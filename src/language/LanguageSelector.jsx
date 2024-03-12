@@ -1,14 +1,14 @@
 "use client";
+import Image from "next/image";
 
-import { Suspense, lazy, useContext, useEffect } from "react";
-import { ReactComponent as IconSpanish } from "../assets/icons/utils/others/spanish.svg";
-import { ReactComponent as IconEnglish } from "../assets/icons/utils/others/english.svg";
+import { useContext, useEffect } from "react";
 
 import LanguageContext from "./LanguageContext";
+import { SelectLanguage } from "@/components/Mobile/Hotel/General/CurrencyLanguage";
 
-const SelectLanguage = lazy(()=>import("../components/Mobile/Hotel/General/CurrencyLanguage"));
+// const SelectLanguage = lazy(()=>import("../components/Mobile/Hotel/General/CurrencyLanguage"));
 
-export default function LanguageSelector() {
+export function LanguageSelector() {
   const { language, setLanguage } = useContext(LanguageContext);
 
   const handleChange = (event) => {
@@ -27,16 +27,19 @@ export default function LanguageSelector() {
     }
   }, [storedLanguage, language, setLanguage]);
 
+  const esLanguage = `${process.env.NEXT_PUBLIC_ASSETS}icons/leng/es.svg`
+  const enLanguage = `${process.env.NEXT_PUBLIC_ASSETS}icons/leng/es.svg`
   return (
     <>
-      <div className="d-language">
+      <div className="flex pl-5 ">
         {defaultLanguage === "es" ? (
-          <IconSpanish className="icon-spanish" />
-        ) : (
-          <IconEnglish className="icon-english" />
+          <Image width={18} height={24} src={`${process.env.NEXT_PUBLIC_ASSETS}icons/leng/es.svg`} alt="MXN lang" />
+          // <IconSpanish className="icon-spanish" />
+          ) : (
+            <Image width={18} height={24} src={`${process.env.NEXT_PUBLIC_ASSETS}icons/leng/en.svg`} alt="US lang" />
         )}
         <select
-          className="select-currencies"
+          className="w-max block border-0 bg-transparent focus:outline-none m-s-b text-gry-100"
           name="select"
           value={defaultLanguage}
           onChange={handleChange}
@@ -49,11 +52,9 @@ export default function LanguageSelector() {
           </option>
         </select>
       </div>
-      <div className="m-language">
-        <Suspense fallback={null}>
-          <SelectLanguage />
-        </Suspense>
-      </div>
+      {/* <div className="m-language">
+        <SelectLanguage />
+      </div> */}
     </>
   );
 }

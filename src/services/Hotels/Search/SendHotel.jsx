@@ -16,13 +16,10 @@ import { useState, useEffect, useContext } from "react";
 // import { ReactComponent as RoomOutlinedIcon } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 import Room from "../config/RoomBox";
 import SearchHotel from "./SearchHotel";
-import { useIsMobile } from "../../../configs/isMobile";
-import Calendar from "../../../components/Calendar/Calendar";
+// import { useIsMobile } from "../../../configs/isMobile";
+import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
-
-// const Room = lazy(() => import("../../hooks/RoomBox"));
-// const SearchHotel = lazy(() => import("./SearchHotel"));
-// const Calendar = lazy(() => import("../../hooks/Calendar"));
+import Calendar from "@/hooks/Calendar";
 
 export default function SendHotel() {
   const isMobile = useIsMobile();

@@ -1,28 +1,24 @@
 "use client";
-
-// import { useHistory } from "react-router-dom";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
-// import { useLocation } from "react-router-dom";
 
 import { navigation } from "../../config/Others/navigation";
 import LanguageContext from "../../language/LanguageContext";
-import Image from "next/image";
-// import { GetIconActivation } from "../../utils/navigation/GetIconActivation";
-// import { useLocation } from "react-router-dom";
 
 export default function NavigationOptions() {
-  const { languageData } = useContext(LanguageContext);
+  const router = useRouter();
   const [activeIcon, setIcon] = useState("");
-  // const location = useLocation();
+  const { languageData } = useContext(LanguageContext);
 
-  // GetIconActivation(location.pathname, setIcon);
   // SELECTED ICON UPDATE ACTIVE ICON
   const handleIconClick = (id) => {
-    // history.push(`/${id}`);
+    setIcon(id)
+    router.push(`/${id}`);
   };
 
   return (
-    <div className="navigation-icons nav-height">
+    <div className="hidden md:flex md:flex-1 md:gap-x-7	 md:justify-end">
       {navigation.map(({ id, label, imageSrc, activeImageSrc }) => (
         <div
           key={id}

@@ -61,13 +61,26 @@ function Calendar({ onDateChange }) {
   }, []);
   const { languageData } = useContext(LanguageContext);
   return (
-    <input
-      className="vertical-range-calendar MuiAutocomplete-root MuiAutocomplete-hasPopupIcon Autocomplete-box css-gcwvw8-MuiAutocomplete-root calendar-results"
-      type="text"
-      ref={calendarRef}
-      placeholder={languageData.SearchBox.tabHotel.dateText}
-      id="check-in"
-    />
+    <div className="flex items-center gap-2">
+      <img
+        className="h-[18px] w-4 invert"
+        src="https://sandboxmexico.com/assets/icons/calendar/calendar-b.svg"
+        alt="calendar icon royal vacation"
+      />
+      <div className="flex relative">
+        <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
+          Fecha
+        </span>
+
+        <input
+          className="mt-3 m-b text-fs-12 focus:outline-none"
+          type="text"
+          ref={calendarRef}
+          placeholder={languageData.SearchBox.tabHotel.dateText}
+          // id="check-in"
+        />
+      </div>
+    </div>
   );
 }
 

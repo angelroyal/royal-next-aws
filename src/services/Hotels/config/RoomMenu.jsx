@@ -3,7 +3,7 @@ import { Button, Typography, TextField } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material/";
 
 import LanguageContext from "../../../language/LanguageContext";
-import { useIsMobile } from "../../../configs/isMobile";
+import { useIsMobile } from "@/config/Mobile/isMobile";
 
 export default function RoomMenu(props) {
   const isMobile = useIsMobile();

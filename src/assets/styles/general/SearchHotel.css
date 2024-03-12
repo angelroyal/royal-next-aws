@@ -1,0 +1,20 @@
+#tab-search-home-tabpane- > div > div:nth-child(1) > div > div > div{
+    padding: 0;
+}
+
+#tab-search-home-tabpane- > div > div:nth-child(1) > div > div > div > div, #\:r3\:{
+    padding: 0;
+}
+
+#tab-search-home-tabpane- > div > div:nth-child(1) > div > div > div > div > fieldset{
+    border: none;
+}
+
+#\:r3\:-listbox{
+    padding: 0;
+    padding-bottom: 8px;
+}
+/* body > div.base-Popper-root.MuiAutocomplete-popper.css-1s5lphu-MuiPopper-root-MuiAutocomplete-popper{
+    width: 331px !important;
+    transform: translate3d(180px, 486px, 0px) !important;
+} */

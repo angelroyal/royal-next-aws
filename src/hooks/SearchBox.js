@@ -3,9 +3,10 @@ import { Tab, Tabs } from "react-bootstrap";
 import React, { useContext, useState } from "react";
 // import { useLocation } from "react-router-dom";
 
-import SendHotel from "../components/Search/SendHotel";
+// import SendHotel from "../components/Search/SendHotel";
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
+import SendHotel from "@/services/Hotels/Search/SendHotel";
 // import { GetIconActivation } from "../utils/navigation/GetIconActivation";
 
 // const ResultTour = lazy(() => import("../components/Search/ResultTour"));
@@ -44,6 +45,7 @@ export default function SearchBox() {
           </div>
 
           {/* <ResultHotel /> */}
+            {/* <SendHotel /> */}
             <SendHotel />
         </Tab>
 
