@@ -7,7 +7,7 @@ import LanguageContext from "../../../../language/LanguageContext";
 import { GetIconActivation } from "../../../../utils/navigation/GetIconActivation";
 
 import "../../../../assets/styles/mobile/SearchHotelDialog.css";
-import { useLocation } from "react-router-dom/cjs/react-router-dom";
+// import { useLocation } from "react-router-dom/cjs/react-router-dom";
 import { ReactComponent as CloseIcon } from "../../../../assets/icons/hotel/modal/close_active.svg";
 
 const Transition = forwardRef((props, ref) => {
@@ -18,11 +18,11 @@ export function DialogSearch(props) {
   const { openDialog, closeDialog } = props;
 
   const { languageData } = useContext(LanguageContext);
-  const location = useLocation();
+  // const location = useLocation();
 
   const [currentActiveIcon, setCurrentActiveIcon] = useState("");
 
-  GetIconActivation(location.pathname, setCurrentActiveIcon);
+  // GetIconActivation(location.pathname, setCurrentActiveIcon);
 
   const handleTabChange = (eventKey) => {
     setCurrentActiveIcon(eventKey);

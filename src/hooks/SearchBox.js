@@ -1,21 +1,23 @@
 import { Tab, Tabs } from "react-bootstrap";
 // import { FormControl } from "@mui/material";
-import React, { useContext, useState, lazy, Suspense } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext, useState } from "react";
+// import { useLocation } from "react-router-dom";
 
+import SendHotel from "../components/Search/SendHotel";
+import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
-import { GetIconActivation } from "../utils/navigation/GetIconActivation";
+// import { GetIconActivation } from "../utils/navigation/GetIconActivation";
 
-const ResultTour = lazy(() => import("../components/Search/ResultTour"));
+// const ResultTour = lazy(() => import("../components/Search/ResultTour"));
 // const ResultMoving = lazy(() => import("../components/Search/ResultMoving"));
-const SendHotel = lazy(() => import("../components/Search/SendHotel"));
+// const SendHotel = lazy(() => import("../components/Search/SendHotel"));
 
 export default function SearchBox() {
   const { languageData } = useContext(LanguageContext);
   const [currentActiveIcon, setCurrentActiveIcon] = useState("");
-  const location = useLocation();
+  // const location = useLocation();
 
-  GetIconActivation(location.pathname, setCurrentActiveIcon);
+  // GetIconActivation(location.pathname, setCurrentActiveIcon);
 
   // CHANGE TAB DINAMIC
   const handleTabChange = (eventKey) => {
@@ -42,9 +44,7 @@ export default function SearchBox() {
           </div>
 
           {/* <ResultHotel /> */}
-          <Suspense fallback={<div className="size-send-hotel"></div>}>
             <SendHotel />
-          </Suspense>
         </Tab>
 
         {/* TAB TOUR */}
@@ -56,9 +56,7 @@ export default function SearchBox() {
           <h3 className="titleSearch container p-2">
             {languageData.SearchBox.tabTour.titleTextTour}
           </h3>
-          <Suspense fallback={<div></div>}>
-            <ResultTour />
-          </Suspense>
+          <ResultTour />
         </Tab>
 
         {/* TAB TRANSPORTATION */}

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 
 // import SearchBox from "../../hooks/SearchBox";
+import SearchBox from "@/hooks/SearchBox";
 import { hotel } from "../../config/Others/imagesBanners";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
@@ -63,7 +64,7 @@ export function BannerHomeTop() {
 
       <div style={{ position: "relative", width: "100%", height: "auto" }}>
         <div className="Element-tabHome">
-          {/* <SearchBox /> */}
+          <SearchBox />
         </div>
       </div>
     </div>

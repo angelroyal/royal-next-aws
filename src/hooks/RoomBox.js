@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Dropdown from "react-bootstrap/Dropdown";
+import React, { useState, useEffect } from "react";
 
 import RoomMenu from "../hooks/RoomMenu";
 
-import { ReactComponent as BedSharpIcon } from "../assets/icons/utils/searchBox/room-autocomplete.svg";
-import { ReactComponent as Person2OutlinedIcon } from "../assets/icons/utils/searchBox/person-autocomplete.svg";
+import BedSharpIcon from "../assets/icons/utils/searchBox/room-autocomplete.svg";
+import Person2OutlinedIcon from "../assets/icons/utils/searchBox/person-autocomplete.svg";
 
 function Room({ OnApply }) {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -33,16 +34,16 @@ function Room({ OnApply }) {
           className="dropdown-room"
         >
           <span style={{ padding: "0 10px" }}>
-            <BedSharpIcon className="icon-room-search" />
+            <Image className="icon-room-search" src={BedSharpIcon} />
             <span className="room-capacity">{totalRooms}</span>
           </span>{" "}
           <span style={{ padding: "0 10px" }}>|</span>
           <span className="person-search" style={{ padding: "0 10px" }}>
-            <Person2OutlinedIcon className="icon-person-search" />
+            <Image className="icon-person-search" src={Person2OutlinedIcon} />
             <span className="room-capacity">{totalPeople}</span>
           </span>
         </Dropdown.Toggle>
-        
+
         <Dropdown.Menu className="dropdown-container">
           <div className="equilateral-triangle-bottom"></div>
           <RoomMenu

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Dialog, Slide } from "@mui/material";
 import DialogActions from "@mui/material/DialogActions";
@@ -7,8 +8,8 @@ import CalendarMobile from "../../../../config/Mobile/CalendarConfig";
 import { ParseDateRangeDate } from "../../../../config/Booking/totalOccupants";
 import { toggleIOSScroll } from "../../../../config/Ios/DetectIsIos";
 
-import { ReactComponent as CloseIcon } from "../../../../assets/icons/hotel/modal/close.svg";
-import { ReactComponent as DateRangeIcon } from "../../../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
+import CloseIcon from "../../../../assets/icons/hotel/modal/close.svg";
+import DateRangeIcon from "../../../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
 
 const Transition = React.forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -63,11 +64,11 @@ export default function OpenDialogCalendar(props) {
       <div className="m-component-info dialog-container">
         <div className="m-calendar-input ps-4 pe-4">
           <Button className="d-flex width100 justify-content-end">
-            <CloseIcon className="close-icon" onClick={onClose} />
+            <Image className="close-icon" onClick={onClose} src={CloseIcon} />
           </Button>
 
           <div className="m-input-search-hotel d-flex gap-1 align-items-center mt-3 mb-3">
-            <DateRangeIcon className="icon-room-search" />
+            <Image className="icon-room-search" src={DateRangeIcon} />
             <span
               className={
                 validFirstDay && validSecondDay

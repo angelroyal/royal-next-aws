@@ -7,7 +7,7 @@ import {
   DialogConfigSearchHotel,
 } from "../General/DialogConfig";
 import LanguageContext from "../../../../language/LanguageContext";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import animationData from "../../../../assets/animations/animated-page-transitions.json";
 
 const Lottie = lazy(() => import("lottie-react"));
@@ -16,7 +16,7 @@ export default function MSearchHotel(props) {
   const { closeDialog } = props;
   const { languageData } = useContext(LanguageContext);
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedDates, setSelectedDates] = useState(null);
@@ -98,7 +98,7 @@ export default function MSearchHotel(props) {
     const query = new URLSearchParams(requestBody).toString();
 
     setTimeout(() => {
-      history.push(`/resultHotel?${query}`);
+      // history.push(`/resultHotel?${query}`);
       setShowModal(false);
     }, 1500);
   };
