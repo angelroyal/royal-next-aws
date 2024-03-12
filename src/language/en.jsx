@@ -1045,12 +1045,12 @@ export const en = {
     confirmationNumber: "Your confirmation number is:",
     reservationDetails: "Reservation details",
     textInformative: "Use your confirmation number in case you need to make changes to your reservation, check its status, or for any other management related to your trip.",
-    titular:"Name",
-    email:"Email",
-    phone:"Phone",
-    infoPayment:"Payment information",
-    cancellations:"Cancellations",
-    cancellationsText:"Please remember that cancellations for reservations, hotels, transportation, or tours are handled directly through the Royal Vacations Mexico support line. We recommend that you get in touch with us for any cancellation or modification requests.",
+    titular: "Name",
+    email: "Email",
+    phone: "Phone",
+    infoPayment: "Payment information",
+    cancellations: "Cancellations",
+    cancellationsText: "Please remember that cancellations for reservations, hotels, transportation, or tours are handled directly through the Royal Vacations Mexico support line. We recommend that you get in touch with us for any cancellation or modification requests.",
     doubts: "Do you have any doubts?",
 
     bookingData: {
@@ -1314,8 +1314,20 @@ export const en = {
 
       title3: "The vacation you want at your fingertips",
       subtitle3: "Get to know Mexico at the best price",
-    }
+    },
+
+    // LP BANNER SELFIE BEACH AND CITY /12-03-24
+    bannerHoteldecided: {
+      havenDecided: "Still haven't decided?",
+      knowMore: "Know more",
+      dontWorry: "Don't worry.",
+      hereSimplify: "We are here to simplify",
+      planning: "your trip planning, making it exciting and hassle-free.",
+
+    },
+    //END LP BANNER SELFIE BEACH AND CITY /12-03-24
   },
+
 
   /*******************************************************************************/
   //////////////////////// 𝓜𝓔𝓣𝓐𝓔𝓣𝓘𝓠𝓤𝓔𝓣𝓐𝓢 METAETIQUETAS 𝓜𝓔𝓣𝓐𝓔𝓣𝓘𝓠𝓤𝓔𝓣𝓐𝓢 //////////////////////////////

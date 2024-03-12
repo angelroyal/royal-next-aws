@@ -15,19 +15,17 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="line-principal-home position-relative">
-        <Image
-          src={Line}
-          alt={languageData.allAlt.altBannerNavigation}
-          height="9px"
-          width="100%"
-          loading="lazy"
-        />
-      </div>
+      <Image
+        src={Line}
+        alt={languageData.allAlt.altBannerNavigation}
+        height="9px"
+        width="100%"
+        loading="lazy"
+      />
 
-      <div data-aos="fade-down" className="navbar-color">
         <NavigationDesktop />
-      </div>
+      {/* <div data-aos="fade-down" className="navbar-color">
+      </div> */}
     </>
   );
 }

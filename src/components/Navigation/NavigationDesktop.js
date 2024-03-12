@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Container,
   // Nav,
@@ -20,6 +18,7 @@ import Cart from "@/hooks/Cart";
 import Currency from "../../config/Others/Currency";
 import LanguageSelector from "@/language/LanguageSelector";
 import Image from "next/image";
+import HeaderBlue from "./HeaderBlue";
 
 // const Cart = lazy(() => import("../../hooks/Cart"));
 // const Currency = lazy(() => import("../../config/Others/Currency"));
@@ -29,93 +28,97 @@ export default function NavigationDesktop() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <Container className="container-nav">
-      <div
-        className="d-flex justify-content-between align-items-center"
-        style={{ height: "2.6rem" }}
-      >
-        <div className="container-navbar-bl">
-          <div className="container-contact" />
-        </div>
+    <div className="md:h-[140px] mb-2">
+      <HeaderBlue />
+    </div>
 
-        <div className="container-call-icons-nav">
-          <a
-            className="description-contact-nav"
-            href="tel:8009530342"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {/* <IconCallCenter className="icon-call-nav-bar" /> */}
-            <Image
-              className="icon-call-nav-bar"
-              width="auto"
-              height="auto"
-              src={IconCallCenter}
-              alt="Logo name Royal"
-            />
+    // <Container className="container-nav">
+    //   <div
+    //     className="d-flex justify-content-between align-items-center"
+    //     style={{ height: "2.6rem" }}
+    //   >
+    //     <div className="container-navbar-bl">
+    //       <div className="container-contact" />
+    //     </div>
 
-            <div className="call-number-nav">
-              <span className="contact-text-nav">
-                {languageData.alertHelp.contact}
-              </span>
+    //     <div className="container-call-icons-nav">
+    //       <a
+    //         className="description-contact-nav"
+    //         href="tel:8009530342"
+    //         target="_blank"
+    //         rel="noopener noreferrer"
+    //       >
+            
+    //         <Image
+    //           className="icon-call-nav-bar"
+    //           width="auto"
+    //           height="auto"
+    //           src={IconCallCenter}
+    //           alt="Logo name Royal"
+    //         />
 
-              <span className="contact-number-nav">800 953 0342</span>
-              <div className="line-description-dev"></div>
-            </div>
-          </a>
+    //         <div className="call-number-nav">
+    //           <span className="contact-text-nav">
+    //             {languageData.alertHelp.contact}
+    //           </span>
 
-          <div className="networks-nav">
-            <a
-              href="https://api.whatsapp.com/send?phone=529981342286&text=¡Hola!%20Necesito%20ayuda%20para%20planificar%20mi%20próximo%20viaje%20a%20México.%20¿Podrían%20orientarme%20sobre%20los%20mejores%20destinos%20y%20actividades%20que%20ofrecen?%20¡Espero%20su%20pronta%20respuesta!"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {/* <IconWhatSapp className="network-nav" /> */}
-            </a>
+    //           <span className="contact-number-nav">800 953 0342</span>
+    //           <div className="line-description-dev"></div>
+    //         </div>
+    //       </a>
 
-            <a
-              href="https://www.facebook.com/RoyalVacationsMx"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {/* <IconFaceBook className="network-nav" /> */}
-            </a>
+    //       <div className="networks-nav">
+    //         <a
+    //           href="https://api.whatsapp.com/send?phone=529981342286&text=¡Hola!%20Necesito%20ayuda%20para%20planificar%20mi%20próximo%20viaje%20a%20México.%20¿Podrían%20orientarme%20sobre%20los%20mejores%20destinos%20y%20actividades%20que%20ofrecen?%20¡Espero%20su%20pronta%20respuesta!"
+    //           target="_blank"
+    //           rel="noopener noreferrer"
+    //         >
+              
+    //         </a>
 
-            <a
-              href="https://www.instagram.com/royalvacationsmx/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {/* <IconInsta className="network-nav" /> */}
-            </a>
-          </div>
-        </div>
+    //         <a
+    //           href="https://www.facebook.com/RoyalVacationsMx"
+    //           target="_blank"
+    //           rel="noopener noreferrer"
+    //         >
+              
+    //         </a>
 
-        <div className="d-flex align-items-center">
-          <div className="element-navigation-currency">
-            {/* <Currency /> */}
-          </div>{" "}
-          |
-          <div className="container-element-navigation">
-            {/* <LanguageSelector /> */}
-          </div>{" "}
-          <div><Cart /></div>
-        </div>
-      </div>
+    //         <a
+    //           href="https://www.instagram.com/royalvacationsmx/"
+    //           target="_blank"
+    //           rel="noopener noreferrer"
+    //         >
+              
+    //         </a>
+    //       </div>
+    //     </div>
 
-      <div className="d-flex justify-content-between align-items-center">
-        <Navbar.Brand href={`${process.env.REACT_APP_BASE_URL}`}>
-          <Image
-            className="name-logo m-0"
-            width="auto"
-            height="auto"
-            src={Logo}
-            alt="Logo name Royal"
-          />
-        </Navbar.Brand>
+    //     <div className="d-flex align-items-center">
+    //       <div className="element-navigation-currency">
+            
+    //       </div>{" "}
+    //       |
+    //       <div className="container-element-navigation">
+            
+    //       </div>{" "}
+    //       <div><Cart /></div>
+    //     </div>
+    //   </div>
 
-        <NavigationOptions />
-      </div>
-    </Container>
+    //   <div className="d-flex justify-content-between align-items-center">
+    //     <Navbar.Brand href={`${process.env.REACT_APP_BASE_URL}`}>
+    //       <Image
+    //         className="name-logo m-0"
+    //         width="auto"
+    //         height="auto"
+    //         src={Logo}
+    //         alt="Logo name Royal"
+    //       />
+    //     </Navbar.Brand>
+
+    //     <NavigationOptions />
+    //   </div>
+    // </Container>
   );
 }
