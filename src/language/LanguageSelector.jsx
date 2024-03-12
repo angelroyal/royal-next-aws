@@ -1,3 +1,5 @@
+"use client";
+
 import { Suspense, lazy, useContext, useEffect } from "react";
 import { ReactComponent as IconSpanish } from "../assets/icons/utils/others/spanish.svg";
 import { ReactComponent as IconEnglish } from "../assets/icons/utils/others/english.svg";

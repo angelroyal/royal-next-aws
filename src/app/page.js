@@ -1,15 +1,22 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../assets/styles/web/App.css";
+
 import Token from "@/components/General/Token";
 import { TokenProvider } from "@/config/context/AuthContext";
 import LanguageProvider from "@/language/LanguageProvider";
+import HomeHotel from "@/pages/Home/HomeHotel";
+import Navigation from "@/components/Navigation/Navigation";
+import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 
 export default function Home() {
   return (
     <LanguageProvider>
       <TokenProvider>
-        <Token />
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-          <div>Holaa</div>
-        </main>
+        <CartAxiosProvider>
+          <Token />
+          <Navigation />
+          <HomeHotel />
+        </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>
   );

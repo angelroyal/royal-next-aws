@@ -31,3 +31,44 @@ body {
     text-wrap: balance;
   } */
 }
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+/* @import "~swiper/swiper-bundle.css"; */
+/* @import "~swiper/swiper-bundle.min.css"; */
+
+
+body{
+  background-color: #F6F6F6;
+}
+
+.m-b {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.m-s-b {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.m-m {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+
+.scroll-page-blue::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 5px !important;
+}
+.scroll-page-blue::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  background-color: #2743A6 !important;
+  border-radius: 5px !important;
+}
+.scroll-page-blue::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+#check-in:active{
+  border: none !important;
+}
