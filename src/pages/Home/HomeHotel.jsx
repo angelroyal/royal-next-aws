@@ -16,6 +16,10 @@ import {
 } from "@/assets/bannerJsx/bannerHomeHotel";
 import PopularCarousel from "@/utils/hotel/PopularCarousel";
 import { PopularState } from "@/utils/hotel/PopularStates";
+import { BannerExcDiscounts, BannerHomeKnowMore } from "@/services/Hotels/components/home/bannerHotel";
+import { Container } from "@/config/Others/Container";
+
+// import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 
 // const CardCarousel = lazy(() => import("../../utils/hotel/CardCarousel"));
 // const PopularCarousel = lazy(() => import("../../utils/hotel/PopularCarousel"));
@@ -28,6 +32,10 @@ export const HomeHotel = () => {
       {/* <MetaHomeH /> */}
       <BannerHomeTop />
 
+      <Container>
+      <BannerExcDiscounts/>
+      <BannerHomeKnowMore/>
+      </Container>
       <BannerHomeDown />
 
       {/* CARD POPULAR" */}
