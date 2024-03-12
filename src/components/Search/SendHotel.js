@@ -97,7 +97,7 @@ export default function SendHotel() {
 
     setTimeout(() => {
       // router.push(`/resultHotel?${query}`);
-      router.push(`/resultHotel?${query}`);
+      router.push(`/hotel/results?${query}`);
       setShowModal(false);
     }, 1500);
   };

@@ -69,7 +69,7 @@ export function CardsHistoryM() {
         clickable: true,
       }}
       // loop={true}
-      modules={[Pagination, Autoplay]}
+      // modules={[Pagination, Autoplay]}
       className="cart-history-swiper"
       autoplay={{
         delay: 7000,
