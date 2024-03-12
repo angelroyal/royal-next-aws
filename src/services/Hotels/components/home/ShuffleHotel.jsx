@@ -1,16 +1,16 @@
 import { useState, useContext } from "react";
 import Rating from "@mui/material/Rating";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import 'swiper/css/navigation';
-import "../../../../assets/css/Libreries/Swiper.css";
+// import "../../../../assets/css/Libreries/Swiper.css";
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
 import LanguageContext from "../../../../language/LanguageContext";
+import Image from "next/image";
 
 export default function ShuffleHotel() {
   const { languageData } = useContext(LanguageContext);
@@ -34,13 +34,13 @@ export default function ShuffleHotel() {
           } flex gap-2 py-2 px-4 justify-center`}
         >
           {menuShuffleHotel === 1 ? (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/beach/beach-w.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/beach/beach-w.svg`}
               alt="icon-beach-w"
             />
           ) : (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/beach/beach-b.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/beach/beach-b.svg`}
               alt="icon-beach-b"
             />
           )}
@@ -59,13 +59,13 @@ export default function ShuffleHotel() {
           } flex gap-2 py-2 px-4 justify-center`}
         >
           {menuShuffleHotel === 2 ? (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/family/family-w.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/family/family-w.svg`}
               alt="icon-family-w"
             />
           ) : (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/family/family-b.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/family/family-b.svg`}
               alt="icon-family-b"
             />
           )}
@@ -83,13 +83,13 @@ export default function ShuffleHotel() {
           }
         >
           {menuShuffleHotel === 3 ? (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/romantic/romantic-w.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/romantic/romantic-w.svg`}
               alt="icon-romantic-w"
             />
           ) : (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/romantic/romantic-b.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/romantic/romantic-b.svg`}
               alt="icon-romantic-b"
             />
           )}
@@ -108,13 +108,13 @@ export default function ShuffleHotel() {
           }
         >
           {menuShuffleHotel === 4 ? (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/business/business-w.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/business/business-w.svg`}
               alt="icon-business-w"
             />
           ) : (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/business/business-b.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/business/business-b.svg`}
               alt="icon-business-b"
             />
           )}
@@ -133,13 +133,13 @@ export default function ShuffleHotel() {
           }
         >
           {menuShuffleHotel === 5 ? (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/adults/adults-w.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/adults/adults-w.svg`}
               alt="icon-adults-w"
             />
           ) : (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/adults/adults-b.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/adults/adults-b.svg`}
               alt="icon-adults-b"
             />
           )}
@@ -158,13 +158,13 @@ export default function ShuffleHotel() {
           }
         >
           {menuShuffleHotel === 6 ? (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/pet/pet-w.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/pet/pet-w.svg`}
               alt="icon-pet-w"
             />
           ) : (
-            <img
-              src={`${import.meta.env.VITE_ASSETS_URL}icons/pet/pet-b.svg`}
+            <Image
+              // src={`${import.meta.env.VITE_ASSETS_URL}icons/pet/pet-b.svg`}
               alt="icon-pet-b"
             />
           )}
@@ -214,7 +214,7 @@ export default function ShuffleHotel() {
           <SwiperSlide key={index}>
             <div className="min-w-[266px] h-full cursor-pointer shadow-lg shadow-gry-50 rounded-xl max-w-[280px]">
               <div className="w-full h-[216px]">
-                <img
+                <Image
                   className="w-full h-full rounded-t-lg object-cover"
                   src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
                   alt="card"
@@ -229,8 +229,8 @@ export default function ShuffleHotel() {
                 <Rating className="my-1" name="read-only" value={2} style={{fontSize:"14px"}} readOnly size="small" />
 
                 <div className="flex gap-1 mb-[11px]">
-                  <img
-                    src={`${import.meta.env.VITE_ASSETS_URL}icons/location/location-bl.svg`}
+                  <Image
+                    // src={`${import.meta.env.VITE_ASSETS_URL}icons/location/location-bl.svg`}
                     alt="icon-pet-b"
                     width={11}
                     height={14}
@@ -293,7 +293,7 @@ export default function ShuffleHotel() {
           <SwiperSlide key={index}>
             <div className="min-w-[266px] h-full cursor-pointer shadow-lg shadow-gry-50 rounded-xl max-w-[280px]">
               <div className="w-full h-[216px]">
-                <img
+                <Image
                   className="w-full h-full rounded-t-lg object-cover"
                   src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
                   alt="card"
@@ -308,8 +308,8 @@ export default function ShuffleHotel() {
                 <Rating className="my-1" name="read-only" value={2} readOnly size="small" />
 
                 <div className="flex gap-1 mb-[11px]">
-                  <img
-                    src={`${import.meta.env.VITE_ASSETS_URL}icons/location/location-bl.svg`}
+                  <Image
+                    // src={`${import.meta.env.VITE_ASSETS_URL}icons/location/location-bl.svg`}
                     alt="icon-pet-b"
                   />
                   <span className="text-bl-100 m-s-b text-fs-12">Oaxaca</span>

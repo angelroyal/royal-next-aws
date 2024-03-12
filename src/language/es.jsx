@@ -1,5 +1,5 @@
 export const es = {
-  
+
   cookie: {
     text: "En Royal Vacations Mexico, nos esforzamos por brindarte una experiencia de navegación única. Utilizamos cookies propias y de terceros para personalizar nuestras ofertas de viaje según tus preferencias, analizando tus hábitos de navegación. Tu privacidad es fundamental para nosotros y queremos asegurarte que el uso de cookies está diseñado exclusivamente para mejorar tu interacción con nuestro sitio.",
     accept: "Acepto",
@@ -230,7 +230,7 @@ export const es = {
   },
 
   unavailableCardHotel: {
-    updateDate:"Actualizar fecha",
+    updateDate: "Actualizar fecha",
     changeHotel: "Cambiar Hotel",
   },
 
@@ -538,12 +538,12 @@ export const es = {
     schedules: "Horarios",
     freeTour: "Gratis",
 
-    OccupancyTours:{
-      selectYourTickets:"Selecciona tus entradas",
-      subtitleSelectYourTickets:"Al seleccionar tus entradas podrás ver el resumen en tu carrito de compra",
-      changeSelection:"Cambiar selección",
-      reserve:"Reservar",
-      dateNotAvailable:"Esta fecha no está disponible. Por favor, selecciona otra.",
+    OccupancyTours: {
+      selectYourTickets: "Selecciona tus entradas",
+      subtitleSelectYourTickets: "Al seleccionar tus entradas podrás ver el resumen en tu carrito de compra",
+      changeSelection: "Cambiar selección",
+      reserve: "Reservar",
+      dateNotAvailable: "Esta fecha no está disponible. Por favor, selecciona otra.",
     },
   },
 
@@ -586,12 +586,12 @@ export const es = {
     titleDuration: "Duración",
     titleCategories: "Categorías",
     //FILTER TOUR //LP 28-02-24
-    filterResults:"Filtrar Resultados",
-    reset:"Resetear",
-    priceRange:"Rango de precio",
-    minimum:"Mínimo",
-    maximum:"Máximo",
-    to:"Hasta",
+    filterResults: "Filtrar Resultados",
+    reset: "Resetear",
+    priceRange: "Rango de precio",
+    minimum: "Mínimo",
+    maximum: "Máximo",
+    to: "Hasta",
     //END FILTER TOUR //LP 28-02-24
   },
 
@@ -968,11 +968,11 @@ export const es = {
     },
   },
 
-  paymentActivities:{
+  paymentActivities: {
     activities: "Actividades",
     comments: "Comentarios",
-    writeHere:"Escribe aquí",
-    selectAnOption:"Selecciona una opción",
+    writeHere: "Escribe aquí",
+    selectAnOption: "Selecciona una opción",
   },
 
   payment: {
@@ -1042,15 +1042,15 @@ export const es = {
     waiting: "Pendiente de confirmar",
 
     // LP
-    confirmationNumber:"Tu número de confirmación es:",
+    confirmationNumber: "Tu número de confirmación es:",
     reservationDetails: "Datos de reserva",
     textInformative: "Usa tu número de confirmación en caso de necesitar hacer cambios en tu reserva, consultar el estado de la misma o para cualquier otra gestión relacionada con tu viaje.",
     titular: "Titular",
-    email:"Correo electrónico",
-    phone:"Telefono",
-    infoPayment:"Informacion de pago",
-    cancellations:"Cancelaciones",
-    cancellationsText:"Recuerda que las cancelaciones de reservaciones, hotel, transporte o tours se gestionan directamente a través de la línea de soporte de Royal Vacations Mexico. Te recomendamos que te pongas en contacto con nosotros para cualquier solicitud de cancelación o modificación.",
+    email: "Correo electrónico",
+    phone: "Telefono",
+    infoPayment: "Informacion de pago",
+    cancellations: "Cancelaciones",
+    cancellationsText: "Recuerda que las cancelaciones de reservaciones, hotel, transporte o tours se gestionan directamente a través de la línea de soporte de Royal Vacations Mexico. Te recomendamos que te pongas en contacto con nosotros para cualquier solicitud de cancelación o modificación.",
     doubts: "¿Tienes dudas?",
 
     bookingData: {
@@ -1315,8 +1315,19 @@ export const es = {
 
       title3: "Las vacaciones que quieres a tu alcance",
       subtitle3: "Conoce México al mejor precio",
+    },
+
+    // LP BANNER SELFIE BEACH AND CITY /12-03-24
+    bannerHoteldecided: {
+      havenDecided: "¿Aún no te decides?",
+      knowMore: "Saber más",
+      dontWorry: "No te preocupes.",
+      hereSimplify: "Estamos aquí para simplificar",
+      planning: "la planeacion de tu viaje, haciendola emocionante y sin complicaciones.",
     }
+    //END LP BANNER SELFIE BEACH AND CITY /12-03-24
   },
+
 
   /*******************************************************************************/
   //////////////////////// 𝓜𝓔𝓣𝓐𝓔𝓣𝓘𝓠𝓤𝓔𝓣𝓐𝓢 METAETIQUETAS 𝓜𝓔𝓣𝓐𝓔𝓣𝓘𝓠𝓤𝓔𝓣𝓐𝓢 //////////////////////////////

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BannerConfig } from "../../config/BannersConfigH";
 // import { Autoplay } from "swiper";
 import { Autoplay, EffectFade } from 'swiper/modules';
@@ -74,6 +75,7 @@ export function BannerIcons() {
 
 export function BannerHomeKnowMore() {
   const { languageData } = useContext(LanguageContext);
+  const test = "https://sandboxmexico.com/assets/banners/hotel/Feb2024/beach.webp";
 
   return (
 
@@ -108,7 +110,7 @@ export function BannerHomeKnowMore() {
 
         >
           <SwiperSlide>
-            <img src="https://sandboxmexico.com/assets/banners/hotel/Feb2024/beach.webp" alt="Img beach" className="w-full h-full" />
+            <Image src={test} width={100} height={100} className="w-full h-full" />
           </SwiperSlide>
 
           <SwiperSlide>
@@ -140,7 +142,7 @@ export function BannerExcDiscounts() {
           <img src="https://sandboxmexico.com/assets/general/Banner-Traveling.webp" className="h-full w-full rounded-lg" alt="Banner Experimenta los mejores tours" />
           <div className="absolute top-[39px] left-[59px] max-sm:left-[28px] max-sm:top-[28px]">
             <h2 className="m-b text-white text-fs-20 w-4/6 mb-4 max-xl:text-fs-15 max-lg:text-fs-20 max-sm:text-fs-12">{languageData.titleBanners.titleTourMexico}</h2>
-            <h4 className="m-m text-white w-4/6 max-xl:text-fs-12 max-lg:text-fs-16 max-lg:text-fs-12 max-sm:text-fs-10" >{languageData.titleBanners.subtitleTourM}</h4>
+            <h4 className="m-m text-white w-4/6 text-fs-18 max-lg:text-fs-12 max-sm:text-fs-10" >{languageData.titleBanners.subtitleTourM}</h4>
           </div>
         </div>
 
