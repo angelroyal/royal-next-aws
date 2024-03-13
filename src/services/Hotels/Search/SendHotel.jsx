@@ -87,16 +87,16 @@ export default function SendHotel() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="flex flex-col xl:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative">
+    <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
+      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative w-full lg:w-[290px] ">
         <SearchHotel onSelectSearch={setSelectedOption} />
       </div>
 
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full xl:w-auto">
+      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full lg:w-[290px]">
         <Calendar onDateChange={handleDateChange} />
       </div>
 
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full xl:w-auto">
+      <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px]">
         <Room OnApply={setRoomData} />
       </div>
 

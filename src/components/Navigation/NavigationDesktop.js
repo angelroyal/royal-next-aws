@@ -14,13 +14,13 @@ export default function NavigationDesktop() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className="md:h-[126px] md:mb-2 bg-gry-30">
+    <div className="md:h-[116px] md:mb-2 bg-gry-30">
       <HeaderBlue />
 
       <div className="relative md:top-[-15px] mt-[38px] md:mt-0">
         <Container>
           {/* fix tailwind */}
-          <header className="relative pt-0 pb-[20px] flex flex-col gap-y-5">
+          <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem]">
             <div className="hidden md:flex justify-end ">
               <SelectCurrency />
               <span className="pl-[19px] pr-[19px]">|</span>
