@@ -1,11 +1,12 @@
-import React, {  useState } from "react";
+"use client";
 
-import LanguageContext from "../../language/LanguageContext";
+import React, {useState} from "react";
+
 import NavigationOptions from "../../pages/others/RouterPages";
 
 import HeaderBlue from "./HeaderBlue";
 import { Container } from "@/config/Others/Container";
-import { SelectCurrency } from "./SelectCurrency";
+// import { SelectCurrency } from "./SelectCurrency";
 import { LanguageSelector } from "@/language/LanguageSelector";
 import Cart from "@/hooks/Cart";
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -13,6 +14,7 @@ import { HamburgerMenu } from "./HamburgerMenu";
 export default function NavigationDesktop() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="md:h-[126px] md:mb-2 bg-gry-30">
       <HeaderBlue />
@@ -22,7 +24,7 @@ export default function NavigationDesktop() {
           {/* fix tailwind */}
           <header className="relative pt-0 pb-[20px] flex flex-col gap-y-5">
             <div className="hidden md:flex justify-end ">
-              <SelectCurrency />
+              {/* <SelectCurrency /> */}
               <span className="pl-[19px] pr-[19px]">|</span>
               <LanguageSelector />
 
