@@ -14,7 +14,7 @@ export default function Navigation() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col sticky top-0 z-[1000]">
       <Image
         src={Line}
         alt={languageData.allAlt.altBannerNavigation}

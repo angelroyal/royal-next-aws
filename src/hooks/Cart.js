@@ -57,7 +57,7 @@ export default function Cart() {
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Tooltip title="Cart">
           <IconButton
-            className="m-icon-card"
+            className="!m-0"
             onClick={handleClick}
             size="small"
             sx={{ ml: 2 }}
@@ -66,13 +66,11 @@ export default function Cart() {
             aria-expanded={Boolean(anchorEl).toString()}
           >
             {totalItemsInCart ? (
-              <div className="cart-active">
-                {/* <IconCartActive sx={{ width: 34, height: 34 }} /> */}
+              <div className="!m-0">
                 <Image src={IconCartActive} width={26} height={26} />
-                <div className="cart-orange-num">{totalItemsInCart}</div>
+                <div className="!m-0">{totalItemsInCart}</div>
               </div>
             ) : (
-              // <IconCart sx={{ width: 34, height: 34 }} />
               <Image src={IconCart} width={26} height={26} />
             )}
           </IconButton>

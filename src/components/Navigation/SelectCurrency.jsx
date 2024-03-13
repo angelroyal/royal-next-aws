@@ -9,12 +9,12 @@ const [currency, setCurrency] = useState("MXN");
 };
 
 useEffect(()=>{
-    console.log(currency);
+    // console.log(currency);
     localStorage.setItem("currency", currency);
   },[currency])
 
   return (
-    <div className="flex border-gry-100 border-t-0 border-b-0 border-l-0 border-r-[1px] pr-5">
+    <div className="flex">
       <img
         src="https://sandboxmexico.com/assets/icons/money/money-b.svg"
         alt="money icon royal vacation"

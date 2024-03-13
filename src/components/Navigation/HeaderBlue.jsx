@@ -7,9 +7,9 @@ export default function HeaderBlue() {
 
   return (
     <div className="relative w-full flex items-center ">
-      <div className="absolute left-0 p-6 flex items-center px-8 bg-bl-100 w-[100%] md:w-[60%] lg:w-[51%] h-12 top-0 border-b rounded-br-[5rem] p-6 z-[-3]"/>
+      <div className="absolute left-0 p-6 flex items-center px-8 bg-bl-100 w-[100%] md:w-[55%] lg:w-[51%] h-12 top-0 border-b rounded-br-[5rem] p-6"/>
         <Container>
-          <div className="flex items-center gap-[44px] mt-[14px]">
+          <div className="relative flex items-center gap-[44px] mt-[14px] z-[3]">
             <a
               className="flex gap-2 no-underline m-s-b"
               href="tel:8009530342"
@@ -28,7 +28,8 @@ export default function HeaderBlue() {
               </span>
             </a>
 
-            <div className="flex gap-4">
+            {/* fix tailwind */}
+            <div className="flex gap-[1rem]">
               <a
                 href="https://api.whatsapp.com/send?phone=529981342286&text=¡Hola!%20Necesito%20ayuda%20para%20planificar%20mi%20próximo%20viaje%20a%20México.%20¿Podrían%20orientarme%20sobre%20los%20mejores%20destinos%20y%20actividades%20que%20ofrecen?%20¡Espero%20su%20pronta%20respuesta!"
                 target="_blank"
