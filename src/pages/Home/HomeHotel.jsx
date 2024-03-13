@@ -11,8 +11,8 @@ import "../../assets/styles/web/Hotel.css";
 // import MetaHomeH from "../../components/Meta/MetaHomeH";
 import SearchBox from "@/hooks/SearchBox";
 import { Container } from "@/config/Others/Container";
-import { PopularState } from "@/utils/hotel/PopularStates";
-import PopularCarousel from "@/utils/hotel/PopularCarousel";
+// import { PopularState } from "@/utils/hotel/PopularStates";
+// PopularState
 import LanguageContext from "../../language/LanguageContext";
 // import { BannerHomeDown } from "@/components/bannerJsx/bannerHomeHotel";
 import {
@@ -23,6 +23,8 @@ import {
 
 import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
+import { PopularState } from "@/services/Hotels/components/home/PopularEstates";
+import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
 // import PopularStates from "@/services/Hotels/components/home/PopularEstates";
 
 
@@ -34,9 +36,9 @@ export const HomeHotel = () => {
 
   return (
     <>
-      <div className="relative flex justify-center align-center  mb-[306px] lg:mb-[118px]">
+      <div className="relative flex justify-center align-center mb-[224px] lg:mb-[118px]">
         <BannerHomeHotelTop />
-        <div className="absolute top-[67%] sm:top-2/4 md:top-3/4 xl:top-[80%] 2xl:top-[86%] w-full flex flex-col items-center">
+        <div className="absolute top-[67%] sm:top-[60%] md:top-[44%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center">
           <SearchBox />
         </div>
       </div>
@@ -45,6 +47,7 @@ export const HomeHotel = () => {
         <BannerExcDiscounts />
         <PopularState />
         <ShuffleHotel />
+        <TransportBanner />
         <TourRecommended />
         <BannerHomeKnowMore />
       </Container>
