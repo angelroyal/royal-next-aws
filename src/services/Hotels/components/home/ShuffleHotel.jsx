@@ -20,6 +20,7 @@ export default function ShuffleHotel() {
 
   return (
     <div>
+      {/* TITLE */}
       <h2 className="m-b text-fs-24 mb-8 ">
         {languageData.homeDestinations[1].titleType}
       </h2>
@@ -236,8 +237,8 @@ export default function ShuffleHotel() {
         }}
       >
         {[...Array(7)].map((_, index) => (
-          <SwiperSlide key={index}>
-            <div className="min-w-[266px] h-full cursor-pointer shadow-lg shadow-gry-50 rounded-xl max-w-[280px]">
+          <SwiperSlide key={index} className="!w-fit !rounded-lg">
+            <div className="min-w-[266px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl max-w-[280px]">
               <div className="w-full h-[216px]">
                 <img
                   className="w-full h-full rounded-t-lg object-cover"
@@ -315,8 +316,8 @@ export default function ShuffleHotel() {
         }}
       >
         {[...Array(7)].map((_, index) => (
-          <SwiperSlide key={index}>
-            <div className="min-w-[266px] h-full cursor-pointer shadow-lg shadow-gry-50 rounded-xl max-w-[280px]">
+          <SwiperSlide key={index} className="!w-fit !rounded-lg">
+            <div className="min-w-[266px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl max-w-[280px]">
               <div className="w-full h-[216px]">
                 <img
                   className="w-full h-full rounded-t-lg object-cover"

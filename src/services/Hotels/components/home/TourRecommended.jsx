@@ -6,24 +6,26 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import LanguageContext from '../../../../language/LanguageContext';
 import Image from 'next/image';
+
 export default function CartTourOptions() {
+
   const { languageData } = useContext(LanguageContext);
   return (
     <>
-      <div className='mb-10'>
+      <div className='mb-10 mt-[128px] max-sm:mt-10'>
         <h2 className="m-b text-center text-fs-24 mb-2">{languageData.TourRecommended.title}</h2>
-        <div className="flex w-full text-center justify-center">
-          <div className="m-m text-gry-100 w-4/5">{languageData.TourRecommended.subtitle} 
-          <b className="text-black">{languageData.TourRecommended.subtitle2}</b> 
-          {languageData.TourRecommended.subtitle3}</div>
+        <div className="flex w-full text-center justify-center max-sm:text-fs-12 w-11/12">
+          <div className="m-m text-gry-100">{languageData.TourRecommended.subtitle}
+            <b className="text-black">{languageData.TourRecommended.subtitle2}</b>
+            {languageData.TourRecommended.subtitle3}</div>
         </div>
       </div>
 
       <Swiper
-      
+
         slidesPerView={5}
         spaceBetween={20}
-        className="mySwiper !pb-10"
+        className="mySwiper !pb-12 max-sm:!pb-16"
         id="swiper-shuffle-hotel"
         pagination={{
           clickable: true,
@@ -58,8 +60,8 @@ export default function CartTourOptions() {
         }}
       >
         {[...Array(10)].map((_, index) => (
-          <SwiperSlide key={index}>
-            <div className="bg-white w-fit max-w-[185px] cursor-pointer shadow-md shadow-gry-70 border border-gry-50 rounded-md p-4 pb-6 flex flex-col justify-center items-center mx-1">
+          <SwiperSlide key={index} className='!w-fit !rounded-md'>
+            <div className="bg-white w-fit w-[185px] cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md p-4 pb-6 flex flex-col justify-center items-center">
               <div className="w-[132px] h-[132px] mb-3">
                 <img
                   className="w-full h-full rounded-full object-cover"

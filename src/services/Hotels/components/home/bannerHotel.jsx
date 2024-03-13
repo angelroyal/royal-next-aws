@@ -4,7 +4,7 @@ import { BannerConfig } from "../../config/BannersConfigH";
 import { Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-
+import { useIsMobile } from '@/config/Mobile/isMobile';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import LanguageContext from "../../../../language/LanguageContext";
@@ -136,29 +136,34 @@ export function BannerExcDiscounts() {
   const bannertour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
 
   const { languageData } = useContext(LanguageContext);
-
+  const isMobile = useIsMobile();
   return (
-    <div className="flex h-[271px] gap-4 w-full max-lg:flex-col max-lg:h-auto">
-      <div className="w-1/2 max-lg:w-full object-contain  max-lg:h-[245px] max-sm:h-[170px]">
-        <Image src={excDiscounts} width={500} height={500} className="h-full w-full rounded-lg object-cover max-lg:object-contain" alt="Banner Exc Discounts" />
+    <div className="flex h-[271px] gap-4 w-full max-lg:flex-col  max-xl:h-[227px] max-lg:h-auto">
+      <div className="w-1/2 max-lg:w-full  max-lg:h-[340px] max-sm:h-[235px]">
+        <Image src={excDiscounts} width={547} height={235} className="h-full w-full rounded-lg object-cover" alt="Banner Exc Discounts" />
       </div>
 
-      <div className="w-1/2 flex gap-4 max-lg:w-full max-lg:auto max-lg:h-[245px] max-sm:h-[170px]">
+      {!isMobile && (
+              <div className="w-1/2 flex gap-4 max-lg:w-full max-lg:auto max-lg:h-[245px] max-sm:h-[170px]">
 
-        <div className="w-1/2 relative">
-          <Image src={bannerTraveling} width={500} height={500} className="h-full w-full rounded-lg" alt="Banner Experimenta los mejores tours" />
+              <div className="w-1/2 relative">
+                <Image src={bannerTraveling} width={500} height={500} className="h-full w-full rounded-lg" alt="Banner Experimenta los mejores tours" />
+      
+                <div className="absolute top-[39px] left-[59px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[28px] max-sm:top-[28px]">
+                  <h2 className="m-b text-white text-fs-22 w-4/6 mb-4 max-xl:text-fs-16 max-lg:text-fs-22">{languageData.titleBanners.titleTourMexico}</h2>
+                  <h4 className="m-m w-4/6 text-[#BEE0EE] text-fs-18 max-xl:text-fs-14  max-lg:text-fs-18" >{languageData.titleBanners.subtitleTourM}</h4>
+                </div>
+              </div>
+      
+              <div className="w-1/2">
+                <Image src={bannertour} width={300} height={300} className="h-full w-full rounded-lg" alt="Banner tour mes de feb" />
+              </div>
+      
+            </div>
 
-          <div className="absolute top-[39px] left-[59px] max-sm:left-[28px] max-sm:top-[28px]">
-            <h2 className="m-b text-white text-fs-20 w-4/6 mb-4 max-xl:text-fs-15 max-lg:text-fs-20 max-sm:text-fs-12">{languageData.titleBanners.titleTourMexico}</h2>
-            <h4 className="m-m text-white w-4/6 text-fs-18 max-lg:text-fs-12 max-sm:text-fs-10" >{languageData.titleBanners.subtitleTourM}</h4>
-          </div>
-        </div>
+      )}
 
-        <div className="w-1/2">
-          <Image src={bannertour} width={300} height={300} className="h-full w-full rounded-lg" alt="Banner tour mes de feb" />
-        </div>
 
-      </div>
 
     </div>
   )

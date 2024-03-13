@@ -23,6 +23,8 @@ import {
 
 import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
+// import PopularStates from "@/services/Hotels/components/home/PopularEstates";
+
 
 // const CardCarousel = lazy(() => import("../../utils/hotel/CardCarousel"));
 // const PopularCarousel = lazy(() => import("../../utils/hotel/PopularCarousel"));
@@ -34,7 +36,7 @@ export const HomeHotel = () => {
     <>
       {/* <MetaHomeH /> */}
       {/* <BannerHomeTop /> */}
-      <div className="relative flex justify-center align-center mb-[118px]">
+      <div className="relative flex justify-center align-center mb-[118px] max-sm:mb-[102px]">
         <BannerHomeHotelTop />
         <div className="absolute top-2/4 sm:top-2/4 md:top-3/4 xl:top-[80%] 2xl:top-[86%] w-full flex flex-col items-center">
           <SearchBox />
