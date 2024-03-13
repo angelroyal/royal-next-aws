@@ -3,9 +3,9 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import { Pagination } from "swiper/modules";
-import axiosWithInterceptor from "../../../../api/axiosWithInterceptor";
 import { useContext, useEffect, useState } from "react";
-import LanguageContext from "../../../../language/LanguageContext";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import LanguageContext from "@/language/LanguageContext";
 
 export function PopularState() {
   const [popularState, setPopularState] = useState([]);
@@ -48,7 +48,7 @@ export function PopularState() {
       <h1 className="m-b text-fs-24 mb-9">{languageData.SearchBox.tabTour.popularState}</h1>
       {popularState.length > 0 ? (
         <Swiper slidesPerView={1} spaceBetween={30} className="h-[408px]">
-          <SwiperSlide>
+          <SwiperSlide className="bg-transparent">
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
               <div className="flex gap-x-3 w-full md:h-full h-2/4">
                 <div className="relative rounded-lg md:w-[23%] w-full">
@@ -59,7 +59,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 m-b">
                       {popularState[0].name}
                     </span>
@@ -81,7 +81,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 md:text-fs-20 m-b">
                       {popularState[1].name}
                     </span>
@@ -105,7 +105,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
                       {popularState[2].name}
                     </span>
@@ -127,7 +127,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
                       {popularState[3].name}
                     </span>
@@ -144,7 +144,7 @@ export function PopularState() {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide>
+          <SwiperSlide className="bg-transparent">
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
               <div className="flex gap-x-3 w-full md:h-full h-[45%]">
                 <div className="relative rounded-lg md:w-[23%] w-full">
@@ -155,7 +155,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 m-b">
                       {popularState[4].name}
                     </span>
@@ -178,7 +178,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 md:text-fs-20 m-b">
                       {popularState[5].name}
                     </span>
@@ -202,7 +202,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
                       {popularState[6].name}
                     </span>
@@ -224,7 +224,7 @@ export function PopularState() {
                     width="100%"
                     height="100%"
                   />
-                  <div className="absolute flex flex-col bottom-0 text-white p-4">
+                  <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
                       {popularState[0].name}
                     </span>

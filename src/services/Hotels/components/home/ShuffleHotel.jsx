@@ -51,7 +51,7 @@ export default function ShuffleHotel() {
             />
           )}
 
-          <span className="text-fs-15 m-m">
+          <span className="text-fs-12 m-m">
             {languageData.hotelTypes.beach}
           </span>
         </button>
@@ -79,7 +79,7 @@ export default function ShuffleHotel() {
               height={18.3}
             />
           )}
-          <span className="text-fs-15 m-m">
+          <span className="text-fs-12 m-m">
             {languageData.hotelTypes.family}
           </span>
         </button>
@@ -108,7 +108,7 @@ export default function ShuffleHotel() {
             />
           )}
 
-          <span className="text-fs-15 m-m">
+          <span className="text-fs-12 m-m">
             {languageData.hotelTypes.romantic}
           </span>
         </button>
@@ -137,7 +137,7 @@ export default function ShuffleHotel() {
             />
           )}
 
-          <span className="text-fs-15 m-m">
+          <span className="text-fs-12 m-m">
             {languageData.hotelTypes.business}
           </span>
         </button>
@@ -166,7 +166,7 @@ export default function ShuffleHotel() {
             />
           )}
 
-          <span className="text-fs-15 m-m">
+          <span className="text-fs-12 m-m">
             {languageData.hotelTypes.adults}
           </span>
         </button>
@@ -195,7 +195,7 @@ export default function ShuffleHotel() {
             />
           )}
 
-          <span className="text-fs-15 m-m text-nowrap	">
+          <span className="text-fs-12 m-m text-nowrap	">
             {languageData.hotelTypes.petFriendly}
           </span>
         </button>

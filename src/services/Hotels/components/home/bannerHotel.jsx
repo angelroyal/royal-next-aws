@@ -11,7 +11,7 @@ import LanguageContext from "../../../../language/LanguageContext";
 import { useContext } from "react";
 export function BannerHomeHotelTop() {
   return (
-    <div className="h-[16rem] md:h-72 2xl:h-[480px] w-full">
+    <div className="h-[442px] md:h-72 2xl:h-[480px] w-full">
       <img
         className="object-cover	w-full h-full object-center"
         src={BannerConfig.bannerTop.img}
