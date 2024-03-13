@@ -36,7 +36,7 @@ export const HomeHotel = () => {
     <>
       {/* <MetaHomeH /> */}
       {/* <BannerHomeTop /> */}
-      <div className="relative flex justify-center align-center mb-[118px] max-sm:mb-[102px]">
+      <div className="relative flex justify-center align-center mb-[306px] xl:mb-[118px]">
         <BannerHomeHotelTop />
         <div className="absolute top-2/4 sm:top-2/4 md:top-3/4 xl:top-[80%] 2xl:top-[86%] w-full flex flex-col items-center">
           <SearchBox />

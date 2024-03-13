@@ -1,13 +1,9 @@
 "use client";
 
-import { useStarToken } from "@/utils/others/StarToken"
+import { useStarToken } from "@/utils/others/StarToken";
 
 export default function Token() {
-    useStarToken();
+  useStarToken();
 
-    return (
-    <div>
-      
-    </div>
-  )
+  return null;
 }

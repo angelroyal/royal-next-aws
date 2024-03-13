@@ -1,15 +1,14 @@
-import { Tab, Tabs } from "react-bootstrap";
-// import { FormControl } from "@mui/material";
-import React, { useContext, useState } from "react";
-// import { useLocation } from "react-router-dom";
+"use client";
 
-// import SendHotel from "../components/Search/SendHotel";
+import Image from "next/image";
+import { Tab, Tabs } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
 import SendHotel from "@/services/Hotels/Search/SendHotel";
-import Image from "next/image";
-// import { GetIconActivation } from "../utils/navigation/GetIconActivation";
 
+// import { GetIconActivation } from "../utils/navigation/GetIconActivation";
 // const ResultTour = lazy(() => import("../components/Search/ResultTour"));
 // const ResultMoving = lazy(() => import("../components/Search/ResultMoving"));
 // const SendHotel = lazy(() => import("../components/Search/SendHotel"));
@@ -20,14 +19,11 @@ export default function SearchBox() {
   // const location = useLocation();
 
   // GetIconActivation(location.pathname, setCurrentActiveIcon);
-  console.log(currentActiveIcon);
+  // console.log(currentActiveIcon);
   // CHANGE TAB DINAMIC
   const handleTabChange = (eventKey) => {
     setCurrentActiveIcon(eventKey);
   };
-  const test  = process.env.NEXT_PUBLIC_URL
-  console.log(test);
-  // const isDev = process.env.REACT_APP_DEV === "true";
 
   return (
     <>

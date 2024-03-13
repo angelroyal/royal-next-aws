@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "spanishName": "Paseo en barco por Acapulco",
+    "englishName": "Acapulco Bay Cruise",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/paseo-barco-acapulco.jpg",
+    "price": 377.19,
+    "category": 4.5,
+    "duration": "2h 30m"
+  },
+  {
+    "id": 2,
+    "spanishName": "Cena y espect\u00e1culo de clavados en Acapulco",
+    "englishName": "Acapulco Cliff Dive Show & Dinner",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/cena-espectaculo-clavados-acapulco.jpg",
+    "price": 1704.76,
+    "category": 3,
+    "duration": "3h"
+  },
+  {
+    "id": 3,
+    "spanishName": "Visita guiada por Acapulco",
+    "englishName": "Acapulco Guided Tour & Cliff Dive Show",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/visita-guiada-acapulco.jpg",
+    "price": 639.29,
+    "category": 4.5,
+    "duration": "4h"
+  },
+  {
+    "id": 4,
+    "spanishName": "Liberaci\u00f3n de tortugas en la laguna de Coyuca",
+    "englishName": "Coyuca Lagoon Sea Turtle Release",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/liberacion-tortugas-coyuca.jpg",
+    "price": 1150.72,
+    "category": 5,
+    "duration": "6h 30m"
+  },
+  {
+    "id": 5,
+    "spanishName": "Excursi\u00f3n a Taxco",
+    "englishName": "Taxco Day Trip",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/excursion-taxco.jpg",
+    "price": 2940.72,
+    "category": 0,
+    "duration": "12h"
+  },
+  {
+    "id": 6,
+    "spanishName": "Excursi\u00f3n a la isla de La Roqueta",
+    "englishName": "La Roqueta Island Day Trip",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/excursion-isla-roqueta.jpg",
+    "price": 1263.23,
+    "category": 2,
+    "duration": "4h 30m"
+  },
+  {
+    "id": 7,
+    "spanishName": "Bautismo de buceo en Acapulco",
+    "englishName": "Acapulco Scuba Diving Introduction",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/bautismo-buceo-acapulco.jpg",
+    "price": 1598.22,
+    "category": 0,
+    "duration": "5h"
+  },
+  {
+    "id": 8,
+    "spanishName": "Snorkel en la bah\u00eda de Acapulco",
+    "englishName": "Acapulco Bay Snorkelling",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/snorkel-bahia-acapulco.jpg",
+    "price": 358,
+    "category": 0,
+    "duration": "1h 30m"
+  },
+  {
+    "id": 9,
+    "spanishName": "Tour en kayak y senderismo por el islote El Morro",
+    "englishName": "El Morro Islet Kayak + Hiking Tour",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/kayak-senderismo-islote-morro.jpg",
+    "price": 358,
+    "category": 5,
+    "duration": "2h"
+  },
+  {
+    "id": 10,
+    "spanishName": "Paddle surf en el islote El Morro",
+    "englishName": "Isla El Morro Paddleboarding",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/paddle-surf-islote-morro.jpg",
+    "price": 255.72,
+    "category": 0,
+    "duration": "1h 30m"
+  },
+  {
+    "id": 11,
+    "spanishName": "Entrada al Xtasea Park Acapulco",
+    "englishName": "Xtasea Park Ticket",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/entrada-xtasea.jpg",
+    "price": 511.43,
+    "category": 4.5,
+    "duration": "45m"
+  },
+  {
+    "id": 12,
+    "spanishName": "Tour por el Fuerte de San Diego + Playas Caleta y Caletilla",
+    "englishName": "San Diego Fort Tour + Caleta and Caletilla Beaches",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/fuerte-san-diego-caleta-caletilla.jpg",
+    "price": 828.21,
+    "category": 0,
+    "duration": "6h"
+  },
+  {
+    "id": 13,
+    "spanishName": "Espect\u00e1culo de clavados en La Quebrada",
+    "englishName": "Acapulco Dive\u00a0Show",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/espectaculo-clavados-quebrada.jpg",
+    "price": 644.2,
+    "category": 5,
+    "duration": "3h"
+  },
+  {
+    "id": 14,
+    "spanishName": "Excursi\u00f3n a la laguna de Tres Palos + Santuario de cocodrilos",
+    "englishName": "Excursion to Tres Palos Lagoon & Crocodile Reserve",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/laguna-tres-palos-santuario-cocodrilos.jpg",
+    "price": 1177.82,
+    "category": 4,
+    "duration": "6h"
+  },
+  {
+    "id": 15,
+    "spanishName": "Paseo a caballo por la playa Bonfil",
+    "englishName": "Horseback Riding on Bonfil Beach",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/paseo-caballo-playa-bonfil.jpg",
+    "price": 1265.79,
+    "category": 5,
+    "duration": "60m"
+  },
+  {
+    "id": 16,
+    "spanishName": "Tour por Acapulco + Museo Hist\u00f3rico",
+    "englishName": "Acapulco Tour + Historical Museum Visit",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/tour-acapulco-museo-historico.jpg",
+    "price": 831.07,
+    "category": 4,
+    "duration": "4h 30m"
+  },
+  {
+    "id": 17,
+    "spanishName": "Excursi\u00f3n a la laguna de Tres Palos",
+    "englishName": "Tres Palos Lagoon Day Trip",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/excursion-laguna-tres-palos.jpg",
+    "price": 1406.43,
+    "category": 5,
+    "duration": "6h"
+  },
+  {
+    "id": 18,
+    "spanishName": "Tour por el Jard\u00edn Bot\u00e1nico de Acapulco",
+    "englishName": "Acapulco Botanical Garden Tour",
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/tour-jardin-botanico-acapulco.jpg",
+    "price": 777.37,
+    "category": 0,
+    "duration": "3h"
+  },
+  {
+    "id": 22,
+    "spanishName": "Excursi\u00f3n a Tulum y Cob\u00e1",
+    "englishName": "Tulum and Coba Tour",
+    "image": "https://cdn2.civitatis.com/mexico/playa-del-carmen/excursion-tulum-coba.jpg",
+    "price": 1449.5,
+    "category": 4.5,
+    "duration": "12h"
+  },
+  {
+    "id": 26,
+    "spanishName": "Excursi\u00f3n a Tulum y Xel-H\u00e1",
+    "englishName": "Tulum & Xel-H\u00e1 Day Trip",
+    "image": "https://cdn2.civitatis.com/mexico/playa-del-carmen/excursion-tulum-xelha.jpg",
+    "price": 2884.98,
+    "category": 4,
+    "duration": "13h"
+  },
+  {
+    "id": 80,
+    "spanishName": "Tour de vi\u00f1edos por Aguascalientes",
+    "englishName": "Aguascalientes Vineyards Tour",
+    "image": "https://cdn2.civitatis.com/mexico/aguascalientes/tour-vinedos-aguascalientes.jpg",
+    "price": 1106.74,
+    "category": 5,
+    "duration": "4h"
+  },
+  {
+    "id": 85,
+    "spanishName": "Excursi\u00f3n a San Jos\u00e9 de Gracia + Vi\u00f1edos Casa Leal",
+    "englishName": "San Jos\u00e9 de Gracia & Casa Leal Vineyards Tour",
+    "image": "https://cdn2.civitatis.com/mexico/aguascalientes/san-jose-gracia-vinedos-casa-leal.jpg",
+    "price": 638.27,
+    "category": 4,
+    "duration": "5h"
+  },
+  {
+    "id": 90,
+    "spanishName": "Tour por Bernal con degustaci\u00f3n de vino",
+    "englishName": null,
+    "image": "https://cdn2.civitatis.com/mexico/bernal/tour-bernal-degustacion-vino.jpg",
+    "price": 920.57,
+    "category": 5,
+    "duration": "3h 30m"
+  }
+]
