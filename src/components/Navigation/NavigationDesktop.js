@@ -7,6 +7,7 @@ import HeaderBlue from "./HeaderBlue";
 import { Container } from "@/config/Others/Container";
 import { SelectCurrency } from "./SelectCurrency";
 import { LanguageSelector } from "@/language/LanguageSelector";
+import Cart from "@/hooks/Cart";
 
 export default function NavigationDesktop() {
 
@@ -18,8 +19,10 @@ export default function NavigationDesktop() {
         <header className="relative pt-0 pb-5 flex flex-col gap-y-5">
           <div className="hidden md:flex  justify-end">
             <SelectCurrency />
-
+            
             <LanguageSelector />
+
+            <Cart/>
           </div>
 
           <nav

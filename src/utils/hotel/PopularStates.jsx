@@ -46,8 +46,10 @@ export function PopularState() {
   );
 
   return (
-    <div className="my-32">
-      <h1 className="m-b text-fs-24 mb-9 text-or-100">{languageData.SearchBox.tabTour.popularState}aaa</h1>
+    <div className="my-16 md:my-32">
+      <h1 className="m-b text-fs-24 mb-9">
+        {languageData.SearchBox.tabTour.popularState}
+      </h1>
       {popularState.length > 0 ? (
         <Swiper slidesPerView={1} spaceBetween={30} className="h-[408px]">
           <SwiperSlide>
@@ -57,9 +59,9 @@ export function PopularState() {
                   <img
                     src={popularState[0].imageUrl}
                     alt={`${popularState[0].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
-                    height="100% brightness-75"
+                    height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4">
                     <span className="text-fs-14 m-b">
@@ -69,7 +71,7 @@ export function PopularState() {
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN {parsePrice(popularState[0].price)}{" "}
+                        MXN ${parsePrice(popularState[0].price)}{" "}
                       </span>
                     </span>
                   </div>
@@ -79,19 +81,19 @@ export function PopularState() {
                   <img
                     src={popularState[1].imageUrl}
                     alt={`${popularState[1].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-75"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4">
-                    <span className="text-fs-20 m-b">
+                    <span className="text-fs-14 md:text-fs-20 m-b">
                       {popularState[1].name}
                     </span>
-                    <span className="m-m text-fs-12">
+                    <span className="m-m text-fs-10 md:text-fs-12">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
-                      <span className="m-s-b text-fs-16">
+                      <span className="m-s-b text-fs-12 md:text-fs-16">
                         {" "}
-                        MXN {parsePrice(popularState[1].price)}{" "}
+                        MXN ${parsePrice(popularState[1].price)}{" "}
                       </span>
                     </span>
                   </div>
@@ -103,7 +105,7 @@ export function PopularState() {
                   <img
                     src={popularState[2].imageUrl}
                     alt={`${popularState[2].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-75"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
                     height="100%"
                   />
@@ -115,7 +117,7 @@ export function PopularState() {
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN {parsePrice(popularState[2].price)}{" "}
+                        MXN ${parsePrice(popularState[2].price)}{" "}
                       </span>
                     </span>
                   </div>
@@ -125,7 +127,7 @@ export function PopularState() {
                   <img
                     src={popularState[3].imageUrl}
                     alt={`${popularState[3].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-75"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
                     height="100%"
                   />
@@ -137,7 +139,7 @@ export function PopularState() {
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN {parsePrice(popularState[3].price)}{" "}
+                        MXN ${parsePrice(popularState[3].price)}{" "}
                       </span>
                     </span>
                   </div>
@@ -153,7 +155,7 @@ export function PopularState() {
                   <img
                     src={popularState[4].imageUrl}
                     alt={`${popularState[4].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-75"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
                     height="100%"
                   />
@@ -166,7 +168,7 @@ export function PopularState() {
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN {parsePrice(popularState[4].price)}{" "}
+                        MXN ${parsePrice(popularState[4].price)}{" "}
                       </span>
                     </span>
                   </div>
@@ -176,19 +178,19 @@ export function PopularState() {
                   <img
                     src={popularState[5].imageUrl}
                     alt={`${popularState[5].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-75"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4">
-                    <span className="text-fs-20 m-b">
+                    <span className="text-fs-14 md:text-fs-20 m-b">
                       {popularState[5].name}
                     </span>
-                    <span className="m-m text-fs-12">
+                    <span className="m-m text-fs-10 md:text-fs-12">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
-                      <span className="m-s-b text-fs-16">
+                      <span className="m-s-b text-fs-12 md:text-fs-16">
                         {" "}
-                        MXN {parsePrice(popularState[5].price)}{" "}
+                        MXN ${parsePrice(popularState[5].price)}{" "}
                       </span>
                     </span>
                   </div>
@@ -200,7 +202,7 @@ export function PopularState() {
                   <img
                     src={popularState[6].imageUrl}
                     alt={`${popularState[6].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-75"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
                     height="100%"
                   />
@@ -212,7 +214,7 @@ export function PopularState() {
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN {parsePrice(popularState[6].price)}{" "}
+                        MXN ${parsePrice(popularState[6].price)}{" "}
                       </span>
                     </span>
                   </div>
@@ -222,7 +224,7 @@ export function PopularState() {
                   <img
                     src={popularState[0].imageUrl}
                     alt={`${popularState[0].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-75"
+                    className="h-full rounded-lg object-cover brightness-[.7]"
                     width="100%"
                     height="100%"
                   />
@@ -234,7 +236,7 @@ export function PopularState() {
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN {parsePrice(popularState[0].price)}{" "}
+                        MXN ${parsePrice(popularState[0].price)}{" "}
                       </span>
                     </span>
                   </div>

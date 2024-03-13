@@ -21,10 +21,8 @@ import {
   BannerHomeKnowMore,
 } from "@/services/Hotels/components/home/bannerHotel";
 
-
 import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
-
 
 // const CardCarousel = lazy(() => import("../../utils/hotel/CardCarousel"));
 // const PopularCarousel = lazy(() => import("../../utils/hotel/PopularCarousel"));
@@ -45,6 +43,7 @@ export const HomeHotel = () => {
 
       <Container>
         <BannerExcDiscounts />
+        <PopularState />
         <ShuffleHotel />
         <TourRecommended />
         <BannerHomeKnowMore />
@@ -53,7 +52,7 @@ export const HomeHotel = () => {
       {/* <BannerHomeDown /> */}
 
       {/* CARD POPULAR" */}
-      <article className="top-destination container">
+      {/* <article className="top-destination container">
         <h1 data-aos="fade-right" className="container title-popular">
           {languageData.homeDestinations[0].titleTop.title}
         </h1>
@@ -63,18 +62,16 @@ export const HomeHotel = () => {
       </article>
       <br />
       <br />
-      <div className="container">
-        <PopularState />
-      </div>
+      <div className="container"></div> */}
 
       {/* Card TYPE HOTELS */}
-      <article className="carousel-destination container">
+      {/* <article className="carousel-destination container">
         <h1 data-aos="fade-right" className="title-popular">
           {languageData.homeDestinations[1].titleType}
         </h1>
 
-        {/* <CardCarousel /> */}
-      </article>
+        <CardCarousel />
+      </article> */}
     </>
   );
 };
