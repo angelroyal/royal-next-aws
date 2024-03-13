@@ -180,11 +180,11 @@ export function InformationModalHotel(props) {
                 onMouseOver={() => handleFacilityHover(index)}
                 onMouseOut={() => setActiveFacility(null)}
               >
-                {React.createElement(
+                {/* {React.createElement(
                   facilities[facility][
                     activeFacility === index ? "active" : "default"
                   ]
-                )}
+                )} */}
                 <div
                   className={`${
                     activeFacility === index

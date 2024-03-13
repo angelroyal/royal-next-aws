@@ -10,7 +10,8 @@ import FiltersHotels from "../../Utils/FiltersHotels";
 import { AnimatedNumber } from "../../Utils/AnimatedNumber";
 import { useToken } from "../../../config/context/AuthContext";
 import LanguageContext from "../../../language/LanguageContext";
-import HotelCard from "../../../components/HotelCard/HotelCard";
+// import HotelCard from "../../../components/HotelCard/HotelCard";
+import HotelCard from "@/components/HotelCard/HotelCard";
 import ListingHotelContext from "../../Context/ListingHotelContext";
 import { scrollToTop } from "../../../utils/pageConfig/scrollToTop";
 import SkeletonChildren from "../../../utils/skeleton/SkeletonChildren";
@@ -21,7 +22,7 @@ import {
 } from "../../../components/bannerJsx/bannerListingHotel";
 
 import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
-import { ReactComponent as IconBanner } from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
+import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useContext } from "react";
 
 import { TooltipDown } from "../../ToolTip/TooltipDown";
@@ -6,9 +7,9 @@ import LanguageContext from "../../../language/LanguageContext";
 import { SelectedRoomsContext } from "../../../pages/Modal/ModalHotel";
 
 import "../../../assets/styles/web/Hotel.css";
-import { ReactComponent as LowPrice } from "../../../assets/icons/hotel/modal/distinguished.svg";
-import { ReactComponent as BedSharpIcon } from "../../../assets/icons/utils/searchBox/room-autocomplete.svg";
-import { ReactComponent as Person2OutlinedIcon } from "../../../assets/icons/utils/searchBox/person-autocomplete.svg";
+import LowPrice from "../../../assets/icons/hotel/modal/distinguished.svg";
+import BedSharpIcon from "../../../assets/icons/utils/searchBox/room-autocomplete.svg";
+import Person2OutlinedIcon from "../../../assets/icons/utils/searchBox/person-autocomplete.svg";
 // import { hash } from "bcryptjs";
 
 // TITLE FUNCTION
@@ -79,7 +80,7 @@ export function MinPriceRoom(props) {
     >
       <div className="room-option-divider">
         <div className="container-info-room">
-          <Person2OutlinedIcon />
+          <Image src={Person2OutlinedIcon} />
           {/* Room information for how many adults and children */}
           <div className="divider-info-person">
             {`${parseInt(room.adultChildren.split(".")[0])} ${
@@ -100,8 +101,7 @@ export function MinPriceRoom(props) {
         {/* Bed information  */}
 
         <div className="container-info-room">
-          <BedSharpIcon />
-
+          <Image src={BedSharpIcon} />
           <div>
             {room.beds && room.beds.length > 0 ? (
               room.beds.map((bed, index) => (
@@ -120,7 +120,7 @@ export function MinPriceRoom(props) {
 
       <div className="room-second-divider">
         <div className="distinguished-svg">
-          <LowPrice className="icon-low-price-modal" />
+          <Image className="icon-low-price-modal" src={LowPrice} />
         </div>
 
         <div>
@@ -261,7 +261,7 @@ export function MaxPriceRoom(props) {
     >
       <div className="room-option-divider">
         <div className="container-info-room">
-          <Person2OutlinedIcon />
+        <Image src={Person2OutlinedIcon} />
           <div className="divider-info-person">
             {`${parseInt(room.adultChildren.split(".")[0])} ${
               parseInt(room.adultChildren.split(".")[0]) > 1
@@ -280,8 +280,7 @@ export function MaxPriceRoom(props) {
         </div>
 
         <div className="container-info-room">
-          <BedSharpIcon />
-
+          <Image src={BedSharpIcon} />
           <div>
             {room.beds && room.beds.length > 0 ? (
               room.beds.map((bed, index) => (
@@ -411,23 +410,43 @@ export function IndividualPriceRoom(props) {
 
   const handleAddDetailHotel = (room) => {
     const persons = parseInt(room.adultChildren.split(".")[0]);
+
+    // const data = {
+    //   code: room.code,
+    //   idRoom: room.idRoom,
+    //   name: room.name,
+    //   // eatingPlan: room.rates.min.eatingPlan,
+    //   eatingPlan: room.rates.min?.eatingPlan ?? "",
+    //   persons: room.adultChildren,
+    //   adults: persons,
+    //   children: room.childrenAges,
+    //   price: room.rates.min.price,
+    //   netPrice: room.rates.min.netPrice,
+    //   rateKey: room.rates.min.rateKey,
+    //   facilities: (room.facilities && room.facilities[0]) || null,
+    //   rateIndex: room.rates.min.rateIndex,
+    //   boardCode: room.rates.min.boardCode,
+    //   hash: room.rates.min.hash,
+    // };
+
+    const { rates: { min = {} } = {} } = room;
+
     const data = {
       code: room.code,
       idRoom: room.idRoom,
       name: room.name,
-      eatingPlan: room.rates.min.eatingPlan,
+      eatingPlan: min.eatingPlan ?? "",
       persons: room.adultChildren,
       adults: persons,
       children: room.childrenAges,
-      price: room.rates.min.price,
-      netPrice: room.rates.min.netPrice,
-      rateKey: room.rates.min.rateKey,
+      price: min.price ?? "",
+      netPrice: min.netPrice ?? "",
+      rateKey: min.rateKey ?? "",
       facilities: (room.facilities && room.facilities[0]) || null,
-      rateIndex: room.rates.min.rateIndex,
-      boardCode: room.rates.min.boardCode,
-      hash: room.rates.min.hash,
+      rateIndex: min.rateIndex ?? "",
+      boardCode: min.boardCode ?? "",
+      hash: min.hash ?? "",
     };
-
     const updatedSelectedRooms = [...selectedRooms, data];
     setSelectedRooms(updatedSelectedRooms);
   };
@@ -436,7 +455,7 @@ export function IndividualPriceRoom(props) {
     <div
       className={`room-option-individual ${
         selectedRooms.some(
-          (selectedRoom) => selectedRoom.rateIndex === room.rates.min.rateIndex
+          (selectedRoom) => selectedRoom.rateIndex === room.rates.min?.rateIndex
         )
           ? "selected-room"
           : ""
@@ -444,7 +463,7 @@ export function IndividualPriceRoom(props) {
     >
       <div className="room-individual-h">
         <div className="container-info-room">
-          <Person2OutlinedIcon />
+        <Image src={Person2OutlinedIcon} />
           {/* Room information for how many adults and children */}
           <div className="divider-info-person">
             {`${parseInt(room.adultChildren.split(".")[0])} ${
@@ -465,8 +484,7 @@ export function IndividualPriceRoom(props) {
         {/* Bed information  */}
 
         <div className="container-info-room">
-          <BedSharpIcon />
-
+          <Image src={BedSharpIcon} />
           <div>
             {room.beds && room.beds.length > 0 ? (
               room.beds.map((bed, index) => (
@@ -485,21 +503,25 @@ export function IndividualPriceRoom(props) {
 
       <div className="room-second-individual">
         <div className="distinguished-svg-individual">
-          <LowPrice className="icon-low-price-modal" />
+          <Image className="icon-low-price-modal" src={LowPrice} />
         </div>
 
         <div>
           {" "}
           <span className="modal-hotel-price">{room.currency}$</span>
-          <span className="card-hotel-price-number">
-            {Math.floor(room.rates.min.price)
-              .toLocaleString("es-MX", { currency: "MXN" })
-              .replace(".00", "")}
-            .
-            <sup className="sup-price-card">
-              {(room.rates.min.price % 1).toFixed(2).slice(2)}
-            </sup>
-          </span>
+          {room.rates &&
+            room.rates.min &&
+            room.rates.min.price(
+              <span className="card-hotel-price-number">
+                {Math.floor(room.rates.min.price)
+                  .toLocaleString("es-MX", { currency: "MXN" })
+                  .replace(".00", "")}
+                .
+                <sup className="sup-price-card">
+                  {(room.rates.min.price % 1).toFixed(2).slice(2)}
+                </sup>
+              </span>
+            )}
         </div>
 
         <div className="card-hotel-taxes">
@@ -511,7 +533,7 @@ export function IndividualPriceRoom(props) {
           disableFocusListener
           disableTouchListener
           title={
-            room.rates.min.cancellationPolicies ? (
+            room.rates.min && room.rates.min.cancellationPolicies ? (
               <React.Fragment>
                 {languageData.roomsCancellations.percentage}{" "}
                 {room.rates.min.cancellationPolicies.from}{" "}
@@ -528,7 +550,13 @@ export function IndividualPriceRoom(props) {
                 </a>
               </React.Fragment>
             ) : (
-              languageData.cancellationPolicies[room.rates.min.cancellationCode]
+              <>
+                {room.rates.min &&
+                  room.rates.min.cancellationPolicies &&
+                  languageData.cancellationPolicies[
+                    room.rates.min.cancellationCode
+                  ]}
+              </>
             )
           }
         >
@@ -537,7 +565,7 @@ export function IndividualPriceRoom(props) {
           </div>
         </TooltipDown>
 
-        {room.rates.min.eatingPlan && (
+        {room.rates.min && room.rates.min.eatingPlan && (
           <li className="booking-li-room">{room.rates.min.eatingPlan}</li>
         )}
 

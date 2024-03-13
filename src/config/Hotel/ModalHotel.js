@@ -1,7 +1,8 @@
+import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
-import { ReactComponent as IconDoneActive } from "../../assets/icons/utils/navigation/done_active.svg";
+import IconDoneActive from "../../assets/icons/utils/navigation/done_active.svg";
 
 export function MissingRooms(props) {
   const { roomsBySelected, addRoom } = props;
@@ -21,7 +22,7 @@ export function MissingRooms(props) {
 
   return isComplete ? (
     <div className="d-flex align-items-center justify-content-center gap-1">
-      <IconDoneActive />
+      <Image src={IconDoneActive} />
       <span>{languageData.modalHotel.missingRooms.completeRooms}</span>
     </div>
   ) : (

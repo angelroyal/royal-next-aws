@@ -1,17 +1,19 @@
 import moment from "moment";
+import Image from "next/image";
 import React, { useState, useContext, useEffect } from "react";
 
-import Room from "../../hooks/RoomUpdate";
-import Calendar from "../../hooks/Calendar";
 import {
   DialogCalendarConfig,
   DialogConfigRoomHotelModal,
 } from "../Mobile/Hotel/General/DialogConfig";
+
+import Room from "../../hooks/RoomUpdate";
+import Calendar from "../../hooks/Calendar";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
 
-import { ReactComponent as SearchIon } from "../../assets/icons/hotel/modal/search.svg";
-import { ReactComponent as DateRangeIcon } from "../../assets/icons/utils/searchBox/calendar-active.svg";
+import SearchIon from "../../assets/icons/hotel/modal/search.svg";
+import DateRangeIcon from "../../assets/icons/utils/searchBox/calendar-active.svg";
 
 export default function SearchRoom(props) {
   const isMobile = useIsMobile();
@@ -141,7 +143,7 @@ export default function SearchRoom(props) {
           />
         ) : (
           <>
-            <DateRangeIcon className={isMobile ? "m-icon-calendar" : ""} />
+            <Image src={DateRangeIcon} className={isMobile ? "m-icon-calendar" : ""} />
             <Calendar onDateChange={handleDateChange} isModal={true} />
           </>
         )}
@@ -169,7 +171,7 @@ export default function SearchRoom(props) {
           disabled={!validFirstDay || !validSecondDay}
           sx={{ mt: 2 }}
         >
-          {isMobile ? <SearchIon /> : languageData.modalSearchHotel.buttonModal}
+          {isMobile ? <Image src={SearchIon} /> : languageData.modalSearchHotel.buttonModal}
         </button>
       </div>
     </div>

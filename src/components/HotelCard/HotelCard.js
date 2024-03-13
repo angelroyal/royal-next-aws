@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Box } from "@mui/system";
-import { Pagination } from "swiper";
 import Col from "react-bootstrap/Col";
+// import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, Rating, SvgIcon } from "@mui/material";
 import React, { useState, useContext, useEffect } from "react";
@@ -23,9 +23,9 @@ import LabelTop from "../../assets/icons/hotel/listing/labelTop.svg";
 import RateBedsRH from "../../assets/icons/hotel/listing/rateBedsRH.svg";
 import RateBedsHB from "../../assets/icons/hotel/listing/rateBedsHB.svg";
 
-import { ReactComponent as DemandIcon } from "../../assets/icons/hotel/listing/on-high-demand.svg";
+import DemandIcon from "../../assets/icons/hotel/listing/on-high-demand.svg";
 
-function HotelCard(props) {
+export default function HotelCard(props) {
   const { index, hotel, availableNights, isClickPaginator, setClickPaginator } = props;
   const isMobile = useIsMobile();
 
@@ -106,7 +106,7 @@ function HotelCard(props) {
       <div className="card-div-label">
         {hotel.isTop && <Image className="label-icon-top" src={LabelTop} />}
 
-        {process.env.REACT_APP_DEV === "true" && (
+        {process.env.NEXT_PUBLIC_DEV === "true" && (
           <>
             {hotel.provider === "rh" && (
               <>
@@ -130,9 +130,9 @@ function HotelCard(props) {
           className="card-hotel" /* data-aos="fade-left" */
         >
           <Swiper
-            // pagination={{
-            //   clickable: true,
-            // }}
+            pagination={{
+              clickable: true,
+            }}
             // modules={[Pagination]}
             className="mySwiper swiperCardHotel"
           >
@@ -149,7 +149,7 @@ function HotelCard(props) {
               ))
             ) : (
               <SwiperSlide id="dotsSwiperHotel">
-                <Image
+                <img
                   alt={`${hotel.name} - ${images.others.noAvailable.bannerNoAvailable.alt}`}
                   src={images.others.noAvailable.bannerNoAvailable.src}
                 />
@@ -227,7 +227,7 @@ function HotelCard(props) {
               <div>
                 <div className="card-hotel-subtitle">
                   <span>
-                    <DemandIcon className="icon-Demand-Icon" />
+                    <Image src={DemandIcon} className="icon-Demand-Icon" />
                   </span>
 
                   <span className="m-icon-label-demand">
@@ -296,14 +296,13 @@ function HotelCard(props) {
             )}
 
             {showModal && (
-              // <ModalHotel
-              //   show={showModal}
-              //   onHide={handleCloseModal}
-              //   hotelKey={hotel.key}
-              //   distanceHotel={hotel.closestInterestPointName}
-              //   nameHotel={hotel.name}
-              // />
-              <div>Hola</div>
+              <ModalHotel
+                show={showModal}
+                onHide={handleCloseModal}
+                hotelKey={hotel.key}
+                distanceHotel={hotel.closestInterestPointName}
+                nameHotel={hotel.name}
+              />
             )}
           </Col>
         </Card>
@@ -316,7 +315,7 @@ function HotelCard(props) {
         >
           {randomBanner.length > 0 && (
             <>
-              <img
+              <Image
                 src={randomBanner[positionActual].image}
                 alt={randomBanner[positionActual].alt}
                 width="100%"
@@ -347,5 +346,3 @@ function HotelCard(props) {
     </>
   );
 }
-
-export default HotelCard;

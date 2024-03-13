@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState, useEffect, useContext } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -5,8 +6,8 @@ import RoomMenu from "../hooks/RoomMenu";
 import LanguageContext from "../language/LanguageContext";
 import { useIsMobile } from "../config/Mobile/isMobile";
 
-import { ReactComponent as BedSharpIcon } from "../assets/icons/utils/searchBox/room-active.svg";
-import { ReactComponent as Person2OutlinedIcon } from "../assets/icons/utils/searchBox/adult-active.svg";
+import BedSharpIcon from "../assets/icons/utils/searchBox/room-active.svg";
+import Person2OutlinedIcon from "../assets/icons/utils/searchBox/adult-active.svg";
 
 function RoomUpdate({ OnApply }) {
   const isMobile = useIsMobile();
@@ -50,7 +51,7 @@ function RoomUpdate({ OnApply }) {
             |
           </span>
           <span className="styles-rooms-update" style={{ padding: "0 10px" }}>
-            <Person2OutlinedIcon className="margin-right-icon" />
+            <Image src={Person2OutlinedIcon} className="margin-right-icon" />
             {isMobile ? (
               totalPeople
             ) : (
@@ -73,7 +74,7 @@ function RoomUpdate({ OnApply }) {
             |
           </span>
           <span className="styles-rooms-update" style={{ padding: "0 10px" }}>
-            <BedSharpIcon className="margin-right-icon" /> {totalRooms}{" "}
+            <Image src={BedSharpIcon} className="margin-right-icon" /> {totalRooms}{" "}
             {isMobile
               ? ""
               : totalRooms > 1

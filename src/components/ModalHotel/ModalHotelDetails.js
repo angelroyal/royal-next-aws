@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Rating } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { Col, Modal, Row } from "react-bootstrap";
@@ -14,7 +15,7 @@ import { SelectedRoomsContext } from "../../pages/Modal/ModalHotel";
 import { GalleryHotel, InformationModalHotel } from "./GalleryHotel";
 
 import Line from "../../assets/images/others/group 75.jpg";
-import { ReactComponent as CloseIcon } from "../../assets/icons/hotel/modal/close_active.svg";
+import CloseIcon from "../../assets/icons/hotel/modal/close_active.svg";
 
 export function ModalHotelDetails(props) {
   const {
@@ -64,12 +65,9 @@ export function ModalHotelDetails(props) {
       className="modal-hotel-all"
     >
       <div className="line-principal-home position-relative">
-        <img
+        <Image
           src={Line}
           alt={languageData.allAlt.altBannerNavigation}
-          height="9px"
-          width="100%"
-          loading="lazy"
         />
       </div>
       <>
@@ -84,7 +82,7 @@ export function ModalHotelDetails(props) {
                         className="bg-transparent border border-0 pe-auto"
                         onClick={onHide}
                       >
-                        <CloseIcon />
+                        <Image src={CloseIcon} />
                       </button>
                     </div>
 

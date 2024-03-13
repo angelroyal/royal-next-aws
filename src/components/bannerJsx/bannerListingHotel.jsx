@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState, useEffect, useContext } from "react";
 
 import { hotel } from "../../config/Others/imagesBanners";
@@ -31,9 +32,7 @@ export function BannerListingHotelTop() {
 
   return (
     <picture className="position-image-new-listing">
-      <img
-        width="100%"
-        height="100%"
+      <Image
         src={
           isMobile ? hotel.bannerListing.imageMobile : hotel.bannerListing.image
         }
@@ -62,7 +61,7 @@ export function BannerListingHotelBottom() {
   return (
     <picture className="content-image-comunication">
       <a href="tel:8009530342" target="_blank" rel="noopener noreferrer">
-        <img
+        <Image
           src={
             isMobile
               ? hotel.bannerCallCenter.imageMobile
@@ -70,8 +69,6 @@ export function BannerListingHotelBottom() {
           }
           className="img-banner-listing-tour-radius"
           alt={hotel.bannerCallCenter.alt}
-          width="100%"
-          height="82%"
         />
 
         <div className="position-new-titles-listing">
