@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['sandboxmexico.com'],
-    },
-  };
-  
-  export default nextConfig;
+  images: {
+    domains: ['sandboxmexico.com', 'api.sandboxmexico.com'],
+  },
+};
+
+export default nextConfig;

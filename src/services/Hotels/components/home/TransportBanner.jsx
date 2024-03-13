@@ -24,15 +24,15 @@ export function TransportBanner() {
           }banners/vehicle/tiggo-7-pro.webp`}
           alt="tiggo car Royal Vacation"
           className="absolute z-[1] bottom-0 right-0"
-          width="auto"
-          height="100%"
+          // width="auto"
+          // height="100%"
         />
         <img
           src={`${import.meta.env.VITE_ASSETS_URL}general/Frame-1414.webp`}
           alt="Royal Vacation"
           className="object-cover h-full mr-0 sm:mr-[44px] lg:mr-0 xl:mr-[44px]"
-          width="auto"
-          height="100%"
+          // width="auto"
+          // height="100%"
         />
       </div>
     </div>

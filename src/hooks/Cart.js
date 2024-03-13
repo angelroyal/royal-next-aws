@@ -67,11 +67,11 @@ export default function Cart() {
           >
             {totalItemsInCart ? (
               <div className="!m-0">
-                <Image src={IconCartActive} width={26} height={26} />
+                <Image src={IconCartActive} width={24} height={20} />
                 <div className="!m-0">{totalItemsInCart}</div>
               </div>
             ) : (
-              <Image src={IconCart} width={26} height={26} />
+              <Image src={IconCart} width={24} height={20} />
             )}
           </IconButton>
         </Tooltip>

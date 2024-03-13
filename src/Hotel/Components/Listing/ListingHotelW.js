@@ -148,8 +148,8 @@ export default function ListingHotelW(props) {
               <img
                 src={IconNoAvailability}
                 alt={languageData.allAlt.altBannerNavigation}
-                height="auto"
-                width="auto"
+                // height="auto"
+                // width="auto"
               />
             </>
           )}

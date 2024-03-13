@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import { Offcanvas } from "react-bootstrap";
 
 import CartGet from "./CartGet";
-
-import { ReactComponent as IconLeft } from "../../assets/icons/utils/navigation/left.svg";
 import { useCartAxios } from "./CartAxios";
+
+import IconLeft from "../../assets/icons/utils/navigation/left.svg";
 
 export default function CartCanvasM(props) {
   const { totalItemsInCart, fetchData } = useCartAxios();
@@ -28,7 +29,7 @@ export default function CartCanvasM(props) {
                 className="border border-0 bg-transparent p-0"
                 onClick={handleClose}
               >
-                <IconLeft />
+                <Image src={IconLeft} alt="icon left" />
               </button>
             </div>
             <div className="m-your-cart">

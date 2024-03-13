@@ -1,4 +1,3 @@
-
 import "../../assets/styles/web/Navbar.css";
 import React from "react";
 
@@ -8,9 +7,9 @@ import Line from "../../assets/images/others/group 75.jpg";
 import LanguageContext from "@/language/LanguageContext";
 import NavigationDesktop from "./NavigationDesktop";
 import Image from "next/image";
+import HeaderBlue from "./HeaderBlue";
 
 export default function Navigation() {
-
   return (
     <div className="flex flex-col sticky top-0 z-[1000]">
       <Image
@@ -18,10 +17,13 @@ export default function Navigation() {
         alt="Royal orange"
         height="9px"
         width="100%"
-        loading="lazy"
+        priority={true}
       />
+      <div className="md:h-[116px] md:mb-2 bg-gry-30">
+        <HeaderBlue />
 
         <NavigationDesktop />
+      </div>
     </div>
   );
 }

@@ -1,13 +1,14 @@
-import React, { useContext, useState } from "react";
 import moment from "moment";
+import Image from "next/image";
+import React, { useContext, useState } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
-import { ReactComponent as IconDate } from "../../assets/icons/utils/payment/date.svg";
-import { ReactComponent as IconPerson } from "../../assets/icons/utils/payment/person.svg";
-import { ReactComponent as IconLocation } from "../../assets/icons/utils/payment/location-inactive.svg";
-import { ReactComponent as IconTransportation } from "../../assets/icons/utils/navigation/transportation.svg";
+import IconDate from "../../assets/icons/utils/payment/date.svg";
+import IconPerson from "../../assets/icons/utils/payment/person.svg";
+import IconLocation from "../../assets/icons/utils/payment/location-inactive.svg";
+import IconTransportation from "../../assets/icons/utils/navigation/transportation.svg";
 
 export default function CartMoving(props) {
   const { movingGetCart, cartId, onUpdateData } = props;
@@ -77,7 +78,7 @@ export default function CartMoving(props) {
             <div className="cart-destination">{transport.destination}</div>
           </div>
           <div className="cart-type-transport">
-            <IconTransportation />
+            <Image src={IconTransportation} alt="icon transport" />
             {languageData.cart.titleTransportation}
           </div>
           <div className="cart-information-reservation">
@@ -90,11 +91,19 @@ export default function CartMoving(props) {
             </div>
             <div className="container-destinations-cart">
               <div className="cart-destination-a">
-                <IconLocation className="icon-size-cart-location" />
+                <Image
+                  src={IconLocation}
+                  alt="icon location"
+                  className="icon-size-cart-location"
+                />
                 {transport.airport}
               </div>
               <div className="cart-destination-b ">
-                <IconLocation className="icon-size-cart-location" />
+                <Image
+                  src={IconLocation}
+                  alt="icon location"
+                  className="icon-size-cart-location"
+                />
                 {transport.hotel.length > 26
                   ? `${transport.hotel.substring(0, 26)}...`
                   : transport.hotel}
@@ -103,14 +112,18 @@ export default function CartMoving(props) {
 
             <div className="cart-detail-info-transport">
               <span className="cart-text-content-t">
-                <IconDate className="icon-size-cart-date" />{" "}
+                <Image
+                  src={IconDate}
+                  alt="icon date"
+                  className="icon-size-cart-date"
+                />{" "}
                 <span className="cart-text-date-t">
                   {moment(transport.departureDate).format("DD/MM/YY")} |{" "}
                   {transport.departureTime}
                 </span>
               </span>
               <span className="cart-text-content-t">
-                <IconPerson />{" "}
+                <Image src={IconPerson} alt="icon person" />{" "}
                 <span className="cart-text-detail">{transport.passengers}</span>
               </span>
             </div>

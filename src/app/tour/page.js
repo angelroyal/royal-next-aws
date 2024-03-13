@@ -4,5 +4,7 @@ export const metadata = {
 };
 
 export default function TourPage() {
-  return <div>Holaa</div>;
+  return <div>
+    esto es una prueba
+    Holaa</div>;
 }

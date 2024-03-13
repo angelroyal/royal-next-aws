@@ -156,8 +156,8 @@ export default function ListingHotelM(props) {
               className="image-do-not-fund"
               src={IconNoAvailability}
               alt={languageData.allAlt.altBannerNavigation}
-              height="auto"
-              width="auto"
+              // height="auto"
+              // width="auto"
             />
           </>
         )}

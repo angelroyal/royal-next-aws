@@ -1,15 +1,16 @@
-import React, { useContext, useState } from "react";
 import moment from "moment";
+import Image from "next/image";
+import React, { useContext, useState } from "react";
 
 import { useCartAxios } from "./CartAxios";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
-import { ReactComponent as IconDate } from "../../assets/icons/utils/payment/date.svg";
-import { ReactComponent as IconPerson } from "../../assets/icons/utils/payment/person.svg";
-import { ReactComponent as IconRoom } from "../../assets/icons/utils/payment/cart-room.svg";
-import { ReactComponent as IconHotel } from "../../assets/icons/utils/navigation/hotel.svg";
-import { ReactComponent as IconNight } from "../../assets/icons/utils/payment/night-room.svg";
+import IconDate from "../../assets/icons/utils/payment/date.svg";
+import IconPerson from "../../assets/icons/utils/payment/person.svg";
+import IconRoom from "../../assets/icons/utils/payment/cart-room.svg";
+import IconHotel from "../../assets/icons/utils/navigation/hotel.svg";
+import IconNight from "../../assets/icons/utils/payment/night-room.svg";
 
 export default function CartHotel(props) {
   const { setItinerary, removeHotelById } = useCartAxios();
@@ -52,7 +53,6 @@ export default function CartHotel(props) {
           className="cart-card"
           onClick={() => handleCardClick(hotel.id)}
         >
-
           <div className="cart-date">
             <div>{moment(hotel.checkIn).format("DD/MM/YY")}</div>
             <div>{moment(hotel.checkOut).format("DD/MM/YY")}</div>
@@ -63,7 +63,6 @@ export default function CartHotel(props) {
               <span className="cart-title-type">
                 {languageData.cart.titleHotel}
               </span>
-
               <span>
                 <span
                   className="cart-card-delete"
@@ -80,7 +79,7 @@ export default function CartHotel(props) {
           </div>
 
           <div className="cart-type-element">
-            <IconHotel />
+            <Image src={IconHotel} alt="icon Hotel" />
             {languageData.cart.titleHotel}
           </div>
 
@@ -93,33 +92,31 @@ export default function CartHotel(props) {
 
             <div className="cart-detail-information">
               <span className="cart-text-content">
-                <IconDate />{" "}
-
+                <Image src={IconDate} alt="icon date" />{" "}
                 <span className="cart-text-detail">
                   {moment(hotel.checkIn).format("DD/MM/YY")}
                 </span>
               </span>
 
               <span className="cart-text-content">
-                <IconNight /> <span className="cart-text-detail">2</span>
+                <Image src={IconNight} alt="icon night" />{" "}
+                <span className="cart-text-detail">2</span>
               </span>
 
               <span className="cart-text-content">
-                <IconRoom />{" "}
+                <Image src={IconRoom} alt="icon room" />{" "}
                 <span className="cart-text-detail">{hotel.rooms}</span>
               </span>
 
               <span className="cart-text-content">
-                <IconPerson />{" "}
-
+                <Image src={IconPerson} alt="icon person" />{" "}
                 <span className="cart-text-detail">
                   {hotel.adults + hotel.children}
                 </span>
               </span>
-
             </div>
           </div>
-          
+
           {showDelete[hotel.id] && (
             <div
               className="delete-card-new"
