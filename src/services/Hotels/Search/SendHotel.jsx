@@ -2,34 +2,20 @@ import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useContext } from "react";
 
-// import {
-//   DialogConfigSearchHotel,
-//   DialogConfigRoomHotel,
-//   DialogCalendarConfig,
-// } from "../Mobile/Hotel/General/DialogConfig";
-// import { useIsMobile } from "../../config/Mobile/isMobile";
-// import AnimationFly from "../../utils/others/AnimationFly";
-// import LanguageContext from "../../language/LanguageContext";
-// import AnimationFlyMobile from "../../utils/others/AnimationFlyMobile";
-
-// import { ReactComponent as DateRangeIcon } from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
-// import { ReactComponent as RoomOutlinedIcon } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 import Room from "../config/RoomBox";
+import Calendar from "@/hooks/Calendar";
 import SearchHotel from "./SearchHotel";
-// import { useIsMobile } from "../../../configs/isMobile";
 import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
-import Calendar from "@/hooks/Calendar";
 
 export default function SendHotel() {
+  const router = useRouter();
   const isMobile = useIsMobile();
   const [validFirstDay, setValidFirstDay] = useState(null);
-  const [validSecondDay, setValidSecondDay] = useState(null);
-  // const [showModal, setShowModal] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
   const [selectedDates, setSelectedDates] = useState(null);
+  const [validSecondDay, setValidSecondDay] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
-  const router = useRouter()
 
   useEffect(() => {
     const storedSelectedDates = localStorage.getItem("selectedDates");
@@ -97,60 +83,26 @@ export default function SendHotel() {
     console.log(query);
 
     router.push(`/resultHotel?${query}`);
-    // setTimeout(() => {
-    //   // setShowModal(false);
-    // }, 1500);
   };
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="flex items-center bg-white gap-2.5 rounded-lg p-6">
-      <div>
-        {isMobile ? (
-          // <DialogConfigSearchHotel destinationSelected={setSelectedOption} />
-          <div>Hola</div>
-        ) : (
-          <>
-            {/* <div className="">
-              
-              <img className="grayscale" src="https://sandboxmexico.com/assets/icons/location/location-b.svg" alt="icon location Royal vacation" />
-              <SearchHotel onSelectSearch={setSelectedOption} />
-            </div> */}
-            <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative">
-              <SearchHotel onSelectSearch={setSelectedOption} />
-            </div>
-          </>
-        )}
+    <div className="flex flex-col xl:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
+      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative">
+        <SearchHotel onSelectSearch={setSelectedOption} />
       </div>
 
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center">
-        {isMobile ? (
-          // <DialogCalendarConfig
-          //   validFirstDay={validFirstDay}
-          //   validSecondDay={validSecondDay}
-          //   onDateChange={handleDateChange}
-          // />
-          <div>holaa</div>
-        ) : (
-          <>
-            <Calendar onDateChange={handleDateChange} />
-          </>
-        )}
+      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full xl:w-auto">
+        <Calendar onDateChange={handleDateChange} />
       </div>
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative">
-        {isMobile ? (
-          // <DialogConfigRoomHotel OnApply={setRoomData} />
-          <div>Hola</div>
-        ) : (
-          // <Suspense fallback={null}>
-          <Room OnApply={setRoomData} />
-          // </Suspense>
-        )}
+
+      <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full xl:w-auto">
+        <Room OnApply={setRoomData} />
       </div>
 
       <>
         <button
-          className={`rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
+          className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
             !selectedOption || !validFirstDay || !validSecondDay
               ? "bg-or-50"
               : "bg-or-100"
