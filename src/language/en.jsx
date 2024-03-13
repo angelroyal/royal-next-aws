@@ -447,6 +447,16 @@ export const en = {
     OR: "Room Only",
   },
 
+  // LP TOUR RECOMMENDED HOME HOTEL
+
+  TourRecommended: {
+    title: "How to enjoy your trip to the fullest?",
+    subtitle: "From exploring",
+    subtitle2: " +100 historical sites,",
+    subtitle3: " we have everything you need to create unforgettable memories. Plan your itinerary with us and make every moment count on your trip!",
+  },
+  // END LP TOUR RECOMMENDED HOME HOTEL
+
   /*********************************************************/
   //////////////////////// 𝓣𝓞𝓤𝓡 TOUR 𝓣𝓞𝓤𝓡 //////////////////////////////
   /*********************************************************/

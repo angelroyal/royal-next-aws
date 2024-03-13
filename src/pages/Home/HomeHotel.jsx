@@ -22,6 +22,13 @@ import {
 } from "@/services/Hotels/components/home/bannerHotel";
 
 
+import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
+import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
+
+
+// const CardCarousel = lazy(() => import("../../utils/hotel/CardCarousel"));
+// const PopularCarousel = lazy(() => import("../../utils/hotel/PopularCarousel"));
+
 export const HomeHotel = () => {
   const { languageData } = useContext(LanguageContext);
 
@@ -38,6 +45,8 @@ export const HomeHotel = () => {
 
       <Container>
         <BannerExcDiscounts />
+        <ShuffleHotel />
+        <TourRecommended />
         <BannerHomeKnowMore />
       </Container>
 
