@@ -11,11 +11,11 @@ import {
 // import { useIsMobile } from "../../config/Mobile/isMobile";
 // import LanguageContext from "../../language/LanguageContext";
 // import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import { useIsMobile } from "../../../configs/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
-import axiosWithInterceptor from "../../../api/axiosWithInterceptor";
 
-import "../../../assets/css/Hotel/SearchHotel.css"
+import "../../../assets/styles/general/SearchHotel.css"
+import { useIsMobile } from "@/config/Mobile/isMobile";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 // import { ReactComponent as Hotels } from "../../assets/icons/utils/navigation/hotel.svg";
 // import { ReactComponent as IconLocation } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";

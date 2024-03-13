@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 import LanguageContext from "../language/LanguageContext";
-import { useIsMobile } from "../config/Mobile/isMobile";
+import { useIsMobile } from "@/config/Mobile/isMobile";
 
 export default function RoomMenu(props) {
   const isMobile = useIsMobile();

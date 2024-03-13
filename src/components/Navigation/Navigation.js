@@ -14,7 +14,7 @@ export default function Navigation() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <>
+    <div className="flex flex-col">
       <Image
         src={Line}
         alt={languageData.allAlt.altBannerNavigation}
@@ -24,8 +24,6 @@ export default function Navigation() {
       />
 
         <NavigationDesktop />
-      {/* <div data-aos="fade-down" className="navbar-color">
-      </div> */}
-    </>
+    </div>
   );
 }

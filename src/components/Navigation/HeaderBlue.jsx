@@ -6,12 +6,12 @@ export default function HeaderBlue() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="w-full flex items-center ">
+    <div className="relative w-full flex items-center ">
       <div className="absolute left-0 p-6 flex items-center px-8 bg-bl-100 w-[100%] md:w-[60%] lg:w-[51%] h-12 top-0 border-b rounded-br-[5rem] p-6 z-[-3]"/>
         <Container>
-          <div className="flex items-center gap-[44px] mt-[1rem]">
+          <div className="flex items-center gap-[44px] mt-[14px]">
             <a
-              className="flex gap-2 "
+              className="flex gap-2 no-underline m-s-b"
               href="tel:8009530342"
               target="_blank"
               rel="noopener noreferrer"
@@ -22,7 +22,7 @@ export default function HeaderBlue() {
                 width={17}
                 height={18}
               />
-              <span className="text-fs-12 ms:text-fs-14 m-s-b text-white">
+              <span className="text-fs-12 ms:text-fs-14 text-white">
                 {languageData.navBar.contact}{" "}
                 <span className="m-b text-white">800 953 0342</span>
               </span>
@@ -67,7 +67,6 @@ export default function HeaderBlue() {
             </div>
           </div>
         </Container>
-      {/* </div> */}
     </div>
   );
 }

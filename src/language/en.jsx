@@ -46,6 +46,7 @@ export const en = {
   SearchBox: {
     tabHotel: {
       hotel: "Hotel",
+      lodgement: "Lodgement",
       titleText: "Find the ideal hotel",
       autocomplete: "Destination",
       textDestination: "Where are you going?",
@@ -445,6 +446,16 @@ export const en = {
     DI: "Dinner Included",
     OR: "Room Only",
   },
+
+  // LP TOUR RECOMMENDED HOME HOTEL
+
+  TourRecommended: {
+    title: "How to enjoy your trip to the fullest?",
+    subtitle: "From exploring",
+    subtitle2: " +100 historical sites,",
+    subtitle3: " we have everything you need to create unforgettable memories. Plan your itinerary with us and make every moment count on your trip!",
+  },
+  // END LP TOUR RECOMMENDED HOME HOTEL
 
   /*********************************************************/
   //////////////////////// 𝓣𝓞𝓤𝓡 TOUR 𝓣𝓞𝓤𝓡 //////////////////////////////

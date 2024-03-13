@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import LanguageContext from "../../../../language/LanguageContext";
 import Image from "next/image";
+import { Padding } from "@mui/icons-material";
 
 export default function ShuffleHotel() {
   const { languageData } = useContext(LanguageContext);
@@ -31,17 +32,21 @@ export default function ShuffleHotel() {
             menuShuffleHotel === 1
               ? "bg-or-100 rounded-3xl text-white"
               : "text-gry-100"
-          } flex gap-2 py-2 px-4 justify-center`}
+          } flex gap-2 py-2 px-4 justify-center items-center`}
         >
           {menuShuffleHotel === 1 ? (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/beach/beach-w.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/beach/beach-w.svg`}
               alt="icon-beach-w"
+              width={16}
+              height={16}
             />
           ) : (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/beach/beach-b.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/beach/beach-b.svg`}
               alt="icon-beach-b"
+              width={16}
+              height={16}
             />
           )}
 
@@ -56,17 +61,21 @@ export default function ShuffleHotel() {
             menuShuffleHotel === 2
               ? "bg-or-100 rounded-3xl text-white"
               : "text-gry-100"
-          } flex gap-2 py-2 px-4 justify-center`}
+          } flex gap-2 py-2 px-4 justify-center items-center`}
         >
           {menuShuffleHotel === 2 ? (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/family/family-w.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/family/family-w.svg`}
               alt="icon-family-w"
+              width={18.3}
+              height={18.3}
             />
           ) : (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/family/family-b.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/family/family-b.svg`}
               alt="icon-family-b"
+              width={18.3}
+              height={18.3}
             />
           )}
           <span className="text-fs-15 m-m">
@@ -78,19 +87,23 @@ export default function ShuffleHotel() {
           onClick={() => setMenuShuffleHotel(3)}
           className={`${menuShuffleHotel === 3
             ? " bg-or-100 rounded-3xl text-white"
-            : "text-gry-100"} flex gap-2 py-2 px-4 justify-center`
+            : "text-gry-100"} flex gap-2 py-2 px-4 justify-center items-center`
             
           }
         >
           {menuShuffleHotel === 3 ? (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/romantic/romantic-w.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/romantic/romantic-w.svg`}
               alt="icon-romantic-w"
+              width={16}
+              height={16}
             />
           ) : (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/romantic/romantic-b.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/romantic/romantic-b.svg`}
               alt="icon-romantic-b"
+              width={16}
+              height={16}
             />
           )}
 
@@ -103,19 +116,23 @@ export default function ShuffleHotel() {
           onClick={() => setMenuShuffleHotel(4)}
           className={`${menuShuffleHotel === 4
             ? "bg-or-100 rounded-3xl text-white"
-            : "text-gry-100"} flex gap-2 py-2 px-4 justify-center`
+            : "text-gry-100"} flex gap-2 py-2 px-4 justify-center items-center`
             
           }
         >
           {menuShuffleHotel === 4 ? (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/business/business-w.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/business/business-w.svg`}
               alt="icon-business-w"
+              width={16}
+              height={16}
             />
           ) : (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/business/business-b.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/business/business-b.svg`}
               alt="icon-business-b"
+              width={16}
+              height={16}
             />
           )}
 
@@ -128,19 +145,23 @@ export default function ShuffleHotel() {
           onClick={() => setMenuShuffleHotel(5)}
           className={`${menuShuffleHotel === 5
             ? "bg-or-100 rounded-3xl text-white"
-            : "text-gry-100"} flex gap-2 py-2 px-4 justify-center`
+            : "text-gry-100"} flex gap-2 py-2 px-4 justify-center items-center`
             
           }
         >
           {menuShuffleHotel === 5 ? (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/adults/adults-w.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/adults/adults-w.svg`}
               alt="icon-adults-w"
+              width={16}
+              height={20.7}
             />
           ) : (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/adults/adults-b.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/adults/adults-b.svg`}
               alt="icon-adults-b"
+              width={16}
+              height={20.7}
             />
           )}
 
@@ -153,19 +174,23 @@ export default function ShuffleHotel() {
           onClick={() => setMenuShuffleHotel(6)}
           className={`${ menuShuffleHotel === 6
             ? "bg-or-100 rounded-3xl text-white"
-            : "text-gry-100"} flex gap-2 py-2 px-4  justify-center`
+            : "text-gry-100"} flex gap-2 py-2 px-4  justify-center items-center`
            
           }
         >
           {menuShuffleHotel === 6 ? (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/pet/pet-w.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/pet/pet-w.svg`}
               alt="icon-pet-w"
+              width={16}
+              height={16}
             />
           ) : (
             <Image
-              // src={`${import.meta.env.VITE_ASSETS_URL}icons/pet/pet-b.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/pet/pet-b.svg`}
               alt="icon-pet-b"
+              width={16}
+              height={16}
             />
           )}
 
@@ -184,7 +209,7 @@ export default function ShuffleHotel() {
         spaceBetween={15}
         navigation
         modules={[Navigation]}
-        className="mySwiper mb-3 pb-2"
+        className="mySwiper !mb-3 !pb-2"
         id="swiper-shuffle-hotel"
         breakpoints={{
           0: {
@@ -214,15 +239,15 @@ export default function ShuffleHotel() {
           <SwiperSlide key={index}>
             <div className="min-w-[266px] h-full cursor-pointer shadow-lg shadow-gry-50 rounded-xl max-w-[280px]">
               <div className="w-full h-[216px]">
-                <Image
+                <img
                   className="w-full h-full rounded-t-lg object-cover"
                   src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
                   alt="card"
                 />
               </div>
 
-              <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white">
-                <div className="m-s-b pt-1 text-fs-14">
+              <div className="w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
+                <div className="m-s-b pt-1 text-fs-14 text-start">
                   El Dorado Seaside Suite{" "}
                 </div>
 
@@ -230,8 +255,8 @@ export default function ShuffleHotel() {
 
                 <div className="flex gap-1 mb-[11px]">
                   <Image
-                    // src={`${import.meta.env.VITE_ASSETS_URL}icons/location/location-bl.svg`}
-                    alt="icon-pet-b"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                    alt="icon-location"
                     width={11}
                     height={14}
                   />
@@ -240,7 +265,7 @@ export default function ShuffleHotel() {
 
                 <div className='flex justify-between border-t border-[#ebebeb] pt-[11px] items-center'>
                   <div className='flex flex-col'>
-                    <span className='m-m text-gry-100 text-fs-10'>{languageData.cartTour.from}</span>
+                    <span className='m-m text-gry-100 text-fs-10 text-start'>{languageData.cartTour.from}</span>
                     <span className='m-b text-or-100 text-fs-12'>MXN <span className="text-fs-16">$5,000</span></span>
                   </div>
 
@@ -264,7 +289,7 @@ export default function ShuffleHotel() {
           clickable: true,
         }}
         modules={[Pagination, Navigation]}
-        className="mySwiper pb-10"
+        className="mySwiper !pb-10"
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -293,15 +318,15 @@ export default function ShuffleHotel() {
           <SwiperSlide key={index}>
             <div className="min-w-[266px] h-full cursor-pointer shadow-lg shadow-gry-50 rounded-xl max-w-[280px]">
               <div className="w-full h-[216px]">
-                <Image
+                <img
                   className="w-full h-full rounded-t-lg object-cover"
                   src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
                   alt="card"
                 />
               </div>
 
-              <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white">
-                <div className="m-b text-fs-14 pt-1">
+              <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
+                <div className="m-b text-fs-14 pt-1 text-start">
                   El Dorado Seaside Suite{" "}
                 </div>
 
@@ -309,15 +334,17 @@ export default function ShuffleHotel() {
 
                 <div className="flex gap-1 mb-[11px]">
                   <Image
-                    // src={`${import.meta.env.VITE_ASSETS_URL}icons/location/location-bl.svg`}
-                    alt="icon-pet-b"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                    alt="location icon"
+                    width={11}
+                    height={14}
                   />
                   <span className="text-bl-100 m-s-b text-fs-12">Oaxaca</span>
                 </div>
 
                 <div className='flex justify-between border-t border-[#ebebeb] pt-[11px] items-center'>
                   <div className='flex flex-col'>
-                    <span className='m-m text-gry-100 text-fs-12'>{languageData.cartTour.from}</span>
+                    <span className='m-m text-gry-100 text-fs-12 text-start'>{languageData.cartTour.from}</span>
                     <span className='m-b text-or-100 text-fs-12'>MXN <span className="text-fs-16">$5,000</span></span>
                   </div>
 
