@@ -61,7 +61,7 @@ export default function CartTourOptions() {
       >
         {[...Array(10)].map((_, index) => (
           <SwiperSlide key={index} className='!w-fit !rounded-md'>
-            <div className="bg-white w-fit w-[185px] cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md p-4 pb-6 flex flex-col justify-center items-center">
+            <div className="bg-white w-[185px] cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md p-4 pb-6 flex flex-col justify-center items-center">
               <div className="w-[132px] h-[132px] mb-3">
                 <img
                   className="w-full h-full rounded-full object-cover"

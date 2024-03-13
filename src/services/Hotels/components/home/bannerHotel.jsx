@@ -113,15 +113,15 @@ export function BannerHomeKnowMore() {
 
         >
           <SwiperSlide>
-            <Image src={beach} width={500} height={500} className="w-full h-full"  alt="Img beach"/>
+            <Image src={beach} width={553} height={500} className="w-full h-full"  alt="Img beach"/>
           </SwiperSlide>
 
           <SwiperSlide>
-            <Image src={city}  width={500} height={500} alt="Img city" className="w-full h-full" />
+            <Image src={city}  width={553} height={500} alt="Img city" className="w-full h-full" />
           </SwiperSlide>
         </Swiper>
 
-        <Image src={selfie}  width={500} height={500} alt="selfie" className="absolute right-0 bottom-0 z-50 w-full h-[29rem] max-lg:h-[30rem]" />
+        <div className="absolute right-0 bottom-0 z-50 w-full h-[29rem] max-lg:h-[30rem]"><Image src={selfie}  width={505} height={472} alt="selfie" className="object-cover" /></div>
       </div>
 
     </div>
