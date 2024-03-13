@@ -1,3 +1,5 @@
+"use client";
+
 import { Tab, Tabs } from "react-bootstrap";
 // import { FormControl } from "@mui/material";
 import React, { useContext, useState } from "react";

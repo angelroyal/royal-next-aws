@@ -6,6 +6,7 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import SearchBox from "@/hooks/SearchBox";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <CartAxiosProvider>
           <Token />
           <Navigation />
-          
+          <SearchBox/>
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>
