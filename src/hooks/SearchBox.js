@@ -7,6 +7,7 @@ import React, { useContext, useState } from "react";
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
 import SendHotel from "@/services/Hotels/Search/SendHotel";
+import Image from "next/image";
 // import { GetIconActivation } from "../utils/navigation/GetIconActivation";
 
 // const ResultTour = lazy(() => import("../components/Search/ResultTour"));
@@ -15,16 +16,17 @@ import SendHotel from "@/services/Hotels/Search/SendHotel";
 
 export default function SearchBox() {
   const { languageData } = useContext(LanguageContext);
-  const [currentActiveIcon, setCurrentActiveIcon] = useState("");
+  const [currentActiveIcon, setCurrentActiveIcon] = useState("hotel");
   // const location = useLocation();
 
   // GetIconActivation(location.pathname, setCurrentActiveIcon);
-
+  console.log(currentActiveIcon);
   // CHANGE TAB DINAMIC
   const handleTabChange = (eventKey) => {
     setCurrentActiveIcon(eventKey);
   };
-
+  const test  = process.env.NEXT_PUBLIC_URL
+  console.log(test);
   // const isDev = process.env.REACT_APP_DEV === "true";
 
   return (
@@ -33,31 +35,60 @@ export default function SearchBox() {
         activeKey={currentActiveIcon}
         onSelect={handleTabChange}
         id="tab-search-home"
+        // style={{padding:"0"}}
+        className="flex gap-x-2 text-fs-12 m-s-b"
       >
         {/* TAB HOTEL */}
         <Tab
-          eventKey=""
-          title={languageData.SearchBox.tabHotel.hotel}
-          className="search-content-home"
+          eventKey="hotel"
+          style={{ padding: "0" }}
+          title={
+            <span
+              className={`${
+                currentActiveIcon === "hotel"
+                  ? "bg-bl-100 text-white"
+                  : "bg-white text-gry-100"
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
+            >
+              <Image
+                // src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
+                src={`${process.env.NEXT_PUBLIC_URL}${currentActiveIcon === "hotel" ? 'icons/hotel/hotel-w.svg' : 'icons/hotel/hotel-b.svg'}`}
+                alt="hotel icon Royal vacation"
+                width={29}
+                height={25}
+              />{" "}
+              {languageData.SearchBox.tabHotel.lodgement}
+            </span>
+          }
         >
-          <div className="titleSearch container p-2">
-            {languageData.SearchBox.tabHotel.titleText}
-          </div>
-
-          {/* <ResultHotel /> */}
-            {/* <SendHotel /> */}
-            <SendHotel />
+          <SendHotel />
         </Tab>
 
         {/* TAB TOUR */}
         <Tab
           eventKey="tour"
-          title={languageData.SearchBox.tabTour.tour}
-          className="search-content-home"
+          title={
+            <span
+              className={`${
+                currentActiveIcon === "tour"
+                  ? "bg-bl-100 text-white"
+                  : "bg-white text-gry-100"
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_URL}${
+                  currentActiveIcon === "tour"
+                    ? "icons/tour/tour-w.svg"
+                    : "icons/tour/tour-b.svg"
+                }`}
+                alt="hotel icon Royal vacation"
+                width={29}
+                height={25}
+              />{" "}
+              {languageData.SearchBox.tabHotel.lodgement}
+            </span>
+          }
         >
-          <h3 className="titleSearch container p-2">
-            {languageData.SearchBox.tabTour.titleTextTour}
-          </h3>
           <ResultTour />
         </Tab>
 

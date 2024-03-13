@@ -1,5 +1,5 @@
 import moment from "moment";
-// import { useHistory } from "react-router-dom";/*  */
+import { useRouter } from "next/navigation";
 import { useState, useEffect, useContext } from "react";
 
 // import {
@@ -29,6 +29,7 @@ export default function SendHotel() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedDates, setSelectedDates] = useState(null);
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
+  const router = useRouter()
 
   useEffect(() => {
     const storedSelectedDates = localStorage.getItem("selectedDates");
@@ -95,10 +96,10 @@ export default function SendHotel() {
     const query = new URLSearchParams(requestBody).toString();
     console.log(query);
 
-    setTimeout(() => {
-      // history.push(`/resultHotel?${query}`);
-      // setShowModal(false);
-    }, 1500);
+    router.push(`/resultHotel?${query}`);
+    // setTimeout(() => {
+    //   // setShowModal(false);
+    // }, 1500);
   };
   const { languageData } = useContext(LanguageContext);
 
@@ -149,7 +150,7 @@ export default function SendHotel() {
 
       <>
         <button
-          className={`flex gap-2 items-center justify-content-center m-b text-fs-12 text-white pt-5 pr-4 pb-5 pl-4 ${
+          className={`rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
             !selectedOption || !validFirstDay || !validSecondDay
               ? "bg-or-50"
               : "bg-or-100"
@@ -161,7 +162,6 @@ export default function SendHotel() {
           disabled={!selectedOption || !validFirstDay || !validSecondDay}
           // eslint-disable-next-line react/no-unknown-property
           sx={{ mt: 2 }}
-          style={{ borderRadius: "50px" }}
         >
           {languageData.SearchBox.tabHotel.buttonSearch}
           <img

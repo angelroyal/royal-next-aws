@@ -9,20 +9,18 @@ import "../../assets/styles/web/Hotel.css";
 //   BannerHomeDown,
 // } from "../../components/bannerJsx/bannerHomeHotel";
 // import MetaHomeH from "../../components/Meta/MetaHomeH";
-import LanguageContext from "../../language/LanguageContext";
-import {
-  BannerHomeDown,
-  BannerHomeTop,
-} from "@/assets/bannerJsx/bannerHomeHotel";
-import PopularCarousel from "@/utils/hotel/PopularCarousel";
-import { PopularState } from "@/utils/hotel/PopularStates";
-import { BannerExcDiscounts, BannerHomeKnowMore } from "@/services/Hotels/components/home/bannerHotel";
+import SearchBox from "@/hooks/SearchBox";
 import { Container } from "@/config/Others/Container";
+import { PopularState } from "@/utils/hotel/PopularStates";
+import PopularCarousel from "@/utils/hotel/PopularCarousel";
+import LanguageContext from "../../language/LanguageContext";
+// import { BannerHomeDown } from "@/components/bannerJsx/bannerHomeHotel";
+import {
+  BannerExcDiscounts,
+  BannerHomeHotelTop,
+  BannerHomeKnowMore,
+} from "@/services/Hotels/components/home/bannerHotel";
 
-// import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
-
-// const CardCarousel = lazy(() => import("../../utils/hotel/CardCarousel"));
-// const PopularCarousel = lazy(() => import("../../utils/hotel/PopularCarousel"));
 
 export const HomeHotel = () => {
   const { languageData } = useContext(LanguageContext);
@@ -30,13 +28,20 @@ export const HomeHotel = () => {
   return (
     <>
       {/* <MetaHomeH /> */}
-      <BannerHomeTop />
+      {/* <BannerHomeTop /> */}
+      <div className="relative flex justify-center align-center mb-[118px]">
+        <BannerHomeHotelTop />
+        <div className="absolute top-2/4 sm:top-2/4 md:top-3/4 xl:top-[80%] 2xl:top-[86%] w-full flex flex-col items-center">
+          <SearchBox />
+        </div>
+      </div>
 
       <Container>
-      <BannerExcDiscounts/>
-      <BannerHomeKnowMore/>
+        <BannerExcDiscounts />
+        <BannerHomeKnowMore />
       </Container>
-      <BannerHomeDown />
+
+      {/* <BannerHomeDown /> */}
 
       {/* CARD POPULAR" */}
       <article className="top-destination container">

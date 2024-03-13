@@ -27,16 +27,14 @@ export function LanguageSelector() {
     }
   }, [storedLanguage, language, setLanguage]);
 
-  const esLanguage = `${process.env.NEXT_PUBLIC_ASSETS}icons/leng/es.svg`
-  const enLanguage = `${process.env.NEXT_PUBLIC_ASSETS}icons/leng/es.svg`
   return (
     <>
       <div className="flex pl-5 ">
         {defaultLanguage === "es" ? (
-          <Image width={18} height={24} src={`${process.env.NEXT_PUBLIC_ASSETS}icons/leng/es.svg`} alt="MXN lang" />
+          <Image width={18} height={24} src={`${process.env.NEXT_PUBLIC_URL}icons/leng/es.svg`} alt="MXN lang" />
           // <IconSpanish className="icon-spanish" />
           ) : (
-            <Image width={18} height={24} src={`${process.env.NEXT_PUBLIC_ASSETS}icons/leng/en.svg`} alt="US lang" />
+            <Image width={18} height={24} src={`${process.env.NEXT_PUBLIC_URL}icons/leng/en.svg`} alt="US lang" />
         )}
         <select
           className="w-max block border-0 bg-transparent focus:outline-none m-s-b text-gry-100"

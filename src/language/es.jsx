@@ -47,6 +47,7 @@ export const es = {
   SearchBox: {
     tabHotel: {
       hotel: "Hotel",
+      lodgement: "Hospedaje",
       titleText: "Encuentra el hotel ideal",
       autocomplete: "Destino",
       textDestination: "¿A dónde vas?",

@@ -57,9 +57,10 @@ function Room({ OnApply }) {
       <Dropdown style={{minWidth:"293px"}} show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex"
+          className="flex border-0 bg-transparent p-0"
+          style={{display:"flex"}}
         >
-          <span className="flex items-center gap-2 border border-2 border-t-0 border-l-0 border-b-0  border-r-gry-70 pr-3.5">
+          <span className="flex items-center gap-2 border-r-2 border-gry-70 pr-3.5">
             <img
               className="h-4 w-4 invert"
               src="https://sandboxmexico.com/assets/icons/room/room-b.svg"
