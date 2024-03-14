@@ -95,7 +95,7 @@ export default function SkeletonModal() {
               <Col sm={8}>
                 <Skeleton
                   variant="rectangular"
-                  width="auto"
+                  // width="auto"
                   height={485}
                   className="skeleton-gallery-image"
                 />

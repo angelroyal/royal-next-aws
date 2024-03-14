@@ -248,8 +248,8 @@ export default function Payment() {
         <Container className="container-itinerary-no-data">
           <img
             className="name-logo m-0"
-            width="auto"
-            height="auto"
+            // width="auto"
+            // height="auto"
             src={Logo}
             alt="Logo name Royal"
           />

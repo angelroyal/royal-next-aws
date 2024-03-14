@@ -1,4 +1,5 @@
 import moment from "moment";
+import Image from "next/image";
 import { Box } from "@mui/system";
 import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
@@ -6,9 +7,9 @@ import React, { useContext, useState } from "react";
 import { useCartAxios } from "./CartAxios";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import { ReactComponent as IconDate } from "../../assets/icons/utils/payment/date.svg";
-import { ReactComponent as IconTour } from "../../assets/icons/utils/navigation/tour.svg";
-import { ReactComponent as IconPerson } from "../../assets/icons/utils/payment/person.svg";
+import IconDate from "../../assets/icons/utils/payment/date.svg";
+import IconTour from "../../assets/icons/utils/navigation/tour.svg";
+import IconPerson from "../../assets/icons/utils/payment/person.svg";
 
 export default function CartTour(props) {
   const { tourGetCart, cartId, onUpdateData } = props;
@@ -85,7 +86,7 @@ export default function CartTour(props) {
             </div>
 
             <div className="cart-type-element">
-              <IconTour />
+              <Image src={IconTour} alt="icon tour" />
               {languageData.cart.titleTour}
             </div>
 
@@ -100,14 +101,14 @@ export default function CartTour(props) {
 
               <div className="cart-detail-information">
                 <span className="cart-text-content">
-                  <IconDate />{" "}
+                  <Image src={IconDate} alt="icon date"/>{" "}
                   <span className="cart-text-detail">
                     {moment(tour.date).format("DD/MM/YY")}
                   </span>
                 </span>
 
                 <span className="cart-text-content">
-                  <IconPerson />{" "}
+                  <Image src={IconPerson} alt="icon person"/>{" "}
                   <span className="cart-text-detail">{tour.tourists}</span>
                 </span>
               </div>

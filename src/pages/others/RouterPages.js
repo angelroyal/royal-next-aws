@@ -29,8 +29,8 @@ export default function NavigationOptions() {
           <Image
             src={activeIcon === id ? activeImageSrc : imageSrc}
             alt={`${languageData.allAlt.altRoyalVacations} ${label}`}
-            width="auto"
-            height="auto"
+            // width="auto"
+            // height="auto"
             className="navigation-icon-img"
           />
           

@@ -1,8 +1,9 @@
+import Image from "next/image";
 import React, { Suspense, lazy } from "react";
 import { Dialog, Slide } from "@mui/material";
 
-import { ReactComponent as CloseIcon } from "../../../../assets/icons/hotel/modal/close_active.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import CloseIcon from "../../../../assets/icons/hotel/modal/close_active.svg";
+import RoomOutlinedIcon from "../../../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 const Transition = React.forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -22,12 +23,12 @@ export default function SearchTourDialog(props) {
       <div className="m-component-info-search dialog-container">
         <div className="height100 ps-4 pt-4 pe-4">
           <div className="d-flex width100 justify-content-end">
-            <CloseIcon onClick={() => closeDialog(false)} />
+            <Image src={CloseIcon} alt="close icon" onClick={() => closeDialog(false)} />
           </div>
 
           {/* INPUT SEARCH TOUR */}
           <div className="m-input-search-hotel d-flex align-items-center justify-content-center">
-            <RoomOutlinedIcon className="icon-location-home-dialog" />
+            <Image src={RoomOutlinedIcon} alt="icon room" className="icon-location-home-dialog" />
             <Suspense fallback={null}>
               <SearchTour closeDialog={() => closeDialog(false)} onSelectTour={onSelectTour} />
             </Suspense>

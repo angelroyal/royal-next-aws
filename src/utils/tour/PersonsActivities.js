@@ -128,12 +128,12 @@ export default function PersonsActivities({ OnApply }) {
         className="dropdown-room"
       >
         <span style={{ padding: "0 10px" }}>
-          <Image src={Person2OutlinedIcon} />
+          <Image src={Person2OutlinedIcon} alt="icon-person"/>
           {totalAdults}
         </span>{" "}
         <span style={{ padding: "0 10px" }}>|</span>
         <span style={{ padding: "0 10px" }}>
-          <Image src={Children2OutlinedIcon} />
+          <Image src={Children2OutlinedIcon} alt="icon-child"/>
           {totalChildren}
         </span>
       </Dropdown.Toggle>

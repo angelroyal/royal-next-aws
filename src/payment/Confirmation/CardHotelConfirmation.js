@@ -61,7 +61,7 @@ export default function CardHotelConfirmation(props) {
               {itemHotel.image ? (
                 <img
                   src={itemHotel.image}
-                  alt="img-hotel"
+                  alt="hotel"
                   width="100%"
                   height="100%"
                 />

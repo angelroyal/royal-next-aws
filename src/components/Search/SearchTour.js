@@ -1,4 +1,5 @@
 import _ from "lodash";
+import Image from "next/image";
 import React, { useState, useEffect, useMemo, useContext } from "react";
 import { Grid, TextField, Autocomplete, Typography } from "@mui/material";
 
@@ -6,8 +7,8 @@ import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 
-import { ReactComponent as IconTour } from "../../assets/icons/utils/navigation/tour.svg";
-import { ReactComponent as IconLocation } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import IconTour from "../../assets/icons/utils/navigation/tour.svg";
+import IconLocation from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 const API_ENDPOINT = `v1/activity`;
 // const API_ENDPOINT = `v1/tour-destinations/search`;
@@ -123,12 +124,12 @@ function SearchTour({closeDialog ,onSelectTour }) {
             <Grid container alignItems="center">
               <Grid item sx={{ display: "flex", width: 30 }}>
                 {option.type === "destination" ? (
-                  <IconLocation
+                  <Image src={IconLocation} alt="icon location"
                     sx={{ color: "text.secondary" }}
                     className="icon-location-tour"
                   />
                 ) : (
-                  <IconTour sx={{ color: "text.secondary" }} />
+                  <Image src={IconTour} alt="icon tour" sx={{ color: "text.secondary" }} />
                 )}
               </Grid>
 
