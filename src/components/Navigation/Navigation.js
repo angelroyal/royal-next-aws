@@ -11,7 +11,7 @@ import HeaderBlue from "./HeaderBlue";
 
 export default function Navigation() {
   return (
-    <div className="flex flex-col sticky top-0 z-[1000]">
+    <div className="flex flex-col sticky top-0 z-[2]">
       <Image
         src={Line}
         alt="Royal orange"
