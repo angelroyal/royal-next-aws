@@ -192,10 +192,10 @@ export function BannerExcDiscounts() {
       
 
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
-        <SwiperSlide className="w-full lg:!w-1/2 max-md:!w-full">
+        <SwiperSlide className="w-full lg:!w-1/2 max-md:!w-full !bg-gry-30">
           <div className="w-full h-[235px]">
-            <Image src={excDiscounts} width={547} height={235} className="max-lg:hidden h-full w-full rounded-lg object-cover" alt="Banner Exc Discounts" />
-            <Image src={excDiscountsMobile} width={332} height={235} className="h-full w-full rounded-lg object-cover bg-gry-30" alt="Banner Exc Discounts mobile" />
+            <Image src={excDiscounts} width={547} height={235} className="max-lg:hidden w-full rounded-lg object-cover" alt="Banner Exc Discounts" />
+            <Image src={excDiscountsMobile} width={332} height={235} className="lg:hidden  rounded-lg object-cover bg-gry-30" alt="Banner Exc Discounts mobile" />
           </div>
         </SwiperSlide>
        
@@ -212,7 +212,7 @@ export function BannerExcDiscounts() {
 
           <SwiperSlide className="!w-[265px] !bg-gry-30 !flex !justify-center max-md:!w-full">
             <div className="w-[265px] h-[235px]">
-              <Image src={bannerTour} width={300} height={300} className="h-full w-full rounded-lg" alt="Banner tour mes de feb" />
+              <Image src={bannerTour} width={266} height={266} className="w-full h-full rounded-lg" alt="Banner tour mes de feb" />
             </div>
           </SwiperSlide>
         

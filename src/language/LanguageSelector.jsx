@@ -18,8 +18,7 @@ export function LanguageSelector() {
     window.location.reload();
   };
 
-  // const storedLanguage = localStorage.getItem("language");
-  const storedLanguage = typeof localStorage !== 'undefined' ? localStorage.getItem("language") : null;
+  const storedLanguage = localStorage.getItem("language");
   const defaultLanguage = storedLanguage || language;
 
   useEffect(() => {
@@ -42,7 +41,7 @@ export function LanguageSelector() {
           // <IconSpanish className="icon-spanish" />
           <Image
             width={25}
-            height={17}
+            height={30}
             src={`${process.env.NEXT_PUBLIC_URL}icons/leng/en.svg`}
             alt="US lang"
           />
