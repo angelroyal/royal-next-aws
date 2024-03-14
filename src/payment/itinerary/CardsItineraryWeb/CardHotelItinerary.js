@@ -122,7 +122,7 @@ export default function CardHotelItinerary(props) {
               <div className="cont-img-card-hotel">
                 <img
                   src={itemHotel.image ? itemHotel.image : ImageNotFound}
-                  alt="img-hotel"
+                  alt="hotel"
                   width="100%"
                   height="100%"
                 />

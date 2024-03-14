@@ -69,7 +69,7 @@ export default function CarouselTourAvailability() {
               width={293}
               height={356}
               style={{ objectFit: "cover", objectPosition: "center" }}
-              alt={`${destination.name} image`}
+              alt={`${destination.name}`}
             />
             <div className="container-card-carousel-a">
               <div className="card-info-tour-modal">

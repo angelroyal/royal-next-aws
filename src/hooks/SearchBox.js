@@ -77,7 +77,7 @@ export default function SearchBox() {
                     ? "icons/tour/tour-w.svg"
                     : "icons/tour/tour-b.svg"
                 }`}
-                alt="hotel icon Royal vacation"
+                alt="Tour icon Royal vacation"
                 width={29}
                 height={25}
               />{" "}

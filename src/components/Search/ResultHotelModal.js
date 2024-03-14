@@ -113,7 +113,7 @@ export default function ResultHotelModal({ closeModal }) {
               />
           ) : (
             <>
-              <RoomOutlinedIcon className="icon-location-home" />
+              <RoomOutlinedIcon className="icon-location-home"/>
               <span className="span-location-home-r">
                 {languageData.SearchBox.tabHotel.autocomplete}
               </span>

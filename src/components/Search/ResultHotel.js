@@ -106,7 +106,7 @@ export default function ResultHotel() {
     <>
       <Row className="row-home-search">
         <Col sm={4} className="styles-input-location-search">
-          <RoomOutlinedIcon className="icon-location-home" />
+          <RoomOutlinedIcon className="icon-location-home"/>
           <span className="span-location-home-r">
             {languageData.SearchBox.tabHotel.autocomplete}
           </span>

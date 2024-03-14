@@ -1,17 +1,15 @@
 import { useState, useContext } from "react";
+import Image from "next/image";
 import Rating from "@mui/material/Rating";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
+import { Navigation, Pagination } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import 'swiper/css/navigation';
-// import "../../../../assets/css/Libreries/Swiper.css";
-// import required modules
-import { Navigation, Pagination } from "swiper/modules";
+
 import LanguageContext from "../../../../language/LanguageContext";
-import Image from "next/image";
-import { Padding } from "@mui/icons-material";
+
 
 export default function ShuffleHotel() {
   const { languageData } = useContext(LanguageContext);

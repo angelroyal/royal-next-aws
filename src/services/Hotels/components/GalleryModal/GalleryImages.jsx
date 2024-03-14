@@ -28,7 +28,7 @@ export function GalleryImages({ images }) {
         <img
           className="object-cover w-full h-full rounded-t-lg"
           src={images[currentIndex]}
-          alt="image gallery hotel"
+          alt="gallery hotel"
         />
       </div>
 
@@ -56,7 +56,7 @@ export function GalleryImages({ images }) {
               <img
                 className="object-cover w-full h-full"
                 src={image}
-                alt={`Image ${index + 1}`}
+                alt={`${index + 1}`}
               />
             </div>
           ))}

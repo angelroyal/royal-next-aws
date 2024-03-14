@@ -169,58 +169,53 @@ export function BannerHomeKnowMore() {
 export function BannerExcDiscounts() {
   const excDiscounts = `${process.env.NEXT_PUBLIC_URL}general/ExcDiscounts-Es.webp`;
   const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
-  const bannertour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
+  const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
+  const excDiscountsMobile = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/Discounts-Es-M.webp`;
 
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <Swiper slidesPerView={3} spaceBetween={16} className="h-[235px]">
+    <Swiper
+      slidesPerView={3}
+      spaceBetween={16}
+      className="h-[235px]"
+      // loop={true}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+        },
+        1024:{
+          slidesPerView: 3,
+        },
+
+      }}>
+      
+
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
-      <SwiperSlide className="!w-1/2">
-        <div className="w-[547px] h-[235px]">
-          <Image
-            src={excDiscounts}
-            width={547}
-            height={235}
-            className="h-full w-full rounded-lg object-cover"
-            alt="Banner Exc Discounts"
-          />
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide className="!w-[266px]">
-        <div className="relative w-[266px] h-[235px]">
-          <Image
-            src={bannerTraveling}
-            width={266}
-            height={235}
-            className="h-full w-full rounded-lg"
-            alt="Banner Experimenta los mejores tours"
-          />
-
-          <div className="absolute top-[39px] left-[59px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[28px] max-sm:top-[28px]">
-            <h2 className="m-b text-white text-fs-22 w-4/6 mb-4 max-xl:text-fs-16 max-lg:text-fs-22">
-              {languageData.titleBanners.titleTourMexico}
-            </h2>
-            <h4 className="m-m w-4/6 text-[#BEE0EE] text-fs-18 max-xl:text-fs-14  max-lg:text-fs-18">
-              {languageData.titleBanners.subtitleTourM}
-            </h4>
+        <SwiperSlide className="w-full lg:!w-1/2 max-md:!w-full">
+          <div className="w-full h-[235px]">
+            <Image src={excDiscounts} width={547} height={235} className="max-lg:hidden h-full w-full rounded-lg object-cover" alt="Banner Exc Discounts" />
+            <Image src={excDiscountsMobile} width={332} height={235} className="h-full w-full rounded-lg object-cover bg-gry-30" alt="Banner Exc Discounts mobile" />
           </div>
-        </div>
-      </SwiperSlide>
+        </SwiperSlide>
+       
+          <SwiperSlide className="!w-[266px] !bg-gry-30 !flex !justify-center max-md:!w-full">
+            <div className="relative w-[266px] h-[235px] max-md:!w-332px]">
+              <Image src={bannerTraveling} width={266} height={235} className="h-full w-full rounded-lg" alt="Banner Experimenta los mejores tours" />
 
-      <SwiperSlide className="!w-[265px]">
-        <div className="w-[265px] h-[235px]">
-          <Image
-            src={bannertour}
-            width={300}
-            height={300}
-            className="h-full w-full rounded-lg"
-            alt="Banner tour mes de feb"
-          />
-        </div>
-      </SwiperSlide>
+              <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[28px] max-sm:top-[28px]">
+                <h2 className="m-b w-9/12 text-white text-fs-20 mb-4 text-left">{languageData.titleBanners.titleTourMexico}</h2>
+                <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-18 text-left" >{languageData.titleBanners.subtitleTourM}</h4>
+              </div>
+            </div>
+          </SwiperSlide>
 
+          <SwiperSlide className="!w-[265px] !bg-gry-30 !flex !justify-center max-md:!w-full">
+            <div className="w-[265px] h-[235px]">
+              <Image src={bannerTour} width={300} height={300} className="h-full w-full rounded-lg" alt="Banner tour mes de feb" />
+            </div>
+          </SwiperSlide>
+        
       {/* </div> */}
     </Swiper>
   );

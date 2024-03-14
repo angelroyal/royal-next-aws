@@ -82,7 +82,7 @@ export default function ResultTour() {
     <>
       <Row className="row-home-search">
         <Col className="input-search-t-h position-relative" sm={4}>
-          <Image className="icon-location-home" src={RoomOutlinedIcon} />
+          <Image className="icon-location-home" src={RoomOutlinedIcon} alt="icon-location"/>
           <span className="span-location-home-r">
             {languageData.SearchBox.tabTour.autoDestination}
           </span>
@@ -94,7 +94,7 @@ export default function ResultTour() {
         </Col>
 
         <Col className="input-search-t-h position-relative" sm={3}>
-          <Image className="icon-date-home" src={DateRangeIcon} />
+          <Image className="icon-date-home" src={DateRangeIcon}  alt="icon-calendar"/>
           <span className="span-date-home-r">
             {languageData.SearchBox.tabTour.date}
           </span>

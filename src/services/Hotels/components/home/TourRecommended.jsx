@@ -66,7 +66,7 @@ export default function CartTourOptions() {
                 <img
                   className="w-full h-full rounded-full object-cover"
                   src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
-                  alt="card"
+                  alt="staywow card"
                 />
 
               </div>
