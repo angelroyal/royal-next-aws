@@ -13,7 +13,7 @@ import {
 // import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import LanguageContext from "../../../language/LanguageContext";
 
-import "../../../assets/styles/general/SearchHotel.css"
+import "../../../assets/styles/general/SearchHotel.css";
 import { useIsMobile } from "@/config/Mobile/isMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
@@ -26,9 +26,17 @@ function SearchHotel(props) {
   const { closeDialog, onSelectSearch } = props;
   const isMobile = useIsMobile();
   const { languageData } = useContext(LanguageContext);
+  // const [dataSearch, setDataSearch] = useState(
+  //   JSON.parse(localStorage.getItem("dataSearch")) || null
+  // );
+  const storedDataSearch =
+    typeof localStorage !== "undefined"
+      ? localStorage.getItem("dataSearch")
+      : null;
   const [dataSearch, setDataSearch] = useState(
-    JSON.parse(localStorage.getItem("dataSearch")) || null
+    storedDataSearch ? JSON.parse(storedDataSearch) : null
   );
+
   const [inputAutocomplete, setInputAutocomplete] = useState("");
   const [optionsSearch, setOptions] = useState([]);
 
@@ -136,7 +144,7 @@ function SearchHotel(props) {
       )}
       renderOption={(props, option) => {
         return (
-          <li key={option.key} {...props} id="list-destination-home-hotel" >
+          <li key={option.key} {...props} id="list-destination-home-hotel">
             <Grid container alignItems="center">
               <Grid
                 item

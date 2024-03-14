@@ -7,7 +7,8 @@ import LanguageContext from "../language/LanguageContext";
 
 function Calendar({ onDateChange }) {
   const calendarRef = useRef(null);
-  const language = localStorage.getItem("language") || "es";
+  // const language = localStorage.getItem("language") || "es";
+  const language = typeof localStorage !== 'undefined' ? localStorage.getItem("language") || "es" : "es";
 
   useEffect(() => {
     const handleDateChange = (selectedDates) => {

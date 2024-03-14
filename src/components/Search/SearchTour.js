@@ -13,10 +13,19 @@ import IconLocation from "../../assets/icons/utils/searchBox/location-autocomple
 const API_ENDPOINT = `v1/activity`;
 // const API_ENDPOINT = `v1/tour-destinations/search`;
 
-function SearchTour({closeDialog ,onSelectTour }) {
+function SearchTour({ closeDialog, onSelectTour }) {
+  // const [searchTour, setDataSearch] = useState(
+  //   JSON.parse(localStorage.getItem("searchTour")) || null
+  // );
+
+  const storedSearchTour =
+    typeof localStorage !== "undefined"
+      ? localStorage.getItem("searchTour")
+      : null;
   const [searchTour, setDataSearch] = useState(
-    JSON.parse(localStorage.getItem("searchTour")) || null
+    storedSearchTour ? JSON.parse(storedSearchTour) : null
   );
+
   const isMobile = useIsMobile();
   const [inputAutocomplete, setInputAutocomplete] = useState("");
   const [optionsSearch, setOptions] = useState([]);
@@ -80,7 +89,9 @@ function SearchTour({closeDialog ,onSelectTour }) {
       ) : (
         <span key={index}>
           {parts}
-          <span style={{ color: "#2743a6 ", fontWeight:800}}>{items[index]}</span>
+          <span style={{ color: "#2743a6 ", fontWeight: 800 }}>
+            {items[index]}
+          </span>
         </span>
       )
     );
@@ -124,12 +135,18 @@ function SearchTour({closeDialog ,onSelectTour }) {
             <Grid container alignItems="center">
               <Grid item sx={{ display: "flex", width: 30 }}>
                 {option.type === "destination" ? (
-                  <Image src={IconLocation} alt="icon location"
+                  <Image
+                    src={IconLocation}
+                    alt="icon location"
                     sx={{ color: "text.secondary" }}
                     className="icon-location-tour"
                   />
                 ) : (
-                  <Image src={IconTour} alt="icon tour" sx={{ color: "text.secondary" }} />
+                  <Image
+                    src={IconTour}
+                    alt="icon tour"
+                    sx={{ color: "text.secondary" }}
+                  />
                 )}
               </Grid>
 

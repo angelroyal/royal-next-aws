@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['sandboxmexico.com', 'api.sandboxmexico.com'],
+    // Reemplaza "domains" por "remotePatterns"
+    domains: ["sandboxmexico.com", "api.sandboxmexico.com"],
   },
 };
 

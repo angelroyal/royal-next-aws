@@ -18,7 +18,8 @@ export function LanguageSelector() {
     window.location.reload();
   };
 
-  const storedLanguage = localStorage.getItem("language");
+  // const storedLanguage = localStorage.getItem("language");
+  const storedLanguage = typeof localStorage !== 'undefined' ? localStorage.getItem("language") : null;
   const defaultLanguage = storedLanguage || language;
 
   useEffect(() => {
