@@ -192,15 +192,15 @@ export function BannerExcDiscounts() {
       
 
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
-        <SwiperSlide className="w-full lg:!w-1/2 max-md:!w-full !bg-gry-30">
-          <div className="w-full h-[235px]">
-            <Image src={excDiscounts} width={547} height={235} className="max-lg:hidden w-full rounded-lg object-cover" alt="Banner Exc Discounts" />
-            <Image src={excDiscountsMobile} width={332} height={235} className="lg:hidden  rounded-lg object-cover bg-gry-30" alt="Banner Exc Discounts mobile" />
+        <SwiperSlide className="!w-1/2 max-md:!w-full !bg-gry-30">
+          <div className="w-full  h-[235px]">
+            <Image src={excDiscounts} width={547} height={273} className="lg:hidden w-full h-full rounded-lg object-cover" alt="Banner Exc Discounts" />
+            {/* <Image src={excDiscountsMobile} width={332} height={235} className="lg:hidden  rounded-lg object-cover bg-gry-30" alt="Banner Exc Discounts mobile" /> */}
           </div>
         </SwiperSlide>
        
-          <SwiperSlide className="!w-[266px] !bg-gry-30 !flex !justify-center max-md:!w-full">
-            <div className="relative w-[266px] h-[235px] max-md:!w-332px]">
+          <SwiperSlide className="!w-[266px] !bg-gry-30 !flex !justify-center">
+            <div className="relative w-full h-[235px]">
               <Image src={bannerTraveling} width={266} height={235} className="h-full w-full rounded-lg" alt="Banner Experimenta los mejores tours" />
 
               <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[28px] max-sm:top-[28px]">
@@ -210,9 +210,9 @@ export function BannerExcDiscounts() {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide className="!w-[265px] !bg-gry-30 !flex !justify-center max-md:!w-full">
-            <div className="w-[265px] h-[235px]">
-              <Image src={bannerTour} width={266} height={266} className="w-full h-full rounded-lg" alt="Banner tour mes de feb" />
+          <SwiperSlide className="!w-[266px] !bg-gry-30 !flex !justify-center">
+            <div className="w-full h-[235px]">
+              <Image src={bannerTour} width={266} height={235} className="w-full h-full rounded-lg " alt="Banner tour mes de feb" />
             </div>
           </SwiperSlide>
         
