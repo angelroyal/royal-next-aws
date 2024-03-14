@@ -138,7 +138,7 @@ export function BannerHomeKnowMore() {
               src={beach}
               width={364}
               height={259}
-              className="relative w-full h-[259px] lg:h-full opacity-75 bottom-0"
+              className="relative w-full h-[259px] lg:h-full bottom-0"
               alt="Img beach"
             />
           </SwiperSlide>
@@ -149,7 +149,7 @@ export function BannerHomeKnowMore() {
               width={364}
               height={259}
               alt="Img city"
-              className="relative w-full h-[259px] lg:h-full opacity-75 bottom-0"
+              className="relative w-full h-[259px] lg:h-full bottom-0"
             />
           </SwiperSlide>
         </Swiper>
