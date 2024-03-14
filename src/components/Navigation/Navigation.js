@@ -19,7 +19,7 @@ export default function Navigation() {
         width="100%"
         priority={true}
       />
-      <div className="md:h-[116px] md:mb-2 bg-gry-30">
+      <div className="md:h-[124px] md:pb-2 bg-white border-b border-gry-70">
         <HeaderBlue />
 
         <NavigationDesktop />

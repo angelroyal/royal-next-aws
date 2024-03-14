@@ -6,7 +6,7 @@ export default function HeaderBlue() {
     <div className="relative w-full flex items-center ">
       <div className="absolute left-0 p-6 flex items-center px-8 bg-bl-100 w-[100%] md:w-[55%] lg:w-[51%] h-12 top-0 border-b rounded-br-[5rem] p-6" />
       <Container>
-        <div className="relative flex items-center gap-[44px] mt-[14px] z-[3]">
+        <div className="relative flex items-center gap-[44px] mt-[14px] z-[3] md:w-3/5">
           <a
             className="flex gap-2 no-underline m-s-b"
             href="tel:8009530342"

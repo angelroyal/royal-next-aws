@@ -14,7 +14,7 @@ export default function NavigationDesktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative md:top-[-15px] mt-[38px] md:mt-0">
+    <div className="relative md:top-[-22px] mt-[38px] md:mt-0">
       <Container>
         {/* fix tailwind */}
         <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem]">

@@ -1,7 +1,8 @@
+"use client";
 
 import { useContext } from "react";
-import LanguageContext from "../../language/LanguageContext"
 import Image from "next/image";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function Footer() {
 
@@ -10,7 +11,7 @@ export default function Footer() {
     return (
         <>
             <div>
-                <Image src={`${process.env.NEXT_PUBLIC_URL}general/line-footer-or.svg`} alt="line-footer-or" width='100%' />
+                <Image src={`${process.env.NEXT_PUBLIC_URL}general/line-footer-or.svg`} alt="line-footer-or" width={100} height={100}/>
             </div>
 
             <footer className="bg-bl-100 flex flex-col text-white max-w-full py-8">
@@ -20,7 +21,7 @@ export default function Footer() {
                         <ul>
                             <li className=" grid place-items-center">
                                 {/* LOGO-W */}
-                                <img src={`${process.env.NEXT_PUBLIC_URL}royal/logo-w.svg`} alt="logo-w" width='300px' height='100%' />
+                                <img src={`${process.env.NEXT_PUBLIC_URL}royal/logo-w.svg`} alt="logo-w" width='300px' height='100px' />
 
                                 {/*SOCIAL ICONS*/}
                                 <div className="m-5 flex justify-center ">
@@ -55,20 +56,20 @@ export default function Footer() {
                         <div className="max-md:grid place-items-center pr-16">
                             <div className="flex max-2xl:grid grid-cols-1">
                                 <a className="flex cursor-pointer">
-                                    <img className="mx-1 " src="https://sandboxmexico.com/assets/icons/tel/tel-w.svg" alt="icon-telephone" width="22px" height="30px" />
+                                    <img className="mx-1 " src={`${process.env.NEXT_PUBLIC_URL}icons/tel/tel-w.svg`} alt="icon-telephone" width="22px" height="30px" />
                                     <span className="hover:text-or-100 mx-2">{languageData.footer.contact.phone}</span>
                                 </a>
                                 <a className="flex cursor-pointer">
-                                    <img className="mx-1" src="https://sandboxmexico.com/assets/icons/whats/whats-w.svg" alt="icon-whatsapp" width="22px" height="30px" />
+                                    <img className="mx-1" src={`${process.env.NEXT_PUBLIC_URL}icons/whats/whats-w.svg`} alt="icon-whatsapp" width="22px" height="30px" />
                                     <span className="hover:text-or-100 ml-2">{languageData.footer.contact.whatsApp}</span>
                                 </a>
                             </div>
                             <a className="flex cursor-pointer">
-                                <img className="mx-1" src="https://sandboxmexico.com/assets/icons/mail/mail-w.svg" alt="icon-whatsapp" width="22px" height="30px" />
+                                <img className="mx-1" src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-w.svg`} alt="icon-whatsapp" width="22px" height="30px" />
                                 <span className="hover:text-or-100 ml-2">{languageData.footer.contact.email}</span>
                             </a>
                             <a className="flex cursor-pointer mt-2">
-                                <img className="mx-1" src="https://sandboxmexico.com/assets/icons/location/location-w.svg" alt="icon-location" width="22px" height="30px" />
+                                <img className="mx-1" src={`${process.env.NEXT_PUBLIC_URL}location/location-w.svg`} alt="icon-location" width="22px" height="30px" />
                                 <span className="hover:text-or-100 leading-5">{languageData.footer.contact.location}</span>
                             </a>
                         </div>
