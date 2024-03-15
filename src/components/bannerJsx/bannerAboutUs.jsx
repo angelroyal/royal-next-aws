@@ -23,15 +23,14 @@ export function BannerAboutUs() {
 
 export function BannerFaqsTop() {
   const { languageData } = useContext(LanguageContext);
-
   return (
-    <div className="content-image-fqas">
+    <div className="relative">
       <img
         src={Others.bannerFqs.image}
         alt={Others.bannerFqs.alt}
         width="100%"
       />
-      <h1 className="text-image-new-faqs">
+      <h1 className="absolute text-white m-b text-[45px] top-0 left-0 right-0 bottom-0 my-auto mx-auto w-max h-max">
         {languageData.titleBanners[Others.bannerFqs.title]}
       </h1>
     </div>
@@ -42,14 +41,14 @@ export function BannerFaqsDown() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="content-image-help-faqs">
+    <div className="relative">
       <img
         src={Others.bannerHelp.image}
         alt={Others.bannerHelp.image}
         width="100%"
       />
-      <div className="position-text-new-titles-fqas">
-        <h2 className="text-image-new-h2-fqs">
+      <div className="absolute h-max my-auto mx-0 top-0 bottom-0 ml-3 lg:w-[68%] pl-[95px]">
+        <h2 className="text-bl-100 m-b">
           {languageData.titleBanners[Others.bannerHelp.title]}
         </h2>
 

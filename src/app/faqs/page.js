@@ -2,11 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/styles/web/App.css";
 
 import Token from "@/components/General/Token";
-import { TokenProvider } from "@/config/context/AuthContext";
+import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
+import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import SearchBox from "@/hooks/SearchBox";
+import FrequentQuestions from "@/pages/others/FrequentQuestions";
 
 export default function Home() {
   return (
@@ -15,7 +16,14 @@ export default function Home() {
         <CartAxiosProvider>
           <Token />
           <Navigation />
-          <SearchBox/>
+          <FrequentQuestions/>
+          {/* <div className="hidden lg:block">
+            <FaqsWeb />
+          </div>
+          <div className="lg:hidden block">
+            <FaqsWeb />
+          </div> */}
+          <Footer />
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

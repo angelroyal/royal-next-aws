@@ -117,7 +117,7 @@ export function BannerHomeKnowMore() {
           </span>
         </div>
 
-        <button className="bg-or-100 w-[164px] h-[44px] text-nowrap rounded-full text-white m-m w-fit text-fs-12 hover:bg-or-70 mb-[50px]">
+        <button className="bg-or-100 w-[164px] h-[44px] text-nowrap rounded-full text-white m-m text-fs-12 hover:bg-or-70 mb-[50px]">
           {languageData.titleBanners.bannerHoteldecided.knowMore}
         </button>
       </div>

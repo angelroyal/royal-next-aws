@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext, useState, useEffect } from "react";
 
 import {
@@ -9,13 +11,15 @@ import { FaqsMobile, FaqsWeb } from "./Faqs";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
 import { SkeletonFaqs } from "../../utils/skeleton/SkeletonFaqs";
-import MetaFrequentQuestions from "../../components/Meta/MetaFrequentQuestions";
+import { Container } from "@/config/Others/Container";
+
+// import MetaFrequentQuestions from "../../components/Meta/MetaFrequentQuestions";
 
 export default function FrequentQuestions() {
   const { languageData } = useContext(LanguageContext);
 
-  const isMobile = useIsMobile()
-  
+  const isMobile = useIsMobile();
+
   const [showSkeletonFaqs, setShowSkeletonFaqs] = useState(true);
   const [showFaqs, setShowFaqs] = useState(false);
 
@@ -36,37 +40,52 @@ export default function FrequentQuestions() {
   };
 
   useEffect(() => {
-      setTimeout(()=>{
-        setShowFaqs(true)
-        setShowSkeletonFaqs(false)
-      },2000);
-    })
-    
+    setTimeout(() => {
+      setShowFaqs(true);
+      setShowSkeletonFaqs(false);
+    }, 2000);
+  });
+
   return (
     <>
       {showSkeletonFaqs && <SkeletonFaqs />}
       {showFaqs && (
-        <>
-          <MetaFrequentQuestions />
-          <div className="container">
-            <BannerFaqsTop />
-            <h1 className="title-popular-faqs">
-              {languageData.faqs.titleFaqs}
-            </h1>
-            <div className="text-subtitle-faqs">
-              {languageData.faqs.textFaqs}
-            </div>
-
-            {
-              isMobile ? <FaqsMobile setOpenSection={setOpenSection} openSection={openSection} activeKey={activeKey} handleAccordionClick={handleAccordionClick}/> : <FaqsWeb setOpenSection={setOpenSection} openSection={openSection} activeKey={activeKey} handleAccordionClick={handleAccordionClick}/>
-            }
-
-            <BannerFaqsDown />
+        <Container>
+          {/* <MetaFrequentQuestions /> */}
+          <BannerFaqsTop />
+          <h1 className="m-b text-[2rem] mt-[1rem]">
+            {languageData.faqs.titleFaqs}
+          </h1>
+          <div className="m-m text-[1rem] pb-[2.5rem]">
+            {languageData.faqs.textFaqs}
           </div>
-        </>
+
+          {/* {isMobile ? (
+            <FaqsMobile
+              setOpenSection={setOpenSection}
+              openSection={openSection}
+              activeKey={activeKey}
+              handleAccordionClick={handleAccordionClick}
+            />
+          ) : (
+            <FaqsWeb
+              setOpenSection={setOpenSection}
+              openSection={openSection}
+              activeKey={activeKey}
+              handleAccordionClick={handleAccordionClick}
+            />
+          )} */}
+
+          <FaqsWeb
+            setOpenSection={setOpenSection}
+            openSection={openSection}
+            activeKey={activeKey}
+            handleAccordionClick={handleAccordionClick}
+          />
+
+          <BannerFaqsDown />
+        </Container>
       )}
     </>
   );
 }
-
-
