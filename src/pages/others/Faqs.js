@@ -1,27 +1,32 @@
+"use client";
+
+import Image from "next/image";
 import React, { useContext } from "react";
-import { Accordion, Col, Row } from "react-bootstrap";
+import { Accordion } from "react-bootstrap";
 
-import LanguageContext from "../../language/LanguageContext";
+import { faqsConfig } from "@/config/Others/faqsConfig";
+import LanguageContext from "@/language/LanguageContext";
 
-import { faqsConfig } from "../../config/Others/faqsConfig";
-import { ReactComponent as IconAdd } from "../../assets/icons/utils/others/add.svg";
-import { ReactComponent as IconRemove } from "../../assets/icons/utils/others/remove.svg";
+import IconAdd  from "../../assets/icons/utils/others/add.svg";
+import IconRemove from "../../assets/icons/utils/others/remove.svg";
+import "../../assets/styles/web/About.css"
 
 export function FaqsWeb(props) {
   const { setOpenSection, openSection, activeKey, handleAccordionClick } =
     props;
+    // console.log(openSection);
   const { languageData } = useContext(LanguageContext);
   return (
-    <Row>
-      <Col xs={4} className="text-info-faqs">
-        <h2 className="title-popular padding-bottom">
+    <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:w-3/5">
+        <h2 className="text-[1.25rem] m-b mb-[0.9rem]">
           {languageData.faqs.subtitleFaqs}
         </h2>
         {Object.keys(faqsConfig).map((sectionKey, index) => (
           <div
             key={index}
-            className={`faqs-subtext padding-bottom ${
-              openSection === sectionKey ? "active-section" : "inactive-section"
+            className={`text-[0.875rem] m-b mb-[1rem] ${
+              openSection === sectionKey && "text-or-100"
             }`}
             // onClick={setOpenSection(sectionKey)}
             onClick={() => setOpenSection(sectionKey)}
@@ -29,27 +34,26 @@ export function FaqsWeb(props) {
             {languageData.faqs[sectionKey]}
           </div>
         ))}
-      </Col>
+      </div>
 
-      <Col xs={8}>
+      <div className="w-full">
         <Accordion activeKey={activeKey}>
           {faqsConfig[openSection].map((item, index) => (
-            <Accordion.Item key={item.id} eventKey={index.toString()}>
+            <Accordion.Item key={item.id} eventKey={index.toString()} className="!border-b !border-r-0 !border-l-0 !border-gyr-100">
               <Accordion.Header
-                className="title-question"
                 // onClick={handleAccordionClick(openSection, index.toString())}
                 onClick={() =>
                   handleAccordionClick(openSection, index.toString())
                 }
               >
-                <div className="item-header-accordion">
+                <div className={`${activeKey === index.toString() && 'text-or-100'} m-b`}>
                   {languageData.faqs.questions[item.question]}
                 </div>
-                <div style={{ width: "0" }}>
+                <div className="w-max">
                   {activeKey === index.toString() ? (
-                    <IconRemove className="icon-inactive-add" />
+                    <Image src={IconRemove}  className="icon-inactive-add"/>
                   ) : (
-                    <IconAdd className="icon-inactive-add" />
+                    <Image src={IconAdd} className="icon-inactive-add"/>
                   )}
                 </div>
               </Accordion.Header>
@@ -69,8 +73,8 @@ export function FaqsWeb(props) {
             </Accordion.Item>
           ))}
         </Accordion>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 }
 

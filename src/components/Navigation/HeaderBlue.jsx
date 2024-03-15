@@ -8,7 +8,7 @@ export default function HeaderBlue() {
       <Container>
         <div className="relative flex items-center gap-[44px] mt-[14px] z-[3] md:w-3/5">
           <a
-            className="flex gap-2 no-underline m-s-b"
+            className="flex gap-2 no-underline m-s-b items-center"
             href="tel:8009530342"
             target="_blank"
             rel="noopener noreferrer"
