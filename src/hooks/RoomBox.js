@@ -11,7 +11,7 @@ function Room({ OnApply }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [totalRooms, setTotalRooms] = useState(1);
   const [totalPeople, setTotalPeople] = useState(
-    localStorage.getItem("totalPeople") || 2
+    typeof window !== "undefined" ? localStorage.getItem("totalPeople") || 2 : 2
   );
 
   useEffect(() => {

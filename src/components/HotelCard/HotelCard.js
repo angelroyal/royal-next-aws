@@ -104,13 +104,13 @@ export default function HotelCard(props) {
   return (
     <>
       <div className="card-div-label">
-        {hotel.isTop && <Image className="label-icon-top" src={LabelTop} />}
+        {hotel.isTop && <Image className="label-icon-top" src={LabelTop} alt="LabelTop" />}
 
         {process.env.NEXT_PUBLIC_DEV === "true" && (
           <>
             {hotel.provider === "rh" && (
               <>
-                <Image src={RateBedsRH} className="label-icon-top" />
+                <Image src={RateBedsRH} alt="LabelTop" className="label-icon-top" />
 
                 <div className="rate-hook-rh">RateHawk</div>
               </>
@@ -118,7 +118,7 @@ export default function HotelCard(props) {
 
             {hotel.provider === "hb" && (
               <>
-                <Image src={RateBedsHB} className="label-icon-top" />
+                <Image src={RateBedsHB} alt="RateBedsHB" className="label-icon-top" />
                 <div className="rate-hook-beds">HotelBeds</div>
               </>
             )}
@@ -143,7 +143,7 @@ export default function HotelCard(props) {
                     className="cover-center-img"
                     alt={`${hotel.name} - ${languageData.allAlt.altRoyalVacations}`}
                     src={image}
-                    effect="blur" // Opcional, para aplicar un efecto de desenfoque
+                    effect="blur"
                   />
                 </SwiperSlide>
               ))
@@ -184,7 +184,7 @@ export default function HotelCard(props) {
               readOnly
             />
 
-            <Box my={2} width="auto" className="container-facilities">
+            <Box my={2} width="auto" className="container-facilities d-flex">
               {hotel.facilities && hotel.facilities.length > 0 ? (
                 <>
                   {hotel.facilities.slice(0, 5).map((facility, index) => (
@@ -201,8 +201,9 @@ export default function HotelCard(props) {
                         }
                         style={{ cursor: "grab", width: "18px" }}
                       >
-                        <SvgIcon
-                          component={facilities[facility].default}
+                        <Image
+                          src={facilities[facility].default}
+                          alt="RateBedsHB"
                           inheritViewBox
                         />
                       </LightTooltip>
@@ -227,7 +228,7 @@ export default function HotelCard(props) {
               <div>
                 <div className="card-hotel-subtitle">
                   <span>
-                    <Image src={DemandIcon} className="icon-Demand-Icon" />
+                    <Image src={DemandIcon} alt="DemandIcon" className="icon-Demand-Icon" />
                   </span>
 
                   <span className="m-icon-label-demand">
