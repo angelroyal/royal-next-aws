@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useContext } from "react";
 import DialogActions from "@mui/material/DialogActions";
 import { Button, Dialog, Fab, Slide } from "@mui/material";
@@ -6,7 +7,7 @@ import FiltersHotels from "../../Utils/FiltersHotels";
 import "../../../assets/styles/mobile/DialogSearchHotel.css";
 import LanguageContext from "../../../language/LanguageContext";
 
-import { ReactComponent as CloseIcon } from "../../../assets/icons/hotel/modal/close_active.svg";
+import CloseIcon from "../../../assets/icons/hotel/modal/close_active.svg";
 
 const Transition = React.forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -25,7 +26,7 @@ export function DialogFilterHotel(props) {
     >
       <div className="m-component-info-room">
         <Button className="d-flex width100 justify-content-end">
-          <CloseIcon className="close-icon" onClick={onClose} />
+          <Image src={CloseIcon} className="close-icon" onClick={onClose} />
         </Button>
 
         <FiltersHotels />

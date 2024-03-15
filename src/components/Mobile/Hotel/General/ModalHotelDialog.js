@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { Alert, Dialog, Slide, Snackbar } from "@mui/material";
 
 import LanguageContext from "../../../../language/LanguageContext";
 import { TotalOccupanciesModal } from "../../../../config/Booking/totalOccupants";
 
-import { ReactComponent as IconShowMore } from "../../../../assets/icons/utils/payment/show_more.svg";
+import IconShowMore from "../../../../assets/icons/utils/payment/show_more.svg";
 import CloseDialogLine from "../../../../assets/images/others/line-close-dialog-w.png";
 
 const Transition = React.forwardRef((props, ref) => {
@@ -50,9 +51,9 @@ export default function ReservationDetailsDialog(props) {
           <div className="close-dialog-button"
           onClick={closeDialog}
           >
-            <img src={CloseDialogLine} alt="CloseDialogLine" className="line-dialog" /> 
+            <Image src={CloseDialogLine} alt="CloseDialogLine" className="line-dialog" /> 
             <div className="icons-close-dialog-container">
-              <IconShowMore className="icons-close-dialog" />
+              <Image src={IconShowMore} alt="Icon Show More" className="icons-close-dialog" />
             </div>
           </div>
 

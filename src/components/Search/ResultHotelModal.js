@@ -1,6 +1,6 @@
 import moment from "moment";
+import Image from "next/image";
 import { Row, Col } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 
 import Room from "../../hooks/RoomBox";
@@ -14,13 +14,12 @@ import {
 import LanguageContext from "../../language/LanguageContext";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 
-import { ReactComponent as DateRangeIcon } from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import DateRangeIcon from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
+import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 export default function ResultHotelModal({ closeModal }) {
   const isMobile = useIsMobile();
 
-  const history = useHistory();
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
   const [selectedDates, setSelectedDates] = useState([
     moment().add(2, "days").toDate(),
@@ -92,7 +91,7 @@ export default function ResultHotelModal({ closeModal }) {
     const query = new URLSearchParams(requestBody).toString();
 
     setTimeout(() => {
-      history.push(`/resultHotel?${query}`);
+      // history.push(`/resultHotel?${query}`);
       window.location.reload();
     }, 1000);
   };
@@ -113,7 +112,7 @@ export default function ResultHotelModal({ closeModal }) {
               />
           ) : (
             <>
-              <RoomOutlinedIcon className="icon-location-home"/>
+              <Image src={RoomOutlinedIcon} alt="RoomOutlinedIcon" className="icon-location-home"/>
               <span className="span-location-home-r">
                 {languageData.SearchBox.tabHotel.autocomplete}
               </span>
@@ -134,7 +133,7 @@ export default function ResultHotelModal({ closeModal }) {
             ></DialogCalendarConfig>
           ) : (
             <>
-              <DateRangeIcon className="icon-date-home" />
+              <Image src={DateRangeIcon} alt="DateRangeIcon" className="icon-date-home" />
               <span className="span-date-home-r">
                 {languageData.SearchBox.tabHotel.date}
               </span>

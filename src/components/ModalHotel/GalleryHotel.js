@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
+import { Navigation } from "swiper/modules";
 
 import { images_es } from "../../language/images_es";
 import { images_en } from "../../language/images_en";
@@ -10,8 +10,6 @@ import {
   ImageNotFound,
   ImageNotFoundModalHotel,
 } from "../../config/Others/ImageNotFound";
-
-SwiperCore.use([Navigation, Thumbs]);
 
 export function GalleryHotel(props) {
   const { hotelModal } = props;
@@ -65,7 +63,7 @@ export function GalleryHotel(props) {
 
         <Swiper
           className="swiper-button-arrow"
-          // modules={[Navigation]}
+          modules={[Navigation]}
           spaceBetween={8}
           slidesPerView={5}
           freeMode={true}

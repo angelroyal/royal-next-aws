@@ -1,16 +1,17 @@
+import Image from "next/image";
 import React, { useContext } from "react";
 
 import { useIsMobile } from "../../../config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 
-import { ReactComponent as IconRoyal } from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
+import IconRoyal from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 
 export function MessageShowRooms() {
   const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="container-itinerary-no-data">
-      <IconRoyal className="margin-top" />
+      <Image src={IconRoyal} alt="IconRoyal" className="margin-top" />
       <h2 className="itinerary-no-show">{languageData.cart.roomEmpty}</h2>
       <p className="itinerary-no-text padding-bottom">
         {languageData.cart.textRoomEmpty}

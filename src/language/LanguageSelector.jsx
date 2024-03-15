@@ -18,12 +18,13 @@ export function LanguageSelector() {
     window.location.reload();
   };
 
-  const storedLanguage = localStorage.getItem("language");
+  const storedLanguage = typeof window !== 'undefined' ? localStorage.getItem("language") || 'es' : 'es';
+
   const defaultLanguage = storedLanguage || language;
 
   useEffect(() => {
     if (storedLanguage && storedLanguage !== language) {
-      setLanguage(storedLanguage);
+      setLanguage(storedLanguage); 
     }
   }, [storedLanguage, language, setLanguage]);
 

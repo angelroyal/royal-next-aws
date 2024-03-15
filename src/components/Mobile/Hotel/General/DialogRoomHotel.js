@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { Dialog, Slide } from "@mui/material";
+import React, { useEffect, useState } from "react";
 
 import RoomMenu from "../../../../hooks/RoomMenu";
 
-import { ReactComponent as CloseIcon } from "../../../../assets/icons/hotel/modal/close_active.svg";
-import { ReactComponent as BedSharpIcon } from "../../../../assets/icons/utils/searchBox/room-autocomplete.svg";
-import { ReactComponent as Person2OutlinedIcon } from "../../../../assets/icons/utils/searchBox/person-autocomplete.svg";
+import CloseIcon from "../../../../assets/icons/hotel/modal/close_active.svg";
+import BedSharpIcon from "../../../../assets/icons/utils/searchBox/room-autocomplete.svg";
+import Person2OutlinedIcon from "../../../../assets/icons/utils/searchBox/person-autocomplete.svg";
 
 const Transition = React.forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -79,13 +80,13 @@ export default function MobileRoomHotel(props) {
         <div className="m-container-dialog-room ps-3 pe-3">
           <div className="width100 d-flex justify-content-end">
             <button className="p-0 align-items-end bg-transparent border-0">
-              <CloseIcon className="close-icon" onClick={closeDialogIcon} />
+              <Image src={CloseIcon} alt="Close Icon" className="close-icon" onClick={closeDialogIcon} />
             </button>
           </div>
 
           <div className="m-input-search-hotel d-flex">
             <span className="width4" style={{ padding: "0 10px" }}>
-              <BedSharpIcon className="icon-room-search" />
+              <Image src={BedSharpIcon} alt="Bed Sharp Icon" className="icon-room-search" />
               <span className="room-capacity">{totalRooms}</span>
             </span>
 
@@ -94,7 +95,7 @@ export default function MobileRoomHotel(props) {
               style={{ padding: "0 10px" }}
             >
               <span style={{ padding: "0 10px" }}>|</span>
-              <Person2OutlinedIcon className="icon-person-search" />
+              <Image src={Person2OutlinedIcon} alt="Person 2 Outlined Icon" className="icon-person-search" />
               <span className="room-capacity">{totalPeople}</span>
             </span>
           </div>

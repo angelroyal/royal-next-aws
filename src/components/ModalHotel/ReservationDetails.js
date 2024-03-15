@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState, useEffect, useContext } from "react";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
@@ -8,9 +9,9 @@ import {
 import { useCartAxios } from "../Cart/CartAxios";
 import LanguageContext from "../../language/LanguageContext";
 
-import { ReactComponent as Close } from "../../assets/icons/hotel/modal/close.svg";
-import { ReactComponent as WarningIcon } from "../../assets/icons/hotel/listing/exclamation-mark.svg";
-import { ReactComponent as MarkDeclined } from "../../assets/icons/hotel/modal/mark-decline-card.svg";
+import Close from "../../assets/icons/hotel/modal/close.svg";
+import WarningIcon from "../../assets/icons/hotel/listing/exclamation-mark.svg";
+import MarkDeclined from "../../assets/icons/hotel/modal/mark-decline-card.svg";
 import { MissingRooms } from "../../config/Hotel/ModalHotel";
 
 const API_ENDPOINT = `v1/carts/hotel`;
@@ -153,7 +154,7 @@ export default function ReservationDetails(props) {
         )}
         {showNestedModal && (
           <div className="d-flex align-items-center justify-content-center">
-            <WarningIcon />
+            <Image src={WarningIcon} alt="WarningIcon" />
             <div className="text-center mt-3 text-danger">
               {languageData.detailHotel.alert}
             </div>
@@ -250,11 +251,11 @@ export default function ReservationDetails(props) {
       {showAlert && showAlert.message === "MPE" && (
         <div className="alert-amount-exceeded margin-top">
           <button className="close-button-amount" onClick={handleCloseAlert}>
-            <Close width="20px" height="20px" />
+            <Image src={Close} alt="Close" width="20px" height="20px" />
           </button>
 
           <div className="alert-text-amount">
-            <MarkDeclined /> {languageData.alertsPayment.alertAmount}
+            <Image src={MarkDeclined} alt="MarkDeclined" /> {languageData.alertsPayment.alertAmount}
           </div>
 
           <div className="alert-subtext-declined">

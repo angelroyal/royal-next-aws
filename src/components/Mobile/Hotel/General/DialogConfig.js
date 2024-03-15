@@ -1,15 +1,16 @@
+import Image from "next/image";
 import React, { Suspense, lazy, useContext, useEffect, useState } from "react";
 
 import LanguageContext from "../../../../language/LanguageContext";
 import { ParseDateRangeDate } from "../../../../config/Booking/totalOccupants";
 
-import { ReactComponent as BedSharpIconMH } from "../../../../assets/icons/utils/searchBox/room-active.svg";
-import { ReactComponent as BedSharpIcon } from "../../../../assets/icons/utils/searchBox/room-autocomplete.svg";
-import { ReactComponent as Person2OutlinedIconMH } from "../../../../assets/icons/utils/searchBox/adult-active.svg";
-import { ReactComponent as DateRangeIconModal } from "../../../../assets/icons/utils/searchBox/calendar-active.svg";
-import { ReactComponent as DateRangeIcon } from "../../../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../../../assets/icons/utils/searchBox/location-autocomplete.svg";
-import { ReactComponent as Person2OutlinedIcon } from "../../../../assets/icons/utils/searchBox/person-autocomplete.svg";
+import BedSharpIconMH from "../../../../assets/icons/utils/searchBox/room-active.svg";
+import BedSharpIcon from "../../../../assets/icons/utils/searchBox/room-autocomplete.svg";
+import Person2OutlinedIconMH from "../../../../assets/icons/utils/searchBox/adult-active.svg";
+import DateRangeIconModal from "../../../../assets/icons/utils/searchBox/calendar-active.svg";
+import DateRangeIcon from "../../../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
+import RoomOutlinedIcon from "../../../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import Person2OutlinedIcon from "../../../../assets/icons/utils/searchBox/person-autocomplete.svg";
 
 const MobileRoomHotel = lazy(() => import("./DialogRoomHotel"));
 const SearchHotelMobile = lazy(() => import("./DialogSearchHotel"));
@@ -23,7 +24,6 @@ export function DialogConfigSearchHotel({ destinationSelected }) {
   const [dialogOpen, setOpenDialog] = useState(false);
   const handleOpenDialog = () => {
     setOpenDialog(true);
-    
   };
   const setMobileHotel = (onHotelChange) => {
     setSelectedOption(onHotelChange);
@@ -36,7 +36,7 @@ export function DialogConfigSearchHotel({ destinationSelected }) {
         className="input-search-hotel d-flex gap-1 align-items-center"
         onClick={handleOpenDialog}
       >
-        <RoomOutlinedIcon className="m-icon-out-line" />
+        <Image src={RoomOutlinedIcon} alt="Room Outlined Icon" className="m-icon-out-line" />
         <span
           className={
             selectedOption
@@ -91,9 +91,17 @@ export function DialogCalendarConfig(props) {
         }}
       >
         {isModal ? (
-          <DateRangeIconModal className="m-icon-calendar" />
+          <Image
+            src={DateRangeIconModal}
+            alt="Date RangeIcon Modal"
+            className="m-icon-calendar"
+          />
         ) : (
-          <DateRangeIcon className="icon-room-search" />
+          <Image
+            src={DateRangeIcon}
+            alt="DateRangeIcon"
+            className="icon-room-search"
+          />
         )}
 
         <span
@@ -159,13 +167,17 @@ export function DialogConfigRoomHotel(props) {
       <div className="input-search-hotel" onClick={handledOpenRoomDialog}>
         <span className="input-room d-flex">
           <div className="d-flex gap-2 align-items-center">
-            <BedSharpIcon className="icon-room-search" />
+            <Image
+              src={BedSharpIcon}
+              alt="BedSharp Icon MH"
+              className="icon-room-search"
+            />
             <span className="input-people">{roomData.length}</span>
           </div>
 
           <div className="d-flex gap-2 align-items-center">
             <span style={{ padding: "0 10px" }}>|</span>
-            <Person2OutlinedIcon className="icon-person-search" />
+            <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" className="icon-person-search" />
             <span className="input-people">{totalPeople}</span>
           </div>
         </span>
@@ -219,14 +231,22 @@ export function DialogConfigRoomHotelModal({ applyRoomData }) {
         <span style={{ padding: "0 10px" }}>|</span>
 
         <div className="d-flex gap-2 align-items-center">
-          <Person2OutlinedIconMH className="m-icon-total-people" />
+          <Image
+            src={Person2OutlinedIconMH}
+            alt="BedSharpIconMH"
+            className="m-icon-total-people"
+          />
           <span className="input-people">{totalPeople}</span>
         </div>
 
         <span style={{ padding: "0 10px" }}>|</span>
 
         <div className="d-flex gap-2 align-items-center">
-          <BedSharpIconMH className="m-icon-total-people" />
+          <Image
+            src={BedSharpIconMH}
+            alt="BedSharp Icon MH"
+            className="m-icon-total-people"
+          />
           <span className="input-people">{roomData.length}</span>
         </div>
       </div>

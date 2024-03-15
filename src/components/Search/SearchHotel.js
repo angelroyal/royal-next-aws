@@ -22,9 +22,13 @@ function SearchDestination(props) {
   const { closeDialog, onSelectSearch } = props;
   const isMobile = useIsMobile();
   const { languageData } = useContext(LanguageContext);
+  // const [dataSearch, setDataSearch] = useState(
+  //   JSON.parse(localStorage.getItem("dataSearch")) || null
+  // );
   const [dataSearch, setDataSearch] = useState(
-    JSON.parse(localStorage.getItem("dataSearch")) || null
+    typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("dataSearch")) || null : null
   );
+
   const [inputAutocomplete, setInputAutocomplete] = useState("");
   const [optionsSearch, setOptions] = useState([]);
 

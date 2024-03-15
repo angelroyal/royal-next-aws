@@ -1,14 +1,15 @@
+import Image from "next/image";
 import { Tab, Tabs } from "react-bootstrap";
 import { Dialog, Slide } from "@mui/material";
 import React, { forwardRef, useContext, useState } from "react";
 
 import MSearchHotel from "./MSearchHotel";
 import LanguageContext from "../../../../language/LanguageContext";
-import { GetIconActivation } from "../../../../utils/navigation/GetIconActivation";
+// import { GetIconActivation } from "../../../../utils/navigation/GetIconActivation";
 
 import "../../../../assets/styles/mobile/SearchHotelDialog.css";
 // import { useLocation } from "react-router-dom/cjs/react-router-dom";
-import { ReactComponent as CloseIcon } from "../../../../assets/icons/hotel/modal/close_active.svg";
+import CloseIcon from "../../../../assets/icons/hotel/modal/close_active.svg";
 
 const Transition = forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -41,7 +42,7 @@ export function DialogSearch(props) {
             onClick={() => closeDialog(false)}
             className="p-0 align-items-end bg-transparent border-0"
           >
-            <CloseIcon className="close-icon" />
+            <Image src={CloseIcon} alt="CloseIcon" className="close-icon" />
           </button>
         </div>
 

@@ -1,7 +1,9 @@
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-import { ReactComponent as ButtonUp } from "../../assets/icons/hotel/listing/up.svg";
+import ButtonUp from "../../assets/icons/hotel/listing/up.svg";
 // SCROLL
+
 export const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
@@ -20,7 +22,6 @@ export function ScrollButton() {
       const maxHeight = 200;
 
       setOccult(scrollY > maxHeight);
-
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -32,7 +33,7 @@ export function ScrollButton() {
   return (
     isOccult && (
       <div onClick={handleScrollTop}>
-        <ButtonUp className="scroll-top-button" />
+        <Image src={ButtonUp} alt="ButtonUp" className="scroll-top-button" />
       </div>
     )
   );

@@ -47,9 +47,31 @@ export default function ListingHotelW(props) {
     setClickPaginator(true);
   };
 
+  // useEffect(() => {
+  //   scrollToTop();
+  //   // QUERY PARAMS POST AXIOS
+  //   const searchParams = new URLSearchParams(window.location.search);
+  //   const requestBody = {
+  //     code: searchParams.get("code"),
+  //     type: searchParams.get("type"),
+  //     "check-in": searchParams.get("check-in"),
+  //     "check-out": searchParams.get("check-out"),
+  //     occupancies: JSON.parse(
+  //       decodeURIComponent(searchParams.get("occupancies"))
+  //     ),
+  //   };
+
+  //   if (requestBody) {
+  //     if (token) {
+  //       setCombinedHotelData(null);
+  //       handleFetchPostHotels(requestBody);
+  //     }
+  //   }
+  // }, [window.location.search, token]);
   useEffect(() => {
-    scrollToTop();
-    // QUERY PARAMS POST AXIOS
+  scrollToTop();
+  // QUERY PARAMS POST AXIOS
+  if (typeof window !== 'undefined') {
     const searchParams = new URLSearchParams(window.location.search);
     const requestBody = {
       code: searchParams.get("code"),
@@ -67,7 +89,8 @@ export default function ListingHotelW(props) {
         handleFetchPostHotels(requestBody);
       }
     }
-  }, [window.location.search, token]);
+  }
+}, [/* window.location.search, */ token]);
 
   useEffect(() => {
     setCurrentPage(1);

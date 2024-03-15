@@ -1,5 +1,6 @@
 import moment from "moment";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay } from "swiper";
+import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useState, useEffect, useContext } from "react";
 // import "react-multi-carousel/lib/styles.css";
@@ -78,11 +79,11 @@ export default function CarouselHotelAvailability(props) {
           slidesPerView={"auto"}
           id="swiper-carousel-swi"
           spaceBetween={30}
-          // pagination={{
-          //   clickable: true,
-          // }}
+          pagination={{
+            clickable: true,
+          }}
           // loop={true}
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination]}
           className="popular-carousel-h"
           autoplay={{
             delay: 9000,
