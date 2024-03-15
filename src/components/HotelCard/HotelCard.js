@@ -28,7 +28,7 @@ import DemandIcon from "../../assets/icons/hotel/listing/on-high-demand.svg";
 export default function HotelCard(props) {
   const { index, hotel, availableNights, isClickPaginator, setClickPaginator } = props;
   const isMobile = useIsMobile();
-
+ console.log(hotel);
   const [totalPeople, setTotalPeople] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const { languageData } = useContext(LanguageContext);
