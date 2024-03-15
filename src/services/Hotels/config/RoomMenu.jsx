@@ -186,7 +186,7 @@ export default function RoomMenu(props) {
         {rooms.map((room, index) => (
           <div
             key={index}
-            className=" pb-2 mb-3 flex flex-col border border-2 border-t-0 border-r-0 border-l-0 border-b-gry-50 "
+            className=" pb-2 mb-3 flex flex-col border-b-1 border-gry-50 "
           >
             <div className="flex justify-between mb-4">
               <div className="col-padding">
@@ -272,7 +272,7 @@ export default function RoomMenu(props) {
                 </div>
 
                 <TextField
-                  id="outlined-number"
+                  // id="outlined-number"
                   className="m-s-b text-fs-20"
                   label={languageData.SearchBox.tabHotel.roomBox.age}
                   value={room.ages[childIndex]}
@@ -303,7 +303,7 @@ export default function RoomMenu(props) {
         ))}
       </div>
 
-      <div className="sticky border-2 border-b-0 border-x-0 border-t-gry100 z-10 items-center flex flex-col bottom-0 left-0 bg-white p-2 justify-between gap-2">
+      <div className="sticky border-t border-gry-50 z-10 items-center flex flex-col bottom-0 left-0 bg-white p-2 justify-between gap-2">
         <button
           disabled={rooms.length === 10}
           onClick={addRoom}

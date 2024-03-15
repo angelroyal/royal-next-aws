@@ -105,7 +105,7 @@ function Room({ OnApply }) {
         </Dropdown.Toggle>
 
         {showDropdown === true && (
-          <Dropdown.Menu className="border-0 w-11/12 z-30">
+          <Dropdown.Menu className="border-0 w-11/12 z-30 p-0">
             {/* <div className="equilateral-triangle-bottom"></div> */}
             <RoomMenu
               showRoom={handleRoomData}
