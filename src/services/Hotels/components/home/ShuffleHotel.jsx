@@ -157,6 +157,7 @@ export default function ShuffleHotel() {
             />
           ) : (
             <Image
+            className="w-auto h-auto"
               src={`${process.env.NEXT_PUBLIC_URL}icons/adults/adults-b.svg`}
               alt="icon-adults-b"
               width={16}
@@ -254,6 +255,7 @@ export default function ShuffleHotel() {
 
                 <div className="flex gap-1 mb-[11px]">
                   <Image
+                    className="w-auto h-auto"
                     src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
                     alt="icon-location"
                     width={11}
@@ -333,6 +335,7 @@ export default function ShuffleHotel() {
 
                 <div className="flex gap-1 mb-[11px]">
                   <Image
+                    className="w-auto h-auto"
                     src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
                     alt="location icon"
                     width={11}
