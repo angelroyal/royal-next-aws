@@ -1,3 +1,3 @@
 export const timeStamp = {
-  interval: 237
+  interval: 31
 };
