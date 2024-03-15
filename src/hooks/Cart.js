@@ -68,9 +68,10 @@ export default function Cart() {
             {totalItemsInCart ? (
               <div className="!m-0 flex relative">
                 <Image
+                  className="w-auto h-auto"
                   src={IconCartActive}
                   width={26}
-                  height={26}
+                  height={22}
                   alt="icon-cart-active"
                 />
                 <div className="absolute top-[-9px] right-0 z-[0]">
@@ -84,7 +85,7 @@ export default function Cart() {
                 </div>
               </div>
             ) : (
-              <Image src={IconCart} width={26} height={26} alt="icon-cart" />
+              <Image src={IconCart} width={26} height={22} className="w-auto h-auto" alt="icon-cart" />
             )}
           </IconButton>
         </Tooltip>

@@ -153,7 +153,7 @@ export default function ShuffleHotel() {
               src={`${process.env.NEXT_PUBLIC_URL}icons/adults/adults-w.svg`}
               alt="icon-adults-w"
               width={16}
-              height={20.7}
+              height={19}
             />
           ) : (
             <Image
