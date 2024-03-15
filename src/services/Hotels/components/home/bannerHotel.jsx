@@ -159,7 +159,7 @@ export function BannerHomeKnowMore() {
           width={364}
           height={480}
           alt="selfie"
-          className="absolute right-0 bottom-[0] z-50 w-full h-[20rem] lg:h-[426px] xl:h-[472px] object-contain"
+          className="absolute right-0 bottom-[0] z-[1] w-full h-[20rem] lg:h-[426px] xl:h-[472px] object-contain"
         />
       </div>
     </div>
