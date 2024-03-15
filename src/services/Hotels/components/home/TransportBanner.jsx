@@ -12,7 +12,7 @@ export function TransportBanner() {
           momento.
         </p>
 
-        <button className="rounded-full py-[20px] px-[41px] bg-bl-100 text-white w-max m-s-b text-fs-12">
+        <button className="rounded-full py-[20px] px-[41px] bg-bl-100 text-white w-max m-s-b text-fs-12 hover:bg-bl-70 hover:opacity-75">
           Elegir fechas
         </button>
       </div>

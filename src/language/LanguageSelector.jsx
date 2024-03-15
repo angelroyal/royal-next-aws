@@ -32,14 +32,16 @@ export function LanguageSelector() {
       <div className="flex pr-[30px]">
         {defaultLanguage === "es" ? (
           <Image
+          className="w-[25px] h-[32px]"
             width={25}
-            height={30}
+            height={32}
             src={`${process.env.NEXT_PUBLIC_URL}icons/leng/es.svg`}
             alt="MXN lang"
           />
         ) : (
           // <IconSpanish className="icon-spanish" />
           <Image
+            className="w-[25px] h-[30px]"
             width={25}
             height={30}
             src={`${process.env.NEXT_PUBLIC_URL}icons/leng/en.svg`}
