@@ -1,6 +1,7 @@
-import React, { forwardRef, useContext, useEffect, useState } from "react";
+import Image from "next/image";
 import { Col, Row } from "react-bootstrap";
 import { Dialog, DialogContent, Rating, Slide } from "@mui/material";
+import React, { forwardRef, useContext, useEffect, useState } from "react";
 
 import TypeRoom from "../../../ModalHotel/TypeRoom";
 import SearchRoom from "../../../Search/SearchRoom";
@@ -15,7 +16,7 @@ import { SelectedRoomsContext } from "../../../../pages/Modal/ModalHotel";
 
 import "../../../../assets/styles/mobile/DialogSearchHotel.css";
 import Line from "../../../../assets/images/others/group 75.jpg";
-import { ReactComponent as CloseIcon } from "../../../../assets/icons/hotel/modal/close_active.svg";
+import CloseIcon from "../../../../assets/icons/hotel/modal/close_active.svg";
 
 // TRANSITION DIALOG
 const Transition = forwardRef((props, ref) => {
@@ -92,7 +93,7 @@ export function DialogModalHotel(props) {
                               className="bg-transparent border border-0 pe-auto"
                               onClick={onHide}
                             >
-                              <CloseIcon />
+                              <Image src={CloseIcon} alt="Close Icon" />
                             </button>
                           </div>
 

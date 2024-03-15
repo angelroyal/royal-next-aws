@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
+import SwiperCore, { Navigation, Thumbs } from "swiper";
 
 import { images_es } from "../../language/images_es";
 import { images_en } from "../../language/images_en";
@@ -65,7 +65,7 @@ export function GalleryHotel(props) {
 
         <Swiper
           className="swiper-button-arrow"
-          // modules={[Navigation]}
+          modules={[Navigation]}
           spaceBetween={8}
           slidesPerView={5}
           freeMode={true}

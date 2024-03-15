@@ -1,11 +1,12 @@
+import Image from "next/image";
 import { Dialog, Slide } from "@mui/material";
 import React, { useState, lazy, useEffect, Suspense } from "react";
 
 import { toggleIOSScroll } from "../../../../config/Ios/DetectIsIos";
 
 import "../../../../assets/styles/mobile/DialogSearchHotel.css";
-import { ReactComponent as CloseIcon } from "../../../../assets/icons/hotel/modal/close_active.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import CloseIcon from "../../../../assets/icons/hotel/modal/close_active.svg";
+import RoomOutlinedIcon from "../../../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 const SearchHotel = lazy(() => import("../../../Search/SearchHotel"));
 
@@ -44,12 +45,12 @@ export default function SearchHotelMobile(props) {
         <div className="height100 ps-4 pe-4">
           <div className="d-flex justify-content-end">
             <button className="p-0 align-items-end bg-transparent border-0">
-              <CloseIcon className="close-icon" onClick={onClose} />
+              <Image src={CloseIcon} alt="Close Icon" className="close-icon" onClick={onClose} />
             </button>
           </div>
 
           <div className="m-input-search-hotel d-flex align-items-center justify-content-center">
-            <RoomOutlinedIcon className="icon-location-home-dialog" />
+            <Image src={RoomOutlinedIcon} alt="Room Outlined Icon" className="icon-location-home-dialog" />
             <Suspense fallback={null}>
               <SearchHotel
                 closeDialog={closeDialog}

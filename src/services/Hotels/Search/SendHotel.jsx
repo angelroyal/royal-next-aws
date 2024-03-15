@@ -82,7 +82,7 @@ export default function SendHotel() {
     const query = new URLSearchParams(requestBody).toString();
     console.log(query);
 
-    router.push(`/resultHotel?${query}`);
+    router.push(`/hotel/results?${query}`);
   };
   const { languageData } = useContext(LanguageContext);
 

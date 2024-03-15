@@ -1,6 +1,6 @@
 import moment from "moment";
+import Image from "next/image";
 import { Row, Col } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 
 import ResultHotelModal from "../Search/ResultHotelModal";
@@ -10,11 +10,11 @@ import CarouselHotelAvailability from "../Carousel/CarouselHotelAvailability";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 
 import LineDialog from "../../assets/images/others/line-dialogs.png";
-import { ReactComponent as Room } from "../../assets/icons/hotel/modal/room-white.svg";
-import { ReactComponent as Person } from "../../assets/icons/hotel/modal/adult-white.svg";
-import { ReactComponent as Calendar } from "../../assets/icons/hotel/modal/calendar-white.svg";
-import { ReactComponent as IconSuccess } from "../../assets/icons/utils/others/done_active.svg";
-import { ReactComponent as IconRoyalWhite } from "../../assets/icons/hotel/modal/icon-royal-vacations-white.svg";
+import Room from "../../assets/icons/hotel/modal/room-white.svg";
+import Person from "../../assets/icons/hotel/modal/adult-white.svg";
+import Calendar from "../../assets/icons/hotel/modal/calendar-white.svg";
+import IconSuccess from "../../assets/icons/utils/others/done_active.svg";
+import IconRoyalWhite from "../../assets/icons/hotel/modal/icon-royal-vacations-white.svg";
 
 export default function ModalHotelOptions(props) {
   const isMobile = useIsMobile()
@@ -113,13 +113,13 @@ export default function ModalHotelOptions(props) {
   const checkOut = moment(dateFormatCheckOut, "DD/MM/YY");
 
   // REDIRECT PAGE PAYMENT
-  const history = useHistory();
+  // const history = useHistory();
   const handleClickItinerary = () => {
     const uidCart = localStorage.getItem("uid-cart");
     if (uidCart) {
       const { uid } = JSON.parse(uidCart);
       const cartId = uid;
-      history.push(`/booking?uid=${cartId}`);
+      // history.push(`/booking?uid=${cartId}`);
     }
   };
 
@@ -139,7 +139,7 @@ export default function ModalHotelOptions(props) {
         <Row className="container-confirm-cart">
           <Col sm={5} className="divider-success-data">
             <i className="fas fa-icon">
-              <IconRoyalWhite className="icon-royal-modal-options" />
+              <Image src={IconRoyalWhite} alt="IconRoyalWhite" className="icon-royal-modal-options" />
             </i>
 
             <h1 className="alert-body">
@@ -156,17 +156,17 @@ export default function ModalHotelOptions(props) {
 
             {room.slice(0, 5).map((nameRoom, index) => (
               <div key={index} className="text-destination-h">
-                <Room className="icon-destination-h" />
+                <Image src={Room} alt="Room" className="icon-destination-h" />
                 {nameRoom.name}
               </div>
             ))}
 
             <div className="text-destination-f">
-              <Calendar className="icon-destination-h" />
+              <Image src={Calendar} alt="Calendar" className="icon-destination-h" />
               {moment(checkIn).format("DD/MM/YY")} -{" "}
               {moment(checkOut).format("DD/MM/YY")}{" "}
               <div>
-                <Person className="icon-destination-h" />
+                <Image src={Person} alt="Person" className="icon-destination-h" />
                 {totalAdults}{" "}
                 {totalAdults > 1
                   ? languageData.itinerary.hotelItinerary.textAdults
@@ -272,7 +272,7 @@ export default function ModalHotelOptions(props) {
 
                 <div className="container-info-modal-items">
                   <div className="info-modal-cart-items">
-                    <IconSuccess style={{ height: "12px" }} />
+                    <Image src={IconSuccess} alt="IconSuccess" style={{ height: "12px" }} />
                     {languageData.modalHotelOptions.textAlready}
                   </div>
                 </div>

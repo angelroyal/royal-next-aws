@@ -11,10 +11,10 @@ import { DialogSearch } from "../Mobile/Hotel/Listing/DialogSearch";
 // import { calculateNights } from "../../Hotel/Utils/calculateNights";
 import { ParseDateRangeDate } from "../../config/Booking/totalOccupants";
 
-import { ReactComponent as RoomWhite } from "../../assets/icons/hotel/listing/room-white.svg";
-import { ReactComponent as PersonWhite } from "../../assets/icons/hotel/listing/person-white.svg";
-import { ReactComponent as LocationWhite } from "../../assets/icons/hotel/listing/location-white.svg";
-import { ReactComponent as CalendarWhite } from "../../assets/icons/hotel/listing/calendar-white.svg";
+import RoomWhite from "../../assets/icons/hotel/listing/room-white.svg";
+import PersonWhite from "../../assets/icons/hotel/listing/person-white.svg";
+import LocationWhite from "../../assets/icons/hotel/listing/location-white.svg";
+import CalendarWhite from "../../assets/icons/hotel/listing/calendar-white.svg";
 import { DialogFilterHotel } from "../../Hotel/Components/Dialog/DialogFilterHotel";
 import { DialogOrderHotel } from "../../Hotel/Components/Dialog/DialogOrderHotel";
 
@@ -132,12 +132,12 @@ export function BlockBlueHotelListing() {
     <>
       <div className="m-block-blue-data">
         <div className="m-mrg-line">
-          <LocationWhite />
+          <Image src={LocationWhite} alt="LocationWhite" />
           <span className="m-pdg-left">{destination}</span>
         </div>
 
         <div>
-          <CalendarWhite />
+          <Image src={CalendarWhite} />
           <span className="m-pdg-left">
             <ParseDateRangeDate
               validFirstDay={checkIn}
@@ -146,11 +146,11 @@ export function BlockBlueHotelListing() {
           </span>
 
           <span className="m-pdg-icon">
-            <RoomWhite /> {decodedOccupancies.length}
+            <Image src={RoomWhite} alt="RoomWhite" /> {decodedOccupancies.length}
           </span>
 
           <span className="m-pdg-left">
-            <PersonWhite className="m-pdg-left" /> {totalPeople}
+            <Image src={PersonWhite} alt="PersonWhite" className="m-pdg-left" /> {totalPeople}
           </span>
         </div>
       </div>

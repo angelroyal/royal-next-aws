@@ -1,15 +1,16 @@
+import Image from "next/image";
 import { Alert, Snackbar } from "@mui/material";
 import React, { Suspense, lazy, useContext, useEffect, useState } from "react";
 
 import { useCartAxios } from "../../../Cart/CartAxios";
+import { MissingRooms } from "../../../../config/Hotel/ModalHotel";
 import LanguageContext from "../../../../language/LanguageContext";
 import { useShowContentHotel } from "../../../../pages/Modal/ModalHotel";
 import axiosWithInterceptor from "../../../../config/Others/axiosWithInterceptor";
 import { TotalOccupanciesModal } from "../../../../config/Booking/totalOccupants";
 
 import CloseDialogLine from "../../../../assets/images/others/line-close-dialog-w.png";
-import { ReactComponent as IconShowLess } from "../../../../assets/icons/hotel/modal/show_less.svg";
-import { MissingRooms } from "../../../../config/Hotel/ModalHotel";
+import IconShowLess from "../../../../assets/icons/hotel/modal/show_less.svg";
 
 const API_ENDPOINT = `v1/carts/hotel`;
 const ReservationDetailsDialog = lazy(() => import("./ModalHotelDialog"));
@@ -132,8 +133,8 @@ export function ShortInfoHotelModal(props) {
         className="line-open-dialog-hotel"
         onClick={openDialog}
       >
-        <img src={CloseDialogLine} alt="CloseDialogLine" className="line-icon-hotel"/>
-        <IconShowLess className="show-less-icon-hotel" />
+        <Image src={CloseDialogLine} alt="CloseDialogLine" className="line-icon-hotel"/>
+        <Image src={IconShowLess} alt="Icon Show Less" className="show-less-icon-hotel" />
       </div>
       <Suspense fallback={null}>
           <ReservationDetailsDialog

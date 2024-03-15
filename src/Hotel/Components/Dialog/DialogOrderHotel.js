@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { Button, Dialog, Slide } from "@mui/material";
+import Image from "next/image";
 import OrderingHotel from "../Listing/OrderingHotel";
+import { Button, Dialog, Slide } from "@mui/material";
+import React, { useContext, useEffect, useRef } from "react";
 import ListingHotelContext from "../../Context/ListingHotelContext";
 
 import "../../../assets/styles/mobile/DialogSearchHotel.css";
-import { ReactComponent as CloseIcon } from "../../../assets/icons/hotel/modal/close_active.svg";
+import CloseIcon from "../../../assets/icons/hotel/modal/close_active.svg";
 
 const Transition = React.forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -37,7 +38,7 @@ export function DialogOrderHotel(props) {
     >
       <div className="m-component-info-room">
         <Button className="d-flex width100 justify-content-end">
-          <CloseIcon className="close-icon" onClick={onClose} />
+          <Image src={CloseIcon} alt="close icon" className="close-icon" onClick={onClose} />
         </Button>
 
         <div className="container-dialog-order">
