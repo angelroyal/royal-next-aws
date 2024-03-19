@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import LanguageContext from "../../../../language/LanguageContext";
+import "../../../../assets/styles/general/Swiper.css";
 
 
 export default function ShuffleHotel() {

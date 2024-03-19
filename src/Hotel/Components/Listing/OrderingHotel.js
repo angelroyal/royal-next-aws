@@ -17,17 +17,19 @@ export default function OrderingHotel() {
   return (
     <>
       {ordering.items.length > 0 && (
-        <div className="ordering-filter-box border w-fit">
-          <div className="order-title">{languageData.filtersHotel.order}</div>
-          <FormControl sx={{ m: 1, minWidth: 250 }} size="small">
+        // MODIFY TAILWIND LP
+        <div className="border w-fit rounded-lg flex flex-col py-[8px] px-[16px] w-[164px] h-[48px]">
+          <div className="m-m text-gry-100 text-fs-10">{languageData.filtersHotel.order}</div>
+          <FormControl sx={{ minWidth: 115 }} size="small" className="!p-0">
             <Select
-              labelId="ordering-filters"
+            className="!text-fs-12 !m-0 !w-[115px] !p-0"
+              // labelId="ordering-filters"
               id="ordering-filters-select"
               value={orderHotel}
               onChange={handleOrderingFilters}
             >
               {ordering.items.map((item, index) => (
-                <MenuItem key={`selector_item_${index}`} value={item.value}>
+                <MenuItem key={`selector_item_${index}`} value={item.value} className="!p-0">
                   {languageData.orderByHotel[item.label]}
                 </MenuItem>
               ))}

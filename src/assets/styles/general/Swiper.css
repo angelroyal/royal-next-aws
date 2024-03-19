@@ -1,0 +1,20 @@
+/* ROYAL NEXT STYLE */
+
+/* Agregar estilos personalizados */
+.swiper-pagination-bullet-active {
+    background: #ff8637 !important;
+  }
+#card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: white !important;
+    width: 6px !important;
+    height: 6px !important;
+    margin: 5px !important;
+  }
+  
+  #card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span {
+    margin:5px  !important;
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  /*END ROYAL NEXT STYLE */
