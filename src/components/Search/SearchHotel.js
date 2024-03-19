@@ -164,9 +164,9 @@ function SearchDestination(props) {
               }}
             >
               {params.group === "Destinos" ? (
-                <Image src={IconLocation} style={{ marginRight: "8px" }} />
+                <Image src={IconLocation} alt="IconLocation" style={{ marginRight: "8px" }} />
               ) : (
-                <Image src={Hotels} style={{ marginRight: "8px" }} />
+                <Image src={Hotels} alt="Hotels" style={{ marginRight: "8px" }} />
               )}
               <Typography variant="subtitle1">{params.group}</Typography>
             </ListSubheader>

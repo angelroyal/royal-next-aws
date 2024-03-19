@@ -106,7 +106,7 @@ export default function ListingHotelW(props) {
       <Row className="display-flex-center">
         <Col sm={3}>
           <h1 className="hotel-title-filters" data-aos="fade-right">
-            <Image className="me-5" src={IconBanner} />
+            <Image className="me-5" src={IconBanner} alt="IconBanner" />
             {languageData.filtersHotel.titleFilter}
           </h1>
 

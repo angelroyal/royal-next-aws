@@ -16,7 +16,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.message === "CUB" && (
         <div className="alert-pay-declined">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} /> {languageData.alertsPayment.declined}
+            <Image src={MarkDeclined} alt="MarkDeclined" /> {languageData.alertsPayment.declined}
           </div>
 
           <div className="alert-subtext-declined">
@@ -29,7 +29,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.message === "UAH" && (
         <div className="alert-unavailable-data">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} />{" "}
+            <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.unavailable}
           </div>
 
@@ -44,7 +44,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.message === "PHC" && (
         <div className="alert-unavailable-data">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} /> {languageData.alertsPayment.alertPrice}
+            <Image src={MarkDeclined} alt="MarkDeclined" /> {languageData.alertsPayment.alertPrice}
           </div>
 
           <div className="alert-subtext-declined">
@@ -56,7 +56,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.message === "MPE" && (
         <div className="alert-amount-exceeded">
           <div className="alert-text-amount">
-            <Image src={MarkDeclined} />
+            <Image src={MarkDeclined} alt="MarkDeclined"/>
             {languageData.alertsPayment.alertAmount}
           </div>
 
@@ -69,7 +69,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.message === "PEC" && (
         <div className="alert-unavailable-data">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} />{" "}
+            <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertPassengers}
           </div>
 
@@ -83,7 +83,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.status === 500 && (
         <div className="alert-pay-declined">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} />{" "}
+            <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertGeneral}
           </div>
 
@@ -97,7 +97,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.status === 402 && (
         <div className="alert-pay-declined">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} />{" "}
+            <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertGeneral}
           </div>
 
@@ -111,7 +111,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.status === 400 && (
         <div className="alert-pay-declined">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} />{" "}
+            <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertGeneral}
           </div>
 
@@ -123,7 +123,7 @@ export default function AlertTextBooking(props) {
       {showAlert && showAlert.object === "error" && (
         <div className="alert-unavailable-data">
           <div className="alert-text-declined">
-            <Image src={MarkDeclined} />{" "}
+            <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.dataIncorrect}
           </div>
           <div className="alert-subtext-declined">

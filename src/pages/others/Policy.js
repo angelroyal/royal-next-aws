@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import "../../assets/styles/web/About.css";
-import MetaPolicy from "../../components/Meta/MetaPolicy";
+// import MetaPolicy from "../../components/Meta/MetaPolicy";
+// PENDING
 import SkeletonPolicy from "../../utils/skeleton/SkeletonPolicy";
 import { scrollToTop, ScrollButton } from "../../utils/pageConfig/scrollToTop";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
@@ -54,7 +55,7 @@ export default function Policy() {
 
   return (
     <>
-      <MetaPolicy />
+      {/* <MetaPolicy /> */}
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
       <ScrollButton/>

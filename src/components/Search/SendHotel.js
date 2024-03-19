@@ -114,7 +114,7 @@ export default function SendHotel() {
             <DialogConfigSearchHotel destinationSelected={setSelectedOption} />
           ) : (
             <>
-              <Image className="icon-location-home" src={RoomOutlinedIcon} />
+              <Image className="icon-location-home" src={RoomOutlinedIcon} alt="RoomOutlinedIcon" />
               <SearchHotel onSelectSearch={setSelectedOption} />
             </>
           )}
@@ -132,7 +132,7 @@ export default function SendHotel() {
             />
           ) : (
             <>
-              <Image className="icon-date-home" src={DateRangeIcon} />
+              <Image className="icon-date-home" src={DateRangeIcon} alt="DateRangeIcon" />
               <Calendar onDateChange={handleDateChange} />
             </>
           )}

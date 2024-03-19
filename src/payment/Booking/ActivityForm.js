@@ -42,28 +42,27 @@ export const ActivityForm = (props) => {
   const handleSubmit = () => {
     let required = true;
     let auxFormArrayActivityItems = [...formArrayActivityItems];
-    // console.log(combinedActivity);
+
+    console.log(combinedActivity);
+    console.log(formData);
+
     Object.entries(combinedActivity.details).forEach(
       ([keyDetail, itemDetail]) => {
-        const resultadoFiltrado = formData.filter(
-          (objeto) => objeto.id === itemDetail.id
+        const resultadoFiltrado = formData.find(
+          (objeto) => objeto && objeto.id === itemDetail.id
         );
-        if (resultadoFiltrado.length === 0) {
-          if (itemDetail.required === true) {
+        if (resultadoFiltrado) {
+          if (itemDetail.required && resultadoFiltrado.value === "") {
             required = false;
           }
         } else {
-          if (itemDetail.required === true) {
-            if (resultadoFiltrado[0].value === "") {
-              required = false;
-            }
+          if (itemDetail.required) {
+            required = false;
           }
         }
       }
     );
 
-    // console.log(index);
-    // console.log(auxFormArrayActivityItems);
     auxFormArrayActivityItems[index].details = formData;
     auxFormArrayActivityItems[index].required = required;
     setFormArrayActivityItems(auxFormArrayActivityItems);

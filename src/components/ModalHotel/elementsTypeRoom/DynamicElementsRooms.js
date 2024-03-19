@@ -80,7 +80,7 @@ export function MinPriceRoom(props) {
     >
       <div className="room-option-divider">
         <div className="container-info-room">
-          <Image src={Person2OutlinedIcon} />
+          <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" />
           {/* Room information for how many adults and children */}
           <div className="divider-info-person">
             {`${parseInt(room.adultChildren.split(".")[0])} ${
@@ -101,7 +101,7 @@ export function MinPriceRoom(props) {
         {/* Bed information  */}
 
         <div className="container-info-room">
-          <Image src={BedSharpIcon} />
+          <Image src={BedSharpIcon} alt="BedSharpIcon" />
           <div>
             {room.beds && room.beds.length > 0 ? (
               room.beds.map((bed, index) => (
@@ -120,7 +120,7 @@ export function MinPriceRoom(props) {
 
       <div className="room-second-divider">
         <div className="distinguished-svg">
-          <Image className="icon-low-price-modal" src={LowPrice} />
+          <Image className="icon-low-price-modal" src={LowPrice} alt="LowPrice" />
         </div>
 
         <div>
@@ -261,7 +261,7 @@ export function MaxPriceRoom(props) {
     >
       <div className="room-option-divider">
         <div className="container-info-room">
-        <Image src={Person2OutlinedIcon} />
+        <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" />
           <div className="divider-info-person">
             {`${parseInt(room.adultChildren.split(".")[0])} ${
               parseInt(room.adultChildren.split(".")[0]) > 1
@@ -280,7 +280,7 @@ export function MaxPriceRoom(props) {
         </div>
 
         <div className="container-info-room">
-          <Image src={BedSharpIcon} />
+          <Image src={BedSharpIcon} alt="BedSharpIcon" />
           <div>
             {room.beds && room.beds.length > 0 ? (
               room.beds.map((bed, index) => (
@@ -463,7 +463,7 @@ export function IndividualPriceRoom(props) {
     >
       <div className="room-individual-h">
         <div className="container-info-room">
-        <Image src={Person2OutlinedIcon} />
+        <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" />
           {/* Room information for how many adults and children */}
           <div className="divider-info-person">
             {`${parseInt(room.adultChildren.split(".")[0])} ${
@@ -484,7 +484,7 @@ export function IndividualPriceRoom(props) {
         {/* Bed information  */}
 
         <div className="container-info-room">
-          <Image src={BedSharpIcon} />
+          <Image src={BedSharpIcon} alt="BedSharpIcon" />
           <div>
             {room.beds && room.beds.length > 0 ? (
               room.beds.map((bed, index) => (
@@ -503,7 +503,7 @@ export function IndividualPriceRoom(props) {
 
       <div className="room-second-individual">
         <div className="distinguished-svg-individual">
-          <Image className="icon-low-price-modal" src={LowPrice} />
+          <Image className="icon-low-price-modal" src={LowPrice} alt="LowPrice" />
         </div>
 
         <div>

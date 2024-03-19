@@ -1,4 +1,5 @@
 // import { useHistory } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState, useContext } from "react";
 
 import CartTour from "./CartTour";
@@ -11,14 +12,13 @@ import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg
 import Image from "next/image";
 
 export default function CartGet({ onCloseMenu }) {
+  const router = useRouter();
   const [cartUid, setCartUid] = useState(null);
   const { cartData, fetchData, totalPrice } = useCartAxios();
   const { languageData } = useContext(LanguageContext);
   const [cartInfo, setCartInfo] = useState(
     cartData && cartData.cartItems ? cartData.cartItems : null
   );
-
-  // console.log("Holaaa", totalPrice);
 
   // OBTAIN UID CART
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function CartGet({ onCloseMenu }) {
     if (uidCart) {
       const { uid } = JSON.parse(uidCart);
       const cartId = uid;
-      // history.push(`/booking?uid=${cartId}`);
+      router.push(`/booking?uid=${cartId}`);
       onCloseMenu();
     }
   };
@@ -123,10 +123,7 @@ export default function CartGet({ onCloseMenu }) {
       {!cartInfo && (
         <>
           {/* <IconRoyal className="margin-top" /> */}
-          <Image
-          src={IconRoyal}
-          className="margin-top"
-          />
+          <Image src={IconRoyal} className="margin-top" alt="IconRoyal" />
           <h2 className="cart-no-show">{languageData.cart.subtitleBooking}</h2>
           <p className="cart-no-text padding-bottom">
             {languageData.cart.textMessage}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import MetaPrivacy from "../../components/Meta/MetaPrivacy";
+// import MetaPrivacy from "../../components/Meta/MetaPrivacy";
+// PENDING
 import SkeletonText from "../../utils/skeleton/SkeletonText";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { ScrollButton, scrollToTop } from "../../utils/pageConfig/scrollToTop";
@@ -49,7 +50,7 @@ export default function Privacy() {
 
   return (
     <>
-      <MetaPrivacy />
+      {/* <MetaPrivacy /> */}
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
       <ScrollButton/>

@@ -1,4 +1,5 @@
 import moment from "moment";
+import Image from "next/image";
 import Lottie from "lottie-react";
 import { Row, Col } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
@@ -11,8 +12,8 @@ import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import animationData from "../../assets/animations/animated-page-transitions.json";
 
-import { ReactComponent as DateRangeIcon } from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import DateRangeIcon from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
+import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 const API_POST = `v1/hotels/availability?order-by=1`;
 
@@ -106,7 +107,7 @@ export default function ResultHotel() {
     <>
       <Row className="row-home-search">
         <Col sm={4} className="styles-input-location-search">
-          <RoomOutlinedIcon className="icon-location-home"/>
+          <Image src={RoomOutlinedIcon} alt="RoomOutlinedIcon" className="icon-location-home"/>
           <span className="span-location-home-r">
             {languageData.SearchBox.tabHotel.autocomplete}
           </span>
@@ -114,7 +115,7 @@ export default function ResultHotel() {
         </Col>
 
         <Col sm={3} className="margin-mobile-search">
-          <DateRangeIcon className="icon-date-home" />
+          <Image src={DateRangeIcon} alt="DateRangeIcon" className="icon-date-home" />
           <span className="span-date-home-r">
             {languageData.SearchBox.tabHotel.date}
           </span>

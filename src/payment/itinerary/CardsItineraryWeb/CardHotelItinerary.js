@@ -80,7 +80,7 @@ export default function CardHotelItinerary(props) {
   return (
     <>
       <div className="cont-card-icon-location-and-date">
-        <Image className="icon-location-border-date" src={IconLocationBorder} />
+        <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder"/>
         <div className="container-card-hotel-i-and-date">
           {/* DAY,TIME HOTEL */}
           <div className="date-itinerary-hotel">

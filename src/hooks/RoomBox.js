@@ -34,12 +34,12 @@ function Room({ OnApply }) {
           className="dropdown-room"
         >
           <span style={{ padding: "0 10px" }}>
-            <Image className="icon-room-search" src={BedSharpIcon} />
+            <Image className="icon-room-search" src={BedSharpIcon} alt="BedSharpIcon" />
             <span className="room-capacity">{totalRooms}</span>
           </span>{" "}
           <span style={{ padding: "0 10px" }}>|</span>
           <span className="person-search" style={{ padding: "0 10px" }}>
-            <Image className="icon-person-search" src={Person2OutlinedIcon} />
+            <Image className="icon-person-search" src={Person2OutlinedIcon} alt="Person2OutlinedIcon" />
             <span className="room-capacity">{totalPeople}</span>
           </span>
         </Dropdown.Toggle>

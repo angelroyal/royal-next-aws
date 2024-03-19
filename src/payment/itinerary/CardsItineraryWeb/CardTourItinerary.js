@@ -75,7 +75,7 @@ export default function TourCardItinerary({ itemActivity }) {
     itemActivity && (
       <>
         <div className="father-tour-card-i">
-          <Image className="icon-location-border" src={IconLocationBorder} />
+          <Image className="icon-location-border" src={IconLocationBorder} alt="IconLocationBorder" />
 
           <div className="father-container-tour-i">
             <div className="date-itinerary">
@@ -95,7 +95,7 @@ export default function TourCardItinerary({ itemActivity }) {
                 onClick={() => setIsRemove(true)}
               >
                 
-                <Image src={CloseIcon} />
+                <Image src={CloseIcon} alt="CloseIcon" />
               </div>
 
               {!isMobile && (
@@ -128,6 +128,7 @@ export default function TourCardItinerary({ itemActivity }) {
                             <Image
                               className="icons-size-m"
                               src={LocationIcon}
+                              alt="LocationIcon"
                             />
                           </div>
 
@@ -168,7 +169,7 @@ export default function TourCardItinerary({ itemActivity }) {
                     <div className="cont-name-location-tour">
                       <div className="d-flex d-grid gap-2 icon-location-and-text">
                         <div>
-                          <Image className="icons-size-m" src={LocationIcon} />
+                          <Image className="icons-size-m" src={LocationIcon} alt="LocationIcon" />
                         </div>
 
                         <span>{itemActivity.address}</span>

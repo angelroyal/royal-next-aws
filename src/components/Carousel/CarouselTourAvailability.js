@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Autoplay, Pagination } from "swiper";
 import { Card, Row, Col } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,7 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
-import { ReactComponent as DemandIcon } from "../../assets/icons/hotel/listing/on-high-demand.svg";
+import DemandIcon from "../../assets/icons/hotel/listing/on-high-demand.svg";
 
 export default function CarouselTourAvailability() {
   const [destinations, setDestinations] = useState([]);
@@ -88,7 +89,7 @@ export default function CarouselTourAvailability() {
                 {destination.isTop === true ? (
                   <div className="container-exclusiveDeal-preview">
                     <span>
-                      <DemandIcon className="" />
+                      <Image src={DemandIcon} alt="DemandIcon" className="" />
                     </span>
 
                     {languageData.cardHotel.label}

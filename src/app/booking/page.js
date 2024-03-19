@@ -14,6 +14,7 @@ export default function Home() {
       <TokenProvider>
         <CartAxiosProvider>
           <Token />
+          <Navigation/>
           <Payment/>
         </CartAxiosProvider>
       </TokenProvider>

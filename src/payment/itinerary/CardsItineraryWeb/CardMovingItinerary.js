@@ -1,13 +1,15 @@
 import moment from "moment";
+import Image from "next/image";
 import { Card } from "@mui/material";
 import React, { useContext } from "react";
 import { Row, Col } from "react-bootstrap";
 
 import LanguageContext from "../../../language/LanguageContext";
+
 import ImageLine from "../../../assets/images/itinerary/itinerary-250.svg";
 import ImageTransports from "../../../assets/images/itinerary/itinerary-transfer.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
-import { ReactComponent as Person2OutlinedIcon } from "../../../assets/icons/utils/searchBox/person-autocomplete.svg";
+import RoomOutlinedIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import Person2OutlinedIcon from "../../../assets/icons/utils/searchBox/person-autocomplete.svg";
 
 export default function CardMovingItinerary(props) {
   const { itemMoving } = props;
@@ -97,14 +99,14 @@ export default function CardMovingItinerary(props) {
                 </div>
 
                 <div className="itinerary-location padding-bottom">
-                  <RoomOutlinedIcon />
+                  <Image src={RoomOutlinedIcon} alt="RoomOutlinedIcon" />
                   <div className="text-info-itinerary p-icon-left">
                     {languageData.itinerary.movingItinerary.textAirport}
                   </div>
                 </div>
 
                 <div className="people-card-itinerary">
-                  <Person2OutlinedIcon />
+                  <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" />
                   <div className="info-people-moving-itinerary">
                     {languageData.itinerary.movingItinerary.textPassengers}{" "}
                     {itemMoving.passengers}

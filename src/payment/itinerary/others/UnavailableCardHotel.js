@@ -1,5 +1,5 @@
 import React, { useState,useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 // import ModalHotel from "../../../pages/Modal/ModalHotel";
 import LanguageContext from "../../../language/LanguageContext";
@@ -12,7 +12,7 @@ export default function UnavailableCardHotel(props) {
   const { destination } = props;
   // console.log(destination);
   const roomData = [{ adults: 2, children: [] }];
-  const history = useHistory();
+  const router = useRouter();
   const { fetchData } = useCartAxios();
   const [fetchSend, setFetchSend] = useState(false);
 
@@ -42,7 +42,7 @@ export default function UnavailableCardHotel(props) {
     const query = new URLSearchParams(requestBody).toString();
 
     setTimeout(() => {
-      history.push(`/resultHotel?${query}`);
+      router.push(`/resultHotel?${query}`);
     }, 1200);
   };
 

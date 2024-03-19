@@ -9,7 +9,8 @@ import { FaqsMobile, FaqsWeb } from "./Faqs";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
 import { SkeletonFaqs } from "../../utils/skeleton/SkeletonFaqs";
-import MetaFrequentQuestions from "../../components/Meta/MetaFrequentQuestions";
+// import MetaFrequentQuestions from "../../components/Meta/MetaFrequentQuestions";
+// PENDING
 
 export default function FrequentQuestions() {
   const { languageData } = useContext(LanguageContext);
@@ -47,7 +48,7 @@ export default function FrequentQuestions() {
       {showSkeletonFaqs && <SkeletonFaqs />}
       {showFaqs && (
         <>
-          <MetaFrequentQuestions />
+          {/* <MetaFrequentQuestions /> */}
           <div className="container">
             <BannerFaqsTop />
             <h1 className="title-popular-faqs">
