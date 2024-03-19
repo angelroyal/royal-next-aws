@@ -1,25 +1,49 @@
 import React from 'react'
-import { Rating } from "@mui/material";
 import Image from 'next/image';
+import { Rating } from "@mui/material";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+// import "./styles.css";
 
 export default function CardHotelT() {
     return (
         //NEW CARD HOTEL TAILWIND /LP
+
         <div className='flex border border-gry-50 rounded mb-[10px] bg-white w-full h-[219px] gap-2'>
+
             {/* IMAGE CARD HOTEL */}
             <div className='w-[30%]'>
-                <img
-                    className="w-full h-full object-cover rounded-l-md"
-                    src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
-                    alt="card"
-                />
+                <Swiper
+                    // spaceBetween={30}
+                    slidesPerView={1}
+                    loop={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination]}
+                    className='!h-full !rounded-l-lg'
+                >
+                    {[...Array(3)].map((_, index) => (
+                        <SwiperSlide>
+                            <img
+                                key={index}
+                                className="w-full h-full object-cover rounded-l-md"
+                                src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
+                                alt="card"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
 
             <div className='w-[70%] p-[20px]'>
                 {/* NAME AND STARS HOTEL */}
                 <div>
                     <h2 className='text-fs-16 m-b mb-0'>Microtel inn and suites By Wyndham Culiacan</h2>
-                    <Rating name="read-only" value={5} readOnly size="small" className='!text-fs-12'/>
+                    <Rating name="read-only" value={5} readOnly size="small" className='!text-fs-12' />
                 </div>
 
                 <div className='flex'>
