@@ -17,7 +17,7 @@ export default function OrderingHotel() {
   return (
     <>
       {ordering.items.length > 0 && (
-        <div className="ordering-filter-box">
+        <div className="ordering-filter-box border w-fit">
           <div className="order-title">{languageData.filtersHotel.order}</div>
           <FormControl sx={{ m: 1, minWidth: 250 }} size="small">
             <Select

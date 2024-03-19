@@ -103,7 +103,7 @@ export default function ListingHotelW(props) {
 
   return (
     <Container>
-      <BannerListingHotelTop />
+      {/* <BannerListingHotelTop /> */}
       <Row className="display-flex-center">
         <Col sm={3}>
           <h1 className="hotel-title-filters" data-aos="fade-right">
