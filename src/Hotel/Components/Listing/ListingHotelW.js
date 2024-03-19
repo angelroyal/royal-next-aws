@@ -23,6 +23,7 @@ import {
 
 import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
 import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
+import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
@@ -132,6 +133,7 @@ export default function ListingHotelW(props) {
 
               {/* ORDER */}
               <OrderingHotel />
+              <CardHotelT />
 
               {/* CARD */}
               {combinedHotelData &&

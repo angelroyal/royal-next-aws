@@ -109,6 +109,7 @@ export default function ListingHotelM(props) {
             {/* HOTEL CARD */}
             {combinedHotelData &&
               combinedHotelData.map((hotel, index) => (
+                
                 <HotelCard
                   key={index}
                   index={index}

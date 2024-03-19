@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext, useState, useEffect } from "react";
 
 import {
@@ -9,14 +11,15 @@ import { FaqsMobile, FaqsWeb } from "./Faqs";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
 import { SkeletonFaqs } from "../../utils/skeleton/SkeletonFaqs";
+import { Container } from "@/config/Others/Container";
+
 // import MetaFrequentQuestions from "../../components/Meta/MetaFrequentQuestions";
-// PENDING
 
 export default function FrequentQuestions() {
   const { languageData } = useContext(LanguageContext);
 
-  const isMobile = useIsMobile()
-  
+  const isMobile = useIsMobile();
+
   const [showSkeletonFaqs, setShowSkeletonFaqs] = useState(true);
   const [showFaqs, setShowFaqs] = useState(false);
 
@@ -37,37 +40,38 @@ export default function FrequentQuestions() {
   };
 
   useEffect(() => {
-      setTimeout(()=>{
-        setShowFaqs(true)
-        setShowSkeletonFaqs(false)
-      },2000);
-    })
-    
+    setTimeout(() => {
+      setShowFaqs(true);
+      setShowSkeletonFaqs(false);
+    }, 2000);
+  });
+
   return (
     <>
       {showSkeletonFaqs && <SkeletonFaqs />}
       {showFaqs && (
-        <>
+        <Container>
           {/* <MetaFrequentQuestions /> */}
-          <div className="container">
-            <BannerFaqsTop />
-            <h1 className="title-popular-faqs">
-              {languageData.faqs.titleFaqs}
-            </h1>
-            <div className="text-subtitle-faqs">
-              {languageData.faqs.textFaqs}
-            </div>
-
-            {
-              isMobile ? <FaqsMobile setOpenSection={setOpenSection} openSection={openSection} activeKey={activeKey} handleAccordionClick={handleAccordionClick}/> : <FaqsWeb setOpenSection={setOpenSection} openSection={openSection} activeKey={activeKey} handleAccordionClick={handleAccordionClick}/>
-            }
-
-            <BannerFaqsDown />
+          <BannerFaqsTop />
+          <h1 className="m-b text-fs-20 md:text-[2rem] mt-[1rem]">
+            {languageData.faqs.titleFaqs}
+          </h1>
+          <div className="m-m text-fs-15 md:text-[1rem] pb-[2.5rem]">
+            {languageData.faqs.textFaqs}
           </div>
-        </>
+
+          
+
+          <FaqsWeb
+            setOpenSection={setOpenSection}
+            openSection={openSection}
+            activeKey={activeKey}
+            handleAccordionClick={handleAccordionClick}
+          />
+
+          <BannerFaqsDown />
+        </Container>
       )}
     </>
   );
 }
-
-

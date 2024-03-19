@@ -1,10 +1,9 @@
-import BannerFaqs from "../../assets/images/banners/others/banner-faq.webp";
 import BannerTourH from "../../assets/images/banners/tour/safe_travel.webp";
 // import BannerTourH from "../../assets/images/banners/tour/tour_banner.webp";
 import BannerHotelH from "../../assets/images/banners/hotel/banner_hotel.webp";
 import BannerHotelHMobile from "../../assets/images/banners/hotel/banner-hotel-movil.webp";
 import BannerTourP from "../../assets/images/banners/tour/tour_royal_banner.webp";
-import BannerFaqHelp from "../../assets/images/banners/others/banner-faq-help.webp";
+// import BannerFaqHelp from "../../assets/images/banners/others/banner-faq-help.webp";
 import BannerHotelC from "../../assets/images/banners/hotel/banner-card-hotel.webp";
 import MBannerHotelC from "../../assets/images/banners/hotel/m-banner-card-hotel.webp";
 import BannerAboutUs from "../../assets/images/banners/others/banner-about-us.webp";
@@ -140,12 +139,12 @@ export const Transfer = {
 
 export const Others = {
   bannerFqs: {
-    image: BannerFaqs,
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/banner-faq.webp`,
     alt: "altFaqs",
     title: "titleFaqs",
   },
   bannerHelp: {
-    image: BannerFaqHelp,
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/banner-faq-help.webp`,
     alt: "altFaqHelp",
     title: "titleFaqHelp",
     paragraph: "subtitleFaqHelp",
