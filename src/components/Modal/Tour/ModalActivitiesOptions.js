@@ -1,26 +1,28 @@
+import Image from "next/image";
 import React, { useContext, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useRouter } from "next/navigation";
 
 import LanguageContext from "../../../language/LanguageContext";
 import { TopActivities } from "../../../utils/tour/TopActivities";
-import { useTourContext } from "../../../tour/Context/ListingTourContext";
+// import { useTourContext } from "../../../tour/Context/ListingTourContext";
+// PENDING
 
-import { ReactComponent as IconSuccess } from "../../../assets/icons/utils/others/done_active.svg";
-import { ReactComponent as IconRoyalWhite } from "../../../assets/icons/hotel/modal/icon-royal-vacations-white.svg";
+import IconSuccess from "../../../assets/icons/utils/others/done_active.svg";
+import IconRoyalWhite from "../../../assets/icons/hotel/modal/icon-royal-vacations-white.svg";
 
 export default function ModalActivitiesOptions(props) {
   const { tourInfo, tourPrice } = useTourContext();
   const { languageData } = useContext(LanguageContext);
 
-  const history = useHistory();
+  const router = useRouter();
   
   const handleClickItinerary = () => {
     const cardId = localStorage.getItem("uid-cart");
     if (cardId) {
       const { uid } = JSON.parse(cardId);
       const cartId = uid;
-      history.push(`/booking?uid=${cartId}`);
+      router.push(`/booking?uid=${cartId}`);
     }
   };
 
@@ -34,7 +36,7 @@ export default function ModalActivitiesOptions(props) {
         <Row className="container-confirm-cart">
           <Col sm={5} className="divider-success-data">
             <i className="fas fa-icon">
-              <IconRoyalWhite className="icon-royal-modal-options" />
+              <Image src={IconRoyalWhite} alt="IconRoyalWhite" className="icon-royal-modal-options" />
             </i>
 
             <h1 className="alert-body">
@@ -67,7 +69,7 @@ export default function ModalActivitiesOptions(props) {
           <h1 className="title-section-hotel">{tourInfo.address}</h1>
 
           <span className="info-modal-cart-items">
-            <IconSuccess style={{ height: "12px" }} />{" "}
+            <Image src={IconSuccess} alt="IconSuccess" style={{ height: "12px" }} />{" "}
             {languageData.modalTourOptions.textAlready}
           </span>
         </div>

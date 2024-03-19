@@ -251,7 +251,7 @@ export default function Payment() {
             // width="auto"
             // height="auto"
             src={Logo}
-            alt="Logo name Royal"
+            alt=" name Royal"
           />
           <h2 className="itinerary-no-show">
             Ups... ocurrió un problema con tu itinerario.

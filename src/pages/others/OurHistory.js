@@ -4,7 +4,8 @@ import { Row, Col } from "react-bootstrap";
 import { CartHistoryW, CardsHistoryM } from "./CartsHistory";
 import CardCarousel from "../../utils/hotel/CardCarousel";
 import { useIsMobile } from "../../config/Mobile/isMobile";
-import MetaHistory from "../../components/Meta/MetaHistory";
+// import MetaHistory from "../../components/Meta/MetaHistory";
+// PENDING
 import LanguageContext from "../../language/LanguageContext";
 import { BannerAboutUs } from "../../components/bannerJsx/bannerAboutUs";
 
@@ -15,7 +16,7 @@ export default function OurHistory() {
   const isMobile = useIsMobile();
   return (
     <>
-      <MetaHistory />
+      {/* <MetaHistory /> */}
       <div className="container padding-container-about">
         <BannerAboutUs />
 

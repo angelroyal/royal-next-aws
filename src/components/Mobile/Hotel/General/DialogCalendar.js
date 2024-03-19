@@ -64,11 +64,11 @@ export default function OpenDialogCalendar(props) {
       <div className="m-component-info dialog-container">
         <div className="m-calendar-input ps-4 pe-4">
           <Button className="d-flex width100 justify-content-end">
-            <Image className="close-icon" onClick={onClose} src={CloseIcon} />
+            <Image className="close-icon" onClick={onClose} src={CloseIcon} alt="CloseIcon"/>
           </Button>
 
           <div className="m-input-search-hotel d-flex gap-1 align-items-center mt-3 mb-3">
-            <Image className="icon-room-search" src={DateRangeIcon} />
+            <Image className="icon-room-search" src={DateRangeIcon} alt="DateRangeIcon" />
             <span
               className={
                 validFirstDay && validSecondDay

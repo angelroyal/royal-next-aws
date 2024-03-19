@@ -51,7 +51,7 @@ function RoomUpdate({ OnApply }) {
             |
           </span>
           <span className="styles-rooms-update" style={{ padding: "0 10px" }}>
-            <Image src={Person2OutlinedIcon} className="margin-right-icon" />
+            <Image src={Person2OutlinedIcon} className="margin-right-icon" alt="Person2OutlinedIcon"/>
             {isMobile ? (
               totalPeople
             ) : (
@@ -74,7 +74,7 @@ function RoomUpdate({ OnApply }) {
             |
           </span>
           <span className="styles-rooms-update" style={{ padding: "0 10px" }}>
-            <Image src={BedSharpIcon} className="margin-right-icon" /> {totalRooms}{" "}
+            <Image src={BedSharpIcon} className="margin-right-icon" alt="BedSharpIcon" /> {totalRooms}{" "}
             {isMobile
               ? ""
               : totalRooms > 1

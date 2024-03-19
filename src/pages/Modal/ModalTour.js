@@ -7,12 +7,13 @@ import React, {
   useRef,
 } from "react";
 
-import MetaModalT from "../../components/Meta/MetaModalT";
+// import MetaModalT from "../../components/Meta/MetaModalT";
 import SkeletonModal from "../../utils/skeleton/SkeletonModal";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import ModalInformationTour from "../../components/Tour/ModalInformationTour";
-import ModalActivitiesOptions from "../../components/Modal/Tour/ModalActivitiesOptions";
-
+// import ModalInformationTour from "../../components/Tour/ModalInformationTour";
+// PENDING
+// import ModalActivitiesOptions from "../../components/Modal/Tour/ModalActivitiesOptions";
+// PENDING
 
 const ShowContentContext = createContext();
 export const useShowContentTour = () => useContext(ShowContentContext);
@@ -64,7 +65,6 @@ export default function ModalTour(props) {
 
   return (
     <>
-      <MetaModalT />
       <ShowContentContext.Provider value={{ showContent, setShowContent }}>
         <Modal
           show={show}
@@ -80,7 +80,7 @@ export default function ModalTour(props) {
                   {tourModal && tourModal ? (
                     <>
                       {/* <GalleryTour tourModal={tourModal.data} /> */}
-                      <ModalInformationTour tourModal={tourModal.data} />
+                      {/* <ModalInformationTour tourModal={tourModal.data} /> */}
                     </>
                   ) : (
                     <SkeletonModal />
@@ -89,9 +89,9 @@ export default function ModalTour(props) {
               </Modal.Body>
             ) : showContent === 2 ? (
               <Modal.Body ref={modalBodyRef}>
-                {tourModal && (
+                {/* {tourModal && (
                   <ModalActivitiesOptions tourModal={tourModal.data} />
-                )}
+                )} */}
               </Modal.Body>
             ) : null}
           </>

@@ -27,7 +27,7 @@ export default function CardHotelConfirmation(props) {
 
   return (
     <div className="cont-card-icon-location-and-date">
-      <Image className="icon-location-border-date" src={IconLocationBorder} />
+      <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder" />
 
       <div className="container-card-hotel-i-and-date">
         {/* DAY,TIME HOTEL */}
@@ -88,7 +88,7 @@ export default function CardHotelConfirmation(props) {
                   </div>
 
                   <div className="icon-location-and-text d-flex gap-2">
-                    <Image className="icons-size-m" src={LocationIcon}/>
+                    <Image className="icons-size-m" src={LocationIcon} alt="LocationIcon"/>
 
                     <span>{itemHotel.address}</span>
                   </div>
@@ -109,7 +109,7 @@ export default function CardHotelConfirmation(props) {
                     </div>
 
                     <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                      <Image className="icons-size-m" src={RoomIcon} />
+                      <Image className="icons-size-m" src={RoomIcon}  alt="RoomIcon"/>
 
                       <span>
                         {itemHotel.totalRooms}{" "}
@@ -156,7 +156,7 @@ export default function CardHotelConfirmation(props) {
               </div>
 
               <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                <Image className="icons-size-m" src={RoomIcon} />
+                <Image className="icons-size-m" src={RoomIcon} alt="RoomIcon" />
 
                 <span>{itemHotel.totalRooms} Habitaciones</span>
               </div>
@@ -241,7 +241,9 @@ export default function CardHotelConfirmation(props) {
                                       <Image
                                         lassName="icons-size-m"
                                         src={RoomIcon}
-                                      />{" "}
+
+alt="RoomIcon"
+/>{" "}
                                       <span className="text-grey-card-hotel-i">
                                         {bed.number} {bed.type}
                                       </span>
@@ -254,6 +256,7 @@ export default function CardHotelConfirmation(props) {
                                     <Image
                                       className="icons-size-s"
                                       src={ErrorIcon}
+                                      alt="ErrorIcon"
                                     />
 
                                     <span className="text-grey-card-hotel-i">
@@ -268,6 +271,7 @@ export default function CardHotelConfirmation(props) {
                                     <Image
                                       className="icons-size-s"
                                       src={DoneIcon}
+                                      alt="DoneIcon"
                                     />
 
                                     <span className="text-grey-card-hotel-i">
@@ -281,6 +285,7 @@ export default function CardHotelConfirmation(props) {
                                     <Image
                                       className="icons-size-s"
                                       src={DoneIcon}
+                                      alt="DoneIcon"
                                     />
                                     <span className="text-all-inclusive-i">
                                       {roomBed.food}

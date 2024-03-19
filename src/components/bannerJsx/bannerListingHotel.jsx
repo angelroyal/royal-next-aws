@@ -137,7 +137,7 @@ export function BlockBlueHotelListing() {
         </div>
 
         <div>
-          <Image src={CalendarWhite} />
+          <Image src={CalendarWhite} alt="CalendarWhite"/>
           <span className="m-pdg-left">
             <ParseDateRangeDate
               validFirstDay={checkIn}

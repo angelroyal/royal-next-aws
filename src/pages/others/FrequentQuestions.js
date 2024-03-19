@@ -53,28 +53,14 @@ export default function FrequentQuestions() {
         <Container>
           {/* <MetaFrequentQuestions /> */}
           <BannerFaqsTop />
-          <h1 className="m-b text-[2rem] mt-[1rem]">
+          <h1 className="m-b text-fs-20 md:text-[2rem] mt-[1rem]">
             {languageData.faqs.titleFaqs}
           </h1>
-          <div className="m-m text-[1rem] pb-[2.5rem]">
+          <div className="m-m text-fs-15 md:text-[1rem] pb-[2.5rem]">
             {languageData.faqs.textFaqs}
           </div>
 
-          {/* {isMobile ? (
-            <FaqsMobile
-              setOpenSection={setOpenSection}
-              openSection={openSection}
-              activeKey={activeKey}
-              handleAccordionClick={handleAccordionClick}
-            />
-          ) : (
-            <FaqsWeb
-              setOpenSection={setOpenSection}
-              openSection={openSection}
-              activeKey={activeKey}
-              handleAccordionClick={handleAccordionClick}
-            />
-          )} */}
+          
 
           <FaqsWeb
             setOpenSection={setOpenSection}

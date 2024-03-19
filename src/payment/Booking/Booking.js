@@ -119,7 +119,7 @@ export default function Booking(props) {
         <AlertTextBooking showAlert={showAlert} />
 
         <div className="display-booking">
-          <Image className="icon-royal-itinerary" src={IconRoyal} />
+          <Image className="icon-royal-itinerary" src={IconRoyal} alt="IconRoyal" />
           <h1 className="booking-title-page">
             {languageData.booking.titleVacations}
           </h1>

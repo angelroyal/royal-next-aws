@@ -1,18 +1,16 @@
 import "../../assets/styles/web/AccordionFrom.css";
 
-import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 import { Form } from "react-bootstrap";
-// import React, { useContext, useEffect, useState } from "react";
-// import LanguageContext from "../../language/LanguageContext";
-
-import LanguageContext from "../../language/LanguageContext";
+import React, { useContext, useEffect, useState } from "react";
 
 import {
   ProcessDataHB,
   processItineraryData,
 } from "../../config/Booking/processData";
-import { ReactComponent as HotelOrangeIcon } from "../../assets/icons/utils/payment/hotel-orange.svg";
-import { ReactComponent as HotelBlackIcon } from "../../assets/icons/utils/payment/hotel-black.svg";
+import LanguageContext from "../../language/LanguageContext";
+import HotelOrangeIcon from "../../assets/icons/utils/payment/hotel-orange.svg";
+import HotelBlackIcon from "../../assets/icons/utils/payment/hotel-black.svg";
 
 export function FormClientRH(props) {
   const { dataItinerary, onRHDataChange } = props;
@@ -114,9 +112,9 @@ export function FormClientRH(props) {
                   onClick={() => setActiveHotelIndex(index)}
                 >
                   {index === activeHotelIndex ? (
-                    <HotelOrangeIcon className="hotel-icon-from-o" />
+                    <Image src={HotelOrangeIcon} alt="HotelOrangeIcon" className="hotel-icon-from-o" />
                   ) : (
-                    <HotelBlackIcon className="hotel-icon-form" />
+                    <Image src={HotelBlackIcon} alt="HotelBlackIcon" className="hotel-icon-form" />
                   )}
                   <h3>{hotel.name}</h3>
                 </div>
@@ -354,7 +352,7 @@ export function FormClientRH(props) {
                   processedDataHB.map((room, item) => (
                     <div key={item}>
                       <div className="title-rh d-flex align-items-center gap-2">
-                        <HotelBlackIcon className="hotel-icon-from-o" />
+                        <Image src={HotelBlackIcon} alt="HotelBlackIcon" className="hotel-icon-from-o" />
                         <h3>
                           {room.name}{" "}
                         </h3>

@@ -26,7 +26,7 @@ export function DialogFilterHotel(props) {
     >
       <div className="m-component-info-room">
         <Button className="d-flex width100 justify-content-end">
-          <Image src={CloseIcon} className="close-icon" onClick={onClose} />
+          <Image src={CloseIcon} alt="CloseIcon" className="close-icon" onClick={onClose} />
         </Button>
 
         <FiltersHotels />

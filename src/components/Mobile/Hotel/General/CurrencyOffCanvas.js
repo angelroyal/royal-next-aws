@@ -1,13 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { Offcanvas } from "react-bootstrap";
 
 import LanguageContext from "../../../../language/LanguageContext";
 
-import { ReactComponent as IconLeft } from "../../../../assets/icons/utils/navigation/left.svg";
-import { ReactComponent as IconMoney } from "../../../../assets/icons/utils/navigation/money.svg";
-import { ReactComponent as IconDoneActive } from "../../../../assets/icons/utils/navigation/done_active.svg";
+import IconLeft from "../../../../assets/icons/utils/navigation/left.svg";
+import IconMoney from "../../../../assets/icons/utils/navigation/money.svg";
+import IconDoneActive from "../../../../assets/icons/utils/navigation/done_active.svg";
 
 export default function CurrencyOffCanvas() {
   const { languageData } = useContext(LanguageContext);
@@ -31,7 +32,7 @@ export default function CurrencyOffCanvas() {
         variant="primary"
         onClick={handleToggle}
       >
-        <IconMoney />
+        <Image src={IconMoney} alt="IconMoney" />
       </button>
 
       <Offcanvas show={showOffcanvas} placement="end">
@@ -40,7 +41,7 @@ export default function CurrencyOffCanvas() {
             className="border border-0 bg-transparent p-0"
             onClick={handleClose}
           >
-            <IconLeft />
+            <Image src={IconLeft} alt="IconLeft" />
           </button>
 
           <Offcanvas.Title>{languageData.currency.currency}</Offcanvas.Title>
@@ -50,7 +51,7 @@ export default function CurrencyOffCanvas() {
         <Offcanvas.Body className="d-flex flex-column gap-4">
           <button onClick={setCurrencyMXN} className="m-currency-list">
             <span className="icon-check-language">
-              {currency === "mxn" && <IconDoneActive />}
+              {currency === "mxn" && <Image src={IconDoneActive} alt="IconDoneActive" />}
             </span>
             {languageData.currency.mxn}
           </button>

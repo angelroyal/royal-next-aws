@@ -143,7 +143,7 @@ export default function SearchRoom(props) {
           />
         ) : (
           <>
-            <Image src={DateRangeIcon} className={isMobile ? "m-icon-calendar" : ""} />
+            <Image src={DateRangeIcon} alt="DateRangeIcon" className={isMobile ? "m-icon-calendar" : ""} />
             <Calendar onDateChange={handleDateChange} isModal={true} />
           </>
         )}
@@ -171,7 +171,7 @@ export default function SearchRoom(props) {
           disabled={!validFirstDay || !validSecondDay}
           sx={{ mt: 2 }}
         >
-          {isMobile ? <Image src={SearchIon} /> : languageData.modalSearchHotel.buttonModal}
+          {isMobile ? <Image src={SearchIon} alt="SearchIon" /> : languageData.modalSearchHotel.buttonModal}
         </button>
       </div>
     </div>

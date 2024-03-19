@@ -55,8 +55,8 @@ export function SelectLanguage() {
         variant="primary"
         onClick={handleToggle}
       >
-        {language === "es" && <Image src={IconSpanish} />}
-        {language === "en" && <Image src={IconEnglish} />}
+        {language === "es" && <Image src={IconSpanish} alt="IconSpanish" />}
+        {language === "en" && <Image src={IconEnglish} alt="IconEnglish" />}
         {/* {language === "fr" && <IconFR />} */}
       </button>
 
@@ -66,7 +66,7 @@ export function SelectLanguage() {
             className="border border-0 bg-transparent p-0"
             onClick={handleClose}
           >
-            <Image src={IconLeft}/>
+            <Image src={IconLeft} alt="IconLeft"/>
           </button>
 
           <Offcanvas.Title>{languageData.language.language}</Offcanvas.Title>
@@ -77,16 +77,16 @@ export function SelectLanguage() {
         <Offcanvas.Body className="d-flex flex-column gap-4">
           <button onClick={setEspLanguage} className="m-currency-list">
             <span className="icon-check-language">
-              {language === "es" && <Image src={IconDoneActive} />}
+              {language === "es" && <Image src={IconDoneActive} alt="IconDoneActive"/>}
             </span>
-            <Image src={IconSpanishT}/>
+            <Image src={IconSpanishT} alt="IconSpanishT"/>
             {languageData.language.ESP}
           </button>
           <button onClick={setCurrencyUS} className="m-currency-list">
             <span className="icon-check-language">
-              {language === "en" && <Image src={IconDoneActive} />}
+              {language === "en" && <Image src={IconDoneActive} alt="IconDoneActive" />}
             </span>
-            <Image src={IconEnglishT} />
+            <Image src={IconEnglishT} alt="IconEnglishT" />
             {languageData.language.EN}
           </button>
 

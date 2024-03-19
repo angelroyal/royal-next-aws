@@ -22,7 +22,7 @@ export function MissingRooms(props) {
 
   return isComplete ? (
     <div className="d-flex align-items-center justify-content-center gap-1">
-      <Image src={IconDoneActive} />
+      <Image src={IconDoneActive} alt="IconDoneActive" />
       <span>{languageData.modalHotel.missingRooms.completeRooms}</span>
     </div>
   ) : (

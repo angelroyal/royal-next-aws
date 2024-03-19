@@ -82,7 +82,7 @@ export function ModalHotelDetails(props) {
                         className="bg-transparent border border-0 pe-auto"
                         onClick={onHide}
                       >
-                        <Image src={CloseIcon} />
+                        <Image src={CloseIcon} alt="CloseIcon"/>
                       </button>
                     </div>
 

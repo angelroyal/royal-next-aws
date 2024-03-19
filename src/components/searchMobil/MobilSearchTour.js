@@ -86,7 +86,7 @@ export default function MobilSearchTour() {
       </h3>
 
       <div className="margin-search-tab">
-        <Image className="icon-location-result" src={RoomOutlinedIcon} />
+        <Image className="icon-location-result" src={RoomOutlinedIcon} alt="RoomOutlinedIcon" />
         <span className="span-location-home">
           {languageData.SearchBox.tabTour.autoDestination}
         </span>
@@ -94,7 +94,7 @@ export default function MobilSearchTour() {
       </div>
 
       <div className="margin-search-tab">
-        <Image className="Icon-date" src={DateRangeIcon} />
+        <Image className="Icon-date" src={DateRangeIcon} alt="DateRangeIcon" />
         <span className="span-date-home">
           {languageData.SearchBox.tabTour.date}
         </span>

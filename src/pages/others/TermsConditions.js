@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import MetaTerms from "../../components/Meta/MetaTerms";
+// import MetaTerms from "../../components/Meta/MetaTerms";
 import SkeletonText from "../../utils/skeleton/SkeletonText";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { ScrollButton, scrollToTop } from "../../utils/pageConfig/scrollToTop";
@@ -49,7 +49,7 @@ export default function TermsConditions() {
 
   return (
     <>
-      <MetaTerms />
+      {/* <MetaTerms /> */}
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
       <ScrollButton/>

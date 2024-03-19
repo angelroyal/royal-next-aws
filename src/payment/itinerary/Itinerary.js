@@ -1,19 +1,15 @@
+import Image from "next/image";
 import React, { useContext, useEffect } from "react";
 
-// import ModalShare from "../../utils/booking/ModalShare";
-// import { /*useIsMobile,*/ useIsMobileNew } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
-// import { useIsMobileNew } from "../../config/Mobile/isMobile";
 import { scrollToTop } from "../../utils/pageConfig/scrollToTop";
 import StructureItineraryWeb from "./others/StructureItineraryWeb";
 import { StepperContext } from "../../config/context/steeperContext";
 import { AlertNoAvailability, AlertUpdate } from "../Booking/AlertRate";
-// import StructureItineraryMobile from "./others/StructureItineraryMobile";
 
 import { isAnyHotelUnavailable } from "../../config/Booking/itineraryHelpers";
 
 import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
-import Image from "next/image";
 
 export default function Itinerary(props) {
   const { dataItinerary } = props;
@@ -41,8 +37,9 @@ export default function Itinerary(props) {
         <div className="m-fit d-flex">
           {/* <IconRoyal className="icon-royal-itinerary" /> */}
           <Image
-          className="icon-royal-itinerary"
-          src={IconRoyal}
+            className="icon-royal-itinerary"
+            src={IconRoyal}
+            alt="IconRoyal"
           />
           <h1 className="itinerary-title-page">
             {languageData.itinerary.titleItinerary}

@@ -97,7 +97,7 @@ export default function Footer() {
                     width="14px"
                     height="14px"
                   />
-                  <span className="hover:text-or-100 no-underline text-white">
+                  <span className="hover:!text-or-100 no-underline text-white">
                     {languageData.footer.contact.phone}
                   </span>
                 </a>
@@ -113,7 +113,7 @@ export default function Footer() {
                     width="14px"
                     height="14px"
                   />
-                  <span className="hover:text-or-100 no-underline text-white">
+                  <span className="hover:!text-or-100 no-underline text-white">
                     {languageData.footer.contact.whatsApp}
                   </span>
                 </a>
@@ -129,7 +129,7 @@ export default function Footer() {
                   width="15px"
                   height="11px"
                 />
-                <span className="hover:text-or-100 no-underline text-white">
+                <span className="hover:!text-or-100 no-underline text-white">
                   {languageData.footer.contact.email}
                 </span>
               </a>
@@ -143,7 +143,7 @@ export default function Footer() {
                   width="11px"
                   height="14px"
                 />
-                <span className="hover:text-or-100 no-underline text-white leading-5">
+                <span className="hover:!text-or-100 no-underline text-white leading-5">
                   {languageData.footer.contact.location}
                 </span>
               </a>
@@ -157,19 +157,19 @@ export default function Footer() {
             </div>
             <div className="flex flex-col m-m text-fs-12 cursor-pointer">
 
-              <Link href="/ourHistory" className="hover:text-or-100 no-underline text-white">
+              <Link href="/ourHistory" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titleHistory}
               </Link>
 
-              <Link href="/ourHistory" className="hover:text-or-100 no-underline text-white">
+              <Link href="/ourHistory" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titleConditions}
               </Link>
               
-              <Link href="/ourHistory" className="hover:text-or-100 no-underline text-white">
+              <Link href="/ourHistory" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titlePrivacy}
               </Link>
 
-              <Link href="/faqs" className="hover:text-or-100 no-underline text-white">
+              <Link href="/faqs" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titleQuestions}
               </Link>
             </div>
@@ -181,16 +181,16 @@ export default function Footer() {
               {languageData.footer.hotelsMexico.titleHotel}
             </div>
             <div className="m-m text-fs-12 flex flex-col">
-              <a className="hover:text-or-100 no-underline text-white">
+              <a className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.hotelsMexico.hotelAcapulco}
               </a>
-              <a className="hover:text-or-100 no-underline text-white">
+              <a className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.hotelsMexico.hotelCancun}
               </a>
-              <a className="hover:text-or-100 no-underline text-white">
+              <a className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.hotelsMexico.hotelMazatlan}
               </a>
-              <a className="hover:text-or-100 no-underline text-white">
+              <a className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.hotelsMexico.hotelPuertoVallarta}
               </a>
             </div>

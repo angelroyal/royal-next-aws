@@ -8,8 +8,9 @@ import CalendarDay from "../../hooks/CalendarDay";
 import LanguageContext from "../../language/LanguageContext";
 import PersonsActivities from "../../utils/tour/PersonsActivities";
 
-import { ReactComponent as DateRangeIcon } from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import DateRangeIcon from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
+import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import Image from "next/image";
 
 export default function ResultTourModal() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -74,7 +75,7 @@ export default function ResultTourModal() {
     <>
       <Row className="row-home-search">
         <Col sm={4}>
-          <RoomOutlinedIcon className="icon-location-home" />
+          <Image src={RoomOutlinedIcon} alt="RoomOutlinedIcon" className="icon-location-home" />
           <span className="span-location-home-r">
             {languageData.SearchBox.tabTour.autoDestination}
           </span>
@@ -82,7 +83,7 @@ export default function ResultTourModal() {
         </Col>
 
         <Col sm={3}>
-          <DateRangeIcon className="icon-date-home" />
+          <Image src={DateRangeIcon} alt="DateRangeIcon" className="icon-date-home" />
           <span className="span-date-home-r">
             {languageData.SearchBox.tabTour.date}
           </span>
