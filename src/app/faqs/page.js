@@ -17,12 +17,6 @@ export default function Home() {
           <Token />
           <Navigation />
           <FrequentQuestions/>
-          {/* <div className="hidden lg:block">
-            <FaqsWeb />
-          </div>
-          <div className="lg:hidden block">
-            <FaqsWeb />
-          </div> */}
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>
