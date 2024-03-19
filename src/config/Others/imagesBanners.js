@@ -6,7 +6,7 @@ import BannerTourP from "../../assets/images/banners/tour/tour_royal_banner.webp
 // import BannerFaqHelp from "../../assets/images/banners/others/banner-faq-help.webp";
 import BannerHotelC from "../../assets/images/banners/hotel/banner-card-hotel.webp";
 import MBannerHotelC from "../../assets/images/banners/hotel/m-banner-card-hotel.webp";
-import BannerAboutUs from "../../assets/images/banners/others/banner-about-us.webp";
+// import BannerAboutUs from "../../assets/images/banners/others/banner-about-us.webp";
 import BannerHotelP from "../../assets/images/banners/hotel/hotel_royal_banner.webp";
 import BannerHotelPMobile from "../../assets/images/banners/hotel/hotel_royal_banner_mobile.webp";
 import BannerContact from "../../assets/images/banners/others/contact_reservation.webp";
@@ -157,7 +157,7 @@ export const Others = {
     paragraph: "subtitleContact",
   },
   bannerAbout: {
-    image: BannerAboutUs,
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/banner-about-us.webp`,
     alt: "altAboutUs",
     title: "titleAboutUs",
   },
