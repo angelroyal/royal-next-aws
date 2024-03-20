@@ -16,10 +16,10 @@ export default function CardHotelT() {
     return (
         //NEW CARD HOTEL TAILWIND /LP
         //  h-[219px]
-        <div className='flex border border-gry-50 rounded mb-[10px] bg-white w-full gap-2 my-[20px]'>
+        <div className='flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-md:flex-col'>
 
             {/* IMAGE CARD HOTEL */}
-            <div className='w-[30%] relative'>
+            <div className='w-[30%] relative max-md:w-full'>
                 <Swiper
                     // spaceBetween={30}
                     id='card-hotel-t'
@@ -29,7 +29,7 @@ export default function CardHotelT() {
                         clickable: true,
                     }}
                     modules={[Pagination]}
-                    className='!h-[87%] !rounded-tl-lg'
+                    className='!h-[87%] !rounded-tl-lg max-md:!rounded-t-lg'
                 >
                     {[...Array(4)].map((_, index) => (
                         <SwiperSlide>
@@ -49,19 +49,19 @@ export default function CardHotelT() {
                     width={42}
                     height={91}
                 />
-                <div className='h-[28px] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg'>{languageData.optionsFilterHotel.allInclusive}</div>
+                <div className='h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-md:rounded-none'>{languageData.optionsFilterHotel.allInclusive}</div>
             </div>
 
-            <div className='w-[70%] p-[20px]'>
+            <div className='w-[70%] p-[20px] max-md:w-full'>
                 {/* NAME AND STARS HOTEL */}
                 <div>
                     <h2 className='text-fs-16 m-b mb-0'>Microtel inn and suites By Wyndham Culiacan</h2>
                     <Rating name="read-only" value={5} readOnly size="small" className='!text-fs-12' />
                 </div>
 
-                <div className='flex'>
+                <div className='flex max-md:flex-col'>
                     {/* INFO HOTEL*/}
-                    <div className='w-3/5  pr-[23px]'>
+                    <div className='w-3/5  pr-[23px] max-md:w-full'>
                         <div className='flex gap-1 '>
                             <Image
                                 className="w-[11px] h-[14px]"
@@ -80,23 +80,26 @@ export default function CardHotelT() {
                                 className="w-4 h-4"
                                 src={`${process.env.NEXT_PUBLIC_URL}icons/info/solicited.svg`}
                                 alt="icon-solicited"
-                                width={16}
-                                height={16}
+                                width={24}
+                                height={25}
                             />
                             <span className='m-b text-fs-12 text-gry-100 '>{languageData.cardHotel.label}</span>
                         </div>
                     </div>
 
                     {/* INFO PRICE */}
-                    <div className='w-2/5 border-l border-gry-70 flex flex-col items-center pl-[23px]'>
-                        <span className='m-b text-red-100 text-fs-12'>¡{languageData.cardHotel.titleSpace} 3!</span>
-                        <h2 className='m-b text-fs-16 flex items-center gap-1'><span className='text-fs-12'>{languageData.cartTour.from} </span>MXN $10,000</h2>
-                        <div className='flex gap-1 mb-1 items-center'>
-                            <del className='m-s-b text-gry-100 text-fs-10'>MXN $11,000</del>
-                            <div className='bg-red-100 text-white text-fs-12 px-[5px] rounded-r-md'>10%</div>
+                    <div className='w-2/5 border-l border-gry-70 flex flex-col pl-[23px] max-md:w-full max-md:border-t max-md:border-l-0 max-md:mt-2 max-md:pt-2 max-md:flex-row max-md:justify-between max-md:items-center max-md:pl-0'>
+                        <div className='flex flex-col items-center '>
+                            <span className='m-b text-red-100 text-fs-12'>¡{languageData.cardHotel.titleSpace} 3!</span>
+                            <h2 className='m-b text-fs-16 flex items-center gap-1'><span className='text-fs-12'>{languageData.cartTour.from} </span>MXN $10,000</h2>
+                            <div className='flex gap-1 mb-1 items-center'>
+                                <del className='m-s-b text-gry-100 text-fs-10'>MXN $11,000</del>
+                                <div className='bg-red-100 text-white text-fs-12 px-[5px] rounded-r-md'>10%</div>
+                            </div>
+                            <div className='m-b bg-[#E0FEF0] text-grn-100 text-fs-8 mb-3 py-[2px] px-[6px] rounded'>{languageData.cartTour.taxesText}</div>
                         </div>
-                        <div className='m-b bg-[#E0FEF0] text-grn-100 text-fs-8 mb-3 py-[2px] px-[6px] rounded'>{languageData.cartTour.taxesText}</div>
-                        <button className='bg-yw-100 text-black text-fs-12 m-b px-[40px] py-[5px] rounded-full hover:opacity-75'>{languageData.cartTour.seeDetails}</button>
+
+                        <button className='bg-yw-100 text-black text-fs-12 m-b px-[40px] py-[5px] rounded-full hover:opacity-75 text-nowrap max-md:w-[160px] max-md:h-[32px] '>{languageData.cartTour.seeDetails}</button>
                     </div>
                 </div>
             </div>
