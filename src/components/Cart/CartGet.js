@@ -1,4 +1,4 @@
-// import { useHistory } from "react-router-dom";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState, useContext } from "react";
 
@@ -9,7 +9,6 @@ import { useCartAxios } from "./CartAxios";
 import LanguageContext from "../../language/LanguageContext";
 
 import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
-import Image from "next/image";
 
 export default function CartGet({ onCloseMenu }) {
   const router = useRouter();

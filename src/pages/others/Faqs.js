@@ -1,5 +1,6 @@
 "use client";
 
+import "../../assets/styles/web/About.css";
 import Image from "next/image";
 import React, { useContext } from "react";
 import { Accordion } from "react-bootstrap";
@@ -9,12 +10,12 @@ import LanguageContext from "@/language/LanguageContext";
 
 import IconAdd from "../../assets/icons/utils/others/add.svg";
 import IconRemove from "../../assets/icons/utils/others/remove.svg";
-import "../../assets/styles/web/About.css";
 
-export function FaqsWeb(props) {
+export default function FaqsWeb(props) {
   const { setOpenSection, openSection, activeKey, handleAccordionClick } =
     props;
-  // console.log(openSection);
+
+  console.log("esto es una prueba");
   const { languageData } = useContext(LanguageContext);
   return (
     <div className="flex flex-col lg:flex-row">
@@ -60,9 +61,9 @@ export function FaqsWeb(props) {
                 </div>
                 <div className="w-max">
                   {activeKey === index.toString() ? (
-                    <Image src={IconRemove} />
+                    <Image src={IconRemove} alt="IconRemove" />
                   ) : (
-                    <Image src={IconAdd} />
+                    <Image src={IconAdd} alt="IconAdd" />
                   )}
                 </div>
               </Accordion.Header>
@@ -86,4 +87,3 @@ export function FaqsWeb(props) {
     </div>
   );
 }
-

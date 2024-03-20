@@ -25,7 +25,6 @@ export const SelectedRoomsContext = createContext([]);
 export default function ModalHotel(props) {
   const isMobile = useIsMobile();
 
-  // Prueba moda:
   const [showNestedModal, setShowNestedModal] = useState(false);
   const [isTrueChangeDate, setIsTrueChangeRequest] = useState(false);
 

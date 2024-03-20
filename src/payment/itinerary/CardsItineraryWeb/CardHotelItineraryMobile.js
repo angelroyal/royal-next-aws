@@ -1,18 +1,18 @@
 import moment from "moment";
-import { CircularProgress, Rating } from "@mui/material";
+import Image from "next/image";
 import React, { useState, useContext } from "react";
+import { CircularProgress, Rating } from "@mui/material";
 
-// import { AccordionIM } from "../../Utils/AccordionIM";
 import LanguageContext from "../../../language/LanguageContext";
 import UnavailableCardHotel from "../others/UnavailableCardHotel";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
+import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
-import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import LocationIcon from "../../../assets/icons/utils/others/location.svg";
+import CloseIcon from "../../../assets/icons/hotel/modal/close_active.svg";
 import lineLocationIcon from "../../../assets/icons/utils/others/itinerary-line.webp";
-import { ReactComponent as CloseIcon } from "../../../assets/icons/hotel/modal/close_active.svg";
-import { ReactComponent as RoomOutlinedIcon } from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import RoomOutlinedIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 export default function CardHotelItineraryMobile(props) {
   const { itemHotel } = props;
@@ -145,7 +145,11 @@ export default function CardHotelItineraryMobile(props) {
                   <div className="m-name-is-h">{itemHotel.name}</div>
 
                   <div>
-                    <RoomOutlinedIcon className="m-i-location-h" />{" "}
+                    <Image
+                      src={RoomOutlinedIcon}
+                      alt="RoomOutlinedIcon"
+                      className="m-i-location-h"
+                    />{" "}
                     <span className="m-text-location-h">
                       {itemHotel.address.length > maxLength
                         ? itemHotel.address.substring(0, maxLength) + "..."
@@ -177,7 +181,7 @@ export default function CardHotelItineraryMobile(props) {
                 ) : (
                   <div className="icon-remove-reservation">
                     <button onClick={() => setIconRemove(true)}>
-                      <CloseIcon />
+                      <Image src={CloseIcon} alt="CloseIcon" />
                     </button>
                   </div>
                 )}
@@ -192,7 +196,6 @@ export default function CardHotelItineraryMobile(props) {
             <div className="overlay" />
           </>
         )}
-        
       </div>
       {loader && (
         <div className="progress-loader">
