@@ -83,7 +83,7 @@ export default function Footer() {
             <div className="m-b text-fs-16 mb-[1rem]">
               {languageData.footer.contact.titleContact}
             </div>
-            <div className="max-md:grid place-items-center pr-16">
+            <div className="max-md:grid place-items-center lg:pr-16">
               <div className="flex gap-x-6">
                 <a
                   className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5"
