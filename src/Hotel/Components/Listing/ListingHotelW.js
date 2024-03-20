@@ -138,11 +138,6 @@ export default function ListingHotelW(props) {
               </div>
               <CardHotelT />
               <CardHotelT />
-              <CardHotelT />
-              <CardHotelT />
-              <CardHotelT />
-              <CardHotelT />
-              <CardHotelT />
 
               {/* CARD */}
               {combinedHotelData &&
