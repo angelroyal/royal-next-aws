@@ -3,14 +3,6 @@
 import React, { useContext } from "react";
 import { Row, Col } from "react-bootstrap";
 
-<<<<<<< Updated upstream
-import { useIsMobile } from "@/config/Mobile/isMobile";
-import LanguageContext from "@/language/LanguageContext";
-import { CartHistoryW /*CardsHistoryM*/ } from "./CartsHistory";
-import { BannerAboutUs } from "@/components/bannerJsx/bannerAboutUs";
-import BannerAbout from "../../assets/images/others/banner-about-us.webp";
-import { Container } from "@/config/Others/Container";
-=======
 // import { CartHistoryW, CardsHistoryM } from "./CartsHistory";
 import CardCarousel from "../../utils/hotel/CardCarousel";
 import { useIsMobile } from "../../config/Mobile/isMobile";
@@ -21,7 +13,6 @@ import { BannerAboutUs } from "../../components/bannerJsx/bannerAboutUs";
 
 import BannerAbout from "../../assets/images/others/banner-about-us.webp";
 import CartHistoryW from "./CartsHistory";
->>>>>>> Stashed changes
 
 export default function OurHistory() {
   const { languageData } = useContext(LanguageContext);
@@ -87,11 +78,7 @@ export default function OurHistory() {
           <h2 className="title-service-quality">
             {languageData.ourHistory.titleServiceQuality}
           </h2>
-<<<<<<< Updated upstream
-          <CartHistoryW />
-=======
           <CartHistoryW/>
->>>>>>> Stashed changes
         </div>
       </div>
 

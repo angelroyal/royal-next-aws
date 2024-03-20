@@ -1,50 +1,25 @@
-import { useState } from "react";
+import { TotalStars } from "@/components/General/Stars";
 
-export function HotelInfo({ hotelInfo }) {
-  const [showFullDescription, setShowFullDescription] = useState(false);
+export function HotelInfo({ GalleryModalHotel }) {
+  console.log(GalleryModalHotel);
 
-  const handleToggleDescription = () => {
-    setShowFullDescription(!showFullDescription);
-  };
-
-  const getDescriptionPreview = (description) => {
-    const words = description.split(" ");
-    return words.slice(0, 30).join(" ");
-  };
   return (
-    <div className="flex flex-column border-black py-3 px-2">
-      <div className="block">
-        <h3 className="mb-2 m-b text-fs-20">Conoce más de este hotel:</h3>
-        <div className="text-fs-14 m-m text-justify">
-          {showFullDescription ? (
-            <div className="flex flex-col ">
-              {hotelInfo.description}
-              <span>
-                <button
-                  className="flex gap-1 items-center m-b text-fs-15 text-bl-100"
-                  onClick={handleToggleDescription}
-                >
-                  Ver menos
-                  <img src="https://sandboxmexico.com/assets/icons/arrows/up-bl.svg" alt="show less" />
-                </button>
-              </span>
-            </div>
-          ) : (
-            <div className="flex flex-col">
-              {getDescriptionPreview(hotelInfo.description)}...
-              <span>
-                <button
-                  className=" flex items-center gap-1 m-b text-fs-15 text-bl-100"
-                  onClick={handleToggleDescription}
-                >
-                  Ver más
-                  <img src="https://sandboxmexico.com/assets/icons/arrows/down-bl.svg" alt="show more" />
-                </button>
-              </span>
-            </div>
-          )}
-        </div>
+    <>
+      <div className="bg-[#fef0d2] w-[115px] rounded-full py-[4px] px-[8px] d-flex flex justify-between mb-2">
+        <img
+          src={`${process.env.NEXT_PUBLIC_URL}/icons/sales/fire_department.svg`}
+          alt="fire"
+          width={12}
+          height={12}
+        />
+        <span className="text-fs-12">Muy solicitado</span>
       </div>
-    </div>
+      <h1 className="m-b text-fs-24">{GalleryModalHotel.hotel.name}</h1>
+
+      <div className="mt-1">
+        <TotalStars stars={GalleryModalHotel.hotel.stars} />
+        <div className="m-m text-fs-13 mt-1">{`${GalleryModalHotel.hotel.destination} ${GalleryModalHotel.hotel.address}`}</div>
+      </div>
+    </>
   );
 }

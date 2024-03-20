@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 import "../../../../assets/css/Hotel/GalleryImage.css";
 export function GalleryImages({ images }) {
@@ -18,21 +20,21 @@ export function GalleryImages({ images }) {
   };
 
   const scrollToCurrentImage = () => {
-    const currentImage = carrouselRef.current.children[currentIndex];
-    currentImage.scrollIntoView({ behavior: "smooth", inline: "center" });
+    // const currentImage = carrouselRef.current.children[currentIndex];
+    // currentImage.scrollIntoView({ behavior: "smooth", inline: "center" });
   };
 
   return (
     <div className="flex relative flex-col gap-y-4">
       <div className="w-full" style={{ height: "30rem" }}>
         <img
-          className="object-cover w-full h-full rounded-t-lg"
+          className="object-cover w-full h-full rounded-lg"
           src={images[currentIndex]}
           alt="gallery hotel"
         />
       </div>
 
-      <div className="m-b text-fs-16 text-center">{`${currentIndex + 1} / ${images.length}`}</div>
+      {/* <div className="m-b text-fs-16 text-center">{`${currentIndex + 1} / ${images.length}`}</div> */}
 
       <div className="mx-16 relative truncate">
         <div
@@ -48,13 +50,13 @@ export function GalleryImages({ images }) {
               className={`w-20 snap-start me-3 cursor-pointer ${
                 index === currentIndex
                   ? "border border-4 border-or-100"
-                  : "opacity-15"
+                  : "opacity-1"
               }`}
               style={{ flex: "0 0 auto", height: "4rem" }}
               onClick={() => setCurrentIndex(index)}
             >
               <img
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full rounded"
                 src={image}
                 alt={`${index + 1}`}
               />

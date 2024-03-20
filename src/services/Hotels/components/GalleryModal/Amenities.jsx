@@ -1,5 +1,8 @@
+"use client";
+
+import { AmenitiesConfig } from "@/config/AmenitiesConfig";
 import { useState } from "react";
-import { AmenitiesConfig } from "../../../../configs/AmenitiesConfig";
+// import { AmenitiesConfig } from "../../../../config/AmenitiesConfig";
 
 
 export function AmenitiesIcons({ text = false, amenities }) {
