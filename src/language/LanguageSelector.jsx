@@ -1,10 +1,11 @@
 "use client";
+
 import Image from "next/image";
 
 import { useContext, useEffect } from "react";
 
 import LanguageContext from "./LanguageContext";
-import { SelectLanguage } from "@/components/Mobile/Hotel/General/CurrencyLanguage";
+// import { SelectLanguage } from "@/components/Mobile/Hotel/General/CurrencyLanguage";
 
 // const SelectLanguage = lazy(()=>import("../components/Mobile/Hotel/General/CurrencyLanguage"));
 
@@ -18,35 +19,39 @@ export function LanguageSelector() {
     window.location.reload();
   };
 
-  const storedLanguage = typeof window !== 'undefined' ? localStorage.getItem("language") || 'es' : 'es';
+  const storedLanguage =
+    typeof window !== "undefined"
+      ? localStorage.getItem("language") || "es"
+      : "es";
 
   const defaultLanguage = storedLanguage || language;
 
   useEffect(() => {
     if (storedLanguage && storedLanguage !== language) {
-      setLanguage(storedLanguage); 
+      setLanguage(storedLanguage);
     }
   }, [storedLanguage, language, setLanguage]);
 
   return (
     <>
       <div className="flex pr-[30px]">
-        {defaultLanguage === "es" ? (
+        {defaultLanguage === "es" && (
           <Image
-          className="w-[25px] h-[32px]"
+            className="w-[25px] h-[30px]"
             width={25}
-            height={32}
+            height={30}
             src={`${process.env.NEXT_PUBLIC_URL}icons/leng/es.svg`}
-            alt="MXN lang"
+            alt="lang"
           />
-        ) : (
+        )}
+        {defaultLanguage === "en" && (
           // <IconSpanish className="icon-spanish" />
           <Image
             className="w-[25px] h-[30px]"
             width={25}
             height={30}
             src={`${process.env.NEXT_PUBLIC_URL}icons/leng/en.svg`}
-            alt="US lang"
+            alt="lang"
           />
         )}
         <select
@@ -63,9 +68,6 @@ export function LanguageSelector() {
           </option>
         </select>
       </div>
-      {/* <div className="m-language">
-        <SelectLanguage />
-      </div> */}
     </>
   );
 }

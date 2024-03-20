@@ -1,21 +1,17 @@
 
-import HotelIcon from "../../assets/icons/utils/others/hotelIcon.svg";
-import MoveIcon from "../../assets/icons/utils/others/moveIcon.svg";
-import TourIcon from "../../assets/icons/utils/others/tourIcon.svg";
-
 export const CardHistoryConfig = [
     {
-        image:HotelIcon,
+        image:`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`,
         title:"hotel",
         description:"textHotelService"
     },
     {
-        image:MoveIcon,
+        image:`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-o.svg`,
         title:"transportation",
         description:"textTransportationService"
     },
     {
-        image:TourIcon,
+        image:`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-o.svg`,
         title:"tour",
         description:"textTourService"
     }

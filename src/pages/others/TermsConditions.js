@@ -1,14 +1,13 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 
-import "../../assets/styles/web/About.css";
-import SkeletonPolicy from "../../utils/skeleton/SkeletonPolicy";
-import { scrollToTop, ScrollButton } from "../../utils/pageConfig/scrollToTop";
+// import MetaTerms from "../../components/Meta/MetaTerms";
+import SkeletonText from "../../utils/skeleton/SkeletonText";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import Test2 from "@/hooks/Test2";
+import { ScrollButton, scrollToTop } from "../../utils/pageConfig/scrollToTop";
 import { Container } from "@/config/Others/Container";
 
-export default function Policy() {
+export default function TermsConditions() {
   const [htmlContent, setHtmlContent] = useState("");
   const language = localStorage.getItem("language") || "es";
 
@@ -16,8 +15,8 @@ export default function Policy() {
     scrollToTop();
     const loadFromCache = async () => {
       try {
-        const cache = await caches.open(`cache-pcc-${language}`);
-        const response = await cache.match(`v1/views/pcc-${language}`);
+        const cache = await caches.open(`cache-tyc-${language}`);
+        const response = await cache.match(`v1/views/tyc-${language}`);
 
         if (response) {
           const text = await response.text();
@@ -32,14 +31,14 @@ export default function Policy() {
 
     const fetchAndCacheData = async () => {
       try {
-        const response = await axiosWithInterceptor.get(`v1/views/pcc`);
+        const response = await axiosWithInterceptor.get(`v1/views/tyc`);
         const text = response.data.content;
 
-        const cache = await caches.open(`cache-pcc-${language}`);
+        const cache = await caches.open(`cache-tyc-${language}`);
         const newResponse = new Response(text, {
           headers: { "Content-Type": "text/html" },
         });
-        await cache.put(`v1/views/pcc-${language}`, newResponse);
+        await cache.put(`v1/views/tyc-${language}`, newResponse);
 
         setHtmlContent(text);
       } catch (error) {
@@ -50,21 +49,16 @@ export default function Policy() {
     loadFromCache();
   }, [language]);
 
-  // const handleScrollTop = async () => {
-  //   scrollToTop();
-  // };
-
   return (
     <>
-      {/* <MetaPolicy /> */}
+      {/* <MetaTerms /> */}
       <Container>
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-        {/* <Test2 /> */}
       </Container>
 
       <ScrollButton />
 
-      {!htmlContent && <SkeletonPolicy />}
+      {!htmlContent && <SkeletonText />}
     </>
   );
 }

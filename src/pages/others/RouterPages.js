@@ -22,7 +22,7 @@ export default function NavigationOptions() {
       {navigation.map(({ id, label, imageSrc, activeImageSrc }) => (
         <div
           key={id}
-          className="navigation-second"
+          className="flex gap-[6px] justify-center content-start items-center cursor-pointer"
           rel="noopener noreferrer"
           onClick={() => handleIconClick(id)}
         >
@@ -31,16 +31,11 @@ export default function NavigationOptions() {
             alt={`${languageData.allAlt.altRoyalVacations} ${label}`}
             // width="auto"
             // height="auto"
-            className="navigation-icon-img"
+            className="w-[1.7rem] h-auto"
           />
           
           <div
-            className="navigation-icon-text"
-            style={{
-              fontFamily:
-                activeIcon === id ? "Montserrat Bold" : "Montserrat Bold",
-              color: activeIcon === id ? "#EB741E" : "#666666",
-            }}
+            className={`text-fs-12 m-b ${activeIcon === id ? 'text-or-100': 'text-gry-100'}`}
           >
             {languageData.navigation[label]}
           </div>
