@@ -1,8 +1,7 @@
+import Image from "next/image";
 import React, { Suspense, lazy } from "react";
 
-// import { useIsMobile } from "../Mobile/isMobile";
-
-import { ReactComponent as IconMoney } from "../../assets/icons/utils/navigation/money.svg";
+import IconMoney from "../../assets/icons/utils/navigation/money.svg";
 
 const CurrencyOffCanvas = lazy(()=> import("../../components/Mobile/Hotel/General/CurrencyOffCanvas"));
 
@@ -25,7 +24,7 @@ export default function Currency() {
   return (
     <>
       <div className="d-currency">
-        <IconMoney className="icon-currencies" />
+        <Image src={IconMoney} alt="IconMoney" className="icon-currencies" />
         <select
           className="select-currencies"
           name="select"

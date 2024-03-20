@@ -1,13 +1,14 @@
-import React, { useContext, useState } from "react";
+import Image from "next/image";
 import { Accordion } from "react-bootstrap";
+import React, { useContext, useState } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 
-import { ReactComponent as IconAdd } from "../../assets/icons/utils/payment/show_more.svg";
-import { ReactComponent as IconRemove } from "../../assets/icons/utils/payment/show_less.svg";
-import { ReactComponent as BedSharpIcon } from "../../assets/icons/utils/searchBox/room-autocomplete.svg";
-import { ReactComponent as Person2OutlinedIcon } from "../../assets/icons/utils/searchBox/person-autocomplete.svg";
+import IconAdd from "../../assets/icons/utils/payment/show_more.svg";
+import IconRemove from "../../assets/icons/utils/payment/show_less.svg";
+import BedSharpIcon from "../../assets/icons/utils/searchBox/room-autocomplete.svg";
+import Person2OutlinedIcon from "../../assets/icons/utils/searchBox/person-autocomplete.svg";
 
 export function AccordionIM(props) {
   const { room } = props;
@@ -39,9 +40,9 @@ export function AccordionIM(props) {
             </div>
             <div style={{ width: "0" }}>
               {activeIndex === index ? (
-                <IconRemove className="margin-icon-accordion" />
+                <Image src={IconRemove} alt="IconRemove" className="margin-icon-accordion" />
               ) : (
-                <IconAdd className="margin-icon-accordion" />
+                <Image src={IconAdd} alt="IconAdd" className="margin-icon-accordion" />
               )}
             </div>
           </Accordion.Header>
@@ -59,13 +60,13 @@ export function AccordionIM(props) {
                       {roomBed.beds && roomBed.beds.length >= 2 ? (
                         <div className={`d-flex ${!isMobile && "flex-column"}`}>
                           <div>
-                            <BedSharpIcon className="m-icon-bed" />
+                            <Image src={BedSharpIcon} alt="BedSharpIcon" className="m-icon-bed" />
                             <span className="info-bed-card-itinerary m-pd-0">
                               x {roomBed.beds[0].number} {roomBed.beds[0].type}
                             </span>
                           </div>
                           <div>
-                            <BedSharpIcon className="m-icon-bed" />
+                            <Image src={BedSharpIcon} alt="BedSharpIcon" className="m-icon-bed" />
                             <span className="info-bed-card-itinerary m-pd-0">
                               x {roomBed.beds[1].number} {roomBed.beds[1].type}
                             </span>
@@ -75,7 +76,7 @@ export function AccordionIM(props) {
                         <>
                           {roomBed.beds && roomBed.beds.length > 0 && (
                             <div className="d-flex">
-                              <BedSharpIcon className="m-icon-bed" />
+                              <Image src={BedSharpIcon} alt="BedSharpIcon" className="m-icon-bed" />
                               <span className="info-bed-card-itinerary m-pd-0">
                                 x {roomBed.beds[0].number}{" "}
                                 {roomBed.beds[0].type}
@@ -85,7 +86,7 @@ export function AccordionIM(props) {
                         </>
                       )}
                       <div className="people-card-itinerary">
-                        <Person2OutlinedIcon className="wdt-10" />
+                        <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" className="wdt-10" />
                         <div className="info-people-card-itinerary">
                           {roomBed.adults}{" "}
                           {roomBed.adults > 1

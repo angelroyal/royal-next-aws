@@ -43,8 +43,8 @@ export const ActivityForm = (props) => {
     let required = true;
     let auxFormArrayActivityItems = [...formArrayActivityItems];
 
-    console.log(combinedActivity);
-    console.log(formData);
+    // console.log(combinedActivity);
+    // console.log(formData);
 
     Object.entries(combinedActivity.details).forEach(
       ([keyDetail, itemDetail]) => {

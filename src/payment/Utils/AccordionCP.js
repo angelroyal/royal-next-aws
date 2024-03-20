@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react";
+import Image from "next/image";
 import { Accordion } from "react-bootstrap";
+import React, { useContext, useState } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
 
-import { ReactComponent as IconAdd } from "../../assets/icons/utils/payment/show_more.svg";
-import { ReactComponent as IconRemove } from "../../assets/icons/utils/payment/show_less.svg";
-import { ReactComponent as BedSharpIcon } from "../../assets/icons/utils/searchBox/room-autocomplete.svg";
+import IconAdd from "../../assets/icons/utils/payment/show_more.svg";
+import IconRemove from "../../assets/icons/utils/payment/show_less.svg";
+import BedSharpIcon from "../../assets/icons/utils/searchBox/room-autocomplete.svg";
 
 export function AccordionCP(props) {
   const { itemHotel, roomItem } = props;
@@ -47,9 +48,17 @@ export function AccordionCP(props) {
 
                       <div style={{ width: "0" }}>
                         {activeIndex === index ? (
-                          <IconRemove className="margin-icon-accordion" />
+                          <Image
+                            src={IconRemove}
+                            alt="IconRemove"
+                            className="margin-icon-accordion"
+                          />
                         ) : (
-                          <IconAdd className="margin-icon-accordion" />
+                          <Image
+                            src={IconAdd}
+                            alt="IconAdd"
+                            className="margin-icon-accordion"
+                          />
                         )}
                       </div>
                     </Accordion.Header>
@@ -71,7 +80,11 @@ export function AccordionCP(props) {
                                       {roomBed.beds &&
                                         roomBed.beds.map((typeBed, index) => (
                                           <div key={index}>
-                                            <BedSharpIcon className="m-icon-bed" />
+                                            <Image
+                                              src={BedSharpIcon}
+                                              alt="BedSharpIcon"
+                                              className="m-icon-bed"
+                                            />
                                             <span className="info-bed-card-itinerary m-pd-0">
                                               x {typeBed.number} {typeBed.type}
                                             </span>

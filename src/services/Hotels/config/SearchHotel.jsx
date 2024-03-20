@@ -1,4 +1,5 @@
 import _ from "lodash";
+import Image from "next/image";
 import { useState, useEffect, useMemo, useContext } from "react";
 import {
   Grid,
@@ -8,14 +9,12 @@ import {
   ListSubheader,
 } from "@mui/material";
 
-// import { useIsMobile } from "../../config/Mobile/isMobile";
-// import LanguageContext from "../../language/LanguageContext";
 import { useIsMobile } from "../../../configs/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
-import { ReactComponent as Hotels } from "../../assets/icons/utils/navigation/hotel.svg";
-import { ReactComponent as IconLocation } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import Hotels from "../../assets/icons/utils/navigation/hotel.svg";
+import IconLocation from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 const API_ENDPOINT = `v1/destinations/search`;
 
@@ -161,9 +160,17 @@ function SearchDestination(props) {
               }}
             >
               {params.group === "Destinos" ? (
-                <IconLocation style={{ marginRight: "8px" }} />
+                <Image
+                  src={IconLocation}
+                  alt="IconLocation"
+                  style={{ marginRight: "8px" }}
+                />
               ) : (
-                <Hotels style={{ marginRight: "8px" }} />
+                <Image
+                  src={Hotels}
+                  alt="Hotels"
+                  style={{ marginRight: "8px" }}
+                />
               )}
               <Typography variant="subtitle1">{params.group}</Typography>
             </ListSubheader>

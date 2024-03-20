@@ -1,7 +1,7 @@
 
-import { ReactComponent as HotelIcon } from "../../assets/icons/utils/others/hotelIcon.svg";
-import { ReactComponent as MoveIcon } from "../../assets/icons/utils/others/moveIcon.svg";
-import { ReactComponent as TourIcon } from "../../assets/icons/utils/others/tourIcon.svg";
+import HotelIcon from "../../assets/icons/utils/others/hotelIcon.svg";
+import MoveIcon from "../../assets/icons/utils/others/moveIcon.svg";
+import TourIcon from "../../assets/icons/utils/others/tourIcon.svg";
 
 export const CardHistoryConfig = [
     {

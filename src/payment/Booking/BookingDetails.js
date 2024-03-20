@@ -1,11 +1,12 @@
+import Image from "next/image";
 import React, { useContext, useState } from "react";
 
+import { DialogBooking } from "./MDialogBooking";
 import LanguageContext from "../../language/LanguageContext";
 
 import OpenDialogLine from "../../assets/images/others/line-open-dialog.png";
-import { ReactComponent as IconCreditCard } from "../../assets/images/others/credit-card.svg";
-import { ReactComponent as IconShowLess } from "../../assets/icons/hotel/modal/show_less.svg";
-import { DialogBooking } from "./MDialogBooking";
+import IconCreditCard from "../../assets/images/others/credit-card.svg";
+import IconShowLess from "../../assets/icons/hotel/modal/show_less.svg";
 
 export function BookingDetails(props) {
   const { itemSummary } = props;
@@ -16,7 +17,7 @@ export function BookingDetails(props) {
       <div className="box-inferior booking-container" onClick={()=>setOpenDialog(true)}>
         <div className="button-open-booking">
           <img src={OpenDialogLine} alt="OpenDialogLine" style={{ width: "100%" }} />
-          <IconShowLess className="icon-show-less" />
+          <Image src={IconShowLess} alt="IconShowLess" className="icon-show-less" />
         </div>
 
         <div className="d-flex p-3">
@@ -35,7 +36,7 @@ export function BookingDetails(props) {
           </div>
 
           <div className="m-i-pay-currency">
-            <IconCreditCard className="m-credit-c" />
+            <Image src={IconCreditCard} alt="IconCreditCard" className="m-credit-c" />
             <div className="m-i-margin-r">
               <div className="m-i-total-c">Total:</div>
 

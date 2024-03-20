@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Autoplay, Pagination } from "swiper";
 import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,13 +13,17 @@ import Transfer from "../../assets/images/others/transfer.svg";
 import CardHistory from "../../assets/images/others/card-container-h.png";
 import Image from "next/image";
 
-export function CartHistoryW() {
+export default function CartHistoryW() {
   const { languageData } = useContext(LanguageContext);
 
   return (
     <Row className="width100 m-0">
       <Col sm={4} className="service-hotel-tour-transportation">
+<<<<<<< Updated upstream
         <Image src={Hotel} className="service-quality" />
+=======
+        <Image src={Hotel} alt="Hotel" className="service-quality" />
+>>>>>>> Stashed changes
         <div className="styles-name-icon-service">
           <div className="name-icon-service">
             {languageData.ourHistory.titleHotelService}
@@ -31,7 +36,11 @@ export function CartHistoryW() {
       </Col>
 
       <Col sm={4} className="service-hotel-tour-transportation">
+<<<<<<< Updated upstream
         <Image  src={Transfer} className="service-quality" />
+=======
+        <Image src={Transfer} alt="Transfer" className="service-quality" />
+>>>>>>> Stashed changes
         <div className="styles-name-icon-service">
           <div className="name-icon-service">
             {languageData.ourHistory.titleTransportationService}
@@ -44,7 +53,11 @@ export function CartHistoryW() {
       </Col>
 
       <Col sm={4} className="service-hotel-tour-transportation">
+<<<<<<< Updated upstream
         <Image src={Tour} className="service-quality" />
+=======
+        <Image src={Tour} alt="Tour" className="service-quality" />
+>>>>>>> Stashed changes
         <div className="styles-name-icon-service">
           <div className="name-icon-service">
             {languageData.ourHistory.titleTourService}
@@ -89,7 +102,11 @@ export function CartHistoryW() {
 //               src={CardHistory}
 //               alt="content cart history"
 //             />
+<<<<<<< Updated upstream
 //             <info.image className="icon-card-about"/>
+=======
+//             {/* <Image src={info.image} alt="info.image" className="icon-card-about"/> */}
+>>>>>>> Stashed changes
 //             <div className="container-description-card">
 //                 <span className="title-card-about">{languageData.navigation[info.title]}</span>
 //                 <span className="description-card-about">{languageData.ourHistory[info.description]}</span>
