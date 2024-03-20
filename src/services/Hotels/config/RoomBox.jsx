@@ -22,8 +22,6 @@ function Room({ OnApply }) {
     }
   }, []);
 
-  console.log(totalPeople);
-
   const handleRoomData = (roomData) => {
     OnApply(roomData);
   };

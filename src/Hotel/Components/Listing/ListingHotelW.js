@@ -70,28 +70,28 @@ export default function ListingHotelW(props) {
   //   }
   // }, [window.location.search, token]);
   useEffect(() => {
-  scrollToTop();
-  // QUERY PARAMS POST AXIOS
-  if (typeof window !== 'undefined') {
-    const searchParams = new URLSearchParams(window.location.search);
-    const requestBody = {
-      code: searchParams.get("code"),
-      type: searchParams.get("type"),
-      "check-in": searchParams.get("check-in"),
-      "check-out": searchParams.get("check-out"),
-      occupancies: JSON.parse(
-        decodeURIComponent(searchParams.get("occupancies"))
-      ),
-    };
+    scrollToTop();
+    // QUERY PARAMS POST AXIOS
+    if (typeof window !== 'undefined') {
+      const searchParams = new URLSearchParams(window.location.search);
+      const requestBody = {
+        code: searchParams.get("code"),
+        type: searchParams.get("type"),
+        "check-in": searchParams.get("check-in"),
+        "check-out": searchParams.get("check-out"),
+        occupancies: JSON.parse(
+          decodeURIComponent(searchParams.get("occupancies"))
+        ),
+      };
 
-    if (requestBody) {
-      if (token) {
-        setCombinedHotelData(null);
-        handleFetchPostHotels(requestBody);
+      if (requestBody) {
+        if (token) {
+          setCombinedHotelData(null);
+          handleFetchPostHotels(requestBody);
+        }
       }
     }
-  }
-}, [/* window.location.search, */ token]);
+  }, [/* window.location.search, */ token]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -121,18 +121,21 @@ export default function ListingHotelW(props) {
 
           {combinedHotelData && combinedHotelData.length > 0 && (
             <>
-              <h2 className="hotel-page-title" data-aos="fade-right">
-                {languageData.filtersHotel.results}{" "}
-                {totalFilteredHotels > 0 && (
-                  <AnimatedNumber targetNumber={totalFilteredHotels} />
-                )}{" "}
-                {totalFilteredHotels > 1
-                  ? languageData.filtersHotel.resultsHotelEn
-                  : languageData.filtersHotel.resultsHotel}
-              </h2>
+              <div className="flex items-end justify-between mt-8">
+                <h2 className="m-b text-fs-20" data-aos="fade-right">
+                  {languageData.listingTour.weFound}{" "}
+                  {totalFilteredHotels > 0 && (
+                    <AnimatedNumber targetNumber={totalFilteredHotels} />
+                  )}{" "}
+                  {totalFilteredHotels > 1
+                    ? languageData.filtersHotel.resultFound
+                    : languageData.filtersHotel.resultsHotel}
+                    {" "}cancun
+                </h2>
 
-              {/* ORDER */}
-              <OrderingHotel />
+                {/* ORDER */}
+                <OrderingHotel />
+              </div>
               <CardHotelT />
 
               {/* CARD */}
@@ -173,8 +176,8 @@ export default function ListingHotelW(props) {
               <img
                 src={IconNoAvailability}
                 alt={languageData.allAlt.altBannerNavigation}
-                // height="auto"
-                // width="auto"
+              // height="auto"
+              // width="auto"
               />
             </>
           )}

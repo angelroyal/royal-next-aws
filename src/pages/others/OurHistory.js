@@ -3,13 +3,29 @@
 import React, { useContext } from "react";
 import { Row, Col } from "react-bootstrap";
 
+<<<<<<< Updated upstream
 import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "@/language/LanguageContext";
 // import { /*CartHistoryW*/ CardsHistoryM } from "./CartsHistory";
 import { BannerAboutUs } from "@/components/bannerJsx/bannerAboutUs";
 // import BannerAbout from "../../assets/images/others/banner-about-us.webp";
 import { Container } from "@/config/Others/Container";
+<<<<<<< HEAD
 import { CardsHistoryM } from "./CartsHistory";
+=======
+=======
+// import { CartHistoryW, CardsHistoryM } from "./CartsHistory";
+import CardCarousel from "../../utils/hotel/CardCarousel";
+import { useIsMobile } from "../../config/Mobile/isMobile";
+// import MetaHistory from "../../components/Meta/MetaHistory";
+// PENDING
+import LanguageContext from "../../language/LanguageContext";
+import { BannerAboutUs } from "../../components/bannerJsx/bannerAboutUs";
+
+import BannerAbout from "../../assets/images/others/banner-about-us.webp";
+import CartHistoryW from "./CartsHistory";
+>>>>>>> Stashed changes
+>>>>>>> be22036f9bf15ff3bfa429a00966d596b5b0f471
 
 export default function OurHistory() {
   const { languageData } = useContext(LanguageContext);
@@ -49,9 +65,18 @@ export default function OurHistory() {
           <h2 className="m-b py-10 text-fs-20 text-center md:text-start md:text-fs-24">
             {languageData.ourHistory.titleServiceQuality}
           </h2>
+<<<<<<< HEAD
           
           <CardsHistoryM />
         </Container>
+=======
+<<<<<<< Updated upstream
+          <CartHistoryW />
+=======
+          <CartHistoryW/>
+>>>>>>> Stashed changes
+        </div>
+>>>>>>> be22036f9bf15ff3bfa429a00966d596b5b0f471
       </div>
     </>
   );

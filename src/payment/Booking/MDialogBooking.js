@@ -1,11 +1,12 @@
-import { Dialog, Slide } from "@mui/material";
+import Image from "next/image";
 import React, { useContext } from "react";
+import { Dialog, Slide } from "@mui/material";
 
 import LanguageContext from "../../language/LanguageContext";
 
+import IconCreditCard from "../../assets/images/others/credit-card.svg";
+import IconShowMore from "../../assets/icons/utils/payment/show_more.svg";
 import CloseDialogLine from "../../assets/images/others/line-close-dialog-w.png"
-import { ReactComponent as IconCreditCard } from "../../assets/images/others/credit-card.svg";
-import { ReactComponent as IconShowMore } from "../../assets/icons/utils/payment/show_more.svg";
 
 const Transition = React.forwardRef((props, ref) => {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -27,7 +28,7 @@ export function DialogBooking(props) {
           <div className="close-dialog-button" onClick={closeDialog}>
             <img src={CloseDialogLine} alt="CloseDialogLine" className="line-dialog" />
             <div className="icons-close-dialog-container">
-              <IconShowMore className="icons-close-dialog" />
+              <Image src={IconShowMore} alt="IconShowMore" className="icons-close-dialog" />
             </div>
           </div>
 
@@ -108,7 +109,7 @@ export function DialogBooking(props) {
             </div>
 
             <div className="footer-dialog-booking">
-              <IconCreditCard className="m-credit-c-d" />
+              <Image src={IconCreditCard} alt="IconCreditCard" className="m-credit-c-d" />
               <div className="">
                 <div className="m-i-total-c">Total:</div>
                 <div className="m-i-price-c">

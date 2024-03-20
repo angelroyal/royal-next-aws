@@ -18,7 +18,7 @@ export default function OrderingHotel() {
     <>
       {ordering.items.length > 0 && (
         // MODIFY TAILWIND LP
-        <div className="border w-fit rounded-lg flex flex-col py-[8px] px-[16px] w-[164px] h-[48px]">
+        <div className="border !border-gry-70 w-fit rounded-lg flex flex-col py-[8px] px-[16px] w-[164px] h-[48px]">
           <div className="m-m text-gry-100 text-fs-10">{languageData.filtersHotel.order}</div>
           <FormControl sx={{ minWidth: 115 }} size="small" className="!p-0">
             <Select

@@ -113,7 +113,7 @@ export default function ReservationDetails(props) {
       setShowContent(2);
       fetchData(cartUid);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setShowAlert(error.response.data);
       if (error.response.data.message === "CNF") {
         setError(true);

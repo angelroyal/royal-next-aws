@@ -212,6 +212,8 @@ export const es = {
     resultsHotelEn: "alojamientos encontrados",
     order: "Ordenar por:",
     selection: "Seleccionar",
+    // LP
+    resultFound:"alojamientos en"
   },
 
   cardHotel: {

@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card, Rating, SvgIcon } from "@mui/material";
 import React, { useState, useContext, useEffect } from "react";
+import Link from "next/link";
 
 import { images_es } from "../../language/images_es";
 import { images_en } from "../../language/images_en";
@@ -28,7 +29,7 @@ import DemandIcon from "../../assets/icons/hotel/listing/on-high-demand.svg";
 export default function HotelCard(props) {
   const { index, hotel, availableNights, isClickPaginator, setClickPaginator } = props;
   const isMobile = useIsMobile();
- console.log(hotel);
+//  console.log(hotel);
   const [totalPeople, setTotalPeople] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const { languageData } = useContext(LanguageContext);
@@ -287,13 +288,14 @@ export default function HotelCard(props) {
             </div>
 
             {hotel.minRate && (
-              <button
+              <Link
                 className="card-hotel-button"
                 type="button"
-                onClick={() => handleOpenModal(hotel.key)}
+                // onClick={() => handleOpenModal(hotel.key)}
+                href={`/hotel/${hotel.name}`}
               >
                 {languageData.cardHotel.buttonShow}
-              </button>
+              </Link>
             )}
 
             {showModal && (

@@ -43,18 +43,18 @@ export function DialogModalHotel(props) {
 
   const { languageData } = useContext(LanguageContext);
 
-  const[isRoomSelected, setIsRoomSelected] = useState(false)
-  useEffect(()=>{
-    if(selectedRooms.length > 0){
+  const [isRoomSelected, setIsRoomSelected] = useState(false);
+  useEffect(() => {
+    if (selectedRooms.length > 0) {
       setIsRoomSelected(true);
-    }else{
+    } else {
       setIsRoomSelected(false);
     }
-  },[selectedRooms])
+  }, [selectedRooms]);
 
-  const [totalRoomsSelected,setTotalRoomsSelected] = useState(null)
-  useEffect(()=>{
-    if(newRequestBody !== null){
+  const [totalRoomsSelected, setTotalRoomsSelected] = useState(null);
+  useEffect(() => {
+    if (newRequestBody !== null) {
       setTotalRoomsSelected(newRequestBody.occupancies.length);
     }
   }, [newRequestBody]);
@@ -97,7 +97,10 @@ export function DialogModalHotel(props) {
                             </button>
                           </div>
 
-                          <h1 className="modal-hotel-title" data-aos="fade-right">
+                          <h1
+                            className="modal-hotel-title"
+                            data-aos="fade-right"
+                          >
                             {hotelModal.hotel.name}
                           </h1>
                         </div>
@@ -139,7 +142,6 @@ export function DialogModalHotel(props) {
                     </div>
                     <div className="container">
                       <>
-
                         <div className="m-container-carousel-modal-hotel">
                           <GalleryHotelMobile hotelModal={hotelModal.hotel} />
                         </div>
@@ -173,7 +175,7 @@ export function DialogModalHotel(props) {
                                 sm={8}
                               >
                                 <TypeRoom
-                                 isRoomSelected={isRoomSelected}
+                                  isRoomSelected={isRoomSelected}
                                   hotelModal={hotelModal.hotel}
                                   onAddDetail={handleAddDetail}
                                 />
@@ -190,8 +192,8 @@ export function DialogModalHotel(props) {
                                   }
                                   setSelectedRooms={setSelectedRooms}
                                   isRoomSelected={isRoomSelected}
-                                  totalRoomsSelected ={totalRoomsSelected}
-                                  />
+                                  totalRoomsSelected={totalRoomsSelected}
+                                />
                               </>
                             </Col>
                           </SelectedRoomsContext.Provider>
@@ -205,7 +207,7 @@ export function DialogModalHotel(props) {
               </div>
             ) : showContent === 2 ? (
               <div className="modal-hotel-h">
-                {hotelModal &&  (
+                {hotelModal && (
                   <div>
                     <SelectedRoomsContext.Provider
                       value={[selectedRooms, setSelectedRooms]}
