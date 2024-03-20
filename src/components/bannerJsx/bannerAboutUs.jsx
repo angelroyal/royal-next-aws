@@ -7,15 +7,15 @@ export function BannerAboutUs() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div data-aos="fade-left" className="relative">
+    <div data-aos="fade-left" className="relative h-[12rem] lg:h-[20rem]">
       <img
-        className="object-fit-cover"
+        className="object-cover w-full h-full "
         src={Others.bannerAbout.image}
         alt={Others.bannerAbout.alt}
         width="100%"
         height="100%"
       />
-      <h1 className="absolute my-auto mx-auto inset-y-0 inset-x-0 w-max h-max text-white text-[45px] m-b drop-shadow-xl">
+      <h1 className="absolute my-auto mx-auto inset-y-0 inset-x-0 w-auto h-max text-white text-fs-20 text-center px-8 lg:px-0 lg:text-[45px] m-b drop-shadow-xl">
         {languageData.titleBanners[Others.bannerAbout.title]}
       </h1>
     </div>

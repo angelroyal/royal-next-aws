@@ -1,10 +1,13 @@
+"use client"
 import React, { useEffect, useState } from "react";
 
 // import MetaPrivacy from "../../components/Meta/MetaPrivacy";
 // PENDING
-import SkeletonText from "../../utils/skeleton/SkeletonText";
-import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
+
 import { ScrollButton, scrollToTop } from "../../utils/pageConfig/scrollToTop";
+import { Container } from "@/config/Others/Container";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import SkeletonText from "@/utils/skeleton/SkeletonText";
 
 export default function Privacy() {
   const [htmlContent, setHtmlContent] = useState("");
@@ -51,9 +54,11 @@ export default function Privacy() {
   return (
     <>
       {/* <MetaPrivacy /> */}
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <Container>
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      </Container>
 
-      <ScrollButton/>
+      <ScrollButton />
 
       {!htmlContent && <SkeletonText />}
     </>

@@ -1,9 +1,11 @@
+"use client"
 import React, { useEffect, useState } from "react";
 
 // import MetaTerms from "../../components/Meta/MetaTerms";
 import SkeletonText from "../../utils/skeleton/SkeletonText";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { ScrollButton, scrollToTop } from "../../utils/pageConfig/scrollToTop";
+import { Container } from "@/config/Others/Container";
 
 export default function TermsConditions() {
   const [htmlContent, setHtmlContent] = useState("");
@@ -50,9 +52,11 @@ export default function TermsConditions() {
   return (
     <>
       {/* <MetaTerms /> */}
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <Container>
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      </Container>
 
-      <ScrollButton/>
+      <ScrollButton />
 
       {!htmlContent && <SkeletonText />}
     </>

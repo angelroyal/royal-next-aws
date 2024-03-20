@@ -11,7 +11,7 @@ import IconAdd from "../../assets/icons/utils/others/add.svg";
 import IconRemove from "../../assets/icons/utils/others/remove.svg";
 import "../../assets/styles/web/About.css";
 
-export function FaqsWeb(props) {
+export default function FaqsWeb(props) {
   const { setOpenSection, openSection, activeKey, handleAccordionClick } =
     props;
   // console.log(openSection);

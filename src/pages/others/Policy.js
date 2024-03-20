@@ -1,11 +1,12 @@
+"use client";
 import React, { useEffect, useState } from "react";
 
 import "../../assets/styles/web/About.css";
-// import MetaPolicy from "../../components/Meta/MetaPolicy";
-// PENDING
 import SkeletonPolicy from "../../utils/skeleton/SkeletonPolicy";
 import { scrollToTop, ScrollButton } from "../../utils/pageConfig/scrollToTop";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
+import Test2 from "@/hooks/Test2";
+import { Container } from "@/config/Others/Container";
 
 export default function Policy() {
   const [htmlContent, setHtmlContent] = useState("");
@@ -56,9 +57,12 @@ export default function Policy() {
   return (
     <>
       {/* <MetaPolicy /> */}
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <Container>
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        {/* <Test2 /> */}
+      </Container>
 
-      <ScrollButton/>
+      <ScrollButton />
 
       {!htmlContent && <SkeletonPolicy />}
     </>
