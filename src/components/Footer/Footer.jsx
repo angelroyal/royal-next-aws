@@ -161,11 +161,11 @@ export default function Footer() {
                 {languageData.footer.about.titleHistory}
               </Link>
 
-              <Link href="/ourHistory" className="hover:!text-or-100 no-underline text-white">
+              <Link href="/tyc" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titleConditions}
               </Link>
               
-              <Link href="/ourHistory" className="hover:!text-or-100 no-underline text-white">
+              <Link href="/policy" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titlePrivacy}
               </Link>
 
