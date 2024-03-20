@@ -128,8 +128,9 @@ export default function ListingHotelW(props) {
                     <AnimatedNumber targetNumber={totalFilteredHotels} />
                   )}{" "}
                   {totalFilteredHotels > 1
-                    ? languageData.filtersHotel.resultsHotelEn
+                    ? languageData.filtersHotel.resultFound
                     : languageData.filtersHotel.resultsHotel}
+                    {" "}cancun
                 </h2>
 
                 {/* ORDER */}
