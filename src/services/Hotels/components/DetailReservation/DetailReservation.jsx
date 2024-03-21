@@ -6,7 +6,7 @@ import { useContext } from "react";
 export default function DetailReservation(){
     const {languageData} = useContext(LanguageContext);
     return(
-        <div className="sticky bottom-0 left-0 w-full bg-white py-6 z-[2] border-t border-gry-50">
+        <div className="sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-50">
             <Container>
                 <div className="relative flex flex-col gap-y-4 md:flex-row md:justify-between md:items-center">
                     <div className="flex flex-col gap-y-2">

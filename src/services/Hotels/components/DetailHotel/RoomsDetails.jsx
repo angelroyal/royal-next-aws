@@ -36,7 +36,7 @@ export default function RoomsDetails() {
               slidesPerView: 3,
             },
             1200: {
-              slidesPerView: 3.8,
+              slidesPerView: 4,
             },
           }}
         >
