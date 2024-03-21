@@ -7,29 +7,22 @@ import React, { useEffect, useContext, useState } from "react";
 
 import OrderingHotel from "../Listing/OrderingHotel";
 import FiltersHotels from "../../Utils/FiltersHotels";
+import HotelCard from "@/components/HotelCard/HotelCard";
 import { AnimatedNumber } from "../../Utils/AnimatedNumber";
 import { useToken } from "../../../config/context/AuthContext";
 import LanguageContext from "../../../language/LanguageContext";
-// import HotelCard from "../../../components/HotelCard/HotelCard";
-import HotelCard from "@/components/HotelCard/HotelCard";
 import ListingHotelContext from "../../Context/ListingHotelContext";
 import { scrollToTop } from "../../../utils/pageConfig/scrollToTop";
 import SkeletonChildren from "../../../utils/skeleton/SkeletonChildren";
 import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
-import {
-  BannerListingHotelBottom,
-  BannerListingHotelTop,
-} from "../../../components/bannerJsx/bannerListingHotel";
+import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 
-import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
-import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
+import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
+import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
-  const { totalPeople, numNights } = props;
-
-  const [isClickPaginator, setClickPaginator] = useState(false);
 
   const {
     totalPages,
@@ -41,14 +34,13 @@ export default function ListingHotelW(props) {
     totalFilteredHotels,
     handleFetchPostHotels,
   } = useContext(ListingHotelContext);
+
   const { languageData } = useContext(LanguageContext);
 
   const clickPaginator = (event, value) => {
     handlePageChange(event, value);
-    setClickPaginator(true);
   };
 
-  // useEffect(() => {
   //   scrollToTop();
   //   // QUERY PARAMS POST AXIOS
   //   const searchParams = new URLSearchParams(window.location.search);
@@ -72,7 +64,7 @@ export default function ListingHotelW(props) {
   useEffect(() => {
     scrollToTop();
     // QUERY PARAMS POST AXIOS
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const searchParams = new URLSearchParams(window.location.search);
       const requestBody = {
         code: searchParams.get("code"),
@@ -129,28 +121,30 @@ export default function ListingHotelW(props) {
                   )}{" "}
                   {totalFilteredHotels > 1
                     ? languageData.filtersHotel.resultFound
-                    : languageData.filtersHotel.resultsHotel}
-                    {" "}cancun
+                    : languageData.filtersHotel.resultsHotel}{" "}
+                  
                 </h2>
 
                 {/* ORDER */}
                 <OrderingHotel />
               </div>
               <CardHotelT />
-              <CardHotelT />
 
               {/* CARD */}
               {combinedHotelData &&
                 combinedHotelData.map((hotel, index) => (
-                  <HotelCard
-                    key={index}
-                    index={index}
-                    hotel={hotel}
-                    availableNights={numNights}
-                    availablePeople={totalPeople}
-                    isClickPaginator={isClickPaginator}
-                    setClickPaginator={setClickPaginator}
-                  />
+                  <>
+                    <CardHotelT hotel={hotel} />{" "}
+                    {/* <HotelCard
+                      key={index}
+                      index={index}
+                      hotel={hotel}
+                      availableNights={numNights}
+                      availablePeople={totalPeople}
+                      isClickPaginator={isClickPaginator}
+                      setClickPaginator={setClickPaginator}
+                    /> */}
+                  </>
                 ))}
 
               {/* PAGINATION */}
@@ -170,15 +164,13 @@ export default function ListingHotelW(props) {
 
           {combinedHotelData && combinedHotelData.length === 0 && (
             <>
-              <div className="image-no-availability-h">
+              <div className="m-b text-fs-20 text-black mt-2 mb-2">
                 {languageData.filtersTour.noAvailability}
               </div>
 
-              <img
+              <Image
                 src={IconNoAvailability}
                 alt={languageData.allAlt.altBannerNavigation}
-              // height="auto"
-              // width="auto"
               />
             </>
           )}

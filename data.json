@@ -1,3 +1,32 @@
 {
-  "Home": "/dominio.com"
+  "key": 1071,
+  "provider": "hb",
+  "availableRooms": 3,
+  "minRate": "26945.40",
+  "stars": 4,
+  "eatingPlans": ["CB", "OR"],
+  "types": [4],
+  "chain": "Krystal",
+  "exclusiveDeal": 3,
+  "isTop": false,
+  "currency": "MXN",
+  "offers": "28973.4",
+  "percentageDiscount": "93",
+  "name": "Krystal Urban Cancún & Beach Club",
+  "destinationCode": 18,
+  "destinationName": "Cancun (y alrededores)",
+  "facilities": ["golf", "restaurant", "wi-fi", "room-service"],
+  "zone": "CUN.20",
+  "images": [
+    "https://api.sandboxmexico.com/assets/images/hotels/1071/125057a_hb_a_001.webp",
+    "https://api.sandboxmexico.com/assets/images/hotels/1071/125057a_hb_a_002.webp",
+
+    "https://api.sandboxmexico.com/assets/images/hotels/1071/125057a_hb_a_003.webp",
+
+    "https://api.sandboxmexico.com/assets/images/hotels/1071/125057a_hb_a_004.webp",
+
+    "https://api.sandboxmexico.com/assets/images/hotels/1071/125057a_hb_l_001.webp"
+  ],
+  "closestInterestPointName": "Plaza Las Americas",
+  "closestInterestPointDistance": 500
 }

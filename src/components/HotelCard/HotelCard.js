@@ -217,7 +217,7 @@ export default function HotelCard(props) {
             </Box>
             {hotel.food && (
               <div className="card-hotel-eating">
-                {languageData.eatingPlan[hotel.food]}
+                {languageData.eatingPlan[hotel.eatingPlans]}
               </div>
             )}
           </Col>

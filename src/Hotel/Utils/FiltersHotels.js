@@ -173,12 +173,12 @@ export default function FiltersHotels() {
                             {showMore[filterGroup] ? (
                               <>
                                 {languageData.showOptions.showLess}{" "}
-                                <img src={ArrowUpIcon}/>
+                                <Image src={ArrowUpIcon} alt="ArrowUpIcon" />
                               </>
                             ) : (
                               <>
                                 {languageData.showOptions.showMore}{" "}
-                                <img src={ArrowIcon}/>
+                                <Image src={ArrowIcon} alt="ArrowUpIcon" />
                               </>
                             )}
                           </button>

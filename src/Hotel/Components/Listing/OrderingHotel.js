@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { FormControl, MenuItem, Select } from "@mui/material";
 
 import { ordering } from "../../../config/Hotel/filters";
 import LanguageContext from "../../../language/LanguageContext";
@@ -7,34 +6,38 @@ import ListingHotelContext from "../../Context/ListingHotelContext";
 
 export default function OrderingHotel() {
   const { languageData } = useContext(LanguageContext);
-  const { orderHotel, setOrderHotel, setCurrentPage } = useContext(ListingHotelContext);
+  const { orderHotel, setOrderHotel, setCurrentPage } =
+    useContext(ListingHotelContext);
 
   const handleOrderingFilters = (event) => {
-    setOrderHotel(event.target.value);
+    const selectedValue = +event.target.value;
+    console.log(selectedValue);
+
+    setOrderHotel(selectedValue);
     setCurrentPage(1);
   };
 
   return (
     <>
       {ordering.items.length > 0 && (
-        // MODIFY TAILWIND LP
-        <div className="border !border-gry-70 w-fit rounded-lg flex flex-col py-[8px] px-[16px] w-[164px] h-[48px]">
-          <div className="m-m text-gry-100 text-fs-10">{languageData.filtersHotel.order}</div>
-          <FormControl sx={{ minWidth: 115 }} size="small" className="!p-0">
-            <Select
-            className="!text-fs-12 !m-0 !w-[115px] !p-0"
-              // labelId="ordering-filters"
-              id="ordering-filters-select"
-              value={orderHotel}
-              onChange={handleOrderingFilters}
-            >
-              {ordering.items.map((item, index) => (
-                <MenuItem key={`selector_item_${index}`} value={item.value} className="!p-0">
-                  {languageData.orderByHotel[item.label]}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+        <div className="relative">
+          <label
+            htmlFor="location"
+            className="m-m text-gry-100 text-fs-10 absolute top-[12px] left-[18px] "
+          >
+            {languageData.filtersHotel.order}
+          </label>
+          <select
+            className="pt-[1.2rem] mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-bl-70 sm:text-sm sm:leading-6 text-fs-14"
+            value={orderHotel}
+            onChange={(event) => handleOrderingFilters(event)}
+          >
+            {ordering.items.map((item, index) => (
+              <option key={index} value={item.value}>
+                {languageData.orderByHotel[item.label]}
+              </option>
+            ))}
+          </select>
         </div>
       )}
     </>

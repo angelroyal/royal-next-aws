@@ -66,7 +66,7 @@ export const applyFilters = (hotels, filters, pricing) => {
     if (filters["eating-plan"] && filters["eating-plan"].length > 0) {
       if (
         !filters["eating-plan"].includes(-1) &&
-        !filters["eating-plan"].some((plan) => hotel.eatingPlans.includes(plan))
+        !filters["eating-plan"].some((plan) => hotel.eatingPlan.includes(plan))
       ) {
         return false;
       }

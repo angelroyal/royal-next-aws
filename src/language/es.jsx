@@ -450,6 +450,7 @@ export const es = {
     LI: "Almuerzo Incluido",
     DI: "Cena Incluida",
     OR: "Solo Habitación",
+    CB: "Desayuno Especial"
   },
 
   // LP TOUR RECOMMENDED HOME HOTEL
