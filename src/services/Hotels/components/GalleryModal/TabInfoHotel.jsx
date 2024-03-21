@@ -107,41 +107,19 @@ export default function TabInfoHotel() {
 
   return (
     <>
-      <div className="sm:hidden">
-        <label htmlFor="tabs" className="sr-only">
-          Select a tab
-        </label>
-
-        <select
-          id="tabs"
-          name="tabs"
-          className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-          value={selectedTab.name}
-          onChange={(e) =>
-            handleTabClick(tabs.find((tab) => tab.name === e.target.value))
-          }
-        >
-          {tabs.map((tab) => (
-            <option key={tab.name} value={tab.name}>
-              {tab.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="hidden sm:block">
+      <div className="block">
         <div className="border-b border-gray-200">
-          <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+          <nav className="-mb-px flex gap-x-3.5 space-x-8 overflow-y-auto" aria-label="Tabs">
             {tabs.map((tab) => (
               <a
                 key={tab.name}
-                href={tab.href}
+                // href={tab.href}
                 onClick={() => handleTabClick(tab)}
                 className={`${
                   selectedTab.name === tab.name
                     ? "border-or-70 text-or-100"
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                } group inline-flex items-center border-b-2 py-4 px-1 text-sm font-medium`}
+                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline my-2`}
                 aria-current={
                   selectedTab.name === tab.name ? "page" : undefined
                 }

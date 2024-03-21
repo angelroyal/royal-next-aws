@@ -21,7 +21,7 @@
   
 
   /* SWIPER ROOMS DETAILS */
-  #room-details > div.swiper-button-prev.swiper-button-disabled{
+  #room-details > div.swiper-button-prev.swiper-button-disabled, #room-details > div.swiper-button-prev{
     display: none;
   }
   
@@ -29,6 +29,7 @@
     color: #666666;
     right: 7px;
     position: absolute;
+    z-index: 1;
   }
   #room-details{
     position: static;
