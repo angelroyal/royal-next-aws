@@ -219,8 +219,8 @@ export default function FiltersHotel() {
                                 </div>
 
                                 <div className='flex gap-1'>
-                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                    <label for="all-category-a"
+                                    <input id='category-Beach' type='checkbox' className="w-[20px] h-[20px]" />
+                                    <label for="category-Beach"
                                         className='m-m text-fs-12 cursor-pointer text-black'
                                     >
                                         {languageData.optionsFilterHotel.beach}
@@ -228,8 +228,8 @@ export default function FiltersHotel() {
                                 </div>
 
                                 <div className='flex gap-1'>
-                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                    <label for="all-category-a"
+                                    <input id='category-Family' type='checkbox' className="w-[20px] h-[20px]" />
+                                    <label for="category-Family"
                                         className='m-m text-fs-12 cursor-pointer text-black'
                                     >
                                         {languageData.optionsFilterHotel.family}
@@ -237,8 +237,8 @@ export default function FiltersHotel() {
                                 </div>
 
                                 <div className='flex gap-1'>
-                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                    <label for="all-category-a"
+                                    <input id='category-Romantic' type='checkbox' className="w-[20px] h-[20px]" />
+                                    <label for="category-Romantic"
                                         className='m-m text-fs-12 cursor-pointer text-black'
                                     >
                                         {languageData.optionsFilterHotel.romantic}
@@ -254,8 +254,8 @@ export default function FiltersHotel() {
                                             <div className='flex flex-col gap-2 mb-1'>
 
                                                 <div className='flex gap-1'>
-                                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                                    <label for="all-category-a"
+                                                    <input id='category-Business' type='checkbox' className="w-[20px] h-[20px]" />
+                                                    <label for="category-Business"
                                                         className='m-m text-fs-12 cursor-pointer text-black'
                                                     >
                                                         {languageData.optionsFilterHotel.business}
@@ -263,8 +263,8 @@ export default function FiltersHotel() {
                                                 </div>
 
                                                 <div className='flex gap-1'>
-                                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                                    <label for="all-category-a"
+                                                    <input id='category-Adults-Only' type='checkbox' className="w-[20px] h-[20px]" />
+                                                    <label for="category-Adults-Only"
                                                         className='m-m text-fs-12 cursor-pointer text-black'
                                                     >
                                                         {languageData.optionsFilterHotel.onlyAdults}
@@ -272,8 +272,8 @@ export default function FiltersHotel() {
                                                 </div>
 
                                                 <div className='flex gap-1'>
-                                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                                    <label for="all-category-a"
+                                                    <input id='category-Pet-Friendly' type='checkbox' className="w-[20px] h-[20px]" />
+                                                    <label for="category-Pet-Friendly"
                                                         className='m-m text-fs-12 cursor-pointer text-black'
                                                     >
                                                         {languageData.optionsFilterHotel.petFriendly}
@@ -317,8 +317,8 @@ export default function FiltersHotel() {
 
                             <div className='flex flex-col gap-2 mb-1'>
                                 <div className='flex gap-1'>
-                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                    <label for="all-category-a"
+                                    <input id='all-category-b' type='checkbox' className="w-[20px] h-[20px]" />
+                                    <label for="all-category-b"
                                         className='m-m text-fs-12 cursor-pointer text-black'
                                     >
                                         {languageData.optionsFilterTour.allCategories}
@@ -326,8 +326,8 @@ export default function FiltersHotel() {
                                 </div>
 
                                 <div className='flex gap-1'>
-                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                    <label for="all-category-a"
+                                    <input id='category-Inclusive' type='checkbox' className="w-[20px] h-[20px]" />
+                                    <label for="category-Inclusive"
                                         className='m-m text-fs-12 cursor-pointer text-black'
                                     >
                                         {languageData.optionsFilterHotel.allInclusive}
@@ -335,8 +335,8 @@ export default function FiltersHotel() {
                                 </div>
 
                                 <div className='flex gap-1'>
-                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                    <label for="all-category-a"
+                                    <input id='category-Room' type='checkbox' className="w-[20px] h-[20px]" />
+                                    <label for="category-Room"
                                         className='m-m text-fs-12 cursor-pointer text-black'
                                     >
                                         {languageData.optionsFilterHotel.onlyRooms}
@@ -344,8 +344,8 @@ export default function FiltersHotel() {
                                 </div>
 
                                 <div className='flex gap-1'>
-                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                    <label for="all-category-a"
+                                    <input id='category-Continental' type='checkbox' className="w-[20px] h-[20px]" />
+                                    <label for="category-Continental"
                                         className='m-m text-fs-12 cursor-pointer text-black'
                                     >
                                         {languageData.optionsFilterHotel.continentalBreakFast}
@@ -361,8 +361,8 @@ export default function FiltersHotel() {
                                             <div className='flex flex-col gap-2 mb-1'>
 
                                                 <div className='flex gap-1'>
-                                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                                    <label for="all-category-a"
+                                                    <input id='category-Breakfast' type='checkbox' className="w-[20px] h-[20px]" />
+                                                    <label for="category-Breakfast"
                                                         className='m-m text-fs-12 cursor-pointer text-black'
                                                     >
                                                         {languageData.optionsFilterHotel.specialBreakfast}
@@ -370,8 +370,8 @@ export default function FiltersHotel() {
                                                 </div>
 
                                                 <div className='flex gap-1'>
-                                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                                    <label for="all-category-a"
+                                                    <input id='category-Lunch' type='checkbox' className="w-[20px] h-[20px]" />
+                                                    <label for="category-Lunch"
                                                         className='m-m text-fs-12 cursor-pointer text-black'
                                                     >
                                                         {languageData.optionsFilterHotel.lunchIncluded}
@@ -379,8 +379,8 @@ export default function FiltersHotel() {
                                                 </div>
 
                                                 <div className='flex gap-1'>
-                                                    <input id='all-category-a' type='checkbox' className="w-[20px] h-[20px]" />
-                                                    <label for="all-category-a"
+                                                    <input id='category-Dinner' type='checkbox' className="w-[20px] h-[20px]" />
+                                                    <label for="category-Dinner"
                                                         className='m-m text-fs-12 cursor-pointer text-black'
                                                     >
                                                         {languageData.optionsFilterHotel.dinnerIncluded}
