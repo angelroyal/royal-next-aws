@@ -27,9 +27,6 @@ export default function DetailReservation() {
                 Impuestos incluidos
               </span>
             </div>
-            {/* <h4 className="text-fs-20 text-black m-b "><span className="text-fs-12 text-black m-s-b">MXN</span>$00.<sup>00</sup></h4> */}
-
-            {/* <span className="text-grn-100 text-fs-8 m-s-b rounded w-max bg-grn-50 py-1 px-2">Impuestos incluidos</span> */}
           </div>
 
           <h3 className="text-gry-70 text-fs-10 h-6 w-max m-s-b">
@@ -40,13 +37,11 @@ export default function DetailReservation() {
             Reservar ahora
           </button>
 
-          <button className="absolute left-0 right-0 mx-auto border-0 top-[-41px] w-[44px] h-[44px] flex justify-center items-center z-[1] border border-gry-100 ">
+          <button className="absolute left-0 right-0 mx-auto border-0 top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[1] border border-gry-100 ">
             <img
               src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-100-cle.svg`}
               alt="arrows"
             />
-            {/* <div className="relative flex">
-                        </div> */}
           </button>
         </div>
       </Container>
