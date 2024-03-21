@@ -24,6 +24,7 @@ import {
 import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
 import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
+import FiltersHotel from "@/services/Hotels/components/Listing/FiltersHotel";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
@@ -112,7 +113,9 @@ export default function ListingHotelW(props) {
           </h1>
 
           <SearchBoxMobile />
-          <FiltersHotels />
+          <FiltersHotel/>
+          
+          {/* <FiltersHotels /> */}
         </Col>
 
         <Col sm={8}>
