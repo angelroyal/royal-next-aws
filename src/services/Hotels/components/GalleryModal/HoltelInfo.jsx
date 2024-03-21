@@ -1,7 +1,7 @@
 import { TotalStars } from "@/components/General/Stars";
 
 export function HotelInfo({ GalleryModalHotel }) {
-  console.log(GalleryModalHotel);
+  // console.log(GalleryModalHotel);
 
   return (
     <>
@@ -16,9 +16,19 @@ export function HotelInfo({ GalleryModalHotel }) {
       </div>
       <h1 className="m-b text-fs-24">{GalleryModalHotel.hotel.name}</h1>
 
-      <div className="mt-1">
-        <TotalStars stars={GalleryModalHotel.hotel.stars} />
-        <div className="m-m text-fs-13 mt-1">{`${GalleryModalHotel.hotel.destination} ${GalleryModalHotel.hotel.address}`}</div>
+      <TotalStars stars={GalleryModalHotel.hotel.stars} />
+
+      <div className="mt-3 flex mb-[6]">
+        <img
+          src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
+          alt="location"
+          width={14}
+          height={18}
+        />
+
+        <div className="m-m text-fs-13 ml-1 text-gry-70">
+          {`${GalleryModalHotel.hotel.address}, ${GalleryModalHotel.hotel.destination}`}
+        </div>
       </div>
     </>
   );

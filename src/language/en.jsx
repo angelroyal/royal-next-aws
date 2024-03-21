@@ -447,6 +447,7 @@ export const en = {
     LI: "Lunch Included",
     DI: "Dinner Included",
     OR: "Room Only",
+    CB: "Special Breakfast"
   },
 
   // LP TOUR RECOMMENDED HOME HOTEL

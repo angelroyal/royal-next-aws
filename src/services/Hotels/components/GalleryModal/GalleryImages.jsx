@@ -2,41 +2,58 @@
 
 import { useRef, useState } from "react";
 import "../../../../assets/css/Hotel/GalleryImage.css";
+
 export function GalleryImages({ images }) {
   const carrouselRef = useRef(null);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? images.length - 1 : prevIndex + 1
     );
-    scrollToCurrentImage();
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? 0 : prevIndex - 1));
-    scrollToCurrentImage();
-  };
-
-  const scrollToCurrentImage = () => {
-    // const currentImage = carrouselRef.current.children[currentIndex];
-    // currentImage.scrollIntoView({ behavior: "smooth", inline: "center" });
   };
 
   return (
     <div className="flex relative flex-col gap-y-4">
-      <div className="w-full" style={{ height: "30rem" }}>
+      <div className="w-full" style={{ height: "27rem" }}>
         <img
           className="object-cover w-full h-full rounded-lg"
           src={images[currentIndex]}
           alt="gallery hotel"
         />
+
+        <button
+          className={`prev-slice absolute translate-y-2/4 p-3 cursor-pointer left-0 ${
+            currentIndex == 0 && "cursor-not-allowed opacity-30"
+          }`}
+          onClick={prevSlide}
+        >
+          <img
+            src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/left-w.svg`}
+            alt="left icon"
+          />
+        </button>
+
+        <button
+          className={`nex-slice absolute translate-y-2/4 p-3 cursor-pointer right-0 ${
+            currentIndex == images.length - 1 && "cursor-not-allowed opacity-30"
+          }`}
+          onClick={nextSlide}
+        >
+          <img
+            src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-w.svg`}
+            alt="left icon"
+          />
+        </button>
       </div>
 
       {/* <div className="m-b text-fs-16 text-center">{`${currentIndex + 1} / ${images.length}`}</div> */}
 
-      <div className="mx-16 relative truncate">
+      <div className="relative truncate">
         <div
           ref={carrouselRef}
           className="flex w-full"
@@ -64,30 +81,6 @@ export function GalleryImages({ images }) {
           ))}
         </div>
       </div>
-
-      <button
-        className={`prev-slice absolute translate-y-2/4 p-3 cursor-pointer left-0 ${
-          currentIndex == 0 && "cursor-not-allowed opacity-30"
-        }`}
-        onClick={prevSlide}
-      >
-        <img
-          src="https://sandboxmexico.com/assets/icons/arrows/left-100.svg"
-          alt="left icon"
-        />
-      </button>
-
-      <button
-        className={`nex-slice absolute translate-y-2/4 p-3 cursor-pointer right-0 ${
-          currentIndex == images.length - 1 && "cursor-not-allowed opacity-30"
-        }`}
-        onClick={nextSlide}
-      >
-        <img
-          src="https://sandboxmexico.com/assets/icons/arrows/right-100.svg"
-          alt="left icon"
-        />
-      </button>
     </div>
   );
 }

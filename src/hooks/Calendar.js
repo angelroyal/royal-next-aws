@@ -1,3 +1,4 @@
+"use client"
 import flatpickr from "flatpickr";
 import "flatpickr/dist/l10n/es.js";
 import "flatpickr/dist/flatpickr.min.css";
@@ -8,7 +9,10 @@ import LanguageContext from "../language/LanguageContext";
 function Calendar({ onDateChange }) {
   const calendarRef = useRef(null);
   // const language = localStorage.getItem("language") || "es";
-  const language = typeof localStorage !== 'undefined' ? localStorage.getItem("language") || "es" : "es";
+  const language =
+    typeof localStorage !== "undefined"
+      ? localStorage.getItem("language") || "es"
+      : "es";
 
   useEffect(() => {
     const handleDateChange = (selectedDates) => {
@@ -62,24 +66,26 @@ function Calendar({ onDateChange }) {
   }, []);
   const { languageData } = useContext(LanguageContext);
   return (
-    <div className="flex items-center gap-2">
-      <img
-        className="h-[18px] w-4 invert"
-        src="https://sandboxmexico.com/assets/icons/calendar/calendar-b.svg"
-        alt="calendar icon royal vacation"
-      />
-      <div className="flex relative">
-        <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
-          Fecha
-        </span>
-
-        <input
-          className="mt-3 m-b text-fs-12 focus:outline-none"
-          type="text"
-          ref={calendarRef}
-          placeholder={languageData.SearchBox.tabHotel.dateText}
-          // id="check-in"
+    <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full lg:w-[290px]">
+      <div className="flex items-center gap-2">
+        <img
+          className="h-[18px] w-4 invert"
+          src="https://sandboxmexico.com/assets/icons/calendar/calendar-b.svg"
+          alt="calendar icon royal vacation"
         />
+        <div className="flex relative">
+          <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
+            Fecha
+          </span>
+
+          <input
+            className="mt-3 m-b text-fs-12 focus:outline-none"
+            type="text"
+            ref={calendarRef}
+            placeholder={languageData.SearchBox.tabHotel.dateText}
+            // id="check-in"
+          />
+        </div>
       </div>
     </div>
   );

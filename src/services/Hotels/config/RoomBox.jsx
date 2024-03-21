@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect, useContext } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -51,7 +52,7 @@ function Room({ OnApply }) {
   };
 
   return (
-    <>
+    <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px]">
       <Dropdown style={{minWidth:"293px"}} show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
@@ -61,7 +62,7 @@ function Room({ OnApply }) {
           <span className="flex items-center gap-2 border-r-2 border-gry-70 pr-3.5">
             <img
               className="h-4 w-4 invert"
-              src="https://sandboxmexico.com/assets/icons/room/room-b.svg"
+              src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
               alt="room icon Royal Vacations"
             />
             <div className="flex flex-col items-start">
@@ -114,7 +115,7 @@ function Room({ OnApply }) {
           </Dropdown.Menu>
         )}
       </Dropdown>
-    </>
+    </div>
   );
 }
 
