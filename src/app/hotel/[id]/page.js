@@ -13,7 +13,7 @@ import { Container } from "@/config/Others/Container";
 export default async function DetailPageHotel({ params }) {
   // const response = await fetch('https://api.sandboxmexico.com/api/es/v1/rooms/availability/' + params.id);
   // const hotel = await response.json();
-  console.log(params);
+  // console.log(params);
 
   return (
     <LanguageProvider>

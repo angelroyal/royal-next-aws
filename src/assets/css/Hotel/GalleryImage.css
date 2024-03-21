@@ -1,6 +1,7 @@
 .prev-slice{
-    bottom: 2rem;
+    bottom: 18rem;
+    z-index: 2;
 }
 .nex-slice{
-    bottom: 2rem;
+    bottom: 18rem;
 }
