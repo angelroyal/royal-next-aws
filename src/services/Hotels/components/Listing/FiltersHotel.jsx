@@ -121,9 +121,10 @@ export default function FiltersHotel() {
                                         <label for="five-stars" className='flex items-center gap-[4px] cursor-pointer'>{[...Array(5)].map((_, index) => (
                                             <Image
                                                 src={`${process.env.NEXT_PUBLIC_URL}icons/info/Star.svg`} key={index}
-                                                width={11}
+                                                width={10}
                                                 height={11}
                                                 alt='icon-star'
+                                                className='w-auto h-auto'
                                             />
                                         ))}</label>
                                     </div>
@@ -133,9 +134,10 @@ export default function FiltersHotel() {
                                         <label for="four-stars" className='flex items-center gap-[4px] cursor-pointer'>{[...Array(4)].map((_, index) => (
                                             <Image
                                                 src={`${process.env.NEXT_PUBLIC_URL}icons/info/Star.svg`} key={index}
-                                                width={11}
+                                                width={10}
                                                 height={11}
                                                 alt='icon-star'
+                                                className='w-auto h-auto'
                                             />
                                         ))}</label>
                                     </div>
@@ -147,10 +149,12 @@ export default function FiltersHotel() {
                                         <label for="three-stars" className='flex items-center gap-[4px] cursor-pointer'>{[...Array(3)].map((_, index) => (
                                             <Image
                                                 src={`${process.env.NEXT_PUBLIC_URL}icons/info/Star.svg`} key={index}
-                                                width={11}
+                                                width={10}
                                                 height={11}
                                                 alt='icon-star'
+                                                className='w-auto h-auto'
                                             />
+                                        
                                         ))}</label>
                                     </div>
 
@@ -159,9 +163,10 @@ export default function FiltersHotel() {
                                         <label for="two-stars" className='flex items-center gap-[4px] cursor-pointer'>{[...Array(2)].map((_, index) => (
                                             <Image
                                                 src={`${process.env.NEXT_PUBLIC_URL}icons/info/Star.svg`} key={index}
-                                                width={11}
+                                                width={10}
                                                 height={11}
                                                 alt='icon-star'
+                                                className='w-auto h-auto'
                                             />
                                         ))}</label>
                                     </div>
@@ -171,9 +176,10 @@ export default function FiltersHotel() {
                                         <label for="one-star" className='flex items-center gap-[4px] cursor-pointer'>
                                             <Image
                                                 src={`${process.env.NEXT_PUBLIC_URL}icons/info/Star.svg`}
-                                                width={11}
+                                                width={10}
                                                 height={11}
                                                 alt='icon-star'
+                                                className='w-auto h-auto'
                                             />
                                         </label>
                                     </div>
