@@ -1,18 +1,17 @@
 import { HotelInfo } from "./HoltelInfo";
 import TabInfoHotel from "./TabInfoHotel";
 import { GalleryImages } from "./GalleryImages";
-import { SearchModalHotel } from "./SearchModalHotel";
 import { GalleryModalHotel } from "../../utils/GalleryModalHotel";
 
 export function GalleryModal() {
   return (
     <div className="flex flex-col gap-y-14">
-      <div className="bg-white rounded-lg flex mt-3 p-8">
-        <div className="w-7/12 pe-4">
+      <div className="bg-white rounded-lg flex flex-col lg:flex-row mt-3 p-8">
+        <div className="w-full lg:w-7/12 pe-4">
           <GalleryImages images={GalleryModalHotel.hotel.images} />
         </div>
 
-        <div className="w-5/ py-4 px-2">
+        <div className="w-full lg:w-5/12 pt-9 lg:py-4 lg:px-2">
           <HotelInfo
             hotelInfo={GalleryModalHotel.hotel}
             GalleryModalHotel={GalleryModalHotel}
@@ -42,7 +41,7 @@ export function GalleryModal() {
         </div>
       </div>
 
-      <SearchModalHotel />
+      
     </div>
   );
 }

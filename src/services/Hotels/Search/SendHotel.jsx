@@ -88,17 +88,9 @@ export default function SendHotel() {
 
   return (
     <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative w-full lg:w-[290px] ">
-        <SearchHotel onSelectSearch={setSelectedOption} />
-      </div>
-
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full lg:w-[290px]">
-        <Calendar onDateChange={handleDateChange} />
-      </div>
-
-      <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px]">
-        <Room OnApply={setRoomData} />
-      </div>
+      <SearchHotel onSelectSearch={setSelectedOption} />
+      <Calendar onDateChange={handleDateChange} />
+      <Room OnApply={setRoomData} />
 
       <>
         <button
@@ -118,7 +110,7 @@ export default function SendHotel() {
           {languageData.SearchBox.tabHotel.buttonSearch}
           <img
             className="h-4 w-4"
-            src="https://sandboxmexico.com/assets/icons/search/search-w.svg"
+            src={`${process.env.NEXT_PUBLIC_URL}icons/search/search-w.svg`}
             alt="search icon royal vacation"
           />
         </button>

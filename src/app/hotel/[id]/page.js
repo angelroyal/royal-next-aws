@@ -10,6 +10,7 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import { Container } from "@/config/Others/Container";
 import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
+import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 
 export default async function DetailPageHotel({ params }) {
   // const response = await fetch('https://api.sandboxmexico.com/api/es/v1/rooms/availability/' + params.id);
@@ -22,10 +23,13 @@ export default async function DetailPageHotel({ params }) {
         <CartAxiosProvider>
           <Token />
           <Navigation />
-          <Container>
-            <GalleryModal />
-            <DetailsHotel />
-          </Container>
+          <div className="relative">
+            <Container>
+              <GalleryModal />
+              <DetailsHotel />
+            </Container>
+            <DetailReservation/>
+          </div>
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

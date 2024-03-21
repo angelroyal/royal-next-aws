@@ -11,7 +11,7 @@ export default function RoomsDetails() {
   //   console.log("Entra");
   return (
     <>
-      <h2 className="text-fs-14 text-black m-b mb-4">
+      <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max">
         Master Suite Vista Interna
       </h2>
       <div className="relative pr-9">
@@ -19,18 +19,29 @@ export default function RoomsDetails() {
           id="room-details"
           className="mySwiper"
           slidesPerView={4}
-          spaceBetween={15}
+          spaceBetween={16}
           navigation
           modules={[Navigation]}
           breakpoints={{
+            300:{
+                slidesPerView: 1.1,
+            },
+            500:{
+                slidesPerView: 1.4,
+            },
+            768:{
+                slidesPerView: 2,
+            },
             1010: {
+              slidesPerView: 3,
+            },
+            1200: {
               slidesPerView: 3.8,
-              spaceBetween: 16,
             },
           }}
         >
           {[...Array(8)].map((vale, index) => (
-            <SwiperSlide key={index} className="bg-transparent">
+            <SwiperSlide key={index} className="bg-transparent shadow-sm">
               <div className="p-4 rounded-lg border border-gry-30 bg-white">
                 <div className="flex flex-col gap-y-4">
                   <div className="relative w-full h-[181px]">

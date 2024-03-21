@@ -18,7 +18,7 @@ export function HotelInfo({ GalleryModalHotel }) {
 
       <TotalStars stars={GalleryModalHotel.hotel.stars} />
 
-      <div className="mt-3 flex">
+      <div className="mt-3 flex mb-[6]">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
           alt="location"

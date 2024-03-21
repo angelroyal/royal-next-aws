@@ -1,9 +1,32 @@
+"use client";
+
+import Calendar from "@/hooks/Calendar";
+import Room from "../../config/RoomBox";
+import { useContext } from "react";
+import LanguageContext from "@/language/LanguageContext";
+
 export function SearchModalHotel() {
+  const { languageData } = useContext(LanguageContext);
   return (
-    <div
-      className="flex p-4 rounded-e-3xl rounded-s-3xl shadow-2xl w-full mb-4 "
-    >
-      {/* Hola */}
+    <div>
+      <div className="flex flex-col gap-y-4 pr-9 w-full ">
+        <h2 className="m-b text-black text-fs-16 text-start">
+          Seleccionar habitaciones
+        </h2>
+
+        <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-x-2 gap-y-2">
+          <Calendar />
+          <Room />
+          <button className="border-0 rounded-full bg-or-100 py-3.5 px-[103px] m-b text-fs-12 text-white hover:bg-or-70 flex gap-x-2 items-center justify-center">
+            {languageData.modalHotel.buttonUpdate}{" "}
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}icons/search/search-w.svg`}
+              alt="search"
+            />
+          </button>
+        </div>
+      </div>
+      <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0">6 habitaciones encontradas</h4>
     </div>
   );
 }
