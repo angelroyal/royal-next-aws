@@ -6,6 +6,9 @@ import "../../assets/styles/web/Hotel.css";
 
 import SearchBox from "@/hooks/SearchBox";
 import { Container } from "@/config/Others/Container";
+// import { PopularState } from "@/utils/hotel/PopularStates";
+// PopularState
+// import { BannerHomeDown } from "@/components/bannerJsx/bannerHomeHotel";
 import {
   BannerExcDiscounts,
   BannerHomeHotelTop,
@@ -16,6 +19,10 @@ import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
 import { PopularState } from "@/services/Hotels/components/home/PopularEstates";
 import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
+// import PopularStates from "@/services/Hotels/components/home/PopularEstates";
+
+// const CardCarousel = lazy(() => import("../../utils/hotel/CardCarousel"));
+// const PopularCarousel = lazy(() => import("../../utils/hotel/PopularCarousel"));
 
 export const HomeHotel = () => {
   return (

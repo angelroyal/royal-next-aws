@@ -8,18 +8,10 @@ import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
 import SendHotel from "@/services/Hotels/Search/SendHotel";
 
-// import { GetIconActivation } from "../utils/navigation/GetIconActivation";
-// const ResultTour = lazy(() => import("../components/Search/ResultTour"));
-// const ResultMoving = lazy(() => import("../components/Search/ResultMoving"));
-// const SendHotel = lazy(() => import("../components/Search/SendHotel"));
-
 export default function SearchBox() {
   const { languageData } = useContext(LanguageContext);
   const [currentActiveIcon, setCurrentActiveIcon] = useState("hotel");
-  // const location = useLocation();
-
-  // GetIconActivation(location.pathname, setCurrentActiveIcon);
-  // console.log(currentActiveIcon);
+  
   // CHANGE TAB DINAMIC
   const handleTabChange = (eventKey) => {
     setCurrentActiveIcon(eventKey);
