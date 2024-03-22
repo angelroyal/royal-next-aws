@@ -12,6 +12,11 @@ import { Container } from "@/config/Others/Container";
 import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 
+export const metadata = {
+  title: "Nombre del hotel - royal ",
+  description: "Royal detalles",
+};
+
 export default async function DetailPageHotel({ params }) {
   // const response = await fetch('https://api.sandboxmexico.com/api/es/v1/rooms/availability/' + params.id);
   // const hotel = await response.json();
