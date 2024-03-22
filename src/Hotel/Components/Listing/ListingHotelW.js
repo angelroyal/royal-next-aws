@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import { Pagination } from "@mui/material";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import React, { useEffect, useContext, useState } from "react";
 
 import OrderingHotel from "../Listing/OrderingHotel";
 import FiltersHotels from "../../Utils/FiltersHotels";
-import HotelCard from "@/components/HotelCard/HotelCard";
 import { AnimatedNumber } from "../../Utils/AnimatedNumber";
 import { useToken } from "../../../config/context/AuthContext";
 import LanguageContext from "../../../language/LanguageContext";
@@ -18,13 +17,14 @@ import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
 import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
-import FiltersHotel from "@/services/Hotels/components/Listing/FiltersHotel";
+// import FiltersHotel from "@/services/Hotels/components/Listing/FiltersHotel";
 import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
+import { Container } from "@/config/Others/Container";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
-
+  const { languageData } = useContext(LanguageContext);
   const {
     totalPages,
     currentPage,
@@ -36,32 +36,10 @@ export default function ListingHotelW(props) {
     handleFetchPostHotels,
   } = useContext(ListingHotelContext);
 
-  const { languageData } = useContext(LanguageContext);
-
   const clickPaginator = (event, value) => {
     handlePageChange(event, value);
   };
 
-  //   scrollToTop();
-  //   // QUERY PARAMS POST AXIOS
-  //   const searchParams = new URLSearchParams(window.location.search);
-  //   const requestBody = {
-  //     code: searchParams.get("code"),
-  //     type: searchParams.get("type"),
-  //     "check-in": searchParams.get("check-in"),
-  //     "check-out": searchParams.get("check-out"),
-  //     occupancies: JSON.parse(
-  //       decodeURIComponent(searchParams.get("occupancies"))
-  //     ),
-  //   };
-
-  //   if (requestBody) {
-  //     if (token) {
-  //       setCombinedHotelData(null);
-  //       handleFetchPostHotels(requestBody);
-  //     }
-  //   }
-  // }, [window.location.search, token]);
   useEffect(() => {
     scrollToTop();
     // QUERY PARAMS POST AXIOS
@@ -97,26 +75,20 @@ export default function ListingHotelW(props) {
   return (
     <Container>
       {/* <BannerListingHotelTop /> */}
-      <Row className="display-flex-center">
-        <Col sm={3}>
-          <h1 className="hotel-title-filters" data-aos="fade-right">
-            <Image className="me-5" src={IconBanner} alt="IconBanner" />
-            {languageData.filtersHotel.titleFilter}
-          </h1>
-
+      <div className="flex justify-around">
+        <div className="w-3/12 mt-10">
           <SearchBoxMobile />
-          <FiltersHotel/>
-          
-          {/* <FiltersHotels /> */}
-        </Col>
+          {/* <FiltersHotel/> */}
+          <FiltersHotels />
+        </div>
 
-        <Col sm={8}>
+        <div className="w-8/12	">
           {/* SKELETON */}
           {!combinedHotelData && <SkeletonChildren />}
 
           {combinedHotelData && combinedHotelData.length > 0 && (
             <>
-              <div className="flex items-end justify-between mt-8">
+              <div className="flex items-end justify-between mt-6">
                 <h2 className="m-b text-fs-20" data-aos="fade-right">
                   {languageData.listingTour.weFound}{" "}
                   {totalFilteredHotels > 0 && (
@@ -125,7 +97,6 @@ export default function ListingHotelW(props) {
                   {totalFilteredHotels > 1
                     ? languageData.filtersHotel.resultFound
                     : languageData.filtersHotel.resultsHotel}{" "}
-                  
                 </h2>
 
                 {/* ORDER */}
@@ -177,8 +148,8 @@ export default function ListingHotelW(props) {
               />
             </>
           )}
-        </Col>
-      </Row>
+        </div>
+      </div>
 
       <BannerListingHotelBottom />
     </Container>
