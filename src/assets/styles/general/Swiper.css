@@ -73,6 +73,7 @@
   background: #fff;
   z-index: 11;
   border-right: 1px solid hsla(0, 0%, 56.9%, .444);
+  z-index: 4;
   --swiper-navigation-size: 20px;
 }
 #swiper-popular-estates > div.swiper-button-prev.swiper-button-disabled{
@@ -84,6 +85,7 @@
 }
 
 #swiper-popular-estates > div.swiper-button-next{
+  z-index: 4;
   top: 5px;
   right: 0;
   color: #eb741e;
