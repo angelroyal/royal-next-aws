@@ -6,7 +6,7 @@ import { GalleryModalHotel } from "../../utils/GalleryModalHotel";
 export function GalleryModal() {
   return (
     <div className="flex flex-col gap-y-14">
-      <div className="bg-white rounded-lg flex flex-col lg:flex-row mt-3 p-8">
+      <div className="bg-white rounded-lg flex flex-col lg:flex-row p-8">
         <div className="w-full lg:w-7/12 pe-4">
           <GalleryImages images={GalleryModalHotel.hotel.images} />
         </div>
