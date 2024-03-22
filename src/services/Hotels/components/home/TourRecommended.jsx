@@ -64,7 +64,7 @@ export default function CartTourOptions() {
       >
         {tour.slice(0, 8).map((tour, index) => (
           <SwiperSlide key={index} className="!w-fit !rounded-md">
-            <div className="bg-white w-[185px] cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md p-4 pb-6 flex flex-col justify-center items-center">
+            <div className="bg-white w-[185px] h-[258px] cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md px-4 py-4 flex flex-col justify-center items-center">
               <div className="w-[132px] h-[132px] mb-3">
                 <img
                   className="w-full h-full rounded-full object-cover"
@@ -74,10 +74,9 @@ export default function CartTourOptions() {
               </div>
 
               <div className="max-w-xs overflow-hidden text-center">
-                <h2 className="text-fs-14 mb-2">
-                  <b>
-                    {tour.spanishName.split(" ").slice(0, 8).join(" ")}
-                    {tour.spanishName.split(" ").length > 8 && " ..."}
+                <h2 className="text-fs-14 mb-2 w-full">
+                  <b className="!box-orient-vertical !line-clamp-2 !overflow-hidden !text-ellipsis">
+                    {tour.spanishName}
                   </b>
                 </h2>
               </div>
