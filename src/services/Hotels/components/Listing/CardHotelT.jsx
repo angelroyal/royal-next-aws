@@ -132,7 +132,7 @@ export default function CardHotelT(props) {
                       : hotel.description}
                   </p>
 
-                  {hotel.exclusiveDeal < 5 ? (
+                  {hotel.exclusiveDeal < 4 ? (
                     <div className="flex bg-[#FFF0BD] px-[10px] py-[3px] items-center w-fit rounded-lg gap-1">
                       <Image
                         className="w-4 h-4"
