@@ -1,4 +1,4 @@
-import "../../assets/styles/web/App.css";
+// import "../../assets/styles/web/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // import HomeHotel from "@/pages/Home/HomeHotel";
