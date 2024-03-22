@@ -16,17 +16,12 @@ import DetailReservation from "@/services/Hotels/components/DetailReservation/De
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 // import { useState } from "react";
 
-export const metadata = {
-  title: "Nombre del hotel - royal ",
-  description: "Royal detalles",
-};
-
 export default async function DetailPageHotel({ params }) {
 
   // const [hotelDescription, setHotelDescription] = useState(null);
-  const response = await fetch( `https://api.sandboxmexico.com/api/es/v1/hotels/${params.id}`);
+  // const response = await fetch( `https://api.sandboxmexico.com/api/es/v1/hotels/${params.id}`);
   // const response = await axiosWithInterceptor.get( `https://api.sandboxmexico.com/api/es/v1/hotels/${params.id}`);
-  console.log(response);
+  // console.log(response);
   // console.log(hotel);
   // console.log(params);
 
