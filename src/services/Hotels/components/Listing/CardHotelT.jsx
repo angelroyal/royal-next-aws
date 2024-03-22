@@ -15,7 +15,6 @@ import { calculateNights } from "@/Hotel/Utils/calculateNights";
 export default function CardHotelT(props) {
   const { hotel } = props;
   const { languageData } = useContext(LanguageContext);
-  // console.log(hotel);
 
   //   PARAMS URL
   const searchParams =
@@ -45,7 +44,7 @@ export default function CardHotelT(props) {
     <>
       {hotel && (
         <div className="max-sm:px-4">
-          <div className="flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col max-h-64 max-sm:max-h-[35rem]">
+          <div className="flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col h-[230px] max-sm:max-h-[35rem]">
             {/* IMAGE CARD HOTEL */}
             <div className="w-[30%] relative max-lg:w-full max-lg:h-[225px]">
               <Swiper
@@ -127,8 +126,8 @@ export default function CardHotelT(props) {
                   {/* PENDIENTE */}
                   <p className="m-m text-fs-10 text-gry-70 !mb-1">
                     {/* {hotel.description} */}
-                    {hotel.description.length > 155
-                      ? `${hotel.description.substring(0, 155)}...`
+                    {hotel.description.length > 165
+                      ? `${hotel.description.substring(0, 165)}...`
                       : hotel.description}
                   </p>
 
@@ -204,7 +203,7 @@ export default function CardHotelT(props) {
                   </div>
 
                   <Link
-                    href={`/hotel/${hotel.name}`}
+                    href={`/hotel/${hotel.codeName}`}
                     target="_blank"
                     className=" no-underline bg-yw-100 text-black text-fs-12 m-b px-[40px] pt-[8px] pb-[8px] py-[5px] rounded-full hover:bg-yw-50 text-nowrap"
                   >
