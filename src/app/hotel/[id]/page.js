@@ -16,6 +16,11 @@ import DetailReservation from "@/services/Hotels/components/DetailReservation/De
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 // import { useState } from "react";
 
+export const metadata = {
+  title: "Nombre del hotel - royal ",
+  description: "Royal detalles",
+};
+
 export default async function DetailPageHotel({ params }) {
 
   // const [hotelDescription, setHotelDescription] = useState(null);

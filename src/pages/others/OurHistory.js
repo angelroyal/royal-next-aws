@@ -2,12 +2,10 @@
 
 import React, { useContext } from "react";
 
-import LanguageContext from "@/language/LanguageContext";
-// import { /*CartHistoryW*/ CardsHistoryM } from "./CartsHistory";
-import { BannerAboutUs } from "@/components/bannerJsx/bannerAboutUs";
-// import BannerAbout from "../../assets/images/others/banner-about-us.webp";
+import CardsHistory from "./CartsHistory";
 import { Container } from "@/config/Others/Container";
-import { CardsHistoryM } from "./CartsHistory";
+import LanguageContext from "@/language/LanguageContext";
+import { BannerAboutUs } from "@/components/bannerJsx/bannerAboutUs";
 
 export default function OurHistory() {
   const { languageData } = useContext(LanguageContext);
@@ -46,7 +44,7 @@ export default function OurHistory() {
           <h2 className="m-b py-10 text-fs-20 text-center md:text-start md:text-fs-24">
             {languageData.ourHistory.titleServiceQuality}
           </h2>
-          <CardsHistoryM />
+          <CardsHistory />
         </Container>
       </div>
     </>

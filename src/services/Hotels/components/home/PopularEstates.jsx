@@ -1,11 +1,11 @@
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { useContext, useEffect, useState } from "react";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import LanguageContext from "@/language/LanguageContext";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export function PopularState() {
   const [popularState, setPopularState] = useState([]);
@@ -44,10 +44,17 @@ export function PopularState() {
   );
 
   return (
-    <div className="my-16 md:my-32">
+    <div className="my-16 md:my-32 relative">
       <h1 className="m-b text-fs-24 mb-9">{languageData.SearchBox.tabTour.popularState}</h1>
       {popularState.length > 0 ? (
-        <Swiper slidesPerView={1} spaceBetween={30} className="h-[408px]">
+        <Swiper 
+        slidesPerView={1} 
+        spaceBetween={30} 
+        className="h-[408px] !static"
+        navigation
+        modules={[Navigation]}
+        id="swiper-popular-estates"
+        >
           <SwiperSlide className="bg-transparent">
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
               <div className="flex gap-x-3 w-full md:h-full h-2/4">

@@ -1,25 +1,24 @@
-/* ROYAL NEXT STYLE */
-
 /* Agregar estilos personalizados */
 .swiper-pagination-bullet-active {
-    background: #ff8637 !important;
-  }
+  background: #ff8637 !important;
+}
+
+/* STYLE SWIPER PAGINATION CardHotelT */
 #card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: white !important;
-    width: 6px !important;
-    height: 6px !important;
-    margin: 5px !important;
-  }
-  
-  #card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span {
-    margin:5px  !important;
-    width: 6px !important;
-    height: 6px !important;
-  }
+  background: white !important;
+  width: 6px !important;
+  height: 6px !important;
+  margin: 5px !important;
+}
 
-  /*END ROYAL NEXT STYLE */
-  
+#card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span {
+  margin: 5px !important;
+  width: 6px !important;
+  height: 6px !important;
+}
+/* END SWIPER PAGINATION CardHotelT */
 
+<<<<<<< HEAD
   /* SWIPER ROOMS DETAILS */
   #room-details > div.swiper-button-prev.swiper-button-disabled, #room-details > div.swiper-button-prev{
     display: none;
@@ -40,3 +39,84 @@
     font-size: 1.3rem;
   }
   /* END SWIPER ROOMS DETAILS */
+=======
+
+/* SWIPER ROOMS DETAILS */
+#room-details>div.swiper-button-prev.swiper-button-disabled,
+#room-details>div.swiper-button-prev {
+  display: none;
+}
+
+#room-details>div.swiper-button-next {
+  color: #666666;
+  right: 7px;
+  position: absolute;
+  z-index: 1;
+}
+
+#room-details {
+  position: static;
+}
+
+#room-details>div.swiper-button-next::after {
+  font-size: 1.3rem;
+}
+
+/* END SWIPER ROOMS DETAILS */
+
+/* SWIPER SHUFFLE HOTEL */
+#swiper-shuffle-hotel>div.swiper-button-prev {
+  display: none;
+}
+
+#swiper-shuffle-hotel>div.swiper-button-next {
+  color: #ff8637;
+  --swiper-navigation-size: 20px;
+  left: 101%;
+  z-index: 4;
+  font-weight: bold;
+}
+
+#swiper-shuffle-hotel > div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+  z-index: 4;
+}
+/*END SWIPER SHUFFLE HOTEL */
+
+/* SWIPER POPULAR ESTATES */
+#swiper-popular-estates > div.swiper-button-prev{
+  top: 5px;
+  left: auto;
+  right: 28px;
+  color: #eb741e;
+  height: 30px;
+  width: 30px;
+  font-weight: bold;
+  box-shadow: 2px 0 12px 0 rgba(0,0,0,.11);
+  background: #fff;
+  z-index: 11;
+  border-right: 1px solid hsla(0, 0%, 56.9%, .444);
+  z-index: 4;
+  --swiper-navigation-size: 20px;
+}
+#swiper-popular-estates > div.swiper-button-prev.swiper-button-disabled{
+  color: grey;
+}
+
+#swiper-popular-estates > div.swiper-button-next.swiper-button-disabled{
+  color: grey;
+}
+
+#swiper-popular-estates > div.swiper-button-next{
+  z-index: 4;
+  top: 5px;
+  right: 0;
+  color: #eb741e;
+  height: 30px;
+  width: 30px;
+  box-shadow: 2px 0 12px 0 rgba(0,0,0,.11);
+  background: #fff;
+  font-weight: bold;
+  --swiper-navigation-size: 20px;
+}
+/*END SWIPER POPULAR ESTATES */
+>>>>>>> d64df9b79baac700025259e1065ff8b19248cbf7
