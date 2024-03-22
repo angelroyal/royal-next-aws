@@ -17,9 +17,10 @@ export function GalleryModal() {
             GalleryModalHotel={GalleryModalHotel}
           />
           <TabInfoHotel />
-          {/* <Amenities /> */}
+          <>
+            {/* <Amenities /> */}
 
-          {/* <div className="block">
+            {/* <div className="block">
             <div className="mb-2 m-b text-fs-20">Este hotel ofrece:</div>
             <AmenitiesIcons
               text={true}
@@ -27,7 +28,7 @@ export function GalleryModal() {
             />
           </div> */}
 
-          {/* <div className="block">
+            {/* <div className="block">
             <div className="mb-2 m-b text-fs-20">Conoce más de este hotel:</div>
 
             <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
@@ -38,10 +39,9 @@ export function GalleryModal() {
               )}
             </ul>
           </div> */}
+          </>
         </div>
       </div>
-
-      
     </div>
   );
 }

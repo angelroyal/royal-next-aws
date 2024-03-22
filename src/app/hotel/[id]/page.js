@@ -1,3 +1,5 @@
+// "use client";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../assets/styles/web/App.css";
 
@@ -11,10 +13,16 @@ import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryM
 import { Container } from "@/config/Others/Container";
 import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+// import { useState } from "react";
 
 export default async function DetailPageHotel({ params }) {
-  // const response = await fetch('https://api.sandboxmexico.com/api/es/v1/rooms/availability/' + params.id);
-  // const hotel = await response.json();
+
+  // const [hotelDescription, setHotelDescription] = useState(null);
+  const response = await fetch( `https://api.sandboxmexico.com/api/es/v1/hotels/${params.id}`);
+  // const response = await axiosWithInterceptor.get( `https://api.sandboxmexico.com/api/es/v1/hotels/${params.id}`);
+  console.log(response);
+  // console.log(hotel);
   // console.log(params);
 
   return (

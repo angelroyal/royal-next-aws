@@ -31,9 +31,11 @@
     position: absolute;
     z-index: 1;
   }
+
   #room-details{
     position: static;
   }
+  
   #room-details > div.swiper-button-next::after{
     font-size: 1.3rem;
   }
