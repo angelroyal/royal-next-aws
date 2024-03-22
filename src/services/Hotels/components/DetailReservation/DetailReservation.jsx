@@ -8,6 +8,7 @@ export default function DetailReservation() {
   const { languageData } = useContext(LanguageContext);
   const [open, setOpen] = useState(false);
   return (
+<<<<<<< HEAD
     <>
       {open === false ? (
         <div className="sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-50">
@@ -17,6 +18,15 @@ export default function DetailReservation() {
                 <h4 className="m-b text-fs-16 text-black">
                   {languageData.detailHotel.detail}
                 </h4>
+=======
+    <div className="sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t-[3px] border-gry-50">
+      <Container>
+        <div className="relative flex flex-col gap-y-4 md:flex-row md:justify-between md:items-center">
+          <div className="flex flex-col gap-y-2">
+            <h4 className="m-b text-fs-16 text-black">
+              {languageData.detailHotel.detail}
+            </h4>
+>>>>>>> c60fcabd1c1a3ecbb17a4b70f17df63a50e67bd6
 
                 <p className="m-0 m-s-b text-fs-8 text-gry-100">
                   5 noches, 4 personas

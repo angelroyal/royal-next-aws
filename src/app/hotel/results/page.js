@@ -9,6 +9,11 @@ import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 
+export const metadata = {
+  title: "Resultados - Royal Vacations Mexico",
+  description: "Royal ssr description",
+};
+
 export default function Home() {
   return (
     <LanguageProvider>

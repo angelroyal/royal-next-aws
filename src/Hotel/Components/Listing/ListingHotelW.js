@@ -18,6 +18,7 @@ import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
 import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
+import FiltersHotel from "@/services/Hotels/components/Listing/FiltersHotel";
 import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
 
@@ -104,7 +105,9 @@ export default function ListingHotelW(props) {
           </h1>
 
           <SearchBoxMobile />
-          <FiltersHotels />
+          <FiltersHotel/>
+          
+          {/* <FiltersHotels /> */}
         </Col>
 
         <Col sm={8}>

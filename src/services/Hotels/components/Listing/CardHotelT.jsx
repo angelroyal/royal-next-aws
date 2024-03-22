@@ -126,13 +126,13 @@ export default function CardHotelT(props) {
 
                   {/* PENDIENTE */}
                   <p className="m-m text-fs-10 text-gry-70 !mb-1">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Libero alias repellendus saepe nam dignissimos inventore
-                    optio delectus soluta consectetur illo, nulla itaque eius
-                    ratione vel nemo animi illum reiciendis ea.
+                    {/* {hotel.description} */}
+                    {hotel.description.length > 155
+                      ? `${hotel.description.substring(0, 155)}...`
+                      : hotel.description}
                   </p>
 
-                  {hotel.exclusiveDeal < 5 ? (
+                  {hotel.exclusiveDeal < 4 ? (
                     <div className="flex bg-[#FFF0BD] px-[10px] py-[3px] items-center w-fit rounded-lg gap-1">
                       <Image
                         className="w-4 h-4"
