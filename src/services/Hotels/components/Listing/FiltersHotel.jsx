@@ -54,13 +54,13 @@ export default function FiltersHotel() {
               </div>
 
               {/* RANGE */}
-              <div class="relative mb-6 !text-bl-100">
+              {/* <div class="relative mb-6 !text-bl-100">
                 <input
                   id="range"
                   type="range"
                   class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer outline-none "
                 ></input>
-              </div>
+              </div> */}
               {/*END RANGE */}
 
               {/* NUMBER FROM  */}
@@ -400,148 +400,6 @@ export default function FiltersHotel() {
         )}
       </Disclosure>
       {/*END ACCORDION TYPE HOTELS */}
-
-      <div className="border-t w-full mt-[12.5px] mb-[12.5px]"></div>
-
-      {/* ACCORDION FEEDING */}
-      <Disclosure defaultOpen={isOpen}>
-        {({ open }) => (
-          <>
-            <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-              <span className="m-s-b text-fs-14">
-                {languageData.titlesFilterHotel.titleFood}
-              </span>
-              <ChevronUpIcon
-                className={`${open ? "rotate-180 transform" : ""} h-5 w-5`}
-              />
-            </Disclosure.Button>
-
-            <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
-              <div className="flex flex-col gap-2 mb-1">
-                <div className="flex gap-1">
-                  <input
-                    id="all-category-b"
-                    type="checkbox"
-                    className="w-[20px] h-[20px]"
-                  />
-                  <label
-                    for="all-category-b"
-                    className="m-m text-fs-12 cursor-pointer text-black"
-                  >
-                    {languageData.optionsFilterTour.allCategories}
-                  </label>
-                </div>
-
-                <div className="flex gap-1">
-                  <input
-                    id="category-Inclusive"
-                    type="checkbox"
-                    className="w-[20px] h-[20px]"
-                  />
-                  <label
-                    for="category-Inclusive"
-                    className="m-m text-fs-12 cursor-pointer text-black"
-                  >
-                    {languageData.optionsFilterHotel.allInclusive}
-                  </label>
-                </div>
-
-                <div className="flex gap-1">
-                  <input
-                    id="category-Room"
-                    type="checkbox"
-                    className="w-[20px] h-[20px]"
-                  />
-                  <label
-                    for="category-Room"
-                    className="m-m text-fs-12 cursor-pointer text-black"
-                  >
-                    {languageData.optionsFilterHotel.onlyRooms}
-                  </label>
-                </div>
-
-                <div className="flex gap-1">
-                  <input
-                    id="category-Continental"
-                    type="checkbox"
-                    className="w-[20px] h-[20px]"
-                  />
-                  <label
-                    for="category-Continental"
-                    className="m-m text-fs-12 cursor-pointer text-black"
-                  >
-                    {languageData.optionsFilterHotel.continentalBreakFast}
-                  </label>
-                </div>
-              </div>
-
-              <Disclosure Open={isOpen}>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Panel className="pb-2 pt-1 text-sm text-gray-500">
-                      <div className="flex flex-col gap-2 mb-1">
-                        <div className="flex gap-1">
-                          <input
-                            id="category-Breakfast"
-                            type="checkbox"
-                            className="w-[20px] h-[20px]"
-                          />
-                          <label
-                            for="category-Breakfast"
-                            className="m-m text-fs-12 cursor-pointer text-black"
-                          >
-                            {languageData.optionsFilterHotel.specialBreakfast}
-                          </label>
-                        </div>
-
-                        <div className="flex gap-1">
-                          <input
-                            id="category-Lunch"
-                            type="checkbox"
-                            className="w-[20px] h-[20px]"
-                          />
-                          <label
-                            for="category-Lunch"
-                            className="m-m text-fs-12 cursor-pointer text-black"
-                          >
-                            {languageData.optionsFilterHotel.lunchIncluded}
-                          </label>
-                        </div>
-
-                        <div className="flex gap-1">
-                          <input
-                            id="category-Dinner"
-                            type="checkbox"
-                            className="w-[20px] h-[20px]"
-                          />
-                          <label
-                            for="category-Dinner"
-                            className="m-m text-fs-12 cursor-pointer text-black"
-                          >
-                            {languageData.optionsFilterHotel.dinnerIncluded}
-                          </label>
-                        </div>
-                      </div>
-                    </Disclosure.Panel>
-
-                    <Disclosure.Button className="flex w-full py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                      <span className="text-bl-100 text-fs-12 m-b underline">
-                        {languageData.modalHotelOptions.buttonShowMore}
-                      </span>
-                      <ChevronUpIcon
-                        className={`${
-                          open ? "rotate-360 transform" : "rotate-180 transform"
-                        } h-5 w-5 text-bl-100`}
-                      />
-                    </Disclosure.Button>
-                  </>
-                )}
-              </Disclosure>
-            </Disclosure.Panel>
-          </>
-        )}
-      </Disclosure>
-      {/*END ACCORDION FEEDING */}
     </div>
   );
 }
