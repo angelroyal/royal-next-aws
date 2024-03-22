@@ -18,7 +18,6 @@
 }
 /* END SWIPER PAGINATION CardHotelT */
 
-<<<<<<< HEAD
   /* SWIPER ROOMS DETAILS */
   #room-details > div.swiper-button-prev.swiper-button-disabled, #room-details > div.swiper-button-prev{
     display: none;
@@ -39,7 +38,6 @@
     font-size: 1.3rem;
   }
   /* END SWIPER ROOMS DETAILS */
-=======
 
 /* SWIPER ROOMS DETAILS */
 #room-details>div.swiper-button-prev.swiper-button-disabled,
@@ -119,4 +117,3 @@
   --swiper-navigation-size: 20px;
 }
 /*END SWIPER POPULAR ESTATES */
->>>>>>> d64df9b79baac700025259e1065ff8b19248cbf7
