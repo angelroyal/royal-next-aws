@@ -1,13 +1,14 @@
-import Image from "next/image";
-import { BannerConfig } from "../../config/BannersConfigH";
-// import { Autoplay } from "swiper";
-import { Autoplay, EffectFade } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/effect-fade";
-import LanguageContext from "../../../../language/LanguageContext";
+
+import Image from "next/image";
 import { useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+
+import { BannerConfig } from "../../config/BannersConfigH";
+import LanguageContext from "../../../../language/LanguageContext";
+
 export function BannerHomeHotelTop() {
   return (
     <div className="h-[442px] md:h-72 2xl:h-[480px] w-full">
