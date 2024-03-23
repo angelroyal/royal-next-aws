@@ -1,12 +1,8 @@
-import "../../assets/styles/web/Navbar.css";
 import React from "react";
-
-// import LanguageContext from "../../language/LanguageContext";
+import Image from "next/image";
 
 import Line from "../../assets/images/others/group 75.jpg";
-import LanguageContext from "@/language/LanguageContext";
 import NavigationDesktop from "./NavigationDesktop";
-import Image from "next/image";
 import HeaderBlue from "./HeaderBlue";
 
 export default function Navigation() {
@@ -15,8 +11,8 @@ export default function Navigation() {
       <Image
         src={Line}
         alt="Royal orange"
-        height="9px"
-        width="100%"
+        height={8}
+        width={1920}
         priority={true}
       />
       <div className="md:h-[124px] md:pb-2 bg-white border-b border-gry-70">

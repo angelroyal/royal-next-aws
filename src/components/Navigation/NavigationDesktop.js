@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Cart from "@/hooks/Cart";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { Container } from "@/config/Others/Container";
-import NavigationOptions from "../../pages/others/RouterPages";
 import { LanguageSelector } from "@/language/LanguageSelector";
 
 import { SelectCurrency } from "./SelectCurrency";
@@ -62,7 +61,6 @@ export default function NavigationDesktop() {
               </button>
             </div>
 
-            <NavigationOptions />
 
             <HamburgerMenu
               open={mobileMenuOpen}

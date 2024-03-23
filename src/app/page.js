@@ -1,13 +1,11 @@
-import "../assets/styles/web/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
-import HomeHotel from "@/pages/Home/HomeHotel";
 import Token from "@/components/General/Token";
+import Footer from "@/components/Footer/Footer";
+import HomeHotel from "@/services/General/HomeHotel";
 import Navigation from "@/components/Navigation/Navigation";
 import LanguageProvider from "@/language/LanguageProvider";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (

@@ -1,15 +1,16 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 
-// import MetaTerms from "../../components/Meta/MetaTerms";
+import { Container } from "@/config/Others/Container";
 import SkeletonText from "../../utils/skeleton/SkeletonText";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { ScrollButton, scrollToTop } from "../../utils/pageConfig/scrollToTop";
-import { Container } from "@/config/Others/Container";
 
 export default function TermsConditions() {
   const [htmlContent, setHtmlContent] = useState("");
-  const language = localStorage.getItem("language") || "es";
+  // const language = localStorage.getItem("language") || "es";
+  const language = typeof window !== 'undefined' && localStorage.getItem("language") ? localStorage.getItem("language") : "es";
+
 
   useEffect(() => {
     scrollToTop();
@@ -51,7 +52,6 @@ export default function TermsConditions() {
 
   return (
     <>
-      {/* <MetaTerms /> */}
       <Container>
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </Container>

@@ -3,44 +3,22 @@ import TabInfoHotel from "./TabInfoHotel";
 import { GalleryImages } from "./GalleryImages";
 import { GalleryModalHotel } from "../../utils/GalleryModalHotel";
 
-export function GalleryModal() {
+export function GalleryModal(props) {
+  const { hotel } = props;
+
   return (
     <div className="flex flex-col gap-y-14">
       <div className="bg-white rounded-lg flex flex-col lg:flex-row p-8">
-        <div className="w-full lg:w-7/12 pe-4">
-          <GalleryImages images={GalleryModalHotel.hotel.images} />
+
+        <div className="w-full lg:w-7/12 pe-4 pr-[2rem]">
+          <GalleryImages images={hotel.images} />
         </div>
 
         <div className="w-full lg:w-5/12 pt-9 lg:py-4 lg:px-2">
-          <HotelInfo
-            hotelInfo={GalleryModalHotel.hotel}
-            GalleryModalHotel={GalleryModalHotel}
-          />
-          <TabInfoHotel />
-          <>
-            {/* <Amenities /> */}
-
-            {/* <div className="block">
-            <div className="mb-2 m-b text-fs-20">Este hotel ofrece:</div>
-            <AmenitiesIcons
-              text={true}
-              amenities={GalleryModalHotel.hotel.facilities}
-            />
-          </div> */}
-
-            {/* <div className="block">
-            <div className="mb-2 m-b text-fs-20">Conoce más de este hotel:</div>
-
-            <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
-              <li>Check-in: 15:00 pm</li>
-              <li>Check-out: 15:00 pm</li>
-              {GalleryModalHotel.hotel.breakfast && (
-                <li> Desayuno: 7:00 am a 11:00 am</li>
-              )}
-            </ul>
-          </div> */}
-          </>
+          <HotelInfo hotel={hotel} />
+          <TabInfoHotel hotel={hotel}/>
         </div>
+   
       </div>
     </div>
   );

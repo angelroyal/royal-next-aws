@@ -6,7 +6,7 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import Payment from "@/pages/others/Payment";
+import Payment from "@/payment/Payment";
 
 export default function Home() {
   return (

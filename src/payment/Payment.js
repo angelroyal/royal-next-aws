@@ -7,34 +7,34 @@ import React, { useState, useEffect, useContext, Suspense, lazy } from "react";
 import {
   StepperContext,
   StepperProvider,
-} from "../../config/context/steeperContext";
-import Booking from "../../payment/Booking/Booking";
-import Itinerary from "../../payment/itinerary/Itinerary";
-import SkeletonPay from "../../utils/skeleton/SkeletonPay";
-import { useToken } from "../../config/context/AuthContext";
-import LanguageContext from "../../language/LanguageContext";
-import { useCartAxios } from "../../components/Cart/CartAxios";
-import { scrollToTop } from "../../utils/pageConfig/scrollToTop";
-import { useIsMobile, useIsMobileNew } from "../../config/Mobile/isMobile";
-import { StepsToPayments, StepsToPaymentsM } from "../../hooks/StepsToPay";
-import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import ConfirmReservation from "../../payment/Confirmation/ConfirmReservation";
-import { BannerState } from "../../components/bannerJsx/bannerPaymentConfirmed";
-import { DialogPaymentItinerary } from "../../payment/Utils/DialogPaymenItitnerary";
+} from "../config/context/steeperContext";
+import Booking from "./Booking/Booking";
+import Itinerary from "./itinerary/Itinerary";
+import SkeletonPay from "../utils/skeleton/SkeletonPay";
+import { useToken } from "../config/context/AuthContext";
+import LanguageContext from "../language/LanguageContext";
+import { useCartAxios } from "../components/Cart/CartAxios";
+import { scrollToTop } from "../utils/pageConfig/scrollToTop";
+import { useIsMobile, useIsMobileNew } from "../config/Mobile/isMobile";
+import { StepsToPayments, StepsToPaymentsM } from "../hooks/StepsToPay";
+import axiosWithInterceptor from "../config/Others/axiosWithInterceptor";
+import ConfirmReservation from "./Confirmation/ConfirmReservation";
+import { BannerState } from "../components/bannerJsx/bannerPaymentConfirmed";
+import { DialogPaymentItinerary } from "./Utils/DialogPaymenItitnerary";
 
-import "../../assets/styles/web/App.css";
-import "../../assets/styles/web/Tour.css";
-import "../../assets/styles/web/Hotel.css";
-import "../../assets/styles/web/Payment.css";
-import "../../assets/styles/mobile/PaymentMobile.css";
+import "../assets/styles/web/App.css";
+import "../assets/styles/web/Tour.css";
+import "../assets/styles/web/Hotel.css";
+import "../assets/styles/web/Payment.css";
+import "../assets/styles/mobile/PaymentMobile.css";
 
-import Logo from "../../assets/images/logos/logo-royal-vacations-text.png";
+import Logo from "../assets/images/logos/logo-royal-vacations-text.png";
 
 const DetailsPayment = lazy(() =>
-  import("../../payment/itinerary/others/DetailsPayment")
+  import("./itinerary/others/DetailsPayment")
 );
 const ReservationShortInfo = lazy(() =>
-  import("../../payment/itinerary/others/DetailReservation")
+  import("./itinerary/others/DetailReservation")
 );
 
 export default function Payment() {

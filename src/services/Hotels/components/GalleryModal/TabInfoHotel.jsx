@@ -7,15 +7,15 @@ import {
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
-const iconInfo = `https://sandboxmexico.com/assets/icons/alert/alert-100.svg`;
-
 const tabs = [
-  { name: "informacion", href: "#", icon: InformationCircleIcon },
-  { name: "Amenidades", href: "#", icon: MegaphoneIcon },
-  { name: "Horarios", href: "#", icon: ClockIcon },
+  { name: "informacion", icon: InformationCircleIcon },
+  { name: "Amenidades", icon: MegaphoneIcon },
+  { name: "Horarios", icon: ClockIcon },
 ];
 
-export default function TabInfoHotel() {
+export default function TabInfoHotel(props) {
+  const { hotel } = props;
+  console.log(hotel);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -30,12 +30,7 @@ export default function TabInfoHotel() {
 
   const getDescriptionPreview = (description) => {
     const words = description.split(" ");
-    return words.slice(0, 120).join(" ");
-  };
-
-  const hotelInfo = {
-    description:
-      "Situado entre las avenidas López Portillo y Chichen Itza en un famoso complejo turístico y urbano de Cancún, este espléndido hotel es el lugar perfecto para unas vacaciones en familia, una escapada de fin de semana o un viaje de negocios. El Aeropuerto Internacional de Cancún está a 20 km y los visitantes se encontrarán muy cerca de muchas empresas locales, oficinas corporativas, lugares de ocio y monumentos locales. Este precioso hotel cuenta con espaciosas habitaciones elegantemente decoradas en las que descansar por completo durante la noche. Los huéspedes despertarán con un delicioso desayuno americano o continental y podrán cenar delicias culinarias mexicanas en el tradicional restaurante del hotel. Durante el día, los clientes podrán jugar al billar, hacer uso de la piscina al aire libre, tomar el sol en las tumbonas o disfrutar de un exótico cóctel en el bar del hotel. Hay aparcamiento disponible para aquellos que lleguen en coche.",
+    return words.slice(0, 150).join(" ");
   };
 
   const getMessageForTab = (tabName) => {
@@ -44,11 +39,11 @@ export default function TabInfoHotel() {
       case "informacion":
         return (
           <>
-            {" "}
             <div className="text-fs-14 m-m text-justify">
               {showFullDescription ? (
-                <div className="flex flex-col ">
-                  {hotelInfo.description}
+                <>
+                  <p>{hotel.description}</p>
+
                   <span>
                     <button
                       className="flex gap-1 items-center m-b text-fs-15 text-bl-100"
@@ -61,10 +56,11 @@ export default function TabInfoHotel() {
                       />
                     </button>
                   </span>
-                </div>
+                </>
               ) : (
-                <div className="flex flex-col">
-                  {getDescriptionPreview(hotelInfo.description)}...
+                <>
+                  <p>{getDescriptionPreview(hotel.description)}...</p>
+
                   <span>
                     <button
                       className=" flex items-center gap-1 m-b text-fs-15 text-bl-100"
@@ -77,14 +73,20 @@ export default function TabInfoHotel() {
                       />
                     </button>
                   </span>
-                </div>
+                </>
               )}
             </div>
           </>
         );
 
       case "Amenidades":
-        return "Aquí están las amenidades.";
+        return (
+          <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
+            {hotel.facilities.map((facility, index) => (
+              <li key={index}>{facility}</li>
+            ))}
+          </ul>
+        );
 
       // TIME CHECK IN Y CHECK OUT
       case "Horarios":
@@ -94,9 +96,7 @@ export default function TabInfoHotel() {
             <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
               <li>Check-in: 15:00 pm</li>
               <li>Check-out: 15:00 pm</li>
-              {/* {GalleryModalHotel.hotel.breakfast && ( */}
-              <li> Desayuno: 7:00 am a 11:00 am</li>
-              {/* )} */}
+              {hotel.breakfast && <li> Desayuno: 7:00 am a 11:00 am</li>}
             </ul>
           </div>
         );
@@ -109,7 +109,10 @@ export default function TabInfoHotel() {
     <>
       <div className="block">
         <div className="border-b border-gray-200">
-          <nav className="-mb-px flex gap-x-3.5 space-x-8 overflow-y-auto" aria-label="Tabs">
+          <nav
+            className="-mb-px flex gap-x-3.5 space-x-8 overflow-y-auto"
+            aria-label="Tabs"
+          >
             {tabs.map((tab) => (
               <a
                 key={tab.name}
@@ -119,7 +122,7 @@ export default function TabInfoHotel() {
                   selectedTab.name === tab.name
                     ? "border-or-70 text-or-100"
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline my-2`}
+                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline my-2 cursor-pointer`}
                 aria-current={
                   selectedTab.name === tab.name ? "page" : undefined
                 }

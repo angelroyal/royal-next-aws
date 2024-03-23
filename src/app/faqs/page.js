@@ -7,7 +7,7 @@ import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import FrequentQuestions from "@/pages/others/FrequentQuestions";
+import FrequentQuestions from "@/services/General/FrequentQuestions";
 
 export default function Home() {
   return (

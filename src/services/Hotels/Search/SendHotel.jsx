@@ -5,12 +5,12 @@ import { useState, useEffect, useContext } from "react";
 import Room from "../config/RoomBox";
 import Calendar from "@/hooks/Calendar";
 import SearchHotel from "./SearchHotel";
-import { useIsMobile } from "@/config/Mobile/isMobile";
+// import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 
 export default function SendHotel() {
   const router = useRouter();
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
   const [validFirstDay, setValidFirstDay] = useState(null);
   const [selectedDates, setSelectedDates] = useState(null);
   const [validSecondDay, setValidSecondDay] = useState(null);
@@ -94,7 +94,7 @@ export default function SendHotel() {
 
       <>
         <button
-          className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
+          className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 hover:!bg-or-70 ${
             !selectedOption || !validFirstDay || !validSecondDay
               ? "bg-or-50"
               : "bg-or-100"

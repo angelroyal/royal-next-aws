@@ -7,7 +7,7 @@ import {
   BannerFaqsDown,
 } from "../../components/bannerJsx/bannerAboutUs";
 
-import FaqsWeb from "./Faqs";
+import FaqsWeb from "../../services/General/Faqs";
 import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
 import { SkeletonFaqs } from "../../utils/skeleton/SkeletonFaqs";

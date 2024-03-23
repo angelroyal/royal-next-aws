@@ -66,7 +66,7 @@ export function GalleryImages({ images }) {
               key={index}
               className={`w-20 snap-start me-3 cursor-pointer ${
                 index === currentIndex
-                  ? "border border-4 border-or-100"
+                  ? "border border-4 border-yw-100"
                   : "opacity-1"
               }`}
               style={{ flex: "0 0 auto", height: "4rem" }}

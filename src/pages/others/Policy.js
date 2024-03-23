@@ -10,7 +10,9 @@ import { Container } from "@/config/Others/Container";
 
 export default function Policy() {
   const [htmlContent, setHtmlContent] = useState("");
-  const language = localStorage.getItem("language") || "es";
+  // const language = localStorage.getItem("language") || "es";
+  const language = typeof window !== 'undefined' && localStorage.getItem("language") ? localStorage.getItem("language") : "es";
+
 
   useEffect(() => {
     scrollToTop();

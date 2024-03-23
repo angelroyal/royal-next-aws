@@ -11,7 +11,9 @@ import SkeletonText from "@/utils/skeleton/SkeletonText";
 
 export default function Privacy() {
   const [htmlContent, setHtmlContent] = useState("");
-  const language = localStorage.getItem("language") || "es";
+  // const language = localStorage.getItem("language") || "es";
+  const language = typeof window !== 'undefined' && localStorage.getItem("language") ? localStorage.getItem("language") : "es";
+
 
   useEffect(() => {
     scrollToTop();
