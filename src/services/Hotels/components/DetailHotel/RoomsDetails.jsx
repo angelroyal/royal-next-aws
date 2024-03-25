@@ -9,7 +9,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../../../../assets/styles/general/Swiper.css";
 
+import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
+
 import {
   formatAdultsAndChildren,
   parseQueryParams,
@@ -17,19 +19,9 @@ import {
 
 export default function RoomsDetails() {
   const { roomsData, handleFetchPostRooms } = useContext(RoomsHotelContext);
+  const { languageData } = useContext(LanguageContext);
 
-  const requestBody = {
-    code: 2,
-    type: "hotel",
-    "check-in": "2024-07-27",
-    "check-out": "2024-07-28",
-    occupancies: [
-      {
-        adults: 2,
-        children: [],
-      },
-    ],
-  };
+  // console.log(roomsData);
 
   useEffect(() => {
     const urlSearchParams = new URLSearchParams(window.location.search);
@@ -109,7 +101,7 @@ export default function RoomsDetails() {
                       </div>
 
                       <div className="flex flex-col gap-y-1">
-                        <p className="m-s-b text-fs-10 text-black text-start m-0">
+                        <p className="m-s-b text-fs-12 text-black text-start m-0">
                           Capacidad
                         </p>
 
@@ -121,28 +113,29 @@ export default function RoomsDetails() {
                               className="w-[14px] h-[14px]"
                               alt="adult"
                             />
-                            <span className="m-s-b text-fs-10 text-gry-100">
+                            <span className="m-s-b text-fs-12 text-gry-100">
                               {formatAdultsAndChildren(room.adultChildren)}
                             </span>
                           </div>
 
                           {/* BEDS */}
-                          <div className="flex gap-x-[4px]">
-                            <img
-                              src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
-                              className="w-[14px] h-[14px]"
-                              alt="room"
-                            />
-                            <span className="m-s-b text-fs-10 text-gry-100">
-                              1 cama king size
-                            </span>
-                          </div>
+                          {room.beds.map((bed, index) => (
+                            <div key={index} className="flex gap-x-[4px]">
+                              <img
+                                src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                                className="w-[14px] h-[14px]"
+                                alt="room"
+                              />
+                              <span className="m-s-b text-fs-12 text-gry-100">
+                                {bed.number} {bed.type}
+                              </span>
+                            </div>
+                          ))}
                         </div>
                       </div>
 
-                      {/* PENDIENTES */}
                       <div className="flex flex-col gap-y-2">
-                        <p className="m-s-b text-fs-10 text-black text-start m-0">
+                        <p className="m-s-b text-fs-12 text-black text-start m-0">
                           Amenidades
                         </p>
 
@@ -165,17 +158,35 @@ export default function RoomsDetails() {
                         </div>
                       </div>
 
+                      {/* CANCELLATIONS NOR OR NRF */}
+                      {/* NOR = refundable */}
                       <div className="flex flex-col gap-y-2">
-                        <span className="flex text-fs-10 gap-x-1 items-center">
-                          <img
-                            src={`${process.env.NEXT_PUBLIC_URL}icons/error/error-r.svg`}
-                            alt="amenities"
-                            className="h-[12px] w-auto"
-                          />{" "}
-                          <p className="m-m m-0 text-fs-10 text-black">
-                            No rembolsable
-                          </p>
-                        </span>
+                        {room.cancellationCode === "NOR" && (
+                          <span className="flex text-fs-12 gap-x-1 items-center">
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/check/check-g.svg`}
+                              alt="amenities"
+                              className="h-[12px] w-auto"
+                            />{" "}
+                            <p className="m-m m-0 text-fs-12 text-black">
+                              {languageData.itinerary.refundable}
+                            </p>
+                          </span>
+                        )}
+
+                        {/* NRF = no Refundable */}
+                        {room.cancellationCode === "NRF" && (
+                          <span className="flex text-fs-12 gap-x-1 items-center">
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/error/error-r.svg`}
+                              alt="amenities"
+                              className="h-[12px] w-auto"
+                            />{" "}
+                            <p className="m-m m-0 text-fs-12 text-black">
+                              {languageData.itinerary.nonRefundable}
+                            </p>
+                          </span>
+                        )}
 
                         <p className="m-0 text-start text-bl-100 m-m text-fs-8">
                           Políticas de cancelación
@@ -186,12 +197,17 @@ export default function RoomsDetails() {
                     <span className="border border-gry-100 w-full mt-4 mb-4 flex" />
 
                     <div className="flex justify-between items-center">
+                      {/* PRICE ROOM  */}
                       <div className="flex flex-col gap-y-1">
                         <span className="m-b text-fs-16 text-black">
-                          MXN <span>$10,000</span>
+                          {room.currency} $
+                          {Math.floor(room.price)
+                            .toLocaleString("es-MX", { currency: "MXN" })
+                            .replace(".00", "")}
+                          .<sup>{(room.price % 1).toFixed(2).slice(2)}</sup>
                         </span>
 
-                        <div className="rounded-1 bg-grn-50 text-grn-100 m-m text-fs-8 py-1 px-2">
+                        <div className="rounded-1 bg-grn-50 text-black m-m text-fs-8 py-1 px-2">
                           Impuestos incluidos
                         </div>
                       </div>

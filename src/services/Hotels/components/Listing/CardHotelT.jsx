@@ -16,8 +16,6 @@ export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;
   const { languageData } = useContext(LanguageContext);
 
-  console.log(requestQueryParams);
-
   //   PARAMS URL
   const searchParams =
     typeof window !== "undefined"
@@ -42,25 +40,22 @@ export default function CardHotelT(props) {
 
   const buildUrlWithParams = (queryParams) => {
     const baseUrl = `/hotel/${hotel.codeName}`;
-  
+
     const occupanciesString = JSON.stringify(queryParams.occupancies);
-    
+
     const queryParamsString = new URLSearchParams({
       ...queryParams,
-      occupancies: encodeURIComponent(occupanciesString)
+      occupancies: encodeURIComponent(occupanciesString),
     }).toString();
-  
+
     return `${baseUrl}?${queryParamsString}`;
   };
 
   return (
-    //NEW CARD HOTEL TAILWIND /LP
-    //  h-[219px]
     <>
       {hotel && (
         <div className="max-sm:px-4">
           <div className="flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col h-[230px] max-sm:max-h-[35rem]">
-            {/* IMAGE CARD HOTEL */}
             <div className="w-[30%] relative max-lg:w-full max-lg:h-[225px]">
               <Swiper
                 // spaceBetween={30}
