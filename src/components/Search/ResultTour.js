@@ -1,7 +1,4 @@
 import moment from "moment";
-import Image from "next/image";
-import Lottie from "lottie-react";
-import { Row, Col } from "react-bootstrap";
 import { useRouter } from "next/navigation";
 import React, { useState, useContext, useEffect } from "react";
 
@@ -10,20 +7,13 @@ import { useIsMobile } from "../../config/Mobile/isMobile";
 import SearchTour from "../../components/Search/SearchTour";
 import LanguageContext from "../../language/LanguageContext";
 import PersonsActivities from "../../utils/tour/PersonsActivities";
-import {
-  /* CalendarTourMobile, */ SearchTourMobile,
-} from "../Mobile/Tour/General/SearchTourMobile";
-
-import animationData from "../../assets/animations/animated-page-transitions.json";
-import DateRangeIcon from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
-import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 export default function ResultTour() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
 
   const [roomData, setRoomData] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const router = useRouter();
 
@@ -55,7 +45,7 @@ export default function ResultTour() {
   const sendAutocomplete = () => {
     const FormatDateStart = selectedDate[0];
     const dateStart = moment(FormatDateStart).format("YYYY-MM-DD");
-    setShowModal(true);
+    // setShowModal(true);
 
     const requestBody = {
       code: selectedOption.key,
@@ -70,7 +60,7 @@ export default function ResultTour() {
 
     setTimeout(() => {
       router.push(`/tours?${query}`);
-      setShowModal(false);
+      // setShowModal(false);
     }, 1500);
   };
 
@@ -80,42 +70,15 @@ export default function ResultTour() {
 
   return (
     <>
-      <Row className="row-home-search">
-        <Col className="input-search-t-h position-relative" sm={4}>
-          <Image className="icon-location-home" src={RoomOutlinedIcon} alt="icon-location"/>
-          <span className="span-location-home-r">
-            {languageData.SearchBox.tabTour.autoDestination}
-          </span>
-          {isMobile ? (
-            <SearchTourMobile onSelectTour={setSelectedOption} />
-          ) : (
-            <SearchTour onSelectTour={setSelectedOption} />
-          )}
-        </Col>
+      <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
+        <SearchTour onSelectTour={setSelectedOption} />
+        <CalendarDay onDateChange={handleDateChange} />
+        <PersonsActivities OnApply={setRoomData} />
 
-        <Col className="input-search-t-h position-relative" sm={3}>
-          <Image className="icon-date-home" src={DateRangeIcon}  alt="icon-calendar"/>
-          <span className="span-date-home-r">
-            {languageData.SearchBox.tabTour.date}
-          </span>
-          {/* {isMobile ? <CalendarTourMobile onDateChange={handleDateChange}/> : <CalendarDay onDateChange={handleDateChange} />} */}
-          <CalendarDay onDateChange={handleDateChange} />
-        </Col>
-
-        <Col className="input-search-t-h position-relative" sm={3}>
-          <PersonsActivities OnApply={setRoomData} />
-          <span className="span-people-home-r">
-            {languageData.SearchBox.tabTour.people}
-          </span>
-        </Col>
-
-        <Col
-          sm={2}
-          className={`${isMobile && "d-flex justify-content-center width100"}`}
-        >
+        <>
           <button
-            className={`button-search-page-search ${
-              !selectedOption || !selectedDate ? "disabled" : ""
+            className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
+              !selectedOption || !selectedDate ? "bg-or-50" : "bg-or-100 hover:!bg-or-70"
             }`}
             variant="contained"
             color="primary"
@@ -125,11 +88,16 @@ export default function ResultTour() {
             sx={{ mt: 2 }}
           >
             {languageData.SearchBox.tabTour.button}
+            <img
+            className="h-4 w-4"
+            src={`${process.env.NEXT_PUBLIC_URL}icons/search/search-w.svg`}
+            alt="search icon royal vacation"
+          />
           </button>
-        </Col>
-      </Row>
+        </>
+      </div>
 
-      {showModal && (
+      {/* {showModal && (
         <div className="modal-backdrop modal-loading">
           <div className="modal-box">
             <Lottie
@@ -138,7 +106,7 @@ export default function ResultTour() {
             />
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }

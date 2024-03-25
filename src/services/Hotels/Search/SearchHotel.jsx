@@ -8,18 +8,12 @@ import {
   ListSubheader,
 } from "@mui/material";
 
-// import { useIsMobile } from "../../config/Mobile/isMobile";
-// import LanguageContext from "../../language/LanguageContext";
-// import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import LanguageContext from "../../../language/LanguageContext";
 
-import "../../../assets/styles/general/SearchHotel.css";
 import { useIsMobile } from "@/config/Mobile/isMobile";
+import LanguageContext from "../../../language/LanguageContext";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
-// import { ReactComponent as Hotels } from "../../assets/icons/utils/navigation/hotel.svg";
-// import { ReactComponent as IconLocation } from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
-
+import "../../../assets/styles/general/SearchHotel.css";
 const API_ENDPOINT = `v1/destinations/search`;
 
 function SearchHotel(props) {
@@ -137,7 +131,7 @@ function SearchHotel(props) {
           setInputAutocomplete(newInputValue);
         }}
         renderInput={(params) => (
-          <div className="flex gap-x-2 items-center">
+          <div className="flex gap-x-2 items-center" id="destination-search">
             <img src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`} className="h-4 w-4 invert" alt="location icon"></img>
             <div className="flex flex-col w-full">
               <p className="text-fs-10 m-s-b text-gry-70 m-0 ">{languageData.SearchBox.tabHotel.autocomplete}</p>

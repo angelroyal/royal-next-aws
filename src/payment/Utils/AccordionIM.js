@@ -86,7 +86,7 @@ export function AccordionIM(props) {
                         </>
                       )}
                       <div className="people-card-itinerary">
-                        <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" className="wdt-10" />
+                        <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" width={16} height={16} className="wdt-10" />
                         <div className="info-people-card-itinerary">
                           {roomBed.adults}{" "}
                           {roomBed.adults > 1

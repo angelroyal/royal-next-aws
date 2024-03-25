@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Tab, Tabs } from "react-bootstrap";
+import { Tab } from "@headlessui/react";
 import React, { useContext, useState } from "react";
 
 import ResultTour from "@/components/Search/ResultTour";
@@ -11,7 +11,7 @@ import SendHotel from "@/services/Hotels/Search/SendHotel";
 export default function SearchBox() {
   const { languageData } = useContext(LanguageContext);
   const [currentActiveIcon, setCurrentActiveIcon] = useState("hotel");
-  
+
   // CHANGE TAB DINAMIC
   const handleTabChange = (eventKey) => {
     setCurrentActiveIcon(eventKey);
@@ -19,18 +19,12 @@ export default function SearchBox() {
 
   return (
     <>
-      <Tabs
-        activeKey={currentActiveIcon}
-        onSelect={handleTabChange}
-        id="tab-search-home"
-        // style={{padding:"0"}}
-        className="flex gap-x-2 text-fs-12 m-s-b"
-      >
-        {/* TAB HOTEL */}
-        <Tab
-          eventKey="hotel"
-          style={{ padding: "0" }}
-          title={
+      <Tab.Group>
+        <Tab.List
+          id="tab-search-home"
+          className="flex gap-x-2 text-fs-12 m-s-b"
+        >
+          <Tab className="focus:outline-none focus:ring-transparent" onClick={()=>handleTabChange("hotel")} style={{ padding: "0" }}>
             <span
               className={`${
                 currentActiveIcon === "hotel"
@@ -39,23 +33,21 @@ export default function SearchBox() {
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
             >
               <Image
-                // src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
-                src={`${process.env.NEXT_PUBLIC_URL}${currentActiveIcon === "hotel" ? 'icons/hotel/hotel-w.svg' : 'icons/hotel/hotel-b.svg'}`}
+                src={`${process.env.NEXT_PUBLIC_URL}${
+                  currentActiveIcon === "hotel"
+                    ? "icons/hotel/hotel-w.svg"
+                    : "icons/hotel/hotel-b.svg"
+                }`}
                 alt="hotel icon Royal vacation"
                 width={29}
                 height={25}
               />{" "}
               {languageData.SearchBox.tabHotel.lodgement}
             </span>
-          }
-        >
-          <SendHotel />
-        </Tab>
+          </Tab>
 
-        {/* TAB TOUR */}
-        <Tab
-          eventKey="tour"
-          title={
+          {/* TAB TOUR */}
+          <Tab className="focus:outline-none focus:ring-transparent" onClick={()=>handleTabChange("tour")}>
             <span
               className={`${
                 currentActiveIcon === "tour"
@@ -75,30 +67,19 @@ export default function SearchBox() {
               />{" "}
               {languageData.SearchBox.tabHotel.lodgement}
             </span>
-          }
-        >
-          <ResultTour />
-        </Tab>
-
-        {/* TAB TRANSPORTATION */}
-        {/* {isDev && (
-          <Tab
-            eventKey="transportation"
-            title={languageData.SearchBox.tabTransportation.titleTransportation}
-            className="search-content-home"
-          >
-            <h3 className="titleSearch container p-2">
-              {languageData.SearchBox.tabTransportation.titleTextMoving}
-            </h3>
-
-            <FormControl component="fieldset" id="radio-button-home">
-              <Suspense fallback={<div></div>}>
-                <ResultMoving />
-              </Suspense>
-            </FormControl>
           </Tab>
-        )} */}
-      </Tabs>
+        </Tab.List>
+
+        <Tab.Panels>
+          <Tab.Panel>
+            <SendHotel />
+          </Tab.Panel>
+
+          <Tab.Panel>
+            <ResultTour />
+          </Tab.Panel>
+        </Tab.Panels>
+      </Tab.Group>
     </>
   );
 }

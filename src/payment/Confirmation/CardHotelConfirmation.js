@@ -27,7 +27,11 @@ export default function CardHotelConfirmation(props) {
 
   return (
     <div className="cont-card-icon-location-and-date">
-      <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder" />
+      <Image
+        className="icon-location-border-date"
+        src={IconLocationBorder}
+        alt="IconLocationBorder"
+      />
 
       <div className="container-card-hotel-i-and-date">
         {/* DAY,TIME HOTEL */}
@@ -88,7 +92,11 @@ export default function CardHotelConfirmation(props) {
                   </div>
 
                   <div className="icon-location-and-text d-flex gap-2">
-                    <Image className="icons-size-m" src={LocationIcon} alt="LocationIcon"/>
+                    <Image
+                      className="icons-size-m"
+                      src={LocationIcon}
+                      alt="LocationIcon"
+                    />
 
                     <span>{itemHotel.address}</span>
                   </div>
@@ -109,7 +117,11 @@ export default function CardHotelConfirmation(props) {
                     </div>
 
                     <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                      <Image className="icons-size-m" src={RoomIcon}  alt="RoomIcon"/>
+                      <Image
+                        className="icons-size-m"
+                        src={RoomIcon}
+                        alt="RoomIcon"
+                      />
 
                       <span>
                         {itemHotel.totalRooms}{" "}
@@ -241,9 +253,8 @@ export default function CardHotelConfirmation(props) {
                                       <Image
                                         lassName="icons-size-m"
                                         src={RoomIcon}
-
-alt="RoomIcon"
-/>{" "}
+                                        alt="RoomIcon"
+                                      />{" "}
                                       <span className="text-grey-card-hotel-i">
                                         {bed.number} {bed.type}
                                       </span>

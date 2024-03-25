@@ -1,13 +1,9 @@
 "use client"
-import { useState, useEffect, useContext } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useState, useEffect, useContext } from "react";
 
-// import RoomMenu from "../hooks/RoomMenu";
 import RoomMenu from "./RoomMenu";
 import LanguageContext from "../../../language/LanguageContext";
-
-// import { ReactComponent as BedSharpIcon } from "../assets/icons/utils/searchBox/room-autocomplete.svg";
-// import { ReactComponent as Person2OutlinedIcon } from "../assets/icons/utils/searchBox/person-autocomplete.svg";
 
 function Room({ OnApply }) {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -52,12 +48,11 @@ function Room({ OnApply }) {
   };
 
   return (
-    <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px]">
+    <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px] h-[54px]">
       <Dropdown style={{minWidth:"293px"}} show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
           className="flex border-0 bg-transparent p-0"
-          style={{display:"flex"}}
         >
           <span className="flex items-center gap-2 border-r-2 border-gry-70 pr-3.5">
             <img

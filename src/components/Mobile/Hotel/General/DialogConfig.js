@@ -177,7 +177,7 @@ export function DialogConfigRoomHotel(props) {
 
           <div className="d-flex gap-2 align-items-center">
             <span style={{ padding: "0 10px" }}>|</span>
-            <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" className="icon-person-search" />
+            <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" width={16} height={16} className="icon-person-search" />
             <span className="input-people">{totalPeople}</span>
           </div>
         </span>

@@ -3,12 +3,16 @@ import Image from "next/image";
 import React, { useState, useEffect, useMemo, useContext } from "react";
 import { Grid, TextField, Autocomplete, Typography } from "@mui/material";
 
+import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import { useIsMobile } from "../../config/Mobile/isMobile";
 
-import IconTour from "../../assets/icons/utils/navigation/tour.svg";
-import IconLocation from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+// import IconTour from "../../assets/icons/utils/navigation/tour.svg";
+// import IconLocation from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
+
+
+import "../../assets/styles/general/SearchHotel.css";
 
 const API_ENDPOINT = `v1/activity`;
 // const API_ENDPOINT = `v1/tour-destinations/search`;
@@ -98,76 +102,86 @@ function SearchTour({ closeDialog, onSelectTour }) {
   };
 
   return (
-    <Autocomplete
-      // open
-      // id="autocomplete-tour"
-      className="search-autocomplete custom-autocomplete"
-      sx={{ width: 300 }}
-      getOptionLabel={(option) => option.label}
-      filterOptions={(x) => x}
-      options={optionsSearch}
-      isOptionEqualToValue={isOptionEqualToValue}
-      autoComplete
-      includeInputInList
-      filterSelectedOptions
-      value={searchTour}
-      noOptionsText={
-        searchTour || isEmpty === true
-          ? ""
-          : languageData.SearchBox.tabTour.text
-      }
-      onChange={(event, newValueAutocomplete) => {
-        clickInput(newValueAutocomplete);
-      }}
-      onInputChange={(event, newInputValue) => {
-        setInputAutocomplete(newInputValue);
-      }}
-      renderInput={(params) => (
-        <TextField
-          className="textField-box-result"
-          {...params}
-          placeholder={languageData.SearchBox.tabTour.destinationText}
-        />
-      )}
-      renderOption={(props, option) => {
-        return (
-          <li {...props}>
-            <Grid container alignItems="center">
-              <Grid item sx={{ display: "flex", width: 30 }}>
-                {option.type === "destination" ? (
-                  <Image
-                    src={IconLocation}
-                    alt="icon location"
-                    sx={{ color: "text.secondary" }}
-                    className="icon-location-tour"
-                  />
-                ) : (
-                  <Image
-                    src={IconTour}
-                    alt="icon tour"
-                    sx={{ color: "text.secondary" }}
-                  />
-                )}
-              </Grid>
+    <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative w-full lg:w-[290px]">
+      <Autocomplete
+        // open
+        // id="autocomplete-tour"
+        className="search-autocomplete custom-autocomplete"
+        sx={{ width: 300 }}
+        getOptionLabel={(option) => option.label}
+        filterOptions={(x) => x}
+        options={optionsSearch}
+        isOptionEqualToValue={isOptionEqualToValue}
+        autoComplete
+        includeInputInList
+        filterSelectedOptions
+        value={searchTour}
+        noOptionsText={
+          searchTour || isEmpty === true
+            ? ""
+            : languageData.SearchBox.tabTour.text
+        }
+        onChange={(event, newValueAutocomplete) => {
+          clickInput(newValueAutocomplete);
+        }}
+        onInputChange={(event, newInputValue) => {
+          setInputAutocomplete(newInputValue);
+        }}
+        renderInput={(params) => (
+          <div className="flex gap-x-2 items-center" id="destination-search">
+            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`} width={16} height={16} className="h-4 w-4 invert" alt="icon-location" />
+            <div className="flex flex-col w-full">
+              <span className="text-fs-10 m-s-b text-gry-70 m-0">
+                {languageData.SearchBox.tabTour.autoDestination}
+              </span>
+              <TextField
+                className="!m-m !text-fs-12 p-0"
+                {...params}
+                placeholder={languageData.SearchBox.tabTour.destinationText}
+              />
+            </div>
+          </div>
+        )}
+        renderOption={(props, option) => {
+          return (
+            <li {...props}>
+              <Grid container alignItems="center">
+                <Grid item sx={{ display: "flex", width: 30 }}>
+                  {option.type === "destination" ? (
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
+                      alt="icon location"
+                      width={16} height={16}
+                      className="icon-location-tour"
+                    />
+                  ) : (
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
+                      width={16} height={16}
+                      alt="icon tour"
+                    />
+                  )}
+                </Grid>
 
-              <Grid
-                item
-                sx={{ width: "calc(100% - 44px)", wordWrap: "break-word" }}
-              >
-                <Typography
-                  className="option-response"
-                  variant="body1"
-                  id="OptionAutocomplete"
+                <Grid
+                  item
+                  sx={{ width: "calc(100% - 44px)", wordWrap: "break-word" }}
                 >
-                  {getDestination(inputAutocomplete, option.label)}
-                  {/* {option.label} */}
-                </Typography>
+                  <Typography
+                    className="option-response"
+                    variant="body1"
+                    id="OptionAutocomplete"
+                  >
+                    {getDestination(inputAutocomplete, option.label)}
+                    {/* {option.label} */}
+                  </Typography>
+                </Grid>
               </Grid>
-            </Grid>
-          </li>
-        );
-      }}
-    />
+            </li>
+          );
+        }}
+      />
+    </div>
   );
 }
 

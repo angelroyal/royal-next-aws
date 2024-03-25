@@ -17,7 +17,6 @@ export default function CalendarDay({ onDateChange }) {
     // ACCEPT DATE SELECTED 0
 
     if (storedDates) {
-      
       const startDate = new Date(storedDates[0]);
       const currentDate = new Date();
 
@@ -25,7 +24,7 @@ export default function CalendarDay({ onDateChange }) {
         startDate.getTime() - currentDate.getTime() < 48 * 60 * 60 * 1000
           ? startDate
           : new Date(currentDate.getTime() + 48 * 60 * 60 * 1000);
-          
+
       const calendarDay = JSON.parse(storedDates);
       flatpickr(calendarRef.current, {
         mode: "single",
@@ -52,12 +51,29 @@ export default function CalendarDay({ onDateChange }) {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <input
-      className="calendar-results"
-      type="text"
-      ref={calendarRef}
-      placeholder={languageData.SearchBox.tabTransportation.autoCompleteArrival}
-      id="check-in"
-    />
+    <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full lg:w-[290px]">
+      <div className="flex items-center gap-2 w-full">
+        <img
+          className="h-[18px] w-4 invert"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
+          alt="calendar icon royal vacation"
+        />
+        <div className="flex relative w-full">
+          <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
+            Fecha
+          </span>
+          
+          <input
+            className="mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer"
+            type="text"
+            ref={calendarRef}
+            placeholder={
+              languageData.SearchBox.tabTransportation.autoCompleteArrival
+            }
+            id="check-in"
+          />
+        </div>
+      </div>
+    </div>
   );
 }

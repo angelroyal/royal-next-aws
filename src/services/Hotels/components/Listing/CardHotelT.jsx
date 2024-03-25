@@ -13,8 +13,10 @@ import LanguageContext from "@/language/LanguageContext";
 import { calculateNights } from "@/Hotel/Utils/calculateNights";
 
 export default function CardHotelT(props) {
-  const { hotel } = props;
+  const { hotel, requestQueryParams } = props;
   const { languageData } = useContext(LanguageContext);
+
+  console.log(requestQueryParams);
 
   //   PARAMS URL
   const searchParams =
@@ -37,6 +39,19 @@ export default function CardHotelT(props) {
       return total + occupancy.adults + occupancy.children.length;
     }, 0);
   }
+
+  const buildUrlWithParams = (queryParams) => {
+    const baseUrl = `/hotel/${hotel.codeName}`;
+  
+    const occupanciesString = JSON.stringify(queryParams.occupancies);
+    
+    const queryParamsString = new URLSearchParams({
+      ...queryParams,
+      occupancies: encodeURIComponent(occupanciesString)
+    }).toString();
+  
+    return `${baseUrl}?${queryParamsString}`;
+  };
 
   return (
     //NEW CARD HOTEL TAILWIND /LP
@@ -203,7 +218,8 @@ export default function CardHotelT(props) {
                   </div>
 
                   <Link
-                    href={`/hotel/${hotel.codeName}`}
+                    // href={`/hotel/${hotel.codeName}?${requestQueryParams}`}
+                    href={buildUrlWithParams(requestQueryParams)}
                     target="_blank"
                     className=" no-underline bg-yw-100 text-black text-fs-12 m-b px-[40px] pt-[8px] pb-[8px] py-[5px] rounded-full hover:bg-yw-50 text-nowrap"
                   >

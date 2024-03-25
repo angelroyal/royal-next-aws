@@ -1,11 +1,8 @@
 import Image from "next/image";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { TextField } from "@mui/material";
 import Dropdown from "react-bootstrap/Dropdown";
-import Container from "react-bootstrap/Container";
 import { Add, Remove } from "@mui/icons-material/";
 import LanguageContext from "../../language/LanguageContext";
-import { Button, Typography, TextField } from "@mui/material";
 import React, { useState, useEffect, useContext } from "react";
 
 import Children2OutlinedIcon from "../../assets/icons/utils/searchBox/kid.svg";
@@ -118,181 +115,206 @@ export default function PersonsActivities({ OnApply }) {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <Dropdown
-      show={showDropdown}
-      onClose={() => setShowDropdown(false)}
-      className="width100"
-    >
-      <Dropdown.Toggle
-        onClick={() => setShowDropdown(!showDropdown)}
-        className="dropdown-room"
-      >
-        <span style={{ padding: "0 10px" }}>
-          <Image src={Person2OutlinedIcon} alt="icon-person"/>
-          {totalAdults}
-        </span>{" "}
-        <span style={{ padding: "0 10px" }}>|</span>
-        <span style={{ padding: "0 10px" }}>
-          <Image src={Children2OutlinedIcon} alt="icon-child"/>
-          {totalChildren}
-        </span>
-      </Dropdown.Toggle>
-      <Dropdown.Menu className="dropdown-container">
-        <div className="equilateral-triangle-bottom"></div>
+    <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px] h-[54px]">
+      <Dropdown show={showDropdown} onClose={() => setShowDropdown(false)}>
+        <p className="absolute top-0 left-0 right-0 mx-auto m-s-b text-fs-10 text-gry-70 w-max">
+          {languageData.SearchBox.tabTour.people}
+        </p>
+        <Dropdown.Toggle
+          onClick={() => setShowDropdown(!showDropdown)}
+          className="flex border-0 bg-transparent p-0 w-full justify-between"
+        >
+          <span
+            className="flex m-s-b gap-x-1 text-fs-12 items-center"
+            style={{ padding: "0 10px" }}
+          >
+            <Image
+              src={Person2OutlinedIcon}
+              width={16}
+              height={22}
+              alt="icon-person"
+            />
+            {totalAdults}
+          </span>{" "}
+          <span style={{ padding: "0 10px" }}>|</span>
+          <span
+            className="flex m-s-b gap-x-1 text-fs-12 items-center"
+            style={{ padding: "0 10px" }}
+          >
+            <Image
+              src={Children2OutlinedIcon}
+              width={16}
+              height={22}
+              alt="icon-child"
+            />
+            {totalChildren}
+          </span>
+        </Dropdown.Toggle>
 
-        <div>
-          {rooms.map((room, index) => (
-            <div key={index} className="divider-room">
-              <Container>
-                <Row className="row-data-room">
-                  <Col sm={8} className="col-padding">
-                    <Typography
-                      variant="subtitle1"
-                      className="title-room-result"
-                    >
+        {showDropdown === true && (
+          <Dropdown.Menu className="border-0 w-11/12 z-30 p-0">
+            <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg">
+              <div className="pt-4 pl-3 pr-3 z-10">
+                {rooms.map((room, index) => (
+                  <div
+                    key={index}
+                    className="pb-2 mb-3 flex flex-col border-b-1 border-gry-50 gap-y-3"
+                  >
+                    <p className="m-m m-0 text-fs-14">
                       {
                         languageData.SearchBox.tabTour.personsActivities
                           .titlePeople
                       }
-                    </Typography>
-                  </Col>
-                  <Col sm={4} className="icon-delete-room"></Col>
-                </Row>
-              </Container>
-
-              <Container className="m-tour-people-search">
-                <Row className="row-room">
-                  <Col className="subtitle-col-room">
-                    {languageData.SearchBox.tabTour.personsActivities.adult}
-                  </Col>
-                  <Col className="col-padding">
-                    <div className="rooms-center">
-                      <Button
-                        disabled={room.adult === 1}
-                        onClick={() =>
-                          handlenumAdultChange(room.adult - 1, index)
-                        }
-                        aria-label="Reduce el número de Adultos"
-                      >
-                        <Remove />
-                      </Button>
-                      <Typography
-                        variant="subtitle1"
-                        style={{ margin: "0px 0px" }}
-                      >
-                        {room.adult}
-                      </Typography>
-                      <Button
-                        disabled={room.adult === 20}
-                        onClick={() =>
-                          handlenumAdultChange(room.adult + 1, index)
-                        }
-                        aria-label="Aumenta el número de Adultos"
-                      >
-                        <Add />
-                      </Button>
-                    </div>
-                  </Col>
-                </Row>
-
-                <Row className="row-room">
-                  <Col>
-                    <div className="subtitle-col-room">
-                      {
-                        languageData.SearchBox.tabTour.personsActivities
-                          .children
-                      }
-                    </div>
-                    {/* <small>(Menores de 12)</small> */}
-                  </Col>
-                  <Col className="col-padding">
-                    <div className="rooms-center">
-                      <Button
-                        disabled={room.child === 0}
-                        onClick={() => removeChild(index)}
-                        aria-label="Reduce el número de Niños"
-                      >
-                        <Remove />
-                      </Button>
-                      <Typography
-                        variant="subtitle1"
-                        style={{ margin: "0px 0px" }}
-                      >
-                        {room.child}
-                      </Typography>
-                      <Button
-                        disabled={room.child === 10}
-                        onClick={() => addChild(index)}
-                        aria-label="Aumenta el número de Niños"
-                      >
-                        <Add />
-                      </Button>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
-              <Row>
-                <Col>
-                  {[...Array(room.child)].map((_, childIndex) => (
-                    <Container key={childIndex} style={{ margin: "10px 0" }}>
-                      <Row className="row-room">
-                        <Col style={{ fontSize: "12px" }}>
+                    </p>
+                    <div className="flex flex-col gap-y-2">
+                      <div className="flex justify-between">
+                        <h3 className="m-b text-fs-16 text-gry-100">
                           {
                             languageData.SearchBox.tabTour.personsActivities
-                              .ageChildren
-                          }{" "}
-                          {childIndex + 1}
-                        </Col>
-                        <Col>
-                          <div key={childIndex} className="flex-text-children">
-                            <TextField
-                              id="outlined-number"
-                              label={
+                              .adult
+                          }
+                        </h3>
+                        <div className="flex gap-x-1 items-center">
+                          <button
+                            disabled={room.adult === 1}
+                            onClick={() =>
+                              handlenumAdultChange(room.adult - 1, index)
+                            }
+                            aria-label="Reduce el número de Adultos"
+                            className={`${
+                              room.adult === 1 ? "text-gry-70" : "text-bl-100"
+                            } m-s-b`}
+                          >
+                            <Remove />
+                          </button>
+                          <span
+                            className="m-m text-fs-15"
+                            style={{ margin: "0px 0px" }}
+                          >
+                            {room.adult}
+                          </span>
+                          <button
+                            disabled={room.adult === 20}
+                            onClick={() =>
+                              handlenumAdultChange(room.adult + 1, index)
+                            }
+                            className="text-bl-100 m-s-b"
+                            aria-label="Aumenta el número de Adultos"
+                          >
+                            <Add />
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between">
+                        <h3 className="m-b text-fs-16 text-gry-100">
+                          {
+                            languageData.SearchBox.tabTour.personsActivities
+                              .children
+                          }
+                        </h3>
+
+                        <div className="flex gap-x-1 items-center">
+                          <button
+                            disabled={room.child === 0}
+                            onClick={() => removeChild(index)}
+                            aria-label="Reduce el número de Niños"
+                            className={`${
+                              room.child === 0 ? "text-gry-70" : "text-bl-100"
+                            } m-s-b`}
+                          >
+                            <Remove />
+                          </button>
+
+                          <span
+                            className="m-m text-fs-15"
+                            variant="subtitle1"
+                            style={{ margin: "0px 0px" }}
+                          >
+                            {room.child}
+                          </span>
+
+                          <button
+                            disabled={room.child === 10}
+                            onClick={() => addChild(index)}
+                            aria-label="Aumenta el número de Niños"
+                            className="text-bl-100 m-s-b"
+                          >
+                            <Add />
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-y-3 mt-3.5">
+                        {[...Array(room.child)].map((_, childIndex) => (
+                          <div
+                            key={childIndex}
+                            className="flex justify-between"
+                          >
+                            <p className="m-0 text-fs-14 m-m">
+                              {
                                 languageData.SearchBox.tabTour.personsActivities
-                                  .age
-                              }
-                              value={room.ages[childIndex]}
-                              onChange={(event) =>
-                                handleAgeChange(
-                                  event.target.value,
-                                  childIndex,
-                                  index
-                                )
-                              }
-                              type="number"
-                              required
-                              variant="outlined"
-                              size="small"
-                              style={{ width: 80 }}
-                              inputProps={{
-                                maxLength: 2,
-                                max: 12,
-                                min: 0,
-                                onKeyPress: (event) => {
-                                  if (!/[0-9]/.test(event.key)) {
-                                    event.preventDefault();
-                                  }
-                                },
-                              }}
-                              error={ageError}
-                              helperText={ageError ? "0-17 años" : ""}
-                            />
+                                  .ageChildren
+                              }{" "}
+                              {childIndex + 1}
+                            </p>
+
+                            <div
+                              key={childIndex}
+                              className="flex-text-children"
+                            >
+                              <TextField
+                                id="outlined-number"
+                                label={
+                                  languageData.SearchBox.tabTour
+                                    .personsActivities.age
+                                }
+                                value={room.ages[childIndex]}
+                                onChange={(event) =>
+                                  handleAgeChange(
+                                    event.target.value,
+                                    childIndex,
+                                    index
+                                  )
+                                }
+                                type="number"
+                                required
+                                variant="outlined"
+                                size="small"
+                                style={{ width: 80 }}
+                                inputProps={{
+                                  maxLength: 2,
+                                  max: 12,
+                                  min: 0,
+                                  onKeyPress: (event) => {
+                                    if (!/[0-9]/.test(event.key)) {
+                                      event.preventDefault();
+                                    }
+                                  },
+                                }}
+                                error={ageError}
+                                helperText={ageError ? "0-17 años" : ""}
+                              />
+                            </div>
                           </div>
-                        </Col>
-                      </Row>
-                    </Container>
-                  ))}
-                </Col>
-              </Row>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                <div className="sticky border-t border-gry-50 z-10 items-center flex flex-col bottom-0 left-0 bg-white p-2 justify-between gap-2">
+                  <button
+                    className="rounded-full bg-or-100 w-max py-1.5 px-4 m-s-b text-fs-15 text-white"
+                    onClick={printTourData}
+                  >
+                    {languageData.SearchBox.tabTour.personsActivities.button}
+                  </button>
+                </div>
+              </div>
             </div>
-          ))}
-          <div className="button-room-page-search">
-            <button className="button-apply-room" onClick={printTourData}>
-              {languageData.SearchBox.tabTour.personsActivities.button}
-            </button>
-          </div>
-        </div>
-      </Dropdown.Menu>
-    </Dropdown>
+          </Dropdown.Menu>
+        )}
+      </Dropdown>
+    </div>
   );
 }
