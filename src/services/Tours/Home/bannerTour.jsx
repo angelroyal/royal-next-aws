@@ -1,11 +1,11 @@
 "use client"
 import "swiper/css";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useContext } from "react";
 import Image from "next/image";
-import LanguageContext from "@/language/LanguageContext";
+import { useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "../../../assets/styles/general/Swiper.css";
+import LanguageContext from "@/language/LanguageContext";
 
 export function BannerHomeTour() {
     const excDiscounts = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/cenote-san-antonio.webp`;
@@ -18,7 +18,7 @@ export function BannerHomeTour() {
         <Swiper
             slidesPerView={3}
             spaceBetween={16}
-            className="h-[235px] my-[30px]"
+            className="h-[235px] my-[40px]"
             // loop={true}
             breakpoints={{
                 0: {
@@ -54,7 +54,7 @@ export function BannerHomeTour() {
                         </span>
                     </div>
 
-                    <div className="absolute h-[235px] right-0 rounded-lg  clip-custom">
+                    <div className="absolute h-[235px] right-0 rounded-lg  clip-custom max-xl:w-[320px] max-lg:w-[71%]">
                         <Image src={excDiscounts} width={547} height={273} className="w-full h-full rounded-r-lg object-cover " alt="Banner Exc Discounts" />
                     </div>
 
@@ -97,3 +97,5 @@ export function BannerHomeTour() {
         </Swiper>
     );
 }
+
+
