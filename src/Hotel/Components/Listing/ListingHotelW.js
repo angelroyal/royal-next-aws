@@ -18,13 +18,14 @@ import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerLi
 
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
 // import FiltersHotel from "@/services/Hotels/components/Listing/FiltersHotel";
-import IconBanner from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
 import { Container } from "@/config/Others/Container";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
   const { languageData } = useContext(LanguageContext);
+  const [requestQueryParams, setRequestQueryParams] = useState(null);
+  
   const {
     totalPages,
     currentPage,
@@ -54,6 +55,7 @@ export default function ListingHotelW(props) {
           decodeURIComponent(searchParams.get("occupancies"))
         ),
       };
+      setRequestQueryParams(requestBody);
 
       if (requestBody) {
         if (token) {
@@ -108,7 +110,10 @@ export default function ListingHotelW(props) {
               {combinedHotelData &&
                 combinedHotelData.map((hotel, index) => (
                   <>
-                    <CardHotelT hotel={hotel} />{" "}
+                    <CardHotelT
+                      hotel={hotel}
+                      requestQueryParams={requestQueryParams}
+                    />{" "}
                     {/* <HotelCard
                       key={index}
                       index={index}
