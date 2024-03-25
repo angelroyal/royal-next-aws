@@ -80,7 +80,7 @@ export function MinPriceRoom(props) {
     >
       <div className="room-option-divider">
         <div className="container-info-room">
-          <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" />
+          <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" height={16} width={16} />
           {/* Room information for how many adults and children */}
           <div className="divider-info-person">
             {`${parseInt(room.adultChildren.split(".")[0])} ${

@@ -77,8 +77,8 @@ export default function ResultTour() {
 
         <>
           <button
-            className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 hover:!bg-or-70 ${
-              !selectedOption || !selectedDate ? "bg-or-50" : "bg-or-100"
+            className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
+              !selectedOption || !selectedDate ? "bg-or-50" : "bg-or-100 hover:!bg-or-70"
             }`}
             variant="contained"
             color="primary"
