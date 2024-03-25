@@ -15,7 +15,7 @@ const tabs = [
 
 export default function TabInfoHotel(props) {
   const { hotel } = props;
-  console.log(hotel);
+  // console.log(hotel);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [showFullDescription, setShowFullDescription] = useState(false);
 

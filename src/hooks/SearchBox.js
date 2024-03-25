@@ -19,8 +19,7 @@ export default function SearchBox() {
 
   return (
     <>
-      <Tab.Group
-      >
+      <Tab.Group>
         <Tab.List
           id="tab-search-home"
           className="flex gap-x-2 text-fs-12 m-s-b"
@@ -50,7 +49,7 @@ export default function SearchBox() {
           {/* TAB TOUR */}
           <Tab className="focus:outline-none focus:ring-transparent" onClick={()=>handleTabChange("tour")}>
             <span
-              className={ `${
+              className={`${
                 currentActiveIcon === "tour"
                   ? "bg-bl-100 text-white"
                   : "bg-white text-gry-100"
