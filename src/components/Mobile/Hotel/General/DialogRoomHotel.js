@@ -95,7 +95,7 @@ export default function MobileRoomHotel(props) {
               style={{ padding: "0 10px" }}
             >
               <span style={{ padding: "0 10px" }}>|</span>
-              <Image src={Person2OutlinedIcon} alt="Person 2 Outlined Icon" className="icon-person-search" />
+              <Image src={Person2OutlinedIcon} alt="Person 2 Outlined Icon" width={16} height={16} className="icon-person-search" />
               <span className="room-capacity">{totalPeople}</span>
             </span>
           </div>

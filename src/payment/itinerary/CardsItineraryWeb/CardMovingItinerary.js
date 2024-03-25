@@ -106,7 +106,7 @@ export default function CardMovingItinerary(props) {
                 </div>
 
                 <div className="people-card-itinerary">
-                  <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" />
+                  <Image src={Person2OutlinedIcon} alt="Person2OutlinedIcon" width={16} height={16} />
                   <div className="info-people-moving-itinerary">
                     {languageData.itinerary.movingItinerary.textPassengers}{" "}
                     {itemMoving.passengers}
