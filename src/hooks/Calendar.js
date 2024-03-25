@@ -67,19 +67,19 @@ function Calendar({ onDateChange }) {
   const { languageData } = useContext(LanguageContext);
   return (
     <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full lg:w-[290px]">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 w-full">
         <img
           className="h-[18px] w-4 invert"
-          src="https://sandboxmexico.com/assets/icons/calendar/calendar-b.svg"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
           alt="calendar icon royal vacation"
         />
-        <div className="flex relative">
+        <div className="flex relative w-full">
           <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
             Fecha
           </span>
 
           <input
-            className="mt-3 m-b text-fs-12 focus:outline-none"
+            className="mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer"
             type="text"
             ref={calendarRef}
             placeholder={languageData.SearchBox.tabHotel.dateText}
