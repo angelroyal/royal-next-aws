@@ -21,7 +21,7 @@ export function GalleryImages({ images }) {
     setCurrentSlideIndex(swiper.activeIndex);
   };
   return (
-    <div className=" w-full lg:w-[55%] select-none">
+    <div className=" w-full lg:w-[52%] select-none">
       <Swiper
         navigation={true}
         style={{
@@ -32,7 +32,7 @@ export function GalleryImages({ images }) {
         slidesPerView={1}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 h-[20rem] md:h-[22rem] xl:h-[33rem]"
+        className="mySwiper2 h-[20rem] md:h-[22rem] xl:h-[30rem]"
         onSlideChange={handleSlideChange}
       >
         {images.map((image, index) => (
