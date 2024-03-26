@@ -56,6 +56,8 @@ export default function AddCartHotel() {
     }
   };
 
+  console.log(selectedRooms);
+
   return (
     <>
       <button
