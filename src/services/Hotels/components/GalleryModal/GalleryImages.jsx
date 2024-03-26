@@ -21,7 +21,7 @@ export function GalleryImages({ images }) {
     setCurrentSlideIndex(swiper.activeIndex);
   };
   return (
-    <div className="h-[390px] select-none">
+    <div className=" w-full lg:w-[55%] select-none">
       <Swiper
         navigation={true}
         style={{
@@ -32,14 +32,14 @@ export function GalleryImages({ images }) {
         slidesPerView={1}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 h-[80%]"
+        className="mySwiper2 h-[20rem] md:h-[24rem] lg:h-[36rem]"
         onSlideChange={handleSlideChange}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <img
               src={image}
-              className="h-full object-cover w-full"
+              className="h-full object-cover w-full rounded-lg"
               alt={`${index + 1}`}
             />
           </SwiperSlide>
@@ -48,20 +48,43 @@ export function GalleryImages({ images }) {
 
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={6}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper h-[15%] mt-2 select-none"
+        className="mySwiper h-full mt-2 select-none"
+        breakpoints={{
+          390: {
+            spaceBetween: 10,
+            slidesPerView: 4
+          },
+          500:{
+            slidesPerView: 5,
+            spaceBetween: 10,
+          },
+          800:{
+            spaceBetween: 17,
+            slidesPerView: 7
+          },
+          1030:{
+            spaceBetween: 17,
+            slidesPerView: 6  
+          },
+          1280:{
+            spaceBetween: 17,
+            slidesPerView: 7  
+          }
+
+          
+          
+        }}
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="!h-[72px]">
             <img
-              className={`object-cover w-full h-full ${
+              className={`object-cover w-full h-full rounded-lg ${
                 index === currentSlideIndex
-                  ? "opacity-100 border-4 border-or-100"
-                  : "opacity-25"
+                  ? "opacity-100 border-2 border-or-100"
+                  : "opacity-50"
               }`}
               src={image}
               alt={`${index + 1}`}

@@ -5,7 +5,10 @@ import {
   MegaphoneIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
+
+import "../../../../assets/styles/general/keyframes.css"
+import { AmenitiesIcons } from "@/components/General/Amenities";
 
 const tabs = [
   { name: "informacion", icon: InformationCircleIcon },
@@ -18,6 +21,9 @@ export default function TabInfoHotel(props) {
   // console.log(hotel);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [isLimitLetters, setIsLimitLetters] = useState(false);
+  const [shortHotelDescription, setShortHotelDescription] = useState(null);
+  const [hotelDescription, setHotelDescription] = useState(null);
 
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
@@ -28,10 +34,20 @@ export default function TabInfoHotel(props) {
     setShowFullDescription(!showFullDescription);
   };
 
-  const getDescriptionPreview = (description) => {
-    const words = description.split(" ");
-    return words.slice(0, 150).join(" ");
-  };
+  // VALIDATION FOR THE LIMIT OF LETTERS ALLOWED
+
+  useEffect(() => {
+    const getDescriptionPreview = () => {
+      const words = hotel.description.split(" ");
+      const totalArray = words.length;
+      setHotelDescription(hotel.description);
+      if (totalArray && totalArray > 155) {
+        setIsLimitLetters(true);
+        setShortHotelDescription(`${words.slice(0, 140).join(" ")}`);
+      }
+    };
+    getDescriptionPreview();
+  }, [hotel]);
 
   const getMessageForTab = (tabName) => {
     switch (tabName) {
@@ -40,40 +56,50 @@ export default function TabInfoHotel(props) {
         return (
           <>
             <div className="text-fs-14 m-m text-justify">
-              {showFullDescription ? (
-                <>
-                  <p>{hotel.description}</p>
+              {hotelDescription !== null ? (
+                showFullDescription ? (
+                  <>
+                    <p className="text-gry-100">
+                      {hotelDescription && hotelDescription}
+                    </p>
 
-                  <span>
-                    <button
-                      className="flex gap-1 items-center m-b text-fs-15 text-bl-100"
-                      onClick={handleToggleDescription}
-                    >
-                      Ver menos
-                      <img
-                        src="https://sandboxmexico.com/assets/icons/arrows/up-bl.svg"
-                        alt="show less"
-                      />
-                    </button>
-                  </span>
-                </>
+                    <span>
+                      <button
+                        className="flex gap-1 items-center m-b text-fs-15 text-bl-100"
+                        onClick={handleToggleDescription}
+                      >
+                        Ver menos
+                        <img
+                          src="https://sandboxmexico.com/assets/icons/arrows/up-bl.svg"
+                          alt="show less"
+                        />
+                      </button>
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-gry-100">
+                      {hotelDescription && isLimitLetters === true ? shortHotelDescription : hotelDescription}
+                      {isLimitLetters === true && "..."}
+                    </p>
+                    {isLimitLetters === true && (
+                      <span>
+                        <button
+                          className=" flex items-center gap-1 m-b text-fs-15 text-bl-100"
+                          onClick={handleToggleDescription}
+                        >
+                          Ver más
+                          <img
+                            src="https://sandboxmexico.com/assets/icons/arrows/down-bl.svg"
+                            alt="show more"
+                          />
+                        </button>
+                      </span>
+                    )}
+                  </>
+                )
               ) : (
-                <>
-                  <p>{getDescriptionPreview(hotel.description)}...</p>
-
-                  <span>
-                    <button
-                      className=" flex items-center gap-1 m-b text-fs-15 text-bl-100"
-                      onClick={handleToggleDescription}
-                    >
-                      Ver más
-                      <img
-                        src="https://sandboxmexico.com/assets/icons/arrows/down-bl.svg"
-                        alt="show more"
-                      />
-                    </button>
-                  </span>
-                </>
+                <div className="relative w-[8px] h-[8px] rounded-[5px] bg-bl-100 text-bl-100 animate-[dot-flashing_1s_infinite_linear_alternate] before:content-[' '] before:block before:absolute before:top-0 before:left-[15px] before:w-[8px] before:h-[8px] before:rounded-[5px] before:bg-bl-100 before:text-bl-100 before:animate-[dot-flashing_1s_infinite_alternate] before:delay-0 after:content-[' '] after:block after:absolute after:top-0 after:left-[30px] after:w-[8px] after:h-[8px] after:rounded-[5px] after:bg-bl-100 after:text-bl-100 after:animate-[dot-flashing_1s_infinite_alternate] after:delay-1000	dot-flashing"></div>
               )}
             </div>
           </>
@@ -81,11 +107,11 @@ export default function TabInfoHotel(props) {
 
       case "Amenidades":
         return (
-          <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
+          <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100">
             {hotel.facilities.map((facility, index) => (
-              <li key={index}>{facility}</li>
+              <li className="flex items-center gap-x-2 mb-2" key={index}>{AmenitiesIcons(facility)} {facility}</li>
             ))}
-          </ul>
+          </div>
         );
 
       // TIME CHECK IN Y CHECK OUT
@@ -108,9 +134,9 @@ export default function TabInfoHotel(props) {
   return (
     <>
       <div className="block">
-        <div className="border-b border-gray-200">
+        <div className="mb-5 mt-6">
           <nav
-            className="-mb-px flex gap-x-3.5 space-x-8 overflow-y-auto"
+            className=" flex gap-x-4 space-x-8 overflow-y-auto my-2"
             aria-label="Tabs"
           >
             {tabs.map((tab) => (
@@ -122,7 +148,7 @@ export default function TabInfoHotel(props) {
                   selectedTab.name === tab.name
                     ? "border-or-70 text-or-100"
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline my-2 cursor-pointer`}
+                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline m-0 !ml-0 !mr-0 cursor-pointer`}
                 aria-current={
                   selectedTab.name === tab.name ? "page" : undefined
                 }
@@ -142,7 +168,7 @@ export default function TabInfoHotel(props) {
         </div>
       </div>
 
-      <div className="mt-4">{getMessageForTab(selectedTab.name)}</div>
+      <div className="mt-5">{getMessageForTab(selectedTab.name)}</div>
     </>
   );
 }

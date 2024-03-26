@@ -36,7 +36,7 @@ export default function SelectRooms(props) {
             className="absolute left-0 right-0 mx-auto border-0 top-[-47px] w-[44px] h-[44px] flex justify-center items-center z-[1] border border-gry-100 "
           >
             <img
-              src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-100-cle.svg`}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-bl-100-cle.svg`}
               alt="arrows"
             />
           </button>
