@@ -57,6 +57,8 @@ export default async function DetailPageHotel({ params }) {
 
   const hotelData = await response.json();
 
+  // console.log(hotelData);
+
   return (
     <LanguageProvider>
       <TokenProvider>
