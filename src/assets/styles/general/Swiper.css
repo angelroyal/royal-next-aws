@@ -16,28 +16,31 @@
   width: 6px !important;
   height: 6px !important;
 }
+
 /* END SWIPER PAGINATION CardHotelT */
 
-  /* SWIPER ROOMS DETAILS */
-  #room-details > div.swiper-button-prev.swiper-button-disabled, #room-details > div.swiper-button-prev{
-    display: none;
-  }
-  
-  #room-details > div.swiper-button-next{
-    color: #666666;
-    right: 7px;
-    position: absolute;
-    z-index: 1;
-  }
+/* SWIPER ROOMS DETAILS */
+#room-details>div.swiper-button-prev.swiper-button-disabled,
+#room-details>div.swiper-button-prev {
+  display: none;
+}
 
-  #room-details{
-    position: static;
-  }
-  
-  #room-details > div.swiper-button-next::after{
-    font-size: 1.3rem;
-  }
-  /* END SWIPER ROOMS DETAILS */
+#room-details>div.swiper-button-next {
+  color: #666666;
+  right: 7px;
+  position: absolute;
+  z-index: 1;
+}
+
+#room-details {
+  position: static;
+}
+
+#room-details>div.swiper-button-next::after {
+  font-size: 1.3rem;
+}
+
+/* END SWIPER ROOMS DETAILS */
 
 /* SWIPER ROOMS DETAILS */
 #room-details>div.swiper-button-prev.swiper-button-disabled,
@@ -75,13 +78,14 @@
   font-weight: bold;
 }
 
-#swiper-shuffle-hotel > div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+#swiper-shuffle-hotel>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   z-index: 4;
 }
+
 /*END SWIPER SHUFFLE HOTEL */
 
 /* SWIPER POPULAR ESTATES */
-#swiper-popular-estates > div.swiper-button-prev{
+#swiper-popular-estates>div.swiper-button-prev {
   top: 5px;
   left: auto;
   right: 28px;
@@ -89,31 +93,40 @@
   height: 30px;
   width: 30px;
   font-weight: bold;
-  box-shadow: 2px 0 12px 0 rgba(0,0,0,.11);
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
   background: #fff;
   z-index: 11;
   border-right: 1px solid hsla(0, 0%, 56.9%, .444);
   z-index: 4;
   --swiper-navigation-size: 20px;
 }
-#swiper-popular-estates > div.swiper-button-prev.swiper-button-disabled{
+
+#swiper-popular-estates>div.swiper-button-prev.swiper-button-disabled {
   color: grey;
 }
 
-#swiper-popular-estates > div.swiper-button-next.swiper-button-disabled{
+#swiper-popular-estates>div.swiper-button-next.swiper-button-disabled {
   color: grey;
 }
 
-#swiper-popular-estates > div.swiper-button-next{
+#swiper-popular-estates>div.swiper-button-next {
   z-index: 4;
   top: 5px;
   right: 0;
   color: #eb741e;
   height: 30px;
   width: 30px;
-  box-shadow: 2px 0 12px 0 rgba(0,0,0,.11);
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
   background: #fff;
   font-weight: bold;
   --swiper-navigation-size: 20px;
 }
+
 /*END SWIPER POPULAR ESTATES */
+
+/* BANNERTOUR CLIP-PATH IMAGE WITH DIAGONAL */
+.clip-custom {
+  clip-path: polygon(0% 43rem, 35% 0%, 179rem 0%, 32rem 27rem, 0rem 27rem)
+}
+
+/* END BANNERTOUR CLIP-PATH IMAGE WITH DIAGONAL */
