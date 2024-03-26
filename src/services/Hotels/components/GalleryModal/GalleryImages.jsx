@@ -32,7 +32,7 @@ export function GalleryImages({ images }) {
         slidesPerView={1}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 h-[20rem] md:h-[24rem] lg:h-[36rem]"
+        className="mySwiper2 h-[20rem] md:h-[22rem] xl:h-[33rem]"
         onSlideChange={handleSlideChange}
       >
         {images.map((image, index) => (
@@ -81,7 +81,7 @@ export function GalleryImages({ images }) {
         {images.map((image, index) => (
           <SwiperSlide key={index} className="!h-[72px]">
             <img
-              className={`object-cover w-full h-full rounded-lg ${
+              className={`object-cover w-full h-full rounded-lg cursor-pointer ${
                 index === currentSlideIndex
                   ? "opacity-100 border-2 border-or-100"
                   : "opacity-50"
