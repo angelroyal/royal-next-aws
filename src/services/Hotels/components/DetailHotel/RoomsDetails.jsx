@@ -24,18 +24,19 @@ export default function RoomsDetails() {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const { languageData } = useContext(LanguageContext);
-  const { roomsData, handleFetchPostRooms, selectedRooms } =
+  const { roomsData, handleFetchPostRooms, selectedRooms, setRequestBodyRooms } =
     useContext(RoomsHotelContext);
+    
 
   useEffect(() => {
     const urlSearchParams = new URLSearchParams(window.location.search);
     const queryParams = parseQueryParams(urlSearchParams);
+    setRequestBodyRooms(queryParams);
     setCheckIn(queryParams["check-in"]);
     setCheckOut(queryParams["check-out"]);
     handleFetchPostRooms(queryParams);
   }, []);
 
-  // console.log(roomsData);
 
   if (!roomsData) {
     return <div>Loading...</div>;

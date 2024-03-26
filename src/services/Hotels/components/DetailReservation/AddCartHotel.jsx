@@ -1,15 +1,18 @@
 import React, { useContext } from "react";
 import { saveToCart } from "../../Api/requestHotel";
 import LanguageContext from "@/language/LanguageContext";
+import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export default function AddCartHotel() {
-    const { languageData } = useContext(LanguageContext);
-  const { selectedRooms } = useContext(RoomsHotelContext);
-  console.log(selectedRooms);
+    const { fetchData } = useCartAxios();
+  const { languageData } = useContext(LanguageContext);
+  const { selectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
+
 
   const handleReserveNow = async () => {
     try {
+        console.log("entro aqui");
       const uidCart = localStorage.getItem("uid-cart");
       let cartId = "";
 
@@ -18,10 +21,11 @@ export default function AddCartHotel() {
         cartId = uid;
       }
 
+
       const saveRequestCart = {
-        key: requestBody.code,
-        checkIn: requestBody["check-in"],
-        checkOut: requestBody["check-out"],
+        key: requestBodyRooms.code,
+        checkIn: requestBodyRooms["check-in"],
+        checkOut: requestBodyRooms["check-out"],
         occupancies: selectedRooms.map((room) => ({
           rateCode: room.rateKey,
           roomCode: room.code,
@@ -36,8 +40,8 @@ export default function AddCartHotel() {
       if (cartId) {
         saveRequestCart.cart = cartId;
       }
-      
 
+      console.log(saveRequestCart);
       const response = await saveToCart(saveRequestCart);
 
       const cartUid = response.cart;
@@ -46,10 +50,9 @@ export default function AddCartHotel() {
         "uid-cart",
         JSON.stringify({ uid: cartUid, expirationTime })
       );
-    //   fetchData(cartUid);
+        fetchData(cartUid);
     } catch (error) {
       console.log(error);
-    
     }
   };
 
