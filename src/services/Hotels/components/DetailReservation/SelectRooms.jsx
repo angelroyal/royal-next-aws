@@ -60,8 +60,8 @@ export default function SelectRooms(props) {
                 <div className="p-2 flex gap-x-4 md:w-max" key={index}>
                   <img
                     className="rounded-lg"
-                    // src={reservation.image}
-                    src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
+                    src={reservation.image}
+                    // src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
                     alt={reservation.name}
                     width={80}
                     height={80}

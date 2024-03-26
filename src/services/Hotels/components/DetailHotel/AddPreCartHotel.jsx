@@ -25,6 +25,7 @@ export default function AddPreCartHotel(props) {
       rateIndex: room.rateIndex,
       boardCode: room.boardCode,
       hash: room.hash,
+      image: room.image,
     };
 
     // console.log(data);
@@ -33,7 +34,6 @@ export default function AddPreCartHotel(props) {
     setSelectedRooms(updatedSelectedRooms);
   };
 
-  // console.log(selectedRooms);
 
   return (
     <button
