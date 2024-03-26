@@ -9,23 +9,15 @@ export default function DetailReservation() {
   const [open, setOpen] = useState(false);
 
   const seeDetailsReservation = () => {
-    const scrollPosition =
-      window.pageYOffset || document.documentElement.scrollTop;
+    const scrollPosition = document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
     const documentHeight = document.body.scrollHeight;
 
-    if ((scrollPosition + windowHeight) / documentHeight > 0.6) {
-      document
-        .getElementById("reservationDetails")
-        .classList.add("opacity-100");
-      document
-        .getElementById("reservationDetails")
-        .classList.remove("opacity-0");
+    if ((scrollPosition + windowHeight) / documentHeight > 0.3) {
+      document.getElementById("reservationDetails").classList.remove("hidden");
+      // setIsVisible(true);
     } else {
-      document
-        .getElementById("reservationDetails")
-        .classList.remove("opacity-100");
-      document.getElementById("reservationDetails").classList.add("opacity-0");
+      document.getElementById("reservationDetails").classList.add("hidden");
     }
   };
 
@@ -34,11 +26,13 @@ export default function DetailReservation() {
     return () => window.removeEventListener("scroll", seeDetailsReservation);
   }, []);
 
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <>
       <div
         id="reservationDetails"
-        className="sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-50 transition-opacity duration-200 opacity-0"
+        className={`sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-50  fixed transition-all duration-500 ${isVisible ? 'block opacity-100' : 'hidden'}`}
       >
         <Container>
           <div className="relative flex flex-col gap-y-4 md:flex-row md:justify-between md:items-center">

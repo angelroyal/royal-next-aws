@@ -1,16 +1,15 @@
 import { HotelInfo } from "./HoltelInfo";
 import TabInfoHotel from "./TabInfoHotel";
 import { GalleryImages } from "./GalleryImages";
-import { GalleryModalHotel } from "../../utils/GalleryModalHotel";
 
 export function GalleryModal(props) {
   const { hotel } = props;
 
   return (
     <div className="flex flex-col gap-y-14">
-      <div className="bg-white rounded-lg flex flex-col lg:flex-row p-8">
+      <div className="bg-white rounded-lg flex flex-col lg:flex-row p-2.5 lg:p-8">
 
-        <div className="w-full lg:w-7/12 pe-4 pr-[2rem]">
+        <div className="w-full lg:w-7/12 lg:pe-4 lg:pr-[2rem]">
           <GalleryImages images={hotel.images} />
         </div>
 
