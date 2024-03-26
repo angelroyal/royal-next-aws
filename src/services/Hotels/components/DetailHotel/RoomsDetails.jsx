@@ -226,7 +226,7 @@ export default function RoomsDetails() {
                               .<sup>{(room.price % 1).toFixed(2).slice(2)}</sup>
                             </span>
 
-                            <div className="rounded-1 bg-grn-50 text-black m-m text-fs-10 py-1 pl-2">
+                            <div className="rounded-1 bg-grn-50 text-black m-m text-fs-10 py-1 px-2 w-max">
                               Impuestos incluidos
                             </div>
                           </div>
