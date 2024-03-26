@@ -104,7 +104,7 @@ export default function RoomsDetails() {
                           {/* IMAGE ROOM */}
                           <div className="relative w-full h-[181px]">
                             <img
-                              src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
+                              src={room.image}
                               className="w-full h-full object-cover rounded-lg"
                               width={40}
                               height={40}

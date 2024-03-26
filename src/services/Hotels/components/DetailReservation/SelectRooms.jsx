@@ -5,23 +5,12 @@ import { useContext } from "react";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
-
-const reservations = [
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-];
+import AddCartHotel from "./AddCartHotel";
 
 export default function SelectRooms(props) {
   const { open, setClose } = props;
   const { languageData } = useContext(LanguageContext);
   const { selectedRooms } = useContext(RoomsHotelContext);
-
-  console.log(selectedRooms);
 
   return (
     <div
@@ -60,8 +49,8 @@ export default function SelectRooms(props) {
                 <div className="p-2 flex gap-x-4 md:w-max" key={index}>
                   <img
                     className="rounded-lg"
-                    // src={reservation.image}
-                    src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
+                    src={reservation.image}
+                    // src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
                     alt={reservation.name}
                     width={80}
                     height={80}
@@ -82,7 +71,7 @@ export default function SelectRooms(props) {
                         MXN {reservation.price}
                       </h3>
 
-                    {/* ADULTS HOTEL */}
+                      {/* ADULTS HOTEL */}
                       <span className="flex text-fs-10 text-black gap-x-2 items-center">
                         <img
                           src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
@@ -127,9 +116,7 @@ export default function SelectRooms(props) {
                 </span>
               </div>
 
-              <button className="rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max">
-                {languageData.detailHotel.buttonPrincipal}
-              </button>
+              <AddCartHotel />
             </div>
           </Container>
         </div>
