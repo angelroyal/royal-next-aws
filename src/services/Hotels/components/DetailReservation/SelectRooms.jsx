@@ -1,94 +1,12 @@
 "use client";
 
-import { Container } from "@/config/Others/Container";
-import LanguageContext from "@/language/LanguageContext";
 import { useContext } from "react";
 
+import RoomsHotelContext from "../../context/RoomsHotelContext";
+import { Container } from "@/config/Others/Container";
+import LanguageContext from "@/language/LanguageContext";
+
 const reservations = [
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
   {
     image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
     name: "Nombre de la habitación",
@@ -101,6 +19,9 @@ const reservations = [
 export default function SelectRooms(props) {
   const { open, setClose } = props;
   const { languageData } = useContext(LanguageContext);
+  const { selectedRooms } = useContext(RoomsHotelContext);
+
+  console.log(selectedRooms);
 
   return (
     <div
@@ -131,12 +52,16 @@ export default function SelectRooms(props) {
               />{" "}
             </h3>
 
-            <div className={`grid grid-cols-1 overflow-y-auto gap-y-2 scroll-page-blue lg:gap-x-2 md:justify-items-center lg:grid-cols-2 xl:grid-cols-3 max-h-[25rem]`}>
-              {reservations.map((reservation, index) => (
+            <div
+              className={`grid grid-cols-1 overflow-y-auto gap-y-2 scroll-page-blue lg:gap-x-2 md:justify-items-center lg:grid-cols-2 xl:grid-cols-3 max-h-[25rem]`}
+            >
+              {/* MAP ROOMS PRE CART HOTEL */}
+              {selectedRooms.map((reservation, index) => (
                 <div className="p-2 flex gap-x-4 md:w-max" key={index}>
                   <img
                     className="rounded-lg"
-                    src={reservation.image}
+                    // src={reservation.image}
+                    src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
                     alt={reservation.name}
                     width={80}
                     height={80}
@@ -146,7 +71,7 @@ export default function SelectRooms(props) {
                     <div className="flex flex-col gap-x-1">
                       <span>
                         <p className="m-0 text-fs-8 m-m text-gry-100">
-                          {reservation.foodType}
+                          {reservation.eatingPlan}
                         </p>
                         <h3 className="text-fs-12 text-black m-s-b">
                           {reservation.name}
@@ -157,6 +82,7 @@ export default function SelectRooms(props) {
                         MXN {reservation.price}
                       </h3>
 
+                    {/* ADULTS HOTEL */}
                       <span className="flex text-fs-10 text-black gap-x-2 items-center">
                         <img
                           src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
@@ -164,7 +90,7 @@ export default function SelectRooms(props) {
                           width={12}
                           height={12}
                         />{" "}
-                        {reservation.occupancy}
+                        {reservation.adults}
                       </span>
                     </div>
                     <img

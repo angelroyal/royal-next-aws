@@ -7,7 +7,7 @@ const RoomsHotelContext = createContext();
 
 export const RoomsHotelProvider = ({ children }) => {
   const [roomsData, setRoomsData] = useState(null);
-  const [roomsSelected, setRoomsSelected] = useState(null);
+  const [selectedRooms, setSelectedRooms] = useState([]);
 
   const handleFetchPostRooms = async (requestBody) => {
     try {
@@ -21,8 +21,8 @@ export const RoomsHotelProvider = ({ children }) => {
   return (
     <RoomsHotelContext.Provider
       value={{
-        roomsSelected,
-        setRoomsSelected,
+        selectedRooms,
+        setSelectedRooms,
         handleFetchPostRooms,
         roomsData,
         setRoomsData,

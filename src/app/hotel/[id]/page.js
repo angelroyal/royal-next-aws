@@ -8,6 +8,7 @@ import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
+import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 
@@ -60,16 +61,18 @@ export default async function DetailPageHotel({ params }) {
     <LanguageProvider>
       <TokenProvider>
         <CartAxiosProvider>
-          <Token />
-          <Navigation />
-          <div className="relative">
-            <Container>
-              <GalleryModal hotel={hotelData} />
-              <DetailsHotel />
-            </Container>
-            <DetailReservation />
-          </div>
-          <Footer />
+          <RoomsHotelProvider>
+            <Token />
+            <Navigation />
+            <div className="relative">
+              <Container>
+                <GalleryModal hotel={hotelData} />
+                <DetailsHotel />
+              </Container>
+              <DetailReservation />
+            </div>
+            <Footer />
+          </RoomsHotelProvider>
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>
