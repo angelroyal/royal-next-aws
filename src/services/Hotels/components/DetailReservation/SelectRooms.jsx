@@ -18,7 +18,7 @@ export default function SelectRooms(props) {
 
   return (
     <div
-      className={`max-h-[80%] xl:max-h-[87%] bottom-0 absolute top-[4px] bg-white w-full z-[1] px-4 py-7`}
+      className={`max-h-[80%] xl:max-h-[78%] bottom-0 absolute top-[4px] bg-white w-full z-[1] px-4 py-7`}
     >
       <div className="relative h-full w-full">
         <Container>

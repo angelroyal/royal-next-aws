@@ -101,7 +101,7 @@ export default function DetailReservation() {
                       {languageData.detailHotel.buttonPrincipal}
                     </button>
                   ) : (
-                    <div className="rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
+                    <div className="select-none	rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
                       {languageData.detailHotel.buttonPrincipal}
                     </div>
                   )}
