@@ -10,7 +10,7 @@ import LanguageContext from "../../../language/LanguageContext";
 
 export default function SendHotel() {
   const router = useRouter();
-  // const isMobile = useIsMobile();
+  const { languageData } = useContext(LanguageContext);
   const [validFirstDay, setValidFirstDay] = useState(null);
   const [selectedDates, setSelectedDates] = useState(null);
   const [validSecondDay, setValidSecondDay] = useState(null);
@@ -80,14 +80,26 @@ export default function SendHotel() {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
-    console.log(query);
 
     router.push(`/hotel/results?${query}`);
   };
-  const { languageData } = useContext(LanguageContext);
+
+  const [isHotelResults, setIsHotelResults] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      setIsHotelResults(currentPath.endsWith("/hotel/results"));
+    }
+  }, []);
+  
+
+  console.log(isHotelResults);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
+    // <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
+    <div className={`flex ${isHotelResults ? 'flex-col' : 'lg:flex-row'} items-center bg-white gap-2.5 rounded-lg p-6`}>
+
       <SearchHotel onSelectSearch={setSelectedOption} />
       <Calendar onDateChange={handleDateChange} />
       <Room OnApply={setRoomData} />

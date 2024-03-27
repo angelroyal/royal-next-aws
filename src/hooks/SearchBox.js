@@ -24,7 +24,11 @@ export default function SearchBox() {
           id="tab-search-home"
           className="flex gap-x-2 text-fs-12 m-s-b"
         >
-          <Tab className="focus:outline-none focus:ring-transparent" onClick={()=>handleTabChange("hotel")} style={{ padding: "0" }}>
+          <Tab
+            className="focus:outline-none focus:ring-transparent"
+            onClick={() => handleTabChange("hotel")}
+            style={{ padding: "0" }}
+          >
             <span
               className={`${
                 currentActiveIcon === "hotel"
@@ -47,7 +51,10 @@ export default function SearchBox() {
           </Tab>
 
           {/* TAB TOUR */}
-          <Tab className="focus:outline-none focus:ring-transparent" onClick={()=>handleTabChange("tour")}>
+          <Tab
+            className="focus:outline-none focus:ring-transparent"
+            onClick={() => handleTabChange("tour")}
+          >
             <span
               className={`${
                 currentActiveIcon === "tour"
