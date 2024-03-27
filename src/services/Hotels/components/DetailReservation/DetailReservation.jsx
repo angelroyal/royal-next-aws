@@ -96,7 +96,7 @@ export default function DetailReservation() {
                     </h3>
                   )}
 
-                  {open === true ? (
+                  {open === true && selectedRooms.length > 0 ? (
                     <button className="rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max">
                       {languageData.detailHotel.buttonPrincipal}
                     </button>
