@@ -20,7 +20,7 @@ import {
   formatAdultsAndChildren,
 } from "../../utils/utilsDetailHotel";
 
-export default function RoomsDetails() {
+export default function RoomsDetails(codeHotel) {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const { languageData } = useContext(LanguageContext);
@@ -29,8 +29,10 @@ export default function RoomsDetails() {
     
 
   useEffect(() => {
+    
     const urlSearchParams = new URLSearchParams(window.location.search);
-    const queryParams = parseQueryParams(urlSearchParams);
+    const queryParams = parseQueryParams(urlSearchParams, codeHotel);
+    console.log(queryParams);
     setRequestBodyRooms(queryParams);
     setCheckIn(queryParams["check-in"]);
     setCheckOut(queryParams["check-out"]);

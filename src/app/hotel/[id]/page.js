@@ -69,7 +69,7 @@ export default async function DetailPageHotel({ params }) {
             <div className="relative">
               <Container>
                 <GalleryModal hotel={hotelData} />
-                <DetailsHotel />
+                <DetailsHotel codeHotel={params.id} />
               </Container>
               <DetailReservation />
             </div>
