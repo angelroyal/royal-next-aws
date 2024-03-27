@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function BannerFooterTour() {
 
   return (
-    <div className='my-[120px] w-full'>
+    <div className='my-[120px] w-full max-sm:my-[30px]'>
         <Image
         src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/banner-tour.webp`}
         width={1272}
