@@ -10,6 +10,7 @@ export const RoomsHotelProvider = ({ children }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const [requestBodyRooms, setRequestBodyRooms] = useState(null);
 
+
   const handleFetchPostRooms = async (requestBody) => {
     try {
       const responseData = await postRoomsToAPI(requestBody);

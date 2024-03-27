@@ -4,10 +4,13 @@ const API_ENDPOINT_ROOMS = "v1/rooms/availability";
 const API_SAVE_CART = `v1/carts/hotel`;
 
 export const postRoomsToAPI = async (requestBody) => {
+
+  const { code, ...bodyWithoutCode } = requestBody;
+
   try {
     const response = await axiosWithInterceptor.post(
-      API_ENDPOINT_ROOMS,
-      requestBody
+      `v1/hotels/${requestBody.code}/rooms/availability`,
+      bodyWithoutCode
     );
     return response.data;
   } catch (error) {
@@ -17,7 +20,10 @@ export const postRoomsToAPI = async (requestBody) => {
 
 export const saveToCart = async (requestData) => {
   try {
-    const response = await axiosWithInterceptor.post(API_SAVE_CART, requestData);
+    const response = await axiosWithInterceptor.post(
+      API_SAVE_CART,
+      requestData
+    );
     return response.data;
   } catch (error) {
     throw error;

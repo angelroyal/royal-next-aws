@@ -90,7 +90,6 @@ export default function CardHotelT(props) {
                 />
               )}
 
-              {/* PENDIENTE */}
               <div className="h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none">
                 {languageData.eatingPlan[hotel.eatingPlan]}
               </div>
