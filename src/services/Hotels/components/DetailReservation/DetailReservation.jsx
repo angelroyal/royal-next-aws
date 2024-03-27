@@ -9,9 +9,9 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 import AddCartHotel from "./AddCartHotel";
 
 export default function DetailReservation() {
-  const { languageData } = useContext(LanguageContext);
   const [open, setOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
+  const { languageData } = useContext(LanguageContext);
 
   const { selectedRooms } = useContext(RoomsHotelContext);
   // console.log(selectedRooms);
