@@ -35,6 +35,7 @@ export default function DetailReservation() {
         setIsVisible(true);
       } else {
         setIsVisible(false);
+        setOpen(false);
       }
     };
 
@@ -51,18 +52,19 @@ export default function DetailReservation() {
         <div
           id="reservationDetails"
           className={`sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-70 transition-all duration-500 ${
-            open === true ? "h-[35rem] xl:h-[47rem]" : "h-[127px]"
+            open === true ? "h-auto" : "h-[15rem] md:h-[127px]"
           }`}
         >
-          <div className="relative h-full">
+          <div className={`${ open ? 'min-h-[15rem] max-lg:h-[77vh] lg:max-h-[40rem]' : 'h-full' } relative`}>
             {/* ROOMS SELECTED */}
             {open === true && <SelectRooms />}
 
             {/* BASIC INFORMATION OF THE SELECTED ROOMS */}
-            <div className="bg-white pt-[27px] mt-[27px] absolute bottom-0 left-0 w-full z-[3]">
+            {/* pt-[27px] mt-[27px] */}
+            <div className="bg-white  absolute bottom-0 left-0 w-full z-[3]">
               <Container>
-                <div className="relative flex flex-col gap-y-4 md:flex-row md:justify-between md:items-center">
-                  <div className="flex flex-col gap-y-2">
+                <div className="relative flex flex-col gap-y-8 md:flex-row md:justify-between md:items-center">
+                  <div className="mb-5 md:m-0 flex flex-col gap-y-2">
                     <h4 className="m-b text-fs-16 text-black">
                       {languageData.detailHotel.detail}
                     </h4>
@@ -89,7 +91,7 @@ export default function DetailReservation() {
                   </div>
 
                   {open === false && (
-                    <h3 className="absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto text-gry-70 text-fs-10 h-6 w-max m-s-b">
+                    <h3 className="absolute bottom-[4rem] md:top-0 md:bottom-0 md:left-0 md:right-0 md:mx-auto md:my-auto text-gry-70 text-fs-10 h-6 w-max m-s-b">
                       Desliza para ver tus habitaciones{" "}
                       {selectedRooms.length > 0 && selectedRooms.length}{" "}
                       seleccionadas
@@ -113,7 +115,7 @@ export default function DetailReservation() {
             {/* OPEN ROOMS SELECTED */}
             <button
               onClick={() => setOpen(!open)}
-              className="absolute left-0 right-0 mx-auto border-0 top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border border-gry-100 "
+              className={` top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border border-gry-100`}
             >
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-bl-100-cle.svg`}
