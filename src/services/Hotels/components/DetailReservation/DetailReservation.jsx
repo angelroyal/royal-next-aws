@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 
 import SelectRooms from "./SelectRooms";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
+import AddCartHotel from "./AddCartHotel";
 
 export default function DetailReservation() {
   const { languageData } = useContext(LanguageContext);
@@ -24,7 +25,7 @@ export default function DetailReservation() {
     }
   }, []);
 
-// HIDE RESERVATION DETAILS FUNCTION
+  // HIDE RESERVATION DETAILS FUNCTION
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -97,9 +98,7 @@ export default function DetailReservation() {
                   )}
 
                   {open === true && selectedRooms.length > 0 ? (
-                    <button className="rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max">
-                      {languageData.detailHotel.buttonPrincipal}
-                    </button>
+                    <AddCartHotel />
                   ) : (
                     <div className="rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
                       {languageData.detailHotel.buttonPrincipal}
@@ -108,7 +107,6 @@ export default function DetailReservation() {
                 </div>
               </Container>
             </div>
-
 
             {/* OPEN ROOMS SELECTED */}
             <button
