@@ -12,8 +12,8 @@ export function formatAdultsAndChildren(adultChildren) {
 
 export function parseQueryParams(url, codeHotel) {
   const queryParams = new URLSearchParams(url);
-  const code = queryParams.get("code");
-  // const code = codeHotel.codeHotel;
+  // const code = queryParams.get("code");
+  const code = codeHotel.codeHotel;
   const type = queryParams.get("type");
   let checkIn = queryParams.get("check-in");
   let checkOut = queryParams.get("check-out");

@@ -75,7 +75,7 @@ export default function DetailReservation() {
                   </button>
                 ) : (
                   <button className="rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
-                    Reservar ahora
+                    Reservar ahora aaaa
                   </button>
                 )}
               </div>

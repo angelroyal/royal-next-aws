@@ -63,7 +63,7 @@ export default function AddCartHotel() {
       <button
         className="rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max"
         onClick={handleReserveNow}
-        disabled={!selectedRooms.length > 0}
+        // disabled={!selectedRooms.length > 0}
       >
         {languageData.detailHotel.buttonPrincipal}
       </button>
