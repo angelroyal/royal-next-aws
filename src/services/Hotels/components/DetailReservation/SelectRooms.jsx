@@ -2,19 +2,26 @@
 
 import { useContext, useEffect, useState } from "react";
 
-import RoomsHotelContext from "../../context/RoomsHotelContext";
 import { Container } from "@/config/Others/Container";
-// import LanguageContext from "@/language/LanguageContext";
+import LanguageContext from "@/language/LanguageContext";
+import RoomsHotelContext from "../../context/RoomsHotelContext";
 
-export default function SelectRooms(props) {
-  const { selectedRooms } = useContext(RoomsHotelContext);
+export default function SelectRooms() {
   const [isComplete, setIsComplete] = useState(false);
+  const { languageData } = useContext(LanguageContext);
+  const { selectedRooms, setSelectedRooms } = useContext(RoomsHotelContext);
+
   useEffect(() => {
     if (selectedRooms == 8) {
       setIsComplete(true);
     }
   }, []);
-  // console.log(selectedRooms);
+
+  // DELETED PRE CART ROOM
+  const deleteRoom = (index) => {
+    const newRooms = selectedRooms.filter((room, i) => i !== index);
+    setSelectedRooms(newRooms);
+  };
 
   return (
     <div
@@ -25,8 +32,9 @@ export default function SelectRooms(props) {
           <div className="w-full flex flex-col gap-y-4 mb-[15rem] md:mb-[11rem]">
             <h3 className="flex items-center text-gry-100 m-s-b text-fs-14 gap-x-1">
               Habitaciones elegidas{" "}
-
-              <p className={`${isComplete === true && 'text-grn-100'} m-0`}>({selectedRooms.length}/8)</p>{" "}
+              <p className={`${isComplete === true && "text-grn-100"} m-0`}>
+                ({selectedRooms.length}/8)
+              </p>{" "}
               {isComplete === true && (
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
@@ -45,8 +53,8 @@ export default function SelectRooms(props) {
                 <div className="p-2 flex gap-x-4 md:w-max" key={index}>
                   <img
                     className="rounded-lg"
-                    // src={reservation.image}
-                    src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
+                    src={reservation.image}
+                    // src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
                     alt={reservation.name}
                     width={80}
                     height={80}
@@ -54,15 +62,18 @@ export default function SelectRooms(props) {
 
                   <div className="flex items-center justify-between w-full md:w-[246px]">
                     <div className="flex flex-col gap-x-1">
+                      {/* EATING PLAN */}
                       <span>
                         <p className="m-0 text-fs-8 m-m text-gry-100">
                           {reservation.eatingPlan}
                         </p>
+
                         <h3 className="text-fs-12 text-black m-s-b">
                           {reservation.name}
                         </h3>
                       </span>
 
+                      {/* PRICE */}
                       <h3 className="m-s-b text-fs-12 text-or-100 ">
                         MXN {reservation.price}
                       </h3>
@@ -78,12 +89,25 @@ export default function SelectRooms(props) {
                         {reservation.adults}
                       </span>
                     </div>
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/delete/delete-r.svg`}
-                      width={10}
-                      height={12}
-                      alt="delete red"
-                    />
+
+                    {/* DELETE */}
+
+                    {selectedRooms && selectedRooms.length > 0 ? (
+                      <>
+                        <button onClick={() => deleteRoom(index)}>
+                          <img
+                            src={`${process.env.NEXT_PUBLIC_URL}icons/delete/delete-r.svg`}
+                            width={10}
+                            height={12}
+                            alt="delete red"
+                          />
+                        </button>
+                      </>
+                    ) : (
+                      <h3 className="no-data-rooms">
+                        {languageData.detailHotel.selectRoom}
+                      </h3>
+                    )}
                   </div>
                 </div>
               ))}
