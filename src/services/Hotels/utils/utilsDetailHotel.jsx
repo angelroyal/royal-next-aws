@@ -10,9 +10,10 @@ export function formatAdultsAndChildren(adultChildren) {
   return adultsText + childrenText;
 }
 
-export function parseQueryParams(url) {
+export function parseQueryParams(url, codeHotel) {
   const queryParams = new URLSearchParams(url);
   const code = queryParams.get("code");
+  // const code = codeHotel.codeHotel;
   const type = queryParams.get("type");
   let checkIn = queryParams.get("check-in");
   let checkOut = queryParams.get("check-out");
@@ -24,9 +25,7 @@ export function parseQueryParams(url) {
   }
 
   const currentDate = new Date();
-  
   const checkInDate = new Date(checkIn);
-  const checkOutDate = new Date(checkOut);
 
   if (checkInDate <= currentDate || checkInDate - currentDate < 2 * 24 * 60 * 60 * 1000) {
     const newCheckInDate = new Date(currentDate);
