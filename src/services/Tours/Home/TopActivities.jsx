@@ -29,7 +29,7 @@ export default function TopActivities() {
             {/* FIX BOOSTRAP 16px*/}
             <div className='flex flex-wrap gap-[16px] justify-between max-lg:justify-around'>
 
-                {tour.map((tour, index) => (
+                {tour.slice(0, 12).map((tour, index) => (
 
                     // CARD TOP ACTIVITIES TOUR
                     <div key={index} className="!w-fit !rounded-lg">
@@ -37,7 +37,7 @@ export default function TopActivities() {
                             <div className="w-full h-[216px]">
 
                                 <img
-                                    className="w-full h-full rounded-t-lg object-cover"
+                                    className="w-full h-full rounded-t-lg object-cover select-none"
                                     src={tour.image}
                                     alt="card"
                                 />

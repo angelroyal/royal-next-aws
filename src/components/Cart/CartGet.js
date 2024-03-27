@@ -7,7 +7,6 @@ import CartHotel from "./CartHotel";
 import CartMoving from "./CartMoving";
 import { useCartAxios } from "./CartAxios";
 import LanguageContext from "../../language/LanguageContext";
-
 import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
 
 export default function CartGet({ onCloseMenu }) {

@@ -63,7 +63,7 @@ export function PopularState() {
                   <img
                     src={popularState[0].imageUrl}
                     alt={`${popularState[0].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
@@ -85,7 +85,7 @@ export function PopularState() {
                   <img
                     src={popularState[1].imageUrl}
                     alt={`${popularState[1].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
@@ -109,7 +109,7 @@ export function PopularState() {
                   <img
                     src={popularState[2].imageUrl}
                     alt={`${popularState[2].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
@@ -131,7 +131,7 @@ export function PopularState() {
                   <img
                     src={popularState[3].imageUrl}
                     alt={`${popularState[3].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
@@ -159,7 +159,7 @@ export function PopularState() {
                   <img
                     src={popularState[4].imageUrl}
                     alt={`${popularState[4].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
@@ -182,7 +182,7 @@ export function PopularState() {
                   <img
                     src={popularState[5].imageUrl}
                     alt={`${popularState[5].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
@@ -206,7 +206,7 @@ export function PopularState() {
                   <img
                     src={popularState[6].imageUrl}
                     alt={`${popularState[6].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
@@ -228,7 +228,7 @@ export function PopularState() {
                   <img
                     src={popularState[0].imageUrl}
                     alt={`${popularState[0].name} Royal Vacation`}
-                    className="h-full rounded-lg object-cover brightness-[.7]"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />

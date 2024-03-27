@@ -8,19 +8,19 @@ import { useContext } from 'react';
 export default function BannerCallHotelT() {
   const { languageData } = useContext(LanguageContext);
   return (
-    <div className='w-full'>
+    <div className='w-full max-h-[223px] h-[223px]'>
       <picture className='pointer relative'>
         {/* <a href="tel:8009530342" target="_blank" rel="noopener noreferrer"> */}
 
         <Image
-          src="https://sandboxmexico.com/assets/banners/desktop/call-d.webp"
+          src={`${process.env.NEXT_PUBLIC_URL}banners/desktop/call-d.webp`}
           alt='Banner-Call-Center'
           width={2000}
           height={2000}
-          className=''
+          className='select-none'
         ></Image>
 
-        <div className="absolute w-[66%] ml-[60px] top-[26%] left-0 max-xl:w-[55%] max-xl:ml-[89px] max-lg:ml-[20px] max-md:ml-[20px]">
+        <div className="absolute w-[62%] ml-[60px] top-[26%] left-0 max-xl:w-[55%] max-xl:ml-[89px] max-lg:ml-[20px] max-md:ml-[20px]">
           <h2 className="m-b text-fsw-24 text-bl-100 text-left mb-[10px] max-lg:mb-0 max-sm:text-fs-10">
             {languageData.titleBanners[hotel.bannerCallCenter.title]}
           </h2>
