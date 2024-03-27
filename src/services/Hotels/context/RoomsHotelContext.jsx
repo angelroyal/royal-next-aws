@@ -9,11 +9,13 @@ export const RoomsHotelProvider = ({ children }) => {
   const [roomsData, setRoomsData] = useState(null);
   const [selectedRooms, setSelectedRooms] = useState([]);
   const [requestBodyRooms, setRequestBodyRooms] = useState(null);
+  const [keyHotel, setKeyHotel] = useState(null);
 
   const handleFetchPostRooms = async (requestBody) => {
     try {
       const responseData = await postRoomsToAPI(requestBody);
       setRoomsData(responseData);
+      setKeyHotel(responseData.key);
     } catch (error) {
       console.error(error);
     }
@@ -29,6 +31,8 @@ export const RoomsHotelProvider = ({ children }) => {
         setRoomsData,
         requestBodyRooms,
         setRequestBodyRooms,
+        keyHotel,
+        setKeyHotel,
       }}
     >
       {children}

@@ -32,7 +32,7 @@ export default function RoomsDetails(codeHotel) {
     
     const urlSearchParams = new URLSearchParams(window.location.search);
     const queryParams = parseQueryParams(urlSearchParams, codeHotel);
-    console.log(queryParams);
+    // console.log(queryParams);
     setRequestBodyRooms(queryParams);
     setCheckIn(queryParams["check-in"]);
     setCheckOut(queryParams["check-out"]);
@@ -141,7 +141,7 @@ export default function RoomsDetails(codeHotel) {
                               </div>
 
                               {/* BEDS */}
-                              {room.beds.map((bed, index) => (
+                              {room.beds && room.beds.map((bed, index) => (
                                 <div key={index} className="flex gap-x-[4px]">
                                   <img
                                     src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
