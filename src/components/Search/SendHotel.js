@@ -99,6 +99,7 @@ export default function SendHotel() {
       // router.push(`/resultHotel?${query}`);
       router.push(`/hotel/results?${query}`);
       setShowModal(false);
+      window.location.reload();
     }, 1500);
   };
   const { languageData } = useContext(LanguageContext);

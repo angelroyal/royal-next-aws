@@ -163,7 +163,7 @@ export default function FiltersHotels() {
                           );
                         })}
                       {filterItems.items.length > 4 && (
-                        <div>
+                        <>
                           <button
                             className="button-shoMore"
                             variant="text"
@@ -171,18 +171,34 @@ export default function FiltersHotels() {
                             onClick={() => handleShowMore(filterGroup)}
                           >
                             {showMore[filterGroup] ? (
-                              <>
-                                {languageData.showOptions.showLess}{" "}
-                                <Image src={ArrowUpIcon} alt="ArrowUpIcon" />
-                              </>
+                              <div className="flex justify-start items-center">
+                                <div>{languageData.showOptions.showLess} </div>
+                                <div>
+                                  <img
+                                    className="ml-2"
+                                    src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-100.svg`}
+                                    alt="ArrowUpIcon"
+                                    width={12}
+                                    height={12}
+                                  />
+                                </div>
+                              </div>
                             ) : (
-                              <>
-                                {languageData.showOptions.showMore}{" "}
-                                <Image src={ArrowIcon} alt="ArrowUpIcon" />
-                              </>
+                              <div className="flex justify-start items-center">
+                                <div>{languageData.showOptions.showMore} </div>
+                                <div>
+                                  <img
+                                    className="ml-2"
+                                    src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/down-100.svg`}
+                                    alt="ArrowUpIcon"
+                                    width={12}
+                                    height={12}
+                                  />
+                                </div>
+                              </div>
                             )}
                           </button>
-                        </div>
+                        </>
                       )}
                     </FormGroup>
                   </AccordionDetails>
