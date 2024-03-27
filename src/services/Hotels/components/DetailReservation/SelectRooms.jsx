@@ -25,11 +25,10 @@ export default function SelectRooms() {
 
   return (
     <div
-      className={`max-h-[80%] xl:max-h-[87%] bottom-0 absolute top-[4px] bg-white w-full z-[1] px-4 py-7`}
+      className={`xl:max-h-[78%] bg-white w-full px-4 py-7`}
     >
-      <div className="relative h-full w-full">
         <Container>
-          <div className="w-full flex flex-col gap-y-4 mb-[15rem] md:mb-[11rem]">
+          <div className="w-full flex flex-col gap-y-4 lg:mb-[5rem]">
             <h3 className="flex items-center text-gry-100 m-s-b text-fs-14 gap-x-1">
               Habitaciones elegidas{" "}
               <p className={`${isComplete === true && "text-grn-100"} m-0`}>
@@ -46,7 +45,7 @@ export default function SelectRooms() {
             </h3>
 
             <div
-              className={`grid grid-cols-1 overflow-y-auto gap-y-2 scroll-page-blue lg:gap-x-2 md:justify-items-center lg:grid-cols-2 xl:grid-cols-3 max-h-[25rem]`}
+              className={`grid grid-cols-1 overflow-y-auto gap-y-2 scroll-page-blue lg:gap-x-2 md:justify-items-center lg:grid-cols-2 xl:grid-cols-3 max-h-[26rem] md:max-h-[30rem] lg:max-h-[25rem]`}
             >
               {/* MAP ROOMS PRE CART HOTEL */}
               {selectedRooms.map((reservation, index) => (
@@ -114,33 +113,6 @@ export default function SelectRooms() {
             </div>
           </div>
         </Container>
-
-        {/* <div className="md:border-t md:border-gry-70 pt-[27px] mt-[27px] absolute bottom-0 left-0 w-full">
-          <Container>
-            <div className="flex flex-col gap-y-6 md:flex-row md:w-full md:justify-between md:items-center">
-              <div className="flex flex-col gap-y-2 items-start">
-                <h3 className="text-fs-16 m-b text-black">
-                  {languageData.detailHotel.detail}
-                </h3>
-                <p className="m-0 text-fs-8 text-gry-100">
-                  5 noches, 4 personas
-                </p>
-                <p className="m-0 text-fs-12 m-b flex items-center">
-                  MXN{" "}
-                  <p className="text-fs-20 m-0">
-                    $00.<sup>00</sup>
-                  </p>
-                </p>
-                <span className="text-grn-100 text-fs-8 m-s-b rounded w-max bg-grn-50 py-1 px-2 h-max">
-                  {languageData.cart.taxes}
-                </span>
-              </div>
-
-              
-            </div>
-          </Container>
-        </div> */}
-      </div>
     </div>
   );
 }
