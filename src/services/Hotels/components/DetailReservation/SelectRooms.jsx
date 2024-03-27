@@ -1,25 +1,20 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 import { Container } from "@/config/Others/Container";
-import LanguageContext from "@/language/LanguageContext";
-
-const reservations = [
-  {
-    image: `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`,
-    name: "Nombre de la habitación",
-    price: 0,
-    occupancy: 2,
-    foodType: "Tipo de alimentación",
-  },
-];
+// import LanguageContext from "@/language/LanguageContext";
 
 export default function SelectRooms(props) {
   const { selectedRooms } = useContext(RoomsHotelContext);
-
-  console.log(selectedRooms);
+  const [isComplete, setIsComplete] = useState(false);
+  useEffect(() => {
+    if (selectedRooms == 8) {
+      setIsComplete(true);
+    }
+  }, []);
+  // console.log(selectedRooms);
 
   return (
     <div
@@ -27,16 +22,19 @@ export default function SelectRooms(props) {
     >
       <div className="relative h-full w-full">
         <Container>
-
           <div className="w-full flex flex-col gap-y-4 mb-[15rem] md:mb-[11rem]">
             <h3 className="flex items-center text-gry-100 m-s-b text-fs-14 gap-x-1">
-              Habitaciones elegidas <p className="m-0 text-grn-100">(8/8)</p>{" "}
-              <img
-                src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
-                alt="done green"
-                height={9}
-                width={12}
-              />{" "}
+              Habitaciones elegidas{" "}
+
+              <p className={`${isComplete === true && 'text-grn-100'} m-0`}>({selectedRooms.length}/8)</p>{" "}
+              {isComplete === true && (
+                <img
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
+                  alt="done green"
+                  height={9}
+                  width={12}
+                />
+              )}
             </h3>
 
             <div
@@ -69,7 +67,7 @@ export default function SelectRooms(props) {
                         MXN {reservation.price}
                       </h3>
 
-                    {/* ADULTS HOTEL */}
+                      {/* ADULTS HOTEL */}
                       <span className="flex text-fs-10 text-black gap-x-2 items-center">
                         <img
                           src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
