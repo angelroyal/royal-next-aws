@@ -16,6 +16,8 @@ import IconCart from "../assets/icons/utils/payment/cart.svg";
 import IconCartActive from "../assets/icons/utils/payment/cart-active.svg";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import Image from "next/image";
+import CartHotelT from "@/components/Cart/CartHotelT";
+
 
 export default function Cart() {
   const { fetchData, totalItemsInCart } = useCartAxios();
@@ -149,6 +151,7 @@ export default function Cart() {
                   </h1>
                 </div>
                 <CartGet onCloseMenu={handleCloseMenu} />
+                <CartHotelT/>
               </div>
             </Menu>
           )}

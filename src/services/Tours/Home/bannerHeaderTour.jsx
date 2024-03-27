@@ -12,7 +12,7 @@ export default function BannerHeaderTour() {
         <div className='relative flex items-center justify-center mb-[120px] h-[442px] md:h-72 2xl:h-[480px] w-full max-sm:mb-[200px]'>
             <img
                 src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`}
-                className='w-full h-full object-cover'>
+                className='w-full h-full object-cover select-none'>
 
             </img>
 

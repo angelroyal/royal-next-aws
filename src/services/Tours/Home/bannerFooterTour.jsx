@@ -9,7 +9,7 @@ export default function BannerFooterTour() {
         width={1272}
         height={469}
         alt='banner-footer-tour'
-        className='w-[99%] h-auto'
+        className='w-[99%] h-auto select-none'
         />
     </div>
   )
