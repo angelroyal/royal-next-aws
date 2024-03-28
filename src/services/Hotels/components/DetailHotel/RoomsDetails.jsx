@@ -19,6 +19,7 @@ import {
   parseQueryParams,
   formatAdultsAndChildren,
 } from "../../utils/utilsDetailHotel";
+import { RoomsSelectedSkeleton } from "../Skeleton/HotelInformationSkeleton";
 
 export default function RoomsDetails(codeHotel) {
   const [checkIn, setCheckIn] = useState(null);
@@ -44,7 +45,8 @@ export default function RoomsDetails(codeHotel) {
   }, []);
 
   if (!roomsData) {
-    return <div>Loading...</div>;
+    // return <div>Loading...</div>;
+    return <RoomsSelectedSkeleton/>;
   }
 
   const groupedRooms = roomsData.rooms.reduce((acc, room) => {
