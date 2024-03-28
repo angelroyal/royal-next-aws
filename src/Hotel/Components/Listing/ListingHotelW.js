@@ -7,6 +7,7 @@ import React, { useEffect, useContext, useState } from "react";
 
 import OrderingHotel from "../Listing/OrderingHotel";
 import FiltersHotels from "../../Utils/FiltersHotels";
+import { Container } from "@/config/Others/Container";
 import { AnimatedNumber } from "../../Utils/AnimatedNumber";
 import { useToken } from "../../../config/context/AuthContext";
 import LanguageContext from "../../../language/LanguageContext";
@@ -17,15 +18,14 @@ import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
 import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
-// import FiltersHotel from "@/services/Hotels/components/Listing/FiltersHotel";
 import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
-import { Container } from "@/config/Others/Container";
+import SearchBox from "@/hooks/SearchBox";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
   const { languageData } = useContext(LanguageContext);
   const [requestQueryParams, setRequestQueryParams] = useState(null);
-  
+
   const {
     totalPages,
     currentPage,
@@ -79,7 +79,8 @@ export default function ListingHotelW(props) {
       {/* <BannerListingHotelTop /> */}
       <div className="flex justify-around">
         <div className="w-3/12 mt-10">
-          <SearchBoxMobile />
+          {/* <SearchBoxMobile /> */}
+          <SearchBox />
           {/* <FiltersHotel/> */}
           <FiltersHotels />
         </div>

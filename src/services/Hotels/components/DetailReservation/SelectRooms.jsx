@@ -102,8 +102,8 @@ export default function SelectRooms({close}) {
                         <button onClick={() => deleteRoom(index)}>
                           <img
                             src={`${process.env.NEXT_PUBLIC_URL}icons/delete/delete-r.svg`}
-                            width={10}
-                            height={12}
+                            width={14}
+                            height={16}
                             alt="delete red"
                           />
                         </button>

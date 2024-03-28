@@ -261,35 +261,39 @@ export default function CardHotelConfirmation(props) {
                                     </div>
                                   ))}
 
-                                {roomBed.cancelPolicies.cancellationCode ===
-                                  "NRF" && (
-                                  <div className="d-flex align-items-center">
-                                    <Image
-                                      className="icons-size-s"
-                                      src={ErrorIcon}
-                                      alt="ErrorIcon"
-                                    />
+                                {roomBed.cancelPolicies &&
+                                  roomBed.cancelPolicies.cancellationCode &&
+                                  roomBed.cancelPolicies.cancellationCode ===
+                                    "NRF" && (
+                                    <div className="d-flex align-items-center">
+                                      <Image
+                                        className="icons-size-s"
+                                        src={ErrorIcon}
+                                        alt="ErrorIcon"
+                                      />
 
-                                    <span className="text-grey-card-hotel-i">
-                                      {languageData.itinerary.nonRefundable}
-                                    </span>
-                                  </div>
-                                )}
+                                      <span className="text-grey-card-hotel-i">
+                                        {languageData.itinerary.nonRefundable}
+                                      </span>
+                                    </div>
+                                  )}
 
-                                {roomBed.cancelPolicies.cancellationCode ===
-                                  "NOR" && (
-                                  <div className="d-flex align-items-center">
-                                    <Image
-                                      className="icons-size-s"
-                                      src={DoneIcon}
-                                      alt="DoneIcon"
-                                    />
+                                {roomBed.cancelPolicies &&
+                                  roomBed.cancelPolicies.cancellationCode &&
+                                  roomBed.cancelPolicies.cancellationCode ===
+                                    "NOR" && (
+                                    <div className="d-flex align-items-center">
+                                      <Image
+                                        className="icons-size-s"
+                                        src={DoneIcon}
+                                        alt="DoneIcon"
+                                      />
 
-                                    <span className="text-grey-card-hotel-i">
-                                      {languageData.itinerary.refundable}
-                                    </span>
-                                  </div>
-                                )}
+                                      <span className="text-grey-card-hotel-i">
+                                        {languageData.itinerary.refundable}
+                                      </span>
+                                    </div>
+                                  )}
 
                                 {roomBed.food && (
                                   <div className="d-flex align-items-center">
