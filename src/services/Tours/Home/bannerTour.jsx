@@ -60,7 +60,7 @@ export function BannerHomeTour() {
                         </div>
 
                         <div className="absolute h-[235px] right-0 rounded-lg  clip-custom max-xl:w-[320px] max-lg:w-[71%]">
-                            <Image src={excDiscounts} width={547} height={273} className="w-full h-full rounded-r-lg object-cover select-none" alt="Banner Exc Discounts" />
+                            <Image src={excDiscounts} width={547} height={273} className="w-full h-full rounded-r-lg object-cover select-none" alt="Banner cenote san antonio" />
                         </div>
 
                         <a
