@@ -163,6 +163,16 @@ export default {
       //   'xl': {'min': '1280px', 'max': '1535px'},
       //   '2xl': {'min': '1536px'},
       // },
+      keyframes:{
+        skeletonLoading:{
+          '0%':{
+            background:"#EFEFEF"
+          },
+          '100%':{
+            background:"#c9c7c7"
+          }
+        }
+      }
     },
   },
   plugins: [
