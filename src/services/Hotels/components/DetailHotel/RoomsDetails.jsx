@@ -107,8 +107,7 @@ export default function RoomsDetails(codeHotel) {
                 (room, index) =>
                   !selectedRooms.some(
                     (selectedRoom) =>
-                      (selectedRoom.idRoom === room.idRoom &&
-                        !selectedRoom.rateKey === room.rateKey)
+                      (selectedRoom.idRoom === room.idRoom )
                   ) && (
                     <SwiperSlide
                       key={index}
