@@ -19,11 +19,13 @@ export default function DetailReservation() {
   // TOTAL CALCULATION
   useEffect(() => {
     if (selectedRooms.length > 0) {
-      setTotalPrice(
-        selectedRooms.reduce((total, item) => total + item.price, 0)
+      let price = selectedRooms.reduce(
+        (total, item) => total + parseFloat(item.price),
+        0
       );
+      setTotalPrice(price);
     }
-  }, []);
+  }, [selectedRooms]);
 
   // HIDE RESERVATION DETAILS FUNCTION
   const [isVisible, setIsVisible] = useState(false);
@@ -56,15 +58,18 @@ export default function DetailReservation() {
             open === true ? "h-auto" : "h-[15rem] md:h-[127px]"
           }`}
         >
-          <div className={`${ open ? 'min-h-[15rem] max-lg:h-[77vh] lg:max-h-[40rem]' : 'h-full' } relative`}>
+          <div
+            className={`${
+              open ? "min-h-[15rem] max-lg:h-[77vh] lg:max-h-[40rem]" : "h-full"
+            } relative`}
+          >
             {/* ROOMS SELECTED */}
-            {open === true && <SelectRooms />}
+            {open === true && <SelectRooms close={()=>setOpen(false)} />}
 
             {/* BASIC INFORMATION OF THE SELECTED ROOMS */}
-            {/* pt-[27px] mt-[27px] */}
-            <div className="bg-white  absolute bottom-0 left-0 w-full z-[3]">
+            <div className="bg-white absolute bottom-0 left-0 w-full z-[3]">
               <Container>
-                <div className="relative flex flex-col gap-y-8 md:flex-row md:justify-between md:items-center">
+                <div className="relative flex flex-col gap-y-14 md:gap-y-8 md:flex-row md:justify-between md:items-center">
                   <div className="mb-5 md:m-0 flex flex-col gap-y-2">
                     <h4 className="m-b text-fs-16 text-black">
                       {languageData.detailHotel.detail}
@@ -91,15 +96,31 @@ export default function DetailReservation() {
                     </div>
                   </div>
 
-                  {open === false && (
-                    <h3 className="absolute bottom-[4rem] md:top-0 md:bottom-0 md:left-0 md:right-0 md:mx-auto md:my-auto text-gry-70 text-fs-10 h-6 w-max m-s-b">
-                      Desliza para ver tus habitaciones{" "}
-                      {selectedRooms.length > 0 && selectedRooms.length}{" "}
-                      seleccionadas
-                    </h3>
+                  {open === false && selectedRooms.length > 0 && (
+                    // <h3 className="absolute bottom-[4rem] md:top-0 md:bottom-0 md:left-0 md:right-0 md:mx-auto md:my-auto text-gry-70 text-fs-10 h-6 w-max m-s-b">
+                    //   Desliza para ver tus habitaciones{" "}
+                    //   {selectedRooms.length > 0 && selectedRooms.length}{" "}
+                    //   seleccionadas
+                    // </h3>
+                    <div className="absolute bottom-0 top-0 md:bottom-0 left-0 right-0 mx-auto my-auto w-max flex items-center">
+                      <div className="relative">
+                        <img
+                          src={selectedRooms[0].image}
+                          alt={selectedRooms[0].name}
+                          className="rounded-md object-cover w-[2.5rem] h-[2.5rem]"
+                          width={30}
+                          height={30}
+                        />{" "}
+                        {selectedRooms.length > 1 && (
+                          <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${
+                            selectedRooms.length - 1
+                          }`}</span>
+                        )}{" "}
+                      </div>
+                    </div>
                   )}
 
-                  {open === true && selectedRooms.length > 0 ? (
+                  {selectedRooms.length > 0 ? (
                     <AddCartHotel />
                   ) : (
                     <div className="select-none	rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
@@ -112,8 +133,11 @@ export default function DetailReservation() {
 
             {/* OPEN ROOMS SELECTED */}
             <button
+              disabled={selectedRooms.length === 0}
               onClick={() => setOpen(!open)}
-              className={` top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border border-gry-100`}
+              className={`${
+                selectedRooms.length === 0 && "cursor-default brightness-[0.6]"
+              } top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border border-gry-100`}
             >
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-bl-100-cle.svg`}

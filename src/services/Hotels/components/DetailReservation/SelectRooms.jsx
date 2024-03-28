@@ -6,20 +6,27 @@ import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 
-export default function SelectRooms() {
+export default function SelectRooms({close}) {
   const [isComplete, setIsComplete] = useState(false);
   const { languageData } = useContext(LanguageContext);
   const { selectedRooms, setSelectedRooms } = useContext(RoomsHotelContext);
 
   useEffect(() => {
-    if (selectedRooms == 8) {
+    if (selectedRooms.length === 10) {
       setIsComplete(true);
+    }else{
+      setIsComplete(false);
     }
-  }, []);
+  }, [selectedRooms]);
+  // console.log(selectedRooms);
+
 
   // DELETED PRE CART ROOM
   const deleteRoom = (index) => {
     const newRooms = selectedRooms.filter((room, i) => i !== index);
+    if(newRooms.length === 0){
+      close();
+    }
     setSelectedRooms(newRooms);
   };
 
@@ -31,9 +38,8 @@ export default function SelectRooms() {
           <div className="w-full flex flex-col gap-y-4 lg:mb-[5rem]">
             <h3 className="flex items-center text-gry-100 m-s-b text-fs-14 gap-x-1">
               Habitaciones elegidas{" "}
-              <p className={`${isComplete === true && "text-grn-100"} m-0`}>
-                ({selectedRooms.length}/8)
-              </p>{" "}
+
+              <p className={`${isComplete === true && 'text-grn-100'} m-0`}>({selectedRooms.length}/10)</p>{" "}
               {isComplete === true && (
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}

@@ -24,12 +24,16 @@ export default function RoomsDetails(codeHotel) {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const { languageData } = useContext(LanguageContext);
-  const { roomsData, handleFetchPostRooms, selectedRooms, setRequestBodyRooms } =
-    useContext(RoomsHotelContext);
-    
+  const {
+    roomsData,
+    handleFetchPostRooms,
+    selectedRooms,
+    setRequestBodyRooms,
+  } = useContext(RoomsHotelContext);
+
+  // console.log(selectedRooms);
 
   useEffect(() => {
-    
     const urlSearchParams = new URLSearchParams(window.location.search);
     const queryParams = parseQueryParams(urlSearchParams, codeHotel);
     // console.log(queryParams);
@@ -38,7 +42,6 @@ export default function RoomsDetails(codeHotel) {
     setCheckOut(queryParams["check-out"]);
     handleFetchPostRooms(queryParams);
   }, []);
-
 
   if (!roomsData) {
     return <div>Loading...</div>;
@@ -52,9 +55,10 @@ export default function RoomsDetails(codeHotel) {
     return acc;
   }, {});
 
+
   return (
     <>
-      <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0">
+      <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 ">
         <span>{roomsData.totalRooms} habitaciones encontradas</span>
         <br />
         <span>Check-in: {checkIn}</span>
@@ -63,11 +67,12 @@ export default function RoomsDetails(codeHotel) {
       </h4>
 
       {Object.entries(groupedRooms).map(([roomType, rooms]) => (
-        <div key={roomType} className="mb-[4rem]">
-          <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max">
+        <div key={roomType} className="mb-[4rem] ">
+          <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 ">
             {roomType}
+            {/* {console.log(rooms)} */}
           </h2>
-          <div className="relative pr-9">
+          <div className="relative pr-4 lg:pr-9">
             <Swiper
               id="room-details"
               className="mySwiper"
@@ -141,18 +146,19 @@ export default function RoomsDetails(codeHotel) {
                               </div>
 
                               {/* BEDS */}
-                              {room.beds && room.beds.map((bed, index) => (
-                                <div key={index} className="flex gap-x-[4px]">
-                                  <img
-                                    src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
-                                    className="w-[14px] h-[14px]"
-                                    alt="room"
-                                  />
-                                  <span className="m-s-b text-fs-12 text-gry-100">
-                                    {bed.number} {bed.type}
-                                  </span>
-                                </div>
-                              ))}
+                              {room.beds &&
+                                room.beds.map((bed, index) => (
+                                  <div key={index} className="flex gap-x-[4px]">
+                                    <img
+                                      src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                                      className="w-[14px] h-[14px]"
+                                      alt="room"
+                                    />
+                                    <span className="m-s-b text-fs-12 text-gry-100">
+                                      {bed.number} {bed.type}
+                                    </span>
+                                  </div>
+                                ))}
                             </div>
                           </div>
 

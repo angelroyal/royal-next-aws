@@ -9,7 +9,7 @@ export function SearchModalHotel() {
   const { languageData } = useContext(LanguageContext);
   return (
     <div>
-      <div className="flex flex-col gap-y-4 pr-9 w-full ">
+      <div className="flex flex-col gap-y-4 pr-4 lg:pr-9 w-full ">
         <h2 className="m-b text-black text-fs-16 text-start">
           Seleccionar habitaciones
         </h2>
