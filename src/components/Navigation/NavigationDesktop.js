@@ -29,12 +29,11 @@ export default function NavigationDesktop() {
             className="flex w-full items-center justify-between "
             aria-label="Global"
           >
-            <div className="flex md:flex-1">
+            <div className="flex md:flex-1 justify-between">
               <a
                 href={`${process.env.NEXT_PUBLIC_HOME}`}
                 className="-m-1.5 p-1.5"
               >
-                <span className="sr-only">Your Company</span>
                 <img
                   src="https://sandboxmexico.com/assets/royal/logo.svg"
                   alt="Royal Vacations Mexico"
@@ -42,6 +41,37 @@ export default function NavigationDesktop() {
                   height={100}
                 />
               </a>
+              <div className="flex items-center">
+                <div>
+                  {" "}
+                  <a
+                    href={`${process.env.NEXT_PUBLIC_HOME}`}
+                    className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
+                  >
+                    {" "}
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
+                      alt="done green"
+                      className="pr-2"
+                    />
+                    Hospedaje
+                  </a>
+                </div>
+
+                <div>
+                  <a
+                    href={`/tour`}
+                    className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
+                  >
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
+                      alt="done green"
+                      className="pr-2"
+                    />
+                    Tours
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="flex gap-x-[18px] md:hidden">
@@ -60,7 +90,6 @@ export default function NavigationDesktop() {
                 </div>
               </button>
             </div>
-
 
             <HamburgerMenu
               open={mobileMenuOpen}

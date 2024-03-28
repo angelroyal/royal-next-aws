@@ -77,7 +77,7 @@ export default function SearchBox() {
           </Tab>
         </Tab.List>
 
-        <Tab.Panels className='bg-red-100'>
+        <Tab.Panels>
           <Tab.Panel>
             <SendHotel />
           </Tab.Panel>
