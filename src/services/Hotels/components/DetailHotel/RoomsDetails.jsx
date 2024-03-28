@@ -55,6 +55,9 @@ export default function RoomsDetails(codeHotel) {
     return acc;
   }, {});
 
+  console.log(selectedRooms);
+
+  console.log(groupedRooms);
 
   return (
     <>
@@ -101,7 +104,9 @@ export default function RoomsDetails(codeHotel) {
               {rooms.map(
                 (room, index) =>
                   !selectedRooms.some(
-                    (selectedRoom) => selectedRoom.idRoom === room.idRoom
+                    (selectedRoom) =>
+                      (selectedRoom.idRoom === room.idRoom &&
+                        !selectedRoom.rateKey === room.rateKey)
                   ) && (
                     <SwiperSlide
                       key={index}

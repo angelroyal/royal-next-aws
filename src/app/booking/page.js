@@ -1,12 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/styles/web/App.css";
 
+import Payment from "@/payment/Payment";
 import Token from "@/components/General/Token";
-import { TokenProvider } from "@/config/context/AuthContext";
+import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
+import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import Payment from "@/payment/Payment";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <Token />
           <Navigation/>
           <Payment/>
+          <Footer/>
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

@@ -1,1020 +1,162 @@
-{
-  "Economy 1 King Bed": [
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-2.0",
-          "adultChildren": "2.0",
-          "childrenAges": [],
-          "rateIndex": 0,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~2~0||N@06~~2194a~655677795~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 1,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 2,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 3,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 4,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 5,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 6,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 7,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 8,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY",
-          "name": "Economy 1 King Bed",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama king size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 9,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-127701180~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      }
-  ],
-  "Economy 2 double Beds": [
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-2.0",
-          "adultChildren": "2.0",
-          "childrenAges": [],
-          "rateIndex": 10,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~2~0||N@06~~2194a~-676450936~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 11,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 12,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 13,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 14,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 15,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 16,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 17,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 18,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.EY-2",
-          "name": "Economy 2 double Beds",
-          "facilities": [
-              "Número de dormitorios"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 19,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.EY-2|CGW-TODOSB2B|RO||1~1~0||N@06~~2194a~-1459829911~N~~~NOR~69C8521EA2C5414171139987751500AAUK000000100000000052194a",
-          "netPrice": 1485,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1687.72",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      }
-  ],
-  "Double two double beds": [
-      {
-          "code": "DBL.2D",
-          "name": "Double two double beds",
-          "facilities": [
-              "Terraza",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-2.0",
-          "adultChildren": "2.0",
-          "childrenAges": [],
-          "rateIndex": 20,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.2D|CGW-TODOSB2B|RO||1~2~0||N@06~~24750~-513514157~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.2D",
-          "name": "Double two double beds",
-          "facilities": [
-              "Terraza",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 21,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.2D|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-1296893132~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.2D",
-          "name": "Double two double beds",
-          "facilities": [
-              "Terraza",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 22,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.2D|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-1296893132~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.2D",
-          "name": "Double two double beds",
-          "facilities": [
-              "Terraza",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 2,
-                  "type": "Cama matrimonial"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 23,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.2D|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-1296893132~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      }
-  ],
-  "Double king zise bed": [
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-2.0",
-          "adultChildren": "2.0",
-          "childrenAges": [],
-          "rateIndex": 24,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~2~0||N@06~~24750~-1229815587~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 25,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 26,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "0-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 27,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 28,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 29,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "1-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 30,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 31,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 32,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      },
-      {
-          "code": "DBL.KG",
-          "name": "Double king zise bed",
-          "facilities": [
-              "Terraza",
-              "Servicio despertador",
-              "Kit de baño",
-              "TV por cable",
-              "Número de dormitorios",
-              "Bañera"
-          ],
-          "beds": [
-              {
-                  "number": 1,
-                  "type": "Cama Queen size"
-              }
-          ],
-          "currency": "MXN",
-          "idRoom": "2-1.0",
-          "adultChildren": "1.0",
-          "childrenAges": [],
-          "rateIndex": 33,
-          "rateKey": "20240413|20240414|W|71|3905|DBL.KG|CGW-TODOSB2B|RO||1~1~0||N@06~~24750~-2013194562~N~~~NOR~69C8521EA2C5414171139987751500AAUK0000001000000000524750",
-          "netPrice": 1614.1999999999998,
-          "eatingPlan": "Solo habitación",
-          "boardCode": "OR",
-          "price": "1834.56",
-          "cancellationCode": "NOR",
-          "cancellationPolicies": {
-              "from": "2024-04-11",
-              "percentage": 5
-          }
-      }
-  ]
-}
+[
+    {
+        "code": "SGL.GD",
+        "name": "Standard Limited View",
+        "beds": [
+            {
+                "number": 1,
+                "type": "Cama king size"
+            }
+        ],
+        "currency": "MXN",
+        "idRoom": "0-1.0",
+        "adultChildren": "1.0",
+        "childrenAges": [],
+        "rateIndex": 0,
+        "rateKey": "20240419|20240420|W|69|161795|SGL.GD|BAR OFFER USD|AI||1~1~0||N@06~~20696~-2038373524~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000520696",
+        "netPrice": 3001.2,
+        "eatingPlan": "Todo incluido",
+        "boardCode": "AI",
+        "price": "3410.90",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_a_045.webp",
+        "cancellationCode": "NOR",
+        "cancellationPolicies": {
+            "from": "2024-04-18",
+            "percentage": 5
+        }
+    },
+    {
+        "code": "SGL.OV",
+        "name": "SUPERIOR",
+        "beds": [
+            {
+                "number": 1,
+                "type": "Cama king size"
+            }
+        ],
+        "currency": "MXN",
+        "idRoom": "0-1.0",
+        "adultChildren": "1.0",
+        "childrenAges": [],
+        "rateIndex": 1,
+        "rateKey": "20240419|20240420|W|69|161795|SGL.OV|BAR OFFER USD|AI||1~1~0||N@06~~25a99~-1000287372~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000525a99",
+        "netPrice": 3078,
+        "eatingPlan": "Todo incluido",
+        "boardCode": "AI",
+        "price": "3498.18",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_070.webp",
+        "cancellationCode": "NOR",
+        "cancellationPolicies": {
+            "from": "2024-04-18",
+            "percentage": 5
+        }
+    },
+    {
+        "code": "DBL.GD",
+        "name": "Standard Limited View",
+        "beds": [
+            {
+                "number": 1,
+                "type": "Cama king size"
+            }
+        ],
+        "currency": "MXN",
+        "idRoom": "0-2.0",
+        "adultChildren": "2.0",
+        "childrenAges": [],
+        "rateIndex": 2,
+        "rateKey": "20240419|20240420|W|69|161795|DBL.GD|BAR OFFER USD|AI||1~2~0||N@06~~240bb~-1174814957~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK00000010000000005240bb",
+        "netPrice": 3752.7999999999997,
+        "eatingPlan": "Todo incluido",
+        "boardCode": "AI",
+        "price": "4265.10",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_064.webp",
+        "cancellationCode": "NOR",
+        "cancellationPolicies": {
+            "from": "2024-04-18",
+            "percentage": 5
+        }
+    },
+    {
+        "code": "DBL.OV",
+        "name": "SUPERIOR",
+        "beds": [
+            {
+                "number": 1,
+                "type": "Cama king size"
+            },
+            {
+                "number": 1,
+                "type": "Cama matrimonial"
+            }
+        ],
+        "currency": "MXN",
+        "idRoom": "0-2.0",
+        "adultChildren": "2.0",
+        "childrenAges": [],
+        "rateIndex": 3,
+        "rateKey": "20240419|20240420|W|69|161795|DBL.OV|BAR OFFER USD|AI||1~2~0||N@06~~20ed2~-697154537~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000520ed2",
+        "netPrice": 4202.799999999999,
+        "eatingPlan": "Todo incluido",
+        "boardCode": "AI",
+        "price": "4776.53",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_063.webp",
+        "cancellationCode": "NOR",
+        "cancellationPolicies": {
+            "from": "2024-04-18",
+            "percentage": 5
+        }
+    },
+    {
+        "code": "SGL.ST-1",
+        "name": "GRAND FAMILY SUITE",
+        "beds": [
+            {
+                "number": 1,
+                "type": "Cama matrimonial"
+            }
+        ],
+        "currency": "MXN",
+        "idRoom": "0-1.0",
+        "adultChildren": "1.0",
+        "childrenAges": [],
+        "rateIndex": 4,
+        "rateKey": "20240419|20240420|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~25de0~-223189582~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000525de0",
+        "netPrice": 4498.6,
+        "eatingPlan": "Todo incluido",
+        "boardCode": "AI",
+        "price": "5112.71",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_067.webp",
+        "cancellationCode": "NOR",
+        "cancellationPolicies": {
+            "from": "2024-04-18",
+            "percentage": 5
+        }
+    },
+    {
+        "code": "DBL.ST-1",
+        "name": "GRAND FAMILY SUITE",
+        "beds": [
+            {
+                "number": 2,
+                "type": "Cama matrimonial"
+            }
+        ],
+        "currency": "MXN",
+        "idRoom": "0-2.0",
+        "adultChildren": "2.0",
+        "childrenAges": [],
+        "rateIndex": 5,
+        "rateKey": "20240419|20240420|W|69|161795|DBL.ST-1|BAR OFFER USD|AI||1~2~0||N@06~~228151~1981618919~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK00000010000000005228151",
+        "netPrice": 6748,
+        "eatingPlan": "Todo incluido",
+        "boardCode": "AI",
+        "price": "7669.18",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_a_046.webp",
+        "cancellationCode": "NOR",
+        "cancellationPolicies": {
+            "from": "2024-04-18",
+            "percentage": 5
+        }
+    }
+]
