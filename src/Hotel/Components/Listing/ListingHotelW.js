@@ -14,7 +14,7 @@ import LanguageContext from "../../../language/LanguageContext";
 import ListingHotelContext from "../../Context/ListingHotelContext";
 import { scrollToTop } from "../../../utils/pageConfig/scrollToTop";
 import SkeletonChildren from "../../../utils/skeleton/SkeletonChildren";
-import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
+// import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
 import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
@@ -143,16 +143,22 @@ export default function ListingHotelW(props) {
           )}
 
           {combinedHotelData && combinedHotelData.length === 0 && (
-            <>
-              <div className="m-b text-fs-20 text-black mt-2 mb-2">
-                {languageData.filtersTour.noAvailability}
+            <div className="flex space-between items-center justify-around mt-4">
+              <div>
+                <img
+                  // src={IconNoAvailability}
+                  alt={languageData.allAlt.altBannerNavigation}
+                  src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/NoAvailabilityHotels.svg`}
+                />
               </div>
 
-              <Image
-                src={IconNoAvailability}
-                alt={languageData.allAlt.altBannerNavigation}
-              />
-            </>
+              <div>
+                <div className="m-b text-fs-22 text-black">¡Ups!</div>
+                <div className="m-s text-fs-18 text-[#1A202C] mt-2 mb-2">
+                  No hemos encontrado algo relacionado a tu búsqueda.
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </div>
