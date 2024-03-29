@@ -94,8 +94,6 @@ export default function SendHotel() {
   }, []);
   
 
-  console.log(isHotelResults);
-
   return (
     // <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
     <div className={`flex ${isHotelResults ? 'flex-col' : 'lg:flex-row'} items-center bg-white gap-2.5 rounded-lg p-6`}>

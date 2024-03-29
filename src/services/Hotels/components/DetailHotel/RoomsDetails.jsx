@@ -32,8 +32,6 @@ export default function RoomsDetails(codeHotel) {
     setRequestBodyRooms,
   } = useContext(RoomsHotelContext);
 
-  // console.log(selectedRooms);
-
   useEffect(() => {
     const urlSearchParams = new URLSearchParams(window.location.search);
     const queryParams = parseQueryParams(urlSearchParams, codeHotel);
@@ -46,7 +44,7 @@ export default function RoomsDetails(codeHotel) {
 
   if (!roomsData) {
     // return <div>Loading...</div>;
-    return <RoomsSelectedSkeleton/>;
+    return <RoomsSelectedSkeleton />;
   }
 
   const groupedRooms = roomsData.rooms.reduce((acc, room) => {
@@ -57,9 +55,8 @@ export default function RoomsDetails(codeHotel) {
     return acc;
   }, {});
 
-  console.log(selectedRooms);
-
   console.log(groupedRooms);
+  console.log(selectedRooms);
 
   return (
     <>
@@ -106,8 +103,7 @@ export default function RoomsDetails(codeHotel) {
               {rooms.map(
                 (room, index) =>
                   !selectedRooms.some(
-                    (selectedRoom) =>
-                      (selectedRoom.idRoom === room.idRoom )
+                    (selectedRoom) => selectedRoom.idRoom === room.idRoom
                   ) && (
                     <SwiperSlide
                       key={index}

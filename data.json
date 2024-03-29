@@ -1,113 +1,5 @@
 [
     {
-        "code": "SGL.GD",
-        "name": "Standard Limited View",
-        "beds": [
-            {
-                "number": 1,
-                "type": "Cama king size"
-            }
-        ],
-        "currency": "MXN",
-        "idRoom": "0-1.0",
-        "adultChildren": "1.0",
-        "childrenAges": [],
-        "rateIndex": 0,
-        "rateKey": "20240419|20240420|W|69|161795|SGL.GD|BAR OFFER USD|AI||1~1~0||N@06~~20696~-2038373524~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000520696",
-        "netPrice": 3001.2,
-        "eatingPlan": "Todo incluido",
-        "boardCode": "AI",
-        "price": "3410.90",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_a_045.webp",
-        "cancellationCode": "NOR",
-        "cancellationPolicies": {
-            "from": "2024-04-18",
-            "percentage": 5
-        }
-    },
-    {
-        "code": "SGL.OV",
-        "name": "SUPERIOR",
-        "beds": [
-            {
-                "number": 1,
-                "type": "Cama king size"
-            }
-        ],
-        "currency": "MXN",
-        "idRoom": "0-1.0",
-        "adultChildren": "1.0",
-        "childrenAges": [],
-        "rateIndex": 1,
-        "rateKey": "20240419|20240420|W|69|161795|SGL.OV|BAR OFFER USD|AI||1~1~0||N@06~~25a99~-1000287372~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000525a99",
-        "netPrice": 3078,
-        "eatingPlan": "Todo incluido",
-        "boardCode": "AI",
-        "price": "3498.18",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_070.webp",
-        "cancellationCode": "NOR",
-        "cancellationPolicies": {
-            "from": "2024-04-18",
-            "percentage": 5
-        }
-    },
-    {
-        "code": "DBL.GD",
-        "name": "Standard Limited View",
-        "beds": [
-            {
-                "number": 1,
-                "type": "Cama king size"
-            }
-        ],
-        "currency": "MXN",
-        "idRoom": "0-2.0",
-        "adultChildren": "2.0",
-        "childrenAges": [],
-        "rateIndex": 2,
-        "rateKey": "20240419|20240420|W|69|161795|DBL.GD|BAR OFFER USD|AI||1~2~0||N@06~~240bb~-1174814957~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK00000010000000005240bb",
-        "netPrice": 3752.7999999999997,
-        "eatingPlan": "Todo incluido",
-        "boardCode": "AI",
-        "price": "4265.10",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_064.webp",
-        "cancellationCode": "NOR",
-        "cancellationPolicies": {
-            "from": "2024-04-18",
-            "percentage": 5
-        }
-    },
-    {
-        "code": "DBL.OV",
-        "name": "SUPERIOR",
-        "beds": [
-            {
-                "number": 1,
-                "type": "Cama king size"
-            },
-            {
-                "number": 1,
-                "type": "Cama matrimonial"
-            }
-        ],
-        "currency": "MXN",
-        "idRoom": "0-2.0",
-        "adultChildren": "2.0",
-        "childrenAges": [],
-        "rateIndex": 3,
-        "rateKey": "20240419|20240420|W|69|161795|DBL.OV|BAR OFFER USD|AI||1~2~0||N@06~~20ed2~-697154537~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000520ed2",
-        "netPrice": 4202.799999999999,
-        "eatingPlan": "Todo incluido",
-        "boardCode": "AI",
-        "price": "4776.53",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_063.webp",
-        "cancellationCode": "NOR",
-        "cancellationPolicies": {
-            "from": "2024-04-18",
-            "percentage": 5
-        }
-    },
-    {
         "code": "SGL.ST-1",
         "name": "GRAND FAMILY SUITE",
         "beds": [
@@ -120,43 +12,69 @@
         "idRoom": "0-1.0",
         "adultChildren": "1.0",
         "childrenAges": [],
-        "rateIndex": 4,
-        "rateKey": "20240419|20240420|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~25de0~-223189582~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK0000001000000000525de0",
-        "netPrice": 4498.6,
+        "rateIndex": 20,
+        "rateKey": "20240515|20240517|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~2561c1~-693659149~N~~~NOR~6E8B43EDA11741A171165935919400AAUK000000100000000052561c1",
+        "netPrice": 8997.2,
         "eatingPlan": "Todo incluido",
         "boardCode": "AI",
-        "price": "5112.71",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_067.webp",
+        "price": "10225.43",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_f_006.webp",
         "cancellationCode": "NOR",
         "cancellationPolicies": {
-            "from": "2024-04-18",
-            "percentage": 5
+            "from": "2024-05-14",
+            "percentage": 2.5
         }
     },
     {
-        "code": "DBL.ST-1",
+        "code": "SGL.ST-1",
         "name": "GRAND FAMILY SUITE",
         "beds": [
             {
-                "number": 2,
+                "number": 1,
                 "type": "Cama matrimonial"
             }
         ],
         "currency": "MXN",
-        "idRoom": "0-2.0",
-        "adultChildren": "2.0",
+        "idRoom": "1-1.0",
+        "adultChildren": "1.0",
         "childrenAges": [],
-        "rateIndex": 5,
-        "rateKey": "20240419|20240420|W|69|161795|DBL.ST-1|BAR OFFER USD|AI||1~2~0||N@06~~228151~1981618919~N~~~NOR~18F6C880F7FA4E8171163900021700AAUK00000010000000005228151",
-        "netPrice": 6748,
+        "rateIndex": 23,
+        "rateKey": "20240515|20240517|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~2561c1~-693659149~N~~~NOR~6E8B43EDA11741A171165935919400AAUK000000100000000052561c1",
+        "netPrice": 8997.2,
         "eatingPlan": "Todo incluido",
         "boardCode": "AI",
-        "price": "7669.18",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_a_046.webp",
+        "price": "10225.43",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_064.webp",
         "cancellationCode": "NOR",
         "cancellationPolicies": {
-            "from": "2024-04-18",
-            "percentage": 5
+            "from": "2024-05-14",
+            "percentage": 2.5
+        }
+    },
+    {
+        "code": "SGL.ST-1",
+        "name": "GRAND FAMILY SUITE",
+        "beds": [
+            {
+                "number": 1,
+                "type": "Cama matrimonial"
+            }
+        ],
+        "currency": "MXN",
+        "idRoom": "1-1.0",
+        "adultChildren": "1.0",
+        "childrenAges": [],
+        "rateIndex": 24,
+        "rateKey": "20240515|20240517|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~2561c1~-693659149~N~~~NOR~6E8B43EDA11741A171165935919400AAUK000000100000000052561c1",
+        "netPrice": 8997.2,
+        "eatingPlan": "Todo incluido",
+        "boardCode": "AI",
+        "price": "10225.43",
+        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_064.webp",
+        "cancellationCode": "NOR",
+        "cancellationPolicies": {
+            "from": "2024-05-14",
+            "percentage": 2.5
         }
     }
 ]

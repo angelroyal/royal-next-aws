@@ -4,7 +4,7 @@ import React from "react";
 
 import "../../assets/styles/web/Hotel.css";
 
-// import SearchBox from "@/hooks/SearchBox";
+import SearchBox from "@/hooks/SearchBox";
 import { Container } from "@/config/Others/Container";
 // import { PopularState } from "@/utils/hotel/PopularStates";
 // PopularState
@@ -30,7 +30,7 @@ export const HomeHotel = () => {
       <div className="relative flex justify-center align-center mb-[224px] lg:mb-[118px]">
         <BannerHomeHotelTop />
         <div className="absolute top-[67%] sm:top-[60%] md:top-[44%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center">
-          {/* <SearchBox /> */}
+          <SearchBox />
         </div>
       </div>
 
