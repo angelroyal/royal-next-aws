@@ -1,13 +1,11 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../../../assets/styles/web/App.css";
-import "../../../assets/styles/web/Hotel.css";
 
-import Hotels from "@/Hotel/Pages/Hotels";
 import Token from "@/components/General/Token";
-import { TokenProvider } from "@/config/context/AuthContext";
+import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
+import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import Hotels from "@/services/Hotels/components/Listing/Hotels";
 
 export const metadata = {
   title: "Resultados - Royal Vacations Mexico",
@@ -22,6 +20,7 @@ export default function Home() {
           <Token />
           <Navigation />
           <Hotels />
+          <Footer/>
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

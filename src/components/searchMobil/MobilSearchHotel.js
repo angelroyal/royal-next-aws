@@ -122,7 +122,7 @@ export default function MobilSearchHotel() {
         <Room OnApply={setRoomData} />
       </div>
 
-      <div className="margin-search-tab button-room-page">
+      <div className=" button-room-page">
         <button
           className={`button-search-page-search ${
             !selectedOption || !validFirstDay || !validSecondDay

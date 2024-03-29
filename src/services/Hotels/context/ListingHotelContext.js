@@ -4,12 +4,12 @@ import React, { createContext, useEffect, useState } from "react";
 import {
   fetchHotelDetailsByKeys,
   fetchPostHotels,
-} from "../Config/axiosService";
+} from "../config/axiosService";
 import {
   applyFilters,
   combineHotelData,
   sortAndFilterHotels,
-} from "../Utils/hotelUtils";
+} from "../utils/hotelUtils";
 
 const ListingHotelContext = createContext();
 

@@ -15,8 +15,8 @@ import RoomWhite from "../../assets/icons/hotel/listing/room-white.svg";
 import PersonWhite from "../../assets/icons/hotel/listing/person-white.svg";
 import LocationWhite from "../../assets/icons/hotel/listing/location-white.svg";
 import CalendarWhite from "../../assets/icons/hotel/listing/calendar-white.svg";
-import { DialogFilterHotel } from "../../Hotel/Components/Dialog/DialogFilterHotel";
-import { DialogOrderHotel } from "../../Hotel/Components/Dialog/DialogOrderHotel";
+import { DialogFilterHotel } from "../../services/Hotels/components/Dialog/DialogFilterHotel";
+import { DialogOrderHotel } from "../../services/Hotels/components/Dialog/DialogOrderHotel";
 
 export function BannerListingHotelTop() {
   const { languageData } = useContext(LanguageContext);

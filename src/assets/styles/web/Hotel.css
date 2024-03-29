@@ -1,9 +1,14 @@
 /* hotel */
 .titleSearch-mobile {
-  color: white;
+  color: #666666;
   font-size: 1.2rem;
   font-family: "Montserrat SemiBold";
   padding: 0.5rem 0.5rem 0.5rem 0rem !important;
+}
+
+#tab-search-result-mobile-tab-tour {
+  background-color: #ebebeb;
+  color: #666666;
 }
 
 /* HOTEL Y SKELETOM */

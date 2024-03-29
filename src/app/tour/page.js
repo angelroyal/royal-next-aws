@@ -38,7 +38,7 @@ export default function Home() {
               <PopularState />
               <TopActivities />
               <BannerFooterTour />
-<CartHotelT/>
+              <CartHotelT />
             </Container>
             {/* END LP */}
 

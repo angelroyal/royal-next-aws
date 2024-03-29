@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
-import { calculateNights } from "@/Hotel/Utils/calculateNights";
+import { calculateNights } from "../../utils/calculateNights";
 
 export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;

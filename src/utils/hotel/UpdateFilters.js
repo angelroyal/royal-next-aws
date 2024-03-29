@@ -1,4 +1,4 @@
-import { filters } from "../../config/Hotel/filters"
+import { filters } from "../../services/Hotels/config/filters"
 
 export const getFiltersNew = () => {
   let filterValues = {};
