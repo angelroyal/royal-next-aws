@@ -72,7 +72,8 @@ export default function SearchBox() {
                 width={29}
                 height={25}
               />{" "}
-              {languageData.SearchBox.tabHotel.lodgement}
+              {/* {languageData.SearchBox.tabHotel.lodgement} */}
+              Actividades
             </span>
           </Tab>
         </Tab.List>

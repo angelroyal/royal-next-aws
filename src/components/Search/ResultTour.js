@@ -59,7 +59,7 @@ export default function ResultTour() {
     const query = new URLSearchParams(requestBody).toString();
 
     setTimeout(() => {
-      router.push(`/tours?${query}`);
+      router.push(`/tour/results?${query}`);
       // setShowModal(false);
     }, 1500);
   };
