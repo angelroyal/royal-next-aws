@@ -16,7 +16,8 @@ import { PopularState } from "@/services/Hotels/components/home/PopularEstates";
 import BannerFooterTour from "@/services/Tours/Home/bannerFooterTour";
 import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
 import SearchBox from "@/hooks/SearchBox";
-import CartHotelT from "@/components/Cart/CartHotelT";
+// import CartHotelT from "@/components/Cart/CartHotelT";
+// import CartOpen from "@/components/Cart/CartOpen";
 export default function Home() {
   return (
     <>
@@ -38,7 +39,8 @@ export default function Home() {
               <PopularState />
               <TopActivities />
               <BannerFooterTour />
-<CartHotelT/>
+              {/* <CartOpen /> */}
+              {/* <CartHotelT /> */}
             </Container>
             {/* END LP */}
 

@@ -7,17 +7,18 @@ export default function CartHotelT() {
     const [iconClose, setIconClose] = useState(null);
 
     return (
-        <>
-        <div className='gb-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)]'></div>
+        <div className='absolute right-[-15px] top-[48px]'>
+            
+        {/* <div className='gb-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)]'></div> */}
         <div className='relative p-[16px] w-[416px] bg-white rounded-lg mb-4 shadow-lg'>
 
-            {/* <Image
+            <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/general/ellipse.svg`}
                 width={36}
                 height={29}
                 alt='icon-ellipse'
                 className='absolute left-[88%] bottom-[97.7%]'
-            /> */}
+            />
             {/* TITLE AND BTN CLOSE */}
             <div className='flex justify-between border-b border-[#ebebeb] mb-[16px] pb-[16px]'>
                 <span className='m-b text-fs-14 text-[#1a202c]'>Revisa tu itinerario</span>
@@ -147,6 +148,6 @@ export default function CartHotelT() {
                 </div>
             </div>
         </div>
-        </>
+        </div>
     )
 }

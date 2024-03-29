@@ -8,15 +8,15 @@ import { useContext } from 'react';
 export default function BannerCallHotelT() {
   const { languageData } = useContext(LanguageContext);
   return (
-    <div className='w-full max-h-[223px] h-[223px]'>
+    <div className='w-full'>
       <picture className='pointer relative'>
         {/* <a href="tel:8009530342" target="_blank" rel="noopener noreferrer"> */}
 
         <Image
           src={`${process.env.NEXT_PUBLIC_URL}banners/desktop/call-d.webp`}
           alt='Banner-Call-Center'
-          width={2000}
-          height={2000}
+          width={1272}
+          height={246}
           className='select-none'
         ></Image>
 
