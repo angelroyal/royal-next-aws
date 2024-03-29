@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../../../assets/styles/general/Swiper.css";
 import LanguageContext from "@/language/LanguageContext";
+// import LanguageContext from "@/language/LanguageContext";
 
 export function BannerHomeTour() {
     const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;

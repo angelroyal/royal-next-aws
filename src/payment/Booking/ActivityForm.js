@@ -115,7 +115,7 @@ export const ActivityForm = (props) => {
             {combinedActivity.details.map((value, index) => (
               <div key={index}>
                 {value.required === true && (
-                  <span class="input-obligations">*</span>
+                  <span className="input-obligations">*</span>
                 )}
 
                 <label className="mb-1">
