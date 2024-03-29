@@ -14,8 +14,8 @@ export default function CartOpen() {
             <Image
                 onClick={() => setOpenCart(cambiarEstado)}
                 src={`${process.env.NEXT_PUBLIC_URL}icons/cart/cart-b.svg`}
-                width={31}
-                height={29}
+                width={26}
+                height={22}
                 alt='icon-cart'
                 className={`transition ${
                     openCart ? 'duration-700 ease-in-out' : 'opacity-80 visible'

@@ -209,6 +209,7 @@ export function BannerExcDiscounts() {
         </div>
       </SwiperSlide>
 
+      {/*TWO CARD TEXT */}
       <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-[500px]:!w-full !bg-gry-30 !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
           <Image src={bannerTraveling} width={266} height={235} className="w-[99%] h-[102%] max-lg:h-[99%] max-[500px]:!w-[81%] max-[425px]:w-[72%] max-[412px]:w-[81%] rounded-lg" alt="Banner Experimenta los mejores tours" />
@@ -219,12 +220,15 @@ export function BannerExcDiscounts() {
           </div>
         </div>
       </SwiperSlide>
-
+      {/*TWO CARD TEXT */}
+      
+      {/* THREE CARD IMAGE HOTEL */}
       <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-[500px]:!w-full !bg-gry-30 !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
           <Image src={bannerTour} width={266} height={235} className="w-[99%] h-[90%] max-lg:w-[96%] max-[500px]:!w-[79%] rounded-lg " alt="Banner tour mes de feb" />
         </div>
       </SwiperSlide>
+      {/* THREE CARD IMAGE HOTEL */}
 
       {/* </div> */}
     </Swiper>
