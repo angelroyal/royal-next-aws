@@ -9,15 +9,7 @@ export default function CartHotelT() {
     return (
         <div className='absolute right-[-15px] top-[48px]'>
 
-            {/* <div className='gb-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)]'></div> */}
-            <Image
-                src={`${process.env.NEXT_PUBLIC_URL}icons/general/ellipse.svg`}
-                width={36}
-                height={29}
-                alt='icon-ellipse'
-                className='absolute left-[88%] bottom-[97.7%] drop-shadow-[0_0_10px_rgba(102,102,102,0.25)] z-[1]'
-            />
-            <div className='relative p-[16px] w-[416px] bg-white rounded-lg mb-4 !shadow-[0_4px_48px_0_rgba(102,102,102,0.25)] z-[2]'>
+            <div className="relative p-[16px] w-[416px] bg-white rounded-lg mb-4 !shadow-[0_4px_48px_0_rgba(102,102,102,0.25)] z-[2] before:content-[' '] before:z-[4] before:w-[2rem] before:h-[1rem] before:block before:bg-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)] before:absolute before:left-[88%] before:top-[-16px]">
 
                 {/* TITLE AND BTN CLOSE */}
                 <div className='flex justify-between border-b border-[#ebebeb] mb-[16px] pb-[16px]'>
@@ -30,11 +22,11 @@ export default function CartHotelT() {
                         className='mr-2'
                     />
                 </div>
-                <div className=''>
+                <div className='max-h-[364px] overflow-y-auto scroll-page-gry'>
                     {/* CARD CART HOTEL */}
-                    {[...Array(3)].map((_, index) => (
+                    {[...Array(4)].map((_, index) => (
                         <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3'>
-                            <div className='p-2 gap-4 flex justify-between w-full'>
+                            <div className='p-2 gap-4 flex justify-between w-full '>
                                 {/* IMAGE CART */}
                                 <img
                                     src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
