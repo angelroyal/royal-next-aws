@@ -7,7 +7,7 @@ import React, { useState, useEffect, useContext, Suspense, lazy } from "react";
 import {
   StepperContext,
   StepperProvider,
-} from "../config/context/steeperContext";
+} from "./context/steeperContext";
 import Booking from "./Booking/Booking";
 import Itinerary from "./itinerary/Itinerary";
 import SkeletonPay from "../utils/skeleton/SkeletonPay";

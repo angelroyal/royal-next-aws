@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { Suspense, lazy, useContext, useEffect, useState } from "react";
 
 import LanguageContext from "../../../../language/LanguageContext";
-import { ParseDateRangeDate } from "../../../../config/Booking/totalOccupants";
+import { ParseDateRangeDate } from "../../../../payment/config/totalOccupants";
 
 import BedSharpIconMH from "../../../../assets/icons/utils/searchBox/room-active.svg";
 import BedSharpIcon from "../../../../assets/icons/utils/searchBox/room-autocomplete.svg";

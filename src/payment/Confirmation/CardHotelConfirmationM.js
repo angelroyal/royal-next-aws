@@ -4,7 +4,7 @@ import React, { useState, useContext } from "react";
 import { AccordionCP } from "../Utils/AccordionCP";
 import LanguageContext from "../../language/LanguageContext";
 import { ImageNotFound } from "../../config/Others/ImageNotFound";
-import { TotalOccupants } from "../../config/Booking/totalOccupants";
+import { TotalOccupants } from "../config/totalOccupants";
 
 import LocationIcon from "../../assets/icons/utils/others/location.svg";
 import lineLocationIcon from "../../assets/icons/utils/others/itinerary-line.webp";

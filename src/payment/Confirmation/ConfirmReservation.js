@@ -4,7 +4,7 @@ import ConfirmationEmail from "../Email/ConfirmationEmail";
 import LanguageContext from "../../language/LanguageContext";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
 import { useCartAxios } from "../../components/Cart/CartAxios";
-import { StepperContext } from "../../config/context/steeperContext";
+import { StepperContext } from "../context/steeperContext";
 import SkeletonConfirmPay from "../../utils/skeleton/SkeletonConfirmPay";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import StructureItineraryWeb from "../itinerary/others/StructureItineraryWeb";

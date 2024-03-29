@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Alert, Dialog, Slide, Snackbar } from "@mui/material";
 
 import LanguageContext from "../../../../language/LanguageContext";
-import { TotalOccupanciesModal } from "../../../../config/Booking/totalOccupants";
+import { TotalOccupanciesModal } from "../../../../payment/config/totalOccupants";
 
 import IconShowMore from "../../../../assets/icons/utils/payment/show_more.svg";
 import CloseDialogLine from "../../../../assets/images/others/line-close-dialog-w.png";

@@ -8,7 +8,7 @@ import { FormClientRH } from "./ClientDataRH";
 import PaymentConektaF from "./PaymentConektaF";
 import AlertTextBooking from "./AlertTextBooking";
 import LanguageContext from "../../language/LanguageContext";
-import { FormDataProvider } from "../../config/context/FormDataContext";
+import { FormDataProvider } from "../context/FormDataContext";
 import { getCombinedActivitys } from "../Services/PaybokingServices.js";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { SkeletonActivitiesTourP } from "../../utils/skeleton/SkeletonActivitiesTourP.js";

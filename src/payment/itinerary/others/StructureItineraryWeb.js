@@ -1,5 +1,5 @@
 import React, { useContext } from /*useContext*/ "react";
-import { StepperContext } from "../../../config/context/steeperContext";
+import { StepperContext } from "../../context/steeperContext";
 import CardTourConfirmation from "@/payment/Confirmation/CardTourConfirmation";
 import CardHotelItinerary from "../CardsItineraryWeb/CardHotelItinerary";
 import CardHotelConfirmation from "@/payment/Confirmation/CardHotelConfirmation";

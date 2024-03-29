@@ -9,7 +9,7 @@ import LanguageContext from "../../language/LanguageContext";
 // import { HotelContext } from "../../config/context/HotelContext";
 import { DialogSearch } from "../Mobile/Hotel/Listing/DialogSearch";
 // import { calculateNights } from "../../Hotel/Utils/calculateNights";
-import { ParseDateRangeDate } from "../../config/Booking/totalOccupants";
+import { ParseDateRangeDate } from "../../payment/config/totalOccupants";
 
 import RoomWhite from "../../assets/icons/hotel/listing/room-white.svg";
 import PersonWhite from "../../assets/icons/hotel/listing/person-white.svg";

@@ -7,7 +7,7 @@ import { MissingRooms } from "../../../../config/Hotel/ModalHotel";
 import LanguageContext from "../../../../language/LanguageContext";
 import { useShowContentHotel } from "../../../../pages/Modal/ModalHotel";
 import axiosWithInterceptor from "../../../../config/Others/axiosWithInterceptor";
-import { TotalOccupanciesModal } from "../../../../config/Booking/totalOccupants";
+import { TotalOccupanciesModal } from "../../../../payment/config/totalOccupants";
 
 import CloseDialogLine from "../../../../assets/images/others/line-close-dialog-w.png";
 import IconShowLess from "../../../../assets/icons/hotel/modal/show_less.svg";

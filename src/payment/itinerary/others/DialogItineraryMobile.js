@@ -3,7 +3,7 @@ import { Dialog, Slide } from "@mui/material";
 import React, { Suspense, lazy, useContext } from "react";
 
 import ReservationShortInfo from "./DetailReservation";
-import { StepperContext } from "../../../config/context/steeperContext";
+import { StepperContext } from "../../context/steeperContext";
 
 import IconShowMore from "../../../assets/icons/utils/payment/show_more.svg";
 

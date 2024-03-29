@@ -5,7 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 
 import LanguageContext from "../../../../language/LanguageContext";
 import CalendarMobile from "../../../../config/Mobile/CalendarConfig";
-import { ParseDateRangeDate } from "../../../../config/Booking/totalOccupants";
+import { ParseDateRangeDate } from "../../../../payment/config/totalOccupants";
 import { toggleIOSScroll } from "../../../../config/Ios/DetectIsIos";
 
 import CloseIcon from "../../../../assets/icons/hotel/modal/close.svg";

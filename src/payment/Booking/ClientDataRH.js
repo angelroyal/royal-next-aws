@@ -7,7 +7,7 @@ import React, { useContext, useEffect, useState } from "react";
 import {
   ProcessDataHB,
   processItineraryData,
-} from "../../config/Booking/processData";
+} from "../config/processData";
 import LanguageContext from "../../language/LanguageContext";
 import HotelOrangeIcon from "../../assets/icons/utils/payment/hotel-orange.svg";
 import HotelBlackIcon from "../../assets/icons/utils/payment/hotel-black.svg";
