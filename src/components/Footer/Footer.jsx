@@ -165,7 +165,7 @@ export default function Footer() {
                 {languageData.footer.about.titleConditions}
               </Link>
               
-              <Link href="/policy" className="hover:!text-or-100 no-underline text-white">
+              <Link href="/privacy" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titlePrivacy}
               </Link>
 

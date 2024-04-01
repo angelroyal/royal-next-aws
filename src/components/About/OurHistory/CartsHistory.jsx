@@ -3,10 +3,10 @@ import Image from "next/image";
 import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import LanguageContext from "../../language/LanguageContext";
-import { CardHistoryConfig } from "../../config/Others/CardHistoryContent";
+import LanguageContext from "../../../language/LanguageContext";
+import { CardHistoryConfig } from "../../../config/Others/CardHistoryContent";
 
-import CardHistory from "../../assets/images/others/card-container-h.png";
+import CardHistory from "../../../assets/images/others/card-container-h.png";
 
 export default function CardsHistory() {
   const { languageData } = useContext(LanguageContext);

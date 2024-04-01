@@ -1,10 +1,10 @@
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
-import OurHistory from "@/services/General/OurHistory";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import OurHistory from "@/components/About/OurHistory/OurHistory";
 
 export default function ourHistory() {
   return (

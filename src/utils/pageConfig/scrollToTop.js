@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -33,7 +35,7 @@ export function ScrollButton() {
   return (
     isOccult && (
       <div onClick={handleScrollTop}>
-        <Image src={ButtonUp} alt="ButtonUp" className="scroll-top-button" />
+        <Image src={ButtonUp} alt="ButtonUp" className="fixed bottom-[9rem] right-[14px] width-[50px] h-[50px] flex justify-center items-center cursor-pointer z-[1000]" />
       </div>
     )
   );

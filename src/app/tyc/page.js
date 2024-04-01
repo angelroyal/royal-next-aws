@@ -3,8 +3,9 @@ import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
-import TermsConditions from "@/pages/others/TermsConditions";
+// import TermsConditions from "@/pages/others/TermsConditions";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import { TyC } from "@/components/About/TyC/TyC";
 
 export default function TyCPage() {
   return (
@@ -13,7 +14,7 @@ export default function TyCPage() {
         <CartAxiosProvider>
           <Token />
           <Navigation />
-          <TermsConditions />
+          <TyC />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>
