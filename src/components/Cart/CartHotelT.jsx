@@ -9,11 +9,11 @@ export default function CartHotelT() {
     return (
         <div className='absolute right-[-15px] top-[48px]'>
 
-            <div className="relative p-[16px] w-[416px] bg-white rounded-lg mb-4 !shadow-[0_4px_48px_0_rgba(102,102,102,0.25)] z-[2] before:content-[' '] before:z-[4] before:w-[2rem] before:h-[1rem] before:block before:bg-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)] before:absolute before:left-[88%] before:top-[-16px]">
+            <div className="relative p-[16px] pt-[25px] w-[416px] bg-white rounded-lg mb-4 !shadow-[0_4px_48px_0_rgba(102,102,102,0.25)] z-[2] before:content-[' '] before:z-[4] before:w-[2rem] before:h-[1rem] before:block before:bg-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)] before:absolute before:left-[88%] before:top-[-16px]">
 
                 {/* TITLE AND BTN CLOSE */}
-                <div className='flex justify-between border-b border-[#ebebeb] mb-[16px] pb-[16px]'>
-                    <span className='m-b text-fs-14 text-[#1a202c]'>Revisa tu itinerario</span>
+                <div className='flex justify-between border-b border-[#ebebeb] mb-[16px] pb-[25px]'>
+                    <span className='m-b text-fs-16 text-[#1a202c]'>Revisa tu itinerario</span>
                     <Image
                         src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
                         width={8}
@@ -31,14 +31,14 @@ export default function CartHotelT() {
                                 <img
                                     src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
                                     alt='img-cart-hotel'
-                                    className='w-[100px] h-[100px] rounded-lg'
+                                    className='w-[100px] h-[100px] rounded-lg object-cover'
                                 />
 
                                 {/* INFO CART */}
-                                <div className='w-full'>
-                                    <span className='text-gry-100 text-fs-10 m-m'>Cancun</span>
+                                <div className='w-full leading-4 flex flex-col justify-center'>
+                                    <span className='m-m text-gry-100 text-fs-12 truncate w-[187px] '>Cancun</span>
 
-                                    <h4 className='m-m text-fs-12'>Hotel Xcaret</h4>
+                                    <span className='m-s-b text-fs-14 truncate w-[187px]'>Hotel Xcaret Cancun Cancun Cancun  Cancun Cancun Cancun</span>
 
                                     <div className='flex gap-2'>
                                         <Image
@@ -48,12 +48,12 @@ export default function CartHotelT() {
                                             alt='icon-calendar'
                                         />
 
-                                        <span className='text-gry-100 text-fs-10 m-m '>12/03/2024 | 2:00pm</span>
+                                        <span className=' m-m text-gry-100 text-fs-12 mb-[3px]'>12/03/2024 | 2:00pm</span>
                                     </div>
 
-                                    <span className='text-fs-12 text-or-100'>MXN $10,000</span>
+                                    <span className='m-s-b text-fs-14 text-or-100 mb-[3px]'>MXN $10,000</span>
 
-                                    <div className='flex gap-2'>
+                                    <div className='flex gap-3'>
                                         <div className='flex gap-2'>
                                             <Image
                                                 src={`${process.env.NEXT_PUBLIC_URL}icons/night/night-b.svg`}
@@ -61,7 +61,7 @@ export default function CartHotelT() {
                                                 height={12}
                                                 alt='icon-night'
                                             />
-                                            <span className='text-fs-10 text-gry-100'>2</span>
+                                            <span className=' m-m text-fs-12 text-gry-100'>2</span>
                                         </div>
 
                                         <div className='flex gap-2'>
@@ -71,7 +71,7 @@ export default function CartHotelT() {
                                                 height={12}
                                                 alt='icon-room'
                                             />
-                                            <span className='text-fs-10 text-gry-100'>2</span>
+                                            <span className='m-m text-fs-12 text-gry-100'>2</span>
                                         </div>
 
                                         <div className='flex gap-2'>
@@ -81,7 +81,7 @@ export default function CartHotelT() {
                                                 height={12}
                                                 alt='icon-dult'
                                             />
-                                            <span className='text-fs-10 text-gry-100'>2</span>
+                                            <span className=' m-m text-fs-12 text-gry-100'>2</span>
                                         </div>
                                     </div>
                                 </div>
@@ -117,26 +117,26 @@ export default function CartHotelT() {
                 {/* PRICE CART */}
                 <div className='border-t border-[#ebebeb] mt-[16px] pt-[16px]'>
                     <div className='flex justify-between'>
-                        <span className='text-fs-10 text-gry-100 m-m'>Subtotal</span>
+                        <span className='text-fs-12 text-gry-100 m-m'>Subtotal</span>
 
-                        <span className='text-fs-12 text-gry-100 m-m'>$12,000.00</span>
+                        <span className='text-fs-14 text-gry-100 m-m'>$12,000.00</span>
+                    </div>
+
+                    <div className='flex justify-between mb-[12px]'>
+                        <span className='text-fs-12 text-gry-100 m-m'>impuestos</span>
+
+                        <span className='text-fs-14 text-gry-100 m-m'>$500</span>
                     </div>
 
                     <div className='flex justify-between'>
-                        <span className='text-fs-10 text-gry-100 m-m'>impuestos</span>
+                        <span className='text-fs-14 m-m'>Total</span>
 
-                        <span className='text-fs-12 text-gry-100 m-m'>$500</span>
-                    </div>
-
-                    <div className='flex justify-between'>
-                        <span className='text-fs-12 m-m'>Total</span>
-
-                        <span className='text-fs-16 m-s-b'>$12,000.00</span>
+                        <span className='text-fs-18 m-s-b'>$12,000.<sup>00</sup></span>
                     </div>
 
                     <div className='flex justify-end gap-[16px] mt-[16px]'>
-                        <button className='text-fs-12 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white'>Resetear carrito</button>
-                        <button className='text-fs-12 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-70'>Finalizar compra</button>
+                        <button className='text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white'>Resetear carrito</button>
+                        <button className='text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d]'>Finalizar compra</button>
                     </div>
                 </div>
             </div>
