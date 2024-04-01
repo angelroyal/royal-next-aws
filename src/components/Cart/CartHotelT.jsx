@@ -4,12 +4,12 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 
 export default function CartHotelT() {
+
     const [iconClose, setIconClose] = useState(null);
 
     return (
         <div className='absolute right-[-15px] top-[48px]'>
-
-            <div className="relative p-[16px] pt-[25px] w-[416px] bg-white rounded-lg mb-4 !shadow-[0_4px_48px_0_rgba(102,102,102,0.25)] z-[2] before:content-[' '] before:z-[4] before:w-[2rem] before:h-[1rem] before:block before:bg-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)] before:absolute before:left-[88%] before:top-[-16px]">
+            <div className="relative p-[16px] pt-[25px] w-[416px] bg-white rounded-lg !shadow-[0_4px_48px_0_rgba(102,102,102,0.25)] z-[2] before:content-[' '] before:z-[4] before:w-[3rem] before:h-[3rem] before:block before:bg-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)] before:absolute before:left-[88%] before:top-[-14px] before:bg-no-repeat">
 
                 {/* TITLE AND BTN CLOSE */}
                 <div className='flex justify-between border-b border-[#ebebeb] mb-[16px] pb-[25px]'>
@@ -22,11 +22,14 @@ export default function CartHotelT() {
                         className='mr-2'
                     />
                 </div>
+
                 <div className='max-h-[364px] overflow-y-auto scroll-page-gry'>
                     {/* CARD CART HOTEL */}
                     {[...Array(4)].map((_, index) => (
-                        <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3'>
+                        <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3 mr-[16px]'>
+
                             <div className='p-2 gap-4 flex justify-between w-full '>
+
                                 {/* IMAGE CART */}
                                 <img
                                     src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
@@ -86,11 +89,12 @@ export default function CartHotelT() {
                                     </div>
                                 </div>
                             </div>
+
                             {/* ICON DELETE */}
                             <div onMouseOver={() => setIconClose(index)} onMouseOut={() => setIconClose(null)} className={`${iconClose === index
                                 ? "transition duration-500 ease-in-out bg-red-100"
                                 : ""
-                                } w-[80px] flex justify-center items-center rounded-r-lg`}
+                                } w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
                             >
 
                                 {iconClose === index ? (
@@ -114,6 +118,7 @@ export default function CartHotelT() {
                     {/* END CART HOTEL */}
 
                 </div>
+
                 {/* PRICE CART */}
                 <div className='border-t border-[#ebebeb] mt-[16px] pt-[16px]'>
                     <div className='flex justify-between'>
@@ -129,7 +134,7 @@ export default function CartHotelT() {
                     </div>
 
                     <div className='flex justify-between'>
-                        <span className='text-fs-14 m-m'>Total</span>
+                        <span className='text-fs-14 m-s-b'>Total</span>
 
                         <span className='text-fs-18 m-s-b'>$12,000.<sup>00</sup></span>
                     </div>

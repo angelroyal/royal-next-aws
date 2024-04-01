@@ -1,28 +1,29 @@
 "use client";
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
 import CartHotelT from './CartHotelT';
+import React, { useEffect, useRef, useState } from 'react'
 
 export default function CartOpen() {
 
   const [openCart, setOpenCart] = useState(false);
 
-  const cambiarEstado = () => { setOpenCart(!openCart); }
+  const changeBoolean = () => { setOpenCart(!openCart); }
+
   const ref = useRef(null);
 
   useEffect(() => {
-    // Agregar un event listener cuando el componente se monta
+    // ADD AN EVENT LISTENER
     document.addEventListener('click', handleClickOutside);
 
-    // Limpiar el event listener cuando el componente se desmonta
+    // CLEAR THE EVENT LISTENER
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
+  //CLICK OCCURRED OUTSIDE THE DIVE, CLOSE THE DIV 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      // Si el clic ocurrió fuera del div, cierra el div
       setOpenCart(false);
     }
   };
@@ -30,14 +31,16 @@ export default function CartOpen() {
   return (
 
     <div ref={ref} className='relative'>
+
       <Image
-        onClick={() => setOpenCart(cambiarEstado)}
+        onClick={() => setOpenCart(changeBoolean)}
         src={`${process.env.NEXT_PUBLIC_URL}icons/cart/cart-b.svg`}
         width={26}
         height={22}
         alt='icon-cart'
         className="transition cursor-pointer hover:drop-shadow-xl"
       />
+
       {openCart === true ? (
         <CartHotelT />
       ) : (
