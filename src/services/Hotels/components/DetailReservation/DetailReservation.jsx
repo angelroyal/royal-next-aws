@@ -5,16 +5,22 @@ import LanguageContext from "@/language/LanguageContext";
 import { useContext, useEffect, useState } from "react";
 
 import SelectRooms from "./SelectRooms";
-import RoomsHotelContext from "../../context/RoomsHotelContext";
 import AddCartHotel from "./AddCartHotel";
+import { useCartAxios } from "@/components/Cart/CartAxios";
+import RoomsHotelContext from "../../context/RoomsHotelContext";
+import { LimitPriceAlert } from "../AlertsHotel/HotelInformationAlerts";
 
 export default function DetailReservation() {
+  const limitPrice = 95000;
   const [open, setOpen] = useState(false);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [priceRooms, setTotalPrice] = useState(0);
+  const [isLimitPrice, setISLimitPrice] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
   const { selectedRooms } = useContext(RoomsHotelContext);
+  const { totalPrice } = useCartAxios();
   // console.log(selectedRooms);
+  // console.log(totalPrice);
 
   // TOTAL CALCULATION
   useEffect(() => {
@@ -24,8 +30,19 @@ export default function DetailReservation() {
         0
       );
       setTotalPrice(price);
+    } else {
+      setTotalPrice(0);
     }
   }, [selectedRooms]);
+
+  // VALIDATION LIMIT PRICE
+  useEffect(() => {
+    if (priceRooms + totalPrice > limitPrice) {
+      setISLimitPrice(true);
+    } else {
+      setISLimitPrice(false);
+    }
+  }, [priceRooms]);
 
   // HIDE RESERVATION DETAILS FUNCTION
   const [isVisible, setIsVisible] = useState(false);
@@ -64,7 +81,7 @@ export default function DetailReservation() {
             } relative`}
           >
             {/* ROOMS SELECTED */}
-            {open === true && <SelectRooms close={()=>setOpen(false)} />}
+            {open === true && <SelectRooms close={() => setOpen(false)} />}
 
             {/* BASIC INFORMATION OF THE SELECTED ROOMS */}
             <div className="bg-white absolute bottom-0 left-0 w-full z-[3]">
@@ -85,10 +102,10 @@ export default function DetailReservation() {
                           MXN{" "}
                         </span>
                         $
-                        {Math.floor(totalPrice)
+                        {Math.floor(priceRooms)
                           .toLocaleString("es-MX", { currency: "MXN" })
                           .replace(".00", "")}
-                        .<sup>{(totalPrice % 1).toFixed(2).slice(2)}</sup>
+                        .<sup>{(priceRooms % 1).toFixed(2).slice(2)}</sup>
                       </h4>
                       <span className="text-grn-100 text-fs-8 m-s-b rounded w-max bg-grn-50 py-1 px-2 h-max">
                         Impuestos incluidos
@@ -120,7 +137,7 @@ export default function DetailReservation() {
                     </div>
                   )}
 
-                  {selectedRooms.length > 0 ? (
+                  {selectedRooms.length > 0 && !isLimitPrice ? (
                     <AddCartHotel />
                   ) : (
                     <div className="select-none	rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
@@ -130,13 +147,22 @@ export default function DetailReservation() {
                 </div>
               </Container>
             </div>
+            {/* ALERT LIMIT PRICE */}
+
+            {isLimitPrice && (
+              <div
+                className={`transition-transform absolute mr-2 right-0 top-[-8rem] lg:top-[-7rem] z-[3] transform translate-x-0`}
+              >
+                <LimitPriceAlert />
+              </div>
+            )}
 
             {/* OPEN ROOMS SELECTED */}
             <button
               disabled={selectedRooms.length === 0}
               onClick={() => setOpen(!open)}
               className={`${
-                selectedRooms.length === 0 && "cursor-default brightness-[0.6]"
+                selectedRooms.length === 0 && "cursor-not-allowed brightness-[0.6]"
               } top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border border-gry-100`}
             >
               <img

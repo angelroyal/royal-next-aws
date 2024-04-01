@@ -5,16 +5,17 @@ import { saveToCart } from "../../Api/requestHotel";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
+import { ReservationFailed } from "../AlertsHotel/HotelInformationAlerts";
 
 export default function AddCartHotel() {
   const router = useRouter();
   const { fetchData } = useCartAxios();
   const { languageData } = useContext(LanguageContext);
 
-  const { selectedRooms, requestBodyRooms, keyHotel } =
+  const { selectedRooms, requestBodyRooms, keyHotel, setIsFailedReservation } =
     useContext(RoomsHotelContext);
 
-    // HANDLE ADD CART HOTEL
+  // HANDLE ADD CART HOTEL
 
   const handleReserveNow = async () => {
     try {
@@ -48,6 +49,8 @@ export default function AddCartHotel() {
       }
 
       const response = await saveToCart(saveRequestCart);
+      // console.log(response);
+      // return;
 
       const cartUid = response.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
@@ -61,6 +64,12 @@ export default function AddCartHotel() {
       }, 1000);
     } catch (error) {
       console.log(error);
+      if(error.response.status >= 400){
+        console.log("entra error");
+        setIsFailedReservation(true);
+      }else{
+        setIsFailedReservation(false);
+      }
     }
   };
 

@@ -1489,5 +1489,11 @@ export const en = {
     find: "Find",
     filter: "Filter",
     order: "Order",
+  },
+
+  Alerts:{
+    hotel:{
+      title:"Oops, there was a problem adding to the shopping cart!"
+    }
   }
 };

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import RoomsDetails from "./RoomsDetails";
 import { SearchModalHotel } from "../GalleryModal/SearchModalHotel";
-import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export default function DetailsHotel(codeHotel) {
 
