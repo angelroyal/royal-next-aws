@@ -107,7 +107,7 @@ export default function SendHotel() {
           className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
             !selectedOption || !validFirstDay || !validSecondDay
               ? "bg-or-50"
-              : "bg-or-100 hover:!bg-or-70"
+              : "bg-or-100 hoveLor:!bg-or-70"
           }`}
           // eslint-disable-next-line react/no-unknown-property
           variant="contained"

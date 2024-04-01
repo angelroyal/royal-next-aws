@@ -55,8 +55,8 @@ export default function RoomsDetails(codeHotel) {
     return acc;
   }, {});
 
-  console.log(groupedRooms);
-  console.log(selectedRooms);
+  // console.log(groupedRooms);
+  // console.log(selectedRooms);
 
   return (
     <>

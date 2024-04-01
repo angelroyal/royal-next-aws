@@ -33,7 +33,7 @@ export function parseQueryParams(url, codeHotel) {
     checkIn = newCheckInDate.toISOString().split('T')[0];
   }
 
-  if (checkInDate <= currentDate) {
+  if (checkInDate <= currentDate || checkIn > checkOut) {
     const newCheckOutDate = new Date(currentDate);
     newCheckOutDate.setMonth(currentDate.getMonth() + 1);
     newCheckOutDate.setDate(currentDate.getDate() + 2);

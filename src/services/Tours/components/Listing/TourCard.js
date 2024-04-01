@@ -178,7 +178,7 @@ export default function TourCard(props) {
                   className="cont-see-details-tour width100"
                   // onClick={() => openDialog(tour)}
                   // href={buildUrlWithParams(requestQueryParams)}
-                  href="/tours"
+                  href={`/tour/${tour.name}`}
                 >
                   {languageData.cartTour.seeDetails}
                 </Link>

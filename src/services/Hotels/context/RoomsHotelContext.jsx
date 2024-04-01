@@ -10,6 +10,7 @@ export const RoomsHotelProvider = ({ children }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const [requestBodyRooms, setRequestBodyRooms] = useState(null);
   const [keyHotel, setKeyHotel] = useState(null);
+  const [isFailedReservation, setIsFailedReservation] = useState(false);
 
   const handleFetchPostRooms = async (requestBody) => {
     try {
@@ -33,6 +34,8 @@ export const RoomsHotelProvider = ({ children }) => {
         setRequestBodyRooms,
         keyHotel,
         setKeyHotel,
+        isFailedReservation,
+        setIsFailedReservation,
       }}
     >
       {children}

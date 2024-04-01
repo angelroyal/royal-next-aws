@@ -1488,5 +1488,12 @@ export const es = {
     find: "Buscar",
     filter: "Filtrar",
     order: "Ordenar",
+  },
+
+  Alerts:{
+    hotel:{
+      title:"Ups ¡Ocurrio un problema al agregar al carrito de compras!"
+    }
   }
+  
 };

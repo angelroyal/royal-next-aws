@@ -57,7 +57,7 @@ export default function SelectRooms({close}) {
               {selectedRooms.map((reservation, index) => (
                 <div className="p-2 flex gap-x-4 md:w-max" key={index}>
                   <img
-                    className="rounded-lg"
+                    className="rounded-lg h-[80px] w-[80px] object-cover"
                     src={reservation.image}
                     // src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
                     alt={reservation.name}

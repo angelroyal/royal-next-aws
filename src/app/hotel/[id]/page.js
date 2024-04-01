@@ -11,8 +11,11 @@ import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
 import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
+import { useContext } from "react";
+import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
 
 export async function generateMetadata({ params }) {
+
   // Token JWT
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5nZXJwcmludCI6ImE5MzhkMWIxNzZiNjk3Y2ZlMGFiODg5YWJiZWMxYjdiIiwidWlkIjoiZTQ3YmJmODMtZTJmOS00OTZiLTllMTgtYjM4YjE4NTYzYmVmIiwicGFzc3dvcmQiOiIkMmEkMTAkUTE1NnRJbFh2VjRRT3BiQWdmN1c4dUREL00yTHkyMUxDVnlHYUFUQWdhbnMzZ3RmM0FwSC4iLCJpYXQiOjE3MTEyMDk4NDAsImV4cCI6MTcxMTIxMTY0MH0.8je_6ourqIU1W94ei7sjdfcIJXZbQY3VwnrkM3nNpkE";
@@ -56,8 +59,6 @@ export default async function DetailPageHotel({ params }) {
   );
 
   const hotelData = await response.json();
-  // console.log(hotelData);
-
   return (
     <LanguageProvider>
       <TokenProvider>
@@ -70,6 +71,9 @@ export default async function DetailPageHotel({ params }) {
                 <GalleryModal hotel={hotelData} />
                 <DetailsHotel codeHotel={params.id} />
               </Container>
+              
+              <ReservationFailed/>
+
               <DetailReservation />
             </div>
             <Footer />
