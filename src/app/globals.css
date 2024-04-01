@@ -57,18 +57,41 @@ body {
   font-weight: 500;
 }
 
-
-.scroll-page-blue::-webkit-scrollbar, body::-webkit-scrollbar {
+/* SCROLL BLUE */
+.scroll-page-blue::-webkit-scrollbar,
+body::-webkit-scrollbar {
   width: 5px !important;
 }
-.scroll-page-blue::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+
+.scroll-page-blue::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
   background-color: #2743A6 !important;
   border-radius: 5px !important;
 }
-.scroll-page-blue::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+
+.scroll-page-blue::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
   background-color: transparent !important;
 }
 
-#check-in:active{
+/* END SCROLL BLUE */
+
+/* SCROLL GRY */
+.scroll-page-gry::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+.scroll-page-gry::-webkit-scrollbar-thumb {
+  background-color: #d1d2d5 !important;
+  border-radius: 5px !important;
+}
+
+.scroll-page-gry::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+/* END SCROLL GRY */
+
+#check-in:active {
   border: none !important;
 }

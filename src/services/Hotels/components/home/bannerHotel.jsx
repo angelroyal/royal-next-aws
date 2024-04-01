@@ -183,6 +183,9 @@ export function BannerExcDiscounts() {
       // loop={true}
       breakpoints={{
         0: {
+          slidesPerView: .5,
+        },
+        350: {
           slidesPerView: 1,
         },
         768: {
@@ -199,29 +202,33 @@ export function BannerExcDiscounts() {
 
 
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
-      <SwiperSlide className="!w-[50%] max-lg:!w-full max-md:!w-full !bg-gry-30 !bg-white">
+      <SwiperSlide className="!w-1/2 max-lg:!w-full !bg-gry-30 !bg-white">
         <div className="w-full flex justify-center !bg-white">
-          <Image src={excDiscounts} width={547} height={235} className="h-auto max-sm:hidden w-full h-full rounded-lg object-cover" alt="Banner Exc Discounts" />
-          <Image src={excDiscountsMobile} width={332} height={235} className="sm:hidden  rounded-lg object-cover bg-gry-30 !bg-white" alt="Banner Exc Discounts mobile" />
+          <Image src={excDiscounts} width={547} height={235} className="h-auto max-[500px]:hidden w-full h-full rounded-lg object-cover" alt="Banner Exc Discounts" />
+          <Image src={excDiscountsMobile} width={332} height={235} className="min-[500px]:hidden w-full h-full  rounded-lg object-cover bg-gry-30 !bg-white" alt="Banner Exc Discounts mobile" />
         </div>
       </SwiperSlide>
 
-      <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      {/*TWO CARD TEXT */}
+      <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-[500px]:!w-full !bg-gry-30 !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
-          <Image src={bannerTraveling} width={266} height={235} className="w-[99%] h-[102%] max-lg:h-[99%] max-sm:w-[71%] rounded-lg" alt="Banner Experimenta los mejores tours" />
+          <Image src={bannerTraveling} width={266} height={235} className="w-[99%] h-[102%] max-lg:h-[99%] max-[500px]:!w-[81%] max-[425px]:w-[72%] max-[412px]:w-[81%] rounded-lg" alt="Banner Experimenta los mejores tours" />
 
-          <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[26%] max-sm:top-[40px]text-fs-">
-            <h2 className="m-b w-9/12 text-white text-fs-28 mb-4 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fs-28 max-md:text-fs-18">{languageData.titleBanners.titleTourMexico}</h2>
-            <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-22 text-left max-2xl:text-fs-18 max-xl:text-fs-16 max-lg:text-fs-22 max-md:text-fs-16" >{languageData.titleBanners.subtitleTourM}</h4>
+          <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[26%] max-sm:top-[40px]">
+            <h2 className="m-b w-9/12 text-white text-fs-28 mb-4 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fsw-48 max-[500px]:text-fs-24">{languageData.titleBanners.titleTourMexico}</h2>
+            <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-22 text-left max-2xl:text-fs-18 max-xl:text-fs-16 max-lg:text-fsw-38 max-[500px]:text-fs-22" >{languageData.titleBanners.subtitleTourM}</h4>
           </div>
         </div>
       </SwiperSlide>
-
-      <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      {/*TWO CARD TEXT */}
+      
+      {/* THREE CARD IMAGE HOTEL */}
+      <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-[500px]:!w-full !bg-gry-30 !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
-          <Image src={bannerTour} width={266} height={235} className="w-[99%] h-[90%] max-lg:h-[87%] max-sm:h-[74%] max-sm:w-auto rounded-lg " alt="Banner tour mes de feb" />
+          <Image src={bannerTour} width={266} height={235} className="w-[99%] h-[90%] max-lg:w-[96%] max-[500px]:!w-[79%] rounded-lg " alt="Banner tour mes de feb" />
         </div>
       </SwiperSlide>
+      {/* THREE CARD IMAGE HOTEL */}
 
       {/* </div> */}
     </Swiper>

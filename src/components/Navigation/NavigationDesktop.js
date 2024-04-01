@@ -8,6 +8,7 @@ import { Container } from "@/config/Others/Container";
 import { LanguageSelector } from "@/language/LanguageSelector";
 
 import { SelectCurrency } from "./SelectCurrency";
+import CartOpen from "../Cart/CartOpen";
 
 export default function NavigationDesktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function NavigationDesktop() {
             <LanguageSelector />
 
             <Cart />
+            <CartOpen/>
           </div>
 
           <nav

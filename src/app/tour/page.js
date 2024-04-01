@@ -15,8 +15,9 @@ import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import { PopularState } from "@/services/Hotels/components/home/PopularEstates";
 import BannerFooterTour from "@/services/Tours/Home/bannerFooterTour";
 import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
-import SearchBox from "@/hooks/SearchBox";
-import CartHotelT from "@/components/Cart/CartHotelT";
+// import SearchBox from "@/hooks/SearchBox";
+// import CartHotelT from "@/components/Cart/CartHotelT";
+import CartOpen from "@/components/Cart/CartOpen";
 export default function Home() {
   return (
     <>
@@ -29,7 +30,7 @@ export default function Home() {
             <div className="relative flex justify-center align-center mb-[224px] lg:mb-[118px]">
               <BannerHeaderTour />
               <div className="absolute top-[67%] sm:top-[60%] md:top-[44%] lg:top-[73%] xl:top-[80%] 2xl:top-[69%] w-full flex flex-col items-center">
-                <SearchBox />
+                {/* <SearchBox /> */}
               </div>
             </div>
             <Container>
@@ -38,7 +39,8 @@ export default function Home() {
               <PopularState />
               <TopActivities />
               <BannerFooterTour />
-              <CartHotelT />
+              <CartOpen />
+              {/* <CartHotelT /> */}
             </Container>
             {/* END LP */}
 

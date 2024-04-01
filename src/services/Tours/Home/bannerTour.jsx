@@ -20,7 +20,7 @@ export function BannerHomeTour() {
         <Swiper
             slidesPerView={3}
             spaceBetween={16}
-            className="h-[235px] my-[40px]"
+            className="my-[40px]"
             id="swiper-banner-home-tour"
             initialSlide={0}
             // loop={true}
@@ -41,10 +41,10 @@ export function BannerHomeTour() {
             }}>
 
             {/* ONE CARD IMAGE AND TEXT */}
-            
-            <SwiperSlide className="!w-1/2 max-lg:!w-full max-sm:!w-full !bg-gry-30 !rounded-lg">
+
+            <SwiperSlide className="!w-[48%] max-lg:!w-full max-sm:!w-full !bg-gry-30 !rounded-lg">
                 <div className="bg-black rounded-lg ">
-                    <div className="relative w-full h-[235px] rounded-lg bg-[#1B1464] max-lg:w-full ">
+                    <div className="relative w-full h-[273px] max-[1395px]:!h-[236px] max-xl:h-[235px] max-lg:h-[292px] rounded-lg bg-[#1B1464] max-lg:w-full ">
 
                         <div className="absolute top-[0%] left-[0%] w-[65%] h-[80%] pr-[50px] bg-[#2743A6] rounded-tl-lg rounded-bl-lg pt-[32px] pl-[22px] max-w-[545px]">
                             <h2 className="text-white text-fs-24 m-b text-left w-[254px] max-sm:text-fs-18 max-sm:w-[159px] !select-all">
@@ -54,13 +54,13 @@ export function BannerHomeTour() {
 
                         <div className="absolute bottom-[35px] left-0 bg-[#1B1464] w-[57%] h-[35%] rounded-bl-lg transform skew-y-[-4deg]"></div>
 
-                        <div className="absolute bottom-0 left-0 h-[45%] pl-[22px] w-[43%]">
+                        <div className="absolute bottom-[-24px] left-0 h-[45%] pl-[22px] w-[43%] max-lg:bottom-[-24px]">
                             <p className="text-white text-fs-12 m-m max-sm:text-fs-10 !select-all">
                                 {languageData.bannersFooter.descriptionOfTheDestination}
                             </p>
                         </div>
 
-                        <div className="absolute h-[235px] right-0 rounded-lg  clip-custom max-xl:w-[320px] max-lg:w-[71%]">
+                        <div className="absolute h-[273px] max-xl:h-[235px] max-lg:h-[292px] right-0 rounded-lg  clip-custom max-xl:w-[299px] max-lg:w-[71%]">
                             <Image src={excDiscounts} width={547} height={273} className="w-full h-full rounded-r-lg object-cover select-none" alt="Banner cenote san antonio" />
                         </div>
 
@@ -79,23 +79,22 @@ export function BannerHomeTour() {
             {/*END ONE CARD IMAGE AND TEXT */}
 
             {/*TWO CARD TEXT */}
-            <SwiperSlide className="!w-[266px] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center">
+            <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-[500px]:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+                <div className="relative w-full flex justify-center ">
+                    <Image src={bannerTraveling} width={266} height={235} className="w-[99%] h-[102%] max-lg:h-[99%] max-[500px]:!w-[81%] max-[425px]:w-[72%] max-[412px]:w-[81%] rounded-lg" alt="Banner Experimenta los mejores tours" />
 
-                <div className="relative w-full h-[235px] flex justify-center">
-                    <Image src={bannerTraveling} width={266} height={235} className="w-[99%] h-[99%] max-sm:w-auto rounded-lg select-none" alt="Banner Experimenta los mejores tours" />
-
-                    <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[26%] max-sm:top-[40px] max-sm:w-[53%]">
-                        <h2 className="m-b w-9/12 text-white text-fs-20 mb-4 text-left">{languageData.titleBanners.titleTourMexico}</h2>
-                        <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-18 text-left" >{languageData.titleBanners.subtitleTourM}</h4>
+                    <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[26%] max-sm:top-[40px]">
+                        <h2 className="m-b w-9/12 text-white text-fs-28 mb-4 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fsw-48 max-[500px]:text-fs-24">{languageData.titleBanners.titleTourMexico}</h2>
+                        <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-22 text-left max-2xl:text-fs-18 max-xl:text-fs-16 max-lg:text-fsw-38 max-[500px]:text-fs-22" >{languageData.titleBanners.subtitleTourM}</h4>
                     </div>
                 </div>
             </SwiperSlide>
             {/*END TWO CARD TEXT */}
 
             {/* THREE CARD IMAGE TOUR */}
-            <SwiperSlide className="!w-[266px] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center">
-                <div className="w-full h-[235px] flex justify-center">
-                    <Image src={bannerTour} width={266} height={235} className="w-[99%] h-[99%] max-sm:w-auto rounded-lg select-none" alt="Banner tour mes de feb" />
+            <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-[500px]:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+                <div className="w-full flex justify-center">
+                    <Image src={bannerTour} width={266} height={235} className="w-[99%] h-[90%] max-lg:w-[96%] max-[500px]:!w-[79%] rounded-lg " alt="Banner tour mes de feb" />
                 </div>
             </SwiperSlide>
             {/*END THREE CARD IMAGE TOUR */}
