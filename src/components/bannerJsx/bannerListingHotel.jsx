@@ -9,14 +9,14 @@ import LanguageContext from "../../language/LanguageContext";
 // import { HotelContext } from "../../config/context/HotelContext";
 import { DialogSearch } from "../Mobile/Hotel/Listing/DialogSearch";
 // import { calculateNights } from "../../Hotel/Utils/calculateNights";
-import { ParseDateRangeDate } from "../../config/Booking/totalOccupants";
+import { ParseDateRangeDate } from "../../payment/config/totalOccupants";
 
 import RoomWhite from "../../assets/icons/hotel/listing/room-white.svg";
 import PersonWhite from "../../assets/icons/hotel/listing/person-white.svg";
 import LocationWhite from "../../assets/icons/hotel/listing/location-white.svg";
 import CalendarWhite from "../../assets/icons/hotel/listing/calendar-white.svg";
-import { DialogFilterHotel } from "../../Hotel/Components/Dialog/DialogFilterHotel";
-import { DialogOrderHotel } from "../../Hotel/Components/Dialog/DialogOrderHotel";
+import { DialogFilterHotel } from "../../services/Hotels/components/Dialog/DialogFilterHotel";
+import { DialogOrderHotel } from "../../services/Hotels/components/Dialog/DialogOrderHotel";
 
 export function BannerListingHotelTop() {
   const { languageData } = useContext(LanguageContext);

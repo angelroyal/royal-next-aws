@@ -2,7 +2,7 @@ import Image from "next/image";
 import OrderingHotel from "../Listing/OrderingHotel";
 import { Button, Dialog, Slide } from "@mui/material";
 import React, { useContext, useEffect, useRef } from "react";
-import ListingHotelContext from "../../Context/ListingHotelContext";
+import ListingHotelContext from "../../context/ListingHotelContext";
 
 import "../../../assets/styles/mobile/DialogSearchHotel.css";
 import CloseIcon from "../../../assets/icons/hotel/modal/close_active.svg";

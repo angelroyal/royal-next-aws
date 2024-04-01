@@ -1,25 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import { Pagination } from "@mui/material";
-import { Col, Row } from "react-bootstrap";
 import React, { useEffect, useContext, useState } from "react";
 
-import OrderingHotel from "../Listing/OrderingHotel";
-import FiltersHotels from "../../Utils/FiltersHotels";
+import OrderingHotel from "./OrderingHotel";
+import FiltersHotels from "../../utils/FiltersHotels";
 import { Container } from "@/config/Others/Container";
-import { AnimatedNumber } from "../../Utils/AnimatedNumber";
-import { useToken } from "../../../config/context/AuthContext";
-import LanguageContext from "../../../language/LanguageContext";
-import ListingHotelContext from "../../Context/ListingHotelContext";
-import { scrollToTop } from "../../../utils/pageConfig/scrollToTop";
-import SkeletonChildren from "../../../utils/skeleton/SkeletonChildren";
+import { AnimatedNumber } from "../../utils/AnimatedNumber";
+import { useToken } from "../../../../config/context/AuthContext";
+import LanguageContext from "../../../../language/LanguageContext";
+import ListingHotelContext from "../../context/ListingHotelContext";
+import { scrollToTop } from "../../../../utils/pageConfig/scrollToTop";
+import SkeletonChildren from "../../../../utils/skeleton/SkeletonChildren";
 // import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
-import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
+// import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
-import IconNoAvailability from "../../../assets/images/others/no-availability-hotel.jpg";
-import SearchBox from "@/hooks/SearchBox";
+import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
+import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
@@ -79,8 +77,8 @@ export default function ListingHotelW(props) {
       {/* <BannerListingHotelTop /> */}
       <div className="flex justify-around">
         <div className="w-3/12 mt-10">
-          {/* <SearchBoxMobile /> */}
-          <SearchBox />
+          <SearchBoxMobile />
+          {/* <SearchBox /> */}
           {/* <FiltersHotel/> */}
           <FiltersHotels />
         </div>
@@ -162,8 +160,8 @@ export default function ListingHotelW(props) {
           )}
         </div>
       </div>
-
-      <BannerListingHotelBottom />
+      <b />
+      <BannerCallHotelT />
     </Container>
   );
 }

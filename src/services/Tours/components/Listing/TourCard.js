@@ -2,9 +2,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "../../../../assets/styles/general/Swiper.css";
 
+import Link from "next/link";
 import Image from "next/image";
 import { Rating } from "@mui/material";
-// import { Autoplay, Pagination } from "swiper";
 import { Pagination } from "swiper/modules";
 import React, { useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,16 +24,19 @@ export default function TourCard(props) {
 
   const description = tour.description;
 
-  // MODAL TOUR
-  const [open, setOpen] = useState(false);
-  const [valueSelected, setValueSelected] = useState(null);
-
   const { languageData } = useContext(LanguageContext);
 
-  const openDialog = (cardInfo) => {
-    setOpen(true);
-    setValueSelected(cardInfo);
-    setTourInfo(cardInfo);
+  const buildUrlWithParams = (queryParams) => {
+    const baseUrl = `/hotel/${hotel.codeName}`;
+
+    const occupanciesString = JSON.stringify(queryParams.occupancies);
+
+    const queryParamsString = new URLSearchParams({
+      ...queryParams,
+      occupancies: encodeURIComponent(occupanciesString),
+    }).toString();
+
+    return `${baseUrl}?${queryParamsString}`;
   };
 
   return (
@@ -49,9 +52,7 @@ export default function TourCard(props) {
                 clickable: true,
               }}
               modules={[Pagination]}
-              // modules={[Pagination, Autoplay]}
               className="swiperCardTour swiperCardTourLP"
-              // id="swiper-tour-list"
             >
               {tour.images && tour.images.length > 0 ? (
                 tour.images.slice(0, 5).map((tourImage, index) => (
@@ -173,12 +174,14 @@ export default function TourCard(props) {
                 </div>
 
                 {/* TEXT SEE-DETAILS LP-15-02-24 */}
-                <button
+                <Link
                   className="cont-see-details-tour width100"
-                  onClick={() => openDialog(tour)}
+                  // onClick={() => openDialog(tour)}
+                  // href={buildUrlWithParams(requestQueryParams)}
+                  href="/tours"
                 >
                   {languageData.cartTour.seeDetails}
-                </button>
+                </Link>
               </div>
             </div>
           </div>

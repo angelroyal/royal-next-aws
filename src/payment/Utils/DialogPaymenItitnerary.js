@@ -6,7 +6,7 @@ import ModalShare from "../../utils/booking/ModalShare";
 import LanguageContext from "../../language/LanguageContext";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
 import { ShareContainer } from "../../utils/booking/ShareContainer";
-import { StepperContext } from "../../config/context/steeperContext";
+import { StepperContext } from "../context/steeperContext";
 import { DialogItineraryMobile } from "../itinerary/others/DialogItineraryMobile";
 
 import IconShowLess from "../../assets/icons/hotel/modal/show_less.svg";

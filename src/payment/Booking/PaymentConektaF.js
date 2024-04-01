@@ -9,7 +9,7 @@ import React, {
 import { Form } from "react-bootstrap";
 import { CircularProgress } from "@mui/material";
 
-import { StepperContext } from "../../config/context/steeperContext";
+import { StepperContext } from "../context/steeperContext";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 

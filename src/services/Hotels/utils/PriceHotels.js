@@ -1,8 +1,8 @@
 import TextField from "@mui/material/TextField";
 import React, { useState, useContext } from "react";
 
-import LanguageContext from "../../language/LanguageContext";
-import ListingHotelContext from "../Context/ListingHotelContext";
+import LanguageContext from "../../../language/LanguageContext";
+import ListingHotelContext from "../context/ListingHotelContext";
 
 export default function PriceHotels() {
   const { setPricing } = useContext(ListingHotelContext);

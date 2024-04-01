@@ -5,7 +5,6 @@ import React, { forwardRef, useContext, useState } from "react";
 
 import MSearchHotel from "./MSearchHotel";
 import LanguageContext from "../../../../language/LanguageContext";
-// import { GetIconActivation } from "../../../../utils/navigation/GetIconActivation";
 
 import "../../../../assets/styles/mobile/SearchHotelDialog.css";
 // import { useLocation } from "react-router-dom/cjs/react-router-dom";

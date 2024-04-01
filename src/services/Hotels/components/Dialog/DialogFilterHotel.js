@@ -3,9 +3,9 @@ import React, { useContext } from "react";
 import DialogActions from "@mui/material/DialogActions";
 import { Button, Dialog, Fab, Slide } from "@mui/material";
 
-import FiltersHotels from "../../Utils/FiltersHotels";
+import FiltersHotels from "../../utils/FiltersHotels";
 import "../../../assets/styles/mobile/DialogSearchHotel.css";
-import LanguageContext from "../../../language/LanguageContext";
+import LanguageContext from "../../../../language/LanguageContext";
 
 import CloseIcon from "../../../assets/icons/hotel/modal/close_active.svg";
 

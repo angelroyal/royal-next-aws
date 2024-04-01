@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
-import { StepperContext } from "../../../config/context/steeperContext";
+import { StepperContext } from "../../context/steeperContext";
 import { SkeletonConfirmPaymentDetails } from "../../../utils/skeleton/SkeletonConfirmPaymentDetails";
 
 import IconCheck from "../../../assets/icons/utils/others/check.svg";

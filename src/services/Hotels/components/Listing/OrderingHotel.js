@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import { ordering } from "../../../config/Hotel/filters";
-import LanguageContext from "../../../language/LanguageContext";
-import ListingHotelContext from "../../Context/ListingHotelContext";
+import { ordering } from "../../config/filters";
+import LanguageContext from "../../../../language/LanguageContext";
+import ListingHotelContext from "../../context/ListingHotelContext";
 
 export default function OrderingHotel() {
   const { languageData } = useContext(LanguageContext);

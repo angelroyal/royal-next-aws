@@ -1,5 +1,5 @@
 import { API_POST_AVAILABILITY } from "./apiRoutesHotel";
-import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
+import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 export const fetchPostHotels = async (requestBody) => {
   try {

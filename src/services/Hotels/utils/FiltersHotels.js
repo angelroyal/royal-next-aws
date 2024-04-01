@@ -11,13 +11,10 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import PriceHotels from "./PriceHotels";
+import LanguageContext from "../../../language/LanguageContext";
+import ListingHotelContext from "../context/ListingHotelContext";
 import { initialFilters } from "./filtersHotelJson";
-import LanguageContext from "../../language/LanguageContext";
-import ListingHotelContext from "../Context/ListingHotelContext";
 
-// SVG
-import ArrowIcon from "../../assets/icons/tour/listing/down-arrow.svg";
-import ArrowUpIcon from "../../assets/icons/tour/listing/up-arrow.svg";
 
 export default function FiltersHotels() {
   const [showMore, setShowMore] = useState({});

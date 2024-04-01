@@ -11,7 +11,7 @@ import {
 import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
-import { StepperContext } from "../../../config/context/steeperContext";
+import { StepperContext } from "../../context/steeperContext";
 
 import IconCreditCart from "../../../assets/images/others/credit-card.svg";
 import IconRightBlack from "../../../assets/icons/utils/payment/right-bl.svg";

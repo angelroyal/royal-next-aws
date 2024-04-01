@@ -4,10 +4,10 @@ import React, { useContext, useEffect } from "react";
 import LanguageContext from "../../language/LanguageContext";
 import { scrollToTop } from "../../utils/pageConfig/scrollToTop";
 import StructureItineraryWeb from "./others/StructureItineraryWeb";
-import { StepperContext } from "../../config/context/steeperContext";
+import { StepperContext } from "../context/steeperContext";
 import { AlertNoAvailability, AlertUpdate } from "../Booking/AlertRate";
 
-import { isAnyHotelUnavailable } from "../../config/Booking/itineraryHelpers";
+import { isAnyHotelUnavailable } from "../config/itineraryHelpers";
 
 import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
 

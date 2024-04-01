@@ -1,3 +1,6 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../assets/styles/web/App.css";
+
 import { Tab, Tabs } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 
