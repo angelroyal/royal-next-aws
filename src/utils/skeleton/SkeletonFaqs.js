@@ -11,7 +11,7 @@ export function SkeletonFaqs() {
       <Skeleton
         variant="rectangular"
         animation="wave"
-        height={isMobile ? "160px" :"346px"}
+        height={isMobile ? "160px" : "346px"}
         width="100%"
       />
       <div className="pb-3">
@@ -23,12 +23,12 @@ export function SkeletonFaqs() {
           isMobile && "flex-column"
         }`}
       >
-        <Skeleton height={44} width="40%" variant="text" animation="wave" />
         <div
           className={`d-flex gap-2  ${
             isMobile ? "width100" : "width3 flex-column"
           }`}
         >
+          <Skeleton height={44} width="40%" variant="text" animation="wave" />
           <Skeleton height={17} width="55%" variant="text" animation="wave" />
           <Skeleton height={17} width="59%" variant="text" animation="wave" />
           <Skeleton height={17} width="30%" variant="text" animation="wave" />

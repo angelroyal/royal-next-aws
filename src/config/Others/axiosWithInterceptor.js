@@ -1,7 +1,4 @@
-"use client";
-
 import axios from 'axios';
-// import { useStarToken } from '../utils/others/StarToken';
 
 const language = typeof window !== 'undefined' ? localStorage.getItem('language') || 'es' : 'es';
 
@@ -11,9 +8,11 @@ const axiosWithInterceptor = axios.create({
 
 axiosWithInterceptor.interceptors.request.use(
   config => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `${token}`;
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('token');
+      if (token) {
+        config.headers.Authorization = `${token}`;
+      }
     }
     return config;
   },
@@ -27,9 +26,6 @@ axiosWithInterceptor.interceptors.response.use(
     return response;
   },
   (error) => {
-    // if (error.response && error.response.status === 403) {      
-    //   useStarToken();
-    // }
     return Promise.reject(error);
   }
 );

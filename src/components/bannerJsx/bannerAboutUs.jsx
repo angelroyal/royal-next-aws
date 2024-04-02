@@ -42,7 +42,7 @@ export function BannerFaqsDown() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="relative mt-8">
+    <div className="relative mt-8 mb-3">
       <img
         src={Others.bannerHelp.image}
         alt={Others.bannerHelp.image}

@@ -108,7 +108,7 @@ export default function MobilSearchHotel() {
       </div>
 
       <div className="margin-search-tab">
-        <DateRangeIcon className="Icon-date" />
+        {/* <DateRangeIcon className="Icon-date" /> */}
         <span className=" mbsc-ios mbsc-ltr mbsc-label mbsc-label-stacked mbsc-label-outline-stacked">
           {languageData.searchMobilHotel.date}
         </span>

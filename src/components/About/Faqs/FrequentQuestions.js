@@ -2,16 +2,13 @@
 
 import React, { useContext, useState, useEffect } from "react";
 
-import {
-  BannerFaqsTop,
-  BannerFaqsDown,
-} from "../../components/bannerJsx/bannerAboutUs";
+import { BannerFaqsTop, BannerFaqsDown } from "../../bannerJsx/bannerAboutUs";
 
-import FaqsWeb from "../../services/General/Faqs";
-import { useIsMobile } from "../../config/Mobile/isMobile";
-import LanguageContext from "../../language/LanguageContext";
-import { SkeletonFaqs } from "../../utils/skeleton/SkeletonFaqs";
+import FaqsWeb from "./Faqs";
 import { Container } from "@/config/Others/Container";
+import { useIsMobile } from "../../../config/Mobile/isMobile";
+import LanguageContext from "../../../language/LanguageContext";
+import { SkeletonFaqs } from "../../../utils/skeleton/SkeletonFaqs";
 
 // import MetaFrequentQuestions from "../../components/Meta/MetaFrequentQuestions";
 
@@ -59,8 +56,6 @@ export default function FrequentQuestions() {
           <div className="m-m text-fs-15 md:text-[1rem] pb-[2.5rem]">
             {languageData.faqs.textFaqs}
           </div>
-
-          
 
           <FaqsWeb
             setOpenSection={setOpenSection}
