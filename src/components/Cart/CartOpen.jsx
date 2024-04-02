@@ -1,13 +1,12 @@
 "use client";
 import Image from 'next/image'
-import CartHotelT from './CartHotelT';
 import React, { useEffect, useRef, useState } from 'react'
-
+import CartT from './CartT';
 export default function CartOpen() {
 
   const [openCart, setOpenCart] = useState(false);
 
-  const changeBoolean = () => { setOpenCart(!openCart); }
+  // const changeBoolean = () => { setOpenCart(!openCart); }
 
   const ref = useRef(null);
 
@@ -33,20 +32,17 @@ export default function CartOpen() {
     <div ref={ref} className='relative'>
 
       <Image
-        onClick={() => setOpenCart(changeBoolean)}
+        onClick={() => setOpenCart(!openCart)}
         src={`${process.env.NEXT_PUBLIC_URL}icons/cart/cart-b.svg`}
         width={26}
         height={22}
         alt='icon-cart'
-        className="transition cursor-pointer hover:drop-shadow-xl"
+        className="cursor-pointer hover:drop-shadow-xl"
       />
-
-      {openCart === true ? (
-        <CartHotelT />
-      ) : (
-        ""
-      )}
-
+      <div className={`transition-opacity ease-in duration-300 ${openCart ? 'opacity-100' : 'opacity-0'}`}>
+        {/* {openCart === true && (<CartHotelT closeCart={() => setOpenCart(false)} />)} */}
+        {openCart && <CartT closeCart={() => setOpenCart(false)} />}
+      </div>
     </div>
   )
 }

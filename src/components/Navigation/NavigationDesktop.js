@@ -18,7 +18,7 @@ export default function NavigationDesktop() {
       <Container>
         {/* fix tailwind */}
         <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem]">
-          <div className="hidden md:flex justify-end ">
+          <div className="hidden md:flex justify-end items-center">
             <SelectCurrency />
             <span className="pl-[19px] pr-[19px]">|</span>
             <LanguageSelector />
