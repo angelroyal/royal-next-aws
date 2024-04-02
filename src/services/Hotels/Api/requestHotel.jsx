@@ -1,7 +1,7 @@
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 const API_ENDPOINT_ROOMS = "v1/rooms/availability";
-const API_SAVE_CART = `v1/carts/hotels`;
+const API_SAVE_CART = `v1/carts/hotel`;
 
 export const postRoomsToAPI = async (requestBody) => {
 

@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
+import Tour from "@/services/Tours/components/DetailTour/Tour";
 
 // export async function generateMetadata({ params }) {
 //   // Token JWT
@@ -53,8 +54,8 @@ export default async function DetailPageTour({ params }) {
         <CartAxiosProvider>
           <RoomsHotelProvider>
             <Token />
-            
             <Navigation />
+            <Tour />
             <Footer />
           </RoomsHotelProvider>
         </CartAxiosProvider>
