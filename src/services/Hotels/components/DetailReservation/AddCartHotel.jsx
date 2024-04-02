@@ -5,7 +5,6 @@ import { saveToCart } from "../../Api/requestHotel";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
-import { ReservationFailed } from "../AlertsHotel/HotelInformationAlerts";
 
 export default function AddCartHotel() {
   const router = useRouter();
