@@ -1,7 +1,11 @@
 "use client";
-import Image from 'next/image'
+
 import React, { useEffect, useRef, useState } from 'react'
+
 import CartT from './CartT';
+import Image from 'next/image'
+import CartMobile from './CartMobile';
+
 export default function CartOpen() {
 
   const [openCart, setOpenCart] = useState(false);
@@ -39,10 +43,13 @@ export default function CartOpen() {
         alt='icon-cart'
         className="cursor-pointer hover:drop-shadow-xl"
       />
+      {openCart && <CartMobile closeCart={() => setOpenCart(false)} />}
+
       <div className={`transition-opacity ease-in duration-300 ${openCart ? 'opacity-100' : 'opacity-0'}`}>
         {/* {openCart === true && (<CartHotelT closeCart={() => setOpenCart(false)} />)} */}
         {openCart && <CartT closeCart={() => setOpenCart(false)} />}
       </div>
+
     </div>
   )
 }

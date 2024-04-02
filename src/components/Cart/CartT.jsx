@@ -10,9 +10,9 @@ export default function CartT({ closeCart }) {
 
     return (
         <>
-            <div className='absolute right-[-15px] top-[48px] '>
+            <div className='absolute right-[-15px] top-[48px] max-sm:hidden'>
 
-                <div className="relative p-[16px] pt-[25px] w-[416px] bg-white rounded-lg !shadow-[0_4px_48px_0_rgba(102,102,102,0.25)] z-[2] before:content-[' '] before:z-[4] before:w-[3rem] before:h-[3rem] before:block before:bg-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)] before:absolute before:left-[88%] before:top-[-14px] before:bg-no-repeat">
+                <div className="relative p-[16px] pt-[25px] w-[416px] bg-white rounded-lg !shadow-[0_4px_40px_0_rgba(102,102,102,0.25)] z-[2] before:content-[' '] before:z-[4] before:w-[3rem] before:h-[3rem] before:block before:bg-[url(https://sandboxmexico.com/assets/icons/general/ellipse.svg)] before:absolute before:left-[88%] before:top-[-14px] before:bg-no-repeat">
 
                     {/* TITLE AND BTN CLOSE */}
                     <div className='flex justify-between border-b border-[#ebebeb] mb-[16px] pb-[25px]'>

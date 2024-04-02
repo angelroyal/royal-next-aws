@@ -96,7 +96,7 @@ export default function SendHotel() {
 
   return (
     // <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
-    <div className={`flex ${isHotelResults ? 'flex-col' : 'lg:flex-row'} items-center bg-white gap-2.5 rounded-lg p-6`}>
+    <div className={`flex ${isHotelResults ? 'flex-col' : 'flex-col lg:flex-row'} items-center bg-white gap-2.5 rounded-lg p-6`}>
 
       <SearchHotel onSelectSearch={setSelectedOption} />
       <Calendar onDateChange={handleDateChange} />
@@ -104,7 +104,7 @@ export default function SendHotel() {
 
       <>
         <button
-          className={`w-full xl:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
+          className={`w-full lg:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
             !selectedOption || !validFirstDay || !validSecondDay
               ? "bg-or-50"
               : "bg-or-100 hoveLor:!bg-or-70"

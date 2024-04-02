@@ -24,7 +24,7 @@ export default function NavigationDesktop() {
             <LanguageSelector />
 
             <Cart />
-            <CartOpen/>
+            <CartOpen />
           </div>
 
           <nav
@@ -56,7 +56,7 @@ export default function NavigationDesktop() {
                       alt="done green"
                       className="pr-2"
                     />
-                    Hospedaje
+                    <span className="max-sm:hidden">Hospedaje</span>
                   </a>
                 </div>
 
@@ -66,11 +66,11 @@ export default function NavigationDesktop() {
                     className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
                   >
                     <img
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
                       alt="done green"
                       className="pr-2"
                     />
-                    Tours
+                    <span className="max-sm:hidden">Tours</span>
                   </a>
                 </div>
               </div>
@@ -78,7 +78,8 @@ export default function NavigationDesktop() {
 
             <div className="flex gap-x-[18px] md:hidden">
               <Cart />
-
+              <CartOpen />
+              
               <button
                 type="button"
                 className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"

@@ -44,7 +44,7 @@ export function BannerHomeTour() {
 
             <SwiperSlide className="!w-[48%] max-lg:!w-full max-sm:!w-full !bg-gry-30 !rounded-lg">
                 <div className="bg-black rounded-lg ">
-                    <div className="relative w-full h-[273px] max-[1395px]:!h-[236px] max-xl:h-[235px] max-lg:h-[292px] rounded-lg bg-[#1B1464] max-lg:w-full ">
+                    <div className="relative w-full h-[273px] max-[1390px]:!h-[236px] max-xl:h-[235px] max-lg:h-[292px] rounded-lg bg-[#1B1464] max-lg:w-full ">
 
                         <div className="absolute top-[0%] left-[0%] w-[65%] h-[80%] pr-[50px] bg-[#2743A6] rounded-tl-lg rounded-bl-lg pt-[32px] pl-[22px] max-w-[545px]">
                             <h2 className="text-white text-fs-24 m-b text-left w-[254px] max-sm:text-fs-18 max-sm:w-[159px] !select-all">
@@ -61,7 +61,7 @@ export function BannerHomeTour() {
                         </div>
 
                         <div className="absolute h-[273px] max-xl:h-[235px] max-lg:h-[292px] right-0 rounded-lg  clip-custom max-xl:w-[299px] max-lg:w-[71%]">
-                            <Image src={excDiscounts} width={547} height={273} className="w-full h-full rounded-r-lg object-cover select-none" alt="Banner cenote san antonio" />
+                            <Image src={excDiscounts} width={547} height={273} className="w-full h-full max-sm:h-[81%] rounded-r-lg object-cover select-none" alt="Banner cenote san antonio" />
                         </div>
 
                         <a

@@ -6,10 +6,10 @@ export default function CartHotelT() {
     return (
         <div>
             {/* CARD CART HOTEL */}
-            {[...Array(2)].map((_, index) => (
-                <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3 mr-[16px]'>
+            {[...Array(1)].map((_, index) => (
+                <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]'>
 
-                    <div className='p-2 gap-4 flex justify-between w-full '>
+                    <div className='p-2 gap-4 flex justify-between w-full max-sm:w-[86%]'>
 
                         {/* IMAGE CART */}
                         <img
@@ -19,10 +19,10 @@ export default function CartHotelT() {
                         />
 
                         {/* INFO CART */}
-                        <div className='w-full leading-4 flex flex-col justify-center'>
+                        <div className='w-full leading-4 flex flex-col justify-center max-sm:w-[61%]'>
                             <span className='m-m text-gry-100 text-fs-12 truncate w-[187px] '>Cancun</span>
 
-                            <span className='m-s-b text-fs-14 truncate w-[187px]'>Hotel Xcaret Cancun Cancun Cancun  Cancun Cancun Cancun</span>
+                            <span className='m-s-b text-fs-14 truncate w-[187px] max-sm:w-full'>Hotel Xcaret Cancun Cancun Cancun  Cancun Cancun Cancun</span>
 
                             <div className='flex gap-2 mb-[3px]'>
                                 <Image

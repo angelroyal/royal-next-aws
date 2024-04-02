@@ -27,7 +27,7 @@ export default function CartTourT() {
                         <div className='w-full leading-4 flex flex-col justify-center'>
                             <span className='m-m text-gry-100 text-fs-12 truncate w-[187px] '>Tulum</span>
 
-                            <span className='m-s-b text-fs-14 truncate w-[187px]'>Paseo en la costa Tulum Tulum Tulum Tulum Tulum</span>
+                            <span className='m-s-b text-fs-14 truncate w-[187px] max-sm:w-[170px]'>Paseo en la costa Tulum Tulum Tulum Tulum Tulum</span>
 
                             <div className='flex gap-2 mb-[3px]'>
                                 <Image
