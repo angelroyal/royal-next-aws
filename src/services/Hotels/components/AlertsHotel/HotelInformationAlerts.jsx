@@ -1,7 +1,7 @@
 "use client";
 import LanguageContext from "@/language/LanguageContext";
 import { XCircleIcon } from "@heroicons/react/20/solid";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export function LimitPriceAlert() {

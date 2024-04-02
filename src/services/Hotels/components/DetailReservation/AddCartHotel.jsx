@@ -48,8 +48,6 @@ export default function AddCartHotel() {
       }
 
       const response = await saveToCart(saveRequestCart);
-      // console.log(response);
-      // return;
 
       const cartUid = response.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
