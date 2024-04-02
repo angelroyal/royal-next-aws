@@ -1,6 +1,8 @@
+"use client";
+
 import React, { createContext, useContext, useState } from "react";
 
-import { orderData } from "./tourUtils";
+import { orderData } from "./orderData";
 
 const TourContext = createContext();
 

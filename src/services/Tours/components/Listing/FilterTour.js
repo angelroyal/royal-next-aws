@@ -23,7 +23,7 @@ import { getFilterTours } from "./allFilters";
 // import { getFilterTours } from "../Services/allFilters";
 // import { orderData } from "../../context/tourUtils";
 import { filterStart, getFilters } from "./filtersTours";
-import { orderData } from "../../context/tourUtils";
+import { orderData } from "../../Context/orderData";
 import LanguageContext from "@/language/LanguageContext";
 import Image from "next/image";
 
