@@ -43,43 +43,39 @@ export default function NavigationDesktop() {
                   height={100}
                 />
               </a>
-              <div className="flex items-center">
-                <div>
+              <div className="hidden md:items-center md:flex">
+                {" "}
+                <a
+                  href={`${process.env.NEXT_PUBLIC_HOME}`}
+                  className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
+                >
                   {" "}
-                  <a
-                    href={`${process.env.NEXT_PUBLIC_HOME}`}
-                    className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
-                  >
-                    {" "}
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
-                      alt="done green"
-                      className="pr-2"
-                    />
-                    <span className="max-sm:hidden">Hospedaje</span>
-                  </a>
-                </div>
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
+                    alt="done green"
+                    className="pr-2"
+                  />
+                  <span>Hospedaje</span>
+                </a>
 
-                <div>
-                  <a
-                    href={`/tour`}
-                    className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
-                  >
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
-                      alt="done green"
-                      className="pr-2"
-                    />
-                    <span className="max-sm:hidden">Tours</span>
-                  </a>
-                </div>
+                <a
+                  href={`/tour`}
+                  className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
+                >
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
+                    alt="done green"
+                    className="pr-2"
+                  />
+                  <span>Tours</span>
+                </a>
               </div>
             </div>
 
             <div className="flex gap-x-[18px] md:hidden">
               <Cart />
               <CartOpen />
-              
+
               <button
                 type="button"
                 className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"

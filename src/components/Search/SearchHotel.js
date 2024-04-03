@@ -26,7 +26,9 @@ function SearchDestination(props) {
   //   JSON.parse(localStorage.getItem("dataSearch")) || null
   // );
   const [dataSearch, setDataSearch] = useState(
-    typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("dataSearch")) || null : null
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("dataSearch")) || null
+      : null
   );
 
   const [inputAutocomplete, setInputAutocomplete] = useState("");
@@ -104,77 +106,87 @@ function SearchDestination(props) {
 
   // TEST OPEN LIST
   return (
-    <Autocomplete
-      // open
-      className="search-autocomplete custom-autocomplete"
-      sx={{ width: 300 }}
-      getOptionLabel={(option) => option.label}
-      groupBy={(option) => option.category} // Agrupa por categoría
-      options={optionsSearch}
-      isOptionEqualToValue={(option, value) => option.key === value.key}
-      autoComplete
-      includeInputInList
-      filterSelectedOptions
-      value={dataSearch}
-      noOptionsText={
-        dataSearch || isEmpty === true
-          ? ""
-          : languageData.SearchBox.tabHotel.textResults
-      }
-      onChange={(event, newValueAutocomplete) => {
-        clickInput(newValueAutocomplete);
-      }}
-      onInputChange={(event, newInputValue) => {
-        setInputAutocomplete(newInputValue);
-      }}
-      renderInput={(params) => (
-        <TextField
-          className="textField-box-result"
-          {...params}
-          placeholder={languageData.SearchBox.tabHotel.textDestination}
-        />
-      )}
-      renderOption={(props, option) => {
-        return (
-          <li key={option.key} {...props}>
-            <Grid container alignItems="center">
-              <Grid
-                item
-                sx={{ width: "calc(100% - 44px)", wordWrap: "break-word" }}
-              >
-                <Typography
-                  className="option-response"
-                  variant="body1"
-                  id="OptionAutocomplete"
+    <div className="absolute top-[1px] w-[90%]">
+      <Autocomplete
+        // open
+        className="search-autocomplete custom-autocomplete"
+        sx={{ width: 300 }}
+        getOptionLabel={(option) => option.label}
+        groupBy={(option) => option.category} // Agrupa por categoría
+        options={optionsSearch}
+        isOptionEqualToValue={(option, value) => option.key === value.key}
+        autoComplete
+        includeInputInList
+        filterSelectedOptions
+        value={dataSearch}
+        noOptionsText={
+          dataSearch || isEmpty === true
+            ? ""
+            : languageData.SearchBox.tabHotel.textResults
+        }
+        onChange={(event, newValueAutocomplete) => {
+          clickInput(newValueAutocomplete);
+        }}
+        onInputChange={(event, newInputValue) => {
+          setInputAutocomplete(newInputValue);
+        }}
+        renderInput={(params) => (
+          <TextField
+            className="textField-box-result"
+            {...params}
+            placeholder={languageData.SearchBox.tabHotel.textDestination}
+          />
+        )}
+        renderOption={(props, option) => {
+          return (
+            <li key={option.key} {...props}>
+              <Grid container alignItems="center">
+                <Grid
+                  item
+                  sx={{ width: "calc(100% - 44px)", wordWrap: "break-word" }}
                 >
-                  {getDestination(inputAutocomplete, option.label)}
-                </Typography>
+                  <Typography
+                    className="option-response"
+                    variant="body1"
+                    id="OptionAutocomplete"
+                  >
+                    {getDestination(inputAutocomplete, option.label)}
+                  </Typography>
+                </Grid>
               </Grid>
-            </Grid>
-          </li>
-        );
-      }}
-      renderGroup={(params) => {
-        return (
-          <li key={params.group}>
-            <ListSubheader
-              style={{
-                display: "flex",
-                background: "#EFEFEF",
-              }}
-            >
-              {params.group === "Destinos" ? (
-                <Image src={IconLocation} alt="IconLocation" style={{ marginRight: "8px" }} />
-              ) : (
-                <Image src={Hotels} alt="Hotels" style={{ marginRight: "8px" }} />
-              )}
-              <Typography variant="subtitle1">{params.group}</Typography>
-            </ListSubheader>
-            {params.children}
-          </li>
-        );
-      }}
-    />
+            </li>
+          );
+        }}
+        renderGroup={(params) => {
+          return (
+            <li key={params.group}>
+              <ListSubheader
+                style={{
+                  display: "flex",
+                  background: "#EFEFEF",
+                }}
+              >
+                {params.group === "Destinos" ? (
+                  <Image
+                    src={IconLocation}
+                    alt="IconLocation"
+                    style={{ marginRight: "8px" }}
+                  />
+                ) : (
+                  <Image
+                    src={Hotels}
+                    alt="Hotels"
+                    style={{ marginRight: "8px" }}
+                  />
+                )}
+                <Typography variant="subtitle1">{params.group}</Typography>
+              </ListSubheader>
+              {params.children}
+            </li>
+          );
+        }}
+      />
+    </div>
   );
 }
 

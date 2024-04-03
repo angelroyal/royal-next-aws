@@ -237,7 +237,7 @@ export const en = {
   },
 
   searchMobilHotel: {
-    titleMultidestination: "Find the ideal hotel",
+    titleMultiDestination: "Find the ideal hotel",
     autocompleteDestination: "Destination",
     date: "Date",
     button: "Search",

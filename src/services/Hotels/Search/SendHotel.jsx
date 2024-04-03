@@ -67,6 +67,8 @@ export default function SendHotel() {
     }
   };
 
+  console.log(selectedOption);
+
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
     // setShowModal(true);
@@ -81,7 +83,12 @@ export default function SendHotel() {
     };
     const query = new URLSearchParams(requestBody).toString();
 
-    router.push(`/hotel/results?${query}`);
+    if(selectedOption.type === "hotel"){
+      
+      window.open(`/hotel/${selectedOption.codeName}?${query}`, '_blank')
+    }else{
+      router.push(`/hotel/results?${query}`);
+    }
   };
 
   const [isHotelResults, setIsHotelResults] = useState(false);
@@ -96,7 +103,7 @@ export default function SendHotel() {
 
   return (
     // <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
-    <div className={`flex ${isHotelResults ? 'flex-col' : 'flex-col lg:flex-row'} items-center bg-white gap-2.5 rounded-lg p-6`}>
+    <div className={`flex ${isHotelResults ? 'flex-col' : 'flex-col lg:flex-row'} shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6`}>
 
       <SearchHotel onSelectSearch={setSelectedOption} />
       <Calendar onDateChange={handleDateChange} />
@@ -104,7 +111,7 @@ export default function SendHotel() {
 
       <>
         <button
-          className={`w-full lg:w-auto rounded-[50px] flex gap-2 items-center justify-content-center m-b text-fs-12 text-white py-[20px] px-4 ${
+          className={`w-full lg:w-auto rounded-[50px] justify-center flex gap-2 items-center m-b text-fs-12 text-white py-[20px] px-4 ${
             !selectedOption || !validFirstDay || !validSecondDay
               ? "bg-or-50"
               : "bg-or-100 hoveLor:!bg-or-70"

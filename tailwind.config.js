@@ -172,6 +172,10 @@ export default {
             background:"#c9c7c7"
           }
         }
+      },
+
+      boxShadow:{
+        '3xl' : '0 4px 15px 0 rgba(168, 155, 155, 0.25)'
       }
     },
   },

@@ -8,7 +8,6 @@ import {
   ListSubheader,
 } from "@mui/material";
 
-
 import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
@@ -17,7 +16,7 @@ import "../../../assets/styles/general/SearchHotel.css";
 const API_ENDPOINT = `v1/destinations/search`;
 
 function SearchHotel(props) {
-  const { closeDialog, onSelectSearch } = props;
+  const { closeDialog, onSelectSearch, listing = false } = props;
   const isMobile = useIsMobile();
   const { languageData } = useContext(LanguageContext);
   // const [dataSearch, setDataSearch] = useState(
@@ -106,10 +105,17 @@ function SearchHotel(props) {
 
   // TEST OPEN LIST
   return (
-    <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative w-full lg:w-[290px]">
+    <div
+      className={`${
+        listing == false && "lg:w-[290px]"
+      } border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative w-full`}
+    >
+      <p className="text-fs-10 m-s-b text-gry-70 m-0 absolute top-[6px] left-[43px]">
+        {languageData.SearchBox.tabHotel.autocomplete}
+      </p>
       <Autocomplete
         // open={true}
-        className="text-white m-m text-fs-12 scroll-page-blue"
+        className="text-white m-m text-fs-12 scroll-page-blue absolute top-[11px] w-[90%]"
         sx={{ width: 300 }}
         getOptionLabel={(option) => option.label}
         groupBy={(option) => option.category} // Agrupa por categoríaF
@@ -132,11 +138,16 @@ function SearchHotel(props) {
         }}
         renderInput={(params) => (
           <div className="flex gap-x-2 items-center" id="destination-search">
-            <img src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`} className="h-4 w-4 invert" alt="location icon"></img>
+            {listing == false && (
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
+                className="h-4 w-4 invert"
+                alt="location icon"
+              ></img>
+            )}
             <div className="flex flex-col w-full">
-              <p className="text-fs-10 m-s-b text-gry-70 m-0 ">{languageData.SearchBox.tabHotel.autocomplete}</p>
               <TextField
-                className="!m-m !text-fs-12"
+                className="!m-m !text-fs-12 truncate"
                 {...params}
                 placeholder={languageData.SearchBox.tabHotel.textDestination}
               />

@@ -75,15 +75,15 @@ export default function ListingHotelW(props) {
   return (
     <Container>
       {/* <BannerListingHotelTop /> */}
-      <div className="flex justify-around">
-        <div className="w-3/12 mt-10">
+      <div className="flex flex-col xl:flex-row md:justify-between">
+        <div className="w-full xl:w-[28%] mt-10">
           <SearchBoxMobile />
-          {/* <SearchBox /> */}
-          {/* <FiltersHotel/> */}
-          <FiltersHotels />
+          <div className="hidden xl:block">
+            <FiltersHotels />
+          </div>
         </div>
 
-        <div className="w-8/12	">
+        <div className="w-full xl:w-8/12 relative">
           {/* SKELETON */}
           {!combinedHotelData && <SkeletonChildren />}
 
@@ -103,7 +103,6 @@ export default function ListingHotelW(props) {
                 {/* ORDER */}
                 <OrderingHotel />
               </div>
-              <CardHotelT />
 
               {/* CARD */}
               {combinedHotelData &&
@@ -141,7 +140,7 @@ export default function ListingHotelW(props) {
           )}
 
           {combinedHotelData && combinedHotelData.length === 0 && (
-            <div className="flex space-between items-center justify-around mt-4">
+            <div className="flex space-between items-center justify-around mt-4 sticky top-[9.25rem]">
               <div>
                 <img
                   // src={IconNoAvailability}
@@ -160,8 +159,10 @@ export default function ListingHotelW(props) {
           )}
         </div>
       </div>
-      <b />
-      <BannerCallHotelT />
+
+      <div className="my-7">
+        <BannerCallHotelT />
+      </div>
     </Container>
   );
 }

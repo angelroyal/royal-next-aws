@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/l10n/es.js";
 import "flatpickr/dist/flatpickr.min.css";
@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useContext } from "react";
 
 import LanguageContext from "../language/LanguageContext";
 
-function Calendar({ onDateChange }) {
+function Calendar({ onDateChange, listing = false }) {
   const calendarRef = useRef(null);
   // const language = localStorage.getItem("language") || "es";
   const language =
@@ -66,13 +66,19 @@ function Calendar({ onDateChange }) {
   }, []);
   const { languageData } = useContext(LanguageContext);
   return (
-    <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full lg:w-[290px]">
+    <div
+      className={`${
+        listing === false && "lg:w-[290px]"
+      } border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full `}
+    >
       <div className="flex items-center gap-2 w-full">
-        <img
-          className="h-[18px] w-4 invert"
-          src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
-          alt="calendar icon royal vacation"
-        />
+        {listing === false && (
+          <img
+            className="h-[18px] w-4 invert"
+            src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
+            alt="calendar icon royal vacation"
+          />
+        )}
         <div className="flex relative w-full">
           <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
             Fecha

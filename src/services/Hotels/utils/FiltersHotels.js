@@ -16,7 +16,7 @@ import ListingHotelContext from "../context/ListingHotelContext";
 import { initialFilters } from "./filtersHotelJson";
 
 
-export default function FiltersHotels() {
+export default function FiltersHotels({listing=false}) {
   const [showMore, setShowMore] = useState({});
   const { languageData } = useContext(LanguageContext);
   const [filters, setFilters] = useState(initialFilters);
@@ -84,7 +84,7 @@ export default function FiltersHotels() {
 
   return (
     <>
-      <div className="container-all-filters">
+      <div className={`${listing === false && 'container-all-filters'}`}>
         <div className="p-2">
           <div className="filter-title d-flex width100 align-items-start">
             {languageData.containerFilterHotel.titleFilter}

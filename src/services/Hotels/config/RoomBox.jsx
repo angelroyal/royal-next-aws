@@ -5,7 +5,7 @@ import { useState, useEffect, useContext } from "react";
 import RoomMenu from "./RoomMenu";
 import LanguageContext from "../../../language/LanguageContext";
 
-function Room({ OnApply }) {
+function Room({listing=false ,OnApply }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [totalRooms, setTotalRooms] = useState(1);
   const [totalPeople, setTotalPeople] = useState({ adults: 2, children: 0 });
@@ -48,11 +48,11 @@ function Room({ OnApply }) {
   };
 
   return (
-    <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px] h-[54px]">
+    <div className={` border-2 border-gray-200 rounded py-2.5 px-4 relative w-full  h-[54px] ${listing === false && 'lg:w-[296px]'} `}>
       <Dropdown style={{minWidth:"293px"}} show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex border-0 bg-transparent p-0"
+          className="!flex border-0 bg-transparent p-0"
         >
           <span className="flex items-center gap-2 border-r-2 border-gry-70 pr-3.5">
             <img
@@ -99,7 +99,7 @@ function Room({ OnApply }) {
         </Dropdown.Toggle>
 
         {showDropdown === true && (
-          <Dropdown.Menu className="border-0 w-11/12 z-30 p-0">
+          <Dropdown.Menu className="border-0 w-11/12 z-[3] p-0">
             {/* <div className="equilateral-triangle-bottom"></div> */}
             <RoomMenu
               showRoom={handleRoomData}
