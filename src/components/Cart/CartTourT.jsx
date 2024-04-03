@@ -12,9 +12,9 @@ export default function CartTourT() {
             
             {/* CARD CART TOUR */}
             {[...Array(2)].map((_, index) => (
-                <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3 mr-[16px]'>
+                <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]'>
 
-                    <div className='p-2 gap-4 flex justify-between w-full '>
+                    <div className='p-2 gap-4 flex justify-between w-full max-sm:w-[86%]'>
 
                         {/* IMAGE CART */}
                         <img
@@ -24,10 +24,10 @@ export default function CartTourT() {
                         />
 
                         {/* INFO CART */}
-                        <div className='w-full leading-4 flex flex-col justify-center'>
+                        <div className='w-full leading-4 flex flex-col justify-center max-sm:w-[61%]'>
                             <span className='m-m text-gry-100 text-fs-12 truncate w-[187px] '>Tulum</span>
 
-                            <span className='m-s-b text-fs-14 truncate w-[187px] max-sm:w-[170px]'>Paseo en la costa Tulum Tulum Tulum Tulum Tulum</span>
+                            <span className='m-s-b text-fs-14 truncate w-[187px] max-sm:w-full'>Paseo en la costa Tulum Tulum Tulum Tulum Tulum</span>
 
                             <div className='flex gap-2 mb-[3px]'>
                                 <Image

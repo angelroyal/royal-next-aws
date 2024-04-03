@@ -35,8 +35,8 @@ export default function CartMobile() {
                                 leaveFrom="translate-x-0"
                                 leaveTo="translate-x-full"
                             >
-                                <Dialog.Panel className="pointer-events-auto w-screen max-w-[22rem]">
-                                    <div className="flex h-[90%] flex-col bg-white py-6 shadow-xl">
+                                <Dialog.Panel className="pointer-events-auto w-screen max-w-[21rem]">
+                                    <div className="flex h-[100vh] flex-col bg-white py-6 shadow-xl">
                                         <div className="px-4 sm:px-6">
                                             <div className="flex items-start justify-between">
                                                 <Dialog.Title className="text-base m-b text-fs-16 text-[#1a202c]">
@@ -45,7 +45,7 @@ export default function CartMobile() {
                                                 <div className="ml-3 flex h-7 items-center">
                                                     <button
                                                         type="button"
-                                                        className="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                        className="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none"
                                                         onClick={() => setOpen(false)}
                                                     >
                                                         <span className="absolute -inset-2.5" />
@@ -55,9 +55,9 @@ export default function CartMobile() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="relative mt-6 flex-1 px-4 sm:px-6 flex flex-col">
+                                        <div className="relative mt-3 flex-1 px-4 sm:px-6 flex flex-col">
                                             {/*CART MOBILE */}
-                                            <div className='h-[65vh]  overflow-y-auto scroll-page-gry'>
+                                            <div className='h-[65vh]  overflow-y-auto overflow-x-clip scroll-page-gry'>
 
                                                 <CartHotelT />
 
@@ -66,7 +66,7 @@ export default function CartMobile() {
                                             </div>
 
                                             {/* PRICE CART */}
-                                            <div className='h-[30%] border-t border-[#ebebeb] mt-[16px] pt-[16px]'>
+                                            <div className='border-t border-[#ebebeb] mt-[16px] pt-[16px] sticky bottom-0  bg-white'>
                                                 <div className='flex justify-between mx-3'>
                                                     <span className='text-fs-12 text-gry-100 m-m'>Subtotal</span>
 
@@ -85,9 +85,9 @@ export default function CartMobile() {
                                                     <span className='text-fs-18 m-s-b'>$12,000.<sup>00</sup></span>
                                                 </div>
 
-                                                <div className='flex justify-end gap-[16px] mt-[16px]'>
-                                                    <button className='text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white'>Resetear carrito</button>
-                                                    <button className='text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d]'>Finalizar compra</button>
+                                                <div className='flex justify-end gap-[16px] mt-[16px] mb-2'>
+                                                    <button className='text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white text-nowrap'>Resetear carrito</button>
+                                                    <button className='text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] text-nowrap'>Finalizar compra</button>
                                                 </div>
                                             </div>
                                         </div>
