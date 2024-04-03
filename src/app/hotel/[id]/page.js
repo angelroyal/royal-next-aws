@@ -11,7 +11,6 @@ import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
 import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
-import { useContext } from "react";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 // import axios from "axios";
@@ -60,6 +59,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function DetailPageHotel({ params }) {
+  const hotel = true;
   try {
     const response = await axiosWithInterceptor.get(
       `${process.env.NEXT_PUBLIC_API_ROYAL}/es/v1/hotels/${params.id}`

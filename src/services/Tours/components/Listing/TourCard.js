@@ -6,12 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Rating } from "@mui/material";
 import { Pagination } from "swiper/modules";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import { TourDialogInfo } from "./TourDialogInfo";
 import LanguageContext from "@/language/LanguageContext";
-import { useTourContext } from "../../context/ListingTourContext";
 
 import IconLocationBlue from "../../../../assets/icons/utils/others/location-blue.svg";
 import ImageNotFount from "../../../../assets/images/banners/es/no-image-available.png";
@@ -20,24 +19,23 @@ export default function TourCard(props) {
   const maxLength = 290;
 
   const { tour } = props;
-  const { setTourInfo } = useTourContext();
 
   const description = tour.description;
 
   const { languageData } = useContext(LanguageContext);
 
-  const buildUrlWithParams = (queryParams) => {
-    const baseUrl = `/hotel/${hotel.codeName}`;
+  // const buildUrlWithParams = (queryParams) => {
+  //   const baseUrl = `/hotel/${hotel.codeName}`;
 
-    const occupanciesString = JSON.stringify(queryParams.occupancies);
+  //   const occupanciesString = JSON.stringify(queryParams.occupancies);
 
-    const queryParamsString = new URLSearchParams({
-      ...queryParams,
-      occupancies: encodeURIComponent(occupanciesString),
-    }).toString();
+  //   const queryParamsString = new URLSearchParams({
+  //     ...queryParams,
+  //     occupancies: encodeURIComponent(occupanciesString),
+  //   }).toString();
 
-    return `${baseUrl}?${queryParamsString}`;
-  };
+  //   return `${baseUrl}?${queryParamsString}`;
+  // };
 
   return (
     <>
@@ -175,6 +173,7 @@ export default function TourCard(props) {
 
                 {/* TEXT SEE-DETAILS LP-15-02-24 */}
                 <Link
+                  target="_blank"
                   className="cont-see-details-tour width100"
                   // onClick={() => openDialog(tour)}
                   // href={buildUrlWithParams(requestQueryParams)}
@@ -187,13 +186,6 @@ export default function TourCard(props) {
           </div>
         </div>
       </div>
-
-      {/* <TourDialogInfo
-        open={open}
-        tourData={valueSelected}
-        onClose={() => setOpen(!open)}
-        tour={tour}
-      /> */}
     </>
   );
 }
