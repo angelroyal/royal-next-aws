@@ -75,6 +75,7 @@ export default function SearchBox() {
           <Tab
             className="focus:outline-none focus:ring-transparent"
             onClick={() => handleTabChange("tour")}
+            style={{ padding: "0" }}
           >
             <span
               className={`${
@@ -93,20 +94,15 @@ export default function SearchBox() {
                 width={29}
                 height={25}
               />{" "}
-              {/* {languageData.SearchBox.tabHotel.lodgement} */}
-              Tours
+              {languageData.modalHotelOptions.titleTour}
             </span>
           </Tab>
         </Tab.List>
 
         <Tab.Panels>
-          <Tab.Panel>
-            <SendHotel />
-          </Tab.Panel>
+          {currentActiveIcon === "hotel" && <SendHotel />}
 
-          <Tab.Panel>
-            <ResultTour />
-          </Tab.Panel>
+          {currentActiveIcon === "tour" && <ResultTour />}
         </Tab.Panels>
       </Tab.Group>
     </>

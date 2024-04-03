@@ -20,9 +20,9 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 export const HomeHotel = () => {
   return (
     <>
-      <div className="relative flex justify-center align-center mb-[224px] lg:mb-[118px]">
+      <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
         <BannerHomeHotelTop />
-        <div className="absolute top-[67%] sm:top-[60%] md:top-[44%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center">
+        <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center">
           <SearchBox />
         </div>
       </div>

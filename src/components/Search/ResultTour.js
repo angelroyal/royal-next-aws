@@ -1,9 +1,10 @@
+"use client"
+
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import React, { useState, useContext, useEffect } from "react";
 
 import CalendarDay from "../../hooks/CalendarDay";
-import { useIsMobile } from "../../config/Mobile/isMobile";
 import SearchTour from "../../components/Search/SearchTour";
 import LanguageContext from "../../language/LanguageContext";
 import PersonsActivities from "../../utils/tour/PersonsActivities";
@@ -14,7 +15,7 @@ export default function ResultTour() {
 
   const [roomData, setRoomData] = useState([]);
   // const [showModal, setShowModal] = useState(false);
-
+  // console.log(selectedOption);
   const router = useRouter();
 
   const handleDateChange = (selectedDate) => {
@@ -54,23 +55,26 @@ export default function ResultTour() {
       adults: roomData[0].adults,
       children: roomData[0].children,
     };
-
+    
+    
     // We convert the object to a string and append it to the URL
     const query = new URLSearchParams(requestBody).toString();
 
-    setTimeout(() => {
+    // if(selectedOption.type === "destination"){
+      
+    //   window.open(`/tour/${selectedOption.codeName}?${query}`, '_blank')
+    // }else{
       router.push(`/tour/results?${query}`);
-      // setShowModal(false);
-    }, 1500);
+    // }
+
+    
   };
 
-  const isMobile = useIsMobile();
 
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <>
-      <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6 shadow-3xl">
+    <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6 shadow-3xl">
         <SearchTour onSelectTour={setSelectedOption} />
         <CalendarDay onDateChange={handleDateChange} />
         <PersonsActivities OnApply={setRoomData} />
@@ -96,17 +100,5 @@ export default function ResultTour() {
           </button>
         </>
       </div>
-
-      {/* {showModal && (
-        <div className="modal-backdrop modal-loading">
-          <div className="modal-box">
-            <Lottie
-              className="transition-royal"
-              animationData={animationData}
-            />
-          </div>
-        </div>
-      )} */}
-    </>
   );
 }

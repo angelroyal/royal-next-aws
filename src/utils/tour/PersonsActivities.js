@@ -114,41 +114,55 @@ export default function PersonsActivities({ OnApply }) {
 
   const { languageData } = useContext(LanguageContext);
 
+  const adultPlural = (adult) => {
+    if (adult == 1) {
+      return "textAdult";
+    } else {
+      return "textAdults";
+    }
+  };
+
+  const childrenPlural = (children) => {
+    if (children == 1) {
+      return "textChild";
+    } else {
+      return "textChildren";
+    }
+  };
+
   return (
     <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px] h-[54px]">
       <Dropdown show={showDropdown} onClose={() => setShowDropdown(false)}>
-        <p className="absolute top-0 left-0 right-0 mx-auto m-s-b text-fs-10 text-gry-70 w-max">
-          {languageData.SearchBox.tabTour.people}
-        </p>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex border-0 bg-transparent p-0 w-full justify-between"
+          className="!flex border-0 gap-x-2 items-center bg-transparent p-0 w-full"
         >
+          <Image
+            src={Person2OutlinedIcon}
+            width={16}
+            height={22}
+            alt="icon-person"
+          />
           <span
-            className="flex m-s-b gap-x-1 text-fs-12 items-center"
+            className="flex m-s-b flex-col gap-y-[3px] text-fs-12 items-start"
             style={{ padding: "0 10px" }}
           >
-            <Image
-              src={Person2OutlinedIcon}
-              width={16}
-              height={22}
-              alt="icon-person"
-            />
-            {totalAdults}
+            <p className="m-0 m-s-b text-fs-10 text-gry-70 w-max">
+              {languageData.SearchBox.tabTour.people}
+            </p>
+            <p className="m-0 m-s-b text-fs-12 text-gry-100">
+              {`${totalAdults} ${
+                languageData.itinerary.tourItinerary[
+                  adultPlural(totalAdults)
+                ]
+              },`}{" "}
+              {`${totalChildren} ${
+                languageData.itinerary.tourItinerary[
+                  childrenPlural(totalChildren)
+                ]
+              }`}
+            </p>
           </span>{" "}
-          <span style={{ padding: "0 10px" }}>|</span>
-          <span
-            className="flex m-s-b gap-x-1 text-fs-12 items-center"
-            style={{ padding: "0 10px" }}
-          >
-            <Image
-              src={Children2OutlinedIcon}
-              width={16}
-              height={22}
-              alt="icon-child"
-            />
-            {totalChildren}
-          </span>
         </Dropdown.Toggle>
 
         {showDropdown === true && (

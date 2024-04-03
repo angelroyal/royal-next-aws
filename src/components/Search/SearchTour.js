@@ -9,8 +9,7 @@ import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
 // import IconTour from "../../assets/icons/utils/navigation/tour.svg";
 // import IconLocation from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
-import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
-
+// import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
 import "../../assets/styles/general/SearchHotel.css";
 
@@ -103,10 +102,14 @@ function SearchTour({ closeDialog, onSelectTour }) {
 
   return (
     <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative w-full lg:w-[290px]">
+      <span className="text-fs-10 m-s-b text-gry-70 m-0 absolute top-[6px] left-[43px]">
+        {languageData.SearchBox.tabTour.autoDestination}
+      </span>
+
       <Autocomplete
         // open
         // id="autocomplete-tour"
-        className="search-autocomplete custom-autocomplete"
+        className="text-white m-m text-fs-12 scroll-page-blue absolute top-[11px] w-[90%]"
         sx={{ width: 300 }}
         getOptionLabel={(option) => option.label}
         filterOptions={(x) => x}
@@ -129,11 +132,14 @@ function SearchTour({ closeDialog, onSelectTour }) {
         }}
         renderInput={(params) => (
           <div className="flex gap-x-2 items-center" id="destination-search">
-            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`} width={16} height={16} className="h-4 w-4 invert" alt="icon-location" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
+              width={16}
+              height={16}
+              className="h-4 w-4 invert"
+              alt="icon-location"
+            />
             <div className="flex flex-col w-full">
-              <span className="text-fs-10 m-s-b text-gry-70 m-0">
-                {languageData.SearchBox.tabTour.autoDestination}
-              </span>
               <TextField
                 className="!m-m !text-fs-12 p-0"
                 {...params}
@@ -151,13 +157,15 @@ function SearchTour({ closeDialog, onSelectTour }) {
                     <Image
                       src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
                       alt="icon location"
-                      width={16} height={16}
+                      width={16}
+                      height={16}
                       className="icon-location-tour"
                     />
                   ) : (
                     <Image
                       src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
-                      width={16} height={16}
+                      width={16}
+                      height={16}
                       alt="icon tour"
                     />
                   )}

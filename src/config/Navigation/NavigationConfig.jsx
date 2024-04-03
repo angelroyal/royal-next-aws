@@ -6,6 +6,7 @@ export function NavigationConfig() {
   const [activeRouter, setActiveRouter] = useState(null);
   
   useEffect(() => {
+    console.log("se ejecuta");
     const path = window.location.pathname;
 
     let actualRouter = null;
