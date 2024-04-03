@@ -6,7 +6,7 @@ export default function CartHotelT() {
     return (
         <div>
             {/* CARD CART HOTEL */}
-            {[...Array(1)].map((_, index) => (
+            {[...Array(10)].map((_, index) => (
                 <div key={index} className='flex rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]'>
 
                     <div className='p-2 gap-4 flex justify-between w-full max-sm:w-[86%]'>
