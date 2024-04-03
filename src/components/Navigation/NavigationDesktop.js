@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Cart from "@/hooks/Cart";
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -9,9 +9,18 @@ import { LanguageSelector } from "@/language/LanguageSelector";
 
 import { SelectCurrency } from "./SelectCurrency";
 import CartOpen from "../Cart/CartOpen";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export default function NavigationDesktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
+
+  // GET ACTIVITY SERVICE
+  const routerActual = NavigationConfig();
+
+  useEffect(() => {
+    setCurrentActiveIcon(routerActual);
+  }, [routerActual]);
 
   return (
     <div className="relative md:top-[-22px] mt-[38px] md:mt-0">
@@ -55,7 +64,7 @@ export default function NavigationDesktop() {
                     alt="done green"
                     className="pr-2"
                   />
-                  <span>Hospedaje</span>
+                  <span className={`${currentActiveIcon === "hotel" && 'text-or-100'}`}>Hospedaje</span>
                 </a>
 
                 <a
@@ -67,7 +76,7 @@ export default function NavigationDesktop() {
                     alt="done green"
                     className="pr-2"
                   />
-                  <span>Tours</span>
+                  <span className={`${currentActiveIcon === "tour" && 'text-or-100'}`}>Tours</span>
                 </a>
               </div>
             </div>

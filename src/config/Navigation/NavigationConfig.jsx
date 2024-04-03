@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
 
-export const NavigationURL = {
-  hotel: ["/", "/hotel/result"],
-  tour: ["/tour", "tour/result"],
-};
+export const NavigationURL = ["hotel", "tour"];
 
 export function NavigationConfig() {
-
-    const [activeTab, setActiveTab] = useState("hotel");
+  const [activeRouter, setActiveRouter] = useState(null);
+  
   useEffect(() => {
     const path = window.location.pathname;
-    // console.log(typeof path);
-    let actualRouter = null
-    Object.entries(NavigationURL).map((route, index) => {
-        if(route[1].includes(path)){
-            actualRouter = route[1].filter(value=> value === path);
-        }
+
+    let actualRouter = null;
+    let pathRouter = path.split("/");
+    NavigationURL.map((url, index) => {
+      if (pathRouter.includes(url)) {
+        actualRouter = pathRouter.filter((value) => value === url);
+      }
     });
-    // console.log(actualRouter);
-    if(actualRouter != null){
-        if(actualRouter[0] != "/"){
-            setActiveTab(actualRouter[0])
-        }
+
+    if (path === "/") {
+      setActiveRouter("hotel");
+    }
+
+    if (actualRouter != null) {
+      setActiveRouter(actualRouter[0]);
     }
   }, []);
 
-  return activeTab;
+  return activeRouter;
 }

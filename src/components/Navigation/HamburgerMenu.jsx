@@ -1,8 +1,23 @@
+"use client"
+
+import { useEffect, useState } from "react";
+
 import { Dialog } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { SelectCurrency } from "./SelectCurrency";
 import { LanguageSelector } from "@/language/LanguageSelector";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 export function HamburgerMenu({ open, setMobileMenuOpen }) {
+
+  const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
+
+  // GET ACTIVITY SERVICE
+  const routerActual = NavigationConfig();
+
+  useEffect(() => {
+    setCurrentActiveIcon(routerActual);
+  }, [routerActual]);
+
   return (
     <Dialog
       as="div"
@@ -41,7 +56,13 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   alt="done green"
                   className="pr-2"
                 />
-                <span>Hospedaje</span>
+                <span
+                  className={`${
+                    currentActiveIcon === "hotel" && "text-or-100"
+                  }`}
+                >
+                  Hospedaje
+                </span>
               </a>
 
               <a
@@ -53,7 +74,11 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   alt="done green"
                   className="pr-2"
                 />
-                <span>Tours</span>
+                <span
+                  className={`${currentActiveIcon === "tour" && "text-or-100"}`}
+                >
+                  Tours
+                </span>
               </a>
             </div>
           </div>

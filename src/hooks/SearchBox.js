@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import React, { useContext, useEffect, useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
@@ -15,31 +15,24 @@ export default function SearchBox() {
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
   const router = useRouter();
 
+  // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
 
-  useEffect(()=>{
-    console.log(routerActual.split("/")[2])
-  },[routerActual])
-
-  // console.log(hola);
-
-  useEffect
+  useEffect(() => {
+    setCurrentActiveIcon(routerActual);
+  }, [routerActual]);
 
   // CHANGE TAB DINAMIC
   const handleTabChange = (eventKey) => {
-    setCurrentActiveIcon(eventKey);
-
     let view = null;
     switch (eventKey) {
       case "hotel":
-        // console.log("entra");
         view = process.env.NEXT_PUBLIC_HOME;
         break;
       case "tour":
         view = "/tour";
         break;
     }
-
     if (view != null) {
       router.push(view);
     }
@@ -87,7 +80,7 @@ export default function SearchBox() {
               className={`${
                 currentActiveIcon === "tour"
                   ? "bg-bl-100 text-white"
-                  : "bg-white text-gry-100"
+                  : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
             >
               <Image
