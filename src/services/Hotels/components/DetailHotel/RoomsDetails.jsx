@@ -35,28 +35,45 @@ export default function RoomsDetails(codeHotel) {
   useEffect(() => {
     const urlSearchParams = new URLSearchParams(window.location.search);
     const queryParams = parseQueryParams(urlSearchParams, codeHotel);
-    // console.log(queryParams);
     setRequestBodyRooms(queryParams);
     setCheckIn(queryParams["check-in"]);
     setCheckOut(queryParams["check-out"]);
     handleFetchPostRooms(queryParams);
   }, []);
 
+  // Filtrar habitaciones para evitar duplicados visuales, excepto las seleccionadas
+  const filteredGroupedRooms = roomsData
+    ? Object.entries(
+        roomsData.rooms.reduce((acc, room) => {
+          if (!acc[room.name]) {
+            acc[room.name] = [];
+          }
+          acc[room.name].push(room);
+          return acc;
+        }, {})
+      ).reduce((acc, [groupName, rooms]) => {
+        const filteredRooms = rooms.filter(
+          (room) =>
+            !selectedRooms.some(
+              (selectedRoom) => selectedRoom.idRoom === room.idRoom
+            ) ||
+            selectedRooms.some(
+              (selectedRoom) =>
+                selectedRoom.idRoom === room.idRoom &&
+                selectedRoom.rateIndex === room.rateIndex
+            )
+        );
+        acc[groupName] = filteredRooms;
+        return acc;
+      }, {})
+    : {};
+
   if (!roomsData) {
-    // return <div>Loading...</div>;
     return <RoomsSelectedSkeleton />;
   }
 
-  const groupedRooms = roomsData.rooms.reduce((acc, room) => {
-    if (!acc[room.name]) {
-      acc[room.name] = [];
-    }
-    acc[room.name].push(room);
-    return acc;
-  }, {});
-
   // console.log(groupedRooms);
-  // console.log(selectedRooms);
+  console.log(selectedRooms);
 
   return (
     <>
@@ -67,47 +84,69 @@ export default function RoomsDetails(codeHotel) {
         <br />
         <span>Check-out: {checkOut}</span>
       </h4>
+      {Object.entries(filteredGroupedRooms).map(([roomType, rooms]) => {
+        // Verificar si hay habitaciones disponibles después del filtrado
+        if (rooms.length === 0) {
+          // No hay habitaciones disponibles en este grupo
+          return (
+            <div key={roomType} className="mb-[4rem]">
+              <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4">
+                {roomType}
+              </h2>
+              <p className="text-center">
+                Para ver habitaciones en esta categoría, por favor elimina
+                selecciones del pre-carrito.
+              </p>
+            </div>
+          );
+        }
 
-      {Object.entries(groupedRooms).map(([roomType, rooms]) => (
-        <div key={roomType} className="mb-[4rem] ">
-          <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 ">
-            {roomType}
-            {/* {console.log(rooms)} */}
-          </h2>
-          <div className="relative pr-4 lg:pr-9">
-            <Swiper
-              id="room-details"
-              className="mySwiper"
-              slidesPerView={4}
-              spaceBetween={16}
-              navigation
-              modules={[Navigation]}
-              breakpoints={{
-                300: {
-                  slidesPerView: 1.1,
-                },
-                500: {
-                  slidesPerView: 1.4,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1010: {
-                  slidesPerView: 3,
-                },
-                1200: {
-                  slidesPerView: 4,
-                },
-              }}
-            >
-              {rooms.map(
-                (room, index) =>
-                  !selectedRooms.some(
-                    (selectedRoom) => selectedRoom.idRoom === room.idRoom
-                  ) && (
+        // Renderizar grupo de habitaciones si hay disponibles
+        return (
+          <div key={roomType} className="mb-[4rem] ">
+            <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 ">
+              {roomType}
+              {/* {console.log(rooms)} */}
+            </h2>
+            <div className="relative pr-4 lg:pr-9">
+              <Swiper
+                id="room-details"
+                className="mySwiper"
+                slidesPerView={4}
+                spaceBetween={16}
+                navigation
+                modules={[Navigation]}
+                breakpoints={{
+                  300: {
+                    slidesPerView: 1.1,
+                  },
+                  500: {
+                    slidesPerView: 1.4,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1010: {
+                    slidesPerView: 3,
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                  },
+                }}
+              >
+                {rooms.map((room, index) => {
+                  const isSelected = selectedRooms.some(
+                    (selectedRoom) =>
+                      selectedRoom.idRoom === room.idRoom &&
+                      selectedRoom.rateIndex === room.rateIndex
+                  );
+
+                  return (
                     <SwiperSlide
                       key={index}
-                      className="bg-transparent shadow-sm"
+                      className={`bg-transparent shadow-sm ${
+                        isSelected ? "border-2 rounded-lg border-bl-70" : ""
+                      }`}
                     >
                       <div className="p-4 rounded-lg border border-gry-30 bg-white">
                         <div className="flex flex-col gap-y-4">
@@ -241,16 +280,26 @@ export default function RoomsDetails(codeHotel) {
                             </div>
                           </div>
 
-                          <AddPreCartHotel room={room} />
+                          {/* <AddPreCartHotel room={room} /> */}
+                          {/* {!isSelected && <AddPreCartHotel room={room} />} */}
+
+                          {isSelected ? (
+                            <div className="text-center text-fs-12 text-bl-100 m-b">
+                              Habitación seleccionada
+                            </div>
+                          ) : (
+                            <AddPreCartHotel room={room} />
+                          )}
                         </div>
                       </div>
                     </SwiperSlide>
-                  )
-              )}
-            </Swiper>
+                  );
+                })}
+              </Swiper>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </>
   );
 }
