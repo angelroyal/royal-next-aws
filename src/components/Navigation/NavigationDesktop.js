@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 
-import Cart from "@/hooks/Cart";
+// import Cart from "@/hooks/Cart";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { Container } from "@/config/Others/Container";
 import { LanguageSelector } from "@/language/LanguageSelector";
 
 import { SelectCurrency } from "./SelectCurrency";
-import CartOpen from "../Cart/CartOpen";
+import CartOpen from "../Cart/open/CartOpen";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export default function NavigationDesktop() {
@@ -32,7 +32,7 @@ export default function NavigationDesktop() {
             <span className="pl-[19px] pr-[19px]">|</span>
             <LanguageSelector />
 
-            <Cart />
+            {/* <Cart /> */}
             <CartOpen />
           </div>
 
@@ -82,7 +82,7 @@ export default function NavigationDesktop() {
             </div>
 
             <div className="flex gap-x-[18px] md:hidden">
-              <Cart />
+              {/* <Cart /> */}
               <CartOpen />
 
               <button

@@ -3,6 +3,7 @@
 import "../assets/styles/web/Cart.css";
 import "../assets/styles/mobile/CartMobile.css";
 
+import Image from "next/image";
 import React, { useState, useEffect, useContext } from "react";
 import { Box, Menu, Tooltip, IconButton } from "@mui/material";
 
@@ -12,10 +13,10 @@ import LanguageContext from "../language/LanguageContext";
 // import { useCartAxios } from "../components/Cart/CartAxios";
 import { useIsMobile } from "../config/Mobile/isMobile";
 
+
 import IconCart from "../assets/icons/utils/payment/cart.svg";
 import IconCartActive from "../assets/icons/utils/payment/cart-active.svg";
 import { useCartAxios } from "@/components/Cart/CartAxios";
-import Image from "next/image";
 
 export default function Cart() {
   const { fetchData, totalItemsInCart } = useCartAxios();

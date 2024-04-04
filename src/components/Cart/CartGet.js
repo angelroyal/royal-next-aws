@@ -4,7 +4,6 @@ import React, { useEffect, useState, useContext } from "react";
 
 import CartTour from "./CartTour";
 import CartHotel from "./CartHotel";
-import CartMoving from "./CartMoving";
 import { useCartAxios } from "./CartAxios";
 import LanguageContext from "../../language/LanguageContext";
 import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
@@ -84,14 +83,6 @@ export default function CartGet({ onCloseMenu }) {
             <CartTour
               cartId={cartUid}
               tourGetCart={cartInfo}
-              onUpdateData={fetchCartData}
-            />
-          )}
-
-          {cartInfo.transportations && (
-            <CartMoving
-              cartId={cartUid}
-              movingGetCart={cartInfo}
               onUpdateData={fetchCartData}
             />
           )}
