@@ -14,17 +14,18 @@ import AddPreCartHotel from "./AddPreCartHotel";
 import ToolTipRefundable from "../ToolTip/Tooltip";
 import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
+import { RoomsSelectedSkeleton } from "../Skeleton/HotelInformationSkeleton";
 
 import {
   parseQueryParams,
   formatAdultsAndChildren,
 } from "../../utils/utilsDetailHotel";
-import { RoomsSelectedSkeleton } from "../Skeleton/HotelInformationSkeleton";
 
 export default function RoomsDetails(codeHotel) {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const { languageData } = useContext(LanguageContext);
+
   const {
     roomsData,
     handleFetchPostRooms,
@@ -41,7 +42,7 @@ export default function RoomsDetails(codeHotel) {
     handleFetchPostRooms(queryParams);
   }, []);
 
-  // Filtrar habitaciones para evitar duplicados visuales, excepto las seleccionadas
+  // Filter rooms to avoid visual duplicates, except selected ones
   const filteredGroupedRooms = roomsData
     ? Object.entries(
         roomsData.rooms.reduce((acc, room) => {
@@ -71,9 +72,6 @@ export default function RoomsDetails(codeHotel) {
   if (!roomsData) {
     return <RoomsSelectedSkeleton />;
   }
-
-  // console.log(groupedRooms);
-  console.log(selectedRooms);
 
   return (
     <>
