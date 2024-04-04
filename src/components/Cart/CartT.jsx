@@ -8,6 +8,7 @@ import CartTourT from "./carts/CartTourT";
 import { useCartAxios } from "./CartAxios";
 import CartHotelT from "./carts/CartHotelT";
 import PriceCart from "./config/PriceCart";
+import EmptyCart from "./utils/EmptyCart";
 // import LanguageContext from "@/language/LanguageContext";
 
 export default function CartT(props) {
@@ -95,7 +96,7 @@ export default function CartT(props) {
             </>
           )}
 
-          {!cartInfo && <div>sin informacion</div>}
+          {!cartInfo && <div><EmptyCart/></div>}
         </div>
       </div>
     </>

@@ -20,7 +20,7 @@ const {cartId} = props;
   return (
     <>
       {/* PRICE CART */}
-      <div className="border-t border-[#ebebeb] mt-[16px] pt-[16px]">
+      <div className="border-t border-[#ebebeb] mt-[16px] pt-[16px] max-sm:sticky max-sm:bottom-0 max-sm:bg-white">
         <div className="flex justify-between">
           <span className="text-fs-12 text-gry-100 m-m">Subtotal</span>
 
@@ -59,11 +59,11 @@ const {cartId} = props;
         </div>
 
         {/* BTN */}
-        <div className="flex justify-end gap-[16px] mt-[16px]">
-          <button className="text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white">
+        <div className="flex justify-end gap-[16px] mt-[16px] mb-3">
+          <button className="text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] text-nowrap hover:bg-bl-100 hover:text-white">
             Resetear carrito
           </button>
-          <Link href={`/booking?uid=${cartId}`}  className="text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d]">
+          <Link href={`/booking?uid=${cartId}`}  className="text-fs-14 text-white m-s-b bg-bl-100 rounded-full text-nowrap py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
             Finalizar compra
           </Link>
         </div>

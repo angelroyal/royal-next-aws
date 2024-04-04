@@ -8,7 +8,7 @@ import CartTourT from "../carts/CartTourT";
 import PriceCart from "../config/PriceCart";
 import { useCartAxios } from "../CartAxios";
 import CartHotelT from "../carts/CartHotelT";
-
+import EmptyCart from "../utils/EmptyCart";
 export default function CartMobile() {
   const [open, setOpen] = useState(true);
 
@@ -123,7 +123,7 @@ export default function CartMobile() {
                         </>
                       )}
 
-                      {!cartInfo && <div>sin informacion</div>}
+                      {!cartInfo && <div><EmptyCart/></div>}
                     </div>
                   </div>
                 </Dialog.Panel>

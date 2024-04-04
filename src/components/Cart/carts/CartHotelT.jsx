@@ -45,7 +45,7 @@ export default function CartHotelT(props) {
   // console.log(hotelGetCart);
 
   return (
-    <div>
+    <div className="relative">
       {/* CARD CART HOTEL */}
       {hotelGetCart &&
         hotelGetCart.hotels.map((hotel, index) => (
@@ -155,7 +155,7 @@ export default function CartHotelT(props) {
             </div>
             {showDelete[hotel.id] && (
               <div
-                className="transition duration-500 ease-in-out bg-red-100 flex w-[48px] justify-center items-center rounded-r-lg cursor-pointer"
+                className="transition duration-500 ease-in-out bg-red-100 flex w-[48px] justify-center items-center rounded-r-lg cursor-pointer absolute right-[14px] h-[116px] max-sm:right-[6px]"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleDeleteClick(hotel);
