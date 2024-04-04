@@ -14,17 +14,18 @@ import AddPreCartHotel from "./AddPreCartHotel";
 import ToolTipRefundable from "../ToolTip/Tooltip";
 import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
+import { RoomsSelectedSkeleton } from "../Skeleton/HotelInformationSkeleton";
 
 import {
   parseQueryParams,
   formatAdultsAndChildren,
 } from "../../utils/utilsDetailHotel";
-import { RoomsSelectedSkeleton } from "../Skeleton/HotelInformationSkeleton";
 
 export default function RoomsDetails(codeHotel) {
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
   const { languageData } = useContext(LanguageContext);
+
   const {
     roomsData,
     handleFetchPostRooms,
@@ -35,79 +36,114 @@ export default function RoomsDetails(codeHotel) {
   useEffect(() => {
     const urlSearchParams = new URLSearchParams(window.location.search);
     const queryParams = parseQueryParams(urlSearchParams, codeHotel);
-    // console.log(queryParams);
     setRequestBodyRooms(queryParams);
     setCheckIn(queryParams["check-in"]);
     setCheckOut(queryParams["check-out"]);
     handleFetchPostRooms(queryParams);
   }, []);
 
+  // Filter rooms to avoid visual duplicates, except selected ones
+  const filteredGroupedRooms = roomsData
+    ? Object.entries(
+        roomsData.rooms.reduce((acc, room) => {
+          if (!acc[room.name]) {
+            acc[room.name] = [];
+          }
+          acc[room.name].push(room);
+          return acc;
+        }, {})
+      ).reduce((acc, [groupName, rooms]) => {
+        const filteredRooms = rooms.filter(
+          (room) =>
+            !selectedRooms.some(
+              (selectedRoom) => selectedRoom.idRoom === room.idRoom
+            ) ||
+            selectedRooms.some(
+              (selectedRoom) =>
+                selectedRoom.idRoom === room.idRoom &&
+                selectedRoom.rateIndex === room.rateIndex
+            )
+        );
+        acc[groupName] = filteredRooms;
+        return acc;
+      }, {})
+    : {};
+
   if (!roomsData) {
-    // return <div>Loading...</div>;
     return <RoomsSelectedSkeleton />;
   }
-
-  const groupedRooms = roomsData.rooms.reduce((acc, room) => {
-    if (!acc[room.name]) {
-      acc[room.name] = [];
-    }
-    acc[room.name].push(room);
-    return acc;
-  }, {});
-
-  // console.log(groupedRooms);
-  // console.log(selectedRooms);
 
   return (
     <>
       <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 ">
-        <span>{roomsData.totalRooms} habitaciones encontradas</span>
+        <span>{roomsData.totalRooms} hnpabitaciones encontradas</span>
         <br />
         <span>Check-in: {checkIn}</span>
         <br />
         <span>Check-out: {checkOut}</span>
       </h4>
 
-      {Object.entries(groupedRooms).map(([roomType, rooms]) => (
-        <div key={roomType} className="mb-[4rem] ">
-          <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 ">
-            {roomType}
-            {/* {console.log(rooms)} */}
-          </h2>
-          <div className="relative pr-4 lg:pr-9">
-            <Swiper
-              id="room-details"
-              className="mySwiper"
-              slidesPerView={4}
-              spaceBetween={16}
-              navigation
-              modules={[Navigation]}
-              breakpoints={{
-                300: {
-                  slidesPerView: 1.1,
-                },
-                500: {
-                  slidesPerView: 1.4,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1010: {
-                  slidesPerView: 3,
-                },
-                1200: {
-                  slidesPerView: 4,
-                },
-              }}
-            >
-              {rooms.map(
-                (room, index) =>
-                  !selectedRooms.some(
-                    (selectedRoom) => selectedRoom.idRoom === room.idRoom
-                  ) && (
+      {Object.entries(filteredGroupedRooms).map(([roomType, rooms]) => {
+        if (rooms.length === 0) {
+          return (
+            <div key={roomType} className="mb-[4rem]">
+              <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4">
+                {roomType}
+              </h2>
+              <p className="text-center">
+                Para ver habitaciones en esta categoría, por favor elimina
+                selecciones del pre-carrito.
+              </p>
+            </div>
+          );
+        }
+
+        // Renderizar grupo de habitaciones si hay disponibles
+        return (
+          <div key={roomType} className="mb-[4rem] ">
+            <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 ">
+              {roomType}
+              {/* {console.log(rooms)} */}
+            </h2>
+            <div className="relative pr-4 lg:pr-9">
+              <Swiper
+                id="room-details"
+                className="mySwiper"
+                slidesPerView={4}
+                spaceBetween={16}
+                navigation
+                modules={[Navigation]}
+                breakpoints={{
+                  300: {
+                    slidesPerView: 1.1,
+                  },
+                  500: {
+                    slidesPerView: 1.4,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1010: {
+                    slidesPerView: 3,
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                  },
+                }}
+              >
+                {rooms.map((room, index) => {
+                  const isSelected = selectedRooms.some(
+                    (selectedRoom) =>
+                      selectedRoom.idRoom === room.idRoom &&
+                      selectedRoom.rateIndex === room.rateIndex
+                  );
+
+                  return (
                     <SwiperSlide
                       key={index}
-                      className="bg-transparent shadow-sm"
+                      className={`bg-transparent shadow-sm ${
+                        isSelected ? "border-2 rounded-lg border-bl-70" : ""
+                      }`}
                     >
                       <div className="p-4 rounded-lg border border-gry-30 bg-white">
                         <div className="flex flex-col gap-y-4">
@@ -241,16 +277,26 @@ export default function RoomsDetails(codeHotel) {
                             </div>
                           </div>
 
-                          <AddPreCartHotel room={room} />
+                          {/* <AddPreCartHotel room={room} /> */}
+                          {/* {!isSelected && <AddPreCartHotel room={room} />} */}
+
+                          {isSelected ? (
+                            <div className="text-center text-fs-12 text-bl-100 m-b">
+                              Habitación seleccionada
+                            </div>
+                          ) : (
+                            <AddPreCartHotel room={room} />
+                          )}
                         </div>
                       </div>
                     </SwiperSlide>
-                  )
-              )}
-            </Swiper>
+                  );
+                })}
+              </Swiper>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </>
   );
 }
