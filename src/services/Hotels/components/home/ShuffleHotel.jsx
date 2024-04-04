@@ -242,7 +242,7 @@ export default function ShuffleHotel() {
               <div className="min-w-[266px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl max-w-[280px]">
                 <div className="w-full h-[216px]">
                   <img
-                    className="w-full h-full rounded-t-lg object-cover"
+                    className="w-full h-full rounded-t-lg object-cover select-none"
                     src={tour.image}
                     alt="card"
                   />
@@ -324,7 +324,7 @@ export default function ShuffleHotel() {
               <div className="min-w-[266px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl max-w-[280px]">
                 <div className="w-full h-[216px]">
                   <img
-                    className="w-full h-full rounded-t-lg object-cover"
+                    className="w-full h-full rounded-t-lg object-cover select-none"
                     src={tour.image}
                     alt="card"
                   />

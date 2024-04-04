@@ -12,21 +12,21 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const router = useRouter();
 
-//   const aboutRout = (routerNavigation)=>{
-//    router.push(routerNavigation) 
-//   }
-  
+  //   const aboutRout = (routerNavigation)=>{
+  //    router.push(routerNavigation) 
+  //   }
+
   return (
     <>
-      <div>
-        <Image
-          src={`${process.env.NEXT_PUBLIC_URL}general/line-footer-or.svg`}
-          alt="line-footer-or"
-          className="w-full"
-          width={1136}
-          height={32}
-        />
-      </div>
+
+      <Image
+        src={`${process.env.NEXT_PUBLIC_URL}general/line-footer-or.svg`}
+        alt="line-footer-or"
+        className="w-full"
+        width={1136}
+        height={32}
+      />
+
 
       <footer className="bg-bl-100 flex flex-col text-white max-w-full pt-[21px] pb-[1rem]">
         {/* LOGO AND SOCIAL ICONS */}
@@ -164,7 +164,7 @@ export default function Footer() {
               <Link href="/tyc" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titleConditions}
               </Link>
-              
+
               <Link href="/privacy" className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titlePrivacy}
               </Link>

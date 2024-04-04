@@ -12,7 +12,7 @@ export function TransportBanner() {
           momento.
         </p>
 
-        <button className="rounded-full py-[20px] px-[41px] bg-bl-100 text-white w-max m-s-b text-fs-12 hover:bg-bl-70 hover:opacity-75">
+        <button className="rounded-full py-[20px] px-[41px] bg-bl-100 text-white w-max m-s-b text-fs-12 hover:bg-bl-110">
           Elegir fechas
         </button>
       </div>
@@ -21,14 +21,14 @@ export function TransportBanner() {
         <img
           src={`${process.env.NEXT_PUBLIC_URL}banners/vehicle/tiggo-7-pro.webp`}
           alt="tiggo car Royal Vacation"
-          className="absolute z-[1] bottom-0 right-0 left-0 mx-auto"
+          className="absolute z-[1] bottom-0 right-0 left-0 mx-auto select-none"
           width="auto"
           height="100%"
         />
         <img
           src={`${process.env.NEXT_PUBLIC_URL}general/Frame-1414.webp`}
           alt="Royal Vacation"
-          className="object-cover h-full mr-0 md:mr-[44px] lg:mr-0 xl:mr-[44px]"
+          className="object-cover h-full mr-0 md:mr-[44px] lg:mr-0 xl:mr-[44px] select-none"
           width="auto"
           height="100%"
         />

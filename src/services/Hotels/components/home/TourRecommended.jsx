@@ -67,7 +67,7 @@ export default function CartTourOptions() {
             <div className="bg-white w-[185px] h-[258px] cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md px-4 py-4 flex flex-col justify-center items-center">
               <div className="w-[132px] h-[132px] mb-3">
                 <img
-                  className="w-full h-full rounded-full object-cover"
+                  className="w-full h-full rounded-full object-cover select-none"
                   src={tour.image}
                   alt="staywow card"
                 />
