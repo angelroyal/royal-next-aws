@@ -20,6 +20,7 @@ import ImageListingTour from "../Banners/ImageListingTour";
 import SkeletonTourCard from "@/utils/skeleton/SkeletonTourCard";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import { Container } from "@/config/Others/Container";
 
 export default function ListingTour() {
   const {
@@ -145,11 +146,10 @@ export default function ListingTour() {
 
       {tourData && <BannerDestinationTour destination={tourData.destination} />}
 
-      {/* {isMobile && <FilterTourML />} */}
+      <Container>
+        <div className="flex flex-col xl:flex-row md:justify-between">
 
-      <div className="container">
-        <Row className="display-flex-center">
-          <Col sm={3} className="col-padding">
+          <div className="w-full xl:w-[28%] mt-10">
             <h1 className="hotel-title-filters">
               {languageData.filtersTour.titleTour}
             </h1>
@@ -166,8 +166,8 @@ export default function ListingTour() {
                 orderTour={orderTour}
               />
             )}
-          </Col>
-          <Col sm={8} className="margin-bottom">
+          </div>
+          <div className="w-full xl:w-8/12 relative">
             {currentTours && (
               <div className="order-and-data-tour">
                 <h5 className="text-we-found-tour">
@@ -227,9 +227,9 @@ export default function ListingTour() {
                 />
               </div>
             )}
-          </Col>
-        </Row>
-      </div>
+          </div>
+        </div>
+      </Container>
     </>
   );
 }

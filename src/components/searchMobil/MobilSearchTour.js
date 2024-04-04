@@ -80,48 +80,29 @@ export default function MobilSearchTour() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <>
-      <h3 className="titleSearch">
-        {languageData.SearchBox.tabTour.titleTextTour}
-      </h3>
-
-      <div className="margin-search-tab">
-        <Image className="icon-location-result" src={RoomOutlinedIcon} alt="RoomOutlinedIcon" />
-        <span className="span-location-home">
-          {languageData.SearchBox.tabTour.autoDestination}
-        </span>
+    <div className="!p-5 shadow-3xl">
+      <div className="flex flex-col gap-y-3">
         <SearchTour onSelectTour={setSelectedOption} />
-      </div>
 
-      <div className="margin-search-tab">
-        <Image className="Icon-date" src={DateRangeIcon} alt="DateRangeIcon" />
-        <span className="span-date-home">
-          {languageData.SearchBox.tabTour.date}
-        </span>
         <CalendarDay onDateChange={handleDateChange} />
-      </div>
 
-      <div className="margin-search-tab">
-        <span className="span-people-tour">
-          {languageData.SearchBox.tabTour.people}
-        </span>
         <PersonsActivities OnApply={setRoomData} />
-      </div>
 
-      <div className="margin-search-tab button-room-page">
-        <button
-          className={`button-search-page-search ${
-            !selectedOption || !selectedDate ? "disabled" : ""
-          }`}
-          variant="contained"
-          color="primary"
-          size="large"
-          onClick={sendAutocomplete}
-          disabled={!selectedOption || !selectedDate}
-          sx={{ mt: 2 }}
-        >
-          {languageData.SearchBox.tabTour.button}
-        </button>
+        <div className="margin-search-tab button-room-page">
+          <button
+            className={`button-search-page-search ${
+              !selectedOption || !selectedDate ? "disabled" : ""
+            }`}
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={sendAutocomplete}
+            disabled={!selectedOption || !selectedDate}
+            sx={{ mt: 2 }}
+          >
+            {languageData.SearchBox.tabTour.button}
+          </button>
+        </div>
       </div>
 
       {showModal && (
@@ -134,6 +115,6 @@ export default function MobilSearchTour() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

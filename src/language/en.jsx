@@ -551,7 +551,7 @@ export const en = {
 
     OccupancyTours: {
       selectYourTickets: "Select your tickets",
-      subtitleSelectYourTickets: "Upon selecting your tickets, you will be able to view the summary in your shopping cart",
+      subtitleSelectYourTickets: "Upon selecting your tickets, you will be able to view the summary in your shopping cart.",
       changeSelection: "Change selection",
       reserve: "Reserve",
       dateNotAvailable: "This date is not available. Please choose another one.",

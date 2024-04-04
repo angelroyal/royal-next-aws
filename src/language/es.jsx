@@ -554,7 +554,7 @@ export const es = {
 
     OccupancyTours: {
       selectYourTickets: "Selecciona tus entradas",
-      subtitleSelectYourTickets: "Al seleccionar tus entradas podrás ver el resumen en tu carrito de compra",
+      subtitleSelectYourTickets: "Al seleccionar tus entradas podrás ver el resumen en tu carrito de compra.",
       changeSelection: "Cambiar selección",
       reserve: "Reservar",
       dateNotAvailable: "Esta fecha no está disponible. Por favor, selecciona otra.",

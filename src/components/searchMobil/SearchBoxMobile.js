@@ -8,23 +8,31 @@ import React, { useState, useEffect, useContext } from "react";
 import MobilSearchTour from "./MobilSearchTour";
 import MobilSearchHotel from "./MobilSearchHotel";
 import LanguageContext from "@/language/LanguageContext";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 // import MobilSearchMoving from "./MobilSearchMoving";
 
 export default function SearchBoxMobile() {
-  const [activeTab, setActiveTab] = useState("hotel");
+  const [activeTab, setActiveTab] = useState(null);
   const { languageData } = useContext(LanguageContext);
 
-  useEffect(() => {
-    const path = window.location.pathname;
+  // GET ACTIVITY SERVICE
+  const routerActual = NavigationConfig();
 
-    if (path.includes("/tours")) {
-      setActiveTab("tour");
-    } else if (path.includes("/hotels")) {
-      setActiveTab("hotel");
-    } else if (path.includes("/moving")) {
-      setActiveTab("moving");
-    }
-  }, []);
+  useEffect(() => {
+    setActiveTab(routerActual);
+  }, [routerActual]);
+
+  // useEffect(() => {
+  //   const path = window.location.pathname;
+
+  //   if (path.includes("/tours")) {
+  //     setActiveTab("tour");
+  //   } else if (path.includes("/hotels")) {
+  //     setActiveTab("hotel");
+  //   } else if (path.includes("/moving")) {
+  //     setActiveTab("moving");
+  //   }
+  // }, []);
 
   // const isDev = process.env.REACT_APP_DEV === "true";
 
@@ -65,13 +73,14 @@ export default function SearchBoxMobile() {
       </Tab.List>
 
       <Tab.Panels>
-        <Tab.Panel>
-          <MobilSearchHotel />
-        </Tab.Panel>
+        {/* <Tab.Panel> */}
+        {activeTab === "hotel" && <MobilSearchHotel />}
+        {/* </Tab.Panel> */}
+
+        {/* <Tab.Panel> */}
+        {activeTab === "tour" && <MobilSearchTour />}
         
-        <Tab.Panel>
-          <MobilSearchTour />
-        </Tab.Panel>
+        {/* </Tab.Panel> */}
       </Tab.Panels>
     </Tab.Group>
   );

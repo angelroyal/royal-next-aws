@@ -5,7 +5,7 @@ import { TotalStars } from "@/components/General/Stars";
 
 export default function DetailTour() {
   return (
-    <div className="mr-[5rem] ml-[5rem]">
+    <div >
       <div className=" bg-gry-50 text-gry-100 p-2 w-fit rounded-full mt-4 text-fs-10 m-b">
         Parque acuatico
       </div>

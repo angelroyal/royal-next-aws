@@ -70,7 +70,7 @@ export default function CalendarDay({ onDateChange }) {
             placeholder={
               languageData.SearchBox.tabTransportation.autoCompleteArrival
             }
-            id="check-in"
+            // id="check-in"
           />
         </div>
       </div>
