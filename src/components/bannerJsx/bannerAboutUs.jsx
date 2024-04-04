@@ -9,7 +9,7 @@ export function BannerAboutUs() {
   return (
     <div data-aos="fade-left" className="relative h-[12rem] lg:h-[20rem]">
       <img
-        className="object-cover w-full h-full "
+        className="object-cover w-full h-full"
         src={Others.bannerAbout.image}
         alt={Others.bannerAbout.alt}
         width="100%"

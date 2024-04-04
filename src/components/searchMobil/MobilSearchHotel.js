@@ -124,7 +124,7 @@ export default function MobilSearchHotel() {
             className={` w-[60%] lg:w-full rounded-[50px] justify-center flex gap-x-2.5 items-center justify-content-center m-b text-fs-12 text-white py-[8.5px] px-8 lg:px-4 ${
               !selectedOption || !validFirstDay || !validSecondDay
                 ? "bg-or-50"
-                : "bg-or-100 hoveLor:!bg-or-70"
+                : "bg-or-100 hover:!bg-or-110"
             }`}
             variant="contained"
             color="primary"
