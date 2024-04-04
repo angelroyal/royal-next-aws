@@ -76,16 +76,15 @@ export default function RoomsDetails(codeHotel) {
   return (
     <>
       <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 ">
-        <span>{roomsData.totalRooms} habitaciones encontradas</span>
+        <span>{roomsData.totalRooms} hnpabitaciones encontradas</span>
         <br />
         <span>Check-in: {checkIn}</span>
         <br />
         <span>Check-out: {checkOut}</span>
       </h4>
+
       {Object.entries(filteredGroupedRooms).map(([roomType, rooms]) => {
-        // Verificar si hay habitaciones disponibles después del filtrado
         if (rooms.length === 0) {
-          // No hay habitaciones disponibles en este grupo
           return (
             <div key={roomType} className="mb-[4rem]">
               <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4">
