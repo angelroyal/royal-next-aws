@@ -189,7 +189,7 @@ export default function DetailsPayment(props) {
                       <button
                         type="submit"
                         onClick={() => paymentReservation()}
-                        className={`button-payment-details  ${
+                        className={`button-payment-details ${
                           !policyAccept || !termsAccept || !buttonActive
                             ? "disabled"
                             : ""

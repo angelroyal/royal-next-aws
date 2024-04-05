@@ -665,7 +665,7 @@ export default function PaymentConektaF(props) {
                     : ""
                 } ${
                   policyChecked && termsChecked
-                    ? "add-padding-container"
+                    ? "add-padding-container hover:bg-yw-110"
                     : "disabled-padding-button"
                 }`}
                 disabled={!policyChecked || !termsChecked || !isButtonEnabled}

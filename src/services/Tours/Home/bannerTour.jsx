@@ -11,8 +11,6 @@ import LanguageContext from "@/language/LanguageContext";
 export function BannerHomeTour() {
     const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
     const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
-    const excDiscounts = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/cenote-san-antonio.webp`;
-
     const { languageData } = useContext(LanguageContext);
 
     return (
@@ -20,23 +18,10 @@ export function BannerHomeTour() {
         <Swiper
             slidesPerView={3}
             spaceBetween={16}
-            className="my-[40px]"
+            className="h-[19rem] mb-16"
             id="swiper-banner-home-tour"
             initialSlide={0}
-            // loop={true}
             breakpoints={{
-                // 0: {
-                //     slidesPerView: 1,
-                // },
-                // 768: {
-                //     slidesPerView: 1.5,
-                // },
-                // 1024: {
-                //     slidesPerView: 2.9,
-                // },
-                // 1440: {
-                //     slidesPerView: 3,
-                // },
                 0: {
                     slidesPerView: .5,
                 },
@@ -58,7 +43,10 @@ export function BannerHomeTour() {
             {/* ONE CARD IMAGE AND TEXT */}
 
             <SwiperSlide className="!w-[48%] max-lg:!w-full max-sm:!w-full !bg-gry-30 !rounded-lg">
-                <div className="bg-black rounded-lg ">
+                <div className="w-full flex justify-center !bg-white">
+                    <Image src={`${process.env.NEXT_PUBLIC_URL}test/bannerTourPrice.jpg`} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-top select-none" alt="Banner Exc Discounts" />
+                </div>
+                {/* <div className="bg-black rounded-lg ">
                     <div className="relative w-full h-[273px] max-xl:h-[235px] max-lg:h-[292px] max-sm:h-[263px] rounded-lg bg-[#1B1464] max-lg:w-full ">
 
                         <div className="absolute top-[0%] left-[0%] w-[65%] h-[80%] pr-[50px] bg-[#2743A6] rounded-tl-lg rounded-bl-lg pt-[32px] pl-[22px] max-w-[545px]">
@@ -86,19 +74,17 @@ export function BannerHomeTour() {
                             className="absolute bottom-[8%] right-[9%] rounded-full py-[10px] px-[30px] bg-yw-100 m-b text-fs-12 text-black no-underline hover:bg-yw-110 max-sm:right-0">
                             {languageData.cartTour.youWantMore}
                         </a>
-
-
                     </div>
-                </div>
+                </div> */}
             </SwiperSlide>
             {/*END ONE CARD IMAGE AND TEXT */}
 
             {/*TWO CARD TEXT */}
-            <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+            <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
                 <div className="relative w-full flex justify-center ">
-                    <Image src={bannerTraveling} width={266} height={235} className="w-[99%] h-[102%] max-lg:h-[99%] max-sm:!w-[81%] rounded-lg" alt="Banner Experimenta los mejores tours" />
+                    <Image src={bannerTraveling} width={266} height={235} className="w-full rounded-lg select-none" alt="Banner Experimenta los mejores tours" />
 
-                    <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[26%] max-sm:top-[40px]">
+                    <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[12%] max-sm:top-[40px]">
                         <h2 className="m-b w-9/12 text-white text-fs-28 mb-4 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fsw-48 max-sm:text-fs-24">{languageData.titleBanners.titleTourMexico}</h2>
                         <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-22 text-left max-2xl:text-fs-18 max-xl:text-fs-16 max-lg:text-fsw-38 max-sm:text-fsw-64" >{languageData.titleBanners.subtitleTourM}</h4>
                     </div>
@@ -107,9 +93,9 @@ export function BannerHomeTour() {
             {/*END TWO CARD TEXT */}
 
             {/* THREE CARD IMAGE TOUR */}
-            <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+            <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
                 <div className="w-full flex justify-center">
-                    <Image src={bannerTour} width={266} height={235} className="w-[99%] h-[90%] max-lg:w-[96%] max-sm:!w-[79%] rounded-lg select-none" alt="Banner tour mes de feb" />
+                    <Image src={bannerTour} width={266} height={235} className="w-full rounded-lg select-none object-cover object-bottom" alt="Banner tour mes de feb" />
                 </div>
             </SwiperSlide>
             {/*END THREE CARD IMAGE TOUR */}

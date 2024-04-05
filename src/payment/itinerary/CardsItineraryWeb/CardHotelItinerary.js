@@ -19,9 +19,9 @@ import RoomIcon from "../../../assets/icons/utils/searchBox/room.svg";
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
 import DoneIcon from "../../../assets/icons/tour/modal/done_active.svg";
 import IconLocationBorder from "../../../assets/icons/utils/others/location-border.svg";
-import LocationIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
+// import LocationIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
 import Image from "next/image";
-
+import "../../../../src/assets/styles/mobile/HotelMobile.css";
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
   // console.log(itemHotel);
@@ -80,10 +80,10 @@ export default function CardHotelItinerary(props) {
   return (
     <>
       <div className="cont-card-icon-location-and-date">
-        <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder"/>
+        <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder" />
         <div className="container-card-hotel-i-and-date">
           {/* DAY,TIME HOTEL */}
-          <div className="date-itinerary-hotel">
+          <div className="date-itinerary-hotel max-lg:!flex-row">
             <div>
               <span className="text-hotel-or-i">
                 {languageData.dayOfWeek[dayOfWeek]}
@@ -95,6 +95,7 @@ export default function CardHotelItinerary(props) {
 
             <ul className="ul-hotel-date">
               <li>
+                <span className="mr-2 ml-2">•</span>
                 <span className="text-hotel-grey-i">Check out</span>{" "}
                 <span className="text-loc-hotel-grey-i">
                   {dateFormatCheckOut}{" "}
@@ -130,7 +131,7 @@ export default function CardHotelItinerary(props) {
 
               <div className="d-flex width8 justify-content-between my-auto mt-1">
                 <div className="width100">
-                  <div className="cont-name-hotel-and-location d-flex flex-column align-self-center">
+                  <div className="cont-name-hotel-and-location d-flex flex-column align-self-center gap-[3px]">
                     <div className="d-flex title-start">
                       <span className="title-card-ini">{itemHotel.name}</span>
 
@@ -145,8 +146,13 @@ export default function CardHotelItinerary(props) {
                       </div>
                     </div>
 
-                    <div className="icon-location-and-text d-flex gap-2">
-                      <Image className="icons-size-m" src={LocationIcon} />
+                    <div className="icon-location-and-text d-flex gap-2 items-center">
+                      <Image 
+                      className="icons-size-m" src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`} 
+                      alt="icon-location-bl"
+                      width={11}
+                      height={14}
+                      />
                       <span>{itemHotel.address}</span>
                     </div>
 
@@ -199,7 +205,7 @@ export default function CardHotelItinerary(props) {
               </div>
             </div>
 
-            <div className="active-container-payment-mobile">
+            <div className="active-container-payment-mobile lg:hidden">
               <div className="occupancy-rooms-itinerary">
                 <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
                   <img
@@ -292,7 +298,7 @@ export default function CardHotelItinerary(props) {
                                   </div>
 
                                   <div className="d-flex flex-wrap row-gap-1 gap-2 align-items-center">
-                                    <div className="d-flex gap-2">
+                                    <div className="d-flex gap-2 items-center">
                                       <img
                                         className="icons-size-m"
                                         src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
@@ -311,7 +317,7 @@ export default function CardHotelItinerary(props) {
                                     {/* MAP ROOM BEDS */}
                                     {roomBed.beds &&
                                       roomBed.beds.map((bed, index) => (
-                                        <div key={index}>
+                                        <div key={index} className="flex gap-2 items-center">
                                           {/* <RoomIcon className="icons-size-m" /> */}
                                           <Image
                                             className="icons-size-m"

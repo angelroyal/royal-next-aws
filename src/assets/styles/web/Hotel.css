@@ -535,6 +535,7 @@
 .ul-hotel-date {
   margin-bottom: 0;
   color: #666;
+  padding-left: 0% !important;
 }
 
 .icon-location-border-date {
@@ -593,6 +594,16 @@
   padding-right: 22px;
   margin-top: 12px;
   box-shadow: 1px 0px 20px 1px rgba(189, 183, 183, 0.75);
+}
+
+.remove-card-listing{
+  position: absolute;
+  right: 0.3rem;
+  top: 0.3rem;
+  width: 1.3rem;
+  height: auto;
+  margin: 0;
+  cursor: pointer;
 }
 
 .close-icon {
@@ -782,9 +793,9 @@
 }
 
 /* CARD HOTEL RESERVATION */
-.active-container-payment-mobile {
+/* .active-container-payment-mobile {
   display: none;
-}
+} */
 .occupancy-rooms-itinerary {
   display: flex;
   gap: 1rem;
