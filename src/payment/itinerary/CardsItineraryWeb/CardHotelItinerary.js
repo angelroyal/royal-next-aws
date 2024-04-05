@@ -21,7 +21,7 @@ import DoneIcon from "../../../assets/icons/tour/modal/done_active.svg";
 import IconLocationBorder from "../../../assets/icons/utils/others/location-border.svg";
 // import LocationIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
 import Image from "next/image";
-
+import "../../../../src/assets/styles/mobile/HotelMobile.css";
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
   // console.log(itemHotel);
@@ -83,7 +83,7 @@ export default function CardHotelItinerary(props) {
         <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder" />
         <div className="container-card-hotel-i-and-date">
           {/* DAY,TIME HOTEL */}
-          <div className="date-itinerary-hotel">
+          <div className="date-itinerary-hotel max-lg:!flex-row">
             <div>
               <span className="text-hotel-or-i">
                 {languageData.dayOfWeek[dayOfWeek]}
@@ -205,7 +205,7 @@ export default function CardHotelItinerary(props) {
               </div>
             </div>
 
-            <div className="active-container-payment-mobile">
+            <div className="active-container-payment-mobile lg:hidden">
               <div className="occupancy-rooms-itinerary">
                 <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
                   <img

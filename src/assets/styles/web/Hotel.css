@@ -793,9 +793,9 @@
 }
 
 /* CARD HOTEL RESERVATION */
-.active-container-payment-mobile {
+/* .active-container-payment-mobile {
   display: none;
-}
+} */
 .occupancy-rooms-itinerary {
   display: flex;
   gap: 1rem;

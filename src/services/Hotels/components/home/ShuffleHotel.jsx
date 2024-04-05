@@ -259,7 +259,7 @@ export default function ShuffleHotel() {
                     <Image
                       className="w-auto h-auto"
                       src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
-                      alt="icon-location"
+                      alt="icon-location-bl"
                       width={11}
                       height={14}
                     />
