@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { Button, Typography, TextField } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material/";
 
@@ -94,6 +94,11 @@ export default function RoomMenu(props) {
   const addRoom = () => {
     if (rooms.length < 10) {
       setRooms([...rooms, { adult: 1, child: 0, ages: [] }]);
+      // setTimeout(scrollToBottom, 100);
+      setTimeout(() => {
+        const roomsContainer = document.getElementById('roomsContainer');
+        roomsContainer.scrollTop = roomsContainer.scrollHeight; // scroll container
+      }, 100);
     }
   };
 
@@ -180,8 +185,10 @@ export default function RoomMenu(props) {
       : localStorage.setItem("roomData", JSON.stringify(roomData));
   };
 
+  const endOfRoomsRef = useRef(null);
+
   return (
-    <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg">
+    <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg" id="roomsContainer">
       <div className="pt-4 pl-3 pr-3 z-10">
         {rooms.map((room, index) => (
           <div
@@ -301,6 +308,8 @@ export default function RoomMenu(props) {
             ))}
           </div>
         ))}
+        <div ref={endOfRoomsRef} />{" "}
+        {/* Coloca el ref aquí, al final de la lista de habitaciones */}
       </div>
 
       <div className="sticky border-t border-gry-50 z-10 items-center flex flex-col bottom-0 left-0 bg-white p-2 justify-between gap-2">
@@ -313,7 +322,10 @@ export default function RoomMenu(props) {
           {languageData.SearchBox.tabHotel.roomBox.addRoom}
         </button>
 
-        <button className="rounded-full bg-or-100 w-max py-1.5 px-4 m-s-b text-fs-15 text-white" onClick={printRoomData}>
+        <button
+          className="rounded-full bg-or-100 w-max py-1.5 px-4 m-s-b text-fs-15 text-white"
+          onClick={printRoomData}
+        >
           {languageData.SearchBox.tabHotel.roomBox.buttonApply}
         </button>
       </div>
