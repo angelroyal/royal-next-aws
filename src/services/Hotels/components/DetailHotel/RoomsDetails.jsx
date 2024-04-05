@@ -281,7 +281,7 @@ export default function RoomsDetails(codeHotel) {
                           {/* {!isSelected && <AddPreCartHotel room={room} />} */}
 
                           {isSelected ? (
-                            <div className="text-center text-fs-12 text-bl-100 m-b">
+                            <div className="text-center text-fs-12 text-bl-100 m-b w-max">
                               Habitación seleccionada
                             </div>
                           ) : (

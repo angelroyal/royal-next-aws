@@ -2604,6 +2604,8 @@ back-img-banner-gradient-img {
   position: absolute;
   object-fit: cover;
   border-radius: 18px;
+  width: 100%;
+  height: 100%;
 }
 
 .cont-text-image-listing-tour {

@@ -29,3 +29,24 @@ export const saveToCart = async (requestData) => {
     throw error;
   }
 };
+
+
+export const lodgings = async (token, id) =>{
+  try {
+    if(token){
+      let response = await axiosWithInterceptor.get(`v1/hotels/shuffle?items=12`,{
+        params:{
+          hotelType: id
+        }
+      })
+
+      console.log(response);
+      if(response.data){
+        return response.data
+      }
+    }
+  } catch (error) {
+    console.log(error);
+    throw error
+  }
+}

@@ -5,38 +5,8 @@ import "swiper/css/navigation";
 import "../../../../assets/styles/general/Swiper.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
-export function HotelInformationSkeleton() {
-  return (
-    <>
-      <div className="bg-white rounded-lg flex flex-col lg:items-center lg:flex-row py-9 px-4 lg:p-8 lg:gap-x-9">
-        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full lg:w-[52%] h-[400px] lg:h-[560px] select-none rounded-md" />
-
-        <div className="w-full lg:min-h-[30rem] lg:w-[40%] xl:w-[45%] pt-9 lg:py-4 lg:px-2">
-          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[35px] w-4/5" />
-          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[20px] w-[8rem] mt-[12px]" />
-          <div className="mt-3 animate-[skeletonLoading_1s_linear_infinite_alternate] h-[16px] w-3/5" />
-
-          <div className="mt-5 animate-[skeletonLoading_1s_linear_infinite_alternate] h-[17rem] w-full rounded-md" />
-        </div>
-      </div>
-
-      <div className="mt-2 bg-white rounded-lg py-9 px-4 lg:p-8 lg:gap-x-9">
-        <div className="flex flex-col gap-y-4 pr-4 lg:pr-9 w-full ">
-          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-2/5 h-[24px]" />
-
-          <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-x-2 gap-y-2">
-            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full lg:w-[296px] h-[54px] rounded-md" />
-            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full lg:w-[296px] h-[54px] rounded-md" />
-            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full lg:w-[296px] h-[52px] rounded-full" />
-          </div>
-        </div>
-
-        {/* CARDS ROOMS SKELETON */}
-      </div>
-    </>
-  );
-}
+import { Rating } from "@mui/material";
+import Image from "next/image";
 
 export function RoomsSelectedSkeleton() {
   return (
@@ -100,6 +70,129 @@ export function RoomsSelectedSkeleton() {
           </SwiperSlide>
         ))}
       </Swiper>
+    </>
+  );
+}
+
+export function LodgingBestPrice() {
+  return (
+    <>
+      <div className="hidden lg:block relative">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={12}
+          navigation
+          id="swiper-shuffle-hotel"
+          className="mySwiper !pb-10 !static"
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            390: {
+              slidesPerView: 1.4,
+            },
+            500: {
+              slidesPerView: 1.8,
+            },
+            620: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 2.5,
+            },
+            1024: {
+              slidesPerView: 3.5,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
+        >
+          {[...Array(8)].map((tour, index) => (
+            <SwiperSlide key={index} className="!rounded-lg">
+              <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
+                <div className="w-full h-[216px] animate-[skeletonLoading_1s_linear_infinite_alternate]"></div>
+
+                <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
+                  <div className="h-[12px] w-[3rem] animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+
+                  <Rating
+                    className="my-1"
+                    name="read-only"
+                    // value={5}
+                    readOnly
+                    size="small"
+                  />
+
+                  <div className="flex gap-1 mb-[11px]">
+                    <Image
+                      className="w-auto h-auto backdrop-grayscale"
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                      alt="location icon"
+                      width={11}
+                      height={14}
+                    />
+                    <span className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-[4rem] h-[12px]" />
+                  </div>
+
+                  <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
+                    <div className="flex flex-col">
+                      <span className="m-m text-gry-100 text-fs-12 text-start animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+                      <span className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-[1rem] h-[12px]" />
+                    </div>
+
+                    <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl px-4 py-2 animate-[skeletonLoading_1s_linear_infinite_alternate] w-[107px]" />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      {/*END TWO SWIPER */}
+
+      <div className=" flex flex-wrap justify-center md:justify-between gap-x-[12] gap-y-[12px] lg:hidden">
+        {[...Array(8)].map((tour, index) => (
+          <div key={index} className="!rounded-lg">
+            {/*  */}
+            <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
+              <div className="w-full h-[216px] animate-[skeletonLoading_1s_linear_infinite_alternate]"></div>
+
+              <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
+                <div className="h-[12px] w-[3rem] animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+
+                <Rating
+                  className="my-1"
+                  name="read-only"
+                  // value={5}
+                  readOnly
+                  size="small"
+                />
+
+                <div className="flex gap-1 mb-[11px]">
+                  <Image
+                    className="w-auto h-auto backdrop-grayscale"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                    alt="location icon"
+                    width={11}
+                    height={14}
+                  />
+                  <span className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-[4rem] h-[12px]" />
+                </div>
+
+                <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
+                  <div className="flex flex-col">
+                    <span className="m-m text-gry-100 text-fs-12 text-start animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+                    <span className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-[1rem] h-[12px]" />
+                  </div>
+
+                  <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl px-4 py-2 animate-[skeletonLoading_1s_linear_infinite_alternate] w-[107px]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

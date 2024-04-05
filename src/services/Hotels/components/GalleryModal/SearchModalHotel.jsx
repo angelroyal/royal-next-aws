@@ -15,7 +15,7 @@ export function SearchModalHotel() {
         </h2>
 
         <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-x-2 gap-y-2">
-          <Calendar />
+          <Calendar hotelDetails={true} />
           <Room />
           
           <button className="border-0 rounded-full bg-or-100 py-3.5 px-[103px] m-b text-fs-12 text-white hover:bg-or-70 flex gap-x-2 items-center justify-center">

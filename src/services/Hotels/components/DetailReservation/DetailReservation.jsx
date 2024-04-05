@@ -72,7 +72,7 @@ export default function DetailReservation() {
         <div
           id="reservationDetails"
           className={`sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-70 transition-all duration-500 ${
-            open === true ? "h-auto" : "h-[15rem] md:h-[127px]"
+            open === true ? "h-auto" : "h-[11.3rem] md:h-[127px]"
           }`}
         >
           <div
@@ -86,7 +86,7 @@ export default function DetailReservation() {
             {/* BASIC INFORMATION OF THE SELECTED ROOMS */}
             <div className="bg-white absolute bottom-0 left-0 w-full z-[3]">
               <Container>
-                <div className="relative flex flex-col gap-y-14 md:gap-y-8 md:flex-row md:justify-between md:items-center">
+                <div className="relative flex flex-col md:gap-y-8 md:flex-row md:justify-between md:items-center">
                   <div className="mb-5 md:m-0 flex flex-col gap-y-2">
                     <h4 className="m-b text-fs-16 text-black">
                       {languageData.detailHotel.detail}
@@ -114,12 +114,7 @@ export default function DetailReservation() {
                   </div>
 
                   {open === false && selectedRooms.length > 0 && (
-                    // <h3 className="absolute bottom-[4rem] md:top-0 md:bottom-0 md:left-0 md:right-0 md:mx-auto md:my-auto text-gry-70 text-fs-10 h-6 w-max m-s-b">
-                    //   Desliza para ver tus habitaciones{" "}
-                    //   {selectedRooms.length > 0 && selectedRooms.length}{" "}
-                    //   seleccionadas
-                    // </h3>
-                    <div className="absolute bottom-0 top-0 md:bottom-0 left-0 right-0 mx-auto my-auto w-max flex items-center">
+                    <div className="absolute top-0 right-[2rem] md:bottom-0 md:left-0 md:right-0 mx-auto my-auto w-max flex items-center">
                       <div className="relative">
                         <img
                           src={selectedRooms[0].image}

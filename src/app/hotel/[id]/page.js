@@ -73,7 +73,7 @@ export default async function DetailPageHotel({ params }) {
           <CartAxiosProvider>
             <RoomsHotelProvider>
               <Token />
-              <Navigation />
+              <Navigation hotelDetails={true}/>
               <div className="relative">
                 <Container>
                   <GalleryModal hotel={hotelData} />

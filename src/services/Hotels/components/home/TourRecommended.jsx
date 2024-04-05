@@ -31,7 +31,7 @@ export default function CartTourOptions() {
 
       <Swiper
         slidesPerView={5}
-        spaceBetween={20}
+        spaceBetween={36}
         className="mySwiper !pb-12 max-sm:!pb-16"
         id="swiper-recommended-hotel"
         pagination={{
@@ -54,18 +54,20 @@ export default function CartTourOptions() {
           846: {
             slidesPerView: 4,
           },
-          1286: {
+          1280: {
             slidesPerView: 5,
           },
-          1440: {
-            slidesPerView: 6,
+          1536: {
+            slidesPerView: 7,
           },
         }}
       >
         {tour.slice(0, 12).map((tour, index) => (
-          <SwiperSlide key={index} className="!w-fit !rounded-md">
-            <div className="bg-white w-[185px] h-[258px] cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md px-4 py-4 flex flex-col justify-center items-center">
-              <div className="w-[132px] h-[132px] mb-3">
+          <SwiperSlide key={index} className="!rounded-md !h-[250px] select-none">
+            {/* w-[185px] h-[258px] */}
+            <div className="h-full bg-white cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md px-4 py-4 flex flex-col justify-center items-center">
+              {/* w-[132px] h-[132px] */}
+              <div className="mb-3 w-[132px] h-[132px]">
                 <img
                   className="w-full h-full rounded-full object-cover select-none"
                   src={tour.image}

@@ -5,9 +5,9 @@ import Line from "../../assets/images/others/group 75.jpg";
 import NavigationDesktop from "./NavigationDesktop";
 import HeaderBlue from "./HeaderBlue";
 
-export default function Navigation() {
+export default function Navigation({hotelDetails=false}) {
   return (
-    <div className="flex flex-col sticky top-0 z-[9]">
+    <div className={`${hotelDetails ? 'static' : 'sticky' } flex flex-col top-0 z-[9]`}>
       <Image
         src={Line}
         alt="Royal orange"
