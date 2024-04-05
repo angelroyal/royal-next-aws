@@ -215,7 +215,7 @@ export default function CardHotelT(props) {
                     // href={`/hotel/${hotel.codeName}?${requestQueryParams}`}
                     href={buildUrlWithParams(requestQueryParams)}
                     target="_blank"
-                    className=" no-underline bg-yw-100 text-black text-fs-12 m-b px-[40px] pt-[8px] pb-[8px] py-[5px] rounded-full hover:bg-yw-50 text-nowrap"
+                    className="no-underline bg-yw-100 text-black text-fs-12 m-b px-[40px] pt-[8px] pb-[8px] py-[5px] rounded-full hover:bg-yw-110 text-nowrap"
                   >
                     {languageData.cardHotel.buttonShow}
                   </Link>

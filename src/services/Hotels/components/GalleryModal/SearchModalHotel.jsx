@@ -18,7 +18,7 @@ export function SearchModalHotel() {
           <Calendar />
           <Room />
           
-          <button className="border-0 rounded-full bg-or-100 py-3.5 px-[103px] m-b text-fs-12 text-white hover:bg-or-70 flex gap-x-2 items-center justify-center">
+          <button className="border-0 rounded-full bg-or-100 py-3.5 px-[103px] m-b text-fs-12 text-white hover:bg-or-110 flex gap-x-2 items-center justify-center">
             {languageData.modalHotel.buttonUpdate}{" "}
             <img
               src={`${process.env.NEXT_PUBLIC_URL}icons/search/search-w.svg`}
