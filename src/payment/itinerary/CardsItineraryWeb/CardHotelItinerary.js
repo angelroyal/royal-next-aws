@@ -145,7 +145,7 @@ export default function CardHotelItinerary(props) {
                       </div>
                     </div>
 
-                    <div className="icon-location-and-text d-flex gap-2">
+                    <div className="icon-location-and-text d-flex gap-2 items-center">
                       <Image className="icons-size-m" src={LocationIcon} />
                       <span>{itemHotel.address}</span>
                     </div>
@@ -292,7 +292,7 @@ export default function CardHotelItinerary(props) {
                                   </div>
 
                                   <div className="d-flex flex-wrap row-gap-1 gap-2 align-items-center">
-                                    <div className="d-flex gap-2">
+                                    <div className="d-flex gap-2 items-center">
                                       <img
                                         className="icons-size-m"
                                         src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
@@ -311,7 +311,7 @@ export default function CardHotelItinerary(props) {
                                     {/* MAP ROOM BEDS */}
                                     {roomBed.beds &&
                                       roomBed.beds.map((bed, index) => (
-                                        <div key={index}>
+                                        <div key={index} className="flex gap-2 items-center">
                                           {/* <RoomIcon className="icons-size-m" /> */}
                                           <Image
                                             className="icons-size-m"

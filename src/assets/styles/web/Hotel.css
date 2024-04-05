@@ -595,6 +595,16 @@
   box-shadow: 1px 0px 20px 1px rgba(189, 183, 183, 0.75);
 }
 
+.remove-card-listing{
+  position: absolute;
+  right: 0.3rem;
+  top: 0.3rem;
+  width: 1.3rem;
+  height: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
 .close-icon {
   position: absolute;
   left: 95%;

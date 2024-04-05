@@ -44,7 +44,7 @@ export function BannerHomeTour() {
 
             <SwiperSlide className="!w-[48%] max-lg:!w-full max-sm:!w-full !bg-gry-30 !rounded-lg">
                 <div className="w-full flex justify-center !bg-white">
-                    <Image src={`${process.env.NEXT_PUBLIC_URL}test/bannerTourZipline.jpg`} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-center max-sm:object-bottom select-none" alt="Banner Exc Discounts" />
+                    <Image src={`${process.env.NEXT_PUBLIC_URL}test/bannerTourZipline.jpg`} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-top select-none" alt="Banner Exc Discounts" />
                 </div>
                 {/* <div className="bg-black rounded-lg ">
                     <div className="relative w-full h-[273px] max-xl:h-[235px] max-lg:h-[292px] max-sm:h-[263px] rounded-lg bg-[#1B1464] max-lg:w-full ">
