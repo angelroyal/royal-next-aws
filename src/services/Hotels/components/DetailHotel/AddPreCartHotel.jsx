@@ -36,7 +36,7 @@ export default function AddPreCartHotel(props) {
 
   return (
     <button
-      className=" cursor-pointer border-0 rounded-full bg-bl-100 text-white text-fs-12 m-s-b py-3.5 px-4 hover:bg-transparent hover:text-bl-100 hover:border-bl-100 hover:border-2"
+      className=" cursor-pointer border-0 rounded-full bg-bl-100 text-white text-fs-12 m-s-b py-3.5 px-4 hover:bg-bl-110"
       onClick={() => handleAddDetailHotelMaxPrice(room)}
       disabled={selectedRooms.some(
         (selectedRoom) => selectedRoom.idRoom === room.idRoom

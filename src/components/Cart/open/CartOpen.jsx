@@ -51,7 +51,7 @@ export default function CartOpen() {
 
   return (
     <div ref={ref} className="relative">
-      <div className="absolute top-[-12px] right-0 z-[0] lef-[12px]">
+      <div className="absolute top-[-12px] right-[7px] z-[0] lef-[12px]">
         <div className="relative flex h-[14px] w-[14px]">
           <span className=" absolute h-[10px] w-[10px] rounded-full bg-or-100 opacity-75 top-0 left-0 right-0 bottom-0 mx-auto my-auto" />
           <span className="relative inline-flex rounded-full h-[14px] w-[14px] bg-or-100"></span>

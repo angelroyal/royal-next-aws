@@ -25,7 +25,7 @@ export default {
           50: "#FEE8BB",
           70: "#FDD278",
           100: "#FCB41E",
-          110: "#D99C1C",
+          110: "#eda91c",
         },
         red: {
           50: "#FABEC1",

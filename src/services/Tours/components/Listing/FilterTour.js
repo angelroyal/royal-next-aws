@@ -271,7 +271,7 @@ export default function FilterTour(props) {
 
           <AccordionActions>
             <Button
-              className="btn-apply-range-price"
+              className="btn-apply-range-price hover:bg-bl-100 hover:!text-white"
               onClick={handleApplyClick}
             >
               {languageData.containerFilterHotel.button}

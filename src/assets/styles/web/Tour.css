@@ -1930,7 +1930,7 @@ back-img-banner-gradient-img {
 }
 
 .complete-payment-i:hover {
-  background-color: #fdd278
+  background-color: #eda91c;
 }
 
 .share-i-tour {
@@ -2431,10 +2431,11 @@ back-img-banner-gradient-img {
   height: 33px;
   border: 0;
   color: black;
+  text-decoration-line: none;
 }
 
 .cont-see-details-tour:hover {
-  background-color: #fdd278
+  background-color: #eda91c;
 }
 
 .cont-see-details-tour-skeleton {
