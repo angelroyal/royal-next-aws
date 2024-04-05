@@ -31,7 +31,6 @@ export const saveToCart = async (requestData) => {
 };
 
 
-<<<<<<< HEAD
 export const lodgings = async (token, id) =>{
   try {
     if(token){
@@ -51,5 +50,3 @@ export const lodgings = async (token, id) =>{
     throw error
   }
 }
-=======
->>>>>>> 3d5dfff90f08f334823f08700603275fe995125a

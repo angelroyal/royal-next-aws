@@ -60,14 +60,7 @@ export function SearchModalHotel() {
         </h2>
 
         <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-x-2 gap-y-2">
-<<<<<<< HEAD
-          <Calendar hotelDetails={true} />
-          <Room />
-          
-          <button className="border-0 rounded-full bg-or-100 py-3.5 px-[103px] m-b text-fs-12 text-white hover:bg-or-70 flex gap-x-2 items-center justify-center">
-            {languageData.modalHotel.buttonUpdate}{" "}
-=======
-          <Calendar onDateChange={handleDateChange} />
+          <Calendar onDateChange={handleDateChange} hotelDetails={true} />
           <Room OnApply={setRoomData} />
 
           <button
@@ -75,7 +68,6 @@ export function SearchModalHotel() {
             className="border-0 rounded-full bg-or-100 py-3.5 px-[103px] m-b text-fs-12 text-white hover:bg-or-110 flex gap-x-2 items-center justify-center"
           >
             {languageData.modalHotel.buttonUpdate}
->>>>>>> 3d5dfff90f08f334823f08700603275fe995125a
             <img
               src={`${process.env.NEXT_PUBLIC_URL}icons/search/search-w.svg`}
               alt="search"
