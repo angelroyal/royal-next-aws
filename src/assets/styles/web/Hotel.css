@@ -535,6 +535,7 @@
 .ul-hotel-date {
   margin-bottom: 0;
   color: #666;
+  padding-left: 0% !important;
 }
 
 .icon-location-border-date {
