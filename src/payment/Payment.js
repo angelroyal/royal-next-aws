@@ -28,7 +28,7 @@ import "../assets/styles/web/Hotel.css";
 import "../assets/styles/web/Payment.css";
 import "../assets/styles/mobile/PaymentMobile.css";
 
-import Logo from "../assets/images/logos/logo-royal-vacations-text.png";
+// import Logo from "../assets/images/logos/logo-royal-vacations-text.png";
 
 const DetailsPayment = lazy(() =>
   import("./itinerary/others/DetailsPayment")
@@ -250,7 +250,8 @@ export default function Payment() {
             className="name-logo m-0"
             // width="auto"
             // height="auto"
-            src={Logo}
+            // src={Logo}
+            src={`${process.env.NEXT_PUBLIC_URL}royal/logo.svg`}
             alt=" name Royal"
           />
           <h2 className="itinerary-no-show">

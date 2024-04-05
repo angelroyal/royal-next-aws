@@ -358,7 +358,7 @@
   }
 
   .active-container-payment-desktop {
-    display: none;
+    display: none !important;
   }
 
   .occupancy-rooms-itinerary {

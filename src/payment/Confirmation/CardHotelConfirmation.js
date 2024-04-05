@@ -13,6 +13,8 @@ import DoneIcon from "../../assets/icons/tour/modal/done_active.svg";
 import IconLocationBorder from "../../assets/icons/utils/others/location-border.svg";
 import LocationIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
+import "@/assets/styles/mobile/HotelMobile.css"
+import "@/assets/styles/web/Hotel.css"
 export default function CardHotelConfirmation(props) {
   const { languageData } = useContext(LanguageContext);
   const { itemHotel } = props;
@@ -35,7 +37,7 @@ export default function CardHotelConfirmation(props) {
 
       <div className="container-card-hotel-i-and-date">
         {/* DAY,TIME HOTEL */}
-        <div className="date-itinerary-hotel">
+        <div className="date-itinerary-hotel max-lg:!flex-row">
           <div>
             <span className="text-hotel-or-i">
               {languageData.dayOfWeek[dayOfWeek]}
@@ -132,7 +134,7 @@ export default function CardHotelConfirmation(props) {
                 </div>
               </div>
 
-              <div className="active-container-payment-desktop widthA">
+              <div className="active-container-payment-desktop widthA flex">
                 <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
                   <span className="text-grey-card-hotel-i">
                     {languageData.cartTour.taxesText}
@@ -152,7 +154,7 @@ export default function CardHotelConfirmation(props) {
             </div>
           </div>
 
-          <div className="active-container-payment-mobile">
+          <div className="active-container-payment-mobile lg:!hidden">
             <div className="occupancy-rooms-itinerary">
               <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
                 <img

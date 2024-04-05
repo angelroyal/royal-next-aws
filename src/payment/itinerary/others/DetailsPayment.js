@@ -18,6 +18,9 @@ import IconRightBlack from "../../../assets/icons/utils/payment/right-bl.svg";
 import LogoFlyRoyal from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 import Image from "next/image";
 
+import "../../../../src/assets/styles/web/Tour.css"
+import "@/assets/styles/mobile/PaymentMobile.css"
+import "@/assets/styles/mobile/AppMobile.css"
 export default function DetailsPayment(props) {
   const { data, step, handleStepChange, setChangeButton, onClose } = props;
 
