@@ -168,18 +168,19 @@ export function BannerHomeKnowMore() {
 }
 
 export function BannerExcDiscounts() {
-  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}general/ExcDiscounts-Es.webp`;
+  // const excDiscounts = `${process.env.NEXT_PUBLIC_URL}general/ExcDiscounts-Es.webp`;
+  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/bannerHotel.jpg`;
   const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
   const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
-  const excDiscountsMobile = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/Discounts-Es-M.webp`;
+  // const excDiscountsMobile = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/Discounts-Es-M.webp`;
 
   const { languageData } = useContext(LanguageContext);
 
   return (
     <Swiper
       slidesPerView={3}
-      spaceBetween={16}
-      className="h-auto "
+      spaceBetween={15}
+      className="h-[19rem]"
       // loop={true}
       breakpoints={{
         0: {
@@ -202,19 +203,19 @@ export function BannerExcDiscounts() {
 
 
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
-      <SwiperSlide className="!w-1/2 max-lg:!w-full !bg-gry-30 !bg-white">
+      <SwiperSlide className="!w-[48%] max-lg:!w-full !bg-gry-30 !bg-white">
         <div className="w-full flex justify-center !bg-white">
-          <Image src={excDiscounts} width={547} height={235} className="h-auto max-sm:hidden w-full h-full rounded-lg object-cover select-none" alt="Banner Exc Discounts" />
-          <Image src={excDiscountsMobile} width={332} height={235} className="sm:hidden w-full h-full  rounded-lg object-cover bg-gry-30 !bg-white select-none" alt="Banner Exc Discounts mobile" />
+          <Image src={excDiscounts} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-top select-none" alt="Banner Exc Discounts" />
+          {/* <Image src={excDiscountsMobile} width={332} height={235} className="sm:hidden w-full  rounded-lg object-cover bg-gry-30 !bg-white select-none" alt="Banner Exc Discounts mobile" /> */}
         </div>
       </SwiperSlide>
 
       {/*TWO CARD TEXT */}
-      <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
-          <Image src={bannerTraveling} width={266} height={235} className="w-[99%] h-[102%] max-lg:h-[99%] max-sm:!w-[81%] rounded-lg select-none" alt="Banner Experimenta los mejores tours" />
+          <Image src={bannerTraveling} width={266} height={235} className="w-full rounded-lg select-none" alt="Banner Experimenta los mejores tours" />
 
-          <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[26%] max-sm:top-[40px]">
+          <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[12%] max-sm:top-[40px]">
             <h2 className="m-b w-9/12 text-white text-fs-28 mb-4 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fsw-48 max-sm:text-fs-24">{languageData.titleBanners.titleTourMexico}</h2>
             <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-22 text-left max-2xl:text-fs-18 max-xl:text-fs-16 max-lg:text-fsw-38 max-sm:text-fsw-64" >{languageData.titleBanners.subtitleTourM}</h4>
           </div>
@@ -223,9 +224,9 @@ export function BannerExcDiscounts() {
       {/*TWO CARD TEXT */}
       
       {/* THREE CARD IMAGE HOTEL */}
-      <SwiperSlide className="!w-[24%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
-          <Image src={bannerTour} width={266} height={235} className="w-[99%] h-[90%] max-lg:w-[96%] max-sm:!w-[79%] rounded-lg select-none" alt="Banner tour mes de feb" />
+          <Image src={bannerTour} width={266} height={235} className="w-full rounded-lg select-none object-cover object-bottom" alt="Banner tour mes de feb" />
         </div>
       </SwiperSlide>
       {/* THREE CARD IMAGE HOTEL */}

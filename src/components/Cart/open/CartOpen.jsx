@@ -63,7 +63,7 @@ export default function CartOpen() {
             height={22}
             alt="icon-cart-active"
           />
-          <div className="absolute top-[-9px] right-0 z-[0]">
+          <div className="absolute top-[-9px] right-[6px] z-[0]">
             <div className="relative flex h-[14px] w-[14px]">
               <span className="animate-ping absolute h-[10px] w-[10px] rounded-full bg-or-100 opacity-75 top-0 left-0 right-0 bottom-0 mx-auto my-auto" />
               <span className="relative inline-flex rounded-full h-[14px] w-[14px] bg-or-100"></span>
