@@ -79,9 +79,7 @@ export default async function DetailPageHotel({ params }) {
                   <GalleryModal hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />
                 </Container>
-
                 <ReservationFailed />
-
                 <DetailReservation />
               </div>
               <Footer />
