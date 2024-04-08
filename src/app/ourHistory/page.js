@@ -6,6 +6,15 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import OurHistory from "@/components/About/OurHistory/OurHistory";
 
+export async function generateMetadata( ) {
+  return {
+    title: 'Nuestra Historia - StayWuw',
+    description: 'StayWuw: Experiencias de viaje inolvidables en México y el mundo. Desde 2017, facilitamos la reserva de hoteles, transportes y tours, con un crecimiento destacado en Cancún. Descubre nuestra evolución y compromiso con una plataforma intuitiva y confiable.',
+    keywords: 'StayWuw, reservas de viaje, experiencias de viaje, hoteles en México, tours en México, reserva de hoteles, viajar a México',
+    author: 'StayWuw'
+  };
+}
+
 export default function ourHistory() {
   return (
     <LanguageProvider>
@@ -14,9 +23,9 @@ export default function ourHistory() {
           <Token />
 
           <Navigation />
-          
+
           <OurHistory />
-          
+
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

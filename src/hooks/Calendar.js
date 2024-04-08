@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useContext } from "react";
 
 import LanguageContext from "../language/LanguageContext";
 
-function Calendar({ onDateChange, listing = false }) {
+function Calendar({ onDateChange, listing = false, hotelDetails=false }) {
   const calendarRef = useRef(null);
   // const language = localStorage.getItem("language") || "es";
   const language =
@@ -85,7 +85,7 @@ function Calendar({ onDateChange, listing = false }) {
           </span>
 
           <input
-            className="mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer"
+            className={`${hotelDetails && 'bg-gry-30'} mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
             type="text"
             ref={calendarRef}
             placeholder={languageData.SearchBox.tabHotel.dateText}

@@ -1,9 +1,6 @@
 import moment from "moment";
-import Lottie from "lottie-react";
 import { useRouter } from "next/navigation";
-import DateRangeIcon from "@mui/icons-material/DateRange";
 import React, { useState, useEffect, useContext } from "react";
-import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
 
 // import Room from "../../hooks/RoomBox";
 import Room from "@/services/Hotels/config/RoomBox";
@@ -21,7 +18,6 @@ export default function MobilSearchHotel() {
   const [validFirstDay, setValidFirstDay] = useState(null);
   const [validSecondDay, setValidSecondDay] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [showModal, setShowModal] = useState(false);
 
   // console.log(selectedDates);
 
@@ -71,8 +67,6 @@ export default function MobilSearchHotel() {
   };
 
   const sendAutocomplete = () => {
-    setShowModal(true);
-
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
 
     // console.log(selectedOption);
@@ -87,15 +81,12 @@ export default function MobilSearchHotel() {
     };
 
     const query = new URLSearchParams(requestBody).toString();
-    if(selectedOption.type === "hotel"){
-      window.open(`/hotel/${selectedOption.codeName}?${query}`, '_blank')
-    }else{
-      router.push(`/hotel/results?${query}`);
+    if (selectedOption.type === "hotel") {
+      window.open(`/hotel/${selectedOption.codeName}?${query}`, "_blank");
+    } else {
+      // router.push(`/hotel/results?${query}`);
+      window.location.href = `/hotel/results?${query}`;
     }
-
-    setTimeout(() => {
-      setShowModal(false);
-    }, 1500);
   };
 
   const { languageData } = useContext(LanguageContext);
@@ -144,17 +135,6 @@ export default function MobilSearchHotel() {
       </div>
 
       <ListingHotelMobile open={openFilter} closeFilter={setOpenFilter} />
-
-      {showModal && (
-        <div className="modal-backdrop modal-loading">
-          <div className="modal-box">
-            <Lottie
-              className="transition-royal"
-              animationData={animationData}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 }

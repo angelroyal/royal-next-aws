@@ -24,6 +24,7 @@ export function DialogItineraryMobile(props) {
       TransitionComponent={Transition}
       keepMounted
       aria-describedby="alert-dialog-slide-description"
+      className="!m-0"
     >
       <div className="m-component-p-top">
         <div className="container-dialog">

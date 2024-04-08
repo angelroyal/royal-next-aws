@@ -305,7 +305,7 @@ export default function CardHotelConfirmation(props) {
                                       alt="DoneIcon"
                                     />
                                     <span className="text-all-inclusive-i">
-                                      {roomBed.food}
+                                      {languageData.eatingPlan[roomBed.food]}
                                     </span>
                                   </div>
                                 )}

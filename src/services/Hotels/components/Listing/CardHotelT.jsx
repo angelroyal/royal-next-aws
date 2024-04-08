@@ -172,7 +172,7 @@ export default function CardHotelT(props) {
 
                 {/* INFO PRICE */}
                 <div className="w-2/5 border-l border-gry-[#ebebeb] flex flex-col pl-[23px] items-center justify-end max-lg:w-full max-lg:border-t max-lg:border-l-0 max-lg:mt-2 max-lg:pt-2 max-lg:flex-row max-lg:justify-between max-lg:pl-0 justify-center">
-                  <div className="flex flex-col items-center ">
+                  <div className="flex flex-col items-start lg:items-center ">
                     <span className="m-b text-red-100 text-fs-12">
                       ¡{languageData.cardHotel.titleSpace}{" "}
                       {hotel.availableRooms}!
@@ -215,7 +215,7 @@ export default function CardHotelT(props) {
                     // href={`/hotel/${hotel.codeName}?${requestQueryParams}`}
                     href={buildUrlWithParams(requestQueryParams)}
                     target="_blank"
-                    className="no-underline bg-yw-100 text-black text-fs-12 m-b px-[40px] pt-[8px] pb-[8px] py-[5px] rounded-full hover:bg-yw-110 text-nowrap"
+                    className="no-underline bg-yw-100 text-black text-fs-12 m-b px-[20px] lg:px-[40px] py-[8px] rounded-full hover:bg-yw-110 text-nowrap"
                   >
                     {languageData.cardHotel.buttonShow}
                   </Link>

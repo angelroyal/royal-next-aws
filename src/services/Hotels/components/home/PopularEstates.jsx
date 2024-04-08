@@ -1,16 +1,21 @@
-"use client"
+"use client";
 import "swiper/css";
+import moment from "moment";
 import "swiper/css/navigation";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Navigation } from "swiper/modules";
 import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
+import UpdateAutocomplete from "@/config/Others/UpdateAutocomplete";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export function PopularState() {
   const [popularState, setPopularState] = useState([]);
   const { languageData } = useContext(LanguageContext);
+  const router = useRouter();
+
   useEffect(() => {
     const getPopularStates = async () => {
       try {
@@ -33,8 +38,37 @@ export function PopularState() {
     getPopularStates();
   }, []);
 
-  // console.log(popularState);
+  const sendDestination = (destinationInfo) => {
+    const encodedRoomData = encodeURIComponent(
+      JSON.stringify([{ adults: 2, children: [] }])
+    );
+    const today = moment();
 
+    let initDate = moment(today).add(1, "month");
+    let endDate = moment(today).add(1, "month").add(2, "day");
+    const checkIn = initDate.format("YYYY-MM-DD");
+    const checkOut = endDate.format("YYYY-MM-DD");
+
+    const requestBody = {
+      destination: destinationInfo.name,
+      code: destinationInfo.code,
+      type: destinationInfo.autocomplete.type,
+      "check-in": checkIn,
+      "check-out": checkOut,
+      occupancies: encodedRoomData,
+    };
+
+    sendDataSearch(destinationInfo);
+
+    // PUSH RESULT HOTEL
+    const query = new URLSearchParams(requestBody).toString();
+    router.push(`/hotel/results?${query}`);
+  };
+
+  const sendDataSearch = (destination) => {
+    const dataLocalSend = destination;
+    UpdateAutocomplete({ dataLocalSend });
+  };
   const parsePrice = (price) => (
     <>
       {Math.floor(price)
@@ -46,20 +80,25 @@ export function PopularState() {
 
   return (
     <div className="my-16 md:my-32 relative">
-      <h1 className="m-b text-fs-24 mb-9">{languageData.SearchBox.tabTour.popularState}</h1>
+      <h1 className="m-b text-fs-24 mb-9">
+        {languageData.SearchBox.tabTour.popularState}
+      </h1>
       {popularState.length > 0 ? (
-        <Swiper 
-        slidesPerView={1} 
-        spaceBetween={30} 
-        className="h-[408px] !static"
-        navigation
-        modules={[Navigation]}
-        id="swiper-popular-estates"
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          className="h-[408px] !static"
+          navigation
+          modules={[Navigation]}
+          id="swiper-popular-estates"
         >
           <SwiperSlide className="bg-transparent">
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
               <div className="flex gap-x-3 w-full md:h-full h-2/4">
-                <div className="relative rounded-lg md:w-[23%] w-full">
+                <div
+                  className="relative rounded-lg md:w-[23%] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[0])}
+                >
                   <img
                     src={popularState[0].imageUrl}
                     alt={`${popularState[0].name} Royal Vacation`}
@@ -81,7 +120,10 @@ export function PopularState() {
                   </div>
                 </div>
 
-                <div className="relative rounded-lg md:w-[77%] w-full">
+                <div
+                  className="relative rounded-lg md:w-[77%] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[1])}
+                >
                   <img
                     src={popularState[1].imageUrl}
                     alt={`${popularState[1].name} Royal Vacation`}
@@ -105,7 +147,10 @@ export function PopularState() {
               </div>
 
               <div className="flex md:flex-col gap-y-3 gap-x-3 md:gap-x-0 md:w-[268px] md:h-full h-[45%]">
-                <div className="relative rounded-lg md:h-[197px] w-full">
+                <div
+                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[2])}
+                >
                   <img
                     src={popularState[2].imageUrl}
                     alt={`${popularState[2].name} Royal Vacation`}
@@ -127,7 +172,10 @@ export function PopularState() {
                   </div>
                 </div>
 
-                <div className="relative rounded-lg md:h-[197px] w-full">
+                <div
+                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[3])}
+                >
                   <img
                     src={popularState[3].imageUrl}
                     alt={`${popularState[3].name} Royal Vacation`}
@@ -155,7 +203,10 @@ export function PopularState() {
           <SwiperSlide className="bg-transparent">
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
               <div className="flex gap-x-3 w-full md:h-full h-[45%]">
-                <div className="relative rounded-lg md:w-[23%] w-full">
+                <div
+                  className="relative rounded-lg md:w-[23%] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[4])}
+                >
                   <img
                     src={popularState[4].imageUrl}
                     alt={`${popularState[4].name} Royal Vacation`}
@@ -178,7 +229,10 @@ export function PopularState() {
                   </div>
                 </div>
 
-                <div className="relative rounded-lg md:w-[77%] w-full">
+                <div
+                  className="relative rounded-lg md:w-[77%] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[5])}
+                >
                   <img
                     src={popularState[5].imageUrl}
                     alt={`${popularState[5].name} Royal Vacation`}
@@ -202,7 +256,10 @@ export function PopularState() {
               </div>
 
               <div className="flex md:flex-col gap-y-3 gap-x-3 md:gap-x-0 md:w-[268px] md:h-full h-2/4">
-                <div className="relative rounded-lg md:h-[197px] w-full">
+                <div
+                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[6])}
+                >
                   <img
                     src={popularState[6].imageUrl}
                     alt={`${popularState[6].name} Royal Vacation`}
@@ -224,7 +281,10 @@ export function PopularState() {
                   </div>
                 </div>
 
-                <div className="relative rounded-lg md:h-[197px] w-full">
+                <div
+                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  onClick={() => sendDestination(popularState[0])}
+                >
                   <img
                     src={popularState[0].imageUrl}
                     alt={`${popularState[0].name} Royal Vacation`}

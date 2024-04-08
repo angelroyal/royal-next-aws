@@ -161,7 +161,7 @@ export function DialogPaymentItinerary(props) {
               </div>
 
               <div className="d-flex flex-column">
-                <span className="total-confirmation-text">Total</span>
+                <span className="total-confirmation-text">Totall</span>
 
                 <div className="total-confirmation-text">
                   MXN $

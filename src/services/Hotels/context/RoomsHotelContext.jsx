@@ -13,6 +13,7 @@ export const RoomsHotelProvider = ({ children }) => {
   const [isFailedReservation, setIsFailedReservation] = useState(false);
 
   const handleFetchPostRooms = async (requestBody) => {
+    setRoomsData(null);
     try {
       const responseData = await postRoomsToAPI(requestBody);
       setRoomsData(responseData);

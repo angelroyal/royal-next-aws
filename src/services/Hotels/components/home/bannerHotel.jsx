@@ -26,7 +26,7 @@ export function BannerHomeHotelTop() {
 export function BannerHomeHotelUp() {
   const Random =
     BannerConfig.bannerUp.text[
-    Math.floor(Math.random() * BannerConfig.bannerUp.text.length)
+      Math.floor(Math.random() * BannerConfig.bannerUp.text.length)
     ];
 
   return (
@@ -118,9 +118,14 @@ export function BannerHomeKnowMore() {
           </span>
         </div>
 
-        <button className="bg-or-100 w-[164px] h-[44px] text-nowrap rounded-full text-white m-m text-fs-12 mb-[50px] hover:bg-or-110">
+        <a
+          className="bg-or-100 w-[164px] cursor-pointer content-center h-[44px] text-center text-nowrap rounded-full text-white m-m text-fs-12 mb-[50px] hover:bg-or-110"
+          href="https://api.whatsapp.com/send?phone=529981342286&text=¡Hola!%20Necesito%20ayuda%20para%20planificar%20mi%20próximo%20viaje%20a%20México.%20¿Podrían%20orientarme%20sobre%20los%20mejores%20destinos%20y%20actividades%20que%20ofrecen?%20¡Espero%20su%20pronta%20respuesta!"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {languageData.titleBanners.bannerHoteldecided.knowMore}
-        </button>
+        </a>
       </div>
 
       <div className="w-full lg:w-[50%] relative lg:h-full lg:rounded-b-lg lg:rounded-t-none">
@@ -169,7 +174,7 @@ export function BannerHomeKnowMore() {
 
 export function BannerExcDiscounts() {
   // const excDiscounts = `${process.env.NEXT_PUBLIC_URL}general/ExcDiscounts-Es.webp`;
-  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/bannerHotel.jpg`;
+  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
   const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
   const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
   // const excDiscountsMobile = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/Discounts-Es-M.webp`;
@@ -205,7 +210,7 @@ export function BannerExcDiscounts() {
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
       <SwiperSlide className="!w-[48%] max-lg:!w-full !bg-gry-30 !bg-white">
         <div className="w-full flex justify-center !bg-white">
-          <Image src={excDiscounts} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-top select-none" alt="Banner Exc Discounts" />
+          <Image src={excDiscounts} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-center select-none" alt="Banner Exc Discounts" />
           {/* <Image src={excDiscountsMobile} width={332} height={235} className="sm:hidden w-full  rounded-lg object-cover bg-gry-30 !bg-white select-none" alt="Banner Exc Discounts mobile" /> */}
         </div>
       </SwiperSlide>

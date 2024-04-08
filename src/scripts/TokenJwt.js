@@ -31,7 +31,6 @@ const createJWT = async () => {
   const keyRamdom = key[indexRandom];
   const password = hashPassword(fingerprint + keyRamdom + uid);
   const secret = process.env.NEXT_PUBLIC_JWT_SECRET;
-  console.log(secret);
 
   // Obtener el timestamp del servidor con axios
   try {
@@ -39,7 +38,7 @@ const createJWT = async () => {
     const serverTimestamp = response.data.server_timestamp;
 
     const iat = Math.floor(serverTimestamp);
-    const exp = iat + 30 * 60;
+    const exp = iat + 50 * 60;
 
     const header = { alg: "HS256", typ: "JWT" };
     const payload = {

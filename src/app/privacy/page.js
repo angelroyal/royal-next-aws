@@ -7,6 +7,17 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import { PrivacyPolicy } from "@/components/About/PolicyPrivacy/PrivacyPolicy";
 
+export async function generateMetadata() {
+  return {
+    title: "Política de Privacidad - StayWuw",
+    description:
+      "Tu Información, Tu Control - StayWuw Te Brinda Control sobre tus Datos Personales según Nuestra Política de Privacidad",
+    keywords:
+      "Política de Privacidad, Gestion de informacion de clientes, Confidencialidad de datos, Seguridad datos, Derechos",
+    author: "StayWuw",
+  };
+}
+
 export default function Home() {
   return (
     <LanguageProvider>
@@ -15,7 +26,7 @@ export default function Home() {
           <Token />
           <Navigation />
           {/* <Privacy /> */}
-          <PrivacyPolicy/>
+          <PrivacyPolicy />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

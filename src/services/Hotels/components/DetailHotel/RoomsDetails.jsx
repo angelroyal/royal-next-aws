@@ -141,8 +141,8 @@ export default function RoomsDetails(codeHotel) {
                   return (
                     <SwiperSlide
                       key={index}
-                      className={`bg-transparent shadow-sm ${
-                        isSelected ? "border-2 rounded-lg border-bl-70" : ""
+                      className={`bg-transparent shadow-sm rounded-lg ${
+                        isSelected ? "border-2 border-bl-70" : ""
                       }`}
                     >
                       <div className="p-4 rounded-lg border border-gry-30 bg-white">
@@ -281,7 +281,7 @@ export default function RoomsDetails(codeHotel) {
                           {/* {!isSelected && <AddPreCartHotel room={room} />} */}
 
                           {isSelected ? (
-                            <div className="text-center text-fs-12 text-bl-100 m-b">
+                            <div className="text-center text-fs-12 text-bl-100 m-b w-min">
                               Habitación seleccionada
                             </div>
                           ) : (

@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
     const hotelMetaData = response.data;
 
     return {
-      title: `${hotelMetaData.name} - Stay WuW`,
+      title: `${hotelMetaData.name} - StayWuw`,
       description: `${hotelMetaData.description}`,
       address: hotelMetaData.address,
       city: hotelMetaData.city,
@@ -73,15 +73,13 @@ export default async function DetailPageHotel({ params }) {
           <CartAxiosProvider>
             <RoomsHotelProvider>
               <Token />
-              <Navigation />
+              <Navigation hotelDetails={true}/>
               <div className="relative">
                 <Container>
                   <GalleryModal hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />
                 </Container>
-
                 <ReservationFailed />
-
                 <DetailReservation />
               </div>
               <Footer />
