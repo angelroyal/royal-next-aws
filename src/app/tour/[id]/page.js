@@ -1,65 +1,76 @@
-// "use client";
-
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
-import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 import Tour from "@/services/Tours/components/DetailTour/Tour";
+import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 
-// export async function generateMetadata({ params }) {
-//   // Token JWT
-//   const token =
-//     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5nZXJwcmludCI6ImE5MzhkMWIxNzZiNjk3Y2ZlMGFiODg5YWJiZWMxYjdiIiwidWlkIjoiZTQ3YmJmODMtZTJmOS00OTZiLTllMTgtYjM4YjE4NTYzYmVmIiwicGFzc3dvcmQiOiIkMmEkMTAkUTE1NnRJbFh2VjRRT3BiQWdmN1c4dUREL00yTHkyMUxDVnlHYUFUQWdhbnMzZ3RmM0FwSC4iLCJpYXQiOjE3MTEyMDk4NDAsImV4cCI6MTcxMTIxMTY0MH0.8je_6ourqIU1W94ei7sjdfcIJXZbQY3VwnrkM3nNpkE";
+export async function generateMetadata({ params, searchParams }) {
 
-//   const config = {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   };
+  const requestBody = {
+    dateFrom: searchParams.dateStart,
+    days: 5,
+    provider: "ct",
+  };
 
-//   // METHOD FETCH
-//   const response = await fetch(
-//     `${process.env.NEXT_PUBLIC_API_ROYAL}/es/v1/hotels/${params.id}`,
-//     config
-//   );
+  try {
+    // METHOD AXIOS
+    const response = await axiosWithInterceptor.post(
+      `v1/activities/${params.id}/availability`,
+      requestBody
+    );
 
-//   // METADATA DETAIL HOTEL
-//   const hotelMetaData = await response.json();
+    // METADATA DETAIL HOTEL
+    const tourMetaData = response.data;
 
-//   return {
-//     title: `${hotelMetaData.name} - Stay WuW`,
-//     description: `${hotelMetaData.description}`,
-//     address: hotelMetaData.address,
-//     city: hotelMetaData.city,
-//     destination: hotelMetaData.destination,
-//     checkIn: hotelMetaData.checkIn,
-//     checkOut: hotelMetaData.checkOut,
-//     stars: hotelMetaData.stars,
-//     facilities: hotelMetaData.facilities.join(", "),
-//     breakfastIncluded: hotelMetaData.breakfast ? "Yes" : "No",
-//     exclusiveDeal: hotelMetaData.exclusiveDeal
-//       ? `Exclusive Deal: ${hotelMetaData.exclusiveDeal}`
-//       : "No Exclusive Deals",
-//     images: hotelMetaData.images.slice(0, 6),
-//   };
-// }
+    return {
+      title: `${tourMetaData.activity.name} - StayWuw`,
+      description: `${tourMetaData.activity.description}`,
+      address: tourMetaData.activity.address,
+      city: tourMetaData.activity.city,
+      destination: tourMetaData.activity.destination,
+    };
+  } catch (error) {
+    console.error("Error fetching hotel metadata:", error);
+    // Handle error here
+    return null;
+  }
+}
 
-export default async function DetailPageTour({ params }) {
-  return (
-    <LanguageProvider>
-      <TokenProvider>
-        <CartAxiosProvider>
-          <RoomsHotelProvider>
-            <Token />
-            <Navigation />
-            <Tour />
-            <Footer />
-          </RoomsHotelProvider>
-        </CartAxiosProvider>
-      </TokenProvider>
-    </LanguageProvider>
-  );
+export default async function DetailPageTour({ params, searchParams }) {
+  const requestBody = {
+    dateFrom: searchParams.dateStart,
+    days: 5,
+    provider: "ct",
+  };
+
+  try {
+    const response = await axiosWithInterceptor.post(
+      `v1/activities/${params.id}/availability`,
+      requestBody
+    );
+
+    const tourData = response.data;
+    // console.log(tourData);
+
+    return (
+      <LanguageProvider>
+        <TokenProvider>
+          <CartAxiosProvider>
+            <RoomsHotelProvider>
+              <Token />
+              <Navigation />
+              <Tour />
+              <Footer />
+            </RoomsHotelProvider>
+          </CartAxiosProvider>
+        </TokenProvider>
+      </LanguageProvider>
+    );
+  } catch (error) {
+    console.error("Error fetching hotel data:", error);
+  }
 }

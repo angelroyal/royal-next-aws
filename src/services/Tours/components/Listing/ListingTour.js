@@ -49,8 +49,10 @@ export default function ListingTour() {
       currency: "MXN",
     };
 
+    const codeTour = searchParams.get("code");
+
     axiosWithInterceptor
-      .post("v1/tour-destinations/availability", requestBody)
+      .get(`v1/destinations/${codeTour}/activities`)
       .then((response) => {
         updateTourData(response.data);
         scrollToTop();

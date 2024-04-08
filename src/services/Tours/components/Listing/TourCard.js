@@ -24,18 +24,22 @@ export default function TourCard(props) {
 
   const { languageData } = useContext(LanguageContext);
 
-  // const buildUrlWithParams = (queryParams) => {
-  //   const baseUrl = `/hotel/${hotel.codeName}`;
+  const buildUrlWithParams = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const requestBody = {
+      code: searchParams.get("code"),
+      type: searchParams.get("type"),
+      dateStart: searchParams.get("dateStart"),
+      adults: searchParams.get("adults"),
+      children: searchParams.get("children"),
+    };
 
-  //   const occupanciesString = JSON.stringify(queryParams.occupancies);
+    const query = new URLSearchParams(requestBody).toString();
 
-  //   const queryParamsString = new URLSearchParams({
-  //     ...queryParams,
-  //     occupancies: encodeURIComponent(occupanciesString),
-  //   }).toString();
+    const baseUrl = `/tour/${tour.codeName}?${query}`;
 
-  //   return `${baseUrl}?${queryParamsString}`;
-  // };
+    return `${baseUrl}`;
+  };
 
   return (
     <>
@@ -176,8 +180,8 @@ export default function TourCard(props) {
                   target="_blank"
                   className="cont-see-details-tour width100"
                   // onClick={() => openDialog(tour)}
-                  // href={buildUrlWithParams(requestQueryParams)}
-                  href={`/tour/${tour.name}`}
+                  href={buildUrlWithParams()}
+                  // href={`/tour/${tour.name}`}
                 >
                   {languageData.cartTour.seeDetails}
                 </Link>

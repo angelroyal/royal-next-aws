@@ -68,6 +68,7 @@ export default function DayCalendar() {
               id="date-tour-modal"
               className={`${selectIndex === index ? 'bg-bl-100' : 'bg-white hover:bg-gry-30'} rounded-md p-2 flex flex-col border border-gry-70 cursor-pointer`}
               onClick={()=>selectDate(index)}
+              key={index}
             >
               <div className="border-b border-gry-70 pb-[3.5px] mb-[3.5px] flex flex-col items-center">
                 <span className={`${selectIndex === index ? 'text-white' : 'text-gry-100'} m-s-b text-fs-12 `}>Mar</span>

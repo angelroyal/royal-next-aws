@@ -57,7 +57,6 @@ export default function ResultTour() {
     };
     
     
-    // We convert the object to a string and append it to the URL
     const query = new URLSearchParams(requestBody).toString();
 
     // if(selectedOption.type === "destination"){
@@ -66,11 +65,8 @@ export default function ResultTour() {
     // }else{
       router.push(`/tour/results?${query}`);
     // }
-
     
   };
-
-
   const { languageData } = useContext(LanguageContext);
 
   return (

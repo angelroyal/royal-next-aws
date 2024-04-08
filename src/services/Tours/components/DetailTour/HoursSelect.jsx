@@ -32,6 +32,7 @@ export function HoursSelect() {
             className={`${
               indexSelected === index ? "border-bl-100" : "hover:bg-gry-30 border-gry-70"
             } border rounded py-2 px-4 w-[83px] cursor-pointer`}
+            key={index}
           >
             <p
               className={`${
