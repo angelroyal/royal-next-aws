@@ -26,6 +26,7 @@ import Hotels from "@/services/Hotels/components/Listing/Hotels";
 // }
 
 export default function Home() {
+  
   return (
     <LanguageProvider>
       <TokenProvider>
