@@ -174,7 +174,7 @@ export function BannerHomeKnowMore() {
 
 export function BannerExcDiscounts() {
   // const excDiscounts = `${process.env.NEXT_PUBLIC_URL}general/ExcDiscounts-Es.webp`;
-  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/bannerHotel.jpg`;
+  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
   const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
   const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
   // const excDiscountsMobile = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/Discounts-Es-M.webp`;
@@ -210,7 +210,7 @@ export function BannerExcDiscounts() {
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
       <SwiperSlide className="!w-[48%] max-lg:!w-full !bg-gry-30 !bg-white">
         <div className="w-full flex justify-center !bg-white">
-          <Image src={excDiscounts} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-top select-none" alt="Banner Exc Discounts" />
+          <Image src={excDiscounts} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-center select-none" alt="Banner Exc Discounts" />
           {/* <Image src={excDiscountsMobile} width={332} height={235} className="sm:hidden w-full  rounded-lg object-cover bg-gry-30 !bg-white select-none" alt="Banner Exc Discounts mobile" /> */}
         </div>
       </SwiperSlide>
