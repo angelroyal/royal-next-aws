@@ -63,7 +63,7 @@ export default async function DetailPageTour({ params, searchParams }) {
             <RoomsHotelProvider>
               <Token />
               <Navigation />
-              <Tour />
+              <Tour tourData={tourData} />
               <Footer />
             </RoomsHotelProvider>
           </CartAxiosProvider>

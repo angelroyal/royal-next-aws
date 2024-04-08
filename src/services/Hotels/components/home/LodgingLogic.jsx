@@ -5,17 +5,16 @@ import { LodgingsView } from "./LodgingView";
 import { useEffect, useState } from "react";
 
 export default function LodgingHotel({ selectionId }) {
-  // const tour = homeRecommendedTour;
   const token = useToken();
-  // var responseTest = null
-  const [test, setTest] = useState(null);
+
+  const [shuffleHotel, setShuffleHotel] = useState(null);
 
   useEffect(() => {
     const getLodgingsHotels = async () => {
       try {
         if (token.token) {
           const responseTest = await lodgings(selectionId);
-          setTest(responseTest);
+          setShuffleHotel(responseTest);
         }
       } catch (error) {
         console.log(error);
@@ -24,5 +23,6 @@ export default function LodgingHotel({ selectionId }) {
     getLodgingsHotels();
   }, [token, selectionId]);
 
-  return <LodgingsView tour={test} />;
+  // console.log(shuffleHotel);
+  return <LodgingsView tour={shuffleHotel} />;
 }

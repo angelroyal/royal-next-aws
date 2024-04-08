@@ -10,7 +10,7 @@ import { Navigation } from "swiper/modules";
 
 import "../../../../assets/css/Hotel/GalleryImage.css";
 
-export default function GalleryTour() {
+export default function GalleryTour({ images }) {
   return (
     <>
       <Swiper
@@ -19,40 +19,15 @@ export default function GalleryTour() {
         className="mySwiper h-[20rem] md:h-[22rem] xl:h-[30rem] mt-4 rounded-lg
      "
       >
-        <SwiperSlide>
-          <img
-            src="https://f.civitatis.com/mexico/cancun/excursion-bahia-akumal-cenote.jpg"
-            className="object-cover w-full h-full select-none"
-          />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <img
-            src="https://f.civitatis.com/mexico/cancun/galeria/pez-bahia-akumal.jpg"
-            className="object-cover w-full h-full select-none"
-          />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <img
-            src="https://f.civitatis.com/mexico/cancun/galeria/snorke-bahia-akumal-biodiversidad.jpg"
-            className="object-cover w-full h-full select-none"
-          />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <img
-            src="https://f.civitatis.com/mexico/cancun/excursion-bahia-akumal-cenote.jpg"
-            className="object-cover w-full h-full select-none"
-          />
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <img
-            src="https://f.civitatis.com/mexico/cancun/excursion-bahia-akumal-cenote.jpg"
-            className="object-cover w-full h-full select-none"
-          />
-        </SwiperSlide>
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={image}
+              alt="image tour details carrousel"
+              className="object-cover w-full h-full select-none"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

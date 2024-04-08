@@ -17,7 +17,7 @@ export function LodgingsView({ tour }) {
   return tour ? (
     <>
       {/* TWO SWIPER */}
-      <div className="hidden lg:block relative">
+      <div className="lg:hidden block relative">
         <Swiper
           slidesPerView={4}
           spaceBetween={12}
@@ -113,7 +113,7 @@ export function LodgingsView({ tour }) {
       </div>
       {/*END TWO SWIPER */}
 
-      <div className=" flex flex-wrap justify-center md:justify-between gap-x-[12] gap-y-[12px] lg:hidden">
+      <div className=" lg:flex flex-wrap justify-center md:justify-between gap-x-[12] gap-y-[12px] hidden">
         {Object.values(tour).slice(0, 8).map((tour, index) => (
           <div key={index} className="!rounded-lg">
             {/*  */}

@@ -1,5 +1,6 @@
 "use client";
 import "swiper/css";
+import axios from "axios";
 import moment from "moment";
 import "swiper/css/navigation";
 import { useRouter } from "next/navigation";
@@ -9,27 +10,24 @@ import { Navigation } from "swiper/modules";
 import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import UpdateAutocomplete from "@/config/Others/UpdateAutocomplete";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export function PopularState() {
   const [popularState, setPopularState] = useState([]);
-  const { languageData } = useContext(LanguageContext);
+  const { language, languageData } = useContext(LanguageContext);
   const router = useRouter();
 
   useEffect(() => {
     const getPopularStates = async () => {
       try {
-        let dataPopularState = await axiosWithInterceptor.get(
-          "v1/destinations/promotions/activities"
+        let dataPopularState = await axios.get(
+          `${process.env.NEXT_PUBLIC_ROYAL_URL}resources/top_activities.json`
         );
 
-        if ((dataPopularState.data, dataPopularState.status === 200)) {
-          if (dataPopularState && dataPopularState.data) {
-            const shuffledDestinations = dataPopularState.data[
-              "topDestinations"
-            ].sort(() => 0.5 - Math.random());
-            setPopularState(shuffledDestinations);
-          }
+        if (dataPopularState.data && dataPopularState.status === 200) {
+          const shuffledDestinations = dataPopularState.data
+            .slice(0, 8)
+            .sort(() => 0.5 - Math.random());
+          setPopularState(shuffledDestinations);
         }
       } catch (error) {
         console.log(error);
@@ -50,9 +48,9 @@ export function PopularState() {
     const checkOut = endDate.format("YYYY-MM-DD");
 
     const requestBody = {
-      destination: destinationInfo.name,
-      code: destinationInfo.code,
-      type: destinationInfo.autocomplete.type,
+      destination: validateLanguageName(language, destinationInfo).name,
+      code: destinationInfo.id,
+      type: "tour",
       "check-in": checkIn,
       "check-out": checkOut,
       occupancies: encodedRoomData,
@@ -83,7 +81,7 @@ export function PopularState() {
       <h1 className="m-b text-fs-24 mb-9">
         {languageData.SearchBox.tabTour.popularState}
       </h1>
-      {popularState.length > 0 ? (
+      {popularState.length > 0 && language ? (
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -93,6 +91,7 @@ export function PopularState() {
           id="swiper-popular-estates"
         >
           <SwiperSlide className="bg-transparent">
+            {/* {console.log(popularState[0][language])} */}
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
               <div className="flex gap-x-3 w-full md:h-full h-2/4">
                 <div
@@ -100,21 +99,27 @@ export function PopularState() {
                   onClick={() => sendDestination(popularState[0])}
                 >
                   <img
-                    src={popularState[0].imageUrl}
-                    alt={`${popularState[0].name} Royal Vacation`}
+                    src={popularState[0].image}
+                    alt={` ${
+                      validateLanguageName(language, popularState[0]).name
+                    } Royal Vacation`}
+                    // alt={`${popularState[0][language].name} Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 m-b">
-                      {popularState[0].name}
+                      {validateLanguageName(language, popularState[0]).name}
                     </span>
                     <span className="m-m text-fs-10">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN ${parsePrice(popularState[0].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[0]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -125,21 +130,26 @@ export function PopularState() {
                   onClick={() => sendDestination(popularState[1])}
                 >
                   <img
-                    src={popularState[1].imageUrl}
-                    alt={`${popularState[1].name} Royal Vacation`}
+                    src={popularState[1].image}
+                    alt={`${
+                      validateLanguageName(language, popularState[1]).name
+                    } Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 md:text-fs-20 m-b">
-                      {popularState[1].name}
+                      {validateLanguageName(language, popularState[1]).name}
                     </span>
                     <span className="m-m text-fs-10 md:text-fs-12">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12 md:text-fs-16">
                         {" "}
-                        MXN ${parsePrice(popularState[1].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[1]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -152,21 +162,26 @@ export function PopularState() {
                   onClick={() => sendDestination(popularState[2])}
                 >
                   <img
-                    src={popularState[2].imageUrl}
-                    alt={`${popularState[2].name} Royal Vacation`}
+                    src={popularState[2].image}
+                    alt={`${
+                      validateLanguageName(language, popularState[2]).name
+                    } Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
-                      {popularState[2].name}
+                      {validateLanguageName(language, popularState[2]).name}
                     </span>
                     <span className="text-fs-10 m-m">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN ${parsePrice(popularState[2].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[2]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -177,21 +192,26 @@ export function PopularState() {
                   onClick={() => sendDestination(popularState[3])}
                 >
                   <img
-                    src={popularState[3].imageUrl}
-                    alt={`${popularState[3].name} Royal Vacation`}
+                    src={popularState[3].image}
+                    alt={`${
+                      validateLanguageName(language, popularState[3]).name
+                    } Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
-                      {popularState[3].name}
+                      {validateLanguageName(language, popularState[3]).name}
                     </span>
                     <span className="text-fs-10 m-m">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN ${parsePrice(popularState[3].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[2]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -208,22 +228,27 @@ export function PopularState() {
                   onClick={() => sendDestination(popularState[4])}
                 >
                   <img
-                    src={popularState[4].imageUrl}
-                    alt={`${popularState[4].name} Royal Vacation`}
+                    src={popularState[4].image}
+                    alt={`${
+                      validateLanguageName(language, popularState[4]).name
+                    } Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 m-b">
-                      {popularState[4].name}
+                      {validateLanguageName(language, popularState[4]).name}
                     </span>
                     <span className="m-m text-fs-10">
                       {" "}
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN ${parsePrice(popularState[4].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[4]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -234,21 +259,26 @@ export function PopularState() {
                   onClick={() => sendDestination(popularState[5])}
                 >
                   <img
-                    src={popularState[5].imageUrl}
-                    alt={`${popularState[5].name} Royal Vacation`}
+                    src={popularState[5].image}
+                    alt={`${
+                      validateLanguageName(language, popularState[5]).name
+                    } Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 md:text-fs-20 m-b">
-                      {popularState[5].name}
+                      {validateLanguageName(language, popularState[5]).name}
                     </span>
                     <span className="m-m text-fs-10 md:text-fs-12">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12 md:text-fs-16">
                         {" "}
-                        MXN ${parsePrice(popularState[5].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[5]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -261,21 +291,26 @@ export function PopularState() {
                   onClick={() => sendDestination(popularState[6])}
                 >
                   <img
-                    src={popularState[6].imageUrl}
-                    alt={`${popularState[6].name} Royal Vacation`}
+                    src={popularState[6].image}
+                    alt={`${
+                      validateLanguageName(language, popularState[6]).name
+                    } Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
-                      {popularState[6].name}
+                      {validateLanguageName(language, popularState[6]).name}
                     </span>
                     <span className="text-fs-10 m-m">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN ${parsePrice(popularState[6].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[6]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -283,24 +318,29 @@ export function PopularState() {
 
                 <div
                   className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
-                  onClick={() => sendDestination(popularState[0])}
+                  onClick={() => sendDestination(popularState[7])}
                 >
                   <img
-                    src={popularState[0].imageUrl}
-                    alt={`${popularState[0].name} Royal Vacation`}
+                    src={popularState[7].image}
+                    alt={`${
+                      validateLanguageName(language, popularState[7]).name
+                    } Royal Vacation`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
                   />
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
-                      {popularState[0].name}
+                      {validateLanguageName(language, popularState[7]).name}
                     </span>
                     <span className="text-fs-10 m-m">
                       {languageData.homeDestinations[0].titleTop.textHotel}{" "}
                       <span className="m-s-b text-fs-12">
                         {" "}
-                        MXN ${parsePrice(popularState[0].price)}{" "}
+                        MXN $
+                        {parsePrice(
+                          validateLanguageName(language, popularState[7]).price
+                        )}{" "}
                       </span>
                     </span>
                   </div>
@@ -315,3 +355,20 @@ export function PopularState() {
     </div>
   );
 }
+
+const validateLanguageName = (language, value) => {
+  // console.log(value);
+  if (language === "es") {
+    if (value.es) {
+      return { name: value.es.name, price: value.es.price };
+    } else {
+      return { name: value.en.name, price: value.en.price };
+    }
+  } else if (language === "en") {
+    if (value.en) {
+      return { name: value.en.name, price: value.en.price };
+    } else {
+      return { name: value.es.name, price: value.es.price };
+    }
+  }
+};

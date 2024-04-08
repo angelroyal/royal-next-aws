@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "./LanguageContext";
 // import { SelectLanguage } from "@/components/Mobile/Hotel/General/CurrencyLanguage";
@@ -11,6 +11,8 @@ import LanguageContext from "./LanguageContext";
 
 export function LanguageSelector() {
   const { language, setLanguage } = useContext(LanguageContext);
+
+  const [actualLanguage, setActualLanguage] = useState("en")
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -21,8 +23,8 @@ export function LanguageSelector() {
 
   const storedLanguage =
     typeof window !== "undefined"
-      ? localStorage.getItem("language") || "es"
-      : "es";
+      ? localStorage.getItem("language") || "en"
+      : "en";
 
   const defaultLanguage = storedLanguage || language;
 
@@ -32,10 +34,14 @@ export function LanguageSelector() {
     }
   }, [storedLanguage, language, setLanguage]);
 
+  useEffect(()=>{
+    setActualLanguage(localStorage.getItem("language") || "en")
+  },[]);
+
   return (
     <>
       <div className="flex pr-[30px]">
-        {defaultLanguage === "es" && (
+        {actualLanguage === "es" && (
           <Image
             className="w-[25px] h-[30px]"
             width={25}
@@ -44,7 +50,7 @@ export function LanguageSelector() {
             alt="lang"
           />
         )}
-        {defaultLanguage === "en" && (
+        {actualLanguage === "en" && (
           // <IconSpanish className="icon-spanish" />
           <Image
             className="w-[25px] h-[30px]"
