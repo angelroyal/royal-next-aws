@@ -1,6 +1,3 @@
-// import Policy from "@/pages/others/Policy";
-// import { PrivacyPolicy } from "@/components/About/PolicyPrivacy/PrivacyPolicy";
-
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -9,6 +6,17 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import { CancelPolicy } from "@/components/About/CancelPolicy/CancelPolicy";
 
+export async function generateMetadata() {
+  return {
+    title: "Políticas de Cancelaciones - StayWuw",
+    description:
+      "Entiende tus Opciones - Nuestra Sección de Políticas de Cambios y Cancelaciones te Ayuda a Tomar Decisiones Informadas",
+    keywords:
+      "Políticas de cancelaciones, Procedimiento de cambios, Proteccion de Datos Personales",
+    author: "StayWuw",
+  };
+}
+
 export default function Home() {
   return (
     <LanguageProvider>
@@ -16,7 +24,7 @@ export default function Home() {
         <CartAxiosProvider>
           <Token />
           <Navigation />
-          <CancelPolicy/>
+          <CancelPolicy />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>
