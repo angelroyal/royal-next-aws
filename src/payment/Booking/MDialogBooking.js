@@ -23,7 +23,7 @@ export function DialogBooking(props) {
       keepMounted
       aria-describedby="alert-dialog-slide-description"
     >
-      <div className="m-component-p-top">
+      <div className="m-component-p-top h-full">
         <div className="container-dialog">
           <div className="close-dialog-button" onClick={closeDialog}>
             <img src={CloseDialogLine} alt="CloseDialogLine" className="line-dialog" />

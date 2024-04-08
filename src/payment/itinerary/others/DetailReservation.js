@@ -23,7 +23,7 @@ export default function ReservationShortInfo(props) {
       <>
         <div className="cont-confirmation-info-father">
           <div className="cont-confirmation-info-green">
-            <div>
+            <div className="flex gap-x-[2px] items-start">
               <Image src={IconCheck} />
               <span className="text-confirm-black-m">
                 {languageData.confirmation.confirmationNumber}

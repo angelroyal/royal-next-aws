@@ -26,7 +26,7 @@ export function DialogItineraryMobile(props) {
       aria-describedby="alert-dialog-slide-description"
       className="!m-0"
     >
-      <div className="m-component-p-top">
+      <div className={`m-component-p-top ${step !==  3 && '!h-full'}`}>
         <div className="container-dialog">
           {/* CLOSE DIALOG */}
           <div className="circle-open-dialog-m" onClick={() => onClose()}>
