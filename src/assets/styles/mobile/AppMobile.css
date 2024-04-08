@@ -1433,7 +1433,8 @@
   /* DIALOG */
   .m-component-p-top {
     padding-top: 41px;
-    height: 100%;
+    height: auto;
+    /* height: 100%; */
   }
 
   .container-dialog {

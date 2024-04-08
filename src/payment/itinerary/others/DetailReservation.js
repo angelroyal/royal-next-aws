@@ -8,6 +8,7 @@ import { SkeletonConfirmPaymentDetails } from "../../../utils/skeleton/SkeletonC
 
 import IconCheck from "../../../assets/icons/utils/others/check.svg";
 import IconShareW from "../../../assets/icons/utils/payment/share-w.svg";
+import "../../../assets/styles/mobile/TourMobile.css"
 
 export default function ReservationShortInfo(props) {
   const isMobile = useIsMobileNew();
