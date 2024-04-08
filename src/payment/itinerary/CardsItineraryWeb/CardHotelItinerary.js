@@ -22,6 +22,7 @@ import IconLocationBorder from "../../../assets/icons/utils/others/location-bord
 // import LocationIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
 import Image from "next/image";
 import "../../../../src/assets/styles/mobile/HotelMobile.css";
+import "@/assets/styles/web/Hotel.css"
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
   // console.log(itemHotel);
@@ -125,7 +126,7 @@ export default function CardHotelItinerary(props) {
                   src={itemHotel.image ? itemHotel.image : ImageNotFound}
                   alt="hotel"
                   width="100%"
-                  height="100%"
+                  className="!h-full"
                 />
               </div>
 
@@ -156,7 +157,7 @@ export default function CardHotelItinerary(props) {
                       <span>{itemHotel.address}</span>
                     </div>
 
-                    <div className="active-container-payment-desktop occupancy-rooms-itinerary">
+                    <div className="occupancy-rooms-itinerary max-lg:!hidden">
                       <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
                         <img
                           className="icons-size-m"
@@ -185,7 +186,7 @@ export default function CardHotelItinerary(props) {
                   </div>
                 </div>
 
-                <div className="active-container-payment-desktop widthA">
+                <div className="active-container-payment-desktop widthA max-lg:hidden flex">
                   <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
                     <span className="text-grey-card-hotel-i">
                       {languageData.cartTour.taxesText}
@@ -205,7 +206,7 @@ export default function CardHotelItinerary(props) {
               </div>
             </div>
 
-            <div className="active-container-payment-mobile lg:hidden">
+            <div className="active-container-payment-mobile lg:!hidden">
               <div className="occupancy-rooms-itinerary">
                 <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
                   <img

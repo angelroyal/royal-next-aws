@@ -17,7 +17,7 @@ export function BookingDetails(props) {
       <div className="box-inferior booking-container" onClick={()=>setOpenDialog(true)}>
         <div className="button-open-booking">
           <img src={OpenDialogLine} alt="OpenDialogLine" style={{ width: "100%" }} />
-          <Image src={IconShowLess} alt="IconShowLess" className="icon-show-less" />
+          <Image src={IconShowLess} alt="IconShowLess" className="icon-show-less !w-[50%]" />
         </div>
 
         <div className="d-flex p-3">

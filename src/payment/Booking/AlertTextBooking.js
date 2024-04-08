@@ -14,8 +14,8 @@ export default function AlertTextBooking(props) {
     <>
       {/* The payment has been processed or the reservation has been completed. */}
       {showAlert && showAlert.message === "CUB" && (
-        <div className="alert-pay-declined">
-          <div className="alert-text-declined">
+        <div className="alert-pay-declined ">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" /> {languageData.alertsPayment.declined}
           </div>
 
@@ -28,7 +28,7 @@ export default function AlertTextBooking(props) {
       {/* Hotel availability was lost, you still need to send the name of the hotel. */}
       {showAlert && showAlert.message === "UAH" && (
         <div className="alert-unavailable-data">
-          <div className="alert-text-declined">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.unavailable}
           </div>
@@ -43,7 +43,7 @@ export default function AlertTextBooking(props) {
       {/* Price overrun */}
       {showAlert && showAlert.message === "PHC" && (
         <div className="alert-unavailable-data">
-          <div className="alert-text-declined">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" /> {languageData.alertsPayment.alertPrice}
           </div>
 
@@ -68,7 +68,7 @@ export default function AlertTextBooking(props) {
 
       {showAlert && showAlert.message === "PEC" && (
         <div className="alert-unavailable-data">
-          <div className="alert-text-declined">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertPassengers}
           </div>
@@ -82,7 +82,7 @@ export default function AlertTextBooking(props) {
       {/* GENERIC ALERT */}
       {showAlert && showAlert.status === 500 && (
         <div className="alert-pay-declined">
-          <div className="alert-text-declined">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertGeneral}
           </div>
@@ -96,7 +96,7 @@ export default function AlertTextBooking(props) {
       {/* GENERIC ALERT */}
       {showAlert && showAlert.status === 402 && (
         <div className="alert-pay-declined">
-          <div className="alert-text-declined">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertGeneral}
           </div>
@@ -110,7 +110,7 @@ export default function AlertTextBooking(props) {
       {/* MAX PRICE */}
       {showAlert && showAlert.status === 400 && (
         <div className="alert-pay-declined">
-          <div className="alert-text-declined">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.alertGeneral}
           </div>
@@ -122,7 +122,7 @@ export default function AlertTextBooking(props) {
       {/* CONEKTA ERROR */}
       {showAlert && showAlert.object === "error" && (
         <div className="alert-unavailable-data">
-          <div className="alert-text-declined">
+          <div className="alert-text-declined flex gap-2">
             <Image src={MarkDeclined} alt="MarkDeclined" />{" "}
             {languageData.alertsPayment.dataIncorrect}
           </div>

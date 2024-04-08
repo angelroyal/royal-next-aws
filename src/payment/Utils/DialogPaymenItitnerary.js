@@ -53,7 +53,7 @@ export function DialogPaymentItinerary(props) {
                 className="circle-open-dialog-m"
                 onClick={() => setOpenDialog(true)}
               >
-                <Image className="icon-show-less" src={IconShowLess} />
+                <Image className="icon-show-less !w-1/2" src={IconShowLess} width={14} height={7}/>
               </div>
 
               <div className="d-flex flex-column ps-2 pe-2">
@@ -157,11 +157,11 @@ export function DialogPaymentItinerary(props) {
                 className="circle-open-dialog-c"
                 onClick={() => setOpenDialog(true)}
               >
-                <Image className="icon-show-less" src={IconShowLessW} />
+                <Image className="icon-show-less !w-1/2" src={IconShowLessW} />
               </div>
 
               <div className="d-flex flex-column">
-                <span className="total-confirmation-text">Total</span>
+                <span className="total-confirmation-text">Totall</span>
 
                 <div className="total-confirmation-text">
                   MXN $
