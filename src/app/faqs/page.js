@@ -9,6 +9,17 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import FrequentQuestions from "@/components/About/Faqs/FrequentQuestions";
 
+export async function generateMetadata() {
+  return {
+    title: "Preguntas Frecuentes -  StayWuw",
+    description:
+      "Tus Consultas, Nuestras Respuestas - StayWuw se Compromete a Brindarte Asistencia en Cada Paso de tu Viaje",
+    keywords:
+      "Preguntas frecuentes, Asistencia al cliente, Ayuda y Soporte, Sobre Royal Vacations, FAQs, Servicios",
+    author: "StayWuw",
+  };
+}
+
 export default function Home() {
   return (
     <LanguageProvider>
@@ -16,7 +27,7 @@ export default function Home() {
         <CartAxiosProvider>
           <Token />
           <Navigation />
-          <FrequentQuestions/>
+          <FrequentQuestions />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

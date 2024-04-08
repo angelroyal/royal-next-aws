@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
     const hotelMetaData = response.data;
 
     return {
-      title: `${hotelMetaData.name} - Stay WuW`,
+      title: `${hotelMetaData.name} - StayWuw`,
       description: `${hotelMetaData.description}`,
       address: hotelMetaData.address,
       city: hotelMetaData.city,
