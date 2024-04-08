@@ -13,9 +13,6 @@ import { LodgingBestPrice } from "../Skeleton/HotelInformationSkeleton";
 
 export function LodgingsView({ tour }) {
   const { languageData } = useContext(LanguageContext);
-//   useEffect(() => {
-//     console.log(tour);
-//   }, [tour]);
 
   return tour ? (
     <>
@@ -55,67 +52,69 @@ export function LodgingsView({ tour }) {
             },
           }}
         >
-          {tour.slice(0, 8).map((tour, index) => (
-            <SwiperSlide key={index} className="!rounded-lg">
-              <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
-                <div className="w-full h-[216px]">
-                  <img
-                    className="w-full h-full rounded-t-lg object-cover select-none"
-                    src={tour.image}
-                    alt="card"
-                  />
-                </div>
-
-                <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-                  <div className="m-b text-fs-14 pt-1 text-start truncate">
-                    {tour.spanishName}{" "}
-                  </div>
-
-                  <Rating
-                    className="my-1"
-                    name="read-only"
-                    value={tour.category}
-                    readOnly
-                    size="small"
-                  />
-
-                  <div className="flex gap-1 mb-[11px]">
-                    <Image
-                      className="w-auto h-auto"
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
-                      alt="location icon"
-                      width={11}
-                      height={14}
+          {Object.values(tour)
+            .slice(0, 8)
+            .map((tour, index) => (
+              <SwiperSlide key={index} className="!rounded-lg">
+                <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
+                  <div className="w-full h-[216px]">
+                    <img
+                      className="w-full h-full rounded-t-lg object-cover select-none"
+                      src={tour.image}
+                      alt="card"
                     />
-                    <span className="text-bl-100 m-s-b text-fs-12">
-                      {tour.spanishDestination}
-                    </span>
                   </div>
 
-                  <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
-                    <div className="flex flex-col">
-                      <span className="m-m text-gry-100 text-fs-12 text-start">
-                        {languageData.cartTour.from}
-                      </span>
-                      <span className="m-b text-or-100 text-fs-12">
-                        MXN <span className="text-fs-16">${tour.price}</span>
+                  <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
+                    <div className="m-b text-fs-14 pt-1 text-start truncate">
+                      {tour.name}{" "}
+                    </div>
+
+                    <Rating
+                      className="my-1"
+                      name="read-only"
+                      value={tour.category}
+                      readOnly
+                      size="small"
+                    />
+
+                    <div className="flex gap-1 mb-[11px]">
+                      <Image
+                        className="w-auto h-auto"
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                        alt="location icon"
+                        width={11}
+                        height={14}
+                      />
+                      <span className="text-bl-100 m-s-b text-fs-12">
+                        {tour.destination}
                       </span>
                     </div>
 
-                    <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap">
-                      {languageData.cartTour.seeDetails}
-                    </button>
+                    <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
+                      <div className="flex flex-col">
+                        <span className="m-m text-gry-100 text-fs-12 text-start">
+                          {languageData.cartTour.from}
+                        </span>
+                        <span className="m-b text-or-100 text-fs-12">
+                          MXN <span className="text-fs-16">${tour.price}</span>
+                        </span>
+                      </div>
+
+                      <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap">
+                        {languageData.cartTour.seeDetails}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
       {/*END TWO SWIPER */}
 
       <div className=" flex flex-wrap justify-center md:justify-between gap-x-[12] gap-y-[12px] lg:hidden">
-        {tour.slice(0, 8).map((tour, index) => (
+        {Object.values(tour).slice(0, 8).map((tour, index) => (
           <div key={index} className="!rounded-lg">
             {/*  */}
             <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
@@ -129,7 +128,7 @@ export function LodgingsView({ tour }) {
 
               <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
                 <div className="m-b text-fs-14 pt-1 text-start truncate">
-                  {tour.spanishName}{" "}
+                  {tour.name}{" "}
                 </div>
 
                 <Rating
@@ -149,7 +148,7 @@ export function LodgingsView({ tour }) {
                     height={14}
                   />
                   <span className="text-bl-100 m-s-b text-fs-12">
-                    {tour.spanishDestination}
+                    {tour.destination}
                   </span>
                 </div>
 
