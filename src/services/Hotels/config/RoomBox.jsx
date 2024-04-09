@@ -1,6 +1,6 @@
 "use client"
 import Dropdown from "react-bootstrap/Dropdown";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 
 import RoomMenu from "./RoomMenu";
 import LanguageContext from "../../../language/LanguageContext";
@@ -47,8 +47,26 @@ function Room({listing=false ,OnApply }) {
     }
   };
 
+    // FUNCTION TO CLOSE MENU
+    const ref = useRef(null);
+
+    useEffect(() => {
+      document.addEventListener("click", handleClickOutside);
+  
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }, []);
+  
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    // END FUNCTION TO CLOSE MENU
+
   return (
-    <div className={` border-2 border-gray-200 rounded py-2.5 px-4 relative w-full  h-[54px] ${listing === false && 'lg:w-[296px]'} `}>
+    <div ref={ref} className={` border-2 border-gray-200 rounded py-2.5 px-4 relative w-full  h-[54px] ${listing === false && 'lg:w-[296px]'} `}>
       <Dropdown style={{minWidth:"293px"}} show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
@@ -106,6 +124,7 @@ function Room({listing=false ,OnApply }) {
               showDrop={setShowDropdown}
               people={setTotalPeople}
               roomsTotal={setTotalRooms}
+              onClose={setShowDropdown}
             />
           </Dropdown.Menu>
         )}

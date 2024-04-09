@@ -30,7 +30,7 @@ export default function Footer() {
 
       <footer className="bg-bl-100 flex flex-col text-white max-w-full pt-[21px] pb-[1rem]">
         {/* LOGO AND SOCIAL ICONS */}
-        <div className="flex justify-center justify-items-center max-md:grid grid-cols-1 max-md:text-center ">
+        <div className="flex max-md:mx-2 justify-center justify-items-center max-md:grid grid-cols-1 max-md:text-center ">
           <div className="basis-1/2 justify-center">
             <ul>
               <li className=" grid place-items-center">

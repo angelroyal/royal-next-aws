@@ -7,19 +7,10 @@ import { useIsMobile } from "../../config/Mobile/isMobile";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
-// import IconTour from "../../assets/icons/utils/navigation/tour.svg";
-// import IconLocation from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
-// import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
-
 import "../../assets/styles/general/SearchHotel.css";
 
 const API_ENDPOINT = `v1/activity`;
-// const API_ENDPOINT = `v1/tour-destinations/search`;
-
-function SearchTour({ closeDialog, onSelectTour }) {
-  // const [searchTour, setDataSearch] = useState(
-  //   JSON.parse(localStorage.getItem("searchTour")) || null
-  // );
+function SearchTour({ closeDialog, onSelectTour, listing = false }) {
 
   const storedSearchTour =
     typeof localStorage !== "undefined"
@@ -101,7 +92,7 @@ function SearchTour({ closeDialog, onSelectTour }) {
   };
 
   return (
-    <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative w-full lg:w-[290px]">
+    <div className={`border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[53px] relative ${listing ? 'w-full' : 'w-full lg:w-[290px]'}`}>
       <span className="text-fs-10 m-s-b text-gry-70 m-0 absolute top-[6px] left-[43px]">
         {languageData.SearchBox.tabTour.autoDestination}
       </span>

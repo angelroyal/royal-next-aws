@@ -3,7 +3,7 @@ import flatpickr from "flatpickr";
 import React, { useEffect, useRef, useContext } from "react";
 import LanguageContext from "../language/LanguageContext";
 
-export default function CalendarDay({ onDateChange }) {
+export default function CalendarDay({ onDateChange, listing=false }) {
   const calendarRef = useRef(null);
 
   useEffect(() => {
@@ -35,6 +35,7 @@ export default function CalendarDay({ onDateChange }) {
         inline: false,
         onChange: handleDateChange,
         defaultDate: calendarDay,
+        disableMobile: true,
       });
     } else {
       flatpickr(calendarRef.current, {
@@ -44,6 +45,7 @@ export default function CalendarDay({ onDateChange }) {
         maxDate: new Date(new Date().getFullYear() + 1, 11, 31),
         locale: "es",
         inline: false,
+        disableMobile: true,
         onChange: handleDateChange,
       });
     }
@@ -51,7 +53,7 @@ export default function CalendarDay({ onDateChange }) {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full lg:w-[290px] h-[54px]">
+    <div className={`${listing ? 'w-full' : 'w-full lg:w-[290px]'} border-2 border-gray-200 rounded py-2.5 px-4 flex items-center h-[54px]`}>
       <div className="flex items-center gap-2 w-full">
         <img
           className="h-[18px] w-4 invert"
@@ -70,7 +72,6 @@ export default function CalendarDay({ onDateChange }) {
             placeholder={
               languageData.SearchBox.tabTransportation.autoCompleteArrival
             }
-            // id="check-in"
           />
         </div>
       </div>

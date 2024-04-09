@@ -6,10 +6,9 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import Tour from "@/services/Tours/components/DetailTour/Tour";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
+import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
 export async function generateMetadata({ params, searchParams }) {
-
   const requestBody = {
     dateFrom: searchParams.dateStart,
     days: 5,
@@ -60,12 +59,12 @@ export default async function DetailPageTour({ params, searchParams }) {
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
-            <RoomsHotelProvider>
+            <DetailTourProvider>
               <Token />
               <Navigation />
               <Tour tourData={tourData} />
               <Footer />
-            </RoomsHotelProvider>
+            </DetailTourProvider>
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>

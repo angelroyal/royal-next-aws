@@ -82,11 +82,11 @@ export default function MobilSearchTour() {
   return (
     <div className="!p-5 shadow-3xl">
       <div className="flex flex-col gap-y-3">
-        <SearchTour onSelectTour={setSelectedOption} />
+        <SearchTour onSelectTour={setSelectedOption} listing={true}/>
 
-        <CalendarDay onDateChange={handleDateChange} />
+        <CalendarDay onDateChange={handleDateChange} listing={true}/>
 
-        <PersonsActivities OnApply={setRoomData} />
+        <PersonsActivities OnApply={setRoomData} listing={true}/>
 
         <div className="margin-search-tab button-room-page">
           <button

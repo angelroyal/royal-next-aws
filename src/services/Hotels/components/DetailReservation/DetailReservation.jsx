@@ -9,6 +9,7 @@ import AddCartHotel from "./AddCartHotel";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 import { LimitPriceAlert } from "../AlertsHotel/HotelInformationAlerts";
+import { calculateNights } from "../../utils/calculateNights";
 
 export default function DetailReservation() {
   const limitPrice = 95000;
@@ -17,10 +18,48 @@ export default function DetailReservation() {
   const [isLimitPrice, setISLimitPrice] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
-  const { selectedRooms } = useContext(RoomsHotelContext);
+  const [diffDate, setDiffDate] = useState(null);
+  const [totalPerson, setTotalPerson] = useState(null);
+
+  const { selectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
   const { totalPrice } = useCartAxios();
+
+  console.log(requestBodyRooms);
   // console.log(selectedRooms);
   // console.log(totalPrice);
+
+  useEffect(() => {
+    if (requestBodyRooms && requestBodyRooms.occupancies) {
+      const adult = requestBodyRooms.occupancies.reduce(
+        (acc, occupancy) => acc + occupancy.adults,
+        0
+      );
+      const children = requestBodyRooms.occupancies.reduce(
+        (acc, occupancy) => acc + occupancy.children.length,
+        0
+      );
+      setTotalPerson(adult + children);
+    }
+
+    let actualDiffDate = null;
+    if (requestBodyRooms && requestBodyRooms["check-in"] && requestBodyRooms["check-out"]) {
+      actualDiffDate = calculateNights(
+        requestBodyRooms["check-in"],
+        requestBodyRooms["check-out"]
+      );
+    } else {
+      const getDateLocalSt = JSON.parse(
+        localStorage.getItem("selectedDates")
+      );
+      console.log(getDateLocalSt);
+      actualDiffDate = calculateNights(getDateLocalSt.formattedCheckIn, getDateLocalSt.formattedCheckOut);
+    }
+
+    setDiffDate(actualDiffDate);
+  }, [requestBodyRooms]);
+
+  console.log("totalPerson", totalPerson);
+  console.log("diffDate", diffDate);
 
   // TOTAL CALCULATION
   useEffect(() => {
@@ -93,7 +132,11 @@ export default function DetailReservation() {
                     </h4>
 
                     <p className="m-0 m-s-b text-fs-8 text-gry-100">
-                      5 noches, 4 personas
+                      {`${diffDate} ${languageData.cardHotel.date} ,${totalPerson} ${
+                        totalPerson === 1
+                          ? languageData.cardHotel.person
+                          : languageData.cardHotel.people
+                      }`}
                     </p>
 
                     <div className="flex gap-x-3">
@@ -157,7 +200,8 @@ export default function DetailReservation() {
               disabled={selectedRooms.length === 0}
               onClick={() => setOpen(!open)}
               className={`${
-                selectedRooms.length === 0 && "cursor-not-allowed brightness-[0.6]"
+                selectedRooms.length === 0 &&
+                "cursor-not-allowed brightness-[0.6]"
               } top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border border-gry-100`}
             >
               <img

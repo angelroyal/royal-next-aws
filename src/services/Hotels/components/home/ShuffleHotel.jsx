@@ -69,7 +69,7 @@ export default function ShuffleHotel() {
       </h2>
 
       {/* MENU  */}
-      <div className="flex overflow-x-auto gap-10 bg-gry-50 py-2 px-4 rounded-3xl mb-8 w-fit max-lg:w-full">
+      <div className="flex overflow-x-scroll overflow-y-hidden gap-10 bg-gry-50 py-2 px-4 rounded-3xl mb-8 w-fit max-lg:w-full h-max">
         {listOptions.map((option, index) => (
           <button key={index}
             onClick={() => handleCategory(index, option.id)}
@@ -77,7 +77,7 @@ export default function ShuffleHotel() {
               menuShuffleHotel === index
                 ? "bg-or-100 rounded-3xl text-white"
                 : "text-gry-100"
-            } flex gap-2 py-2 px-4 justify-center items-center`}
+            } flex gap-2 py-2 px-4 justify-center items-center h-max`}
           >
             {menuShuffleHotel === index ? (
               <Image
@@ -95,7 +95,7 @@ export default function ShuffleHotel() {
               />
             )}
 
-            <span className="text-fs-12 m-m">
+            <span className={`text-nowrap text-fs-12 m-m`}>
               {languageData.hotelTypes[option.name]}
             </span>
           </button>
