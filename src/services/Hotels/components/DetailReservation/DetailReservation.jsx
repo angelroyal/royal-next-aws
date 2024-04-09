@@ -42,23 +42,30 @@ export default function DetailReservation() {
     }
 
     let actualDiffDate = null;
-    if (requestBodyRooms && requestBodyRooms["check-in"] && requestBodyRooms["check-out"]) {
+    if (
+      requestBodyRooms &&
+      requestBodyRooms["check-in"] &&
+      requestBodyRooms["check-out"]
+    ) {
+      console.log("entra 1");
       actualDiffDate = calculateNights(
         requestBodyRooms["check-in"],
         requestBodyRooms["check-out"]
       );
     } else {
-      const getDateLocalSt = JSON.parse(
-        localStorage.getItem("selectedDates")
-      );
+      console.log("entra 2");
+      const getDateLocalSt = JSON.parse(localStorage.getItem("selectedDates"));
       console.log(getDateLocalSt);
-      actualDiffDate = calculateNights(getDateLocalSt.formattedCheckIn, getDateLocalSt.formattedCheckOut);
+      actualDiffDate = calculateNights(
+        getDateLocalSt.formattedCheckIn,
+        getDateLocalSt.formattedCheckOut
+      );
     }
 
     setDiffDate(actualDiffDate);
   }, [requestBodyRooms]);
 
-  console.log("totalPerson", totalPerson);
+  // console.log("totalPerson", totalPerson);
   console.log("diffDate", diffDate);
 
   // TOTAL CALCULATION
@@ -132,7 +139,11 @@ export default function DetailReservation() {
                     </h4>
 
                     <p className="m-0 m-s-b text-fs-8 text-gry-100">
-                      {`${diffDate} ${languageData.cardHotel.date} ,${totalPerson} ${
+                      {`${diffDate} ${
+                        diffDate === 1
+                          ? languageData.cardHotel.night
+                          : languageData.cardHotel.nights
+                      } ${totalPerson} ${
                         totalPerson === 1
                           ? languageData.cardHotel.person
                           : languageData.cardHotel.people

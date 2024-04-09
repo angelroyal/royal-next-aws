@@ -218,7 +218,6 @@ export const es = {
 
   cardHotel: {
     titleSpace: "Solo quedan",
-    date:"Días",
     night: "Noche,",
     nights: "Noches,",
     person: "Persona",

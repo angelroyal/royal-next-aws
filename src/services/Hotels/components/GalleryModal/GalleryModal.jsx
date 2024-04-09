@@ -6,7 +6,7 @@ export function GalleryModal(props) {
   const { hotel } = props;
 
   return (
-    <div className="bg-gry-30 rounded-lg flex flex-col lg:items-center lg:flex-row py-9 px-4 lg:p-8 lg:gap-x-9">
+    <div className="bg-white rounded-lg flex flex-col lg:items-center lg:flex-row py-9 px-4 lg:p-8 lg:gap-x-9">
       <GalleryImages images={hotel.images} />
 
       <div className="w-full lg:min-h-[30rem] lg:w-[40%] xl:w-[45%] pt-9 lg:py-4 lg:px-2">

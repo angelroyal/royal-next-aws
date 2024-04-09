@@ -217,7 +217,6 @@ export const en = {
 
   cardHotel: {
     titleSpace: "Only",
-    date:"Days",
     night: "Night,",
     nights: "Nights,",
     person: "Person,",

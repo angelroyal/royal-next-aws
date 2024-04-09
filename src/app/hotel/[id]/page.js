@@ -59,7 +59,7 @@ export default async function DetailPageHotel({ params }) {
             <RoomsHotelProvider>
               <Token />
               <Navigation hotelDetails={true} />
-              <div className="relative">
+              <div className="relative bg-gry-30">
                 <Container>
                   <GalleryModal hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />

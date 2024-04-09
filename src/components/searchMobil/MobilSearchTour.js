@@ -17,7 +17,6 @@ export default function MobilSearchTour() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [roomData, setRoomData] = useState([]);
-  const [showModal, setShowModal] = useState(false);
 
   const router = useRouter();
 
@@ -58,7 +57,6 @@ export default function MobilSearchTour() {
   const sendAutocomplete = () => {
     const FormatDateStart = selectedDate[0];
     const dateStart = moment(FormatDateStart).format("YYYY-MM-DD");
-    setShowModal(true);
 
     const requestBody = {
       code: selectedOption.key,
@@ -71,10 +69,9 @@ export default function MobilSearchTour() {
     // We convert the object to a string and append it to the URL
     const query = new URLSearchParams(requestBody).toString();
 
-    setTimeout(() => {
-      router.push(`/tours?${query}`);
-      setShowModal(false);
-    }, 1500);
+    // router.push(`/tour?${query}`);
+    window.location.href = `/tour/results?${query}`;
+    // router.push(`/tour/results?${query}`);
   };
 
   const { languageData } = useContext(LanguageContext);
@@ -105,16 +102,7 @@ export default function MobilSearchTour() {
         </div>
       </div>
 
-      {showModal && (
-        <div className="modal-backdrop modal-loading">
-          <div className="modal-box">
-            <Lottie
-              className="transition-royal"
-              animationData={animationData}
-            />
-          </div>
-        </div>
-      )}
+      
     </div>
   );
 }
