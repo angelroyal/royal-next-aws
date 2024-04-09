@@ -49,23 +49,41 @@ export default function DetailTour({ tourData }) {
           <div className="m-b text-[#1a202c]">
             <sup className="text-fs-12">{languageData.cartTour.from}</sup>{" "}
             <span className="text-fs-24">MXN</span>{" "}
-            <span className="text-fs-24">$10,000</span>
+            <span className="text-fs-24">
+              $
+              {Math.floor(tourData.price)
+                .toLocaleString("es-MX", { currency: "MXN" })
+                .replace(".00", "")}
+              .
+              <sup className="">
+                {(tourData.price % 1).toFixed(2).slice(2)}{" "}
+              </sup>
+            </span>
           </div>
 
-          {tourData.discount > 0 && (
-            <div className="text-fs-12 text-center m-b">
-              <span className="text-gry-100 pr-2">MXN $10,000</span>
-              <span className="text-red-100">-10%</span>
+          {tourData.discount < 0 && (
+            <div className="text-fs-12 text-center m-b mt-[5px]">
+              <span className="text-gry-100 pr-2">
+                MXN $
+                {Math.floor(tourData.originalPrice)
+                  .toLocaleString("es-MX", { currency: "MXN" })
+                  .replace(".00", "")}
+                .
+                <sup className="">
+                  {(tourData.originalPrice % 1).toFixed(2).slice(2)}{" "}
+                </sup>
+              </span>
+              <span className="text-red-100 m-b">{tourData.discount}%</span>
             </div>
           )}
 
-          <div className=" bg-grn-50 text-grn-100 p-1 w-fit rounded-md mt-4 text-fs-8 m-b">
+          <div className={`bg-grn-50 text-grn-100 p-1 w-fit rounded-md text-fs-8 m-b ${tourData.discount < 0 && 'mt-[5px]'}`}>
             {languageData.cart.taxes}
           </div>
         </div>
       </div>
 
-      <GalleryTour images={tourData.images}/>
+      <GalleryTour images={tourData.images} />
     </div>
   );
 }

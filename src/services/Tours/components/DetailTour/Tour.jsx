@@ -13,7 +13,7 @@ export default function Tour({tourData}) {
 
         <div className="flex flex-col lg:flex-row mt-9">
           <div className="w-full lg:w-6/12 shadow-3xl p-4">
-            <TabsTours />
+            <TabsTours tourData={tourData.activity}/>
           </div>
           <div className="w-full flex-col lg:w-6/12 pt-9 lg:pl-[54px]">
             <DayCalendar />

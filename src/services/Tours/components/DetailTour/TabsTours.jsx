@@ -5,7 +5,7 @@ import {
   MegaphoneIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-import { use, useEffect, useState } from "react";
+import { useState } from "react";
 
 import "../../../../assets/styles/general/keyframes.css";
 
@@ -15,7 +15,7 @@ const tabs = [
 ];
 
 export default function TabsTours(props) {
-  const { hotel } = props;
+  const { tourData } = props;
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   const handleTabClick = (tab) => {
@@ -29,54 +29,20 @@ export default function TabsTours(props) {
       //   INFO HOTEL
       case "informacion":
         return (
-          <div className="m-m text-gry-100 text-fs-14">
-            At nightfall, the torches are lit and Xplor Fuego emerges. Under the
-            stars, you will have the opportunity to fly over the jungle in an
-            impressive zip-line circuit. This nocturnal adventure will ignite
-            your desire for excitement to travel the 7-line circuit that the
-            park has.
-            <br />
-            <br />
-            Also, you can glide down the tallest zip-line in the entire Mexican
-            Caribbean whose main tower rises to 147 ft (45 m) high and you will
-            descend at a speed of 18 mph (30 km/h). Remember to smile for the
-            photo, since there are Xelfie points distributed throughout the
-            entire circuit and that will take your best angle so that you can
-            take home the memory of the unlimited nighttime adventure of Xplor
-            Fuego.
-            <br />
-            <br />
-            Our hosts will take care of giving you the necessary safety
-            instructions, adjusting and checking that your equipment is ready to
-            start the flight and have maximum fun.
-            <br />
-            <br />
-            At nightfall, the torches are lit and Xplor Fuego emerges. Under the
-            stars, you will have the opportunity to fly over the jungle in an
-            impressive zip-line circuit. This nocturnal adventure will ignite
-            your desire for excitement to travel the 7-line circuit that the
-            park has.
-            <br />
-            <br />
-            Also, you can glide down the tallest zip-line in the entire Mexican
-            Caribbean whose main tower rises to 147 ft (45 m) high and you will
-            descend at a speed of 18 mph (30 km/h). Remember to smile for the
-            photo, since there are Xelfie points distributed throughout the
-            entire circuit and that will take your best angle so that you can
-            take home the memory of the unlimited nighttime adventure of Xplor
-            Fuego.
-            <br />
-            Our hosts will take care of giving you the necessary safety
-            instructions, adjusting and checking that your equipment is ready to
-            start the flight and have maximum fun.
-          </div>
+          <div
+            className="m-m"
+            dangerouslySetInnerHTML={{ __html: tourData.infoVoucher }}
+          />
         );
       case "Amenidades":
         return (
-          <div>
-            Aqui iran las amenidades, es chamba del guille, quiero renunciar
-            aaaah, ayudaaa
-          </div>
+          <ul className="list-disc pl-5">
+            {tourData.included.map((value, index) => (
+              <li className="m-m mt-2 text-fs-14 text-black" key={index}>
+                {value}
+              </li>
+            ))}
+          </ul>
         );
 
       default:
