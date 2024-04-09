@@ -14,10 +14,10 @@ import { scrollToTop } from "../../../../utils/pageConfig/scrollToTop";
 import SkeletonChildren from "../../../../utils/skeleton/SkeletonChildren";
 // import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
 // import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
-
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
+import { HotelCardSkeleton } from "../Skeleton/HotelListingSkeleton";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
@@ -85,7 +85,8 @@ export default function ListingHotelW(props) {
 
         <div className="w-full xl:w-8/12 relative">
           {/* SKELETON */}
-          {!combinedHotelData && <SkeletonChildren />}
+          {/* {!combinedHotelData && <SkeletonChildren />} */}
+          {!combinedHotelData && <HotelCardSkeleton />}
 
           {combinedHotelData && combinedHotelData.length > 0 && (
             <>

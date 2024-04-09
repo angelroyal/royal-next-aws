@@ -1,11 +1,16 @@
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect, useContext } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
+import { useCartAxios } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import DetailTourContext from "@/services/Tours/context/DetailTourContext";
 
 export default function AddCartTour(props) {
   const { totalPrice, tourists } = props;
+  const { fetchData } = useCartAxios();
+  const router = useRouter();
+
   const { languageData } = useContext(LanguageContext);
   const { dataTour, hourTour, dayTour, selectModality } =
     useContext(DetailTourContext);
@@ -43,8 +48,6 @@ export default function AddCartTour(props) {
         saveRequestCart
       );
 
-      console.log(response);
-
       const cartUid = response.data.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
       localStorage.setItem(
@@ -52,7 +55,11 @@ export default function AddCartTour(props) {
         JSON.stringify({ uid: cartUid, expirationTime })
       );
       // setShowContent(2);
-      //   fetchData(cartUid);
+      fetchData(cartUid);
+
+      setTimeout(() => {
+        router.push(`/booking?uid=${cartUid}`);
+      }, 1000);
     } catch (error) {
       //   if (
       //     error.response.data.message ===
@@ -69,8 +76,8 @@ export default function AddCartTour(props) {
 
   useEffect(() => {
     // Verifica si al menos un elemento tiene una parte decimal mayor a 0
-    const hasValidTourists = tourists.some(tourist => {
-      const decimalPart = Number(`0.${tourist.split('.')[1]}`);
+    const hasValidTourists = tourists.some((tourist) => {
+      const decimalPart = Number(`0.${tourist.split(".")[1]}`);
       return decimalPart > 0;
     });
     setIsButtonDisabled(!hasValidTourists);
@@ -79,7 +86,9 @@ export default function AddCartTour(props) {
   return (
     <button
       onClick={() => handleAddCartTour()}
-      className={`rounded-full w-full py-3.5 text-black text-center text-fs-12 m-s-b bg-yw-100 hover:bg-yw-110 ${isButtonDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`rounded-full w-full py-3.5 text-black text-center text-fs-12 m-s-b bg-yw-100 hover:bg-yw-110 ${
+        isButtonDisabled ? "opacity-50 cursor-not-allowed" : ""
+      }`}
       disabled={isButtonDisabled}
     >
       {languageData.modalTour.OccupancyTours.reserve}

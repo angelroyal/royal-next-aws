@@ -9,8 +9,8 @@ import MobilSearchTour from "./MobilSearchTour";
 import MobilSearchHotel from "./MobilSearchHotel";
 import LanguageContext from "@/language/LanguageContext";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
+import { MobilSearchSkeleton } from "@/services/Hotels/components/Skeleton/HotelListingSkeleton";
 // import MobilSearchMoving from "./MobilSearchMoving";
-
 export default function SearchBoxMobile() {
   const [activeTab, setActiveTab] = useState(null);
   const { languageData } = useContext(LanguageContext);
@@ -45,11 +45,10 @@ export default function SearchBoxMobile() {
           style={{ padding: "0" }}
         >
           <span
-            className={`${
-              activeTab === "hotel"
-                ? "bg-bl-100 text-white"
-                : "bg-gry-50 text-gry-100"
-            } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
+            className={`${activeTab === "hotel"
+              ? "bg-bl-100 text-white"
+              : "bg-gry-50 text-gry-100"
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
           >
             {languageData.SearchBox.tabHotel.lodgement}
           </span>
@@ -61,27 +60,30 @@ export default function SearchBoxMobile() {
           style={{ padding: "0" }}
         >
           <span
-            className={`${
-              activeTab === "tour"
-                ? "bg-bl-100 text-white"
-                : "bg-gry-50 text-gry-100"
-            } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
+            className={`${activeTab === "tour"
+              ? "bg-bl-100 text-white"
+              : "bg-gry-50 text-gry-100"
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
           >
             Actividades
           </span>
         </Tab>
       </Tab.List>
+      
+      {activeTab === null ? <MobilSearchSkeleton /> :
 
-      <Tab.Panels>
-        {/* <Tab.Panel> */}
-        {activeTab === "hotel" && <MobilSearchHotel />}
-        {/* </Tab.Panel> */}
+        <Tab.Panels>
+          {/* <Tab.Panel> */}
+          {activeTab === "hotel" && <MobilSearchHotel />}
+          {/* </Tab.Panel> */}
 
-        {/* <Tab.Panel> */}
-        {activeTab === "tour" && <MobilSearchTour />}
-        
-        {/* </Tab.Panel> */}
-      </Tab.Panels>
+          {/* <Tab.Panel> */}
+          {activeTab === "tour" && <MobilSearchTour />}
+
+          {/* </Tab.Panel> */}
+        </Tab.Panels>
+      }
+
     </Tab.Group>
   );
 }
