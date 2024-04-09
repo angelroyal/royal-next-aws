@@ -146,13 +146,29 @@ export default function TourCard(props) {
                   <h2 className="text-black-card-tour-test-m">
                     {/* TEXT FROM /LP15-02-24 */}
                     {languageData.cartTour.from}
-                    <span className="text-black-card-tour-test-g">
-                      MXN $
-                      {Math.floor(tour.originalPrice)
-                        .toLocaleString("es-MX", { currency: "MXN" })
-                        .replace(".00", "")}
-                      .<sup>{(tour.originalPrice % 1).toFixed(2).slice(2)}</sup>
-                    </span>
+                    {tour.originalPrice ? (
+                      <span className="text-black-card-tour-test-g">
+                        MXN $
+                        {Math.floor(tour.originalPrice)
+                          .toLocaleString("es-MX", { currency: "MXN" })
+                          .replace(".00", "")}
+                        .
+                        <sup>
+                          {(tour.originalPrice % 1).toFixed(2).slice(2)}
+                        </sup>
+                      </span>
+                    ) : (
+                      <span className="text-black-card-tour-test-g">
+                        MXN $
+                        {Math.floor(tour.price)
+                          .toLocaleString("es-MX", { currency: "MXN" })
+                          .replace(".00", "")}
+                        .
+                        <sup>
+                          {(tour.price % 1).toFixed(2).slice(2)}
+                        </sup>
+                      </span>
+                    )}
                   </h2>
 
                   {tour.discount > 0 && (

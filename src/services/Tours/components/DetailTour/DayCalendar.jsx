@@ -1,15 +1,36 @@
 "use client";
-
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "../../../../assets/styles/general/Swiper.css";
-import { Navigation } from 'swiper/modules';
-export default function DayCalendar() {
-   const [selectIndex, setSelectIndex] = useState(0)
 
-  const selectDate = (index)=>{
-    setSelectIndex(index)
-  }
+import moment from "moment";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState, useContext, useEffect } from "react";
+
+import DetailTourContext from "../../context/DetailTourContext";
+
+export default function DayCalendar(props) {
+  const { tourData, tourSchedule } = props;
+  const [selectIndex, setSelectIndex] = useState(0);
+  const { setDataTour, setDayTour } = useContext(DetailTourContext);
+
+  // FIRST DAY SELECTED 
+  useEffect(() => {
+    if (tourSchedule.length > 0) {
+      setDayTour(tourSchedule[0]);
+    }
+  }, [tourSchedule]);
+
+   // TOURDATA
+   useEffect(() => {
+    setDataTour(tourData);
+  }, []);
+
+  // DAY SELECT
+  const selectDate = (index) => {
+    setSelectIndex(index);
+    setDayTour(tourSchedule[index]);
+  };
+
   return (
     <div className="w-full">
       <div className="flex justify-between">
@@ -17,7 +38,7 @@ export default function DayCalendar() {
           Elige fecha y hora
         </span>
 
-        <div className="flex gap-x-[6px] items-center cursor-pointer">
+        {/* <div className="flex gap-x-[6px] items-center cursor-pointer">
           <img
             src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-bl-100.svg`}
             width="14px"
@@ -29,14 +50,12 @@ export default function DayCalendar() {
           <p className="m-0 text-bl-100 m-s-b text-fs-16 mr-">
             Ver más detalles
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div className="relative pr-[58px] mt-[16px]">
         <Swiper
-          // slidesPerView={"auto"}
           spaceBetween={8}
-          // loop={true}
           pagination={{
             clickable: true,
           }}
@@ -44,14 +63,13 @@ export default function DayCalendar() {
             0: {
               slidesPerView: 2.7,
             },
-            500:{
+            500: {
               slidesPerView: 4,
             },
-            800:{
-
+            800: {
               slidesPerView: 5,
             },
-            1024:{
+            1024: {
               slidesPerView: 3.5,
             },
             1270: {
@@ -61,27 +79,71 @@ export default function DayCalendar() {
           id="dates-tour-modal"
           className="!static h-max"
           navigation={true}
-          modules={[ Navigation]}
+          modules={[Navigation]}
         >
-          {[...Array(8)].map((_, index) => (
+          {tourSchedule.map((tour, index) => (
             <SwiperSlide
               id="date-tour-modal"
-              className={`${selectIndex === index ? 'bg-bl-100' : 'bg-white hover:bg-gry-30'} rounded-md p-2 flex flex-col border border-gry-70 cursor-pointer`}
-              onClick={()=>selectDate(index)}
+              className={`${
+                selectIndex === index ? "bg-bl-100" : "bg-white hover:bg-gry-30"
+              } rounded-md p-2 flex flex-col border border-gry-70 cursor-pointer`}
+              onClick={() => selectDate(index)}
               key={index}
             >
               <div className="border-b border-gry-70 pb-[3.5px] mb-[3.5px] flex flex-col items-center">
-                <span className={`${selectIndex === index ? 'text-white' : 'text-gry-100'} m-s-b text-fs-12 `}>Mar</span>
-                <h3 className={`${selectIndex === index ? 'text-white' : 'text-black'} m-b test-fs-20 `}>27</h3>
-                <span className={`${selectIndex === index ? 'text-white' : 'text-black'} m-s-b text-fs-12 `}>Enero</span>
+                {/* DAY WEEK  */}
+                <span
+                  className={`${
+                    selectIndex === index ? "text-white" : "text-gry-100"
+                  } m-s-b text-fs-12 `}
+                >
+                  {moment(tour.date).format("ddd")}
+                </span>
+
+                {/* NUMBER DAY WEEK */}
+                <h3
+                  className={`${
+                    selectIndex === index ? "text-white" : "text-black"
+                  } m-b test-fs-20 `}
+                >
+                  {moment(tour.date).format("D")}
+                </h3>
+
+                {/* MONTH */}
+                <span
+                  className={`${
+                    selectIndex === index ? "text-white" : "text-black"
+                  } m-s-b text-fs-12 `}
+                >
+                  {moment(tour.date).format("MMMM")}
+                </span>
               </div>
 
               <div className="flex flex-col gap-y-1 items-center">
-                <span className={`${selectIndex === index ? 'text-white' : 'text-gry-100'} text-fs-10 m-m`}>
+                <span
+                  className={`${
+                    selectIndex === index ? "text-white" : "text-gry-100"
+                  } text-fs-10 m-m`}
+                >
                   Desde
                 </span>
-                <span className={`${selectIndex === index ? 'text-white' : 'text-black'} m-b text-fs-14`}>$691</span>
-                <span className={`${selectIndex === index ? 'text-white' : 'text-black'} text-8 m-b text-fs-8`}>MXN</span>
+                <span
+                  className={`${
+                    selectIndex === index ? "text-white" : "text-black"
+                  } m-b text-fs-14`}
+                >
+                  $
+                  {Math.floor(tour.priceFrom)
+                    .toLocaleString("es-MX", { currency: "MXN" })
+                    .replace(".00", "")}
+                </span>
+                <span
+                  className={`${
+                    selectIndex === index ? "text-white" : "text-black"
+                  } text-8 m-b text-fs-8`}
+                >
+                  MXN
+                </span>
               </div>
             </SwiperSlide>
           ))}

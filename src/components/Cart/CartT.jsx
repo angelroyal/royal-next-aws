@@ -19,7 +19,6 @@ export default function CartT(props) {
     cartData && cartData.cartItems ? cartData.cartItems : null
     );
     
-    console.log(cartInfo);
   // OBTAIN UID CART
   useEffect(() => {
     handleUid();
