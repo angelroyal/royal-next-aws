@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useContext } from "react";
 
 import LanguageContext from "../language/LanguageContext";
 
-function Calendar({ onDateChange, listing = false, hotelDetails=false }) {
+function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
   const calendarRef = useRef(null);
   // const language = localStorage.getItem("language") || "es";
   const language =
@@ -46,6 +46,7 @@ function Calendar({ onDateChange, listing = false, hotelDetails=false }) {
         },
         defaultDate: selectedDates,
         showMonths: window.innerWidth < 768 ? 1 : 2,
+        disableMobile: true,
       });
     } else {
       flatpickr(calendarRef.current, {
@@ -61,6 +62,7 @@ function Calendar({ onDateChange, listing = false, hotelDetails=false }) {
         showMonths: window.innerWidth < 768 ? 1 : 2,
         inline: false,
         onChange: handleDateChange,
+        disableMobile: true,
       });
     }
   }, []);
@@ -85,7 +87,9 @@ function Calendar({ onDateChange, listing = false, hotelDetails=false }) {
           </span>
 
           <input
-            className={`${hotelDetails && 'bg-gry-30'} mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
+            className={`${
+              hotelDetails && "bg-gry-30"
+            } mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
             type="text"
             ref={calendarRef}
             placeholder={languageData.SearchBox.tabHotel.dateText}

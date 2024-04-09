@@ -8,7 +8,7 @@ import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
 export default function Tour({tourData}) {
   return (
     <Container>
-      <div className="p-9 mt-[25.8px]">
+      <div className="p-9 md:mt-[25.8px]">
         <DetailTour tourData={tourData.activity}/>
 
         <div className="flex flex-col lg:flex-row mt-9">

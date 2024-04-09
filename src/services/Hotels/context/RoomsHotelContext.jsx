@@ -11,7 +11,8 @@ export const RoomsHotelProvider = ({ children }) => {
   const [requestBodyRooms, setRequestBodyRooms] = useState(null);
   const [keyHotel, setKeyHotel] = useState(null);
   const [isFailedReservation, setIsFailedReservation] = useState(false);
-
+  
+  // console.log(requestBodyRooms);
   const handleFetchPostRooms = async (requestBody) => {
     setRoomsData(null);
     try {

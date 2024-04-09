@@ -8,7 +8,7 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function DetailTour({ tourData }) {
   const { languageData } = useContext(LanguageContext);
-  console.log(tourData);
+  // console.log(tourData);
   return (
     <div>
       <div className="flex flex-wrap">
@@ -45,7 +45,7 @@ export default function DetailTour({ tourData }) {
         </div>
 
         {/* PRICING */}
-        <div className="flex flex-col items-center">
+        <div className="max-md:hidden flex flex-col items-center">
           <div className="m-b text-[#1a202c]">
             <sup className="text-fs-12">{languageData.cartTour.from}</sup>{" "}
             <span className="text-fs-24">MXN</span>{" "}

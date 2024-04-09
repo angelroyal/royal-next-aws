@@ -30,7 +30,7 @@ export default function TabsTours(props) {
       case "informacion":
         return (
           <div
-            className="m-m"
+            className="m-m text-fs-12"
             dangerouslySetInnerHTML={{ __html: tourData.infoVoucher }}
           />
         );

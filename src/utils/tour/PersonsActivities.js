@@ -3,12 +3,12 @@ import { TextField } from "@mui/material";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Add, Remove } from "@mui/icons-material/";
 import LanguageContext from "../../language/LanguageContext";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 
 import Children2OutlinedIcon from "../../assets/icons/utils/searchBox/kid.svg";
 import Person2OutlinedIcon from "../../assets/icons/utils/searchBox/person-autocomplete.svg";
 
-export default function PersonsActivities({ OnApply }) {
+export default function PersonsActivities({ OnApply, listing }) {
   const [rooms, setRooms] = useState([]);
   const [ageError, setAgeError] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -130,8 +130,26 @@ export default function PersonsActivities({ OnApply }) {
     }
   };
 
+  // FUNCTION TO CLOSE MENU
+  const ref = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setShowDropdown(false);
+    }
+  };
+  // END FUNCTION TO CLOSE MENU
+
   return (
-    <div className="border-2 border-gray-200 rounded py-2.5 px-4 relative w-full lg:w-[296px] h-[54px]">
+    <div ref={ref} className={`${listing ? 'w-full' : 'w-full lg:w-[296px]'} border-2 border-gray-200 rounded py-2.5 px-4 relative h-[54px]`}>
       <Dropdown show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
@@ -166,7 +184,7 @@ export default function PersonsActivities({ OnApply }) {
         </Dropdown.Toggle>
 
         {showDropdown === true && (
-          <Dropdown.Menu className="border-0 w-11/12 z-[3] p-0">
+          <Dropdown.Menu className="border-0 w-11/12 z-[1] p-0">
             <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg">
               <div className="pt-4 pl-3 pr-3 z-10">
                 {rooms.map((room, index) => (
