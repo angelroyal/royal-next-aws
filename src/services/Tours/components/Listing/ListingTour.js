@@ -21,7 +21,7 @@ import SkeletonTourCard from "@/utils/skeleton/SkeletonTourCard";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { Container } from "@/config/Others/Container";
-
+import { BannerListingSkeleton, WeFoundTourSkeleton } from "../Skeleton/TourListingSkeleton";
 export default function ListingTour() {
   const {
     tourData,
@@ -83,7 +83,7 @@ export default function ListingTour() {
     if (changeTours > 0) {
       setCurrentTours(
         auxTourData &&
-          auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
+        auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
       );
       setCurrentPage(1);
     }
@@ -94,7 +94,7 @@ export default function ListingTour() {
     if (!isNaN(currentPage)) {
       setCurrentTours(
         auxTourData &&
-          auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
+        auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
       );
       // setCurrentPage(1);
     }
@@ -138,12 +138,13 @@ export default function ListingTour() {
   return (
     <>
       {!tourData && (
-        <Skeleton
-          className="skeleton-banner-tour"
-          variant="rectangular"
-          width="100%"
-          height="13rem"
-        />
+        // <Skeleton
+        //   className="skeleton-banner-tour"
+        //   variant="rectangular"
+        //   width="100%"
+        //   height="13rem"
+        // />
+        <BannerListingSkeleton />
       )}
 
       {tourData && <BannerDestinationTour destination={tourData.destination} />}
@@ -181,7 +182,8 @@ export default function ListingTour() {
               </div>
             )}
 
-            <div className="cont-found-ordering-tour-skeleton">
+            {!auxTourData && (<WeFoundTourSkeleton />)}
+            {/* <div className="cont-found-ordering-tour-skeleton">
               {!auxTourData && (
                 <Skeleton
                   variant="text"
@@ -195,7 +197,8 @@ export default function ListingTour() {
                   sx={{ fontSize: "3rem", width: "20%" }}
                 />
               )}
-            </div>
+            </div> */}
+            
             {!tourData && <SkeletonTourCard />}
 
             {currentTours && (

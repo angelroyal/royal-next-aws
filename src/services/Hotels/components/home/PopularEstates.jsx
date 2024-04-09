@@ -10,7 +10,7 @@ import { Navigation } from "swiper/modules";
 import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import UpdateAutocomplete from "@/config/Others/UpdateAutocomplete";
-
+import PopularStateSkeleton from "../Skeleton/HotelHomeSkeleton";
 export function PopularState() {
   const [popularState, setPopularState] = useState([]);
   const { language, languageData } = useContext(LanguageContext);
@@ -350,7 +350,7 @@ export function PopularState() {
           </SwiperSlide>
         </Swiper>
       ) : (
-        <></>
+        <PopularStateSkeleton/>
       )}
     </div>
   );

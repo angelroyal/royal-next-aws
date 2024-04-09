@@ -10,7 +10,6 @@ import LanguageContext from "../../language/LanguageContext";
 import animationData from "../../assets/animations/animated-page-transitions.json";
 import SearchHotel from "@/services/Hotels/Search/SearchHotel";
 import { ListingHotelMobile } from "@/services/Hotels/components/Listing/ListingHotelMobile";
-
 export default function MobilSearchHotel() {
   const router = useRouter();
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
