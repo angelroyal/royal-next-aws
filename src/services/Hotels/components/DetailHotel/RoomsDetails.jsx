@@ -76,11 +76,7 @@ export default function RoomsDetails(codeHotel) {
   return (
     <>
       <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 ">
-        <span>{roomsData.totalRooms} hnpabitaciones encontradas</span>
-        <br />
-        <span>Check-in: {checkIn}</span>
-        <br />
-        <span>Check-out: {checkOut}</span>
+        <span>{roomsData.totalRooms} habitaciones encontradas</span>
       </h4>
 
       {Object.entries(filteredGroupedRooms).map(([roomType, rooms]) => {

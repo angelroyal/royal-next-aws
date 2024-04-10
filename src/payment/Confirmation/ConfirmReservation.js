@@ -11,7 +11,7 @@ import StructureItineraryWeb from "../itinerary/others/StructureItineraryWeb";
 
 export default function ConfirmReservation() {
   const isMobile = useIsMobileNew();
-  const { fetchData } = useCartAxios();
+  const { fetchData, setCartData } = useCartAxios();
   const [dataConfirmation, setDataConfirmation] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const scrollToTop = () => {
@@ -50,6 +50,7 @@ export default function ConfirmReservation() {
         const token = localStorage.getItem("token");
         const iat = localStorage.getItem("iat");
         const exp = localStorage.getItem("exp");
+        setCartData(null);
 
         localStorage.clear();
 
