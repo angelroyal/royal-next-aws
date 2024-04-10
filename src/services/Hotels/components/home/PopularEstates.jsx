@@ -85,7 +85,7 @@ export function PopularState() {
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
-          className="h-[408px] !static"
+          className="h-[500px] !static"
           navigation
           modules={[Navigation]}
           id="swiper-popular-estates"
@@ -158,7 +158,7 @@ export function PopularState() {
 
               <div className="flex md:flex-col gap-y-3 gap-x-3 md:gap-x-0 md:w-[268px] md:h-full h-[45%]">
                 <div
-                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer"
                   onClick={() => sendDestination(popularState[2])}
                 >
                   <img
@@ -188,7 +188,7 @@ export function PopularState() {
                 </div>
 
                 <div
-                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer"
                   onClick={() => sendDestination(popularState[3])}
                 >
                   <img
