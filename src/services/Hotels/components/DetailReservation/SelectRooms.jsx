@@ -9,10 +9,11 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 export default function SelectRooms({close}) {
   const [isComplete, setIsComplete] = useState(false);
   const { languageData } = useContext(LanguageContext);
-  const { selectedRooms, setSelectedRooms } = useContext(RoomsHotelContext);
+  const { selectedRooms, setSelectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
 
+  // console.log(requestBodyRooms);
   useEffect(() => {
-    if (selectedRooms.length === 10) {
+    if (selectedRooms.length === requestBodyRooms.occupancies.length) {
       setIsComplete(true);
     }else{
       setIsComplete(false);
@@ -39,7 +40,7 @@ export default function SelectRooms({close}) {
             <h3 className="flex items-center text-gry-100 m-s-b text-fs-14 gap-x-1">
               Habitaciones elegidas{" "}
 
-              <p className={`${isComplete === true && 'text-grn-100'} m-0`}>({selectedRooms.length}/10)</p>{" "}
+              <p className={`${isComplete === true && 'text-grn-100'} m-0`}>({selectedRooms.length}/{requestBodyRooms.occupancies.length})</p>{" "}
               {isComplete === true && (
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
@@ -51,21 +52,20 @@ export default function SelectRooms({close}) {
             </h3>
 
             <div
-              className={`grid grid-cols-1 overflow-y-auto gap-y-2 scroll-page-blue lg:gap-x-2 md:justify-items-center lg:grid-cols-2 xl:grid-cols-3 max-h-[26rem] md:max-h-[30rem] lg:max-h-[25rem]`}
+              className={`grid grid-cols-1 overflow-y-auto gap-y-2 scroll-page-blue lg:gap-x-3.5 md:justify-items-center lg:grid-cols-2 xl:grid-cols-3 max-h-[26rem] md:max-h-[30rem] lg:max-h-[25rem]`}
             >
               {/* MAP ROOMS PRE CART HOTEL */}
               {selectedRooms.map((reservation, index) => (
-                <div className="p-2 flex gap-x-4 md:w-max" key={index}>
+                <div className="p-2 flex gap-x-4 md:w-full border border-gry-30 rounded-md" key={index}>
                   <img
                     className="rounded-lg h-[80px] w-[80px] object-cover"
                     src={reservation.image}
-                    // src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-to-en.webp`}
                     alt={reservation.name}
                     width={80}
                     height={80}
                   />
 
-                  <div className="flex items-center justify-between w-full md:w-[246px]">
+                  <div className="flex items-center justify-between w-full max-md:w-[246px] md:w-full">
                     <div className="flex flex-col gap-x-1">
                       {/* EATING PLAN */}
                       <span>

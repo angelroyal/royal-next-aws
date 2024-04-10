@@ -144,7 +144,7 @@ export default function RoomsDetails(codeHotel) {
                       <div className="p-4 rounded-lg border border-gry-30 bg-white">
                         <div className="flex flex-col gap-y-4">
                           {/* IMAGE ROOM */}
-                          <div className="relative w-full h-[181px]">
+                          <div className="relative w-full h-[222px]">
                             <img
                               src={room.image}
                               className="w-full h-full object-cover rounded-lg"
@@ -163,7 +163,7 @@ export default function RoomsDetails(codeHotel) {
 
                           <div className="flex flex-col gap-y-1">
                             <p className="m-s-b text-fs-12 text-black text-start m-0">
-                              Capacidad
+                              {languageData.containerModalHotel.capacityRoom}
                             </p>
 
                             <div className="flex flex-wrap gap-y-2 gap-x-2 ">
@@ -255,7 +255,7 @@ export default function RoomsDetails(codeHotel) {
                           </div>
                         </div>
 
-                        <span className="border border-gry-100 w-full mt-4 mb-4 flex" />
+                        <span className="border border-gry-30 w-full mt-4 mb-4 flex" />
 
                         <div className="flex justify-between items-center">
                           {/* PRICE ROOM  */}
@@ -268,8 +268,8 @@ export default function RoomsDetails(codeHotel) {
                               .<sup>{(room.price % 1).toFixed(2).slice(2)}</sup>
                             </span>
 
-                            <div className="rounded-1 bg-grn-50 text-black m-m text-fs-10 py-1 px-2 w-max">
-                              Impuestos incluidos
+                            <div className="rounded bg-grn-30 text-grn-100 m-m text-fs-10 py-1 px-2 w-max">
+                              {languageData.cart.taxes}
                             </div>
                           </div>
 
