@@ -62,7 +62,7 @@ export default function CartHotelT(props) {
               />
 
               {/* INFO CART */}
-              <div className="w-full leading-4 flex flex-col justify-center max-sm:w-[61%]">
+              <div className="w-full leading-4 flex flex-col justify-center max-sm:w-[61%] gap-y-[5px]">
                 <span className="m-m text-gry-100 text-fs-12 truncate w-[187px] ">
                   Cancun
                 </span>
@@ -71,7 +71,7 @@ export default function CartHotelT(props) {
                   {hotel.name}
                 </span>
 
-                <div className="flex gap-2 mb-[3px]">
+                <div className="flex gap-2">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
                     width={12}
@@ -84,7 +84,7 @@ export default function CartHotelT(props) {
                   </span>
                 </div>
 
-                <span className="m-s-b text-fs-14 text-or-100 mb-[3px]">
+                <span className="m-s-b text-fs-14 text-or-100">
                   MXN $
                   {Math.floor(hotel.price)
                     .toLocaleString("es-MX", { currency: "MXN" })

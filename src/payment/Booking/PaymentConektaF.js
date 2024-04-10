@@ -234,6 +234,8 @@ export default function PaymentConektaF(props) {
     const lastFourDigits = numberCard.substring(numberCard.length - 4);
     let required = false;
     let items = [];
+
+    console.log(formArrayActivityItems);
     if (formArrayActivityItems !== null) {
       // console.log(formArrayActivityItems);
       const objetosFiltrados = formArrayActivityItems.filter(
@@ -242,8 +244,8 @@ export default function PaymentConektaF(props) {
       if (objetosFiltrados.length === 0) {
         required = true;
         items = formArrayActivityItems.map((objeto) => {
-          const { required, ...resto } = objeto; // Desestructuración para extraer "required" y el resto de las propiedades
-          return resto; // Devuelve un nuevo objeto sin la propiedad "required"
+          const { required, ...result } = objeto; // Desestructuración para extraer "required" y el result de las propiedades
+          return result; // Devuelve un nuevo objeto sin la propiedad "required"
         });
       }
     }

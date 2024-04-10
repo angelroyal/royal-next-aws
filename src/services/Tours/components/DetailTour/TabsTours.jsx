@@ -3,9 +3,9 @@
 import {
   InformationCircleIcon,
   MegaphoneIcon,
-  ClockIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import LanguageContext from "@/language/LanguageContext";
 
 import "../../../../assets/styles/general/keyframes.css";
 
@@ -17,6 +17,7 @@ const tabs = [
 export default function TabsTours(props) {
   const { tourData } = props;
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const { languageData } = useContext(LanguageContext);
 
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
@@ -29,10 +30,18 @@ export default function TabsTours(props) {
       //   INFO HOTEL
       case "informacion":
         return (
-          <div
-            className="m-m text-fs-12"
-            dangerouslySetInnerHTML={{ __html: tourData.infoVoucher }}
-          />
+          <>
+            {tourData.duration && (
+              <div className="bg-gry-50 text-gry-100 p-2 w-fit rounded-full mt-4 text-fs-10 m-b">
+                {languageData.cartTour.duration}: {tourData.duration}
+              </div>
+            )}
+
+            <div
+              className="m-m text-fs-12"
+              dangerouslySetInnerHTML={{ __html: tourData.infoVoucher }}
+            />
+          </>
         );
       case "Amenidades":
         return (

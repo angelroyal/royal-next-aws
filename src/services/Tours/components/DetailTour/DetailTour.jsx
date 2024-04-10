@@ -8,7 +8,7 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function DetailTour({ tourData }) {
   const { languageData } = useContext(LanguageContext);
-  // console.log(tourData);
+  console.log(tourData);
   return (
     <div>
       <div className="flex flex-wrap">
@@ -27,21 +27,23 @@ export default function DetailTour({ tourData }) {
         <div>
           <h1 className="m-b text-fs-28 pt-2">{tourData.name}</h1>
           <TotalStars
-            stars={tourData.star_rating}
+            stars={tourData.starRating}
             className="text-fs-8 gap-[1px]"
           />
 
-          <div className="mt-3 flex mb-[6]">
-            <img
-              src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
-              alt="location"
-              width={14}
-              height={14}
-            />
-            <div className="m-m text-fs-13 ml-1 text-gry-70">
-              {tourData.address}
+          {tourData.address && tourData.address !== "NA" && (
+            <div className="mt-3 flex mb-[6]">
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
+                alt="location"
+                width={14}
+                height={14}
+              />
+              <div className="m-m text-fs-13 ml-1 text-gry-70">
+                {tourData.address}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* PRICING */}
@@ -77,7 +79,11 @@ export default function DetailTour({ tourData }) {
             </div>
           )}
 
-          <div className={`bg-grn-50 text-grn-100 p-1 w-fit rounded-md text-fs-8 m-b ${tourData.discount < 0 && 'mt-[5px]'}`}>
+          <div
+            className={`bg-grn-30 text-grn-100 p-1 w-fit rounded-md text-fs-8 m-b ${
+              tourData.discount < 0 && "mt-[5px]"
+            }`}
+          >
             {languageData.cart.taxes}
           </div>
         </div>

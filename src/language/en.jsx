@@ -263,7 +263,7 @@ export const en = {
     showLess: "see less",
     checkIn: "Check-in: 3:00 pm",
     checkOut: "Check-out: 11:00 am",
-    breakfast: "Breakfast: 8:00 am to 11:00 am",
+    breakfast: "Breakfast: 7:00 am to 11:00 am",
     buttonUpdate: "Update",
     showTooltip: "Choose your dates!",
     adult: "adult,",

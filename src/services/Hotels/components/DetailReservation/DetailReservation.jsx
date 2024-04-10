@@ -24,7 +24,7 @@ export default function DetailReservation() {
   const { selectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
   const { totalPrice } = useCartAxios();
 
-  console.log(requestBodyRooms);
+  // console.log(requestBodyRooms);
   // console.log(selectedRooms);
   // console.log(totalPrice);
 
@@ -161,8 +161,8 @@ export default function DetailReservation() {
                           .replace(".00", "")}
                         .<sup>{(priceRooms % 1).toFixed(2).slice(2)}</sup>
                       </h4>
-                      <span className="text-grn-100 text-fs-8 m-s-b rounded w-max bg-grn-50 py-1 px-2 h-max">
-                        Impuestos incluidos
+                      <span className="text-grn-100 text-fs-8 m-s-b rounded w-max bg-grn-30 py-1 px-2 h-max">
+                        {languageData.cart.taxes}
                       </span>
                     </div>
                   </div>
@@ -177,9 +177,9 @@ export default function DetailReservation() {
                           width={30}
                           height={30}
                         />{" "}
-                        {selectedRooms.length > 1 && (
+                        {selectedRooms.length > 0 && (
                           <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${
-                            selectedRooms.length - 1
+                            selectedRooms.length
                           }`}</span>
                         )}{" "}
                       </div>
