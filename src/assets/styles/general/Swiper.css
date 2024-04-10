@@ -145,3 +145,12 @@
   display: none;
 }
 /* END SWIPER TOUR DETAILS CARDS DATE */
+
+
+/* IMAGES TOUR LISTING */
+#images-tour-listing > div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets span{
+  margin: 0 8px !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+/* END IMAGES TOUR LISTING */

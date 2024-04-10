@@ -19,7 +19,7 @@ export default {
           50: "#F9D5BB",
           70: "#F3AC78",
           100: "#EB741E",
-          110: "#d16719"
+          110: "#d16719",
         },
         yw: {
           50: "#FEE8BB",
@@ -44,6 +44,7 @@ export default {
           100: "#2899C7",
         },
         grn: {
+          30: "#e7f7ef",
           50: "#A6E5C6",
           70: "#66CC9B",
           100: "#10AC61",
@@ -166,20 +167,20 @@ export default {
       //   'xl': {'min': '1280px', 'max': '1535px'},
       //   '2xl': {'min': '1536px'},
       // },
-      keyframes:{
-        skeletonLoading:{
-          '0%':{
-            background:"#EFEFEF"
+      keyframes: {
+        skeletonLoading: {
+          "0%": {
+            background: "#EFEFEF",
           },
-          '100%':{
-            background:"#c9c7c7"
-          }
-        }
+          "100%": {
+            background: "#c9c7c7",
+          },
+        },
       },
 
-      boxShadow:{
-        '3xl' : '0 4px 15px 0 rgba(168, 155, 155, 0.25)'
-      }
+      boxShadow: {
+        "3xl": "0 4px 15px 0 rgba(168, 155, 155, 0.25)",
+      },
     },
   },
   plugins: [

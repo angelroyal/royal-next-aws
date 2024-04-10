@@ -14,11 +14,14 @@ import LanguageContext from "@/language/LanguageContext";
 
 import IconLocationBlue from "../../../../assets/icons/utils/others/location-blue.svg";
 import ImageNotFount from "../../../../assets/images/banners/es/no-image-available.png";
+import "../../../../assets/styles/general/Swiper.css"
 
 export default function TourCard(props) {
   const maxLength = 290;
 
   const { tour } = props;
+
+  console.log(tour);
 
   const description = tour.description;
 
@@ -55,6 +58,7 @@ export default function TourCard(props) {
               }}
               modules={[Pagination]}
               className="swiperCardTour swiperCardTourLP"
+              id="images-tour-listing"
             >
               {tour.images && tour.images.length > 0 ? (
                 tour.images.slice(0, 5).map((tourImage, index) => (
@@ -84,33 +88,34 @@ export default function TourCard(props) {
           </div>
 
           <div className="cont-card-info-star-loc-price">
-            <h2 className="title-card-tour-test">
-              {tour.name && tour.name.length > 35
-                ? tour.name.slice(0, 32) + "..."
-                : tour.name}
+            <h2 className="title-card-tour-test truncate w-[95%]">
+              {tour.name}
             </h2>
+
             <Rating
               className="stars-card-tour-font-size"
               name="size-small"
               style={{ padding: "5px 0px" }}
               defaultValue={0}
-              value={tour.star_rating}
+              value={tour.starRating}
               size="small"
               readOnly
             />
 
             <div className="d-flex cont-mobile-loc-price">
               <div className="cont-info-card-tour-test">
-                <div className="d-flex gap-1">
-                  <Image
-                    src={IconLocationBlue}
-                    alt="IconLocationBlue"
-                    className="icons-card-tour-w-s"
-                  />
-                  <span className="text-blue-card-tour-test">
-                    {tour.address}
-                  </span>
-                </div>
+                {tour.address && (
+                  <div className="d-flex gap-1">
+                    <Image
+                      src={IconLocationBlue}
+                      alt="IconLocationBlue"
+                      className="icons-card-tour-w-s"
+                    />
+                    <span className="text-blue-card-tour-test">
+                      {tour.address}
+                    </span>
+                  </div>
+                )}
 
                 <span className="text-grey-card-tour-test-s">
                   {description && description.length > maxLength ? (
@@ -163,10 +168,7 @@ export default function TourCard(props) {
                         {Math.floor(tour.price)
                           .toLocaleString("es-MX", { currency: "MXN" })
                           .replace(".00", "")}
-                        .
-                        <sup>
-                          {(tour.price % 1).toFixed(2).slice(2)}
-                        </sup>
+                        .<sup>{(tour.price % 1).toFixed(2).slice(2)}</sup>
                       </span>
                     )}
                   </h2>

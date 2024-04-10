@@ -264,7 +264,7 @@ export const es = {
     showLess: "Ver menos",
     checkIn: "Check-in: 15:00 pm",
     checkOut: "Check-out: 11:00 pm",
-    breakfast: "Desayuno: 7:00 am a 12:00 am",
+    breakfast: "Desayuno: 7:00 am a 11:00 am",
     buttonUpdate: "Actualizar",
     showTooltip: "¡Elige tus fechas!",
     adult: "adulto,",

@@ -5,10 +5,12 @@ import {
   MegaphoneIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-import { use, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
-import "../../../../assets/styles/general/keyframes.css"
+import LanguageContext from "@/language/LanguageContext";
 import { AmenitiesIcons } from "@/components/General/Amenities";
+
+import "../../../../assets/styles/general/keyframes.css";
 
 const tabs = [
   { name: "informacion", icon: InformationCircleIcon },
@@ -24,6 +26,8 @@ export default function TabInfoHotel(props) {
   const [isLimitLetters, setIsLimitLetters] = useState(false);
   const [shortHotelDescription, setShortHotelDescription] = useState(null);
   const [hotelDescription, setHotelDescription] = useState(null);
+
+  const { languageData } = useContext(LanguageContext);
 
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
@@ -68,7 +72,7 @@ export default function TabInfoHotel(props) {
                         className="flex gap-1 items-center m-b text-fs-15 text-bl-100"
                         onClick={handleToggleDescription}
                       >
-                        Ver menos
+                        {languageData.modalHotel.showLess}
                         <img
                           src="https://sandboxmexico.com/assets/icons/arrows/up-bl.svg"
                           alt="show less"
@@ -79,7 +83,9 @@ export default function TabInfoHotel(props) {
                 ) : (
                   <>
                     <p className="text-gry-100">
-                      {hotelDescription && isLimitLetters === true ? shortHotelDescription : hotelDescription}
+                      {hotelDescription && isLimitLetters === true
+                        ? shortHotelDescription
+                        : hotelDescription}
                       {isLimitLetters === true && "..."}
                     </p>
                     {isLimitLetters === true && (
@@ -88,7 +94,7 @@ export default function TabInfoHotel(props) {
                           className=" flex items-center gap-1 m-b text-fs-15 text-bl-100"
                           onClick={handleToggleDescription}
                         >
-                          Ver más
+                          {languageData.modalHotel.showMore}
                           <img
                             src="https://sandboxmexico.com/assets/icons/arrows/down-bl.svg"
                             alt="show more"
@@ -109,7 +115,9 @@ export default function TabInfoHotel(props) {
         return (
           <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100">
             {hotel.facilities.map((facility, index) => (
-              <li className="flex items-center gap-x-2 mb-2" key={index}>{AmenitiesIcons(facility)} {facility}</li>
+              <li className="flex items-center gap-x-2 mb-2" key={index}>
+                {AmenitiesIcons(facility)} {facility}
+              </li>
             ))}
           </div>
         );
@@ -122,7 +130,7 @@ export default function TabInfoHotel(props) {
             <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
               <li>Check-in: 15:00 pm</li>
               <li>Check-out: 15:00 pm</li>
-              {hotel.breakfast && <li> Desayuno: 7:00 am a 11:00 am</li>}
+              {hotel.breakfast && <li> {languageData.modalHotel.breakfast}</li>}
             </ul>
           </div>
         );
