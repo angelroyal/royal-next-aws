@@ -86,7 +86,7 @@ export default function FiltersHotels({listing=false}) {
     <>
       <div className={`${listing === false && 'container-all-filters'}`}>
         <div className="p-2">
-          <div className="filter-title d-flex width100 align-items-start">
+          <div className="filter-title !text-fs-17 d-flex width100 align-items-start">
             {languageData.containerFilterHotel.titleFilter}
           </div>
           <div className="h-line" />
@@ -114,7 +114,7 @@ export default function FiltersHotels({listing=false}) {
                     id={`panel${index + 1}a-header`}
                   >
                     <div
-                      className="filter-subtitle"
+                      className="filter-subtitle !text-fs-15"
                       variant="p"
                       sx={{ fontWeight: "bold", fontSize: "1.1rem" }}
                     >
@@ -168,7 +168,7 @@ export default function FiltersHotels({listing=false}) {
                             onClick={() => handleShowMore(filterGroup)}
                           >
                             {showMore[filterGroup] ? (
-                              <div className="flex justify-start items-center">
+                              <div className="flex justify-start items-center !text-fs-13">
                                 <div>{languageData.showOptions.showLess} </div>
                                 <div>
                                   <img
@@ -181,7 +181,7 @@ export default function FiltersHotels({listing=false}) {
                                 </div>
                               </div>
                             ) : (
-                              <div className="flex justify-start items-center">
+                              <div className="flex justify-start items-center !text-fs-13">
                                 <div>{languageData.showOptions.showMore} </div>
                                 <div>
                                   <img
