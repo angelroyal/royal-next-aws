@@ -3,12 +3,12 @@ import { Col, Modal, Row } from "react-bootstrap";
 
 import LanguageContext from "../../language/LanguageContext";
 
-import RoyalMail from "../../assets/icons/utils/payment/email-m.svg";
-import RoyalShareLink from "../../assets/icons/utils/payment/clip-link.svg";
-import RoyalWhatsapp from "../../assets/icons/utils/payment/whatsapp-m.svg";
-import RoyalMailActive from "../../assets/icons/utils/payment/email-active-m.svg";
-import RoyalShareLinkActive from "../../assets/icons/utils/payment/clip-link-active.svg";
-import RoyalWhatsappActive from "../../assets/icons/utils/payment/whatsapp-active-m.svg";
+// import RoyalMail from "../../assets/icons/utils/payment/email-m.svg";
+// import RoyalShareLink from "../../assets/icons/utils/payment/clip-link.svg";
+// import RoyalWhatsapp from "../../assets/icons/utils/payment/whatsapp-m.svg";
+// import RoyalMailActive from "../../assets/icons/utils/payment/email-active-m.svg";
+// import RoyalShareLinkActive from "../../assets/icons/utils/payment/clip-link-active.svg";
+// import RoyalWhatsappActive from "../../assets/icons/utils/payment/whatsapp-active-m.svg";
 
 export function ShareContainer({
   smShow,
@@ -98,7 +98,7 @@ export function ShareContainer({
               <Col sm={4} className="styles-columns-share-m">
                 <>
                   <div
-                    className="info-media-share"
+                    className="info-media-share flex flex-col items-center"
                     onClick={handleWhatsAppClick}
                     onMouseEnter={() => handleMouseOver("whatsapp")}
                     onMouseLeave={handleMouseOut}
@@ -106,8 +106,8 @@ export function ShareContainer({
                     <img
                       src={
                         activeIcon === "whatsapp"
-                          ? RoyalWhatsappActive
-                          : RoyalWhatsapp
+                          ? `${process.env.NEXT_PUBLIC_URL}icons/whats/whats-b-o.svg`
+                          : `${process.env.NEXT_PUBLIC_URL}icons/whats/whats-b.svg`
                       }
                       alt={languageData.allAlt.media.altWhatsapp}
                       className="wtp-share"
@@ -127,13 +127,13 @@ export function ShareContainer({
               <Col sm={4} className="styles-columns-share-m">
                 <>
                   <div
-                    className="info-media-share"
+                    className="info-media-share flex flex-col items-center"
                     onClick={handleEmailClick}
                     onMouseEnter={() => handleMouseOver("mail")}
                     onMouseLeave={handleMouseOut}
                   >
                     <img
-                      src={activeIcon === "mail" ? RoyalMailActive : RoyalMail}
+                      src={activeIcon === "mail" ? `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-b-o.svg` : `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-b.svg`}
                       alt={languageData.allAlt.media.altMail}
                       className="mail-share"
                     />
@@ -151,7 +151,7 @@ export function ShareContainer({
               <Col sm={4} className="styles-columns-share-m">
                 <>
                   <div
-                    className="info-media-share"
+                    className="info-media-share flex flex-col items-center"
                     onClick={handleCopyClick}
                     onMouseEnter={() => handleMouseOver("link")}
                     onMouseLeave={handleMouseOut}
@@ -159,8 +159,8 @@ export function ShareContainer({
                     <img
                       src={
                         activeIcon === "link"
-                          ? RoyalShareLinkActive
-                          : RoyalShareLink
+                          ? `${process.env.NEXT_PUBLIC_URL}icons/link/link-b-o.svg`
+                          : `${process.env.NEXT_PUBLIC_URL}icons/link/link-b.svg`
                       }
                       alt={languageData.allAlt.media.altLink}
                       className="media-share"
