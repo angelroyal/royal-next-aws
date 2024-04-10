@@ -2,7 +2,7 @@ export function TransportBanner() {
   return (
     // h-[408px]
     <div className="flex bg-white flex-col lg:flex-row h-max my-16 md:mt-[131px] md:mb-32 shadow-3xl">
-      <div className="flex justify-center px-8 py-14 md:px-16 w-full lg:pr-0 items-start md:py-[88px] flex-col gap-y-2.5 lg:w-4/5 gap-y-2.5">
+      <div className="flex justify-center px-8 py-14 md:px-16 w-full lg:pr-0 items-start md:py-[88px] flex-col gap-y-2.5 lg:w-4/5 gap-y-5">
         <h3 className="m-b text-fs-32">Transporte a tu disposición</h3>
 
         <p className="m-m text-fs-14">
