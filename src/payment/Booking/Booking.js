@@ -88,7 +88,7 @@ export default function Booking(props) {
         ([keyCombinationActivity, itemCombinationActivity]) => {
           let newDetail = []; // Definir newDetail dentro del bucle para cada iteración
           if (itemCombinationActivity.details) {
-            itemCombinationActivity.details.booking.forEach((objeto) => {
+            itemCombinationActivity.details.forEach((objeto) => {
               newDetail.push({
                 id: objeto.id,
                 value: "",
