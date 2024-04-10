@@ -11,7 +11,6 @@ export default function OrderingHotel() {
 
   const handleOrderingFilters = (event) => {
     const selectedValue = +event.target.value;
-    console.log(selectedValue);
 
     setOrderHotel(selectedValue);
     setCurrentPage(1);

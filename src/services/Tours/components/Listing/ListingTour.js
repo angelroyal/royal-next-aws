@@ -43,11 +43,11 @@ export default function ListingTour() {
     setTourData(null);
     setCurrentTours(null);
     const searchParams = new URLSearchParams(window.location.search);
-    const requestBody = {
-      type: searchParams.get("type"),
-      id: searchParams.get("code"),
-      currency: "MXN",
-    };
+    // const requestBody = {
+    //   type: searchParams.get("type"),
+    //   id: searchParams.get("code"),
+    //   currency: "MXN",
+    // };
 
     const codeTour = searchParams.get("code");
 

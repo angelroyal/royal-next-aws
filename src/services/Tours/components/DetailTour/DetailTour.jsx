@@ -31,17 +31,20 @@ export default function DetailTour({ tourData }) {
             className="text-fs-8 gap-[1px]"
           />
 
-          <div className="mt-3 flex mb-[6]">
-            <img
-              src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
-              alt="location"
-              width={14}
-              height={14}
-            />
-            <div className="m-m text-fs-13 ml-1 text-gry-70">
-              {tourData.address}
+          {/* ADDRES */}
+          {tourData.address && (
+            <div className="mt-3 flex mb-[6]">
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
+                alt="location"
+                width={14}
+                height={14}
+              />
+              <div className="m-m text-fs-13 ml-1 text-gry-70">
+                {tourData.address}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* PRICING */}
@@ -77,7 +80,11 @@ export default function DetailTour({ tourData }) {
             </div>
           )}
 
-          <div className={`bg-grn-50 text-grn-100 p-1 w-fit rounded-md text-fs-8 m-b ${tourData.discount < 0 && 'mt-[5px]'}`}>
+          <div
+            className={`bg-grn-50 text-grn-100 p-1 w-fit rounded-md text-fs-8 m-b ${
+              tourData.discount < 0 && "mt-[5px]"
+            }`}
+          >
             {languageData.cart.taxes}
           </div>
         </div>

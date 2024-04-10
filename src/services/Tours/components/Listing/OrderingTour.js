@@ -13,37 +13,32 @@ export default function OrderingTour() {
 
   const handleOrderingFilters = (event) => {
     // console.log("hollaaa");
-    setOrderTour(event.target.value);
+    const selectedValue = +event.target.value;
+    setOrderTour(selectedValue);
     updatePage(1);
   };
 
   return (
     <>
       {orderingTour.items.length > 0 && (
-        <div className="ordering-filter-box-tour">
-          <div className="d-flex flex-column cont-ordering-filter-tour">
-            <div className="order-title-tour">
-              {languageData.filtersHotel.order}
-            </div>
-            <FormControl
-              sx={{ m: 1, minWidth: 150 }}
-              size="small"
-              id="ordering-tour-test"
-            >
-              <Select
-                labelId="ordering-filters"
-                id="ordering-filters-select-tour"
-                value={orderTour}
-                onChange={handleOrderingFilters}
-              >
-                {orderingTour.items.map((item, index) => (
-                  <MenuItem key={`selector_item_${index}`} value={item.value}>
-                    {languageData.orderByTour[item.label]}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </div>
+        <div className="relative">
+          <label
+            htmlFor="location"
+            className="m-m text-gry-100 text-fs-10 absolute top-[12px] left-[18px] "
+          >
+            {languageData.filtersHotel.order}
+          </label>
+          <select
+            className="pt-[1.2rem] mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-bl-70 sm:text-sm sm:leading-6 text-fs-14"
+            value={orderTour}
+            onChange={(event) => handleOrderingFilters(event)}
+          >
+            {orderingTour.items.map((item, index) => (
+              <option key={index} value={item.value}>
+                {languageData.orderByTour[item.label]}
+              </option>
+            ))}
+          </select>
         </div>
       )}
     </>
