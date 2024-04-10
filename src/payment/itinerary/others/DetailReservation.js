@@ -97,7 +97,7 @@ export default function ReservationShortInfo(props) {
                   {infoReservation.payment.titular}
                 </span>
               </div>
-              <div className="fle-colum-confirmation">
+              <div className="fle-colum-confirmation mr-[30px]">
                 <span className="text-confirm-grey-m">
                   {" "}
                   {languageData.confirmation.bookingData.titleBookingData}
