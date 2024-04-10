@@ -93,7 +93,7 @@ export default function MobilSearchHotel() {
 
   return (
     <div className="!p-5 shadow-3xl">
-      <p className="m-s-b text-[1.2rem] text-gry-100 p-2">
+      <p className="m-s-b text-[1.2rem] text-black p-2">
         {languageData.searchMobilHotel.titleMultiDestination}
       </p>
 
