@@ -11,12 +11,14 @@ import StructureItineraryWeb from "../itinerary/others/StructureItineraryWeb";
 
 export default function ConfirmReservation() {
   const isMobile = useIsMobileNew();
-  const { fetchData, setCartData } = useCartAxios();
+  const { fetchData, cartData, setCartData, setItinerary, setTotalItemsInCart } = useCartAxios();
   const [dataConfirmation, setDataConfirmation] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+
+  console.log(cartData);
 
   const { languageData } = useContext(LanguageContext);
   const { setInfoReservation } = useContext(StepperContext);
@@ -50,7 +52,6 @@ export default function ConfirmReservation() {
         const token = localStorage.getItem("token");
         const iat = localStorage.getItem("iat");
         const exp = localStorage.getItem("exp");
-        setCartData(null);
 
         localStorage.clear();
 
@@ -73,6 +74,9 @@ export default function ConfirmReservation() {
 
   const handleEmptyClear = () => {
     fetchData(null);
+    setItinerary(null);
+    setTotalItemsInCart(null);
+    setCartData(null);
   };
 
   return (

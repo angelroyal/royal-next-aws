@@ -127,7 +127,8 @@ export const CartAxiosProvider = ({ children }) => {
         totalItemsInCart,
         removeHotelById,
         removeActivityById,
-        totalPrice
+        totalPrice, 
+        setTotalItemsInCart
       }}
     >
       {children}
