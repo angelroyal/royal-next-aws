@@ -49,6 +49,7 @@ export default function ResultTour() {
     // setShowModal(true);
 
     const requestBody = {
+      destination: selectedOption.label,
       code: selectedOption.key,
       type: selectedOption.type,
       dateStart: dateStart,

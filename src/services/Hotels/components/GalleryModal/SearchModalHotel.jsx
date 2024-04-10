@@ -59,7 +59,7 @@ export function SearchModalHotel() {
           Seleccionar habitaciones
         </h2>
 
-        <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-x-2 gap-y-2">
+        <div className="flex flex-col lg:flex-row lg:justify-start lg:gap-x-2 gap-y-2">
           <Calendar onDateChange={handleDateChange} hotelDetails={true} />
           <Room OnApply={setRoomData} />
 

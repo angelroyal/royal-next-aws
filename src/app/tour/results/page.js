@@ -9,11 +9,19 @@ import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import ListTour from "@/services/Tours/components/Listing/ListTour";
+import Footer from "@/components/Footer/Footer";
 
-export const metadata = {
-  title: "Resultados - Royal Vacations Mexico",
-  description: "Royal ssr description",
-};
+export async function generateMetadata({ searchParams }) {
+  const destination = searchParams.destination || 'México';
+  const checkIn = searchParams.dateStart;
+
+  return {
+    title: `Descubre ${destination}: Encuentra los Mejores Tours con ${process.env.NEXT_NAME_COMPANY}.com`,
+    description: `Encuentra los mejores tours en ${destination} del ${checkIn} . Explora con ${process.env.NEXT_NAME_COMPANY}`,
+    keywords: `tours en ${destination}, viajes por ${destination}, aventuras en ${destination}, excursiones en ${destination}, destinos turísticos ${destination}, guía de viaje ${destination}`,
+    author: `${process.env.NEXT_NAME_COMPANY}`,
+  };
+}
 
 export default function Home() {
   return (
@@ -23,6 +31,7 @@ export default function Home() {
           <Token />
           <Navigation />
           <ListTour />
+          <Footer />
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

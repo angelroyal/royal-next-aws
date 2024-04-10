@@ -8,21 +8,16 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import Hotels from "@/services/Hotels/components/Listing/Hotels";
 
-export async function generateMetadata(context) {
-  // Accede a los parámetros de la URL desde context.query
-  // const { destination, 'check-in': checkIn, 'check-out': checkOut } = context.query;
-  const destination = "Cancun";
-  const checkIn = "Cancun";
-  const checkOut = "Cancun";
+export async function generateMetadata({ searchParams }) {
+  const destination = searchParams.destination || 'México';
+  const checkIn = searchParams.checkIn;
+  const checkOut = searchParams.checkOut;
 
-  const decodedDestination = destination ? decodeURIComponent(destination) : '';
   return {
-    title: `Resultados para ${decodedDestination} - Royal Vacations Mexico`,
-    description:
-    `Encuentra los mejores hoteles en ${decodedDestination} del ${checkIn} al ${checkOut}. Explora con Royal Vacations Mexico.`,
-    keywords:
-      "Políticas de cancelaciones, Procedimiento de cambios, Proteccion de Datos Personales",
-    author: "StayWuw",
+    title: `Descubre ${destination}: Encuentra los Mejores Tours con ${process.env.NEXT_NAME_COMPANY}.com`,
+    description: `Encuentra los mejores hoteles en ${destination} del ${checkIn} al ${checkOut}. Explora con ${process.env.NEXT_NAME_COMPANY}`,
+    keywords: `hoteles en ${destination}, mejores hoteles ${destination}, reservación de hoteles ${destination}, ofertas de hoteles en ${destination}, hoteles todo incluido ${destination}`,
+    author: `${process.env.NEXT_NAME_COMPANY}`,
   };
 }
 
@@ -34,7 +29,7 @@ export default function Home() {
           <Token />
           <Navigation />
           <Hotels />
-          <Footer/>
+          <Footer />
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

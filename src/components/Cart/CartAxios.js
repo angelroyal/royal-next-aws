@@ -120,6 +120,7 @@ export const CartAxiosProvider = ({ children }) => {
     <CartAxiosContext.Provider
       value={{
         cartData,
+        setCartData,
         fetchData,
         itineraryData,
         setItinerary,
