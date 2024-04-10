@@ -8,7 +8,7 @@ import { StepperContext } from "../context/steeperContext";
 import SkeletonConfirmPay from "../../utils/skeleton/SkeletonConfirmPay";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import StructureItineraryWeb from "../itinerary/others/StructureItineraryWeb";
-
+import Image from "next/image";
 export default function ConfirmReservation() {
   const isMobile = useIsMobileNew();
   const { fetchData, cartData, setCartData, setItinerary, setTotalItemsInCart } = useCartAxios();
@@ -91,7 +91,7 @@ export default function ConfirmReservation() {
 
               {/* TOTAL PRICE CONFIRMATION */}
               {!isMobile && (
-                <div className="orange-total-p-c">
+                <div className="orange-total-p-c !pr-4 !rounded-br-lg">
                   <span className="total-confirmation-r">
                     No. de confirmación:{" "}
                     <div className="green-container-c">
@@ -99,13 +99,26 @@ export default function ConfirmReservation() {
                     </div>
                   </span>
 
-                  <span className="price-num-confirmation">
-                    {languageData.confirmation.total} $
-                    {Math.floor(dataConfirmation.totalPrice)
-                      .toLocaleString("es-MX", { currency: "MXN" })
-                      .replace(".00", "")}
-                    .{(dataConfirmation.totalPrice % 1).toFixed(2).slice(2)}
-                  </span>
+                  <div className="flex flex-row gap-4 items-center">
+                    <span className="price-num-confirmation">
+                      {languageData.confirmation.total} $
+                      {Math.floor(dataConfirmation.totalPrice)
+                        .toLocaleString("es-MX", { currency: "MXN" })
+                        .replace(".00", "")}
+                      .<sup>{(dataConfirmation.totalPrice % 1).toFixed(2).slice(2)}</sup>
+                    </span>
+
+                    <button className="bg-or-100 rounded-full flex gap-2 py-2 px-4">
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
+                        alt="icon-share"
+                        width={16}
+                        height={18}
+                      />
+
+                      <span className="m-b text-white text-fs-12">Compartir Itinerario</span>
+                    </button>
+                  </div>                  
                 </div>
               )}
             </>
