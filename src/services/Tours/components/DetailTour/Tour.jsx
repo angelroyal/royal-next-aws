@@ -11,12 +11,13 @@ export default function Tour(props) {
 
   return (
     <Container>
-      <div className="p-9 mt-[25.8px]">
+      {/* <div className="p-9 mt-[25.8px]">  LP  TASK 20*/}
+      <div className="p-9 ">
         <DetailTour tourData={tourData.activity} />
 
         <div className="flex flex-col lg:flex-row mt-9">
           <div className="w-full lg:w-6/12 shadow-3xl p-4">
-            <TabsTours tourData={tourData.activity}/>
+            <TabsTours tourData={tourData.activity} />
           </div>
 
           <div className="w-full flex-col lg:w-6/12 pt-9 lg:pl-[54px]">
