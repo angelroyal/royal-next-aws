@@ -97,7 +97,7 @@ export function LodgingsView({ tour }) {
                           {languageData.cartTour.from}
                         </span>
                         <span className="m-b text-or-100 text-fs-12">
-                          MXN <span className="text-fs-16">${tour.price}</span>
+                          MXN <span className="m-b text-fs-16">${tour.price}</span>
                         </span>
                       </div>
 
@@ -113,8 +113,8 @@ export function LodgingsView({ tour }) {
       </div>
       {/*END TWO SWIPER */}
 
-      <div className=" lg:flex flex-wrap justify-center md:justify-between gap-x-[12] gap-y-[12px] hidden">
-        {Object.values(tour).slice(0, 8).map((tour, index) => (
+      <div className=" lg:flex flex-wrap justify-center md:justify-start gap-x-[16px] gap-y-[24px] hidden">
+        {Object.values(tour).slice(0, 10).map((tour, index) => (
           <div key={index} className="!rounded-lg">
             {/*  */}
             <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
@@ -125,10 +125,11 @@ export function LodgingsView({ tour }) {
                   alt="card"
                 />
               </div>
-
-              <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-                <div className="m-b text-fs-14 pt-1 text-start truncate">
-                  {tour.name}{" "}
+              
+              {/* bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col */}
+              <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
+                <div className="m-s-b pt-1 text-fs-14 text-start truncate">
+                  {tour.name}{""}
                 </div>
 
                 <Rating
@@ -158,7 +159,7 @@ export function LodgingsView({ tour }) {
                       {languageData.cartTour.from}
                     </span>
                     <span className="m-b text-or-100 text-fs-12">
-                      MXN <span className="text-fs-16">${tour.price}</span>
+                      MXN <span className="m-b text-fs-16">${tour.price}</span>
                     </span>
                   </div>
 
