@@ -107,7 +107,7 @@ export function BannerHomeKnowMore() {
         </h2>
 
         {/* FIX BOOSTRAP mb-5 - mb-[20px */}
-        <div className="mb-[20px] w-11/12">
+        <div className="mb-[20px] w-[84%]">
           <span className="m-m text-fs-20 mb-[20px] m-m ">
             {languageData.titleBanners.bannerHoteldecided.dontWorry}
             <span className="m-m text-bl-100">
