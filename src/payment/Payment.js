@@ -88,7 +88,7 @@ export default function Payment() {
     if (token) {
       fetchData();
     }
-  }, [token, itineraryData, cartData]);
+  }, [token, itineraryData]);
 
   const fetchData = async () => {
     setData(null);

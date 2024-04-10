@@ -43,6 +43,7 @@ export default function CartT(props) {
   // GET AXIOS CONTEXT CART
   const fetchCartData = () => {
     fetchData(cartUid);
+    console.log("entro aqui");
   };
 
   const handleEmptyAlert = (statusEmpty) => {
