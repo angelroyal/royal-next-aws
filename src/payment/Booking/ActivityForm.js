@@ -98,6 +98,8 @@ export const ActivityForm = (props) => {
     }
   }, [formData]);
 
+  console.log(combinedActivity);
+
   return (
     <>
       {combinedActivity.details && (
@@ -112,7 +114,7 @@ export const ActivityForm = (props) => {
           </div>
 
           <div className="form-activity-body mb-3">
-            {combinedActivity.details.map((value, index) => (
+            {combinedActivity.details.booking.map((value, index) => (
               <div key={index}>
                 {value.required === true && (
                   <span className="input-obligations">*</span>
