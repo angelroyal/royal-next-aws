@@ -213,7 +213,7 @@ export default function Payment() {
                       </div>
                     )}
                   </div>
-                  <BannerConfirmationT/>
+                  {step === 3 && (<BannerConfirmationT/>)}
                 </Container>
 
                 {isMobileNew && data && data.items && (
