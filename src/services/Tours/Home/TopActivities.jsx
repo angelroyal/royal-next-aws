@@ -70,7 +70,10 @@ export default function TopActivities() {
                                 <div className='flex justify-between border-t border-[#ebebeb] pt-[11px] items-center'>
                                     <div className='flex flex-col'>
                                         <span className='m-m text-black text-fs-12 text-start'>{languageData.cartTour.from}</span>
-                                        <span className='m-b text-or-100 text-fs-14'>MXN <span className="text-fs-16">${tour.price}</span></span>
+                                        <span className='m-s-b text-or-100 text-fs-12'>MXN {" "}
+                                            <span className="m-b text-fs-16">${Math.floor(tour.price)}</span>
+                                            .<sup className="m-b">{(tour.price % 1).toFixed(2).slice(2)}</sup>
+                                        </span>
                                     </div>
 
                                     <button className='m-s-b text-black text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:!text-white text-nowrap'>{languageData.cartTour.seeDetails}</button>
