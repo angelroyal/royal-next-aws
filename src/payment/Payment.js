@@ -27,6 +27,7 @@ import "../assets/styles/web/Tour.css";
 import "../assets/styles/web/Hotel.css";
 import "../assets/styles/web/Payment.css";
 import "../assets/styles/mobile/PaymentMobile.css";
+import BannerConfirmationT from "@/components/bannerJsx/bannerConfirmationT";
 
 // import Logo from "../assets/images/logos/logo-royal-vacations-text.png";
 
@@ -212,6 +213,7 @@ export default function Payment() {
                       </div>
                     )}
                   </div>
+                  <BannerConfirmationT/>
                 </Container>
 
                 {isMobileNew && data && data.items && (
