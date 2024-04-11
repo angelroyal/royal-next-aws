@@ -5,11 +5,11 @@ import LanguageContext from "../../language/LanguageContext";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
 import { useCartAxios } from "../../components/Cart/CartAxios";
 import { StepperContext } from "../context/steeperContext";
+import { ShareContainer } from "@/utils/booking/ShareContainer";
 import SkeletonConfirmPay from "../../utils/skeleton/SkeletonConfirmPay";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import StructureItineraryWeb from "../itinerary/others/StructureItineraryWeb";
 import Image from "next/image";
-import { ShareContainer } from "@/utils/booking/ShareContainer";
 export default function ConfirmReservation() {
   const isMobile = useIsMobileNew();
   const { fetchData, cartData, setCartData, setItinerary, setTotalItemsInCart } = useCartAxios();
@@ -19,7 +19,6 @@ export default function ConfirmReservation() {
     window.scrollTo(0, 0);
   };
 
-  const [openShare, setOpenShare] = useState(false);
   const [smShow, setSmShow] = useState(false);
 
   console.log(cartData);
