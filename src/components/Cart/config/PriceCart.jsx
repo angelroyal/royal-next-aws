@@ -60,10 +60,10 @@ const {cartId} = props;
 
         {/* BTN */}
         <div className="flex justify-end gap-[16px] mt-[16px] mb-3">
-          <button className="text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] text-nowrap hover:bg-bl-100 hover:text-white">
+          <button className=" flex items-center text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white">
             Resetear carrito
           </button>
-          <Link href={`/booking?uid=${cartId}`}  className="text-fs-14 text-white m-s-b bg-bl-100 rounded-full text-nowrap py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
+          <Link href={`/booking?uid=${cartId}`}  className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
             Finalizar compra
           </Link>
         </div>

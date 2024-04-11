@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Rating } from "@mui/material";
 import { Image } from 'react-bootstrap';
