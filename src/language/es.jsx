@@ -362,6 +362,12 @@ export const es = {
     terms: "términos de cancelación.",
   },
 
+  tourPolicyCancelation:{
+    title:"Tipos de cancelaciones",
+    before:"Antes de",
+    penalty:"penalización del" 
+  },
+
   titlesFilterHotel: {
     Star: "Estrellas",
     titleTypeHotel: "Tipo de Hotel",

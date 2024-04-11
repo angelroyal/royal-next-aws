@@ -24,5 +24,5 @@ export default function LodgingHotel({ selectionId }) {
   }, [token, selectionId]);
 
   // console.log(shuffleHotel);
-  return <LodgingsView tour={shuffleHotel} />;
+  return <LodgingsView hotels={shuffleHotel} />;
 }

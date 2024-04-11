@@ -360,6 +360,12 @@ export const en = {
     terms: "cancellation terms."
   },
 
+  tourPolicyCancelation:{
+    title:"Types of cancellations",
+    before:"Before",
+    penalty:"penalty" 
+  },
+
   titlesFilterHotel: {
     Star: "Stars",
     titleTypeHotel: "Hotel Type",

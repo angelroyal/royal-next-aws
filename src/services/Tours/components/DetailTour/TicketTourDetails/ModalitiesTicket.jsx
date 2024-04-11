@@ -8,7 +8,7 @@ import ContentTour from "./ContentTour";
 import { TicketsTour } from "./TicketTour";
 import DetailTourContext from "@/services/Tours/context/DetailTourContext";
 
-export function ModalitiesTicket() {
+export function ModalitiesTicket({tourData}) {
   const [isModality, setIsModality] = useState(false);
   const { dayTour, setSelectModality } = useContext(DetailTourContext);
   
@@ -89,6 +89,7 @@ export function ModalitiesTicket() {
         <TicketsTour
           setIsModality={setIsModality}
           isModality={isModality}
+          tourData={tourData}
         />
       </>
     )

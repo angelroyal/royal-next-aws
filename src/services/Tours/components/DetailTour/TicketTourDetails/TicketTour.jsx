@@ -8,12 +8,16 @@ import { PersonsButtonTour } from "./PersonsButtonTour";
 // import { ChildrenButton } from "./ChildrenButton";
 import LanguageContext from "@/language/LanguageContext";
 import DetailTourContext from "@/services/Tours/context/DetailTourContext";
+import { CancelPolicyToulTip } from "./CancelPolicy";
 
 export function TicketsTour(props) {
-  const { setIsModality, isModality } = props;
+  const { setIsModality, isModality, tourData } = props;
   const { languageData } = useContext(LanguageContext);
   const { selectModality } = useContext(DetailTourContext);
 
+  const [openPolicy, setOpenPolicy] = useState(false);
+
+  console.log(tourData);
   // CATEGORIES SELECTED PERSONS
   const [categories, setCategories] = useState([]);
 
@@ -40,6 +44,14 @@ export function TicketsTour(props) {
 
   const taxes = totalPrice * 0.16;
   const netPrice = totalPrice * 0.84;
+
+  const handleMouseOver = () => {
+    setOpenPolicy(true);
+  };
+
+  const handleMouseLeave = () => {
+    setOpenPolicy(false);
+  };
 
   return (
     isModality &&
@@ -85,8 +97,8 @@ export function TicketsTour(props) {
                     <p className="text-gry-100 text-fs-10 m-m m-0">
                       {category.text}
                     </p>
-
-                    <span className="text-fs-12 m-b text-gry-100">
+                    {/* text-gry-100 */}
+                    <span className="text-fs-12 m-b text-black">
                       $
                       {Math.floor(category.price)
                         .toLocaleString("es-MX", { currency: "MXN" })
@@ -106,9 +118,19 @@ export function TicketsTour(props) {
                 {languageData.modalTour.OccupancyTours.changeSelection}
               </button>
 
-              <span className="text-center text-fs-10 m-s-b text-bl-100 pt-2 cursor-pointer">
-                {languageData.containerModalHotel.policies}
-              </span>
+              {tourData.activity.cancelPolicies && (
+                <div
+                  className="relative flex justify-center"
+                  onMouseOver={handleMouseOver}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <span className="text-center text-fs-10 m-s-b text-bl-100 pt-2 cursor-pointer relative">
+                    {languageData.containerModalHotel.policies}
+                  </span>
+                  {openPolicy && <CancelPolicyToulTip policies={tourData.activity.cancelPolicies}/>}
+                  {/* <CancelPolicyToulTip policies={tourData.activity.cancelPolicies}/> */}
+                </div>
+              )}
             </div>
           </div>
 
@@ -139,7 +161,7 @@ export function TicketsTour(props) {
               {/* TAXES PRICE * 16 */}
               <div className="flex justify-between items-center">
                 <span className="text-fs-10 m-s-b text-white w-max">
-                  Impuestos
+                  {languageData.booking.taxes}
                 </span>
                 <span className="text-white text-fs-12 m-s-b">
                   {" "}
@@ -153,8 +175,10 @@ export function TicketsTour(props) {
 
               {/* TOTAL PRICE */}
               <div className="flex justify-between items-center">
-                <span className="text-fs-12 m-s-b text-white w-max">Total</span>
-                <span className="text-white text-fs-12 m-s-b">
+                <span className="text-fs-12 m-s-b text-white w-max">
+                  {languageData.confirmation.total}
+                </span>
+                <span className="text-white text-fs-16 m-s-b">
                   $
                   {Math.floor(totalPrice)
                     .toLocaleString("es-MX", { currency: "MXN" })
