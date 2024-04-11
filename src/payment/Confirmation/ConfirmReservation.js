@@ -9,6 +9,7 @@ import SkeletonConfirmPay from "../../utils/skeleton/SkeletonConfirmPay";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import StructureItineraryWeb from "../itinerary/others/StructureItineraryWeb";
 import Image from "next/image";
+import { ShareContainer } from "@/utils/booking/ShareContainer";
 export default function ConfirmReservation() {
   const isMobile = useIsMobileNew();
   const { fetchData, cartData, setCartData, setItinerary, setTotalItemsInCart } = useCartAxios();
@@ -18,10 +19,29 @@ export default function ConfirmReservation() {
     window.scrollTo(0, 0);
   };
 
+  const [openShare, setOpenShare] = useState(false);
+  const [smShow, setSmShow] = useState(false);
+
   console.log(cartData);
 
   const { languageData } = useContext(LanguageContext);
   const { setInfoReservation } = useContext(StepperContext);
+
+  const handleOpenModal = () => {
+    setSmShow(true);
+  };
+
+  const handleCloseModal = () => {
+    setSmShow(false);
+  };
+
+  const handleIconClick = () => {
+    if (!smShow) {
+      handleOpenModal();
+    } else {
+      handleCloseModal();
+    }
+  };
 
   useEffect(() => {
     scrollToTop();
@@ -108,7 +128,7 @@ export default function ConfirmReservation() {
                       .<sup>{(dataConfirmation.totalPrice % 1).toFixed(2).slice(2)}</sup>
                     </span>
 
-                    <button className="bg-or-100 rounded-full flex gap-2 py-2 px-4">
+                    <button className="bg-or-100 rounded-full flex gap-2 py-2 px-4" onClick={handleIconClick}>
                       <Image
                         src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
                         alt="icon-share"
@@ -118,7 +138,8 @@ export default function ConfirmReservation() {
 
                       <span className="m-b text-white text-fs-12">Compartir Itinerario</span>
                     </button>
-                  </div>                  
+                    <ShareContainer smShow={smShow} handleCloseModal={handleCloseModal} />
+                  </div>
                 </div>
               )}
             </>
