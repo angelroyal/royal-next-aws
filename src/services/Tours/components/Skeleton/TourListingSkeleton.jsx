@@ -17,9 +17,9 @@ export function WeFoundTourSkeleton() {
 
 export function CardTourSkeleton() {
     return (
-        <div className="flex justify-between items-center my-8">
-            <div className='animate-[skeletonLoading_1s_linear_infinite_alternate] w-[50%] h-[20px]' />
-            <div className='animate-[skeletonLoading_1s_linear_infinite_alternate] w-[180px] h-[50px] max-md:w-[150px] rounded-lg' />
+        <div className="bg-gry-30 w-full rounded-2xl ">
+            <div className='animate-[skeletonLoading_1s_linear_infinite_alternate] w-[254px] h-full'/>
+
         </div>
     )
 }

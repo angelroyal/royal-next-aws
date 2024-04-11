@@ -151,8 +151,8 @@ export function LodgingBestPrice() {
       </div>
       {/*END TWO SWIPER */}
 
-      <div className=" lg:flex flex-wrap justify-center md:justify-between gap-x-[12] gap-y-[12px] hidden">
-        {[...Array(8)].map((tour, index) => (
+      <div className=" lg:flex flex-wrap justify-center md:justify-start gap-x-[16px] gap-y-[24px] hidden">
+        {[...Array(10)].map((tour, index) => (
           <div key={index} className="!rounded-lg">
             {/*  */}
             <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
