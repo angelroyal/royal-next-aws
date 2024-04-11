@@ -31,7 +31,8 @@ export default function ContentTour(props) {
             <div className="flex justify-between items-center" key={index}>
               <p className="text-gry-100 text-fs-10 m-m m-0">{category.text}</p>
 
-              <span className="text-fs-12 m-b text-gry-100">
+              {/* text-gry-100 */}
+              <span className="text-fs-12 m-b text-black">
                 $
                 {Math.floor(category.price)
                   .toLocaleString("es-MX", { currency: "MXN" })

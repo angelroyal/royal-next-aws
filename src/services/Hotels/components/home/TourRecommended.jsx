@@ -12,6 +12,10 @@ export default function CartTourOptions() {
   const { languageData } = useContext(LanguageContext);
   const tour = homeRecommendedTour;
 
+  const sentTour = (tour) =>{
+    console.log(tour);
+  }
+  
   return (
     <>
       <div className="mb-10 mt-[128px] max-sm:mt-10">
@@ -63,7 +67,7 @@ export default function CartTourOptions() {
         }}
       >
         {tour.slice(0, 12).map((tour, index) => (
-          <SwiperSlide key={index} className="!rounded-md !h-[275px] select-none">
+          <SwiperSlide key={index} className="!rounded-md !h-[275px] select-none" onClick={()=>sentTour(tour)}>
             {/* w-[185px] h-[258px] */}
             <div className="h-full bg-white cursor-pointer shadow-md shadow-gry-70 border border-gry-30 rounded-md px-4 py-4 flex flex-col justify-center items-center">
               {/* w-[132px] h-[132px] */}

@@ -4,10 +4,10 @@ import {
   InformationCircleIcon,
   MegaphoneIcon,
 } from "@heroicons/react/24/outline";
-import { useState, useContext } from "react";
-import LanguageContext from "@/language/LanguageContext";
+import { useContext, useState } from "react";
 
 import "../../../../assets/styles/general/keyframes.css";
+import LanguageContext from "@/language/LanguageContext";
 
 const tabs = [
   { name: "informacion", icon: InformationCircleIcon },
@@ -30,18 +30,15 @@ export default function TabsTours(props) {
       //   INFO HOTEL
       case "informacion":
         return (
-          <>
-            {tourData.duration && (
-              <div className="bg-gry-50 text-gry-100 p-2 w-fit rounded-full mt-4 text-fs-10 m-b">
-                {languageData.cartTour.duration}: {tourData.duration}
-              </div>
-            )}
-
+          <div className="flex flex-col gap-y-4">
+            <span className="rounded bg-gry-30 w-max text-gry-100 m-s-b h-[36px] py-1 px-2 text-fs-9 text-center content-center">
+              {languageData.cartTour.duration} {tourData.duration}
+            </span>
             <div
               className="m-m text-fs-12"
               dangerouslySetInnerHTML={{ __html: tourData.infoVoucher }}
             />
-          </>
+          </div>
         );
       case "Amenidades":
         return (

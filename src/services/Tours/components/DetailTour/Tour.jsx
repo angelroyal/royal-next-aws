@@ -23,7 +23,7 @@ export default function Tour(props) {
           <div className="w-full flex-col lg:w-6/12 pt-9 lg:pl-[54px]">
             <DayCalendar tourSchedule={tourData.activity.schedule} tourData={tourData.activity} />
             <HoursSelect />
-            <ModalitiesTicket />
+            <ModalitiesTicket tourData={tourData}/>
           </div>
 
         </div>
