@@ -1,160 +1,246 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Form } from "react-bootstrap";
-import LanguageContext from "../../language/LanguageContext";
+// import LanguageContext from "../../language/LanguageContext";
 
-
-export const ActivityForm = (props) => {
-
-  const { languageData } = useContext(LanguageContext);
-
-  const {
-    combinedActivity,
-    formArrayActivityItems,
-    index,
-    setFormArrayActivityItems,
-  } = props;
-
-  // console.log(combinedActivity);
-
-  const [formData, setFormData] = useState([]); // Estado para almacenar los datos del formulario
-  const [trueArrays, setTruArrays] = useState(false);
-
-  const handleInputChange = (e, index, key) => {
-    const { value } = e.target;
-    const updatedFormData = [...formData];
-    updatedFormData[index] = {
-      id: key,
-      value,
-    };
-    setFormData(updatedFormData);
-  };
-
-  const handleSelectChange = (e, index, key) => {
-    const { value } = e.target;
-    const updatedFormData = [...formData];
-    updatedFormData[index] = {
-      id: key,
-      value,
-    };
-    setFormData(updatedFormData);
-  };
-
-  const handleSubmit = () => {
-    let required = true;
-    let auxFormArrayActivityItems = [...formArrayActivityItems];
-
-    // console.log(combinedActivity);
-    // console.log(formData);
-
-    Object.entries(combinedActivity.details).forEach(
-      ([keyDetail, itemDetail]) => {
-        const resultadoFiltrado = formData.find(
-          (objeto) => objeto && objeto.id === itemDetail.id
-        );
-        if (resultadoFiltrado) {
-          if (itemDetail.required && resultadoFiltrado.value === "") {
-            required = false;
-          }
-        } else {
-          if (itemDetail.required) {
-            required = false;
-          }
-        }
-      }
-    );
-
-    auxFormArrayActivityItems[index].details = formData;
-    auxFormArrayActivityItems[index].required = required;
-    setFormArrayActivityItems(auxFormArrayActivityItems);
-  };
+export const ActivityForm = ({ activityPreBooking, setFormActivityItems }) => {
+  // const { languageData } = useContext(LanguageContext);
+  const [formData, setFormData] = useState({});
 
   useEffect(() => {
-    if (
-      formArrayActivityItems.length > 0 &&
-      combinedActivity.details &&
-      combinedActivity.details.length > 0
-    ) {
-      setTruArrays(true);
-    }
-  }, [formArrayActivityItems.length > 0 && combinedActivity]);
-
-  useEffect(() => {
-    if (
-      formArrayActivityItems.length > 0 &&
-      combinedActivity.details &&
-      combinedActivity.details.length > 0
-    ) {
-      handleSubmit();
-    }
-  }, [trueArrays]);
-
-  useEffect(() => {
-    if (
-      formArrayActivityItems.length > 0 &&
-      combinedActivity.details &&
-      combinedActivity.details.length > 0
-    ) {
-      handleSubmit();
-    }
+    validateAndSetFormData();
   }, [formData]);
 
-  console.log(combinedActivity);
+  const handleInputChange = (
+    e,
+    activityIndex,
+    itemType,
+    groupIndex,
+    itemIndex,
+    id,
+    isRequired
+  ) => {
+    let newValue = e.target.value; 
+
+    if (e.target.tagName === 'SELECT') {
+      newValue = e.target.options[e.target.selectedIndex].text;
+    }
+
+    const updatedItem = { id, value: newValue, required: isRequired };
+
+    const updatedFormData = { ...formData };
+    updatedFormData[activityIndex] = updatedFormData[activityIndex] || {};
+    updatedFormData[activityIndex][itemType] =
+      updatedFormData[activityIndex][itemType] || [];
+
+    if (itemType === "passengers") {
+      updatedFormData[activityIndex][itemType][groupIndex] =
+        updatedFormData[activityIndex][itemType][groupIndex] || [];
+      updatedFormData[activityIndex][itemType][groupIndex][itemIndex] =
+        updatedItem;
+    } else {
+      updatedFormData[activityIndex][itemType][itemIndex] = updatedItem;
+    }
+
+    setFormData(updatedFormData);
+  };
+
+  const validateAndSetFormData = () => {
+    let allRequiredFieldsFilled = true;
+    const filteredFormData = [];
+  
+    Object.entries(formData).forEach(([activityIndex, activity]) => {
+      const activityData = {
+        type: "activity",
+        id: activityPreBooking[activityIndex].id,
+        details: {
+          booking: [],
+          passengers: []
+        }
+      };
+  
+      // PROC BOOKING
+      if (activity.booking) {
+        activityData.details.booking = activity.booking.map(item => ({
+          id: item.id,
+          value: item.value
+        }));
+      }
+  
+      // PROC PASSENGERS
+      if (activity.passengers) {
+        activity.passengers.forEach(group => {
+          group.forEach(item => {
+            if (item.required && (!item.value || item.value === "")) {
+              allRequiredFieldsFilled = false;
+            }
+            activityData.details.passengers.push({
+              id: item.id,
+              value: item.value
+            });
+          });
+        });
+      }
+  
+      filteredFormData.push(activityData);
+    });
+  
+    if (allRequiredFieldsFilled) {
+      setFormActivityItems(filteredFormData);
+    } else {
+      alert('Por favor, complete todos los campos requeridos antes de continuar.');
+    }
+  };
+  
 
   return (
     <>
-      {combinedActivity.details && (
-        <>
+      {activityPreBooking.map((activity, activityIndex) => (
+        <div key={activity.id}>
+          {/* TITLE TOUR */}
           <div className="title-data mb-1 flex">
             <img
               src="https://sandboxmexico.com/assets/icons/tour/tour-o.svg"
               alt="no found"
               className="me-2 ms-1"
             />
-            {combinedActivity.title}
+            {activity.name}
           </div>
 
+          {/* SECTION INPUT DYNAMIC */}
           <div className="form-activity-body mb-3">
-            {combinedActivity.details.booking.map((value, index) => (
-              <div key={index}>
-                {value.required === true && (
-                  <span className="input-obligations">*</span>
-                )}
-
-                <label className="mb-1">
-                  {value.label && (
-                    <b>{value.label }</b>
+            {activity.details.booking.map((bookingItem, bookingIndex) => (
+              <div key={bookingItem.id}>
+                {/* INPUT REQUIRED */}
+                <label>
+                  <b>{bookingItem.label}</b>
+                  {bookingItem.required && (
+                    <span className="input-obligations">*</span>
                   )}
                 </label>
-                {value.type === "text" ? (
-                  <Form.Control
-                    as="textarea"
-                    style={{ height: "100px", background: "#FFFFFF" }}
-                    placeholder={languageData.paymentActivities.writeHere}
-                    className="mb-2"
-                    value={formData[index] ? formData[index][value.id] : ""} // Obtener el valor del textarea desde el estado formData
-                    onChange={(e) => handleInputChange(e, index, value.id)} // Aquí se pasa el índice y la clave
-                  />
-                ) : (
-                  <Form.Select
-                    aria-label="Default select example"
-                    className="mb-2"
-                    value={formData[index] ? formData[index][value.id] : ""}
-                    onChange={(e) => handleSelectChange(e, index, value.id)}
-                  >
-                    <option value="">{languageData.paymentActivities.selectAnOption}</option>{" "}
-                    {/* Opción por defecto */}
-                    {value.options.map((option, keyOption) => (
-                      <option value={option.id} key={keyOption}>
-                        {option.text}
-                      </option>
-                    ))}
-                  </Form.Select>
-                )}
+
+                {/* DYNAMIC INPUTS */}
+                <input
+                  type={bookingItem.type}
+                  className="form-control mb-2"
+                  value={
+                    formData[activityIndex] &&
+                    formData[activityIndex].booking &&
+                    formData[activityIndex].booking[bookingIndex] &&
+                    formData[activityIndex].booking[bookingIndex][
+                      bookingItem.id
+                    ]
+                  }
+                  onChange={(e) =>
+                    handleInputChange(
+                      e,
+                      activityIndex,
+                      "booking",
+                      null,
+                      bookingIndex,
+                      bookingItem.id,
+                      bookingItem.required
+                    )
+                  }
+                />
               </div>
             ))}
           </div>
-        </>
-      )}
+
+          {/* PASSENGERS CONTAIN */}
+          {activity.details.passengers && (
+            <div>
+              {/* TITLE TOUR */}
+              <div className="title-data mb-1 flex">
+                <img
+                  src="https://sandboxmexico.com/assets/icons/adults/adults-o.svg"
+                  alt="no found"
+                  className="me-2 ms-1"
+                />
+                Información de pasajero
+              </div>
+
+              {activity.details.passengers.map((passengerGroup, groupIndex) => (
+                <div key={groupIndex} className="form-activity-body mb-3">
+                  <div className="m-b text-fs-16 mb-2">
+                    Persona #{groupIndex + 1}
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    {passengerGroup.map((passenger, passengerIndex) => (
+                      <div key={passenger.id}>
+                        <label>
+                          <b>{passenger.label}</b>
+                          {passenger.required && (
+                            <span className="input-obligations">*</span>
+                          )}
+                        </label>
+                        {passenger.type === "select" ? (
+                          <select
+                            className="form-select mb-2"
+                            value={
+                              formData[activityIndex] &&
+                              formData[activityIndex].passengers &&
+                              formData[activityIndex].passengers[groupIndex] &&
+                              formData[activityIndex].passengers[groupIndex][
+                                passengerIndex
+                              ] &&
+                              formData[activityIndex].passengers[groupIndex][
+                                passengerIndex
+                              ][passenger.id]
+                            }
+                            onChange={(e) =>
+                              handleInputChange(
+                                e,
+                                activityIndex,
+                                "passengers",
+                                groupIndex,
+                                passengerIndex,
+                                passenger.id,
+                                passenger.required
+                              )
+                            }
+                          >
+                            {passenger.options.map((option, optionIndex) => (
+                              <option key={optionIndex} value={option.id}>
+                                {option.text}
+                              </option>
+                            ))}
+                          </select>
+                        ) : (
+                          <input
+                            type="text"
+                            className="form-control mb-2"
+                            value={
+                              formData[activityIndex] &&
+                              formData[activityIndex].passengers &&
+                              formData[activityIndex].passengers[groupIndex] &&
+                              formData[activityIndex].passengers[groupIndex][
+                                passengerIndex
+                              ] &&
+                              formData[activityIndex].passengers[groupIndex][
+                                passengerIndex
+                              ][passenger.id]
+                            }
+                            onChange={(e) =>
+                              handleInputChange(
+                                e,
+                                activityIndex,
+                                "passengers",
+                                groupIndex,
+                                passengerIndex,
+                                passenger.id,
+                                passenger.required
+                              )
+                            }
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
     </>
   );
 };

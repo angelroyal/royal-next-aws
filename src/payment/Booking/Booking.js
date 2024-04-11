@@ -9,7 +9,7 @@ import PaymentConektaF from "./PaymentConektaF";
 import AlertTextBooking from "./AlertTextBooking";
 import LanguageContext from "../../language/LanguageContext";
 import { FormDataProvider } from "../context/FormDataContext";
-import { getCombinedActivitys } from "../Services/PaybokingServices.js";
+// import { getCombinedActivitys } from "../Services/PaybokingServices.js";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { SkeletonActivitiesTourP } from "../../utils/skeleton/SkeletonActivitiesTourP.js";
 
@@ -27,9 +27,10 @@ export default function Booking(props) {
   const [userData, setUserData] = useState({});
   const [showAlert, setShowAlert] = useState(null);
   const [hotelRH, setRoomsRH] = useState([]);
-  const [combinedActivitys, setCombinedActivitys] = useState(null);
   const [formActivityItems, setFormActivityItems] = useState(null);
-  const [formArrayActivityItems, setFormArrayActivityItems] = useState(null);
+  const [activityPreBooking, setActivityPreBooking] = useState(null);
+
+  console.log(formActivityItems);
 
   // const [isRH, setRH] = useState(false);
   // const isMobile = useIsMobile();
@@ -65,13 +66,7 @@ export default function Booking(props) {
       const searchParams = new URLSearchParams(window.location.search);
       const cartId = searchParams.get("uid");
       const response = await axiosWithInterceptor.get(`${url}${cartId}`);
-      // console.log(response);
-      // const filterDataItinerary = dataItinerary.items.filter(
-      //   (objeto) => objeto.type === "activity"
-      // );
-      // dataItinerary.items = filterDataItinerary
-      setCombinedActivitys(getCombinedActivitys(response, dataItinerary));
-      // console.log(getCombinedActivitys(response, dataItinerary));
+      setActivityPreBooking(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -81,37 +76,6 @@ export default function Booking(props) {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    if (combinedActivitys !== null && combinedActivitys.length > 0) {
-      let array = [];
-      Object.entries(combinedActivitys).forEach(
-        ([keyCombinationActivity, itemCombinationActivity]) => {
-          let newDetail = []; // Definir newDetail dentro del bucle para cada iteración
-          if (itemCombinationActivity.details) {
-            itemCombinationActivity.details.forEach((objeto) => {
-              newDetail.push({
-                id: objeto.id,
-                value: "",
-              });
-            });
-            if (newDetail.length > 0) {
-              // console.log(newDetail);
-              array.push({
-                type: "activity",
-                id: itemCombinationActivity.providerId, // Corregido para obtener la clave del elemento actual
-                details: newDetail,
-                required: true,
-              });
-            }
-          }
-        }
-      );
-      if (array.length > 0 && array[0].details.length > 0) {
-        setFormArrayActivityItems(array);
-      }
-    }
-  }, [combinedActivitys]);
-
   return (
     <FormDataProvider>
       <div>
@@ -119,7 +83,11 @@ export default function Booking(props) {
         <AlertTextBooking showAlert={showAlert} />
 
         <div className="display-booking">
-          <Image className="icon-royal-itinerary" src={IconRoyal} alt="IconRoyal" />
+          <Image
+            className="icon-royal-itinerary"
+            src={IconRoyal}
+            alt="IconRoyal"
+          />
           <h1 className="booking-title-page">
             {languageData.booking.titleVacations}
           </h1>
@@ -140,36 +108,28 @@ export default function Booking(props) {
               onRHDataChange={handleRHChange}
             />
 
-            {formArrayActivityItems && formArrayActivityItems.length > 0 && (
+            {activityPreBooking && (
               <div className="form-activity">
                 <h2 className="title-data-h">
                   {languageData.paymentActivities.activities}
                 </h2>
-                {combinedActivitys.map((value, key) => (
-                  <ActivityForm
-                    combinedActivity={value}
-                    key={key}
-                    index={key}
-                    setFormActivityItems={setFormActivityItems}
-                    formArrayActivityItems={formArrayActivityItems}
-                    setFormArrayActivityItems={setFormArrayActivityItems}
-                  />
-                ))}
+                <ActivityForm
+                  activityPreBooking={activityPreBooking}
+                  setFormActivityItems={setFormActivityItems}
+                />
               </div>
             )}
 
-            {!formArrayActivityItems && hasACtivities === true && (
+            {!activityPreBooking && (
               <SkeletonActivitiesTourP />
             )}
 
             <PaymentConektaF
-              userData={userData}
-              onAlertDataChange={handleAlertDataChange}
               hotelRH={hotelRH}
+              userData={userData}
               changeButton={changeButton}
+              onAlertDataChange={handleAlertDataChange}
               formActivityItems={formActivityItems}
-              combinedActivitys={combinedActivitys}
-              formArrayActivityItems={formArrayActivityItems}
             />
           </Col>
           {/* {isMobile ? (
