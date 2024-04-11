@@ -26,13 +26,7 @@ const AlertBooking = lazy(() => import("./AlertBooking"));
 const CardPayment = lazy(() => import("../Utils/CardPayment"));
 
 export default function PaymentConektaF(props) {
-  const {
-    userData,
-    onAlertDataChange,
-    hotelRH,
-    changeButton,
-    formArrayActivityItems,
-  } = props;
+  const { userData, onAlertDataChange, hotelRH, changeButton, formActivityItems } = props;
 
   const [showModal, setShowModal] = useState(false);
   const [animationData, setAnimationData] = useState(LoadingData);
@@ -83,46 +77,18 @@ export default function PaymentConektaF(props) {
     } else {
       checkUserDataCardDataRH();
     }
-  }, [
-    userData,
-    nameCard,
-    numberCard,
-    cvvCard,
-    hotelRH,
-    formArrayActivityItems,
-  ]);
+  }, [userData, nameCard, numberCard, cvvCard, hotelRH]);
 
   const checkUserDataAndCardData = () => {
-    // console.log(formArrayActivityItems);
-    let required = false;
-    if (formArrayActivityItems !== null) {
-      const objetosFiltrados = formArrayActivityItems.filter(
-        (objeto) => objeto.required === false
-      );
-      if (objetosFiltrados.length === 0) {
-        required = true;
-      }
-    }
-
     let validate =
-      formArrayActivityItems !== null
-        ? required &&
-          userData &&
-          userData.firstName &&
-          userData.lastName &&
-          userData.email &&
-          userData.phoneNumber &&
-          nameCard &&
-          numberCard &&
-          cvvCard
-        : userData &&
-          userData.firstName &&
-          userData.lastName &&
-          userData.email &&
-          userData.phoneNumber &&
-          nameCard &&
-          numberCard &&
-          cvvCard;
+      userData &&
+      userData.firstName &&
+      userData.lastName &&
+      userData.email &&
+      userData.phoneNumber &&
+      nameCard &&
+      numberCard &&
+      cvvCard;
     if (validate) {
       setIsUserDataValid(true);
     } else {
@@ -131,44 +97,19 @@ export default function PaymentConektaF(props) {
   };
 
   const checkUserDataCardDataRH = () => {
-    // console.log(formArrayActivityItems);
-    let required = false;
-    if (formArrayActivityItems !== null) {
-      const objetosFiltrados = formArrayActivityItems.filter(
-        (objeto) => objeto.required === false
-      );
-      if (objetosFiltrados.length === 0) {
-        required = true;
-      }
-    }
-
     let validate =
-      formArrayActivityItems !== null
-        ? required &&
-          hotelRH.filter((hotel) => hotel.type === "ch" && hotel.age).length ===
-            hotelRH.filter((hotel) => hotel.type === "ch").length &&
-          hotelRH.filter((hotel) => hotel.firstName && hotel.lastName)
-            .length === hotelRH.length &&
-          userData &&
-          userData.firstName &&
-          userData.lastName &&
-          userData.email &&
-          userData.phoneNumber &&
-          nameCard &&
-          numberCard &&
-          cvvCard
-        : hotelRH.filter((hotel) => hotel.type === "ch" && hotel.age).length ===
-            hotelRH.filter((hotel) => hotel.type === "ch").length &&
-          hotelRH.filter((hotel) => hotel.firstName && hotel.lastName)
-            .length === hotelRH.length &&
-          userData &&
-          userData.firstName &&
-          userData.lastName &&
-          userData.email &&
-          userData.phoneNumber &&
-          nameCard &&
-          numberCard &&
-          cvvCard;
+      hotelRH.filter((hotel) => hotel.type === "ch" && hotel.age).length ===
+        hotelRH.filter((hotel) => hotel.type === "ch").length &&
+      hotelRH.filter((hotel) => hotel.firstName && hotel.lastName).length ===
+        hotelRH.length &&
+      userData &&
+      userData.firstName &&
+      userData.lastName &&
+      userData.email &&
+      userData.phoneNumber &&
+      nameCard &&
+      numberCard &&
+      cvvCard;
     if (validate) {
       setIsUserDataValid(true);
     } else {
@@ -232,25 +173,6 @@ export default function PaymentConektaF(props) {
     const email = userData.email;
     const phoneNumber = userData.phoneNumber;
     const lastFourDigits = numberCard.substring(numberCard.length - 4);
-    let required = false;
-    let items = [];
-
-    console.log(formArrayActivityItems);
-    if (formArrayActivityItems !== null) {
-      // console.log(formArrayActivityItems);
-      const objetosFiltrados = formArrayActivityItems.filter(
-        (objeto) => objeto.required === false
-      );
-      if (objetosFiltrados.length === 0) {
-        required = true;
-        items = formArrayActivityItems.map((objeto) => {
-          const { required, ...result } = objeto; // Desestructuración para extraer "required" y el result de las propiedades
-          return result; // Devuelve un nuevo objeto sin la propiedad "required"
-        });
-      }
-    }
-
-    // console.log(items);
 
     axiosWithInterceptor
       .post("v1/payment", {
@@ -264,7 +186,7 @@ export default function PaymentConektaF(props) {
         cardTitular: nameCard,
         cardNumber: lastFourDigits,
         ...(hotelRH ? { guests: hotelRH } : {}),
-        ...(required ? { items: items } : {}),
+        ...(formActivityItems ? { items: formActivityItems } : {}),
         // ...(required ? {
         //   items: [
         //     {
