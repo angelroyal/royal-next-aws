@@ -15,10 +15,11 @@ export default function CartT(props) {
   const { closeCart } = props;
   const [cartUid, setCartUid] = useState(null);
   const { cartData, fetchData } = useCartAxios();
+  const [isLoader, setIsLoader] = useState(false);
   const [cartInfo, setCartInfo] = useState(
     cartData && cartData.cartItems ? cartData.cartItems : null
-    );
-    
+  );
+
   // OBTAIN UID CART
   useEffect(() => {
     handleUid();
@@ -49,7 +50,6 @@ export default function CartT(props) {
     setCartInfo(statusEmpty);
   };
 
-
   return (
     <>
       <div className="absolute right-[-15px] top-[48px] max-sm:hidden">
@@ -71,13 +71,17 @@ export default function CartT(props) {
 
           {cartInfo && (
             <>
-              <div className="max-h-[364px] overflow-y-auto scroll-page-gry">
+              <div
+                className={`max-h-[364px] relative overflow-y-auto scroll-page-gry `}
+              >
                 {cartInfo.hotels && (
                   <CartHotelT
                     cartId={cartUid}
                     hotelGetCart={cartInfo}
-                    onUpdateData={fetchCartData}
                     emptyClr={handleEmptyAlert}
+                    setIsLoader={setIsLoader}
+                    isLoader={isLoader}
+                    // onUpdateData={fetchCartData}
                   />
                 )}
 
@@ -85,7 +89,9 @@ export default function CartT(props) {
                   <CartTourT
                     cartId={cartUid}
                     tourGetCart={cartInfo}
-                    onUpdateData={fetchCartData}
+                    setIsLoader={setIsLoader}
+                    isLoader={isLoader}
+                    // onUpdateData={fetchCartData}
                   />
                 )}
               </div>
@@ -95,7 +101,11 @@ export default function CartT(props) {
             </>
           )}
 
-          {!cartInfo && <div><EmptyCart/></div>}
+          {!cartInfo && (
+            <div>
+              <EmptyCart />
+            </div>
+          )}
         </div>
       </div>
     </>

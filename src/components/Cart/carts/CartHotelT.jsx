@@ -11,23 +11,32 @@ export default function CartHotelT(props) {
   const [iconDelete, setIconDelete] = useState(null);
 
   const { setItinerary, removeHotelById } = useCartAxios();
-  const { hotelGetCart, cartId } = props;
+  const { hotelGetCart, cartId, setIsLoader, isLoader } = props;
   const [showDelete, setShowDelete] = useState({});
+  const [loadingHotels, setLoadingHotels] = useState({});
   // const { languageData } = useContext(LanguageContext);
 
   // console.log(hotelGetCart);
 
   const handleDeleteClick = (hotel) => {
-    const hotelId = hotel.id;
+    setLoadingHotels((prevLoadingHotels) => ({
+      ...prevLoadingHotels,
+      [hotel.id]: true,
+    }));
 
+    const hotelId = hotel.id;
+    setIsLoader(true);
     axiosWithInterceptor
       .delete(`v1/carts/${cartId}/hotel/${hotelId}`)
       .then((response) => {
         removeHotelById(hotelId);
         setShowDelete({ ...showDelete });
         setItinerary(Math.floor(Math.random() * 100) + 1);
+        setIsLoader(false);
+        setLoadingHotels({});
       })
       .catch((error) => {
+        setIsLoader(false);
         alert("Ups ocurrio un error en eliminar el carro");
       });
   };
@@ -53,8 +62,13 @@ export default function CartHotelT(props) {
         hotelGetCart.hotels.map((hotel, index) => (
           <div
             key={index}
-            className="flex rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]"
+            className="flex relative rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]"
           >
+            {loadingHotels[hotel.id] && (
+              <div className="absolute flex justify-center items-center w-full h-full backdrop-contrast-50">
+                <div className="relative w-[8px] h-[8px] rounded-[5px] bg-bl-100 text-bl-100 animate-[dot-flashing_1s_infinite_linear_alternate] before:content-[' '] before:block before:absolute before:top-0 before:left-[15px] before:w-[8px] before:h-[8px] before:rounded-[5px] before:bg-bl-100 before:text-bl-100 before:animate-[dot-flashing_1s_infinite_alternate] before:delay-0 after:content-[' '] after:block after:absolute after:top-0 after:left-[30px] after:w-[8px] after:h-[8px] after:rounded-[5px] after:bg-bl-100 after:text-bl-100 after:animate-[dot-flashing_1s_infinite_alternate] after:delay-1000	dot-flashing" />
+              </div>
+            )}
             <div className="p-2 gap-4 flex justify-between w-full max-sm:w-[86%]">
               {/* IMAGE CART */}
               <img
@@ -136,29 +150,11 @@ export default function CartHotelT(props) {
             </div>
 
             {/* ICON DELETE */}
-            <div
-              onMouseOver={() => setIconDelete(index)}
-              onMouseOut={() => setIconDelete(null)}
-              className={`${
-                iconDelete === index
-                  ? "transition duration-500 ease-in-out "
-                  : ""
-              } w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
-            >
-              <Image
-                src={`${process.env.NEXT_PUBLIC_URL}icons/delete/delete-r.svg`}
-                width={16}
-                height={16}
-                alt="icon-delete-r"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleDelete(hotel.id);
-                }}
-              />
-            </div>
-            {showDelete[hotel.id] && (
+            {showDelete[hotel.id] ? (
               <div
-                className="transition duration-500 ease-in-out bg-red-100 flex w-[48px] justify-center items-center rounded-r-lg cursor-pointer absolute right-[14px] h-[116px] max-sm:right-[6px]"
+                className={`${
+                  isLoader && "hidden"
+                } transition duration-500 ease-in-out bg-red-100 w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
                 onClick={(e) => {
                   e.stopPropagation();
                   handleDeleteClick(hotel);
@@ -171,7 +167,68 @@ export default function CartHotelT(props) {
                   alt="icon-delete-w"
                 />
               </div>
+            ) : (
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleDelete(hotel.id);
+                }}
+                className={` ${
+                  isLoader && "hidden"
+                } w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
+              >
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/delete/delete-r.svg`}
+                  width={16}
+                  height={16}
+                  alt="icon-delete-r"
+                />
+              </div>
             )}
+
+            {/* {showDelete[hotel.id] && (
+              
+            )} */}
+            {/* {!isLoader && (
+              <>
+                <div
+                  onMouseOver={() => setIconDelete(index)}
+                  onMouseOut={() => setIconDelete(null)}
+                  className={`${
+                    iconDelete === index
+                      ? "transition duration-500 ease-in-out "
+                      : ""
+                  } w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
+                >
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/delete/delete-r.svg`}
+                    width={16}
+                    height={16}
+                    alt="icon-delete-r"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleDelete(hotel.id);
+                    }}
+                  />
+                </div>
+                {showDelete[hotel.id] && (
+                  <div
+                    className="transition duration-500 ease-in-out bg-red-100 flex w-[48px] justify-center items-center rounded-r-lg cursor-pointer absolute right-[14px] h-[116px] max-sm:right-[6px]"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDeleteClick(hotel);
+                    }}
+                  >
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/delete/delete-w.svg`}
+                      width={16}
+                      height={16}
+                      alt="icon-delete-w"
+                    />
+                  </div>
+                )}
+              </>
+            )} */}
           </div>
         ))}
       {/* END CART HOTEL */}

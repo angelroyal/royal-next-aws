@@ -7,7 +7,7 @@ import { useCartAxios } from "../CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export default function CartTourT(props) {
-  const { cartId, tourGetCart } = props;
+  const { cartId, tourGetCart, setIsLoader, isLoader } = props;
 
   const { setItinerary, removeActivityById } = useCartAxios();
   const [loadingTours, setLoadingTours] = useState({});
@@ -30,26 +30,26 @@ export default function CartTourT(props) {
 
   const removeTour = (tour) => {
     const activityId = tour.id;
-    if (deleteTour[activityId]) {
-      setLoadingTours((prevLoadingTours) => ({
-        ...prevLoadingTours,
-        [tour.id]: true,
-      }));
 
-      axiosWithInterceptor
-        .delete(`v1/carts/${cartId}/activity/${activityId}`)
-        .then((response) => {
-          removeActivityById(activityId);
-          setDeleteTour({ ...deleteTour });
-          setItinerary(Math.floor(Math.random() * 100) + 1);
-        })
-        .catch((error) => {
-          console.error("Error al eliminar la actividad:", error);
-        })
-        .finally(() => {
-          setLoadingTours({});
-        });
-    }
+    setIsLoader(true);
+    setLoadingTours((prevLoadingTours) => ({
+      ...prevLoadingTours,
+      [tour.id]: true,
+    }));
+
+    axiosWithInterceptor
+      .delete(`v1/carts/${cartId}/activity/${activityId}`)
+      .then((response) => {
+        removeActivityById(activityId);
+        setDeleteTour({ ...deleteTour });
+        setItinerary(Math.floor(Math.random() * 100) + 1);
+        setLoadingTours({});
+        setIsLoader(false);
+      })
+      .catch((error) => {
+        setIsLoader(false);
+        console.error("Error al eliminar la actividad:", error);
+      });
   };
 
   // console.log(deleteTour);
@@ -120,9 +120,12 @@ export default function CartTourT(props) {
           </div>
 
           {/* ICON DELETE */}
+
           {deleteTour[tourInfo.id] ? (
             <div
-              className={`transition duration-500 ease-in-out bg-red-100 w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
+              className={`${
+                isLoader && "hidden"
+              } transition duration-500 ease-in-out bg-red-100 w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
               onClick={(e) => {
                 e.stopPropagation();
                 removeTour(tourInfo);
@@ -137,7 +140,9 @@ export default function CartTourT(props) {
             </div>
           ) : (
             <div
-              className={`w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
+              className={`${
+                isLoader && "hidden"
+              }  w-[48px] flex justify-center items-center rounded-r-lg cursor-pointer`}
               onClick={(e) => {
                 e.stopPropagation();
                 handleDelete(tourInfo.id);
