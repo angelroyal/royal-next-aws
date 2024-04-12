@@ -15,6 +15,8 @@ export default function CartHotelT(props) {
   const [showDelete, setShowDelete] = useState({});
   // const { languageData } = useContext(LanguageContext);
 
+  // console.log(hotelGetCart);
+
   const handleDeleteClick = (hotel) => {
     const hotelId = hotel.id;
 
@@ -56,7 +58,8 @@ export default function CartHotelT(props) {
             <div className="p-2 gap-4 flex justify-between w-full max-sm:w-[86%]">
               {/* IMAGE CART */}
               <img
-                src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
+                // src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
+                src={hotel.image}
                 alt="img-cart-hotel"
                 className="w-[100px] h-[100px] rounded-lg object-cover"
               />
