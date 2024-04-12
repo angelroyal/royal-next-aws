@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-// import LanguageContext from "../../language/LanguageContext";
+import LanguageContext from "../../language/LanguageContext";
 
 export const ActivityForm = ({ activityPreBooking, setFormActivityItems }) => {
-  // const { languageData } = useContext(LanguageContext);
+  const { languageData } = useContext(LanguageContext);
   const [formData, setFormData] = useState({});
 
   useEffect(() => {
@@ -18,19 +18,26 @@ export const ActivityForm = ({ activityPreBooking, setFormActivityItems }) => {
     id,
     isRequired
   ) => {
-    let newValue = e.target.value; 
+    let newValue = e.target.value;
 
-    if (e.target.tagName === 'SELECT') {
+    // FOR SELECT ELEMENTS, USE THE SELECTED OPTION'S TEXT INSTEAD OF ITS VALUE
+    if (e.target.tagName === "SELECT") {
       newValue = e.target.options[e.target.selectedIndex].text;
     }
 
+    // CONSTRUCT UPDATED ITEM OBJECT WITH ID, VALUE, AND REQUIRED STATUS
     const updatedItem = { id, value: newValue, required: isRequired };
 
+    // CREATE A COPY OF CURRENT FORM DATA TO UPDATE
+    // ENSURE ACTIVITY ENTRY EXISTS
     const updatedFormData = { ...formData };
     updatedFormData[activityIndex] = updatedFormData[activityIndex] || {};
+
+    // ENSURE ITEM TYPE ENTRY EXISTS (E.G., 'booking' OR 'passengers')
     updatedFormData[activityIndex][itemType] =
       updatedFormData[activityIndex][itemType] || [];
 
+    // FOR PASSENGERS, UPDATE THE SPECIFIC PASSENGER ITEM IN ITS GROUP
     if (itemType === "passengers") {
       updatedFormData[activityIndex][itemType][groupIndex] =
         updatedFormData[activityIndex][itemType][groupIndex] || [];
@@ -46,50 +53,54 @@ export const ActivityForm = ({ activityPreBooking, setFormActivityItems }) => {
   const validateAndSetFormData = () => {
     let allRequiredFieldsFilled = true;
     const filteredFormData = [];
-  
+
+    // ITERATE OVER EACH ACTIVITY IN THE FORM DATA
     Object.entries(formData).forEach(([activityIndex, activity]) => {
       const activityData = {
         type: "activity",
         id: activityPreBooking[activityIndex].id,
         details: {
           booking: [],
-          passengers: []
-        }
+          passengers: [],
+        },
       };
-  
-      // PROC BOOKING
+
+      // PROCESS BOOKING ITEMS
       if (activity.booking) {
-        activityData.details.booking = activity.booking.map(item => ({
+        activityData.details.booking = activity.booking.map((item) => ({
           id: item.id,
-          value: item.value
+          value: item.value,
         }));
       }
-  
-      // PROC PASSENGERS
+
+      // PROCESS PASSENGERS
       if (activity.passengers) {
-        activity.passengers.forEach(group => {
-          group.forEach(item => {
+        activity.passengers.forEach((group) => {
+          group.forEach((item) => {
             if (item.required && (!item.value || item.value === "")) {
               allRequiredFieldsFilled = false;
             }
             activityData.details.passengers.push({
               id: item.id,
-              value: item.value
+              value: item.value,
             });
           });
         });
       }
-  
+
+      // ADD THE COMPLETED ACTIVITY DATA TO THE FINAL FORM DATA ARRAY
       filteredFormData.push(activityData);
     });
-  
+
+    // CHECK IF ALL REQUIRED FIELDS ARE FILLED BEFORE SETTING THE FINAL DATA
     if (allRequiredFieldsFilled) {
       setFormActivityItems(filteredFormData);
     } else {
-      alert('Por favor, complete todos los campos requeridos antes de continuar.');
+      alert(
+        "Por favor, complete todos los campos requeridos antes de continuar."
+      );
     }
   };
-  
 
   return (
     <>
@@ -200,7 +211,7 @@ export const ActivityForm = ({ activityPreBooking, setFormActivityItems }) => {
                           >
                             {passenger.options.map((option, optionIndex) => (
                               <option key={optionIndex} value={option.id}>
-                                {option.text}
+                                {languageData.countries[option.text]}
                               </option>
                             ))}
                           </select>

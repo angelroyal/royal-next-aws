@@ -45,7 +45,7 @@ export default async function DetailPageTour({ params, searchParams }) {
     days: 5,
     provider: "ct",
   };
-
+ 
   try {
     const response = await axiosWithInterceptor.post(
       `v1/activities/${params.id}/availability`,

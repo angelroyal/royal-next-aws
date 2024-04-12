@@ -108,7 +108,7 @@ export function LodgingBestPrice() {
             },
           }}
         >
-          {[...Array(8)].map((tour, index) => (
+          {[...Array(10)].map((tour, index) => (
             <SwiperSlide key={index} className="!rounded-lg">
               <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
                 <div className="w-full h-[216px] rounded-t-lg animate-[skeletonLoading_1s_linear_infinite_alternate]"></div>
@@ -152,7 +152,7 @@ export function LodgingBestPrice() {
       {/*END TWO SWIPER */}
 
       <div className=" lg:flex flex-wrap justify-center md:justify-between gap-x-[12] gap-y-[12px] hidden">
-        {[...Array(8)].map((tour, index) => (
+        {[...Array(10)].map((tour, index) => (
           <div key={index} className="!rounded-lg">
             {/*  */}
             <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
