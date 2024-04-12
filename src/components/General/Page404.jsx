@@ -11,12 +11,12 @@ export default function Page404() {
     return (
 
         <Container>
-            <div className='flex'>
-                <Lottie className="m-[3rem]" animationData={animationData} />
+            <div className='flex max-md:flex-col items-center'>
+                <Lottie className=" m-[3rem] ml-[10rem] max-2xl:ml-[4.3rem] max-lg:ml-[3rem]" animationData={animationData} />
 
-                <div className='ml-[3rem] flex flex-col justify-center items-start'>
+                <div className='ml-[3rem] max-sm:ml-0 flex flex-col justify-center items-start max-md:items-center mb-4'>
                     <div className="m-b text-fs-24 text-bl-100">{languageData.pageError.titleAlert}</div>
-                    <div className="m-s-b text-fs-20 text-black mb-1">{languageData.pageError.textAlert}</div>
+                    <div className="m-s-b text-fs-20 text-black mb-1 max-sm:text-center">{languageData.pageError.textAlert}</div>
 
                     <a
                         href={`${process.env.NEXT_PUBLIC_HOME}`}
