@@ -108,7 +108,7 @@ export function LodgingBestPrice() {
             },
           }}
         >
-          {[...Array(8)].map((tour, index) => (
+          {[...Array(10)].map((tour, index) => (
             <SwiperSlide key={index} className="!rounded-lg">
               <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
                 <div className="w-full h-[216px] rounded-t-lg animate-[skeletonLoading_1s_linear_infinite_alternate]"></div>

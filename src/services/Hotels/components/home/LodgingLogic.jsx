@@ -11,6 +11,7 @@ export default function LodgingHotel({ selectionId }) {
 
   useEffect(() => {
     const getLodgingsHotels = async () => {
+      setShuffleHotel(null);
       try {
         if (token.token) {
           const responseTest = await lodgings(selectionId);

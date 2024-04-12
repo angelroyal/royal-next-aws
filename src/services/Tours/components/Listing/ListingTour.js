@@ -17,7 +17,7 @@ import { BannerDestinationTour } from "../Banners/BannerTour";
 import LanguageContext from "@/language/LanguageContext";
 import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
 import ImageListingTour from "../Banners/ImageListingTour";
-import SkeletonTourCard from "@/utils/skeleton/SkeletonTourCard";
+// import SkeletonTourCard from "@/utils/skeleton/SkeletonTourCard";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { Container } from "@/config/Others/Container";
@@ -178,7 +178,7 @@ export default function ListingTour() {
                 <OrderingTour />
               </div>
             )}
-            <CardTourSkeleton/>
+            
             {!auxTourData && (<WeFoundTourSkeleton />)}
             {/* <div className="cont-found-ordering-tour-skeleton">
               {!auxTourData && (
@@ -196,7 +196,7 @@ export default function ListingTour() {
               )}
             </div> */}
             
-            {!tourData && <SkeletonTourCard />}
+            {!tourData && <CardTourSkeleton/>}
 
             {currentTours && (
               <>
@@ -211,7 +211,7 @@ export default function ListingTour() {
                       {getKeyImage(
                         index + 1,
                         auxTourData.activities.length
-                      ) && <ImageListingTour />}
+                      ) && <ImageListingTour />}                      
                     </div>
                   ))}
               </>

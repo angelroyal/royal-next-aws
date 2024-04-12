@@ -50,7 +50,7 @@ export function LodgingsView({ hotels }) {
           }}
         >
           {Object.values(hotels)
-            .slice(0, 8)
+            .slice(0, 10)
             .map((hotel, index) => (
               <SwiperSlide key={index} className="!rounded-lg">
                 <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">

@@ -285,9 +285,9 @@ export function PopularState() {
                 </div>
               </div>
 
-              <div className="flex md:flex-col gap-y-3 gap-x-3 md:gap-x-0 md:w-[268px] md:h-full h-2/4">
+              <div className="flex md:flex-col gap-y-3 gap-x-3 md:gap-x-0 md:w-[268px] md:h-full h-[45%]">
                 <div
-                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer"
                   onClick={() => sendDestination(popularState[6])}
                 >
                   <img
@@ -317,7 +317,7 @@ export function PopularState() {
                 </div>
 
                 <div
-                  className="relative rounded-lg md:h-[197px] w-full cursor-pointer"
+                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer"
                   onClick={() => sendDestination(popularState[7])}
                 >
                   <img
