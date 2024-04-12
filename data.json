@@ -1,80 +1,190 @@
 [
-    {
-        "code": "SGL.ST-1",
-        "name": "GRAND FAMILY SUITE",
-        "beds": [
-            {
-                "number": 1,
-                "type": "Cama matrimonial"
-            }
-        ],
-        "currency": "MXN",
-        "idRoom": "0-1.0",
-        "adultChildren": "1.0",
-        "childrenAges": [],
-        "rateIndex": 20,
-        "rateKey": "20240515|20240517|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~2561c1~-693659149~N~~~NOR~6E8B43EDA11741A171165935919400AAUK000000100000000052561c1",
-        "netPrice": 8997.2,
-        "eatingPlan": "Todo incluido",
-        "boardCode": "AI",
-        "price": "10225.43",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_f_006.webp",
-        "cancellationCode": "NOR",
-        "cancellationPolicies": {
-            "from": "2024-05-14",
-            "percentage": 2.5
+  {
+    "type": "activity",
+    "id": 331,
+    "providerId": "105671",
+    "name": "Free tour de tacos mexicanos",
+    "details": {
+      "booking": [
+        {
+          "id": "comentarios-6616fa67896298.42261373",
+          "label": "Comentarios",
+          "required": false,
+          "type": "text",
+          "options": null
+        },
+        {
+          "id": "preguntaTitulo_0-6616fa67896298.42261373",
+          "label": "Indica si eres vegano, vegetariano o tienes alguna intolerancia alimenticia:",
+          "required": false,
+          "type": "text",
+          "options": null
         }
-    },
-    {
-        "code": "SGL.ST-1",
-        "name": "GRAND FAMILY SUITE",
-        "beds": [
-            {
-                "number": 1,
-                "type": "Cama matrimonial"
-            }
+      ],
+      "passengers": [
+        [
+          {
+            "id": "passenger-1-0-6616fa67896298.42261373",
+            "label": "Nombre",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-2-0-6616fa67896298.42261373",
+            "label": "Apellidos",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-12-0-6616fa67896298.42261373",
+            "label": "Nacionalidad",
+            "required": true,
+            "type": "select",
+            "options": [
+              {
+                "id": "0",
+                "text": ""
+              },
+              {
+                "id": "1",
+                "text": "AFG"
+              },
+              {
+                "id": "2",
+                "text": "ALA"
+              }
+            ]
+          }
         ],
-        "currency": "MXN",
-        "idRoom": "1-1.0",
-        "adultChildren": "1.0",
-        "childrenAges": [],
-        "rateIndex": 23,
-        "rateKey": "20240515|20240517|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~2561c1~-693659149~N~~~NOR~6E8B43EDA11741A171165935919400AAUK000000100000000052561c1",
-        "netPrice": 8997.2,
-        "eatingPlan": "Todo incluido",
-        "boardCode": "AI",
-        "price": "10225.43",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_064.webp",
-        "cancellationCode": "NOR",
-        "cancellationPolicies": {
-            "from": "2024-05-14",
-            "percentage": 2.5
-        }
-    },
-    {
-        "code": "SGL.ST-1",
-        "name": "GRAND FAMILY SUITE",
-        "beds": [
-            {
-                "number": 1,
-                "type": "Cama matrimonial"
-            }
+        [
+          {
+            "id": "passenger-1-1-6616fa67896298.42261373",
+            "label": "Nombre",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-2-1-6616fa67896298.42261373",
+            "label": "Apellidos",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-12-1-6616fa67896298.42261373",
+            "label": "Nacionalidad",
+            "required": true,
+            "type": "select",
+            "options": [
+              {
+                "id": "0",
+                "text": ""
+              },
+              {
+                "id": "1",
+                "text": "AFG"
+              },
+              {
+                "id": "2",
+                "text": "ALA"
+              }
+            ]
+          }
         ],
-        "currency": "MXN",
-        "idRoom": "1-1.0",
-        "adultChildren": "1.0",
-        "childrenAges": [],
-        "rateIndex": 24,
-        "rateKey": "20240515|20240517|W|69|161795|SGL.ST-1|BAR OFFER USD|AI||1~1~0||N@06~~2561c1~-693659149~N~~~NOR~6E8B43EDA11741A171165935919400AAUK000000100000000052561c1",
-        "netPrice": 8997.2,
-        "eatingPlan": "Todo incluido",
-        "boardCode": "AI",
-        "price": "10225.43",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/1355/161127a_hb_ro_064.webp",
-        "cancellationCode": "NOR",
-        "cancellationPolicies": {
-            "from": "2024-05-14",
-            "percentage": 2.5
-        }
+        [
+          {
+            "id": "passenger-1-2-6616fa67896298.42261373",
+            "label": "Nombre",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-2-2-6616fa67896298.42261373",
+            "label": "Apellidos",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-12-2-6616fa67896298.42261373",
+            "label": "Nacionalidad",
+            "required": true,
+            "type": "select",
+            "options": [
+              {
+                "id": "0",
+                "text": ""
+              },
+              {
+                "id": "1",
+                "text": "AFG"
+              },
+              {
+                "id": "2",
+                "text": "ALA"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "id": "passenger-1-3-6616fa67896298.42261373",
+            "label": "Nombre",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-2-3-6616fa67896298.42261373",
+            "label": "Apellidos",
+            "required": true,
+            "type": "text",
+            "options": null
+          },
+          {
+            "id": "passenger-12-3-6616fa67896298.42261373",
+            "label": "Nacionalidad",
+            "required": true,
+            "type": "select",
+            "options": [
+              {
+                "id": "0",
+                "text": ""
+              },
+              {
+                "id": "1",
+                "text": "AFG"
+              },
+              {
+                "id": "2",
+                "text": "ALA"
+              }
+            ]
+          }
+        ]
+      ]
     }
+  },
+  {
+    "type": "activity",
+    "id": 332,
+    "providerId": "6082",
+    "name": "Free tour por Ciudad de México",
+    "details": {
+      "booking": [
+        {
+          "id": "comentarios-6616fc3eac0106.43087710",
+          "label": "Comentarios",
+          "required": false,
+          "type": "text",
+          "options": null
+        }
+      ],
+      "passengers": null
+    }
+  }
 ]
