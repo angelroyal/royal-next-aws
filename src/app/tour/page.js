@@ -18,7 +18,6 @@ import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
 import SearchBox from "@/hooks/SearchBox";
 // import CartHotelT from "@/components/Cart/CartHotelT";
 // import CartOpen from "@/components/Cart/open/CartOpen";
-
 // export const metadata = {
 //   title: 'viewport',
 //   description: '...',
