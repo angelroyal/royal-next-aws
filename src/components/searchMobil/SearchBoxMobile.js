@@ -65,7 +65,7 @@ export default function SearchBoxMobile() {
               : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
           >
-            Actividades
+            {languageData.modalHotelOptions.titleTour}
           </span>
         </Tab>
       </Tab.List>

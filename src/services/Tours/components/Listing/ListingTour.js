@@ -21,7 +21,7 @@ import SkeletonTourCard from "@/utils/skeleton/SkeletonTourCard";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { Container } from "@/config/Others/Container";
-import { BannerListingSkeleton, WeFoundTourSkeleton } from "../Skeleton/TourListingSkeleton";
+import { BannerListingSkeleton, CardTourSkeleton, WeFoundTourSkeleton } from "../Skeleton/TourListingSkeleton";
 export default function ListingTour() {
   const {
     tourData,
@@ -178,7 +178,7 @@ export default function ListingTour() {
                 <OrderingTour />
               </div>
             )}
-
+            <CardTourSkeleton/>
             {!auxTourData && (<WeFoundTourSkeleton />)}
             {/* <div className="cont-found-ordering-tour-skeleton">
               {!auxTourData && (

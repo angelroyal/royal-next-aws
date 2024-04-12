@@ -154,3 +154,9 @@
   height: 8px !important;
 }
 /* END IMAGES TOUR LISTING */
+
+/* PAGINATION TOUR RECOMMENDED */
+#swiper-recommended-hotel > div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: -5px !important;
+}
+/*END PAGINATION TOUR RECOMMENDED */
