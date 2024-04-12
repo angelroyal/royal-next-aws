@@ -14,10 +14,11 @@ export function TicketsTour(props) {
   const { setIsModality, isModality, tourData } = props;
   const { languageData } = useContext(LanguageContext);
   const { selectModality } = useContext(DetailTourContext);
+  const [isLoader, setIsLoader] = useState(false);
 
   const [openPolicy, setOpenPolicy] = useState(false);
 
-  console.log(tourData);
+  // console.log(tourData);
   // CATEGORIES SELECTED PERSONS
   const [categories, setCategories] = useState([]);
 
@@ -56,7 +57,7 @@ export function TicketsTour(props) {
   return (
     isModality &&
     selectModality && (
-      <>
+      <div className="relative">
         {/* TITLE SELECT MODALITY TOUR */}
         <div className="flex flex-col gap-y-1 pb-4">
           <span className="m-s-b text-fs-14 text-black text-start w-max pb-1">
@@ -112,8 +113,9 @@ export function TicketsTour(props) {
               <span className="px-2 border-dashed border border-gry-70 w-fulls my-4" />
 
               <button
-                className="border-2 border-or-100 rounded-full px-[25px] py-[2px] text-or-100 text-fs-12 m-s-b hover:bg-gry-30"
+                className={`${isLoader && 'bg-gry-30'} border-2 border-or-100 rounded-full px-[25px] py-[2px] text-or-100 text-fs-12 m-s-b hover:bg-gry-30`}
                 onClick={() => setIsModality(false)}
+                disabled={isLoader}
               >
                 {languageData.modalTour.OccupancyTours.changeSelection}
               </button>
@@ -187,10 +189,10 @@ export function TicketsTour(props) {
                 </span>
               </div>
             </div>
-            <AddCartTour tourists={selectionsArray} totalPrice={totalPrice} />
+            <AddCartTour tourists={selectionsArray} totalPrice={totalPrice} isLoader={isLoader} setIsLoader={setIsLoader} />
           </div>
         </div>
-      </>
+      </div>
     )
   );
 }

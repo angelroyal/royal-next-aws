@@ -1500,6 +1500,12 @@ export const en = {
   Alerts: {
     hotel: {
       title: "Oops, there was a problem adding to the shopping cart!"
+    },
+    tour:{
+      tourDetails:{
+        title:"Oops, there was a problem adding to the shopping cart!",
+        message:"Please try again later."
+      }
     }
   },
 

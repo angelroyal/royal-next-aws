@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { saveToCart } from "../../Api/requestHotel";
@@ -10,6 +10,7 @@ export default function AddCartHotel() {
   const router = useRouter();
   const { fetchData } = useCartAxios();
   const { languageData } = useContext(LanguageContext);
+  const [isLoading, setIsLoading] = useState(false)
 
   const { selectedRooms, requestBodyRooms, keyHotel, setIsFailedReservation } =
     useContext(RoomsHotelContext);
@@ -18,6 +19,7 @@ export default function AddCartHotel() {
 
   const handleReserveNow = async () => {
     try {
+      setIsLoading(true);
       const uidCart = localStorage.getItem("uid-cart");
       let cartId = "";
 
@@ -61,6 +63,7 @@ export default function AddCartHotel() {
       }, 1000);
     } catch (error) {
       console.log(error);
+      setIsLoading(false);
       if(error.response.status >= 400){
         console.log("entra error");
         setIsFailedReservation(true);
@@ -75,9 +78,9 @@ export default function AddCartHotel() {
       <button
         className="rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max hover:bg-yw-110"
         onClick={handleReserveNow}
-        // disabled={!selectedRooms.length > 0}
+        disabled={isLoading}
       >
-        {languageData.detailHotel.buttonPrincipal}
+        {isLoading ? languageData.cart.loadingText :languageData.detailHotel.buttonPrincipal}
       </button>
     </>
   );

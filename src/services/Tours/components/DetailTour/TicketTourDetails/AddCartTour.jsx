@@ -1,14 +1,21 @@
 import { useRouter } from "next/navigation";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import DetailTourContext from "@/services/Tours/context/DetailTourContext";
+import { AlertTourDetails } from "../../AlertsTour/AlertTours";
 
 export default function AddCartTour(props) {
-  const { totalPrice, tourists } = props;
+  const { totalPrice, tourists, isLoader, setIsLoader } = props;
   const { fetchData } = useCartAxios();
+  const [alert, setAlert] = useState({
+    alert: false,
+    type: null,
+    title: null,
+    message: null,
+  });
   const router = useRouter();
 
   const { languageData } = useContext(LanguageContext);
@@ -19,6 +26,7 @@ export default function AddCartTour(props) {
 
   const handleAddCartTour = async () => {
     try {
+      setIsLoader(true);
       const uidCart = localStorage.getItem("uid-cart");
       let cartId = "";
 
@@ -59,8 +67,19 @@ export default function AddCartTour(props) {
 
       setTimeout(() => {
         router.push(`/booking?uid=${cartUid}`);
+        // setIsLoader(false);
       }, 1000);
     } catch (error) {
+      setIsLoader(false);
+      console.log(error);
+      if (error.response.status >= 405) {
+        setAlert({
+          alert: true,
+          type: "error",
+          title: languageData.Alerts.tour.tourDetails.title,
+          message: languageData.Alerts.tour.tourDetails.message,
+        });
+      }
       //   if (
       //     error.response.data.message ===
       //       "La fecha de salida debe ser 2 días después de la fecha actual" ||
@@ -74,6 +93,23 @@ export default function AddCartTour(props) {
 
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+  const ref = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  //CLICK OCCURRED OUTSIDE THE DIVE, CLOSE THE DIV
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setAlert({ alert: false, type: null, title: null, message: null });
+    }
+  };
+
   useEffect(() => {
     // Verifica si al menos un elemento tiene una parte decimal mayor a 0
     const hasValidTourists = tourists.some((tourist) => {
@@ -84,14 +120,23 @@ export default function AddCartTour(props) {
   }, [tourists]);
 
   return (
-    <button
-      onClick={() => handleAddCartTour()}
-      className={`rounded-full w-full py-3.5 text-black text-center text-fs-12 m-s-b bg-yw-100 hover:bg-yw-110 ${
-        isButtonDisabled ? "opacity-50 cursor-not-allowed" : ""
-      }`}
-      disabled={isButtonDisabled}
-    >
-      {languageData.modalTour.OccupancyTours.reserve}
-    </button>
+    <>
+      <button
+        onClick={() => handleAddCartTour()}
+        className={`rounded-full w-full py-3.5 text-black text-center text-fs-12 m-s-b bg-yw-100 hover:bg-yw-110 ${
+          isButtonDisabled || isLoader ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        disabled={isButtonDisabled || isLoader}
+      >
+        {isLoader
+          ? languageData.cart.loadingText
+          : languageData.modalTour.OccupancyTours.reserve}
+      </button>
+      {alert.alert && (
+        <div ref={ref}>
+          <AlertTourDetails alertInfo={alert} />
+        </div>
+      )}
+    </>
   );
 }
