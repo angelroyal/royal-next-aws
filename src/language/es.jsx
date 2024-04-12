@@ -1499,7 +1499,14 @@ export const es = {
   Alerts: {
     hotel: {
       title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!"
+    },
+    tour:{
+      tourDetails:{
+        title:"Ups ¡Ocurrio un problema al agregar al carrito de compras!",
+        message:"Por favor, inténtalo más tarde."
+      }
     }
+
   },
 
   countries: {

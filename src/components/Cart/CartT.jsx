@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 // import { useRouter } from "next/navigation";
 
@@ -20,16 +20,26 @@ export default function CartT(props) {
     cartData && cartData.cartItems ? cartData.cartItems : null
   );
 
+  // console.log("cartData", cartData);
+  // console.log("cartData.length", cartData.cartItems.activities.length);
+
   // OBTAIN UID CART
   useEffect(() => {
     handleUid();
   }, []);
 
   useEffect(() => {
-    if (cartData && cartData.cartItems && cartData.cartItems.length === 0) {
-      setCartInfo(null);
-    } else if (cartData && cartData.cartItems) {
+    if (
+      cartData &&
+      cartData.cartItems &&
+      cartData.cartItems.activities &&
+      cartData.cartItems.activities.length > 0 ||
+      cartData.cartItems.hotels &&
+      cartData.cartItems.hotels.length > 0 
+    ) {
       setCartInfo(cartData.cartItems);
+    } else {
+      setCartInfo(null);
     }
   }, [cartData]);
 
@@ -46,9 +56,9 @@ export default function CartT(props) {
     fetchData(cartUid);
   };
 
-  const handleEmptyAlert = (statusEmpty) => {
-    setCartInfo(statusEmpty);
-  };
+  // const handleEmptyAlert = (statusEmpty) => {
+  //   setCartInfo(statusEmpty);
+  // };
 
   return (
     <>
@@ -78,9 +88,9 @@ export default function CartT(props) {
                   <CartHotelT
                     cartId={cartUid}
                     hotelGetCart={cartInfo}
-                    emptyClr={handleEmptyAlert}
                     setIsLoader={setIsLoader}
                     isLoader={isLoader}
+                    // emptyClr={handleEmptyAlert}
                     // onUpdateData={fetchCartData}
                   />
                 )}

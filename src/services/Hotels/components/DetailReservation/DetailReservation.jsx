@@ -47,15 +47,15 @@ export default function DetailReservation() {
       requestBodyRooms["check-in"] &&
       requestBodyRooms["check-out"]
     ) {
-      console.log("entra 1");
+      // console.log("entra 1");
       actualDiffDate = calculateNights(
         requestBodyRooms["check-in"],
         requestBodyRooms["check-out"]
       );
     } else {
-      console.log("entra 2");
+      // console.log("entra 2");
       const getDateLocalSt = JSON.parse(localStorage.getItem("selectedDates"));
-      console.log(getDateLocalSt);
+      // console.log(getDateLocalSt);
       actualDiffDate = calculateNights(
         getDateLocalSt.formattedCheckIn,
         getDateLocalSt.formattedCheckOut
@@ -66,7 +66,7 @@ export default function DetailReservation() {
   }, [requestBodyRooms]);
 
   // console.log("totalPerson", totalPerson);
-  console.log("diffDate", diffDate);
+  // console.log("diffDate", diffDate);
 
   // TOTAL CALCULATION
   useEffect(() => {
