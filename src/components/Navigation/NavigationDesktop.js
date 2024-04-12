@@ -7,8 +7,8 @@ import { HamburgerMenu } from "./HamburgerMenu";
 import { Container } from "@/config/Others/Container";
 import { LanguageSelector } from "@/language/LanguageSelector";
 
-import { SelectCurrency } from "./SelectCurrency";
 import CartOpen from "../Cart/open/CartOpen";
+import { SelectCurrency } from "./SelectCurrency";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export default function NavigationDesktop() {

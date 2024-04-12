@@ -30,6 +30,8 @@ export default function SendHotel() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectedDates, setSelectedDates] = useState(null);
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
+  const { languageData, language } = useContext(LanguageContext);
+
 
   useEffect(() => {
     const storedSelectedDates = localStorage.getItem("selectedDates");
@@ -97,12 +99,12 @@ export default function SendHotel() {
 
     setTimeout(() => {
       // router.push(`/resultHotel?${query}`);
-      router.push(`/hotel/results?${query}`);
+      router.push(`${language}/hotel/results?${query}`);
       setShowModal(false);
       window.location.reload();
     }, 1500);
   };
-  const { languageData } = useContext(LanguageContext);
+  // const { languageData } = useContext(LanguageContext);
 
   return (
     <>

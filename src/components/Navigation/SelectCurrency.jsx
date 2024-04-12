@@ -3,17 +3,17 @@
 import { useEffect, useState } from "react";
 
 export function SelectCurrency() {
-const [currency, setCurrency] = useState("MXN");
+  const [currency, setCurrency] = useState("MXN");
 
   const currencySelected = (event) => {
     const currencySelected = event.target.value;
     setCurrency(currencySelected);
-};
+  };
 
-useEffect(()=>{
+  useEffect(() => {
     // console.log(currency);
     localStorage.setItem("currency", currency);
-  },[currency])
+  }, [currency]);
 
   return (
     <div className="flex">
@@ -24,7 +24,13 @@ useEffect(()=>{
         height={18}
       />
 
-      <select defaultValue="MXN" onChange={currencySelected}  id="location" name="location" className="w-max block border-0 bg-transparent focus:outline-none m-s-b text-gry-100 ">
+      <select
+        defaultValue="MXN"
+        onChange={currencySelected}
+        id="location"
+        name="location"
+        className="w-max block border-0 bg-transparent focus:outline-none m-s-b text-gry-100 "
+      >
         <option className="m-s-b text-fs-12">MXN</option>
         {/* <option className="m-s-b text-fs-12">US</option> */}
       </select>

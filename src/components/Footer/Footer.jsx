@@ -8,7 +8,7 @@ import { SocialNetworks, creditsCard } from "./Config";
 import Link from "next/link";
 
 export default function Footer() {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const year = new Date().getFullYear();
   const router = useRouter();
 
@@ -157,7 +157,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col m-m text-fs-12 cursor-pointer">
 
-              <Link href="/ourHistory" className="hover:!text-or-100 no-underline text-white">
+              <Link href={`/${language}/history`} className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titleHistory}
               </Link>
 

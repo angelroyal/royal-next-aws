@@ -1,79 +1,42 @@
 "use client";
 
-import Image from "next/image";
 
-import { useContext, useEffect, useState } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import LanguageContext from "./LanguageContext";
-// import { SelectLanguage } from "@/components/Mobile/Hotel/General/CurrencyLanguage";
 
-// const SelectLanguage = lazy(()=>import("../components/Mobile/Hotel/General/CurrencyLanguage"));
+function getLanguageFromPath(path) {
+  const match = path.match(/^\/([a-z]{2})\//);
+  return match ? match[1] : null;
+}
 
 export function LanguageSelector() {
-  const { language, setLanguage } = useContext(LanguageContext);
-
-  const [actualLanguage, setActualLanguage] = useState("en")
-
-  const handleChange = (event) => {
-    const value = event.target.value;
-    setLanguage(value);
-    localStorage.setItem("language", value);
-    window.location.reload();
-  };
-
-  const storedLanguage =
-    typeof window !== "undefined"
-      ? localStorage.getItem("language") || "en"
-      : "en";
-
-  const defaultLanguage = storedLanguage || language;
+  const { setLanguage } = useContext(LanguageContext);
+  const [actualLanguage, setActualLanguage] = useState();
 
   useEffect(() => {
-    if (storedLanguage && storedLanguage !== language) {
-      setLanguage(storedLanguage);
-    }
-  }, [storedLanguage, language, setLanguage]);
+    // Intenta obtener el idioma de localStorage, de la URL, o usar 'en' por defecto
+    const storedLanguage = localStorage.getItem('language') || getLanguageFromPath(window.location.pathname) || 'en';
+    setActualLanguage(storedLanguage);
+    setLanguage(storedLanguage);
+  }, [setLanguage]);
 
-  useEffect(()=>{
-    setActualLanguage(localStorage.getItem("language") || "en")
-  },[]);
+  const handleChange = (event) => {
+    const newLanguage = event.target.value;
+    setLanguage(newLanguage);
+    localStorage.setItem('language', newLanguage);
+
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search; // Extrae los parámetros de búsqueda actuales
+    const newPath = `/${newLanguage}${currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/')}${currentSearch}`;
+    window.location.href = newPath; // Cambiar la URL y recargar la página
+  };
 
   return (
-    <>
-      <div className="flex pr-[30px]">
-        {actualLanguage === "es" && (
-          <Image
-            className="w-[25px] h-[30px]"
-            width={25}
-            height={30}
-            src={`${process.env.NEXT_PUBLIC_URL}icons/leng/es.svg`}
-            alt="lang"
-          />
-        )}
-        {actualLanguage === "en" && (
-          // <IconSpanish className="icon-spanish" />
-          <Image
-            className="w-[25px] h-[30px]"
-            width={25}
-            height={30}
-            src={`${process.env.NEXT_PUBLIC_URL}icons/leng/en.svg`}
-            alt="lang"
-          />
-        )}
-        <select
-          className="w-max block border-0 bg-transparent focus:outline-none m-s-b text-gry-100"
-          name="select"
-          value={defaultLanguage}
-          onChange={handleChange}
-        >
-          <option className="options-select-languaje" value="es">
-            ESP
-          </option>
-          <option className="options-select-languaje" value="en">
-            ENG
-          </option>
-        </select>
-      </div>
-    </>
+    <select onChange={handleChange} value={actualLanguage}>
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
   );
 }
+

@@ -10,7 +10,7 @@ import LanguageContext from "../../../language/LanguageContext";
 
 export default function SendHotel() {
   const router = useRouter();
-  const { languageData } = useContext(LanguageContext);
+  const { language, languageData } = useContext(LanguageContext);
   const [validFirstDay, setValidFirstDay] = useState(null);
   const [selectedDates, setSelectedDates] = useState(null);
   const [validSecondDay, setValidSecondDay] = useState(null);
@@ -82,14 +82,15 @@ export default function SendHotel() {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
-
+    
     if(selectedOption.type === "hotel"){
-      
-      window.open(`/hotel/${selectedOption.codeName}?${query}`, '_blank')
+      console.log(language);
+      window.open(`/${language}/mexico/${selectedOption.codeName}/hotels/${selectedOption.codeName}?${query}`, '_blank')
     }else{
-      router.push(`/hotel/results?${query}`);
+      router.push(`${language}/mexico/${selectedOption.codeName}/hotels?${query}`);
     }
   };
+
 
   const [isHotelResults, setIsHotelResults] = useState(false);
 
@@ -135,3 +136,6 @@ export default function SendHotel() {
     </div>
   );
 }
+
+// https://staywuw.com/en/mexico/cancun-mexico/{zone}-hotels/renaissance-cancun-resort-marina/
+// https://staywuw.com/en/mexico/{zone}-{cointry}/hotels
