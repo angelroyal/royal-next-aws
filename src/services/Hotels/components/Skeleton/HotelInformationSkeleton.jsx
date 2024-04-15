@@ -114,15 +114,15 @@ export function LodgingBestPrice() {
                 <div className="w-full h-[216px] rounded-t-lg animate-[skeletonLoading_1s_linear_infinite_alternate]"></div>
 
                 <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-                  <div className="h-[12px] w-[3rem] animate-[skeletonLoading_1s_linear_infinite_alternate]" />
-
-                  <Rating
+                  {/* <div className="h-[12px] w-[3rem] animate-[skeletonLoading_1s_linear_infinite_alternate]" /> */}
+                  {/* PINCHE LUIS  */}
+                  {/* <Rating
                     className="my-1"
                     name="read-only"
                     // value={5}
                     readOnly
                     size="small"
-                  />
+                  /> */}
 
                   <div className="flex gap-1 mb-[11px] items-center">
                     <Image
@@ -159,15 +159,15 @@ export function LodgingBestPrice() {
               <div className="w-full h-[216px] rounded-t-lg animate-[skeletonLoading_1s_linear_infinite_alternate]"></div>
 
               <div className="bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-                <div className="h-[12px] w-[3rem] animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+                {/* <div className="h-[12px] w-[3rem] animate-[skeletonLoading_1s_linear_infinite_alternate]" /> */}
 
-                <Rating
+                {/* <Rating
                   className="my-1"
                   name="read-only"
                   // value={5}
                   readOnly
                   size="small"
-                />
+                /> */}
 
                 <div className="flex gap-1 mb-[11px] items-center">
                   <Image
