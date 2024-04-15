@@ -274,6 +274,12 @@ export const en = {
     rooms: "rooms",
     roomTitle: "Room",
     selectRoom: "Choose your first room",
+    Highly:"Highly requested",
+    roomSelect: "Select rooms",
+    roomsFound:"rooms found",
+    selectedRoom: "Selected room",
+    chosenRooms:"Chosen rooms",
+    toView:"To view rooms in this category, please remove selections from the pre-cart.",
     missingRooms: {
       text1: "room",
       text2: "left",
@@ -444,6 +450,8 @@ export const en = {
     bestTour: "Best tours",
     backToHotels: "Return to Hotels",
     textAlready: "Hotel Ready!",
+    // LP
+    findOutSchedules: "Find out more about this hotel:",
   },
 
   eatingPlan: {
@@ -553,6 +561,8 @@ export const en = {
     details: "Details",
     seeMoreDates: "see more dates",
     schedules: "Schedules",
+    amenities: "Amenities",
+    information: "Information",
     freeTour: "Free",
 
     OccupancyTours: {
@@ -659,14 +669,14 @@ export const en = {
     textAlready: "Tour Ready!",
   },
 
-    /*********************************************************/
+  /*********************************************************/
   ////////////////////////  TRANSPORT //////////////////////////////
   /*********************************************************/
   bannerTransportHome: {
-    titleDisposal :"Transporte a tu disposición",
-    textReserv:"Reserva ahora y disfruta de tarifas competitivas, seguridad y puntualidad en cada recorrido. Tu comodidad es nuestra prioridad. Únete a nosotros y haz que tus viajes sean memorables desde el primer momento.",
+    titleDisposal: "Transporte a tu disposición",
+    textReserv: "Reserva ahora y disfruta de tarifas competitivas, seguridad y puntualidad en cada recorrido. Tu comodidad es nuestra prioridad. Únete a nosotros y haz que tus viajes sean memorables desde el primer momento.",
     ChooseDates: "Choose dates",
-   },
+  },
 
   /************************************************************/
   //////////////////////// 𝓜𝓞𝓥𝓘𝓝𝓖 MOVING 𝓜𝓞𝓥𝓘𝓝𝓖 //////////////////////////////
@@ -1509,10 +1519,10 @@ export const en = {
     hotel: {
       title: "Oops, there was a problem adding to the shopping cart!"
     },
-    tour:{
-      tourDetails:{
-        title:"Oops, there was a problem adding to the shopping cart!",
-        message:"Please try again later."
+    tour: {
+      tourDetails: {
+        title: "Oops, there was a problem adding to the shopping cart!",
+        message: "Please try again later."
       }
     }
   },

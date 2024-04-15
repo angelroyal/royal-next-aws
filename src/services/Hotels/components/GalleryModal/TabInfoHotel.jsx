@@ -13,9 +13,9 @@ import { AmenitiesIcons } from "@/components/General/Amenities";
 import "../../../../assets/styles/general/keyframes.css";
 
 const tabs = [
-  { name: "informacion", icon: InformationCircleIcon },
-  { name: "Amenidades", icon: MegaphoneIcon },
-  { name: "Horarios", icon: ClockIcon },
+  { name: "information", icon: InformationCircleIcon },
+  { name: "amenities", icon: MegaphoneIcon  },
+  { name: "schedules", icon: ClockIcon  },
 ];
 
 export default function TabInfoHotel(props) {
@@ -56,7 +56,7 @@ export default function TabInfoHotel(props) {
   const getMessageForTab = (tabName) => {
     switch (tabName) {
       //   INFO HOTEL
-      case "informacion":
+      case "information":
         return (
           <>
             <div className="text-fs-14 m-m text-justify">
@@ -111,7 +111,7 @@ export default function TabInfoHotel(props) {
           </>
         );
 
-      case "Amenidades":
+      case "amenities":
         return (
           <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100">
             {hotel.facilities.map((facility, index) => (
@@ -123,10 +123,10 @@ export default function TabInfoHotel(props) {
         );
 
       // TIME CHECK IN Y CHECK OUT
-      case "Horarios":
+      case "schedules":
         return (
           <div className="block">
-            <div className="mb-2 m-b text-fs-20">Conoce más de este hotel:</div>
+            <div className="mb-2 m-b text-fs-20">{languageData.modalHotelOptions.findOutSchedules}</div>
             <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
               <li>Check-in: 15:00 pm</li>
               <li>Check-out: 15:00 pm</li>
@@ -169,7 +169,7 @@ export default function TabInfoHotel(props) {
                   } -ml-0.5 mr-2 h-5 w-5`}
                   aria-hidden="true"
                 />
-                <span>{tab.name}</span>
+                <span>{languageData.modalTour[tab.name]}</span>
               </a>
             ))}
           </nav>

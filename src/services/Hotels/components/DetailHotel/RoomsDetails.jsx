@@ -76,7 +76,7 @@ export default function RoomsDetails(codeHotel) {
   return (
     <>
       <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 ">
-        <span>{roomsData.totalRooms} habitaciones encontradas</span>
+        <span>{roomsData.totalRooms} {languageData.modalHotel.roomsFound}</span>
       </h4>
 
       {Object.entries(filteredGroupedRooms).map(([roomType, rooms]) => {
@@ -87,8 +87,7 @@ export default function RoomsDetails(codeHotel) {
                 {roomType}
               </h2>
               <p className="text-center">
-                Para ver habitaciones en esta categoría, por favor elimina
-                selecciones del pre-carrito.
+                {languageData.modalHotel.toView}
               </p>
             </div>
           );
@@ -198,7 +197,7 @@ export default function RoomsDetails(codeHotel) {
 
                           <div className="flex flex-col gap-y-2">
                             <p className="m-s-b text-fs-12 text-black text-start m-0">
-                              Amenidades
+                              {languageData.modalTour.amenities}
                             </p>
 
                             <div className="flex flex-wrap gap-x-[8px]">
@@ -278,7 +277,7 @@ export default function RoomsDetails(codeHotel) {
 
                           {isSelected ? (
                             <div className="text-center text-fs-12 text-bl-100 m-b w-min">
-                              Habitación seleccionada
+                              {languageData. modalHotel.selectedRoom}
                             </div>
                           ) : (
                             <AddPreCartHotel room={room} />

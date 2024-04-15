@@ -56,7 +56,7 @@ export function SearchModalHotel() {
     <div>
       <div className="flex flex-col gap-y-4 pr-4 lg:pr-9 w-full">
         <h2 className="m-b text-black text-fs-16 text-start">
-          Seleccionar habitaciones
+          {languageData.modalHotel.roomSelect}
         </h2>
 
         <div className="flex flex-col lg:flex-row lg:justify-start lg:gap-x-2 gap-y-2">

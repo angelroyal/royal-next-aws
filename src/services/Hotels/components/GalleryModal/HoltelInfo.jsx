@@ -1,13 +1,18 @@
+"use client";
+
 import { TotalStars } from "@/components/General/Stars";
+import LanguageContext from "@/language/LanguageContext";
+import { useContext } from "react";
 
 export function HotelInfo(props) {
   const { hotel } = props;
+  const { languageData } = useContext(LanguageContext);
 
   return (
     <>
       {/* IS TOP */}
       {hotel.isTop && (
-        <div className="bg-[#fef0d2] w-[115px] rounded-full py-[4px] px-[8px] d-flex flex justify-between mb-2">
+        <div className="bg-[#fef0d2] w-[130px] rounded-full py-[4px] px-[8px] d-flex flex justify-between mb-2 gap-2">
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/sales/fire_department.svg`}
             alt="fire"
@@ -15,7 +20,7 @@ export function HotelInfo(props) {
             height={12}
           />
 
-          <span className="text-fs-12">Muy solicitado</span>
+          <span className="text-fs-12 text-nowrap ">{languageData.modalHotel.Highly}</span>
         </div>
       )}
 

@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 
 import RoomsHotelContext from "../../context/RoomsHotelContext";
-
+import LanguageContext from "@/language/LanguageContext";
 export default function AddPreCartHotel(props) {
+  const { languageData } = useContext(LanguageContext);
   const { room } = props;
   const { selectedRooms, setSelectedRooms } = useContext(RoomsHotelContext);
 
@@ -42,7 +43,7 @@ export default function AddPreCartHotel(props) {
         (selectedRoom) => selectedRoom.idRoom === room.idRoom
       )}
     >
-      Agregar
+      {languageData.containerModalHotel.buttonModal}
     </button>
   );
 }

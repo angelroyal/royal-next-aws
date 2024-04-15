@@ -55,7 +55,7 @@ const ToolTipRefundable = ({room}) => {
       }
     >
       <p className="m-0 text-start text-bl-100 m-m text-fs-10">
-        Políticas de cancelación
+        {languageData.containerModalHotel.policies}
       </p>
     </Tooltip>
   );

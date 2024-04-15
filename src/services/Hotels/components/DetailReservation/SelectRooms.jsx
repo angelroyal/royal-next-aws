@@ -38,7 +38,7 @@ export default function SelectRooms({close}) {
         <Container>
           <div className="w-full flex flex-col gap-y-4 lg:mb-[5rem]">
             <h3 className="flex items-center text-gry-100 m-s-b text-fs-14 gap-x-1">
-              Habitaciones elegidas{" "}
+              {languageData. modalHotel.chosenRooms}{" "}
 
               <p className={`${isComplete === true && 'text-grn-100'} m-0`}>({selectedRooms.length}/{requestBodyRooms.occupancies.length})</p>{" "}
               {isComplete === true && (
