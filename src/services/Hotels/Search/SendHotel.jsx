@@ -74,6 +74,7 @@ export default function SendHotel() {
     // setShowModal(true);
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
     const requestBody = {
+      codeNameHotel: selectedOption.codeName,
       destination: selectedOption.label,
       codeName: selectedOption.codeName,
       code: selectedOption.key,
@@ -85,10 +86,10 @@ export default function SendHotel() {
     const query = new URLSearchParams(requestBody).toString();
 
     // https://staywuw.com/en/mexico/cancun-mexico/{zone}-hotels/renaissance-cancun-resort-marina/
+    http://localhost:3000/en/mexico/mazatlan-international-airport-m?xico-park-royal-beach-mazatlan/mazatlan-international-airport-m?xico-hotels/park-royal-beach-mazatl
     
     if(selectedOption.type === "hotel"){
-      console.log(language);
-      window.open(`/${language}/mexico/${selectedOption.zone}-${selectedOption.codeName}/${selectedOption.zone}-hotels/${selectedOption.codeName}?${query}`, '_blank')
+      window.open(`/${language}/mexico/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`, '_blank')
     }else{
       router.push(`${language}/mexico/${selectedOption.codeName}/hotels?${query}`);
     }

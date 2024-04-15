@@ -7,18 +7,21 @@ import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
 import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 // import axios from "axios";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ searchParams }) {
+  console.log("esta entrando");
   try {
     // METHOD AXIOS
-    const response = await axiosWithInterceptor.get(`v1/hotels/${params.id}`);
+    const response = await axiosWithInterceptor.get(
+      `v1/hotels/${searchParams.codeNameHotel}/rooms`
+    );
 
     // METADATA DETAIL HOTEL
     const hotelMetaData = response.data;
@@ -46,10 +49,12 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function DetailPageHotel({ params }) {
+export default async function DetailPageHotel({ params, searchParams }) {
   try {
-    const response = await axiosWithInterceptor.get(`v1/hotels/${params.id}`);
-
+    // console.log(searchParams);
+    const response = await axiosWithInterceptor.get(
+      `v1/hotels/${searchParams.codeNameHotel}/rooms`
+    );
     const hotelData = response.data;
 
     return (
