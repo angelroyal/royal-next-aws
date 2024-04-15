@@ -275,6 +275,12 @@ export const es = {
     rooms: "habitaciones",
     roomTitle: "Habitación",
     selectRoom: "Elige tu primera habitación",
+    Highly:"Muy solicitado",
+    roomSelect: "Seleccionar habitaciones",
+    roomsFound:"habitaciones encontradas",
+    selectedRoom: "Habitación seleccionada",
+    chosenRooms:"Habitaciones elegidas",
+    toView:"Para ver habitaciones en esta categoría, por favor elimina selecciones del pre-carrito.",
     missingRooms: {
       text1: "!Falta",
       text2: "habitacion",
@@ -447,6 +453,8 @@ export const es = {
     bestTour: "Mejores tours",
     backToHotels: "Regresar Hoteles",
     textAlready: "Hotel ¡Listo!",
+    // LP
+    findOutSchedules: "Conoce más de este hotel:",
   },
 
   eatingPlan: {
@@ -556,6 +564,8 @@ export const es = {
     details: "Detalles",
     seeMoreDates: "ver mas fechas",
     schedules: "Horarios",
+    amenities: "Amenidades",
+    information: "Información",
     freeTour: "Gratis",
 
     OccupancyTours: {
