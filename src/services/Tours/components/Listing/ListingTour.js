@@ -21,7 +21,12 @@ import ImageListingTour from "../Banners/ImageListingTour";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { Container } from "@/config/Others/Container";
-import { BannerListingSkeleton, CardTourSkeleton, WeFoundTourSkeleton } from "../Skeleton/TourListingSkeleton";
+import {
+  BannerListingSkeleton,
+  CardTourSkeleton,
+  WeFoundTourSkeleton,
+} from "../Skeleton/TourListingSkeleton";
+import { NotFoundDestination } from "@/components/General/NotFoundDestination";
 export default function ListingTour() {
   const {
     tourData,
@@ -59,6 +64,7 @@ export default function ListingTour() {
       })
       .catch((error) => {
         console.error(error);
+        setTourData([])
       });
   }, []);
 
@@ -79,26 +85,26 @@ export default function ListingTour() {
   }, [tourData]);
 
   useEffect(() => {
-    // console.log('entro aqui cambio tour en filtros');
     if (changeTours > 0) {
       setCurrentTours(
         auxTourData &&
-        auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
+          auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
       );
       setCurrentPage(1);
     }
   }, [changeTours]);
 
   useEffect(() => {
-    // console.log('entro aqui cambio tour en paginacion');
     if (!isNaN(currentPage)) {
       setCurrentTours(
         auxTourData &&
-        auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
+          auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
       );
       // setCurrentPage(1);
     }
   }, [currentPage]);
+
+  // console.log(currentTours);
 
   // useEffect(() => {
   //   console.log('entro aqui');
@@ -147,11 +153,10 @@ export default function ListingTour() {
         <BannerListingSkeleton />
       )}
 
-      {tourData && <BannerDestinationTour destination={tourData.destination} />}
+      {tourData && tourData.length > 0 && <BannerDestinationTour destination={tourData.destination} />}
 
       <Container>
         <div className="flex flex-col xl:flex-row md:justify-between">
-
           <div className="w-full xl:w-[28%] mt-10">
             <SearchBoxMobile className="margin-bottom" />
 
@@ -178,8 +183,12 @@ export default function ListingTour() {
                 <OrderingTour />
               </div>
             )}
-            
-            {!auxTourData && (<WeFoundTourSkeleton />)}
+
+            {!currentTours && !tourData && <WeFoundTourSkeleton />}
+
+            {tourData && tourData.length == 0 && (
+              <NotFoundDestination />
+            )}
             {/* <div className="cont-found-ordering-tour-skeleton">
               {!auxTourData && (
                 <Skeleton
@@ -195,8 +204,8 @@ export default function ListingTour() {
                 />
               )}
             </div> */}
-            
-            {!tourData && <CardTourSkeleton/>}
+
+            {!tourData && <CardTourSkeleton />}
 
             {currentTours && (
               <>
@@ -211,7 +220,7 @@ export default function ListingTour() {
                       {getKeyImage(
                         index + 1,
                         auxTourData.activities.length
-                      ) && <ImageListingTour />}                      
+                      ) && <ImageListingTour />}
                     </div>
                   ))}
               </>
