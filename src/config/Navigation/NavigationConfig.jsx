@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const NavigationURL = ["hotel", "tour"];
+export const NavigationURL = ["hotels", "tour"];
 
 export function NavigationConfig() {
   const [activeRouter, setActiveRouter] = useState(null);
@@ -10,14 +10,18 @@ export function NavigationConfig() {
 
     let actualRouter = null;
     let pathRouter = path.split("/");
+    // console.log(pathRouter);
     NavigationURL.map((url, index) => {
       if (pathRouter.includes(url)) {
+        // console.log("entra");
         actualRouter = pathRouter.filter((value) => value === url);
       }
     });
 
+    // console.log(actualRouter);
+
     if (path === "/") {
-      setActiveRouter("hotel");
+      setActiveRouter("hotels");
     }
 
     if (actualRouter != null) {
