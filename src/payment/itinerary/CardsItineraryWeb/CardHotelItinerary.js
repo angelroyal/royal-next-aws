@@ -395,7 +395,7 @@ export default function CardHotelItinerary(props) {
             )}
             {/* END REMOVE CARD */}
 
-            {itemHotel.available === false && (
+            {itemHotel.available === true && (
               <>
                 <UnavailableCardHotel destination={itemHotel} />
                 <div className="overlay" />

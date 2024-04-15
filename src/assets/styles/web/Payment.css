@@ -1898,10 +1898,11 @@ h5 {
   margin: 0 6px;
   font-family: "Montserrat Medium";
   font-size: 0.938rem;
+  padding: 4px 8px;
 }
 
 .btn-update-hotel:hover {
-  background-color: #f3ac78;
+  background-color: #d16719;
 }
 
 .travel-image-payment-confirmed {
