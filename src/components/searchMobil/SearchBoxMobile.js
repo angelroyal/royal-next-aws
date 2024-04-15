@@ -17,6 +17,7 @@ export default function SearchBoxMobile() {
 
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
+  // console.log(routerActual);
 
   useEffect(() => {
     setActiveTab(routerActual);
@@ -41,11 +42,11 @@ export default function SearchBoxMobile() {
       <Tab.List className="flex gap-x-2 text-fs-12 m-s-b">
         <Tab
           className="focus:outline-none focus:ring-transparent"
-          onClick={() => setActiveTab("hotel")}
+          onClick={() => setActiveTab("hotels")}
           style={{ padding: "0" }}
         >
           <span
-            className={`${activeTab === "hotel"
+            className={`${activeTab === "hotels"
               ? "bg-bl-100 text-white"
               : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
@@ -74,7 +75,7 @@ export default function SearchBoxMobile() {
 
         <Tab.Panels>
           {/* <Tab.Panel> */}
-          {activeTab === "hotel" && <MobilSearchHotel />}
+          {activeTab === "hotels" && <MobilSearchHotel />}
           {/* </Tab.Panel> */}
 
           {/* <Tab.Panel> */}
