@@ -48,12 +48,30 @@ export default function Home() {
     ],
   };
 
+  const jsonWeb = {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    url: "http://staywuw.com/",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "http://staywuw.com/",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <>
       <section>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </section>
+
+      <section>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonWeb) }}
         />
       </section>
       <LanguageProvider>
