@@ -913,7 +913,7 @@
   }
 
   .btn-update-hotel {
-    font-size: 10px;
+    font-size: 10px !important;
   }
 
   .buttons-unavailable-hotel {

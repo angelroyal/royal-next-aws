@@ -39,7 +39,7 @@ export default function CookieBanner() {
       return (
         <div className={!cookieConsent ? "w-full bg-white fixed bottom-0 left-0 border-bl-100 border-t z-[400]" : "hidden"}>
           <Container>
-            <div className='flex items-center py-[1rem]'>
+            <div className='flex items-center py-[1rem] max-md:flex-col max-md:gap-4'>
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}general/cookies/cookie-royal.png`}
                 alt="cookie Royal Vacations Mexico"
