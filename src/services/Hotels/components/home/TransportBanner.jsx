@@ -1,30 +1,6 @@
-import Head from "next/head";
-
 export function TransportBanner() {
-  const jsonData = {
-    "@context": "http://schema.org",
-    "@type": "Service",
-    serviceType: "Transporte",
-    provider: {
-      "@type": "Organization",
-      name: "Royal Vacation Transport",
-      image: `${process.env.NEXT_PUBLIC_URL}banners/vehicle/tiggo-7-pro.webp`,
-      url: "http://www.royalvacationtransport.com",
-    },
-    areaServed: {
-      "@type": "Country",
-      name: "España",
-    },
-    description:
-      "Reserva ahora y disfruta de tarifas competitivas, seguridad y puntualidad en cada recorrido. Tu comodidad es nuestra prioridad.",
-  };
-
   return (
-    // h-[408px]
-    <div className="flex bg-or-100 flex-col lg:flex-row h-max my-16 md:mt-[131px] md:mb-32 shadow-3xl">
-      <Head>
-        <script type="application/ld+json">{JSON.stringify(jsonData)}</script>
-      </Head>
+    <section className="flex bg-white flex-col lg:flex-row h-max my-16 md:mt-[131px] md:mb-32 shadow-3xl">
       <div className="flex justify-center px-8 py-14 md:px-16 w-full lg:pr-0 items-start md:py-[88px] flex-col gap-y-2.5 lg:w-4/5 gap-y-5">
         <h3 className="m-b text-fs-32">Transporte a tu disposición</h3>
 
@@ -56,6 +32,6 @@ export function TransportBanner() {
           height="100%"
         />
       </div>
-    </div>
+    </section>
   );
 }
