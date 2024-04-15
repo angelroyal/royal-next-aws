@@ -1,16 +1,18 @@
 "use client"
 
-import { useEffect, useState } from "react";
-
+import { useContext, useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 import { SelectCurrency } from "./SelectCurrency";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import LanguageContext from "@/language/LanguageContext";
 import { LanguageSelector } from "@/language/LanguageSelector";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
+
 export function HamburgerMenu({ open, setMobileMenuOpen }) {
 
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
 
+  const { languageData } = useContext(LanguageContext);
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
 
@@ -53,15 +55,14 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                 {" "}
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
-                  alt="done green"
+                  alt="hospedaje-menu"
                   className="pr-2"
                 />
                 <span
-                  className={`${
-                    currentActiveIcon === "hotel" && "text-or-100"
-                  }`}
+                  className={`${currentActiveIcon === "hotel" && "text-or-100"
+                    }`}
                 >
-                  Hospedaje
+                  {languageData.SearchBox.tabHotel.lodgement}
                 </span>
               </a>
 
@@ -71,7 +72,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
               >
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
-                  alt="done green"
+                  alt="tour-menu"
                   className="pr-2"
                 />
                 <span

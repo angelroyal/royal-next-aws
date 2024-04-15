@@ -1,6 +1,10 @@
+"use client";
 import { Container } from "@/config/Others/Container";
-
+import LanguageContext from "@/language/LanguageContext";
+import { useContext } from "react";
 export default function HeaderBlue() {
+
+  const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="relative w-full flex items-center ">
@@ -20,7 +24,7 @@ export default function HeaderBlue() {
               height={18}
             />
             <span className="text-fs-12 ms:text-fs-14 text-white">
-              Contactanos
+              {languageData.navBar.contact}
             </span>
             <span className="m-b text-white">800 953 0342</span>
           </a>

@@ -16,7 +16,8 @@ export function NotFoundDestination() {
       <div>
         <div className="m-b text-fs-22 text-black">¡Ups!</div>
         <div className="m-s text-fs-18 text-[#1A202C] mt-2 mb-2">
-          No hemos encontrado algo relacionado a tu búsqueda.
+          {languageData.filtersTour.noAvailability}
+          {/* No hemos encontrado algo relacionado a tu búsqueda. */}
         </div>
       </div>
     </div>
