@@ -75,6 +75,7 @@ export default function SendHotel() {
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
     const requestBody = {
       destination: selectedOption.label,
+      codeName: selectedOption.codeName,
       code: selectedOption.key,
       type: selectedOption.type,
       "check-in": validFirstDay,
@@ -82,10 +83,12 @@ export default function SendHotel() {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
+
+    // https://staywuw.com/en/mexico/cancun-mexico/{zone}-hotels/renaissance-cancun-resort-marina/
     
     if(selectedOption.type === "hotel"){
       console.log(language);
-      window.open(`/${language}/mexico/${selectedOption.codeName}/hotels/${selectedOption.codeName}?${query}`, '_blank')
+      window.open(`/${language}/mexico/${selectedOption.zone}-${selectedOption.codeName}/${selectedOption.zone}-hotels/${selectedOption.codeName}?${query}`, '_blank')
     }else{
       router.push(`${language}/mexico/${selectedOption.codeName}/hotels?${query}`);
     }

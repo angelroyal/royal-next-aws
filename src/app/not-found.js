@@ -7,6 +7,7 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 
 export default function Home() {
+    
   return (
     <>
       <LanguageProvider>

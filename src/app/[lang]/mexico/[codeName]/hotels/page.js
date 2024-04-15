@@ -8,6 +8,7 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import Hotels from "@/services/Hotels/components/Listing/Hotels";
 
+// region LISTING HOTEL
 export async function generateMetadata({ searchParams }) {
   const destination = searchParams.destination || 'México';
   const checkIn = searchParams.checkIn;
