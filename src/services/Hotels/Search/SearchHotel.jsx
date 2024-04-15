@@ -115,7 +115,7 @@ function SearchHotel(props) {
       </p>
       <Autocomplete
         // open={true}
-        className="text-white m-m text-fs-12 scroll-page-blue absolute top-[11px] w-[90%]"
+        className="text-white m-m text-fs-12 scroll-page-blue absolute top-[11px] !w-[90%]"
         sx={{ width: 300 }}
         getOptionLabel={(option) => option.label}
         groupBy={(option) => option.category} // Agrupa por categoríaF

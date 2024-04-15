@@ -100,7 +100,7 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
       <Autocomplete
         // open
         // id="autocomplete-tour"
-        className="text-white m-m text-fs-12 scroll-page-blue absolute top-[11px] w-[90%]"
+        className="text-white m-m text-fs-12 scroll-page-blue absolute top-[11px] !w-[90%]"
         sx={{ width: 300 }}
         getOptionLabel={(option) => option.label}
         filterOptions={(x) => x}

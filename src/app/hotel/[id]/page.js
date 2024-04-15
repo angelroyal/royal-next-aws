@@ -15,10 +15,12 @@ import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/Hote
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 // import axios from "axios";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ searchParams }) {
   try {
     // METHOD AXIOS
-    const response = await axiosWithInterceptor.get(`v1/hotels/${params.id}`);
+    const response = await axiosWithInterceptor.get(
+      `v1/hotels/${searchParams.codeNameHotel}/rooms`
+    );
 
     // METADATA DETAIL HOTEL
     const hotelMetaData = response.data;
@@ -46,10 +48,12 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function DetailPageHotel({ params }) {
+export default async function DetailPageHotel({ params, searchParams }) {
   try {
-    const response = await axiosWithInterceptor.get(`v1/hotels/${params.id}`);
-
+    // console.log(searchParams);
+    const response = await axiosWithInterceptor.get(
+      `v1/hotels/${searchParams.codeNameHotel}/rooms`
+    );
     const hotelData = response.data;
 
     return (

@@ -18,6 +18,7 @@ import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import { HotelCardSkeleton } from "../Skeleton/HotelListingSkeleton";
+import { NotFoundDestination } from "@/components/General/NotFoundDestination";
 
 export default function ListingHotelW(props) {
   const { token } = useToken();
@@ -47,6 +48,7 @@ export default function ListingHotelW(props) {
       const requestBody = {
         code: searchParams.get("code"),
         type: searchParams.get("type"),
+        codeName: searchParams.get("codeName"),
         "check-in": searchParams.get("check-in"),
         "check-out": searchParams.get("check-out"),
         occupancies: JSON.parse(
@@ -63,15 +65,15 @@ export default function ListingHotelW(props) {
       }
     }
   }, [/* window.location.search, */ token]);
-
+  
   useEffect(() => {
     setCurrentPage(1);
   }, [totalFilteredHotels]);
-
+  
   useEffect(() => {
     scrollToTop();
   }, [currentPage]);
-
+  
   return (
     <Container>
       {/* <BannerListingHotelTop /> */}
@@ -96,9 +98,10 @@ export default function ListingHotelW(props) {
                   {totalFilteredHotels > 0 && (
                     <AnimatedNumber targetNumber={totalFilteredHotels} />
                   )}{" "}
-                  {totalFilteredHotels > 1
+                  {languageData.filtersHotel.resultsHotel}
+                  {/* {totalFilteredHotels > 1
                     ? languageData.filtersHotel.resultFound
-                    : languageData.filtersHotel.resultsHotel}{" "}
+                    : languageData.filtersHotel.resultsHotel}{" "} */}
                 </h2>
 
                 {/* ORDER */}
@@ -141,22 +144,7 @@ export default function ListingHotelW(props) {
           )}
 
           {combinedHotelData && combinedHotelData.length === 0 && (
-            <div className="flex space-between items-center justify-around mt-4 sticky top-[9.25rem]">
-              <div>
-                <img
-                  // src={IconNoAvailability}
-                  alt={languageData.allAlt.altBannerNavigation}
-                  src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/NoAvailabilityHotels.svg`}
-                />
-              </div>
-
-              <div>
-                <div className="m-b text-fs-22 text-black">¡Ups!</div>
-                <div className="m-s text-fs-18 text-[#1A202C] mt-2 mb-2">
-                  No hemos encontrado algo relacionado a tu búsqueda.
-                </div>
-              </div>
-            </div>
+            <NotFoundDestination />
           )}
         </div>
       </div>

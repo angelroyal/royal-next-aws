@@ -1535,10 +1535,18 @@
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .grey-container {
+    width: 33%;
+  }
+}
+
+
+
 @media screen and (max-width: 991px) {
   .grey-container {
     /* width: 45%; */
-    width: 37%;
+    width: 36%;
   }
 
   .father-info-itinerary {

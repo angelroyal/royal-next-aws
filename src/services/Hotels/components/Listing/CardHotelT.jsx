@@ -44,6 +44,7 @@ export default function CardHotelT(props) {
     const occupanciesString = JSON.stringify(queryParams.occupancies);
 
     const queryParamsString = new URLSearchParams({
+      codeNameHotel: hotel.codeName,
       ...queryParams,
       occupancies: encodeURIComponent(occupanciesString),
     }).toString();

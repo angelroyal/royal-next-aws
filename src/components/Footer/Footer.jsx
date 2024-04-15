@@ -30,10 +30,10 @@ export default function Footer() {
 
       <footer className="bg-bl-100 flex flex-col text-white max-w-full pt-[21px] pb-[1rem]">
         {/* LOGO AND SOCIAL ICONS */}
-        <div className="flex max-md:mx-2 justify-center justify-items-center max-md:grid grid-cols-1 max-md:text-center ">
+        <div className="flex max-xl:mx-2 justify-center justify-items-center max-xl:grid grid-cols-1 max-xl:text-center">
           <div className="basis-1/2 justify-center">
-            <ul>
-              <li className=" grid place-items-center">
+            {/* <ul> */}
+              <div className=" grid place-items-center">
                 {/* LOGO-W */}
                 <img
                   className="mb-[1rem]"
@@ -74,17 +74,17 @@ export default function Footer() {
                     />
                   ))}
                 </div>
-              </li>
-            </ul>
+              </div>
+            {/* </ul> */}
           </div>
 
           {/* CONTACT */}
-          <div className="basis-1/2 leading-10 ">
+          <div className="basis-1/2 leading-10 xl:mt-0 mt-2">
             <div className="m-b text-fs-16 mb-[1rem]">
               {languageData.footer.contact.titleContact}
             </div>
-            <div className="max-md:grid place-items-center lg:pr-16">
-              <div className="flex gap-x-6">
+            <div className="max-xl:grid place-items-center xl:pr-16">
+              <div className="flex gap-x-6 w-max">
                 <a
                   className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5"
                   href="tel:8009530342"
@@ -102,7 +102,7 @@ export default function Footer() {
                   </span>
                 </a>
                 <a
-                  className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5"
+                  className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5 w-max"
                   href="https://api.whatsapp.com/send?phone=529981342286&text=¡Hola!%20Necesito%20ayuda%20para%20planificar%20mi%20próximo%20viaje%20a%20México.%20¿Podrían%20orientarme%20sobre%20los%20mejores%20destinos%20y%20actividades%20que%20ofrecen?%20¡Espero%20su%20pronta%20respuesta!"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -119,7 +119,7 @@ export default function Footer() {
                 </a>
               </div>
               <a
-                className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5"
+                className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5 w-max"
                 target="_blank"
                 href="mailto:info@royalvacationsmexico.com"
               >
@@ -134,7 +134,7 @@ export default function Footer() {
                 </span>
               </a>
               <a
-                className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5 items-start"
+                className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5 items-start w-full"
                 href="https://www.google.com/maps/place/Royal+Vacations+M%C3%A9xico/@21.1627042,-86.8270667,17z/data=!4m10!1m2!2m1!1sRoyal+Vacations+M%C3%A9xico!3m6!1s0x8f4c2df6381c1c45:0x2a631cb9dd8567ff!8m2!3d21.1652997!4d-86.8250255!15sChdSb3lhbCBWYWNhdGlvbnMgTcOpeGljb5IBDXRyYXZlbF9hZ2VuY3ngAQA!16s%2Fg%2F11rv1nkff4?entry=ttu"
               >
                 <img
@@ -143,54 +143,54 @@ export default function Footer() {
                   width="11px"
                   height="14px"
                 />
-                <span className="hover:!text-or-100 no-underline text-white leading-5">
+                <p className="hover:!text-or-100 no-underline text-white leading-5 w-full text-wrap m-0">
                   {languageData.footer.contact.location}
-                </span>
+                </p>
               </a>
             </div>
           </div>
 
           {/* ABOUT */}
-          <div className="basis-1/4 leading-8">
+          <div className="basis-1/4 leading-8 xl:mt-0 mt-2">
             <div className="m-b text-fs-16 mb-[1rem]">
               {languageData.footer.about.titleAbout}
             </div>
-            <div className="flex flex-col m-m text-fs-12 cursor-pointer">
+            <div className="flex flex-col m-m text-fs-12 items-center xl:items-start">
 
               <Link href={`/${language}/history`} className="hover:!text-or-100 no-underline text-white">
                 {languageData.footer.about.titleHistory}
               </Link>
 
-              <Link href="/tyc" className="hover:!text-or-100 no-underline text-white">
+              <Link href="/tyc" className="hover:!text-or-100 no-underline text-white w-max cursor-pointer">
                 {languageData.footer.about.titleConditions}
               </Link>
 
-              <Link href="/privacy" className="hover:!text-or-100 no-underline text-white">
+              <Link href="/privacy" className="hover:!text-or-100 no-underline text-white w-max cursor-pointer">
                 {languageData.footer.about.titlePrivacy}
               </Link>
 
-              <Link href="/faqs" className="hover:!text-or-100 no-underline text-white">
+              <Link href="/faqs" className="hover:!text-or-100 no-underline text-white w-max cursor-pointer">
                 {languageData.footer.about.titleQuestions}
               </Link>
             </div>
           </div>
 
           {/* HOTELS-IN-MEXICO */}
-          <div className="basis-1/4 leading-8 cursor-pointer ">
+          <div className="basis-1/4 leading-8 xl:mt-0 mt-2">
             <div className="m-b text-fs-16 mb-[1rem]">
               {languageData.footer.hotelsMexico.titleHotel}
             </div>
-            <div className="m-m text-fs-12 flex flex-col">
-              <a className="hover:!text-or-100 no-underline text-white">
+            <div className="m-m text-fs-12 flex flex-col xl:items-start items-center">
+              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
                 {languageData.footer.hotelsMexico.hotelAcapulco}
               </a>
-              <a className="hover:!text-or-100 no-underline text-white">
+              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
                 {languageData.footer.hotelsMexico.hotelCancun}
               </a>
-              <a className="hover:!text-or-100 no-underline text-white">
+              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
                 {languageData.footer.hotelsMexico.hotelMazatlan}
               </a>
-              <a className="hover:!text-or-100 no-underline text-white">
+              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
                 {languageData.footer.hotelsMexico.hotelPuertoVallarta}
               </a>
             </div>

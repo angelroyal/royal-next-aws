@@ -1,11 +1,14 @@
-import { API_POST_AVAILABILITY } from "./apiRoutesHotel";
+// import { API_POST_AVAILABILITY } from "./apiRoutesHotel";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 export const fetchPostHotels = async (requestBody) => {
+  console.log("requestBody",requestBody);
+  const { codeName, ...bodyWithoutCode } = requestBody;
   try {
     const response = await axiosWithInterceptor.post(
-      API_POST_AVAILABILITY,
-      requestBody
+      `v1/destinations/${requestBody.codeName}/hotels/availability`,
+      // 'v1/hotels/availability',
+      bodyWithoutCode
     );
     return response.data;
   } catch (error) {

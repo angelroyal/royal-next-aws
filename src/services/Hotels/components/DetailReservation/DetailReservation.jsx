@@ -59,6 +59,7 @@ export default function DetailReservation() {
       actualDiffDate = calculateNights(
         getDateLocalSt.formattedCheckIn,
         getDateLocalSt.formattedCheckOut
+        // pendite Fechas sin local Storage
       );
     }
 
