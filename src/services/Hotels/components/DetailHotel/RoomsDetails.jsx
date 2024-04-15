@@ -70,7 +70,7 @@ export default function RoomsDetails(codeHotel) {
     : {};
 
   if (!roomsData) {
-    return <RoomsSelectedSkeleton />;
+    return <div>Holaa</div>;
   }
 
   return (
