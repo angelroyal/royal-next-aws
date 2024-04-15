@@ -48,7 +48,7 @@ export default function NavigationDesktop() {
                 className="-m-1.5 p-1.5"
               >
                 <img
-                  src={`${process.env.NEXT_PUBLIC_URL}royal/logo.svg`}
+                  src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
                   alt="Royal Vacations Mexico"
                   width={200}
                   height={100}

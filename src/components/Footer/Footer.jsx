@@ -37,7 +37,7 @@ export default function Footer() {
                 {/* LOGO-W */}
                 <img
                   className="mb-[1rem]"
-                  src={`${process.env.NEXT_PUBLIC_URL}royal/logo-w.svg`}
+                  src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo-blank.svg`}
                   alt="logo-w"
                   width="239px"
                   height="51px"
