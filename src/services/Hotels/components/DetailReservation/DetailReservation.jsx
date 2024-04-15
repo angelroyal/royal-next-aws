@@ -10,6 +10,7 @@ import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 import { LimitPriceAlert } from "../AlertsHotel/HotelInformationAlerts";
 import { calculateNights } from "../../utils/calculateNights";
+import moment from "moment";
 
 export default function DetailReservation() {
   const limitPrice = 95000;
@@ -53,14 +54,12 @@ export default function DetailReservation() {
         requestBodyRooms["check-out"]
       );
     } else {
-      // console.log("entra 2");
-      const getDateLocalSt = JSON.parse(localStorage.getItem("selectedDates"));
-      // console.log(getDateLocalSt);
-      actualDiffDate = calculateNights(
-        getDateLocalSt.formattedCheckIn,
-        getDateLocalSt.formattedCheckOut
-        // pendite Fechas sin local Storage
-      );
+      const today = moment();
+      let initDate = moment(today).add(1, "month");
+      let endDate = moment(today).add(1, "month").add(2, "day");
+      const checkIn = initDate.format("YYYY-MM-DD");
+      const checkOut = endDate.format("YYYY-MM-DD");
+      actualDiffDate = calculateNights(checkIn, checkOut);
     }
 
     setDiffDate(actualDiffDate);
@@ -179,9 +178,7 @@ export default function DetailReservation() {
                           height={30}
                         />{" "}
                         {selectedRooms.length > 0 && (
-                          <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${
-                            selectedRooms.length
-                          }`}</span>
+                          <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${selectedRooms.length}`}</span>
                         )}{" "}
                       </div>
                     </div>
