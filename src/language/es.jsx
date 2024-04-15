@@ -661,6 +661,15 @@ export const es = {
     textAlready: "Tour ¡Listo!",
   },
 
+  /*********************************************************/
+  ////////////////////////  TRANSPORT //////////////////////////////
+  /*********************************************************/
+  bannerTransportHome: {
+   titleDisposal :"Transporte a tu disposición",
+   textReserv:"Reserva ahora y disfruta de tarifas competitivas, seguridad y puntualidad en cada recorrido. Tu comodidad es nuestra prioridad. Únete a nosotros y haz que tus viajes sean memorables desde el primer momento.",
+   ChooseDates: "Elegir fechas",
+  },
+
   /************************************************************/
   //////////////////////// 𝓜𝓞𝓥𝓘𝓝𝓖 MOVING 𝓜𝓞𝓥𝓘𝓝𝓖 //////////////////////////////
   /************************************************************/
@@ -1500,10 +1509,10 @@ export const es = {
     hotel: {
       title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!"
     },
-    tour:{
-      tourDetails:{
-        title:"Ups ¡Ocurrio un problema al agregar al carrito de compras!",
-        message:"Por favor, inténtalo más tarde."
+    tour: {
+      tourDetails: {
+        title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!",
+        message: "Por favor, inténtalo más tarde."
       }
     }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 // import Cart from "@/hooks/Cart";
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -10,10 +10,12 @@ import { LanguageSelector } from "@/language/LanguageSelector";
 import CartOpen from "../Cart/open/CartOpen";
 import { SelectCurrency } from "./SelectCurrency";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function NavigationDesktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
+  const { languageData } = useContext(LanguageContext);
 
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
@@ -64,7 +66,7 @@ export default function NavigationDesktop() {
                     alt="done green"
                     className="pr-2"
                   />
-                  <span className={`${currentActiveIcon === "hotel" && 'text-or-100'}`}>Hospedaje</span>
+                  <span className={`${currentActiveIcon === "hotel" && 'text-or-100'}`}>{languageData.SearchBox.tabHotel.lodgement}</span>
                 </a>
 
                 <a

@@ -3,7 +3,7 @@ import flatpickr from "flatpickr";
 import React, { useEffect, useRef, useContext } from "react";
 import LanguageContext from "../language/LanguageContext";
 
-export default function CalendarDay({ onDateChange, listing=false }) {
+export default function CalendarDay({ onDateChange, listing = false }) {
   const calendarRef = useRef(null);
 
   useEffect(() => {
@@ -62,9 +62,9 @@ export default function CalendarDay({ onDateChange, listing=false }) {
         />
         <div className="flex relative w-full">
           <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
-            Fecha
+            {languageData.SearchBox.tabHotel.date}
           </span>
-          
+
           <input
             className="mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer"
             type="text"

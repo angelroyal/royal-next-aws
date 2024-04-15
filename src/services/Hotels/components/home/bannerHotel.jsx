@@ -119,7 +119,7 @@ export function BannerHomeKnowMore() {
         </div>
 
         <a
-          className="bg-or-100 w-[164px] cursor-pointer content-center h-[44px] text-center text-nowrap rounded-full text-white m-m text-fs-12 mb-[50px] hover:bg-or-110 flex justify-center items-center"
+          className="bg-or-100 w-[164px] cursor-pointer content-center h-[44px] text-center text-nowrap rounded-full text-white m-m text-fs-12 mb-[50px] hover:bg-or-110 flex justify-center items-center no-underline"
           href="https://api.whatsapp.com/send?phone=529981342286&text=¡Hola!%20Necesito%20ayuda%20para%20planificar%20mi%20próximo%20viaje%20a%20México.%20¿Podrían%20orientarme%20sobre%20los%20mejores%20destinos%20y%20actividades%20que%20ofrecen?%20¡Espero%20su%20pronta%20respuesta!"
           target="_blank"
           rel="noopener noreferrer"

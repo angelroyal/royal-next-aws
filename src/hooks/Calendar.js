@@ -69,9 +69,8 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
   const { languageData } = useContext(LanguageContext);
   return (
     <div
-      className={`${
-        listing === false && "lg:w-[290px]"
-      } border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full `}
+      className={`${listing === false && "lg:w-[290px]"
+        } border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full `}
     >
       <div className="flex items-center gap-2 w-full">
         {listing === false && (
@@ -83,17 +82,16 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
         )}
         <div className="flex relative w-full">
           <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">
-            Fecha
+            {languageData.SearchBox.tabHotel.date}
           </span>
 
           <input
-            className={`${
-              hotelDetails && "bg-gry-30"
-            } mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
+            className={`${hotelDetails && "bg-gry-30"
+              } mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
             type="text"
             ref={calendarRef}
             placeholder={languageData.SearchBox.tabHotel.dateText}
-            // id="check-in"
+          // id="check-in"
           />
         </div>
       </div>
