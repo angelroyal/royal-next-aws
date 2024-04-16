@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useContext, useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
@@ -9,10 +9,9 @@ import { LanguageSelector } from "@/language/LanguageSelector";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export function HamburgerMenu({ open, setMobileMenuOpen }) {
-
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
 
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
 
@@ -59,15 +58,16 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   className="pr-2"
                 />
                 <span
-                  className={`${currentActiveIcon === "hotel" && "text-or-100"
-                    }`}
+                  className={`${
+                    currentActiveIcon === "hotel" && "text-or-100"
+                  }`}
                 >
                   {languageData.SearchBox.tabHotel.lodgement}
                 </span>
               </a>
 
               <a
-                href={`/tour`}
+                href={`${language}/tour`}
                 className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
               >
                 <img

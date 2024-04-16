@@ -33,6 +33,7 @@ export default function CartT(props) {
       cartData.cartItems &&
       cartData.cartItems.activities &&
       cartData.cartItems.activities.length > 0 ||
+      cartData &&
       cartData.cartItems.hotels &&
       cartData.cartItems.hotels.length > 0 
     ) {

@@ -16,7 +16,6 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 // import axios from "axios";
 
 export async function generateMetadata({ searchParams }) {
-  console.log("esta entrando");
   try {
     // METHOD AXIOS
     const response = await axiosWithInterceptor.get(

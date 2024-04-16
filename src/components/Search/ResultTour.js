@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import moment from "moment";
 import { useRouter } from "next/navigation";
@@ -10,13 +10,11 @@ import LanguageContext from "../../language/LanguageContext";
 import PersonsActivities from "../../utils/tour/PersonsActivities";
 
 export default function ResultTour() {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const [roomData, setRoomData] = useState([]);
-  // const [showModal, setShowModal] = useState(false);
-  // console.log(selectedOption);
   const router = useRouter();
+  const [roomData, setRoomData] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const { languageData, language } = useContext(LanguageContext);
 
   const handleDateChange = (selectedDate) => {
     setSelectedDate(selectedDate);
@@ -49,6 +47,7 @@ export default function ResultTour() {
     // setShowModal(true);
 
     const requestBody = {
+      codeNameTour: selectedOption.codeName,
       destination: selectedOption.label,
       code: selectedOption.key,
       type: selectedOption.type,
@@ -56,46 +55,56 @@ export default function ResultTour() {
       adults: roomData[0].adults,
       children: roomData[0].children,
     };
-    
-    
+
     const query = new URLSearchParams(requestBody).toString();
 
     // if(selectedOption.type === "destination"){
-      
+
     //   window.open(`/tour/${selectedOption.codeName}?${query}`, '_blank')
     // }else{
-      router.push(`/tour/results?${query}`);
+    // router.push(`/tour/results?${query}`);
     // }
-    
+
+    if (selectedOption.type === "activity") {
+      window.open(
+        `/${language}/mx/${selectedOption.destination}-${selectedOption.country}/tours/${selectedOption.codeName}?${query}`,
+        "_blank"
+      );
+    } else {
+      router.push(
+        `${language}/mx/${selectedOption.codeName}-${selectedOption.country}/tours?${query}`
+      );
+    }
   };
-  const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6 shadow-3xl">
-        <SearchTour onSelectTour={setSelectedOption}/>
-        <CalendarDay onDateChange={handleDateChange} />
-        <PersonsActivities OnApply={setRoomData} />
+      <SearchTour onSelectTour={setSelectedOption} />
+      <CalendarDay onDateChange={handleDateChange} />
+      <PersonsActivities OnApply={setRoomData} />
 
-        <>
-          <button
-            className={`w-full lg:w-auto rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white py-[20px] px-4 ${
-              !selectedOption || !selectedDate ? "bg-or-50" : "bg-or-100 hover:!bg-or-110"
-            }`}
-            variant="contained"
-            color="primary"
-            size="large"
-            onClick={sendAutocomplete}
-            disabled={!selectedOption || !selectedDate}
-            sx={{ mt: 2 }}
-          >
-            {languageData.SearchBox.tabTour.button}
-            <img
+      <>
+        <button
+          className={`w-full lg:w-auto rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white py-[20px] px-4 ${
+            !selectedOption || !selectedDate
+              ? "bg-or-50"
+              : "bg-or-100 hover:!bg-or-110"
+          }`}
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={sendAutocomplete}
+          disabled={!selectedOption || !selectedDate}
+          sx={{ mt: 2 }}
+        >
+          {languageData.SearchBox.tabTour.button}
+          <img
             className="h-4 w-4"
             src={`${process.env.NEXT_PUBLIC_URL}icons/search/search-w.svg`}
             alt="search icon royal vacation"
           />
-          </button>
-        </>
-      </div>
+        </button>
+      </>
+    </div>
   );
 }

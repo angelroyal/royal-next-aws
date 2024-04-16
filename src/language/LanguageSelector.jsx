@@ -25,12 +25,21 @@ export function LanguageSelector() {
     const newLanguage = event.target.value;
     setLanguage(newLanguage);
     localStorage.setItem('language', newLanguage);
-
+  
     const currentPath = window.location.pathname;
     const currentSearch = window.location.search; // Extrae los parámetros de búsqueda actuales
-    const newPath = `/${newLanguage}${currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/')}${currentSearch}`;
-    window.location.href = newPath; // Cambiar la URL y recargar la página
+    
+    if (currentPath === '/') {
+      // Si estamos en la raíz, no cambiar la URL.
+      window.location.reload(); // Solo recargar la página para aplicar el cambio de idioma
+    } else {
+      // Si no estamos en la raíz, proceder con el cambio de idioma en la URL
+      const newPath = `/${newLanguage}${currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/')}${currentSearch}`;
+      window.location.href = newPath; // Cambiar la URL y recargar la página
+    }
   };
+  
+  
 
   return (
     <select onChange={handleChange} value={actualLanguage}>

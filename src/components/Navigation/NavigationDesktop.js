@@ -15,7 +15,7 @@ import LanguageContext from "@/language/LanguageContext";
 export default function NavigationDesktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
@@ -66,11 +66,16 @@ export default function NavigationDesktop() {
                     alt="done green"
                     className="pr-2"
                   />
-                  <span className={`${currentActiveIcon === "hotels" && 'text-or-100'}`}>{languageData.SearchBox.tabHotel.lodgement}</span>
+                  <span
+                    className={`${
+                      currentActiveIcon === "hotels" && "text-or-100"
+                    }`}
+                  >
+                    {languageData.SearchBox.tabHotel.lodgement}
+                  </span>
                 </a>
-
                 <a
-                  href={`/tour`}
+                  href={`${language}/tour`}
                   className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
                   <img
@@ -78,7 +83,13 @@ export default function NavigationDesktop() {
                     alt="done green"
                     className="pr-2"
                   />
-                  <span className={`${currentActiveIcon === "tour" && 'text-or-100'}`}>Tours</span>
+                  <span
+                    className={`${
+                      currentActiveIcon === "tour" && "text-or-100"
+                    }`}
+                  >
+                    Tours
+                  </span>
                 </a>
               </div>
             </div>

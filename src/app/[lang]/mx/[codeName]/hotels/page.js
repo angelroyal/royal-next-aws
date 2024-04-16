@@ -15,9 +15,9 @@ export async function generateMetadata({ searchParams }) {
   const checkOut = searchParams.checkOut;
 
   return {
-    title: `Descubre ${destination}: Encuentra los Mejores Tours con ${process.env.NEXT_NAME_COMPANY}.com`,
-    description: `Encuentra los mejores hoteles en ${destination} del ${checkIn} al ${checkOut}. Explora con ${process.env.NEXT_NAME_COMPANY}`,
-    keywords: `hoteles en ${destination}, mejores hoteles ${destination}, reservación de hoteles ${destination}, ofertas de hoteles en ${destination}, hoteles todo incluido ${destination}`,
+    title: `Discover ${destination}: Find the Best hotels with ${process.env.NEXT_NAME_COMPANY}.com`,
+    description: `Find the best hotels in ${destination} from ${checkIn} to ${checkOut}. Explore with ${process.env.NEXT_NAME_COMPANY}`,
+    keywords: `hotels in ${destination}, best hotels ${destination}, hotel booking ${destination}, hotel deals in ${destination}, all inclusive hotels ${destination}`,
     author: `${process.env.NEXT_NAME_COMPANY}`,
   };
 }

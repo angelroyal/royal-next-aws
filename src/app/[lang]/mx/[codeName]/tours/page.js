@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../../assets/styles/web/App.css";
-import "../../../assets/styles/web/Hotel.css";
-import "../../../assets/styles/web/Tour.css";
+import "../../../../../assets/styles/web/App.css";
+import "../../../../../assets/styles/web/Hotel.css";
+import "../../../../../assets/styles/web/Tour.css";
 
 import Token from "@/components/General/Token";
 import { TokenProvider } from "@/config/context/AuthContext";

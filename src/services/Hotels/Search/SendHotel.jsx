@@ -2,7 +2,7 @@ import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useContext } from "react";
 
-import Room from "../config/RoomBox";
+import Room from "../config/RoomBox"; 
 import Calendar from "@/hooks/Calendar";
 import SearchHotel from "./SearchHotel";
 // import { useIsMobile } from "@/config/Mobile/isMobile";
@@ -85,9 +85,6 @@ export default function SendHotel() {
     };
     const query = new URLSearchParams(requestBody).toString();
 
-    // https://staywuw.com/en/mexico/cancun-mexico/{zone}-hotels/renaissance-cancun-resort-marina/
-    http://localhost:3000/en/mexico/mazatlan-international-airport-m?xico-park-royal-beach-mazatlan/mazatlan-international-airport-m?xico-hotels/park-royal-beach-mazatl
-    
     if(selectedOption.type === "hotel"){
       window.open(`/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`, '_blank')
     }else{
