@@ -21,14 +21,14 @@ export function TransportBanner() {
       <div className="w-full relative w-4/5 flex justify-center mb-14 lg:mb-0 lg:justify-end items-center lg:items-end">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}banners/vehicle/tiggo-7-pro.webp`}
-          alt="tiggo car Royal Vacation"
+          alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} tiggo car`}
           className="absolute z-[1] bottom-0 right-0 left-0 mx-auto select-none"
           width="auto"
           height="100%"
         />
         <img
           src={`${process.env.NEXT_PUBLIC_URL}general/Frame-1414.webp`}
-          alt="Royal Vacation"
+          alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
           className="object-cover h-full mr-0 md:mr-[44px] lg:mr-0 xl:mr-[44px] select-none"
           width="auto"
           height="100%"

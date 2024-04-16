@@ -130,7 +130,7 @@ export default function MobilSearchHotel() {
             <img
               className="h-4 w-4"
               src={`${process.env.NEXT_PUBLIC_URL}icons/search/search-w.svg`}
-              alt="search icon royal vacation"
+              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon search`}
             />
           </button>
         </div>

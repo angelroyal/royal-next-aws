@@ -14,7 +14,7 @@ export default function NotFound() {
         <div className="img-found-handle">
           <img
             src={Logo}
-            alt="Royal Vacations Mexico"
+            alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
             style={{ width: "28vw", padding: "8rem 0 0 0" }}
           />
         </div>

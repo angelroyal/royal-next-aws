@@ -42,7 +42,7 @@ export default function CookieBanner() {
             <div className='flex items-center py-[1rem] max-md:flex-col max-md:gap-4'>
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}general/cookies/cookie-royal.png`}
-                alt="cookie Royal Vacations Mexico"
+                alt={`cookie ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                 width="140"
                 height="140"
               />

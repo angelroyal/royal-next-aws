@@ -76,7 +76,7 @@ function Room({listing=false ,OnApply }) {
             <img
               className="h-4 w-4 invert"
               src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
-              alt="room icon Royal Vacations"
+              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon room`}
             />
             <div className="flex flex-col items-start">
               <span className="text-fs-10 m-s-b text-gry-70">
@@ -93,7 +93,7 @@ function Room({listing=false ,OnApply }) {
             <img
               className="h-3.5 w-3.5 invert"
               src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
-              alt="person icon Royal Vacations"
+              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon adult`}
             />
             <div className="flex flex-col items-start">
               <span className="text-fs-10 m-s-b text-gry-70">

@@ -50,7 +50,7 @@ export function ReservationFailed() {
           <div className="w-max flex gap-y-3 flex-col justify-center items-center cursor-pointer gap-x-2.5">
             <img
               src={`${process.env.NEXT_PUBLIC_URL}royal/logo.svg`}
-              alt="Royal Vacations Mexico"
+              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
               width={200}
               height={100}
             />

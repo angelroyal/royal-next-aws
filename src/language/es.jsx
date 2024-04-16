@@ -1264,8 +1264,6 @@ export const es = {
     titleFaqs: "¿Cómo te ayudamos?",
     altFaqs: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Preguntas Frecuentes`,
 
-    // titleHotelP: "¡Encuentra el paraíso en México y disfruta!",
-    // subtitleHotelP: "Vive unas vacaciones de ensueño con Royal Vacations",
     altHotelP: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Hospedaje en México`,
 
     titleTourP: "¡Encuentra el paraíso en México y disfruta!",

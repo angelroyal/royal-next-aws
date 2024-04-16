@@ -32,7 +32,7 @@ export default function OurHistory() {
 
             <img
               src={`${process.env.NEXT_PUBLIC_URL}banners/desktop/our-history-city.webp`}
-              alt="Royal Vacations Mexico Our History City"
+              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} Our History City`}
               className="h-[22rem] lg:h-[558px] object-cover"
             />
           </div>

@@ -19,7 +19,7 @@ export default function HeaderBlue() {
           >
             <img
               src="https://sandboxmexico.com/assets/icons/call/call-w.svg"
-              alt="call icon royal vacation"
+              alt={`call icon${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
               width={17}
               height={18}
             />
@@ -39,7 +39,7 @@ export default function HeaderBlue() {
               <img
                 className="w-4 h-4"
                 src="https://sandboxmexico.com/assets/icons/whats/whats-w.svg"
-                alt="icon whatsapp royal vacation"
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon whatsapp`}
               />
             </a>
 
@@ -51,7 +51,7 @@ export default function HeaderBlue() {
               <img
                 className="w-4 h-4"
                 src="https://sandboxmexico.com/assets/icons/face/face-w.svg"
-                alt="icon facebook royal vacation"
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon facebook`}
               />
             </a>
 
@@ -63,7 +63,7 @@ export default function HeaderBlue() {
               <img
                 className="w-4 h-4"
                 src="https://sandboxmexico.com/assets/icons/insta/insta-w.svg"
-                alt="icon instagram royal vacation"
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY}icon instagram`}
               />
             </a>
           </div>

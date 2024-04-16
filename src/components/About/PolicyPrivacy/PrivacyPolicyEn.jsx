@@ -6,14 +6,13 @@ export function PrivacyPolicyEn() {
       </h1>
       <div className="m-b text-[.938rem] text-black">
         In compliance with the provisions of the Federal Law on Protection of
-        Personal data in possession of individuals (LFPDPPP) Royal Vacations
-        Mexico puts at your disposal the following notice of Privacy:
+        Personal data in possession of individuals (LFPDPPP) {process.env.NEXT_PUBLIC_NAME_COMPANY} puts at your disposal the following notice of Privacy:
       </div>
       <h3 className="pt-[2rem] pb-[.3rem] text-[.938rem] text-black m-b">
         Responsible for the protection and processing of your personal data
       </h3>
       <div className="m-m text-[.875rem] text-black text-justify">
-        VIAJES BAMO S.A.of C.V.(Hereinafter "Royal Vacations Mexico"), domiciled
+        VIAJES BAMO S.A.of C.V.(Hereinafter "{process.env.NEXT_PUBLIC_NAME_COMPANY}"), domiciled
         in Avenida Nader 98, apple 5, lot.117, Supermanzana 3, Cancun, Quintana
         Roo, C.P.77500.
       </div>
@@ -24,7 +23,7 @@ export function PrivacyPolicyEn() {
         The personal data that
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         Collect from you, they will be destined only for the purposes described
         In this privacy notice and may be collected:
@@ -32,7 +31,7 @@ export function PrivacyPolicyEn() {
       <ul className="pl-[2rem] mb-[.5rem] text-justify">
         <li className="m-m text-[.875rem] text-black pl-[.5rem] pb-[5px]">
           Directly, entering your data or using services Online through the page
-          www.royalvacationsmexico.com
+          www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com
         </li>
         <li className="m-m text-[.875rem] text-black pl-[.5rem] pb-[5px]">
           Directly, through our reservation center Telephonic "Call Center".
@@ -51,7 +50,7 @@ export function PrivacyPolicyEn() {
         The data that
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         Collect from you, they will be the following: Full name with last names,
         telephone number, email, domicile and financial data As they are: credit
@@ -63,13 +62,13 @@ export function PrivacyPolicyEn() {
         In addition,
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         in Special cases will request to collect your physical image
         (photography and/or video), for which
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         will enable the ideal means to obtain the consent of the holders
         according to the provisions of the LFPDPPP and its regulation.
@@ -87,7 +86,7 @@ export function PrivacyPolicyEn() {
           confirmation of services by you reserved with
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}
           </span>{" "}
           to through their means, for financial and credit purposes, to give
           compliance with the obligations contracted with you and with our
@@ -112,7 +111,7 @@ export function PrivacyPolicyEn() {
           purposes (only and exclusively for
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}
           </span>
           ).
         </li>
@@ -122,14 +121,14 @@ export function PrivacyPolicyEn() {
         cancellation of email sending with advertising purposes by
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>
         , By clicking on the “Cancel Subscription” link.
       </div>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         In case you do not want your personal data to be treated for These
         additional purposes, you can present a written via email to address
-        privacy@royalvacationsmexico.com.
+        privacy@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com.
       </div>
       <h3 className="pt-[2rem] pb-[.3rem] text-[.938rem] text-black m-b">
         Transfer of dates, national and international
@@ -144,12 +143,12 @@ export function PrivacyPolicyEn() {
           of
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México{" "}
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
           </span>
           either to a parent company or any society of the same group of
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México{" "}
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
           </span>
           that operates under the same internal processes and policies;
         </li>
@@ -218,7 +217,7 @@ export function PrivacyPolicyEn() {
         of the arc rights provided for in the present notice. Nevertheless,
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         you informs that maintaining your personal data in your database, will
         better understand your needs based on your history and with This offers
@@ -235,21 +234,21 @@ export function PrivacyPolicyEn() {
         EXERCISE, which must be sent to
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
-        to through the following email: privacy@royalvacationsmexico.com, or may
+        to through the following email: privacy@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com, or may
         present your in writing and in Spanish language and complying with the
         requirements indicated in article 29 of the LFPDPPP Regulation in the
         address of
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         already previously indicated. For more information you can communicate
         directly To the Data Protection Department
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         to through the email account indicated above.
       </div>
@@ -282,7 +281,7 @@ export function PrivacyPolicyEn() {
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         <span className="m-b text-[.875rem] text-black">
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         you will follow up on your application in a period of 20 business days
         counted from the reception of said FORMAT or application, with the
@@ -290,7 +289,7 @@ export function PrivacyPolicyEn() {
         of being appropriate,
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         will have a maximum period of 15 business days to make its ARCO Right.
       </div>
@@ -326,7 +325,7 @@ export function PrivacyPolicyEn() {
       </h3>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         <span className="m-b text-[.875rem] text-black">
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         Use own and third parties to analyze your navigation and Offer a more
         personalized service according to your interests.
@@ -337,12 +336,12 @@ export function PrivacyPolicyEn() {
       <div className="pb-[1rem] m-m text-[.875rem] text-black text-justify">
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         You can make modifications or updates at any time to this privacy
         notice.Modifications or updates to be carried out, they will enter into
         force at the time they are published On the website
-        www.royalvacationsmexico.com, in its sites affiliates or in any means of
+        www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com, in its sites affiliates or in any means of
         communication to use to Publish it, so its continuous review is
         recommended.
       </div>
@@ -354,7 +353,7 @@ export function PrivacyPolicyEn() {
         understood that he has granted his consent Tacit in terms of article 8
         of the LFPDPPP.
         <span className="m-b text-[.875rem] text-black">
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         you suggests reading this privacy notice, since by contributing your
         data by any means, constitutes the acceptance of the present Notice of

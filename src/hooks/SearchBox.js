@@ -64,7 +64,7 @@ export default function SearchBox() {
                     ? "icons/hotel/hotel-w.svg"
                     : "icons/hotel/hotel-b.svg"
                 }`}
-                alt="hotel icon Royal vacation"
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon hotel`}
                 width={29}
                 height={25}
               />{" "}
@@ -91,7 +91,7 @@ export default function SearchBox() {
                     ? "icons/tour/tour-w.svg"
                     : "icons/tour/tour-b.svg"
                 }`}
-                alt="Tour icon Royal vacation"
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon tour`}
                 width={29}
                 height={25}
               />{" "}
