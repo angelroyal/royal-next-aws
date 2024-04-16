@@ -14,7 +14,7 @@ import { calculateNights } from "../../utils/calculateNights";
 
 export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   //   PARAMS URL
   const searchParams =
@@ -39,7 +39,9 @@ export default function CardHotelT(props) {
   }
 
   const buildUrlWithParams = (queryParams) => {
-    const baseUrl = `/hotel/${hotel.codeName}`;
+    const destination  = searchParams.get("codeNameHotel");
+
+    const baseUrl = `/${language}/mx/${destination}-mexico/${destination}-hotels/${hotel.codeName}`;
 
     const occupanciesString = JSON.stringify(queryParams.occupancies);
 

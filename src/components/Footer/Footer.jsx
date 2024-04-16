@@ -1,24 +1,58 @@
 "use client";
 
-import { useContext } from "react";
+import Link from "next/link";
+import moment from "moment";
 import Image from "next/image";
+import { useContext } from "react";
 import { useRouter } from "next/navigation";
 import LanguageContext from "@/language/LanguageContext";
+
 import { SocialNetworks, creditsCard } from "./Config";
-import Link from "next/link";
+
 
 export default function Footer() {
+  const hotel = {
+    code: "18",
+    codeName: "cancun",
+    destination: "Cancún",
+    codeNameHotel: "cancun",
+  };
   const { languageData, language } = useContext(LanguageContext);
   const year = new Date().getFullYear();
   const router = useRouter();
 
   //   const aboutRout = (routerNavigation)=>{
-  //    router.push(routerNavigation) 
+  //    router.push(routerNavigation)
   //   }
+
+  const sendHotel = (hotelInfo) => {
+    console.log("entro aqui");
+    const encodedRoomData = encodeURIComponent(
+      JSON.stringify([{ adults: 2, children: [] }])
+    );
+    const today = moment();
+
+    let initDate = moment(today).add(1, "month");
+    let endDate = moment(today).add(1, "month").add(2, "day");
+    const checkIn = initDate.format("YYYY-MM-DD");
+    const checkOut = endDate.format("YYYY-MM-DD");
+    // http://localhost:3000/en/mx/cancun-mexico/hotels?codeNameHotel=cancun&destination=Canc%C3%BAn&codeName=cancun&code=18&type=destination&check-in=2024-05-16&check-out=2024-05-17&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
+    const requestBody = {
+      codeNameHotel: hotelInfo.codeName,
+      destination: hotelInfo.label,
+      codeName: hotelInfo.codeName,
+      code: hotelInfo.key,
+      type: "destination",
+      "check-in": checkIn,
+      "check-out": checkOut,
+      occupancies: encodedRoomData,
+    };
+    const query = new URLSearchParams(requestBody).toString();
+    return router.push(`${language}/mx/${hotelInfo.codeName}/hotels?${query}`);
+  };
 
   return (
     <>
-
       <Image
         src={`${process.env.NEXT_PUBLIC_URL}general/line-footer-or.svg`}
         alt="line-footer-or"
@@ -26,7 +60,6 @@ export default function Footer() {
         width={1136}
         height={32}
       />
-
 
       <footer className="bg-bl-100 flex flex-col text-white max-w-full pt-[21px] pb-[1rem]">
         {/* LOGO AND SOCIAL ICONS */}
@@ -46,10 +79,7 @@ export default function Footer() {
               {/*SOCIAL ICONS*/}
               <div className="flex gap-x-[17px] justify-center ">
                 {SocialNetworks.map((network, index) => (
-                  <a key={index}
-                    target="_blank"
-                    href={network.href}
-                  >
+                  <a key={index} target="_blank" href={network.href}>
                     <img
                       className="cursor-pointer"
                       src={`${process.env.NEXT_PUBLIC_URL}${network.url}`}
@@ -157,20 +187,31 @@ export default function Footer() {
               {languageData.footer.about.titleAbout}
             </div>
             <div className="flex flex-col m-m text-fs-12 items-center xl:items-start">
-
-              <Link href={`/${language}/history`} className="hover:!text-or-100 no-underline text-white">
+              <Link
+                href={`/${language}/history`}
+                className="hover:!text-or-100 no-underline text-white"
+              >
                 {languageData.footer.about.titleHistory}
               </Link>
 
-              <Link href="/tyc" className="hover:!text-or-100 no-underline text-white w-max cursor-pointer">
+              <Link
+                href={`/${language}/tyc`}
+                className="hover:!text-or-100 no-underline text-white w-max cursor-pointer"
+              >
                 {languageData.footer.about.titleConditions}
               </Link>
 
-              <Link href="/privacy" className="hover:!text-or-100 no-underline text-white w-max cursor-pointer">
+              <Link
+                href={`/${language}/privacy`}
+                className="hover:!text-or-100 no-underline text-white w-max cursor-pointer"
+              >
                 {languageData.footer.about.titlePrivacy}
               </Link>
 
-              <Link href="/faqs" className="hover:!text-or-100 no-underline text-white w-max cursor-pointer">
+              <Link
+                href={`/${language}/faqs`}
+                className="hover:!text-or-100 no-underline text-white w-max cursor-pointer"
+              >
                 {languageData.footer.about.titleQuestions}
               </Link>
             </div>
@@ -182,18 +223,30 @@ export default function Footer() {
               {languageData.footer.hotelsMexico.titleHotel}
             </div>
             <div className="m-m text-fs-12 flex flex-col xl:items-start items-center">
-              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
+              <Link
+                href={"#"}
+                className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
+              >
                 {languageData.footer.hotelsMexico.hotelAcapulco}
-              </a>
-              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
+              </Link>
+              <Link
+                href={"sendHotel"}
+                className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
+              >
                 {languageData.footer.hotelsMexico.hotelCancun}
-              </a>
-              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
+              </Link>
+              <Link
+                href={"#"}
+                className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
+              >
                 {languageData.footer.hotelsMexico.hotelMazatlan}
-              </a>
-              <a className="hover:!text-or-100 no-underline text-white cursor-pointer w-max">
+              </Link>
+              <Link
+                href={"#"}
+                className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
+              >
                 {languageData.footer.hotelsMexico.hotelPuertoVallarta}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

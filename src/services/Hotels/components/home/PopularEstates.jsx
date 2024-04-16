@@ -64,7 +64,7 @@ export function PopularState() {
 
     // PUSH RESULT HOTEL
     const query = new URLSearchParams(requestBody).toString();
-    console.log(destinationInfo);
+    // console.log(destinationInfo);
     // http://localhost:3000/es/mx/monterrey-mexico/hotels?codeNameHotel=monterrey&destination=Monterrey&codeName=monterrey&code=52&type=destination&check-in=2024-05-17&check-out=2024-05-18&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
     // http://localhost:3000/es/mx/monterrey/hotels?destination=Monterrey&code=undefined&type=tour&check-in=2024-05-16&check-out=2024-05-18&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
     router.push(`${language}/mx/${destinationInfo.codeName}/hotels?${query}`);
