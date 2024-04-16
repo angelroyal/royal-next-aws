@@ -102,7 +102,6 @@ function SearchHotel(props) {
       }, 100);
     }
   };
-
   // TEST OPEN LIST
   return (
     <div

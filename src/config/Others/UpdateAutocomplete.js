@@ -5,10 +5,15 @@ export default function UpdateAutocomplete(props) {
 
   // LOCAL STORAGE SAVE DATA STATIC
   // AUTOCOMPLETE SEARCH
+  // {"type":"destination","key":52,"label":"Monterrey","codeName":"monterrey","country":"mexico","countryDestinationCodeName":"monterrey-mexico","category":"Destinos"}
   const requestSearch = {
+    type: "destination",
     key: dataLocalSend.code,
     label: dataLocalSend.name,
-    type: "destination",
+    codeName:dataLocalSend.codeName,
+    country:dataLocalSend.country,
+    countryDestinationCodeName:`${dataLocalSend.codeName}-${dataLocalSend.country}`,
+    // category:""
     provider: "hb",
   };
 
