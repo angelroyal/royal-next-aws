@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useContext } from "react";
-import { useCartAxios } from "../CartAxios";
 import Link from "next/link";
+import React, { useContext } from "react";
+
+import { useCartAxios } from "../CartAxios";
 import LanguageContext from "@/language/LanguageContext";
+
 export default function PriceCart(props) {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const { cartId } = props;
 
   const { totalPrice } = useCartAxios();
@@ -15,7 +17,7 @@ export default function PriceCart(props) {
 
   const handleClickItinerary = () => {
     if (uidCart) {
-      history.push(`/booking?uid=${cartId}`);
+      history.push(`${language}/booking?uid=${cartId}`);
       onCloseMenu();
     }
   };
@@ -66,7 +68,7 @@ export default function PriceCart(props) {
           <button className=" flex items-center text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white">
             {languageData.cart.btnReset}
           </button>
-          <Link href={`/booking?uid=${cartId}`} className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
+          <Link href={`${language}/booking?uid=${cartId}`} passHref className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
           {languageData.cart. btnPurchase}
           </Link>
         </div>

@@ -18,7 +18,7 @@ export default function AddCartTour(props) {
   });
   const router = useRouter();
 
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const { dataTour, hourTour, dayTour, selectModality } =
     useContext(DetailTourContext);
 
@@ -66,7 +66,7 @@ export default function AddCartTour(props) {
       fetchData(cartUid);
 
       setTimeout(() => {
-        router.push(`/booking?uid=${cartUid}`);
+        router.push(`${language}/booking?uid=${cartUid}`);
         // setIsLoader(false);
       }, 1000);
     } catch (error) {

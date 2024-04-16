@@ -12,7 +12,7 @@ export default function CartGet({ onCloseMenu }) {
   const router = useRouter();
   const [cartUid, setCartUid] = useState(null);
   const { cartData, fetchData, totalPrice } = useCartAxios();
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const [cartInfo, setCartInfo] = useState(
     cartData && cartData.cartItems ? cartData.cartItems : null
   );
@@ -50,7 +50,7 @@ export default function CartGet({ onCloseMenu }) {
     if (uidCart) {
       const { uid } = JSON.parse(uidCart);
       const cartId = uid;
-      router.push(`/booking?uid=${cartId}`);
+      router.push(`${language}/booking?uid=${cartId}`);
       onCloseMenu();
     }
   };

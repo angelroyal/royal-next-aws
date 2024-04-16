@@ -45,7 +45,7 @@ export default function NavigationDesktop() {
           >
             <div className="flex md:flex-1 justify-between">
               <Link
-                className="m-1.5 p-1.5"
+                className="m-1.5"
                 href={`${process.env.NEXT_PUBLIC_HOME}`}
                 passHref
               >
