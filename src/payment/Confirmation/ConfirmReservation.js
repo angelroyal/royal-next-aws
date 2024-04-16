@@ -21,8 +21,6 @@ export default function ConfirmReservation() {
 
   const [smShow, setSmShow] = useState(false);
 
-  console.log(cartData);
-
   const { languageData } = useContext(LanguageContext);
   const { setInfoReservation } = useContext(StepperContext);
 

@@ -15,7 +15,6 @@ export function SearchTourMobile(props) {
 
   useEffect(() => {
     const searchTour = JSON.parse(localStorage.getItem("searchTour"));
-    // console.log(searchTour);s
     if (searchTour) {
       setSelectedOption(searchTour.label);
     }

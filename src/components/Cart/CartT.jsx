@@ -19,8 +19,6 @@ export default function CartT(props) {
     cartData && cartData.cartItems ? cartData.cartItems : null
   );
   const { languageData } = useContext(LanguageContext);
-  // console.log("cartData", cartData);
-  // console.log("cartData.length", cartData.cartItems.activities.length);
 
   // OBTAIN UID CART
   useEffect(() => {

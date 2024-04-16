@@ -2,7 +2,6 @@ import LanguageContext from "@/language/LanguageContext";
 import { useContext } from "react";
 
 export function CancelPolicyToulTip({ policies }) {
-  console.log(policies);
 
   const { languageData, language } = useContext(LanguageContext);
   return (

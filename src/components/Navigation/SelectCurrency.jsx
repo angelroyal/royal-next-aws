@@ -11,7 +11,6 @@ export function SelectCurrency() {
   };
 
   useEffect(() => {
-    // console.log(currency);
     localStorage.setItem("currency", currency);
   }, [currency]);
 

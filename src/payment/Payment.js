@@ -113,7 +113,7 @@ export default function Payment() {
       setData(response.data);
       setSkeletonShow(false);
     } catch (error) {
-      // console.log(error);
+      // console.eror(error);
 
       if (error.response) {
         const errorMessage = error.response.data;

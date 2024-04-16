@@ -40,7 +40,6 @@ export function DialogPaymentItinerary(props) {
   const [smShow, setSmShow] = useState(false);
 
   const paymentReservation = () => {
-    // console.log("click");
     setChangeButton(Math.floor(Math.random() * 100) + 1);
   };
   return (

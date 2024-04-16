@@ -45,7 +45,6 @@ export default function FilterTour(props) {
   const [auxStart, setAuxStart] = useState(0);
   const [rangeValue, setRangeValue] = useState([3500, 10000]);
   const [range, setRange] = useState(["", ""]);
-  // console.log(setAuxStart);
 
   //Para usar los 4 filtrados ,checkbox, estrellas, precios en rango y desde hasta
   useEffect(() => {
@@ -111,7 +110,6 @@ export default function FilterTour(props) {
     // Hacer una copia del objeto de filtros
     const newFilters =
       type === "checkbox" ? { ...filters } : { ...filtersStarts };
-    // console.log(type);
     //Hacer una copia del arreglo de elementos del grupo
     const newItems = [...newFilters[group].items];
     // // Modificar el objeto específico en la copia

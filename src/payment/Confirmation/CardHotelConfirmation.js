@@ -19,8 +19,6 @@ export default function CardHotelConfirmation(props) {
   const { languageData } = useContext(LanguageContext);
   const { itemHotel } = props;
   const isMobile = useIsMobile();
-  // console.log(itemHotel);
-
   const dateFormatCheckIn = moment(itemHotel.checkIn).format("DD/MM/YY");
   const dateFormatCheckOut = moment(itemHotel.checkOut).format("DD/MM/YY");
   const dayOfWeek = moment(itemHotel.date).format("dddd");

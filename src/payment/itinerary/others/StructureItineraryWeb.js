@@ -9,8 +9,6 @@ import CardTourItinerary from "../../../payment/itinerary/CardsItineraryWeb/Card
 
 export default function StructureItineraryWeb(props) {
   const { dataItinerary } = props;
-  // console.log(dataItinerary);
-
   const { step } = useContext(StepperContext);
 
   return (

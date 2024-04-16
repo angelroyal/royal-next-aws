@@ -27,7 +27,9 @@ export default function PriceCart(props) {
       {/* PRICE CART */}
       <div className="border-t border-[#ebebeb] mt-[16px] pt-[16px] max-sm:sticky max-sm:bottom-0 max-sm:bg-white">
         <div className="flex justify-between">
-          <span className="text-fs-12 text-gry-100 m-m">{languageData.cart.subtotal}</span>
+          <span className="text-fs-12 text-gry-100 m-m">
+            {languageData.cart.subtotal}
+          </span>
 
           <span className="text-fs-14 text-gry-100 m-m">
             $
@@ -39,7 +41,9 @@ export default function PriceCart(props) {
         </div>
 
         <div className="flex justify-between mb-[12px]">
-          <span className="text-fs-12 text-gry-100 m-m">{languageData.booking.taxes}</span>
+          <span className="text-fs-12 text-gry-100 m-m">
+            {languageData.booking.taxes}
+          </span>
 
           <span className="text-fs-14 text-gry-100 m-m">
             {" "}
@@ -68,8 +72,12 @@ export default function PriceCart(props) {
           <button className=" flex items-center text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white">
             {languageData.cart.btnReset}
           </button>
-          <Link href={`${language}/booking?uid=${cartId}`} passHref className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
-          {languageData.cart. btnPurchase}
+          <Link
+            href={`/${language}/booking?uid=${cartId}`}
+            passHref
+            className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline"
+          >
+            {languageData.cart.btnPurchase}
           </Link>
         </div>
       </div>

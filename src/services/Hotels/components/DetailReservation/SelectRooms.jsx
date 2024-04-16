@@ -11,7 +11,6 @@ export default function SelectRooms({close}) {
   const { languageData } = useContext(LanguageContext);
   const { selectedRooms, setSelectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
 
-  // console.log(requestBodyRooms);
   useEffect(() => {
     if (selectedRooms.length === requestBodyRooms.occupancies.length) {
       setIsComplete(true);
@@ -19,8 +18,6 @@ export default function SelectRooms({close}) {
       setIsComplete(false);
     }
   }, [selectedRooms]);
-  // console.log(selectedRooms);
-
 
   // DELETED PRE CART ROOM
   const deleteRoom = (index) => {

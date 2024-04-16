@@ -20,9 +20,6 @@ export default function TourCard(props) {
   const maxLength = 290;
 
   const { tour } = props;
-  console.log(tour);
-
-  // console.log(tour);
 
   const description = tour.description;
 

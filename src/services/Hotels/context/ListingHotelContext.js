@@ -79,7 +79,7 @@ export const ListingHotelProvider = ({ children }) => {
       const data = await fetchPostHotels(requestBody);
       setMapHotels(data.mapHotels);
     } catch (error) {
-      // console.log(error);
+      // console.eror(error);
       setCombinedHotelData([]);
     }
   };

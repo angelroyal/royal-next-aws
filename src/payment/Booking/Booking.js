@@ -30,8 +30,6 @@ export default function Booking(props) {
   const [formActivityItems, setFormActivityItems] = useState(null);
   const [activityPreBooking, setActivityPreBooking] = useState(null);
 
-  console.log(formActivityItems);
-
   // const [isRH, setRH] = useState(false);
   // const isMobile = useIsMobile();
 
@@ -68,7 +66,7 @@ export default function Booking(props) {
       const response = await axiosWithInterceptor.get(`${url}${cartId}`);
       setActivityPreBooking(response.data);
     } catch (error) {
-      console.log(error);
+      console.eror(error);
     }
   };
 

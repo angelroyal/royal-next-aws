@@ -18,7 +18,6 @@ export function TicketsTour(props) {
 
   const [openPolicy, setOpenPolicy] = useState(false);
 
-  // console.log(tourData);
   // CATEGORIES SELECTED PERSONS
   const [categories, setCategories] = useState([]);
 

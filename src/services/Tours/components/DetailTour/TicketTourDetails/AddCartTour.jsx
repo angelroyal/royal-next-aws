@@ -22,7 +22,6 @@ export default function AddCartTour(props) {
   const { dataTour, hourTour, dayTour, selectModality } =
     useContext(DetailTourContext);
 
-  // console.log(dataTour);
 
   const handleAddCartTour = async () => {
     try {
@@ -66,12 +65,12 @@ export default function AddCartTour(props) {
       fetchData(cartUid);
 
       setTimeout(() => {
-        router.push(`${language}/booking?uid=${cartUid}`);
+        router.push(`/${language}/booking?uid=${cartUid}`);
         // setIsLoader(false);
       }, 1000);
     } catch (error) {
       setIsLoader(false);
-      console.log(error);
+      console.eror(error);
       if (error.response.status >= 405) {
         setAlert({
           alert: true,

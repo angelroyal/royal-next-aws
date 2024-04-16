@@ -79,7 +79,6 @@ export function FormClientRH(props) {
   // SEND INFO PAYMENT
   const handleSubmit = () => {
     const submissionData = formData.map(({ key, ...rest }) => rest);
-    // console.log(submissionData);
     onRHDataChange(submissionData);
   };
 

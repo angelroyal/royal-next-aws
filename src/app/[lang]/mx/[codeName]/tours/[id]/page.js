@@ -53,7 +53,6 @@ export default async function DetailPageTour({ params, searchParams }) {
     );
 
     const tourData = response.data;
-    // console.log(tourData);
 
     return (
       <LanguageProvider>

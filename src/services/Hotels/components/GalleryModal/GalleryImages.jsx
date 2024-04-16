@@ -15,7 +15,6 @@ export function GalleryImages({ images }) {
   // const [currentIndex, setCurrentIndex] = useState(0);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  // console.log(thumbsSwiper);
   const handleSlideChange = (swiper) => {
     setCurrentSlideIndex(swiper.activeIndex);
   };

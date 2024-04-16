@@ -247,7 +247,6 @@ export default function PaymentConektaF(props) {
   };
 
   const handleSubmit = (event) => {
-    // console.log("event", event);
     if (event) event.preventDefault();
     setShowModal(true);
     setAnimationData(LoadingData);

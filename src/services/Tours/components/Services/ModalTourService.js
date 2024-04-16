@@ -4,7 +4,6 @@ import moment from "moment";
 // import LanguageContext from "../../../language/LanguageContext";
 
 // const getDayAndMonth = (date) => {
-//   // console.log(date);
 //   const fecha = new Date(date);
 //   const days = ['Dom', 'Lun', 'Mar', 'M', 'Jue', 'Vie', 'Sáb'];
 //   const months = ['Enero', 'Feb', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Sep', 'Octubre', 'Nov', 'Dic'];
@@ -13,7 +12,6 @@ import moment from "moment";
 //   const numDiaSemana = fecha.getDay();
 //   const numMes = fecha.getMonth();
 
-//   // console.log(numMes);
 
 //   // Obtiene los nombres correspondientes del día de la semana y del mes
 //   const nombreDiaSemana = days[numDiaSemana];
@@ -52,9 +50,6 @@ const getGroupTime = (times) => {
 
 export const getCombinedRate = (props) => {
   const { tourModal, tourInfo } = props;
-  // console.log("tourModal",tourModal);
-  // console.log("tourInfo",tourInfo);
-  // console.log(moment.locale('fr'));
 
   Object.entries(tourModal.schedule).forEach(([keySchudele, schedule]) => {
     // let dayAndMonth = getDayAndMonth(schedule.date);

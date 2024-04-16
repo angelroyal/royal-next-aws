@@ -52,8 +52,6 @@ export default function CartTourT(props) {
       });
   };
 
-  // console.log(deleteTour);
-
   return (
     <div>
       {/* CARD CART TOUR */}

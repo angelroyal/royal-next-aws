@@ -9,8 +9,6 @@ export function HoursSelect() {
   const { dayTour, setHourTour } = useContext(DetailTourContext);
   const [indexSelected, setIndexSelected] = useState(0);
 
-  // console.log(dayTour);
-
   // FIRST HOUR DEFAULT SET
   useEffect(() => {
     if (dayTour && dayTour.times && dayTour.times.length > 0) {

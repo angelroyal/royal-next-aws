@@ -25,10 +25,6 @@ export default function DetailReservation() {
   const { selectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
   const { totalPrice } = useCartAxios();
 
-  // console.log(requestBodyRooms);
-  // console.log(selectedRooms);
-  // console.log(totalPrice);
-
   useEffect(() => {
     if (requestBodyRooms && requestBodyRooms.occupancies) {
       const adult = requestBodyRooms.occupancies.reduce(
@@ -48,7 +44,6 @@ export default function DetailReservation() {
       requestBodyRooms["check-in"] &&
       requestBodyRooms["check-out"]
     ) {
-      // console.log("entra 1");
       actualDiffDate = calculateNights(
         requestBodyRooms["check-in"],
         requestBodyRooms["check-out"]
@@ -64,9 +59,6 @@ export default function DetailReservation() {
 
     setDiffDate(actualDiffDate);
   }, [requestBodyRooms]);
-
-  // console.log("totalPerson", totalPerson);
-  // console.log("diffDate", diffDate);
 
   // TOTAL CALCULATION
   useEffect(() => {

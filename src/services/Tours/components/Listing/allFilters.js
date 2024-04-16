@@ -45,7 +45,6 @@ const getFilterPriceRange = (dataTour,filter) => {
 
 
 export const getFilterTours = (dataTour, filter) => {
-  // console.log(filter);
   let newDataTours = { ...dataTour };
 
   for (let key in filter) {

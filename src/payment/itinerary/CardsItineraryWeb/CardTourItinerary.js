@@ -41,7 +41,7 @@ export default function TourCardItinerary({ itemActivity }) {
   //       setLoader(false);
   //     }
   //   } catch (error) {
-  //     console.log(error);
+  //     console.eror(error);
   //     setLoader(false);
   //   }
   // };
@@ -75,7 +75,11 @@ export default function TourCardItinerary({ itemActivity }) {
     itemActivity && (
       <>
         <div className="father-tour-card-i">
-          <Image className="icon-location-border" src={IconLocationBorder} alt="IconLocationBorder" />
+          <Image
+            className="icon-location-border"
+            src={IconLocationBorder}
+            alt="IconLocationBorder"
+          />
 
           <div className="father-container-tour-i">
             <div className="date-itinerary">
@@ -94,7 +98,6 @@ export default function TourCardItinerary({ itemActivity }) {
                 className="close-icon-tour-i"
                 onClick={() => setIsRemove(true)}
               >
-                
                 <Image src={CloseIcon} alt="CloseIcon" />
               </div>
 
@@ -169,7 +172,11 @@ export default function TourCardItinerary({ itemActivity }) {
                     <div className="cont-name-location-tour">
                       <div className="d-flex d-grid gap-2 icon-location-and-text">
                         <div>
-                          <Image className="icons-size-m" src={LocationIcon} alt="LocationIcon" />
+                          <Image
+                            className="icons-size-m"
+                            src={LocationIcon}
+                            alt="LocationIcon"
+                          />
                         </div>
 
                         <span>{itemActivity.address}</span>
@@ -183,14 +190,15 @@ export default function TourCardItinerary({ itemActivity }) {
                         ></img>
 
                         <span>
-                          {itemActivity.tourists.map(
-                            (tourist, index) =>
-                              `${tourist.quantity} ${tourist.category}${
-                                index !== itemActivity.tourists.length - 1
-                                  ? ","
-                                  : ""
-                              } `
-                          )}
+                          {itemActivity.tourists &&
+                            itemActivity.tourists.map(
+                              (tourist, index) =>
+                                `${tourist.quantity} ${tourist.category}${
+                                  index !== itemActivity.tourists.length - 1
+                                    ? ","
+                                    : ""
+                                } `
+                            )}
                         </span>
                       </div>
                     </div>

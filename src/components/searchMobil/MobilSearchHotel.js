@@ -17,8 +17,6 @@ export default function MobilSearchHotel() {
   const [validSecondDay, setValidSecondDay] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // console.log(selectedDates);
-
   useEffect(() => {
     const storedSelectedDates = localStorage.getItem("selectedDates");
     const storedValidFirstDay = localStorage.getItem("validFirstDay");

@@ -10,7 +10,7 @@ export default function AddCartHotel() {
   const router = useRouter();
   const { fetchData } = useCartAxios();
   const { languageData, language } = useContext(LanguageContext);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   const { selectedRooms, requestBodyRooms, keyHotel, setIsFailedReservation } =
     useContext(RoomsHotelContext);
@@ -59,15 +59,16 @@ export default function AddCartHotel() {
       );
       fetchData(cartUid);
       setTimeout(() => {
-        router.push(`${language}/booking?uid=${cartUid}`);
+        // router.push(`${language}/booking?uid=${cartUid}`);
+        router.push(`/${language}/booking?uid=${cartUid}`);
+
       }, 1000);
     } catch (error) {
-      console.log(error);
+      console.eror(error);
       setIsLoading(false);
-      if(error.response.status >= 400){
-        console.log("entra error");
+      if (error.response.status >= 400) {
         setIsFailedReservation(true);
-      }else{
+      } else {
         setIsFailedReservation(false);
       }
     }
@@ -80,7 +81,9 @@ export default function AddCartHotel() {
         onClick={handleReserveNow}
         disabled={isLoading}
       >
-        {isLoading ? languageData.cart.loadingText :languageData.detailHotel.buttonPrincipal}
+        {isLoading
+          ? languageData.cart.loadingText
+          : languageData.detailHotel.buttonPrincipal}
       </button>
     </>
   );

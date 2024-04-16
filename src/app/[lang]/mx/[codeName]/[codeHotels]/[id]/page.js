@@ -50,7 +50,6 @@ export async function generateMetadata({ searchParams }) {
 
 export default async function DetailPageHotel({ params, searchParams }) {
   try {
-    // console.log(searchParams);
     const response = await axiosWithInterceptor.get(
       `v1/hotels/${searchParams.codeNameHotel}/rooms`
     );

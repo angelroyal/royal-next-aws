@@ -22,8 +22,6 @@ export const CartAxiosProvider = ({ children }) => {
     }
   });
 
-  // console.log(cartData);
-
   const [totalPrice, setTotalPrice] = useState(0);
   const [itineraryData, setItinerary] = useState(null);
   const [totalItemsInCart, setTotalItemsInCart] = useState(null);
@@ -56,7 +54,6 @@ export const CartAxiosProvider = ({ children }) => {
       const totalHotelPrice = hotels ? hotels.reduce((acc, hotel) => acc + hotel.price, 0) : 0;
       const totalActivityPrice = activities ? activities.reduce((acc, activity) => acc + activity.price, 0) : 0;
 
-      // console.log("totalPrice", totalHotelPrice, "totalActivityPrice", totalActivityPrice);
       const totalPrice = totalHotelPrice + totalActivityPrice;
 
       setTotalPrice(totalPrice);

@@ -24,7 +24,6 @@ export function PopularState() {
           `v1/destinations/promotions/hotels`
         );
 
-        // console.log(dataPopularState);
         if (dataPopularState.data && dataPopularState.status === 200) {
           const shuffledDestinations = dataPopularState.data.topDestinations
             .slice(0, 8)
@@ -32,7 +31,7 @@ export function PopularState() {
           setPopularState(shuffledDestinations);
         }
       } catch (error) {
-        console.log(error);
+        console.eror(error);
       }
     };
     getPopularStates();
@@ -64,9 +63,6 @@ export function PopularState() {
 
     // PUSH RESULT HOTEL
     const query = new URLSearchParams(requestBody).toString();
-    // console.log(destinationInfo);
-    // http://localhost:3000/es/mx/monterrey-mexico/hotels?codeNameHotel=monterrey&destination=Monterrey&codeName=monterrey&code=52&type=destination&check-in=2024-05-17&check-out=2024-05-18&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
-    // http://localhost:3000/es/mx/monterrey/hotels?destination=Monterrey&code=undefined&type=tour&check-in=2024-05-16&check-out=2024-05-18&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
     router.push(`${language}/mx/${destinationInfo.codeName}/hotels?${query}`);
   };
 
@@ -98,7 +94,6 @@ export function PopularState() {
           id="swiper-popular-estates"
         >
           <SwiperSlide className="bg-transparent">
-            {/* {console.log(popularState[0][language])} */}
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
               <div className="flex gap-x-3 w-full md:h-full h-2/4">
                 <div

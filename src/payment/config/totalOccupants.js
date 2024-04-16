@@ -36,8 +36,6 @@ export function TotalOccupanciesModal(props) {
   const [numNights, setNumNights] = useState(0);
   const [totalPeopleData, setTotalPeopleData] = useState(0);
 
-  // console.log(changeDate);
-
   // DIFF DATES
   useEffect(() => {
     const datesLocal = JSON.parse(localStorage.getItem("selectedDates"));

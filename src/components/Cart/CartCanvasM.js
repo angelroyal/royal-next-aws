@@ -13,7 +13,6 @@ export default function CartCanvasM(props) {
 
   const handleClose = () => {
     setShowOffcanvas(false);
-    // console.log("se esta ejecutando");
     if (cartUid) {
       fetchData(cartUid);
     }

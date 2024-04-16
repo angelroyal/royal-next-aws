@@ -32,12 +32,10 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
   const AutocompleteFetch = useMemo(
     () =>
       _.debounce(async (inputAutocomplete) => {
-        // console.log(inputAutocomplete);
         try {
           const response = await axiosWithInterceptor.get(
             `${API_ENDPOINT}/${inputAutocomplete}`
           );
-          // console.log(response);
           setOptions(response.data.activities);
         } catch (error) {
           console.error(error);

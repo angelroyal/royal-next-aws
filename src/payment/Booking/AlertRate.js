@@ -43,7 +43,6 @@ export function AlertRate(props) {
       const response = await axiosWithInterceptor.post(url, requestPayload);
       if (response) {
       }
-      // console.log("Respuesta exitosa:", response.data);
       window.location.reload();
     } catch (error) {
       console.error("Error:", error);
@@ -99,7 +98,6 @@ export function AlertRate(props) {
 
 export function AlertLoad() {
   const { languageData } = useContext(LanguageContext);
-  // console.log("entra 2");
   const [smShow, setSmShow] = useState(false);
 
   const handleOpenModal = () => {

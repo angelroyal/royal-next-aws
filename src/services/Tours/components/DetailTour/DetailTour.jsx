@@ -8,7 +8,6 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function DetailTour({ tourData }) {
   const { languageData } = useContext(LanguageContext);
-  console.log(tourData);
   return (
     <div>
       <div className="flex flex-wrap">

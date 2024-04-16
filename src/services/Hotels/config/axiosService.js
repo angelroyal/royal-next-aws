@@ -2,7 +2,6 @@
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 export const fetchPostHotels = async (requestBody) => {
-  console.log("requestBody",requestBody);
   const { codeName, ...bodyWithoutCode } = requestBody;
   try {
     const response = await axiosWithInterceptor.post(

@@ -72,7 +72,6 @@ export default function ResultTour() {
       );
     } else {
       const newURL = `/${language}/mx/${selectedOption.codeName}-${selectedOption.country}/tours?${query}`;
-      console.log('New URL:', newURL); // Verifica que la URL esté construida correctamente
       router.push(newURL);
     }
   };

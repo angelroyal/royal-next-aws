@@ -25,7 +25,6 @@ import "../../../../src/assets/styles/mobile/HotelMobile.css";
 import "@/assets/styles/web/Hotel.css"
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
-  // console.log(itemHotel);
   const { fetchData } = useCartAxios();
   const isMobile = useIsMobile();
 

@@ -47,7 +47,6 @@ export default function CardPayment(props) {
 
   useEffect(() => {
     if (isCVV === true) {
-      // console.log("isCVV", isCVV);
       setIsBack(isCVV);
       changeCard();
     } else {

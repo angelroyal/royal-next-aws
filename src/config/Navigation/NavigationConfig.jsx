@@ -10,15 +10,12 @@ export function NavigationConfig() {
 
     let actualRouter = null;
     let pathRouter = path.split("/");
-    // console.log(pathRouter);
     NavigationURL.map((url, index) => {
       if (pathRouter.includes(url)) {
-        // console.log("entra");
         actualRouter = pathRouter.filter((value) => value === url);
       }
     });
 
-    // console.log(actualRouter);
 
     if (path === "/") {
       setActiveRouter("hotels");

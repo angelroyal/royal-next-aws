@@ -18,12 +18,11 @@ export default function LodgingHotel({ selectionId }) {
           setShuffleHotel(responseTest);
         }
       } catch (error) {
-        console.log(error);
+        console.eror(error);
       }
     };
     getLodgingsHotels();
   }, [token, selectionId]);
 
-  // console.log(shuffleHotel);
   return <LodgingsView hotels={shuffleHotel} />;
 }

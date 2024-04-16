@@ -14,9 +14,6 @@ export default function CartHotelT(props) {
   const { hotelGetCart, cartId, setIsLoader, isLoader } = props;
   const [showDelete, setShowDelete] = useState({});
   const [loadingHotels, setLoadingHotels] = useState({});
-  // const { languageData } = useContext(LanguageContext);
-
-  // console.log(hotelGetCart);
 
   const handleDeleteClick = (hotel) => {
     setLoadingHotels((prevLoadingHotels) => ({
@@ -52,8 +49,6 @@ export default function CartHotelT(props) {
     updatedShowDelete[hotelId] = !updatedShowDelete[hotelId];
     setShowDelete(updatedShowDelete);
   };
-
-  // console.log(hotelGetCart);
 
   return (
     <div className="relative">

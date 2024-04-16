@@ -31,8 +31,7 @@ export function LimitPriceAlert() {
 export function ReservationFailed() {
   const { isFailedReservation, setIsFailedReservation } = useContext(RoomsHotelContext);
   const { languageData } = useContext(LanguageContext);
-  // useEffect(())
-  // console.log(isFailedReservation);
+
   return (
     isFailedReservation && (
       <>

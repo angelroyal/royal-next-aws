@@ -67,7 +67,6 @@ export function handleErrorsComponent(errorReact) {
 //     ],
 //   };
 
-//   console.log(slackMessage);
 // }
 
 // export function sendLoggerFront(title, errorInfo) {

@@ -50,7 +50,7 @@ export default function CartGet({ onCloseMenu }) {
     if (uidCart) {
       const { uid } = JSON.parse(uidCart);
       const cartId = uid;
-      router.push(`${language}/booking?uid=${cartId}`);
+      router.push(`/${language}/booking?uid=${cartId}`);
       onCloseMenu();
     }
   };

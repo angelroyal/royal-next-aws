@@ -98,7 +98,6 @@ export default function RoomsDetails(codeHotel) {
           <div key={roomType} className="mb-[4rem] ">
             <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 ">
               {roomType}
-              {/* {console.log(rooms)} */}
             </h2>
             <div className="relative pr-4 lg:pr-9">
               <Swiper

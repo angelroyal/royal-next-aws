@@ -13,7 +13,6 @@ export default function CartTourOptions() {
   const tour = homeRecommendedTour;
 
   const sentTour = (tour) =>{
-    console.log(tour);
   }
   
   return (

@@ -23,9 +23,7 @@ export default function SendHotel() {
     const storedValidSecondDay = localStorage.getItem("validSecondDay");
     const dataSearch = localStorage.getItem("dataSearch");
 
-    console.log(dataSearch);
     if (dataSearch) {
-      // console.log("if");
       const parsedDataSearch = JSON.parse(dataSearch);
       setSelectedOption(parsedDataSearch);
     }
@@ -66,6 +64,7 @@ export default function SendHotel() {
       const CheckOut = moment(FormatCheckOut).format("YYYY-MM-DD");
       setValidSecondDay(CheckOut);
       localStorage.setItem("validSecondDay", CheckOut);
+      
     }
   };
 

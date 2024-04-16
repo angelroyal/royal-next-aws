@@ -10,7 +10,6 @@ import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 export default function UnavailableCardHotel(props) {
   const { languageData } = useContext(LanguageContext);
   const { destination } = props;
-  // console.log(destination);
   const roomData = [{ adults: 2, children: [] }];
   const router = useRouter();
   const { fetchData } = useCartAxios();

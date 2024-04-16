@@ -43,7 +43,7 @@ export const lodgings = async (id) => {
       return response.data;
     }
   } catch (error) {
-    console.log(error);
+    console.eror(error);
     throw error;
   }
 };

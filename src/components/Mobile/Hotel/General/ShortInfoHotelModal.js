@@ -79,7 +79,7 @@ export function ShortInfoHotelModal(props) {
         localStorage.removeItem("uid-cart");
         localStorage.removeItem("cartData");
       }
-      // console.log(error);
+      // console.eror(error);
       setShowAlert(error.response.data);
     }
     handleShowContentChange();
