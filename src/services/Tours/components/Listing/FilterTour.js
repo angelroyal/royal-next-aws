@@ -136,7 +136,6 @@ export default function FilterTour(props) {
     }
     // Actualizar el estado con la copia modificada
     newFilters[group] = { ...newFilters[group], items: newItems };
-    // console.log(newFilters);
     if (type === "checkbox") {
       setFilters(newFilters);
     } else {

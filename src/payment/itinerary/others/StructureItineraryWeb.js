@@ -24,6 +24,7 @@ export default function StructureItineraryWeb(props) {
                 <CardTourItinerary key={index} itemActivity={item} />
               ) : (
                 <CardTourConfirmation key={index} itemActivity={item} />
+                // <div>test</div>
               )}
             </div>
           );
@@ -35,6 +36,7 @@ export default function StructureItineraryWeb(props) {
                   <CardHotelItinerary itemHotel={item} />
                 ) : (
                   <CardHotelConfirmation itemHotel={item} />
+                  // <div>test</div>
                 )
                 // <CardHotelItinerary itemHotel={item} />
               }

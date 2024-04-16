@@ -191,7 +191,7 @@ export default function TourCardItinerary({ itemActivity }) {
 
                         <span>
                           {itemActivity.tourists &&
-                            itemActivity.tourists.map(
+                            itemActivity.tourists.categories.map(
                               (tourist, index) =>
                                 `${tourist.quantity} ${tourist.category}${
                                   index !== itemActivity.tourists.length - 1
