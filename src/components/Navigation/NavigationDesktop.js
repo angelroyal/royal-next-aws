@@ -51,7 +51,7 @@ export default function NavigationDesktop() {
               >
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
-                  alt="Royal Vacations Mexico"
+                  alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
                   width={200}
                   height={100}
                 />

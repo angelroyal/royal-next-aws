@@ -46,7 +46,7 @@ export function TyCEs() {
         Persona que viaja temporalmente y/o que utiliza el sitio
         www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com, con el objeto de hacer uso de la
         intermediación y el motor de reservaciones de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y
         con el fin último de disfrutar cualquiera de los servicios turísticos
         proporcionados de manera directa por el Proveedor. (En lo sucesivo
         denominado de aquí en adelante como
@@ -54,8 +54,7 @@ export function TyCEs() {
         <span className="m-b text-[.938rem]"> PROVEEDOR.-</span> Persona física
         o moral que proporciona en forma directa los servicios turísticos a El
         Usuario-Turista, contratados, reservados o adquiridos por este último a
-        través de la intermediación y motor de reservaciones del sitio de Royal
-        Vacations México.
+        través de la intermediación y motor de reservaciones del sitio de {process.env.NEXT_PUBLIC_NAME_COMPANY}.
       </div>
 
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
@@ -67,14 +66,14 @@ export function TyCEs() {
         Condiciones, así como con interés en adquirir los servicios de
         intermediación y reservación que aquí se especifican, y que para ello
         recurre a{" "}
-        <span className="m-b text-[.875rem]">Royal Vacations México</span> y a
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y a
         efecto de que funja como mera intermediaria entre Usted y los
         Proveedores prestadores directos de servicios turísticos.
       </div>
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
         Usted declara bajo protesta de decir verdad, que reconoce que los
         servicios proporcionados por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y su
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y su
         Sitio, consisten
         <span className="m-b text-[.938rem]">
           {" "}
@@ -117,9 +116,9 @@ export function TyCEs() {
         en la
         <span className="m-b text-[.875rem]"> INTERMEDIACIÓN</span> que existirá
         entre
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         Usted y los Proveedores, en donde
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         para los efectos de los presentes Términos y Condiciones, actuará única
         y exclusivamente como
         <span className="m-b text-[.875rem]"> INTERMEDIARIA</span>,
@@ -128,18 +127,18 @@ export function TyCEs() {
         reservación en hoteles y establecimientos de hospedaje; reservación de
         sitios de atracción turística; reservación de paquetes de viajes; entre
         otros, Así, una vez que las reservaciones le sean confirmadas por
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         conteniendo los servicios turísticos por Usted elegidos (de acuerdo a su
         disponibilidad), se concluirá con la prestación del servicio de
         intermediación por parte de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, ya
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, ya
         que dichos servicios turísticos serán proporcionados a Usted por los
         Proveedores de manera directa.
       </div>
 
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
         <span className="m-b text-[.938rem]">USO DEL SITIO.-</span>
-        <span className="m-b text-[.875rem]">Royal Vacations México</span> le
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY}</span> le
         otorga una licencia limitada, intransferible, revocable, para usar este
         Sitio de acuerdo a los presentes Términos y Condiciones. Usted debe usar
         este sitio solamente para realizar o comprar reservaciones legítimas y
@@ -153,17 +152,17 @@ export function TyCEs() {
         colores y formas, material editorial, formatos impresos, formatos de
         búsqueda, descargas digitales, compilaciones de datos, códigos fuente,
         software, etc. son propiedad exclusiva de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> o
         bien cuenta con todas las Licencias y Autorizaciones para tal uso, por
         tanto Usted no puede copiar, reproducir, volver a publicar, cargar,
         modificar, transmitir o distribuir dicho contenido sin tener la
         autorización previa y por escrito de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         excepto, en los casos (a) en que Usted descargue para ver e imprimir el
         material que se encuentra contenido en este Sitio ó (b) descargue o
         imprima el material que le sea enviado a su correo electrónico por parte
         de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, en
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, en
         ambas situaciones Usted única y exclusivamente podrá utilizarlo para su
         uso personal, debiendo incluir el material impreso siempre la leyenda “©
         VIAJES BAMO S.A. DE C.V. 2018-2020 Todos los derechos reservados.”
@@ -175,7 +174,7 @@ export function TyCEs() {
         o copiar cualquiera de las páginas Web, datos o contenido, código
         fuente, que se encuentre en este Sitio en ningún caso y sin el
         consentimiento previo y por escrito de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>. De
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>. De
         acuerdo a lo anterior, Usted manifiesta estar de acuerdo en que no
         copiará, publicará, transmitirá, modificará o transferirá de ninguna
         otra manera los datos o contenido de este Sitio a ningún computador,
@@ -193,7 +192,7 @@ export function TyCEs() {
         estos avisos. El uso de tal material en cualquier otro sitio web o en
         cualquier ambiente de computadores en red, está prohibido. Está
         prohibido por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> que
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> que
         usted coloque o transmita cualquier material que vaya en contra de la
         ley, amenazante, injurioso, difamatorio, obsceno, indecente,
         pornográfico, profano, o cualquier material que pueda constituir o
@@ -205,7 +204,7 @@ export function TyCEs() {
         publicidad, (b) esté protegida por Derechos de Autor, de Marca
         Registrada u otros Derechos de Propiedad, a menos que se tenga la
         autorización expresa y por escrito de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> o
         del propietario de tales derechos, (c) que contenga un virus, bug o
         cualquier otro ítem peligroso o (d) que sea usada para confabularse
         ilegalmente en contra de otra persona en detrimento de su derecho a
@@ -244,14 +243,14 @@ export function TyCEs() {
         <span className="m-b text-[.875rem]"> Términos y Condiciones</span>, así
         como la
         <span className="m-b text-[.875rem]"> política de privacidad</span> de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
         Todas las reservaciones están sujetas a disponibilidad al momento de
         procesar su solicitud. La disponibilidad no puede ser garantizada hasta
         haber recibido el pago total. Para algunas reservaciones (debidamente
         identificadas antes de llenar sus detalles de contacto y de la tarjeta
         de crédito), tenemos que verificar la disponibilidad directamente con el
         departamento de reservaciones del proveedor antes de poder confirmarlas.
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> le
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> le
         pide un máximo de 24 horas para dicha verificación de disponibilidad y
         confirmación. Con el fin de evitar contratiempos, Usted debe imprimir su
         cupón correspondiente y presentarlo al momento de requerir su servicio
@@ -260,13 +259,13 @@ export function TyCEs() {
         asignado, mencionando su número de reservación.
       </div>
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
-        <span className="m-b text-[.875rem]">Royal Vacations México</span> le
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY}</span> le
         sugiere leer cuidadosamente la cláusula correspondiente a las POLÍTICAS
         DE CANCELACIÓN. Cualquier cambio de reservación está sujeto a
         disponibilidad y re-cotización de tarifas. Para mayor información, Usted
         deberá contactar a su Asesor de Viajes asignado, mencionando su número
         de reservación. Toda reservación confirmada en firme por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         proporciona un número de control de reservación el cual deberá portar
         Usted en todo momento.
       </div>
@@ -274,19 +273,19 @@ export function TyCEs() {
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         <span className="m-b text-[.938rem]">POLÍTICAS DE PAGO.-</span> El monto
         correspondiente a su reservación
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> lo
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> lo
         cargará inmediatamente a los datos de la tarjeta de crédito que Usted
         proporcione para tal efecto, siempre y cuando el estatus de su
         reservación muestre que está confirmada, y aparecerá en su estado de
         cuenta con la leyenda:
-        <span className="m-b text-[.875rem]"> “Royal Vacations México”</span> o
+        <span className="m-b text-[.875rem]"> “{process.env.NEXT_PUBLIC_NAME_COMPANY}”</span> o
         con la leyenda equivalente al Proveedor, excepto en algunas
         reservaciones que incluyen boletos de avión donde podrán aparecer dos
         cargos. (a) El primero por el costo de los boletos de avión y (b) el
         segundo por los demás servicios reservados, tales como: Hotel,
         traslados, impuestos, cuotas y otros. Estos cargos se reflejarán con la
         leyenda
-        <span className="m-b text-[.875rem]"> “Royal Vacations México”</span> o
+        <span className="m-b text-[.875rem]"> “{process.env.NEXT_PUBLIC_NAME_COMPANY}”</span> o
         con la leyenda equivalente al Proveedor y el nombre correspondiente a la
         “AEROLÍNEA”. Para el pago de su reserva, aceptamos Tarjetas de Crédito
         Visa, MasterCard y American Express. Si Usted no cuenta con alguna de
@@ -301,7 +300,7 @@ export function TyCEs() {
         su recibo de pago de su tarjeta de crédito, puede variar hasta un tres
         por ciento con motivo de la fluctuación internacional del tipo de
         cambios de divisas.
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         es responsable de dicha fluctuación. Usted reconoce haber sido informado
         de la fluctuación del tipo de cambio y estar de acuerdo con el cargo
         correspondiente en Dólares Americanos. En caso de requerir factura
@@ -314,7 +313,7 @@ export function TyCEs() {
         Se le informa que existen impuestos y/o cuotas Estatales y Municipales
         tanto en la República Mexicana como en el Extranjero que podrían ser
         cobrados directamente por el proveedor final del servicio,
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         asume ninguna responsabilidad sobre dichos cobros, ni forman parte del
         precio final de su reservación.
       </div>
@@ -338,7 +337,7 @@ export function TyCEs() {
       </div>
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         A continuación
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> le
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> le
         describe sus políticas generales de cancelación aplicables para la
         mayoría de los hoteles:
       </div>
@@ -376,7 +375,7 @@ export function TyCEs() {
 
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         A continuación
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> le
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> le
         describe sus políticas generales de cancelación, aplicables para la
         mayoría de los tours y servicios de transportación terrestre:
       </div>
@@ -395,9 +394,9 @@ export function TyCEs() {
 
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         Responsabilidad limitada de
-        <span className="m-b text-[.875rem]"> Royal Vacations México:</span> En
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}:</span> En
         virtud de que
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         actúa únicamente como INTERMEDIARIO en la prestación del servicio de
         transportación aérea, al no ser el prestador directo del servicio, Usted
         entiende y acepta que una vez que sean expedidos los boletos aéreos, si
@@ -410,15 +409,15 @@ export function TyCEs() {
         mercantil; (e) se inicia una huelga por sus empleados; (f) y/o por
         cualquier otro motivo, será responsabilidad única y exclusiva de la
         aerolínea prestadora del servicio y no de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>. Por
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>. Por
         lo anterior, en el caso de que los servicios aéreos no sean
         proporcionados parcial o totalmente por parte de la línea aérea, Usted
         libera a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> de
         cualquier responsabilidad o falta de cumplimiento, no reservándose
         ninguna acción administrativa, civil o penal, ni derecho alguno en
         contra de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, ni
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, ni
         a pretender alguna reclamación, compensación, reembolso, indemnización
         y/o pago de daños y perjuicios.
       </div>
@@ -428,7 +427,7 @@ export function TyCEs() {
         se verá reflejada en su estado de cuenta dentro de los próximos 5-10
         días hábiles dependiendo del Proceso Bancario, principalmente de los
         plazos de su Banco emisor.
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> se
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> se
         reserva el derecho de contratar por cuenta de Usted, los servicios a que
         se refiere este especifican en los presentes Términos y Condiciones
         precisamente en la calidad y/o categorías contratadas, en cuanto a
@@ -440,14 +439,14 @@ export function TyCEs() {
         si Usted hace uso del servicio, se entenderá que consintió dicha
         modificación y no procederá reclamación, compensación o reembolso
         alguno. Una vez que
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         recibe por parte de Usted el importe de los servicios contratados, sean
         estos aéreos, terrestres, de hospedaje, en conjunto (paquete) o
         cualquier otro,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         cuenta con la autorización inmediata de Usted para emitir, expedir o
         adquirir los boletos aéreos a su nombre, apegándose y aceptando tanto
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         como Usted las políticas de cancelación, emisión y venta de boletos de
         las compañías aéreas nacionales e internacionales, las políticas de
         expedición, emisión y venta de boletos aéreos de IATA International y a
@@ -455,7 +454,7 @@ export function TyCEs() {
       </div>
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         Para las cancelaciones de autobuses
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         tiene capacidad de cancelaciones únicamente con el proveedor Primera
         Plus, para el resto de proveedores el proceso básico para cambios y
         cancelaciones es directamente en las taquillas, por lo menos 60 min
@@ -483,28 +482,28 @@ export function TyCEs() {
       <div className="py-[2.5rem] text-justify m-m text-[.875rem]">
         <span className="m-b text-[.938rem]">PROPIEDAD INDUSTRIAL.-</span>
         Usted reconoce que la marca
-        <span className="m-b text-[.875rem]"> “Royal Vacations México”</span>,
+        <span className="m-b text-[.875rem]"> “{process.env.NEXT_PUBLIC_NAME_COMPANY}”</span>,
         es marca registrada o en trámite de registro para uso exclusivo de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>. Y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>. Y
         de manera enunciativa más no limitativa las demás marcas, logotipos,
         nombres comerciales, patentes, modelos de utilidad y métodos
         comerciales, cartera de clientes, que aparecen ó funcionan en este
         Sitio, constituyen derechos de Propiedad Industrial que se encuentran
         registrados o en proceso de registro, son propiedad exclusiva de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, de
         sus afiliadas, ó terceras partes contratantes, y fueron proporcionadas
         para el uso del Sitio, por tal razón
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         cuenta con las autorizaciones y/o licencia de uso respectiva y por tanto
         Usted no puede copiar, reproducir, volver a publicar, cargar, publicar,
         modificar, transmitir o distribuir dichos derechos ni el contenido de
         este Sitio, sin tener la autorización previa y por escrito de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         excepto, en los casos (a) en que Usted descargue para ver e imprimir el
         material que se encuentra contenido en este Sitio ó (b) descargue o
         imprima el material que le sea enviado a su correo electrónico por parte
         de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, en
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, en
         cuyas situaciones, Usted única y exclusivamente podrá utilizarlo para su
         uso personal, debiendo incluir siempre la leyenda “© VIAJES BAMO S.A. DE
         C.V. Todos los derechos reservados”. En razón de lo anterior, nada de lo
@@ -513,24 +512,24 @@ export function TyCEs() {
         Internacionales, podrá ser considerado por Usted como una licencia o
         derecho a usar cualquiera de las Marcas Comerciales, o demás derechos de
         Propiedad Industrial sin el previo consentimiento por escrito de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, o
         en su caso de los titulares de tales derechos. Y se le prohíbe
         utilizarlas en cualquier otra aplicación que no sea permitida por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> o
         cualquier otro uso comercial. Usted acuerda en no alterar la Propiedad
         Industrial de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> en
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> en
         modo alguno, ni se permitirá la acción que de cualquier manera que pueda
         menoscabar, denigrar o disminuir los derechos de Propiedad Industrial de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
         Usted se compromete a no utilizar las marcas o nombres comerciales de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         como nombres de dominio ni registrarlos como parte de un nombre de
         dominio, o bien su colocación como parte de Publicidad en Internet sin
         previo consentimiento por escrito de
         <span className="m-b text-[.875rem]">
           {" "}
-          Royal Vacations México. Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}. {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         se reserva el derecho de vigilar la calidad del uso de su Propiedad
         Industrial, además, notificará a Usted de inmediato por escrito en el
@@ -541,9 +540,9 @@ export function TyCEs() {
         Internacionales así como derechos consignados en el Código Civil, Penal
         y de Comercio. Si Usted incurriera en algún uso inapropiado del
         contenido y Propiedad Industrial de este Sitio,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         tendrá el derecho de requerirle (a) que deje de utilizar el contenido
-        que <span className="m-b text-[.875rem]">Royal Vacations México </span>
+        que <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         considere vulnera sus derechos de Propiedad Industria. (b) que deje de
         copiar total o parcialmente, reproducir, volver a publicar, cargar,
         publicar, transmitir, distribuir o modificar el uso del contenido y de
@@ -564,7 +563,7 @@ export function TyCEs() {
         de computación, bases de datos, anuncios publicitarios, que aparecen ó
         funcionan en este Sitio, constituyen Derechos de Autor que se encuentran
         registrados o en proceso de registro y son propiedad exclusiva de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> o
         del proveedor que presta el servicio, con titularidad de derechos
         patrimoniales, o sobre los cuales se cuenta con Licencia de uso o
         Autorización respectiva y fueron proporcionadas para el uso del Sitio,
@@ -572,12 +571,12 @@ export function TyCEs() {
         publicar, transmitir, modificar o distribuir dichos derechos ni el
         contenido de este Sitio, sin tener la autorización previa y por escrito
         de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         excepto, en los casos (a) en que Usted descargue para ver e imprimir el
         material que se encuentra contenido en este Sitio ó (b) descargue o
         imprima el material que le sea enviado a su correo electrónico por parte
         de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>, en
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>, en
         cuyas situaciones, Usted única y exclusivamente podrá utilizarlo para su
         uso personal, debiendo incluir la leyenda “© VIAJES BAMO S.A. DE C.V.
         Todos los derechos reservados”. En razón de lo anterior, nada de lo
@@ -586,22 +585,22 @@ export function TyCEs() {
         Internacionales, podrá ser considerado por Usted como una licencia o
         derecho a usar cualquiera de estos Derechos de Autor sin el previo
         consentimiento por escrito de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>. Y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>. Y
         se le prohíbe usarlas en cualquier aplicación que no sea permitida por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> o
         cualquier otro uso comercial. Usted acuerda en no alterar los Derechos
         de Autor de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> en
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> en
         modo alguno, ni se permitirá la acción que de cualquier manera que pueda
         menoscabar, denigrar o disminuir los Derechos de Autor de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
         Usted se compromete a no colocar todo o en parte de los Derechos de
         Autor de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         como publicidad en internet sin previo consentimiento por escrito de
         <span className="m-b text-[.875rem]">
           {" "}
-          Royal Vacations México. Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}. {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         se reserva el derecho de vigilar la calidad del uso de sus Derechos de
         Autor, además, notificará a Usted de inmediato por escrito en el caso de
@@ -612,7 +611,7 @@ export function TyCEs() {
         Internacionales, así como derechos consignados en el Código Civil, Penal
         y de Comercio. Si Usted incurriera en algún uso inapropiado del
         contenido y Derechos de Autor de este Sitio,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         tendrá el derecho de requerirle (a) que deje de utilizar el contenido y
         Derechos de Autor del Sitio, (b) que deje de copiar total o
         parcialmente, reproducir, volver a publicar, cargar, publicar,
@@ -625,14 +624,14 @@ export function TyCEs() {
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
         <span className="m-b text-[.938rem]">PRIVACIDAD Y SEGURIDAD.-</span>
         Usted manifiesta que ha leído la POLÍTICA DE PRIVACIDAD Y SEGURIDAD de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, los
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, los
         términos incorporados en ella, y está de acuerdo en que los términos de
         tal política son razonables. Usted consiente en que su información
         personal sea usada por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y/o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y/o
         por sus proveedores y distribuidores terceras partes de acuerdo con los
         términos de la Política de Privacidad de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y
         para los propósitos establecidos en ella.
       </div>
 
@@ -640,24 +639,24 @@ export function TyCEs() {
         <span className="m-b text-[.938rem]">
           REVISIÓN DE LAS TRANSMISIONES.-
         </span>
-        <span className="m-b text-[.875rem]">Royal Vacations México </span>
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         podrá monitorear y revisar cualquier información que se transmita o
         reciba por medio de este sitio y se reserva el derecho a censurar,
         editar, suprimir o prohibir la transmisión o la recepción de cualquier
         información que
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         considere inapropiada o que viole estos términos y condiciones. Durante
         el tiempo que dure el monitoreo, puede que la información sea examinada,
         grabada o copiada y al usar este sitio usted manifestará que acepta tal
         monitoreo y revisión. Usted manifiesta además estar de acuerdo en que si
         usted hace sugerencias, presenta ideas, comentarios o hace preguntas, o
         coloca cualquier otra información en este sitio, usted le garantiza a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, el
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, el
         derecho no exclusivo, sin regalías, perpetuo, irrevocable y con derecho
         de sublicencia total para usar, reproducir, modificar, adaptar,
         publicar, traducir, crear trabajos derivados, distribuir y exhibir tal
         contenido en cualquier forma, medio o tecnología.
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span> no
         se responsabiliza ni tendrá ninguna responsabilidad por ningún contenido
         que sea situado o presentado por Usted.
       </div>
@@ -666,13 +665,13 @@ export function TyCEs() {
         <span className="m-b text-[.938rem]">
           LIMITACIÓN DE RESPONSABILIDAD.-
         </span>
-        <span className="m-b text-[.875rem]">Royal Vacations México </span> NO
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY} </span> NO
         SERÁ RESPONSABLE, NI ASUME NINGUNA RESPONSABILIDAD POR CUALQUIER DAÑO O
         VIRUS QUE PUEDA INFECTAR SU COMPUTADOR O CUALQUIER OTRA PROPIEDAD DE
         USTED DEBIDO AL ACCESO, USO O NAVEGACIÓN QUE HAGA DE ESTE SITIO, O POR
         LA DESCARGA DE CUALQUIER MATERIAL, DATO, TEXTO, IMAGEN, VÍDEO O AUDIO
         DESDE EL SITIO. EN NINGÚN CASO
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         SERÁ RESPONSABLE POR CUALQUIER LESIÓN, DAÑO, PERJUICIO, PÉRDIDA, RECLAMO
         O CUALQUIER DAÑO ESPECIAL, PUNITIVO, INDIRECTO, INCIDENTAL POR
         NEGLIGENCIA, O ILÍCITO, QUE RESULTE DE, (I) CUALQUIER USO DE ESTE SITIO
@@ -686,7 +685,7 @@ export function TyCEs() {
         LABORES, SUSPENSIÓN DE ACTIVIDADES POR DECISIÓN DE LOS TRABAJADORES DE
         LOS PROVEEDORES, O POR CUALQUIER OTRO SIMILAR, YA QUE USTED COMPRENDE
         QUE
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> ES
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> ES
         ÚNICAMENTE INTERMEDIARIO EN LA PRESTACIÓN DE LOS SERVICIOS TURÍSTICOS
         OFERTADOS EN EL SITIO Y COMPRENDE QUE EN LA MAYORÍA DE LOS CASOS NO
         PUEDE CONTROLAR EL DESTINO DE LOS PAGOS QUE USTED HAYA REALIZADO Y MÁS
@@ -697,7 +696,7 @@ export function TyCEs() {
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
         <span className="m-b text-[.938rem]">RESPONSABILIDAD.-</span> Usted
         deberá responder de los daños que genere a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, que
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, que
         resulten de cualquier mal uso o uso incorrecto que pudiera hacer del
         Sitio, o sobre cualquier operación fraudulenta o con fines contrarios a
         los servicios prestados en el sitio o aquellos que vayan en contra de
@@ -708,10 +707,10 @@ export function TyCEs() {
         <span className="m-b text-[.938rem]">ENLACES.-</span> Este Sitio
         contiene enlaces a otros sitios Web los cuales se proporcionan
         únicamente para su conveniencia y no como respaldo a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y
         ellos pertenecen a los proveedores o distribuidores terceras partes de
         los contenidos de tales otros sitios Web.
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         será responsable por el contenido de ningún otro sitio Web y no
         representa o garantiza ningún otro sitio Web o el contenido o material
         de tales sitios. Si Usted decide acceder a otros sitios Web, lo hace
@@ -724,28 +723,28 @@ export function TyCEs() {
         </span>
         Este Sitio contiene enlace a diversas páginas sociales, entre ellas, las
         páginas de Facebook con nombre de usuario:
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
-        página de twitter con nombre de usuario: @RoyalVacationsMexico y Youtube
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
+        página de twitter con nombre de usuario: @{process.env.NEXT_PUBLIC_NAME_COMPANY} y Youtube
         con usuario
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         cuentas administradas por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>;
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>;
         Usted reconoce que dichas páginas son exclusivamente para uso
         informativo y difusión social de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, y
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         será responsable de manera enunciativa más no limitativa por el
         contenido, información, publicación de terceros, comentarios,
         fotografías, videos, contenido de hashtags, ni cualquier otro material
         fuera del alcance de la administración directa de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, ni
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, ni
         por el material que compartido en dichos sitios sociales por Usted o
         cualquier tercero y fuera de la administración de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         pueda violar los derechos de propiedad industrial o derechos de autor.
         Usted es responsable del uso que le pueda dar a dichos sitios, y Usted
         libera de toda responsabilidad a
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         por cualquier uso incorrecto o mal intencionado que pudiera hacer de los
         mismos, o por publicaciones, información, comentarios, y material
         diverso que pudiera resultar ofensivo, insidioso, erróneo, pornográfico
@@ -758,23 +757,23 @@ export function TyCEs() {
         proporciona a Usted el servicio de información y actualización del
         clima, mismo que se publica única y exclusivamente para fines
         informativos; Usted deslinda a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         será responsable sobre cualquier inconsistencia, inexactitud o
         información publicada dentro de su servicio del Clima,
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         se hace responsable por cualquier cambio en las condiciones climáticas,
         ello por encontrarse fuera del control absoluto de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, por
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, por
         tanto Usted reconoce y libera de toda responsabilidad a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> de
         manera limitativa, más no enunciativa, sobre cualquier, reclamación,
         reembolso, queja, compensación, crédito, cambio, cancelación,
         inconveniencias, molestias, accidente, heridas, enfermedades, pérdidas
         físicas o materiales, daños, detrimento o afectación en su persona o en
         su patrimonio, muerte y todas aquellas derivadas de las condiciones
         climáticas de cualquiera de los destinos ofertados por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
       </div>
 
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
@@ -782,19 +781,19 @@ export function TyCEs() {
         proporciona a Usted el enlace exclusivamente para fines informativos de
         Google Maps ©, respecto de la ubicación de diversos servicios
         proporcionados por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>;
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>;
         Usted reconoce que los mapas mostrados en el Sitio, así como la
         ubicación de tales servicios, son únicamente para fines de ubicación y
         localización aproximada, no obstante, Usted reconoce y conviene que al
         hacer uso de los mapas, Usted se sujeta a los términos y condiciones de
         uso que establece Google Maps ©, por lo que Usted libera a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> de
         cualquier responsabilidad derivada de cualquier inconsistencia respecto
         a la ubicación o direcciones mostradas en los mapas, libera a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>
         sobre cualquier desorientación, o cualquier pérdida de ubicación que
         pudiera sufrir derivada del uso de los mapas y libera a
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span> de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span> de
         manera enunciativa más no limitativa sobre cualquier cambio, reembolso,
         queja, cancelación, recargos, no show, reclamo, crédito, compensación y
         cualquier otro que pudiera derivar de las inconsistencias o uso
@@ -811,7 +810,7 @@ export function TyCEs() {
         los datos e información completa para la formación del itinerario y la
         reservación de servicios terrestres y marítimos (hoteles, visitas, autos
         de alquiler, restaurantes, cruceros, etc) liberando a
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span> de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span> de
         cualquier responsabilidad por cambios de itinerario generados por datos
         mal proporcionados, o por cualquier error en los datos proporcionados
         por Usted para la emisión o compra de boletos aéreos como puede ser el
@@ -830,13 +829,13 @@ export function TyCEs() {
         condiciones de servicio establecidas por cada uno de los Proveedores y
         prestadores directos de servicios contratados por Usted a través de la
         intermediación de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, por
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, por
         lo que
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         debe hacer de su conocimiento las que sean más importantes, no obstante
         el Proveedor podrá hacer de su conocimiento nuevas o adicionales
         condiciones de servicio sobre las cuales
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         tiene responsabilidad alguna y en consecuencia declina cualquier
         responsabilidad que pudiera derivar por su incumplimiento. Así mismo,
         Usted deberá por medios propios proveerse de los pasaportes o documentos
@@ -846,18 +845,18 @@ export function TyCEs() {
         las autoridades Aduaneras, Aéreas, Marítimas, Aeroportuarias, Federales,
         Estatales, Municipales etc., que resulten necesarias para realizar su
         viaje, liberando a
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         sobre cualquier problema que llegare a surgir con dichas autoridades,
         así como de la pérdida de boletos de avión, transportación aérea o
         noches de hotel con motivo de dichas omisiones que en ningún caso podrán
         ser imputadas a
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span> por
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span> por
         ser de responsabilidad exclusiva de Usted. En los casos de viajes
         internacionales Usted se compromete a presentarse en los aeropuertos y
         documentarse ante las aerolíneas mínimo con TRES HORAS DE ANTICIPACIÓN
         en vuelos internacionales y DOS HORAS DE ANTICIPACIÓN en vuelos
         nacionales, salvo la instrucción expresa y por escrito que reciba de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y/o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y/o
         alguna otra instrucción para presentarse aún antes por parte de dichas
         Autoridades.
       </div>
@@ -883,10 +882,10 @@ export function TyCEs() {
         <span className="m-b text-[.938rem]">
           CONVENIOS ADICIONALES CON PROVEEDORES.-
         </span>
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         queda relevada de cualquier responsabilidad derivada de convenios
         adicionales y fuera de la intermediación con
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         que se hayan celebrado entre Usted y demás Proveedores prestadores
         directos de los servicios, como son transportistas aéreos y terrestres,
         navieras, cruceros, hoteles, arrendadoras de autos, etc.
@@ -897,16 +896,16 @@ export function TyCEs() {
           SERVICIOS POR O PARA TERCERAS PERSONAS.-
         </span>
         En el caso de que Usted contrate los servicios de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span> a
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span> a
         través del Sitio, por cuenta de diversa agencia de viajes o de cualquier
         tercero, o bien los contrate Usted a favor de terceras personas, Usted
         está de acuerdo que todos los sujetos antes mencionados se sujetarán
         invariablemente a los presentes Términos y Condiciones. Para el caso de
         que Usted contrate los servicios de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> por
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> por
         cuenta de diversa agencia de viajes, o cualquier tercero, fungiendo
         estos como intermediarios,
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> se
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> se
         deslinda de cualquier responsabilidad o problema generado por el
         incumplimiento de la intermediaria o agencia de viajes y en el mismo
         sentido por datos mal proporcionados por la intermediaria o agencia de
@@ -921,26 +920,26 @@ export function TyCEs() {
         <span className="m-b text-[.938rem]">
           DESLINDE DE RESPONSABILIDADES.-
         </span>
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         como Agencia de Viajes por internet, presta servicios en calidad de
         agente de reservaciones intermediaria entre Usted y el Proveedor o
         Proveedores directos de los servicios turísticos promocionados en este
         Sitio.
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         establece negociaciones comerciales dentro de sus propios estándares de
         calidad y servicio, tales como, pero no limitados a: hospedaje en
         hoteles, transportación terrestre y otras actividades turísticas afines
         como tours y excursiones, eligiendo sólo a los proveedores más
         calificados y de mayor prestigio del mercado. Ahora bien, toda vez que
         el carácter jurídico de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span> es
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span> es
         el de fungir única y exclusivamente como INTERMEDIARIA y no como
         proveedora directa de los servicios turísticos,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span> no
         asume ni asumirá ninguna responsabilidad generada de relación alguna
         ante Usted y los Prestadores Finales de Servicios y a su vez Usted
         libera a
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         sobre cualquier responsabilidad ante cualquier falla o falta de
         cumplimiento por parte del Proveedor o Proveedores directos de los
         servicios turísticos, incluyendo sin limitación alguna cualquier falla o
@@ -954,13 +953,13 @@ export function TyCEs() {
         cualquier falla o falta de cumplimiento por parte de todos aquellos
         servicios turísticos que sean proporcionados de manera directa por uno o
         varios Proveedores y no de manera directa por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>; Sin
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>; Sin
         embargo
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         podrá a su libre discreción proporcionarle datos de contacto y/o
         domicilio del proveedor a efecto de que Usted ejerza la reclamación
         respectiva o vía de reclamación que Usted considere necesaria.
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         como Agencia de Viajes y agente INTERMEDIARIA de reservaciones, no
         ofrece, ni ofrecerá ninguna garantía sobre los servicios proporcionados
         de manera directa por los Proveedores, ni garantiza la posición
@@ -977,30 +976,30 @@ export function TyCEs() {
         fallo sea ocasionado de manera directa por
         <span className="m-b text-[.875rem]">
           {" "}
-          Royal Vacations México. Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}. {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>
         , no asume responsabilidad ante Usted y Usted libera de toda
         responsabilidad a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> por
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> por
         actos, omisiones o cualquier tipo de queja o insatisfacción derivados de
         los servicios proporcionados por los proveedores directos de servicios
         en el Sitio anunciados, en virtud de que
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         tiene control alguno o relación legal sobre su personal, equipo,
         operación, publicidad o bienes. En aquellas situaciones en que el
         Proveedor falle en la prestación de sus servicios Usted podrá intentar
         cualquier recurso permitido por las leyes aplicables en contra del
         Proveedor.
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> le
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> le
         garantiza que cuenta con altos estándares de servicio y tomará un
         cuidado especial en la selección de los Proveedores para evitar en todo
         momento la falla de los mismos.
       </div>
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         Asimismo{" "}
-        <span className="m-b text-[.875rem]">Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         será responsable y Usted libera de toda responsabilidad a
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         respecto de:
       </div>
 
@@ -1014,20 +1013,20 @@ export function TyCEs() {
           responsabilidad única y exclusiva de los proveedores y cualquier
           reclamación sobre supuesta publicidad engañosa Usted reconoce que
           deberá realizarla directamente a los proveedores por no ser
-          <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
           responsable de dichas imágenes con pleno conocimiento de usted desde
           el momento en que contrata su servicio turístico.
         </li>
         <li className="m-m text-[.875rem] pl-[0.5rem] pb-[5px]">
           La categoría de estrellas asignada a los hoteles y servicios, ya que
           están basadas en la interpretación de
-          <span className="m-b text-[.875rem]"> Royal Vacations México</span> y
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y
           de los Proveedores Directos de Servicios y pueden diferir de las
           categorías reportadas en otros lugares.
         </li>
         <li className="m-m text-[.875rem] pl-[0.5rem] pb-[5px]">
           Las descripciones de los servicios de viaje son actualizadas por
-          <span className="m-b text-[.875rem]"> Royal Vacations México</span> a
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> a
           su mejor conocimiento, pero no garantizan que todo será exactamente
           igual a su llegada.
         </li>
@@ -1059,9 +1058,9 @@ export function TyCEs() {
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         Respecto a los términos y condiciones y/o políticas de los Proveedores
         directos de servicios.
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         asumirá responsabilidad alguna y Usted libera de toda responsabilidad a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, así
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, así
         como de toda reclamación, costo, gasto o pérdida que Usted pudiera
         sufrir incluyendo cualquier herida personal o de terceras personas,
         accidentes o deceso, daños a pertenencias personales, pérdida de
@@ -1088,17 +1087,17 @@ export function TyCEs() {
           atrasos, terremotos, conflictos bélicos, huracanes, nevadas, y en
           general cualquier otro evento legal o de la naturaleza que sea
           impredecible y que no le sea imputables a
-          <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
         </li>
         <li className="m-m text-[.875rem] pl-[0.5rem] pb-[5px]">
           O actos u omisiones de cualquiera otra persona que no sea
-          <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
         </li>
         <li className="m-m text-[.875rem] pl-[0.5rem] pb-[5px]">
           O enfermedad, robo, disputas laborales, fallas mecánicas, cuarentena,
           acciones gubernamentales, clima, o cualquier otra causa ajena al
           control directo de
-          <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
         </li>
         <li className="m-m text-[.875rem] pl-[0.5rem] pb-[5px]">
           O ante la insistencia de Usted para realizar cualquier tipo de viaje,
@@ -1116,7 +1115,7 @@ export function TyCEs() {
           dichas actividades bajo consciencia de causa, bajo dichas ocasiones
           siempre se considerarán fueron realizadas bajo su propio riesgo,
           liberando Usted a
-          <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
           respecto de cualquier denuncia, demanda, queja, inconformidad,
           recompensa, indemnización, compensación, reclamación por daños
           directos, indirectos, punitivos, cortesía, etc., derivados de
@@ -1126,15 +1125,15 @@ export function TyCEs() {
         </li>
         <li className="m-m text-[.875rem] pl-[0.5rem] pb-[5px]">
           Cualquier otro evento que no se encuentre bajo el control directo de
-          <span className="m-b text-[.875rem]"> Royal Vacations México </span>.
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>.
           Cualquier reclamación o notificación por escrito en contra de
-          <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
           deberá ser recibida a más tardar con catorce (14) días después del
           regreso de su viaje;
-          <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
           se reserva el derecho de rechazar o realizar una operación comercial
           con algún Usuario- Turista en cualquier momento;
-          <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+          <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
           se reserva el derecho de cancelar o cambiar los servicios de viaje a
           nuestra discreción, pero se tratará de sustituirlos con servicios
           comparables; Usted será responsable de verificar que el Proveedor
@@ -1150,61 +1149,61 @@ export function TyCEs() {
       <div className="pb-[0.5rem] m-m text-[.875rem] text-justify">
         El reembolso total no será procedente en situaciones en las que el viaje
         tenga que ser cancelado, interrumpido y/o pospuesto por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> por
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> por
         razones que estén fuera de su control (causas de fuerza mayor, tales
         como, pero no limitadas a, clima, huracán, terremotos, actos de
         terrorismo, huelgas, solicitud de quiebra o concurso mercantil,
         suspensión de actividades, etc.) y en los que las obligaciones
         contractuales de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> con
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> con
         sus proveedores no le permitan obtener reembolso de la suma pagada o a
         ser pagada al Proveedor por cuenta del cliente. En cualquier caso, a
         discreción de
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>, se
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>, se
         podrá retener un 10% del total de la cantidad pagada por la reservación
         como gasto administrativo. A pesar de la estrecha comunicación
         establecida por
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> con
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> con
         los Proveedores aquí anunciados, existe la posibilidad de que la
         vigencia de algunos precios haya expirado o provenga de información
         erróneamente o imprecisamente proporcionada por dichos Proveedores con
         la que nuestra base de datos es alimentada. No obstante esto,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         toma la precaución de verificar las tarifas que aplican con cada
         reservación. En caso de que el precio correcto sea menor a la cantidad
         cotizada,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         aplicará el monto menor. En caso de que el precio correcto sea mayor a
         la cantidad cotizada, su Asesor de Viajes asignado se pondrá
         oportunamente en contacto con Usted, informándole la cantidad correcta o
         bien registrando la cancelación de la reservación a petición suya por no
         estar de acuerdo con el incremento en precio, deslindando expresamente a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y
         sus Proveedores de cualquier responsabilidad o pago de indemnización por
         inconvenientes causados por dicha cancelación. En el caso de que los
         servicios contratados no pudieran ser proporcionados parcial o
         totalmente por parte del Proveedor,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         sólo podrá en determinadas ocasiones gestionar por cuenta de Usted el
         reembolso del importe que proceda, quedando relevada
-        <span className="m-b text-[.875rem]"> Royal Vacations</span> México de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> México de
         cualquier responsabilidad o compromiso mayor en los casos en que el
         reembolso por la cantidad total o restante no sea reembolsada por el
         Proveedor.
       </div>
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
         En casos de que por algún error o manipulación por Usted del sistema de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         se obtenga una cantidad ilógicamente menor al valor comercial del
         servicio ofertado, a menos que se ofrezca expresamente como una oferta
         extraordinaria o como promoción por ser cliente frecuente,
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         podrá notificar al cliente turista el precio real y verdadero antes de
         la prestación del servicio, a efecto de que el cliente decida si desea
         conservar su reservación y en caso de no ser así, acepta que las
         cantidades que haya pagado, le sean reembolsadas en el mismo método de
         pago que haya realizado, sin responsabilidad para
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>.
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>.
       </div>
 
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
@@ -1225,13 +1224,13 @@ export function TyCEs() {
 
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
         <span className="m-b text-[.938rem]">TERMINACIÓN.-</span>{" "}
-        <span className="m-b text-[.875rem]">Royal Vacations México </span>
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         podrá dar por terminado estos Términos y Condiciones y/o cualquiera de
         sus servicios en cualquier momento sin necesidad de avisar o notificar
         dicha terminación, por cualquier causa o motivo, incluyendo por
         cualquier uso inapropiado de este sitio o su incumplimiento con estos
         Términos y Condiciones. No obstante tal terminación no afectará ningún
-        derecho u obligación contraída por Royal Vacations México ante Usted una
+        derecho u obligación contraída por {process.env.NEXT_PUBLIC_NAME_COMPANY} ante Usted una
         vez confirmada una reservación.
       </div>
 
@@ -1294,10 +1293,10 @@ export function TyCEs() {
           ACUERDO, RENUNCIA Y EXONERACIÓN SOBRE COVID-19.-
         </span>
         Al reservar con
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span>,
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         Usted leyó detenidamente nuestros términos y condiciones y está de
         acuerdo en que
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         fungió únicamente como mera intermediaria de reservación entre Usted y
         el proveedor final del servicio. Ahora bien, derivado de la pandemia por
         COVID-19 que ha afectado el mundo, la mayoría de nuestros proveedores,
@@ -1317,13 +1316,13 @@ export function TyCEs() {
         servicios de los Proveedores finales reconociendo y asumiendo esos
         riesgos. Usted y aquéllos por los que responde eximen de toda
         responsabilidad, mantendrán indemne y se comprometen a no demandar a
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> y/o
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> y/o
         Viajes Bamo, S.A de C.V., y sus predecesores, sucesores, entidades
         filiales, matrices, subsidiarias y demás relacionadas, directores
         pasados o presentes, cesionarios, representantes, agentes, abogados,
         gerentes, administradores, socios comerciales, Proveedores, o
         cualesquiera otras personas de cualquier manera relacionadas con
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         (los “Exonerados”) respecto de cualquier queja, acción judicial o
         reclamación de cualquier daño y/o perjuicio, cualquiera que sea su
         naturaleza, económicos, financieros o de otro tipo, legales,
@@ -1350,7 +1349,7 @@ export function TyCEs() {
         Reiteramos que todos los protocolos de higiene y seguridad adoptados por
         los Proveedores finales, son responsabilidad de estos últimos, por lo
         que
-        <span className="m-b text-[.875rem]"> Royal Vacations México</span> no
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span> no
         asume responsabilidad por la eficiencia de dichos protocolos.
       </div>
     </div>

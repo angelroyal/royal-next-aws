@@ -104,8 +104,8 @@ export function PopularState() {
                     src={popularState[0].image}
                     alt={` ${
                       validateLanguageName(language, popularState[0]).name
-                    } Royal Vacation`}
-                    // alt={`${popularState[0][language].name} Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                    // alt={`${popularState[0][language].name} staywuw`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
@@ -135,7 +135,7 @@ export function PopularState() {
                     src={popularState[1].image}
                     alt={`${
                       validateLanguageName(language, popularState[1]).name
-                    } Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
@@ -167,7 +167,7 @@ export function PopularState() {
                     src={popularState[2].image}
                     alt={`${
                       validateLanguageName(language, popularState[2]).name
-                    } Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
@@ -197,7 +197,7 @@ export function PopularState() {
                     src={popularState[3].image}
                     alt={`${
                       validateLanguageName(language, popularState[3]).name
-                    } Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
@@ -233,7 +233,7 @@ export function PopularState() {
                     src={popularState[4].image}
                     alt={`${
                       validateLanguageName(language, popularState[4]).name
-                    } Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
@@ -264,7 +264,7 @@ export function PopularState() {
                     src={popularState[5].image}
                     alt={`${
                       validateLanguageName(language, popularState[5]).name
-                    } Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
@@ -296,7 +296,7 @@ export function PopularState() {
                     src={popularState[6].image}
                     alt={`${
                       validateLanguageName(language, popularState[6]).name
-                    } Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"
@@ -326,7 +326,7 @@ export function PopularState() {
                     src={popularState[7].image}
                     alt={`${
                       validateLanguageName(language, popularState[7]).name
-                    } Royal Vacation`}
+                    } ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
                     className="h-full rounded-lg object-cover brightness-[.7] select-none"
                     width="100%"
                     height="100%"

@@ -58,7 +58,7 @@ export default function CalendarDay({ onDateChange, listing = false }) {
         <img
           className="h-[18px] w-4 invert"
           src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
-          alt="calendar icon royal vacation"
+          alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
         />
         <div className="flex relative w-full">
           <span className="absolute top-0 left-0 m-s-b text-fs-10 text-gry-70">

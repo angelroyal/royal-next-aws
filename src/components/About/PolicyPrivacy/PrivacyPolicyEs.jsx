@@ -6,15 +6,14 @@ export function PrivacyPolicyEs() {
       </h1>
       <div className="m-b text-[.938rem] text-black">
         En cumplimiento con lo establecido por la Ley Federal de Protección de
-        Datos Personales en Posesión de los Particulares (LFPDPPP) Royal
-        Vacations México pone a su disposición el siguiente Aviso de Privacidad:
+        Datos Personales en Posesión de los Particulares (LFPDPPP) {process.env.NEXT_PUBLIC_NAME_COMPANY} pone a su disposición el siguiente Aviso de Privacidad:
       </div>
 
       <h3 className="pt-[2rem] pb-[.3rem] text-[.938rem] text-black m-b">
         Responsable de la protección y tratamiento de sus Datos Personales
       </h3>
       <div className="m-m text-[.875rem] text-black text-justify">
-        Viajes Bamo S.A. de C.V. (En lo sucesivo “Royal Vacations México”), con
+        Viajes Bamo S.A. de C.V. (En lo sucesivo “{process.env.NEXT_PUBLIC_NAME_COMPANY}”), con
         domicilio en Avenida Nader 98, Manzana 5, Lote. 117, Supermanzana 3,
         Cancún, Quintana Roo, C.P. 77500.
       </div>
@@ -25,7 +24,7 @@ export function PrivacyPolicyEs() {
         Los datos personales que
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         recabe de usted, serán destinados únicamente para los fines descritos en
         el presente aviso de privacidad y podrán ser recabados:
@@ -33,7 +32,7 @@ export function PrivacyPolicyEs() {
       <ul className="pl-[2rem] mb-[.5rem] text-justify list-disc">
         <li className="m-m text-[.875rem] text-black pl-[.5rem] pb-[5px]">
           De manera directa, ingresando sus datos o utilizando los servicios en
-          línea a través de la página www.royalvacationsmexico.com
+          línea a través de la página www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com
         </li>
         <li className="m-m text-[.875rem] text-black pl-[.5rem] pb-[5px]">
           De manera directa, a través de nuestro centro de reservación
@@ -52,11 +51,9 @@ export function PrivacyPolicyEs() {
         Datos recabados
       </h3>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        Los datos que
-        <span className="m-b text-[.875rem] text-black">
-          Royal Vacations México
-        </span>
-        recabe de usted, serán los siguientes: Nombre completo con apellidos,
+        Los datos que 
+        <span className="m-b text-[.875rem] text-black"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
+         recabe de usted, serán los siguientes: Nombre completo con apellidos,
         número de teléfono, correo electrónico, domicilio y datos financieros
         como lo son: Número de tarjeta de crédito, nombre del titular de la
         misma, fecha de vencimiento, código de seguridad y aquellos datos que
@@ -67,13 +64,13 @@ export function PrivacyPolicyEs() {
         Asimismo,
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         en casos especiales solicitará recabar su imagen física (fotografía y/o
         video), para lo cual
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         habilitará los medios idóneos para obtener el consentimiento de los
         titulares de acuerdo a lo establecido en la LFPDPPP y en su reglamento.
@@ -91,7 +88,7 @@ export function PrivacyPolicyEs() {
           confirmación de los servicios por usted reservados con
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}
           </span>{" "}
           a través de sus medios, con fines financieros y crediticios, para dar
           cumplimiento a las obligaciones contraídas con usted y con nuestros
@@ -117,7 +114,7 @@ export function PrivacyPolicyEs() {
           servicios y fines publicitarios (Única y exclusivamente para
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}
           </span>
           ).
         </li>
@@ -128,7 +125,7 @@ export function PrivacyPolicyEs() {
         publicitarios por parte de
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>
         , haciendo click en el link “Cancelar suscripción”.
       </div>
@@ -136,7 +133,7 @@ export function PrivacyPolicyEs() {
         En caso de que no desee que sus datos personales sean tratados para
         estos fines adicionales, usted puede presentar desde este momento un
         escrito vía correo electrónico a la dirección
-        privacidad@royalvacationsmexico.com.
+        privacidad@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com.
       </div>
       <h3 className="pt-[2rem] pb-[.3rem] text-[.938rem] text-black m-b">
         Transferencia de datos, nacional e internacional
@@ -151,12 +148,12 @@ export function PrivacyPolicyEs() {
           común de
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}
           </span>{" "}
           o a una sociedad matriz o a cualquier sociedad del mismo grupo de
           <span className="m-b text-[.875rem] text-black">
             {" "}
-            Royal Vacations México{" "}
+            {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
           </span>
           que opere bajo los mismos procesos y políticas internas;
         </li>
@@ -228,7 +225,7 @@ export function PrivacyPolicyEs() {
         presente aviso. No obstante,
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         le informa que el mantener sus datos personales en su base de datos, le
         permitirá entender mejor sus necesidades con base a su historial y con
@@ -245,22 +242,22 @@ export function PrivacyPolicyEs() {
         DE DERECHOS ARCO, el cual deberá remitir a
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         a través del siguiente correo electrónico:
-        privacidad@royalvacationsmexico.com, o bien, podrá presentar su
+        privacidad@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com, o bien, podrá presentar su
         solicitud por escrito y en idioma español y cumpliendo con los
         requisitos señalados en el artículo 29 del reglamento de la LFPDPPP en
         la dirección de
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         ya antes señalada. Para mayor información podrá comunicarse directamente
         al Departamento de Protección de Datos
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         a través de la cuenta de correo electrónico antes indicada.
       </div>
@@ -294,7 +291,7 @@ export function PrivacyPolicyEs() {
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         <span className="m-b text-[.875rem] text-black">
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         le dará seguimiento a su solicitud en un lapso de 20 días hábiles
         contados a partir de la recepción de dicho FORMATO o solicitud, con la
@@ -302,7 +299,7 @@ export function PrivacyPolicyEs() {
         misma. En caso de resultar procedente,
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         contará con un plazo máximo de 15 días hábiles para hacer efectivo su
         derecho ARCO.
@@ -339,9 +336,7 @@ export function PrivacyPolicyEs() {
         Cookies
       </h3>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        <span className="m-b text-[.875rem] text-black">
-          Royal Vacations México
-        </span>
+        <span className="m-b text-[.875rem] text-black"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         utiliza cookies propias y de terceros para analizar su navegación y
         ofrecerle un servicio más personalizado acorde a sus intereses.
       </div>
@@ -350,12 +345,12 @@ export function PrivacyPolicyEs() {
       </h3>
       <div className="pb-[1rem] m-m text-[.875rem] text-black text-justify">
         <span className="m-b text-[.875rem] text-black">
-          Royal Vacations México{" "}
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}{" "}
         </span>
         podrá efectuar en cualquier momento modificaciones o actualizaciones al
         presente Aviso de Privacidad. Las modificaciones o actualizaciones que
         se efectúen, entrarán en vigor en el momento en que son publicados en el
-        sitio de internet www.royalvacationsmexico.com, en sus sitios afiliados
+        sitio de internet www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com, en sus sitios afiliados
         o en cualquier medio de comunicación que utilice para publicarlo, por lo
         que se recomienda su revisión continua.
       </div>
@@ -368,7 +363,7 @@ export function PrivacyPolicyEs() {
         tácito en términos del artículo 8 de la LFPDPPP.
         <span className="m-b text-[.875rem] text-black">
           {" "}
-          Royal Vacations México
+          {process.env.NEXT_PUBLIC_NAME_COMPANY}
         </span>{" "}
         le sugiere la lectura del presente Aviso de Privacidad, ya que al
         aportar sus datos por cualquier medio, constituye la aceptación del
