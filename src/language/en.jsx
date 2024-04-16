@@ -143,6 +143,13 @@ export const en = {
     titleTransportation: "Transfers",
     loadingText: "Loading...",
     remove: "Delete",
+    // LP
+    checkItinerary: "Check your itinerary",
+    subtotal:"Subtotal",
+    btnReset:"Reset cart",
+    btnPurchase:"Complete purchase",
+    empty:"Your itinerary is empty",
+    startNow:"Start now",
   },
 
   allAlt: {
@@ -274,12 +281,12 @@ export const en = {
     rooms: "rooms",
     roomTitle: "Room",
     selectRoom: "Choose your first room",
-    Highly:"Highly requested",
+    Highly: "Highly requested",
     roomSelect: "Select rooms",
-    roomsFound:"rooms found",
+    roomsFound: "rooms found",
     selectedRoom: "Selected room",
-    chosenRooms:"Chosen rooms",
-    toView:"To view rooms in this category, please remove selections from the pre-cart.",
+    chosenRooms: "Chosen rooms",
+    toView: "To view rooms in this category, please remove selections from the pre-cart.",
     missingRooms: {
       text1: "room",
       text2: "left",
@@ -673,8 +680,8 @@ export const en = {
   ////////////////////////  TRANSPORT //////////////////////////////
   /*********************************************************/
   bannerTransportHome: {
-    titleDisposal: "Transporte a tu disposición",
-    textReserv: "Reserva ahora y disfruta de tarifas competitivas, seguridad y puntualidad en cada recorrido. Tu comodidad es nuestra prioridad. Únete a nosotros y haz que tus viajes sean memorables desde el primer momento.",
+    titleDisposal: "Transportation at your disposal",
+    textBookNow: "Book now and enjoy competitive rates, safety, and punctuality on every journey. Your comfort is our priority. Join us and make your travels memorable from the very first moment.",
     ChooseDates: "Choose dates",
   },
 
@@ -1524,7 +1531,13 @@ export const en = {
         title: "Oops, there was a problem adding to the shopping cart!",
         message: "Please try again later."
       }
-    }
+    },
+
+    itinerary: {
+      title: "Oops...There was an issue with your itinerary",
+      contact: "Contact us at",
+    },
+
   },
 
   countries: {

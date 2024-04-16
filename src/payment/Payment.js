@@ -253,14 +253,15 @@ export default function Payment() {
             // width="auto"
             // height="auto"
             // src={Logo}
-            src={`${process.env.NEXT_PUBLIC_URL}royal/logo.svg`}
+            // src={`${process.env.NEXT_PUBLIC_URL}royal/logo.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
             alt=" name Royal"
           />
           <h2 className="itinerary-no-show">
-            Ups... ocurrió un problema con tu itinerario.
+            {languageData.Alerts.itinerary.title}
           </h2>
           <p className="itinerary-no-text padding-bottom">
-            Contactanos al 800 953 0342
+           {languageData.Alerts.itinerary.contact} 800 953 0342
           </p>
         </Container>
       )}

@@ -1,16 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 // import { useRouter } from "next/navigation";
-
 import CartTourT from "./carts/CartTourT";
 import { useCartAxios } from "./CartAxios";
 import CartHotelT from "./carts/CartHotelT";
 import PriceCart from "./config/PriceCart";
 import EmptyCart from "./utils/EmptyCart";
+import LanguageContext from "@/language/LanguageContext";
 // import LanguageContext from "@/language/LanguageContext";
-
 export default function CartT(props) {
   const { closeCart } = props;
   const [cartUid, setCartUid] = useState(null);
@@ -19,7 +18,7 @@ export default function CartT(props) {
   const [cartInfo, setCartInfo] = useState(
     cartData && cartData.cartItems ? cartData.cartItems : null
   );
-
+  const { languageData } = useContext(LanguageContext);
   // console.log("cartData", cartData);
   // console.log("cartData.length", cartData.cartItems.activities.length);
 
@@ -67,7 +66,7 @@ export default function CartT(props) {
           {/* TITLE AND BTN CLOSE */}
           <div className="flex justify-between border-b border-[#ebebeb] mb-[16px] pb-[25px]">
             <span className="m-b text-fs-16 text-[#1a202c]">
-              Revisa tu itinerario
+              {languageData.cart.checkItinerary}
             </span>
             <Image
               src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}

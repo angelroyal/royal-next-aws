@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useContext } from "react";
 import { useCartAxios } from "../CartAxios";
 import Link from "next/link";
-
+import LanguageContext from "@/language/LanguageContext";
 export default function PriceCart(props) {
-const {cartId} = props;
+  const { languageData } = useContext(LanguageContext);
+  const { cartId } = props;
 
   const { totalPrice } = useCartAxios();
 
@@ -22,7 +25,7 @@ const {cartId} = props;
       {/* PRICE CART */}
       <div className="border-t border-[#ebebeb] mt-[16px] pt-[16px] max-sm:sticky max-sm:bottom-0 max-sm:bg-white">
         <div className="flex justify-between">
-          <span className="text-fs-12 text-gry-100 m-m">Subtotal</span>
+          <span className="text-fs-12 text-gry-100 m-m">{languageData.cart.subtotal}</span>
 
           <span className="text-fs-14 text-gry-100 m-m">
             $
@@ -34,7 +37,7 @@ const {cartId} = props;
         </div>
 
         <div className="flex justify-between mb-[12px]">
-          <span className="text-fs-12 text-gry-100 m-m">impuestos</span>
+          <span className="text-fs-12 text-gry-100 m-m">{languageData.booking.taxes}</span>
 
           <span className="text-fs-14 text-gry-100 m-m">
             {" "}
@@ -47,7 +50,7 @@ const {cartId} = props;
         </div>
 
         <div className="flex justify-between">
-          <span className="text-fs-14 m-s-b">Total</span>
+          <span className="text-fs-14 m-s-b">{languageData.cart.total}</span>
 
           <span className="text-fs-18 m-s-b">
             $
@@ -61,10 +64,10 @@ const {cartId} = props;
         {/* BTN */}
         <div className="flex justify-end gap-[16px] mt-[16px] mb-3">
           <button className=" flex items-center text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white">
-            Resetear carrito
+            {languageData.cart.btnReset}
           </button>
-          <Link href={`/booking?uid=${cartId}`}  className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
-            Finalizar compra
+          <Link href={`/booking?uid=${cartId}`} className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
+          {languageData.cart. btnPurchase}
           </Link>
         </div>
       </div>
