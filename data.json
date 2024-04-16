@@ -1,190 +1,91 @@
 [
   {
-    "type": "activity",
-    "id": 331,
-    "providerId": "105671",
-    "name": "Free tour de tacos mexicanos",
+    
+
+    "image": "https://cdn2.civitatis.com/mexico/acapulco/paseo-barco-acapulco.jpg",
+    "date": "22-10-24",
+    "title": "¿Qué visitar en Acapulco? 8 Lugares imperdibles",
+    "subtitle": "Descubre qué visitar en Acapulco, Guerrero durante tus vacaciones o de fin de semana",
+    "paragraph": "El ambiente tropical y de playa son una sensación única que transmiten paz y relajación. Acapulco es un lugar con estas características, con múltiples lugares para visitar que se convierte en un destino perfecto para los días vacacionales. Además de las playas bonitas de Acapulco, existen lugares turísticos que son muy tradicionales de la zona y que se caracterizan por ser únicos en su tipo.",
+    "youKnow": "Acapulco es la ciudad más grande del Estado de Guerrero y es uno de los 10 destinos turísticos más visitados de México.",
+    "secondParagraph":"La Bahía de Acapulco es un lugar de fácil entrada y salida; ya que su ubicación geográfica favorece a qué",
+    
+   
+
+    "placeTitle":"8 Lugares que visitar en Acapulco",
+    "placeSubtitle":"Toma nota de tus favoritos y consulta el mapa con ubicaciones exactas al final de la nota. Comienza a planear .",
     "details": {
-      "booking": [
+      "places": [
         {
-          "id": "comentarios-6616fa67896298.42261373",
-          "label": "Comentarios",
-          "required": false,
-          "type": "text",
-          "options": null
+          "title": "1. Zona Dorada",
+          "subtitle": "¡La emblemática costa que distingue a Acapulco! ",
+          "paragraph": "Para empezar el día y si eres de las personas a las que les gusta ejercitarse un poco antes de empezar la jornada, la Zona Dorada de Acapulco te ofrece la oportunidad de practicar paddle board y kayak en el mar. ¿Te imaginas navegar con un acompañante mientras remas por tu cuenta? Es un buen ejercicio para despertar y la brisa del mar te relajará.",
+          "image": "https://cdn2.civitatis.com/mexico/acapulco/cena-espectaculo-clavados-acapulco.jpg"
         },
         {
-          "id": "preguntaTitulo_0-6616fa67896298.42261373",
-          "label": "Indica si eres vegano, vegetariano o tienes alguna intolerancia alimenticia:",
-          "required": false,
-          "type": "text",
-          "options": null
-        }
-      ],
-      "passengers": [
-        [
-          {
-            "id": "passenger-1-0-6616fa67896298.42261373",
-            "label": "Nombre",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-2-0-6616fa67896298.42261373",
-            "label": "Apellidos",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-12-0-6616fa67896298.42261373",
-            "label": "Nacionalidad",
-            "required": true,
-            "type": "select",
-            "options": [
-              {
-                "id": "0",
-                "text": ""
-              },
-              {
-                "id": "1",
-                "text": "AFG"
-              },
-              {
-                "id": "2",
-                "text": "ALA"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "id": "passenger-1-1-6616fa67896298.42261373",
-            "label": "Nombre",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-2-1-6616fa67896298.42261373",
-            "label": "Apellidos",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-12-1-6616fa67896298.42261373",
-            "label": "Nacionalidad",
-            "required": true,
-            "type": "select",
-            "options": [
-              {
-                "id": "0",
-                "text": ""
-              },
-              {
-                "id": "1",
-                "text": "AFG"
-              },
-              {
-                "id": "2",
-                "text": "ALA"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "id": "passenger-1-2-6616fa67896298.42261373",
-            "label": "Nombre",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-2-2-6616fa67896298.42261373",
-            "label": "Apellidos",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-12-2-6616fa67896298.42261373",
-            "label": "Nacionalidad",
-            "required": true,
-            "type": "select",
-            "options": [
-              {
-                "id": "0",
-                "text": ""
-              },
-              {
-                "id": "1",
-                "text": "AFG"
-              },
-              {
-                "id": "2",
-                "text": "ALA"
-              }
-            ]
-          }
-        ],
-        [
-          {
-            "id": "passenger-1-3-6616fa67896298.42261373",
-            "label": "Nombre",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-2-3-6616fa67896298.42261373",
-            "label": "Apellidos",
-            "required": true,
-            "type": "text",
-            "options": null
-          },
-          {
-            "id": "passenger-12-3-6616fa67896298.42261373",
-            "label": "Nacionalidad",
-            "required": true,
-            "type": "select",
-            "options": [
-              {
-                "id": "0",
-                "text": ""
-              },
-              {
-                "id": "1",
-                "text": "AFG"
-              },
-              {
-                "id": "2",
-                "text": "ALA"
-              }
-            ]
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "type": "activity",
-    "id": 332,
-    "providerId": "6082",
-    "name": "Free tour por Ciudad de México",
-    "details": {
-      "booking": [
+          "title": "2. Zócalo de Acapulco",
+          "subtitle": "¡Come delicioso en el corazón de Acapulco!",
+          "paragraph": "Dependiendo del hotel en el que te hospedes, podrás disfrutar de un delicioso desayuno, aunque si te acercas al Zócalo de la ciudad, podrás probar de ricos platillos hechos por los locales a precios muy accesibles y sobre todo, deliciosos.",
+          "image": "https://cdn2.civitatis.com/mexico/acapulco/cena-espectaculo-clavados-acapulco.jpg"
+        },
         {
-          "id": "comentarios-6616fc3eac0106.43087710",
-          "label": "Comentarios",
-          "required": false,
-          "type": "text",
-          "options": null
+          "title": "3. La Quebrada",
+          "subtitle": "¡Siente la adrenalina en cada salto!",
+          "paragraph": "Disfruta de un gran espectáculo por los valientes clavadistas que arriesgan su vida.La Quebrada es un icono de Acapulco, cientos de personas asisten cada día a este sitio a presenciar los espectaculares clavados a más de 15 m de altura.Es increíble la fuerza y valentía de los clavadistas al realizar este tipo de actos. Sin duda quedarás con el ojo cuadado.",
+          "image": "https://cdn2.civitatis.com/mexico/acapulco/cena-espectaculo-clavados-acapulco.jpg"
         }
-      ],
-      "passengers": null
+      ]
+    },
+
+    
+
+    "mapTitle": "Mapa de lugares turísticos para visitar en Acapulco",
+    "mapSubtitle": "Consulta todos los lugares mencionados para visitar en Acapulco en el siguiente mapa:",
+    "mapImage": "https://cdn2.civitatis.com/mexico/acapulco/excursion-isla-roqueta.jpg",
+
+    
+
+    "titleRecommendations": "Recomendaciones antes de visitar Acapulco",
+    "subtitleRecommendations": "Sigue los siguientes tips para tener una mejor estancia en tu viaje:",
+    "visit": {
+      "recommendations": [
+        {
+          "title": "1. Llegar temprano para elegir el mejor lugar con la mejor vista."
+        },
+        {
+          "title": "2.La mayoría de los sitios cuentan con servicio de alimentos o si lo prefieres, puedes llevar los tuyos. Pregunta a los locales de la zona."
+        },
+        {
+          "title": "3.Si tu gusto es estar en el mar, no olvides tomar tus precauciones sobre el nivel de marea y profundidad para evitar accidentes."
+        },
+        {
+          "title": "4.Pregunta por el cierre de lugares y actividades para que puedas elegir mejor el sitio donde pasaras el día."
+        }
+      ]
+    },
+
+   
+
+    "bestRutesTitle": "Mejores rutas hacia Acapulco, Gro:",
+    "best": {
+      "rutes": [
+        {
+          "title": "Ciudad de México a Acapulco De Juárez",
+          "duration": " 05 h 00m"
+        },
+        {
+          "title": "Taxco de Alarcón a Acapulco De Juárez",
+          "duration": " 05 h 00m"
+        },
+        {
+          "title": "Terminal Cuernavaca a Terminal Acapulco Costera",
+          "duration": " 05 h 00m"
+        },
+        {
+          "title": "Terminal Veracruz a Terminal Acapulco Costera",
+          "duration": " 08 h 30m"
+        }
+      ]
     }
   }
 ]

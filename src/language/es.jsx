@@ -145,6 +145,10 @@ export const es = {
     titleTransportation: "Traslados",
     loadingText: "Cargando...",
     remove: "Eliminar",
+    // LP
+    checkItinerary:"Revisa tu itinerario",
+    subtotal:"Subtotal",
+    btnReset:"Resetear carrito",
   },
 
   allAlt: {
@@ -676,7 +680,7 @@ export const es = {
   /*********************************************************/
   bannerTransportHome: {
    titleDisposal :"Transporte a tu disposición",
-   textReserv:"Reserva ahora y disfruta de tarifas competitivas, seguridad y puntualidad en cada recorrido. Tu comodidad es nuestra prioridad. Únete a nosotros y haz que tus viajes sean memorables desde el primer momento.",
+   textBookNow:"Reserva ahora y disfruta de tarifas competitivas, seguridad y puntualidad en cada recorrido. Tu comodidad es nuestra prioridad. Únete a nosotros y haz que tus viajes sean memorables desde el primer momento.",
    ChooseDates: "Elegir fechas",
   },
 
@@ -1524,7 +1528,12 @@ export const es = {
         title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!",
         message: "Por favor, inténtalo más tarde."
       }
-    }
+    },
+
+    itinerary: {
+      title:"Ups... ocurrió un problema con tu itinerario.",
+      contact:"Contactanos al",
+    },
 
   },
 
