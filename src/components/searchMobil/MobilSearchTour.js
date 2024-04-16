@@ -1,7 +1,6 @@
 import moment from "moment";
-import Image from "next/image";
-import Lottie from "lottie-react";
 import { useRouter } from "next/navigation";
+
 import React, { useState, useContext, useEffect } from "react";
 
 import CalendarDay from "../../hooks/CalendarDay";
@@ -9,16 +8,11 @@ import SearchTour from "../../components/Search/SearchTour";
 import LanguageContext from "../../language/LanguageContext";
 import PersonsActivities from "../../utils/tour/PersonsActivities";
 
-import animationData from "../../assets/animations/animated-page-transitions.json";
-import DateRangeIcon from "../../assets/icons/utils/searchBox/calendar-autocomplete.svg";
-import RoomOutlinedIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
-
 export default function MobilSearchTour() {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
   const [roomData, setRoomData] = useState([]);
-
-  const router = useRouter();
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const { languageData, language } = useContext(LanguageContext);
 
   useEffect(() => {
     const storedSelectedDate = localStorage.getItem("selectedDate");
@@ -59,6 +53,8 @@ export default function MobilSearchTour() {
     const dateStart = moment(FormatDateStart).format("YYYY-MM-DD");
 
     const requestBody = {
+      codeNameTour: selectedOption.codeName,
+      destination: selectedOption.label,
       code: selectedOption.key,
       type: selectedOption.type,
       dateStart: dateStart,
@@ -66,24 +62,27 @@ export default function MobilSearchTour() {
       children: roomData[0].children,
     };
 
-    // We convert the object to a string and append it to the URL
     const query = new URLSearchParams(requestBody).toString();
 
-    // router.push(`/tour?${query}`);
-    window.location.href = `/tour/results?${query}`;
-    // router.push(`/tour/results?${query}`);
+    if (selectedOption.type === "activity") {
+      const newTabURL = `/${language}/mx/${selectedOption.destination}-${selectedOption.country}/tours/${selectedOption.codeName}?${query}`;
+      window.open(newTabURL, "_blank");
+    } else {
+      const newURL = `/${language}/mx/${selectedOption.codeName}-${selectedOption.country}/tours?${query}`;
+      console.log("New URL:", newURL); // Verifica que la URL esté construida correctamente
+      // router.push(newURL); // Redirección usando el router de Next.js
+      window.location.href = newURL;
+    }
   };
-
-  const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="!p-5 shadow-3xl">
       <div className="flex flex-col gap-y-3">
-        <SearchTour onSelectTour={setSelectedOption} listing={true}/>
+        <SearchTour onSelectTour={setSelectedOption} listing={true} />
 
-        <CalendarDay onDateChange={handleDateChange} listing={true}/>
+        <CalendarDay onDateChange={handleDateChange} listing={true} />
 
-        <PersonsActivities OnApply={setRoomData} listing={true}/>
+        <PersonsActivities OnApply={setRoomData} listing={true} />
 
         <div className="margin-search-tab button-room-page">
           <button
@@ -101,8 +100,6 @@ export default function MobilSearchTour() {
           </button>
         </div>
       </div>
-
-      
     </div>
   );
 }
