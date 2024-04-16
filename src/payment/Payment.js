@@ -255,7 +255,7 @@ export default function Payment() {
             // src={Logo}
             // src={`${process.env.NEXT_PUBLIC_URL}royal/logo.svg`}
             src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
-            alt=" name Royal"
+            alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
           />
           <h2 className="itinerary-no-show">
             {languageData.Alerts.itinerary.title}

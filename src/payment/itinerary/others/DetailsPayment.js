@@ -58,6 +58,7 @@ export default function DetailsPayment(props) {
             <div className="cont-icon-logo-details-payment">
               <Image
                 src={LogoFlyRoyal}
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
                 />
               {/* TEXT PAYMENT DETAILS /LP 15-02-24 */}
               <span className="text-black-info-i">{languageData.itinerary.paymentDetails}</span>

@@ -84,7 +84,7 @@ export default function Booking(props) {
           <Image
             className="icon-royal-itinerary"
             src={IconRoyal}
-            alt="IconRoyal"
+            alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
           />
           <h1 className="booking-title-page">
             {languageData.booking.titleVacations}

@@ -61,7 +61,7 @@ export function AlertRate(props) {
         >
           <Modal.Header></Modal.Header>
           <Modal.Body className="display-modal-rate">
-            <Image src={IconRoyal} alt="IconRoyal" className="icon-royal-modal-rate" />
+            <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-rate" />
             <div className="title-modal-rate">
               {languageData.alertsPayment.rateTitle}
             </div>
@@ -134,7 +134,7 @@ export function AlertLoad() {
         >
           <Modal.Header></Modal.Header>
           <Modal.Body className="display-modal-rate">
-            <Image src={IconRoyal} alt="IconRoyal" className="icon-royal-modal-load-r" />
+            <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-load-r" />
             <div className="title-modal-load-r">
               {languageData.alertsPayment.textAlert.PE}
             </div>
@@ -177,7 +177,7 @@ export function AlertUpdate(props) {
           >
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body className="display-modal-rate-update">
-              <Image src={IconRoyal} alt="IconRoyal" className="icon-royal-modal-rate" />
+              <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-rate" />
               <div className="title-modal-rate-update">
                 {languageData.alertsPayment.updatePrice}
               </div>
@@ -224,7 +224,7 @@ export function AlertNoAvailability(props) {
         >
           <Modal.Header closeButton></Modal.Header>
           <Modal.Body className="display-modal-rate-update">
-            <Image src={IconRoyal} alt="IconRoyal" className="icon-royal-modal-rate" />
+            <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-rate" />
             <div className="title-modal-rate-update">
               {languageData.confirmation.bookingData.alertNoAvailability}
             </div>

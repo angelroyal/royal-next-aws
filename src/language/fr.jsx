@@ -82,7 +82,7 @@ export const fr = {
       whatsApp: "998 134 2286",
       location:
         "Av. Tulum et Av Náder, Sm 2, Mza. 1, lte. 44, Andador VI, C.P. 77500 Cancun, Q.Roo.",
-      email: "info@royalvacationsmexico.com",
+      email: `info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
       rightsReserved: "Tous droits réservés",
     },
   },
