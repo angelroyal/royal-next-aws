@@ -149,6 +149,9 @@ export const es = {
     checkItinerary:"Revisa tu itinerario",
     subtotal:"Subtotal",
     btnReset:"Resetear carrito",
+    btnPurchase:"Finalizar compra",
+    empty:"Tu itinerario está vacio",
+    startNow:"Comenzar ahora",
   },
 
   allAlt: {

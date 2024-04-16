@@ -64,10 +64,10 @@ export default function PriceCart(props) {
         {/* BTN */}
         <div className="flex justify-end gap-[16px] mt-[16px] mb-3">
           <button className=" flex items-center text-fs-14 text-bl-100 m-s-b border-2 border-bl-100 rounded-full py-[12px] px-[16px] hover:bg-bl-100 hover:text-white">
-            Resetear carrito
+            {languageData.cart.btnReset}
           </button>
           <Link href={`/booking?uid=${cartId}`} className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline">
-            Finalizar compra
+          {languageData.cart. btnPurchase}
           </Link>
         </div>
       </div>

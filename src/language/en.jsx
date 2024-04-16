@@ -147,6 +147,9 @@ export const en = {
     checkItinerary: "Check your itinerary",
     subtotal:"Subtotal",
     btnReset:"Reset cart",
+    btnPurchase:"Complete purchase",
+    empty:"Your itinerary is empty",
+    startNow:"Start now",
   },
 
   allAlt: {
