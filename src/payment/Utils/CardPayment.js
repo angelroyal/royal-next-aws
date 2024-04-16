@@ -159,7 +159,7 @@ export default function CardPayment(props) {
             alt="font back card"
             className="font-back-card"
           />
-          <Image className="royal-name-card-back" src={RoyalLetterIcon} />
+          <Image className="royal-name-card-back" src={RoyalLetterIcon} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon letter`}/>
 
           <div className="back-card">
             <div className="d-flex flex-column py-4 hight100 width100">

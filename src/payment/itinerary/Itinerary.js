@@ -39,7 +39,7 @@ export default function Itinerary(props) {
           <Image
             className="icon-royal-itinerary"
             src={IconRoyal}
-            alt="IconRoyal"
+            alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
           />
           <h1 className="itinerary-title-page">
             {languageData.itinerary.titleItinerary}
