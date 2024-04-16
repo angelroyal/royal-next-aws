@@ -25,7 +25,7 @@ export default function SendHotel() {
 
     console.log(dataSearch);
     if (dataSearch) {
-      console.log("if");
+      // console.log("if");
       const parsedDataSearch = JSON.parse(dataSearch);
       setSelectedOption(parsedDataSearch);
     }
@@ -69,7 +69,7 @@ export default function SendHotel() {
     }
   };
 
-  console.log(selectedOption);
+  // console.log(selectedOption);
 
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
