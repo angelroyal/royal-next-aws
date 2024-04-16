@@ -23,7 +23,9 @@ export default function SendHotel() {
     const storedValidSecondDay = localStorage.getItem("validSecondDay");
     const dataSearch = localStorage.getItem("dataSearch");
 
+    console.log(dataSearch);
     if (dataSearch) {
+      console.log("if");
       const parsedDataSearch = JSON.parse(dataSearch);
       setSelectedOption(parsedDataSearch);
     }
@@ -67,7 +69,7 @@ export default function SendHotel() {
     }
   };
 
-  // console.log(selectedOption);
+  console.log(selectedOption);
 
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
@@ -84,7 +86,6 @@ export default function SendHotel() {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
-
     if(selectedOption.type === "hotel"){
       window.open(`/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`, '_blank')
     }else{
