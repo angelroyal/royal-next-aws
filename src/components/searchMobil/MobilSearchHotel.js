@@ -7,11 +7,10 @@ import Room from "@/services/Hotels/config/RoomBox";
 import Calendar from "../../hooks/Calendar";
 // import SearchHotel from "../Search/SearchHotel";
 import LanguageContext from "../../language/LanguageContext";
-import animationData from "../../assets/animations/animated-page-transitions.json";
 import SearchHotel from "@/services/Hotels/Search/SearchHotel";
 import { ListingHotelMobile } from "@/services/Hotels/components/Listing/ListingHotelMobile";
 export default function MobilSearchHotel() {
-  const router = useRouter();
+  const { languageData, language } = useContext(LanguageContext);
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
   const [selectedDates, setSelectedDates] = useState(null);
   const [validFirstDay, setValidFirstDay] = useState(null);
@@ -66,29 +65,33 @@ export default function MobilSearchHotel() {
   };
 
   const sendAutocomplete = () => {
+    // setShowModal(true);
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
-
-    // console.log(selectedOption);
-
     const requestBody = {
+      codeNameHotel: selectedOption.codeName,
       destination: selectedOption.label,
+      codeName: selectedOption.codeName,
       code: selectedOption.key,
       type: selectedOption.type,
-      "check-in": validFirstDay,
-      "check-out": validSecondDay,
+      "check-in": validFirstDay, // Asegúrate de que validFirstDay está definido y formateado adecuadamente
+      "check-out": validSecondDay, // Asegúrate de que validSecondDay está definido y formateado adecuadamente
       occupancies: encodedRoomData,
     };
-
+  
     const query = new URLSearchParams(requestBody).toString();
-    if (selectedOption.type === "hotel") {
-      window.open(`/hotel/${selectedOption.codeName}?${query}`, "_blank");
-    } else {
-      // router.push(`/hotel/results?${query}`);
-      window.location.href = `/hotel/results?${query}`;
+  
+    if(selectedOption.type === "hotel"){
+      // Abre una nueva pestaña para los detalles del hotel
+      const newTabURL = `/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`;
+      window.open(newTabURL, '_blank');
+    }else{
+      // Usa el router para redirigir a la página de resultados de hoteles
+      const newPath = `/${language}/mx/${selectedOption.codeName}-${selectedOption.country}/hotels?${query}`;
+      // router.push(newPath);
+      window.location.href = newPath;
     }
   };
 
-  const { languageData } = useContext(LanguageContext);
   const [openFilter, setOpenFilter] = useState(false);
 
   return (

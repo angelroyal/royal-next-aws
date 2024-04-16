@@ -1,7 +1,6 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/styles/web/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// import { Tab, Tabs } from "react-bootstrap";
 import { Tab } from "@headlessui/react";
 import React, { useState, useEffect, useContext } from "react";
 
@@ -11,31 +10,17 @@ import LanguageContext from "@/language/LanguageContext";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 import { MobilSearchSkeleton } from "@/services/Hotels/components/Skeleton/HotelListingSkeleton";
 // import MobilSearchMoving from "./MobilSearchMoving";
+
 export default function SearchBoxMobile() {
   const [activeTab, setActiveTab] = useState(null);
   const { languageData } = useContext(LanguageContext);
 
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
-  // console.log(routerActual);
 
   useEffect(() => {
     setActiveTab(routerActual);
   }, [routerActual]);
-
-  // useEffect(() => {
-  //   const path = window.location.pathname;
-
-  //   if (path.includes("/tours")) {
-  //     setActiveTab("tour");
-  //   } else if (path.includes("/hotels")) {
-  //     setActiveTab("hotel");
-  //   } else if (path.includes("/moving")) {
-  //     setActiveTab("moving");
-  //   }
-  // }, []);
-
-  // const isDev = process.env.REACT_APP_DEV === "true";
 
   return (
     <Tab.Group>

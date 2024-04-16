@@ -69,8 +69,7 @@ export default function MobilSearchTour() {
       window.open(newTabURL, "_blank");
     } else {
       const newURL = `/${language}/mx/${selectedOption.codeName}-${selectedOption.country}/tours?${query}`;
-      console.log("New URL:", newURL); // Verifica que la URL esté construida correctamente
-      // router.push(newURL); // Redirección usando el router de Next.js
+      console.log("New URL:", newURL);
       window.location.href = newURL;
     }
   };

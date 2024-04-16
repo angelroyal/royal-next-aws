@@ -9,7 +9,7 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 export default function AddCartHotel() {
   const router = useRouter();
   const { fetchData } = useCartAxios();
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const [isLoading, setIsLoading] = useState(false)
 
   const { selectedRooms, requestBodyRooms, keyHotel, setIsFailedReservation } =
@@ -59,7 +59,7 @@ export default function AddCartHotel() {
       );
       fetchData(cartUid);
       setTimeout(() => {
-        router.push(`/booking?uid=${cartUid}`);
+        router.push(`${language}/booking?uid=${cartUid}`);
       }, 1000);
     } catch (error) {
       console.log(error);
