@@ -12,7 +12,7 @@ import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 import { SearchHomeSkeleton } from "@/components/Skeleton/SearchHome";
 
 export default function SearchBox() {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
   const router = useRouter();
 
@@ -31,7 +31,7 @@ export default function SearchBox() {
         view = process.env.NEXT_PUBLIC_HOME;
         break;
       case "tour":
-        view = "/tour";
+        view = `${language}/tour`;
         break;
     }
     if (view != null) {
