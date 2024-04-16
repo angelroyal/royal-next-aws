@@ -91,7 +91,7 @@ export default function SendHotel() {
     if(selectedOption.type === "hotel"){
       window.open(`/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`, '_blank')
     }else{
-      router.push(`${language}/mx/${selectedOption.codeName}/${selectedOption.destination}-hotels?${query}`);
+      router.push(`${language}/mx/${selectedOption.codeName}-${selectedOption.country}/hotels?${query}`);
     }
   };
 
