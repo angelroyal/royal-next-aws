@@ -53,14 +53,14 @@ export function TourDescription(props) {
             <div key={index} className="spa-bet-col">
               <div className="spa-bet">
                 <span className="text-black-info-i-s hotel-name width4">
-                  {tour.name}
+                  {tour.title}
                 </span>
                 <span className="text-black-info-i-m">
                   $
-                  {Math.floor(tour.price)
+                  {Math.floor(tour.currentPrice)
                     .toLocaleString("es-MX", { currency: "MXN" })
                     .replace(".00", "")}
-                  .<sup>{(tour.price % 1).toFixed(2).slice(2)}</sup>
+                  .<sup>{(tour.currentPrice % 1).toFixed(2).slice(2)}</sup>
                 </span>
               </div>
 

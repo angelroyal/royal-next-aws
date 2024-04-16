@@ -11,18 +11,22 @@ import LocationIcon from "../../assets/icons/utils/searchBox/location-autocomple
 
 export default function CardTourConfirmation(props) {
   const { itemActivity } = props;
+  console.log(itemActivity);
+
   const isMobile = useIsMobile();
   const { languageData } = useContext(LanguageContext);
 
   // DAY OF WEEK
   const dayOfWeek = moment(itemActivity.date).format("dddd");
 
-  // console.log(itemActivity);
-
   return (
     itemActivity && (
       <div className="father-tour-card-i">
-        <Image className="icon-location-border" src={IconLocationBorder} alt="IconLocationBorder"/>
+        <Image
+          className="icon-location-border"
+          src={IconLocationBorder}
+          alt="IconLocationBorder"
+        />
         {/* {
         isMobile && (<h3>hola</h3>)
       } */}
@@ -66,7 +70,11 @@ export default function CardTourConfirmation(props) {
                     <div className="cont-name-location-tour gap-2">
                       <div className="d-flex d-grid gap-2 icon-location-and-text">
                         <div>
-                          <Image className="icons-size-m" src={LocationIcon} alt="LocationIcon" />
+                          <Image
+                            className="icons-size-m"
+                            src={LocationIcon}
+                            alt="LocationIcon"
+                          />
                         </div>
 
                         <span>{itemActivity.address}</span>
@@ -80,7 +88,8 @@ export default function CardTourConfirmation(props) {
                         ></img>
                         <span className="text-tour-grey-i-m">
                           {/* 2 adultos, 2 niños */}
-                          {itemActivity.peoples} <PluralPeople people={itemActivity.peoples}/>
+                          {itemActivity.peoples}{" "}
+                          <PluralPeople people={itemActivity.peoples} />
                         </span>
                       </div>
                     </div>
@@ -99,7 +108,11 @@ export default function CardTourConfirmation(props) {
                   <div className="cont-name-location-tour">
                     <div className="d-flex d-grid gap-2 icon-location-and-text">
                       <div>
-                        <Image className="icons-size-m" src={LocationIcon} alt="LocationIcon"/>
+                        <Image
+                          className="icons-size-m"
+                          src={LocationIcon}
+                          alt="LocationIcon"
+                        />
                       </div>
 
                       <span>{itemActivity.address}</span>
@@ -113,8 +126,8 @@ export default function CardTourConfirmation(props) {
                       ></img>
 
                       <span>
-                        {/* 2 adultos, 2 niños */}
-                        {itemActivity.peoples} <PluralPeople people={itemActivity.peoples}/>
+                        {itemActivity.peoples}{" "}
+                        <PluralPeople people={itemActivity.peoples} />
                       </span>
                     </div>
                   </div>
