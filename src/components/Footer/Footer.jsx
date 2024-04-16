@@ -33,48 +33,48 @@ export default function Footer() {
         <div className="flex max-xl:mx-2 justify-center justify-items-center max-xl:grid grid-cols-1 max-xl:text-center">
           <div className="basis-1/2 justify-center">
             {/* <ul> */}
-              <div className=" grid place-items-center">
-                {/* LOGO-W */}
-                <img
-                  className="mb-[1rem]"
-                  src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo-blank.svg`}
-                  alt="logo-w"
-                  width="239px"
-                  height="51px"
-                />
+            <div className=" grid place-items-center">
+              {/* LOGO-W */}
+              <img
+                className="mb-[1rem]"
+                src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo-blank.svg`}
+                alt="logo-w"
+                width="239px"
+                height="51px"
+              />
 
-                {/*SOCIAL ICONS*/}
-                <div className="flex gap-x-[17px] justify-center ">
-                  {SocialNetworks.map((network, index) => (
-                    <a key={index}
-                      target="_blank"
-                      href={network.href}
-                    >
-                      <img
-                        className="cursor-pointer"
-                        src={`${process.env.NEXT_PUBLIC_URL}${network.url}`}
-                        alt={network.alt}
-                        width="25px"
-                        height="25px"
-                      />
-                    </a>
-                  ))}
-                </div>
-
-                {/* PAYMENTS ICONS */}
-                <div className=" mt-[31px] mb-4 mx-1 flex justify-center ">
-                  {creditsCard.map((card, index) => (
+              {/*SOCIAL ICONS*/}
+              <div className="flex gap-x-[17px] justify-center ">
+                {SocialNetworks.map((network, index) => (
+                  <a key={index}
+                    target="_blank"
+                    href={network.href}
+                  >
                     <img
-                      key={index}
-                      className="mx-1"
-                      src={`${process.env.NEXT_PUBLIC_URL}${card.image}`}
-                      alt={card.alt}
-                      width="50px"
-                      height="100%"
+                      className="cursor-pointer"
+                      src={`${process.env.NEXT_PUBLIC_URL}${network.url}`}
+                      alt={network.alt}
+                      width="25px"
+                      height="25px"
                     />
-                  ))}
-                </div>
+                  </a>
+                ))}
               </div>
+
+              {/* PAYMENTS ICONS */}
+              <div className=" mt-[31px] mb-4 mx-1 flex justify-center ">
+                {creditsCard.map((card, index) => (
+                  <img
+                    key={index}
+                    className="mx-1"
+                    src={`${process.env.NEXT_PUBLIC_URL}${card.image}`}
+                    alt={card.alt}
+                    width="50px"
+                    height="100%"
+                  />
+                ))}
+              </div>
+            </div>
             {/* </ul> */}
           </div>
 
@@ -129,8 +129,9 @@ export default function Footer() {
                   width="15px"
                   height="11px"
                 />
+                {/* LP */}
                 <span className="hover:!text-or-100 no-underline text-white">
-                  {languageData.footer.contact.email}
+                  info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com
                 </span>
               </a>
               <a

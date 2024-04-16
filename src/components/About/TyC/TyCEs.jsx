@@ -8,13 +8,13 @@ export function TyCEs() {
       </h1>
       <h2 className="m-b text-[.938rem] pb-[0.5rem]">INTRODUCCIÓN </h2>
       <div className="m-m text-[.875rem] text-justify pb-[2.5rem]">
-        Bienvenido al sitio de internet www.royalvacationsmexico.com
-        <span className="m-b text-[.875rem]">Royal Vacations México</span>,
+        Bienvenido al sitio de internet www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY}</span>,
         colectivamente denominado como el “Sitio”. El uso que haga de este Sitio
         está expresamente condicionado a su aceptación de los presentes Términos
         y Condiciones. Al usar este sitio, manifiesta su consentimiento con los
         Términos y Condiciones.
-        <span className="m-b text-[.875rem]">Royal Vacations México</span> se
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY}</span> se
         reserva el derecho de adicionar o modificar los Términos y Condiciones
         en cualquier momento. Todos los términos adicionados o modificados
         causarán efecto en el momento en que éstos sean actualizados. El uso
@@ -34,9 +34,9 @@ export function TyCEs() {
         un Usuario-Turista, respecto de los servicios turísticos proporcionados
         de manera directa por el Proveedor. (En lo sucesivo denominadas de aquí
         en adelante como “
-        <span className="m-b text-[.875rem]">Royal Vacations México</span>”
-        indistintamente). www.royalvacationsmexico.com.- Página web de
-        <span className="m-b text-[.875rem]"> Royal Vacations México </span>
+        <span className="m-b text-[.875rem]">{process.env.NEXT_PUBLIC_NAME_COMPANY}</span>”
+        indistintamente). www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com.- Página web de
+        <span className="m-b text-[.875rem]"> {process.env.NEXT_PUBLIC_NAME_COMPANY} </span>
         que actúa como intermediaria y como motor de reservaciones, ofreciendo a
         través del internet al Usuario-Turista, los diversos servicios
         turísticos que proporciona de manera directa el Proveedor. (En lo
@@ -44,7 +44,7 @@ export function TyCEs() {
         <span className="m-b text-[.875rem]"> “Sitio”</span>).
         <span className="m-b text-[.938rem]">USUARIO-TURISTA.-</span>
         Persona que viaja temporalmente y/o que utiliza el sitio
-        www.royalvacationsmexico.com, con el objeto de hacer uso de la
+        www.{process.env.NEXT_PUBLIC_NAME_COMPANY}.com, con el objeto de hacer uso de la
         intermediación y el motor de reservaciones de
         <span className="m-b text-[.875rem]"> Royal Vacations México</span> y
         con el fin último de disfrutar cualquiera de los servicios turísticos

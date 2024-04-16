@@ -1,6 +1,6 @@
 export const en = {
   cookie: {
-    text: "At Royal Vacations Mexico, we strive to provide you with a unique browsing experience. We use our own and third-party cookies to personalize our travel offers based on your preferences, analyzing your browsing habits. Your privacy is paramount to us, and we want to assure you that the use of cookies is exclusively designed to enhance your interaction with our site.",
+    text: `At ${process.env.NEXT_PUBLIC_NAME_COMPANY}, we strive to provide you with a unique browsing experience. We use our own and third-party cookies to personalize our travel offers based on your preferences, analyzing your browsing habits. Your privacy is paramount to us, and we want to assure you that the use of cookies is exclusively designed to enhance your interaction with our site.`,
     accept: "Accept",
   },
 
@@ -40,7 +40,7 @@ export const en = {
     number: "800 953 0342",
     call: "Call us!",
     tabTitle: "Come back! We miss you!",
-    tabTitleRoyal: "Royal Vacations Mexico",
+    tabTitleRoyal: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
 
   SearchBox: {
@@ -121,7 +121,7 @@ export const en = {
 
   mobile: {
     informationMobile:
-      "The Royal Vacations team is currently engaged in the development of a mobile version of its platform. So far, the platform is only available in its web version.",
+    `The ${process.env.NEXT_PUBLIC_NAME_COMPANY} team is currently engaged in the development of a mobile version of its platform. So far, the platform is only available in its web version.`,
   },
 
   cart: {
@@ -145,33 +145,33 @@ export const en = {
     remove: "Delete",
     // LP
     checkItinerary: "Check your itinerary",
-    subtotal:"Subtotal",
-    btnReset:"Reset cart",
-    btnPurchase:"Complete purchase",
-    empty:"Your itinerary is empty",
-    startNow:"Start now",
+    subtotal: "Subtotal",
+    btnReset: "Reset cart",
+    btnPurchase: "Complete purchase",
+    empty: "Your itinerary is empty",
+    startNow: "Start now",
   },
 
   allAlt: {
     media: {
-      altFacebook: "Royal Vacations Mexico Facebook",
-      altInstagram: "Royal Vacations Mexico Instagram",
-      altLinkedin: "Royal Vacations Mexico Linkedin",
-      altTiktok: "Royal Vacations Mexico Tiktok",
-      altPhone: "Royal Vacations Mexico Phone",
-      altWhatsapp: "Royal Vacations Mexico Whatsapp",
-      altLocation: "Royal Vacations Mexico Location",
-      altMail: "Royal Vacations Mexico Mail",
-      altLink: "Royal Vacations Mexico Share-Link",
+      altFacebook: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Facebook`,
+      altInstagram: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Instagram`,
+      altLinkedin: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Linkedin`,
+      altTiktok: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Tiktok`,
+      altPhone: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Phone`,
+      altWhatsapp:`${process.env.NEXT_PUBLIC_NAME_COMPANY} Whatsapp`,
+      altLocation:`${process.env.NEXT_PUBLIC_NAME_COMPANY} Location`,
+      altMail:`${process.env.NEXT_PUBLIC_NAME_COMPANY} Mail`,
+      altLink:`${process.env.NEXT_PUBLIC_NAME_COMPANY} Share-Link`,
     },
-    altBannerFooter: "Royal Vactions Mexico - Bannerfooter",
-    altLogo: "Royal Vactions Mexico Logo",
-    altVisa: "Royal Vacations Cards Visa",
-    altMovingCarousel: "Royal Vacations Transportation",
-    altRoyalVacations: "Royal Vacations Mexico",
-    altBannerNavigation: "Royal Vactions Mexico - Bannerprincipal",
-    altCallCenter: "Royal Vacations Mexico call-center",
-    altClient: "Royal Vacations Customer Assistance",
+    altBannerFooter: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Bannerfooter`,
+    altLogo: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Logo`,
+    altVisa: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Cards Visa`,
+    altMovingCarousel: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Transportation`,
+    altRoyalVacations: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
+    altBannerNavigation: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Bannerprincipal`,
+    altCallCenter: `${process.env.NEXT_PUBLIC_NAME_COMPANY} call-center`,
+    altClient: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Customer Assistance`,
   },
 
   nestedModal: {
@@ -499,7 +499,7 @@ export const en = {
 
   // LP BANNERTOUR 
   bannerTour: {
-    subtitleBannerTour: "Travel wherever you want at the best price with Royal Vacations México.",
+    subtitleBannerTour: `Travel wherever you want at the best price with ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
   },
 
   bannersFooter: {
@@ -826,10 +826,11 @@ export const en = {
       whatsApp: "998 134 2286",
       location:
         "Av. Tulum and Av Náder, Sm 2, Mza. 1, lte. 44, Andador VI, C.P. 77500 Cancun, Q.Roo.",
-      email: "info@royalvacationsmexico.com",
+      // email: "info@royalvacationsmexico.com",
+      email: `info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
       rightsReserved: "All rights reserved.",
       copyright: "Copyright ©",
-      royalVacations: "Royal Vacations Mexico.",
+      royalVacations: `${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
     },
     about: {
       titleAbout: "About",
@@ -851,7 +852,7 @@ export const en = {
   ourHistory: {
     titleWhoWeAre: "Who we are?",
     textOurTeam:
-      "Behind Royal Vacations Mexico there is more than a search and booking website; there is a professional and passionate team dedicated to helping you live incredible experiences discovering Mexico and the world.",
+    `Behind ${process.env.NEXT_PUBLIC_NAME_COMPANY} there is more than a search and booking website; there is a professional and passionate team dedicated to helping you live incredible experiences discovering Mexico and the world.`,
     textExperiences:
       "From the beginning the goal was to create exceptional experiences in every trip, with a focus on total satisfaction of travelers' needs, offering a platform where they can book with ease.",
     textAgreements:
@@ -862,7 +863,7 @@ export const en = {
       "With the launch of the website in 2019, travelers were provided with an online platform where they can plan their vacations in a reliable and intuitive way, always looking for the best deals from the most important hotel chains worldwide and with endless services and destinations.",
     textImageRenovation:
       "Today we have renewed the image and improved the website with the opinions of each of the travelers who have placed their trust in us. This story began 8 years ago and will continue to move forward with your trust.",
-    titleServiceQuality: "Royal Vacations Mexico offering you quality services",
+    titleServiceQuality: `${process.env.NEXT_PUBLIC_NAME_COMPANY} offering you quality services`,
     titleHotelService: "Hotels",
     textHotelService: "The ideal hotel for your needs you will find it with us",
     titleTransportationService: "Transfers",
@@ -880,7 +881,7 @@ export const en = {
       "Here we provide you with all the information you need to solve your doubts so you can enjoy your vacation to the fullest",
     subtitleFaqs: "FAQ's",
     frequentlyQuestions: "Frequently Asked Questions",
-    aboutRoyal: "About Royal Vacations",
+    aboutRoyal: `About ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     services: "Services",
     bookings: "Your Reservations",
     changes: "Changes",
@@ -888,7 +889,7 @@ export const en = {
     questions: {
       questionRoyal: "About us?",
       textRoyal:
-        "Royal Vacations Mexico is the trade name of VIAJES BAMO S.A DE C.V. We focus on providing tourism services among other activities related to travel for personal enjoyment. Legally incorporated under Mexican regulations, under Public Deed number 2701. Volume Twelve Second, Volume D, before the Faith of Lic.Ricardo Dehesa Cortés, of Notary Office 90 in Playa del Carmen, Quintana Roo, Mexico.",
+      `${process.env.NEXT_PUBLIC_NAME_COMPANY} is the trade name of VIAJES BAMO S.A DE C.V. We focus on providing tourism services among other activities related to travel for personal enjoyment. Legally incorporated under Mexican regulations, under Public Deed number 2701. Volume Twelve Second, Volume D, before the Faith of Lic.Ricardo Dehesa Cortés, of Notary Office 90 in Playa del Carmen, Quintana Roo, Mexico.`,
       questionDirection: "Where are we located?",
       textDirection:
         "Our offices are located at Av.Tulum and Av. Nader, Sm.2, Mz.1, Lt.44 Andador Vl, C.P.77500; Cancun, Q.R; but for your convenience, we also make reservations via telephone and online, always guaranteeing you a personalized and attentive service.",
@@ -897,7 +898,7 @@ export const en = {
       brand:
         "We are a registered trademark with all rights reserved. You can access our RFC, in case you wish to do so",
       nationalRegistration:
-        "We have a National Tourism Registry (RNT). This guarantees that we are legally registered with the Ministry of Tourism. You can verify it directly in their official website under our commercial name: Royal Vacations Mexico.",
+      `We have a National Tourism Registry (RNT). This guarantees that we are legally registered with the Ministry of Tourism. You can verify it directly in their official website under our commercial name: ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
       website:
         "Our Facebook page is registered and certified by the company",
       confirmation:
@@ -923,7 +924,7 @@ export const en = {
         "If you have any additional questions, you can call +52 800 953 0342 and we will gladly assist you.",
       questionCreditCard: "What are the available forms of payment?",
       textCreditCard:
-        "Royal Vacations Mexico accepts from bank transfers and deposits, up to convenience store payments. For another part, it is important that you know when making payment with credit card, you can get great benefits such as accessible and attractive promotions for your next vacation",
+      `${process.env.NEXT_PUBLIC_NAME_COMPANY} accepts from bank transfers and deposits, up to convenience store payments. For another part, it is important that you know when making payment with credit card, you can get great benefits such as accessible and attractive promotions for your next vacation`,
       questionConsultant:
         "What to do if the advisor does not contact you?",
       textConsultant:
@@ -940,7 +941,7 @@ export const en = {
       questionDates:
         "How to make changes to reservations?",
       textDates:
-        "Of course! If you request a change of dates, we only require that you be notified via email to: info@royalvacationsmexico.com at least 20 business days prior to your arrival date at the hotel. Adjustments will be subject to price and availability variations",
+      `Of course! If you request a change of dates, we only require that you be notified via email to: info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com at least 20 business days prior to your arrival date at the hotel. Adjustments will be subject to price and availability variations`,
       questionCancellation: "What to do if you need to cancel?",
       textCancellation:
         "Unfortunately, most of our packages are non-refundable. In the event that you are unable to travel, we can help you arrange a change of dates subject to price and availability variations. In the event that your package is refundable, you can check the refund conditions and penalties in the Terms of Service section, available in our Terms and Conditions, or call our reservation center.",
@@ -1095,7 +1096,7 @@ export const en = {
     phone: "Phone",
     infoPayment: "Payment information",
     cancellations: "Cancellations",
-    cancellationsText: "Please remember that cancellations for reservations, hotels, transportation, or tours are handled directly through the Royal Vacations Mexico support line. We recommend that you get in touch with us for any cancellation or modification requests.",
+    cancellationsText: `Please remember that cancellations for reservations, hotels, transportation, or tours are handled directly through the ${process.env.NEXT_PUBLIC_NAME_COMPANY} support line. We recommend that you get in touch with us for any cancellation or modification requests.`,
     doubts: "Do you have any doubts?",
 
     bookingData: {
@@ -1250,66 +1251,66 @@ export const en = {
     // altHotelH: "Royal Vacations Mexico",
 
     titleTourH: "The best trip is enjoyed as a family",
-    altTourH: "Royal Vacations - Tours in Mexico",
+    altTourH: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Tours in Mexico`,
 
     titleTransferH: "Travel and live the experience",
-    altTransferH: "Royal Vacations Transfers",
+    altTransferH: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Transfers`,
 
     titleAboutUs: "The best destinations nationwide for you",
-    altAboutUs: "Royal Vacations About Us",
+    altAboutUs: `${process.env.NEXT_PUBLIC_NAME_COMPANY} About Us`,
 
     titleFaqs: "how do we help you?",
-    altFaqs: "Royal Vacations Frequently Asked Questions",
+    altFaqs: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Frequently Asked Questions`,
 
     // titleHotelP: "Discover and enjoy paradise in Mexico!",
     // subtitleHotelP: "Enjoy your dream vacation with Royal Vacations",
-    altHotelP: "Royal Vacations Lodging in Mexico",
+    altHotelP: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Lodging in Mexico`,
 
     titleTourP: "Find paradise in Mexico and enjoy!",
-    subtitleTourP: "Live a dream vacation with Royal Vacations",
-    altTourP: "Tourist destinations with Royal Vacation",
+    subtitleTourP: `Live a dream vacation with ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
+    altTourP: `Tourist destinations with ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
 
     titleTransferP: "The Cheapest Airport Transfers!",
-    subtitleTransferP: "Enjoy your dream vacation with Royal Vacations",
-    altTransferP: "Royal Vacations Transportation",
+    subtitleTransferP: `Enjoy your dream vacation with ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
+    altTransferP: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Transportation`,
 
     titleTourTraveling: "Planning the perfect vacation?",
     subtitleTourT: "Less planning, more travel!",
-    altTourT: "Royal Vacations Travel",
+    altTourT: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Travel`,
 
     titleTourMexico: "Find the top-rated tours in Mexico.",
     subtitleTourM: "Now is the time to enjoy.",
-    altTourM: "Royal Vacations Top Tours.",
+    altTourM: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Top Tours.`,
 
     titleTourFamily: "The best option for you and your family.",
     subtitleTourF: "Book now!",
-    altTourF: "Royal Vacations Family Travel.",
+    altTourF: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Family Travel.`,
 
     titleTransferBest: "A Safe Trip?",
     subtitleTransferB: "The best private transportation option you can find here.",
-    altTransferB: "Royal Vacations The Best Transportation",
+    altTransferB: `${process.env.NEXT_PUBLIC_NAME_COMPANY} The Best Transportation`,
 
     titleTransferSafe: "Compare in our catalog and book in advance.",
     subtitleTransferS: "Save time and money, and enjoy your vacation.",
-    altTransferS: "Royal Vacations Safe Transfers",
+    altTransferS: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Safe Transfers`,
 
     titleTransferTravel: "Receive the best attention during your trip",
     subtitleTransferT: "Travel safely and at the lowest price!",
-    altTransferT: "Royal Vacations Travel Transportations",
+    altTransferT: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Travel Transportations`,
 
     titleCallCenter: "Do you have doubts with your reservation? Call now, we will help you resolve your doubts",
     subtitleCallCenter1: "You need something else and can't find it, call us at", //*******
     subtitleCallCenter2: ", one of our advisors can help you",
-    altCallCenter: "Royal Vacations Reservations Reservation Assistance",
+    altCallCenter: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Reservations Reservation Assistance`,
 
     titleContact: "Is something missing from your reservation?",
     subtitleContact: "If you have any questions please call us at", //*******
-    altContact: "Royal Vacations Reservation Contact",
+    altContact: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Reservation Contact`,
 
     titleFaqHelp: "Need help? Send us a message!",
     subtitleFaqHelp: "For any questions or comments, write us at", /////////
     paragraph: "or call us at ", //*******
-    altFaqHelp: "Royal Vacations Help and Support",
+    altFaqHelp: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Help and Support`,
 
     titleListing1: "Family Discounts",
     titleListing2: "Enjoy unbeatable prices",
@@ -1318,17 +1319,17 @@ export const en = {
     titleListing5: "Adventure throughout Mexico with affordable prices",
     // titleListing: "Contact us for unbeatable family travel discounts",
     subtitleListing: "Personalized attention to your needs",
-    altListing: "Royal Vacations Mexico Family Travel",
+    altListing: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Family Travel`,
 
     titleCard: "Traveling is smiling",
     subtitleCard: "Smile with us!",
-    altCard: "Royal Vacations Mexico Extraordinary experiences",
+    altCard: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Extraordinary experiences`,
 
     titleConfirmedPayment: "Is something missing from your reservation?",
     subTitleConfirmedPayment: "If you have any questions, call us at ",
 
     titleNumber: "800 953 0342",
-    titleEmail: "info@royalvacationsmexico.com",
+    titleEmail: `info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
 
     principalBannerH: {
       title1: "Find the rest you are looking for",
@@ -1381,23 +1382,23 @@ export const en = {
 
   metaHome: {
     metaHotel: {
-      title: "Royal Vacations Mexico - Home Hotel",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Home Hotel`,
       description:
-        "Exceptional Lodging Experiences in Mexico - Royal Vacations Mexico Gives You Access to the Best Hotels in Emblematic Destinations",
+      `Exceptional Lodging Experiences in Mexico - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Gives You Access to the Best Hotels in Emblematic Destinations`,
       keywords:
         "Lodging in Mexico, Booking Hotels, Popular Destinations, Plan your destination",
     },
     metaTour: {
-      title: "Royal Vacations Mexico - Home Tour",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Home Tour`,
       description:
-        "Live Unique Experiences in Mexico with Royal Vacations Mexico - Book Tours to Connect with History, Nature and Culture of the Country",
+      `Live Unique Experiences in Mexico with ${process.env.NEXT_PUBLIC_NAME_COMPANY} - Book Tours to Connect with History, Nature and Culture of the Country`,
       keywords:
         "Tours in Mexico, Adventures, Different Activities, Tourist Destinations",
     },
     metaMoving: {
-      title: "Royal Vacations Mexico - Home Transfer",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Home Transfer`,
       description:
-        "Arrive in Cancun in Style - Book Comfortable and Safe Transfers with Royal Vacations Mexico and Start Your Vacation on the Right Foot",
+      `Arrive in Cancun in Style - Book Comfortable and Safe Transfers with ${process.env.NEXT_PUBLIC_NAME_COMPANY} and Start Your Vacation on the Right Foot`,
       keywords:
         "Transportation Service, Arrive on Time, Destination, Transfers",
     },
@@ -1405,107 +1406,107 @@ export const en = {
 
   metaResults: {
     metaHotel: {
-      title: "Royal Vacations Mexico - Results Hotel",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Results Hotel`,
       description:
-        "Hotels for Every Taste - Royal Vacations Mexico Offers You a Collection of Accommodation Options in Mexico Just a Click Away",
+      `Hotels for Every Taste - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Offers You a Collection of Accommodation Options in Mexico Just a Click Away`,
       keywords:
         "Accommodations, Hotel Search, Best Hotels in Mexico, Lodging Deals, Booking Assistance",
     },
     metaTour: {
-      title: "Royal Vacations Mexico - Results Tour",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Results Tour`,
       description:
-        "Your Portal to Booking Tours in Mexico - Find, Compare, and Book Tours in Fascinating Mexican Destinations with Royal Vacations Mexico",
+      `Your Portal to Booking Tours in Mexico - Find, Compare, and Book Tours in Fascinating Mexican Destinations with ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
       keywords:
         "Tourist Activities, Discover the Best Tour, Booking Assistance, Tour Search",
     },
     metaMoving: {
-      title: "Royal Vacations Mexico - Results Moving",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Results Moving`,
       description:
-        "Custom Transfers in Cancun - Royal Vacations Mexico Provides Personalized Transportation Options to Meet Your Needs",
+      `Custom Transfers in Cancun - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Provides Personalized Transportation Options to Meet Your Needs`,
       keywords:
         "Arrive on Time, Cancun Transfer Search, Airport Transfers, Shared Transportation, Booking Assistance",
     },
-    author: "Royal Vacations Mexico",
+    author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
 
   metaModal: {
     metaHotel: {
-      title: "Royal Vacations Mexico - ",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - `,
       description:
         "Detailed Hotel Experience - Discover What the Hotel Has to Offer in Our Information Modality",
       keywords:
         "Hotel Details, Description, Amenities, Hotel Gallery, Room Prices, Date Availability",
     },
     metaTour: {
-      title: "Royal Vacations Mexico - Modal Tour",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Modal Tour`,
       description:
         "Visualize Your Next Adventure - Explore the Tour, Available Dates, and Surprises Waiting for You in Our Information Modality",
       keywords:
         "Tour Description, Availability, Activity Duration, Tour Modality, Price",
     },
     metaMoving: {
-      title: "Royal Vacations Mexico - Modal Transfers",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Modal Transfers`,
       description:
         "Transportation Booking - Complete Our Destination Form to Get Information about Your Journey and Easily Plan Your Next Trip",
       keywords: "Destination Form, Route Information, Transfer Booking",
     },
-    author: "Royal Vacations Mexico",
+    author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
 
   metaFooter: {
     metaHistory: {
-      title: "Royal Vacations Mexico - Our History",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Our History`,
       description:
-        "About Us - Discover the Passion and Commitment that Drive Royal Vacations Mexico to Provide You with the Best Travel Experiences",
+      `About Us - Discover the Passion and Commitment that Drive ${process.env.NEXT_PUBLIC_NAME_COMPANY} to Provide You with the Best Travel Experiences`,
       keywords:
-        "Who we are, Service Quality, About Royal Vacations Mexico, Success Story",
+      `Who we are, Service Quality, About ${process.env.NEXT_PUBLIC_NAME_COMPANY}, Success Story`,
     },
     metaTerms: {
-      title: "Royal Vacations Mexico - Terms and Conditions",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Terms and Conditions`,
       description:
         "Book with Confidence - Our Terms and Conditions Define Our Commitment to Service Excellence",
       keywords:
-        "Royal Vacations Mexico Terms and Conditions, Booking Policy, Website Usage, Customer Responsibilities",
+      `${process.env.NEXT_PUBLIC_NAME_COMPANY} Terms and Conditions, Booking Policy, Website Usage, Customer Responsibilities`,
     },
     metaPrivacy: {
-      title: "Royal Vacations Mexico - Privacy Policy",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Privacy Policy`,
       description:
-        "Your Information, Your Control - Royal Vacations Mexico Gives You Control over Your Personal Data per Our Privacy Policy",
+      `Your Information, Your Control - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Gives You Control over Your Personal Data per Our Privacy Policy`,
       keywords:
         "Privacy Policy, Customer Data Management, Data Confidentiality, Data Security, Rights",
     },
     metaPolicy: {
-      title: "Royal Vacations Mexico - Cancellation Policies",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Cancellation Policies`,
       description:
         "Understand Your Options - Our Change and Cancellation Policies Section Helps You Make Informed Decisions",
       keywords:
         "Cancellation Policies, Change Procedures, Personal Data Protection",
     },
     metaQuestion: {
-      title: "Royal Vacations Mexico - Frequently Asked Questions",
+      title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Frequently Asked Questions`,
       description:
-        "Your Queries, Our Answers - Royal Vacations Mexico is Committed to Providing Assistance at Every Step of Your Journey",
+      `Your Queries, Our Answers - ${process.env.NEXT_PUBLIC_NAME_COMPANY} is Committed to Providing Assistance at Every Step of Your Journey`,
       keywords:
-        "Frequently Asked Questions, Customer Assistance, Help and Support, About Royal Vacations, FAQs, Services",
+      `Frequently Asked Questions, Customer Assistance, Help and Support, About ${process.env.NEXT_PUBLIC_NAME_COMPANY}, FAQs, Services`,
     },
-    author: "Royal Vacations Mexico",
+    author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
 
   metaModelOptions: {
-    title: "Royal Vacations Mexico - Modal Options",
+    title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Modal Options`,
     description:
       "Wide Range of Choices - In Our Options Modality, Find a Variety of Hotels, Tours, and Transportation for Your Next Trip",
     keywords: "Hotels, Transfers, Tours, Lodging, Transportation, Activities",
-    author: "Royal Vacations Mexico",
+    author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
 
   metaPayment: {
-    title: "Royal Vacations Mexico - Payment",
+    title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Payment`,
     description:
       "Stress-Free Booking - Our Three-Step Sequence Guides You from Planning to Payment Confirmation",
     keywords:
       "Itinerary, Travel, Payment, Payment Confirmation, Reservation Details",
-    author: "Royal Vacations Mexico",
+    author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
 
   language: {
