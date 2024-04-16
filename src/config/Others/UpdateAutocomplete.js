@@ -12,7 +12,7 @@ export default function UpdateAutocomplete(props) {
     label: dataLocalSend.name,
     codeName:dataLocalSend.codeName,
     country:dataLocalSend.country,
-    countryDestinationCodeName:`${dataLocalSend.codeName}-mexico`,
+    countryDestinationCodeName:`${dataLocalSend.codeName}-${dataLocalSend.country}`,
     // category:""
     provider: "hb",
   };
