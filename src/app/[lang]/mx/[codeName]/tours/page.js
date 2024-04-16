@@ -16,10 +16,10 @@ export async function generateMetadata({ searchParams }) {
   const checkIn = searchParams.dateStart;
 
   return {
-    title: `Descubre ${destination}: Encuentra los Mejores Tours con ${process.env.NEXT_NAME_COMPANY}.com`,
-    description: `Encuentra los mejores tours en ${destination} del ${checkIn} . Explora con ${process.env.NEXT_NAME_COMPANY}`,
+    title: `Descubre ${destination}: Encuentra los Mejores Tours con ${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
+    description: `Encuentra los mejores tours en ${destination} del ${checkIn} . Explora con ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     keywords: `tours en ${destination}, viajes por ${destination}, aventuras en ${destination}, excursiones en ${destination}, destinos turísticos ${destination}, guía de viaje ${destination}`,
-    author: `${process.env.NEXT_NAME_COMPANY}`,
+    author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   };
 }
 

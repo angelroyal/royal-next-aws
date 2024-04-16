@@ -15,10 +15,10 @@ export async function generateMetadata({ searchParams }) {
   const checkOut = searchParams.checkOut;
 
   return {
-    title: `Discover ${destination}: Find the Best hotels with ${process.env.NEXT_NAME_COMPANY}.com`,
-    description: `Find the best hotels in ${destination} from ${checkIn} to ${checkOut}. Explore with ${process.env.NEXT_NAME_COMPANY}`,
+    title: `Discover ${destination}: Find the Best hotels with ${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
+    description: `Find the best hotels in ${destination} from ${checkIn} to ${checkOut}. Explore with ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     keywords: `hotels in ${destination}, best hotels ${destination}, hotel booking ${destination}, hotel deals in ${destination}, all inclusive hotels ${destination}`,
-    author: `${process.env.NEXT_NAME_COMPANY}`,
+    author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   };
 }
 

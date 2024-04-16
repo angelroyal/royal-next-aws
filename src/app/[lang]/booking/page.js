@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../assets/styles/web/App.css";
+import "../../../assets/styles/web/App.css";
 
 import Payment from "@/payment/Payment";
 import Token from "@/components/General/Token";
@@ -15,9 +15,9 @@ export default function Home() {
       <TokenProvider>
         <CartAxiosProvider>
           <Token />
-          <Navigation/>
-          <Payment/>
-          <Footer/>
+          <Navigation />
+          <Payment />
+          <Footer />
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>
