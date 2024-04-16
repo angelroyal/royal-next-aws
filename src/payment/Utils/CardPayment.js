@@ -106,10 +106,10 @@ export default function CardPayment(props) {
     >
       {isBack === false && (
         <>
-          <Image className="icon-logo-transparent" src={IconLogo} />
+          <Image className="icon-logo-transparent" src={IconLogo} alt="logo transparent cart"/>
 
           <div className="front-card">
-            <Image className="chip-icon" src={ChipCard} />
+            <Image className="chip-icon" src={ChipCard} alt="chip icon"/>
 
             <div className="number-card">
               {numberSpace().map((value, item) => (

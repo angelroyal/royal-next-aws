@@ -114,7 +114,7 @@ export default function CardHotelItinerary(props) {
               onClick={() => setIconRemove(true)}
             >
               {/* <CloseIcon /> */}
-              <Image src={CloseIcon} />
+              <Image src={CloseIcon} alt="icon close"/>
             </div>
 
             {/* FATHER ONE */}
@@ -174,7 +174,7 @@ export default function CardHotelItinerary(props) {
 
                       <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
                         {/* <RoomIcon className="icons-size-m" /> */}
-                        <Image className="icons-size-m" src={RoomIcon} />
+                        <Image className="icons-size-m" src={RoomIcon} alt="icon Room"/>
 
                         <span>
                           {itemHotel.totalRooms}{" "}
@@ -221,7 +221,7 @@ export default function CardHotelItinerary(props) {
                 </div>
 
                 <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                  <Image className="icons-size-m" src={RoomIcon} />
+                  <Image className="icons-size-m" src={RoomIcon} alt="icon room"/>
                   <span>{itemHotel.totalRooms} Habitaciones</span>
                 </div>
               </div>
@@ -322,6 +322,7 @@ export default function CardHotelItinerary(props) {
                                           <Image
                                             className="icons-size-m"
                                             src={RoomIcon}
+                                            alt="icon Room"
                                           />{" "}
                                           <span className="text-grey-card-hotel-i">
                                             {bed.number} {bed.type}
@@ -336,12 +337,14 @@ export default function CardHotelItinerary(props) {
                                         <Image
                                           className="icons-size-s"
                                           src={ErrorIcon}
+                                          alt="icon error"
                                         />
                                       )}
                                       {roomBed.refundable === true && (
                                         <Image
                                           className="icons-size-s"
                                           src={DoneIcon}
+                                          alt="icon done"
                                         />
                                       )}
 
@@ -359,6 +362,7 @@ export default function CardHotelItinerary(props) {
                                         <Image
                                           className="icons-size-s"
                                           src={DoneIcon}
+                                          alt="icon-done"
                                         />
                                         <span className="text-all-inclusive-i">
                                           {roomBed.eatingPlan}

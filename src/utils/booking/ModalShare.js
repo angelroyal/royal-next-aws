@@ -64,11 +64,11 @@ export default function ModalShare({ itinerary = false }) {
           onClick={handleIconClick}
         >
           {itinerary ? (
-            <Image src={ShareOr} />
+            <Image src={ShareOr} alt="share orange"/>
           ) : iconActive ? (
-            <Image src={ShareActiveIcon} />
+            <Image src={ShareActiveIcon} alt="share active"/>
           ) : (
-            <Image src={ShareIcon} />
+            <Image src={ShareIcon} alt="share icon"/>
           )}
         </div>
       </div>
