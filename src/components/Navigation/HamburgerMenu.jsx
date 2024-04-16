@@ -7,6 +7,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import LanguageContext from "@/language/LanguageContext";
 import { LanguageSelector } from "@/language/LanguageSelector";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
+import Link from "next/link";
 
 export function HamburgerMenu({ open, setMobileMenuOpen }) {
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
@@ -47,8 +48,9 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
             </div>
 
             <div className="space-y-7 py-6">
-              <a
+              <Link
                 href={`${process.env.NEXT_PUBLIC_HOME}`}
+                passHref
                 className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
               >
                 {" "}
@@ -64,10 +66,11 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                 >
                   {languageData.SearchBox.tabHotel.lodgement}
                 </span>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href={`${language}/tour`}
+                passHref
                 className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
               >
                 <img
@@ -80,7 +83,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                 >
                   Tours
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

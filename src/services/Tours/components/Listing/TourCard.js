@@ -14,21 +14,23 @@ import LanguageContext from "@/language/LanguageContext";
 
 import IconLocationBlue from "../../../../assets/icons/utils/others/location-blue.svg";
 import ImageNotFount from "../../../../assets/images/banners/es/no-image-available.png";
-import "../../../../assets/styles/general/Swiper.css"
+import "../../../../assets/styles/general/Swiper.css";
 
 export default function TourCard(props) {
   const maxLength = 290;
 
   const { tour } = props;
+  console.log(tour);
 
   // console.log(tour);
 
   const description = tour.description;
 
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   const buildUrlWithParams = () => {
     const searchParams = new URLSearchParams(window.location.search);
+    const destination = searchParams.get("codeNameTour");
     const requestBody = {
       code: searchParams.get("code"),
       type: searchParams.get("type"),
@@ -39,8 +41,7 @@ export default function TourCard(props) {
 
     const query = new URLSearchParams(requestBody).toString();
 
-    const baseUrl = `/tour/${tour.codeName}?${query}`;
-
+    const baseUrl = `/${language}/mx/${destination}-mexico/tours/${tour.codeName}?${query}`;
     return `${baseUrl}`;
   };
 

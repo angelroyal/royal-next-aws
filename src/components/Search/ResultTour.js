@@ -51,7 +51,7 @@ export default function ResultTour() {
       destination: selectedOption.label,
       code: selectedOption.key,
       type: selectedOption.type,
-      dateStart: dateStart,
+      dateStart: dateStart, 
       adults: roomData[0].adults,
       children: roomData[0].children,
     };

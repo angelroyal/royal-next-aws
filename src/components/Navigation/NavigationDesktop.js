@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 
 // import Cart from "@/hooks/Cart";
@@ -43,9 +44,10 @@ export default function NavigationDesktop() {
             aria-label="Global"
           >
             <div className="flex md:flex-1 justify-between">
-              <a
+              <Link
+                className="m-1.5 p-1.5"
                 href={`${process.env.NEXT_PUBLIC_HOME}`}
-                className="-m-1.5 p-1.5"
+                passHref
               >
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
@@ -53,11 +55,12 @@ export default function NavigationDesktop() {
                   width={200}
                   height={100}
                 />
-              </a>
+              </Link>
               <div className="hidden md:items-center md:flex">
                 {" "}
-                <a
+                <Link
                   href={`${process.env.NEXT_PUBLIC_HOME}`}
+                  passHref
                   className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
                   {" "}
@@ -73,9 +76,10 @@ export default function NavigationDesktop() {
                   >
                     {languageData.SearchBox.tabHotel.lodgement}
                   </span>
-                </a>
-                <a
-                  href={`${language}/tour`}
+                </Link>
+                <Link
+                  href={`/${language}/tour`}
+                  passHref
                   className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
                   <img
@@ -90,7 +94,7 @@ export default function NavigationDesktop() {
                   >
                     Tours
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
 
