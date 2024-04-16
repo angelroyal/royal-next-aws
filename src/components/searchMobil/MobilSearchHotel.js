@@ -73,21 +73,18 @@ export default function MobilSearchHotel() {
       codeName: selectedOption.codeName,
       code: selectedOption.key,
       type: selectedOption.type,
-      "check-in": validFirstDay, // Asegúrate de que validFirstDay está definido y formateado adecuadamente
-      "check-out": validSecondDay, // Asegúrate de que validSecondDay está definido y formateado adecuadamente
+      "check-in": validFirstDay,
+      "check-out": validSecondDay,
       occupancies: encodedRoomData,
     };
-  
+
     const query = new URLSearchParams(requestBody).toString();
-  
-    if(selectedOption.type === "hotel"){
-      // Abre una nueva pestaña para los detalles del hotel
+
+    if (selectedOption.type === "hotel") {
       const newTabURL = `/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`;
-      window.open(newTabURL, '_blank');
-    }else{
-      // Usa el router para redirigir a la página de resultados de hoteles
+      window.open(newTabURL, "_blank");
+    } else {
       const newPath = `/${language}/mx/${selectedOption.codeName}-${selectedOption.country}/hotels?${query}`;
-      // router.push(newPath);
       window.location.href = newPath;
     }
   };

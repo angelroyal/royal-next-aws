@@ -69,8 +69,6 @@ export default function SendHotel() {
     }
   };
 
-  console.log(selectedOption);
-
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
     // setShowModal(true);
