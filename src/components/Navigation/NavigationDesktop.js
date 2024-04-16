@@ -66,7 +66,7 @@ export default function NavigationDesktop() {
                     alt="done green"
                     className="pr-2"
                   />
-                  <span className={`${currentActiveIcon === "hotel" && 'text-or-100'}`}>{languageData.SearchBox.tabHotel.lodgement}</span>
+                  <span className={`${currentActiveIcon === "hotels" && 'text-or-100'}`}>{languageData.SearchBox.tabHotel.lodgement}</span>
                 </a>
 
                 <a

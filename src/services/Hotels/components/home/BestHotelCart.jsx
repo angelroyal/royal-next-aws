@@ -8,7 +8,7 @@ import { useContext } from "react";
 import LanguageContext from "@/language/LanguageContext";
 
 export function BestHotelCart({ hotel }) {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
     // console.log(hotel);
@@ -24,7 +24,7 @@ export function BestHotelCart({ hotel }) {
     const checkOut = endDate.format("YYYY-MM-DD");
     // return
     const requestBody = {
-      destination: hotel.name,
+      codeNameHotel: hotel.codeName,
       code: hotel.code,
       type: "hotel",
       "check-in": checkIn,
@@ -32,7 +32,7 @@ export function BestHotelCart({ hotel }) {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
-    window.open(`/hotel/${hotel.codeName}?${query}`, "_blank");
+    window.open(`/${language}/mexico/${hotel.destinationCodeName}-${hotel.country}/${hotel.destinationCodeName}-hotels/${hotel.codeName}?${query}`, '_blank');
   };
 
   return (

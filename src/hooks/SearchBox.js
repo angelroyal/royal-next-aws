@@ -9,6 +9,7 @@ import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
 import SendHotel from "@/services/Hotels/Search/SendHotel";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
+import { SearchHomeSkeleton } from "@/components/Skeleton/SearchHome";
 
 export default function SearchBox() {
   const { languageData } = useContext(LanguageContext);
@@ -26,7 +27,7 @@ export default function SearchBox() {
   const handleTabChange = (eventKey) => {
     let view = null;
     switch (eventKey) {
-      case "hotel":
+      case "hotels":
         view = process.env.NEXT_PUBLIC_HOME;
         break;
       case "tour":
@@ -47,19 +48,19 @@ export default function SearchBox() {
         >
           <Tab
             className="focus:outline-none focus:ring-transparent"
-            onClick={() => handleTabChange("hotel")}
+            onClick={() => handleTabChange("hotels")}
             style={{ padding: "0" }}
           >
             <span
               className={`${
-                currentActiveIcon === "hotel"
+                currentActiveIcon === "hotels"
                   ? "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
             >
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}${
-                  currentActiveIcon === "hotel"
+                  currentActiveIcon === "hotels"
                     ? "icons/hotel/hotel-w.svg"
                     : "icons/hotel/hotel-b.svg"
                 }`}
@@ -100,9 +101,15 @@ export default function SearchBox() {
         </Tab.List>
 
         <Tab.Panels>
-          {currentActiveIcon === "hotel" && <SendHotel />}
+          {currentActiveIcon ? (
+            <>
+              {currentActiveIcon === "hotels" && <SendHotel />}
 
-          {currentActiveIcon === "tour" && <ResultTour />}
+              {currentActiveIcon === "tour" && <ResultTour />}
+            </>
+          ) : (
+            <SearchHomeSkeleton />
+          )}
         </Tab.Panels>
       </Tab.Group>
     </>

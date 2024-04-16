@@ -1,4 +1,3 @@
-
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import HomeHotel from "@/services/General/HomeHotel";
@@ -16,7 +15,8 @@ export default function Home() {
             <Token />
             <Navigation />
             <HomeHotel />
-            <Footer/>
+
+            <Footer />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>

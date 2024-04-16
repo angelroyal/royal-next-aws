@@ -104,6 +104,8 @@ export default function SendHotel() {
       setIsHotelResults(currentPath.endsWith("/hotel/results"));
     }
   }, []);
+
+  
   
 
   return (
