@@ -6,11 +6,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title:
-    "StayWuw.com | Hoteles, tours, transporte y experiencias de viaje excepcionales ",
+    "StayWuw.com | Hotels, tours, transportation, and exceptional travel experiences",
   description:
-    "Descubre México con Royal Vacations: desde lujosos hoteles hasta tours emocionantes y traslados cómodos. Planifica tu escapada perfecta con opciones personalizadas para explorar los destinos más emblemáticos. Todo lo que necesitas para unas vacaciones inolvidables, en un solo lugar.",
+    "Discover Mexico with Royal Vacations: from luxurious hotels to exciting tours and comfortable transfers. Plan your perfect getaway with personalized options to explore the most iconic destinations. Everything you need for an unforgettable vacation, all in one place.",
   keywords:
-    "Vacaciones en México, Hoteles de Lujo, Tours Aventureros, Servicio de Traslados, Viajes Personalizados, Destinos Emblemáticos, Planificación de Viajes",
+    "Vacations in Mexico, Luxury Hotels, Adventurous Tours, Transfer Services, Customized Trips, Iconic Destinations, Travel Planning",
   author: "StayWuw",
 };
 
@@ -21,20 +21,20 @@ export default function RootLayout({ children }) {
     legalName: "StayWuw.com ",
     url: "http://staywuw.com",
     description:
-      "By investing in technology that takes the friction out of travel, Booking.com seamlessly connects millions of travelers to memorable experiences, a variety of transportation options, and incredible places to stay – from homes to hotels, and much more. As one of the world’s largest travel marketplaces for both established brands and entrepreneurs of all sizes, Booking.com enables properties around the world to reach a global audience and grow their businesses.",
+      "Discover Mexico with StayWuw: from luxurious hotels to exciting tours and comfortable transfers. Plan your perfect getaway with personalized options to explore the most iconic destinations. Everything you need for an unforgettable vacation, all in one place.",
     address: {
       "@type": "PostalAddress",
       addressCountry: "Mexico",
       addressRegion: "Mexico",
-      addressLocality: "Cancun, Mexico",
-      postOfficeBoxNumber: "150",
+      addressLocality: "Av. Tulum y Av Náder, Sm 2, Mza. 1, lte. 44, Andador VI, C.P. 77500 Cancún, Q.Roo.",
+      postOfficeBoxNumber: "44",
       postalCode: "77505",
-      streetAddress: "Nader",
+      streetAddress: "Av Náder",
     },
-    faxNumber: "+52 998134 2286",
+    faxNumber: "+52 800 953 0342",
     logo: "https://sandboxmexico.com/assets/royal/principal-logo.svg",
-    founder: "Lic Pepe",
-    foundingDate: "1995",
+    founder: "Stay Wuw company",
+    foundingDate: "2024",
     foundingLocation: "Mexico",
     areaServed: "Mexico",
     brand: {
@@ -42,15 +42,14 @@ export default function RootLayout({ children }) {
       name: "http://staywuw.com/",
     },
     keywords:
-      "online travel agency, hotels, holiday rentals, flights, rental cars",
+      "online travel agency, hotels, holiday rentals, flights, rental cars, Vacations in Mexico, Luxury Hotels, Adventurous Tours, Transfer Services, Customized Trips, Iconic Destinations, Travel Planning",
     parentOrganization: {
       "@type": "Corporation",
-      name: "Stay Wuw",
+      name: "StayWuw",
     },
     sameAs: [
       "https://www.facebook.com/RoyalVacationsMx",
       "https://www.instagram.com/royalvacationsmx/",
-      "https://twitter.com/bookingcom",
       "https://www.linkedin.com/company/royal-vacations-mexico/",
       "https://www.tiktok.com/@royalvacationsmx",
     ],
