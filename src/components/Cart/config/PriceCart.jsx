@@ -1,8 +1,9 @@
 "use client";
+
 import React, { useContext } from "react";
 import { useCartAxios } from "../CartAxios";
 import Link from "next/link";
-
+import LanguageContext from "@/language/LanguageContext";
 export default function PriceCart(props) {
   const { languageData } = useContext(LanguageContext);
   const { cartId } = props;
@@ -36,7 +37,7 @@ export default function PriceCart(props) {
         </div>
 
         <div className="flex justify-between mb-[12px]">
-          <span className="text-fs-12 text-gry-100 m-m">{languageData. booking.taxes}</span>
+          <span className="text-fs-12 text-gry-100 m-m">{languageData.booking.taxes}</span>
 
           <span className="text-fs-14 text-gry-100 m-m">
             {" "}
