@@ -11,7 +11,7 @@ export default function Tour(props) {
   return (
     <Container>
       {/* <div className="p-9 mt-[25.8px]">  LP  TASK 20*/}
-      {
+      {tourData && (
         <div className="p-9 ">
           <DetailTour tourData={tourData.activity} />
 
@@ -30,7 +30,7 @@ export default function Tour(props) {
             </div>
           </div>
         </div>
-      }
+      )}
     </Container>
   );
 }

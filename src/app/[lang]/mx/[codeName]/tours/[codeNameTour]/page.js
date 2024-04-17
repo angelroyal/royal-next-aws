@@ -1,12 +1,3 @@
-// import Token from "@/components/General/Token";
-// import Footer from "@/components/Footer/Footer";
-// import LanguageProvider from "@/language/LanguageProvider";
-// import Navigation from "@/components/Navigation/Navigation";
-// import { TokenProvider } from "@/config/context/AuthContext";
-// import Tour from "@/services/Tours/components/DetailTour/Tour";
-// import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-// import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
