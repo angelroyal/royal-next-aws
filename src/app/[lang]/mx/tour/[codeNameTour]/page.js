@@ -13,6 +13,7 @@ export default async function DetailPageHotel({ params, searchParams }) {
       `v1/hotels/temptation-cancun-resort/rooms`
     );
     const hotelData = response.data;
+    console.log(hotelData);
 
     console.log("esta entrando aqui");
 
@@ -24,6 +25,7 @@ export default async function DetailPageHotel({ params, searchParams }) {
             <Navigation hotelDetails={true} />
             <div>
               sadsadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+              {hotelData.name}
             </div>
             <Footer />
           </CartAxiosProvider>
