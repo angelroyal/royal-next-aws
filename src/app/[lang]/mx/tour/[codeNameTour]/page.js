@@ -8,33 +8,30 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
-export default async function DetailPageTour({ params, searchParams }) {
+export default async function DetailPageHotel({ params, searchParams }) {
   try {
     const response = await axiosWithInterceptor.get(
-      `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+      `v1/activities/autobus-de-fiesta-por-cancun/availability?dateFrom=2024-05-19&days=5&provider=ct`
     );
-
-    const tourData = response.data;
-    console.log(tourData);
+    const hotelData = response.data;
+    console.log(hotelData);
+    console.log("esta entrando aqui");
 
     return (
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
-            <DetailTourProvider>
               <Token />
               <Navigation hotelDetails={true} />
-              <div>
-                hola {tourData.timeZone}
+              <div className="relative bg-gry-30">
+                holaaaaaaaaaaa {hotelData.timeZone}
               </div>
-              {tourData && <Tour tourData={tourData} />}
               <Footer />
-            </DetailTourProvider>
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>
     );
   } catch (error) {
-    console.error("Error fetching hotel data:", error);
+    console.log("Error fetching hotel data:", error);
   }
 }
