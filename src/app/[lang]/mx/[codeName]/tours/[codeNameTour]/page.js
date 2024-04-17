@@ -1,5 +1,3 @@
-"use client";
-
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -17,10 +15,12 @@ export async function generateMetadata({ params, searchParams }) {
     provider: "ct",
   };
 
+  console.log(params);
+
   try {
     // METHOD AXIOS
     const response = await axiosWithInterceptor.post(
-      `v1/activities/${params.id}/availability`,
+      `v1/activities/${params.codeNameTour}/availability`,
       requestBody
     );
 
@@ -50,7 +50,7 @@ export default async function DetailPageTour({ params, searchParams }) {
  
   try {
     const response = await axiosWithInterceptor.post(
-      `v1/activities/${params.id}/availability`,
+      `v1/activities/${params.codeNameTour}/availability`,
       requestBody
     );
 
