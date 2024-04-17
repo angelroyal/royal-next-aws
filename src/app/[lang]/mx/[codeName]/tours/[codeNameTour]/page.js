@@ -15,6 +15,7 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import Tour from "@/services/Tours/components/DetailTour/Tour";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
 export async function generateMetadata({ params, searchParams }) {
   const requestBody = {
@@ -66,12 +67,12 @@ export default async function DetailPageTour({ params, searchParams }) {
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
-            <RoomsHotelProvider>
+            <DetailTourProvider>
               <Token />
               <Navigation hotelDetails={true} />
               <Tour tourData={tourData} />
               <Footer />
-            </RoomsHotelProvider>
+            </DetailTourProvider>
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>
