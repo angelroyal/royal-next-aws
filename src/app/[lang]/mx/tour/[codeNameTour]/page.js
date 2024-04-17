@@ -8,7 +8,7 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 export default async function DetailPageHotel({ params, searchParams }) {
   try {
     const response = await axiosWithInterceptor.get(
-      `v1/activities/autobus-de-fiesta-por-cancun/availability?dateFrom=2024-05-19&days=5&provider=ct`
+      `v1/hotels/temptation-cancun-resort/rooms`
     );
     const hotelData = response.data;
     console.log(hotelData);
@@ -20,9 +20,7 @@ export default async function DetailPageHotel({ params, searchParams }) {
           <CartAxiosProvider>
             <Token />
             <div className="relative bg-gry-30">
-              {hotelData && (
-                <div>{hotelData.timeZone}</div>
-              )}
+              <div>{hotelData.name}</div>
               holaaaaaaaaaaa
             </div>
             <Footer />
