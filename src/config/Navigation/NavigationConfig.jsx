@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const NavigationURL = ["hotels", "tour"];
+export const NavigationURL = ["hotels", "tour", "tours"];
 
 export function NavigationConfig() {
   const [activeRouter, setActiveRouter] = useState(null);

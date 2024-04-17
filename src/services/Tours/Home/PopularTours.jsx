@@ -9,21 +9,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
-import UpdateAutocomplete from "@/config/Others/UpdateAutocomplete";
 import PopularStateSkeleton from "@/services/Hotels/components/Skeleton/HotelHomeSkeleton";
 
 export function PopularTours() {
-  const [popularState, setPopularState] = useState([]);
   const { language, languageData } = useContext(LanguageContext);
   const router = useRouter();
-
+  
+  const [popularState, setPopularState] = useState([]);
   useEffect(() => {
     const getPopularStates = async () => {
       try {
         let dataPopularState = await axios.get(
           `${process.env.NEXT_PUBLIC_ROYAL_URL}resources/top_activities.json`
         );
-
+        
         if (dataPopularState.data && dataPopularState.status === 200) {
           const shuffledDestinations = dataPopularState.data
             .slice(0, 8)
@@ -31,7 +30,7 @@ export function PopularTours() {
           setPopularState(shuffledDestinations);
         }
       } catch (error) {
-        console.eror(error);
+        console.error(error);
       }
     };
     getPopularStates();
@@ -47,10 +46,10 @@ export function PopularTours() {
     const checkIn = initDate.format("YYYY-MM-DD");
 
     const requestBody = {
-      codeNameTour: destinationInfo.codeName,
-      destination: validateLanguageName(language, destinationInfo).name,
-      code: destinationInfo.id,
-      type: "activity",
+      // codeNameTour: destinationInfo.codeName,
+      // destination: validateLanguageName(language, destinationInfo).name,
+      // code: destinationInfo.id,
+      // type: "activity",
       dateStart:checkIn,
       adults: persons[0].adults,
       children: persons[0].children,
@@ -77,11 +76,12 @@ export function PopularTours() {
     // router.push(`${language}/mx/${destinationInfo.codeName}/hotels?${query}`);
   };
 
-  const sendDataSearch = (destination) => {
-    const dataLocalSend = destination;
-    const type = "activity";
-    UpdateAutocomplete({ dataLocalSend, type });
-  };
+  // const sendDataSearch = (destination) => {
+  //   const dataLocalSend = destination;
+  //   const type = "activity";
+  //   UpdateAutocomplete({ dataLocalSend, type });
+  // };
+
   const parsePrice = (price) => (
     <>
       {Math.floor(price)

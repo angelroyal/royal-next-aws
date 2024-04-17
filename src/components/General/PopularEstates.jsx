@@ -10,9 +10,12 @@ import { Navigation } from "swiper/modules";
 import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import UpdateAutocomplete from "@/config/Others/UpdateAutocomplete";
-import PopularStateSkeleton from "../Skeleton/HotelHomeSkeleton";
+import PopularStateSkeleton from "../../services/Hotels/components/Skeleton/HotelHomeSkeleton";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-export function PopularState() {
+import { UpdateAutocompleteTour } from "@/config/Others/UpdateAutocompleteTour";
+
+export function PopularState({ tour = false }) {
+  console.log(tour);
   const [popularState, setPopularState] = useState([]);
   const { language, languageData } = useContext(LanguageContext);
   const router = useRouter();
@@ -31,46 +34,73 @@ export function PopularState() {
           setPopularState(shuffledDestinations);
         }
       } catch (error) {
-        console.eror(error);
+        console.error(error);
       }
     };
     getPopularStates();
   }, []);
 
   const sendDestination = (destinationInfo) => {
-    const encodedRoomData = encodeURIComponent(
-      JSON.stringify([{ adults: 2, children: [] }])
-    );
-    const today = moment();
+    if (tour) {
+      const persons = [{ adults: 2, children: 0 }];
+      const today = moment();
 
-    let initDate = moment(today).add(1, "month");
-    let endDate = moment(today).add(1, "month").add(2, "day");
-    const checkIn = initDate.format("YYYY-MM-DD");
-    const checkOut = endDate.format("YYYY-MM-DD");
+      let initDate = moment(today).add(1, "month");
+      const checkIn = initDate.format("YYYY-MM-DD");
 
-    const requestBody = {
-      codeNameHotel: destinationInfo.codeName,
-      destination: destinationInfo.name,
-      codeName: destinationInfo.codeName,
-      code: destinationInfo.id,
-      type: "tour",
-      "check-in": checkIn,
-      "check-out": checkOut,
-      occupancies: encodedRoomData,
-    };
+      const requestBodyTour = {
+        codeNameTour: destinationInfo.codeName,
+        dateStart: checkIn,
+        adults: persons[0].adults,
+        children: persons[0].children,
+      };
 
-    sendDataSearch(destinationInfo);
+      const queryTour = new URLSearchParams(requestBodyTour).toString();
+      sendDataSearchTour(destinationInfo);
+      const newURL = `/${language}/mx/${destinationInfo.codeName}-${destinationInfo.country}/tours?${queryTour}`;
+      router.push(newURL);
+    } else {
+      const encodedRoomData = encodeURIComponent(
+        JSON.stringify([{ adults: 2, children: [] }])
+      );
+      const today = moment();
 
-    // PUSH RESULT HOTEL
-    const query = new URLSearchParams(requestBody).toString();
-    router.push(`${language}/mx/${destinationInfo.codeName}/hotels?${query}`);
+      let initDate = moment(today).add(1, "month");
+      let endDate = moment(today).add(1, "month").add(2, "day");
+      const checkIn = initDate.format("YYYY-MM-DD");
+      const checkOut = endDate.format("YYYY-MM-DD");
+
+      const requestBodyHotel = {
+        codeNameHotel: destinationInfo.codeName,
+        destination: destinationInfo.name,
+        codeName: destinationInfo.codeName,
+        code: destinationInfo.id,
+        type: "destination",
+        "check-in": checkIn,
+        "check-out": checkOut,
+        occupancies: encodedRoomData,
+      };
+      const queryHotel = new URLSearchParams(requestBodyHotel).toString();
+      sendDataSearch(destinationInfo);
+      // PUSH RESULT HOTEL
+      router.push(
+        `/${language}/mx/${destinationInfo.codeName}/hotels?${queryHotel}`
+      );
+    }
   };
 
+  //UPDATE LOCAL STORAGE HOTEL
   const sendDataSearch = (destination) => {
     const dataLocalSend = destination;
-    const type = "destination"
-    UpdateAutocomplete({ dataLocalSend, type });
+    UpdateAutocomplete({ dataLocalSend });
   };
+
+  //UPDATE LOCAL STORAGE TOUR
+  const sendDataSearchTour = (tourInfo) => {
+    const dataLocalSend = tourInfo;
+    UpdateAutocompleteTour({ dataLocalSend });
+  };
+
   const parsePrice = (price) => (
     <>
       {Math.floor(price)
