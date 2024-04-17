@@ -81,14 +81,16 @@ export default function SearchBox() {
           >
             <span
               className={`${
-               currentActiveIcon === "tours"
+               currentActiveIcon === "tour"
+              //  currentActiveIcon === "tours"
                   ? "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
             >
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}${
-                 currentActiveIcon === "tours"
+                 currentActiveIcon === "tour"
+                //  currentActiveIcon === "tours"
                     ? "icons/tour/tour-w.svg"
                     : "icons/tour/tour-b.svg"
                 }`}
@@ -106,7 +108,8 @@ export default function SearchBox() {
             <>
               {currentActiveIcon === "hotels" && <SendHotel />}
 
-              {currentActiveIcon === "tours"  && <ResultTour />}
+              {currentActiveIcon === "tour"  && <ResultTour />}
+              {/* {currentActiveIcon === "tours"  && <ResultTour />} */}
             </>
           ) : (
             <SearchHomeSkeleton />
