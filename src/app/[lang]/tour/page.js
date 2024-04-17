@@ -2,6 +2,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // import HomeHotel from "@/pages/Home/HomeHotel";
+import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import { Container } from "@/config/Others/Container";
@@ -10,13 +11,11 @@ import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import TopActivities from "@/services/Tours/Home/TopActivities";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import { PopularTours } from "@/services/Tours/Home/PopularTours";
 import { BannerHomeTour } from "@/services/Tours/Home/bannerTour";
-import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
-import { PopularState } from "@/services/Hotels/components/home/PopularEstates";
 import BannerFooterTour from "@/services/Tours/Home/bannerFooterTour";
 import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
-import SearchBox from "@/hooks/SearchBox";
-// import ContactUs from "@/components/General/ContactUs";
+import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 // import CartHotelT from "@/components/Cart/CartHotelT";
 // import CartOpen from "@/components/Cart/open/CartOpen";
 // export const metadata = {
@@ -51,7 +50,7 @@ export default function Home() {
             <Container>
               <BannerHomeTour />
               <BannerCallHotelT />
-              <PopularState />
+              <PopularTours />
               <TopActivities />
               <BannerFooterTour />
               {/* <ContactUs/> */}

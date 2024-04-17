@@ -3,30 +3,43 @@
 import Link from "next/link";
 import moment from "moment";
 import Image from "next/image";
-import { useContext } from "react";
-import { useRouter } from "next/navigation";
+import { useContext, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 
 import { SocialNetworks, creditsCard } from "./Config";
 
-
-export default function Footer() {
-  const hotel = {
+const Hotels = {
+  acapulco: {
+    code: "1",
+    codeName: "acapulco",
+    destination: "Acapulco",
+    codeNameHotel: "acapulco",
+  },
+  cancun: {
     code: "18",
     codeName: "cancun",
     destination: "Cancún",
     codeNameHotel: "cancun",
-  };
+  },
+  mazatlan: {
+    code: "48",
+    codeName: "mazatlan",
+    destination: "Mazatlan",
+    codeNameHotel: "mazatlan",
+  },
+  puertoVallarta: {
+    code: "67",
+    codeName: "puerto-vallarta",
+    destination: "Puerto Vallarta",
+    codeNameHotel: "puerto-vallarta",
+  },
+};
+
+export default function Footer() {
   const { languageData, language } = useContext(LanguageContext);
   const year = new Date().getFullYear();
-  const router = useRouter();
-
-  //   const aboutRout = (routerNavigation)=>{
-  //    router.push(routerNavigation)
-  //   }
 
   const sendHotel = (hotelInfo) => {
-    console.log("entro aqui");
     const encodedRoomData = encodeURIComponent(
       JSON.stringify([{ adults: 2, children: [] }])
     );
@@ -36,7 +49,7 @@ export default function Footer() {
     let endDate = moment(today).add(1, "month").add(2, "day");
     const checkIn = initDate.format("YYYY-MM-DD");
     const checkOut = endDate.format("YYYY-MM-DD");
-    // http://localhost:3000/en/mx/cancun-mexico/hotels?codeNameHotel=cancun&destination=Canc%C3%BAn&codeName=cancun&code=18&type=destination&check-in=2024-05-16&check-out=2024-05-17&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
+
     const requestBody = {
       codeNameHotel: hotelInfo.codeName,
       destination: hotelInfo.label,
@@ -48,7 +61,8 @@ export default function Footer() {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
-    return router.push(`${language}/mx/${hotelInfo.codeName}/hotels?${query}`);
+    // location.reload()
+    return `/${language}/mx/${hotelInfo.codeName}/hotels?${query}`;
   };
 
   return (
@@ -224,25 +238,25 @@ export default function Footer() {
             </div>
             <div className="m-m text-fs-12 flex flex-col xl:items-start items-center">
               <Link
-                href={"#"}
+                href={sendHotel(Hotels.acapulco)}
                 className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
               >
                 {languageData.footer.hotelsMexico.hotelAcapulco}
               </Link>
               <Link
-                href={"sendHotel"}
+                href={sendHotel(Hotels.cancun)}
                 className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
               >
                 {languageData.footer.hotelsMexico.hotelCancun}
               </Link>
               <Link
-                href={"#"}
+                href={sendHotel(Hotels.mazatlan)}
                 className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
               >
                 {languageData.footer.hotelsMexico.hotelMazatlan}
               </Link>
               <Link
-                href={"#"}
+                href={sendHotel(Hotels.puertoVallarta)}
                 className="hover:!text-or-100 no-underline text-white cursor-pointer w-max"
               >
                 {languageData.footer.hotelsMexico.hotelPuertoVallarta}

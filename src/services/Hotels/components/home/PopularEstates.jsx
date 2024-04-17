@@ -68,7 +68,8 @@ export function PopularState() {
 
   const sendDataSearch = (destination) => {
     const dataLocalSend = destination;
-    UpdateAutocomplete({ dataLocalSend });
+    const type = "destination"
+    UpdateAutocomplete({ dataLocalSend, type });
   };
   const parsePrice = (price) => (
     <>
