@@ -1,12 +1,9 @@
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
-import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
-import Tour from "@/services/Tours/components/DetailTour/Tour";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
 export default async function DetailPageHotel({ params, searchParams }) {
   try {
@@ -21,12 +18,11 @@ export default async function DetailPageHotel({ params, searchParams }) {
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
-              <Token />
-              <Navigation hotelDetails={true} />
-              <div className="relative bg-gry-30">
-                holaaaaaaaaaaa {hotelData.timeZone}
-              </div>
-              <Footer />
+            <Token />
+            <div className="relative bg-gry-30">
+              holaaaaaaaaaaa {hotelData.timeZone}
+            </div>
+            <Footer />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>
