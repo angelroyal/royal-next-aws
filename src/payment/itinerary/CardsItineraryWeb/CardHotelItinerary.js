@@ -215,21 +215,21 @@ export default function CardHotelItinerary(props) {
                   />
 
                   <span>
-                    {itemHotel.totalAdults} adultos, {itemHotel.totalChildren}{" "}
-                    niños
+                    {itemHotel.totalAdults} {languageData.containerModalHotel.adults}, {itemHotel.totalChildren}{" "}
+                    {languageData.containerModalHotel.children}
                   </span>
                 </div>
 
                 <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
                   <Image className="icons-size-m" src={RoomIcon} alt="icon room"/>
-                  <span>{itemHotel.totalRooms} Habitaciones</span>
+                  <span>{itemHotel.totalRooms} {languageData.modalHotel.rooms}</span>
                 </div>
               </div>
 
               <div className={`${isMobile ? "widthA" : "width100"}`}>
                 <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
                   <span className="text-grey-card-hotel-i">
-                    Impuestos incluidos
+                    {languageData.cardHotel.taxes}
                   </span>
 
                   {/* PENDIENTE DE CONECTAR BACK */}

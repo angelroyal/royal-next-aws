@@ -11,7 +11,7 @@ export function CardTopActivitiesSkeleton() {
                 <div className="text-fs-12"><TotalStars/></div>
                 <div className="flex gap-1 mb-[11px] items-center my-2">
                     <Image
-                        className="backdrop-grayscale w-[14px] h-[18px]"
+                        className="backdrop-grayscale w-[11px] h-[14px]"
                         src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
                         alt="location icon"
                         width={11}
