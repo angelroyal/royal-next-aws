@@ -72,7 +72,7 @@ export function LodgingsView({ hotels }) {
           </div>
         ))}
       </div>
-      <LodgingBestPrice />
+      {/* <LodgingBestPrice /> */}
     </>
   ) : (
     <LodgingBestPrice />
