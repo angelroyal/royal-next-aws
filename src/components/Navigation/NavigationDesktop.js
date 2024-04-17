@@ -74,7 +74,7 @@ export default function NavigationDesktop() {
                       currentActiveIcon === "hotels" && "text-or-100"
                     }`}
                   >
-                    {languageData.SearchBox.tabHotel.lodgement}
+                    {languageData.SearchBox.tabHotel.hotel}
                   </span>
                 </Link>
                 <Link

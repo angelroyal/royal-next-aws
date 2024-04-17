@@ -36,7 +36,7 @@ export default function SearchBoxMobile() {
               : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
           >
-            {languageData.SearchBox.tabHotel.lodgement}
+            {languageData.SearchBox.tabHotel.hotel}
           </span>
         </Tab>
 

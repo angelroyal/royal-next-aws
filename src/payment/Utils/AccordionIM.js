@@ -12,7 +12,6 @@ import Person2OutlinedIcon from "../../assets/icons/utils/searchBox/person-autoc
 
 export function AccordionIM(props) {
   const { room } = props;
-  // console.log(room);
   const { languageData } = useContext(LanguageContext);
   const isMobile = useIsMobile();
 

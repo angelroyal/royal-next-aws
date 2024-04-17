@@ -58,7 +58,7 @@ export function BannerFaqsDown() {
           {languageData.titleBanners[Others.bannerHelp.paragraph]}{" "}
           <a
             target="_blank"
-            href="mailto:info@royalvacationsmexico.com"
+            href="mailto:info@StayWuw.com"
             className="cursor-pointer m-b hover:text-or-100 no-underline text-gry-100"
           >
             {languageData.titleBanners.titleEmail}

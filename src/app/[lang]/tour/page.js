@@ -26,7 +26,7 @@ import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 
 export const metadata = {
   title: "StayWuw.com | Únete a los Tours Más Emocionantes de México",
-  description: "Descubre México con Royal Vacations: desde lujosos hoteles hasta tours emocionantes y traslados cómodos. Planifica tu escapada perfecta con opciones personalizadas para explorar los destinos más emblemáticos. Todo lo que necesitas para unas vacaciones inolvidables, en un solo lugar.",
+  description: "Descubre México con StayWuw: desde lujosos hoteles hasta tours emocionantes y traslados cómodos. Planifica tu escapada perfecta con opciones personalizadas para explorar los destinos más emblemáticos. Todo lo que necesitas para unas vacaciones inolvidables, en un solo lugar.",
   keywords: "Vacaciones en México, Hoteles de Lujo, Tours Aventureros, Servicio de Traslados, Viajes Personalizados, Destinos Emblemáticos, Planificación de Viajes",
   author: "StayWuw",
   content:'width=device-width, initial-scale=1.0',

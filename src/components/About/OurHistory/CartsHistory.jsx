@@ -52,6 +52,7 @@ export default function CardsHistory() {
                 h-[50px] lg:w-[60px] lg:h-[60px]"
                 width={24}
                 height={21}
+                alt="icon services"
               />
 
               <h3 className="m-b text-or-100 text-fs-16 lg:text-fs-24 text-center">

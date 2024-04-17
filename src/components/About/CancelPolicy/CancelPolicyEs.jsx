@@ -174,7 +174,7 @@ export function CancelPolicyEs() {
           Nombre completo del titular de la reservación.
         </li>
         <li className="m-m text-[.875rem] text-black pb-[5px]">
-          Clave de confirmación de Royal / RYL
+          Clave de confirmación de {process.env.NEXT_PUBLIC_NAME_COMPANY} / RYL
         </li>
         <li className="m-m text-[.875rem] text-black pb-[5px]">
           Motivo de la cancelación.
@@ -182,7 +182,7 @@ export function CancelPolicyEs() {
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         Si lo prefieres, manda tu solicitud de cancelación vía email a
-        info@royalvacationsmexico.com con los datos mencionados arriba.
+        info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com con los datos mencionados arriba.
       </div>
       <div className="m-b text-[.938rem] text-black pt-[1.5rem] pb-[.3rem] text-justify">
         NOTA: En cuanto a este apartado de cancelaciones, se aclara que los
@@ -199,7 +199,7 @@ export function CancelPolicyEs() {
         Política de Protección de Datos Personales:
       </h3>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        En Royal.Travel estamos comprometidos con tu seguridad. Por ello, te
+        En {process.env.NEXT_PUBLIC_NAME_COMPANY}.Travel estamos comprometidos con tu seguridad. Por ello, te
         informamos que de manera aleatoria nuestro departamento de Protección de
         datos personales, realiza una validación adicional y podrá solicitar
         documentos que comprueben que eres el titular de la reserva y/o la

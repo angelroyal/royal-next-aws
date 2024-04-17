@@ -171,7 +171,7 @@ export function CancelPolicyEn() {
           Full name of the reservation holder.
         </li>
         <li className="m-m text-[.875rem] text-black pb-[5px]">
-          Royal Confirmation Key / RYL
+          {process.env.NEXT_PUBLIC_NAME_COMPANY} Confirmation Key / RYL
         </li>
         <li className="m-m text-[.875rem] text-black pb-[5px]">
           Reason for cancellation.
@@ -179,7 +179,7 @@ export function CancelPolicyEn() {
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         If you prefer, send your cancellation application via email to
-        info@royalvacationsmexico.com with the data mentioned above.
+        info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com with the data mentioned above.
       </div>
       <div className="m-b text-[.938rem] text-black pt-[1.5rem] pb-[.3rem] text-justify">
         NOTE: As for this cancellation section, it is clarified that positions
@@ -195,7 +195,7 @@ export function CancelPolicyEn() {
         Personal data protection policy:
       </h3>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        In Royal. Travel we are committed to your safety. Therefore, you We
+        In {process.env.NEXT_PUBLIC_NAME_COMPANY}. Travel we are committed to your safety. Therefore, you We
         inform that our protection department randomly personal data, perform
         additional validation and may Request documents that check that you are
         the holder of the reserve and/or the purchase is authorized by the

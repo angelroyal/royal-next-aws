@@ -69,7 +69,6 @@ export default function ListingTour() {
   }, []);
 
   useEffect(() => {
-    // console.log(currentPage);
     if (currentPage === 1) {
       setCurrentPage(1);
     }
@@ -104,10 +103,8 @@ export default function ListingTour() {
     }
   }, [currentPage]);
 
-  // console.log(currentTours);
 
   // useEffect(() => {
-  //   console.log('entro aqui');
   //   if (changeTours > 0 || !isNaN(currentPage)) {
   //     setCurrentTours(
   //       auxTourData &&

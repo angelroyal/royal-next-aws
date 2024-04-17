@@ -22,7 +22,6 @@ export function HoursSelect() {
     setHourTour(dayTour.times[index]);
   };
 
-  console.log(dayTour);
 
   return (
     <>

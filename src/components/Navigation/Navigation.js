@@ -10,7 +10,7 @@ export default function Navigation({hotelDetails=false}) {
     <div className={`${hotelDetails ? 'static' : 'sticky' } flex flex-col top-0 z-[9]`}>
       <Image
         src={Line}
-        alt="Royal orange"
+        alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} orange`}
         height={8}
         width={1920}
         priority={true}

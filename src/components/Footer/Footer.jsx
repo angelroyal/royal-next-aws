@@ -165,7 +165,7 @@ export default function Footer() {
               <a
                 className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5 w-max"
                 target="_blank"
-                href="mailto:info@royalvacationsmexico.com"
+                href="mailto:info@StayWuw.com"
               >
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-w.svg`}

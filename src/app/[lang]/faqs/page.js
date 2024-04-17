@@ -15,7 +15,7 @@ export async function generateMetadata() {
     description:
       "Tus Consultas, Nuestras Respuestas - StayWuw se Compromete a Brindarte Asistencia en Cada Paso de tu Viaje",
     keywords:
-      "Preguntas frecuentes, Asistencia al cliente, Ayuda y Soporte, Sobre Royal Vacations, FAQs, Servicios",
+      "Preguntas frecuentes, Asistencia al cliente, Ayuda y Soporte, Sobre StayWuw, FAQs, Servicios",
     author: "StayWuw",
   };
 }

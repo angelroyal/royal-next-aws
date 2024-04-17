@@ -16,13 +16,7 @@ import { SkeletonActivitiesTourP } from "../../utils/skeleton/SkeletonActivities
 import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
 
 export default function Booking(props) {
-  const {
-    dataItinerary,
-    changeButton,
-    hasACtivities,
-    // step,
-    // handleStepChange
-  } = props;
+  const { dataItinerary, changeButton } = props;
 
   const [userData, setUserData] = useState({});
   const [showAlert, setShowAlert] = useState(null);
@@ -74,6 +68,8 @@ export default function Booking(props) {
     fetchData();
   }, []);
 
+  console.log(activityPreBooking);
+
   return (
     <FormDataProvider>
       <div>
@@ -84,7 +80,7 @@ export default function Booking(props) {
           <Image
             className="icon-royal-itinerary"
             src={IconRoyal}
-            alt="IconRoyal"
+            alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
           />
           <h1 className="booking-title-page">
             {languageData.booking.titleVacations}
@@ -106,7 +102,7 @@ export default function Booking(props) {
               onRHDataChange={handleRHChange}
             />
 
-            {activityPreBooking && (
+            {activityPreBooking && activityPreBooking.length > 0 && (
               <div className="form-activity">
                 <h2 className="title-data-h">
                   {languageData.paymentActivities.activities}
@@ -118,9 +114,7 @@ export default function Booking(props) {
               </div>
             )}
 
-            {!activityPreBooking && (
-              <SkeletonActivitiesTourP />
-            )}
+            {!activityPreBooking && <SkeletonActivitiesTourP />}
 
             <PaymentConektaF
               hotelRH={hotelRH}

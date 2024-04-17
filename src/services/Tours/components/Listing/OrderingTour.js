@@ -12,7 +12,6 @@ export default function OrderingTour() {
   const { orderTour, setOrderTour, updatePage } = useTourContext();
 
   const handleOrderingFilters = (event) => {
-    // console.log("hollaaa");
     const selectedValue = +event.target.value;
     setOrderTour(selectedValue);
     updatePage(1);

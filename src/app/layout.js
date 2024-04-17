@@ -8,7 +8,7 @@ export const metadata = {
   title:
     "StayWuw.com | Hotels, tours, transportation, and exceptional travel experiences",
   description:
-    "Discover Mexico with Royal Vacations: from luxurious hotels to exciting tours and comfortable transfers. Plan your perfect getaway with personalized options to explore the most iconic destinations. Everything you need for an unforgettable vacation, all in one place.",
+    "Discover Mexico with stayWuw: from luxurious hotels to exciting tours and comfortable transfers. Plan your perfect getaway with personalized options to explore the most iconic destinations. Everything you need for an unforgettable vacation, all in one place.",
   keywords:
     "Vacations in Mexico, Luxury Hotels, Adventurous Tours, Transfer Services, Customized Trips, Iconic Destinations, Travel Planning",
   author: "StayWuw",

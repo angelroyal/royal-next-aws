@@ -112,7 +112,7 @@ export default function CartGet({ onCloseMenu }) {
       {!cartInfo && (
         <>
           {/* <IconRoyal className="margin-top" /> */}
-          <Image src={IconRoyal} className="margin-top" alt="IconRoyal" />
+          <Image src={IconRoyal} className="margin-top" alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} />
           <h2 className="cart-no-show">{languageData.cart.subtitleBooking}</h2>
           <p className="cart-no-text padding-bottom">
             {languageData.cart.textMessage}

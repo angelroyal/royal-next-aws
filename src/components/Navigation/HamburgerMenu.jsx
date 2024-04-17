@@ -64,7 +64,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                     currentActiveIcon === "hotel" && "text-or-100"
                   }`}
                 >
-                  {languageData.SearchBox.tabHotel.lodgement}
+                  {languageData.SearchBox.tabHotel.hotel}
                 </span>
               </Link>
 

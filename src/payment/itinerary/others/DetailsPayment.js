@@ -36,14 +36,14 @@ export default function DetailsPayment(props) {
   } = useContext(StepperContext);
 
   const paymentReservation = () => {
-    if(isMobile){
+    if (isMobile) {
       onClose();
     }
     setChangeButton(Math.floor(Math.random() * 100) + 1);
   };
 
   const nextStep = () => {
-    if(isMobile){
+    if (isMobile) {
       onClose();
     }
     handleStepChange(step + 1);
@@ -58,7 +58,8 @@ export default function DetailsPayment(props) {
             <div className="cont-icon-logo-details-payment">
               <Image
                 src={LogoFlyRoyal}
-                />
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
+              />
               {/* TEXT PAYMENT DETAILS /LP 15-02-24 */}
               <span className="text-black-info-i">{languageData.itinerary.paymentDetails}</span>
             </div>
@@ -73,15 +74,14 @@ export default function DetailsPayment(props) {
                 {data.summary.activities.length > 0 && (
                   <TourDescription tours={data.summary.activities} />
                 )}
-                
+
                 {data.summary.transportations.length > 0 && (
                   <TransportDescription tours={data.summary.transportations} />
                 )}
 
                 <div
-                  className={`info-hotel-flex-colum-border ${
-                    isMobile && "border-0"
-                  }`}
+                  className={`info-hotel-flex-colum-border ${isMobile && "border-0"
+                    }`}
                 >
                   {/* TEXT TAXES /LP 15-02-24  */}
                   <span className="text-grey-info-i">{languageData.booking.taxes}</span>
@@ -129,7 +129,8 @@ export default function DetailsPayment(props) {
               <div className="cont-icons-payments-itinerary">
                 {/* <IconCreditCart className="icons-payments-tour" /> */}
                 <Image
-                src={IconCreditCart}
+                  src={IconCreditCart}
+                  alt="icons credit carts"
                 />
               </div>
 
@@ -178,12 +179,13 @@ export default function DetailsPayment(props) {
                     >
                       <span className="text-black-info-i-m">
                         {/* TEXT COMPLETE PAYMENT  /LP-15-02-24*/}
-                        {languageData.itinerary.detailsPayment.completePayment} 
+                        {languageData.itinerary.detailsPayment.completePayment}
                       </span>
-                      
+
                       <Image
-                src={IconRightBlack}
-                />
+                        src={IconRightBlack}
+                        alt="icon right"
+                      />
                     </div>
                   )}
 
@@ -192,15 +194,13 @@ export default function DetailsPayment(props) {
                       <button
                         type="submit"
                         onClick={() => paymentReservation()}
-                        className={`button-payment-details ${
-                          !policyAccept || !termsAccept || !buttonActive
+                        className={`button-payment-details ${!policyAccept || !termsAccept || !buttonActive
                             ? "disabled"
                             : ""
-                        } ${
-                          policyAccept && termsAccept
+                          } ${policyAccept && termsAccept
                             ? "add-padding-container"
                             : "disabled-padding-button"
-                        } `}
+                          } `}
                         disabled={
                           !policyAccept || !termsAccept || !buttonActive
                         }

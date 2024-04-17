@@ -11,7 +11,6 @@ export function BestHotelCart({ hotel }) {
   const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
-    // console.log(hotel);
 
     const encodedRoomData = encodeURIComponent(
       JSON.stringify([{ adults: 2, children: [] }])
