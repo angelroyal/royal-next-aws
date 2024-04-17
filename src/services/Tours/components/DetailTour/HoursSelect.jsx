@@ -4,10 +4,12 @@ import { useState, useContext, useEffect } from "react";
 import moment from "moment";
 
 import DetailTourContext from "../../context/DetailTourContext";
+import LanguageContext from "@/language/LanguageContext";
 
 export function HoursSelect() {
   const { dayTour, setHourTour } = useContext(DetailTourContext);
   const [indexSelected, setIndexSelected] = useState(0);
+  const {languageData} = useContext(LanguageContext);
 
   // FIRST HOUR DEFAULT SET
   useEffect(() => {
@@ -29,12 +31,12 @@ export function HoursSelect() {
         <>
           {dayTour.times.every(hour => hour.time === '') ? (
             <div className="text-center py-9">
-              <p className="text-black text-fs-14">Este tour no requiere seleccionar una hora.</p>
+              <p className="text-black text-fs-14">{languageData.modalTour.doesNotTime}</p>
             </div>
           ) : (
             <div className="py-9">
               <p className="m-s-b text-black text-fs-14 text-start pb-4">
-                Horarios
+                {languageData.modalTour.schedule}
               </p>
   
               <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-x-4 gap-y-[9px] xl:pr-[63px]">

@@ -10,8 +10,8 @@ import "../../../../assets/styles/general/keyframes.css";
 import LanguageContext from "@/language/LanguageContext";
 
 const tabs = [
-  { name: "informacion", icon: InformationCircleIcon },
-  { name: "Amenidades", icon: MegaphoneIcon },
+  { name: "information", icon: InformationCircleIcon },
+  { name: "amenities", icon: MegaphoneIcon },
 ];
 
 export default function TabsTours(props) {
@@ -28,7 +28,7 @@ export default function TabsTours(props) {
   const getMessageForTab = (tabName) => {
     switch (tabName) {
       //   INFO HOTEL
-      case "informacion":
+      case "information":
         return (
           <div className="flex flex-col gap-y-4">
             <span className="rounded bg-gry-30 w-max text-gry-100 m-s-b h-[36px] py-1 px-2 text-fs-9 text-center content-center">
@@ -40,7 +40,7 @@ export default function TabsTours(props) {
             />
           </div>
         );
-      case "Amenidades":
+      case "amenities":
         return (
           <ul className="list-disc pl-5">
             {tourData.included.map((value, index) => (
@@ -86,7 +86,7 @@ export default function TabsTours(props) {
                   } -ml-0.5 mr-2 h-5 w-5`}
                   aria-hidden="true"
                 />
-                <span>{tab.name}</span>
+                <span>{languageData.modalTour[tab.name]}</span>
               </a>
             ))}
           </nav>

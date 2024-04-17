@@ -70,7 +70,7 @@ export default function AddCartTour(props) {
       }, 1000);
     } catch (error) {
       setIsLoader(false);
-      console.eror(error);
+      console.error(error);
       if (error.response.status >= 405) {
         setAlert({
           alert: true,

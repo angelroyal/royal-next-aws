@@ -571,6 +571,9 @@ export const en = {
     amenities: "Amenities",
     information: "Information",
     freeTour: "Free",
+    choosenDate:"Choose date and time",
+    modalities:"Modalities",
+    doesNotTime:"This tour does not require selecting a time.",
 
     OccupancyTours: {
       selectYourTickets: "Select your tickets",
