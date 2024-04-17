@@ -11,7 +11,6 @@ import LocationIcon from "../../assets/icons/utils/searchBox/location-autocomple
 
 export default function CardTourConfirmation(props) {
   const { itemActivity } = props;
-  console.log(itemActivity);
 
   const isMobile = useIsMobile();
   const { languageData } = useContext(LanguageContext);
