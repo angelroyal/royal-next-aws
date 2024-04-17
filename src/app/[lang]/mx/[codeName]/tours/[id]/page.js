@@ -1,3 +1,5 @@
+"use client";
+
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
