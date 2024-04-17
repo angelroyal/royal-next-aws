@@ -7,35 +7,25 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import LanguageProvider from "@/language/LanguageProvider";
 import React from "react";
 
-export default async function DetailPageTour({ params, searchParams }) {
-  const requestBody = {
-    dateFrom: searchParams.dateStart,
-    days: 5,
-    provider: "ct",
-  };
-
+export default async function DetailPageHotel({ params, searchParams }) {
   try {
-    const response = await axiosWithInterceptor.post(
-      `v1/activities/${params.codeNameTour}/availability`,
-      requestBody
+    const response = await axiosWithInterceptor.get(
+      `v1/hotels/temptation-cancun-resort/rooms`
     );
+    const hotelData = response.data;
 
-    const tourData = response.data;
-    console.log(tourData);
+    console.log("esta entrando aqui");
 
     return (
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
-            {/* <DetailTourProvider> */}
             <Token />
             <Navigation hotelDetails={true} />
             <div>
-              {params.codeNameTour}
-              <div>PAAPAPAPAPAPAPAPAPAPAPAPAPAPAPAAP</div>
+              sadsadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
             </div>
             <Footer />
-            {/* </DetailTourProvider> */}
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>
