@@ -9,7 +9,7 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
 export async function generateMetadata({ params, searchParams }) {
-  const requestBody = {
+  const queryParams = {
     dateFrom: searchParams.dateStart,
     days: 5,
     provider: "ct",
@@ -17,9 +17,9 @@ export async function generateMetadata({ params, searchParams }) {
 
   try {
     // METHOD AXIOS
-    const response = await axiosWithInterceptor.post(
+    const response = await axiosWithInterceptor.get(
       `v1/activities/${params.codeNameTour}/availability`,
-      requestBody
+      { params: queryParams }
     );
 
     // METADATA DETAIL HOTEL
@@ -40,16 +40,16 @@ export async function generateMetadata({ params, searchParams }) {
 }
 
 export default async function DetailPageTour({ params, searchParams }) {
-  const requestBody = {
+  const queryParams = {
     dateFrom: searchParams.dateStart,
     days: 5,
     provider: "ct",
   };
 
   try {
-    const response = await axiosWithInterceptor.post(
+    const response = await axiosWithInterceptor.get(
       `v1/activities/${params.codeNameTour}/availability`,
-      requestBody
+      { params: queryParams }
     );
 
     const tourData = response.data;
