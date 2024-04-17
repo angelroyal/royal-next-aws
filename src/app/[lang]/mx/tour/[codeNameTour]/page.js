@@ -20,7 +20,10 @@ export default async function DetailPageHotel({ params, searchParams }) {
           <CartAxiosProvider>
             <Token />
             <div className="relative bg-gry-30">
-              holaaaaaaaaaaa {hotelData.timeZone}
+              {hotelData && (
+                <div>{hotelData.timeZone}</div>
+              )}
+              holaaaaaaaaaaa
             </div>
             <Footer />
           </CartAxiosProvider>
