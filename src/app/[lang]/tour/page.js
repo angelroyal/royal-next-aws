@@ -16,6 +16,7 @@ import { PopularState } from "@/services/Hotels/components/home/PopularEstates";
 import BannerFooterTour from "@/services/Tours/Home/bannerFooterTour";
 import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
 import SearchBox from "@/hooks/SearchBox";
+// import ContactUs from "@/components/General/ContactUs";
 // import CartHotelT from "@/components/Cart/CartHotelT";
 // import CartOpen from "@/components/Cart/open/CartOpen";
 // export const metadata = {
@@ -53,6 +54,7 @@ export default function Home() {
               <PopularState />
               <TopActivities />
               <BannerFooterTour />
+              {/* <ContactUs/> */}
             </Container>
             {/* END LP */}
 
