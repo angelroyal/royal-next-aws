@@ -11,8 +11,8 @@ import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import UpdateAutocomplete from "@/config/Others/UpdateAutocomplete";
 import PopularStateSkeleton from "@/services/Hotels/components/Skeleton/HotelHomeSkeleton";
-PopularStateSkeleton
-export function PopularState() {
+
+export function PopularTours() {
   const [popularState, setPopularState] = useState([]);
   const { language, languageData } = useContext(LanguageContext);
   const router = useRouter();
@@ -38,37 +38,49 @@ export function PopularState() {
   }, []);
 
   const sendDestination = (destinationInfo) => {
-    const encodedRoomData = encodeURIComponent(
-      JSON.stringify([{ adults: 2, children: [] }])
-    );
+    // console.log(destinationInfo);
+    // console.log(destinationInfo[language || "es"].destination);
+    const persons = [{ adults: 2, children: 0 }]
     const today = moment();
 
     let initDate = moment(today).add(1, "month");
-    let endDate = moment(today).add(1, "month").add(2, "day");
     const checkIn = initDate.format("YYYY-MM-DD");
-    const checkOut = endDate.format("YYYY-MM-DD");
 
     const requestBody = {
+      codeNameTour: destinationInfo.codeName,
       destination: validateLanguageName(language, destinationInfo).name,
       code: destinationInfo.id,
-      type: "tour",
-      "check-in": checkIn,
-      "check-out": checkOut,
-      occupancies: encodedRoomData,
+      type: "activity",
+      dateStart:checkIn,
+      adults: persons[0].adults,
+      children: persons[0].children,
     };
+    // return;
+    destinationInfo["country"] = "mexico"
 
-    sendDataSearch(destinationInfo);
+    const query = new URLSearchParams(requestBody).toString();
+    
+    // http://localhost:3000/es/mx/Acapulco-mexico/tours/cena-y-espectaculo-de-clavados-en-acapulco?destination=Cena+y+espect%C3%A1culo+de+clavados+en+Acapulco&code=6&type=tour&check-in=2024-05-16&check-out=2024-05-18&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A0%257D%255D
+    // http://localhost:3000/es/mx/acapulco-mexico/tours/cena-y-espectaculo-de-clavados-en-acapulco?codeNameTour=cena-y-espectaculo-de-clavados-en-acapulco&destination=Cena+y+espect%C3%A1culo+de+clavados+en+Acapulco%2C+Acapulco&code=6&type=activity&dateStart=2024-04-26&adults=2&children=0
+    // sendDataSearch(destinationInfo);
+
+    window.open(
+      `/${language}/mx/${
+        destinationInfo[language || "es"].destination
+      }-mexico/tours/${destinationInfo.codeName}?${query}`,
+      "_blank"
+    );
 
     // PUSH RESULT HOTEL
-    const query = new URLSearchParams(requestBody).toString();
     // http://localhost:3000/es/mexico/cancun/hotels?codeNameHotel=cancun&destination=Canc%C3%BAn&codeName=cancun&code=18&type=destination&check-in=2024-05-17&check-out=2024-05-18&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
     // router.push(`/hotel/results?${query}`);
-    router.push(`${language}/mx/${destinationInfo.codeName}/hotels?${query}`);
+    // router.push(`${language}/mx/${destinationInfo.codeName}/hotels?${query}`);
   };
 
   const sendDataSearch = (destination) => {
     const dataLocalSend = destination;
-    UpdateAutocomplete({ dataLocalSend });
+    const type = "activity";
+    UpdateAutocomplete({ dataLocalSend, type });
   };
   const parsePrice = (price) => (
     <>
@@ -352,7 +364,7 @@ export function PopularState() {
           </SwiperSlide>
         </Swiper>
       ) : (
-        <PopularStateSkeleton/>
+        <PopularStateSkeleton />
       )}
     </div>
   );
