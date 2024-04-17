@@ -1,20 +1,17 @@
-import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import Footer from "@/components/Footer/Footer";
 import Token from "@/components/General/Token";
-import Navigation from "@/components/Navigation/Navigation";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-import { TokenProvider } from "@/config/context/AuthContext";
+import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
-import React from "react";
+import { TokenProvider } from "@/config/context/AuthContext";
+import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export default async function DetailPageHotel({ params, searchParams }) {
   try {
     const response = await axiosWithInterceptor.get(
-      `v1/hotels/temptation-cancun-resort/rooms`
+      `v1/activities/autobus-de-fiesta-por-cancun/availability?dateFrom=2024-05-19&days=5&provider=ct`
     );
     const hotelData = response.data;
     console.log(hotelData);
-
     console.log("esta entrando aqui");
 
     return (
@@ -22,10 +19,11 @@ export default async function DetailPageHotel({ params, searchParams }) {
         <TokenProvider>
           <CartAxiosProvider>
             <Token />
-            <Navigation hotelDetails={true} />
-            <div>
-              sadsadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-              {hotelData.name}
+            <div className="relative bg-gry-30">
+              {hotelData && (
+                <div>{hotelData.timeZone}</div>
+              )}
+              holaaaaaaaaaaa
             </div>
             <Footer />
           </CartAxiosProvider>
@@ -33,81 +31,6 @@ export default async function DetailPageHotel({ params, searchParams }) {
       </LanguageProvider>
     );
   } catch (error) {
-    console.error("Error fetching hotel data:", error);
+    console.log("Error fetching hotel data:", error);
   }
 }
-
-// import Token from "@/components/General/Token";
-// import Footer from "@/components/Footer/Footer";
-// import LanguageProvider from "@/language/LanguageProvider";
-// import Navigation from "@/components/Navigation/Navigation";
-// import { TokenProvider } from "@/config/context/AuthContext";
-// import Tour from "@/services/Tours/components/DetailTour/Tour";
-// import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-// import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
-
-// export async function generateMetadata({ params, searchParams }) {
-//   const requestBody = {
-//     dateFrom: searchParams.dateStart,
-//     days: 5,
-//     provider: "ct",
-//   };
-
-//   try {
-//     // METHOD AXIOS
-//     const response = await axiosWithInterceptor.post(
-//       `v1/activities/${params.codeNameTour}/availability`,
-//       requestBody
-//     );
-
-//     // METADATA DETAIL HOTEL
-//     const tourMetaData = response.data;
-
-//     return {
-//       title: `${tourMetaData.activity.name} - StayWuw`,
-//       description: `${tourMetaData.activity.description}`,
-//       address: tourMetaData.activity.address,
-//       city: tourMetaData.activity.city,
-//       destination: tourMetaData.activity.destination,
-//     };
-//   } catch (error) {
-//     console.error("Error fetching hotel metadata:", error);
-//     // Handle error here
-//     return null;
-//   }
-// }
-
-// export default async function DetailPageTour({ params, searchParams }) {
-//   const requestBody = {
-//     dateFrom: searchParams.dateStart,
-//     days: 5,
-//     provider: "ct",
-//   };
-
-//   try {
-//     const response = await axiosWithInterceptor.post(
-//       `v1/activities/${params.codeNameTour}/availability`,
-//       requestBody
-//     );
-
-//     const tourData = response.data;
-
-//     return (
-//       <LanguageProvider>
-//         <TokenProvider>
-//           <CartAxiosProvider>
-//             <DetailTourProvider>
-//               <Token />
-//               <Navigation hotelDetails={true} />
-//               <Tour tourData={tourData} />
-//               <Footer />
-//             </DetailTourProvider>
-//           </CartAxiosProvider>
-//         </TokenProvider>
-//       </LanguageProvider>
-//     );
-//   } catch (error) {
-//     console.error("Error fetching hotel data:", error);
-//   }
-// }

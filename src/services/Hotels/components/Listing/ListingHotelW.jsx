@@ -11,7 +11,6 @@ import { useToken } from "../../../../config/context/AuthContext";
 import LanguageContext from "../../../../language/LanguageContext";
 import ListingHotelContext from "../../context/ListingHotelContext";
 import { scrollToTop } from "../../../../utils/pageConfig/scrollToTop";
-import SkeletonChildren from "../../../../utils/skeleton/SkeletonChildren";
 // import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
 // import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
