@@ -53,6 +53,7 @@ export default function Home() {
               <PopularTours />
               <TopActivities />
               <BannerFooterTour />
+              {/* <ContactUs/> */}
             </Container>
             {/* END LP */}
 
