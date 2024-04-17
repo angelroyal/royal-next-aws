@@ -108,7 +108,7 @@ export function LodgingBestPrice() {
         >
           {[...Array(10)].map((tour, index) => (
             <SwiperSlide key={index} className="!rounded-lg">
-              <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
+              <div className="h-full shadow-md shadow-gry-30 rounded-xl">
                 <CardTopActivitiesSkeleton />
               </div>
             </SwiperSlide>
@@ -121,7 +121,7 @@ export function LodgingBestPrice() {
         {[...Array(10)].map((tour, index) => (
           <div key={index} className="!rounded-lg">
             {/*  */}
-            <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
+            <div className="h-full min-w-[280px] max-w-[280px] shadow-md shadow-gry-30 rounded-xl">
               <CardTopActivitiesSkeleton />
             </div>
           </div>
