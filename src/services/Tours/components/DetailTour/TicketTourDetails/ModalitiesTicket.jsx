@@ -7,11 +7,12 @@ import { Navigation } from "swiper/modules";
 import ContentTour from "./ContentTour";
 import { TicketsTour } from "./TicketTour";
 import DetailTourContext from "@/services/Tours/context/DetailTourContext";
+import LanguageContext from "@/language/LanguageContext";
 
 export function ModalitiesTicket({tourData}) {
   const [isModality, setIsModality] = useState(false);
   const { dayTour, setSelectModality } = useContext(DetailTourContext);
-  
+  const { languageData } = useContext(LanguageContext);  
 
   // CHANGE MODALITY
   const handleModality = (modality) => {
@@ -24,7 +25,7 @@ export function ModalitiesTicket({tourData}) {
       <>
         {isModality === false && (
           <>
-            <p className="m-s-b text-black text-fs-14 mb-4">Modalidades</p>
+            <p className="m-s-b text-black text-fs-14 mb-4">{languageData.modalTour.modalities}</p>
             <div className="max-xl:hidden flex flex-wrap gap-x-[11px] gap-y-4  ">
               {/*  */}
               {dayTour.rates.map((modality, index) => (

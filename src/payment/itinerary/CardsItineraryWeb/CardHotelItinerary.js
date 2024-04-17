@@ -392,7 +392,7 @@ export default function CardHotelItinerary(props) {
                   className="remove-reservation-itinerary"
                   onClick={() => removeReservation(itemHotel.code)}
                 >
-                  Eliminar
+                  {languageData.cart.remove}
                 </div>
               </>
             )}
