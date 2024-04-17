@@ -1,3 +1,12 @@
+// import Token from "@/components/General/Token";
+// import Footer from "@/components/Footer/Footer";
+// import LanguageProvider from "@/language/LanguageProvider";
+// import Navigation from "@/components/Navigation/Navigation";
+// import { TokenProvider } from "@/config/context/AuthContext";
+// import Tour from "@/services/Tours/components/DetailTour/Tour";
+// import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+// import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -14,8 +23,6 @@ export async function generateMetadata({ params, searchParams }) {
     days: 5,
     provider: "ct",
   };
-
-  console.log(params);
 
   try {
     // METHOD AXIOS
@@ -47,7 +54,7 @@ export default async function DetailPageTour({ params, searchParams }) {
     days: 5,
     provider: "ct",
   };
- 
+
   try {
     const response = await axiosWithInterceptor.post(
       `v1/activities/${params.codeNameTour}/availability`,
@@ -62,7 +69,7 @@ export default async function DetailPageTour({ params, searchParams }) {
           <CartAxiosProvider>
             <DetailTourProvider>
               <Token />
-              <Navigation />
+              <Navigation hotelDetails={true} />
               <Tour tourData={tourData} />
               <Footer />
             </DetailTourProvider>
