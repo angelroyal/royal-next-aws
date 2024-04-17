@@ -23,7 +23,7 @@ export const sortAndFilterHotels = (hotels, order) => {
         }
         return 0;
       });
-      case 6:
+    case 6:
       return [...hotels].sort((a, b) => {
         if (a.provider === "hb" && b.provider !== "hb") {
           return -1;
@@ -38,6 +38,15 @@ export const sortAndFilterHotels = (hotels, order) => {
 };
 
 export const applyFilters = (hotels, filters, pricing) => {
+  const eatingPlanMap = {
+    1: "AI",
+    2: "OR",
+    3: "CD",
+    4: "SD",
+    5: "LI",
+    6: "DI",
+  };
+
   return hotels.filter((hotel) => {
     const rate = parseFloat(hotel.minRate);
 
@@ -66,7 +75,9 @@ export const applyFilters = (hotels, filters, pricing) => {
     if (filters["eating-plan"] && filters["eating-plan"].length > 0) {
       if (
         !filters["eating-plan"].includes(-1) &&
-        !filters["eating-plan"].some((plan) => hotel.eatingPlan.includes(plan))
+        !filters["eating-plan"].some((code) =>
+          hotel.eatingPlan.includes(eatingPlanMap[code])
+        )
       ) {
         return false;
       }

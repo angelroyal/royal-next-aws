@@ -54,6 +54,7 @@ export default async function DetailPageHotel({ params, searchParams }) {
       `v1/hotels/${searchParams.codeNameHotel}/rooms`
     );
     const hotelData = response.data;
+    console.log("esta entrando aqui");
 
     return (
       <LanguageProvider>
@@ -77,6 +78,6 @@ export default async function DetailPageHotel({ params, searchParams }) {
       </LanguageProvider>
     );
   } catch (error) {
-    console.error("Error fetching hotel data:", error);
+    console.log("Error fetching hotel data:", error);
   }
 }
