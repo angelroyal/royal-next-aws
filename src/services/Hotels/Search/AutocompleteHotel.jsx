@@ -80,7 +80,7 @@ export default function AutocompleteHotel() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full max-w-md mx-auto lg:w-[296px]">
       <div className="relative">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
