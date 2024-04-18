@@ -109,7 +109,7 @@ export default function AutocompleteHotel() {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Combobox.Options className="p-0 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Combobox.Options className="scroll-page-blue p-0 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
               {Object.entries(results).map(([type, items]) => (
                 <div key={type}>
                   <div className="px-3 py-2 text-lg font-semibold text-gray-700">
