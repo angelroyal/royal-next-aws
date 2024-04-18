@@ -16,7 +16,7 @@ import { BannerHomeTour } from "@/services/Tours/Home/bannerTour";
 import BannerFooterTour from "@/services/Tours/Home/bannerFooterTour";
 import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
-import ContactUs from "@/components/General/ContactUs";
+// import ContactUs from "@/components/General/ContactUs";
 import { PopularState } from "@/components/General/PopularEstates";
 // import CartHotelT from "@/components/Cart/CartHotelT";
 // import CartOpen from "@/components/Cart/open/CartOpen";
@@ -56,7 +56,7 @@ export default function Home() {
               <PopularState tour={true}/>
               <TopActivities />
               <BannerFooterTour />
-              <ContactUs/>
+              {/* <ContactUs/> */}
             </Container>
             {/* END LP */}
 
