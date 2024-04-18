@@ -47,7 +47,7 @@ export default function ContactUs() {
                     <div className='bg-bl-100 w-[60px] h-[60px] rounded-full flex justify-center items-center '>
                     </div>
 
-                    <span className='m-b text-gry-100 pl-2 pr-6 text-fs-12 max-md:hidden'>{languageData.navBar.contact}</span>
+                    <span className='m-b text-gry-100 pl-2 pr-6 text-fs-12 w-[105px] max-md:hidden'>{languageData.navBar.contact}</span>
 
 
                 </div>

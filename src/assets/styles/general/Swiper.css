@@ -163,7 +163,7 @@
 
 .animations-left{
   animation: MyDiv;
-  animation-duration: 300ms;
+  animation-duration: 400ms;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-direction: normal;
