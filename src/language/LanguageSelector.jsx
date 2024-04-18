@@ -43,7 +43,7 @@ export function LanguageSelector() {
 
   return (
     <>
-      <div className="d-flex">
+      <div className="flex">
         {actualLanguage === "es" ? (
           <img
             src={`${process.env.NEXT_PUBLIC_URL}icons/leng/es.svg`}
