@@ -11,12 +11,13 @@ import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import TopActivities from "@/services/Tours/Home/TopActivities";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import { PopularTours } from "@/services/Tours/Home/PopularTours";
+// import { PopularTours } from "@/services/Tours/Home/PopularTours";
 import { BannerHomeTour } from "@/services/Tours/Home/bannerTour";
 import BannerFooterTour from "@/services/Tours/Home/bannerFooterTour";
 import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import ContactUs from "@/components/General/ContactUs";
+import { PopularState } from "@/components/General/PopularEstates";
 // import CartHotelT from "@/components/Cart/CartHotelT";
 // import CartOpen from "@/components/Cart/open/CartOpen";
 // export const metadata = {
@@ -51,7 +52,8 @@ export default function Home() {
             <Container>
               <BannerHomeTour />
               <BannerCallHotelT />
-              <PopularTours />
+              {/* <PopularTours /> */}
+              <PopularState tour={true}/>
               <TopActivities />
               <BannerFooterTour />
               <ContactUs/>

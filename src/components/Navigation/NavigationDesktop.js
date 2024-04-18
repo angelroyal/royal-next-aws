@@ -89,8 +89,8 @@ export default function NavigationDesktop() {
                   />
                   <span
                     className={`${
-                      currentActiveIcon === "tour" && "text-or-100"
-                    }`}
+                     currentActiveIcon === "tours" || currentActiveIcon === "tour" ? "text-or-100"
+                    : ''}`}
                   >
                     Tours
                   </span>

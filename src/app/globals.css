@@ -98,3 +98,17 @@ body::-webkit-scrollbar-track {
 #check-in:active {
   border: none !important;
 }
+
+.bg-flag-es {
+  background-image: url('https://sandboxmexico.com/assets/icons/leng/es.svg');
+  background-repeat: no-repeat;
+  background-size: 20px 14px;
+  background-position: 10px center;
+}
+
+.bg-flag-us {
+  background-image: url('ttps://sandboxmexico.com/assets/icons/leng/en.svg');
+  background-repeat: no-repeat;
+  background-size: 20px 14px;
+  background-position: 10px center;
+}

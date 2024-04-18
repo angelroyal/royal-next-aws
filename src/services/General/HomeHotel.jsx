@@ -14,7 +14,7 @@ import {
 
 import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
-import { PopularState } from "@/services/Hotels/components/home/PopularEstates";
+import { PopularState } from "@/components/General/PopularEstates";
 import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
 
 export const HomeHotel = () => {

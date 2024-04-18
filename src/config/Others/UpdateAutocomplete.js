@@ -1,13 +1,12 @@
 import moment from "moment";
 
 export default function UpdateAutocomplete(props) {
-  const { dataLocalSend, type } = props;
+  const { dataLocalSend } = props;
 
   // LOCAL STORAGE SAVE DATA STATIC
   // AUTOCOMPLETE SEARCH
-  // {"type":"destination","key":52,"label":"Monterrey","codeName":"monterrey","country":"mexico","countryDestinationCodeName":"monterrey-mexico","category":"Destinos"}
   const requestSearch = {
-    type: type,
+    type: "destination",
     key: dataLocalSend.code,
     label: dataLocalSend.name,
     codeName:dataLocalSend.codeName,

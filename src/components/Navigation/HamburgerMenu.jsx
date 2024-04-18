@@ -79,7 +79,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   className="pr-2"
                 />
                 <span
-                  className={`${currentActiveIcon === "tour" && "text-or-100"}`}
+                  className={`${ currentActiveIcon === "tours" && "text-or-100"}`}
                 >
                   Tours
                 </span>
