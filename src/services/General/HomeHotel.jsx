@@ -16,6 +16,7 @@ import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
 import { PopularState } from "@/components/General/PopularEstates";
 import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
+import AutocompleteHotel from "../Hotels/Search/AutocompleteHotel";
 
 export const HomeHotel = () => {
   return (
@@ -34,6 +35,8 @@ export const HomeHotel = () => {
         <TransportBanner />
         <TourRecommended />
         <BannerHomeKnowMore />
+
+        <AutocompleteHotel />
       </Container>
     </>
   );
