@@ -46,7 +46,7 @@ export default function SearchBoxMobile() {
           style={{ padding: "0" }}
         >
           <span
-            className={`${activeTab === "tours"
+            className={`${activeTab === "tours" || activeTab === "tour"
               ? "bg-bl-100 text-white"
               : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
@@ -64,7 +64,7 @@ export default function SearchBoxMobile() {
           {/* </Tab.Panel> */}
 
           {/* <Tab.Panel> */}
-          {activeTab === "tours" && <MobilSearchTour />}
+          {activeTab === "tours" || activeTab === "tour" ? <MobilSearchTour /> : ''}
 
           {/* </Tab.Panel> */}
         </Tab.Panels>
