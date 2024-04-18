@@ -22,7 +22,7 @@ export default function ContactUs() {
 
         const bounce = setTimeout(() => {
             setDelayClass(true);
-        }, 500);
+        }, 600);
 
 
         return () => clearTimeout(timer, contact, bounce)
