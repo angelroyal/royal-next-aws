@@ -161,6 +161,7 @@
 }
 /*END PAGINATION TOUR RECOMMENDED */
 
+/* ANIMATION ContactUs.jsx */
 .animations-left{
   animation: MyDiv;
   animation-duration: 400ms;
@@ -191,3 +192,5 @@
   0%   { bottom: -3rem;}
   100%  { bottom: 2rem;}
 }
+
+/*END ANIMATION ContactUs.jsx */

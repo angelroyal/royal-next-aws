@@ -1,10 +1,12 @@
 "use client";
+
 import Image from 'next/image'
-import React, { useContext, useEffect, useState } from 'react'
-import LanguageContext from '@/language/LanguageContext'
 import "@/assets/styles/general/Swiper.css";
+import LanguageContext from '@/language/LanguageContext'
+import React, { useContext, useEffect, useState } from 'react'
 
 export default function ContactUs() {
+
     const { languageData } = useContext(LanguageContext);
     const [delayIcon, setDelayIcon] = useState(false);
     const [delayContact, setDelayContact] = useState(false);
@@ -54,7 +56,7 @@ export default function ContactUs() {
             }
 
             {delayIcon &&
-                <div className={`bg-bl-100 p-3 rounded-full border border-white fixed bottom-[39px] right-[149px] z-[11] max-md:right-[36px]
+                <div className={`bg-bl-100 p-[1rem] rounded-full border border-white fixed bottom-[39px] right-[149px] z-[11] max-md:right-[36px]
                     ${delayClass ? "bounce2" : "animations-icon"
                     }`}>
                     <Image
