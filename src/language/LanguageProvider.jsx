@@ -6,11 +6,14 @@ import { es } from "./es";
 import { en } from "./en";
 
 function LanguageProvider(props) {
-  const [language, setLanguage] = useState("es");
+  const [language, setLanguage] = useState("en");
 
   const [currency, setCurrency] =useState("MXN");
 
   useEffect(()=>{
+    const storedLanguage = localStorage.getItem("language") || "en";
+    setLanguage(storedLanguage);
+    
     const currencyData = sessionStorage.getItem("selectedCurrency");
     setCurrency(currencyData);
   },[])

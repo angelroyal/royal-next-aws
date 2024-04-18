@@ -49,13 +49,13 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function DetailPageHotel({ params }) {
-
   try {
     const response = await axiosWithInterceptor.get(
       `v1/hotels/${params.id}/rooms`
     );
+
     const hotelData = response.data;
-    
+
     return (
       <LanguageProvider>
         <TokenProvider>
