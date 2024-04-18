@@ -138,7 +138,7 @@ export default function AutocompleteHotel() {
                       {({ active }) => (
                         <div
                           className={`p-2 ${
-                            active ? "bg-blue-500 text-white" : "text-gray-900"
+                            active ? "bg-gry-30" : "text-gray-900"
                           }`}
                           onClick={() => handleSelect(item)}
                         >
