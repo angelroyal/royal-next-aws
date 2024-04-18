@@ -7,25 +7,25 @@ import DayCalendar from "./DayCalendar";
 import { HoursSelect } from "./HoursSelect";
 import { Container } from "@/config/Others/Container";
 import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
-export default function Tour({ params, searchParams }) {
-  const [tourData, setTourData] = useState(null);
+export default function Tour({ tourData }) {
+  // const [tourData, setTourData] = useState(null);
 
-  useEffect(() => {
-    const fetchTourData = async () => {
-      try {
-        const response = await axiosWithInterceptor.get(
-          `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
-        );
-        setTourData(response.data);
-      } catch (error) {
-        console.error("Failed to fetch tour data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchTourData = async () => {
+  //     try {
+  //       const response = await axiosWithInterceptor.get(
+  //         `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+  //       );
+  //       setTourData(response.data);
+  //     } catch (error) {
+  //       console.error("Failed to fetch tour data:", error);
+  //     }
+  //   };
 
-    fetchTourData();
-  }, [params.codeNameTour, searchParams.dateStart]);
+  //   fetchTourData();
+  // }, [params.codeNameTour, searchParams.dateStart]);
 
   return (
     <Container>

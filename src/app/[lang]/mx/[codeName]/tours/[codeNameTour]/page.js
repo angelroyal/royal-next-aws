@@ -8,37 +8,39 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
-// export async function generateMetadata({ params, searchParams }) {
-//   try {
-//     // METHOD AXIOS
-//     const response = await axiosWithInterceptor.get(
-//       `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
-//     );
+export async function generateMetadata({ params, searchParams }) {
 
-//     // METADATA DETAIL HOTEL
-//     const tourMetaData = response.data;
-
-//     return {
-//       title: `${tourMetaData.activity.name} - StayWuw`,
-//       description: `${tourMetaData.activity.description}`,
-//       address: tourMetaData.activity.address,
-//       city: tourMetaData.activity.city,
-//       destination: tourMetaData.activity.destination,
-//     };
-//   } catch (error) {
-//     console.error("Error fetching hotel metadata:", error);
-//     // Handle error here
-//     return null;
-//   }
-// }
-
-export default function DetailPage({ params, searchParams }) {
   try {
-    // const response = await axiosWithInterceptor.get(
-    //   `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
-    // );
+    // METHOD AXIOS
+    const response = await axiosWithInterceptor.get(
+      `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+    );
 
-    // const tourData = response.data;
+    // METADATA DETAIL HOTEL
+    const tourMetaData = response.data;
+
+    return {
+      title: `${tourMetaData.activity.name} - StayWuw`,
+      description: `${tourMetaData.activity.description}`,
+      address: tourMetaData.activity.address,
+      city: tourMetaData.activity.city,
+      destination: tourMetaData.activity.destination,
+    };
+  } catch (error) {
+    console.error("Error fetching hotel metadata:", error);
+    // Handle error here
+    return null;
+  }
+}
+
+export default async function DetailPageTour({ params, searchParams }) {
+
+  try {
+    const response = await axiosWithInterceptor.get(
+      `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+    );
+
+    const tourData = response.data;
 
     return (
       <LanguageProvider>
@@ -46,8 +48,8 @@ export default function DetailPage({ params, searchParams }) {
           <CartAxiosProvider>
             <DetailTourProvider>
               <Token />
-              <Navigation hotelDetails={true} />
-              <Tour params={params} searchParams={searchParams}/>
+              <Navigation />
+              <Tour tourData={tourData} />
               <Footer />
             </DetailTourProvider>
           </CartAxiosProvider>
