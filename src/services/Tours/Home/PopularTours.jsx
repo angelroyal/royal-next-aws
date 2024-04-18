@@ -31,7 +31,7 @@ export function PopularTours() {
           setPopularState(shuffledDestinations);
         }
       } catch (error) {
-        console.eror(error);
+        console.error(error);
       }
     };
     getPopularStates();

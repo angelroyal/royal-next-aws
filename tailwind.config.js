@@ -181,6 +181,10 @@ export default {
       boxShadow: {
         "3xl": "0 4px 15px 0 rgba(168, 155, 155, 0.25)",
       },
+
+      animation: {
+        'spin-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) 1s',
+      }
     },
   },
   plugins: [
