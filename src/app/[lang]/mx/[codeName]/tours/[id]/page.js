@@ -9,7 +9,7 @@ import Tour from "@/services/Tours/components/DetailTour/Tour";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 // import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
-// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 // import axios from "axios";
 import ErrorComponent from "@/components/General/ErrorComponent ";
 
