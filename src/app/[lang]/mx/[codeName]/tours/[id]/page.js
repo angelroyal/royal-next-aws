@@ -72,8 +72,43 @@ export default async function DetailPageTour({ params }) {
               <Token />
               <Navigation hotelDetails={true} />
               <ErrorComponent
-                message={`Failed to load tour data. Error: ${error.message}`}
+                message={`Failed to load tour data. Error: ${error}`}
               />
+              <div
+                style={{
+                  margin: "20px",
+                  padding: "20px",
+                  backgroundColor: "#ffcccc",
+                  color: "#333",
+                  borderRadius: "8px",
+                  textAlign: "left",
+                }}
+              >
+                <h2>Error Occurred</h2>
+                {error.response ? (
+                  <>
+                    <h4>Response:</h4>
+                    <p>Status: {error.response.status}</p>
+                    <p>Headers:</p>
+                    <pre>{JSON.stringify(error.response.headers, null, 2)}</pre>
+                    <p>Data:</p>
+                    <pre>{JSON.stringify(error.response.data, null, 2)}</pre>
+                  </>
+                ) : error.request ? (
+                  <>
+                    <h4>Request:</h4>
+                    <p>No response received. Request details unavailable.</p>
+                  </>
+                ) : (
+                  <>
+                    <h4>Error Message:</h4>
+                    <p>{error.message}</p>
+                  </>
+                )}
+                <p>Config:</p>
+                <pre>{JSON.stringify(error.config, null, 2)}</pre>
+           
+              </div>
               <Footer />
             </DetailTourProvider>
           </CartAxiosProvider>
