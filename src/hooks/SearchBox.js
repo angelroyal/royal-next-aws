@@ -10,6 +10,7 @@ import LanguageContext from "../language/LanguageContext";
 import SendHotel from "@/services/Hotels/Search/SendHotel";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 import { SearchHomeSkeleton } from "@/components/Skeleton/SearchHome";
+import SearchTransport from "@/services/Transport/components/Search/SearchTransport";
 
 export default function SearchBox() {
   const { languageData, language } = useContext(LanguageContext);
@@ -33,6 +34,9 @@ export default function SearchBox() {
         break;
       case "tour":
         view = `/${language}/tour`;
+        break;
+      case "transport":
+        view = `/${language}/transport`;
         break;
     }
     if (view != null) {
@@ -100,6 +104,35 @@ export default function SearchBox() {
               {languageData.modalHotelOptions.titleTour}
             </span>
           </Tab>
+
+          {/* TAB TRANSPORT */}
+          <Tab
+            className="focus:outline-none focus:ring-transparent"
+            onClick={() => handleTabChange("transport")}
+            style={{ padding: "0" }}
+          >
+            <span
+              className={`${
+                currentActiveIcon === "transport"
+                  ? //  currentActiveIcon === "tours"
+                    "bg-bl-100 text-white"
+                  : "bg-gry-50 text-gry-100"
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_URL}${
+                  currentActiveIcon === "transport" ||
+                  currentActiveIcon === "transports"
+                    ? "icons/transport/transport-w.svg"
+                    : "icons/transport/transport-b.svg"
+                }`}
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon tour`}
+                width={29}
+                height={25}
+              />{" "}
+              {languageData.modalHotelOptions.titleTour}
+            </span>
+          </Tab>
         </Tab.List>
 
         <Tab.Panels>
@@ -112,7 +145,7 @@ export default function SearchBox() {
               ) : (
                 ""
               )}
-              {/* {currentActiveIcon === "tours"  && <ResultTour />} */}
+              {currentActiveIcon === "transport"  && <SearchTransport />}
             </>
           ) : (
             <SearchHomeSkeleton />

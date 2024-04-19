@@ -58,6 +58,7 @@ export default function NavigationDesktop() {
               </Link>
               <div className="hidden md:items-center md:flex">
                 {" "}
+                {/* HOTEL LINK */}
                 <Link
                   href={`${process.env.NEXT_PUBLIC_HOME}`}
                   passHref
@@ -77,6 +78,8 @@ export default function NavigationDesktop() {
                     {languageData.SearchBox.tabHotel.hotel}
                   </span>
                 </Link>
+
+                {/* TOUR LINK */}
                 <Link
                   href={`/${language}/tour`}
                   passHref

@@ -3,7 +3,7 @@ import LanguageContext from "@/language/LanguageContext";
 import { Combobox } from "@headlessui/react";
 import { useContext, useEffect, useState } from "react";
 import { getTransportation } from "../../Api/requestTransport";
-import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { DisabledInputTransport } from "../../utils/DisabledInputTransport";
 
 export function SearchDestinationB({
   selectedTransportation,
@@ -12,25 +12,29 @@ export function SearchDestinationB({
 }) {
   console.log(selectedTransportation);
   const { language, languageData } = useContext(LanguageContext);
+  const [isSearch, setIsSearch] = useState(false);
 
   const [destinations, setDestinations] = useState(null);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    const selectTransport = async (destinationId, language) => {
-      const response = await getTransportation(destinationId, language);
-      setDestinations(response);
-    };
-
+    setIsSearch(true);
     if (selectedTransportation) {
+      const selectTransport = async (destinationId, language) => {
+        const response = await getTransportation(destinationId, language);
+        setDestinations(response);
+        setIsSearch(false);
+      };
       selectTransport(selectedTransportation.id, language);
-    }else{
+    } else {
       setDestinations(null);
-      setSelectDestination(null)
+      setSelectDestination(null);
+      setQuery("");
+      setIsSearch(false);
     }
   }, [selectedTransportation]);
 
-  // console.log(destinations);
+  console.log(isSearch);
 
   const handleLetter = (event) => {
     setQuery(event.target.value);
@@ -58,49 +62,69 @@ export function SearchDestinationB({
     );
   };
 
+  // FILTER TRANSPORT
+  const filterTransport =
+    query === ""
+      ? destinations
+        ? destinations.zones
+        : ""
+      : destinations.zones.filter((destination) => {
+          return destination.label.toLowerCase().includes(query.toLowerCase());
+        });
+
+  // console.log(filterTransport);
+
   return destinations && destinations.zones.length > 0 ? (
+    // INPUT TRANSPORT
     <Combobox
       as="div"
       value={selectDestination}
       onChange={setSelectDestination}
     >
       <div className="relative">
-        <Combobox.Input
-          // disabled={true}
-          className={`placeholder:m-m placeholder:text-gry-70 w-full h-[56px] rounded border border-gry-100 bg-white py-2.5 px-4 text-gray-900 shadow-sm focus:outline-none text-fs-12 m-s-b`}
-          onChange={(event) => handleLetter(event)}
-          displayValue={(person) => person?.label}
-          placeholder={languageData.SearchBox.tabHotel.textDestination}
-        />
-
-        <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
-          <ChevronUpDownIcon
-            className="h-5 w-5 text-gray-400"
-            aria-hidden="true"
+        <Combobox.Button className="focus:outline-none">
+          <img
+            className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
+            width="16px"
+            height="20px"
+            src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+            alt="transport-b"
           />
-        </Combobox.Button>
 
-        <Combobox.Options className="absolute z-[1] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-          {destinations.zones.map((destination, index) => (
-            <Combobox.Option
-              key={index}
-              value={destination}
-              className="text-black m-s-b text-fs-12 cursor-pointer"
-            >
-              <p className="my-3.5">
-                {getDestination(query, destination.label)}
-              </p>
-            </Combobox.Option>
-          ))}
-        </Combobox.Options>
+          <p className="m-0 top-2.5 left-[2.5rem] absolute text-gry-70 m-m text-fs-10">
+            {languageData.SearchBox.tabHotel.autocomplete}
+          </p>
+          <Combobox.Input
+            className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[32px] shadow-sm focus:outline-none text-fs-12`}
+            onChange={(event) => handleLetter(event)}
+            displayValue={(person) => person?.label}
+            placeholder={
+              isSearch
+                ? "Buscando rutas..."
+                : languageData.SearchBox.tabHotel.textDestination
+            }
+          />
+
+          <Combobox.Options className="px-2 absolute z-[1] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            {filterTransport &&
+              filterTransport.map((destination, index) => (
+                <Combobox.Option
+                  key={index}
+                  value={destination}
+                  className="text-gry-100 m-m text-fs-12 cursor-pointer text-start"
+                >
+                  <p className="my-3.5">
+                    {getDestination(query, destination.label)}
+                  </p>
+                </Combobox.Option>
+              ))}
+          </Combobox.Options>
+        </Combobox.Button>
       </div>
     </Combobox>
   ) : (
-    <input
-      type="text"
-      disabled
-      className="disabled:cursor-not-allowed placeholder:m-m placeholder:text-gry-70 w-full h-[56px] rounded border border-gry-100 bg-white py-2.5 px-4 text-gray-900 shadow-sm focus:outline-none text-fs-12 m-s-b"
-      placeholder={languageData.SearchBox.tabHotel.textDestination}
-    />
+    
+    // INPUT DISABLED TRANSPORT
+    <DisabledInputTransport languageData={languageData} isSearch={isSearch}/>
   );
 }
