@@ -8,9 +8,10 @@ import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import { BannerHomeTransport } from "@/services/Transport/components/bannerTransport";
-import TipsBooking from "@/services/Transport/components/tipsBooking";
+import { BannerHomeTransport } from "@/services/Transport/Home/bannerTransport";
+import TipsBooking from "@/services/Transport/Home/TipsBooking";
 import { BannerHomeTop } from "@/services/Transport/Home/BannerHomeTop";
+import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
 
 export const metadata = {
   title: "StayWuw.com | Únete a los Tours Más Emocionantes de México",
@@ -43,6 +44,7 @@ export default function HomeTransport() {
             <Container>
               <BannerHomeTransport/>
               <TipsBooking/>
+              <RecommendedTransport/>
             </Container>
             {/* END LP */}
 
