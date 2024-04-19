@@ -11,14 +11,14 @@ import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export default function Tour(props) {
-  const { params, searchParams, tourMetaData } = props;
+  const { params, tourMetaData } = props;
   const [tourData, setTourData] = useState(null);
 
   useEffect(() => {
     const fetchTourData = async () => {
       try {
         const response = await axiosWithInterceptor.get(
-          `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+          `v1/activities/${params.id}/availability?dateFrom=2024-05-17&days=5&provider=ct`
         );
         setTourData(response.data);
       } catch (error) {
@@ -27,7 +27,7 @@ export default function Tour(props) {
     };
 
     fetchTourData();
-  }, [params.codeNameTour, searchParams.dateStart]);
+  }, []);
 
   return (
     <Container>

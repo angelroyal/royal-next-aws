@@ -1,3 +1,5 @@
+// "use client";
+
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -31,10 +33,10 @@ import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 //   }
 // }
 
-export default async function DetailPageTour({ params, searchParams }) {
+export default async function DetailPageTour({ params }) {
   try {
     const response = await axiosWithInterceptor.get(
-      `v1/activities/${params.codeNameTour}`
+      `v1/activities/${params.id}`
     );
 
     const tourMetaData = response.data;
@@ -45,10 +47,9 @@ export default async function DetailPageTour({ params, searchParams }) {
           <CartAxiosProvider>
             <DetailTourProvider>
               <Token />
-              <Navigation />
+              <Navigation hotelDetails={true}/>
               <Tour
                 params={params}
-                searchParams={searchParams}
                 tourMetaData={tourMetaData}
               />
               <Footer />
