@@ -107,7 +107,6 @@ export default async function DetailPageTour({ params }) {
                 )}
                 <p>Config:</p>
                 <pre>{JSON.stringify(error.config, null, 2)}</pre>
-           
               </div>
               <Footer />
             </DetailTourProvider>
