@@ -8,36 +8,36 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
-export async function generateMetadata({ params }) {
-  try {
-    // METHOD AXIOS
-    const response = await axiosWithInterceptor.get(
-      `v1/activities/${params.codeNameTour}`
-    );
+// export async function generateMetadata({ params }) {
+//   try {
+//     // METHOD AXIOS
+//     const response = await axiosWithInterceptor.get(
+//       `v1/activities/${params.codeNameTour}`
+//     );
 
-    // METADATA DETAIL HOTEL
-    const tourMetaData = response.data;
+//     // METADATA DETAIL HOTEL
+//     const tourMetaData = response.data;
 
-    return {
-      title: `${tourMetaData.activity.name} - StayWuw`,
-      description: `${tourMetaData.activity.description}`,
-      starRating: tourMetaData.activity.starRating,
-      city: tourMetaData.destination.name,
-    };
-  } catch (error) {
-    console.error("Error fetching hotel metadata:", error);
-    // Handle error here
-    return null;
-  }
-}
+//     return {
+//       title: `${tourMetaData.activity.name} - StayWuw`,
+//       description: `${tourMetaData.activity.description}`,
+//       starRating: tourMetaData.activity.starRating,
+//       city: tourMetaData.destination.name,
+//     };
+//   } catch (error) {
+//     console.error("Error fetching hotel metadata:", error);
+//     // Handle error here
+//     return null;
+//   }
+// }
 
 export default async function DetailPageTour({ params, searchParams }) {
   try {
-    const response = await axiosWithInterceptor.get(
-      `v1/activities/${params.codeNameTour}`
-    );
+    // const response = await axiosWithInterceptor.get(
+    //   `v1/activities/${params.codeNameTour}`
+    // );
 
-    const tourMetaData = response.data;
+    // const tourMetaData = response.data;
 
     return (
       <LanguageProvider>
@@ -49,7 +49,7 @@ export default async function DetailPageTour({ params, searchParams }) {
               <Tour
                 params={params}
                 searchParams={searchParams}
-                tourMetaData={tourMetaData}
+                // tourMetaData={tourMetaData}
               />
               <Footer />
             </DetailTourProvider>
