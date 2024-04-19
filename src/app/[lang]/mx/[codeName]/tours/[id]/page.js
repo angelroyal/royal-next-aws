@@ -41,17 +41,18 @@ export default async function DetailPageTour({ params }) {
 
     const tourMetaData = response.data;
 
+    if (!tourMetaData) {
+      return <div>cargando</div>;
+    }
+
     return (
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
             <DetailTourProvider>
               <Token />
-              <Navigation hotelDetails={true}/>
-              <Tour
-                params={params}
-                tourMetaData={tourMetaData}
-              />
+              <Navigation hotelDetails={true} />
+              <Tour params={params} tourMetaData={tourMetaData} />
               <Footer />
             </DetailTourProvider>
           </CartAxiosProvider>
@@ -60,5 +61,18 @@ export default async function DetailPageTour({ params }) {
     );
   } catch (error) {
     console.error("Error fetching hotel data:", error);
+    return (
+      <LanguageProvider>
+        <TokenProvider>
+          <CartAxiosProvider>
+            <DetailTourProvider>
+              <Token />
+              <Navigation hotelDetails={true} />
+              <Footer />
+            </DetailTourProvider>
+          </CartAxiosProvider>
+        </TokenProvider>
+      </LanguageProvider>
+    );
   }
 }
