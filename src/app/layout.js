@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import LanguageProvider from "@/language/LanguageProvider";
-import ContactUs from "@/components/General/ContactUs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -26,7 +25,8 @@ export default function RootLayout({ children }) {
       "@type": "PostalAddress",
       addressCountry: "Mexico",
       addressRegion: "Mexico",
-      addressLocality: "Av. Tulum y Av Náder, Sm 2, Mza. 1, lte. 44, Andador VI, C.P. 77500 Cancún, Q.Roo.",
+      addressLocality:
+        "Av. Tulum y Av Náder, Sm 2, Mza. 1, lte. 44, Andador VI, C.P. 77500 Cancún, Q.Roo.",
       postOfficeBoxNumber: "44",
       postalCode: "77505",
       streetAddress: "Av Náder",
@@ -82,8 +82,7 @@ export default function RootLayout({ children }) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonWeb) }}
           />
         </section>
-        <LanguageProvider>{children}<ContactUs/></LanguageProvider>
-        
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

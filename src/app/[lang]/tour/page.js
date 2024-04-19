@@ -6,32 +6,26 @@ import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import { Container } from "@/config/Others/Container";
+import ContactUs from "@/components/General/ContactUs";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import TopActivities from "@/services/Tours/Home/TopActivities";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-// import { PopularTours } from "@/services/Tours/Home/PopularTours";
 import { BannerHomeTour } from "@/services/Tours/Home/bannerTour";
+import { PopularState } from "@/components/General/PopularEstates";
 import BannerFooterTour from "@/services/Tours/Home/bannerFooterTour";
 import BannerHeaderTour from "@/services/Tours/Home/bannerHeaderTour";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
-// import ContactUs from "@/components/General/ContactUs";
-import { PopularState } from "@/components/General/PopularEstates";
-// import CartHotelT from "@/components/Cart/CartHotelT";
-// import CartOpen from "@/components/Cart/open/CartOpen";
-// export const metadata = {
-//   title: 'viewport',
-//   description: '...',
-//   content:'width=device-width, initial-scale=1.0',
-// }
 
 export const metadata = {
   title: "StayWuw.com | Únete a los Tours Más Emocionantes de México",
-  description: "Descubre México con StayWuw: desde lujosos hoteles hasta tours emocionantes y traslados cómodos. Planifica tu escapada perfecta con opciones personalizadas para explorar los destinos más emblemáticos. Todo lo que necesitas para unas vacaciones inolvidables, en un solo lugar.",
-  keywords: "Vacaciones en México, Hoteles de Lujo, Tours Aventureros, Servicio de Traslados, Viajes Personalizados, Destinos Emblemáticos, Planificación de Viajes",
+  description:
+    "Descubre México con StayWuw: desde lujosos hoteles hasta tours emocionantes y traslados cómodos. Planifica tu escapada perfecta con opciones personalizadas para explorar los destinos más emblemáticos. Todo lo que necesitas para unas vacaciones inolvidables, en un solo lugar.",
+  keywords:
+    "Vacaciones en México, Hoteles de Lujo, Tours Aventureros, Servicio de Traslados, Viajes Personalizados, Destinos Emblemáticos, Planificación de Viajes",
   author: "StayWuw",
-  content:'width=device-width, initial-scale=1.0',
+  content: "width=device-width, initial-scale=1.0",
 };
 
 export default function Home() {
@@ -52,15 +46,11 @@ export default function Home() {
             <Container>
               <BannerHomeTour />
               <BannerCallHotelT />
-              {/* <PopularTours /> */}
-              <PopularState tour={true}/>
+              <PopularState tour={true} />
               <TopActivities />
               <BannerFooterTour />
-              {/* <ContactUs/> */}
             </Container>
-            {/* END LP */}
-
-            {/* <HomeHotel /> */}
+            <ContactUs />
             <Footer />
           </CartAxiosProvider>
         </TokenProvider>

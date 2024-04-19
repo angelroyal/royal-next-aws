@@ -1,5 +1,6 @@
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
+import ContactUs from "@/components/General/ContactUs";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
@@ -26,6 +27,7 @@ export default function ourHistory() {
           <Navigation />
           <OurHistory />
           <Footer />
+          <ContactUs />
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

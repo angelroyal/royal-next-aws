@@ -8,12 +8,11 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
-export async function generateMetadata({ params, searchParams }) {
-
+export async function generateMetadata({ params }) {
   try {
     // METHOD AXIOS
     const response = await axiosWithInterceptor.get(
-      `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+      `v1/activities/${params.codeNameTour}`
     );
 
     // METADATA DETAIL HOTEL
@@ -22,9 +21,8 @@ export async function generateMetadata({ params, searchParams }) {
     return {
       title: `${tourMetaData.activity.name} - StayWuw`,
       description: `${tourMetaData.activity.description}`,
-      address: tourMetaData.activity.address,
-      city: tourMetaData.activity.city,
-      destination: tourMetaData.activity.destination,
+      starRating: tourMetaData.activity.starRating,
+      city: tourMetaData.destination.name,
     };
   } catch (error) {
     console.error("Error fetching hotel metadata:", error);
@@ -34,13 +32,12 @@ export async function generateMetadata({ params, searchParams }) {
 }
 
 export default async function DetailPageTour({ params, searchParams }) {
-
   try {
     const response = await axiosWithInterceptor.get(
-      `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+      `v1/activities/${params.codeNameTour}`
     );
 
-    const tourData = response.data;
+    const tourMetaData = response.data;
 
     return (
       <LanguageProvider>
@@ -49,7 +46,11 @@ export default async function DetailPageTour({ params, searchParams }) {
             <DetailTourProvider>
               <Token />
               <Navigation />
-              <Tour tourData={tourData} />
+              <Tour
+                params={params}
+                searchParams={searchParams}
+                tourMetaData={tourMetaData}
+              />
               <Footer />
             </DetailTourProvider>
           </CartAxiosProvider>

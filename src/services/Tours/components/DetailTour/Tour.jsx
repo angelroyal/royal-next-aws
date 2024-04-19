@@ -1,39 +1,41 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import TabsTours from "./TabsTours";
 import DetailTour from "./DetailTour";
 import DayCalendar from "./DayCalendar";
 import { HoursSelect } from "./HoursSelect";
 import { Container } from "@/config/Others/Container";
 import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
-// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
-export default function Tour({ tourData }) {
-  // const [tourData, setTourData] = useState(null);
+export default function Tour(props) {
+  const { params, searchParams, tourMetaData } = props;
+  const [tourData, setTourData] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchTourData = async () => {
-  //     try {
-  //       const response = await axiosWithInterceptor.get(
-  //         `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
-  //       );
-  //       setTourData(response.data);
-  //     } catch (error) {
-  //       console.error("Failed to fetch tour data:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchTourData = async () => {
+      try {
+        const response = await axiosWithInterceptor.get(
+          `v1/activities/${params.codeNameTour}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+        );
+        setTourData(response.data);
+      } catch (error) {
+        console.error("Failed to fetch tour data:", error);
+      }
+    };
 
-  //   fetchTourData();
-  // }, [params.codeNameTour, searchParams.dateStart]);
+    fetchTourData();
+  }, [params.codeNameTour, searchParams.dateStart]);
 
   return (
     <Container>
       {/* <div className="p-9 mt-[25.8px]">  LP  TASK 20*/}
+      <DetailTour tourData={tourMetaData.activity} />
+      
       {tourData && (
         <div className="p-9 ">
-          <DetailTour tourData={tourData.activity} />
-
           <div className="flex flex-col lg:flex-row mt-9">
             <div className="w-full lg:w-6/12 shadow-3xl p-4">
               <TabsTours tourData={tourData.activity} />
