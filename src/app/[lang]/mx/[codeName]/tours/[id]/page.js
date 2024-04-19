@@ -10,7 +10,7 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 // import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 // import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-import axios from "axios";
+// import axios from "axios";
 import ErrorComponent from "@/components/General/ErrorComponent ";
 
 // export async function generateMetadata({ params }) {
@@ -38,7 +38,7 @@ import ErrorComponent from "@/components/General/ErrorComponent ";
 
 export default async function DetailPageTour({ params }) {
   try {
-    const response = await axios.get(
+    const response = await axiosWithInterceptor.get(
       `https://api.sandboxmexico.com/api/es/v1/activities/paddle-surf-en-el-islote-el-morro`
     );
 
