@@ -1725,7 +1725,7 @@ h5 {
   align-items: center;
   justify-items: center;
   padding: 7rem 0;
-  min-height: 32vh;
+  padding: 21vh 0;
 }
 
 .itinerary-no-show {

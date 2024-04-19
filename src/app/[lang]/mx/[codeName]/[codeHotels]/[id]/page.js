@@ -2,6 +2,7 @@
 
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
+import Page404 from "@/components/General/Page404";
 import { Container } from "@/config/Others/Container";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
@@ -13,7 +14,6 @@ import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryM
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-// import axios from "axios";
 
 export async function generateMetadata({ params }) {
   try {
@@ -78,6 +78,19 @@ export default async function DetailPageHotel({ params }) {
       </LanguageProvider>
     );
   } catch (error) {
-    console.log("Error fetching hotel data:", error);
+    return (
+      <LanguageProvider>
+        <TokenProvider>
+          <CartAxiosProvider>
+            <DetailTourProvider>
+              <Token />
+              <Navigation hotelDetails={true} />
+              <Page404 />
+              <Footer />
+            </DetailTourProvider>
+          </CartAxiosProvider>
+        </TokenProvider>
+      </LanguageProvider>
+    );
   }
 }

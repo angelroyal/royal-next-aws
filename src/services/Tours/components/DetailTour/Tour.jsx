@@ -7,6 +7,7 @@ import DetailTour from "./DetailTour";
 import DayCalendar from "./DayCalendar";
 import { HoursSelect } from "./HoursSelect";
 import { Container } from "@/config/Others/Container";
+import SkeletonDetailTour from "../Skeleton/SkeletonDetailTour";
 import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
@@ -33,6 +34,8 @@ export default function Tour(props) {
     <Container>
       {/* <div className="p-9 mt-[25.8px]">  LP  TASK 20*/}
       {tourMetaData && <DetailTour tourData={tourMetaData.activity} />}
+
+      {!tourData && <SkeletonDetailTour />}
 
       {tourData && (
         <div className="p-9 ">
