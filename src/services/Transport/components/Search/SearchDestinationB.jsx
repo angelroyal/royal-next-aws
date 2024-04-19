@@ -80,9 +80,10 @@ export function SearchDestinationB({
       as="div"
       value={selectDestination}
       onChange={setSelectDestination}
+      className="max-lg:w-full"
     >
       <div className="relative">
-        <Combobox.Button className="focus:outline-none">
+        <Combobox.Button className="focus:outline-none max-lg:w-full">
           <img
             className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
             width="16px"
@@ -95,7 +96,7 @@ export function SearchDestinationB({
             {languageData.SearchBox.tabHotel.autocomplete}
           </p>
           <Combobox.Input
-            className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[32px] shadow-sm focus:outline-none text-fs-12`}
+            className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12`}
             onChange={(event) => handleLetter(event)}
             displayValue={(person) => person?.label}
             placeholder={
