@@ -33,11 +33,11 @@ import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
 export default async function DetailPageTour({ params, searchParams }) {
   try {
-    // const response = await axiosWithInterceptor.get(
-    //   `v1/activities/${params.codeNameTour}`
-    // );
+    const response = await axiosWithInterceptor.get(
+      `v1/activities/${params.codeNameTour}`
+    );
 
-    // const tourMetaData = response.data;
+    const tourMetaData = response.data;
 
     return (
       <LanguageProvider>
@@ -49,7 +49,7 @@ export default async function DetailPageTour({ params, searchParams }) {
               <Tour
                 params={params}
                 searchParams={searchParams}
-                // tourMetaData={tourMetaData}
+                tourMetaData={tourMetaData}
               />
               <Footer />
             </DetailTourProvider>
