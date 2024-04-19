@@ -11,6 +11,7 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 // import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import axios from "axios";
+import ErrorComponent from "@/components/General/ErrorComponent ";
 
 // export async function generateMetadata({ params }) {
 //   try {
@@ -70,6 +71,9 @@ export default async function DetailPageTour({ params }) {
             <DetailTourProvider>
               <Token />
               <Navigation hotelDetails={true} />
+              <ErrorComponent
+                message={`Failed to load tour data. Error: ${error.message}`}
+              />
               <Footer />
             </DetailTourProvider>
           </CartAxiosProvider>
