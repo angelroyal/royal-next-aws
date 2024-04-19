@@ -32,8 +32,8 @@ export default function Tour(props) {
   return (
     <Container>
       {/* <div className="p-9 mt-[25.8px]">  LP  TASK 20*/}
-      <DetailTour tourData={tourMetaData.activity} />
-      
+      {tourMetaData && <DetailTour tourData={tourMetaData.activity} />}
+
       {tourData && (
         <div className="p-9 ">
           <div className="flex flex-col lg:flex-row mt-9">
