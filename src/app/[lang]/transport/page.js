@@ -11,7 +11,8 @@ import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import SearchTransport from "@/services/Transport/components/Search/SearchTransport";
-
+import { BannerHomeTransport } from "@/services/Transport/components/bannerTransport";
+import TipsBooking from "@/services/Transport/components/tipsBooking";
 
 export const metadata = {
   title: "StayWuw.com | Únete a los Tours Más Emocionantes de México",
@@ -40,6 +41,8 @@ export default function HomeTransport() {
               <TopActivities />
               <BannerFooterTour />
               <ContactUs/> */}
+              <BannerHomeTransport/>
+              <TipsBooking/>
             </Container>
             {/* END LP */}
 
