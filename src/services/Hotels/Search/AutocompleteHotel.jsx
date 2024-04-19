@@ -89,13 +89,13 @@ export default function AutocompleteHotel() {
         />
         <label
           htmlFor="search-input"
-          className="m-m text-gry-100 text-fs-10 absolute top-[11px] left-[32px] "
+          className="m-b absolute top-[11px] left-[32px] text-fs-10 text-gry-70 "
         >
           Destinos
         </label>
         <Combobox value={selectedItem} onChange={handleSelect}>
           <Combobox.Input
-            className=" border-2 border-gray-200  pt-[1.2rem] pb-[.5rem] pl-[32px] block w-full rounded text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-gray-200 sm:text-sm sm:leading-6 text-fs-14"
+            className="placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[22px] pr-4 pl-[32px] shadow-sm focus:outline-none text-fs-12"
             onChange={handleChange}
             displayValue={(item) => (item ? item.label : "")}
             placeholder={!input ? "Buscar hotel o destino" : ""}
@@ -109,7 +109,7 @@ export default function AutocompleteHotel() {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Combobox.Options className="scroll-page-blue p-0 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Combobox.Options className="scroll-page-blue p-0 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white  text-base shadow-lg ring-1 ring-gray-300 ring-opacity-5 focus:outline-none sm:text-sm">
               {Object.entries(results).map(([type, items]) => (
                 <div key={type}>
                   <div className="px-3 py-2 text-lg font-semibold text-gray-700">
