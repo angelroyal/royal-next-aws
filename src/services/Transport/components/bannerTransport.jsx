@@ -43,12 +43,12 @@ export function BannerHomeTransport() {
 
             <SwiperSlide className="!w-[47%] max-lg:!w-full max-sm:!w-full !bg-gry-30 !rounded-lg">
                 <div className="flex bg-white justify-center items-center shadow-3xl">
-                    <div className="w-[40%] flex flex-col pl-[25px] gap-3">
+                    <div className="w-[40%] flex flex-col pl-[25px] gap-3 max-sm:!w-[58%]">
                         <span className="m-b text-fs-28">Asegura tu trayecto</span>
                         <bottom className="px-[24px] py-[16px] bg-yw-100 hover:bg-yw-110 m-s-b text-fs-14 w-fit rounded-full">¡Reserva ahora!</bottom>
                     </div>
                     <div className="w-[60%] !bg-white">
-                        <Image src={bannerCartLeading} width={378} height={235} className="w-full h-[19rem] rounded-lg object-cover object-center select-none" alt="Banner Exc Discounts" />
+                        <Image src={bannerCartLeading} width={378} height={235} className="w-full h-[19rem] rounded-lg object-contain object-center select-none " alt="Banner Exc Discounts" />
                     </div>
                 </div>
             </SwiperSlide>
