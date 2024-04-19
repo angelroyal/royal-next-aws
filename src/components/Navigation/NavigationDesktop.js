@@ -44,6 +44,7 @@ export default function NavigationDesktop() {
             aria-label="Global"
           >
             <div className="flex md:flex-1 justify-between">
+              {/* HOME HOTEL LINK */}
               <Link
                 className="m-1.5"
                 href={`${process.env.NEXT_PUBLIC_HOME}`}
@@ -56,13 +57,14 @@ export default function NavigationDesktop() {
                   height={100}
                 />
               </Link>
-              <div className="hidden md:items-center md:flex">
-                {" "}
+
+              <div className="hidden md:items-center md:flex md:gap-x-7">
+
                 {/* HOTEL LINK */}
                 <Link
                   href={`${process.env.NEXT_PUBLIC_HOME}`}
                   passHref
-                  className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline"
                 >
                   {" "}
                   <img
@@ -83,7 +85,7 @@ export default function NavigationDesktop() {
                 <Link
                   href={`/${language}/tour`}
                   passHref
-                  className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
@@ -98,11 +100,30 @@ export default function NavigationDesktop() {
                     Tours
                   </span>
                 </Link>
+               
+                {/* TRANSPORT LINK */}
+                <Link
+                  href={`/${language}/transport`}
+                  passHref
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
+                >
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+                    alt="done green"
+                    className="pr-2"
+                  />
+                  <span
+                    className={`${
+                     currentActiveIcon === "transports" || currentActiveIcon === "transport" ? "text-or-100"
+                    : ''}`}
+                  >
+                    {languageData.modalHotelOptions.titleTransfer}
+                  </span>
+                </Link>
               </div>
             </div>
 
             <div className="flex gap-x-[18px] md:hidden">
-              {/* <Cart /> */}
               <CartOpen />
 
               <button

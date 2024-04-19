@@ -61,9 +61,10 @@ export default function SearchBox() {
                 currentActiveIcon === "hotels"
                   ? "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
-              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
               <Image
+              className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
                   currentActiveIcon === "hotels"
                     ? "icons/hotel/hotel-w.svg"
@@ -89,9 +90,10 @@ export default function SearchBox() {
                   ? //  currentActiveIcon === "tours"
                     "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
-              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
               <Image
+              className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
                   currentActiveIcon === "tour" || currentActiveIcon === "tours"
                     ? "icons/tour/tour-w.svg"
@@ -117,9 +119,10 @@ export default function SearchBox() {
                   ? //  currentActiveIcon === "tours"
                     "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
-              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4`}
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
               <Image
+              className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
                   currentActiveIcon === "transport" ||
                   currentActiveIcon === "transports"
@@ -130,7 +133,7 @@ export default function SearchBox() {
                 width={29}
                 height={25}
               />{" "}
-              {languageData.modalHotelOptions.titleTour}
+              {languageData.modalHotelOptions.titleTransfer}
             </span>
           </Tab>
         </Tab.List>
