@@ -7,8 +7,10 @@ import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import Tour from "@/services/Tours/components/DetailTour/Tour";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
+// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import axios from "axios";
 
 // export async function generateMetadata({ params }) {
 //   try {
@@ -35,8 +37,8 @@ import { DetailTourProvider } from "@/services/Tours/context/DetailTourContext";
 
 export default async function DetailPageTour({ params }) {
   try {
-    const response = await axiosWithInterceptor.get(
-      `v1/activities/${params.id}`
+    const response = await axios.get(
+      `https://api.sandboxmexico.com/api/es/v1/activities/paddle-surf-en-el-islote-el-morro`
     );
 
     const tourMetaData = response.data;
