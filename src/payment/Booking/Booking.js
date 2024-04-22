@@ -60,7 +60,7 @@ export default function Booking(props) {
       const response = await axiosWithInterceptor.get(`${url}${cartId}`);
       setActivityPreBooking(response.data);
     } catch (error) {
-      console.eror(error);
+      console.error(error);
     }
   };
 

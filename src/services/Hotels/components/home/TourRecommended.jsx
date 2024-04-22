@@ -12,7 +12,14 @@ export default function CartTourOptions() {
   const { languageData, language } = useContext(LanguageContext);
   const tourData = homeRecommendedTour;
 
-  const sentTour = (tour) => {};
+  const sentTour = (tourInfo) => {
+    window.open(
+      `/${language}/mx/${tourInfo.destinationCodeName}-${
+        tourInfo[language || "es"].country
+      }/tours/${tourInfo.codeName}`,
+      "_blank"
+    );
+  };
 
   return (
     <>

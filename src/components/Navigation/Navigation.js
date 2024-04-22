@@ -12,8 +12,8 @@ export default function Navigation({hotelDetails=false}) {
         src={Line}
         alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} orange`}
         height={8}
-        width={1920}
         priority={true}
+        className="size-full"
       />
       <div className="md:h-[124px] md:pb-2 bg-white border-b border-gry-70">
         <HeaderBlue />
