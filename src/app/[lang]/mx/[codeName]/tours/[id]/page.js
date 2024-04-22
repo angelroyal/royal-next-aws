@@ -42,9 +42,9 @@ export default async function DetailPageTour({ params }) {
 
     const tourMetaData = response.data;
 
-    if (!tourMetaData) {
-      return <div>cargando</div>;
-    }
+    // if (!tourMetaData) {
+    //   return <div>cargando</div>;
+    // }
 
     return (
       <LanguageProvider>

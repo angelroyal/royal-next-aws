@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SkeletonDetailTour() {
   return (
-    <div className="flex max-lg:flex-col">
+    <div className="flex max-lg:flex-col mt-12">
       <div className="bg-gry-30 p-[20px] flex flex-col gap-4 w-1/2 max-lg:w-full max-lg:h-[20rem]">
         <div className="flex gap-2">
           <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-[125px] h-[35px]" />
