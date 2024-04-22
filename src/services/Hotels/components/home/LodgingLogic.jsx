@@ -18,7 +18,7 @@ export default function LodgingHotel({ selectionId }) {
           setShuffleHotel(responseTest);
         }
       } catch (error) {
-        console.eror(error);
+        console.error(error);
       }
     };
     getLodgingsHotels();
