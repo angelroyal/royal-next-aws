@@ -82,12 +82,10 @@ export default async function DetailPageHotel({ params }) {
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
-            <DetailTourProvider>
-              <Token />
-              <Navigation hotelDetails={true} />
-              <Page404 />
-              <Footer />
-            </DetailTourProvider>
+            <Token />
+            <Navigation hotelDetails={true} />
+            <Page404 />
+            <Footer />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>
