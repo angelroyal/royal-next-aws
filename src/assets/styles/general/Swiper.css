@@ -73,7 +73,7 @@
 #swiper-shuffle-hotel>div.swiper-button-next {
   color: #ff8637;
   --swiper-navigation-size: 20px;
-  left: 101%;
+  left: 100%;
   z-index: 4;
   font-weight: bold;
 }
@@ -160,3 +160,9 @@
   bottom: -5px !important;
 }
 /*END PAGINATION TOUR RECOMMENDED */
+
+/* SWIPER TRANSPORT (PAGINATION) PROMOTED ROUTES*/
+#swiper-shuffle-hotel > div.swiper-wrapper{
+  padding-bottom: 40px;
+}
+/*END SWIPER TRANSPORT (PAGINATION) PROMOTED ROUTES*/

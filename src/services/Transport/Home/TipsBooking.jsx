@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function TipsBooking() {
     return (
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center my-32'>
             <h3 className='m-b text-fs-24'>Reserva tu traslado en 3 pasos</h3>
 
             <div className='flex gap-[16px] max-md:flex-col overflow-x-clip scroll-page-gry'>

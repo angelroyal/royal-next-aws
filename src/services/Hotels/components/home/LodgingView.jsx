@@ -19,7 +19,7 @@ export function LodgingsView({ hotels }) {
           slidesPerView={4}
           spaceBetween={12}
           navigation
-          id="swiper-shuffle-hotel"
+          id="swiper-Promoted-Routes"
           pagination={{
             clickable: true,
           }}
