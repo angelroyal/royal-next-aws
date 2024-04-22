@@ -24,7 +24,6 @@ export default function SearchBox() {
     setCurrentActiveIcon(routerActual);
   }, [routerActual]);
 
-  console.log(currentActiveIcon);
   // CHANGE TAB DINAMIC
   const handleTabChange = (eventKey) => {
     let view = null;
