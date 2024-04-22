@@ -5,7 +5,7 @@ export default function BannerDiscoverPossibilities() {
         <div className='relative w-full flex items-center my-32 max-lg:items-start '>
 
             <img src={ `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-baggage.jpg`} alt='banner baggage' className='w-full max-lg:hidden'/>
-            <img src={ `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-baggage-mobile.jpg`} alt='banner baggage' className='lg:hidden w-full h-[822px]'/>
+            <img src={ `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-baggage-mobile.jpg`} alt='banner baggage mobile' className='lg:hidden w-full h-[822px]'/>
 
             <div className='absolute flex flex-col ml-[92px] max-lg:mx-[40px] max-lg:mt-[90px] max-sm:mt-[40px]'>
                 <h2 className='m-b text-fs-34 '>Descubre tus posibilidades aquí</h2>

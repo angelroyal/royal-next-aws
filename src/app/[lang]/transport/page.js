@@ -14,7 +14,7 @@ import { BannerHomeTop } from "@/services/Transport/Home/BannerHomeTop";
 import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { BannerHomeTransport, BannerSafelyTransport } from "@/services/Transport/Home/bannerTransport";
-
+import CartTourOptions from "@/services/Hotels/components/home/TourRecommended";
 
 export const metadata = {
   title: "StayWuw.com | Únete a los Tours Más Emocionantes de México",
@@ -50,7 +50,8 @@ export default function HomeTransport() {
               <RecommendedTransport/>    
               <BannerSafelyTransport/>    
               <PromotedRoutes/> 
-              <BannerDiscoverPossibilities/>              
+              <BannerDiscoverPossibilities/>
+              <CartTourOptions/>              
             </Container>
             {/* END LP */}
 

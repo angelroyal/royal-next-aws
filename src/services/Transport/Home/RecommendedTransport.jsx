@@ -54,7 +54,7 @@ export default function RecommendedTransport() {
 
             <SwiperSlide key={index}>
               <div className='flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white'>
-                <Image src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} width={216} height={164} />
+                <Image src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} width={216} height={164} alt="test card" />
 
                 <span className='text-fs-16 m-b mt-[16px]'>Vehiculo Standard</span>
 
@@ -62,17 +62,17 @@ export default function RecommendedTransport() {
 
                 <div className='flex flex-wrap mb-[6px] gap-2'>
                   <div className='flex gap-2'>
-                    <Image src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`} width={12.8} height={13.4} />
+                    <Image src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`} width={12.8} height={13.4} alt="icon adult"/>
                     <span className='m-m text-fs-12'>4 personas</span>
                   </div>
 
                   <div className='flex gap-2'>
-                    <Image src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`} width={14} height={13} />
+                    <Image src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`} width={14} height={13} alt="icon transport"/>
                     <span className='m-m text-fs-12'>Modelo:KSDSDF</span>
                   </div>
 
                   <div className='flex gap-2'>
-                    <Image src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`} width={12.1} height={14.1} />
+                    <Image src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`} width={12.1} height={14.1} alt="icon baggage"/>
                     <span className='m-m text-fs-12'>2 Maletas</span>
                   </div>
                 </div>
