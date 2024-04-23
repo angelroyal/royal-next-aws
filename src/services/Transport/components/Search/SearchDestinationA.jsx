@@ -6,9 +6,11 @@ import { getTransportation } from "../../Api/requestTransport";
 import { DisabledInputTransport } from "../../utils/DisabledInputTransport";
 
 export function SearchDestinationA({
-  selectedTransportation,
-  setSelectDestination,
-  selectDestination,
+  selectedAutoComplete,
+  setSelectDestinationA,
+  selectDestinationA,
+  destinationALocal,
+  setSelectDestinationB,
 }) {
   const { language, languageData } = useContext(LanguageContext);
   const [isSearch, setIsSearch] = useState(false);
@@ -16,35 +18,45 @@ export function SearchDestinationA({
   const [destinations, setDestinations] = useState(null);
   const [query, setQuery] = useState("");
 
+  useEffect(() => {
+    if (destinationALocal) {
+      setSelectDestinationA(destinationALocal);
+      setQuery(destinationALocal.label);
+    }
+  }, [destinationALocal]);
+
   // GET ZONES AND CLEAN INPUT IF CHANGE AUTO COMPLETE
   useEffect(() => {
-    if (selectedTransportation) {
+    if (selectedAutoComplete) {
+      // console.log("if");
       setIsSearch(true);
       const selectTransport = async (destinationId, language) => {
         const response = await getTransportation(destinationId, language);
         setDestinations(response);
         setIsSearch(false);
       };
-      selectTransport(selectedTransportation.id, language);
+      selectTransport(selectedAutoComplete.id, language);
+    } else {
+      setDestinations(null);
+      setSelectDestinationA(null);
+      setQuery("");
     }
-    setDestinations(null);
-    setSelectDestination(null);
-    setQuery("");
-  }, [selectedTransportation]);
+  }, [selectedAutoComplete]);
 
   const handleLetter = (event) => {
     if (event.target.value !== "") {
       setQuery(event.target.value);
     } else {
       setQuery("");
-      setSelectDestination(null);
+      setSelectDestinationA(null);
+      setSelectDestinationB(null);
     }
   };
 
   // CLEAN INPUT
   useEffect(() => {
     if (query === "") {
-      setSelectDestination(null);
+      setSelectDestinationA(null);
     }
   }, [query]);
 
@@ -76,12 +88,14 @@ export function SearchDestinationA({
       ? destinations
         ? destinations.zones
         : ""
-      : destinations.zones.filter((destination) => {
+      : destinations &&
+        destinations.zones.filter((destination) => {
           return destination.label.toLowerCase().includes(query.toLowerCase());
         });
 
   // SET DESTINATION A TO LOCAL STORAGE
-  const selectDestinationA = (destination) => {
+  const selectNewDestinationA = (destination) => {
+    setSelectDestinationB(null);
     const getSearchTransport = JSON.parse(
       localStorage.getItem("searchTransport")
     );
@@ -95,12 +109,12 @@ export function SearchDestinationA({
     }
   };
 
-  return selectedTransportation ? (
+  return selectedAutoComplete ? (
     // INPUT TRANSPORT
     <Combobox
       as="div"
-      value={selectDestination}
-      onChange={setSelectDestination}
+      value={selectDestinationA}
+      onChange={setSelectDestinationA}
       className="max-lg:w-full"
     >
       <div className="relative">
@@ -135,7 +149,7 @@ export function SearchDestinationA({
                   key={index}
                   value={destination}
                   className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px]"
-                  onClick={() => selectDestinationA(destination)}
+                  onClick={() => selectNewDestinationA(destination)}
                 >
                   <p className="m-0">
                     {getDestination(query, destination.label)}
@@ -155,59 +169,4 @@ export function SearchDestinationA({
     // INPUT DISABLED TRANSPORT
     <DisabledInputTransport languageData={languageData} isSearch={isSearch} />
   );
-  // return destinations && destinations.zones.length > 0 ? (
-
-  //   // INPUT TRANSPORT
-  //   <Combobox
-  //     as="div"
-  //     value={selectDestination}
-  //     onChange={setSelectDestination}
-  //     className="max-lg:w-full"
-  //   >
-  //     <div className="relative">
-  //       <Combobox.Button className="focus:outline-none max-lg:w-full">
-  //         <img
-  //           className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
-  //           width="16px"
-  //           height="20px"
-  //           src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
-  //           alt="transport-b"
-  //         />
-
-  //         <p className="m-0 top-2.5 left-[2.5rem] absolute text-gry-70 m-m text-fs-10">
-  //           {languageData.SearchBox.tabHotel.autocomplete}
-  //         </p>
-  //         <Combobox.Input
-  //           className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12`}
-  //           onChange={(event) => handleLetter(event)}
-  //           displayValue={(person) => person?.label}
-  //           placeholder={
-  //             isSearch
-  //               ? "Buscando rutas..."
-  //               : languageData.SearchBox.tabHotel.textDestination
-  //           }
-  //         />
-
-  //         <Combobox.Options className="px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-  //           {filterTransport &&
-  //             filterTransport.map((destination, index) => (
-  //               <Combobox.Option
-  //                 key={index}
-  //                 value={destination}
-  //                 className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px]"
-  //                 onClick={() => selectDestinationA(destination)}
-  //               >
-  //                 <p className="m-0">
-  //                   {getDestination(query, destination.label)}
-  //                 </p>
-  //               </Combobox.Option>
-  //             ))}
-  //         </Combobox.Options>
-  //       </Combobox.Button>
-  //     </div>
-  //   </Combobox>
-  // ) : (
-  //   // INPUT DISABLED TRANSPORT
-  //   <DisabledInputTransport destinations={destinations} languageData={languageData} isSearch={isSearch} />
-  // );
 }

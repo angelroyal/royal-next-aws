@@ -5,8 +5,10 @@ import { autoCompleteSearch } from "../../Api/requestTransport";
 import LanguageContext from "@/language/LanguageContext";
 
 export function AutoCompleteTrans({
-  selectedTransportation,
-  setSelectedTransportation,
+  selectedAutoComplete,
+  setSelectedAutoComplete,
+  setSelectDestinationA,
+  setSelectDestinationB,
 }) {
   const { language, languageData } = useContext(LanguageContext);
   const [query, setQuery] = useState("");
@@ -17,10 +19,13 @@ export function AutoCompleteTrans({
   const handleLetter = (event) => {
     if (event.target.value.length >= 3) {
       setQuery(event.target.value);
-    } else {
+    }
+    if (event.target.value.length === 0) {
       setResultAutocomplete(null);
-      setSelectedTransportation(null);
+      setSelectedAutoComplete(null);
       setQuery("");
+      setSelectDestinationA(null);
+      setSelectDestinationB(null);
     }
   };
 
@@ -57,20 +62,22 @@ export function AutoCompleteTrans({
     );
   };
 
-  const selectDestinationA = (destination) => {
+  const selectNewDestinationA = (destination) => {
+    setSelectDestinationA(null);
+    setSelectDestinationB(null);
     const newValue = {
       autoComplete: destination,
       destinationA: null,
       destinationB: null,
-    }
+    };
     localStorage.setItem("searchTransport", JSON.stringify(newValue));
   };
 
   return (
     <Combobox
       as="div"
-      value={selectedTransportation}
-      onChange={setSelectedTransportation}
+      value={selectedAutoComplete}
+      onChange={setSelectedAutoComplete}
       className="max-lg:w-full"
     >
       <div className="relative">
@@ -108,7 +115,7 @@ export function AutoCompleteTrans({
                     key={index}
                     value={autoComplete}
                     className="text-gry-100 m-m text-fs-12 cursor-pointer text-start"
-                    onClick={() => selectDestinationA(autoComplete)}
+                    onClick={() => selectNewDestinationA(autoComplete)}
                   >
                     <p className="my-3.5">
                       {getDestination(query, autoComplete.label)}
