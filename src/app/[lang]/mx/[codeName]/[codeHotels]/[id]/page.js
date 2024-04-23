@@ -54,7 +54,6 @@ export default async function DetailPageHotel({ params, searchParams }) {
       `v1/hotels/${searchParams.codeNameHotel}/rooms`
     );
     const hotelData = response.data;
-    console.log("esta entrando aqui");
 
     return (
       <LanguageProvider>
