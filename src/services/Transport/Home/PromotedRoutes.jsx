@@ -36,7 +36,7 @@ export default function PromotedRoutes() {
       </h3>
 
       {/* MENU  */}
-      <div className="flex overflow-y-hidden gap-10 bg-gry-50 py-2 px-4 rounded-3xl mb-8 w-fit h-max">
+      <div className="flex overflow-y-hidden gap-[15px] bg-gry-50 py-[8px] px-[12px] rounded-3xl mb-8 w-fit h-max">
         {listOptions.map((option, index) => (
           <button key={index}
             onClick={() => setMenuPromoted(index)}
@@ -134,7 +134,7 @@ export function PromotedRoutesCard() {
     // CARD TRANSPORT PROMOTED ROUTES
     <>
       {/* <div className='flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white w-[260px]'> */}
-      <Image src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} width={216} height={164} alt="test card"/>
+      <Image src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} width={216} height={164} alt="test card" className="select-none"/>
 
       <div className='flex gap-2'>
         <Image
@@ -142,6 +142,7 @@ export function PromotedRoutesCard() {
           alt='icon location'
           width={12}
           height={12}
+          className="select-none"
         />
         <span className='text-fs-12 m-m text-gry-100'>cancun</span>
       </div>

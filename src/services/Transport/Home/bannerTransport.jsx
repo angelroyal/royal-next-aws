@@ -134,9 +134,9 @@ export function BannerHomeTransportD() {
 export function BannerSafelyTransport() {
     return (
         <div className="bg-gry-30 rounded-lg flex gap-[16px] max-lg:flex-col my-32">
-            <img src={`${process.env.NEXT_PUBLIC_URL}banners/transport/client-happy-transport.jpg`} alt="banner transporte persona sonriendo" className="w-1/2 rounded-l-lg max-lg:rounded-t-lg max-lg:rounded-bl-none max-lg:w-full max-lg:h-[22rem]"/>
+            <img src={`${process.env.NEXT_PUBLIC_URL}banners/transport/client-happy-transport.jpg`} alt="banner transporte persona sonriendo" className="w-1/2 rounded-l-lg max-lg:rounded-t-lg max-lg:rounded-bl-none max-lg:w-full max-lg:h-[22rem] select-none object-cover"/>
 
-            <div className="flex flex-col gap-4 p-[56px] items-start justify-center">
+            <div className="flex flex-col gap-4 pl-[56px] py-[80px] pr-[25px] items-start justify-center max-md:py-[24px] max-md:pl-[16px] max-md:pr-[36px]">
                 <h3 className="text-fs-36 m-b w-[75%] max-md:text-fs-26 max-lg:w-full">Viaja con seguridad y tranquilidad</h3>
                 <span className="m-m text-fs-16">Nuestros conductores profesionales te garantizan un viaje sin contratiempos, brindándote la confianza que necesitas en cada trayecto.</span>
                 <button className="px-[16px] py-[16px] rounded-full bg-yw-100 text-fs-14 m-s-b hover:bg-yw-110">Reservar un traslado</button>

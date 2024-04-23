@@ -64,15 +64,15 @@ export default function ListingHotelW(props) {
       }
     }
   }, [/* window.location.search, */ token]);
-  
+
   useEffect(() => {
     setCurrentPage(1);
   }, [totalFilteredHotels]);
-  
+
   useEffect(() => {
     scrollToTop();
   }, [currentPage]);
-  
+
   return (
     <Container>
       {/* <BannerListingHotelTop /> */}
@@ -112,6 +112,7 @@ export default function ListingHotelW(props) {
                 combinedHotelData.map((hotel, index) => (
                   <>
                     <CardHotelT
+                      key={index}
                       hotel={hotel}
                       requestQueryParams={requestQueryParams}
                     />{" "}

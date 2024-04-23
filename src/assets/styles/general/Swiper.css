@@ -84,8 +84,8 @@
 
 /*END SWIPER SHUFFLE HOTEL */
 
-/* SWIPER POPULAR ESTATES */
-#swiper-popular-estates>div.swiper-button-prev {
+/* SWIPER POPULAR ESTATES  AND RECOMMENDED TRANSPORT*/
+#swiper-popular-estates>div.swiper-button-prev,  #swiper-recommended-transport>div.swiper-button-prev{
   top: 5px;
   left: auto;
   right: 28px;
@@ -101,15 +101,15 @@
   --swiper-navigation-size: 20px;
 }
 
-#swiper-popular-estates>div.swiper-button-prev.swiper-button-disabled {
+#swiper-popular-estates>div.swiper-button-prev.swiper-button-disabled, #swiper-recommended-transport>div.swiper-button-prev.swiper-button-disabled{
   color: grey;
 }
 
-#swiper-popular-estates>div.swiper-button-next.swiper-button-disabled {
+#swiper-popular-estates>div.swiper-button-next.swiper-button-disabled, #swiper-recommended-transport>div.swiper-button-next.swiper-button-disabled{
   color: grey;
 }
 
-#swiper-popular-estates>div.swiper-button-next {
+#swiper-popular-estates>div.swiper-button-next, #swiper-recommended-transport>div.swiper-button-next {
   z-index: 4;
   top: 5px;
   right: 0;
@@ -122,7 +122,17 @@
   --swiper-navigation-size: 20px;
 }
 
-/*END SWIPER POPULAR ESTATES */
+@media screen and (max-width: 1024px) {
+  #swiper-recommended-transport>div.swiper-button-next {
+    display: none;
+  }
+
+  #swiper-recommended-transport>div.swiper-button-prev{
+    display: none;
+  }
+}
+
+/*END SWIPER POPULAR ESTATES AND RECOMMENDED TRANSPORT*/
 
 /* BANNERTOUR CLIP-PATH IMAGE WITH DIAGONAL */
 .clip-custom {

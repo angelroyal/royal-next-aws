@@ -23,7 +23,7 @@ export default function RecommendedTransport() {
           className="!static"
           navigation
           modules={[Navigation]}
-          id="swiper-popular-estates"
+          id="swiper-recommended-transport"
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -54,7 +54,7 @@ export default function RecommendedTransport() {
 
             <SwiperSlide key={index}>
               <div className='flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white'>
-                <Image src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} width={216} height={164} alt="test card" />
+                <Image src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} width={216} height={164} alt="test card" className="select-none"/>
 
                 <span className='text-fs-16 m-b mt-[16px]'>Vehiculo Standard</span>
 
