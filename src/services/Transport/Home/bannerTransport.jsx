@@ -111,11 +111,11 @@ export function BannerHomeTransportD() {
                 </div>
             </div>
 
-            <div className="relative w-full flex justify-center w-3/12">
+            <div className="relative flex justify-center w-3/12">
                 <Image src={bannerCardSecond} width={266} height={235} className="w-full rounded-lg select-none" alt="Banner Experimenta los mejores tours" />
             </div>
 
-            <div className="w-full flex justify-center w-3/12 relative">
+            <div className=" flex justify-center w-3/12 relative">
                 <Image src={bannerCardFinish} width={266} height={235} className="w-full rounded-lg select-none object-cover object-bottom" alt="Banner tour mes de feb" />
                 <div className="absolute bottom-[30px] left-[33px] max-xl:top-[32px] max-xl:left-[2px] max-sm:left-[12%] max-sm:top-[40px]">
                     <h2 className="m-b w-9/12 text-white text-fs-44 mb-5 text-left max-2xl:text-fs-30">¿Primera vez con nosotros?</h2>
