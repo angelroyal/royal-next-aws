@@ -5,9 +5,10 @@ import LanguageContext from "@/language/LanguageContext";
 import { Combobox } from "@headlessui/react";
 
 export function SearchDestinationB({
-  selectDestination,
-  selectRelated,
-  setSelectRelated,
+  selectDestinationA,
+  selectDestinationB,
+  setSelectDestinationB,
+  destinationBLocal,
 }) {
   const { languageData } = useContext(LanguageContext);
   const [query, setQuery] = useState("");
@@ -15,15 +16,25 @@ export function SearchDestinationB({
   // CLEAN INPUT
   useEffect(() => {
     if (query === "") {
-      setSelectRelated(null);
+      setSelectDestinationB(null);
     }
   }, [query]);
 
+  useEffect(() => {
+    if (destinationBLocal) {
+      setQuery(destinationBLocal.label);
+      setSelectDestinationB(destinationBLocal);
+    }
+  }, [destinationBLocal]);
+
   // CLEAN INPUT IF CHANGE DESTINATION A
   useEffect(() => {
-    setQuery("");
-    setSelectRelated(null);
-  }, [selectDestination]);
+    console.log(selectDestinationA);
+    if (!selectDestinationA) {
+      setQuery("");
+      setSelectDestinationB(null);
+    }
+  }, [selectDestinationA]);
 
   const handleLetter = (event) => {
     setQuery(event.target.value);
@@ -32,10 +43,11 @@ export function SearchDestinationB({
   // FILTER TRANSPORT
   const filterRelates =
     query === ""
-      ? selectDestination
-        ? selectDestination.related
+      ? selectDestinationA
+        ? selectDestinationA.related
         : ""
-      : selectDestination.related.filter((related) => {
+      : selectDestinationA &&
+        selectDestinationA.related.filter((related) => {
           return related.label.toLowerCase().includes(query.toLowerCase());
         });
 
@@ -62,7 +74,7 @@ export function SearchDestinationB({
   };
 
   // SET DESTINATION A TO LOCAL STORAGE
-  const selectDestinationB = (destination) => {
+  const selectNewDestinationB = (destination) => {
     const getSearchTransport = JSON.parse(
       localStorage.getItem("searchTransport")
     );
@@ -76,11 +88,11 @@ export function SearchDestinationB({
     }
   };
 
-  return selectDestination && selectDestination.related.length > 0 ? (
+  return selectDestinationA && selectDestinationA.related.length > 0 ? (
     <Combobox
       as="div"
-      value={selectRelated}
-      onChange={setSelectRelated}
+      value={selectDestinationB}
+      onChange={setSelectDestinationB}
       className="max-lg:w-full"
     >
       <div className="relative">
@@ -109,7 +121,7 @@ export function SearchDestinationB({
                 key={index}
                 value={related}
                 className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px]"
-                onClick={() => selectDestinationB(related)}
+                onClick={() => selectNewDestinationB(related)}
               >
                 <p className="m-0">{getDestination(query, related.label)}</p>
               </Combobox.Option>

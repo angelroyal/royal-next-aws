@@ -7,44 +7,52 @@ import { SearchDestinationB } from "./SearchDestinationB";
 
 // RFC
 export default function SearchTransport() {
-  const [selectedTransportation, setSelectedTransportation] = useState(null);
-  const [selectDestination, setSelectDestination] = useState(null);
-  const [selectRelated, setSelectRelated] = useState(null);
+  const [selectedAutoComplete, setSelectedAutoComplete] = useState(null);
+  const [selectDestinationA, setSelectDestinationA] = useState(null);
+  const [selectDestinationB, setSelectDestinationB] = useState(null);
+
+  const [destinationALocal, setDestinationALocal] = useState(null);
+  const [destinationBLocal, setDestinationBLocal] = useState(null);
   const [searchTransport, setSearchTransport] = useState(
     JSON.parse(localStorage.getItem("searchTransport")) || null
   );
 
   useEffect(() => {
     if (searchTransport) {
-      setSelectedTransportation(searchTransport.autoComplete);
-      setSelectDestination(searchTransport.destinationA);
-      setSelectRelated(searchTransport.destinationB);
+      setSelectedAutoComplete(searchTransport.autoComplete);
+      setDestinationALocal(searchTransport.destinationA);
+      setDestinationBLocal(searchTransport.destinationB);
     }
   }, []);
 
   return (
     <div className="flex flex-col lg:flex-row shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6 max-lg:w-[393px]">
       <AutoCompleteTrans
-        selectedTransportation={selectedTransportation}
-        setSelectedTransportation={setSelectedTransportation}
+        selectedAutoComplete={selectedAutoComplete}
+        setSelectedAutoComplete={setSelectedAutoComplete}
+        setSelectDestinationA={setSelectDestinationA}
+        setSelectDestinationB={setSelectDestinationB}
       />
 
       <SearchDestinationA
-        selectedTransportation={selectedTransportation}
-        setSelectDestination={setSelectDestination}
-        selectDestination={selectDestination}
+        selectedAutoComplete={selectedAutoComplete}
+        setSelectDestinationA={setSelectDestinationA}
+        selectDestinationA={selectDestinationA}
+        destinationALocal={destinationALocal}
+        setSelectDestinationB={setSelectDestinationB}
       />
 
       <SearchDestinationB
-        selectDestination={selectDestination}
-        selectRelated={selectRelated}
-        setSelectRelated={setSelectRelated}
+        selectDestinationA={selectDestinationA}
+        selectDestinationB={selectDestinationB}
+        setSelectDestinationB={setSelectDestinationB}
+        destinationBLocal={destinationBLocal}
       />
 
       <ButtonSearch
-        selectedTransportation={selectedTransportation}
-        selectDestination={selectDestination}
-        selectRelated={selectRelated}
+        selectedAutoComplete={selectedAutoComplete}
+        selectDestinationA={selectDestinationA}
+        selectDestinationB={selectDestinationB}
       />
     </div>
   );
