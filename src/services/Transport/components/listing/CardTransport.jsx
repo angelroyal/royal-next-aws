@@ -35,7 +35,9 @@ export default function CardTransport() {
 
                 {/* TRANSPORT ROUND OR PRIVATE */}
                 <div className="pt-2">
-                  <span className="text-gry-70 m-b text-fs-12">Tipo de viaje:</span>
+                  <span className="text-gry-70 m-b text-fs-12">
+                    Tipo de viaje:
+                  </span>
                   <span className="text-fs-14 m-b">Redondo</span>
                 </div>
 
@@ -51,7 +53,7 @@ export default function CardTransport() {
                           height={18}
                           alt="card adult"
                         />{" "}
-                        4 personas
+                        {transport.places} personas
                       </div>
 
                       {/* SERVICE TRANSPORT */}
@@ -63,7 +65,9 @@ export default function CardTransport() {
                           height={18}
                           alt="card transport"
                         />{" "}
-                        4 servicios privado
+                        {transport.type === "private"
+                          ? "servicio privado"
+                          : "servicio compartido"}
                       </div>
 
                       {/* BAGGAGE */}
