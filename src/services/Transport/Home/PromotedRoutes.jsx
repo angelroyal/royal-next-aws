@@ -9,7 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useContext, useState } from 'react'
 import LanguageContext from '@/language/LanguageContext';
 
-export default function PromotedRoutes() {
+export default function 
+PromotedRoutes() {
   const { languageData } = useContext(LanguageContext);
   const [menuPromoted, setMenuPromoted] = useState(0);
   const listOptions = [
