@@ -11,31 +11,15 @@ export function BestHotelCart({ hotel }) {
   const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
-
-    const encodedRoomData = encodeURIComponent(
-      JSON.stringify([{ adults: 2, children: [] }])
+    window.open(
+      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
+      "_blank"
     );
-    const today = moment();
-
-    let initDate = moment(today).add(1, "month");
-    let endDate = moment(today).add(1, "month").add(2, "day");
-    const checkIn = initDate.format("YYYY-MM-DD");
-    const checkOut = endDate.format("YYYY-MM-DD");
-    // return
-    const requestBody = {
-      codeNameHotel: hotel.codeName,
-      code: hotel.code,
-      type: "hotel",
-      "check-in": checkIn,
-      "check-out": checkOut,
-      occupancies: encodedRoomData,
-    };
-    const query = new URLSearchParams(requestBody).toString();
-    window.open(`/${language}/mexico/${hotel.destinationCodeName}-${hotel.country}/${hotel.destinationCodeName}-hotels/${hotel.codeName}?${query}`, '_blank');
   };
 
+
   return (
-    <div  onClick={()=>searchHotel(hotel)}>
+    <div onClick={() => searchHotel(hotel)}>
       <div className="w-full h-[216px]">
         <img
           className="w-full h-full rounded-t-lg object-cover select-none"
@@ -82,7 +66,7 @@ export function BestHotelCart({ hotel }) {
             </span>
           </div>
 
-          <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap" >
+          <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap">
             {languageData.cartTour.seeDetails}
           </button>
         </div>

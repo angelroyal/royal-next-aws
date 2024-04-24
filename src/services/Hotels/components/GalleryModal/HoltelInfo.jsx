@@ -12,7 +12,7 @@ export function HotelInfo(props) {
     <>
       {/* IS TOP */}
       {hotel.isTop && (
-        <div className="bg-[#fef0d2] w-[130px] rounded-full py-[4px] px-[8px] d-flex flex justify-between mb-2 gap-2">
+        <div className="bg-[#fef0d2] w-[fit-content] rounded-full py-[4px] px-[8px] d-flex flex justify-between mb-2 gap-2">
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/sales/fire_department.svg`}
             alt="fire"

@@ -2,6 +2,7 @@
 
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
+import Page404 from "@/components/General/Page404";
 import { Container } from "@/config/Others/Container";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
@@ -13,13 +14,12 @@ import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryM
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-// import axios from "axios";
 
-export async function generateMetadata({ searchParams }) {
+export async function generateMetadata({ params }) {
   try {
     // METHOD AXIOS
     const response = await axiosWithInterceptor.get(
-      `v1/hotels/${searchParams.codeNameHotel}/rooms`
+      `v1/hotels/${params.id}/rooms`
     );
 
     // METADATA DETAIL HOTEL
@@ -48,11 +48,12 @@ export async function generateMetadata({ searchParams }) {
   }
 }
 
-export default async function DetailPageHotel({ params, searchParams }) {
+export default async function DetailPageHotel({ params }) {
   try {
     const response = await axiosWithInterceptor.get(
-      `v1/hotels/${searchParams.codeNameHotel}/rooms`
+      `v1/hotels/${params.id}/rooms`
     );
+
     const hotelData = response.data;
 
     return (
@@ -77,6 +78,17 @@ export default async function DetailPageHotel({ params, searchParams }) {
       </LanguageProvider>
     );
   } catch (error) {
-    console.log("Error fetching hotel data:", error);
+    return (
+      <LanguageProvider>
+        <TokenProvider>
+          <CartAxiosProvider>
+            <Token />
+            <Navigation hotelDetails={true} />
+            <Page404 />
+            <Footer />
+          </CartAxiosProvider>
+        </TokenProvider>
+      </LanguageProvider>
+    );
   }
 }

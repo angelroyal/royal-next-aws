@@ -37,25 +37,12 @@ export default function TopActivities() {
   }, []);
 
   const sentTour = (tourInfo) => {
-    console.log(tourInfo);
-    const persons = [{ adults: 2, children: 0 }]
     const today = moment();
-
-    let initDate = moment(today).add(1, "month");
-    const checkIn = initDate.format("YYYY-MM-DD");
-
-    const requestBody = {
-      dateStart:checkIn,
-      adults: persons[0].adults,
-      children: persons[0].children,
-    };
-
-    const query = new URLSearchParams(requestBody).toString();
 
     window.open(
         `/${language}/mx/${
             tourInfo.destinationCodeName
-        }-${tourInfo[language || 'es'].country}/tours/${tourInfo.codeName}?${query}`,
+        }-${tourInfo[language || 'es'].country}/tours/${tourInfo.codeName}`,
         "_blank"
       );
   };

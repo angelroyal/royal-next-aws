@@ -2,8 +2,15 @@ import axios from "axios";
 
 const language =
   typeof window !== "undefined"
+<<<<<<< HEAD
     ? localStorage.getItem("language") || "es"
     : "es";
+=======
+    ? localStorage.getItem("language") || "en"
+    : "en";
+
+console.log(language);
+>>>>>>> master
 
 const clientIP = "187.188.15.87";
 
