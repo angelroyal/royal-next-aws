@@ -66,8 +66,8 @@ export default function CardTransport() {
                           alt="card transport"
                         />{" "}
                         {transport.type === "private"
-                          ? "servicio privado"
-                          : "servicio compartido"}
+                          ? "Servicio privado"
+                          : "Servicio compartido"}
                       </div>
 
                       {/* BAGGAGE */}
@@ -85,7 +85,11 @@ export default function CardTransport() {
                   </div>
 
                   {/* PRICE */}
-                  <div className="w-full flex-col lg:w-5/12 pt-9 lg:pl-[54px]"></div>
+                  <div className="w-full flex-col lg:w-5/12 pt-9 lg:pl-[54px]">
+                    <div className="pt-1">
+                      <span>MXN</span> <span>1233</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

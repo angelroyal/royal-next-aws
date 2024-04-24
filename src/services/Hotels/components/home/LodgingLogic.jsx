@@ -18,20 +18,7 @@ export default function LodgingHotel({ selectionId }) {
       setShuffleHotel(hotelList[selectionId]);
     } else {
       setShuffleHotel(null);
-<<<<<<< HEAD
-      try {
-        if (token.token) {
-          const responseTest = await lodgings(selectionId);
-          setShuffleHotel(responseTest);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getLodgingsHotels();
-=======
     }
->>>>>>> master
   }, [token, selectionId]);
 
   return <LodgingsView hotels={shuffleHotel} />;

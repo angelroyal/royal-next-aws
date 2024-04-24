@@ -13,7 +13,6 @@ export default async function DetailPageHotel() {
     `https://api.sandboxmexico.com/api/es/v1/transports/destinations/719365/zones/251/252/vehicles`
   );
   const transportData = response.data;
-  console.log(transportData);
 
   try {
     return (
