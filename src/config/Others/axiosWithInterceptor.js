@@ -5,8 +5,6 @@ const language =
     ? localStorage.getItem("language") || "en"
     : "en";
 
-console.log(language);
-
 const clientIP = "187.188.15.87";
 
 const axiosWithInterceptor = axios.create({
