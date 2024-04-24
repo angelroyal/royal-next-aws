@@ -97,6 +97,8 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
                   alt="tour-menu"
                   className="pr-2"
+                  width="32px"
+                  height="23px"
                 />
                 <span
                   className={`${ currentActiveIcon === "transports" || currentActiveIcon === "transport" ? "text-or-100" : ""}`}
