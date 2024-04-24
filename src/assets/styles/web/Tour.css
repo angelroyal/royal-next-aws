@@ -257,7 +257,6 @@
   height: 100%;
 }
 
-
 .position-new-titles-tour {
   position: absolute;
   top: 47%;
@@ -269,7 +268,7 @@
   display: grid;
   align-items: center;
   align-content: center;
-  background: #2743A6;
+  background: #2743a6;
   /* LP */
   border-radius: 10px 0px 0px 10px;
   /* END LP */
@@ -283,7 +282,7 @@
   height: 57%;
   position: absolute;
   border-top: solid 28px transparent;
-  border-right: solid 363px #1B1464;
+  border-right: solid 363px #1b1464;
   border-radius: 0px 0px 0px 10px;
   color: white;
 }
@@ -306,7 +305,7 @@
   bottom: 0%;
   width: 80%;
   height: 100%;
-  clip-path: polygon(0% 43rem, 51% 0%, 179rem 0%, 32rem 27rem, 0rem 27rem)
+  clip-path: polygon(0% 43rem, 51% 0%, 179rem 0%, 32rem 27rem, 0rem 27rem);
 }
 
 .btn-image-right-home-tour {
@@ -316,7 +315,7 @@
   border-radius: 100px;
   border: none;
   padding: 10px 30px;
-  background: #FCB41E;
+  background: #fcb41e;
   font-family: "Montserrat Bold";
   font-size: 0.9rem;
   color: black;
@@ -324,7 +323,7 @@
 }
 
 .btn-image-right-home-tour:hover {
-  background-color: #fdd278
+  background-color: #fdd278;
 }
 
 /* END LP */
@@ -965,7 +964,6 @@ body
   box-shadow: 0 4px 15px 0 rgba(168, 155, 155, 0.25);
   border-radius: 8px;
   /*END LP-22-02-24  */
-
 }
 
 .image-card-t-h {
@@ -976,7 +974,6 @@ body
   /*LP-22-02-24  */
   border-radius: 8px 8px 0 0;
   /*END LP-22-02-24  */
-
 }
 
 .description-g-t-c {
@@ -985,12 +982,12 @@ body
   padding: 0 20px 10px 20px;
 }
 
-.cont-rating-text-tour-card{
+.cont-rating-text-tour-card {
   min-height: 76px;
   margin-top: 10px;
 }
 
-.cont-rating-text-tour-card-skeleton{
+.cont-rating-text-tour-card-skeleton {
   min-height: 50px;
   margin-top: 10px;
 }
@@ -1029,10 +1026,10 @@ body
   position: absolute;
   top: 2%;
   right: 2%;
-  padding:14px 10px;
-  background: rgba(235,235,235,0.7);
+  padding: 14px 10px;
+  background: rgba(235, 235, 235, 0.7);
   border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   /*LP-22-02-24  */
 }
 
@@ -1058,13 +1055,11 @@ body
   color: #000000;
 }
 
-.subtitle-card-tour{
+.subtitle-card-tour {
   font-family: "Montserrat Medium";
   font-size: 14px;
   color: #666;
 }
-
-
 
 /* .title-cards-tour.carrousel {
   position: absolute;
@@ -1075,9 +1070,9 @@ body
 } */
 
 /* LP 22-02-24 */
-.cont-price-tour-card-popular{
+.cont-price-tour-card-popular {
   padding-top: 10px;
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #ebebeb;
   align-items: center;
 }
 /*END LP 22-02-24 */
@@ -1085,45 +1080,46 @@ body
 /* END TOUR CARD HOME */
 
 /* CAROUSEL TOUR */
-.title-cards-tour.carrousel{
+.title-cards-tour.carrousel {
   position: absolute;
   top: 0;
 }
-#carousel-home-tour{
+#carousel-home-tour {
   padding-top: 3.7rem;
 }
-#carousel-home-tour > div.swiper-button-next{
+#carousel-home-tour > div.swiper-button-next {
   top: 15px;
   right: 0;
-  color: #EB741E;
+  color: #eb741e;
   height: 30px;
   width: 30px;
-  box-shadow: 2px 0px 12px 0px rgba(0,0,0,0.11);
+  box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.11);
   background: white;
-  &::after{
+  &::after {
     font-size: 17px;
     font-weight: bold;
   }
 }
 
-#carousel-home-tour > div.swiper-button-next.swiper-button-disabled, #carousel-home-tour > div.swiper-button-prev.swiper-button-disabled{
+#carousel-home-tour > div.swiper-button-next.swiper-button-disabled,
+#carousel-home-tour > div.swiper-button-prev.swiper-button-disabled {
   color: #666;
   /* box-shadow: 2px 0px 12px 0px rgba(0,0,0,0.11); */
   opacity: 1;
 }
 
-#carousel-home-tour > div.swiper-button-prev{
+#carousel-home-tour > div.swiper-button-prev {
   top: 15px;
   left: auto;
   right: 28px;
-  color: #EB741E;
+  color: #eb741e;
   height: 30px;
   width: 30px;
-  box-shadow: 2px 0px 12px 0px rgba(0,0,0,0.11);
+  box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.11);
   background: white;
   z-index: 11;
   border-right: 1px solid rgba(145, 145, 145, 0.444);
-  &::after{
+  &::after {
     font-size: 17px;
     font-weight: bold;
   }
@@ -1134,21 +1130,21 @@ body
   margin-bottom: 6rem;
 }
 
-.container-item-carrousel-tour{
+.container-item-carrousel-tour {
   display: flex !important;
   height: 30rem;
 }
 
-.container-one-image-tour{
+.container-one-image-tour {
   display: flex;
   height: 100%;
   width: 100%;
 }
 
-.column-image-one-tour{
+.column-image-one-tour {
   width: 23%;
   height: 100%;
-  & img{
+  & img {
     border-radius: 8px;
     width: 100%;
     height: 100%;
@@ -1156,10 +1152,10 @@ body
     filter: brightness(0.79);
   }
 }
-.column-image-two-tour{
+.column-image-two-tour {
   width: 77%;
   height: 100%;
-  & img{
+  & img {
     border-radius: 8px;
     width: 100%;
     height: 100%;
@@ -1168,12 +1164,12 @@ body
   }
 }
 
-.column-image-three-tour{
+.column-image-three-tour {
   width: 29%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  & img{
+  & img {
     border-radius: 8px;
     width: 100%;
     height: 100%;
@@ -1182,7 +1178,7 @@ body
   }
 }
 
-.title-location-tour-carousel{
+.title-location-tour-carousel {
   font-size: 14px;
   font-family: "Montserrat Bold";
   color: white;
@@ -1194,8 +1190,8 @@ body
   align-items: flex-start;
 }
 
-.title-xl-tour-carousel{
-  font-size: 20px ;
+.title-xl-tour-carousel {
+  font-size: 20px;
   font-family: "Montserrat Bold";
   color: white;
   position: absolute;
@@ -1206,7 +1202,7 @@ body
   align-items: flex-start;
 }
 
-.price-text-xl-tour-carousel{
+.price-text-xl-tour-carousel {
   font-size: 12px;
   font-family: "Montserrat Medium";
   color: white;
@@ -1215,13 +1211,13 @@ body
   align-items: center;
 }
 
-.price-xl-tour-carousel{
+.price-xl-tour-carousel {
   font-size: 16px;
   font-family: "Montserrat Semibold" !important;
   color: white;
 }
 
-.price-text-carousel-tour{
+.price-text-carousel-tour {
   font-size: 10px;
   font-family: "Montserrat Medium";
   color: white;
@@ -1230,22 +1226,22 @@ body
   align-items: center;
 }
 
-.price-tour-carousel{
+.price-tour-carousel {
   font-family: "Montserrat Semibold" !important;
   font-size: 12px;
   color: white;
 }
 
-.column-image-tour-home{
+.column-image-tour-home {
   height: 48%;
 }
 
-.carrousel-image{
+.carrousel-image {
   position: relative;
   cursor: pointer;
 }
 
-.carousel-control-prev{
+.carousel-control-prev {
   right: 2rem;
   top: -2rem;
   display: block !important;
@@ -1682,12 +1678,12 @@ back-img-banner-gradient-img {
 
 /* CARD-TOUR/MOBILE/LP 01-02-24*/
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
   .container-tour-i {
     flex-direction: column;
     padding: 1.3rem 1.3rem 0.3rem 1.3rem;
   }
-  .cont-name-location-tour{
+  .cont-name-location-tour {
     width: 100%;
   }
 
@@ -1711,7 +1707,6 @@ back-img-banner-gradient-img {
     top: 0%;
   }
 
-  
   .title-tour-card-i {
     overflow: hidden;
     height: 50px;
@@ -1758,8 +1753,6 @@ back-img-banner-gradient-img {
   .cont-location-hours-price-tour-card {
     flex-direction: column;
   }
-
- 
 }
 
 /*END CARD-TOUR/MOBILE/LP*/
@@ -1920,15 +1913,14 @@ back-img-banner-gradient-img {
 }
 
 .complete-payment-i {
+  align-items: center;
   background-color: #fcb41e;
   border-radius: 100px;
-  width: 160px;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
   cursor: pointer;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 19px 1rem;
 }
 
 .complete-payment-i:hover {

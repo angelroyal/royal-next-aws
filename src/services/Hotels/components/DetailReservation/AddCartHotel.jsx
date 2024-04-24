@@ -64,7 +64,7 @@ export default function AddCartHotel() {
 
       }, 1000);
     } catch (error) {
-      console.eror(error);
+      console.error(error);
       setIsLoading(false);
       if (error.response.status >= 400) {
         setIsFailedReservation(true);

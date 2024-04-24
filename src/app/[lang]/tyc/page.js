@@ -1,6 +1,7 @@
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import { TyC } from "@/components/About/TyC/TyC";
+import ContactUs from "@/components/General/ContactUs";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
@@ -25,6 +26,7 @@ export default function TyCPage() {
           <Token />
           <Navigation />
           <TyC />
+          <ContactUs />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

@@ -1,3 +1,5 @@
+"use client";
+
 import "../../assets/styles/web/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 

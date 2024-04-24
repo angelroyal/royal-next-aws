@@ -1,10 +1,12 @@
 import LanguageContext from "@/language/LanguageContext";
 import { useContext } from "react";
 import { getListingTransports } from "../../Api/requestTransport";
+import { useRouter } from "next/navigation";
 
 export function ButtonSearch(props) {
   const { selectedAutoComplete, selectDestinationA, selectDestinationB } = props;
   const { languageData, language } = useContext(LanguageContext);
+  const router = useRouter()
 
   const getTransportsLists = async () => {
     const ids = {
@@ -12,6 +14,10 @@ export function ButtonSearch(props) {
       zoneFromId: selectDestinationA.id,
       zoneToId: selectDestinationB.id,
     };
+     const labelDestination = selectedAutoComplete.label.replaceAll(' ',"-");
+    const params = new URLSearchParams(ids).toString();
+    const transportRout = `/${language}/mx/${labelDestination}-mexico/transport?${params}`
+    router.push(transportRout);
     // const response = await getListingTransports(language, ids);
     // console.log(response);
   };

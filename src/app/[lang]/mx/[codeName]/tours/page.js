@@ -4,15 +4,16 @@ import "../../../../../assets/styles/web/Hotel.css";
 import "../../../../../assets/styles/web/Tour.css";
 
 import Token from "@/components/General/Token";
+import Footer from "@/components/Footer/Footer";
+import ContactUs from "@/components/General/ContactUs";
 import { TokenProvider } from "@/config/context/AuthContext";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import ListTour from "@/services/Tours/components/Listing/ListTour";
-import Footer from "@/components/Footer/Footer";
 
 export async function generateMetadata({ searchParams }) {
-  const destination = searchParams.destination || 'México';
+  const destination = searchParams.destination || "México";
   const checkIn = searchParams.dateStart;
 
   return {
@@ -31,6 +32,7 @@ export default function Home() {
           <Token />
           <Navigation />
           <ListTour />
+          <ContactUs />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

@@ -1795,7 +1795,7 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 
-.swiper-slide {
+/* .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -1803,7 +1803,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   position: relative;
-}
+} */
 
 /* Previous arrow */
 .swiper-button-prev {

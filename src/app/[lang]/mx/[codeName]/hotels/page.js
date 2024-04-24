@@ -7,10 +7,11 @@ import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import Hotels from "@/services/Hotels/components/Listing/Hotels";
+import ContactUs from "@/components/General/ContactUs";
 
 // region LISTING HOTEL
 export async function generateMetadata({ searchParams }) {
-  const destination = searchParams.destination || 'México';
+  const destination = searchParams.destination || "México";
   const checkIn = searchParams.checkIn;
   const checkOut = searchParams.checkOut;
 
@@ -30,6 +31,7 @@ export default function Home() {
           <Token />
           <Navigation />
           <Hotels />
+          <ContactUs />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

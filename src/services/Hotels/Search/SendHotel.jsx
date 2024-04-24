@@ -7,6 +7,7 @@ import Calendar from "@/hooks/Calendar";
 import SearchHotel from "./SearchHotel";
 // import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
+import AutocompleteHotel from "./AutocompleteHotel";
 
 export default function SendHotel() {
   const router = useRouter();
@@ -107,7 +108,8 @@ export default function SendHotel() {
     // <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
     <div className={`flex ${isHotelResults ? 'flex-col' : 'flex-col lg:flex-row'} shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6`}>
 
-      <SearchHotel onSelectSearch={setSelectedOption} />
+      {/* <SearchHotel onSelectSearch={setSelectedOption} /> */}
+      <AutocompleteHotel/>
       <Calendar onDateChange={handleDateChange} />
       <Room OnApply={setRoomData} />
 

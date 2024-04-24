@@ -9,6 +9,7 @@ import Calendar from "../../hooks/Calendar";
 import LanguageContext from "../../language/LanguageContext";
 import SearchHotel from "@/services/Hotels/Search/SearchHotel";
 import { ListingHotelMobile } from "@/services/Hotels/components/Listing/ListingHotelMobile";
+
 export default function MobilSearchHotel() {
   const { languageData, language } = useContext(LanguageContext);
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);

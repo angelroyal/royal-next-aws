@@ -2,6 +2,7 @@
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
 import LanguageProvider from "@/language/LanguageProvider";
+import ContactUs from "@/components/General/ContactUs";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
@@ -27,6 +28,7 @@ export default function Home() {
           <Navigation />
           {/* <Privacy /> */}
           <PrivacyPolicy />
+          <ContactUs />
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>
