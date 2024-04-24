@@ -9,7 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useContext, useState } from 'react'
 import LanguageContext from '@/language/LanguageContext';
 
-export default function PromotedRoutes() {
+export default function
+  PromotedRoutes() {
   const { languageData } = useContext(LanguageContext);
   const [menuPromoted, setMenuPromoted] = useState(0);
   const listOptions = [
@@ -51,6 +52,7 @@ export default function PromotedRoutes() {
                 alt={option.name}
                 width={16}
                 height={16}
+                className="w-[16px] h-[16px]"
               />
             ) : (
               <Image
@@ -58,6 +60,7 @@ export default function PromotedRoutes() {
                 alt={option.name}
                 width={16}
                 height={16}
+                className="w-[16px] h-[16px]"
               />
             )}
 
@@ -146,6 +149,7 @@ export function PromotedRoutesCard() {
               alt='icon location'
               width={12}
               height={12}
+              className="w-[12px] h-[12px]"
             />
             <span className='text-fs-12 m-m text-gry-100'>cancun</span>
           </div>
@@ -164,12 +168,21 @@ export function PromotedRoutesCard() {
 
           <div className='flex flex-wrap mb-[6px] gap-2'>
             <div className='flex gap-2'>
-              <Image src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`} width={12.8} height={13.4} alt="icon adult" />
+              <Image src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                width={12.8}
+                height={13.4}
+                alt="icon adult"
+                className="w-[12.8px] h-[13.4px]" />
+
               <span className='m-m text-fs-12'>4 personas</span>
             </div>
 
             <div className='flex gap-2'>
-              <Image src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`} width={14} height={13} alt="icon transport" />
+              <Image src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+                width={14}
+                height={13}
+                alt="icon transport"
+                className="w-[14px] h-[13px]" />
               <span className='m-m text-fs-12'>Modelo:KSDSDF</span>
             </div>
 

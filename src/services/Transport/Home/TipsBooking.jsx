@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function TipsBooking() {
     return (
         <div className='flex flex-col items-center my-32'>
-            <h3 className='m-b text-fs-24'>Reserva tu traslado en 3 pasos</h3>
+            <h3 className='m-b text-fs-24 max-sm:text-center'>Reserva tu traslado en 3 pasos</h3>
 
             <div className='flex gap-[16px] max-md:flex-col overflow-x-clip scroll-page-gry'>
 
@@ -12,7 +12,11 @@ export default function TipsBooking() {
                 <div className='flex flex-col p-[20px] items-center  w-[165px]'>
                     <div className='p-[4px] bg-white shadow-3xl mb-[16px]'>
                         <div className='bg-gry-50 w-[80px] h-[80px] flex items-center justify-center border-2 border-white rounded-lg'>
-                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-on-bl.svg`} alt='icon-location' width={24} height={30}/>
+                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-on-bl.svg`}
+                                alt='icon-location'
+                                width={24}
+                                height={30}
+                                className='w-[24px] h-[30px]' />
                         </div>
                     </div>
 
@@ -27,7 +31,11 @@ export default function TipsBooking() {
                 <div className='flex flex-col p-[20px] items-center w-[165px]'>
                     <div className='p-[4px] bg-white mb-[16px] shadow-3xl'>
                         <div className='bg-or-100 w-[80px] h-[80px] flex items-center justify-center border-2 border-white rounded-lg'>
-                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-done-w.svg`} alt='icon-location' width={27} height={30}/>
+                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-done-w.svg`}
+                                alt='icon-location'
+                                width={27}
+                                height={30}
+                                className='w-[27px] h-[30px]' />
                         </div>
                     </div>
 
@@ -42,7 +50,11 @@ export default function TipsBooking() {
                 <div className='flex flex-col p-[20px] items-center w-[165px]'>
                     <div className='p-[4px] bg-white mb-[16px] shadow-3xl'>
                         <div className='bg-gry-50 w-[80px] h-[80px] flex items-center justify-center border-2 border-white rounded-lg'>
-                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/general/airport-bl.svg`} alt='icon-location' width={33} height={21}/>
+                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/general/airport-bl.svg`}
+                                alt='icon-location'
+                                width={33}
+                                height={21}
+                                className='w-[33px] h-[21px]' />
                         </div>
                     </div>
 
