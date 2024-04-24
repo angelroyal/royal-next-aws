@@ -16,7 +16,7 @@ export default function TipsBooking() {
                                 alt='icon-location'
                                 width={24}
                                 height={30}
-                                className='w-[24px] h-[30]' />
+                                className='w-[24px] h-[30px]' />
                         </div>
                     </div>
 
@@ -31,7 +31,11 @@ export default function TipsBooking() {
                 <div className='flex flex-col p-[20px] items-center w-[165px]'>
                     <div className='p-[4px] bg-white mb-[16px] shadow-3xl'>
                         <div className='bg-or-100 w-[80px] h-[80px] flex items-center justify-center border-2 border-white rounded-lg'>
-                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-done-w.svg`} alt='icon-location' width={27} height={30} />
+                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-done-w.svg`}
+                                alt='icon-location'
+                                width={27}
+                                height={30}
+                                className='w-[27px] h-[30px]' />
                         </div>
                     </div>
 
@@ -46,7 +50,11 @@ export default function TipsBooking() {
                 <div className='flex flex-col p-[20px] items-center w-[165px]'>
                     <div className='p-[4px] bg-white mb-[16px] shadow-3xl'>
                         <div className='bg-gry-50 w-[80px] h-[80px] flex items-center justify-center border-2 border-white rounded-lg'>
-                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/general/airport-bl.svg`} alt='icon-location' width={33} height={21} />
+                            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/general/airport-bl.svg`}
+                                alt='icon-location'
+                                width={33}
+                                height={21}
+                                className='w-[33px] h-[21px]' />
                         </div>
                     </div>
 
