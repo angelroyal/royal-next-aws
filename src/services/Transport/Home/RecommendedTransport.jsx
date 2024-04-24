@@ -71,7 +71,11 @@ export default function RecommendedTransport() {
                       </div>
 
                       <div className='flex gap-2'>
-                        <Image src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`} width={14} height={13} alt="icon transport" />
+                        <Image src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`} 
+                        width={14} 
+                        height={13} 
+                        alt="icon transport" 
+                        className="w-[14px] h-[13px]"/>
                         <span className='m-m text-fs-12'>Modelo:KSDSDF</span>
                       </div>
 
