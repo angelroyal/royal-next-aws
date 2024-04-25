@@ -149,7 +149,7 @@ export default function PersonsActivities({ OnApply, listing }) {
   // END FUNCTION TO CLOSE MENU
 
   return (
-    <div ref={ref} className={`${listing ? 'w-full' : 'w-full lg:w-[296px]'} border-2 border-gray-200 rounded py-2.5 px-4 relative h-[54px]`}>
+    <div ref={ref} className={`${listing ? 'w-full' : 'w-full lg:w-[296px]'} border-2 border-gray-200 rounded py-2.5 px-4 relative h-[56px]`}>
       <Dropdown show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
@@ -184,7 +184,7 @@ export default function PersonsActivities({ OnApply, listing }) {
         </Dropdown.Toggle>
 
         {showDropdown === true && (
-          <Dropdown.Menu className="border-0 w-11/12 z-[1] p-0">
+          <Dropdown.Menu className="border-0 w-11/12 z-[2] p-0">
             <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg">
               <div className="pt-4 pl-3 pr-3 z-10">
                 {rooms.map((room, index) => (
