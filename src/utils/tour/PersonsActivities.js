@@ -184,7 +184,7 @@ export default function PersonsActivities({ OnApply, listing }) {
         </Dropdown.Toggle>
 
         {showDropdown === true && (
-          <Dropdown.Menu className="border-0 w-11/12 z-[1] p-0">
+          <Dropdown.Menu className="border-0 w-11/12 z-[2] p-0">
             <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg">
               <div className="pt-4 pl-3 pr-3 z-10">
                 {rooms.map((room, index) => (

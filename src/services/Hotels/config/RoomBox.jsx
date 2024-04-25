@@ -66,7 +66,7 @@ function Room({listing=false ,OnApply }) {
     // END FUNCTION TO CLOSE MENU
 
   return (
-    <div ref={ref} className={` border-2 border-gray-200 rounded py-2.5 px-4 relative w-full  h-[54px] ${listing === false && 'lg:w-[296px]'} `}>
+    <div ref={ref} className={`border-2 border-gray-200 rounded py-2.5 px-4 relative w-full  h-[54px] ${listing === false && 'lg:w-[296px]'}`}>
       <Dropdown style={{minWidth:"293px"}} show={showDropdown} onClose={() => setShowDropdown(false)}>
         <Dropdown.Toggle
           onClick={() => setShowDropdown(!showDropdown)}
