@@ -43,7 +43,7 @@ export default function ContactUs() {
 
                 <div
                     // className='fixed bottom-[2rem] right-[2rem] flex items-center gap-2 bg-white h-[50px] mb-[10px] w-fit rounded-tr-2xl rounded-l-3xl shadow-3xl cursor-pointer no-underline z-10 max-md:rounded-full hover:transform hover:scale-105 transition-transform duration-300 '
-                    className={`fixed bottom-[2rem] right-[2rem] flex items-center gap-2 bg-white h-[50px] mb-[10px] w-fit rounded-tr-2xl rounded-l-3xl shadow-3xl cursor-pointer no-underline z-10 max-md:rounded-full ${delayClass ? "bounce2" : "animations-icon"
+                    className={`fixed bottom-[1.9rem] right-[2rem] flex items-center gap-2 bg-white h-[50px] mb-[10px] w-fit rounded-tr-2xl rounded-l-3xl shadow-3xl cursor-pointer no-underline z-10 max-md:rounded-full ${delayClass ? "bounce2" : "animations-icon"
                         }`}
                 >
                     <div className='bg-bl-100 w-[60px] h-[60px] rounded-full flex justify-center items-center '>

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 import { BestHotelCart } from "./BestHotelCart";
 import { LodgingBestPrice } from "../Skeleton/HotelInformationSkeleton";
@@ -18,12 +18,11 @@ export function LodgingsView({ hotels }) {
         <Swiper
           slidesPerView={4}
           spaceBetween={12}
-          navigation
-          id="swiper-Promoted-Routes"
+          id="swiper-shuffle-hotel"
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination]}
           className="mySwiper !pb-10 !static"
           breakpoints={{
             0: {
