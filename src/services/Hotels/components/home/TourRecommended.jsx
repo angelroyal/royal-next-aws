@@ -5,8 +5,9 @@ import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import LanguageContext from "../../../../language/LanguageContext";
 import Image from "next/image";
+
+import LanguageContext from "../../../../language/LanguageContext";
 import { homeRecommendedTour } from "@/config/Others/HomeRecommendedTour";
 
 export default function CartTourOptions() {

@@ -2,10 +2,12 @@
 
 import { useContext } from "react";
 import CardTransport from "./CardTransport";
+import FilterTransport from "./FilterTransport";
 import { Container } from "@/config/Others/Container";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
-import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
+// import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import ListingTransportContext from "../../context/ListingTransportContext";
+import OrderingTransport from "./OrderingTransport";
 
 export default function ListingTransport(props) {
   const { data } = props;
@@ -17,10 +19,12 @@ export default function ListingTransport(props) {
       {/* <BannerListingHotelTop /> */}
       <div className="flex flex-col xl:flex-row md:justify-between">
         <div className="w-full xl:w-[28%] mt-10">
-          <SearchBoxMobile />
+          {/* <SearchBoxMobile /> */}
+          <FilterTransport />
         </div>
 
-        <div className="w-full xl:w-8/12 relative">
+        <div className="w-full xl:w-8/12">
+          <OrderingTransport/>
           <CardTransport />
         </div>
       </div>
