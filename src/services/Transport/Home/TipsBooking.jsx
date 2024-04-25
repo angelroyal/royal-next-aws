@@ -1,10 +1,13 @@
-import React from 'react'
+"use client";
 import Image from 'next/image'
+import React, { useContext } from 'react'
+import LanguageContext from '@/language/LanguageContext'
 
 export default function TipsBooking() {
+    const { languageData } = useContext(LanguageContext);
     return (
         <div className='flex flex-col items-center my-32'>
-            <h3 className='m-b text-fs-24 max-sm:text-center'>Reserva tu traslado en 3 pasos</h3>
+            <h3 className='m-b text-fs-24 max-sm:text-center'>{languageData.tipsBooking.titleBookSteps}</h3>
 
             <div className='flex gap-[16px] max-md:flex-col overflow-x-clip scroll-page-gry'>
 
@@ -20,7 +23,7 @@ export default function TipsBooking() {
                         </div>
                     </div>
 
-                    <span className='mb-[8px] text-fs-14px m-s-b text-nowrap'>Elige la ubicación</span>
+                    <span className='mb-[8px] text-fs-14px m-s-b text-nowrap'>{languageData.tipsBooking.chooseLocation}</span>
                     <span className='text-gry-100 text-fs-12 text-center'>Lorem ipsum dolor sit amet</span>
                 </div>
 
@@ -39,7 +42,7 @@ export default function TipsBooking() {
                         </div>
                     </div>
 
-                    <span className='mb-[8px] text-fs-14px m-s-b text-nowrap'>Fecha de recolección</span>
+                    <span className='mb-[8px] text-fs-14px m-s-b text-nowrap'>{languageData.tipsBooking.pickUpDate}</span>
                     <span className='text-gry-100 text-fs-12 text-center'>Lorem ipsum dolor sit amet</span>
                 </div>
 
@@ -58,7 +61,7 @@ export default function TipsBooking() {
                         </div>
                     </div>
 
-                    <span className='mb-[8px] text-fs-14px m-s-b text-nowrap' >Reserva tu coche </span>
+                    <span className='mb-[8px] text-fs-14px m-s-b text-nowrap' >{languageData.tipsBooking.bookCar}</span>
                     <span className='text-gry-100 text-fs-12 text-center'>Lorem ipsum dolor sit amet</span>
                 </div>
 

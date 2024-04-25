@@ -51,7 +51,7 @@ export default function CartTourOptions() {
         modules={[Pagination]}
         breakpoints={{
           0: {
-            slidesPerView: 1,
+            slidesPerView: 1.5,
           },
           390: {
             slidesPerView: 2,
@@ -59,17 +59,23 @@ export default function CartTourOptions() {
           570: {
             slidesPerView: 2.5,
           },
-          700: {
+          768: {
             slidesPerView: 3,
           },
           846: {
+            slidesPerView: 3.5,
+          },
+          992: {
             slidesPerView: 4,
+          },
+          1200: {
+            slidesPerView: 4.5,
           },
           1280: {
             slidesPerView: 5,
           },
           1536: {
-            slidesPerView: 7,
+            slidesPerView: 6.7,
           },
         }}
       >
@@ -81,13 +87,14 @@ export default function CartTourOptions() {
           return (
             <SwiperSlide
               key={index}
-              className="!rounded-md !h-[275px] select-none"
+              className="!rounded-md !h-[265px] select-none"
               onClick={() => sentTour(tour)}
             >
               {/* w-[185px] h-[258px] */}
-              <div className="h-full bg-white cursor-pointer shadow-3xl border border-gry-30 rounded-md px-4 py-4 flex flex-col justify-center items-center">
+              <div className="h-full bg-white cursor-pointer shadow-3xl border border-gry-30 rounded-md px-4 py-4 flex flex-col justify-between items-center min-w-[179px]">
                 {/* w-[132px] h-[132px] */}
-                <div className="mb-3 w-[132px] h-[132px]">
+                {/* <div className="mb-3 w-[132px] h-[132px]"> */}
+                <div className="w-[132px] h-[132px]">
                   <img
                     className="w-full h-full rounded-full object-cover select-none"
                     src={tour.image}
@@ -96,14 +103,14 @@ export default function CartTourOptions() {
                 </div>
 
                 <div className="max-w-xs overflow-hidden text-center">
-                  <h2 className="text-fs-14 mb-2 mt-4 mb-4 w-full">
-                    <b className="!box-orient-vertical !line-clamp-2 !overflow-hidden !text-ellipsis">
+                  <span className="text-fs-14 w-full">
+                    <b className="pt-3 !box-orient-vertical !line-clamp-2 !overflow-hidden !text-ellipsis">
                       {tour[language].name}
                     </b>
-                  </h2>
+                  </span>
                 </div>
 
-                <div className="flex justify-center gap-1">
+                <div className="flex justify-center gap-1 mt-[8px]">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
                     width={9.5}
