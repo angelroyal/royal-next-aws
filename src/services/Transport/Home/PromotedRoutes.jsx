@@ -18,14 +18,14 @@ export default function
       id: 1,
       icon: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-w.svg`,
       iconActive: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-b.svg`,
-      name: "Privado",
+      name: "private",
     },
 
     {
       id: 2,
       icon: `${process.env.NEXT_PUBLIC_URL}icons/family/family-w.svg`,
       iconActive: `${process.env.NEXT_PUBLIC_URL}icons/family/family-b.svg`,
-      name: "Compartido",
+      name: "shared",
     },
   ];
 
@@ -33,7 +33,7 @@ export default function
     <div className='my-[10px]'>
       {/* TITLE */}
       <h3 className="m-b text-fs-24 mb-8 ">
-        Trayectos promocionados
+        {languageData.CardHomeTransport.titlePromoted}
       </h3>
 
       {/* MENU  */}
@@ -65,7 +65,7 @@ export default function
             )}
 
             <span className={`text-nowrap text-fs-12 m-m`}>
-              {option.name}
+              {languageData.CardHomeTransport[option.name]}
             </span>
           </button>
         ))}
@@ -115,8 +115,6 @@ export default function
             },
           }}
         >
-
-          {/* CARD TRANSPORT */}
           {[...Array(8)].map((_, index) => (
 
             <SwiperSlide key={index}>
@@ -133,8 +131,9 @@ export default function
 }
 
 export function PromotedRoutesCard() {
+  const { languageData } = useContext(LanguageContext);
   return (
-    // CARD TRANSPORT PROMOTED ROUTES
+    //CARD TRANSPORT PROMOTED ROUTES
     <>
 
       {/*IMAGE TRANSPORT*/}
@@ -157,14 +156,14 @@ export function PromotedRoutesCard() {
           <span className='text-fs-16 m-b'>Vehiculo Standard</span>
 
           <div className='flex gap-1'>
-            <span className='text-fs-12 text-gry-100 m-m'>Tipo de viaje:</span>
+            <span className='text-fs-12 text-gry-100 m-m'>{languageData.CardHomeTransport.typeTrip}</span>
             <span className='text-fs-12 m-b'>Redondo</span>
           </div>
         </div>
 
-        {/* CHARACTERISTICS */}
+        {/* FEATURES */}
         <div className="flex flex-col gap-1">
-          <span className='text-gry-100 text-fs-14 m-m'>Caracteristicas</span>
+          <span className='text-gry-100 text-fs-12 m-m'>{languageData.CardHomeTransport.features}</span>
 
           <div className='flex flex-wrap mb-[6px] gap-2'>
             <div className='flex gap-2'>
@@ -195,7 +194,7 @@ export function PromotedRoutesCard() {
 
         {/* MODALITIES */}
         <div className="flex flex-col gap-1">
-          <span className='text-gry-100 text-fs-12 m-m'>Modalidades</span>
+          <span className='text-gry-100 text-fs-12 m-m'>{languageData.modalTour.modalities}</span>
 
           <div className='flex gap-2 mb-[15.5px]'>
             <div className='bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12'>Privado</div>
@@ -206,15 +205,15 @@ export function PromotedRoutesCard() {
       </div>
 
       {/* PRICE */}
-      <div className='flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px]'>
+      <div className='flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between '>
 
         <div className='flex flex-col'>
-          <span className='text-fs-10 text-gry-100'>desde</span>
+          <span className='text-fs-10 text-gry-100'>{languageData.cartTour.from}</span>
           <span className='m-b text-fs-16'>MXN $5,000</span>
-          <span className='text-bl-100 text-fs-10'>politicas de cancelacion</span>
+          <span className='text-bl-100 text-fs-10'>{languageData.containerModalHotel.policies}</span>
         </div>
 
-        <bottom className='flex items-center px-[23px] py-[12px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit mt-[15.5px] text-nowrap cursor-pointer'>Reservar</bottom>
+        <bottom className='flex items-center px-[23px] py-[12px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit text-nowrap cursor-pointer'>{languageData.CardHomeTransport.reserveBtn}</bottom>
       </div>
       {/* </div> */}
     </>

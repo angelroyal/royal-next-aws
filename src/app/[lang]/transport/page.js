@@ -34,24 +34,26 @@ export default function HomeTransport() {
           <CartAxiosProvider>
             <Token />
             <Navigation />
-            
+
             {/* SearchTransport */}
             <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
-              
-              <BannerHomeTop/>
+
+              <BannerHomeTop />
               <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center">
                 <SearchBox />
               </div>
             </div>
 
             <Container>
-              <BannerHomeTransport/>
-              <TipsBooking/>
-              <RecommendedTransport/>    
-              <BannerSafelyTransport/>    
-              <PromotedRoutes/> 
-              <BannerDiscoverPossibilities/>
-              <CartTourOptions/>              
+              <BannerHomeTransport />
+              <TipsBooking />
+              <RecommendedTransport />
+              <BannerSafelyTransport />
+              <PromotedRoutes />
+              <BannerDiscoverPossibilities />
+              <div className="mb-16">
+                <CartTourOptions />
+              </div>
             </Container>
             {/* END LP */}
 

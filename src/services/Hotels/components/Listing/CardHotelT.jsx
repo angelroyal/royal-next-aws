@@ -57,7 +57,8 @@ export default function CardHotelT(props) {
   return (
     <>
       {hotel && (
-        <div className="max-sm:px-4">
+        // <div className="max-sm:px-4">
+        <div className="">
           <div className="flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col lg:h-[230px] max-sm:max-h-[35rem]">
             <div className="w-[30%] relative max-lg:w-full max-lg:h-[225px]">
               <Swiper

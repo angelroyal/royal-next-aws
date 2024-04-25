@@ -17,13 +17,17 @@ export default function CardTransport() {
       {dataTransportF &&
         dataTransportF.map((transport, index) => (
           <div key={index} className="max-sm:px-4">
-            <div className="flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col lg:h-[230px] max-sm:max-h-[35rem]">
+            <div className="shadow-3xl flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col lg:h-[230px] max-sm:max-h-[35rem]">
               <div className="w-[30%] relative max-lg:w-full max-lg:h-[225px]">
                 <img
                   className="w-full h-full object-contain"
                   src={transport.image}
                   alt="card"
                 />
+
+                <div className="absolute top-[197px] w-[100%] h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none">
+                  {transport.type === "private" ? "Privado" : "Compartido"}
+                </div>
               </div>
 
               {/* CONTAINER 60 */}
@@ -80,7 +84,19 @@ export default function CardTransport() {
                           height={16}
                           alt="card baggage"
                         />{" "}
-                        4 maletas
+                        {transport.hand_suitcase} equipaje de mano
+                      </div>
+
+                      {/* BAGGAGE */}
+                      <div className="text-fs-14 flex">
+                        <img
+                          className="mr-[5px]"
+                          src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`}
+                          width={16}
+                          height={16}
+                          alt="card baggage"
+                        />{" "}
+                        {transport.large_suitcase} maletas
                       </div>
                     </div>
                   </div>

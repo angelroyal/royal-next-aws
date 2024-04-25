@@ -30,8 +30,6 @@ export default function FiltersHotels({listing=false}) {
         .filter((item) => item.checked)
         .map((item) => item.value);
     });
-    console.log(newSelectedFilters);
-
     setSelectedFilters(newSelectedFilters);
   }, [filters]);
 

@@ -8,47 +8,50 @@ export default function FilterTransport() {
   const [filters, setFilters] = useState(filterDataTransport);
   const { setSelectedFilters } = useContext(ListingTransportContext);
 
-  const updateSelectedFilters = () => {
+  useEffect(() => {
     const newSelectedFilters = {};
-    filters.forEach((category) => {
-      newSelectedFilters[category.name.toLowerCase()] = category.options
+    filters.forEach((filterGroup) => {
+      newSelectedFilters[filterGroup.name.toLowerCase()] = filterGroup.options
         .filter((option) => option.checked)
         .map((option) => option.value);
     });
     setSelectedFilters(newSelectedFilters);
-  };
-
-  useEffect(() => {
-    updateSelectedFilters();
-  }, [filters]);
+  }, [filters, setSelectedFilters]);
 
   const handleCheckboxChange = (categoryIndex, optionIndex) => {
-    const newFilters = filters.map((category, idx) => {
-      if (idx === categoryIndex) {
-        const isCurrentlyChecked = category.options[optionIndex].checked;
-        const isAllOption = category.options[optionIndex].value === -1;
-        return {
-          ...category,
-          options: category.options.map((option, i) => {
-            if (isAllOption) {
-              return i === optionIndex
-                ? { ...option, checked: !isCurrentlyChecked }
-                : { ...option, checked: false };
+    setFilters((prevFilters) => {
+      return prevFilters.map((category, idx) => {
+        if (idx === categoryIndex) {
+          const optionsUpdated = category.options.map((option, i) => {
+            if (optionIndex === i) {
+              return { ...option, checked: !option.checked };
+            } else if (category.options[optionIndex].value === -1) {
+              return { ...option, checked: false };
             } else {
-              return i === optionIndex
-                ? { ...option, checked: !option.checked }
-                : option.value === -1
+              return option.value === -1
                 ? { ...option, checked: false }
                 : option;
             }
-          }),
-        };
-      }
-      return category;
-    });
-    setFilters(newFilters);
-  };
+          });
 
+          // Ensure at least 'Todos' is checked if no other option is selected
+          const noOptionSelected = !optionsUpdated.some(
+            (option) => option.checked && option.value !== -1
+          );
+          if (noOptionSelected) {
+            optionsUpdated.forEach((option, i) => {
+              if (option.value === -1) {
+                optionsUpdated[i] = { ...option, checked: true };
+              }
+            });
+          }
+
+          return { ...category, options: optionsUpdated };
+        }
+        return category;
+      });
+    });
+  };
   return (
     <>
       <PriceTransport />

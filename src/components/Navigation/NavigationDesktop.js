@@ -26,10 +26,10 @@ export default function NavigationDesktop() {
   }, [routerActual]);
 
   return (
-    <div className="relative md:top-[-22px] mt-[38px] md:mt-0">
+    <div className="relative md:top-[-22px] mt-[38px] md:mt-0 max-sm:mt-[20px]">
       <Container>
         {/* fix tailwind */}
-        <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem]">
+        <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem] max-sm:pb-0">
           <div className="hidden md:flex justify-end items-center">
             <SelectCurrency />
             <span className="pl-[19px] pr-[19px]">|</span>
@@ -55,6 +55,7 @@ export default function NavigationDesktop() {
                   alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
                   width={200}
                   height={100}
+                  className="max-sm:w-[140px] max-sm:h-[40px]"
                 />
               </Link>
 

@@ -16,7 +16,7 @@ export function TransportBanner() {
         </p>
 
         <button className="rounded-full py-[20px] px-[41px] bg-bl-100 text-white w-max m-s-b text-fs-12 hover:bg-bl-110">
-          {languageData.bannerTransportHome.ChooseDates}
+          {languageData.bannerTransportHome.chooseDates}
         </button>
       </div>
 
