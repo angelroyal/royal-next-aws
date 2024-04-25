@@ -1,21 +1,24 @@
 "use client";
 
 import "swiper/css";
-import Image from "next/image";
 import "swiper/css/navigation";
+import Image from "next/image";
+import { useContext } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../../../assets/styles/general/Swiper.css";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function RecommendedTransport() {
+  const { languageData } = useContext(LanguageContext);
+
   return (
     <>
 
       <div className="relative">
 
         {/* TITLE RECOMMENDED TRANSPORT */}
-        <h2 className='mb-[32px] text-fs-24 m-b'>Opciones recomendadas</h2>
-        {/* TITLE RECOMMENDED TRANSPORT */}
+        <h2 className='mb-[32px] text-fs-24 m-b'>{languageData.CardHomeTransport.titleRecommended}</h2>
 
         <Swiper
           slidesPerView={5}
@@ -60,9 +63,9 @@ export default function RecommendedTransport() {
                 <div className="flex flex-col gap-[16px]">
                   <span className='text-fs-16 m-b mt-[16px]'>Vehiculo Standard</span>
 
-                  {/* CHARACTERISTICS */}
+                  {/* FEATURES */}
                   <div className="flex flex-col gap-[8px]">
-                    <span className='text-gry-100 text-fs-14 m-m'>Caracteristicas</span>
+                    <span className='text-gry-100 text-fs-12 m-m'>{languageData.CardHomeTransport.features}</span>
 
                     <div className='flex flex-wrap mb-[6px] gap-2'>
                       <div className='flex gap-2'>
@@ -88,7 +91,7 @@ export default function RecommendedTransport() {
 
                   {/* MODALITIES */}
                   <div className="flex flex-col gap-[8px]">
-                    <span className='text-gry-100 text-fs-12 m-m'>Modalidades</span>
+                    <span className='text-gry-100 text-fs-12 m-m'>{languageData. modalTour.modalities}</span>
 
                     <div className='flex gap-2 mb-[15.5px]'>
                       <div className='bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12'>Privado</div>
@@ -99,9 +102,9 @@ export default function RecommendedTransport() {
                 {/* NAME TRANSPORT */}
 
                 <div className='flex flex-col gap-2 border-t-2 border-[#EBEBEB] items-center'>
-                  <bottom className='px-[71.5px] py-[14px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit mt-[15.5px] text-nowrap cursor-pointer'>Ver detalles</bottom>
+                  <bottom className='px-[71.5px] py-[14px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit mt-[15.5px] text-nowrap cursor-pointer'>{languageData.cartTour.seeDetails}</bottom>
 
-                  <span className='text-bl-100 text-fs-10'>politicas de cancelacion</span>
+                  <span className='text-bl-100 text-fs-10'>{languageData.containerModalHotel.policies}</span>
                 </div>
               </div>
             </SwiperSlide>
