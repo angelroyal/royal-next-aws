@@ -70,6 +70,7 @@ export default function TourCardItinerary({ itemActivity }) {
   // DAY OF WEEK
   const dayOfWeek = moment(itemActivity.date).format("dddd");
   const url = process.env.REACT_APP_URL_SITE + "/policy";
+  console.log(itemActivity);
 
   return (
     itemActivity && (
@@ -126,17 +127,19 @@ export default function TourCardItinerary({ itemActivity }) {
                       <h2 className="title-card-ini">{itemActivity.title}</h2>
 
                       <div className="cont-name-location-tour gap-2">
-                        <div className="d-flex d-grid gap-2 icon-location-and-text">
-                          <div>
-                            <Image
-                              className="icons-size-m"
-                              src={LocationIcon}
-                              alt="LocationIcon"
-                            />
-                          </div>
+                        {itemActivity.address && (
+                          <div className="d-flex d-grid gap-2 icon-location-and-text">
+                            <div>
+                              <Image
+                                className="icons-size-m"
+                                src={LocationIcon}
+                                alt="LocationIcon"
+                              />
+                            </div>
 
-                          <span>{itemActivity.address}</span>
-                        </div>
+                            <span>{itemActivity.address}</span>
+                          </div>
+                        )}
 
                         <div className="d-flex d-grid gap-2 text-grey-card-hotel-i">
                           <img
@@ -145,15 +148,15 @@ export default function TourCardItinerary({ itemActivity }) {
                             alt="icon-adult"
                           ></img>
                           <span className="text-tour-grey-i-m">
-                            {itemActivity.tourists.map(
-                              (tourist, index) =>
-                                `${tourist.quantity} ${tourist.category}${
-                                  index !== itemActivity.tourists.length - 1
-                                    ? ","
-                                    : ""
-                                } `
-                            )}
-                            {/* 2 adultos, 2 niños */}
+                            {itemActivity.tourists &&
+                              itemActivity.tourists.categories.map(
+                                (tourist, index) =>
+                                  `${tourist.quantity} ${tourist.category}${
+                                    index !== itemActivity.tourists.length - 1
+                                      ? ","
+                                      : ""
+                                  } `
+                              )}
                           </span>
                         </div>
                       </div>
@@ -170,18 +173,19 @@ export default function TourCardItinerary({ itemActivity }) {
                 <div className="cont-location-hours-price-tour-card">
                   {!isMobile && (
                     <div className="cont-name-location-tour">
-                      <div className="d-flex d-grid gap-2 icon-location-and-text">
-                        <div>
-                          <Image
-                            className="icons-size-m"
-                            src={LocationIcon}
-                            alt="LocationIcon"
-                          />
+                      {itemActivity.address && (
+                        <div className="d-flex d-grid gap-2 icon-location-and-text">
+                          <div>
+                            <Image
+                              className="icons-size-m"
+                              src={LocationIcon}
+                              alt="LocationIcon"
+                            />
+                          </div>
+
+                          <span>{itemActivity.address}</span>
                         </div>
-
-                        <span>{itemActivity.address}</span>
-                      </div>
-
+                      )}
                       <div className="d-flex d-grid gap-2 text-grey-card-hotel-i">
                         <img
                           className="icons-size-m"
