@@ -56,6 +56,38 @@ export default async function DetailPageHotel({ params }) {
 
     const hotelData = response.data;
 
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      name: hotelData.name,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: hotelData.address,
+        addressLocality: hotelData.city,
+        addressRegion: hotelData.city,
+        postalCode: "12345",
+        addressCountry: "MX",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 40.712776,
+        longitude: -74.005974,
+      },
+      url: "https://staywuw.com",
+      telephone: "+52 998 134 2286",
+      starRating: {
+        "@type": "Rating",
+        ratingValue: hotelData.stars,
+        bestRating: "5",
+      },
+      checkinTime: hotelData.checkIn,
+      checkoutTime: hotelData.checkOut,
+      numberOfRooms: 150,
+      // priceRange: "$$$",
+      amenities: [...hotelData.facilities],
+      image: [...hotelData.images],
+    };
+
     return (
       <LanguageProvider>
         <TokenProvider>
@@ -65,6 +97,14 @@ export default async function DetailPageHotel({ params }) {
               <Navigation hotelDetails={true} />
               <div className="relative bg-gry-30">
                 <Container>
+                  <section>
+                    <script
+                      type="application/ld+json"
+                      dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(jsonLd),
+                      }}
+                    />
+                  </section>
                   <GalleryModal hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />
                 </Container>
