@@ -12,14 +12,17 @@ import LanguageContext from "../../../../language/LanguageContext";
 export function BannerHomeHotelTop() {
   return (
     <div className="h-[442px] md:h-72 2xl:h-[480px] w-full">
-      <img
-        className="object-cover	w-full h-full object-center select-none"
-        src={BannerConfig.bannerTop.img}
-        alt="banner-top"
-        width="100%"
-        height="100%"
-      />
-    </div>
+    <video
+      className="object-cover w-full h-full object-center select-none"
+      src="https://sandboxmexico.com/assets/test/aEvkEmejemplo.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      Tu navegador no soporta videos.
+    </video>
+  </div>
   );
 }
 
