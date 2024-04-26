@@ -20,7 +20,7 @@ export function AutoCompleteTrans({
     if (event.target.value.length >= 3) {
       setQuery(event.target.value);
     }
-    if (event.target.value.length === 0) {
+    if (event.target.value.length < 3) {
       setResultAutocomplete(null);
       setSelectedAutoComplete(null);
       setQuery("");
