@@ -208,7 +208,7 @@ export function BannerExcDiscounts() {
 
 
       {/* <div className="flex h-[271px] gap-4 w-full  max-xl:h-[227px] max-lg:h-auto overflow-x-auto"> */}
-      <SwiperSlide className="!w-[48%] max-lg:!w-full !bg-gry-30 !bg-white">
+      <SwiperSlide className="!w-[48%] max-lg:!w-full  !bg-white">
         <div className="w-full flex justify-center !bg-white">
           <Image src={excDiscounts} width={547} height={235} className="w-full h-[19rem] rounded-lg object-cover object-center select-none" alt="Banner Exc Discounts" />
           {/* <Image src={excDiscountsMobile} width={332} height={235} className="sm:hidden w-full  rounded-lg object-cover bg-gry-30 !bg-white select-none" alt="Banner Exc Discounts mobile" /> */}

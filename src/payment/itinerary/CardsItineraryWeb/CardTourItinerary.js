@@ -70,7 +70,6 @@ export default function TourCardItinerary({ itemActivity }) {
   // DAY OF WEEK
   const dayOfWeek = moment(itemActivity.date).format("dddd");
   const url = process.env.REACT_APP_URL_SITE + "/policy";
-  console.log(itemActivity);
 
   return (
     itemActivity && (
@@ -129,13 +128,11 @@ export default function TourCardItinerary({ itemActivity }) {
                       <div className="cont-name-location-tour gap-2">
                         {itemActivity.address && (
                           <div className="d-flex d-grid gap-2 icon-location-and-text">
-                            <div>
-                              <Image
-                                className="icons-size-m"
-                                src={LocationIcon}
-                                alt="LocationIcon"
-                              />
-                            </div>
+                            <Image
+                              className="icons-size-m"
+                              src={LocationIcon}
+                              alt="LocationIcon"
+                            />
 
                             <span>{itemActivity.address}</span>
                           </div>
@@ -146,7 +143,7 @@ export default function TourCardItinerary({ itemActivity }) {
                             className="icons-size-m"
                             src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
                             alt="icon-adult"
-                          ></img>
+                          />
                           <span className="text-tour-grey-i-m">
                             {itemActivity.tourists &&
                               itemActivity.tourists.categories.map(
