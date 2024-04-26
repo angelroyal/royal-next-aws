@@ -18,7 +18,7 @@ export const filterDataTransport = [
       { label: "5", value: 5, checked: false },
       { label: "6", value: 6, checked: false },
       { label: "7", value: 7, checked: false },
-      { label: "8", value: 8, checked: false },
+      { label: "+ 8" , value: 8, checked: false },
     ],
   },
   {
@@ -32,7 +32,7 @@ export const filterDataTransport = [
       { label: "5", value: 5, checked: false },
       { label: "6", value: 6, checked: false },
       { label: "7", value: 7, checked: false },
-      { label: "8", value: 8, checked: false },
+      { label: "+ 8", value: 8, checked: false },
     ],
   },
 ];

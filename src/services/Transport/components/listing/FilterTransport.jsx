@@ -3,10 +3,15 @@ import React, { useState, useEffect, useContext } from "react";
 import PriceTransport from "./PriceTransport";
 import { filterDataTransport } from "../../config/filterDataTransport";
 import ListingTransportContext from "../../context/ListingTransportContext";
+import LanguageContext from "@/language/LanguageContext";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 export default function FilterTransport() {
   const [filters, setFilters] = useState(filterDataTransport);
   const { setSelectedFilters } = useContext(ListingTransportContext);
+  const { languageData } = useContext(LanguageContext);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     const newSelectedFilters = {};
@@ -54,31 +59,64 @@ export default function FilterTransport() {
   };
   return (
     <>
-      <PriceTransport />
-      <div className="p-4">
-        {filters.map((category, categoryIndex) => (
-          <div key={category.name} className="mb-4">
-            <h3 className="font-bold">{category.name}</h3>
-            <div className="flex flex-wrap gap-2">
-              {category.options.map((option, optionIndex) => (
-                <label
-                  key={option.label}
-                  className="inline-flex items-center space-x-2"
-                >
-                  <input
-                    type="checkbox"
-                    checked={option.checked}
-                    onChange={() =>
-                      handleCheckboxChange(categoryIndex, optionIndex)
-                    }
-                    className="form-checkbox h-5 w-5 text-blue-600"
-                  />
-                  <span>{option.label}</span>
-                </label>
-              ))}
+      <div className="mt-4 p-6 border border-[#EBEBEB] rounded-md bg-white">
+        {/*TEXT FILTER RESULT AND BTN RESET */}
+        <div className="flex justify-between mb-[12.5px]">
+          <span className="text-fs-16 m-b">
+            {languageData.titlesFilterTour.filterResults}
+          </span>
+          <button className="text-bl-100 text-fs-12 m-s-b">
+            {languageData.titlesFilterTour.reset}
+          </button>
+        </div>
+
+        <div className="border-t w-full mb-[12.5px]"></div>
+        {/* ACCORDION  RANGE PRICE */}
+        <PriceTransport />
+        {/*END ACCORDION  RANGE PRICE */}
+        <div className="border-t w-full mb-[12.5px] mt-[12.5px]"></div>
+
+        <div className="">
+          {filters.map((category, categoryIndex) => (
+            <div key={category.name} className="mb-4">
+              <Disclosure defaultOpen={isOpen}>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                      <span className="m-s-b text-fs-14">
+                        <h3 className="font-bold">{category.name}</h3>
+                      </span>
+                      <ChevronUpIcon
+                        className={`${open ? "rotate-180 transform" : ""} h-5 w-5`}
+                      />
+                    </Disclosure.Button>
+
+                    <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
+                      <div className={`${category.name === "category" ?'flex flex-col gap-2': "grid grid-cols-3 gap-2"}`}>
+                        {category.options.map((option, optionIndex) => (
+                          <label
+                            key={option.label}
+                            className="inline-flex items-center space-x-2"
+                          >
+                            <input
+                              type="checkbox"
+                              checked={option.checked}
+                              onChange={() =>
+                                handleCheckboxChange(categoryIndex, optionIndex)
+                              }
+                              className="form-checkbox h-5 w-5 text-blue-600 cursor-pointer"
+                            />
+                            <span className="m-m text-fs-12 cursor-pointer text-black">{option.label}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
