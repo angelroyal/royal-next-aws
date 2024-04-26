@@ -46,7 +46,8 @@ export function SearchDestinationA({
   const handleLetter = (event) => {
     if (event.target.value !== "") {
       setQuery(event.target.value);
-    } else {
+    } 
+    if(event.target.value.length < 3) {
       setQuery("");
       setSelectDestinationA(null);
       setSelectDestinationB(null);
