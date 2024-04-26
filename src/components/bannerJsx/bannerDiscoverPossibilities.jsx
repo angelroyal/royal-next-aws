@@ -10,7 +10,7 @@ export default function BannerDiscoverPossibilities() {
             <img src={ `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-baggage.jpg`} alt='banner baggage' className='w-full max-lg:hidden select-none'/>
             <img src={ `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-baggage-mobile.jpg`} alt='banner baggage mobile' className='lg:hidden w-full h-[822px] select-none'/>
 
-            <div className='absolute flex flex-col ml-[92px] max-lg:mx-[40px] max-lg:mt-[90px] max-sm:mt-[40px]'>
+            <div className='absolute flex flex-col ml-[60px] max-lg:mx-[40px] max-lg:mt-[90px] max-sm:mt-[40px]'>
                 <h2 className='m-b text-fs-34 '>{languageData.bannerTransportHome.discoverOptions}</h2>
                 <span className='m-s-b text-fs-16 w-[70%] mt-[10px]'>{languageData.bannerTransportHome.getKnowBetter}</span>
 

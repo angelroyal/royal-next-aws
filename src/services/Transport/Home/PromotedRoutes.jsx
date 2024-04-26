@@ -72,7 +72,7 @@ export default function
       </div>
 
       {/* CARDS TRANSPORT DESKTOP*/}
-      <div className='flex gap-4 flex-wrap max-lg:hidden'>
+      <div className='flex gap-4 flex-wrap max-lg:hidden justify-between'>
         {[...Array(8)].map((_, index) => (
           <div key={index} className='flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white w-[260px]'>
             <PromotedRoutesCard key={index} />

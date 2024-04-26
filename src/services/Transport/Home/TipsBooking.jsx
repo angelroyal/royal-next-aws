@@ -9,7 +9,7 @@ export default function TipsBooking() {
         <div className='flex flex-col items-center my-32'>
             <h3 className='m-b text-fs-24 max-sm:text-center'>{languageData.tipsBooking.titleBookSteps}</h3>
 
-            <div className='flex gap-[16px] max-md:flex-col overflow-x-clip scroll-page-gry'>
+            <div className='flex gap-[16px] max-md:flex-col overflow-x-clip scroll-page-gry max-[991px]:gap-0'>
 
                 {/* LOCATION */}
                 <div className='flex flex-col p-[20px] items-center  w-[165px]'>
@@ -28,7 +28,10 @@ export default function TipsBooking() {
                 </div>
 
                 {/* LINE TOP DASHED */}
-                <div className=' w-[116px] h-[109px] border-dashed border-t-4 border-gry-50 rounded-full mt-[43px] max-md:mt-0 max-md:border-r-4 max-md:border-t-0'></div>
+                {/* <div className=' w-[116px] h-[109px] border-dashed border-t-4 border-gry-50 rounded-full mt-[43px] max-md:mt-0 max-md:border-r-4 max-md:border-t-0'></div> */}
+                <img src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-up.svg`} alt='icon-dashed-up' className='pb-[6rem] max-md:hidden max-[991px]:w-[80px]' />
+                <img src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-right.svg`} alt='icon-dashed-right' className='md:hidden w-[30px] ml-[73px]' />
+
 
                 {/* CALENDAR */}
                 <div className='flex flex-col p-[20px] items-center w-[165px]'>
@@ -47,7 +50,9 @@ export default function TipsBooking() {
                 </div>
 
                 {/* LINE BOTTOM DASHED */}
-                <div className=' w-[116px] border-dashed border-b-4 border-gry-50 rounded-full h-[109px] max-md:border-l-4 max-md:border-b-0 max-md:ml-[47px]'></div>
+                {/* <div className=' w-[116px] border-dashed border-b-4 border-gry-50 rounded-full h-[109px] max-md:border-l-4 max-md:border-b-0 max-md:ml-[47px]'></div> */}
+                <img src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-down.svg`} alt='icon-dashed-down' className='pb-[5.5rem] max-md:hidden max-[991px]:w-[80px]' />
+                <img src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-left.svg`} alt='icon-dashed-left' className='md:hidden w-[30px] ml-[45px] ' />
 
                 {/* AIRPORT */}
                 <div className='flex flex-col p-[20px] items-center w-[165px]'>
