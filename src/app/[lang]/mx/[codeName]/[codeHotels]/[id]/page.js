@@ -60,6 +60,7 @@ export default async function DetailPageHotel({ params }) {
       "@context": "https://schema.org",
       "@type": "Hotel",
       name: hotelData.name,
+      description: hotelData.description,
       address: {
         "@type": "PostalAddress",
         streetAddress: hotelData.address,
@@ -83,8 +84,13 @@ export default async function DetailPageHotel({ params }) {
       checkinTime: hotelData.checkIn,
       checkoutTime: hotelData.checkOut,
       numberOfRooms: 150,
-      // priceRange: "$$$",
-      amenities: [...hotelData.facilities],
+      additionalProperty: [
+        {
+          "@type": "PropertyValue",
+          name: "Amenidades",
+          value: hotelData.facilities.join(", "),
+        },
+      ],
       image: [...hotelData.images],
     };
 
