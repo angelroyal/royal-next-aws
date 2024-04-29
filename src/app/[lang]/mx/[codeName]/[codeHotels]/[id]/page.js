@@ -58,34 +58,38 @@ export default async function DetailPageHotel({ params }) {
 
     const jsonLd = {
       "@context": "https://schema.org",
-      "@type": "Hotel",
-      name: hotelData.name,
+      "@type": "Apartment",
+      name: "227  Lynn Street - Medium apartment",
+      description:
+        "Great downtown accommodation for family or group of friends.",
+      numberOfRooms: 3,
+      occupancy: {
+        "@type": "QuantitativeValue",
+        minValue: 1,
+        maxValue: 4,
+      },
+      floorLevel: "5",
+      floorSize: {
+        "@type": "QuantitativeValue",
+        value: 81,
+        unitCode: "MTK",
+      },
+      numberOfBathroomsTotal: 2,
+      numberOfBedrooms: 2,
+      petsAllowed: true,
+      tourBookingPage: "http://example.com",
+      yearBuilt: 2005,
+      telephone: "+1-617-312-9783",
       address: {
         "@type": "PostalAddress",
-        streetAddress: hotelData.address,
-        addressLocality: hotelData.city,
-        addressRegion: hotelData.city,
-        postalCode: "12345",
-        addressCountry: "MX",
+        addressCountry: "US",
+        addressLocality: "West Roxbury",
+        addressRegion: "MA",
+        postalCode: "02132",
+        streetAddress: "227  Lynn Street",
       },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 40.712776,
-        longitude: -74.005974,
-      },
-      url: "https://staywuw.com",
-      telephone: "+52 998 134 2286",
-      starRating: {
-        "@type": "Rating",
-        ratingValue: hotelData.stars,
-        bestRating: "5",
-      },
-      checkinTime: hotelData.checkIn,
-      checkoutTime: hotelData.checkOut,
-      numberOfRooms: 150,
-      // priceRange: "$$$",
-      amenities: [...hotelData.facilities],
-      image: [...hotelData.images],
+      latitude: 42.2742,
+      longitude: -71.143,
     };
 
     return (
