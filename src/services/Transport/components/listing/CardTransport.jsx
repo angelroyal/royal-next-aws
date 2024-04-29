@@ -6,12 +6,17 @@ import React, { useContext, useState } from "react";
 
 import ListingTransportContext from "../../context/ListingTransportContext";
 import CancelPolicyTransport from "../ToulTip/CancelPolicyTransport";
-
+import ModalTransport from "../modal/ModalTransport";
 export default function CardTransport() {
+  const [openModal, setOpenModal] = useState(false);
   const { dataTransportF } = useContext(ListingTransportContext);
   const [openPolicy, setOpenPolicy] = useState(null);
-  // console.log(dataTransportF);
-
+  console.log(dataTransportF);
+  const [cartPosition, setCartPosition] = useState(null);
+  const openCartDetails = (index) => {
+    setCartPosition(index);
+    setOpenModal(!openModal)
+  }
   return (
     <>
       {dataTransportF &&
@@ -49,7 +54,7 @@ export default function CardTransport() {
                         </span>
                       </div>
 
-                      <div class="flex gap-3">
+                      <div className="flex gap-3">
 
                         <div className="flex flex-col gap-2">
                           {/* PEOPLES */}
@@ -142,7 +147,17 @@ export default function CardTransport() {
                     </div>
                   </div>
 
-                  <button className="bg-yw-100 py-[10px] px-[50px] rounded-full m-b text-fs-12 hover:bg-yw-110 max-sm:px-[20px]">Reservar</button>
+                  <button
+                    className="bg-yw-100 py-[10px] px-[50px] rounded-full m-b text-fs-12 hover:bg-yw-110 max-sm:px-[20px]"
+                    onClick={() =>
+                      openCartDetails(index)}
+
+
+                  >Reservar</button>
+
+                  {openModal && cartPosition === index && <ModalTransport />}
+                  {/* {openModal && <ModalTransport closeModal={() => setOpenModal(false)} />} */}
+
                 </div>
               </div>
             </div>
