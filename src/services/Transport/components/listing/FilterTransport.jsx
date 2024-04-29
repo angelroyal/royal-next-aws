@@ -65,20 +65,22 @@ export default function FilterTransport() {
           <span className="text-fs-16 m-b">
             {languageData.titlesFilterTour.filterResults}
           </span>
+
           <button className="text-bl-100 text-fs-12 m-s-b">
             {languageData.titlesFilterTour.reset}
           </button>
         </div>
 
-        <div className="border-t w-full mb-[12.5px]"></div>
+        <div className="border-t w-full mb-[12.5px]" />
+
         {/* ACCORDION  RANGE PRICE */}
         <PriceTransport />
         {/*END ACCORDION  RANGE PRICE */}
-        <div className="border-t w-full mb-[12.5px] mt-[12.5px]"></div>
+        <div className="border-t w-full mb-[12.5px] mt-[12.5px]" />
 
-        <div className="">
-          {filters.map((category, categoryIndex) => (
-            <div key={category.name} className="mb-4">
+        {filters.map((category, categoryIndex) => (
+          <>
+            <div key={category.name}>
               <Disclosure defaultOpen={isOpen}>
                 {({ open }) => (
                   <>
@@ -123,8 +125,13 @@ export default function FilterTransport() {
                 )}
               </Disclosure>
             </div>
-          ))}
-        </div>
+            {categoryIndex === filters.length - 1 ? (
+              ""
+            ) : (
+              <div className="border-t w-full mb-[12.5px] mt-[12.5px]" />
+            )}
+          </>
+        ))}
       </div>
     </>
   );
