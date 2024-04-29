@@ -50,7 +50,7 @@ export default function CartOpen() {
   };
 
   return (
-    <div ref={ref} className="relative cursor-pointer">
+    <div ref={ref} className="relative cursor-pointer ml-[20px]">
       {totalItemsInCart ? (
         <div
           className="!m-0 flex relative"
