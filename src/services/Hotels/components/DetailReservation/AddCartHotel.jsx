@@ -37,7 +37,7 @@ export default function AddCartHotel() {
           rateCode: room.rateKey,
           roomCode: room.code,
           adults: room.adults,
-          children: room.children || [],
+          children: room.childrenAges || [],
           price: room.netPrice,
           boardCode: room.boardCode,
           hash: room.hash,
