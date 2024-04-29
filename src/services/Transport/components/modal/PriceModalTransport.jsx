@@ -7,16 +7,17 @@ import CancelPolicyTransport from '../ToulTip/CancelPolicyTransport'
 export default function PriceModalTransport() {
 
   const [openPolicy, setOpenPolicy] = useState(false);
+  const [changePrivate, setChangePrivate] = useState(true);
 
   return (
-    <div className='py-[48px] pr-[48px]'>
+    <div className='py-[48px] pr-[48px] max-md:py-[20px] max-md:px-[20px]'>
       <div className='m-[16px] '>
         {/* CART VEHICLE*/}
-        <div className='border border-[#ebebeb] rounded-lg p-[16px] mb-[24px] flex flex-col gap-[8px]'>
+        <div className='border border-[#ebebeb] rounded-lg p-[16px] mb-[24px] flex flex-col gap-[8px] max-w-[297px]'>
           <span className='m-s-b text-fs-20 '>Vehículo Standard Buss Lorem Ipsum</span>
 
           <div className='py-[8px] px-[16px] text-white bg-black rounded-full w-fit text-fs-12'>compartido</div>
-          <img src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} alt='img-transport'></img>
+          <img src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} alt='img-transport' className='max-w-[265px] max-h-[150px] object-cover'></img>
 
           <div className='flex flex-wrap gap-[8px]'>
 
@@ -54,7 +55,11 @@ export default function PriceModalTransport() {
           </div>
 
           <div className='bg-grn-30 py-[8px] px-[15px] rounded-bl-lg'>
-            <span className='text-grn-100 m-s-b text-fs-12'>El precio total se calcula sumando el costo individual de cada pasajero.</span>
+            {changePrivate === true ?
+              <span className='text-grn-100 m-s-b text-fs-12'>El precio incluye la tarifa para cuatro pasajeros.</span>
+              :
+              <span className='text-grn-100 m-s-b text-fs-12'>El precio total se calcula sumando el costo individual de cada pasajero.</span>}
+
           </div>
         </div>
 

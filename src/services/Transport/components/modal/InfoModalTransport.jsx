@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function InfoModalTransport() {
+  const [changePrivate, setChangePrivate] = useState(true);
+
   return (
-    <div className='py-[48px] pl-[48px] flex flex-col gap-2'>
+    <div className='py-[48px] pl-[48px] flex flex-col gap-2 w-[324px] max-md:pb-[20px] max-md:pr-[20px]'>
       {/* TITLE */}
       <h3 className='text-fs-24 m-b mb-[36px]'>Reservar transporte</h3>
 
@@ -16,7 +18,7 @@ export default function InfoModalTransport() {
       {/* FROM , TO */}
       <span className='text-gry-100 text-fs-12 m-s-b'>Desde</span>
 
-      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] w-[324px] mb-[16px]">
+      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[324px] mb-[16px]">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
           alt="Location Icon"
@@ -34,7 +36,7 @@ export default function InfoModalTransport() {
 
       <span className='text-gry-100 text-fs-12 m-s-b'>Hacia</span>
 
-      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] w-[324px]  mb-[16px]">
+      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[324px]  mb-[16px]">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
           alt="Location Icon"
@@ -112,11 +114,15 @@ export default function InfoModalTransport() {
 
         </div>
 
-        <div className='flex gap-1 items-center'>
-          <span className='text-fs-12 m-m'>Precio individual: </span>
-          <span className='text-fs-12 m-b text-bl-100'>MXN</span>
-          <span className='text-fs-14 m-b text-bl-100'>$5,000</span>
-        </div>
+        {changePrivate === true &&
+          <div className='flex gap-1 items-center'>
+            <span className='text-fs-12 m-m'>Precio individual: </span>
+            <span className='text-fs-12 m-b text-bl-100'>MXN</span>
+            <span className='text-fs-14 m-b text-bl-100'>$5,000</span>
+          </div>
+        }
+
+
       </div>
 
     </div>
