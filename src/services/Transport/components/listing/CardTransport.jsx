@@ -10,7 +10,7 @@ import CancelPolicyTransport from "../ToulTip/CancelPolicyTransport";
 export default function CardTransport() {
   const { dataTransportF } = useContext(ListingTransportContext);
   const [openPolicy, setOpenPolicy] = useState(null);
-  console.log(dataTransportF);
+  // console.log(dataTransportF);
 
   return (
     <>
