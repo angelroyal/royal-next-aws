@@ -14,7 +14,6 @@ export async function generateMetadata({ searchParams }) {
       `v1/transports/destinations/${searchParams.destinationId}/zones/${searchParams.zoneFromId}/${searchParams.zoneToId}/vehicles`
     );
     const transportData = response.data;
-    console.log(transportData);
 
     return {
       title: `Transporte - StayWuw`,

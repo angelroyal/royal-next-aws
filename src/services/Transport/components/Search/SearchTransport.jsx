@@ -68,6 +68,7 @@ export default function SearchTransport({ isListing = false }) {
       )}
 
       <AutoCompleteTrans
+        isListing={isListing}
         selectedAutoComplete={selectedAutoComplete}
         setSelectedAutoComplete={setSelectedAutoComplete}
         setSelectDestinationA={setSelectDestinationA}
@@ -75,6 +76,7 @@ export default function SearchTransport({ isListing = false }) {
       />
 
       <SearchDestinationA
+        isListing={isListing}
         selectedAutoComplete={selectedAutoComplete}
         setSelectDestinationA={setSelectDestinationA}
         selectDestinationA={selectDestinationA}
@@ -83,6 +85,7 @@ export default function SearchTransport({ isListing = false }) {
       />
 
       <SearchDestinationB
+        isListing={isListing}
         selectDestinationA={selectDestinationA}
         selectDestinationB={selectDestinationB}
         setSelectDestinationB={setSelectDestinationB}

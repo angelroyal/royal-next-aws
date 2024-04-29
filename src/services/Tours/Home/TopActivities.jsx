@@ -4,7 +4,6 @@ import { Rating } from "@mui/material";
 import { Image } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
-import { homeRecommendedTour } from "@/config/Others/HomeRecommendedTour";
 
 import "swiper/css";
 import axios from "axios";
@@ -13,7 +12,6 @@ import moment from "moment/moment";
 
 export default function TopActivities() {
   const { languageData, language } = useContext(LanguageContext);
-  // const tour = (homeRecommendedTour);
 
   const [tours, setTours] = useState([]);
   useEffect(() => {

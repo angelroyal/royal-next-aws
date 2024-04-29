@@ -20,15 +20,19 @@ export default function RoomMenu(props) {
     onClose,
   } = props;
   const [rooms, setRooms] = useState([{ adult: 2, child: 0, ages: [] }]);
-  const [totalPeople, setTotalPeople] = useState(
-    localStorage.getItem(isModal ? "totalPeopleSecondary" : "totalPeople") || 2
-  );
+  const [totalPeople, setTotalPeople] = useState(2);
 
   const { languageData } = useContext(LanguageContext);
 
   const [ageError, setAgeError] = useState(false);
 
   useEffect(() => {
+    const storedTotalPeople = localStorage.getItem(
+      isModal ? "totalPeopleSecondary" : "totalPeople"
+    );
+    if (storedTotalPeople) {
+      setTotalPeople(storedTotalPeople);
+    }
     const roomData = JSON.parse(localStorage.getItem("roomData"));
     const roomDataModal = JSON.parse(localStorage.getItem("roomDataSecondary"));
     if (isModal) {
@@ -96,7 +100,7 @@ export default function RoomMenu(props) {
   const addRoom = () => {
     if (rooms.length < 10) {
       setRooms([...rooms, { adult: 1, child: 0, ages: [] }]);
-      
+
       setTimeout(() => {
         const roomsContainer = document.getElementById("roomsContainer");
         roomsContainer.scrollTop = roomsContainer.scrollHeight; // scroll container
@@ -201,11 +205,8 @@ export default function RoomMenu(props) {
       leaveTo="transform opacity-0 scale-95"
     >
       <Menu.Items className="absolute right-0 z-[2] mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-        <Menu.Item  id="roomsContainer">
-          <div
-            className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg"
-           
-          >
+        <Menu.Item id="roomsContainer">
+          <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg">
             <div className="pt-4 pl-3 pr-3 z-10">
               {rooms.map((room, index) => (
                 <div
