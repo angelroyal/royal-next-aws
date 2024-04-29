@@ -62,7 +62,7 @@ export default function AddCartHotel() {
       setTimeout(() => {
         // router.push(`${language}/booking?uid=${cartUid}`);
         router.push(`/${language}/booking?uid=${cartUid}`);
-      }, 1000);
+      }, 1500);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
