@@ -5,6 +5,7 @@ import LanguageContext from "@/language/LanguageContext";
 import { Combobox } from "@headlessui/react";
 
 export function SearchDestinationB({
+  isListing,
   selectDestinationA,
   selectDestinationB,
   setSelectDestinationB,
@@ -92,10 +93,14 @@ export function SearchDestinationB({
       as="div"
       value={selectDestinationB}
       onChange={setSelectDestinationB}
-      className="max-lg:w-full"
+      className={`${isListing ? "w-full" : "max-lg:w-full"}`}
     >
       <div className="relative">
-        <Combobox.Button className="focus:outline-none max-lg:w-full">
+        <Combobox.Button
+          className={`${
+            isListing ? "w-full" : "max-lg:w-full"
+          } focus:outline-none`}
+        >
           <img
             className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
             width="16px"
@@ -109,7 +114,9 @@ export function SearchDestinationB({
           </p>
 
           <Combobox.Input
-            className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12`}
+            className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12 ${
+              isListing ? "w-full" : "w-full lg:w-[290px]"
+            }`}
             onChange={(event) => handleLetter(event)}
             displayValue={(related) => related?.label}
             placeholder={languageData.SearchBox.tabHotel.textDestination}
