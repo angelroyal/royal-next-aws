@@ -12,7 +12,11 @@ export default function CardTransport() {
   const { dataTransportF } = useContext(ListingTransportContext);
   const [openPolicy, setOpenPolicy] = useState(null);
   console.log(dataTransportF);
-
+  const [cartPosition, setCartPosition] = useState(null);
+  const openCartDetails = (index) => {
+    setCartPosition(index);
+    setOpenModal(!openModal)
+  }
   return (
     <>
       {dataTransportF &&
@@ -50,7 +54,7 @@ export default function CardTransport() {
                         </span>
                       </div>
 
-                      <div class="flex gap-3">
+                      <div className="flex gap-3">
 
                         <div className="flex flex-col gap-2">
                           {/* PEOPLES */}
@@ -145,13 +149,13 @@ export default function CardTransport() {
 
                   <button
                     className="bg-yw-100 py-[10px] px-[50px] rounded-full m-b text-fs-12 hover:bg-yw-110 max-sm:px-[20px]"
-                    onClick={() => {
-                      setOpenModal(!openModal);
-                    }}
+                    onClick={() =>
+                      openCartDetails(index)}
+
 
                   >Reservar</button>
 
-                  {openModal && <ModalTransport />}
+                  {openModal && cartPosition === index && <ModalTransport />}
                   {/* {openModal && <ModalTransport closeModal={() => setOpenModal(false)} />} */}
 
                 </div>
