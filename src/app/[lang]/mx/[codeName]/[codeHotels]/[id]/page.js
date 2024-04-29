@@ -15,38 +15,38 @@ import DetailReservation from "@/services/Hotels/components/DetailReservation/De
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
-// export async function generateMetadata({ params }) {
-//   try {
-//     // METHOD AXIOS
-//     const response = await axiosWithInterceptor.get(
-//       `v1/hotels/${params.id}/rooms`
-//     );
+export async function generateMetadata({ params }) {
+  try {
+    // METHOD AXIOS
+    const response = await axiosWithInterceptor.get(
+      `v1/hotels/${params.id}/rooms`
+    );
 
-//     // METADATA DETAIL HOTEL
-//     const hotelMetaData = response.data;
+    // METADATA DETAIL HOTEL
+    const hotelMetaData = response.data;
 
-//     return {
-//       title: `${hotelMetaData.name} - StayWuw`,
-//       description: `${hotelMetaData.description}`,
-//       address: hotelMetaData.address,
-//       city: hotelMetaData.city,
-//       destination: hotelMetaData.destination,
-//       checkIn: hotelMetaData.checkIn,
-//       checkOut: hotelMetaData.checkOut,
-//       stars: hotelMetaData.stars,
-//       facilities: hotelMetaData.facilities.join(", "),
-//       breakfastIncluded: hotelMetaData.breakfast ? "Yes" : "No",
-//       exclusiveDeal: hotelMetaData.exclusiveDeal
-//         ? `Exclusive Deal: ${hotelMetaData.exclusiveDeal}`
-//         : "No Exclusive Deals",
-//       images: hotelMetaData.images.slice(0, 6),
-//     };
-//   } catch (error) {
-//     console.error("Error fetching hotel metadata:", error);
-//     // Handle error here
-//     return null;
-//   }
-// }
+    return {
+      title: `${hotelMetaData.name} - StayWuw`,
+      description: `${hotelMetaData.description}`,
+      address: hotelMetaData.address,
+      city: hotelMetaData.city,
+      destination: hotelMetaData.destination,
+      checkIn: hotelMetaData.checkIn,
+      checkOut: hotelMetaData.checkOut,
+      stars: hotelMetaData.stars,
+      facilities: hotelMetaData.facilities.join(", "),
+      breakfastIncluded: hotelMetaData.breakfast ? "Yes" : "No",
+      exclusiveDeal: hotelMetaData.exclusiveDeal
+        ? `Exclusive Deal: ${hotelMetaData.exclusiveDeal}`
+        : "No Exclusive Deals",
+      images: hotelMetaData.images.slice(0, 6),
+    };
+  } catch (error) {
+    console.error("Error fetching hotel metadata:", error);
+    // Handle error here
+    return null;
+  }
+}
 
 export default async function DetailPageHotel({ params }) {
   try {
@@ -56,7 +56,37 @@ export default async function DetailPageHotel({ params }) {
 
     const hotelData = response.data;
 
-
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      name: hotelData.name,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: hotelData.address,
+        addressLocality: hotelData.city,
+        addressRegion: hotelData.city,
+        postalCode: "12345",
+        addressCountry: "MX",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 40.712776,
+        longitude: -74.005974,
+      },
+      url: "https://staywuw.com",
+      telephone: "+52 998 134 2286",
+      starRating: {
+        "@type": "Rating",
+        ratingValue: hotelData.stars,
+        bestRating: "5",
+      },
+      checkinTime: hotelData.checkIn,
+      checkoutTime: hotelData.checkOut,
+      numberOfRooms: 150,
+      // priceRange: "$$$",
+      amenities: [...hotelData.facilities],
+      image: [...hotelData.images],
+    };
 
     return (
       <LanguageProvider>
@@ -67,7 +97,14 @@ export default async function DetailPageHotel({ params }) {
               <Navigation hotelDetails={true} />
               <div className="relative bg-gry-30">
                 <Container>
-                
+                  <section>
+                    <script
+                      type="application/ld+json"
+                      dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(jsonLd),
+                      }}
+                    />
+                  </section>
                   <GalleryModal hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />
                 </Container>
@@ -82,7 +119,16 @@ export default async function DetailPageHotel({ params }) {
     );
   } catch (error) {
     return (
-      <div>hola esto es un error</div>
+      <LanguageProvider>
+        <TokenProvider>
+          <CartAxiosProvider>
+            <Token />
+            <Navigation hotelDetails={true} />
+            <Page404 />
+            <Footer />
+          </CartAxiosProvider>
+        </TokenProvider>
+      </LanguageProvider>
     );
   }
 }
