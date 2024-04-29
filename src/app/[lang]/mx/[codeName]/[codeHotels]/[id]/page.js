@@ -49,6 +49,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function DetailPageHotel({ params }) {
+  console.log(params);
   try {
     const response = await axiosWithInterceptor.get(
       `v1/hotels/${params.id}/rooms`
@@ -74,7 +75,7 @@ export default async function DetailPageHotel({ params }) {
         latitude: 40.712776,
         longitude: -74.005974,
       },
-      url: "https://staywuw.com",
+      url: `https://staywuw.com/en/mx/${params.codeName}/${params.codeHotels}/${params.id}`,
       telephone: "+52 998 134 2286",
       starRating: {
         "@type": "Rating",
