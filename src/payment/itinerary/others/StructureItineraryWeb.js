@@ -6,7 +6,6 @@ import CardHotelConfirmation from "@/payment/Confirmation/CardHotelConfirmation"
 import CardMovingItinerary from "../CardsItineraryWeb/CardMovingItinerary";
 import CardTourItinerary from "../../../payment/itinerary/CardsItineraryWeb/CardTourItinerary";
 
-
 export default function StructureItineraryWeb(props) {
   const { dataItinerary } = props;
   const { step } = useContext(StepperContext);
@@ -16,7 +15,7 @@ export default function StructureItineraryWeb(props) {
       {" "}
       {dataItinerary.items.map((item, index) => {
         if (item.type === "transport") {
-          return <CardMovingItinerary key={index} itemMoving={item} />;
+          return <CardMovingItinerary />;
         } else if (item.type === "activity") {
           return (
             <div key={index}>
@@ -33,7 +32,10 @@ export default function StructureItineraryWeb(props) {
             <div key={index}>
               {
                 step === 1 ? (
-                  <CardHotelItinerary itemHotel={item} />
+                  <>
+                    <CardHotelItinerary itemHotel={item} />
+                    {/* <CardMovingItinerary /> */}
+                  </>
                 ) : (
                   <CardHotelConfirmation itemHotel={item} />
                   // <div>test</div>
