@@ -8,6 +8,7 @@ import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 // import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import ListingTransportContext from "../../context/ListingTransportContext";
 import OrderingTransport from "./OrderingTransport";
+import SearchTransport from "../Search/SearchTransport";
 
 export default function ListingTransport(props) {
   const { data } = props;
@@ -20,6 +21,7 @@ export default function ListingTransport(props) {
       <div className="flex flex-col xl:flex-row md:justify-between">
         <div className="w-full xl:w-[24%] mt-10">
           {/* <SearchBoxMobile /> */}
+          <SearchTransport isListing={true}/>
           <FilterTransport />
         </div>
 
