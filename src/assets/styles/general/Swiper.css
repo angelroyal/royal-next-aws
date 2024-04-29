@@ -209,3 +209,7 @@
 }
 
 /*END ANIMATION ContactUs.jsx */
+
+.time-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}

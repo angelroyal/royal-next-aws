@@ -16,7 +16,7 @@ export default function PriceModalTransport() {
         <div className='border border-[#ebebeb] rounded-lg p-[16px] mb-[24px] flex flex-col gap-[8px] max-w-[297px]'>
           <span className='m-s-b text-fs-20 '>Vehículo Standard Buss Lorem Ipsum</span>
 
-          <div className='py-[8px] px-[16px] text-white bg-black rounded-full w-fit text-fs-12'>compartido</div>
+          <div className='py-[8px] px-[16px] text-white bg-black rounded-full w-fit text-fs-12'>Compartido</div>
           <img src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`} alt='img-transport' className='max-w-[265px] max-h-[150px] object-cover'></img>
 
           <div className='flex flex-wrap gap-[8px]'>
@@ -65,7 +65,7 @@ export default function PriceModalTransport() {
 
         {/* PRICE */}
         <div className='flex flex-col gap-[8px]'>
-          <div className='flex justify-between'>
+          <div className='flex justify-between items-center'>
             <span className='m-b text-fs-14'>Total:</span>
 
             <span className='m-b text-fs-14'>MXN <span className='text-fs-20'>$10,000</span></span>

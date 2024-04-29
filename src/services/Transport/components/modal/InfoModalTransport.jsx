@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import "@/assets/styles/general/Swiper.css";
 export default function InfoModalTransport() {
   const [changePrivate, setChangePrivate] = useState(true);
 
@@ -25,12 +25,9 @@ export default function InfoModalTransport() {
           className="w-[12.7] h-[16px] mr-2"
         />
 
-        <label
-          htmlFor="search-input"
-          className="m-s-b text-gry-100 text-fs-12"
-        >
-          Aeropuesto internacional de cancun
-        </label>
+        <input type="text"
+          placeholder='Aeropuesto internacional de cancun'
+          className='w-full bg-transparent text-gry-100 m-s-b text-fs-12 focus:outline-0 placeholder:m-s-b placeholder:text-gry-100 placeholder:text-fs-12' />
 
       </div>
 
@@ -43,12 +40,9 @@ export default function InfoModalTransport() {
           className="w-[12.7] h-[16px] mr-2"
         />
 
-        <label
-          htmlFor="search-input"
-          className="m-s-b text-gry-100 text-fs-12"
-        >
-          Hotel nickelodeon Riviera maya
-        </label>
+        <input type="text"
+          placeholder='Hotel nickelodeon Riviera maya'
+          className='w-full bg-transparent text-gry-100 m-s-b text-fs-12 focus:outline-0 placeholder:m-s-b placeholder:text-gry-100 placeholder:text-fs-12' />
 
       </div>
 
@@ -59,28 +53,28 @@ export default function InfoModalTransport() {
         <div className='w-1/2'>
           <span>Fecha</span>
 
-          <div className='flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2'>
+          <div className='flex px-[2px] py-[11.5px] border border-[#ebebeb] items-center gap-2'>
             <img
               className="w-[14px] h-[16px]"
               src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
               alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
             />
-            <span className='text-fs-12 m-m'>23/05/2024</span>
-            {/* <input type="datetime" className='w-[66px]'></input> */}
+            {/* <span className='text-fs-12 m-m'>23/05/2024</span> */}
+            <input type="date" className='focus:outline-0 bg-white text-fs-12 m-m time-input'></input>
           </div>
         </div>
 
         {/* HOUR */}
         <div className='w-1/2'>
           <div>Horario</div>
-          <div className='flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2'>
+          <div className='flex py-[11.5px] px-[2px] border border-[#ebebeb] items-center gap-2'>
             <img
               className=""
               src={`${process.env.NEXT_PUBLIC_URL}icons/general/schedule.svg`}
               alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
             />
-            {/* <input type="datetime" className='w-[66px]'></input> */}
-            <span className='text-fs-12 m-m'>09:00 am</span>
+            <input type="time" id="timeInput" className="focus:outline-0 bg-white text-fs-12 m-m time-input" />
+            {/* <span className='text-fs-12 m-m'>09:00 am</span> */}
           </div>
         </div>
       </div>
@@ -99,8 +93,8 @@ export default function InfoModalTransport() {
             />
           </button>
 
-          <div className='px-[20px] py-[8px] border border-gry-50 '>
-            2
+          <div className='pl-[22px] pr-[32px] py-[8px] border border-gry-50 max-w-[47px]'>
+            <input type="number" className='focus:outline-0 w-[30px]' />
           </div>
 
           <button>

@@ -12,9 +12,9 @@ export default function ModalTransport() {
     setIsOpen(false)
   }
 
-  function openModal() {
-    setIsOpen(true)
-  }
+  // function openModal() {
+  //   setIsOpen(true)
+  // }
 
   return (
 
@@ -45,7 +45,7 @@ export default function ModalTransport() {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-fit max-w-[800px] transform overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
-                <div className='flex relative max-md:flex-col'>
+                <div className='flex relative gap-[48px] max-md:flex-col'>
                   <InfoModalTransport />
                   <PriceModalTransport />
                   <Image
