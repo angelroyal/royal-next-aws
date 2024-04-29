@@ -41,7 +41,7 @@ export default async function DetailPageTour({ params }) {
     );
 
     const tourMetaData = response.data;
-    console.log(tourMetaData);
+    console.log(params);
 
     const jsonLd = {
       "@context": "https://schema.org",
@@ -51,7 +51,7 @@ export default async function DetailPageTour({ params }) {
       provider: {
         "@type": "Organization",
         name: "Your Company Name", // Reemplaza con el nombre de tu empresa
-        url: "https://www.yourcompanywebsite.com/en/mx/acapulco-mexico/tours/excursion-a-la-isla-de-la-roqueta", // Reemplaza con la URL de tu empresa
+        url: `https://staywuw.com/en/mx/${params.codeName}/tours/${params.id}`,
       },
       offers: {
         "@type": "Offer",
@@ -76,7 +76,7 @@ export default async function DetailPageTour({ params }) {
         "@type": "Audience",
         audienceType: typology.description,
       })),
-      destination: {
+      itinerary: {
         "@type": "Place",
         name: tourMetaData.destination.name,
         address: {
