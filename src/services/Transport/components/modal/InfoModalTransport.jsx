@@ -94,7 +94,7 @@ export default function InfoModalTransport() {
           </button>
 
           <div className='pl-[22px] pr-[32px] py-[8px] border border-gry-50 max-w-[47px]'>
-            <input type="number" className='focus:outline-0 w-[30px]' />
+            <input type="number" className='focus:outline-0 w-[30px] time-input' />
           </div>
 
           <button>
