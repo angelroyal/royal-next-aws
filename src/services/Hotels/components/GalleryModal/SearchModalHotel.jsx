@@ -36,20 +36,21 @@ export function SearchModalHotel() {
   };
 
   const handleUpdateRooms = () => {
-    const checkInDate =
-      selectedDates.formattedCheckIn || requestBodyRooms.CheckIn;
-    const checkOutDate =
-      selectedDates.formattedCheckOut || requestBodyRooms.CheckOut;
+    // const checkInDate =
+    //   selectedDates.formattedCheckIn || requestBodyRooms.CheckIn;
+    // const checkOutDate =
+    //   selectedDates.formattedCheckOut || requestBodyRooms.CheckOut;
 
-    const queryParams = {
-      code: requestBodyRooms.code,
-      type: requestBodyRooms.type,
-      "check-in": checkInDate,
-      "check-out": checkOutDate,
-      occupancies: roomData,
-    };
-    setRequestBodyRooms(queryParams);
-    handleFetchPostRooms(queryParams);
+    // const queryParams = {
+    //   code: requestBodyRooms.code,
+    //   type: requestBodyRooms.type,
+    //   "check-in": checkInDate,
+    //   "check-out": checkOutDate,
+    //   occupancies: roomData,
+    // };
+    // setRequestBodyRooms(queryParams);
+    // handleFetchPostRooms(queryParams);
+    
   };
 
   return (
