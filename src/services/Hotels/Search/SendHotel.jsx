@@ -72,25 +72,27 @@ export default function SendHotel() {
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
     // setShowModal(true);
+    // console.log(selectedOption);
+    const dataSearch = JSON.parse(localStorage.getItem("dataSearch"));
+    // return
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
     const requestBody = {
-      codeNameHotel: selectedOption.codeName,
-      destination: selectedOption.label,
-      codeName: selectedOption.codeName,
-      code: selectedOption.key,
-      type: selectedOption.type,
+      codeNameHotel: dataSearch.codeName,
+      destination: dataSearch.label,
+      codeName: dataSearch.codeName,
+      code: dataSearch.key,
+      type: dataSearch.type,
       "check-in": validFirstDay,
       "check-out": validSecondDay,
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
-    if(selectedOption.type === "hotel"){
-      window.open(`/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`, '_blank')
+    if(dataSearch.type === "hotel"){
+      window.open(`/${language}/mx/${dataSearch.destination}-${dataSearch.country}/${dataSearch.destination}-hotels/${dataSearch.codeName}?${query}`, '_blank')
     }else{
-      router.push(`${language}/mx/${selectedOption.codeName}-${selectedOption.country}/hotels?${query}`);
+      router.push(`${language}/mx/${dataSearch.codeName}-${dataSearch.country}/hotels?${query}`);
     }
   };
-
 
   const [isHotelResults, setIsHotelResults] = useState(false);
 

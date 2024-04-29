@@ -14,10 +14,15 @@ function Room({ listing = false, OnApply }) {
   const { languageData } = useContext(LanguageContext);
   useEffect(() => {
     const roomData = JSON.parse(localStorage.getItem("roomData"));
-
+    // console.log(roomData);
     if (roomData) {
       setTotalRooms(roomData.length);
     }
+    const totalAdults = JSON.parse(localStorage.getItem("adultsHotel") || 2);
+    const totalChildren = JSON.parse(
+      localStorage.getItem("childrenHotel") || 0
+    );
+    setTotalPeople({ adults: totalAdults, children: totalChildren });
   }, []);
 
   const handleRoomData = (roomData) => {
