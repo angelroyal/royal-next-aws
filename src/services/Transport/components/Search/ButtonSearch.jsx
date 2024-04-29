@@ -4,7 +4,7 @@ import { getListingTransports } from "../../Api/requestTransport";
 import { useRouter } from "next/navigation";
 
 export function ButtonSearch(props) {
-  const { selectedAutoComplete, selectDestinationA, selectDestinationB } = props;
+  const { isListing, selectedAutoComplete, selectDestinationA, selectDestinationB } = props;
   const { languageData, language } = useContext(LanguageContext);
   const router = useRouter()
 
@@ -24,7 +24,7 @@ export function ButtonSearch(props) {
 
   return (
     <button
-      className={`w-full lg:w-auto rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white py-[20px] px-4 ${
+      className={`w-full ${!isListing && "lg:w-auto"}  rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white py-[20px] px-4 ${
         !selectedAutoComplete || !selectDestinationA || !selectDestinationB
           ? "bg-or-50 cursor-not-allowed"
           : "bg-or-100 hover:!bg-or-110"

@@ -83,16 +83,22 @@ export default function FilterTransport() {
                 {({ open }) => (
                   <>
                     <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                      <span className="m-s-b text-fs-14">
-                        <h3 className="font-bold">{category.name}</h3>
-                      </span>
+                      <h3 className="m-s-b text-fs-14">{category.name}</h3>
                       <ChevronUpIcon
-                        className={`${open ? "rotate-180 transform" : ""} h-5 w-5`}
+                        className={`${
+                          open ? "rotate-180 transform" : ""
+                        } h-5 w-5`}
                       />
                     </Disclosure.Button>
 
                     <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
-                      <div className={`${category.name === "category" ?'flex flex-col gap-2': "grid grid-cols-3 gap-2"}`}>
+                      <div
+                        className={`${
+                          category.name === "category"
+                            ? "flex flex-col gap-2"
+                            : "grid grid-cols-3 gap-2"
+                        }`}
+                      >
                         {category.options.map((option, optionIndex) => (
                           <label
                             key={option.label}
@@ -106,7 +112,9 @@ export default function FilterTransport() {
                               }
                               className="form-checkbox h-5 w-5 text-blue-600 cursor-pointer"
                             />
-                            <span className="m-m text-fs-12 cursor-pointer text-black">{option.label}</span>
+                            <span className="m-m text-fs-12 cursor-pointer text-black">
+                              {option.label}
+                            </span>
                           </label>
                         ))}
                       </div>

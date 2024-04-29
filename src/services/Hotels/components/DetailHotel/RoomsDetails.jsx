@@ -285,7 +285,6 @@ export default function RoomsDetails(codeHotel) {
             </div>
           );
         }
-        // Si no hay habitaciones, no se renderiza nada
         return null;
       })}
     </>
