@@ -41,7 +41,6 @@ export default async function DetailPageTour({ params }) {
     );
 
     const tourMetaData = response.data;
-    console.log(params);
 
     const jsonLd = {
       "@context": "https://schema.org",
@@ -50,7 +49,7 @@ export default async function DetailPageTour({ params }) {
       description: tourMetaData.activity.description,
       provider: {
         "@type": "Organization",
-        name: "Your Company Name", // Reemplaza con el nombre de tu empresa
+        name: "Stay Wuw",
         url: `https://staywuw.com/en/mx/${params.codeName}/tours/${params.id}`,
       },
       offers: {
@@ -58,7 +57,7 @@ export default async function DetailPageTour({ params }) {
         price: tourMetaData.activity.price,
         priceCurrency: "MXN",
         availability: "http://schema.org/InStock",
-        validFrom: "2024-01-01", // Reemplaza con la fecha de inicio válida
+        validFrom: "2024-01-01", 
       },
       itinerary: [
         {
