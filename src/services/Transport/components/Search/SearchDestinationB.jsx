@@ -29,7 +29,6 @@ export function SearchDestinationB({
 
   // CLEAN INPUT IF CHANGE DESTINATION A
   useEffect(() => {
-    console.log(selectDestinationA);
     if (!selectDestinationA) {
       setQuery("");
       setSelectDestinationB(null);

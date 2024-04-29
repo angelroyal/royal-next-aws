@@ -14,8 +14,8 @@ export const ListingTransportProvider = ({ children }) => {
   const [dataTransportF, setDataTransportF] = useState(null);
   const [selectedFilters, setSelectedFilters] = useState({});
   const [pricing, setPricing] = useState({ min: "", max: "" });
-  console.log(selectedFilters);
-  console.log(dataTransportF);
+  // console.log(selectedFilters);
+  // console.log(dataTransportF);
 
   useEffect(() => {
     if (dataTransport) {
