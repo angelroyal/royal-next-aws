@@ -10,7 +10,6 @@ export async function autoCompleteSearch(autocomplete, lang) {
       return response.data;
     }
   } catch (error) {
-    console.log(error);
     throw(error)
   }
 }
