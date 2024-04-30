@@ -6,7 +6,7 @@ import ListingTransportContext from "../../context/ListingTransportContext";
 
 export default function OrderingTransport() {
   const { languageData } = useContext(LanguageContext);
-  const { orderHotel, setOrderHotel } = useContext(ListingTransportContext);
+  const { orderHotel, setOrderHotel, dataTransportF } = useContext(ListingTransportContext);
 
   const handleOrderingFilters = (event) => {
     const selectedValue = +event.target.value;
@@ -17,7 +17,7 @@ export default function OrderingTransport() {
   return (
     <>
       <div className="flex justify-between items-center my-[32px]">
-        <span className="m-s-b text-fs-20">Encontramos 315 vehículos en cancún</span>
+        <span className="m-s-b text-fs-20">Encontramos {dataTransportF.length} vehículos en cancún</span>
 
         {orderingTransport.items.length > 0 && (
           <div className="relative">

@@ -1,17 +1,21 @@
 "use client";
 
 import { useContext } from "react";
+
 import CardTransport from "./CardTransport";
 import FilterTransport from "./FilterTransport";
 import OrderingTransport from "./OrderingTransport";
 import { Container } from "@/config/Others/Container";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
-import ListingTransportContext from "../../context/ListingTransportContext";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
+import ListingTransportContext from "../../context/ListingTransportContext";
+import { NotFoundDestination } from "@/components/General/NotFoundDestination";
 
 export default function ListingTransport(props) {
   const { data } = props;
-  const { setDataTransport } = useContext(ListingTransportContext);
+  const { setDataTransport, dataTransportF } = useContext(
+    ListingTransportContext
+  );
   setDataTransport(data);
 
   return (
@@ -21,13 +25,20 @@ export default function ListingTransport(props) {
         <div className="w-full xl:w-[28%] 2xl:w-[24%] mt-10">
           {/* <SearchBoxMobile /> */}
           <SearchBoxMobile className="margin-bottom" />
-          
           <FilterTransport />
         </div>
 
         <div className="w-full xl:w-8/12">
-          <OrderingTransport/>
-          <CardTransport />
+          {dataTransportF && dataTransportF.length > 0 && (
+            <>
+              <OrderingTransport />
+              <CardTransport />
+            </>
+          )}
+
+          {dataTransportF && dataTransportF.length === 0 && (
+            <NotFoundDestination />
+          )}
         </div>
       </div>
 

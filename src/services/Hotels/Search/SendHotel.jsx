@@ -4,8 +4,6 @@ import { useState, useEffect, useContext } from "react";
 
 import Room from "../config/RoomBox"; 
 import Calendar from "@/hooks/Calendar";
-import SearchHotel from "./SearchHotel";
-// import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import AutocompleteHotel from "./AutocompleteHotel";
 

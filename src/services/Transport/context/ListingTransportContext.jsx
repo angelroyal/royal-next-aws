@@ -14,12 +14,10 @@ export const ListingTransportProvider = ({ children }) => {
   const [dataTransportF, setDataTransportF] = useState(null);
   const [selectedFilters, setSelectedFilters] = useState({});
   const [pricing, setPricing] = useState({ min: "", max: "" });
-  // console.log(selectedFilters);
-  // console.log(dataTransportF);
 
   useEffect(() => {
     if (dataTransport) {
-      let filteredData = [...dataTransport]; // Hacer una copia del estado actual de los datos
+      let filteredData = [...dataTransport];
       filteredData = filterByOrderHotel(filteredData, orderHotel);
       filteredData = filterBySelectedFilters(
         filteredData,

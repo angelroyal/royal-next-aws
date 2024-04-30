@@ -11,7 +11,6 @@ export default function FilterTransport() {
   const [filters, setFilters] = useState(filterDataTransport);
   const { setSelectedFilters } = useContext(ListingTransportContext);
   const { languageData } = useContext(LanguageContext);
-  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     const newSelectedFilters = {};
@@ -75,62 +74,56 @@ export default function FilterTransport() {
 
         {/* ACCORDION  RANGE PRICE */}
         <PriceTransport />
+
         {/*END ACCORDION  RANGE PRICE */}
         <div className="border-t w-full mb-[12.5px] mt-[12.5px]" />
 
         {filters.map((category, categoryIndex) => (
-          <>
-            <div key={category.name}>
-              <Disclosure defaultOpen={isOpen}>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                      <h3 className="m-s-b text-fs-14">{category.name}</h3>
-                      <ChevronUpIcon
-                        className={`${
-                          open ? "rotate-180 transform" : ""
-                        } h-5 w-5`}
-                      />
-                    </Disclosure.Button>
+          <div key={category.name}>
+            <Disclosure defaultOpen={true}>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                    <h3 className="m-s-b text-fs-14">{category.name}</h3>
+                    <ChevronUpIcon
+                      className={`${
+                        open ? "rotate-180 transform" : ""
+                      } h-5 w-5`}
+                    />
+                  </Disclosure.Button>
 
-                    <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
-                      <div
-                        className={`${
-                          category.name === "category"
-                            ? "flex flex-col gap-2"
-                            : "grid grid-cols-3 gap-2"
-                        }`}
-                      >
-                        {category.options.map((option, optionIndex) => (
-                          <label
-                            key={option.label}
-                            className="inline-flex items-center space-x-2"
-                          >
-                            <input
-                              type="checkbox"
-                              checked={option.checked}
-                              onChange={() =>
-                                handleCheckboxChange(categoryIndex, optionIndex)
-                              }
-                              className="form-checkbox h-5 w-5 text-blue-600 cursor-pointer"
-                            />
-                            <span className="m-m text-fs-12 cursor-pointer text-black">
-                              {option.label}
-                            </span>
-                          </label>
-                        ))}
-                      </div>
-                    </Disclosure.Panel>
-                  </>
-                )}
-              </Disclosure>
-            </div>
-            {categoryIndex === filters.length - 1 ? (
-              ""
-            ) : (
-              <div className="border-t w-full mb-[12.5px] mt-[12.5px]" />
-            )}
-          </>
+                  <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
+                    <div
+                      className={`${
+                        category.name === "category"
+                          ? "flex flex-col gap-2"
+                          : "grid grid-cols-3 gap-2"
+                      }`}
+                    >
+                      {category.options.map((option, optionIndex) => (
+                        <label
+                          key={option.label}
+                          className="inline-flex items-center space-x-2"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={option.checked}
+                            onChange={() =>
+                              handleCheckboxChange(categoryIndex, optionIndex)
+                            }
+                            className="form-checkbox h-5 w-5 text-blue-600 cursor-pointer"
+                          />
+                          <span className="m-m text-fs-12 cursor-pointer text-black">
+                            {option.label}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          </div>
         ))}
       </div>
     </>

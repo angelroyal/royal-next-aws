@@ -1,6 +1,5 @@
 "use client";
 
-import moment from "moment";
 import Image from "next/image";
 import Rating from "@mui/material/Rating";
 import { useContext } from "react";
@@ -38,7 +37,7 @@ export function BestHotelCart({ hotel }) {
         <Rating
           className="my-1"
           name="read-only"
-          value={hotel.category}
+          value={hotel.stars}
           readOnly
           size="small"
         />
@@ -52,7 +51,7 @@ export function BestHotelCart({ hotel }) {
             height={14}
           />
           <span className="text-bl-100 m-s-b text-fs-12">
-            {hotel.destination}
+            {hotel.address}
           </span>
         </div>
 

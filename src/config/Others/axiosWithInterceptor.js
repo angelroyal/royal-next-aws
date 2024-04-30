@@ -9,7 +9,6 @@ const getLanguage = () => {
 
 // Usamos la función para obtener el idioma
 const language = getLanguage();
-console.log(language);
 
 const clientIP = "187.188.15.87";
 
