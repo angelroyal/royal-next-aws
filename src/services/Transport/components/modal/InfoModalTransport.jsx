@@ -1,10 +1,24 @@
 import React, { useState } from 'react'
 import "@/assets/styles/general/Swiper.css";
+
 export default function InfoModalTransport() {
+
   const [changePrivate, setChangePrivate] = useState(true);
 
+  const [counter, setCounter] = useState(0);
+
+  const counterAdd = () => {
+    setCounter(counter + 1)
+  }
+
+  const counterRemove = () => {
+    if (counter > 0)
+      setCounter(counter - 1)
+  }
+
+
   return (
-    <div className='py-[48px] pl-[48px] flex flex-col gap-2 w-[324px] max-md:pb-[20px] max-md:pr-[20px]'>
+    <div className='flex flex-col gap-2 w-1/2 max-md:w-full'>
       {/* TITLE */}
       <h3 className='text-fs-24 m-b mb-[36px]'>Reservar transporte</h3>
 
@@ -25,10 +39,7 @@ export default function InfoModalTransport() {
           className="w-[12.7] h-[16px] mr-2"
         />
 
-        <input type="text"
-          placeholder='Aeropuesto internacional de cancun'
-          className='w-full bg-transparent text-gry-100 m-s-b text-fs-12 focus:outline-0 placeholder:m-s-b placeholder:text-gry-100 placeholder:text-fs-12' />
-
+        <div className='text-gry-100 m-s-b text-fs-12'>Aeropuesto internacional de cancun</div>
       </div>
 
       <span className='text-gry-100 text-fs-12 m-s-b'>Hacia</span>
@@ -40,10 +51,7 @@ export default function InfoModalTransport() {
           className="w-[12.7] h-[16px] mr-2"
         />
 
-        <input type="text"
-          placeholder='Hotel nickelodeon Riviera maya'
-          className='w-full bg-transparent text-gry-100 m-s-b text-fs-12 focus:outline-0 placeholder:m-s-b placeholder:text-gry-100 placeholder:text-fs-12' />
-
+        <div className='text-gry-100 m-s-b text-fs-12'>Hotel nickelodeon Riviera maya</div>
       </div>
 
       {/* DATE AND HOUR */}
@@ -53,7 +61,7 @@ export default function InfoModalTransport() {
         <div className='w-1/2'>
           <span>Fecha</span>
 
-          <div className='flex px-[2px] py-[11.5px] border border-[#ebebeb] items-center gap-2'>
+          <div className='flex px-[2px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative'>
             <img
               className="w-[14px] h-[16px]"
               src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
@@ -67,7 +75,7 @@ export default function InfoModalTransport() {
         {/* HOUR */}
         <div className='w-1/2'>
           <div>Horario</div>
-          <div className='flex py-[11.5px] px-[2px] border border-[#ebebeb] items-center gap-2'>
+          <div className='flex py-[11.5px] px-[2px] border border-[#ebebeb] items-center gap-2 relative'>
             <img
               className=""
               src={`${process.env.NEXT_PUBLIC_URL}icons/general/schedule.svg`}
@@ -84,20 +92,29 @@ export default function InfoModalTransport() {
         <span className='text-fs-14 m-s-b'>¿Cuántos pasajeros?</span>
 
         <div className='flex gap-[16px]'>
-          <button>
+          <div
+            onClick={counterRemove}
+            className={`${counter === 0
+                ? "cursor-not-allowed"
+                : "cursor-pointer"
+              } px-[8px] flex items-center`}
+          >
             <img
               src={`${process.env.NEXT_PUBLIC_URL}icons/remove/remove-100.svg`}
               alt="icon Remove"
               width={9.3}
               height={9.3}
             />
-          </button>
-
-          <div className='pl-[22px] pr-[32px] py-[8px] border border-gry-50 max-w-[47px]'>
-            <input type="number" className='focus:outline-0 w-[30px] time-input' />
           </div>
 
-          <button>
+          <div className='pl-[22px] pr-[22px] py-[8px] border border-gry-50'>
+            {counter}
+          </div>
+
+          <button
+            onClick={counterAdd}
+            className='px-[8px] cursor-no-drop'
+          >
             <img
               src={`${process.env.NEXT_PUBLIC_URL}icons/add/add-100.svg`}
               alt="icon Add"

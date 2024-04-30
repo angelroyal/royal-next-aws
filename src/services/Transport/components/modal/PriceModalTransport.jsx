@@ -10,10 +10,10 @@ export default function PriceModalTransport() {
   const [changePrivate, setChangePrivate] = useState(true);
 
   return (
-    <div className='py-[48px] pr-[48px] max-md:py-[20px] max-md:px-[20px]'>
+    <div className=' w-1/2 max-md:w-full'>
       <div className='m-[16px] '>
         {/* CART VEHICLE*/}
-        <div className='border border-[#ebebeb] rounded-lg p-[16px] mb-[24px] flex flex-col gap-[8px] max-w-[297px]'>
+        <div className='border border-[#ebebeb] rounded-lg p-[16px] mb-[24px] flex flex-col gap-[8px]'>
           <span className='m-s-b text-fs-20 '>Vehículo Standard Buss Lorem Ipsum</span>
 
           <div className='py-[8px] px-[16px] text-white bg-black rounded-full w-fit text-fs-12'>Compartido</div>
@@ -71,7 +71,7 @@ export default function PriceModalTransport() {
             <span className='m-b text-fs-14'>MXN <span className='text-fs-20'>$10,000</span></span>
           </div>
 
-          <bottom className='py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center'>Agregar al carrito</bottom>
+          <button className='py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center'>Agregar al carrito</button>
 
           <div
             onMouseOver={() => setOpenPolicy(true)}

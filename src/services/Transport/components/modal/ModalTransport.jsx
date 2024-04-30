@@ -44,8 +44,8 @@ export default function ModalTransport() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-fit max-w-[800px] transform overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
-                <div className='flex relative gap-[48px] max-md:flex-col'>
+              <Dialog.Panel className=" w-[58rem] rounded-lg transform overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
+                <div className='flex relative gap-[48px] max-md:flex-col p-[48px] w-full'>
                   <InfoModalTransport />
                   <PriceModalTransport />
                   <Image

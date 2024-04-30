@@ -138,7 +138,7 @@ export default function TourCardItinerary({ itemActivity }) {
                           </div>
                         )}
 
-                        <div className="d-flex d-grid gap-2 text-grey-card-hotel-i">
+                        <div className="d-flex gap-2 text-grey-card-hotel-i items-center">
                           <img
                             className="icons-size-m"
                             src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
@@ -183,7 +183,7 @@ export default function TourCardItinerary({ itemActivity }) {
                           <span>{itemActivity.address}</span>
                         </div>
                       )}
-                      <div className="d-flex d-grid gap-2 text-grey-card-hotel-i">
+                      <div className="d-flex gap-2 text-grey-card-hotel-i items-center">
                         <img
                           className="icons-size-m"
                           src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
@@ -269,7 +269,7 @@ export default function TourCardItinerary({ itemActivity }) {
                                   )
                                 }
                               >
-                                <div className="tooltipUp-cancellations text-tour-bl-i-s">
+                                <div className="tooltipUp-cancellations text-tour-bl-i-s !text-fs-8">
                                   {languageData.containerModalHotel.policies}
                                 </div>
                               </TooltipDown>
