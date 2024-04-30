@@ -106,7 +106,7 @@ export default function TourCardItinerary({ itemActivity }) {
                   <img
                     className="image-tour-i"
                     src={itemActivity.image ? itemActivity.image : ""}
-                    alt="tour-test-banner-abaut-us"
+                    alt="tour gallery"
                   />
                 </div>
               )}
@@ -117,8 +117,8 @@ export default function TourCardItinerary({ itemActivity }) {
                     <div className="cont-img-card-hotel">
                       <img
                         className="image-tour-i"
-                        src="https://sandboxmexico.com/assets/banners/desktop/banner-about-us.webp"
-                        alt="tour-test-banner-abaut-us"
+                        src={itemActivity.image ? itemActivity.image : ""}
+                        alt="tour gallery mobile"
                       />
                     </div>
 
@@ -188,7 +188,7 @@ export default function TourCardItinerary({ itemActivity }) {
                           className="icons-size-m"
                           src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
                           alt="icon-adult"
-                        ></img>
+                        />
 
                         <span>
                           {itemActivity.tourists &&
@@ -269,7 +269,7 @@ export default function TourCardItinerary({ itemActivity }) {
                                   )
                                 }
                               >
-                                <div className="tooltipUp-cancellations text-tour-bl-i-s !text-fs-8">
+                                <div className="tooltipUp-cancellations text-tour-bl-i-s !text-fs-8 cursor-pointer !block max-lg:!text-left">
                                   {languageData.containerModalHotel.policies}
                                 </div>
                               </TooltipDown>

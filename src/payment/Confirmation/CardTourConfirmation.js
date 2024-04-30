@@ -46,8 +46,8 @@ export default function CardTourConfirmation(props) {
               <div className="cont-img-card-hotel">
                 <img
                   className="image-tour-i"
-                  src="https://sandboxmexico.com/assets/banners/desktop/banner-about-us.webp"
-                  alt="tour-test-banner-abaut-us"
+                  src={itemActivity.image ? itemActivity.image : ""}
+                  alt="gallery tour"
                 />
               </div>
             )}
@@ -58,8 +58,8 @@ export default function CardTourConfirmation(props) {
                   <div className="cont-img-card-hotel">
                     <img
                       className="image-tour-i"
-                      src="https://sandboxmexico.com/assets/banners/desktop/banner-about-us.webp"
-                      alt="tour-test-banner-abaut-us"
+                      src={itemActivity.image ? itemActivity.image : ""}
+                      alt="gallery tour"
                     />
                   </div>
 
@@ -156,7 +156,7 @@ export default function CardTourConfirmation(props) {
 
                     {itemActivity.cancelPolicies &&
                       itemActivity.cancelPolicies.length > 0 && (
-                        <span className="text-tour-bl-i-s">
+                        <span className="text-tour-bl-i-s !text-fs-8 cursor-pointer !block max-lg:!text-left">
                           {languageData.containerModalHotel.policies}
                         </span>
                       )}

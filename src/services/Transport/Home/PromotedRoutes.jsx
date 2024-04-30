@@ -210,7 +210,7 @@ export function PromotedRoutesCard() {
         <div className='flex flex-col'>
           <span className='text-fs-10 text-gry-100'>{languageData.cartTour.from}</span>
           <span className='m-b text-fs-16'>MXN $5,000</span>
-          <span className='text-bl-100 text-fs-10'>{languageData.containerModalHotel.policies}</span>
+          <span className='text-bl-100 text-fs-10 cursor-pointer'>{languageData.containerModalHotel.policies}</span>
         </div>
 
         <bottom className='flex items-center px-[23px] py-[12px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit text-nowrap cursor-pointer'>{languageData.CardHomeTransport.reserveBtn}</bottom>

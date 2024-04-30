@@ -104,7 +104,7 @@ export default function RecommendedTransport() {
                 <div className='flex flex-col gap-2 border-t-2 border-[#EBEBEB] items-center'>
                   <bottom className='px-[71.5px] py-[14px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit mt-[15.5px] text-nowrap cursor-pointer'>{languageData.cartTour.seeDetails}</bottom>
 
-                  <span className='text-bl-100 text-fs-10'>{languageData.containerModalHotel.policies}</span>
+                  <span className='text-bl-100 text-fs-10 cursor-pointer'>{languageData.containerModalHotel.policies}</span>
                 </div>
               </div>
             </SwiperSlide>

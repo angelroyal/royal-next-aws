@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Rating from "@mui/material/Rating";
 import { useContext } from "react";
-
 import LanguageContext from "@/language/LanguageContext";
+import { TotalStars } from "@/components/General/Stars";
 
 export function BestHotelCart({ hotel }) {
   const { languageData, language } = useContext(LanguageContext);
@@ -28,18 +28,17 @@ export function BestHotelCart({ hotel }) {
 
       {/* bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col */}
       <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-        <div className="m-s-b pt-1 text-fs-14 text-start truncate">
+        <div className="m-s-b pt-1 text-fs-14 text-start truncate mb-[4px]">
           {hotel.name}
           {""}
         </div>
 
-        <Rating
-          className="my-1"
-          name="read-only"
-          value={hotel.stars}
-          readOnly
-          size="small"
-        />
+        <div className="mb-[4px]">
+          <TotalStars
+            name="read-only"
+            stars={hotel.stars}
+          />
+        </div>
 
         <div className="flex gap-1 mb-[11px]">
           <Image
@@ -49,7 +48,7 @@ export function BestHotelCart({ hotel }) {
             width={11}
             height={14}
           />
-          <span className="text-bl-100 m-s-b text-fs-12">{hotel.address}</span>
+          <span className="text-bl-100 m-s-b text-fs-12 truncate">{hotel.address}</span>
         </div>
 
         <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">

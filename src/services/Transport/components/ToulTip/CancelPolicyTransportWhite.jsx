@@ -7,10 +7,10 @@ export default function CancelPolicyTransportWhite() {
     const { languageData } = useContext(LanguageContext);
 
     return (
-        <div className="absolute bottom-[1.7rem] md:right-0 left-[1rem]">
+        <div className="absolute bottom-[1.7rem] md:right-[-18px]">
             <div className="relative bg-white rounded-md p-4 w-max shadow-3xl">
                 <img
-                    className="absolute bottom-[-9px] max-md:left-0 max-md:right-0 md:right-[3.5rem] max-md:mx-auto rotate-180"
+                    className="absolute bottom-[-9px] max-md:left-0 max-md:right-0 md:right-[90px] max-md:mx-auto rotate-180"
                     src={`${process.env.NEXT_PUBLIC_URL}icons/general/ellipse.svg`}
                     alt="ellipse white"
                     width={22}

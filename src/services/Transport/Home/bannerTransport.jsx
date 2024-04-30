@@ -105,7 +105,7 @@ export function BannerHomeTransportD() {
             <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
                 <div className="w-[40%] flex flex-col pl-[25px] gap-3 max-sm:!w-[58%]">
                     <span className="m-b text-fs-28">{languageData.bannerTransport.secureJourney}</span>
-                    <bottom className="px-[24px] py-[16px] bg-yw-100 hover:bg-yw-110 m-s-b text-fs-14 w-fit rounded-full">{languageData.bannerTransport.bookNowBtn}</bottom>
+                    <bottom className="px-[24px] py-[16px] bg-yw-100 hover:bg-yw-110 m-s-b text-fs-14 w-fit rounded-full cursor-pointer">{languageData.bannerTransport.bookNowBtn}</bottom>
                 </div>
                 <div className="w-[60%] !bg-white">
                     <Image src={bannerCartLeading} width={378} height={235} className="w-full h-[19rem] rounded-lg object-contain object-center select-none " alt="Banner Exc Discounts" />
