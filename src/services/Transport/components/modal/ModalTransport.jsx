@@ -12,15 +12,15 @@ export default function ModalTransport() {
     setIsOpen(false)
   }
 
-  // function openModal() {
-  //   setIsOpen(true)
-  // }
+  function openModal() {
+    setIsOpen(true)
+  }
 
   return (
 
     // <div className='absolute bg-white border border-gry-100 w-[800px] h-[657px] flex justify-between'>
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={closeModal}>
+      <Dialog as="div" className="relative z-10" onClose={openModal}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"

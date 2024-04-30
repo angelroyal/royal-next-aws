@@ -61,7 +61,7 @@ export default function InfoModalTransport() {
         <div className='w-1/2'>
           <span>Fecha</span>
 
-          <div className='flex px-[2px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative'>
+          <div className='flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative'>
             <img
               className="w-[14px] h-[16px]"
               src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
@@ -75,7 +75,7 @@ export default function InfoModalTransport() {
         {/* HOUR */}
         <div className='w-1/2'>
           <div>Horario</div>
-          <div className='flex py-[11.5px] px-[2px] border border-[#ebebeb] items-center gap-2 relative'>
+          <div className='flex py-[11.5px] px-[16px] border border-[#ebebeb] items-center gap-2 relative'>
             <img
               className=""
               src={`${process.env.NEXT_PUBLIC_URL}icons/general/schedule.svg`}

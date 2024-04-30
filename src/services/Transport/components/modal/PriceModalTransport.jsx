@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import CancelPolicyTransport from '../ToulTip/CancelPolicyTransport'
-
+import CancelPolicyTransportWhite from '../ToulTip/CancelPolicyTransportWhite';
 export default function PriceModalTransport() {
 
   const [openPolicy, setOpenPolicy] = useState(false);
@@ -81,7 +81,7 @@ export default function PriceModalTransport() {
             <span className="relative text-center text-fs-14 m-s-b text-bl-100 cursor-pointer relative">
               {/* {languageData.containerModalHotel.policies} */}
               politicas de cancelacion
-              {openPolicy === true && <CancelPolicyTransport />}
+              {openPolicy === true && <CancelPolicyTransportWhite />}
             </span>
 
           </div>
