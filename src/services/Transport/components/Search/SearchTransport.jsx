@@ -10,7 +10,7 @@ export default function SearchTransport({ isListing = false }) {
   const [selectedAutoComplete, setSelectedAutoComplete] = useState(null);
   const [selectDestinationA, setSelectDestinationA] = useState(null);
   const [selectDestinationB, setSelectDestinationB] = useState(null);
-  const [travelType, setTravelType] = useState(1);
+  const [travelType, setTravelType] = useState("simple");
 
   const [destinationALocal, setDestinationALocal] = useState(null);
   const [destinationBLocal, setDestinationBLocal] = useState(null);
@@ -23,8 +23,22 @@ export default function SearchTransport({ isListing = false }) {
       setSelectedAutoComplete(searchTransport.autoComplete);
       setDestinationALocal(searchTransport.destinationA);
       setDestinationBLocal(searchTransport.destinationB);
+      setTravelType(searchTransport.type)
     }
   }, []);
+
+  useEffect(()=>{
+    const getSearchTransport = JSON.parse(
+      localStorage.getItem("searchTransport")
+    );
+    if (getSearchTransport) {
+      getSearchTransport.type = travelType;
+      localStorage.setItem(
+        "searchTransport",
+        JSON.stringify(getSearchTransport)
+      );
+    }
+  },[travelType])
 
   return (
     <div
@@ -33,39 +47,37 @@ export default function SearchTransport({ isListing = false }) {
       }`}
     >
       {/* SELECT TRAVEL TYPE */}
-      {isListing && (
-        <div className="flex w-full gap-4">
+      <div className={`${!isListing && 'lg:flex-col'} flex w-full gap-4`}>
+        <button
+          onClick={() => setTravelType("simple")}
+          className="border-none flex gap-x-2 items-center"
+        >
           <button
-            onClick={() => setTravelType(1)}
-            className="border-none flex gap-x-2 items-center"
-          >
-            <button
-              className={`cursor-pointer w-[16px] h-[16px] rounded-full border relative ${
-                travelType === 1 ? "!border-bl-100" : "!border-gry-50"
-              } ${
-                travelType === 1 &&
-                "before:content-[' '] before:absolute before:w-[10px] before:h-[10px] before:rounded-full before:bg-bl-100 before:inset-x-0	before:inset-y-0	before:mx-auto before:my-auto"
-              }`}
-            />
-            <h3 className="text-fs-12 m-m text-black">Un destino</h3>
-          </button>
+            className={`cursor-pointer w-[16px] h-[16px] rounded-full border relative ${
+              travelType === "simple" ? "!border-bl-100" : "!border-gry-50"
+            } ${
+              travelType === "simple" &&
+              "before:content-[' '] before:absolute before:w-[10px] before:h-[10px] before:rounded-full before:bg-bl-100 before:inset-x-0	before:inset-y-0	before:mx-auto before:my-auto"
+            }`}
+          />
+          <h3 className="text-fs-12 m-m text-black m-0">Un destino</h3>
+        </button>
 
+        <button
+          onClick={() => setTravelType("round")}
+          className="border-none flex gap-x-2"
+        >
           <button
-            onClick={() => setTravelType(2)}
-            className="border-none flex gap-x-2"
-          >
-            <button
-              className={`cursor-pointer w-[16px] h-[16px] rounded-full border relative ${
-                travelType === 2 ? "!border-bl-100" : "!border-gry-50"
-              } ${
-                travelType === 2 &&
-                "before:content-[' '] before:absolute before:w-[10px] before:h-[10px] before:rounded-full before:bg-bl-100 before:inset-x-0	before:inset-y-0	before:mx-auto before:my-auto"
-              }`}
-            />
-            <h3 className="text-fs-12 m-m text-black">Viaje redondo</h3>
-          </button>
-        </div>
-      )}
+            className={`cursor-pointer w-[16px] h-[16px] rounded-full border relative ${
+              travelType === "round" ? "!border-bl-100" : "!border-gry-50"
+            } ${
+              travelType === "round" &&
+              "before:content-[' '] before:absolute before:w-[10px] before:h-[10px] before:rounded-full before:bg-bl-100 before:inset-x-0	before:inset-y-0	before:mx-auto before:my-auto"
+            }`}
+          />
+          <h3 className="text-fs-12 m-m text-black m-0">Viaje redondo</h3>
+        </button>
+      </div>
 
       <AutoCompleteTrans
         isListing={isListing}
@@ -97,6 +109,7 @@ export default function SearchTransport({ isListing = false }) {
         selectedAutoComplete={selectedAutoComplete}
         selectDestinationA={selectDestinationA}
         selectDestinationB={selectDestinationB}
+        travelType={travelType}
       />
     </div>
   );

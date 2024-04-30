@@ -1,6 +1,6 @@
+import Image from "next/image";
+import { TextField } from "@mui/material";
 import { useContext, useState, useEffect, useRef, Fragment } from "react";
-import { Button, Typography, TextField } from "@mui/material";
-import { Add, Remove } from "@mui/icons-material/";
 
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobile } from "@/config/Mobile/isMobile";
@@ -84,16 +84,15 @@ export default function RoomMenu(props) {
     if (value === "0" || (value >= 1 && value <= 12)) {
       setAgeError(false);
       const newRooms = [...rooms];
-      newRooms[roomIndex].ages[childIndex] = value;
+      newRooms[roomIndex].ages[childIndex] = parseInt(value);
       setRooms(newRooms);
     } else if (value === "") {
-      // Permite borrar
-      setAgeError(false);
+      setAgeError(true);
       const newRooms = [...rooms];
       newRooms[roomIndex].ages[childIndex] = ""; // Borra el valor
       setRooms(newRooms);
     } else {
-      setAgeError(true);
+      setAgeError(false);
     }
   };
 
@@ -118,7 +117,9 @@ export default function RoomMenu(props) {
     const newRooms = [...rooms];
     if (newRooms[roomIndex].child < 4) {
       newRooms[roomIndex].child++;
-      newRooms[roomIndex].ages.push("");
+      newRooms[roomIndex].ages.push(0);
+      // newRooms[roomIndex].ages.push("");
+      // console.log(newRooms);
       setRooms(newRooms);
     }
   };
@@ -193,6 +194,18 @@ export default function RoomMenu(props) {
 
   const endOfRoomsRef = useRef(null);
 
+  useEffect(() => {
+    setAgeError(false);
+    rooms.map((room) => {
+      if (room.ages.length > 0) {
+        const filterAges = room.ages.filter((age) => age === "");
+        if (filterAges.length > 0) {
+          setAgeError(true);
+        }
+      }
+    });
+  }, [rooms]);
+
   return (
     <Transition
       show={showDropdown}
@@ -234,108 +247,131 @@ export default function RoomMenu(props) {
                       )}
                     </div>
                   </div>
-
-                  <div>
-                    <div className="flex justify-between items-center">
-                      <div className="m-b text-fs-14 text-gray-700">
-                        {languageData.SearchBox.tabHotel.roomBox.adult}
-                      </div>
-
-                      <div className="flex">
-                        <Button
-                          disabled={room.adult === 1}
-                          onClick={() =>
-                            handleNumAdultChange(room.adult - 1, index)
-                          }
-                          aria-label="Reduce el número de Adultos"
-                        >
-                          <Remove />
-                        </Button>
-                        <Typography
-                          variant="subtitle1"
-                          style={{ margin: "0 0" }}
-                        >
-                          {room.adult}
-                        </Typography>
-                        <Button
-                          disabled={room.adult === 8}
-                          onClick={() =>
-                            handleNumAdultChange(room.adult + 1, index)
-                          }
-                          aria-label="Aumenta el número de Adultos"
-                        >
-                          <Add />
-                        </Button>
-                      </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <div className="m-b text-fs-14 text-gray-700">
+                      {languageData.SearchBox.tabHotel.roomBox.adult}
                     </div>
 
-                    <div className="flex justify-between items-center">
-                      <div className="m-b text-fs-14 text-gray-700">
-                        {languageData.SearchBox.tabHotel.roomBox.children}
-                      </div>
+                    <div className="flex">
+                      <button
+                        disabled={room.adult === 1}
+                        onClick={() =>
+                          handleNumAdultChange(room.adult - 1, index)
+                        }
+                        aria-label="Reduce el número de Adultos"
+                      >
+                        <Image
+                          src={`${
+                            room.adult === 1
+                              ? `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-70.svg`
+                              : `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-bl.svg`
+                          }`}
+                          alt="remove"
+                          width={14}
+                          height={14}
+                          className="w-[14px] h-[14px]"
+                        />
+                      </button>
 
-                      <div className="flex">
-                        <Button
-                          disabled={room.child === 0}
-                          onClick={() => removeChild(index)}
-                          aria-label="Reduce el número de Niños"
-                        >
-                          <Remove />
-                        </Button>
+                      <p className="m-s-b text-[1rem] text-black m-0 px-[15px]">
+                        {room.adult}
+                      </p>
 
-                        <Typography
-                          variant="subtitle1"
-                          style={{ margin: "0 0" }}
-                        >
-                          {room.child}
-                        </Typography>
-                        <Button
-                          disabled={room.child === 4}
-                          onClick={() => addChild(index)}
-                          aria-label="Aumenta el número de Niños"
-                        >
-                          <Add />
-                        </Button>
-                      </div>
+                      <button
+                        disabled={room.adult === 8}
+                        onClick={() =>
+                          handleNumAdultChange(room.adult + 1, index)
+                        }
+                        aria-label="Aumenta el número de Adultos"
+                      >
+                        <Image
+                          src={`${
+                            room.adult === 8
+                              ? `${process.env.NEXT_PUBLIC_URL}icons/add/add-70.svg`
+                              : `${process.env.NEXT_PUBLIC_URL}icons/add/add-bl.svg`
+                          }`}
+                          alt="add"
+                          width={14}
+                          height={14}
+                          className="w-[14px] h-[14px]"
+                        />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <div className="m-b text-fs-14 text-gray-700">
+                      {languageData.SearchBox.tabHotel.roomBox.children}
+                    </div>
+
+                    <div className="flex">
+                      <button
+                        disabled={room.child === 0}
+                        onClick={() => removeChild(index)}
+                        aria-label="Reduce el número de Niños"
+                      >
+                        <Image
+                          src={`${
+                            room.child === 0
+                              ? `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-70.svg`
+                              : `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-bl.svg`
+                          }`}
+                          alt="remove"
+                          width={14}
+                          height={14}
+                          className="w-[14px] h-[14px]"
+                        />
+                      </button>
+
+                      <p className="m-s-b text-[1rem] text-black m-0 px-[15px]">
+                        {room.child}
+                      </p>
+
+                      <button
+                        disabled={room.child === 4}
+                        onClick={() => addChild(index)}
+                        aria-label="Aumenta el número de Niños"
+                      >
+                        <Image
+                          src={`${
+                            room.child === 4
+                              ? `${process.env.NEXT_PUBLIC_URL}icons/add/add-70.svg`
+                              : `${process.env.NEXT_PUBLIC_URL}icons/add/add-bl.svg`
+                          }`}
+                          alt="add"
+                          width={14}
+                          height={14}
+                          className="w-[14px] h-[14px]"
+                        />
+                      </button>
                     </div>
                   </div>
 
                   {[...Array(room.child)].map((_, childIndex) => (
                     <div
                       key={childIndex}
-                      className="flex justify-between items-center mt-4"
+                      className="flex justify-between items-center mt-[30px] relative"
                     >
                       <div className="m-m text-fs-12 text-gray-400 ">
                         {languageData.SearchBox.tabHotel.roomBox.ageChildren}{" "}
                         {childIndex + 1}
                       </div>
 
-                      <TextField
-                        // id="outlined-number"
-                        className="m-s-b text-fs-20"
+                      <input
+                        type="number"
+                        className="m-m text-fs-16 w-[44px] border border-gry-100 rounded-md focus:outline-none text-center"
                         label={languageData.SearchBox.tabHotel.roomBox.age}
                         value={room.ages[childIndex]}
                         onChange={(event) =>
                           handleAgeChange(event.target.value, childIndex, index)
                         }
-                        type="number"
                         required
-                        variant="outlined"
-                        size="small"
-                        style={{ width: 80 }}
-                        inputProps={{
-                          maxLength: 2,
-                          max: 12,
-                          min: 0,
-                          onKeyPress: (event) => {
-                            if (!/[0-9]/.test(event.key)) {
-                              event.preventDefault();
-                            }
-                          },
-                        }}
-                        error={ageError}
-                        helperText={ageError ? "0-12 años" : ""}
                       />
+                      {ageError && (
+                        <p className="m-0 text-sm text-red-600 absolute bottom-[-17px] right-0">
+                          0-12 {languageData.itinerary.tourItinerary.years}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -355,8 +391,11 @@ export default function RoomMenu(props) {
               </button>
 
               <button
-                className="rounded-full bg-or-100 w-max py-1.5 px-4 m-s-b text-fs-15 text-white"
+                className={`rounded-full w-max py-1.5 px-4 m-s-b text-fs-15 text-white ${
+                  ageError ? "bg-or-50" : "bg-or-100"
+                }`}
                 onClick={printRoomData}
+                disabled={ageError}
               >
                 {languageData.SearchBox.tabHotel.roomBox.buttonApply}
               </button>

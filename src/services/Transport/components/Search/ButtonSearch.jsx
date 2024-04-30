@@ -4,19 +4,26 @@ import { getListingTransports } from "../../Api/requestTransport";
 import { useRouter } from "next/navigation";
 
 export function ButtonSearch(props) {
-  const { isListing, selectedAutoComplete, selectDestinationA, selectDestinationB } = props;
+  const {
+    isListing,
+    selectedAutoComplete,
+    selectDestinationA,
+    selectDestinationB,
+    travelType,
+  } = props;
   const { languageData, language } = useContext(LanguageContext);
-  const router = useRouter()
+  const router = useRouter();
 
   const getTransportsLists = async () => {
     const ids = {
       destinationId: selectedAutoComplete.id,
       zoneFromId: selectDestinationA.id,
       zoneToId: selectDestinationB.id,
+      type: travelType,
     };
-    
+
     const params = new URLSearchParams(ids).toString();
-    const transportRout = `/${language}/mx/${selectedAutoComplete.codeName}-${selectedAutoComplete.country}/transport?${params}`
+    const transportRout = `/${language}/mx/${selectedAutoComplete.codeName}-${selectedAutoComplete.country}/transport?${params}`;
     router.push(transportRout);
     // const response = await getListingTransports(language, ids);
     // console.log(response);
@@ -24,7 +31,9 @@ export function ButtonSearch(props) {
 
   return (
     <button
-      className={`w-full ${!isListing && "lg:w-auto py-[20px]"} rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white py-[8.5px] px-4 ${
+      className={`w-full ${
+        !isListing && "lg:w-auto py-[20px]"
+      } rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white py-[8.5px] px-4 ${
         !selectedAutoComplete || !selectDestinationA || !selectDestinationB
           ? "bg-or-50 cursor-not-allowed"
           : "bg-or-100 hover:!bg-or-110"
@@ -32,7 +41,9 @@ export function ButtonSearch(props) {
       variant="contained"
       color="primary"
       size="large"
-      disabled={!selectedAutoComplete || !selectDestinationA || !selectDestinationB}
+      disabled={
+        !selectedAutoComplete || !selectDestinationA || !selectDestinationB
+      }
       sx={{ mt: 2 }}
       onClick={getTransportsLists}
     >
