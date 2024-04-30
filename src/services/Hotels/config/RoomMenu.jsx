@@ -87,7 +87,6 @@ export default function RoomMenu(props) {
       newRooms[roomIndex].ages[childIndex] = parseInt(value);
       setRooms(newRooms);
     } else if (value === "") {
-      // Permite borrar
       setAgeError(true);
       const newRooms = [...rooms];
       newRooms[roomIndex].ages[childIndex] = ""; // Borra el valor
@@ -196,13 +195,12 @@ export default function RoomMenu(props) {
   const endOfRoomsRef = useRef(null);
 
   useEffect(() => {
+    setAgeError(false);
     rooms.map((room) => {
       if (room.ages.length > 0) {
-        const filterAges = room.ages.filter((ages) => ages === "");
+        const filterAges = room.ages.filter((age) => age === "");
         if (filterAges.length > 0) {
           setAgeError(true);
-        } else {
-          setAgeError(false);
         }
       }
     });
@@ -374,33 +372,6 @@ export default function RoomMenu(props) {
                           0-12 {languageData.itinerary.tourItinerary.years}
                         </p>
                       )}
-
-                      {/* <TextField
-                        // id="outlined-number"
-                        className="m-s-b text-fs-20"
-                        label={languageData.SearchBox.tabHotel.roomBox.age}
-                        value={room.ages[childIndex]}
-                        onChange={(event) =>
-                          handleAgeChange(event.target.value, childIndex, index)
-                        }
-                        type="number"
-                        required
-                        variant="outlined"
-                        size="small"
-                        style={{ width: 80 }}
-                        inputProps={{
-                          maxLength: 2,
-                          max: 12,
-                          min: 0,
-                          onKeyPress: (event) => {
-                            if (!/[0-9]/.test(event.key)) {
-                              event.preventDefault();
-                            }
-                          },
-                        }}
-                        error={ageError}
-                        helperText={ageError ? "0-12 años" : ""}
-                      /> */}
                     </div>
                   ))}
                 </div>
@@ -420,7 +391,9 @@ export default function RoomMenu(props) {
               </button>
 
               <button
-                className={`rounded-full w-max py-1.5 px-4 m-s-b text-fs-15 text-white ${ageError ? 'bg-or-50' : 'bg-or-100'}`}
+                className={`rounded-full w-max py-1.5 px-4 m-s-b text-fs-15 text-white ${
+                  ageError ? "bg-or-50" : "bg-or-100"
+                }`}
                 onClick={printRoomData}
                 disabled={ageError}
               >
