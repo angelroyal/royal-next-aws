@@ -138,7 +138,7 @@ export function SearchDestinationA({
           </p>
           <Combobox.Input
             className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12 ${
-              isListing ? "w-full" : "w-full lg:w-[290px]"
+              isListing ? "w-full" : "w-full lg:w-[260px]"
             }`}
             onChange={(event) => handleLetter(event)}
             displayValue={(person) => person?.label}
