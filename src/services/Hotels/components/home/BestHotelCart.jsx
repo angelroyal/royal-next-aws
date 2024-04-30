@@ -16,7 +16,6 @@ export function BestHotelCart({ hotel }) {
     );
   };
 
-
   return (
     <div onClick={() => searchHotel(hotel)}>
       <div className="w-full h-[216px]">
@@ -50,9 +49,7 @@ export function BestHotelCart({ hotel }) {
             width={11}
             height={14}
           />
-          <span className="text-bl-100 m-s-b text-fs-12">
-            {hotel.address}
-          </span>
+          <span className="text-bl-100 m-s-b text-fs-12">{hotel.address}</span>
         </div>
 
         <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
