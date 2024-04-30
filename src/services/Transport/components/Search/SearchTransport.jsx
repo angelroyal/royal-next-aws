@@ -23,6 +23,7 @@ export default function SearchTransport({ isListing = false }) {
       setSelectedAutoComplete(searchTransport.autoComplete);
       setDestinationALocal(searchTransport.destinationA);
       setDestinationBLocal(searchTransport.destinationB);
+      setTravelType(searchTransport.type)
     }
   }, []);
 
