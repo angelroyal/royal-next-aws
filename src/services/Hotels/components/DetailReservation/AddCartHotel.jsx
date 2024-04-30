@@ -16,6 +16,7 @@ export default function AddCartHotel() {
     useContext(RoomsHotelContext);
 
   // HANDLE ADD CART HOTEL
+  console.log(selectedRooms);
 
   const handleReserveNow = async () => {
     try {
@@ -37,7 +38,7 @@ export default function AddCartHotel() {
           rateCode: room.rateKey,
           roomCode: room.code,
           adults: room.adults,
-          children: room.childrenAges || [],
+          children: room.children || [],
           price: room.netPrice,
           boardCode: room.boardCode,
           hash: room.hash,
@@ -61,8 +62,7 @@ export default function AddCartHotel() {
       setTimeout(() => {
         // router.push(`${language}/booking?uid=${cartUid}`);
         router.push(`/${language}/booking?uid=${cartUid}`);
-
-      }, 1000);
+      }, 2000);
     } catch (error) {
       console.error(error);
       setIsLoading(false);

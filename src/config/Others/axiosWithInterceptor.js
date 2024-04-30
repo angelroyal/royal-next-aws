@@ -1,9 +1,15 @@
 import axios from "axios";
 
-const language =
-  typeof window !== "undefined"
-    ? localStorage.getItem("language") || "en"
-    : "en";
+const getLanguage = () => {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem('language') || 'en';
+  }
+  return 'en';
+};
+
+// Usamos la función para obtener el idioma
+const language = getLanguage();
+console.log(language);
 
 const clientIP = "187.188.15.87";
 

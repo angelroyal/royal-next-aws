@@ -68,7 +68,6 @@ export default function Booking(props) {
     fetchData();
   }, []);
 
-  console.log(activityPreBooking);
 
   return (
     <FormDataProvider>
