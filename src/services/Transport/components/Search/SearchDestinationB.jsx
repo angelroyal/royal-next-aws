@@ -137,6 +137,6 @@ export function SearchDestinationB({
       </div>
     </Combobox>
   ) : (
-    <DisabledInputTransportRelated languageData={languageData} />
+    <DisabledInputTransportRelated isListing={isListing} languageData={languageData} />
   );
 }

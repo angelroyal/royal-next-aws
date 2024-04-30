@@ -175,6 +175,6 @@ export function SearchDestinationA({
     </Combobox>
   ) : (
     // INPUT DISABLED TRANSPORT
-    <DisabledInputTransport languageData={languageData} isSearch={isSearch} />
+    <DisabledInputTransport isListing={isListing} languageData={languageData} isSearch={isSearch} />
   );
 }
