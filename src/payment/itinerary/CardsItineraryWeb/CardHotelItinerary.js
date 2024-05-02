@@ -86,7 +86,7 @@ export default function CardHotelItinerary(props) {
           width={16}
         />
 
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col gap-y-5 w-full">
           {/* DAY,TIME HOTEL */}
           <div className="flex gap-x-4 max-lg:!flex-row">
             <div>
@@ -114,7 +114,7 @@ export default function CardHotelItinerary(props) {
             </ul>
           </div>
 
-          <div className="bg-white p-4 rounded-lg w-full flex-col flex gap-x-8 relative items-center">
+          <div className="bg-white p-[16px] rounded-lg flex-col flex gap-x-8 relative w-[732px] max-xl:w-full shadow-3xl">
             {/* CLOSE BUTTON */}
 
             {/* <CloseIcon /> */}
@@ -130,16 +130,16 @@ export default function CardHotelItinerary(props) {
 
             {/* FATHER ONE */}
 
-            <div className="flex gap-x-8 items-center">
+            <div className="flex gap-x-8 items-center max-sm:gap-[10px]">
               <Image
                 src={itemHotel.image ? itemHotel.image : ImageNotFound}
                 alt="hotel"
                 width={132}
                 height={114}
-                className="h-[114px] w-[132px] rounded-lg"
+                className="h-[114px] w-[132px] rounded-lg max-sm:h-[80px] max-sm:w-[90px]"
               />
 
-              <div className="flex justify-between gap-x-[149px] my-auto">
+              <div className="flex justify-between my-auto w-[80%]">
                 <div className="flex flex-col gap-y-1">
                   <div className="d-flex title-start">
                     <span className="text-fs-16 m-b text-black">
@@ -201,7 +201,7 @@ export default function CardHotelItinerary(props) {
                 </div>
 
                 <div className="w-auto max-lg:hidden flex flex-col gap-y-1 ">
-                  <span className="text-fs-9 text-gry-70 m-m">
+                  <span className="text-fs-10 text-gry-100 m-m">
                     {languageData.cartTour.taxesText}
                   </span>
 
@@ -219,7 +219,7 @@ export default function CardHotelItinerary(props) {
               </div>
             </div>
 
-            <div className="flex justify-between border-y border-gry-100 items-start py-[0.6rem] my-[1rem] lg:!hidden">
+            <div className="flex justify-between border-y border-[#ebebeb] items-start py-[0.6rem] my-[1rem] lg:!hidden">
               <div className="flex flex-col gap-y-[1rem]">
                 <div className="flex gap-x-2 items-center">
                   <Image
@@ -254,7 +254,7 @@ export default function CardHotelItinerary(props) {
 
               <div className={`${isMobile ? "w-auto" : "w-full"}`}>
                 <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
-                  <span className="text-fs-9 text-gry-70 m-m">
+                  <span className="text-fs-10 text-gry-100 m-m">
                     {languageData.cartTour.taxesText}
                   </span>
 
@@ -275,7 +275,7 @@ export default function CardHotelItinerary(props) {
 
             {/* FATHER TWO */}
 
-            <div className="w-full mt-6">
+            <div className="w-full mt-6 max-sm:mt-0">
               <div className="text-or-100 text-fs-10 m-s-b !mb-4">
                 {/* TEXT ROOMS YOU RESERVED /LP 15-02-24 */}
                 <span>{languageData.itinerary.roomsYouReserved}</span>

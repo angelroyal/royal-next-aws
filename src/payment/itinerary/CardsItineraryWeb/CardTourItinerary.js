@@ -111,7 +111,7 @@ export default function TourCardItinerary({ itemActivity }) {
               </div>
 
               <div className="flex lg:hidden">
-                <div className="rounded-[8px] w-[35%] h-[117.7px] max-sm:h-[92.7px]">
+                <div className="rounded-[8px] w-[35%] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
                   <img
                     className="w-full h-full rounded-[8px] object-cover"
                     src={itemActivity.image ? itemActivity.image : ""}
@@ -119,10 +119,15 @@ export default function TourCardItinerary({ itemActivity }) {
                   />
                 </div>
 
+<<<<<<< HEAD
                 <div className="flex gap-[4px] flex-col w-[65%] pl-[20px]">
                   <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">
                     {itemActivity.title}
                   </h2>
+=======
+                <div className="flex gap-[4px] flex-col w-[65%] pl-[20px] max-sm:pl-[10px]">
+                  <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">{itemActivity.title}</h2>
+>>>>>>> a834d2e1bd3f9cd92aadb51bb2453173994c6fbb
 
                   <div className="w-full flex flex-col justify-evenly gap-[8px]">
                     {itemActivity.address && (
@@ -212,7 +217,7 @@ export default function TourCardItinerary({ itemActivity }) {
                       </span>
                     </div>
 
-                    <div className="w-1/2 flex flex-col justify-center gap-[4px]">
+                    <div className="w-1/2 flex flex-col justify-center gap-[4px] max-sm:w-fit">
                       <span className="m-s-b text-fs-10 text-gry-100 text-nowrap">
                         {languageData.modalTourOptions.taxes}
                       </span>
