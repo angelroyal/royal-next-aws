@@ -3,8 +3,8 @@ import { useContext, useState } from "react";
 // import { getListingTransports } from "../../Api/requestTransport";
 import { useRouter } from "next/navigation";
 import LanguageContext from "@/language/LanguageContext";
-import ListingTransportContext from "../../context/ListingTransportContext";
 import { ListingHotelMobile } from "../Listing/FilterTransportMobile";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export function ButtonSearch(props) {
   const {
@@ -31,19 +31,29 @@ export function ButtonSearch(props) {
     const transportRout = `/${language}/mx/${selectedAutoComplete.codeName}-${selectedAutoComplete.country}/transport?${params}`;
     router.push(transportRout);
   };
+  const routerActual = NavigationConfig();
+  console.log(routerActual);
+  
+  const isTransport = ()=>{
+    if(routerActual && routerActual ==="transport" || routerActual === "transports"){
+      return true
+    }else{
+      return false
+    }
+  }
 
   return (
     <div className={`flex justify-between w-full gap-x-4`}>
-      {isListing && (
-        <button
-          className={`py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center text-bl-100 m-b text-fs-12 ${
-            isListing && "block xl:hidden"
-          }`}
-          onClick={() => setOpenFilter(true)}
-        >
-          Filtros
-        </button>
-      )}
+      {(isListing && isTransport && (
+          <button
+            className={`py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center text-bl-100 m-b text-fs-12 ${
+              isListing && "block xl:hidden"
+            }`}
+            onClick={() => setOpenFilter(true)}
+          >
+            Filtros
+          </button>
+        ))}
 
       <button
         className={`w-full ${

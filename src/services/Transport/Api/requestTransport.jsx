@@ -10,7 +10,7 @@ export async function autoCompleteSearch(autocomplete, lang) {
       return response.data;
     }
   } catch (error) {
-    throw(error)
+    throw error;
   }
 }
 
@@ -39,6 +39,18 @@ export async function getListingTransports(lang, ids) {
     }
   } catch (error) {
     console.log(error);
-    throw(error)
+    throw error;
   }
 }
+
+export const saveToCartTransport = async (requestData) => {
+  try {
+    const response = await axiosWithInterceptor.post(
+      "/v1/carts/transport",
+      requestData
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
