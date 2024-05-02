@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import CancelPolicyTransportWhite from "../ToulTip/CancelPolicyTransportWhite";
 import ModalTransportContext from "../../context/ModalTransportContext";
@@ -6,6 +7,9 @@ import { saveToCartTransport } from "../../Api/requestTransport";
 
 export default function TransportPriceCart(props) {
   const { transport } = props;
+  const [openPolicy, setOpenPolicy] = useState(false);
+
+  //   STATES CONTEXT TRANSPORT
   const {
     passenger,
     departureDate,
@@ -13,13 +17,19 @@ export default function TransportPriceCart(props) {
     departureTime,
     comebackTime,
   } = useContext(ModalTransportContext);
-  console.log(transport);
 
-  const [openPolicy, setOpenPolicy] = useState(false);
-
+  
   const priceShared = transport.price * passenger;
-
+  const isButtonEnabled = passenger > 0 && departureDate && departureTime;
+  
+  const router = useRouter();
+  
   const handleReserveNow = async () => {
+    let calculatedPrice =
+      transport.type === "shared"
+        ? transport.price * passenger
+        : transport.price;
+
     try {
       const uidCart = localStorage.getItem("uid-cart");
       let cartId = "";
@@ -38,9 +48,11 @@ export default function TransportPriceCart(props) {
         vehicleLabel: transport.label,
         departureDate: departureDate,
         departureTime: departureTime,
-        comebackDate: comebackDate,
-        comebackTime: comebackTime,
-        price: transport.price,
+        // comebackDate: comebackDate,
+        // comebackTime: comebackTime,
+        ...(comebackDate ? { comebackDate: comebackDate } : {}),
+        ...(comebackTime ? { comebackTime: comebackTime } : {}),
+        price: calculatedPrice,
         currency: "MXN",
         destinationId: 719395,
         cancelPolicyHours: transport.cancellation,
@@ -97,8 +109,11 @@ export default function TransportPriceCart(props) {
       </div>
 
       <button
-        className="py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center"
+        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center ${
+          !isButtonEnabled ? "cursor-not-allowed	" : ""
+        }`}
         onClick={handleReserveNow}
+        disabled={!isButtonEnabled}
       >
         Agregar al carrito
       </button>

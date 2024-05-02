@@ -1,4 +1,4 @@
-import moment from "moment";
+import moment from 'moment';
 import React, { useContext } from "react";
 
 import ModalTransportContext from "../../context/ModalTransportContext";
@@ -25,12 +25,10 @@ export default function DateAndHour(props) {
     setComebackDate(e.target.value);
   };
   const handleDepartureTimeChange = (e) => {
-    const formattedTime = moment(e.target.value, 'HH:mm').format('H:mm:ss');
-  setDepartureTime(formattedTime);
+    setDepartureTime(e.target.value);
   };
   const handleComebackTimeChange = (e) => {
-    const formattedTime = moment(e.target.value, 'HH:mm').format('H:mm:ss');
-    setComebackTime(formattedTime);
+    setComebackTime(e.target.value);
   };
 
   return (
