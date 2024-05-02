@@ -26,8 +26,11 @@ export async function generateMetadata({ searchParams }) {
 }
 
 export default async function DetailPageHotel({ searchParams }) {
+  const roundQueryParam =
+    searchParams.type === "round" ? 1 : searchParams.type === "simple" ? 0 : "";
+
   const response = await axiosWithInterceptor.get(
-    `v1/transports/destinations/${searchParams.destinationId}/zones/${searchParams.zoneFromId}/${searchParams.zoneToId}/vehicles`
+    `v1/transports/destinations/${searchParams.destinationId}/zones/${searchParams.zoneFromId}/${searchParams.zoneToId}/vehicles?round=${roundQueryParam}`
   );
   const transportData = response.data;
 
