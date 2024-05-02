@@ -33,7 +33,7 @@ export default function CartT(props) {
       cartData.cartItems.activities.length > 0 ||
       cartData &&
       cartData.cartItems.hotels &&
-      cartData.cartItems.hotels.length > 0 
+      cartData.cartItems.hotels.length > 0
     ) {
       setCartInfo(cartData.cartItems);
     } else {
@@ -88,8 +88,8 @@ export default function CartT(props) {
                     hotelGetCart={cartInfo}
                     setIsLoader={setIsLoader}
                     isLoader={isLoader}
-                    // emptyClr={handleEmptyAlert}
-                    // onUpdateData={fetchCartData}
+                  // emptyClr={handleEmptyAlert}
+                  // onUpdateData={fetchCartData}
                   />
                 )}
 
@@ -99,7 +99,7 @@ export default function CartT(props) {
                     tourGetCart={cartInfo}
                     setIsLoader={setIsLoader}
                     isLoader={isLoader}
-                    // onUpdateData={fetchCartData}
+                  // onUpdateData={fetchCartData}
                   />
                 )}
               </div>
