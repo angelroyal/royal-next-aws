@@ -53,7 +53,7 @@ export default function CardTransport() {
                           Tipo de viaje:
                         </span>
                         <span className="text-fs-14 m-b">
-                          {transport.round === false ? "redondo" : "sencillo"}
+                          {transport.round === false ? "Sencillo" : "Redondo"}
                         </span>
                       </div>
 

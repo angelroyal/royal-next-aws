@@ -1,10 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { useContext } from "react";
+
 import TransportPriceCart from "./TransportPriceCart";
+import ModalTransportContext from "../../context/ModalTransportContext";
 
 export default function PriceModalTransport(props) {
   const { transport } = props;
+  const { passenger } = useContext(ModalTransportContext);
 
   return (
     <div className=" w-1/2 max-md:w-full">
@@ -24,6 +28,7 @@ export default function PriceModalTransport(props) {
           />
 
           <div className="flex flex-wrap gap-[8px]">
+            {/* PASSENGERS */}
             <div className="flex gap-[8px]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-bl.svg`}
@@ -33,10 +38,11 @@ export default function PriceModalTransport(props) {
               />
 
               <span className="text-fs-12 m-m">
-                4/{transport.places} Personas
+                {passenger}/{transport.places} Personas
               </span>
             </div>
 
+            {/* SUITE CASES */}
             <div className="flex gap-[8px]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-bl.svg`}
@@ -49,6 +55,7 @@ export default function PriceModalTransport(props) {
               </span>
             </div>
 
+            {/* LARGE SUITE CASES */}
             <div className="flex gap-[8px]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-bl.svg`}
@@ -61,6 +68,7 @@ export default function PriceModalTransport(props) {
               </span>
             </div>
 
+            {/* USB */}
             <div className="flex gap-[8px]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/general/usb.svg`}
@@ -71,6 +79,7 @@ export default function PriceModalTransport(props) {
               <span className="text-fs-12 m-m">Cargador</span>
             </div>
 
+          {/* A/C */}
             <div className="flex gap-[8px]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/air/air-bl.svg`}
@@ -116,7 +125,7 @@ export default function PriceModalTransport(props) {
         </div>
 
         {/* PRICE */}
-        <TransportPriceCart transport={transport}/>
+        <TransportPriceCart transport={transport} />
       </div>
     </div>
   );

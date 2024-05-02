@@ -1,9 +1,9 @@
+import { Disclosure } from "@headlessui/react";
 import React, { useState, useContext } from "react";
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 import LanguageContext from "@/language/LanguageContext";
 import ListingTransportContext from "../../context/ListingTransportContext";
-import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 export default function PriceTransport() {
   const { languageData } = useContext(LanguageContext);

@@ -4,9 +4,12 @@ import ModalTransportContext from "../../context/ModalTransportContext";
 export default function PassengersTransport(props) {
   const { transport } = props;
   const { passenger, setPassenger } = useContext(ModalTransportContext);
+  console.log(transport);
 
   const addPassenger = () => {
-    setPassenger((prev) => prev + 1);
+    if (passenger < transport.places) {
+      setPassenger((prev) => prev + 1);
+    }
   };
 
   const removePassenger = () => {
@@ -14,8 +17,10 @@ export default function PassengersTransport(props) {
   };
 
   const handlePassengerChange = (event) => {
-    const value = Math.max(0, parseInt(event.target.value, 10));
-    setPassenger(isNaN(value) ? 0 : value);
+    if (passenger < transport.places) {
+      const value = Math.max(0, parseInt(event.target.value, 10));
+      setPassenger(isNaN(value) ? 0 : value);
+    }
   };
 
   return (
@@ -36,15 +41,9 @@ export default function PassengersTransport(props) {
             height={9.3}
           />
         </div>
-
-        <input
-          type="number"
-          className="w-[100px] py-[8px] border border-gry-50 text-center"
-          min="0"
-          value={passenger}
-          onChange={handlePassengerChange}
-        />
-
+        <div className="w-[100px] py-[8px] border border-gry-50 text-center">
+          {passenger}
+        </div>
         <button onClick={addPassenger} className="px-[8px] cursor-pointer">
           <img
             src={`${process.env.NEXT_PUBLIC_URL}icons/add/add-100.svg`}

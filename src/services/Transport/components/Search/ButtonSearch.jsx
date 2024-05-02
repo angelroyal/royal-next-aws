@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 // import { getListingTransports } from "../../Api/requestTransport";
 import { useRouter } from "next/navigation";
 import LanguageContext from "@/language/LanguageContext";
-import { ListingHotelMobile } from "../Listing/FilterTransportMobile";
+import { ListingHotelMobile } from "../listing/FilterTransportMobile";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export function ButtonSearch(props) {
@@ -32,7 +32,7 @@ export function ButtonSearch(props) {
     router.push(transportRout);
   };
   const routerActual = NavigationConfig();
-  console.log(routerActual);
+  // console.log(routerActual);
   
   const isTransport = ()=>{
     if(routerActual && routerActual ==="transport" || routerActual === "transports"){

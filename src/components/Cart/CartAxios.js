@@ -14,7 +14,7 @@ export const useCartAxios = () => {
 export const CartAxiosProvider = ({ children }) => {
   // INTENT LOADING DATA LOCAL STORAGE
   const [cartData, setCartData] = useState(() => {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (typeof window !== "undefined" && window.localStorage) {
       const storedData = localStorage.getItem("cartData");
       return storedData ? JSON.parse(storedData) : null;
     } else {
@@ -49,10 +49,15 @@ export const CartAxiosProvider = ({ children }) => {
 
     // SUM PRICE TOTAL CART
     if (cartData && cartData.cartItems) {
-      const { hotels, activities } = cartData.cartItems;
+      const { hotels, activities, transportations } = cartData.cartItems;
+      console.log(transportations);
 
-      const totalHotelPrice = hotels ? hotels.reduce((acc, hotel) => acc + hotel.price, 0) : 0;
-      const totalActivityPrice = activities ? activities.reduce((acc, activity) => acc + activity.price, 0) : 0;
+      const totalHotelPrice = hotels
+        ? hotels.reduce((acc, hotel) => acc + hotel.price, 0)
+        : 0;
+      const totalActivityPrice = activities
+        ? activities.reduce((acc, activity) => acc + activity.price, 0)
+        : 0;
 
       const totalPrice = totalHotelPrice + totalActivityPrice;
 
@@ -73,7 +78,6 @@ export const CartAxiosProvider = ({ children }) => {
     }
     return 0;
   };
-
 
   const removeHotelById = (hotelId) => {
     if (cartData && cartData.cartItems && cartData.cartItems.hotels) {
@@ -124,8 +128,8 @@ export const CartAxiosProvider = ({ children }) => {
         totalItemsInCart,
         removeHotelById,
         removeActivityById,
-        totalPrice, 
-        setTotalItemsInCart
+        totalPrice,
+        setTotalItemsInCart,
       }}
     >
       {children}

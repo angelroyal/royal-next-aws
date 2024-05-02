@@ -1,11 +1,20 @@
+import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 
-import CancelPolicyTransportWhite from "../ToulTip/CancelPolicyTransportWhite";
-import ModalTransportContext from "../../context/ModalTransportContext";
+import LanguageContext from "@/language/LanguageContext";
+import { useCartAxios } from "@/components/Cart/CartAxios";
 import { saveToCartTransport } from "../../Api/requestTransport";
+import ModalTransportContext from "../../context/ModalTransportContext";
+import CancelPolicyTransportWhite from "../ToulTip/CancelPolicyTransportWhite";
 
 export default function TransportPriceCart(props) {
   const { transport } = props;
+  const router = useRouter();
+  const { fetchData } = useCartAxios();
+  const { language } = useContext(LanguageContext);
+  const [openPolicy, setOpenPolicy] = useState(false);
+
+  //   STATES CONTEXT TRANSPORT
   const {
     passenger,
     departureDate,
@@ -13,13 +22,25 @@ export default function TransportPriceCart(props) {
     departureTime,
     comebackTime,
   } = useContext(ModalTransportContext);
-  console.log(transport);
 
-  const [openPolicy, setOpenPolicy] = useState(false);
-
+  // PRICE AND BUTTON ENABLED
   const priceShared = transport.price * passenger;
+  const isButtonEnabled = passenger > 0 && departureDate && departureTime;
 
   const handleReserveNow = async () => {
+    
+    // PRICE RESERVED
+    let calculatedPrice =
+      transport.type === "shared"
+        ? transport.price * passenger
+        : transport.price;
+
+    // QUERY PARAMS BY POST ADD CART
+    const searchParams = new URLSearchParams(window.location.search);
+    const destinationId = searchParams.get("destinationId");
+    const zoneFromId = searchParams.get("zoneFromId");
+    const zoneToId = searchParams.get("zoneToId");
+
     try {
       const uidCart = localStorage.getItem("uid-cart");
       let cartId = "";
@@ -31,18 +52,20 @@ export default function TransportPriceCart(props) {
 
       // REQUEST BODY ADD CART
       const saveRequestCart = {
-        from: 212,
-        to: 211,
+        from: zoneFromId,
+        to: zoneToId,
         pax: passenger,
         vehicleId: transport.id,
         vehicleLabel: transport.label,
         departureDate: departureDate,
         departureTime: departureTime,
-        comebackDate: comebackDate,
-        comebackTime: comebackTime,
-        price: transport.price,
+        // comebackDate: comebackDate,
+        // comebackTime: comebackTime,
+        ...(comebackDate ? { comebackDate: comebackDate } : {}),
+        ...(comebackTime ? { comebackTime: comebackTime } : {}),
+        price: calculatedPrice,
         currency: "MXN",
-        destinationId: 719395,
+        destinationId: destinationId,
         cancelPolicyHours: transport.cancellation,
       };
 
@@ -60,7 +83,7 @@ export default function TransportPriceCart(props) {
         "uid-cart",
         JSON.stringify({ uid: cartUid, expirationTime })
       );
-      //   fetchData(cartUid);
+      fetchData(cartUid);
       setTimeout(() => {
         router.push(`/${language}/booking?uid=${cartUid}`);
       }, 2000);
@@ -97,8 +120,11 @@ export default function TransportPriceCart(props) {
       </div>
 
       <button
-        className="py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center"
+        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center ${
+          !isButtonEnabled ? "cursor-not-allowed	" : ""
+        }`}
         onClick={handleReserveNow}
+        disabled={!isButtonEnabled}
       >
         Agregar al carrito
       </button>

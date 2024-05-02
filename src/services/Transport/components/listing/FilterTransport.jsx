@@ -1,16 +1,16 @@
+import { Disclosure } from "@headlessui/react";
+import LanguageContext from "@/language/LanguageContext";
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import React, { useState, useEffect, useContext } from "react";
 
 import PriceTransport from "./PriceTransport";
 import { filterDataTransport } from "../../config/filterDataTransport";
 import ListingTransportContext from "../../context/ListingTransportContext";
-import LanguageContext from "@/language/LanguageContext";
-import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 export default function FilterTransport() {
+  const { languageData } = useContext(LanguageContext);
   const [filters, setFilters] = useState(filterDataTransport);
   const { setSelectedFilters } = useContext(ListingTransportContext);
-  const { languageData } = useContext(LanguageContext);
 
   useEffect(() => {
     const newSelectedFilters = {};
@@ -79,7 +79,7 @@ export default function FilterTransport() {
         <div className="border-t w-full mb-[12.5px] mt-[12.5px]" />
 
         {filters.map((category, categoryIndex) => (
-          <div key={category.name}>
+          <div key={categoryIndex}>
             <Disclosure defaultOpen={true}>
               {({ open }) => (
                 <>
@@ -102,7 +102,7 @@ export default function FilterTransport() {
                     >
                       {category.options.map((option, optionIndex) => (
                         <label
-                          key={option.label}
+                          key={optionIndex}
                           className="inline-flex items-center space-x-2"
                         >
                           <input
