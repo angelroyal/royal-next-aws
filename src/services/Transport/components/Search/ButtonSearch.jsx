@@ -32,7 +32,7 @@ export function ButtonSearch(props) {
     router.push(transportRout);
   };
   const routerActual = NavigationConfig();
-  console.log(routerActual);
+  // console.log(routerActual);
   
   const isTransport = ()=>{
     if(routerActual && routerActual ==="transport" || routerActual === "transports"){
