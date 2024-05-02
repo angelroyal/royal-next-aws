@@ -5,7 +5,6 @@ import CardHotelItinerary from "../CardsItineraryWeb/CardHotelItinerary";
 import CardHotelConfirmation from "@/payment/Confirmation/CardHotelConfirmation";
 import CardMovingItinerary from "../CardsItineraryWeb/CardMovingItinerary";
 import CardTourItinerary from "../../../payment/itinerary/CardsItineraryWeb/CardTourItinerary";
-
 export default function StructureItineraryWeb(props) {
   const { dataItinerary } = props;
   const { step } = useContext(StepperContext);
