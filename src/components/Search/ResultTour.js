@@ -77,7 +77,7 @@ export default function ResultTour() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6 shadow-3xl max-lg:w-[393px]">
+    <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6 shadow-3xl max-lg:w-[391px]">
       <SearchTour onSelectTour={setSelectedOption} />
       <CalendarDay onDateChange={handleDateChange} />
       <PersonsActivities OnApply={setRoomData} />

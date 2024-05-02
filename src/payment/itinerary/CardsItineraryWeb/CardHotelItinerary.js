@@ -22,7 +22,8 @@ import IconLocationBorder from "../../../assets/icons/utils/others/location-bord
 // import LocationIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
 import Image from "next/image";
 import "../../../../src/assets/styles/mobile/HotelMobile.css";
-import "@/assets/styles/web/Hotel.css"
+import "@/assets/styles/web/Hotel.css";
+import { TotalStars } from "@/components/General/Stars";
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
   const { fetchData } = useCartAxios();
@@ -79,168 +80,199 @@ export default function CardHotelItinerary(props) {
 
   return (
     <>
-      <div className="cont-card-icon-location-and-date">
-        <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder" />
-        <div className="container-card-hotel-i-and-date">
+      <div className="flex gap-x-2 items-start">
+        <Image
+          className="w-4"
+          src={IconLocationBorder}
+          alt="IconLocationBorder"
+          width={16}
+        />
+
+        <div className="flex flex-col gap-y-5">
           {/* DAY,TIME HOTEL */}
-          <div className="date-itinerary-hotel max-lg:!flex-row">
+          <div className="flex gap-x-4 max-lg:!flex-row">
             <div>
-              <span className="text-hotel-or-i">
+              <span className="m-b text-fs-16 text-or-100 m-0">
                 {languageData.dayOfWeek[dayOfWeek]}
               </span>{" "}
-              <span className="text-loc-hotel-grey-i">{dateFormatCheckIn}</span>{" "}
-              <span className="text-loc-hotel-grey-i">|</span>{" "}
-              <span className="text-loc-hotel-grey-i">14:00pm</span>
+              <span className="m-m text-fs-16 text-gry-70 mr-2 pr-2 border-r-2 border-gyr-100">
+                {dateFormatCheckIn}
+              </span>{" "}
+              {/* <span className="m-m text-fs-16 text-gry-70 m-0">|</span>{" "} */}
+              <span className="m-m text-fs-16 text-gry-70 m-0">14:00pm</span>
             </div>
 
-            <ul className="ul-hotel-date">
+            <ul className="m-0 p-0">
               <li>
-                <span className="mr-2 ml-2">•</span>
-                <span className="text-hotel-grey-i">Check out</span>{" "}
-                <span className="text-loc-hotel-grey-i">
+                <span className="mr-4 text-gry-100">•</span>
+                <span className="text-fs-16 m-b text-gry-100">
+                  Check out
+                </span>{" "}
+                <span className="text-gry-70 text-fs-16 m-m">
                   {dateFormatCheckOut}{" "}
                 </span>
-                <span className="text-loc-hotel-grey-i">- </span>
-                <span className="text-loc-hotel-grey-i">02:00pm</span>
+                <span className="text-gry-70 text-fs-16 m-m">- </span>
+                <span className="text-gry-70 text-fs-16 m-m">02:00pm</span>
               </li>
             </ul>
           </div>
 
-          <div className="cont-card-hotel-itinerary">
+          <div className="bg-white p-4 rounded-lg w-full flex-col flex gap-x-8 relative items-center">
             {/* CLOSE BUTTON */}
 
-            <div
-              className="remove-card-listing"
-              onClick={() => setIconRemove(true)}
-            >
-              {/* <CloseIcon /> */}
-              <Image src={CloseIcon} alt="icon close"/>
-            </div>
+            {/* <CloseIcon /> */}
+            <button onClick={() => setIconRemove(true)}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
+                alt="icon close"
+                className="w-[10px] h-[10px] absolute right-4 top-4"
+                width={10}
+                height={10}
+              />
+            </button>
 
             {/* FATHER ONE */}
 
-            <div className="d-flex cont-img-price-info">
-              <div className="cont-img-card-hotel">
-                <img
-                  src={itemHotel.image ? itemHotel.image : ImageNotFound}
-                  alt="hotel"
-                  width="100%"
-                  className="!h-full"
-                />
-              </div>
+            <div className="flex gap-x-8 items-center">
+              <Image
+                src={itemHotel.image ? itemHotel.image : ImageNotFound}
+                alt="hotel"
+                width={132}
+                height={114}
+                className="h-[114px] w-[132px] rounded-lg"
+              />
 
-              <div className="d-flex width8 justify-content-between my-auto mt-1">
-                <div className="width100">
-                  <div className="cont-name-hotel-and-location d-flex flex-column align-self-center gap-[3px]">
-                    <div className="d-flex title-start">
-                      <span className="title-card-ini">{itemHotel.name}</span>
+              <div className="flex justify-between gap-x-[149px] my-auto">
+                <div className="flex flex-col gap-y-1">
+                  <div className="d-flex title-start">
+                    <span className="text-fs-16 m-b text-black">
+                      {itemHotel.name}
+                    </span>
 
-                      <div className="">
-                        <Rating
-                          id="start-itinerary"
-                          className="d-flex align-self-start"
-                          name="no-value"
-                          value={itemHotel.stars}
-                          readOnly
-                        />
-                      </div>
-                    </div>
+                    <TotalStars
+                      stars={itemHotel.stars}
+                      width={"w-[12]"}
+                      height={"h-[12]"}
+                    />
+                  </div>
 
-                    <div className="icon-location-and-text d-flex gap-2 items-center">
-                      <Image 
-                      className="icons-size-m" src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`} 
+                  <div className="flex items-center gap-x-1">
+                    <Image
+                      className="w-[11px] h-[14px]"
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
                       alt="icon-location-bl"
                       width={11}
                       height={14}
+                    />
+                    <span className="text-bl-100 text-fs-10 m-s-b">
+                      {itemHotel.address}
+                    </span>
+                  </div>
+
+                  <div className="flex gap-x-4 max-lg:!hidden">
+                    <div className="flex gap-x-1 items-center">
+                      <Image
+                        className="w-[14px] h-[15px]"
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                        alt="icon-adult-b"
+                        width={14}
+                        height={15}
                       />
-                      <span>{itemHotel.address}</span>
+                      <span className="text-fs-10 text-gry-100 m-s-b">
+                        {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
+                        {itemHotel.totalAdults} {languageData.modalHotel.adults}{" "}
+                        {itemHotel.totalChildren}{" "}
+                        {languageData.modalHotel.children}
+                      </span>
                     </div>
 
-                    <div className="occupancy-rooms-itinerary max-lg:!hidden">
-                      <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                        <img
-                          className="icons-size-m"
-                          src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
-                          alt="icon-adult-b"
-                        ></img>
-                        <span>
-                          {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
-                          {itemHotel.totalAdults}{" "}
-                          {languageData.modalHotel.adults}{" "}
-                          {itemHotel.totalChildren}{" "}
-                          {languageData.modalHotel.children}
-                        </span>
-                      </div>
+                    <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
+                      {/* <RoomIcon className="icons-size-m" /> */}
+                      <Image
+                        className="w-[14px] h-[15px]"
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                        // src={RoomIcon}
+                        alt="icon Room"
+                        width={14}
+                        height={15}
+                      />
 
-                      <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                        {/* <RoomIcon className="icons-size-m" /> */}
-                        <Image className="icons-size-m" src={RoomIcon} alt="icon Room"/>
-
-                        <span>
-                          {itemHotel.totalRooms}{" "}
-                          {languageData.itinerary.detailsPayment.rooms}
-                        </span>
-                      </div>
+                      <span className="text-fs-10 text-gry-100 m-s-b">
+                        {itemHotel.totalRooms}{" "}
+                        {languageData.itinerary.detailsPayment.rooms}
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="active-container-payment-desktop widthA max-lg:hidden flex">
-                  <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
-                    <span className="text-grey-card-hotel-i">
-                      {languageData.cartTour.taxesText}
-                    </span>
-
-                    <span className="title-card-two">
-                      <b>
-                        MXN $
-                        {Math.floor(itemHotel.price)
-                          .toLocaleString("es-MX", { currency: "MXN" })
-                          .replace(".00", "")}
-                        .<sup>{(itemHotel.price % 1).toFixed(2).slice(2)}</sup>
-                      </b>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="active-container-payment-mobile lg:!hidden">
-              <div className="occupancy-rooms-itinerary">
-                <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                  <img
-                    className="icons-size-m"
-                    src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
-                    alt="icon-adult-b"
-                  />
-
-                  <span>
-                    {itemHotel.totalAdults} {languageData.containerModalHotel.adults}, {itemHotel.totalChildren}{" "}
-                    {languageData.containerModalHotel.children}
-                  </span>
-                </div>
-
-                <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
-                  <Image className="icons-size-m" src={RoomIcon} alt="icon room"/>
-                  <span>{itemHotel.totalRooms} {languageData.modalHotel.rooms}</span>
-                </div>
-              </div>
-
-              <div className={`${isMobile ? "widthA" : "width100"}`}>
-                <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
-                  <span className="text-grey-card-hotel-i">
-                    {languageData.cardHotel.taxes}
+                <div className="w-auto max-lg:hidden flex flex-col gap-y-1 ">
+                  <span className="text-fs-9 text-gry-70 m-m">
+                    {languageData.cartTour.taxesText}
                   </span>
 
-                  {/* PENDIENTE DE CONECTAR BACK */}
-                  <span className="title-card-two">
-                    <b>
-                      MXN $
+                  <span className="m-b text-black flex items-center gap-x-[2px]">
+                    <p className="text-fs-12 m-0">MXN</p>
+                    <p className="text-fs-16 m-0">
+                      $
                       {Math.floor(itemHotel.price)
                         .toLocaleString("es-MX", { currency: "MXN" })
                         .replace(".00", "")}
                       .<sup>{(itemHotel.price % 1).toFixed(2).slice(2)}</sup>
-                    </b>
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-between border-y border-gry-100 items-start py-[0.6rem] my-[1rem] lg:!hidden">
+              <div className="flex flex-col gap-y-[1rem]">
+                <div className="flex gap-x-2 items-center">
+                  <Image
+                    className="w-[14px] h-[15px]"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                    alt="icon-adult-b"
+                    width={14}
+                    height={15}
+                  />
+
+                  <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                    {itemHotel.totalAdults}{" "}
+                    {languageData.containerModalHotel.adults},{" "}
+                    {itemHotel.totalChildren}{" "}
+                    {languageData.containerModalHotel.children}
+                  </span>
+                </div>
+
+                <div className="flex gap-x-2 items-center">
+                  <Image
+                    src={RoomIcon}
+                    alt="icon room"
+                    className="w-[14px] h-[15px]"
+                    width={14}
+                    height={15}
+                  />
+                  <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                    {itemHotel.totalRooms} {languageData.modalHotel.rooms}
+                  </span>
+                </div>
+              </div>
+
+              <div className={`${isMobile ? "w-auto" : "w-full"}`}>
+                <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
+                  <span className="text-fs-9 text-gry-70 m-m">
+                    {languageData.cartTour.taxesText}
+                  </span>
+
+                  {/* PENDIENTE DE CONECTAR BACK */}
+                  <span className="m-b text-black flex items-center gap-x-[2px]">
+                    <p className="text-fs-12 m-0">MXN</p>
+                    <p className="text-fs-16 m-0">
+                      $
+                      {Math.floor(itemHotel.price)
+                        .toLocaleString("es-MX", { currency: "MXN" })
+                        .replace(".00", "")}
+                      .<sup>{(itemHotel.price % 1).toFixed(2).slice(2)}</sup>
+                    </p>
                   </span>
                 </div>
               </div>
@@ -248,15 +280,15 @@ export default function CardHotelItinerary(props) {
 
             {/* FATHER TWO */}
 
-            <div>
-              <div className="text-or">
+            <div className="w-full mt-6">
+              <div className="text-or-100 text-fs-10 m-s-b !mb-4">
                 {/* TEXT ROOMS YOU RESERVED /LP 15-02-24 */}
                 <span>{languageData.itinerary.roomsYouReserved}</span>
               </div>
 
               {/* FIRST ACCORDION */}
 
-              <div className="cont-accordion-hotel-card-i">
+              <div className="rounded-lg bg-gry-30 w-full h-auto">
                 {itemHotel.rooms &&
                   itemHotel.rooms.map((roomInfo, index) => (
                     <div key={index}>
@@ -270,109 +302,109 @@ export default function CardHotelItinerary(props) {
                           aria-controls="panel1-content"
                           id="panel1-header"
                         >
-                          <div className="father-all-inclusive">
-                            <div className="d-flex gap-3 align-items-center">
-                              <span className="title-card-three">
-                                x{roomInfo.quantity} {roomInfo.name}
-                              </span>
-                            </div>
+                          <div className="flex items-center m-b text-fs-12 text-black">
+                            x{roomInfo.quantity} {roomInfo.name}
                           </div>
                         </AccordionSummary>
 
                         {/* DETAILS FIRST ACCORDION */}
 
                         <AccordionDetails>
-                          <div className="d-flex d-grid gap-4 align-items-center">
-                            {roomInfo.occupancies &&
-                              roomInfo.occupancies.map((roomBed, index) => (
-                                <div key={index}>
-                                  <div className="text-grey-card-hotel-i margin-b">
-                                    {/* TEXT ROOM /LP 15-02-24 */}
-                                    <span>
-                                      {
-                                        languageData.itinerary.detailsPayment
-                                          .room
-                                      }{" "}
-                                      {index + 1}
+                          {/* <div className="flex grid gap-4 items-center"> */}
+                          {roomInfo.occupancies &&
+                            roomInfo.occupancies.map((roomBed, index) => (
+                              <div key={index}>
+                                <div className="mb-2.5 text-fs-11 text-gry-100 m-s-b text-nowrap">
+                                  {/* TEXT ROOM /LP 15-02-24 */}
+                                  <span>
+                                    {languageData.itinerary.detailsPayment.room}{" "}
+                                    {index + 1}
+                                  </span>
+                                </div>
+
+                                <div className="flex flex-wrap gap-x-2 gap-y-2 items-center">
+                                  <div className="flex gap-X-2 items-center">
+                                    <Image
+                                      className="w-[14px] h-[15px]"
+                                      src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                                      alt="icon-adult-b"
+                                      width={14}
+                                      height={15}
+                                    />
+
+                                    <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                                      {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
+                                      {roomBed.adults}{" "}
+                                      {languageData.modalHotel.adults}{" "}
+                                      {roomBed.children}{" "}
+                                      {languageData.modalHotel.children}
                                     </span>
                                   </div>
 
-                                  <div className="d-flex flex-wrap row-gap-1 gap-2 align-items-center">
-                                    <div className="d-flex gap-2 items-center">
-                                      <img
-                                        className="icons-size-m"
-                                        src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
-                                        alt="icon-adult-b"
-                                      />
-
-                                      <span className="text-grey-card-hotel-i">
-                                        {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
-                                        {roomBed.adults}{" "}
-                                        {languageData.modalHotel.adults}{" "}
-                                        {roomBed.children}{" "}
-                                        {languageData.modalHotel.children}
-                                      </span>
-                                    </div>
-
-                                    {/* MAP ROOM BEDS */}
-                                    {roomBed.beds &&
-                                      roomBed.beds.map((bed, index) => (
-                                        <div key={index} className="flex gap-2 items-center">
-                                          {/* <RoomIcon className="icons-size-m" /> */}
-                                          <Image
-                                            className="icons-size-m"
-                                            src={RoomIcon}
-                                            alt="icon Room"
-                                          />{" "}
-                                          <span className="text-grey-card-hotel-i">
-                                            {bed.number} {bed.type}
-                                          </span>
-                                        </div>
-                                      ))}
-
-                                    {/* NON REFUNDABLE */}
-
-                                    <div className="d-flex align-items-center">
-                                      {roomBed.refundable === false && (
+                                  {/* MAP ROOM BEDS */}
+                                  {roomBed.beds &&
+                                    roomBed.beds.map((bed, index) => (
+                                      <div
+                                        key={index}
+                                        className="flex gap-2 items-center"
+                                      >
+                                        {/* <RoomIcon className="icons-size-m" /> */}
                                         <Image
-                                          className="icons-size-s"
-                                          src={ErrorIcon}
-                                          alt="icon error"
-                                        />
-                                      )}
-                                      {roomBed.refundable === true && (
-                                        <Image
-                                          className="icons-size-s"
-                                          src={DoneIcon}
-                                          alt="icon done"
-                                        />
-                                      )}
-
-                                      <span className="text-grey-card-hotel-i">
-                                        {!roomBed.refundable &&
-                                          languageData.itinerary.nonRefundable}
-                                        {roomBed.refundable &&
-                                          languageData.itinerary.refundable}
-                                      </span>
-                                    </div>
-
-                                    {/* EATING PLAN */}
-                                    {roomBed.eatingPlan && (
-                                      <div className="d-flex align-items-center">
-                                        <Image
-                                          className="icons-size-s"
-                                          src={DoneIcon}
-                                          alt="icon-done"
-                                        />
-                                        <span className="text-all-inclusive-i">
-                                          {roomBed.eatingPlan}
+                                          src={RoomIcon}
+                                          alt="icon Room"
+                                          className="w-[14px] h-[15px]"
+                                          width={14}
+                                          height={15}
+                                        />{" "}
+                                        <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                                          {bed.number} {bed.type}
                                         </span>
                                       </div>
+                                    ))}
+
+                                  {/* NON REFUNDABLE */}
+
+                                  <div className="d-flex align-items-center">
+                                    {roomBed.refundable === false && (
+                                      <Image
+                                        className="icons-size-s"
+                                        src={ErrorIcon}
+                                        alt="icon error"
+                                      />
                                     )}
+                                    {roomBed.refundable === true && (
+                                      <Image
+                                        className="icons-size-s"
+                                        src={DoneIcon}
+                                        alt="icon done"
+                                      />
+                                    )}
+
+                                    <span className="text-grey-card-hotel-i">
+                                      {!roomBed.refundable &&
+                                        languageData.itinerary.nonRefundable}
+                                      {roomBed.refundable &&
+                                        languageData.itinerary.refundable}
+                                    </span>
                                   </div>
+
+                                  {/* EATING PLAN */}
+                                  {roomBed.eatingPlan && (
+                                    <div className="d-flex align-items-center">
+                                      <Image
+                                        className="icons-size-s"
+                                        src={DoneIcon}
+                                        alt="icon-done"
+                                      />
+                                      <span className="text-all-inclusive-i">
+                                        {roomBed.eatingPlan}
+                                      </span>
+                                    </div>
+                                  )}
                                 </div>
-                              ))}
-                          </div>
+                              </div>
+                            ))}
+                          {/* </div> */}
                         </AccordionDetails>
                       </Accordion>
                     </div>
@@ -414,5 +446,341 @@ export default function CardHotelItinerary(props) {
         </div>
       )}
     </>
+    // <>
+    //   <div className="cont-card-icon-location-and-date">
+    //     <Image className="icon-location-border-date" src={IconLocationBorder} alt="IconLocationBorder" />
+    //     <div className="container-card-hotel-i-and-date">
+    //       {/* DAY,TIME HOTEL */}
+    //       <div className="date-itinerary-hotel max-lg:!flex-row">
+    //         <div>
+    //           <span className="text-hotel-or-i">
+    //             {languageData.dayOfWeek[dayOfWeek]}
+    //           </span>{" "}
+    //           <span className="text-loc-hotel-grey-i">{dateFormatCheckIn}</span>{" "}
+    //           <span className="text-loc-hotel-grey-i">|</span>{" "}
+    //           <span className="text-loc-hotel-grey-i">14:00pm</span>
+    //         </div>
+
+    //         <ul className="ul-hotel-date">
+    //           <li>
+    //             <span className="mr-2 ml-2">•</span>
+    //             <span className="text-hotel-grey-i">Check out</span>{" "}
+    //             <span className="text-loc-hotel-grey-i">
+    //               {dateFormatCheckOut}{" "}
+    //             </span>
+    //             <span className="text-loc-hotel-grey-i">- </span>
+    //             <span className="text-loc-hotel-grey-i">02:00pm</span>
+    //           </li>
+    //         </ul>
+    //       </div>
+
+    //       <div className="cont-card-hotel-itinerary">
+    //         {/* CLOSE BUTTON */}
+
+    //         <div
+    //           className="remove-card-listing"
+    //           onClick={() => setIconRemove(true)}
+    //         >
+    //           {/* <CloseIcon /> */}
+    //           <Image src={CloseIcon} alt="icon close"/>
+    //         </div>
+
+    //         {/* FATHER ONE */}
+
+    //         <div className="d-flex cont-img-price-info">
+    //           <div className="cont-img-card-hotel">
+    //             <img
+    //               src={itemHotel.image ? itemHotel.image : ImageNotFound}
+    //               alt="hotel"
+    //               width="100%"
+    //               className="!h-full"
+    //             />
+    //           </div>
+
+    //           <div className="d-flex width8 justify-content-between my-auto mt-1">
+    //             <div className="width100">
+    //               <div className="cont-name-hotel-and-location d-flex flex-column align-self-center gap-[3px]">
+    //                 <div className="d-flex title-start">
+    //                   <span className="title-card-ini">{itemHotel.name}</span>
+
+    //                   <div className="">
+    //                     <Rating
+    //                       id="start-itinerary"
+    //                       className="d-flex align-self-start"
+    //                       name="no-value"
+    //                       value={itemHotel.stars}
+    //                       readOnly
+    //                     />
+    //                   </div>
+    //                 </div>
+
+    //                 <div className="icon-location-and-text d-flex gap-2 items-center">
+    //                   <Image
+    //                   className="icons-size-m" src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+    //                   alt="icon-location-bl"
+    //                   width={11}
+    //                   height={14}
+    //                   />
+    //                   <span>{itemHotel.address}</span>
+    //                 </div>
+
+    //                 <div className="occupancy-rooms-itinerary max-lg:!hidden">
+    //                   <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
+    //                     <img
+    //                       className="icons-size-m"
+    //                       src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
+    //                       alt="icon-adult-b"
+    //                     ></img>
+    //                     <span>
+    //                       {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
+    //                       {itemHotel.totalAdults}{" "}
+    //                       {languageData.modalHotel.adults}{" "}
+    //                       {itemHotel.totalChildren}{" "}
+    //                       {languageData.modalHotel.children}
+    //                     </span>
+    //                   </div>
+
+    //                   <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
+    //                     {/* <RoomIcon className="icons-size-m" /> */}
+    //                     <Image className="icons-size-m" src={RoomIcon} alt="icon Room"/>
+
+    //                     <span>
+    //                       {itemHotel.totalRooms}{" "}
+    //                       {languageData.itinerary.detailsPayment.rooms}
+    //                     </span>
+    //                   </div>
+    //                 </div>
+    //               </div>
+    //             </div>
+
+    //             <div className="active-container-payment-desktop widthA max-lg:hidden flex">
+    //               <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
+    //                 <span className="text-grey-card-hotel-i">
+    //                   {languageData.cartTour.taxesText}
+    //                 </span>
+
+    //                 <span className="title-card-two">
+    //                   <b>
+    //                     MXN $
+    //                     {Math.floor(itemHotel.price)
+    //                       .toLocaleString("es-MX", { currency: "MXN" })
+    //                       .replace(".00", "")}
+    //                     .<sup>{(itemHotel.price % 1).toFixed(2).slice(2)}</sup>
+    //                   </b>
+    //                 </span>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+
+    //         <div className="active-container-payment-mobile lg:!hidden">
+    //           <div className="occupancy-rooms-itinerary">
+    //             <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
+    //               <img
+    //                 className="icons-size-m"
+    //                 src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
+    //                 alt="icon-adult-b"
+    //               />
+
+    //               <span>
+    //                 {itemHotel.totalAdults} {languageData.containerModalHotel.adults}, {itemHotel.totalChildren}{" "}
+    //                 {languageData.containerModalHotel.children}
+    //               </span>
+    //             </div>
+
+    //             <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
+    //               <Image className="icons-size-m" src={RoomIcon} alt="icon room"/>
+    //               <span>{itemHotel.totalRooms} {languageData.modalHotel.rooms}</span>
+    //             </div>
+    //           </div>
+
+    //           <div className={`${isMobile ? "widthA" : "width100"}`}>
+    //             <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
+    //               <span className="text-grey-card-hotel-i">
+    //                 {languageData.cardHotel.taxes}
+    //               </span>
+
+    //               {/* PENDIENTE DE CONECTAR BACK */}
+    //               <span className="title-card-two">
+    //                 <b>
+    //                   MXN $
+    //                   {Math.floor(itemHotel.price)
+    //                     .toLocaleString("es-MX", { currency: "MXN" })
+    //                     .replace(".00", "")}
+    //                   .<sup>{(itemHotel.price % 1).toFixed(2).slice(2)}</sup>
+    //                 </b>
+    //               </span>
+    //             </div>
+    //           </div>
+    //         </div>
+
+    //         {/* FATHER TWO */}
+
+    //         <div>
+    //           <div className="text-or">
+    //             {/* TEXT ROOMS YOU RESERVED /LP 15-02-24 */}
+    //             <span>{languageData.itinerary.roomsYouReserved}</span>
+    //           </div>
+
+    //           {/* FIRST ACCORDION */}
+
+    //           <div className="cont-accordion-hotel-card-i">
+    //             {itemHotel.rooms &&
+    //               itemHotel.rooms.map((roomInfo, index) => (
+    //                 <div key={index}>
+    //                   <Accordion
+    //                     id="accordion-hotel-itinerary-one"
+    //                     expanded={expanded === index}
+    //                     onChange={handleChange(index)}
+    //                   >
+    //                     <AccordionSummary
+    //                       expandIcon={<ExpandMoreIcon />}
+    //                       aria-controls="panel1-content"
+    //                       id="panel1-header"
+    //                     >
+    //                       <div className="father-all-inclusive">
+    //                         <div className="d-flex gap-3 align-items-center">
+    //                           <span className="title-card-three">
+    //                             x{roomInfo.quantity} {roomInfo.name}
+    //                           </span>
+    //                         </div>
+    //                       </div>
+    //                     </AccordionSummary>
+
+    //                     {/* DETAILS FIRST ACCORDION */}
+
+    //                     <AccordionDetails>
+    //                       <div className="d-flex d-grid gap-4 align-items-center">
+    //                         {roomInfo.occupancies &&
+    //                           roomInfo.occupancies.map((roomBed, index) => (
+    //                             <div key={index}>
+    //                               <div className="text-grey-card-hotel-i margin-b">
+    //                                 {/* TEXT ROOM /LP 15-02-24 */}
+    //                                 <span>
+    //                                   {
+    //                                     languageData.itinerary.detailsPayment
+    //                                       .room
+    //                                   }{" "}
+    //                                   {index + 1}
+    //                                 </span>
+    //                               </div>
+
+    //                               <div className="d-flex flex-wrap row-gap-1 gap-2 align-items-center">
+    //                                 <div className="d-flex gap-2 items-center">
+    //                                   <img
+    //                                     className="icons-size-m"
+    //                                     src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
+    //                                     alt="icon-adult-b"
+    //                                   />
+
+    //                                   <span className="text-grey-card-hotel-i">
+    //                                     {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
+    //                                     {roomBed.adults}{" "}
+    //                                     {languageData.modalHotel.adults}{" "}
+    //                                     {roomBed.children}{" "}
+    //                                     {languageData.modalHotel.children}
+    //                                   </span>
+    //                                 </div>
+
+    //                                 {/* MAP ROOM BEDS */}
+    //                                 {roomBed.beds &&
+    //                                   roomBed.beds.map((bed, index) => (
+    //                                     <div key={index} className="flex gap-2 items-center">
+    //                                       {/* <RoomIcon className="icons-size-m" /> */}
+    //                                       <Image
+    //                                         className="icons-size-m"
+    //                                         src={RoomIcon}
+    //                                         alt="icon Room"
+    //                                       />{" "}
+    //                                       <span className="text-grey-card-hotel-i">
+    //                                         {bed.number} {bed.type}
+    //                                       </span>
+    //                                     </div>
+    //                                   ))}
+
+    //                                 {/* NON REFUNDABLE */}
+
+    //                                 <div className="d-flex align-items-center">
+    //                                   {roomBed.refundable === false && (
+    //                                     <Image
+    //                                       className="icons-size-s"
+    //                                       src={ErrorIcon}
+    //                                       alt="icon error"
+    //                                     />
+    //                                   )}
+    //                                   {roomBed.refundable === true && (
+    //                                     <Image
+    //                                       className="icons-size-s"
+    //                                       src={DoneIcon}
+    //                                       alt="icon done"
+    //                                     />
+    //                                   )}
+
+    //                                   <span className="text-grey-card-hotel-i">
+    //                                     {!roomBed.refundable &&
+    //                                       languageData.itinerary.nonRefundable}
+    //                                     {roomBed.refundable &&
+    //                                       languageData.itinerary.refundable}
+    //                                   </span>
+    //                                 </div>
+
+    //                                 {/* EATING PLAN */}
+    //                                 {roomBed.eatingPlan && (
+    //                                   <div className="d-flex align-items-center">
+    //                                     <Image
+    //                                       className="icons-size-s"
+    //                                       src={DoneIcon}
+    //                                       alt="icon-done"
+    //                                     />
+    //                                     <span className="text-all-inclusive-i">
+    //                                       {roomBed.eatingPlan}
+    //                                     </span>
+    //                                   </div>
+    //                                 )}
+    //                               </div>
+    //                             </div>
+    //                           ))}
+    //                       </div>
+    //                     </AccordionDetails>
+    //                   </Accordion>
+    //                 </div>
+    //               ))}
+    //           </div>
+    //         </div>
+
+    //         {/* REMOVE CARD */}
+
+    //         {iconRemove && (
+    //           <>
+    //             <div
+    //               className="container-remove-itinerary"
+    //               onClick={() => cancelRemove()}
+    //             />
+    //             <div
+    //               className="remove-reservation-itinerary"
+    //               onClick={() => removeReservation(itemHotel.code)}
+    //             >
+    //               {languageData.cart.remove}
+    //             </div>
+    //           </>
+    //         )}
+    //         {/* END REMOVE CARD */}
+
+    //         {itemHotel.available === false && (
+    //           <>
+    //             <UnavailableCardHotel destination={itemHotel} />
+    //             <div className="overlay" />
+    //           </>
+    //         )}
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   {loader && (
+    //     <div className="progress-loader">
+    //       <CircularProgress />
+    //     </div>
+    //   )}
+    // </>
   );
 }

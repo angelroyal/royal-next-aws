@@ -106,7 +106,7 @@ export default function SendHotel() {
 
   return (
     // <div className="flex flex-col lg:flex-row items-center bg-white gap-2.5 rounded-lg p-6">
-    <div className={`flex ${isHotelResults ? 'flex-col' : 'flex-col lg:flex-row'} shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6 max-lg:w-[393px]`}>
+    <div className={`flex ${isHotelResults ? 'flex-col' : 'flex-col lg:flex-row'} shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6 max-lg:w-[391px]`}>
 
       {/* <SearchHotel onSelectSearch={setSelectedOption} /> */}
       <AutocompleteHotel/>

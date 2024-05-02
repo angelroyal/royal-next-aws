@@ -5,12 +5,18 @@ import { SearchDestinationA } from "./SearchDestinationA";
 import { ButtonSearch } from "./ButtonSearch";
 import { SearchDestinationB } from "./SearchDestinationB";
 
-// RFC
+const TravelTypes = [
+  { value: "simple", label: "Sencillo" },
+  { value: "round", label: "Redondo" },
+];
+
 export default function SearchTransport({ isListing = false }) {
+
+
   const [selectedAutoComplete, setSelectedAutoComplete] = useState(null);
   const [selectDestinationA, setSelectDestinationA] = useState(null);
   const [selectDestinationB, setSelectDestinationB] = useState(null);
-  const [travelType, setTravelType] = useState(1);
+  const [travelType, setTravelType] = useState("simple");
 
   const [destinationALocal, setDestinationALocal] = useState(null);
   const [destinationBLocal, setDestinationBLocal] = useState(null);
@@ -23,81 +29,90 @@ export default function SearchTransport({ isListing = false }) {
       setSelectedAutoComplete(searchTransport.autoComplete);
       setDestinationALocal(searchTransport.destinationA);
       setDestinationBLocal(searchTransport.destinationB);
+      setTravelType(searchTransport.type);
     }
   }, []);
 
+  useEffect(() => {
+    const getSearchTransport = JSON.parse(
+      localStorage.getItem("searchTransport")
+    );
+    if (getSearchTransport) {
+      getSearchTransport.type = travelType;
+      localStorage.setItem(
+        "searchTransport",
+        JSON.stringify(getSearchTransport)
+      );
+    }
+  }, [travelType]);
+
   return (
     <div
-      className={`flex shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6 ${
-        isListing ? "w-ful flex-col" : "flex-col lg:flex-row max-lg:w-[393px]"
+      className={`flex flex-col p-6 shadow-3xl bg-white gap-y-[12.5px] rounded-lg ${
+        isListing ? "w-full" : "max-lg:w-[391px]"
       }`}
     >
       {/* SELECT TRAVEL TYPE */}
-      {isListing && (
-        <div className="flex w-full gap-4">
+      <div className={`flex w-full gap-4`}>
+        {TravelTypes.map((travel, index) => (
           <button
-            onClick={() => setTravelType(1)}
+            key={index}
+            onClick={() => setTravelType(travel.value)}
             className="border-none flex gap-x-2 items-center"
           >
             <button
               className={`cursor-pointer w-[16px] h-[16px] rounded-full border relative ${
-                travelType === 1 ? "!border-bl-100" : "!border-gry-50"
+                travelType === travel.value
+                  ? "!border-bl-100"
+                  : "!border-gry-50"
               } ${
-                travelType === 1 &&
+                travelType === travel.value &&
                 "before:content-[' '] before:absolute before:w-[10px] before:h-[10px] before:rounded-full before:bg-bl-100 before:inset-x-0	before:inset-y-0	before:mx-auto before:my-auto"
               }`}
             />
-            <h3 className="text-fs-12 m-m text-black">Un destino</h3>
+            <h3 className="text-fs-12 m-m text-black m-0">{travel.label}</h3>
           </button>
+        ))}
+      </div>
 
-          <button
-            onClick={() => setTravelType(2)}
-            className="border-none flex gap-x-2"
-          >
-            <button
-              className={`cursor-pointer w-[16px] h-[16px] rounded-full border relative ${
-                travelType === 2 ? "!border-bl-100" : "!border-gry-50"
-              } ${
-                travelType === 2 &&
-                "before:content-[' '] before:absolute before:w-[10px] before:h-[10px] before:rounded-full before:bg-bl-100 before:inset-x-0	before:inset-y-0	before:mx-auto before:my-auto"
-              }`}
-            />
-            <h3 className="text-fs-12 m-m text-black">Viaje redondo</h3>
-          </button>
-        </div>
-      )}
+      <div
+        className={`flex items-center gap-2.5 ${
+          isListing ? "w-ful flex-col" : "flex-col lg:flex-row"
+        }`}
+      >
+        <AutoCompleteTrans
+          isListing={isListing}
+          selectedAutoComplete={selectedAutoComplete}
+          setSelectedAutoComplete={setSelectedAutoComplete}
+          setSelectDestinationA={setSelectDestinationA}
+          setSelectDestinationB={setSelectDestinationB}
+        />
 
-      <AutoCompleteTrans
-        isListing={isListing}
-        selectedAutoComplete={selectedAutoComplete}
-        setSelectedAutoComplete={setSelectedAutoComplete}
-        setSelectDestinationA={setSelectDestinationA}
-        setSelectDestinationB={setSelectDestinationB}
-      />
+        <SearchDestinationA
+          isListing={isListing}
+          selectedAutoComplete={selectedAutoComplete}
+          setSelectDestinationA={setSelectDestinationA}
+          selectDestinationA={selectDestinationA}
+          destinationALocal={destinationALocal}
+          setSelectDestinationB={setSelectDestinationB}
+        />
 
-      <SearchDestinationA
-        isListing={isListing}
-        selectedAutoComplete={selectedAutoComplete}
-        setSelectDestinationA={setSelectDestinationA}
-        selectDestinationA={selectDestinationA}
-        destinationALocal={destinationALocal}
-        setSelectDestinationB={setSelectDestinationB}
-      />
+        <SearchDestinationB
+          isListing={isListing}
+          selectDestinationA={selectDestinationA}
+          selectDestinationB={selectDestinationB}
+          setSelectDestinationB={setSelectDestinationB}
+          destinationBLocal={destinationBLocal}
+        />
 
-      <SearchDestinationB
-        isListing={isListing}
-        selectDestinationA={selectDestinationA}
-        selectDestinationB={selectDestinationB}
-        setSelectDestinationB={setSelectDestinationB}
-        destinationBLocal={destinationBLocal}
-      />
-
-      <ButtonSearch
-        isListing={isListing}
-        selectedAutoComplete={selectedAutoComplete}
-        selectDestinationA={selectDestinationA}
-        selectDestinationB={selectDestinationB}
-      />
+        <ButtonSearch
+          isListing={isListing}
+          selectedAutoComplete={selectedAutoComplete}
+          selectDestinationA={selectDestinationA}
+          selectDestinationB={selectDestinationB}
+          travelType={travelType}
+        />
+      </div>
     </div>
   );
 }

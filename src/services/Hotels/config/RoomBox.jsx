@@ -96,7 +96,7 @@ function Room({ listing = false, OnApply }) {
                 {languageData.SearchBox.tabHotel.rooms}
               </span>
 
-              <span className="m-s-b text-fs-12 text-gry-100">
+              <span className="m-s-b text-fs-12 text-gry-100 text-nowrap">
                 {totalRooms} {languageData.modalHotel[roomPlural(totalRooms)]}
               </span>
             </div>
@@ -113,7 +113,7 @@ function Room({ listing = false, OnApply }) {
                 {languageData.SearchBox.tabTour.people}
               </span>
 
-              <span className="m-s-b text-fs-12 text-gry-100">
+              <span className="m-s-b text-fs-12 text-gry-100 text-nowrap">
                 {`${totalPeople.adults} ${
                   languageData.itinerary.tourItinerary[
                     adultPlural(totalPeople.adults)

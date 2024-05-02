@@ -63,7 +63,7 @@ export default function SearchBox() {
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
               <Image
-              className="max-lg:w-4 max-lg:h-4"
+                className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
                   currentActiveIcon === "hotels"
                     ? "icons/hotel/hotel-w.svg"
@@ -92,7 +92,7 @@ export default function SearchBox() {
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
               <Image
-              className="max-lg:w-4 max-lg:h-4"
+                className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
                   currentActiveIcon === "tour" || currentActiveIcon === "tours"
                     ? "icons/tour/tour-w.svg"
@@ -121,7 +121,7 @@ export default function SearchBox() {
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
               <Image
-              className="max-lg:w-4 max-lg:h-4"
+                className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
                   currentActiveIcon === "transport" ||
                   currentActiveIcon === "transports"
@@ -137,22 +137,25 @@ export default function SearchBox() {
           </Tab>
         </Tab.List>
 
-        <Tab.Panels>
-          {currentActiveIcon ? (
-            <>
-              {currentActiveIcon === "hotels" && <SendHotel />}
+        <div className="w-full flex justify-center">
+          <Tab.Panels>
+            {currentActiveIcon ? (
+              <>
+                {currentActiveIcon === "hotels" && <SendHotel />}
 
-              {currentActiveIcon === "tour" || currentActiveIcon === "tours" ? (
-                <ResultTour />
-              ) : (
-                ""
-              )}
-              {currentActiveIcon === "transport"  && <SearchTransport />}
-            </>
-          ) : (
-            <SearchHomeSkeleton />
-          )}
-        </Tab.Panels>
+                {currentActiveIcon === "tour" ||
+                currentActiveIcon === "tours" ? (
+                  <ResultTour />
+                ) : (
+                  ""
+                )}
+                {currentActiveIcon === "transport" && <SearchTransport />}
+              </>
+            ) : (
+              <SearchHomeSkeleton />
+            )}
+          </Tab.Panels>
+        </div>
       </Tab.Group>
     </>
   );

@@ -9,6 +9,7 @@ import Calendar from "../../hooks/Calendar";
 import LanguageContext from "../../language/LanguageContext";
 import SearchHotel from "@/services/Hotels/Search/SearchHotel";
 import { ListingHotelMobile } from "@/services/Hotels/components/Listing/ListingHotelMobile";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export default function MobilSearchHotel() {
   const { languageData, language } = useContext(LanguageContext);
@@ -90,6 +91,8 @@ export default function MobilSearchHotel() {
 
   const [openFilter, setOpenFilter] = useState(false);
 
+  const routerActual = NavigationConfig();
+
   return (
     <div className="!p-5 shadow-3xl">
       <p className="m-s-b text-[1.2rem] text-black p-2">
@@ -102,15 +105,22 @@ export default function MobilSearchHotel() {
         <Room listing={true} OnApply={setRoomData} />
 
         <div className="flex justify-between gap-x-4">
-          <button
-            className="py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center block xl:hidden text-bl-100 m-b text-fs-12"
-            onClick={() => setOpenFilter(true)}
-          >
-            Filtros
-          </button>
+          {routerActual === "hotel" ||
+            (routerActual === "hotels" && (
+              <button
+                className="py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center block xl:hidden text-bl-100 m-b text-fs-12"
+                onClick={() => setOpenFilter(true)}
+              >
+                Filtros
+              </button>
+            ))}
 
           <button
-            className={` w-[60%] lg:w-full rounded-[50px] justify-center flex gap-x-2.5 items-center justify-content-center m-b text-fs-12 text-white py-[8.5px] px-8 lg:px-4 ${
+            className={` ${
+              routerActual === "hotel" || routerActual === "hotels"
+                ? "w-[60%] lg:w-full"
+                : "w-full"
+            }  rounded-[50px] justify-center flex gap-x-2.5 items-center justify-content-center m-b text-fs-12 text-white py-[8.5px] px-8 lg:px-4 ${
               !selectedOption || !validFirstDay || !validSecondDay
                 ? "bg-or-50"
                 : "bg-or-100 hover:!bg-or-110"

@@ -25,7 +25,10 @@ export default function ListingTransport(props) {
         <div className="w-full xl:w-[28%] 2xl:w-[24%] mt-10">
           {/* <SearchBoxMobile /> */}
           <SearchBoxMobile className="margin-bottom" />
-          <FilterTransport />
+
+          <div className="max-xl:hidden">
+            <FilterTransport />
+          </div>
         </div>
 
         <div className="w-full xl:w-8/12">

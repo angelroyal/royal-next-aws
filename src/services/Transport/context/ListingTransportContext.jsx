@@ -22,7 +22,7 @@ export const ListingTransportProvider = ({ children }) => {
       filteredData = filterBySelectedFilters(
         filteredData,
         selectedFilters,
-        pricing
+        pricing,
       );
       setDataTransportF(filteredData);
     }

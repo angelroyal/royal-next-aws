@@ -2,21 +2,24 @@
 
 import "swiper/css";
 import "swiper/css/pagination";
+
 import React, { useContext, useState } from "react";
 
-import ListingTransportContext from "../../context/ListingTransportContext";
-import CancelPolicyTransport from "../ToulTip/CancelPolicyTransport";
 import ModalTransport from "../modal/ModalTransport";
+import CancelPolicyTransport from "../ToulTip/CancelPolicyTransport";
+import ListingTransportContext from "../../context/ListingTransportContext";
+
 export default function CardTransport() {
   const [openModal, setOpenModal] = useState(false);
-  const { dataTransportF } = useContext(ListingTransportContext);
   const [openPolicy, setOpenPolicy] = useState(null);
-  console.log(dataTransportF);
-  const [cartPosition, setCartPosition] = useState(null);
-  const openCartDetails = (index) => {
-    setCartPosition(index);
-    setOpenModal(!openModal)
-  }
+  const { dataTransportF } = useContext(ListingTransportContext);
+  const [selectedTransport, setSelectedTransport] = useState(null);
+
+  const openCartDetails = (transport) => {
+    setSelectedTransport(transport);
+    setOpenModal(true);
+  };
+
   return (
     <>
       {dataTransportF &&
@@ -55,7 +58,6 @@ export default function CardTransport() {
                       </div>
 
                       <div className="flex gap-3">
-
                         <div className="flex flex-col gap-2">
                           {/* PEOPLES */}
                           <div className="text-fs-12 flex text-gry-100 items-center text-nowrap truncate">
@@ -109,10 +111,8 @@ export default function CardTransport() {
                             {transport.large_suitcase} maletas
                           </div>
                         </div>
-
                       </div>
                     </div>
-
                   </div>
                 </div>
                 {/* PRICE */}
@@ -120,8 +120,9 @@ export default function CardTransport() {
                   <div className="flex-col flex items-end gap-[4px]">
                     <div className="pt-1 flex items-center gap-[8px]">
                       <span className="m-m text-fs-12">MXN</span>{" "}
-                      <span className="m-b text-fs-20 ">{" "}$
-
+                      <span className="m-b text-fs-20 ">
+                        {" "}
+                        $
                         {Math.floor(transport.price)
                           .toLocaleString("es-MX", { currency: "MXN" })
                           .replace(".00", "")}
@@ -138,7 +139,6 @@ export default function CardTransport() {
                         politicas de cancelacion
                         {openPolicy === index && <CancelPolicyTransport />}
                       </span>
-
                     </div>
 
                     <div className="m-b bg-[#E0FEF0] text-grn-100 text-fs-10  py-[4px] px-[8px] rounded md:mb-3">
@@ -149,15 +149,18 @@ export default function CardTransport() {
 
                   <button
                     className="bg-yw-100 py-[10px] px-[50px] rounded-full m-b text-fs-12 hover:bg-yw-110 max-sm:px-[20px]"
-                    onClick={() =>
-                      openCartDetails(index)}
+                    onClick={() => openCartDetails(transport)}
+                  >
+                    Reservar
+                  </button>
 
-
-                  >Reservar</button>
-
-                  {openModal && cartPosition === index && <ModalTransport />}
-                  {/* {openModal && <ModalTransport closeModal={() => setOpenModal(false)} />} */}
-
+                  {openModal && (
+                    <ModalTransport
+                      isOpen={openModal}
+                      onClose={() => setOpenModal(false)}
+                      transport={selectedTransport}
+                    />
+                  )}
                 </div>
               </div>
             </div>
