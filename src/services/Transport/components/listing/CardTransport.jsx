@@ -1,13 +1,13 @@
 "use client";
 
-import "swiper/css";
-import "swiper/css/pagination";
-
 import React, { useContext, useState } from "react";
 
 import ModalTransport from "../modal/ModalTransport";
 import CancelPolicyTransport from "../ToulTip/CancelPolicyTransport";
 import ListingTransportContext from "../../context/ListingTransportContext";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function CardTransport() {
   const [openModal, setOpenModal] = useState(false);
@@ -115,6 +115,7 @@ export default function CardTransport() {
                     </div>
                   </div>
                 </div>
+                
                 {/* PRICE */}
                 <div className="flex-col flex items-end gap-[4px] max-md:flex-row max-md:justify-between max-md:border-t max-md:border-gry-50 max-md:mt-[10px] max-md:pt-[10px max-md:items-center">
                   <div className="flex-col flex items-end gap-[4px]">

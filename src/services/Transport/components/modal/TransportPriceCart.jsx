@@ -135,7 +135,6 @@ export default function TransportPriceCart(props) {
         className="text-center"
       >
         <span className="relative text-center text-fs-14 m-s-b text-bl-100 cursor-pointer relative">
-          {/* {languageData.containerModalHotel.policies} */}
           politicas de cancelacion
           {openPolicy === true && <CancelPolicyTransportWhite />}
         </span>

@@ -5,7 +5,6 @@ export async function autoCompleteSearch(autocomplete, lang) {
     const response = await axiosWithInterceptor.get(
       `${process.env.NEXT_PUBLIC_API_ROYAL}/${lang}/v1/transport/search/${autocomplete}`
     );
-    // console.log(response);
     if (response.status === 200) {
       return response.data;
     }
@@ -15,7 +14,6 @@ export async function autoCompleteSearch(autocomplete, lang) {
 }
 
 export async function getTransportation(destinationId, lang) {
-  // console.log(destinationId, lang);
   try {
     const response = await axiosWithInterceptor(
       `${process.env.NEXT_PUBLIC_API_ROYAL}/${lang}/v1/transport/list-zone/${destinationId}`
@@ -25,7 +23,6 @@ export async function getTransportation(destinationId, lang) {
     }
   } catch (error) {
     console.log(error);
-    // throw(error)
   }
 }
 

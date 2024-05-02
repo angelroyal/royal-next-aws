@@ -51,20 +51,12 @@ export default function ResultTour() {
       destination: selectedOption.label,
       code: selectedOption.key,
       type: selectedOption.type,
-      dateStart: dateStart, 
+      dateStart: dateStart,
       adults: roomData[0].adults,
       children: roomData[0].children,
     };
 
     const query = new URLSearchParams(requestBody).toString();
-
-    // if(selectedOption.type === "destination"){
-
-    //   window.open(`/tour/${selectedOption.codeName}?${query}`, '_blank')
-    // }else{
-    // router.push(`/tour/results?${query}`);
-    // }
-
     if (selectedOption.type === "activity") {
       window.open(
         `/${language}/mx/${selectedOption.destination}-${selectedOption.country}/tours/${selectedOption.codeName}?${query}`,

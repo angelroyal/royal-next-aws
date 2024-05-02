@@ -1,8 +1,5 @@
 "use client";
 
-import "../../assets/styles/web/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Tab } from "@headlessui/react";
 import React, { useState, useEffect, useContext } from "react";
 
@@ -10,9 +7,11 @@ import MobilSearchTour from "./MobilSearchTour";
 import MobilSearchHotel from "./MobilSearchHotel";
 import LanguageContext from "@/language/LanguageContext";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
-import { MobilSearchSkeleton } from "@/services/Hotels/components/Skeleton/HotelListingSkeleton";
 import SearchTransport from "@/services/Transport/components/Search/SearchTransport";
-// import MobilSearchMoving from "./MobilSearchMoving";
+import { MobilSearchSkeleton } from "@/services/Hotels/components/Skeleton/HotelListingSkeleton";
+
+import "../../assets/styles/web/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function SearchBoxMobile() {
   const [activeTab, setActiveTab] = useState(null);
@@ -77,18 +76,12 @@ export default function SearchBoxMobile() {
       {activeTab === null ? <MobilSearchSkeleton /> :
 
         <Tab.Panels>
-          {/* <Tab.Panel> */}
           {activeTab === "hotels" && <MobilSearchHotel />}
-          {/* </Tab.Panel> */}
 
-          {/* <Tab.Panel> */}
           {activeTab === "tours" || activeTab === "tour" ? <MobilSearchTour /> : ''}
 
           {activeTab === "transports" || activeTab === "transport" ? <SearchTransport isListing={true}/> : ''}
 
-
-
-          {/* </Tab.Panel> */}
         </Tab.Panels>
       }
 

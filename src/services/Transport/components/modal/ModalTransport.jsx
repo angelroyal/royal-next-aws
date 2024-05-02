@@ -1,7 +1,8 @@
 import Image from "next/image";
-import React, { Fragment, useState, useEffect } from "react";
-import InfoModalTransport from "./InfoModalTransport";
 import { Dialog, Transition } from "@headlessui/react";
+import React, { Fragment, useState, useEffect } from "react";
+
+import InfoModalTransport from "./InfoModalTransport";
 import PriceModalTransport from "./PriceModalTransport";
 import { ModalTransportProvider } from "../../context/ModalTransportContext";
 

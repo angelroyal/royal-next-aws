@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
-import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import React, { useContext, useEffect, useState } from "react";
 
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
 import SendHotel from "@/services/Hotels/Search/SendHotel";
-import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 import { SearchHomeSkeleton } from "@/components/Skeleton/SearchHome";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 import SearchTransport from "@/services/Transport/components/Search/SearchTransport";
 
 export default function SearchBox() {

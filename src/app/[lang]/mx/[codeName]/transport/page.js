@@ -20,7 +20,6 @@ export async function generateMetadata({ searchParams }) {
     };
   } catch (error) {
     console.error("Error fetching hotel metadata:", error);
-    // Handle error here
     return null;
   }
 }

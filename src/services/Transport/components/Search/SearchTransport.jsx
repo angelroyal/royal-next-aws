@@ -1,8 +1,10 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
+
+import { ButtonSearch } from "./ButtonSearch";
 import { AutoCompleteTrans } from "./AutoCompleteTrans";
 import { SearchDestinationA } from "./SearchDestinationA";
-import { ButtonSearch } from "./ButtonSearch";
 import { SearchDestinationB } from "./SearchDestinationB";
 
 const TravelTypes = [
