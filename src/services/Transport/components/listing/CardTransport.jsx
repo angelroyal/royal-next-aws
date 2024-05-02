@@ -11,7 +11,7 @@ export default function CardTransport() {
   const [openModal, setOpenModal] = useState(false);
   const { dataTransportF } = useContext(ListingTransportContext);
   const [openPolicy, setOpenPolicy] = useState(null);
-  console.log(dataTransportF);
+  // console.log(dataTransportF);
   const [cartPosition, setCartPosition] = useState(null);
   const openCartDetails = (index) => {
     setCartPosition(index);
