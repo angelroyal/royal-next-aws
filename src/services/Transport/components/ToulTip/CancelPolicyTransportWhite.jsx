@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import LanguageContext from "@/language/LanguageContext";
 
-export default function CancelPolicyTransportWhite() {
+export default function CancelPolicyTransportWhite({cancellation}) {
 
     const { languageData } = useContext(LanguageContext);
 
@@ -16,7 +16,8 @@ export default function CancelPolicyTransportWhite() {
                     width={22}
                     height={22}
                 />
-                <h1 className="text-fs-14 m-b text-black">{languageData.tourPolicyCancelation.title}</h1>
+                <h1 className="text-fs-14 m-b text-black">{`${languageData.cancelationTransport.cancelation} ${cancellation} ${languageData.durationTour.hPlural}`}</h1>
+                {/* <h1 className="text-fs-14 m-b text-black">{languageData.tourPolicyCancelation.title}</h1> */}
             </div>
         </div>
     )

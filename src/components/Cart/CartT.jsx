@@ -9,6 +9,7 @@ import { useCartAxios } from "./CartAxios";
 import PriceCart from "./config/PriceCart";
 import CartHotelT from "./carts/CartHotelT";
 import LanguageContext from "@/language/LanguageContext";
+import CartTransportT from "./carts/CartTransportT";
 
 export default function CartT(props) {
   const { closeCart } = props;
@@ -100,6 +101,16 @@ export default function CartT(props) {
                     setIsLoader={setIsLoader}
                     isLoader={isLoader}
                     // onUpdateData={fetchCartData}
+                  />
+                )}
+
+
+                {cartInfo.transportations && (
+                  <CartTransportT
+                    cartId={cartUid}
+                    transportGetCart={cartInfo}
+                    setIsLoader={setIsLoader}
+                    isLoader={isLoader}
                   />
                 )}
               </div>
