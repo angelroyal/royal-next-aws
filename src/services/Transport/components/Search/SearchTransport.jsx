@@ -88,6 +88,7 @@ export default function SearchTransport({ isListing = false }) {
           setSelectedAutoComplete={setSelectedAutoComplete}
           setSelectDestinationA={setSelectDestinationA}
           setSelectDestinationB={setSelectDestinationB}
+          travelType={travelType}
         />
 
         <SearchDestinationA

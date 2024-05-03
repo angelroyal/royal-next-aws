@@ -12,6 +12,7 @@ export function AutoCompleteTrans({
   setSelectedAutoComplete,
   setSelectDestinationA,
   setSelectDestinationB,
+  travelType,
 }) {
   const { language, languageData } = useContext(LanguageContext);
   const [query, setQuery] = useState("");
@@ -72,6 +73,7 @@ export function AutoCompleteTrans({
       autoComplete: destination,
       destinationA: null,
       destinationB: null,
+      type: travelType,
     };
     localStorage.setItem("searchTransport", JSON.stringify(newValue));
   };
@@ -81,11 +83,15 @@ export function AutoCompleteTrans({
       as="div"
       value={selectedAutoComplete}
       onChange={setSelectedAutoComplete}
-      className={`${isListing ? 'w-full' : 'max-lg:w-full'}`}
+      className={`${isListing ? "w-full" : "max-lg:w-full"}`}
     >
       <div className="relative">
         {/* INPUT STYLE */}
-        <Combobox.Button className={`${isListing ? 'w-full' : 'max-lg:w-full'} focus:outline-none`}>
+        <Combobox.Button
+          className={`${
+            isListing ? "w-full" : "max-lg:w-full"
+          } focus:outline-none`}
+        >
           <img
             className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
             width="16px"
@@ -99,7 +105,9 @@ export function AutoCompleteTrans({
           </p>
 
           <Combobox.Input
-            className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[22px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12 ${isListing ? 'w-full' : 'w-full lg:w-[260px]'}`}
+            className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[22px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12 ${
+              isListing ? "w-full" : "w-full lg:w-[260px]"
+            }`}
             onChange={(event) => handleLetter(event)}
             displayValue={(person) => person?.label}
             placeholder={languageData.SearchBox.tabHotel.textDestination}

@@ -1,32 +1,29 @@
 "use client";
 
-import { Row, Col } from "react-bootstrap";
 import { Pagination } from "@mui/material";
-import Skeleton from "@mui/material/Skeleton";
 import React, { useEffect, useContext, useState } from "react";
-
-import "../../../../assets/styles/web/Tour/StyleFIlterTour.css";
-
-import { useTourContext } from "../../context/ListingTourContext";
 
 // EXPORT NEW
 import TourCard from "./TourCard";
-import OrderingTour from "./OrderingTour";
 import FilterTour from "./FilterTour";
-import { BannerDestinationTour } from "../Banners/BannerTour";
-import LanguageContext from "@/language/LanguageContext";
-import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
-import ImageListingTour from "../Banners/ImageListingTour";
-// import SkeletonTourCard from "@/utils/skeleton/SkeletonTourCard";
-import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-import { Container } from "@/config/Others/Container";
 import {
   BannerListingSkeleton,
   CardTourSkeleton,
   WeFoundTourSkeleton,
 } from "../Skeleton/TourListingSkeleton";
+import OrderingTour from "./OrderingTour";
+import { Container } from "@/config/Others/Container";
+import LanguageContext from "@/language/LanguageContext";
+import ImageListingTour from "../Banners/ImageListingTour";
+import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
+import { BannerDestinationTour } from "../Banners/BannerTour";
+import { useTourContext } from "../../context/ListingTourContext";
+import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
+
+import "../../../../assets/styles/web/Tour/StyleFIlterTour.css";
+
 export default function ListingTour() {
   const {
     tourData,
@@ -141,16 +138,10 @@ export default function ListingTour() {
   return (
     <>
       {!tourData && (
-        // <Skeleton
-        //   className="skeleton-banner-tour"
-        //   variant="rectangular"
-        //   width="100%"
-        //   height="13rem"
-        // />
         <BannerListingSkeleton />
       )}
 
-      {tourData && tourData.length > 0 && <BannerDestinationTour destination={tourData.destination} />}
+      {tourData && <BannerDestinationTour destination={tourData.destination} />}
 
       <Container>
         <div className="flex flex-col xl:flex-row md:justify-between">
@@ -158,7 +149,6 @@ export default function ListingTour() {
             <SearchBoxMobile className="margin-bottom" />
 
             {auxTourData && (
-              // <FilterTour updateURL={updateURL} className="margin-bottom" />
               <FilterTour
                 className="margin-bottom"
                 tourData={tourData}
