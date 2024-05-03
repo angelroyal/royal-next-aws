@@ -17,10 +17,8 @@ import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 import "@/assets/styles/web/Hotel.css";
 import "../../../../src/assets/styles/mobile/HotelMobile.css";
-import RoomIcon from "../../../assets/icons/utils/searchBox/room.svg";
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
-import DoneIcon from "../../../assets/icons/tour/modal/done_active.svg";
-import IconLocationBorder from "../../../assets/icons/utils/others/location-border.svg";
+
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -184,7 +182,7 @@ export default function CardHotelItinerary(props) {
                       </span>
                     </div>
 
-                    <div className="text-grey-card-hotel-i d-flex gap-2 align-items-center">
+                    <div className="flex gap-2 items-center text-fs-10 text-gry-100 m-s-b">
                       <Image
                         className="w-[14px] h-[15px]"
                         src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
@@ -241,7 +239,7 @@ export default function CardHotelItinerary(props) {
 
                 <div className="flex gap-x-2 items-center">
                   <Image
-                    src={RoomIcon}
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
                     alt="icon room"
                     className="w-[14px] h-[15px]"
                     width={14}
@@ -318,7 +316,7 @@ export default function CardHotelItinerary(props) {
                                 </div>
 
                                 <div className="flex flex-wrap gap-x-2 gap-y-2 items-center">
-                                  <div className="flex gap-X-2 items-center">
+                                  <div className="flex gap-x-2 items-center">
                                     <Image
                                       className="w-[14px] h-[15px]"
                                       src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
@@ -344,7 +342,7 @@ export default function CardHotelItinerary(props) {
                                         className="flex gap-2 items-center"
                                       >
                                         <Image
-                                          src={RoomIcon}
+                                          src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
                                           alt="icon Room"
                                           className="w-[14px] h-[15px]"
                                           width={14}
@@ -361,20 +359,22 @@ export default function CardHotelItinerary(props) {
                                   <div className="flex items-center">
                                     {roomBed.refundable === false && (
                                       <Image
-                                        className="w-[15px ]"
+                                        className="w-[15px] mr-[5px]"
                                         src={ErrorIcon}
                                         alt="icon error"
                                       />
                                     )}
                                     {roomBed.refundable === true && (
                                       <Image
-                                        className="icons-size-s"
-                                        src={DoneIcon}
+                                        className="w-[15px] mr-[5px]"
+                                        src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
                                         alt="icon done"
+                                        width={12}
+                                        height={10}
                                       />
                                     )}
 
-                                    <span className="text-grey-card-hotel-i">
+                                    <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
                                       {!roomBed.refundable &&
                                         languageData.itinerary.nonRefundable}
                                       {roomBed.refundable &&
@@ -384,13 +384,15 @@ export default function CardHotelItinerary(props) {
 
                                   {/* EATING PLAN */}
                                   {roomBed.eatingPlan && (
-                                    <div className="d-flex align-items-center">
+                                    <div className="flex items-center">
                                       <Image
-                                        className="icons-size-s"
-                                        src={DoneIcon}
-                                        alt="icon-done"
+                                        className="w-[15px] mr-[5px]"
+                                        src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
+                                        alt="icon done"
+                                        width={12}
+                                        height={10}
                                       />
-                                      <span className="text-all-inclusive-i">
+                                      <span className="text-fs-10 text-nowrap m-b text-grn-100">
                                         {roomBed.eatingPlan}
                                       </span>
                                     </div>
