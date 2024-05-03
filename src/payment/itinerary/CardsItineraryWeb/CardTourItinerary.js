@@ -69,10 +69,12 @@ export default function TourCardItinerary({ itemActivity }) {
     itemActivity && (
       <>
         <div className="relative mt-[22px]">
-          <img
+          <Image
             className="absolute"
             src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
             alt="Icon Location Border"
+            width={16}
+            height={200}
           />
 
           <div className="ml-[26px]">
@@ -111,7 +113,7 @@ export default function TourCardItinerary({ itemActivity }) {
               </div>
 
               <div className="flex lg:hidden">
-                <div className="rounded-[8px] w-[35%] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
+                <div className="rounded-[8px] w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
                   <img
                     className="w-full h-full rounded-[8px] object-cover"
                     src={itemActivity.image ? itemActivity.image : ""}
@@ -119,15 +121,8 @@ export default function TourCardItinerary({ itemActivity }) {
                   />
                 </div>
 
-<<<<<<< HEAD
-                <div className="flex gap-[4px] flex-col w-[65%] pl-[20px]">
-                  <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">
-                    {itemActivity.title}
-                  </h2>
-=======
                 <div className="flex gap-[4px] flex-col w-[65%] pl-[20px] max-sm:pl-[10px]">
                   <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">{itemActivity.title}</h2>
->>>>>>> a834d2e1bd3f9cd92aadb51bb2453173994c6fbb
 
                   <div className="w-full flex flex-col justify-evenly gap-[8px]">
                     {itemActivity.address && (
@@ -166,7 +161,7 @@ export default function TourCardItinerary({ itemActivity }) {
                 </div>
               </div>
 
-              <div className="w-[80%] pl-[32px] flex flex-col justify-center gap-[8px] max-lg:mt-[8px] max-lg:pt-[16px] max-lg:border-t max-lg:border-gry-70 max-lg:w-full max-lg:pl-0">
+              <div className="w-[80%] pl-[32px] flex flex-col justify-center gap-[8px] max-lg:mt-[8px] max-lg:pt-[16px] max-lg:border-t max-lg:border-[#ebebeb] max-lg:w-full max-lg:pl-0">
                 <h2 className="max-lg:hidden text-fs-16 m-b text-black pt-[13px] pb-[10px] truncate">
                   {itemActivity.title}
                 </h2>

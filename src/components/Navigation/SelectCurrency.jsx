@@ -15,7 +15,7 @@ export function SelectCurrency() {
   }, [currency]);
 
   return (
-    <div className="flex">
+    <div className="flex gap-[3px]">
       <img
         src="https://sandboxmexico.com/assets/icons/money/money-b.svg"
         alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon money`}

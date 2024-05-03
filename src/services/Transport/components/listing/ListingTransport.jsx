@@ -10,6 +10,7 @@ import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import ListingTransportContext from "../../context/ListingTransportContext";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
+import { CardTransportSkeleton, WeFoundTransportSkeleton } from "../Skeleton/TransportListingSkeleton";
 
 export default function ListingTransport(props) {
   const { data } = props;
@@ -36,6 +37,13 @@ export default function ListingTransport(props) {
               <CardTransport />
             </>
           )}
+
+          {!dataTransportF &&
+            <>
+              <WeFoundTransportSkeleton />
+              <CardTransportSkeleton />
+            </>
+          }
 
           {dataTransportF && dataTransportF.length === 0 && (
             <NotFoundDestination />
