@@ -1,10 +1,14 @@
 "use client";
+
 import { useContext } from "react";
+
 import LanguageContext from "@/language/LanguageContext";
 
-export default function CancelPolicyTransport({ cancellation }) {
-  console.log(cancellation);
+export default function CancelPolicyTransport(props) {
+  const { cancellation } = props;
+
   const { languageData } = useContext(LanguageContext);
+
   return (
     <div className="absolute top-[1.8rem] md:right-0">
       <div className="relative bg-bl-100 rounded-md p-4 w-max">
@@ -15,8 +19,9 @@ export default function CancelPolicyTransport({ cancellation }) {
           width={22}
           height={22}
         />
-        <h1 className="text-fs-14 text-white m-b">{`${languageData.cancelationTransport.cancelation} ${cancellation} ${languageData.durationTour.hPlural}`}</h1>
-        {/* <h1 className="text-fs-14 text-white m-b">{languageData.tourPolicyCancelation.title}</h1> */}
+        {cancellation && (
+          <h1 className="text-fs-14 text-white m-b">{`${languageData.cancelationTransport.cancelation} ${cancellation} ${languageData.durationTour.hPlural}`}</h1>
+        )}{" "}
       </div>
     </div>
   );

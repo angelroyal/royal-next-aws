@@ -123,6 +123,25 @@ export const CartAxiosProvider = ({ children }) => {
     }
   };
 
+  const removeTransportById = (transportId) => {
+    if (cartData && cartData.cartItems && cartData.cartItems.transportations) {
+      const updatedActivities = cartData.cartItems.transportations.filter(
+        (transport) => transport.id !== transportId
+      );
+
+      const updatedCartData = {
+        ...cartData,
+        cartItems: {
+          ...cartData.cartItems,
+          transportations: updatedActivities,
+        },
+      };
+
+      setCartData(updatedCartData);
+      localStorage.setItem("cartData", JSON.stringify(updatedCartData));
+    }
+  };
+
   return (
     <CartAxiosContext.Provider
       value={{
@@ -134,6 +153,7 @@ export const CartAxiosProvider = ({ children }) => {
         totalItemsInCart,
         removeHotelById,
         removeActivityById,
+        removeTransportById,
         totalPrice,
         setTotalItemsInCart,
       }}
