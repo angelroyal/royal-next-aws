@@ -119,15 +119,8 @@ export default function TourCardItinerary({ itemActivity }) {
                   />
                 </div>
 
-<<<<<<< HEAD
-                <div className="flex gap-[4px] flex-col w-[65%] pl-[20px]">
-                  <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">
-                    {itemActivity.title}
-                  </h2>
-=======
                 <div className="flex gap-[4px] flex-col w-[65%] pl-[20px] max-sm:pl-[10px]">
                   <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">{itemActivity.title}</h2>
->>>>>>> a834d2e1bd3f9cd92aadb51bb2453173994c6fbb
 
                   <div className="w-full flex flex-col justify-evenly gap-[8px]">
                     {itemActivity.address && (

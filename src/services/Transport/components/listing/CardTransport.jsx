@@ -19,7 +19,7 @@ export default function CardTransport() {
     setSelectedTransport(transport);
     setOpenModal(true);
   };
-
+  
   return (
     <>
       {dataTransportF &&
@@ -138,7 +138,7 @@ export default function CardTransport() {
                       <span className="relative text-center text-fs-10 m-s-b text-bl-100 cursor-pointer relative">
                         {/* {languageData.containerModalHotel.policies} */}
                         politicas de cancelacion
-                        {openPolicy === index && <CancelPolicyTransport />}
+                        {openPolicy === index && <CancelPolicyTransport cancellation={transport.cancellation} />}
                       </span>
                     </div>
 

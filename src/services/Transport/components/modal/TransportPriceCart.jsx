@@ -136,7 +136,7 @@ export default function TransportPriceCart(props) {
       >
         <span className="relative text-center text-fs-14 m-s-b text-bl-100 cursor-pointer relative">
           politicas de cancelacion
-          {openPolicy === true && <CancelPolicyTransportWhite />}
+          {openPolicy === true && <CancelPolicyTransportWhite cancellation={transport.cancellation} />}
         </span>
       </div>
     </div>
