@@ -729,6 +729,7 @@ export const es = {
     roundTrip:"Redondo",
     privateService:"Servicio privado",
     sharedService:"Servicio compartido",
+    vehicles:"vehículos",
   },
 
   /************************************************************/

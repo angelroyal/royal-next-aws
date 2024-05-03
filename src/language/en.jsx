@@ -380,7 +380,7 @@ export const en = {
   },
 
   cancelationTransport:{
-    cancelation: "Cancela antes de"
+    cancelation: "Cancel before"
   },
 
   titlesFilterHotel: {
@@ -727,6 +727,7 @@ export const en = {
     roundTrip:"Round trip",
     privateService:"Private service",
     sharedService:"Shared service",
+    vehicles:"vehicles",
   },
 
   /************************************************************/
