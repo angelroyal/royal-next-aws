@@ -1,4 +1,5 @@
 import { StarIcon } from "@heroicons/react/20/solid";
+
 export function TotalStars({ stars, width = null, height = null }) {
   const ClassNames = (...classes) => {
     return classes.filter(Boolean).join(" ");

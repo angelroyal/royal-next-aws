@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import ModalTransportContext from "../../context/ModalTransportContext";
 
 export default function PassengersTransport(props) {
@@ -16,12 +17,12 @@ export default function PassengersTransport(props) {
     setPassenger((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
-  const handlePassengerChange = (event) => {
-    if (passenger < transport.places) {
-      const value = Math.max(0, parseInt(event.target.value, 10));
-      setPassenger(isNaN(value) ? 0 : value);
-    }
-  };
+  // const handlePassengerChange = (event) => {
+  //   if (passenger < transport.places) {
+  //     const value = Math.max(0, parseInt(event.target.value, 10));
+  //     setPassenger(isNaN(value) ? 0 : value);
+  //   }
+  // };
 
   return (
     <div className="flex flex-col gap-[16px]">

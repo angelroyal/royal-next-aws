@@ -1,4 +1,3 @@
-import moment from "moment";
 import Image from "next/image";
 import React, { useContext } from "react";
 
@@ -6,10 +5,6 @@ import LanguageContext from "../../../language/LanguageContext";
 
 import IconLocationBorder from "../../../assets/icons/utils/others/location-border.svg";
 
-// import ImageLine from "../../../assets/images/itinerary/itinerary-250.svg";
-// import ImageTransports from "../../../assets/images/itinerary/itinerary-transfer.svg";
-// import RoomOutlinedIcon from "../../../assets/icons/utils/searchBox/location-autocomplete.svg";
-// import Person2OutlinedIcon from "../../../assets/icons/utils/searchBox/person-autocomplete.svg";
 
 export default function CardMovingItinerary(props) {
   const { languageData } = useContext(LanguageContext);

@@ -1,8 +1,10 @@
 "use client";
+
 import { Combobox } from "@headlessui/react";
 import { useContext, useEffect, useState } from "react";
-import { autoCompleteSearch } from "../../Api/requestTransport";
+
 import LanguageContext from "@/language/LanguageContext";
+import { autoCompleteSearch } from "../../Api/requestTransport";
 
 export function AutoCompleteTrans({
   isListing,
@@ -102,8 +104,7 @@ export function AutoCompleteTrans({
             displayValue={(person) => person?.label}
             placeholder={languageData.SearchBox.tabHotel.textDestination}
           />
-          {/* <div className="relative">
-          </div> */}
+
           {resultAutocomplete && (
             <Combobox.Options
               className={`px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm ${

@@ -3,14 +3,12 @@ import Image from "next/image";
 import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
 
-import { useIsMobile } from "../../../config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { TooltipDown } from "../../../components/ToolTip/TooltipDown";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 export default function TourCardItinerary({ itemActivity }) {
-  const isMobile = useIsMobile();
   const { fetchData } = useCartAxios();
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
@@ -82,14 +80,15 @@ export default function TourCardItinerary({ itemActivity }) {
               <span className="m-b text-or-100 text-fs-16">
                 {languageData.dayOfWeek[dayOfWeek]}
               </span>
-              <span className="m-m text-fs-16 text-[#a6a6a6]">{itemActivity.date}</span>
+              <span className="m-m text-fs-16 text-[#a6a6a6]">
+                {itemActivity.date}
+              </span>
               <span className="m-m text-fs-16 text-[#a6a6a6]">|</span>
               <span className="m-m text-fs-16 text-[#a6a6a6]">02:00pm</span>
             </div>
 
             {/* ITINERARY CARD */}
 
-            {/* <div className="container-tour-i">*/}
             <div className="w-[732px] max-xl:w-full flex rounded-[8px] p-[16px] shadow-3xl bg-white mt-[12px] border border-[#ebebeb] relative mb-[15px] max-lg:flex-col max-lg:px-[20px] ">
               <div
                 className="absolute right-[1rem] top-[1rem] cursor-pointer"
@@ -99,11 +98,10 @@ export default function TourCardItinerary({ itemActivity }) {
                   src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
                   alt="CloseIcon"
                   width={10}
-                  height={10} />
+                  height={10}
+                />
               </div>
 
-              {/* {!isMobile && ( */}
-              {/* <div className="max-md:hidden cont-img-card-hotel"> styles mobile*/}
               <div className="max-lg:hidden rounded-[8px] w-[133px] h-[117.7px]">
                 <img
                   className="w-full h-full rounded-[8px] object-cover"
@@ -111,9 +109,6 @@ export default function TourCardItinerary({ itemActivity }) {
                   alt="tour gallery"
                 />
               </div>
-              {/* )} */}
-
-              {/* {isMobile && ( */}
 
               <div className="flex lg:hidden">
                 <div className="rounded-[8px] w-[35%] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
@@ -152,9 +147,10 @@ export default function TourCardItinerary({ itemActivity }) {
                         {itemActivity.tourists &&
                           itemActivity.tourists.categories.map(
                             (tourist, index) =>
-                              `${tourist.quantity} ${tourist.category}${index !== itemActivity.tourists.length - 1
-                                ? ","
-                                : ""
+                              `${tourist.quantity} ${tourist.category}${
+                                index !== itemActivity.tourists.length - 1
+                                  ? ","
+                                  : ""
                               } `
                           )}
                       </span>
@@ -163,15 +159,12 @@ export default function TourCardItinerary({ itemActivity }) {
                 </div>
               </div>
 
-              {/* )} */}
-
               <div className="w-[80%] pl-[32px] flex flex-col justify-center gap-[8px] max-lg:mt-[8px] max-lg:pt-[16px] max-lg:border-t max-lg:border-gry-70 max-lg:w-full max-lg:pl-0">
-                {/* {!isMobile && ( */}
-                <h2 className="max-lg:hidden text-fs-16 m-b text-black pt-[13px] pb-[10px] truncate">{itemActivity.title}</h2>
-                {/* )} */}
+                <h2 className="max-lg:hidden text-fs-16 m-b text-black pt-[13px] pb-[10px] truncate">
+                  {itemActivity.title}
+                </h2>
 
                 <div className="h-full flex justify-between flex-wrap max-lg:flex-col flex-row">
-                  {/* {!isMobile && ( */}
                   <div className="max-lg:hidden w-1/2 flex justify-start flex-col max-lg:w-full gap-[4px]">
                     {itemActivity.address && (
                       <div className="flex gap-[4px] m-s-b text-bl-100 text-fs-10">
@@ -197,15 +190,15 @@ export default function TourCardItinerary({ itemActivity }) {
                         {itemActivity.tourists &&
                           itemActivity.tourists.categories.map(
                             (tourist, index) =>
-                              `${tourist.quantity} ${tourist.category}${index !== itemActivity.tourists.length - 1
-                                ? ","
-                                : ""
+                              `${tourist.quantity} ${tourist.category}${
+                                index !== itemActivity.tourists.length - 1
+                                  ? ","
+                                  : ""
                               } `
                           )}
                       </span>
                     </div>
                   </div>
-                  {/* )} */}
 
                   <div className="w-1/2 flex items-start justify-between max-lg:w-full">
                     <div className="flex flex-col items-center justify-center max-lg:items-start">
@@ -232,29 +225,23 @@ export default function TourCardItinerary({ itemActivity }) {
                         </sup>
                       </span>
 
-                      {
-                        itemActivity.cancelPolicies &&
+                      {itemActivity.cancelPolicies &&
                         itemActivity.cancelPolicies.length > 0 &&
                         itemActivity.cancelPolicies.map(
                           (cancelPolicy, index) => (
                             <TooltipDown
                               key={index}
-                              // interactive
                               disableFocusListener
                               disableTouchListener
                               title={
                                 cancelPolicy ? (
                                   <React.Fragment>
-                                    {
-                                      languageData.roomsCancellations
-                                        .percentage
-                                    }{" "}
+                                    {languageData.roomsCancellations.percentage}{" "}
                                     {cancelPolicy.hours}{" "}
                                     {languageData.roomsCancellations.from}{" "}
-                                    {`${cancelPolicy.penalty}${cancelPolicy.type === "percent"
-                                      ? "%"
-                                      : ""
-                                      }`}
+                                    {`${cancelPolicy.penalty}${
+                                      cancelPolicy.type === "percent" ? "%" : ""
+                                    }`}
                                     {languageData.roomsCancellations.total}{" "}
                                     <a
                                       className="text-bl-100 no-underline"
@@ -275,12 +262,7 @@ export default function TourCardItinerary({ itemActivity }) {
                               </div>
                             </TooltipDown>
                           )
-                        )
-
-                        // <span className="text-tour-bl-i-s">
-                        //   Politicas de cancelación
-                        // </span>
-                      }
+                        )}
                     </div>
                   </div>
                 </div>

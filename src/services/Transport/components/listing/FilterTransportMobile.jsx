@@ -1,10 +1,10 @@
 "use client";
-import { Fragment, useContext } from "react";
+
+import { Fragment } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { Dialog, Transition } from "@headlessui/react";
 
 import FilterTransport from "./FilterTransport";
-import ListingTransportContext from "../../context/ListingTransportContext";
 
 export function ListingHotelMobile({openFilter, setOpenFilter}){
 

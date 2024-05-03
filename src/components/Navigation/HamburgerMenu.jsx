@@ -1,13 +1,14 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import Link from "next/link";
 import { Dialog } from "@headlessui/react";
-import { SelectCurrency } from "./SelectCurrency";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useContext, useEffect, useState } from "react";
+
+import { SelectCurrency } from "./SelectCurrency";
 import LanguageContext from "@/language/LanguageContext";
 import { LanguageSelector } from "@/language/LanguageSelector";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
-import Link from "next/link";
 
 export function HamburgerMenu({ open, setMobileMenuOpen }) {
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);

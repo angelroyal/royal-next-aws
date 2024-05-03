@@ -1,4 +1,3 @@
-import moment from 'moment';
 import React, { useContext } from "react";
 
 import ModalTransportContext from "../../context/ModalTransportContext";

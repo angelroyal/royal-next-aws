@@ -1,10 +1,10 @@
-import "@/assets/styles/general/Swiper.css";
 
-import React, { useContext, useState } from "react";
+import React from "react";
 
-// import ModalTransportContext from "../../context/ModalTransportContext";
 import DateAndHour from "./DateAndHour";
 import PassengersTransport from "./PassengersTransport";
+
+import "@/assets/styles/general/Swiper.css";
 
 export default function InfoModalTransport(props) {
   const { transport } = props;

@@ -27,6 +27,7 @@ export function DisabledInputTransport({ isListing, languageData, isSearch }) {
     </div>
   );
 }
+
 export function DisabledInputTransportRelated({ isListing, languageData }) {
   return (
     <div className={`${isListing ? "w-full" : "max-lg:w-full"} relative`}>

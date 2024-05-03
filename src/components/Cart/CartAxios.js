@@ -2,8 +2,8 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-import { handleErrorsAxios } from "../../config/Logger/handleErrors";
 import { fetchCartData } from "./apiCart";
+import { handleErrorsAxios } from "../../config/Logger/handleErrors";
 
 const CartAxiosContext = createContext();
 

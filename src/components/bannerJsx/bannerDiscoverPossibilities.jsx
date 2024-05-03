@@ -1,7 +1,9 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
-import LanguageContext from "@/language/LanguageContext";
+
 import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
 
 export default function BannerDiscoverPossibilities() {
   const { languageData } = useContext(LanguageContext);
@@ -11,7 +13,8 @@ export default function BannerDiscoverPossibilities() {
   const nameRegexIndividual = /^[A-Za-z ]{1,40}$/;
 
   const [valueInputs, setValuesInputs] = useState(false);
-
+  
+  // ADD NAME
   const addNamePerson = (e) => {
     const value = e.target.value;
     if (nameRegexIndividual.test(value) || value === "") {
@@ -19,6 +22,7 @@ export default function BannerDiscoverPossibilities() {
     }
   };
 
+  // ADD PHONE
   const addPhone = (event) => {
     const value = event.target.value;
     if (phoneRegex.test(value) || value === "") {
@@ -26,6 +30,7 @@ export default function BannerDiscoverPossibilities() {
     }
   };
 
+  // VALIDATE INPUTS ISEN'T EMPTY
   useEffect(() => {
     const isValid =
       phoneValue &&
@@ -41,8 +46,8 @@ export default function BannerDiscoverPossibilities() {
     }
   }, [phoneValue, namePerson]);
 
+  // SEND MESSAGE TO TELEGRAM GROUP
   const handleSubmit = () => {
-    console.log("entra");
     axios
       .post(
         "https://api.telegram.org/bot6413785790:AAFbmewlmcgnSngod5XWED_h8Iib7mlCJiE/sendMessage",

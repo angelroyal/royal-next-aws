@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { TextField } from "@mui/material";
 import { useContext, useState, useEffect, useRef, Fragment } from "react";
 
-import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobile } from "@/config/Mobile/isMobile";
 import { Menu, Transition } from "@headlessui/react";
+import LanguageContext from "../../../language/LanguageContext";
 
 export default function RoomMenu(props) {
   const isMobile = useIsMobile();
@@ -118,8 +117,6 @@ export default function RoomMenu(props) {
     if (newRooms[roomIndex].child < 4) {
       newRooms[roomIndex].child++;
       newRooms[roomIndex].ages.push(0);
-      // newRooms[roomIndex].ages.push("");
-      // console.log(newRooms);
       setRooms(newRooms);
     }
   };

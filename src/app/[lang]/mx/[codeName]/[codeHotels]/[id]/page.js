@@ -8,12 +8,12 @@ import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
 import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export async function generateMetadata({ params }) {
   try {

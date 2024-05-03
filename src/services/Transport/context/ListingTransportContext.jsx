@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useState, useEffect } from "react";
+
 import {
   filterByOrderHotel,
   filterBySelectedFilters,
@@ -22,7 +23,7 @@ export const ListingTransportProvider = ({ children }) => {
       filteredData = filterBySelectedFilters(
         filteredData,
         selectedFilters,
-        pricing,
+        pricing
       );
       setDataTransportF(filteredData);
     }

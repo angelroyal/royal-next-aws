@@ -381,6 +381,10 @@ export const es = {
     penalty: "penalización del"
   },
 
+  cancelationTransport:{
+    cancelation: "Cancela antes de"
+  },
+
   titlesFilterHotel: {
     Star: "Estrellas",
     titleTypeHotel: "Tipo de Hotel",
