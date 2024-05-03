@@ -11,16 +11,17 @@ export default function CartTransportT(props) {
   const { transport, cartId, isLoader, setIsLoader } = props;
 
   const [showDelete, setShowDelete] = useState({});
+  const { setItinerary, removeTransportById } = useCartAxios();
   const [loadingTransports, setLoadingTransports] = useState({});
 
-  const { setItinerary, removeTransportById } = useCartAxios();
-
+  // TOGGLE DELETE ICON SHOW
   const toggleDelete = (transportId) => {
     const updatedShowDelete = { ...showDelete };
     updatedShowDelete[transportId] = !updatedShowDelete[transportId];
     setShowDelete(updatedShowDelete);
   };
 
+  // FUNCTION DELETED TRANSPORT AXIOS
   const handleDeleteClick = (transport) => {
     setLoadingTransports((prevLoadingTransports) => ({
       ...prevLoadingTransports,
@@ -45,12 +46,10 @@ export default function CartTransportT(props) {
       });
   };
 
-  console.log(transport);
-
   return (
     <>
       <div className="flex relative rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]">
-        {/* STYLE WHEN REMOVED  HAZLO GUILLE ATTE LUIS*/}
+        {/* STYLE WHEN REMOVED */}
         {loadingTransports[transport.id] && (
           <div className="absolute flex justify-center items-center w-full h-full backdrop-contrast-50">
             <div className="relative w-[8px] h-[8px] rounded-[5px] bg-bl-100 text-bl-100 animate-[dot-flashing_1s_infinite_linear_alternate] before:content-[' '] before:block before:absolute before:top-0 before:left-[15px] before:w-[8px] before:h-[8px] before:rounded-[5px] before:bg-bl-100 before:text-bl-100 before:animate-[dot-flashing_1s_infinite_alternate] before:delay-0 after:content-[' '] after:block after:absolute after:top-0 after:left-[30px] after:w-[8px] after:h-[8px] after:rounded-[5px] after:bg-bl-100 after:text-bl-100 after:animate-[dot-flashing_1s_infinite_alternate] after:delay-1000	dot-flashing" />
@@ -75,6 +74,7 @@ export default function CartTransportT(props) {
               {transport.name}
             </span>
 
+            {/* TIME TRANSPORT */}
             <div className="flex gap-2 mb-[3px]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
@@ -91,6 +91,7 @@ export default function CartTransportT(props) {
               </span>
             </div>
 
+            {/* PRICE TRANSPORT */}
             <span className="m-s-b text-fs-14 text-or-100 mb-[3px]">
               MXN $
               {Math.floor(transport.prices)
@@ -99,6 +100,7 @@ export default function CartTransportT(props) {
               .<sup>{(transport.prices % 1).toFixed(2).slice(2)}</sup>
             </span>
 
+            {/* TYPE AND PEOPLE TOTAL  */}
             <div className="flex gap-3">
               <div className="flex gap-2">
                 <Image
@@ -123,8 +125,7 @@ export default function CartTransportT(props) {
           </div>
         </div>
 
-        {/* ICON DELETE */}
-
+        {/* ICON DELETE  CLICK*/}
         {showDelete[transport.id] ? (
           <div
             className={`${
