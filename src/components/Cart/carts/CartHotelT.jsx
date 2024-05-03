@@ -15,7 +15,7 @@ export default function CartHotelT(props) {
   const [loadingHotels, setLoadingHotels] = useState({});
 
   const handleDeleteClick = (hotel) => {
-    setLoadingHotels((prevLoadingHotels) => ({
+    setLoadingHotels((prevLoadingHotels) => ({ 
       ...prevLoadingHotels,
       [hotel.id]: true,
     }));
@@ -43,11 +43,11 @@ export default function CartHotelT(props) {
     setShowDelete(updatedShowDelete);
   };
 
-  const handleCardClick = (hotelId) => {
-    const updatedShowDelete = { ...showDelete };
-    updatedShowDelete[hotelId] = !updatedShowDelete[hotelId];
-    setShowDelete(updatedShowDelete);
-  };
+  // const handleCardClick = (hotelId) => {
+  //   const updatedShowDelete = { ...showDelete };
+  //   updatedShowDelete[hotelId] = !updatedShowDelete[hotelId];
+  //   setShowDelete(updatedShowDelete);
+  // };
 
   return (
     <div className="relative">
