@@ -81,9 +81,10 @@ export default function CardHotelItinerary(props) {
       <div className="flex gap-x-2 items-start">
         <Image
           className="w-4"
-          src={IconLocationBorder}
+          src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
           alt="IconLocationBorder"
           width={16}
+          height={200}
         />
 
         <div className="flex flex-col gap-y-5 w-full">
@@ -131,18 +132,18 @@ export default function CardHotelItinerary(props) {
             {/* FATHER ONE */}
 
             <div className="flex gap-x-8 items-center max-sm:gap-[10px]">
-              <Image
-                src={itemHotel.image ? itemHotel.image : ImageNotFound}
-                alt="hotel"
-                width={132}
-                height={114}
-                className="h-[114px] w-[132px] rounded-lg max-sm:h-[80px] max-sm:w-[90px]"
-              />
+              <div className="w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
+                <img
+                  src={itemHotel.image ? itemHotel.image : ImageNotFound}
+                  alt="hotel"
+                  className=" w-full h-full rounded-lg"
+                />
+              </div>
 
-              <div className="flex justify-between my-auto w-[80%]">
+              <div className="flex justify-between my-auto w-[74%] max-sm:w-[65%]">
                 <div className="flex flex-col gap-y-1">
                   <div className="d-flex title-start">
-                    <span className="text-fs-16 m-b text-black">
+                    <span className="text-fs-16 m-b text-black !line-clamp-2">
                       {itemHotel.name}
                     </span>
 
@@ -161,7 +162,7 @@ export default function CardHotelItinerary(props) {
                       width={11}
                       height={14}
                     />
-                    <span className="text-bl-100 text-fs-10 m-s-b">
+                    <span className="text-bl-100 text-fs-10 m-s-b truncate">
                       {itemHotel.address}
                     </span>
                   </div>
@@ -200,7 +201,7 @@ export default function CardHotelItinerary(props) {
                   </div>
                 </div>
 
-                <div className="w-auto max-lg:hidden flex flex-col gap-y-1 ">
+                <div className="w-auto max-lg:hidden flex flex-col gap-y-1 w-full justify-center">
                   <span className="text-fs-10 text-gry-100 m-m">
                     {languageData.cartTour.taxesText}
                   </span>
@@ -253,7 +254,7 @@ export default function CardHotelItinerary(props) {
               </div>
 
               <div className={`${isMobile ? "w-auto" : "w-full"}`}>
-                <div className="cont-price-taxes-and-policies d-flex flex-column align-self-center">
+                <div className="flex flex-col self-center">
                   <span className="text-fs-10 text-gry-100 m-m">
                     {languageData.cartTour.taxesText}
                   </span>
@@ -357,10 +358,10 @@ export default function CardHotelItinerary(props) {
 
                                   {/* NON REFUNDABLE */}
 
-                                  <div className="d-flex align-items-center">
+                                  <div className="flex items-center">
                                     {roomBed.refundable === false && (
                                       <Image
-                                        className="icons-size-s"
+                                        className="w-[15px ]"
                                         src={ErrorIcon}
                                         alt="icon error"
                                       />

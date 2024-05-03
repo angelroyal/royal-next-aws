@@ -69,10 +69,12 @@ export default function TourCardItinerary({ itemActivity }) {
     itemActivity && (
       <>
         <div className="relative mt-[22px]">
-          <img
+          <Image
             className="absolute"
             src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
             alt="Icon Location Border"
+            width={16}
+            height={200}
           />
 
           <div className="ml-[26px]">
@@ -111,7 +113,7 @@ export default function TourCardItinerary({ itemActivity }) {
               </div>
 
               <div className="flex lg:hidden">
-                <div className="rounded-[8px] w-[35%] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
+                <div className="rounded-[8px] w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
                   <img
                     className="w-full h-full rounded-[8px] object-cover"
                     src={itemActivity.image ? itemActivity.image : ""}
@@ -159,7 +161,7 @@ export default function TourCardItinerary({ itemActivity }) {
                 </div>
               </div>
 
-              <div className="w-[80%] pl-[32px] flex flex-col justify-center gap-[8px] max-lg:mt-[8px] max-lg:pt-[16px] max-lg:border-t max-lg:border-gry-70 max-lg:w-full max-lg:pl-0">
+              <div className="w-[80%] pl-[32px] flex flex-col justify-center gap-[8px] max-lg:mt-[8px] max-lg:pt-[16px] max-lg:border-t max-lg:border-[#ebebeb] max-lg:w-full max-lg:pl-0">
                 <h2 className="max-lg:hidden text-fs-16 m-b text-black pt-[13px] pb-[10px] truncate">
                   {itemActivity.title}
                 </h2>
