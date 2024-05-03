@@ -12,8 +12,8 @@ export function CartItem({ item, itemType, cartId, setIsLoader, isLoader }) {
           setIsLoader={setIsLoader}
           isLoader={isLoader}
         />
-        // <div>a</div>
       );
+
     case "activities":
       return (
         <CartTourT
@@ -23,6 +23,7 @@ export function CartItem({ item, itemType, cartId, setIsLoader, isLoader }) {
           isLoader={isLoader}
         />
       );
+
     case "transportations":
       return (
         <CartTransportT
