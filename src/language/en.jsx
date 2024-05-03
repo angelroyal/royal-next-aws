@@ -716,6 +716,13 @@ export const en = {
     shared: "Shared",
     typeTrip: "Type of trip:",
     reserveBtn: "Reserve",
+    people:"People",
+    suitcases:"Suitcases",
+    handLuggage:"Hand luggage",
+    oneWay:"One-way trip",
+    roundTrip:"Round trip",
+    privateService:"Private service",
+    sharedService:"Shared service",
   },
 
   /************************************************************/

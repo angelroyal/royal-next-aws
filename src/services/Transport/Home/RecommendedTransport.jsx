@@ -1,20 +1,21 @@
 "use client";
 
-import "swiper/css";
-import "swiper/css/navigation";
 import Image from "next/image";
 import { useContext } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "../../../assets/styles/general/Swiper.css";
 import LanguageContext from "@/language/LanguageContext";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "../../../assets/styles/general/Swiper.css";
+
 export default function RecommendedTransport() {
+
   const { languageData } = useContext(LanguageContext);
 
   return (
     <>
-
       <div className="relative">
 
         {/* TITLE RECOMMENDED TRANSPORT */}
@@ -70,7 +71,7 @@ export default function RecommendedTransport() {
                     <div className='flex flex-wrap mb-[6px] gap-2'>
                       <div className='flex gap-2'>
                         <Image src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`} width={12.8} height={13.4} alt="icon adult" />
-                        <span className='m-m text-fs-12'>4 personas</span>
+                        <span className='m-m text-fs-12'>4 {languageData.CardHomeTransport.people}</span>
                       </div>
 
                       <div className='flex gap-2'>
@@ -79,12 +80,12 @@ export default function RecommendedTransport() {
                         height={13} 
                         alt="icon transport" 
                         className="w-[14px] h-[13px]"/>
-                        <span className='m-m text-fs-12'>Modelo:KSDSDF</span>
+                        <span className='m-m text-fs-12'>{languageData.cardMoving.textModel} KSDSDF</span>
                       </div>
 
                       <div className='flex gap-2'>
                         <Image src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`} width={12.1} height={14.1} alt="icon baggage" />
-                        <span className='m-m text-fs-12'>2 Maletas</span>
+                        <span className='m-m text-fs-12'>2 {languageData.CardHomeTransport.suitcases}</span>
                       </div>
                     </div>
                   </div>
@@ -94,8 +95,8 @@ export default function RecommendedTransport() {
                     <span className='text-gry-100 text-fs-12 m-m'>{languageData. modalTour.modalities}</span>
 
                     <div className='flex gap-2 mb-[15.5px]'>
-                      <div className='bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12'>Privado</div>
-                      <div className='bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12'>Compartido</div>
+                      <div className='bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12'>{languageData.CardHomeTransport.private}</div>
+                      <div className='bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12'>{languageData.CardHomeTransport.shared}</div>
                     </div>
                   </div>
                 </div>
