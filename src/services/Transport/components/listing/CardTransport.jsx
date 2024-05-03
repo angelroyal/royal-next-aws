@@ -3,6 +3,7 @@
 import React, { useContext, useState } from "react";
 
 import ModalTransport from "../modal/ModalTransport";
+import LanguageContext from "@/language/LanguageContext";
 import CancelPolicyTransport from "../ToulTip/CancelPolicyTransport";
 import ListingTransportContext from "../../context/ListingTransportContext";
 
@@ -10,8 +11,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function CardTransport() {
+
   const [openModal, setOpenModal] = useState(false);
   const [openPolicy, setOpenPolicy] = useState(null);
+  const { languageData } = useContext(LanguageContext);
   const { dataTransportF } = useContext(ListingTransportContext);
   const [selectedTransport, setSelectedTransport] = useState(null);
 
@@ -35,7 +38,7 @@ export default function CardTransport() {
                 />
 
                 <div className="absolute bottom-0 w-[100%] h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none">
-                  {transport.type === "private" ? "Privado" : "Compartido"}
+                  {transport.type === "private" ? languageData.CardHomeTransport.private : languageData.CardHomeTransport.shared}
                 </div>
               </div>
 
@@ -51,10 +54,10 @@ export default function CardTransport() {
                       {/* TRANSPORT ROUND OR PRIVATE */}
                       <div className="pt-2 pb-[1.2rem]">
                         <span className="text-gry-70 m-b text-fs-12 mr-[8px]">
-                          Tipo de viaje:
+                          {languageData.CardHomeTransport.typeTrip}
                         </span>
                         <span className="text-fs-14 m-b">
-                          {transport.round === false ? "Sencillo" : "Redondo"}
+                          {transport.round === false ? languageData.CardHomeTransport.oneWay : languageData.CardHomeTransport.roundTrip}
                         </span>
                       </div>
 
@@ -69,7 +72,7 @@ export default function CardTransport() {
                               height={18}
                               alt="card adult"
                             />{" "}
-                            {transport.places} personas
+                            {transport.places} {languageData.CardHomeTransport.people}
                           </div>
 
                           {/* BAGGAGE */}
@@ -81,7 +84,7 @@ export default function CardTransport() {
                               height={16}
                               alt="card baggage"
                             />{" "}
-                            {transport.hand_suitcase} equipaje de mano
+                            {transport.hand_suitcase} {languageData.CardHomeTransport.handLuggage}
                           </div>
                         </div>
 
@@ -96,8 +99,8 @@ export default function CardTransport() {
                               alt="card transport"
                             />{" "}
                             {transport.type === "private"
-                              ? "Servicio privado"
-                              : "Servicio compartido"}
+                              ? languageData.CardHomeTransport.privateService
+                              : languageData.CardHomeTransport.sharedService}
                           </div>
 
                           {/* BAGGAGE */}
@@ -109,7 +112,7 @@ export default function CardTransport() {
                               height={16}
                               alt="card baggage"
                             />{" "}
-                            {transport.large_suitcase} maletas
+                            {transport.large_suitcase} {languageData.CardHomeTransport.suitcases}
                           </div>
                         </div>
                       </div>
@@ -137,15 +140,13 @@ export default function CardTransport() {
                       onMouseLeave={() => setOpenPolicy(null)}
                     >
                       <span className="relative text-center text-fs-10 m-s-b text-bl-100 cursor-pointer relative">
-                        {/* {languageData.containerModalHotel.policies} */}
-                        politicas de cancelacion
+                        {languageData.containerModalHotel.policies}
                         {openPolicy === index && <CancelPolicyTransport cancellation={transport.cancellation} />}
                       </span>
                     </div>
 
                     <div className="m-b bg-[#E0FEF0] text-grn-100 text-fs-10  py-[4px] px-[8px] rounded md:mb-3">
-                      {/* {languageData.cartTour.taxesText} */}
-                      Impuestos incluidos
+                      {languageData.cartTour.taxesText}
                     </div>
                   </div>
 
@@ -153,7 +154,7 @@ export default function CardTransport() {
                     className="bg-yw-100 py-[10px] px-[50px] rounded-full m-b text-fs-12 hover:bg-yw-110 max-sm:px-[20px]"
                     onClick={() => openCartDetails(transport)}
                   >
-                    Reservar
+                    {languageData.CardHomeTransport.reserveBtn}
                   </button>
 
                   {openModal && (

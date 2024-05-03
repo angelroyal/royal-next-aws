@@ -722,6 +722,13 @@ export const es = {
     shared: "Compartido",
     typeTrip: "Tipo de viaje:",
     reserveBtn: "Reservar",
+    people:"Personas",
+    suitcases:"Maletas",
+    handLuggage:"Equipaje de mano",
+    oneWay:"Sencillo",
+    roundTrip:"Redondo",
+    privateService:"Servicio privado",
+    sharedService:"Servicio compartido",
   },
 
   /************************************************************/
