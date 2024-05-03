@@ -3,18 +3,16 @@
 import Image from "next/image";
 import React, { useState, useEffect, useContext } from "react";
 
-import CartTourT from "./carts/CartTourT";
 import EmptyCart from "./utils/EmptyCart";
-import { useCartAxios } from "./CartAxios";
 import PriceCart from "./config/PriceCart";
-import CartHotelT from "./carts/CartHotelT";
+import { useCartAxios } from "./CartAxios";
+import { CartItem } from "./config/CartItem";
 import LanguageContext from "@/language/LanguageContext";
-import CartTransportT from "./carts/CartTransportT";
 
 export default function CartT(props) {
   const { closeCart } = props;
   const [cartUid, setCartUid] = useState(null);
-  const { cartData, fetchData } = useCartAxios();
+  const { cartData } = useCartAxios();
   const [isLoader, setIsLoader] = useState(false);
   const { languageData } = useContext(LanguageContext);
   const [cartInfo, setCartInfo] = useState(
@@ -34,7 +32,10 @@ export default function CartT(props) {
         cartData.cartItems.activities.length > 0) ||
       (cartData &&
         cartData.cartItems.hotels &&
-        cartData.cartItems.hotels.length > 0)
+        cartData.cartItems.hotels.length > 0) ||
+      (cartData &&
+        cartData.cartItems.transportations &&
+        cartData.cartItems.transportations.length > 0)
     ) {
       setCartInfo(cartData.cartItems);
     } else {
@@ -49,15 +50,6 @@ export default function CartT(props) {
       setCartUid(uid);
     }
   };
-
-  // GET AXIOS CONTEXT CART
-  // const fetchCartData = () => {
-  //   fetchData(cartUid);
-  // };
-
-  // const handleEmptyAlert = (statusEmpty) => {
-  //   setCartInfo(statusEmpty);
-  // };
 
   return (
     <>
@@ -83,39 +75,23 @@ export default function CartT(props) {
               <div
                 className={`max-h-[364px] relative overflow-y-auto scroll-page-gry `}
               >
-                {cartInfo.hotels && (
-                  <CartHotelT
-                    cartId={cartUid}
-                    hotelGetCart={cartInfo}
-                    setIsLoader={setIsLoader}
-                    isLoader={isLoader}
-                    // emptyClr={handleEmptyAlert}
-                    // onUpdateData={fetchCartData}
-                  />
+                {["hotels", "activities", "transportations"].map(
+                  (type) =>
+                    cartInfo[type] &&
+                    cartInfo[type].map((item, index) => (
+                      <CartItem
+                        key={`${type}-${index}`}
+                        item={item}
+                        itemType={type} // Removes the 's' from the end to match switch cases
+                        cartId={cartUid}
+                        setIsLoader={setIsLoader}
+                        isLoader={isLoader}
+                      />
+                    ))
                 )}
 
-                {cartInfo.activities && (
-                  <CartTourT
-                    cartId={cartUid}
-                    tourGetCart={cartInfo}
-                    setIsLoader={setIsLoader}
-                    isLoader={isLoader}
-                    // onUpdateData={fetchCartData}
-                  />
-                )}
-
-
-                {cartInfo.transportations && (
-                  <CartTransportT
-                    cartId={cartUid}
-                    transportGetCart={cartInfo}
-                    setIsLoader={setIsLoader}
-                    isLoader={isLoader}
-                  />
-                )}
+                {/* PRICE */}
               </div>
-
-              {/* PRICE */}
               <PriceCart cartId={cartUid} />
             </>
           )}
