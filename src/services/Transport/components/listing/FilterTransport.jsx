@@ -21,7 +21,7 @@ export default function FilterTransport() {
     });
     setSelectedFilters(newSelectedFilters);
   }, [filters, setSelectedFilters]);
-
+  console.log(filters);
   const handleCheckboxChange = (categoryIndex, optionIndex) => {
     setFilters((prevFilters) => {
       return prevFilters.map((category, idx) => {
@@ -79,26 +79,25 @@ export default function FilterTransport() {
         <div className="border-t w-full mb-[12.5px] mt-[12.5px]" />
 
         {filters.map((category, categoryIndex) => (
+
           <div key={categoryIndex}>
             <Disclosure defaultOpen={true}>
               {({ open }) => (
                 <>
                   <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-                    <h3 className="m-s-b text-fs-14">{category.name}</h3>
+                    <h3 className="m-s-b text-fs-14">{languageData.filterTransport[category.name]}</h3>
                     <ChevronUpIcon
-                      className={`${
-                        open ? "rotate-180 transform" : ""
-                      } h-5 w-5`}
+                      className={`${open ? "rotate-180 transform" : ""
+                        } h-5 w-5`}
                     />
                   </Disclosure.Button>
 
                   <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
                     <div
-                      className={`${
-                        category.name === "category"
+                      className={`${category.name === "category"
                           ? "flex flex-col gap-2"
                           : "grid grid-cols-3 gap-2"
-                      }`}
+                        }`}
                     >
                       {category.options.map((option, optionIndex) => (
                         <label
@@ -113,9 +112,18 @@ export default function FilterTransport() {
                             }
                             className="form-checkbox h-5 w-5 text-blue-600 cursor-pointer"
                           />
-                          <span className="m-m text-fs-12 cursor-pointer text-black">
-                            {option.label}
-                          </span>
+                          {category.name != "category" &&
+
+                            <span className="m-m text-fs-12 cursor-pointer text-black">
+                              {option.label === "Todos" ? languageData.optionsFilterHotel.allStart : option.label}
+                            </span>
+                          }
+                          {category.name === "category" &&
+
+                            <span className="m-m text-fs-12 cursor-pointer text-black">
+                              {languageData.filterTransport[option.label]}
+                            </span>
+                          }
                         </label>
                       ))}
                     </div>

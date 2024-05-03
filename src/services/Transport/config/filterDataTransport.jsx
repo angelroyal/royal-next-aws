@@ -2,9 +2,9 @@ export const filterDataTransport = [
   {
     name: "category",
     options: [
-      { label: "Todos", value: -1, checked: true },
-      { label: "Privado", value: 1, checked: false },
-      { label: "Compartido", value: 2, checked: false },
+      { label: "all", value: -1, checked: true },
+      { label: "private", value: 1, checked: false },
+      { label: "shared", value: 2, checked: false },
     ],
   },
   {

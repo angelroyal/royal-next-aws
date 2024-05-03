@@ -1,25 +1,26 @@
 
-import React from "react";
+import React, { useContext } from "react";
 
 import DateAndHour from "./DateAndHour";
-import PassengersTransport from "./PassengersTransport";
-
 import "@/assets/styles/general/Swiper.css";
+import PassengersTransport from "./PassengersTransport";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function InfoModalTransport(props) {
   const { transport } = props;
   console.log(transport);
+  const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col gap-2 w-1/2 max-md:w-full">
       {/* TITLE */}
       <h3 className="text-fs-24 m-b mb-[36px]">
-        ¡Ya casi está listo tu transporte!
+        {languageData.ModalTransport.titleModal}
       </h3>
 
       {/* TYPE OF TRIP */}
       <div className="flex flex-col gap-[6px] mb-[16px]">
-        <span className="text-gry-100 text-fs-12 m-s-b">Tipo de viaje</span>
+        <span className="text-gry-100 text-fs-12 m-s-b">{languageData.confirmation.cardMoving.typeTravel}</span>
 
         <div className="text-gry-100 text-fs-12 m-s-b py-[8px] px-[16px] bg-gry-50 rounded-full w-fit">
           {transport.round === true ? "Redondo" : "Sencillo"}
@@ -27,7 +28,7 @@ export default function InfoModalTransport(props) {
       </div>
 
       {/* FROM , TO */}
-      <span className="text-gry-100 text-fs-12 m-s-b">Desde</span>
+      <span className="text-gry-100 text-fs-12 m-s-b">{languageData.confirmation.cardMoving.from}</span>
 
       <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[324px] mb-[16px]">
         <img
@@ -41,7 +42,7 @@ export default function InfoModalTransport(props) {
         </div>
       </div>
 
-      <span className="text-gry-100 text-fs-12 m-s-b">Hacia</span>
+      <span className="text-gry-100 text-fs-12 m-s-b">{languageData.confirmation.cardMoving.to}</span>
 
       <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[324px]  mb-[16px]">
         <img

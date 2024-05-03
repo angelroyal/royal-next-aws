@@ -13,6 +13,7 @@ export default function TransportPriceCart(props) {
   const { fetchData } = useCartAxios();
   const { language } = useContext(LanguageContext);
   const [openPolicy, setOpenPolicy] = useState(false);
+  const { languageData } = useContext(LanguageContext);
 
   //   STATES CONTEXT TRANSPORT
   const {
@@ -30,7 +31,7 @@ export default function TransportPriceCart(props) {
   console.log(transport);
 
   const handleReserveNow = async () => {
-    
+
     // PRICE RESERVED
     let calculatedPrice =
       transport.type === "shared"
@@ -57,7 +58,7 @@ export default function TransportPriceCart(props) {
         from: zoneFromId,
         to: zoneToId,
         pax: passenger,
-        type:transport.type,
+        type: transport.type,
         price: calculatedPrice,
         vehicleId: transport.id,
         destinationId: destinationId,
@@ -66,7 +67,7 @@ export default function TransportPriceCart(props) {
         ...(comebackDate ? { comebackDate: comebackDate } : {}),
         ...(comebackTime ? { comebackTime: comebackTime } : {}),
         currency: "MXN",
-        vehicleImage:transport.image,
+        vehicleImage: transport.image,
         vehicleLabel: transport.label,
         cancelPolicyHours: transport.cancellation,
       };
@@ -122,13 +123,12 @@ export default function TransportPriceCart(props) {
       </div>
 
       <button
-        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center ${
-          !isButtonEnabled ? "cursor-not-allowed	" : ""
-        }`}
+        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center ${!isButtonEnabled ? "cursor-not-allowed	" : ""
+          }`}
         onClick={handleReserveNow}
         disabled={!isButtonEnabled}
       >
-        Agregar al carrito
+        {languageData.modalArrive.buttonArrive}
       </button>
 
       <div
@@ -137,7 +137,7 @@ export default function TransportPriceCart(props) {
         className="text-center"
       >
         <span className="relative text-center text-fs-14 m-s-b text-bl-100 cursor-pointer relative">
-          politicas de cancelacion
+          {languageData.containerModalHotel.policies}
           {openPolicy === true && <CancelPolicyTransportWhite cancellation={transport.cancellation} />}
         </span>
       </div>

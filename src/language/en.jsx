@@ -730,6 +730,26 @@ export const en = {
     vehicles:"vehicles",
   },
 
+  filterTransport: {
+    category:"Category",
+    baggage:"Baggage",
+    seats:"Seats",
+    all:"All",
+    private: "Private",
+    shared: "Shared",
+  },
+
+  ModalTransport:{
+    titleModal:"Your transportation is almost ready",
+    Schedule:"Schedule",
+    howManyPassengers:"How many passengers?",
+    individualPrice:"Individual price:",
+    charger:"Charger",
+    airConditioning:"Air conditioning",
+    travelInsurance:"Travel insurance",
+    babySeat:"Baby seat",
+  },
+
   /************************************************************/
   //////////////////////// 𝓜𝓞𝓥𝓘𝓝𝓖 MOVING 𝓜𝓞𝓥𝓘𝓝𝓖 //////////////////////////////
   /************************************************************/
