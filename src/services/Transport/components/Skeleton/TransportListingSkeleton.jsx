@@ -2,7 +2,7 @@ import React from 'react'
 
 export function WeFoundTransportSkeleton() {
     return (
-        <div className="flex justify-between items-center my-8">
+        <div className="flex justify-between items-center my-[36px]">
             <div className='animate-[skeletonLoading_1s_linear_infinite_alternate] w-1/2 h-[20px]' />
             <div className='animate-[skeletonLoading_1s_linear_infinite_alternate] w-[180px] h-[50px] max-lg:w-[150px] rounded-lg' />
         </div>

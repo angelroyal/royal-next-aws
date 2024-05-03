@@ -289,6 +289,7 @@ export default function TourCardItinerary({ itemActivity }) {
         </div>
         {loader && (
           <div className="w-full h-full fixed flex justify-center items-center top-0 left-0 z-[3] overflow-y-hidden bg-[#c9c9c940]">
+            {/* MUI */}
             <CircularProgress />
           </div>
         )}
