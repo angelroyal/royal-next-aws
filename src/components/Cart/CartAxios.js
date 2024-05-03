@@ -59,7 +59,12 @@ export const CartAxiosProvider = ({ children }) => {
         ? activities.reduce((acc, activity) => acc + activity.price, 0)
         : 0;
 
-      const totalPrice = totalHotelPrice + totalActivityPrice;
+      const totalTransportPrice = transportations
+        ? transportations.reduce((acc, transport) => acc + transport.prices, 0)
+        : 0;
+
+      const totalPrice =
+        totalHotelPrice + totalActivityPrice + totalTransportPrice;
 
       setTotalPrice(totalPrice);
     } else {
@@ -69,12 +74,13 @@ export const CartAxiosProvider = ({ children }) => {
 
   const getTotalItems = () => {
     if (cartData && cartData.cartItems) {
-      const { hotels, activities } = cartData.cartItems;
+      const { hotels, activities, transportations } = cartData.cartItems;
 
       const totalHotels = hotels ? hotels.length : 0;
       const totalActivities = activities ? activities.length : 0;
+      const totalTransports = transportations ? transportations.length : 0;
 
-      setTotalItemsInCart(totalHotels + totalActivities);
+      setTotalItemsInCart(totalHotels + totalActivities + totalTransports);
     }
     return 0;
   };

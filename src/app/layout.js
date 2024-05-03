@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import LanguageProvider from "@/language/LanguageProvider";
+import CookieBanner from "@/components/General/CookieBanner";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -82,7 +84,10 @@ export default function RootLayout({ children }) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonWeb) }}
           />
         </section>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <CookieBanner />
+        </LanguageProvider>
       </body>
     </html>
   );

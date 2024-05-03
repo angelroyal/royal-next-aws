@@ -27,6 +27,8 @@ export default function TransportPriceCart(props) {
   const priceShared = transport.price * passenger;
   const isButtonEnabled = passenger > 0 && departureDate && departureTime;
 
+  console.log(transport);
+
   const handleReserveNow = async () => {
     
     // PRICE RESERVED
@@ -55,17 +57,17 @@ export default function TransportPriceCart(props) {
         from: zoneFromId,
         to: zoneToId,
         pax: passenger,
+        type:transport.type,
+        price: calculatedPrice,
         vehicleId: transport.id,
-        vehicleLabel: transport.label,
+        destinationId: destinationId,
         departureDate: departureDate,
         departureTime: departureTime,
-        // comebackDate: comebackDate,
-        // comebackTime: comebackTime,
         ...(comebackDate ? { comebackDate: comebackDate } : {}),
         ...(comebackTime ? { comebackTime: comebackTime } : {}),
-        price: calculatedPrice,
         currency: "MXN",
-        destinationId: destinationId,
+        vehicleImage:transport.image,
+        vehicleLabel: transport.label,
         cancelPolicyHours: transport.cancellation,
       };
 

@@ -28,7 +28,7 @@ export default function CookieBanner() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDelayCookies(true);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
