@@ -729,6 +729,29 @@ export const es = {
     roundTrip:"Redondo",
     privateService:"Servicio privado",
     sharedService:"Servicio compartido",
+    vehicles:"vehículos",
+  },
+
+  filterTransport: {
+    category:"Categoria",
+    baggage:"Equipaje",
+    seats:"Asientos",
+    all:"Todos",
+    private: "Privado",
+    shared: "Compartido",
+  },
+
+  ModalTransport:{
+    titleModal:"¡Ya casi está listo tu transporte!",
+    Schedule:"Horario",
+    howManyPassengers:"¿Cuántos pasajeros?",
+    individualPrice:"Precio individual:",
+    charger:"Cargador",
+    airConditioning:"Aire acondicionado",
+    travelInsurance:"Seguro de viaje",
+    babySeat:"Silla para bebés",
+    privateService:"El precio total corresponde al servicio privado completo.",
+    sharedService:"El precio total se determina sumando el costo por cada pasajero.",
   },
 
   /************************************************************/

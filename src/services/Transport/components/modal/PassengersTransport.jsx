@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-
+import LanguageContext from "@/language/LanguageContext";
 import ModalTransportContext from "../../context/ModalTransportContext";
 
 export default function PassengersTransport(props) {
   const { transport } = props;
   const { passenger, setPassenger } = useContext(ModalTransportContext);
+  const { languageData } = useContext(LanguageContext);
   console.log(transport);
 
   const addPassenger = () => {
@@ -26,7 +27,7 @@ export default function PassengersTransport(props) {
 
   return (
     <div className="flex flex-col gap-[16px]">
-      <span className="text-fs-14 m-s-b">¿Cuántos pasajeros?</span>
+      <span className="text-fs-14 m-s-b">{languageData.ModalTransport.howManyPassengers}</span>
 
       <div className="flex gap-[16px]">
         <div
@@ -57,7 +58,7 @@ export default function PassengersTransport(props) {
 
       {transport.type === "shared" && (
         <div className="flex gap-1 items-center">
-          <span className="text-fs-12 m-m">Precio individual: </span>
+          <span className="text-fs-12 m-m">{languageData.ModalTransport.individualPrice} </span>
           <span className="text-fs-12 m-b text-bl-100">MXN</span>
           <span className="text-fs-14 m-b text-bl-100">
             $

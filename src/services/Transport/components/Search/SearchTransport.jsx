@@ -1,24 +1,25 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { ButtonSearch } from "./ButtonSearch";
 import { AutoCompleteTrans } from "./AutoCompleteTrans";
+import LanguageContext from "@/language/LanguageContext";
 import { SearchDestinationA } from "./SearchDestinationA";
 import { SearchDestinationB } from "./SearchDestinationB";
 
 const TravelTypes = [
-  { value: "simple", label: "Sencillo" },
-  { value: "round", label: "Redondo" },
+  { value: "simple", label: "oneWay" },
+  { value: "round", label: "roundTrip" },
 ];
 
 export default function SearchTransport({ isListing = false }) {
-
 
   const [selectedAutoComplete, setSelectedAutoComplete] = useState(null);
   const [selectDestinationA, setSelectDestinationA] = useState(null);
   const [selectDestinationB, setSelectDestinationB] = useState(null);
   const [travelType, setTravelType] = useState("simple");
+  const { languageData } = useContext(LanguageContext);
 
   const [destinationALocal, setDestinationALocal] = useState(null);
   const [destinationBLocal, setDestinationBLocal] = useState(null);
@@ -72,7 +73,7 @@ export default function SearchTransport({ isListing = false }) {
                 "before:content-[' '] before:absolute before:w-[10px] before:h-[10px] before:rounded-full before:bg-bl-100 before:inset-x-0	before:inset-y-0	before:mx-auto before:my-auto"
               }`}
             />
-            <h3 className="text-fs-12 m-m text-black m-0">{travel.label}</h3>
+            <h3 className="text-fs-12 m-m text-black m-0">{languageData.CardHomeTransport[travel.label]}</h3>
           </button>
         ))}
       </div>

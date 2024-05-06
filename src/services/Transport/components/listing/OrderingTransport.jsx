@@ -17,7 +17,7 @@ export default function OrderingTransport() {
   return (
     <>
       <div className="flex justify-between items-center my-[32px]">
-        <span className="m-s-b text-fs-20">Encontramos {dataTransportF.length} vehículos en cancún</span>
+        <span className="m-s-b text-fs-20">{languageData.listingTour.weFound} {dataTransportF.length} {languageData.CardHomeTransport.vehicles}</span>
 
         {orderingTransport.items.length > 0 && (
           <div className="relative">

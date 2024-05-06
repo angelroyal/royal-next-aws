@@ -5,11 +5,12 @@ import { useContext } from "react";
 
 import TransportPriceCart from "./TransportPriceCart";
 import ModalTransportContext from "../../context/ModalTransportContext";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function PriceModalTransport(props) {
   const { transport } = props;
   const { passenger } = useContext(ModalTransportContext);
-
+  const { languageData } = useContext(LanguageContext);
   return (
     <div className=" w-1/2 max-md:w-full">
       <div className="m-[16px] ">
@@ -18,7 +19,7 @@ export default function PriceModalTransport(props) {
           <span className="m-s-b text-fs-20 ">{transport.label}</span>
 
           <div className="py-[8px] px-[16px] text-white bg-black rounded-full w-fit text-fs-12">
-            {transport.type === "shared" ? "Compartido" : "Privado"}
+            {transport.type === "shared" ? languageData.filterTransport.shared : languageData.filterTransport.private}
           </div>
 
           <img
@@ -38,7 +39,7 @@ export default function PriceModalTransport(props) {
               />
 
               <span className="text-fs-12 m-m">
-                {passenger}/{transport.places} Personas
+                {passenger}/{transport.places} {languageData.modalArrive.subtitlePeople}
               </span>
             </div>
 
@@ -51,7 +52,7 @@ export default function PriceModalTransport(props) {
                 height={12.3}
               />
               <span className="text-fs-12 m-m">
-                {transport.hand_suitcase / transport.places} equipaje de mano
+                {transport.hand_suitcase / transport.places} {languageData.CardHomeTransport.handLuggage}
               </span>
             </div>
 
@@ -64,7 +65,7 @@ export default function PriceModalTransport(props) {
                 height={12.3}
               />
               <span className="text-fs-12 m-m">
-                {transport.large_suitcase / transport.places} Maleta
+                {transport.large_suitcase / transport.places} {languageData.CardHomeTransport.suitcases}
               </span>
             </div>
 
@@ -76,10 +77,10 @@ export default function PriceModalTransport(props) {
                 width={16}
                 height={16}
               />
-              <span className="text-fs-12 m-m">Cargador</span>
+              <span className="text-fs-12 m-m">{languageData.ModalTransport.charger}</span>
             </div>
 
-          {/* A/C */}
+            {/* A/C */}
             <div className="flex gap-[8px]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/air/air-bl.svg`}
@@ -87,7 +88,7 @@ export default function PriceModalTransport(props) {
                 width={13.3}
                 height={13.3}
               />
-              <span className="text-fs-12 m-m">Aire acondicionado</span>
+              <span className="text-fs-12 m-m">{languageData.ModalTransport.airConditioning}</span>
             </div>
 
             <div className="flex gap-[8px]">
@@ -97,7 +98,7 @@ export default function PriceModalTransport(props) {
                 width={16}
                 height={16}
               />
-              <span className="text-fs-12 m-m">Seguro de viaje</span>
+              <span className="text-fs-12 m-m">{languageData.ModalTransport.travelInsurance}</span>
             </div>
 
             <div className="flex gap-[8px]">
@@ -107,20 +108,18 @@ export default function PriceModalTransport(props) {
                 width={12.8}
                 height={13.4}
               />
-              <span className="text-fs-12 m-m">Silla para bebés </span>
+              <span className="text-fs-12 m-m">{languageData.ModalTransport.babySeat}</span>
             </div>
           </div>
 
           <div className="bg-grn-30 py-[8px] px-[15px] rounded-bl-lg">
-            {transport.type === "private" ? (
-              <span className="text-grn-100 m-s-b text-fs-12">
-                El precio total corresponde al servicio privado completo.
-              </span>
-            ) : (
-              <span className="text-grn-100 m-s-b text-fs-12">
-                El precio total se determina sumando el costo por cada pasajero.
-              </span>
-            )}
+            <span className="text-grn-100 m-s-b text-fs-12">
+              {transport.type === "private" ? (
+                languageData.ModalTransport.privateService
+              ) : (
+                languageData.ModalTransport.sharedService
+              )}
+            </span>
           </div>
         </div>
 
