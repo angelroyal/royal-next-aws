@@ -123,7 +123,7 @@ export default function TransportPriceCart(props) {
       </div>
 
       <button
-        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 hover:bg-bl-110 rounded-full text-center ${!isButtonEnabled ? "cursor-not-allowed	" : ""
+        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 rounded-full text-center ${!isButtonEnabled ? "cursor-not-allowed" : "hover:bg-bl-110"
           }`}
         onClick={handleReserveNow}
         disabled={!isButtonEnabled}
