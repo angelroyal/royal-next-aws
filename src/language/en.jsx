@@ -748,6 +748,8 @@ export const en = {
     airConditioning:"Air conditioning",
     travelInsurance:"Travel insurance",
     babySeat:"Baby seat",
+    privateService:"The total price corresponds to the full private service.",
+    sharedService:"The total price is determined by adding the cost for each passenger.",
   },
 
   /************************************************************/

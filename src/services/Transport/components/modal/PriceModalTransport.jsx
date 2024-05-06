@@ -19,7 +19,7 @@ export default function PriceModalTransport(props) {
           <span className="m-s-b text-fs-20 ">{transport.label}</span>
 
           <div className="py-[8px] px-[16px] text-white bg-black rounded-full w-fit text-fs-12">
-            {transport.type === "shared" ? "Compartido" : "Privado"}
+            {transport.type === "shared" ? languageData.filterTransport.shared : languageData.filterTransport.private}
           </div>
 
           <img
@@ -115,9 +115,9 @@ export default function PriceModalTransport(props) {
           <div className="bg-grn-30 py-[8px] px-[15px] rounded-bl-lg">
             <span className="text-grn-100 m-s-b text-fs-12">
               {transport.type === "private" ? (
-                "El precio total corresponde al servicio privado completo."
+                languageData.ModalTransport.privateService
               ) : (
-                "El precio total se determina sumando el costo por cada pasajero."
+                languageData.ModalTransport.sharedService
               )}
             </span>
           </div>

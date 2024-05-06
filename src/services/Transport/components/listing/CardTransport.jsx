@@ -50,14 +50,14 @@ export default function CardTransport() {
                   </h2>
 
                   <div className="flex flex-col lg:flex-row w-full">
-                    <div className="w-full lg:w-[70%] flex flex-col justify-evenly">
+                    <div className="w-full lg:w-[80%] flex flex-col justify-evenly">
                       {/* TRANSPORT ROUND OR PRIVATE */}
                       <div className="pt-2 pb-[1.2rem]">
                         <span className="text-gry-70 m-b text-fs-12 mr-[8px]">
                           {languageData.CardHomeTransport.typeTrip}
                         </span>
                         <span className="text-fs-14 m-b">
-                          {transport.round === false ? languageData.CardHomeTransport.oneWay : languageData.CardHomeTransport.roundTrip}
+                          {transport.round === false ? languageData.CardHomeTransport.roundTrip : languageData.CardHomeTransport.oneWay }
                         </span>
                       </div>
 
