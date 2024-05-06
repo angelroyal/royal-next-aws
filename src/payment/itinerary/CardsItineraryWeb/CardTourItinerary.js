@@ -9,7 +9,7 @@ import { TooltipDown } from "../../../components/ToolTip/TooltipDown";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 export default function TourCardItinerary({ itemActivity }) {
-  const { fetchData } = useCartAxios();
+  const { setItinerary, fetchData } = useCartAxios();
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
   const { languageData } = useContext(LanguageContext);
@@ -23,23 +23,6 @@ export default function TourCardItinerary({ itemActivity }) {
   const searchParams = new URLSearchParams(window.location.search);
   const cartUid = searchParams.get("uid");
 
-  // const handleRemoveTour = async (cardTourID) => {
-  //   setLoader(true);
-  //   try {
-  //     const response = await axiosWithInterceptor.delete(
-  //       `v1/carts/${cartUid}/activity/${cardTourID}`
-  //     );
-  //     if (response.data) {
-  //       fetchData(cartUid);
-  //       setIsRemove(false);
-  //       setLoader(false);
-  //     }
-  //   } catch (error) {
-  //     console.eror(error);
-  //     setLoader(false);
-  //   }
-  // };
-
   const handleRemoveTour = (cardTourID) => {
     setLoader(true);
     const reservationRemove = async () => {
@@ -49,6 +32,8 @@ export default function TourCardItinerary({ itemActivity }) {
           fetchData(cartUid);
           setIsRemove(false);
           setLoader(false);
+          setItinerary(Math.floor(Math.random() * 100) + 1);
+
         })
         .catch((error) => {
           console.error(error);

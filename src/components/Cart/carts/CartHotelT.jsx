@@ -43,11 +43,6 @@ export default function CartHotelT(props) {
     setShowDelete(updatedShowDelete);
   };
 
-  // const handleCardClick = (hotelId) => {
-  //   const updatedShowDelete = { ...showDelete };
-  //   updatedShowDelete[hotelId] = !updatedShowDelete[hotelId];
-  //   setShowDelete(updatedShowDelete);
-  // };
 
   return (
     <div className="relative">

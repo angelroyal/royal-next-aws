@@ -50,7 +50,6 @@ export const CartAxiosProvider = ({ children }) => {
     // SUM PRICE TOTAL CART
     if (cartData && cartData.cartItems) {
       const { hotels, activities, transportations } = cartData.cartItems;
-      console.log(transportations);
 
       const totalHotelPrice = hotels
         ? hotels.reduce((acc, hotel) => acc + hotel.price, 0)

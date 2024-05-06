@@ -19,10 +19,9 @@ import "@/assets/styles/web/Hotel.css";
 import "../../../../src/assets/styles/mobile/HotelMobile.css";
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
 
-
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
-  const { fetchData } = useCartAxios();
+  const { setItinerary, fetchData } = useCartAxios();
   const isMobile = useIsMobile();
 
   const { languageData } = useContext(LanguageContext);
@@ -55,6 +54,8 @@ export default function CardHotelItinerary(props) {
           .then((response) => {
             fetchData(cartUid);
             setIconRemove(false);
+            // setLoader(false);
+            setItinerary(Math.floor(Math.random() * 100) + 1);
           })
           .catch((error) => {
             console.error(error);
