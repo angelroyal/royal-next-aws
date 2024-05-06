@@ -2,8 +2,6 @@
 
 import React from "react";
 
-import "../../assets/styles/web/Hotel.css";
-
 import SearchBox from "@/hooks/SearchBox";
 import { Container } from "@/config/Others/Container";
 import {
