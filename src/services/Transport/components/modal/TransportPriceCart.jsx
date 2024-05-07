@@ -6,6 +6,7 @@ import { useCartAxios } from "@/components/Cart/CartAxios";
 import { saveToCartTransport } from "../../Api/requestTransport";
 import ModalTransportContext from "../../context/ModalTransportContext";
 import CancelPolicyTransportWhite from "../ToulTip/CancelPolicyTransportWhite";
+import { ErrorAlert } from "../Alerts/AlertsTransport";
 
 export default function TransportPriceCart(props) {
   const { transport } = props;
@@ -14,6 +15,12 @@ export default function TransportPriceCart(props) {
   const { language } = useContext(LanguageContext);
   const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
+
+  const [alert, setAlert] = useState({
+    isAlert: false,
+    title: null,
+    message: null,
+  });
 
   //   STATES CONTEXT TRANSPORT
   const {
@@ -28,10 +35,9 @@ export default function TransportPriceCart(props) {
   const priceShared = transport.price * passenger;
   const isButtonEnabled = passenger > 0 && departureDate && departureTime;
 
-  console.log(transport);
+  // console.log(transport);
 
   const handleReserveNow = async () => {
-
     // PRICE RESERVED
     let calculatedPrice =
       transport.type === "shared"
@@ -79,7 +85,6 @@ export default function TransportPriceCart(props) {
 
       //   AXIOS POST ADD CART
       const response = await saveToCartTransport(saveRequestCart);
-
       const cartUid = response.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
       localStorage.setItem(
@@ -91,7 +96,14 @@ export default function TransportPriceCart(props) {
         router.push(`/${language}/booking?uid=${cartUid}`);
       }, 2000);
     } catch (error) {
-      console.error(error);
+      console.error("error", error);
+      if (error.response.status >= 400) {
+        setAlert({
+          isAlert: true,
+          title: languageData.Alerts.tour.tourDetails.title,
+          message: languageData.Alerts.tour.tourDetails.message,
+        });
+      }
     }
   };
 
@@ -138,9 +150,12 @@ export default function TransportPriceCart(props) {
       >
         <span className="relative text-center text-fs-14 m-s-b text-bl-100 cursor-pointer relative">
           {languageData.containerModalHotel.policies}
-          {openPolicy === true && <CancelPolicyTransportWhite cancellation={transport.cancellation} />}
+          {openPolicy === true && (
+            <CancelPolicyTransportWhite cancellation={transport.cancellation} />
+          )}
         </span>
       </div>
+      <ErrorAlert infoAlert={alert} setAlert={setAlert} />
     </div>
   );
 }
