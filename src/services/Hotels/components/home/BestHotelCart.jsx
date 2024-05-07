@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Rating from "@mui/material/Rating";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import { TotalStars } from "@/components/General/Stars";
 
 export function BestHotelCart({ hotel }) {
   const { languageData, language } = useContext(LanguageContext);
+  const [isHovered, setIsHovered] = useState(false);
 
   const searchHotel = (hotel) => {
     window.open(
@@ -17,10 +17,14 @@ export function BestHotelCart({ hotel }) {
   };
 
   return (
-    <div onClick={() => searchHotel(hotel)}>
-      <div className="w-full h-[216px]">
+    <div
+      onClick={() => searchHotel(hotel)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="w-full h-[216px] overflow-hidden">
         <img
-          className="w-full h-full rounded-t-lg object-cover select-none"
+          className="w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform scale-100 hover:scale-105"
           src={hotel.image}
           alt="card"
         />
@@ -34,10 +38,7 @@ export function BestHotelCart({ hotel }) {
         </div>
 
         <div className="mb-[4px]">
-          <TotalStars
-            name="read-only"
-            stars={hotel.stars}
-          />
+          <TotalStars name="read-only" stars={hotel.stars} />
         </div>
 
         <div className="flex gap-1 mb-[11px]">
@@ -48,7 +49,9 @@ export function BestHotelCart({ hotel }) {
             width={11}
             height={14}
           />
-          <span className="text-bl-100 m-s-b text-fs-12 truncate">{hotel.address}</span>
+          <span className="text-bl-100 m-s-b text-fs-12 truncate">
+            {hotel.address}
+          </span>
         </div>
 
         <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
@@ -61,7 +64,11 @@ export function BestHotelCart({ hotel }) {
             </span>
           </div>
 
-          <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap">
+          <button
+            className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap ${
+              isHovered ? "bg-bl-100 text-white" : "text-bl-100 border-bl-100"
+            }`}
+          >
             {languageData.cartTour.seeDetails}
           </button>
         </div>
