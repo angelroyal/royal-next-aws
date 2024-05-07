@@ -150,6 +150,7 @@ export function PopularState({ tour = false }) {
                   </div>
                 </div>
 
+                {/* IMAGE CENTER CARROUSEL */}
                 <div
                   className="relative rounded-lg md:w-[77%] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[1])}
@@ -176,6 +177,7 @@ export function PopularState({ tour = false }) {
                 </div>
               </div>
 
+              {/* IMAGE RIGHT CARROUSEL */}
               <div className="flex md:flex-col gap-y-3 gap-x-3 md:gap-x-0 md:w-[268px] md:h-full h-[45%]">
                 {popularState.slice(2, 4).map((destination, index) => (
                   <div
@@ -203,17 +205,18 @@ export function PopularState({ tour = false }) {
             </div>
           </SwiperSlide>
 
+          {/* MOBILE */}
           <SwiperSlide className="bg-transparent">
             <div className="flex flex-col md:flex-row gap-x-0 gap-y-3 md:gap-y-0 h-full md:gap-x-3">
-              <div className="flex gap-x-3 w-full md:h-full h-[45%]">
+              <div className="flex gap-x-3 w-full md:h-full h-2/4">
                 <div
-                  className="relative rounded-lg md:w-[23%] w-full cursor-pointer"
+                  className="relative rounded-lg md:w-[23%] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[4])}
                 >
                   <img
                     src={popularState[4].imageUrl}
                     alt={`${popularState[4].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
+                    className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
                     width="100%"
                     height="100%"
                   />
