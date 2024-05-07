@@ -236,13 +236,13 @@ export function PopularState({ tour = false }) {
                 </div>
 
                 <div
-                  className="relative rounded-lg md:w-[77%] w-full cursor-pointer"
+                  className="relative rounded-lg md:w-[77%] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[5])}
                 >
                   <img
                     src={popularState[5].imageUrl}
                     alt={`${popularState[5].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
                     width="100%"
                     height="100%"
                   />
@@ -263,13 +263,13 @@ export function PopularState({ tour = false }) {
 
               <div className="flex md:flex-col gap-y-3 gap-x-3 md:gap-x-0 md:w-[268px] md:h-full h-[45%]">
                 <div
-                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer"
+                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[6])}
                 >
                   <img
                     src={popularState[6].imageUrl}
                     alt={`${popularState[6].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
                     width="100%"
                     height="100%"
                   />
@@ -288,13 +288,13 @@ export function PopularState({ tour = false }) {
                 </div>
 
                 <div
-                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer"
+                  className="relative rounded-lg md:h-[246px] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[0])}
                 >
                   <img
                     src={popularState[0].imageUrl}
                     alt={`${popularState[0].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none"
+                    className="h-full rounded-lg object-cover brightness-[.7] select-none  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
                     width="100%"
                     height="100%"
                   />
