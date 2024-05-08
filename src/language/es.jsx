@@ -68,6 +68,12 @@ export const es = {
       buttonSearch: "Buscar",
     },
 
+    tabTransport: {
+      city: "Ciudad",
+      from: "Hacia",
+      to: "Desde"
+    },
+
     tabTour: {
       tour: "Tour",
       from: "Desde",
