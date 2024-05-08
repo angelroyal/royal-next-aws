@@ -66,7 +66,7 @@ export function LodgingsView({ hotels }) {
 
       <div className=" lg:flex flex-wrap justify-between gap-x-[16px] gap-y-[24px] hidden">
         {Object.values(hotels)
-          .slice(0, 10)
+          .slice(0, 8)
           .map((hotel, index) => (
             <div key={index} className="!rounded-lg">
               {/*  */}
