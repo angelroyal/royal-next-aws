@@ -187,13 +187,16 @@ export function BannerSafelyTransport() {
   return (
     <div className="bg-gry-30 rounded-lg flex gap-[16px] max-lg:flex-col my-32">
       <img
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
         src={`${process.env.NEXT_PUBLIC_URL}banners/transport/client-happy-transport.jpg`}
         alt="banner transporte persona sonriendo"
         className="w-1/2 rounded-l-lg max-lg:rounded-t-lg max-lg:rounded-bl-none max-lg:w-full max-lg:h-[22rem] select-none object-cover"
       />
 
       <div
-        data-aos="fade-up"
+        data-aos="fade-left"
         className="flex flex-col gap-4 pl-[56px] py-[80px] pr-[25px] items-start justify-center max-md:py-[24px] max-md:pl-[16px] max-md:pr-[36px]"
       >
         <h3 className="text-fs-36 m-b w-[75%] max-md:text-fs-26 max-lg:w-full">
