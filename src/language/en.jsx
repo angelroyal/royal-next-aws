@@ -67,6 +67,12 @@ export const en = {
       buttonSearch: "Search",
     },
 
+    tabTransport: {
+      city: "City",
+      from: "From",
+      to: "To"
+    },
+
     tabTour: {
       tour: "Tour",
       from: "From",

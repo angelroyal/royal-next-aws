@@ -72,7 +72,7 @@ export default function CartTourOptions() {
             slidesPerView: 4.5,
           },
           1280: {
-            slidesPerView: 5,
+            slidesPerView: 6,
           },
           1536: {
             slidesPerView: 6.7,
@@ -81,8 +81,7 @@ export default function CartTourOptions() {
       >
         {tourData.slice(0, 12).map((tour, index) => {
           if (!tour[language]) {
-            console.error("Missing language data for tour:", tour);
-            return null; // Skip rendering this particular slide
+            return null;
           }
           return (
             <SwiperSlide

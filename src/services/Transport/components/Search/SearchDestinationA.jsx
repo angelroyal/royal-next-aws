@@ -136,7 +136,7 @@ export function SearchDestinationA({
           />
 
           <p className="m-0 top-2.5 left-[2.5rem] absolute text-gry-70 m-m text-fs-10">
-            {languageData.SearchBox.tabHotel.autocomplete}
+            {languageData.SearchBox.tabTransport.from}
           </p>
           <Combobox.Input
             className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12 ${

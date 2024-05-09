@@ -101,7 +101,7 @@ export function AutoCompleteTrans({
           />
 
           <p className="m-0 top-2.5 left-[2.5rem] absolute text-gry-70 m-m text-fs-10">
-            {languageData.SearchBox.tabHotel.autocomplete}
+            {languageData.SearchBox.tabTransport.city}
           </p>
 
           <Combobox.Input

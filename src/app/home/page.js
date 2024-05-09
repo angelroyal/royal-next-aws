@@ -14,9 +14,8 @@ export default function Home() {
         <CartAxiosProvider>
           <Token />
           <Navigation />
-          <HomeHotel />
-          <ContactUs />
-          <Footer />
+
+aqui pinche luis          <Footer />
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

@@ -7,8 +7,8 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function BannerDiscoverPossibilities() {
   const { languageData } = useContext(LanguageContext);
-  const [namePerson, setNamePerson] = useState(null);
-  const [phoneValue, setPhone] = useState(null);
+  const [namePerson, setNamePerson] = useState("");
+  const [phoneValue, setPhone] = useState("");
   const phoneRegex = /^\d{0,10}$/;
   const nameRegexIndividual = /^[A-Za-z ]{1,40}$/;
 

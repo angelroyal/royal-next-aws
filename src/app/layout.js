@@ -1,7 +1,9 @@
 import "./globals.css";
+
 import { Inter } from "next/font/google";
 import LanguageProvider from "@/language/LanguageProvider";
 import CookieBanner from "@/components/General/CookieBanner";
+import AosInitializer from "@/config/Animation/AosInitializer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -86,6 +88,7 @@ export default function RootLayout({ children }) {
         </section>
         <LanguageProvider>
           {children}
+          <AosInitializer />
           <CookieBanner />
         </LanguageProvider>
       </body>
