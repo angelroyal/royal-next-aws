@@ -19,6 +19,7 @@ export default function
       icon: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-w.svg`,
       iconActive: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-b.svg`,
       name: "private",
+      alt:`icon-beach ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     },
 
     {
@@ -26,6 +27,7 @@ export default function
       icon: `${process.env.NEXT_PUBLIC_URL}icons/family/family-w.svg`,
       iconActive: `${process.env.NEXT_PUBLIC_URL}icons/family/family-b.svg`,
       name: "shared",
+      alt:`icon-family ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     },
   ];
 
@@ -49,7 +51,7 @@ export default function
             {menuPromoted === index ? (
               <Image
                 src={option.icon}
-                alt={option.name}
+                alt={option.alt}
                 width={16}
                 height={16}
                 className="w-[16px] h-[16px]"
@@ -57,7 +59,7 @@ export default function
             ) : (
               <Image
                 src={option.iconActive}
-                alt={option.name}
+                alt={option.alt}
                 width={16}
                 height={16}
                 className="w-[16px] h-[16px]"
