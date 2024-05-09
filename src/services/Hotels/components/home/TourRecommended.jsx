@@ -1,7 +1,7 @@
 "use client";
 import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import LanguageContext from "../../../../language/LanguageContext";
 import { homeRecommendedTour } from "@/config/Others/HomeRecommendedTour";
+
 
 export default function CartTourOptions() {
   const { languageData, language } = useContext(LanguageContext);
@@ -29,7 +30,7 @@ export default function CartTourOptions() {
         <h2 className="m-b text-center text-fs-24 mb-2">
           {languageData.TourRecommended.title}
         </h2>
-        <div className="flex w-full text-center justify-center max-sm:text-fs-12 w-11/12">
+        <div className="flex text-center justify-center max-sm:text-fs-12 w-11/12">
           <div className="m-m text-gry-100">
             {languageData.TourRecommended.subtitle}
             <b className="text-black">
@@ -41,14 +42,19 @@ export default function CartTourOptions() {
       </div>
 
       <Swiper
-        slidesPerView={5}
+        slidesPerView={6}
         spaceBetween={36}
         className="mySwiper !pb-12 max-sm:!pb-16"
         id="swiper-recommended-hotel"
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+
         breakpoints={{
           0: {
             slidesPerView: 1.5,
