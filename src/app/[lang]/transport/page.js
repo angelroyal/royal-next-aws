@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
@@ -11,12 +10,11 @@ import TipsBooking from "@/services/Transport/Home/TipsBooking";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import PromotedRoutes from "@/services/Transport/Home/PromotedRoutes";
 import { BannerHomeTop } from "@/services/Transport/Home/BannerHomeTop";
+import CartTourOptions from "@/services/Hotels/components/home/TourRecommended";
 import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { BannerHomeTransport, BannerSafelyTransport } from "@/services/Transport/Home/bannerTransport";
-import CartTourOptions from "@/services/Hotels/components/home/TourRecommended";
-import { BannersHomeExclusiveDiscounts, BannersHomeOffers, BannersHomeOffersNow } from "@/components/Home/BannersHome";
-import ExploreActivitiesHome from "@/components/Home/ExploreActivitiesHome";
+
 export const metadata = {
   title: "StayWuw.com | Únete a los Tours Más Emocionantes de México",
   description:
@@ -55,12 +53,6 @@ export default function HomeTransport() {
               <div className="mb-16">
                 <CartTourOptions />
               </div>
-              {/* DELETE TEST HOME HOME */}
-              <BannersHomeOffers/>
-              <BannersHomeExclusiveDiscounts/>
-              <BannersHomeOffersNow/>
-              <ExploreActivitiesHome/>
-              {/*END DELETE TEST HOME HOME */}
             </Container>
             {/* END LP */}
 

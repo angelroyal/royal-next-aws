@@ -7,6 +7,7 @@ import { TotalStars } from "../General/Stars";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import LanguageContext from "@/language/LanguageContext";
 
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
@@ -34,7 +35,7 @@ export function BannersHomeOffers() {
 
                 </Swiper>
             </div>
-            <picture>
+            <picture className="w-[30%]">
                 <div className="w-full h-full shadow-3xl rounded-lg">
                     <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers-second.jpg`} className="w-full h-full rounded-lg select-none object-cover" alt="Banner Experimenta los mejores tours" />
                 </div>

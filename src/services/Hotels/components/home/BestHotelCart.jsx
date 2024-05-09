@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useContext } from "react";
-import LanguageContext from "@/language/LanguageContext";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 

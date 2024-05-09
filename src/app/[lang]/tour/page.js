@@ -1,7 +1,4 @@
-// import "../../assets/styles/web/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
-// import HomeHotel from "@/pages/Home/HomeHotel";
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
