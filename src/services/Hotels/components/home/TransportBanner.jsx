@@ -30,12 +30,14 @@ export function TransportBanner() {
         <img
           src={`${process.env.NEXT_PUBLIC_URL}banners/vehicle/tiggo-7-pro.webp`}
           alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} tiggo car`}
-          className="absolute z-[1] bottom-0 right-0 left-0 mx-auto select-none"
-          width="auto"
-          height="100%"
+          className="absolute z-[1] bottom-[75px] right-0 left-[139px] mx-auto select-none max-xl:!left-0"
+          // width="auto"
+          // height="100%"
+          width={452}
+          height={226}
         />
         <img
-          src={`${process.env.NEXT_PUBLIC_URL}general/Frame-1414.webp`}
+          src={`${process.env.NEXT_PUBLIC_URL}general/Iso-tipo-staywuw.jpg`}
           alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
           className="object-cover h-full mr-0 md:mr-[44px] lg:mr-0 xl:mr-[44px] select-none"
           width="auto"
