@@ -72,7 +72,6 @@ export default function ExploreActivitiesHome() {
 
                                     </div>
                                 </div>
-                                {/* <div className="polygon-path bg-yw-100 w-[100px] h-[100px] absolute bottom-0 rounded-tl-lg" /> */}
                             </SwiperSlide>
                         ))}
 
