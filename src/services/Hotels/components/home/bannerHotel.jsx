@@ -109,9 +109,9 @@ export function BannerIcons() {
 
 export function BannerHomeKnowMore() {
   const { languageData } = useContext(LanguageContext);
-  const beach = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/beach.webp`;
-  const city = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/city.webp`;
-  const selfie = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/selfie.webp`;
+  const beach = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/beach.jpg`;
+  const city = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/city.jpg`;
+  const selfie = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/selfie.png`;
 
   return (
     <div className="flex h-[408px] mb-10 mt-16 lg:mt-32 max-lg:flex-col max-lg:h-auto">
@@ -155,7 +155,7 @@ export function BannerHomeKnowMore() {
           className="mySwiper h-full"
         >
           <SwiperSlide className="bg-transparent">
-            <Image
+            <img
               src={beach}
               width={364}
               height={259}
@@ -165,7 +165,7 @@ export function BannerHomeKnowMore() {
           </SwiperSlide>
 
           <SwiperSlide className="bg-transparent max-lg:w-full">
-            <Image
+            <img
               src={city}
               width={364}
               height={259}
@@ -175,7 +175,7 @@ export function BannerHomeKnowMore() {
           </SwiperSlide>
         </Swiper>
 
-        <Image
+        <img
           src={selfie}
           width={364}
           height={480}
