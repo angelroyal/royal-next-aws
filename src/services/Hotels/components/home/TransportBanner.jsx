@@ -8,8 +8,6 @@ export function TransportBanner() {
     <section className="flex bg-white flex-col lg:flex-row h-max my-16 md:mt-[131px] md:mb-32 shadow-3xl">
       <div
         data-aos="fade-right"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine"
         className="flex justify-center px-8 py-14 md:px-16 w-full lg:pr-0 items-start md:py-[88px] flex-col gap-y-2.5 lg:w-4/5 gap-y-5"
       >
         <h3 className="m-b text-fs-32">
@@ -27,8 +25,6 @@ export function TransportBanner() {
 
       <div
         data-aos="fade-left"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine"
         className="relative w-4/5 flex justify-center mb-14 lg:mb-0 lg:justify-end items-center lg:items-end"
       >
         <img
