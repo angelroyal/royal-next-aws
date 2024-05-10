@@ -362,11 +362,11 @@
 
 /* SWIPER POPULAR DESTINATIONS HOME */
 #swiper-popular-destinations-home>div.swiper-button-prev {
-  top: 125px;
-  left: 20px;
+  top: 201px;
+  left: -21px;
   color: black;
-  height: 56px;
-  width: 56px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   font-weight: bold;
   box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
@@ -374,20 +374,28 @@
   z-index: 11;
   border-right: 1px solid hsla(0, 0%, 56.9%, .444);
   z-index: 4;
-  --swiper-navigation-size: 20px;
+  --swiper-navigation-size: 14px;
 }
 
 #swiper-popular-destinations-home>div.swiper-button-next {
   z-index: 4;
-  top: 337px;
-  right: 20px;
+  top: 201px;
+  right: -21px;
   border-radius: 50%;
   color: black;
-  height: 56px;
-  width: 56px;
+  height: 40px;
+  width: 40px;
   box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
   background: #fff;
   font-weight: bold;
-  --swiper-navigation-size: 20px;
+  --swiper-navigation-size: 14px;
+}
+
+#swiper-popular-destinations-home>div.swiper-button-prev.swiper-button-disabled {
+  display: none;
+}
+
+#swiper-popular-destinations-home>div.swiper-button-next.swiper-button-disabled {
+  display: none;
 }
 /* END SWIPER POPULAR DESTINATIONS HOME */

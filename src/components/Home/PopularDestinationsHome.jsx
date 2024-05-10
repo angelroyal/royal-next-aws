@@ -11,42 +11,42 @@ import "@/assets/styles/general/Swiper.css";
 export default function PopularDestinationsHome() {
     return (
 
-        <div className='flex flex-col gap-[36px] my-[180px]'>
+        <div className='flex flex-col gap-[36px] my-[180px] relative'>
             <h2 className='text-fs-28 m-b '>Destinos populares</h2>
 
             <Swiper
                 slidesPerView={1}
-                className="rounded-lg w-full"
+                className="rounded-lg w-full !static"
                 spaceBetween={12}
                 id="swiper-popular-destinations-home"
                 initialSlide={0}
                 navigation
                 modules={[Navigation]}
                 breakpoints={{
-                    // 0: {
-                    //     slidesPerView: 1,
-                    // },
-                    // 390: {
-                    //     slidesPerView: 1.4,
-                    // },
-                    // 500: {
-                    //     slidesPerView: 1.8,
-                    // },
-                    // 620: {
-                    //     slidesPerView: 2,
-                    // },
-                    // 768: {
-                    //     slidesPerView: 2.5,
-                    // },
-                    // 1024: {
-                    //     slidesPerView: 3.5,
-                    // },
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    390: {
+                        slidesPerView: 1.4,
+                    },
+                    500: {
+                        slidesPerView: 1.8,
+                    },
+                    620: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                    },
+                    1024: {
+                        slidesPerView: 3.5,
+                    },
                     1280: {
                         slidesPerView: 5,
                     },
                 }}
             >
-                {[...Array(6)].map((_, index) => (
+                {[...Array(8)].map((_, index) => (
                     <SwiperSlide className="!rounded-lg" key={index}>
                         <div className='h-[280px] relative'>
                             <img src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`} alt='banner-offers' className="w-full h-full rounded-lg select-none object-cover" />

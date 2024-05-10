@@ -109,11 +109,11 @@ export function BannersHomeOffersNow() {
 
             <div className="w-full flex h-[250px] gap-[10px]">
                 <div className="w-1/2">
-                    <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`} alt='banner-offers' className="h-full w-full rounded-lg select-none" />
+                    <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`} alt='banner-offers' className="h-full w-full rounded-lg select-none object-cover" />
                 </div>
 
                 <div className="w-1/2">
-                    <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`} alt='banner-offers' className="h-full w-full rounded-lg select-none" />
+                    <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`} alt='banner-offers' className="h-full w-full rounded-lg select-none object-cover" />
                 </div>
             </div>
 
