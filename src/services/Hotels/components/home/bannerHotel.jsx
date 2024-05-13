@@ -65,6 +65,8 @@ export function BannerIcons() {
         <img
           src="https://sandboxmexico.com/assets/icons/beach/beach-b.svg"
           alt="icon-beach-b"
+          width={16}
+          height={16}
         />
         <span>Playa</span>
       </div>
@@ -72,6 +74,8 @@ export function BannerIcons() {
         <img
           src="https://sandboxmexico.com/assets/icons/family/family-b.svg"
           alt="icon-family-b"
+          width={16}
+          height={16}
         />
         <span>Familia</span>
       </div>
@@ -79,6 +83,8 @@ export function BannerIcons() {
         <img
           src="https://sandboxmexico.com/assets/icons/romantic/romantic-b.svg"
           alt="icon-romantic-b"
+          width={16}
+          height={16}
         />
         <span>Romántico</span>
       </div>
@@ -86,6 +92,8 @@ export function BannerIcons() {
         <img
           src="https://sandboxmexico.com/assets/icons/business/business-b.svg"
           alt="icon-business-b"
+          width={16}
+          height={16}
         />
         <span>Negocios</span>
       </div>
@@ -93,6 +101,8 @@ export function BannerIcons() {
         <img
           src="https://sandboxmexico.com/assets/icons/adults/adults-b.svg"
           alt="icon-adults-b"
+          width={16}
+          height={16}
         />
         <span>Adultos</span>
       </div>
@@ -100,6 +110,8 @@ export function BannerIcons() {
         <img
           src="https://sandboxmexico.com/assets/icons/pet/pet-b.svg"
           alt="icon-pet-b"
+          width={16}
+          height={16}
         />
         <span>Pet Friendly</span>
       </div>
