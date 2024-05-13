@@ -1,5 +1,6 @@
 "use client";
 
+import { Image } from "react-bootstrap";
 import { Navigation } from "swiper/modules";
 import { TotalStars } from "../General/Stars";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -41,20 +42,75 @@ export default function EnjoyStayHome() {
                     className='h-full w-full pt-[1px] rounded-r-lg brightness-75'
                 />
 
-                <div className="absolute bottom-0 w-full h-full">
+                <div className="absolute bottom-[-43px] w-full h-full px-[53px]">
 
                     <Swiper
-                        slidesPerView={1}
+                        slidesPerView={2}
                         className="h-full rounded-lg"
-                        id="swiper-home-explore-activities"
+                        id="swiper-home-enjoy-stay"
                         initialSlide={0}
+                        spaceBetween={12}
                         navigation
                         modules={[Navigation]}
                     >
                         {[...Array(5)].map((_, index) => (
 
+
                             <SwiperSlide className="!rounded-lg shadow-3xl" key={index}>
-                                <img src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`} alt='banner-offers' className="rounded-lg select-none object-cover" />
+
+                                {/* CARDS HOTEL */}
+                                <div key={index} className="shadow-3xl rounded-lg">
+                                    <div className="w-full h-[216px]">
+                                        <img
+                                            className="w-full h-full rounded-t-lg object-cover select-none"
+                                            src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`}
+                                            alt="card"
+                                        />
+                                    </div>
+
+                                    <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col h-[151px]">
+                                        <div className="m-s-b pt-1 text-fs-14 text-start truncate mb-[4px]">
+                                            Excursion a chichén itzá
+                                            {""}
+                                        </div>
+
+                                        <div className="mb-[4px]">
+                                            <TotalStars
+                                                name="read-only"
+                                                stars={5}
+                                                width={"11px"}
+                                                height={"11px"}
+                                            />
+                                        </div>
+
+                                        <div className="flex gap-1 mb-[11px]">
+                                            <Image
+                                                className="w-auto h-auto"
+                                                src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                                                alt="location icon"
+                                                width={11}
+                                                height={14}
+                                            />
+                                            <span className="text-bl-100 m-s-b text-fs-12 truncate">Yucatán</span>
+                                        </div>
+
+                                        <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
+                                            <div className="flex flex-col">
+                                                <span className="m-m text-gry-100 text-fs-12 text-start">
+                                                    {/* {languageData.cartTour.from} */}desde
+                                                </span>
+                                                <span className="m-b text-or-100 text-fs-12">
+                                                    MXN <span className="m-b text-fs-16">$5,000</span>
+                                                </span>
+                                            </div>
+
+                                            <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap">
+                                                {/* {languageData.cartTour.seeDetails} */}
+                                                Ver detalles
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </SwiperSlide>
                         ))}

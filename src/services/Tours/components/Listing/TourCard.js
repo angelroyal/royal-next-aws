@@ -46,7 +46,7 @@ export default function TourCard(props) {
     <>
       <div className="cont-card-tour-test d-flex">
         <div className="card-listing-tour">
-          <div className="image-card-tour-l">
+          <div className="image-card-tour-l !h-full">
             {/* <img className='image-card-tour-test' src='https://sandboxmexico.com/assets/banners/desktop/banner-about-us.webp' alt='tour-test-banner-abaut-us' /> */}
             <Swiper
               slidesPerView={1}
@@ -55,7 +55,7 @@ export default function TourCard(props) {
                 clickable: true,
               }}
               modules={[Pagination]}
-              className="swiperCardTour swiperCardTourLP"
+              className="swiperCardTour swiperCardTourLP !h-full"
               id="images-tour-listing"
             >
               {tour.images && tour.images.length > 0 ? (
@@ -66,7 +66,7 @@ export default function TourCard(props) {
                     style={{ width: 280, height: "100%" }}
                   >
                     <img
-                      className="object-fit-cover img-tour-list"
+                      className="object-fit-cover img-tour-list !h-full"
                       alt="tours list"
                       src={tourImage}
                       width={"100%"}
@@ -86,7 +86,7 @@ export default function TourCard(props) {
           </div>
 
           <div className="cont-card-info-star-loc-price">
-            <h2 className="title-card-tour-test truncate w-[95%]">
+            <h2 className="title-card-tour-test truncate w-[90%]">
               {tour.name}
             </h2>
 
@@ -100,8 +100,8 @@ export default function TourCard(props) {
               readOnly
             />
 
-            <div className="d-flex cont-mobile-loc-price">
-              <div className="cont-info-card-tour-test">
+            <div className="d-flex cont-mobile-loc-price w-full">
+              <div className="cont-info-card-tour-test w-[70%]">
                 {tour.address && (
                   <div className="d-flex gap-1">
                     <Image
@@ -144,7 +144,7 @@ export default function TourCard(props) {
 
               <div className="line-card-tour-grey"></div>
 
-              <div className="cont-price-percentage-details">
+              <div className="cont-price-percentage-details w-[30%]">
                 <div className="content-card-tour-gap-percentage">
                   <h2 className="text-black-card-tour-test-m">
                     {/* TEXT FROM /LP15-02-24 */}
