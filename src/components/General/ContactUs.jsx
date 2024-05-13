@@ -56,7 +56,7 @@ export default function ContactUs() {
             }
 
             {delayIcon &&
-                <div className={`bg-bl-100 p-[1rem] rounded-full border border-white fixed bottom-[39px] right-[149px] z-[11] max-md:right-[36px]
+                <div className={`bg-bl-100 p-[1rem] rounded-full border border-white fixed bottom-[39px] right-[149px] z-[10] max-md:right-[36px]
                     ${delayClass ? "bounce2" : "animations-icon"
                     }`}>
                     <Image
