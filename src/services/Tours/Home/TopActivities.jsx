@@ -60,7 +60,7 @@ export default function TopActivities() {
         </span>
       </div>
 
-      <div className="flex flex-wrap gap-[16px] justify-between max-lg:justify-around">
+      <div className="flex flex-wrap gap-[16px] justify-between max-sm:justify-around">
         {tours.length > 0
           ? tours.map((tour, index) => (
               // CARD TOP ACTIVITIES TOUR
@@ -71,7 +71,7 @@ export default function TopActivities() {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(-1)}
               >
-                <div className="min-w-[266px] max-w-[280px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl relative">
+                <div className="min-w-[266px] max-w-[280px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl relative max-lg:min-w-[229px] max-lg:max-w-[229px] max-md:min-w-[266px] max-md:max-w-[280px] max-sm:max-w-fit">
                   <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
                     <img
                       className={`w-full h-full object-cover select-none transition-transform duration-500 transform ${
@@ -88,7 +88,7 @@ export default function TopActivities() {
                   </div>
 
                   <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-                    <div className="m-s-b pt-1 text-fs-14 text-start truncate">
+                    <div className="m-s-b pt-1 text-fs-14 text-start truncate max-sm:w-[250px]">
                       {validateLanguageName(language, tour).name}{" "}
                     </div>
 
