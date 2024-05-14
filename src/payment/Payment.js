@@ -4,10 +4,7 @@
 import { Container } from "react-bootstrap";
 import React, { useState, useEffect, useContext, Suspense, lazy } from "react";
 
-import {
-  StepperContext,
-  StepperProvider,
-} from "./context/steeperContext";
+import { StepperContext, StepperProvider } from "./context/steeperContext";
 import Booking from "./Booking/Booking";
 import Itinerary from "./itinerary/Itinerary";
 import SkeletonPay from "../utils/skeleton/SkeletonPay";
@@ -31,9 +28,7 @@ import BannerConfirmationT from "@/components/bannerJsx/bannerConfirmationT";
 
 // import Logo from "../assets/images/logos/logo-royal-vacations-text.png";
 
-const DetailsPayment = lazy(() =>
-  import("./itinerary/others/DetailsPayment")
-);
+const DetailsPayment = lazy(() => import("./itinerary/others/DetailsPayment"));
 const ReservationShortInfo = lazy(() =>
   import("./itinerary/others/DetailReservation")
 );
@@ -148,34 +143,31 @@ export default function Payment() {
 
   return (
     <>
-      {/* <SkeletonPay /> */}
       {data && (
         <StepperProvider>
           <StepperContext.Consumer>
             {({ step, handleStepChange }) => (
               <div className="personal-container background-payment-step">
-                {!isMobileNew && step !== 3 && (
-                  <div className="grey-container" />
+                {step !== 3 && (
+                  <div className=" max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0" />
                 )}
                 <Container>
+
                   {step === 3 && <BannerState />}
 
                   <div className="container-payment-steeps-info">
-                    <div className="width100 container-steeps-payment">
+                    <div className="w-full lg:w-[68%] xl:w-[90%] pr-[20px] container-steeps-payment">
                       <>
                         {step >= 1 && step <= 3 ? (
                           <div className="row-steeper-i p-0">
-                            {isMobile ? (
-                              <StepsToPaymentsM
-                                step={step}
-                                handleStepChange={handleStepChange}
-                              />
-                            ) : (
-                              <StepsToPayments
-                                step={step}
-                                handleStepChange={handleStepChange}
-                              />
-                            )}
+                            <StepsToPaymentsM
+                              step={step}
+                              handleStepChange={handleStepChange}
+                            />
+                            <StepsToPayments
+                              step={step}
+                              handleStepChange={handleStepChange}
+                            />
                           </div>
                         ) : null}
                       </>
@@ -197,26 +189,25 @@ export default function Payment() {
                       )}
                     </div>
 
-                    {!isMobileNew && (
-                      <div className="details-payment-left d-flex justify-content-end">
-                        <Suspense fallback={null}>
-                          {step === 3 ? (
-                            <ReservationShortInfo />
-                          ) : (
-                            <DetailsPayment
-                              data={data}
-                              step={step}
-                              handleStepChange={handleStepChange}
-                            />
-                          )}
-                        </Suspense>
-                      </div>
-                    )}
+                    <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white">
+                      <Suspense fallback={null}>
+                        {step === 3 ? (
+                          <ReservationShortInfo />
+                        ) : (
+                          <DetailsPayment
+                            data={data}
+                            step={step}
+                            handleStepChange={handleStepChange}
+                          />
+                        )}
+                      </Suspense>
+                    </div>
+                    {/* )} */}
                   </div>
-                  {step === 3 && (<BannerConfirmationT/>)}
+                  {step === 3 && <BannerConfirmationT />}
                 </Container>
 
-                {isMobileNew && data && data.items && (
+                {data && data.items && (
                   <DialogPaymentItinerary
                     handleStepChange={handleStepChange}
                     reservationData={data}
@@ -230,7 +221,7 @@ export default function Payment() {
         </StepperProvider>
       )}
 
-      {!data && skeletonShow && <SkeletonPay />}
+      <Container>{!data && skeletonShow && <SkeletonPay />}</Container>
 
       {showClr && (showClr.message === "CLR" || showClr.message === "CNF") && (
         <Container className="container-itinerary-no-data">
@@ -250,10 +241,6 @@ export default function Payment() {
         <Container className="container-itinerary-no-data">
           <img
             className="name-logo m-0"
-            // width="auto"
-            // height="auto"
-            // src={Logo}
-            // src={`${process.env.NEXT_PUBLIC_URL}royal/logo.svg`}
             src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
             alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
           />
@@ -261,7 +248,7 @@ export default function Payment() {
             {languageData.Alerts.itinerary.title}
           </h2>
           <p className="itinerary-no-text padding-bottom">
-           {languageData.Alerts.itinerary.contact} 800 953 0342
+            {languageData.Alerts.itinerary.contact} 800 953 0342
           </p>
         </Container>
       )}

@@ -30,7 +30,7 @@ export function StepsToPayments({ step, handleStepChange }) {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="hidden md:flex md:items-center max-lg:justify-center">
       {Steps.map((stepValue, index) => (
         <>
           <button
@@ -84,11 +84,10 @@ export function StepsToPaymentsM({ step, handleStepChange }) {
   };
   
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex md:hidden items-center justify-center">
       {Steps.map((stepValue, index) => (
-        <>
+        <div key={index} className="flex items-center">
           <button
-            key={index}
             onClick={() => handleStepsButton(stepValue.value)}
             className={`focus:outline-none focus:ring-transparent px-2 flex flex-col items-center gap-y-[2px] w-[72px]`}
           >
@@ -113,14 +112,14 @@ export function StepsToPaymentsM({ step, handleStepChange }) {
 
           {Steps.length - 1 !== index && (
             <span
-              className={`border-[1px] border-dashed w-[39px] ${
+              className={`border-[1px] border-dashed w-[39px] h-[1px] ${
                 step && step >= stepValue.value
                   ? "border-bl-100"
                   : "border-gry-70"
               }`}
             />
           )}
-        </>
+        </div>
       ))}
     </div>
   );

@@ -1,6 +1,7 @@
 import Image from "next/image";
-import React, { useState, useEffect, useContext } from "react";
 import Modal from "react-bootstrap/Modal";
+import { Dialog, Transition } from "@headlessui/react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
@@ -61,7 +62,11 @@ export function AlertRate(props) {
         >
           <Modal.Header></Modal.Header>
           <Modal.Body className="display-modal-rate">
-            <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-rate" />
+            <Image
+              src={IconRoyal}
+              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
+              className="icon-royal-modal-rate"
+            />
             <div className="title-modal-rate">
               {languageData.alertsPayment.rateTitle}
             </div>
@@ -72,7 +77,8 @@ export function AlertRate(props) {
 
             <div className="service-change-rate">
               <ul>
-                {infoDataRate && infoDataRate.priceChanged &&
+                {infoDataRate &&
+                  infoDataRate.priceChanged &&
                   infoDataRate.priceChanges.map((service, index) => (
                     <li key={index}>{service.name}</li>
                   ))}
@@ -134,7 +140,11 @@ export function AlertLoad() {
         >
           <Modal.Header></Modal.Header>
           <Modal.Body className="display-modal-rate">
-            <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-load-r" />
+            <Image
+              src={IconRoyal}
+              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
+              className="icon-royal-modal-load-r"
+            />
             <div className="title-modal-load-r">
               {languageData.alertsPayment.textAlert.PE}
             </div>
@@ -177,7 +187,11 @@ export function AlertUpdate(props) {
           >
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body className="display-modal-rate-update">
-              <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-rate" />
+              <Image
+                src={IconRoyal}
+                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
+                className="icon-royal-modal-rate"
+              />
               <div className="title-modal-rate-update">
                 {languageData.alertsPayment.updatePrice}
               </div>
@@ -198,43 +212,77 @@ export function AlertNoAvailability(props) {
   const [smShow, setSmShow] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
-  const handleOpenModal = () => {
-    setSmShow(true);
-  };
-
-  const handleCloseModal = () => {
-    setSmShow(false);
-  };
-
   useEffect(() => {
     if (isNoAvailability === true) {
-      handleOpenModal();
+      setSmShow(true);
     }
   }, []);
 
   return (
-    <>
-      <div className="modal">
-        <Modal
-          size="sm"
-          id="modal-alert-rate-update"
-          show={smShow}
-          onHide={handleCloseModal}
-          aria-labelledby="example-modal-sizes-title-sm"
+    <Transition.Root show={smShow} as={Fragment}>
+      <Dialog className="relative z-10" onClose={() => setSmShow(false)}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
-          <Modal.Header closeButton></Modal.Header>
-          <Modal.Body className="display-modal-rate-update">
-            <Image src={IconRoyal} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} className="icon-royal-modal-rate" />
-            <div className="title-modal-rate-update">
-              {languageData.confirmation.bookingData.alertNoAvailability}
-            </div>
-            <div className="text-rate-modal-update">
-              {languageData.confirmation.bookingData.alertNoAvailabilityText}
-            </div>
-            <div className="line-rate-modal-update"></div>
-          </Modal.Body>
-        </Modal>
-      </div>
-    </>
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            >
+              <Dialog.Panel className="transform overflow-hidden bg-white rounded-lg shadow-xl transition-all my-auto">
+                <div className="p-[24px] relative flex flex-col items-center">
+                  <button
+                    className="border-0 focus:outline-none absolute mr-[11px] mt-[11px] right-0 top-0 w-4 h-4 z-[2]"
+                    onClick={() => setSmShow(false)}
+                  >
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-70.svg`}
+                      alt="close icon modal"
+                      width={16}
+                      height={16}
+                      className="w-full h-full"
+                    />
+                  </button>
+
+                  <Image
+                    src={IconRoyal}
+                    alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
+                    className="w-[46] h-[46px]"
+                  />
+                  
+                  <div className="text-bl-100 text-center m-s-b text-fs-20">
+                    {languageData.confirmation.bookingData.alertNoAvailability}
+                  </div>
+
+                  <div className="m-m text-fs-17 text-gry-100">
+                    {
+                      languageData.confirmation.bookingData
+                        .alertNoAvailabilityText
+                    }
+                  </div>
+                </div>
+
+                <div className="border w-full h-[1px] my-[26px]" />
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition.Root>
   );
 }
