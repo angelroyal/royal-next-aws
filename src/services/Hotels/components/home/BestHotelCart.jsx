@@ -6,8 +6,8 @@ import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 
 export function BestHotelCart({ hotel }) {
-  const { languageData, language } = useContext(LanguageContext);
   const [isHovered, setIsHovered] = useState(false);
+  const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
     window.open(
