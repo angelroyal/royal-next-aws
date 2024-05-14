@@ -6,8 +6,8 @@ import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 
 export function BestHotelCart({ hotel }) {
-  const { languageData, language } = useContext(LanguageContext);
   const [isHovered, setIsHovered] = useState(false);
+  const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
     window.open(
@@ -21,10 +21,13 @@ export function BestHotelCart({ hotel }) {
       onClick={() => searchHotel(hotel)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      className="shadow-3xl"
     >
-      <div className="w-full h-[216px] overflow-hidden">
+      <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
         <img
-          className="w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform scale-100 hover:scale-105"
+          className={`w-full h-full object-cover select-none transition-transform duration-500 transform ${
+            isHovered ? "scale-105" : "scale-100"
+          }`}
           src={hotel.image}
           alt="card"
         />

@@ -13,6 +13,8 @@ export const en = {
     titleBl: "Call us!",
     subtitle: "Get benefits and personalized help by dialing our number.",
     followNetwork: "Follow us to know more.",
+    title:"Doubts to choose a hotel?",
+    description:"Share your information with us and an advisor will contact you."
   },
 
   alertHelp: {

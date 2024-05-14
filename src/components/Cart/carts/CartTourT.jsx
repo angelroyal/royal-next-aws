@@ -8,7 +8,6 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export default function CartTourT(props) {
   const { cartId, activity, setIsLoader, isLoader } = props;
-  console.log(cartId);
 
   const { setItinerary, removeActivityById } = useCartAxios();
   const [loadingTours, setLoadingTours] = useState({});

@@ -106,8 +106,3 @@ export default function ShuffleHotel() {
     </div>
   );
 }
-
-
-export function activitiesTypes(){
-
-}

@@ -11,9 +11,10 @@ import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActiviti
 import moment from "moment/moment";
 
 export default function TopActivities() {
+  const [tours, setTours] = useState([]);
+  const [isHovered, setIsHovered] = useState({});
   const { languageData, language } = useContext(LanguageContext);
 
-  const [tours, setTours] = useState([]);
   useEffect(() => {
     const topActivities = async () => {
       try {
@@ -38,11 +39,11 @@ export default function TopActivities() {
     const today = moment();
 
     window.open(
-        `/${language}/mx/${
-            tourInfo.destinationCodeName
-        }-${tourInfo[language || 'es'].country}/tours/${tourInfo.codeName}`,
-        "_blank"
-      );
+      `/${language}/mx/${tourInfo.destinationCodeName}-${
+        tourInfo[language || "es"].country
+      }/tours/${tourInfo.codeName}`,
+      "_blank"
+    );
   };
 
   return (
@@ -58,20 +59,27 @@ export default function TopActivities() {
         </span>
       </div>
 
-      {/* FIX BOOSTRAP 16px*/}
       <div className="flex flex-wrap gap-[16px] justify-between max-lg:justify-around">
         {tours.length > 0
           ? tours.slice(0, 12).map((tour, index) => (
               // CARD TOP ACTIVITIES TOUR
               <div
                 key={index}
-                className="!w-fit !rounded-lg"
+                className="!w-fit !rounded-lg shadow-3xl"
                 onClick={() => sentTour(tour)}
+                onMouseEnter={() =>
+                  setIsHovered({ ...isHovered, [index]: true })
+                }
+                onMouseLeave={() =>
+                  setIsHovered({ ...isHovered, [index]: false })
+                }
               >
                 <div className="min-w-[266px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl max-w-[300px] relative">
-                  <div className="w-full h-[216px]">
+                  <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
                     <img
-                      className="w-full h-full rounded-t-lg object-cover select-none"
+                      className={`w-full h-full object-cover select-none transition-transform duration-500 transform ${
+                        isHovered[index] ? "scale-105" : "scale-100"
+                      }`}
                       src={tour.image}
                       alt="card"
                     />
@@ -131,14 +139,19 @@ export default function TopActivities() {
                         </span>
                       </div>
 
-                      <button className="m-s-b text-black text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:!text-white text-nowrap">
+                      <button
+                        className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap ${
+                          isHovered[index]
+                            ? "bg-bl-100 text-white"
+                            : "text-bl-100 border-bl-100"
+                        }`}
+                      >
                         {languageData.cartTour.seeDetails}
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              //END CARD TOP ACTIVITIES TOUR
             ))
           : [...Array(5)].map((_, index) => (
               <div key={index} className="min-w-[266px] h-full">
