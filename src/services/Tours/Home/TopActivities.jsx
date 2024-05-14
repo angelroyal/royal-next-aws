@@ -1,14 +1,15 @@
 "use client";
 
+import axios from "axios";
+import Image from "next/image";
+import moment from "moment/moment";
 import { Rating } from "@mui/material";
-import { Image } from "react-bootstrap";
-import React, { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
+import React, { useContext, useEffect, useState } from "react";
+import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
 
 import "swiper/css";
-import axios from "axios";
-import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
-import moment from "moment/moment";
+import "@/assets/styles/general/Swiper.css";
 
 export default function TopActivities() {
   const [tours, setTours] = useState([]);
@@ -24,7 +25,7 @@ export default function TopActivities() {
 
         if (dataPopularState.data && dataPopularState.status === 200) {
           const shuffledDestinations = dataPopularState.data
-            .slice(0, 8)
+            .slice(0, 10)
             .sort(() => 0.5 - Math.random());
           setTours(shuffledDestinations);
         }
@@ -61,11 +62,11 @@ export default function TopActivities() {
 
       <div className="flex flex-wrap gap-[16px] justify-between max-lg:justify-around">
         {tours.length > 0
-          ? tours.slice(0, 10).map((tour, index) => (
+          ? tours.map((tour, index) => (
               // CARD TOP ACTIVITIES TOUR
               <div
                 key={index}
-                className="!w-fit !rounded-lg shadow-3xl"
+                className="!w-fit !rounded-lg shadow-3xl colum-two"
                 onClick={() => sentTour(tour)}
                 onMouseEnter={() =>
                   setIsHovered({ ...isHovered, [index]: true })
