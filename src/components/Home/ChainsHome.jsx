@@ -33,6 +33,17 @@ export default function ChainsHome() {
                         delay: 3000,
                         disableOnInteraction: false,
                     }}
+                    breakpoints={{
+                        390: {
+                            slidesPerView: 2,
+                        },
+                        800: {
+                            slidesPerView: 4,
+                        },
+                        1024: {
+                            slidesPerView: 6,
+                        },
+                    }}
                 >
 
                     <SwiperSlide className="!rounded-lg !flex !items-center">
@@ -99,11 +110,11 @@ export default function ChainsHome() {
 
                     <SwiperSlide className="!rounded-lg !flex !items-center">
                         <Image
-                              src={logoBarcelo}
-                              alt='Logo Barcelo chains'
-                              className="select-none"
-                              width={156}
-                              height={101}
+                            src={logoBarcelo}
+                            alt='Logo Barcelo chains'
+                            className="select-none"
+                            width={156}
+                            height={101}
                         />
                     </SwiperSlide>
 

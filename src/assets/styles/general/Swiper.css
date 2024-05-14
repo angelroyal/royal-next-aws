@@ -103,12 +103,14 @@
 }
 
 #swiper-popular-estates>div.swiper-button-prev.swiper-button-disabled,
+#swiper-banner-home-offers>div.swiper-button-prev.swiper-button-disabled,
 #swiper-exclusive-discounts>div.swiper-button-prev.swiper-button-disabled,
 #swiper-recommended-transport>div.swiper-button-prev.swiper-button-disabled {
   color: grey;
 }
 
 #swiper-popular-estates>div.swiper-button-next.swiper-button-disabled,
+#swiper-banner-home-offers>div.swiper-button-next.swiper-button-disabled,
 #swiper-exclusive-discounts>div.swiper-button-next.swiper-button-disabled,
 #swiper-recommended-transport>div.swiper-button-next.swiper-button-disabled {
   color: grey;
@@ -283,16 +285,6 @@
   font-weight: bold;
   --swiper-navigation-size: 20px;
 }
-
-#swiper-banner-home-offers>div.swiper-button-prev.swiper-button-disabled {
-  color: grey;
-}
-
-#swiper-banner-home-offers>div.swiper-button-next.swiper-button-disabled {
-  color: grey;
-}
-
-
 /*END SWIPER BANNER HOME OFFERS*/
 
 /* SWIPER EXCLUSIVE DISCOUNTS HOME */
@@ -358,6 +350,16 @@
   --swiper-navigation-size: 20px;
 }
 
+ @media only screen and (max-width: 1024px) {
+  #swiper-home-explore-activities>div.swiper-button-prev {
+    display: none;
+  }
+  
+  #swiper-home-explore-activities>div.swiper-button-next {
+    display: none;
+  }
+ }
+
 /* END SWIPER HOME EXPLORE ACTIVITIES */
 
 /* SWIPER POPULAR DESTINATIONS HOME */
@@ -398,8 +400,48 @@
 #swiper-popular-destinations-home>div.swiper-button-next.swiper-button-disabled {
   display: none;
 }
+
 /* END SWIPER POPULAR DESTINATIONS HOME */
 
 /* SWIPER ENJOY STAY HOME */
+#swiper-home-enjoy-stay>div.swiper-button-prev {
+  top: 173px;
+  left: 56px;
+  color: black;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
+  background: #fff;
+  z-index: 11;
+  border-right: 1px solid hsla(0, 0%, 56.9%, .444);
+  z-index: 4;
+  --swiper-navigation-size: 14px;
+}
 
-/* SWIPER ENJOY STAY HOME */
+#swiper-home-enjoy-stay>div.swiper-button-next {
+  z-index: 4;
+  top: 173px;
+  right: 56px;
+  border-radius: 50%;
+  color: black;
+  height: 40px;
+  width: 40px;
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
+  background: #fff;
+  font-weight: bold;
+  --swiper-navigation-size: 14px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #swiper-home-enjoy-stay>div.swiper-button-prev {
+    left: 20px;
+  }
+  
+  #swiper-home-enjoy-stay>div.swiper-button-next {
+    right: 20px;
+  }
+ }
+
+/* END SWIPER ENJOY STAY HOME */

@@ -203,6 +203,22 @@ export const es = {
     textAlert: "No pudimos encontrar este destino.",
     confirmButton: "Ir al inicio"
   },
+
+  /*********************************************************/
+  ////////////////////////  HOME //////////////////////////////
+  /*********************************************************/
+  bannersHome: {
+    textTyC: "**Precios y descuentos válidos en servicios seleccionados y sujetos a disponibilidad al momento de la compra. Consulta términos y condiciones haciendo clic",
+    here: "Aquí",
+    currentOffers: "Ofertas de ahora",
+    limitedPromotions: "Promociones y ofertas válidas durante tiempo limitado.",
+  },
+
+  ExploreActivitiesHome: {
+    titleExplore: "Explora una variedad de actividades",
+    weRecommended: "Te recomendamos aquí los mejores tours de México.",
+  },
+
   /*********************************************************/
   //////////////////////// 𝓗𝓞𝓣𝓔𝓛 HOTEL 𝓗𝓞𝓣𝓔𝓛 //////////////////////////////
   /*********************************************************/
@@ -389,7 +405,7 @@ export const es = {
     penalty: "penalización del"
   },
 
-  cancelationTransport:{
+  cancelationTransport: {
     cancelation: "Cancela antes de"
   },
 
@@ -730,36 +746,36 @@ export const es = {
     shared: "Compartido",
     typeTrip: "Tipo de viaje:",
     reserveBtn: "Reservar",
-    people:"Personas",
-    suitcases:"Maletas",
-    handLuggage:"Equipaje de mano",
-    oneWay:"Sencillo",
-    roundTrip:"Redondo",
-    privateService:"Servicio privado",
-    sharedService:"Servicio compartido",
-    vehicles:"vehículos",
+    people: "Personas",
+    suitcases: "Maletas",
+    handLuggage: "Equipaje de mano",
+    oneWay: "Sencillo",
+    roundTrip: "Redondo",
+    privateService: "Servicio privado",
+    sharedService: "Servicio compartido",
+    vehicles: "vehículos",
   },
 
   filterTransport: {
-    category:"Categoria",
-    baggage:"Equipaje",
-    seats:"Asientos",
-    all:"Todos",
+    category: "Categoria",
+    baggage: "Equipaje",
+    seats: "Asientos",
+    all: "Todos",
     private: "Privado",
     shared: "Compartido",
   },
 
-  ModalTransport:{
-    titleModal:"¡Ya casi está listo tu transporte!",
-    Schedule:"Horario",
-    howManyPassengers:"¿Cuántos pasajeros?",
-    individualPrice:"Precio individual:",
-    charger:"Cargador",
-    airConditioning:"Aire acondicionado",
-    travelInsurance:"Seguro de viaje",
-    babySeat:"Silla para bebés",
-    privateService:"El precio total corresponde al servicio privado completo.",
-    sharedService:"El precio total se determina sumando el costo por cada pasajero.",
+  ModalTransport: {
+    titleModal: "¡Ya casi está listo tu transporte!",
+    Schedule: "Horario",
+    howManyPassengers: "¿Cuántos pasajeros?",
+    individualPrice: "Precio individual:",
+    charger: "Cargador",
+    airConditioning: "Aire acondicionado",
+    travelInsurance: "Seguro de viaje",
+    babySeat: "Silla para bebés",
+    privateService: "El precio total corresponde al servicio privado completo.",
+    sharedService: "El precio total se determina sumando el costo por cada pasajero.",
   },
 
   /************************************************************/

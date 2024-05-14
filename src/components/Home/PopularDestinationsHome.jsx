@@ -1,18 +1,22 @@
 "use client";
 
-import React from 'react'
+import React, { useContext } from 'react'
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import LanguageContext from '@/language/LanguageContext';
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
 export default function PopularDestinationsHome() {
+
+    const { languageData } = useContext(LanguageContext);
+
     return (
 
         <div className='flex flex-col gap-[36px] my-[180px] relative'>
-            <h2 className='text-fs-28 m-b '>Destinos populares</h2>
+            <h2 className='text-fs-28 m-b '>{languageData.homeDestinations[0].titleTop.title}</h2>
 
             <Swiper
                 slidesPerView={1}

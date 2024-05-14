@@ -1,28 +1,32 @@
 "use client";
-
 import Image from "next/image";
+import { useContext } from "react";
+import CardTourHome from "./CardTourHome";
 import { Navigation } from "swiper/modules";
-import { TotalStars } from "../General/Stars";
 import { Swiper, SwiperSlide } from "swiper/react";
+import LanguageContext from "@/language/LanguageContext";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
 export default function ExploreActivitiesHome() {
+
+    const { languageData } = useContext(LanguageContext);
+
     return (
         <div className="flex flex-col my-[180px]">
 
             {/* TITLE EXPLORE ACTIVITIES HOME*/}
-            <span className="m-b text-fs-28 ">Explora una variedad de actividades</span>
+            <span className="m-b text-fs-28 ">{languageData.ExploreActivitiesHome.titleExplore}</span>
 
             {/* SUBTITLE EXPLORE ACTIVITIES HOME */}
-            <span className="m-m text-fs-16 text-gry-100 mb-[12px]">Te recomendamos aquí los mejores tours de México.</span>
+            <span className="m-m text-fs-16 text-gry-100 mb-[12px]">{languageData.ExploreActivitiesHome.weRecommended}</span>
 
-            <div className="w-full flex h-[750px] gap-[32px]">
+            <div className="w-full flex h-[667px] gap-[32px] max-lg:flex-col max-lg:h-auto">
 
                 {/* SWIPER EXPLORE ACTIVITIES HOME */}
-                <div className="w-1/2 relative">
+                <div className="w-1/2 relative max-lg:w-full max-lg:h-[500px]">
                     <Swiper
                         slidesPerView={1}
                         className="h-full rounded-lg"
@@ -62,7 +66,7 @@ export default function ExploreActivitiesHome() {
                                             precolombina de Chichén Itzá.</p>
 
                                         <button className="m-b text-fs-16 flex items-center w-fit px-[24px] py-[10px] bg-white rounded-full gap-[8px] hover:!bg-gry-30">
-                                            Saber más
+                                            {languageData.titleBanners.bannerHoteldecided.knowMore}
                                             <Image
                                                 src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/arrow-right.svg`}
                                                 width={16}
@@ -79,62 +83,19 @@ export default function ExploreActivitiesHome() {
                 </div>
 
                 {/*CARDS TOUR EXPLORE ACTIVITIES HOME */}
-                <div className="w-1/2 grid grid-cols-2 gap-[16px]">
+                <div className="w-1/2 grid grid-cols-2 gap-[16px] max-lg:w-full max-md:hidden">
                     {[...Array(4)].map((_, index) => (
-                        <div key={index} className="shadow-3xl rounded-lg">
-                            <div className="w-full h-[216px]">
-                                <img
-                                    className="w-full h-full rounded-t-lg object-cover select-none"
-                                    src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`}
-                                    alt="card"
-                                />
-                            </div>
-
-                            <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col h-[151px]">
-                                <div className="m-s-b pt-1 text-fs-14 text-start truncate mb-[4px]">
-                                    Excursion a chichén itzá
-                                    {""}
-                                </div>
-
-                                <div className="mb-[4px]">
-                                    <TotalStars
-                                        name="read-only"
-                                        stars={5}
-                                        width={"11px"}
-                                        height={"11px"}
-                                    />
-                                </div>
-
-                                <div className="flex gap-1 mb-[11px]">
-                                    <Image
-                                        className="w-auto h-auto"
-                                        src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
-                                        alt="location icon"
-                                        width={11}
-                                        height={14}
-                                    />
-                                    <span className="text-bl-100 m-s-b text-fs-12 truncate">Yucatán</span>
-                                </div>
-
-                                <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
-                                    <div className="flex flex-col">
-                                        <span className="m-m text-gry-100 text-fs-12 text-start">
-                                            {/* {languageData.cartTour.from} */}desde
-                                        </span>
-                                        <span className="m-b text-or-100 text-fs-12">
-                                            MXN <span className="m-b text-fs-16">$5,000</span>
-                                        </span>
-                                    </div>
-
-                                    <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap">
-                                        {/* {languageData.cartTour.seeDetails} */}
-                                        Ver detalles
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <CardTourHome key={index} />
                     ))}
                 </div>
+
+                {/* CARDS MOBILE */}
+                <div className="w-1/2 grid grid-cols-1 gap-[16px] max-lg:w-full md:hidden">
+                    {[...Array(2)].map((_, index) => (
+                        <CardTourHome key={index} />
+                    ))}
+                </div>
+                {/*END CARDS MOBILE */}
             </div>
 
         </div>
