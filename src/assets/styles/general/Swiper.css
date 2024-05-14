@@ -82,6 +82,17 @@
   z-index: 4;
 }
 
+@media screen and (max-width: 1536px) {
+  .colum-two:nth-of-type(n+9) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .colum-two:nth-of-type(n+7) {
+    display: none;
+  }
+}
+
 /*END SWIPER SHUFFLE HOTEL */
 
 /* SWIPER POPULAR ESTATES  AND RECOMMENDED TRANSPORT*/

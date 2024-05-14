@@ -38,7 +38,7 @@ export default function ChainsHome() {
                         disableOnInteraction: false,
                     }}
                     breakpoints={{
-                        390: {
+                        0: {
                             slidesPerView: 2,
                         },
                         800: {

@@ -31,8 +31,8 @@ export default function CardTourHome() {
                     <TotalStars
                         name="read-only"
                         stars={5}
-                        width={"11px"}
-                        height={"11px"}
+                        width={"10px"}
+                        height={"10px"}
                     />
                 </div>
 
@@ -48,7 +48,7 @@ export default function CardTourHome() {
                         <span className="text-bl-100 m-s-b text-fs-12 truncate">Yucatán</span>
                     </div>
 
-                    <div className="flex justify-between w-1/2 items-center">
+                    <div className="flex justify-end w-1/2 items-center">
                         <div className="flex flex-col">
                             <span className="m-m text-gry-100 text-fs-12 text-start">
                                 {languageData.cartTour.from}

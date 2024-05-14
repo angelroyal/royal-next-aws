@@ -46,7 +46,7 @@ export function BannersHomeOffers() {
                     {[...Array(5)].map((_, index) => (
 
                         <SwiperSlide className="!rounded-lg" key={index}>
-                            <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`} alt='banner-offers' className="h-full w-full rounded-lg select-none object-cover" />
+                            <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`} alt='banner-offers' className="h-full w-full select-none object-cover" />
                         </SwiperSlide>
                     ))}
 

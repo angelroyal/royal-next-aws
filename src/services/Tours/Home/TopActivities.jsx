@@ -61,7 +61,7 @@ export default function TopActivities() {
 
       <div className="flex flex-wrap gap-[16px] justify-between max-lg:justify-around">
         {tours.length > 0
-          ? tours.slice(0, 12).map((tour, index) => (
+          ? tours.slice(0, 10).map((tour, index) => (
               // CARD TOP ACTIVITIES TOUR
               <div
                 key={index}
@@ -74,7 +74,7 @@ export default function TopActivities() {
                   setIsHovered({ ...isHovered, [index]: false })
                 }
               >
-                <div className="min-w-[266px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl max-w-[300px] relative">
+                <div className="min-w-[266px] max-w-[280px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl relative">
                   <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
                     <img
                       className={`w-full h-full object-cover select-none transition-transform duration-500 transform ${

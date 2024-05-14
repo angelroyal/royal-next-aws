@@ -21,7 +21,7 @@ export function BestHotelCart({ hotel }) {
       onClick={() => searchHotel(hotel)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="shadow-3xl"
+      className="shadow-3xl !rounded-lg"
     >
       <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
         <img
