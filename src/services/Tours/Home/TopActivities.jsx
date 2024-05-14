@@ -13,7 +13,7 @@ import "@/assets/styles/general/Swiper.css";
 
 export default function TopActivities() {
   const [tours, setTours] = useState([]);
-  const [isHovered, setIsHovered] = useState({});
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
   const { languageData, language } = useContext(LanguageContext);
 
   useEffect(() => {
@@ -68,18 +68,14 @@ export default function TopActivities() {
                 key={index}
                 className="!w-fit !rounded-lg shadow-3xl colum-two"
                 onClick={() => sentTour(tour)}
-                onMouseEnter={() =>
-                  setIsHovered({ ...isHovered, [index]: true })
-                }
-                onMouseLeave={() =>
-                  setIsHovered({ ...isHovered, [index]: false })
-                }
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(-1)}
               >
                 <div className="min-w-[266px] max-w-[280px] h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl relative">
                   <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
                     <img
                       className={`w-full h-full object-cover select-none transition-transform duration-500 transform ${
-                        isHovered[index] ? "scale-105" : "scale-100"
+                        hoveredIndex === index ? "scale-105" : "scale-100"
                       }`}
                       src={tour.image}
                       alt="card"
@@ -142,7 +138,7 @@ export default function TopActivities() {
 
                       <button
                         className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap ${
-                          isHovered[index]
+                          hoveredIndex === index
                             ? "bg-bl-100 text-white"
                             : "text-bl-100 border-bl-100"
                         }`}
