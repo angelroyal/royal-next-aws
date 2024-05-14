@@ -57,7 +57,7 @@ export default function PopularDestinationsHome() {
 
                             <div className='flex flex-col pl-[16px] pb-[16px] absolute bottom-0 gap-[4px]'>
                                 <span className='m-b text-white text-fs-14'>Ciudad de Mexico</span>
-                                <span className='flex items-center gap-1 m-m text-white text-fs-12'>hoteles desde <span className='text-fs-14'>MXN $1,427.00</span></span>
+                                <span className='flex items-center gap-1 m-m text-white text-fs-12'>{languageData.homeDestinations[0].titleTop.textHotel}<span className='text-fs-14'>MXN $1,427.00</span></span>
                             </div>
                         </div>
                     </SwiperSlide>

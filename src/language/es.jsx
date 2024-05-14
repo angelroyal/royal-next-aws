@@ -14,8 +14,8 @@ export const es = {
     titleBl: "¡Llámanos!",
     subtitle: "Obtén beneficios y ayuda personalizada marcando a nuestro número.",
     followNetwork: "Síguenos para saber más.",
-    title:"¿Dudas para elegir un hotel?",
-    description:"Compártenos tus datos y un asesor se comunicará contigo."
+    title: "¿Dudas para elegir un hotel?",
+    description: "Compártenos tus datos y un asesor se comunicará contigo."
   },
 
   alertHelp: {
@@ -217,6 +217,13 @@ export const es = {
   ExploreActivitiesHome: {
     titleExplore: "Explora una variedad de actividades",
     weRecommended: "Te recomendamos aquí los mejores tours de México.",
+    bestHotels: "Los mejores hoteles para tu estancia",
+  },
+
+  enjoyStayHome: {
+    titleEnjoy: "Disfruta de tu estancia en hoteles exclusivos",
+    offersDates: "Ofertas para las fechas",
+    btnViewOffers: "ver todas las ofertas",
   },
 
   /*********************************************************/

@@ -1,17 +1,19 @@
 "use client";
 
-import { Image } from "react-bootstrap";
+import { useContext } from "react";
 import CardHotelHome from "./CardHotelHome";
 import { Navigation } from "swiper/modules";
-import { TotalStars } from "../General/Stars";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import LanguageContext from "@/language/LanguageContext";
+import LanguageContext from "@/language/LanguageContext";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
 export default function EnjoyStayHome() {
+
+    const { languageData } = useContext(LanguageContext);
+
     return (
         <div className='flex h-[448px] w-full rounded-lg max-lg:flex-col max-lg:h-auto'>
 
@@ -24,13 +26,15 @@ export default function EnjoyStayHome() {
                 />
 
                 <div className='absolute bottom-0 flex flex-col gap-[16px] pb-[90px] pl-[49px] w-[80%] max-md:pb-[45px]'>
-                    <h2 className='text-white m-s-b text-fs-32 max-md:text-fs-28'>Disfruta de tu estancia en hoteles exclusivos</h2>
+                    <h2 className='text-white m-s-b text-fs-32 max-md:text-fs-28'>{languageData.enjoyStayHome.titleEnjoy}</h2>
 
-                    <span className='text-white m-m text-fs-14'>Ofertas para las fechas: <b>del 29 de abril al 14 de mayo.</b></span>
+                    <span className='text-white m-m text-fs-14'>{languageData.enjoyStayHome.offersDates}: <b>del 29 de abril al 14 de mayo.</b></span>
 
                     <span className='text-white m-m text-fs-16'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. consectetur adipisicing elit. </span>
 
-                    <button className='px-[16px] py-[14px] bg-or-100 text-white text-fs-14 m-s-b rounded-full w-fit hover:!bg-or-110 mt-[20px]'>ver todas las ofertas</button>
+                    <button className='px-[16px] py-[14px] bg-or-100 text-white text-fs-14 m-s-b rounded-full w-fit hover:!bg-or-110 mt-[20px]'>
+                        {languageData.enjoyStayHome.btnViewOffers}
+                    </button>
                 </div>
 
             </div>
@@ -65,7 +69,7 @@ export default function EnjoyStayHome() {
                             <SwiperSlide className="!rounded-lg shadow-3xl" key={index}>
 
                                 {/* CARDS HOTEL */}
-                                <CardHotelHome/>
+                                <CardHotelHome />
 
                             </SwiperSlide>
                         ))}

@@ -214,6 +214,13 @@ export const en = {
   ExploreActivitiesHome: {
     titleExplore: "Explore a variety of activities",
     weRecommended: "We recommend the best tours in Mexico here.",
+    bestHotels: "The best hotels for your stay",
+  },
+
+  enjoyStayHome: {
+    titleEnjoy: "Enjoy your stay in exclusive hotels",
+    offersDates: "Offers for the dates",
+    btnViewOffers: "View all offers",
   },
 
   /*********************************************************/

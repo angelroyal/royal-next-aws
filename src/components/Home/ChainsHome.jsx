@@ -1,13 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import { useContext } from "react";
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
+import LanguageContext from "@/language/LanguageContext";
 
 import "swiper/css";
 
 
 export default function ChainsHome() {
+
+    const { languageData } = useContext(LanguageContext);
 
     const logoRiu = `${process.env.NEXT_PUBLIC_URL}img/home/logo-riu.jpg`;
     const logoNick = `${process.env.NEXT_PUBLIC_URL}img/home/logo-nick.jpg`;
@@ -18,7 +22,7 @@ export default function ChainsHome() {
 
     return (
         <div className="mb-[56px]">
-            <h2 className="m-b text-fs-28 mb-[36px]">Los mejores hoteles para tu estancia</h2>
+            <h2 className="m-b text-fs-28 mb-[36px]">{languageData.ExploreActivitiesHome.bestHotels}</h2>
 
             <div className="h-[135px]">
                 <Swiper
