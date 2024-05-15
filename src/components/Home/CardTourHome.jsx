@@ -17,7 +17,7 @@ export default function CardTourHome() {
             onMouseLeave={() => setIsHovered(false)}
         >
 
-            <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
+            <div className="w-full h-[241px] overflow-hidden rounded-t-lg">
                 <img
                     className={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform
                      ${isHovered ? "scale-105" : "scale-100"}`}
