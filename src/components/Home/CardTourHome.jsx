@@ -1,20 +1,26 @@
 
 import Image from "next/image"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { TotalStars } from "../General/Stars"
 import LanguageContext from "@/language/LanguageContext"
 
 export default function CardTourHome() {
 
     const { languageData } = useContext(LanguageContext);
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
 
-        <div className="shadow-3xl rounded-lg">
+        <div
+            className="shadow-3xl rounded-lg"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
 
-            <div className="w-full h-[216px]">
+            <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
                 <img
-                    className="w-full h-full rounded-t-lg object-cover select-none"
+                    className={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform
+                     ${isHovered ? "scale-105" : "scale-100"}`}
                     src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`}
                     alt="card"
                 />

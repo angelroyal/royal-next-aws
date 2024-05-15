@@ -106,14 +106,14 @@ export function BannersHomeExclusiveDiscounts() {
           <div className="w-1/2 shadow-3xl rounded-lg">
             <img
               src={bannerDiscounts}
-              className="w-full h-full rounded-lg select-none"
+              className="w-full h-full rounded-lg select-none aspect-square"
             />
           </div>
 
           <div className="w-1/2 shadow-3xl rounded-lg">
             <img
               src={bannerDiscountsSecond}
-              className="w-full h-full rounded-lg select-none"
+              className="w-full h-full rounded-lg select-none aspect-square"
             />
           </div>
         </div>
@@ -201,11 +201,11 @@ export function BannersHomeOffersNow() {
           <img
             src={offersNow}
             alt="banner-offers"
-            className="h-full w-full rounded-lg select-none object-cover"
+            className="h-full w-full rounded-lg select-none aspect-[573/250]"
           />
         </div>
 
-        <div className="w-1/2">
+        <div className="w-1/2 aspect-[573/250]">
           <img
             src={offersNowSecond}
             alt="banner-offers"

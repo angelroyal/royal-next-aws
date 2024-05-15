@@ -47,7 +47,7 @@ export default function EnjoyStayHome() {
                     className='h-full w-full pt-[1px] rounded-r-lg brightness-75 max-lg:rounded-b-lg'
                 />
 
-                <div className="absolute bottom-0 w-full h-[91%] px-[80px] max-md:px-[40px]">
+                <div className="absolute top-0 w-full h-full pl-[70px] pr-[83px] max-md:px-[40px] pt-[54.2px]">
 
                     <Swiper
                         slidesPerView={1}

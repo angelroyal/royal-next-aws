@@ -18,15 +18,15 @@ export default function ExploreActivitiesHome() {
         <div className="flex flex-col my-[180px]">
 
             {/* TITLE EXPLORE ACTIVITIES HOME*/}
-            <span className="m-b text-fs-28 ">{languageData.ExploreActivitiesHome.titleExplore}</span>
+            <span className="m-b text-fs-28 mb-[4px]">{languageData.ExploreActivitiesHome.titleExplore}</span>
 
             {/* SUBTITLE EXPLORE ACTIVITIES HOME */}
-            <span className="m-m text-fs-16 text-gry-100 mb-[12px]">{languageData.ExploreActivitiesHome.weRecommended}</span>
+            <span className="m-m text-fs-16 text-gry-100 mb-[32px]">{languageData.ExploreActivitiesHome.weRecommended}</span>
 
             <div className="w-full flex h-[667px] gap-[32px] max-lg:flex-col max-lg:h-auto">
 
                 {/* SWIPER EXPLORE ACTIVITIES HOME */}
-                <div className="w-1/2 relative max-lg:w-full max-lg:h-[500px]">
+                <div className="w-[55%] relative max-lg:w-full max-lg:h-[500px]">
                     <Swiper
                         slidesPerView={1}
                         className="h-full rounded-lg"
@@ -43,7 +43,7 @@ export default function ExploreActivitiesHome() {
                                 <div className='w-[190px] h-[190px] rounded-full border-[32px] border-yw-100 absolute top-[-114px] right-[-31px]' />
 
                                 <div className="h-[395px] absolute bottom-0 w-full">
-                                    <div style={{ height: 150, overflow: "hidden" }}>
+                                    <div style={{ height: 164, overflow: "hidden" }}>
                                         <svg
                                             viewBox="0 0 500 150"
                                             preserveAspectRatio="none"
@@ -83,14 +83,14 @@ export default function ExploreActivitiesHome() {
                 </div>
 
                 {/*CARDS TOUR EXPLORE ACTIVITIES HOME */}
-                <div className="w-1/2 grid grid-cols-2 gap-[16px] max-lg:w-full max-md:hidden">
+                <div className="w-[45%] grid grid-cols-2 gap-[16px] max-lg:w-full max-md:hidden">
                     {[...Array(4)].map((_, index) => (
                         <CardTourHome key={index} />
                     ))}
                 </div>
 
                 {/* CARDS MOBILE */}
-                <div className="w-1/2 grid grid-cols-1 gap-[16px] max-lg:w-full md:hidden">
+                <div className="w-[45%] grid grid-cols-1 gap-[16px] max-lg:w-full md:hidden">
                     {[...Array(2)].map((_, index) => (
                         <CardTourHome key={index} />
                     ))}

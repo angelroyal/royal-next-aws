@@ -1,24 +1,29 @@
 import Image from "next/image"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { TotalStars } from "../General/Stars"
 import LanguageContext from "@/language/LanguageContext"
 
 export default function CardHotelHome() {
 
     const { languageData } = useContext(LanguageContext);
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
 
-        <div className="shadow-3xl rounded-lg">
-            <div className="w-full h-[216px]">
+        <div className="shadow-3xl rounded-lg "
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
                 <img
-                    className="w-full h-full rounded-t-lg object-cover select-none"
+                    className={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform
+                     ${isHovered ? "scale-105" : "scale-100"}`}
                     src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`}
                     alt="card"
                 />
             </div>
 
-            <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col h-[151px]">
+            <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col h-[145px]">
                 <div className="m-s-b pt-1 text-fs-14 text-start truncate mb-[4px]">
                     Excursion a chichén itzá
                     {""}
@@ -54,7 +59,10 @@ export default function CardHotelHome() {
                         </span>
                     </div>
 
-                    <button className="m-s-b text-bl-100 text-fs-12 min-h-8 rounded-3xl border-2 border-bl-100 px-4 py-2 hover:bg-bl-100 hover:text-white text-nowrap">
+                    <button
+                        className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap 
+                        ${isHovered ? "bg-bl-100 text-white" : "text-bl-100 border-bl-100"}`}
+                    >
                         {languageData.cartTour.seeDetails}
                     </button>
                 </div>
