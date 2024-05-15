@@ -10,7 +10,7 @@ export default function CardHotelHome() {
 
     return (
 
-        <div className="shadow-3xl rounded-lg "
+        <div className="shadow-3xl rounded-lg max-w-[330px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

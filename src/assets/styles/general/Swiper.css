@@ -3,7 +3,7 @@
   background: #ff8637 !important;
 }
 
-/* STYLE SWIPER PAGINATION CardHotelT */
+/* STYLE SWIPER PAGINATION CardHotelT LISTING HOTEL*/
 #card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: white !important;
   width: 6px !important;
@@ -17,7 +17,48 @@
   height: 6px !important;
 }
 
-/* END SWIPER PAGINATION CardHotelT */
+#card-hotel-t>div.swiper-button-prev {
+  /* top: 337px; */
+  left: 8px;
+  color: black;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
+  background: #fff;
+  z-index: 11;
+  border-right: 1px solid hsla(0, 0%, 56.9%, .444);
+  z-index: 4;
+  --swiper-navigation-size: 9px;
+  opacity: 0.5;
+}
+
+#card-hotel-t>div.swiper-button-next {
+  z-index: 4;
+  /* top: 337px; */
+  right: 8px;
+  border-radius: 50%;
+  color: black;
+  height: 25px;
+  width: 25px;
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
+  background: #fff;
+  font-weight: bold;
+  --swiper-navigation-size: 9px;
+  opacity: 0.5;
+}
+
+#card-hotel-t>div.swiper-button-next:hover {
+  opacity: 1;
+}
+
+#card-hotel-t>div.swiper-button-prev:hover {
+  opacity: 1;
+}
+
+
+/* END SWIPER PAGINATION CardHotelT LISTING HOTEL*/
 
 /* SWIPER ROOMS DETAILS */
 #room-details>div.swiper-button-prev.swiper-button-disabled,
@@ -434,7 +475,7 @@
 #swiper-home-enjoy-stay>div.swiper-button-next {
   z-index: 4;
   top: 210px;
-  right: 60px;
+  right: 86px;
   border-radius: 50%;
   color: black;
   height: 40px;
