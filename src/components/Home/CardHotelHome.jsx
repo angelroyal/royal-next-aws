@@ -9,8 +9,8 @@ export default function CardHotelHome() {
 
     return (
 
-        <div className="shadow-3xl rounded-lg">
-            <div className="w-full h-[216px]">
+        <div className="shadow-3xl rounded-lg ">
+            <div className="w-full h-[216px] ">
                 <img
                     className="w-full h-full rounded-t-lg object-cover select-none"
                     src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`}
@@ -18,7 +18,7 @@ export default function CardHotelHome() {
                 />
             </div>
 
-            <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col h-[151px]">
+            <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col h-[145px]">
                 <div className="m-s-b pt-1 text-fs-14 text-start truncate mb-[4px]">
                     Excursion a chichén itzá
                     {""}

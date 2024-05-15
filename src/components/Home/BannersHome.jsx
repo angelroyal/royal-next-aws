@@ -46,7 +46,7 @@ export function BannersHomeOffers() {
                     {[...Array(5)].map((_, index) => (
 
                         <SwiperSlide className="!rounded-lg" key={index}>
-                            <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`} alt='banner-offers' className="h-full w-full select-none object-cover" />
+                            <img src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`} alt='banner-offers' className="h-full w-full select-none aspect-[387/200]" />
                         </SwiperSlide>
                     ))}
 
@@ -80,11 +80,11 @@ export function BannersHomeExclusiveDiscounts() {
                 <div className="w-1/2 flex gap-[10px] max-lg:w-full max-lg:hidden">
 
                     <div className="w-1/2 shadow-3xl rounded-lg">
-                        <img src={bannerDiscounts} className="w-full h-full rounded-lg select-none" />
+                        <img src={bannerDiscounts} className="w-full h-full rounded-lg select-none aspect-square" />
                     </div>
 
                     <div className="w-1/2 shadow-3xl rounded-lg">
-                        <img src={bannerDiscountsSecond} className="w-full h-full rounded-lg select-none" />
+                        <img src={bannerDiscountsSecond} className="w-full h-full rounded-lg select-none aspect-square" />
                     </div>
 
                 </div>
@@ -164,10 +164,10 @@ export function BannersHomeOffersNow() {
             <div className="w-full flex h-[250px] gap-[10px] max-lg:hidden">
 
                 <div className="w-1/2">
-                    <img src={offersNow} alt='banner-offers' className="h-full w-full rounded-lg select-none object-cover" />
+                    <img src={offersNow} alt='banner-offers' className="h-full w-full rounded-lg select-none aspect-[573/250]" />
                 </div>
 
-                <div className="w-1/2">
+                <div className="w-1/2 aspect-[573/250]">
                     <img src={offersNowSecond} alt='banner-offers' className="h-full w-full rounded-lg select-none object-cover" />
                 </div>
 
