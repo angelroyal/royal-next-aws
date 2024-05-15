@@ -22,8 +22,6 @@ import {
 } from "../../utils/utilsDetailHotel";
 
 export default function RoomsDetails(codeHotel) {
-
-  const [isHovered, setIsHovered] = useState(null);
   const { languageData } = useContext(LanguageContext);
   const {
     roomsData,
@@ -127,15 +125,13 @@ export default function RoomsDetails(codeHotel) {
                       >
                         <div
                           className="p-4 rounded-lg border border-gry-30 bg-white"
-                          onMouseEnter={() => setIsHovered(index)}
-                          onMouseLeave={() => setIsHovered(null)}
                         >
                           <div className="flex flex-col gap-y-4 ">
                             {/* IMAGE ROOM */}
                             <div className="relative w-full h-[222px] overflow-hidden rounded-lg">
                               <img
                                 src={room.image}
-                                className={`w-full h-full object-cover rounded-lg transition-transform duration-500 transform ${isHovered === index ? "scale-105" : "scale-100"}`}
+                                className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
                                 width={40}
                                 height={40}
                                 alt="room"
