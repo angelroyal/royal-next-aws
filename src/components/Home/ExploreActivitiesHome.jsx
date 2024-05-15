@@ -18,10 +18,10 @@ export default function ExploreActivitiesHome() {
         <div className="flex flex-col my-[180px]">
 
             {/* TITLE EXPLORE ACTIVITIES HOME*/}
-            <span className="m-b text-fs-28 ">{languageData.ExploreActivitiesHome.titleExplore}</span>
+            <span className="m-b text-fs-28 mb-[4px]">{languageData.ExploreActivitiesHome.titleExplore}</span>
 
             {/* SUBTITLE EXPLORE ACTIVITIES HOME */}
-            <span className="m-m text-fs-16 text-gry-100 mb-[12px]">{languageData.ExploreActivitiesHome.weRecommended}</span>
+            <span className="m-m text-fs-16 text-gry-100 mb-[32px]">{languageData.ExploreActivitiesHome.weRecommended}</span>
 
             <div className="w-full flex h-[667px] gap-[32px] max-lg:flex-col max-lg:h-auto">
 

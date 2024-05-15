@@ -25,7 +25,7 @@ export function BestHotelCart({ hotel }) {
     >
       <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
         <img
-          className={`w-full h-full object-cover select-none transition-transform duration-500 transform ${
+          className={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform ${
             isHovered ? "scale-105" : "scale-100"
           }`}
           src={hotel.image}
