@@ -12,6 +12,7 @@ import { useToken } from "../config/context/AuthContext";
 import LanguageContext from "../language/LanguageContext";
 import { useCartAxios } from "../components/Cart/CartAxios";
 import { scrollToTop } from "../utils/pageConfig/scrollToTop";
+import EmptyItinerary from "./itinerary/Alerts/EmptyItinerary";
 import { useIsMobile, useIsMobileNew } from "../config/Mobile/isMobile";
 import { StepsToPayments, StepsToPaymentsM } from "../hooks/StepsToPay";
 import axiosWithInterceptor from "../config/Others/axiosWithInterceptor";
@@ -224,17 +225,21 @@ export default function Payment() {
       <Container>{!data && skeletonShow && <SkeletonPay />}</Container>
 
       {showClr && (showClr.message === "CLR" || showClr.message === "CNF") && (
-        <Container className="container-itinerary-no-data">
-          <h2 className="itinerary-no-show">
-            {languageData.cart.subtitleItinerary}
-          </h2>
-          <p className="itinerary-no-text padding-bottom">
-            {languageData.cart.textMessage}
-          </p>
-          <button className="button-start-itinerary" onClick={handleStart}>
-            {languageData.cart.buttonPay}
-          </button>
-        </Container>
+        <>
+          {/* <Container className="container-itinerary-no-data">
+            <h2 className="itinerary-no-show">
+              {languageData.cart.subtitleItinerary}
+            </h2>
+            <p className="itinerary-no-text padding-bottom">
+              {languageData.cart.textMessage}
+            </p>
+            <button className="button-start-itinerary" onClick={handleStart}>
+              {languageData.cart.buttonPay}
+            </button>
+          </Container> */}
+          
+          <EmptyItinerary />
+        </>
       )}
 
       {errorAlertBooking === true && (

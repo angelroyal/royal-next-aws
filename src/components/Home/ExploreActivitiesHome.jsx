@@ -49,7 +49,7 @@ export default function ExploreActivitiesHome() {
                 <div className="w-[190px] h-[190px] rounded-full border-[32px] border-yw-100 absolute top-[-114px] right-[-31px]" />
 
                 <div className="h-[395px] absolute bottom-0 w-full">
-                  <div style={{ height: 164, overflow: "hidden" }}>
+                  <div style={{ height: 138, overflow: "hidden" }}>
                     <svg
                       viewBox="0 0 500 150"
                       preserveAspectRatio="none"
