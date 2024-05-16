@@ -8,7 +8,6 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function InfoModalTransport(props) {
   const { transport } = props;
-  console.log(transport);
   const { languageData } = useContext(LanguageContext);
 
   return (
