@@ -68,9 +68,9 @@ export function BannersHomeExclusiveDiscounts() {
 
   return (
     <div className="w-full">
-      <div className="flex w-full gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px]">
+      <div className="flex w-full 2xl:gap-[2vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px]">
 
-        <div className="w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:block max-md:flex max-md:justify-between max-sm:hidden">
+        <div className="2xl:w-fit 2xl:gap-[2vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:block max-md:flex max-md:justify-between max-sm:hidden">
 
           <div className="w-[280px] shadow-3xl rounded-lg">
             <img
@@ -117,7 +117,7 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
         {/* END SWIPER MOBILE */}
 
-        <div className="w-[60.6%] shadow-3xl rounded-lg max-sm:h-[250px] max-2xl:w-[52.6%] max-xl:w-[39.6%] max-lg:w-[63.6%] max-md:w-full max-md:h-[280px] ">
+        <div className="2xl:w-[56.6%] w-[60.6%] shadow-3xl rounded-lg max-sm:h-[250px] max-2xl:w-[52.6%] max-xl:w-[39.6%] max-lg:w-[63.6%] max-md:w-full max-md:h-[280px] ">
           <Swiper
             slidesPerView={1}
             className="h-full rounded-lg"
@@ -158,7 +158,7 @@ export function BannersHomeOffersNow() {
   const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
 
   return (
-    <div className="flex flex-col my-[180px]">
+    <div className="flex flex-col my-[180px] max-sm:my-[90px]">
       <span className="m-b text-fs-28 ">
         {languageData.bannersHome.currentOffers}
       </span>
@@ -167,20 +167,20 @@ export function BannersHomeOffersNow() {
         {languageData.bannersHome.limitedPromotions}
       </span>
 
-      <div className="w-full flex h-[250px] gap-[10px] max-lg:hidden">
-        <div className="w-1/2">
-          <img
-            src={offersNow}
-            alt="banner-offers"
-            className="h-full w-full rounded-lg select-none aspect-[573/250]"
-          />
-        </div>
-
-        <div className="w-1/2 aspect-[573/250]">
+      <div className="w-full flex h-[250px] gap-[2vw] max-lg:hidden justify-between">
+        <div className="w-[50%]">
           <img
             src={offersNowSecond}
             alt="banner-offers"
-            className="h-full w-full rounded-lg select-none object-cover"
+            className="w-full rounded-lg select-none "
+          />
+        </div>
+
+        <div className="w-[50%] ">
+          <img
+            src={offersNow}
+            alt="banner-offers"
+            className="w-full rounded-lg select-none object-cover"
           />
         </div>
       </div>
@@ -191,6 +191,7 @@ export function BannersHomeOffersNow() {
           slidesPerView={1}
           className="h-full rounded-lg"
           initialSlide={0}
+          loop={true}
         >
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">

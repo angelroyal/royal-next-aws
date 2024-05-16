@@ -15,7 +15,7 @@ export default function PopularDestinationsHome() {
 
     return (
 
-        <div className='flex flex-col gap-[36px] my-[180px] relative'>
+        <div className='flex flex-col gap-[36px] my-[180px] relative max-sm:my-[90px]'>
             <h2 className='text-fs-28 m-b '>{languageData.homeDestinations[0].titleTop.title}</h2>
 
             <Swiper

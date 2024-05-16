@@ -16,7 +16,7 @@ export default function ExploreActivitiesHome() {
   const { languageData } = useContext(LanguageContext);
 
   return (
-    <div className="flex flex-col my-[180px]">
+    <div className="flex flex-col my-[180px] max-sm:my-[90px]">
       {/* TITLE EXPLORE ACTIVITIES HOME*/}
       <span className="m-b text-fs-28 mb-[4px]">
         {languageData.ExploreActivitiesHome.titleExplore}
@@ -27,7 +27,7 @@ export default function ExploreActivitiesHome() {
         {languageData.ExploreActivitiesHome.weRecommended}
       </span>
 
-      <div className="w-full flex h-[717px] gap-[92px] max-lg:flex-col max-lg:h-auto max-xl:gap-[12px]">
+      <div className="w-full flex h-[717px] gap-[5vw] max-lg:flex-col max-lg:h-auto max-xl:gap-[12px]">
         {/* SWIPER EXPLORE ACTIVITIES HOME */}
         <div className="w-[45%] relative max-lg:w-full max-lg:h-[500px]">
           <Swiper
