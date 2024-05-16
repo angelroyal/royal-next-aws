@@ -67,27 +67,30 @@ export function BannersHomeExclusiveDiscounts() {
   const bannerDiscountsSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts-second.jpg`;
 
   return (
-    <div>
+    <div className="w-full">
       <div className="flex w-full gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px]">
 
-        <div className="w-1/2 flex gap-[10px] max-lg:w-full max-lg:hidden">
-          <div className="w-1/2 shadow-3xl rounded-lg">
+        <div className="w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:block max-md:flex max-md:justify-between max-sm:hidden">
+
+          <div className="w-[280px] shadow-3xl rounded-lg">
             <img
               src={bannerDiscounts}
-              className="w-full h-full rounded-lg select-none aspect-square"
+              className="w-full h-full rounded-lg select-none aspect-square object-contain"
+              alt="banner discounts"
             />
           </div>
 
-          <div className="w-1/2 shadow-3xl rounded-lg">
+          <div className="w-[280px] shadow-3xl rounded-lg">
             <img
               src={bannerDiscountsSecond}
               className="w-full h-full rounded-lg select-none aspect-square"
+              alt="banner discounts second"
             />
           </div>
         </div>
 
         {/* SWIPER MOBILE */}
-        <div className="lg:hidden w-[35%] max-md:w-full">
+        <div className="lg:hidden w-[35%] max-md:w-full max-md:hidden max-sm:block">
           <Swiper
             slidesPerView={1}
             className="h-full rounded-lg shadow-3xl"
@@ -114,7 +117,7 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
         {/* END SWIPER MOBILE */}
 
-        <div className="w-1/2 shadow-3xl rounded-lg max-md:w-full max-lg:w-[64%] max-sm:h-[250px]">
+        <div className="w-[60.6%] shadow-3xl rounded-lg max-sm:h-[250px] max-2xl:w-[52.6%] max-xl:w-[39.6%] max-lg:w-[63.6%] max-md:w-full max-md:h-[280px] ">
           <Swiper
             slidesPerView={1}
             className="h-full rounded-lg"
