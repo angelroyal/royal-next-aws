@@ -128,6 +128,7 @@
     display: none;
   }
 }
+
 @media screen and (max-width: 1280px) {
   .colum-two:nth-of-type(n+7) {
     display: none;
@@ -337,6 +338,26 @@
   font-weight: bold;
   --swiper-navigation-size: 20px;
 }
+
+@media only screen and (max-width: 1280px) {
+  #swiper-banner-home-offers>div.swiper-button-prev {
+    top: 280px;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-next {
+    top: 280px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #swiper-banner-home-offers>div.swiper-button-prev {
+    top: 193px;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-next {
+    top: 193px;
+  }
+}
+
 /*END SWIPER BANNER HOME OFFERS*/
 
 /* SWIPER EXCLUSIVE DISCOUNTS HOME */
@@ -402,15 +423,22 @@
   --swiper-navigation-size: 20px;
 }
 
- @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   #swiper-home-explore-activities>div.swiper-button-prev {
     display: none;
   }
-  
+
   #swiper-home-explore-activities>div.swiper-button-next {
     display: none;
   }
- }
+}
+
+
+@media screen and (max-width: 640px) {
+  .colum-one:nth-of-type(n+3) {
+    display: none;
+  }
+}
 
 /* END SWIPER HOME EXPLORE ACTIVITIES */
 
@@ -486,14 +514,23 @@
   --swiper-navigation-size: 14px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1536px) {
+  #swiper-home-enjoy-stay>div.swiper-button-prev {
+    left: 48px;
+  }
+
+  #swiper-home-enjoy-stay>div.swiper-button-next {
+    right: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
   #swiper-home-enjoy-stay>div.swiper-button-prev {
     left: 20px;
   }
-  
+
   #swiper-home-enjoy-stay>div.swiper-button-next {
-    right: 20px;
+    right: 18px;
   }
- }
+}
 
 /* END SWIPER ENJOY STAY HOME */

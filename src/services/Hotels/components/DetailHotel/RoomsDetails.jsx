@@ -8,7 +8,7 @@ import "../../../../assets/styles/general/Swiper.css";
 
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
 import AddPreCartHotel from "./AddPreCartHotel";
 import ToolTipRefundable from "../ToolTip/Tooltip";

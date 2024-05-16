@@ -28,41 +28,8 @@ export default function BannersHeaderHome() {
 
 export function BannersHomeOffers() {
   return (
-    // <div className="flex w-full gap-[16px] h-[400px] my-[32px] max-lg:flex-col max-lg:h-auto">
-    //   <div className="!w-[70%] shadow-3xl rounded-lg max-lg:!w-full max-lg:h-[400px]">
-    //     <Swiper
-    //       slidesPerView={1}
-    //       className="h-full rounded-lg"
-    //       id="swiper-banner-home-offers"
-    //       initialSlide={0}
-    //       navigation
-    //       modules={[Navigation]}
-    //     >
-    //       {[...Array(5)].map((_, index) => (
-    //         <SwiperSlide className="!rounded-lg" key={index}>
-    //           <img
-    //             src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers.jpg`}
-    //             alt="banner-offers"
-    //             className="h-full w-full select-none object-cover" // Cambiado de object-contain a object-cover
-    //           />
-    //         </SwiperSlide>
-    //       ))}
-    //     </Swiper>
-    //   </div>
-
-    //   <picture className="w-[30%] max-lg:!w-full max-lg:h-[400px]">
-    //     <div className="w-full h-full shadow-3xl rounded-lg">
-    //       <img
-    //         src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers-second.jpg`}
-    //         className="w-full h-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
-    //         alt="Banner Experimenta los mejores tours"
-    //       />
-    //     </div>
-    //   </picture>
-    // </div>
-
-    <div className="w-full flex h-[434px] justify-between gap-[12px]">
-      <div className="w-[70%]">
+    <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
+      <div className="w-[70%] max-md:w-full max-sm:h-[250px]">
         <Swiper
           slidesPerView={1}
           className="h-full rounded-lg"
@@ -76,14 +43,14 @@ export function BannersHomeOffers() {
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}banners/home/Rectangle 372.png`}
                 alt="banner-offers"
-                className="w-full select-none object-cover" // Cambiado de object-contain a object-cover
+                className="w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      <div className="w-[30%]">
+      <div className="w-[30%] max-md:w-full">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers-second.jpg`}
           className="h-full w-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
@@ -101,7 +68,8 @@ export function BannersHomeExclusiveDiscounts() {
 
   return (
     <div>
-      <div className="flex w-full gap-[10px] h-[280px] my-[32px] max-lg:flex-col max-lg:h-auto">
+      <div className="flex w-full gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px]">
+
         <div className="w-1/2 flex gap-[10px] max-lg:w-full max-lg:hidden">
           <div className="w-1/2 shadow-3xl rounded-lg">
             <img
@@ -119,14 +87,14 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
 
         {/* SWIPER MOBILE */}
-        <div className="lg:hidden max-sm:h-[280px]">
+        <div className="lg:hidden w-[35%] max-md:w-full">
           <Swiper
             slidesPerView={1}
-            className="h-full rounded-lg"
+            className="h-full rounded-lg shadow-3xl"
             initialSlide={0}
           >
             <SwiperSlide className="!rounded-lg">
-              <div className="shadow-3xl rounded-lg">
+              <div className="rounded-lg">
                 <img
                   src={bannerDiscounts}
                   className="w-full h-full rounded-lg select-none"
@@ -135,7 +103,7 @@ export function BannersHomeExclusiveDiscounts() {
             </SwiperSlide>
 
             <SwiperSlide className="!rounded-lg">
-              <div className="shadow-3xl rounded-lg">
+              <div className="rounded-lg">
                 <img
                   src={bannerDiscountsSecond}
                   className="w-full h-full rounded-lg select-none"
@@ -146,7 +114,7 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
         {/* END SWIPER MOBILE */}
 
-        <div className="w-1/2 shadow-3xl rounded-lg max-lg:w-full max-sm:h-[280px]">
+        <div className="w-1/2 shadow-3xl rounded-lg max-md:w-full max-lg:w-[64%] max-sm:h-[250px]">
           <Swiper
             slidesPerView={1}
             className="h-full rounded-lg"
@@ -171,11 +139,11 @@ export function BannersHomeExclusiveDiscounts() {
       </div>
 
       <div className="m-m text-fs-12 text-gry-100 flex justify-center gap-1">
-        {languageData.bannersHome.textTyC}{" "}
-        <a className="m-s-b text-black decoration-solid">
+        <span>{languageData.bannersHome.textTyC}{" "}<span className="m-s-b text-black decoration-solid">
           {" "}
           {languageData.bannersHome.here}
-        </a>
+        </span></span>
+
       </div>
     </div>
   );
@@ -192,7 +160,7 @@ export function BannersHomeOffersNow() {
         {languageData.bannersHome.currentOffers}
       </span>
 
-      <span className="m-m text-fs-16 text-gry-100 mb-[12px]">
+      <span className="m-m text-fs-16 text-gry-100 mb-[22px]">
         {languageData.bannersHome.limitedPromotions}
       </span>
 

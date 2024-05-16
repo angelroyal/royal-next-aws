@@ -4,6 +4,8 @@ import { useContext, useState } from "react"
 import { TotalStars } from "../General/Stars"
 import LanguageContext from "@/language/LanguageContext"
 
+import "@/assets/styles/general/Swiper.css";
+
 export default function CardTourHome() {
 
     const { languageData } = useContext(LanguageContext);
@@ -12,7 +14,7 @@ export default function CardTourHome() {
     return (
 
         <div
-            className="shadow-3xl rounded-lg"
+            className="shadow-3xl rounded-lg colum-one"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

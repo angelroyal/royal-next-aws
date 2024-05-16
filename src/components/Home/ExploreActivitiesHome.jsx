@@ -27,7 +27,7 @@ export default function ExploreActivitiesHome() {
         {languageData.ExploreActivitiesHome.weRecommended}
       </span>
 
-      <div className="w-full flex h-[717px] gap-[92px] max-lg:flex-col max-lg:h-auto">
+      <div className="w-full flex h-[717px] gap-[92px] max-lg:flex-col max-lg:h-auto max-xl:gap-[12px]">
         {/* SWIPER EXPLORE ACTIVITIES HOME */}
         <div className="w-[45%] relative max-lg:w-full max-lg:h-[500px]">
           <Swiper
@@ -64,7 +64,7 @@ export default function ExploreActivitiesHome() {
 
                   <div className="w-full h-[80%] bg-yw-100 rounded-tl-[50px]" />
 
-                  <div className="absolute bottom-0 pb-[49px] pl-[47.5px] pr-[59.5px] flex flex-col gap-[8px]">
+                  <div className="absolute bottom-0 pb-[49px] pl-[47.5px] pr-[59.5px] flex flex-col gap-[8px] max-sm:pb-[20px]">
                     <h3 className="text-fs-28 m-s-b">Cancún</h3>
 
                     <p className="m-m text-fs-14">
@@ -90,13 +90,12 @@ export default function ExploreActivitiesHome() {
         </div>
 
         {/*CARDS TOUR EXPLORE ACTIVITIES HOME */}
-        <div className="w-[55%] grid grid-cols-2 gap-[16px] max-lg:w-full max-md:hidden gap-x-[46px]">
+        <div className="w-[55%] grid grid-cols-2 gap-[16px] max-lg:w-full gap-x-[46px] max-xl:gap-[12px] max-sm:grid-cols-1">
           {[...Array(4)].map((_, index) => (
             <CardTourHome key={index} />
           ))}
         </div>
 
-        {/*END CARDS MOBILE */}
       </div>
     </div>
   );
