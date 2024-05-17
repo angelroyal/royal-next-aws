@@ -1310,6 +1310,7 @@ export const es = {
     email: "Email",
     copyLink: "Copiar Enlace",
     copy: "Enlace copiado",
+    share:"Compartir"
   },
 
   alertsPayment: {

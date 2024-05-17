@@ -32,11 +32,11 @@ export default function CardPayment(props) {
     if (cardType) {
       switch (cardType) {
         case "Visa":
-          return <Image className="type-card-payment" src={VisaIcon} />;
+          return <Image className="type-card-payment" alt="type-card-payment" src={VisaIcon} />;
         case "MasterCard":
-          return <Image className="type-card-payment" src={MasterCardIcon} />;
+          return <Image className="type-card-payment" alt="type-card-payment" src={MasterCardIcon} />;
         case "Amex":
-          return <Image className="type-card-payment" src={AmexIcon} />;
+          return <Image className="type-card-payment" alt="type-card-payment" src={AmexIcon} />;
         default:
           return "";
       }

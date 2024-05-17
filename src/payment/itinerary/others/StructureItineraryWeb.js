@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { StepperContext } from "../../context/steeperContext";
+import { BookingContext } from "@/payment/context/BookingContext";
 import CardHotelItinerary from "../CardsItineraryWeb/CardHotelItinerary";
 import CardMovingItinerary from "../CardsItineraryWeb/CardMovingItinerary";
 import CardTourConfirmation from "@/payment/Confirmation/CardTourConfirmation";
@@ -9,11 +9,10 @@ import CardTourItinerary from "../../../payment/itinerary/CardsItineraryWeb/Card
 
 export default function StructureItineraryWeb(props) {
   const { dataItinerary } = props;
-  const { step } = useContext(StepperContext);
+  const { step } = useContext(BookingContext);
 
   return (
     <>
-      {" "}
       {dataItinerary.items.map((item, index) => {
         if (item.type === "transport") {
           return <CardMovingItinerary />;
@@ -33,7 +32,6 @@ export default function StructureItineraryWeb(props) {
               {step === 1 ? (
                 <>
                   <CardHotelItinerary itemHotel={item} />
-                  {/* <CardMovingItinerary /> */}
                 </>
               ) : (
                 <CardHotelConfirmation itemHotel={item} />

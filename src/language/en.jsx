@@ -1307,6 +1307,7 @@ export const en = {
     email: "Email",
     copyLink: "Copy Link",
     copy: "Copy Link",
+    share:"Share"
   },
 
   alertsPayment: {

@@ -263,7 +263,7 @@ export default function RoomMenu(props) {
                               ? `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-70.svg`
                               : `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-bl.svg`
                           }`}
-                          alt="remove"
+                          alt="remove icon"
                           width={14}
                           height={14}
                           className="w-[14px] h-[14px]"
@@ -287,7 +287,7 @@ export default function RoomMenu(props) {
                               ? `${process.env.NEXT_PUBLIC_URL}icons/add/add-70.svg`
                               : `${process.env.NEXT_PUBLIC_URL}icons/add/add-bl.svg`
                           }`}
-                          alt="add"
+                          alt="add icon"
                           width={14}
                           height={14}
                           className="w-[14px] h-[14px]"
@@ -313,7 +313,7 @@ export default function RoomMenu(props) {
                               ? `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-70.svg`
                               : `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-bl.svg`
                           }`}
-                          alt="remove"
+                          alt="remove icon"
                           width={14}
                           height={14}
                           className="w-[14px] h-[14px]"
@@ -335,7 +335,7 @@ export default function RoomMenu(props) {
                               ? `${process.env.NEXT_PUBLIC_URL}icons/add/add-70.svg`
                               : `${process.env.NEXT_PUBLIC_URL}icons/add/add-bl.svg`
                           }`}
-                          alt="add"
+                          alt="add icon"
                           width={14}
                           height={14}
                           className="w-[14px] h-[14px]"

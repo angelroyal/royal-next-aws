@@ -21,6 +21,7 @@ import LoadingData from "../../assets/animations/loadingFly.json";
 
 import { handleErrorsAxios } from "../../config/Logger/handleErrors";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
+import { BookingContext } from "../context/BookingContext";
 
 const AlertBooking = lazy(() => import("./AlertBooking"));
 const CardPayment = lazy(() => import("../Utils/CardPayment"));
@@ -69,7 +70,7 @@ export default function PaymentConektaF(props) {
     setIsButtonActive,
     setCountNumber,
     setProgressCount,
-  } = useContext(StepperContext);
+  } = useContext(BookingContext);
 
   useEffect(() => {
     if (hotelRH === null) {

@@ -105,7 +105,7 @@ export function ShareContainer({ smShow, handleCloseModal }) {
 
   return (
     <Transition.Root show={smShow} as={Fragment}>
-      <Dialog className="relative z-10" onClose={handleCloseModal}>
+      <Dialog className="relative z-[1000]" onClose={handleCloseModal}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
