@@ -303,12 +303,12 @@ export function BannerHomeHotelD() {
   return (
     <div className="flex gap-[16px] h-[318px] mb-[40px]">
       <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
-        <div className="w-full h-full flex justify-center !bg-white">
+        <div className="w-full h-full flex justify-center !bg-white overflow-hidden rounded-lg">
           <Image
             src={excDiscounts}
             width={547}
             height={235}
-            className="w-full h-full rounded-lg object-cover object-center select-none"
+            className="w-full h-full rounded-lg object-cover object-center select-none transition-transform duration-500 transform scale-100 hover:scale-105"
             alt="Banner Exc Discounts"
           />
         </div>
@@ -326,12 +326,12 @@ export function BannerHomeHotelD() {
       </div>
 
       <div className=" flex justify-center w-3/12 relative">
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center overflow-hidden rounded-lg">
           <Image
             src={bannerTour}
             width={266}
             height={235}
-            className="w-full rounded-lg select-none object-cover object-bottom"
+            className="w-full rounded-lg select-none object-cover object-bottom transition-transform duration-500 transform scale-100 hover:scale-105"
             alt="Banner tour mes de feb"
           />
         </div>
