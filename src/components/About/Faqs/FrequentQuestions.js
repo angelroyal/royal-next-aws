@@ -9,7 +9,7 @@ import { Container } from "@/config/Others/Container";
 import { useIsMobile } from "../../../config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import { SkeletonFaqs } from "../../../utils/skeleton/SkeletonFaqs";
-
+import SkeletonFaqsT from "../Skeleton/SkeletonFaqsT";
 // import MetaFrequentQuestions from "../../components/Meta/MetaFrequentQuestions";
 
 export default function FrequentQuestions() {
@@ -45,7 +45,8 @@ export default function FrequentQuestions() {
 
   return (
     <>
-      {showSkeletonFaqs && <SkeletonFaqs />}
+      {/* {!showSkeletonFaqs && <SkeletonFaqs />} */}
+      {showSkeletonFaqs && <SkeletonFaqsT/>}
       {showFaqs && (
         <Container>
           {/* <MetaFrequentQuestions /> */}
