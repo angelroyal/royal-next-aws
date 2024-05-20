@@ -56,7 +56,7 @@ export function DialogPaymentItinerary(props) {
           {step !== 3 ? (
             <div className="rounded-t-[12px] relative h-full pt-[1.2rem] pb-[1rem] px-[1.2rem] shadow-[0px_-4px_14px_-3px_rgb(0,0,0,52%)]">
               <div
-                className="absolute top-[-16px] w-[3rem] h-[3rem] rounded-full left-0 right-0 mx-auto bg-white z-[3] shadow-[0px_-12px_12px_-11px]"
+                className="absolute top-[-16px] w-[3rem] h-[3rem] rounded-full left-0 right-0 mx-auto bg-white z-[3] shadow-[0px_-12px_12px_-11px] cursor-pointer"
                 onClick={() => setOpenDialog(true)}
               >
                 <Image

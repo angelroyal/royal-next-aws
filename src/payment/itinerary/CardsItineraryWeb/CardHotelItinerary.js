@@ -161,7 +161,7 @@ export default function CardHotelItinerary(props) {
                       width={11}
                       height={14}
                     />
-                    <span className="text-bl-100 text-fs-10 m-s-b truncate">
+                    <span className="text-bl-100 text-fs-10 m-s-b truncate max-lg:text-wrap">
                       {itemHotel.address}
                     </span>
                   </div>
