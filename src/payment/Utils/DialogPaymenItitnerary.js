@@ -60,7 +60,7 @@ export function DialogPaymentItinerary(props) {
                 onClick={() => setOpenDialog(true)}
               >
                 <Image
-                  className="absolute top-[13px] left-[11px] w-[14px] h-[7px]"
+                  className="absolute top-[13px] left-0 right-0 mx-auto w-[14px] h-[7px]"
                   src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-70.svg`}
                   width={14}
                   height={7}

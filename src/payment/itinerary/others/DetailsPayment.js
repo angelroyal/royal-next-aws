@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import { CircularProgress } from "@mui/material";
 
@@ -51,9 +51,14 @@ export default function DetailsPayment(props) {
     handleStepChange(step + 1);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <div className="flex w-full h-full pt-[28px] pb-[20px] px-6 lg:pt-[4.6rem] lg:pl-[24px] lg:pb-[24px] flex-col gap-y-[40px] sticky top-0">
+      {/* h-full */}
+      <div className="flex w-full h-full lg:h-max pt-[28px] pb-[20px] px-6 lg:pt-[4.6rem] lg:pl-[24px] lg:pb-[24px] flex-col gap-y-[40px] sticky top-0">
         {/* TITLE AND LOGO */}
         {data && (
           <>
@@ -74,7 +79,8 @@ export default function DetailsPayment(props) {
             {/* INFO PRICE AND TOTAL*/}
             {/* <div className="cont-info-price-info-itinerary"> */}
             <div className="w-full lg:!pb-4 lg:mb-[18px] h-full relative">
-              <div className="flex flex-col mb-[9rem]">
+              {/* mb-[9rem] */}
+              <div className="flex flex-col mb-[3rem]">
                 {data.summary.hotels.length > 0 && (
                   <DescriptionHotel hotel={data.summary.hotels} />
                 )}
@@ -110,7 +116,8 @@ export default function DetailsPayment(props) {
               </div>
 
               {/* FOOTER SECTION DETAILS */}
-              <div className="flex w-full flex-col gap-y-[20px] lg:gap-y-[40px] absolute !bottom-0 bg-white">
+              {/* absolute */}
+              <div className="flex w-full flex-col gap-y-[20px] lg:gap-y-[40px] sticky !bottom-0 bg-white">
                 <div className="flex flex-col-reverse lg:flex-col gap-y-[20px] lg:gap-y-[40px]">
                   <div className="flex justify-between">
                     <p className="m-0 text-black text-fs-16 m-b">Total</p>

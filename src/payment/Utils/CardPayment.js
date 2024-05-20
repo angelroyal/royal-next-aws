@@ -106,7 +106,8 @@ export default function CardPayment(props) {
     >
       {isBack === false && (
         <>
-          <Image className="icon-logo-transparent" src={IconLogo} alt="logo transparent cart"/>
+        {/* src={IconLogo} */}
+          <Image className="icon-logo-transparent" width={44} height={44} src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw-wt.svg`} alt="logo transparent cart"/>
 
           <div className="front-card">
             <Image className="chip-icon" src={ChipCard} alt="chip icon"/>
@@ -159,7 +160,8 @@ export default function CardPayment(props) {
             alt="font back card"
             className="font-back-card"
           />
-          <Image className="royal-name-card-back" src={RoyalLetterIcon} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon letter`}/>
+          {/* src={RoyalLetterIcon} */}
+          <Image className="royal-name-card-back" src={`${process.env.NEXT_PUBLIC_URL}icons/general/principal-logo-blank.svg`} width={22} height={22} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon letter`}/>
 
           <div className="back-card">
             <div className="d-flex flex-column py-4 hight100 width100">

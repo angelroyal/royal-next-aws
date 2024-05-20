@@ -120,7 +120,7 @@ export default function ConfirmReservation() {
               {/* LEFT INFORMATION */}
               <div className="w-full lg:w-[68%] xl:w-[90%] pr-[20px] container-steeps-payment">
                 {/* STEPS */}
-                <div className="h-auto mt-[4rem] mb-[6rem] p-0">
+                <div className="h-auto mt-[31.6px] mb-[28px] lg:mt-[4rem] lg:mb-[6rem] p-0">
                   <StepsToPaymentsM
                     step={3}
                     handleStepChange={handleStepChange}

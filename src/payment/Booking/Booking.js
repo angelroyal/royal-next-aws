@@ -68,73 +68,61 @@ export default function Booking(props) {
     fetchData();
   }, []);
 
-
   return (
     <FormDataProvider>
       <div>
         {/* SHOW ALERTS MSG */}
         <AlertTextBooking showAlert={showAlert} />
 
-        <div className="display-booking">
+        <div className="flex !gap-x-2 w-full items-start justify-start items-start !mb-2">
           <Image
-            className="icon-royal-itinerary"
-            src={IconRoyal}
+            className="w-[27px] h-[25px]"
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw.svg`}
             alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
+            width={27}
+            height={25}
           />
-          <h1 className="booking-title-page">
+          <h1 className="text-fs-24 m-b text-black">
             {languageData.booking.titleVacations}
           </h1>
         </div>
 
-        <h2 className="booking-subtitle-page">
+        <h2 className="text-fs-14 m-m text-black">
           {languageData.booking.subtitleComplete}
         </h2>
 
-        <Row className="container-form-payment">
-          <Col sm={12} className="forms-col">
-            {/* Passing the handleUserDataChange function as a prop */}
+        <div className="pt-[36px] flex flex-col gap-y-[36px]">
+          {/* Passing the handleUserDataChange function as a prop */}
 
-            <ClientData onUserDataChange={handleUserDataChange} />
+          <ClientData onUserDataChange={handleUserDataChange} />
 
-            <FormClientRH
-              dataItinerary={dataItinerary.items}
-              onRHDataChange={handleRHChange}
-            />
+          <FormClientRH
+            dataItinerary={dataItinerary.items}
+            onRHDataChange={handleRHChange}
+          />
 
-            {activityPreBooking && activityPreBooking.length > 0 && (
-              <div className="form-activity">
-                <h2 className="title-data-h">
-                  {languageData.paymentActivities.activities}
-                </h2>
-                <ActivityForm
-                  activityPreBooking={activityPreBooking}
-                  setFormActivityItems={setFormActivityItems}
-                />
-              </div>
-            )}
+          {activityPreBooking && activityPreBooking.length > 0 && (
+            <div className="py-[32px] px-[24px] w-full rounded-[19px] bg-white">
+              <h2 className="title-data-h">
+                {languageData.paymentActivities.activities}
+              </h2>
+              <ActivityForm
+                activityPreBooking={activityPreBooking}
+                setFormActivityItems={setFormActivityItems}
+              />
+            </div>
+          )}
 
-            {!activityPreBooking && <SkeletonActivitiesTourP />}
+          {!activityPreBooking && <SkeletonActivitiesTourP />}
 
-            <PaymentConektaF
-              hotelRH={hotelRH}
-              userData={userData}
-              changeButton={changeButton}
-              onAlertDataChange={handleAlertDataChange}
-              formActivityItems={formActivityItems}
-            />
-          </Col>
-          {/* {isMobile ? (
-            <BookingDetails itemSummary={dataItinerary.summary} />
-          ) : (
-            <Col sm={3} className="details-payment-col-right">
-              <h3 className="itinerary-details-payment">
-                {languageData.booking.textBooking}
-              </h3>
-              <DetailsPayment itemSummary={dataItinerary.summary} />
-              <Card className="margin-icon-top" />
-            </Col>
-          )} */}
-        </Row>
+          <PaymentConektaF
+            hotelRH={hotelRH}
+            userData={userData}
+            changeButton={changeButton}
+            onAlertDataChange={handleAlertDataChange}
+            formActivityItems={formActivityItems}
+          />
+        </div>
       </div>
     </FormDataProvider>
   );

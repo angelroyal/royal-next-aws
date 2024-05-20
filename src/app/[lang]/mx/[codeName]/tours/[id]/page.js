@@ -34,8 +34,9 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function DetailPageTour({ params }) {
+export default async function DetailPageTour({ params, searchParams }) {
   try {
+    console.log(searchParams);
     const response = await axiosWithInterceptor.get(
       `v1/activities/${params.id}`
     );
@@ -101,7 +102,7 @@ export default async function DetailPageTour({ params }) {
                 />
               </section>
               <Navigation hotelDetails={true} />
-              <Tour params={params} tourMetaData={tourMetaData} />
+              <Tour params={params} tourMetaData={tourMetaData} searchParams={searchParams}/>
               <Footer />
             </DetailTourProvider>
           </CartAxiosProvider>
