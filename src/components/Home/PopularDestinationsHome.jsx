@@ -15,7 +15,7 @@ export default function PopularDestinationsHome() {
 
     return (
 
-        <div className='flex flex-col gap-[36px] my-[180px] relative'>
+        <div className='flex flex-col gap-[36px] my-[180px] relative max-sm:my-[90px]'>
             <h2 className='text-fs-28 m-b '>{languageData.homeDestinations[0].titleTop.title}</h2>
 
             <Swiper
@@ -52,8 +52,8 @@ export default function PopularDestinationsHome() {
             >
                 {[...Array(8)].map((_, index) => (
                     <SwiperSlide className="!rounded-lg" key={index}>
-                        <div className='h-[280px] relative'>
-                            <img src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`} alt='banner-offers' className="w-full h-full rounded-lg select-none object-cover" />
+                        <div className='h-[280px] relative overflow-hidden rounded-lg'>
+                            <img src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`} alt='banner-offers' className="w-full h-full rounded-lg select-none object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.75]" />
 
                             <div className='flex flex-col pl-[16px] pb-[16px] absolute bottom-0 gap-[4px]'>
                                 <span className='m-b text-white text-fs-14'>Ciudad de Mexico</span>

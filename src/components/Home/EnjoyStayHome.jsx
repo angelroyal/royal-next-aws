@@ -25,8 +25,8 @@ export default function EnjoyStayHome() {
                     className='h-full w-full rounded-l-lg max-lg:rounded-t-lg max-lg:rounded-l-0'
                 />
 
-                <div className='absolute bottom-0 flex flex-col gap-[16px] pb-[90px] pl-[49px] w-[80%] max-md:pb-[45px]'>
-                    <h2 className='text-white m-s-b text-fs-32 max-md:text-fs-28'>{languageData.enjoyStayHome.titleEnjoy}</h2>
+                <div className='absolute bottom-0 flex flex-col gap-[16px] pb-[90px] pl-[49px] w-[80%] max-md:pb-[45px] max-xl:pb-[24px] max-lg:pb-[81px]'>
+                    <h2 className='text-white m-s-b text-fs-32 max-xl:text-fs-28 max-lg:text-fs-32 max-md:text-fs-28 '>{languageData.enjoyStayHome.titleEnjoy}</h2>
 
                     <span className='text-white m-m text-fs-14'>{languageData.enjoyStayHome.offersDates}: <b>del 29 de abril al 14 de mayo.</b></span>
 
@@ -47,7 +47,7 @@ export default function EnjoyStayHome() {
                     className='h-full w-full pt-[1px] rounded-r-lg brightness-75 max-lg:rounded-b-lg'
                 />
 
-                <div className="absolute bottom-0 w-full h-[91%] px-[80px] max-md:px-[40px]">
+                <div className="absolute top-0 w-full h-full pl-[70px] pr-[83px] max-md:px-[40px] pt-[54.2px]">
 
                     <Swiper
                         slidesPerView={1}
@@ -58,6 +58,9 @@ export default function EnjoyStayHome() {
                         navigation
                         modules={[Navigation]}
                         breakpoints={{
+                            489: {
+                                slidesPerView: 1.5,
+                            },
                             768: {
                                 slidesPerView: 2,
                             },

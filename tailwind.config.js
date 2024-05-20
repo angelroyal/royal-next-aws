@@ -178,6 +178,20 @@ export default {
             background: "#c9c7c7",
           },
         },
+        'slide-up': {
+          '0%': { bottom: '0vw' },
+          '100%': { bottom: '90%' },
+          '95%': { bottom: '93%' },
+        },
+        'slide-in': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+
+      animation: {
+        'slide-up': 'slide-up 1s forwards',
+        'slide-in': 'slide-in 0.5s forwards',
       },
 
       boxShadow: {

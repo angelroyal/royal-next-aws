@@ -12,6 +12,7 @@ import LanguageContext from "../language/LanguageContext";
 import { BookingContext } from "./context/BookingContext";
 import { useCartAxios } from "../components/Cart/CartAxios";
 import { scrollToTop } from "../utils/pageConfig/scrollToTop";
+import EmptyItinerary from "./itinerary/Alerts/EmptyItinerary";
 import DetailsPayment from "./itinerary/others/DetailsPayment";
 import ConfirmReservation from "./Confirmation/ConfirmReservation";
 import { StepsToPayments, StepsToPaymentsM } from "../hooks/StepsToPay";
@@ -132,10 +133,10 @@ export default function Payment() {
   console.log(openDialog);
   return (
     <>
-      <div
-        className={`w-full h-full relative bg-[#f6f6f6]`}
-      >
-        {openDialog && <div className="backdrop-brightness-50 w-full h-full absolute z-[1]"/>}
+      <div className={`w-full h-full relative bg-[#f6f6f6]`}>
+        {openDialog && (
+          <div className="backdrop-brightness-50 w-full h-full absolute z-[1]" />
+        )}
         <Container>
           <>
             {/* BACKGROUND WHITE */}
@@ -202,20 +203,7 @@ export default function Payment() {
           {/* EMPTY CART ALERT */}
           {showClr &&
             (showClr.message === "CLR" || showClr.message === "CNF") && (
-              <div className="container-itinerary-no-data">
-                <h2 className="itinerary-no-show">
-                  {languageData.cart.subtitleItinerary}
-                </h2>
-                <p className="itinerary-no-text padding-bottom">
-                  {languageData.cart.textMessage}
-                </p>
-                <button
-                  className="button-start-itinerary"
-                  onClick={handleStart}
-                >
-                  {languageData.cart.buttonPay}
-                </button>
-              </div>
+              <EmptyItinerary />
             )}
 
           {/* ERROR ALERT  */}
@@ -237,7 +225,7 @@ export default function Payment() {
         </Container>
 
         {/* DIALOG INFORMATION MOBILE */}
-        { data && data.items && (
+        {data && data.items && (
           <DialogPaymentItinerary
             handleStepChange={handleStepChange}
             reservationData={data}

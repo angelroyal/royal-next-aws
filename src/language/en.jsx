@@ -260,7 +260,7 @@ export const en = {
     people: "People.",
     taxes: "Taxes included",
     buttonShow: "More detail",
-    label: "in high demand!",
+    label: "In high demand!",
     amenities: "No amenities",
     bestHotel: "Best hotels",
     unavailable: "not available",

@@ -14,6 +14,7 @@ import { PopularState } from "@/components/General/PopularEstates";
 import ShuffleHotel from "@/services/Hotels/components/home/ShuffleHotel";
 import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
 import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
+// import BtnShowNotification from "@/components/Alerts/Notifications/BtnShowNotification";
 
 export const HomeHotel = () => {
   return (
@@ -32,6 +33,7 @@ export const HomeHotel = () => {
         <TransportBanner />
         <TourRecommended />
         <BannerHomeKnowMore />
+        {/* <BtnShowNotification /> */}
       </Container>
     </>
   );

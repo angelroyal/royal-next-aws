@@ -19,7 +19,7 @@ import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import { HotelCardSkeleton } from "../Skeleton/HotelListingSkeleton";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
 
-export default function ListingHotelW(props) {
+export default function ListingHotelW() {
   const { token } = useToken();
   const { languageData } = useContext(LanguageContext);
   const [requestQueryParams, setRequestQueryParams] = useState(null);
@@ -38,6 +38,7 @@ export default function ListingHotelW(props) {
   const clickPaginator = (event, value) => {
     handlePageChange(event, value);
   };
+  
 
   useEffect(() => {
     scrollToTop();
