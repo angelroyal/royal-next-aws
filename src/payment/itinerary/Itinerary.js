@@ -50,7 +50,7 @@ export default function Itinerary(props) {
         {/* {!isMobile && <ModalShare className="modal-style-share" />} */}
       </div>
 
-      <h2 className="itinerary-subtitle-page">
+      <h2 className="text-fs-14 m-m text-black mb-[36px]">
         {languageData.itinerary.subtitleItinerary}
       </h2>
 
