@@ -118,7 +118,7 @@ export default function ConfirmReservation() {
 
             <div className="flex min-h-[42rem] ">
               {/* LEFT INFORMATION */}
-              <div className="w-full lg:w-[68%] xl:w-[90%] pr-[20px] container-steeps-payment">
+              <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
                 {/* STEPS */}
                 <div className="h-auto mt-[31.6px] mb-[28px] lg:mt-[4rem] lg:mb-[6rem] p-0">
                   <StepsToPaymentsM

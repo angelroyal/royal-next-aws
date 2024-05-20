@@ -103,7 +103,7 @@ export default function Booking(props) {
 
           {activityPreBooking && activityPreBooking.length > 0 && (
             <div className="py-[32px] px-[24px] w-full rounded-[19px] bg-white">
-              <h2 className="title-data-h">
+              <h2 className="title-data">
                 {languageData.paymentActivities.activities}
               </h2>
               <ActivityForm

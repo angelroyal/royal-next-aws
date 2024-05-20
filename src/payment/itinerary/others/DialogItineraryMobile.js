@@ -23,7 +23,7 @@ export function DialogItineraryMobile(props) {
             <div className={`bg-white !border border-gry-70 w-full relative ${step !== 3 ? 'h-fit' : 'h-full'}`}>
               {/* CLOSE DIALOG */}
               <div
-                className="absolute w-[40px] h-[40px] rounded-full flex justify-center bg-white z-[3] items-center top-[-14px] left-0 right-0 mx-auto shadow-[0px_-12px_12px_-11px_rgba(0,0,0,0.75)]"
+                className="absolute w-[40px] h-[40px] rounded-full flex justify-center bg-white z-[3] items-center top-[-14px] left-0 right-0 mx-auto shadow-[0px_-12px_12px_-11px_rgba(0,0,0,0.75)] cursor-pointer"
                 onClick={() => setOpenDialog(false)}
               >
                 <Image

@@ -1,7 +1,7 @@
 export default function SkeletonPay() {
   return (
     <div className="flex ">
-      <div className="w-full lg:w-[68%] xl:w-[90%] pr-[20px]">
+      <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
         <StepsSkeleton />
         <StepsSkeletonMobile />
         <CartsReservationSkeleton />

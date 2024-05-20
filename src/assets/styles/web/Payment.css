@@ -1488,7 +1488,7 @@ h5 {
   font-size: 0.875rem !important;
   color: #666666;
   display: flex;
-  gap: 6px;
+  /* gap: 6px; */
 }
 
 .button-share-itinerary {
