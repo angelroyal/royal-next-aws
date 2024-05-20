@@ -58,7 +58,7 @@ export default function BannerDiscoverPossibilities() {
 
     axios
       .post(
-        "https://api.telegam.org/bot6413785790:AAFbmewlmcgnSngod5XWED_h8Iib7mlCJiE/sendMessage",
+        "https://api.telegram.org/bot6413785790:AAFbmewlmcgnSngod5XWED_h8Iib7mlCJiE/sendMessage",
         {
           chat_id: "-1002030618875",
           text: `⚡ NUEVO CONTACTO ⚡ \n \nNOMBRE: ${namePerson}\nTELEFONO: ${phoneValue}`,

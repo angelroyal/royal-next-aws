@@ -28,6 +28,10 @@ export default function NotificationType({ type, title, message }) {
     };
   }, [duration]);
 
+  const handleClose = () => {
+    setVisible(false);
+  };
+
   if (!visible) return null;
 
   return (
@@ -52,10 +56,12 @@ export default function NotificationType({ type, title, message }) {
         {/* CLOSE ICON */}
         <div>
           <img
+          className="cursor-pointer"
             src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-50.svg`}
             alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} - Close`}
             width={10}
             height={10}
+            onClick={handleClose}
           />
         </div>
       </div>
