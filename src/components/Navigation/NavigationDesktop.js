@@ -3,20 +3,19 @@
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 
-// import Cart from "@/hooks/Cart";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { Container } from "@/config/Others/Container";
 import { LanguageSelector } from "@/language/LanguageSelector";
 
 import CartOpen from "../Cart/open/CartOpen";
 import { SelectCurrency } from "./SelectCurrency";
-import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 import LanguageContext from "@/language/LanguageContext";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export default function NavigationDesktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
   const { languageData, language } = useContext(LanguageContext);
+  const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
 
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
@@ -63,7 +62,7 @@ export default function NavigationDesktop() {
 
                 {/* HOTEL LINK */}
                 <Link
-                  href={`${process.env.NEXT_PUBLIC_HOME}`}
+                 href={`/${language}/hotel`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline"
                 >
@@ -75,7 +74,7 @@ export default function NavigationDesktop() {
                   />
                   <span
                     className={`${
-                      currentActiveIcon === "hotels" && "text-or-100"
+                      currentActiveIcon === "hotels" || currentActiveIcon === "hotel" && "text-or-100"
                     }`}
                   >
                     {languageData.SearchBox.tabHotel.hotel}

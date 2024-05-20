@@ -31,6 +31,9 @@ export default function SearchBox() {
       case "hotels":
         view = process.env.NEXT_PUBLIC_HOME;
         break;
+      case "hotel":
+        view = `/${language}/hotel`;
+        break;
       case "tour":
         view = `/${language}/tour`;
         break;
@@ -38,6 +41,7 @@ export default function SearchBox() {
         view = `/${language}/transport`;
         break;
     }
+
     if (view != null) {
       router.push(view);
     }
@@ -57,7 +61,7 @@ export default function SearchBox() {
           >
             <span
               className={`${
-                currentActiveIcon === "hotels"
+                currentActiveIcon === "hotels" || currentActiveIcon === "hotel"
                   ? "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
@@ -65,7 +69,8 @@ export default function SearchBox() {
               <Image
                 className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
-                  currentActiveIcon === "hotels"
+                  currentActiveIcon === "hotels" ||
+                  currentActiveIcon === "hotel"
                     ? "icons/hotel/hotel-w.svg"
                     : "icons/hotel/hotel-b.svg"
                 }`}
@@ -141,7 +146,10 @@ export default function SearchBox() {
           <Tab.Panels>
             {currentActiveIcon ? (
               <>
-                {currentActiveIcon === "hotels" && <SendHotel />}
+                {currentActiveIcon === "hotels" ||
+                currentActiveIcon === "hotel" ? (
+                  <SendHotel />
+                ) : null}
 
                 {currentActiveIcon === "tour" ||
                 currentActiveIcon === "tours" ? (

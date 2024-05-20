@@ -1,70 +1,111 @@
 "use client";
 
-import React, { useContext } from 'react'
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import LanguageContext from '@/language/LanguageContext';
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
+import { useContext, useEffect, useState } from "react";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import LanguageContext from "@/language/LanguageContext";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+
 export default function PopularDestinationsHome() {
+  const [popularState, setPopularState] = useState(null);
+  const { languageData } = useContext(LanguageContext);
 
-    const { languageData } = useContext(LanguageContext);
+  useEffect(() => {
+    getPopularStates();
+  }, []);
 
-    return (
+  const getPopularStates = async () => {
+    try {
+      let dataPopularState = await axiosWithInterceptor.get(
+        `v1/destinations/promotions/hotels`
+      );
 
-        <div className='flex flex-col gap-[36px] my-[180px] relative max-sm:my-[90px]'>
-            <h2 className='text-fs-28 m-b '>{languageData.homeDestinations[0].titleTop.title}</h2>
+      if (dataPopularState.data && dataPopularState.status === 200) {
+        const shuffledDestinations = dataPopularState.data.topDestinations
+          .slice(0, 8)
+          .sort(() => 0.5 - Math.random());
+        setPopularState(shuffledDestinations);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-            <Swiper
-                slidesPerView={1}
-                className="rounded-lg w-full !static"
-                spaceBetween={12}
-                id="swiper-popular-destinations-home"
-                initialSlide={0}
-                navigation
-                modules={[Navigation]}
-                breakpoints={{
-                    0: {
-                        slidesPerView: 1,
-                    },
-                    390: {
-                        slidesPerView: 1.4,
-                    },
-                    500: {
-                        slidesPerView: 1.8,
-                    },
-                    620: {
-                        slidesPerView: 2,
-                    },
-                    768: {
-                        slidesPerView: 2.5,
-                    },
-                    1024: {
-                        slidesPerView: 3.5,
-                    },
-                    1280: {
-                        slidesPerView: 5,
-                    },
-                }}
-            >
-                {[...Array(8)].map((_, index) => (
-                    <SwiperSlide className="!rounded-lg" key={index}>
-                        <div className='h-[280px] relative overflow-hidden rounded-lg'>
-                            <img src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`} alt='banner-offers' className="w-full h-full rounded-lg select-none object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.75]" />
+  return (
+    <div className="flex flex-col gap-[36px] my-[180px] relative max-sm:my-[90px]">
+      <h2 className="text-fs-28 m-b ">
+        {languageData.homeDestinations[0].titleTop.title}
+      </h2>
 
-                            <div className='flex flex-col pl-[16px] pb-[16px] absolute bottom-0 gap-[4px]'>
-                                <span className='m-b text-white text-fs-14'>Ciudad de Mexico</span>
-                                <span className='flex items-center gap-1 m-m text-white text-fs-12'>{languageData.homeDestinations[0].titleTop.textHotel}<span className='text-fs-14'>MXN $1,427.00</span></span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                ))}
+      <Swiper
+        slidesPerView={1}
+        className="rounded-lg w-full !static"
+        spaceBetween={12}
+        id="swiper-popular-destinations-home"
+        initialSlide={0}
+        navigation
+        modules={[Navigation]}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          390: {
+            slidesPerView: 1.4,
+          },
+          500: {
+            slidesPerView: 1.8,
+          },
+          620: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 2.5,
+          },
+          1024: {
+            slidesPerView: 3.5,
+          },
+          1280: {
+            slidesPerView: 5,
+          },
+        }}
+      >
+        {popularState && popularState.map((popular, index) => (
+          <SwiperSlide className="!rounded-lg" key={index}>
+            <div className="h-[280px] relative overflow-hidden rounded-lg">
+              {/* IMAGE */}
+              <img
+                src={popular.imageUrl}
+                alt="banner-offers"
+                className="brightness-[.65] w-full h-full rounded-lg select-none object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.85]"
+              />
 
-            </Swiper>
+              <div className="flex flex-col pl-[16px] pb-[16px] absolute bottom-0 gap-[4px]">
+                {/* TITLE */}
+                <span className="m-b text-white text-fs-14">
+                  {popular.name}
+                </span>
 
-        </div>
-    )
+                {/* PRICE */}
+                <span className="flex items-center gap-1 m-m text-white text-fs-12">
+                  {languageData.homeDestinations[0].titleTop.textHotel}
+                  <span className="text-fs-14">
+                    MXN $
+                    {Math.floor(popular.price)
+                      .toLocaleString("es-MX", { currency: "MXN" })
+                      .replace(".00", "")}
+                    .<sup>{(popular.price % 1).toFixed(2).slice(2)}</sup>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 }
