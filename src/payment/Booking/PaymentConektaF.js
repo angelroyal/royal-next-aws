@@ -27,7 +27,13 @@ const AlertBooking = lazy(() => import("./AlertBooking"));
 const CardPayment = lazy(() => import("../Utils/CardPayment"));
 
 export default function PaymentConektaF(props) {
-  const { userData, onAlertDataChange, hotelRH, changeButton, formActivityItems } = props;
+  const {
+    userData,
+    onAlertDataChange,
+    hotelRH,
+    changeButton,
+    formActivityItems,
+  } = props;
 
   const [showModal, setShowModal] = useState(false);
   const [animationData, setAnimationData] = useState(LoadingData);
@@ -516,11 +522,12 @@ export default function PaymentConektaF(props) {
             </div>
           </div>
 
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="flex justify-between items-center">
             {/* TERMS & CONDITIONS */}
-            <div>
-              <div className="d-flex gap-2">
+            <div className="flex flex-col gap-y-[9px]">
+              <div className="flex gap-x-2 items-start">
                 <input
+                  className="max-md:mt-[3px]"
                   type="checkbox"
                   id="policy"
                   name="policy"
@@ -531,7 +538,7 @@ export default function PaymentConektaF(props) {
                 />{" "}
                 <label
                   htmlFor="policy"
-                  className="clauses"
+                  className="clauses flex flex-wrap gap-[3px]"
                   style={{
                     cursor: isUserDataValid ? "pointer" : "not-allowed",
                   }}
@@ -548,8 +555,9 @@ export default function PaymentConektaF(props) {
                 </label>
               </div>
 
-              <div className="d-flex gap-2">
+              <div className="flex gap-x-2 items-start">
                 <input
+                  className="max-md:mt-[3px]"
                   type="checkbox"
                   id="terms"
                   name="terms"
@@ -560,7 +568,7 @@ export default function PaymentConektaF(props) {
                 />{" "}
                 <label
                   htmlFor="terms"
-                  className="clauses"
+                  className="clauses flex flex-wrap gap-[3px]"
                   style={{
                     cursor: isUserDataValid ? "pointer" : "not-allowed",
                   }}
