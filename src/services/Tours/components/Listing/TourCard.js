@@ -36,8 +36,6 @@ export default function TourCard(props) {
       children: searchParams.get("children"),
     };
 
-    console.log(requestBody);
-
     const query = new URLSearchParams(requestBody).toString();
 
     const baseUrl = `/${language}/mx/${destination}-mexico/tours/${tour.codeName}?${query}`;

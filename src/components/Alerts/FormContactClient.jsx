@@ -116,8 +116,6 @@ export function FormContactClient() {
         }
       )
       .then((response) => {
-        console.log(response);
-        console.log(response.status);
         if (response.status === 200) {
           setOpen(false);
         }

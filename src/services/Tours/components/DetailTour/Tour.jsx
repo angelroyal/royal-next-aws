@@ -15,8 +15,6 @@ export default function Tour(props) {
   const { params, tourMetaData, searchParams } = props;
   const [tourData, setTourData] = useState(null);
 
-  // console.log(params);
-
   useEffect(() => {
     const fetchTourData = async () => {
       try {

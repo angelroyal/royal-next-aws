@@ -35,8 +35,6 @@ export default function TransportPriceCart(props) {
   const priceShared = transport.price * passenger;
   const isButtonEnabled = passenger > 0 && departureDate && departureTime;
 
-  // console.log(transport);
-
   const handleReserveNow = async () => {
     // PRICE RESERVED
     let calculatedPrice =

@@ -29,7 +29,6 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
           const response = await axiosWithInterceptor.get(
             `${API_ENDPOINT}/${inputAutocomplete}`
           );
-          // console.log(response);
           const groupedResults = response.data.activities.reduce(
             (acc, item) => {
               acc[item.type] = acc[item.type] || [];
@@ -38,7 +37,6 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
             },
             {}
           );
-          // console.log(groupedResults);
           setOptions(groupedResults);
           setIsOpen(Object.keys(groupedResults).length > 0);
           // setOptions(response.data.activities);
@@ -48,8 +46,6 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
       }, 400),
     []
   );
-
-  // console.log(optionsSearch);
 
   const { languageData } = useContext(LanguageContext);
 

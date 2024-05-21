@@ -130,7 +130,6 @@ export default function Payment() {
   const handleStart = () => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
   };
-  console.log(openDialog);
   return (
     <>
       <div className={`w-full h-full relative bg-[#f6f6f6]`}>

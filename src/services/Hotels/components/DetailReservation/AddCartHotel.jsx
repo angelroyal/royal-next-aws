@@ -16,8 +16,6 @@ export default function AddCartHotel() {
     useContext(RoomsHotelContext);
 
   // HANDLE ADD CART HOTEL
-  console.log(selectedRooms);
-
   const handleReserveNow = async () => {
     try {
       setIsLoading(true);

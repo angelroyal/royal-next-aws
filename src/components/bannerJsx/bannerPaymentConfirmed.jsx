@@ -41,8 +41,6 @@ export function BannerState() {
   const { languageData } = useContext(LanguageContext);
   const { infoReservation } = useContext(BookingContext);
 
-  // console.log(infoReservation);
-
   return (
     <div className="w-full flex flex-col">
       <Image
