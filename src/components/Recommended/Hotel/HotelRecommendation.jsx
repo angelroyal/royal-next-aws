@@ -4,15 +4,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
+import { useContext } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useEffect, useState } from "react";
 
+import LanguageContext from "@/language/LanguageContext";
 import { BestHotelCart } from '@/services/Hotels/components/home/BestHotelCart'
-
 
 export default function HotelRecommendation() {
 
+    const { languageData } = useContext(LanguageContext);
+    // TEST TO PAINT CARDHOTEL
     const hotelMap = {
         "code": 3982,
         "name": "Loreto Bay Golf Resort and Spa",
@@ -31,13 +33,14 @@ export default function HotelRecommendation() {
             "country": "mexico"
         }
     };
+    // END TEST TO PAINT CARDHOTEL
 
     return (
         <>
             <div className="bg-white p-[36px] relative rounded-lg my-[28px]">
                 <div className="mb-[36px]">
                     {/* TITLE */}
-                    <span className="m-b text-fs-20">Alojamientos que pueden gustarte</span>
+                    <span className="m-b text-fs-20">{languageData.recommendations.hotel.titleRecommedation}</span>
                 </div>
 
                 <Swiper

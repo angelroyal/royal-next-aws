@@ -4,23 +4,26 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import React from 'react'
+import React, { useContext } from 'react'
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import LanguageContext from "@/language/LanguageContext";
 import { PromotedRoutesCard } from "@/services/Transport/Home/PromotedRoutes";
 
 export default function TransportRecommendation() {
     
     const isRecommended = true;
+    const { languageData } = useContext(LanguageContext);
+
     return (
 
         <div className='bg-white rounded-lg p-[36px] relative'>
 
             <div className='flex justify-between items-center mb-[36px] max-md:flex-col max-md:items-start'>
-                <span className='text-fs-20 m-b max-md:text-fs-16'>¿Ya sabes como llegar?</span>
+                <span className='text-fs-20 m-b max-md:text-fs-16'>{languageData.recommendations.transport.titleRecommedation}</span>
 
-                <button className='m-s-b bg-bl-100 text-white text-fs-12 rounded-full py-[14px] px-[16px] hover:bg-bl-110'>Elegir transporte</button>
+                <button className='m-s-b bg-bl-100 text-white text-fs-12 rounded-full py-[14px] px-[16px] hover:bg-bl-110'>{languageData.recommendations.transport.btnchoose}</button>
             </div>
 
             <Swiper

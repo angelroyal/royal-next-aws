@@ -6,7 +6,7 @@ import TransportRecommendation from "@/components/Recommended/Transport/Transpor
 export default function OrderRecommendation() {
 
     let order;
-    const service = "hotel";
+    const service = "tour";
 
     if (service === 'hotel') {
         order =

@@ -7,13 +7,15 @@ import "@/assets/styles/general/Swiper.css";
 import axios from "axios";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
+import LanguageContext from "@/language/LanguageContext";
 import CardTopActivities from "@/services/Tours/Home/CardTopActivities";
 
 export default function TopActivities() {
 
   const [tours, setTours] = useState([]);
+  const { languageData } = useContext(LanguageContext);
 
   useEffect(() => {
     const topActivities = async () => {
@@ -39,7 +41,7 @@ export default function TopActivities() {
     <div className="bg-white p-[36px] relative rounded-lg my-[28px] max-md:p-[20px]">
       <div className="mb-[36px]">
         {/* TITLE */}
-        <span className="m-b text-fs-20 max-md:text-fs-16">Añade más diversión a tus vacaciones</span>
+        <span className="m-b text-fs-20 max-md:text-fs-16">{languageData.recommendations.tour.titleRecommedation}</span>
       </div>
 
       <Swiper
