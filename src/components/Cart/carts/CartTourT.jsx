@@ -103,7 +103,7 @@ export default function CartTourT(props) {
                   src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
                   width={12}
                   height={12}
-                  alt="icon-dult"
+                  alt="icon-adult"
                 />
                 <span className=" m-m text-fs-12 text-gry-100">
                   {totalTourist(activity.tourists)}

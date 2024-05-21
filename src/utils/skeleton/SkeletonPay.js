@@ -1,9 +1,9 @@
 export default function SkeletonPay() {
   return (
     <div className="flex ">
-      <div className="w-full lg:w-[68%] xl:w-[90%] pr-[20px]">
+      <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
         <StepsSkeleton />
-        <StepsSkeletonMobile/>
+        <StepsSkeletonMobile />
         <CartsReservationSkeleton />
         <CartDetailsSkeleton />
       </div>
@@ -17,12 +17,16 @@ export default function SkeletonPay() {
 
 function StepsSkeletonMobile() {
   return (
-    <div className="md:hidden flex mt-[3.3rem] mb-[1.6rem] flex items-center justify-center">
+    <div className="xl:hidden lg:flex md:hidden flex mt-[3.3rem] mb-[1.6rem] flex items-center justify-center">
       {[...Array(3)].map((_, index) => (
         <div key={index} className="flex items-center">
           <div className="flex flex-col items-center">
             <div className="w-[32px] h-[32px] rounded-full animate-[skeletonLoading_1s_linear_infinite_alternate]" />
-            <div className={`animate-[skeletonLoading_1s_linear_infinite_alternate] h-[18px] ${index === 0 || index === 2 ?'w-[77px]' : 'w-[50px]'}`} />
+            <div
+              className={`animate-[skeletonLoading_1s_linear_infinite_alternate] h-[18px] ${
+                index === 0 || index === 2 ? "w-[77px]" : "w-[50px]"
+              }`}
+            />
           </div>
 
           {3 - 1 !== index && (
@@ -35,7 +39,7 @@ function StepsSkeletonMobile() {
 }
 function StepsSkeleton() {
   return (
-    <div className="hidden md:flex mt-[4rem] mb-[6rem] w-full max-lg:justify-center">
+    <div className="xl:flex lg:hidden md:flex hidden mt-[4rem] mb-[6rem] w-full max-lg:justify-center items-center">
       {[...Array(3)].map((_, index) => (
         <div className="flex items-center" key={index}>
           <div

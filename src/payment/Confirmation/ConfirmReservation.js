@@ -1,18 +1,29 @@
+
 import React, { useState, useEffect, useContext } from "react";
 
+import { BookingContext } from "../context/BookingContext";
 import ConfirmationEmail from "../Email/ConfirmationEmail";
-import LanguageContext from "../../language/LanguageContext";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
 import { useCartAxios } from "../../components/Cart/CartAxios";
-import { StepperContext } from "../context/steeperContext";
-import { ShareContainer } from "@/utils/booking/ShareContainer";
+import { StepsToPayments, StepsToPaymentsM } from "@/hooks/StepsToPay";
 import SkeletonConfirmPay from "../../utils/skeleton/SkeletonConfirmPay";
+import ReservationShortInfo from "../itinerary/others/DetailReservation";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
+import { BannerState } from "@/components/bannerJsx/bannerPaymentConfirmed";
+import BannerConfirmationT from "@/components/bannerJsx/bannerConfirmationT";
 import StructureItineraryWeb from "../itinerary/others/StructureItineraryWeb";
-import Image from "next/image";
+import { TotalPriceBL } from "./TotalPriceBl";
+
 export default function ConfirmReservation() {
   const isMobile = useIsMobileNew();
-  const { fetchData, cartData, setCartData, setItinerary, setTotalItemsInCart } = useCartAxios();
+  const {
+    fetchData,
+    cartData,
+    setCartData,
+    setItinerary,
+    setTotalItemsInCart,
+  } = useCartAxios();
+
   const [dataConfirmation, setDataConfirmation] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const scrollToTop = () => {
@@ -21,8 +32,7 @@ export default function ConfirmReservation() {
 
   const [smShow, setSmShow] = useState(false);
 
-  const { languageData } = useContext(LanguageContext);
-  const { setInfoReservation } = useContext(StepperContext);
+  const { setInfoReservation, handleStepChange } = useContext(BookingContext);
 
   const handleOpenModal = () => {
     setSmShow(true);
@@ -97,52 +107,48 @@ export default function ConfirmReservation() {
   };
 
   return (
-    <div className="m-h-hotel-confirmation">
+    <>
       {isLoading && <SkeletonConfirmPay />}
-      {/* <SkeletonConfirmPay/> */}
-      {dataConfirmation && (
-        <>
-          {dataConfirmation && (
-            <>
-              <StructureItineraryWeb dataItinerary={dataConfirmation} />
 
-              {/* TOTAL PRICE CONFIRMATION */}
-              {!isMobile && (
-                <div className="orange-total-p-c !pr-4 !rounded-br-lg">
-                  <span className="total-confirmation-r">
-                    No. de confirmación:{" "}
-                    <div className="green-container-c">
-                      {dataConfirmation.booking.reference}
-                    </div>
-                  </span>
+      <>
+        {dataConfirmation && (
+          <>
+            {/* BANNER STATE CONFIRMATION */}
+            <BannerState />
 
-                  <div className="flex flex-row gap-4 items-center">
-                    <span className="price-num-confirmation">
-                      {languageData.confirmation.total} $
-                      {Math.floor(dataConfirmation.totalPrice)
-                        .toLocaleString("es-MX", { currency: "MXN" })
-                        .replace(".00", "")}
-                      .<sup>{(dataConfirmation.totalPrice % 1).toFixed(2).slice(2)}</sup>
-                    </span>
-
-                    <button className="bg-or-100 rounded-full flex gap-2 py-2 px-4" onClick={handleIconClick}>
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
-                        alt="icon-share"
-                        width={16}
-                        height={18}
-                      />
-
-                      <span className="m-b text-white text-fs-12">Compartir Itinerario</span>
-                    </button>
-                    <ShareContainer smShow={smShow} handleCloseModal={handleCloseModal} />
-                  </div>
+            <div className="flex min-h-[42rem] ">
+              {/* LEFT INFORMATION */}
+              <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
+                {/* STEPS */}
+                <div className="h-auto mt-[31.6px] mb-[28px] lg:mt-[4rem] lg:mb-[6rem] p-0">
+                  <StepsToPaymentsM
+                    step={3}
+                    handleStepChange={handleStepChange}
+                  />
+                  <StepsToPayments
+                    step={3}
+                    handleStepChange={handleStepChange}
+                  />
                 </div>
-              )}
-            </>
-          )}
-        </>
-      )}
-    </div>
+
+                <StructureItineraryWeb dataItinerary={dataConfirmation} />
+              </div>
+
+              {/* RIGHT INFORMATION */}
+              <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px]">
+                <ReservationShortInfo />
+              </div>
+            </div>
+
+            {/* TOTAL PRICE CONFIRMATION */}
+            <TotalPriceBL smShow={smShow} handleCloseModal={handleCloseModal} handleIconClick={handleIconClick} />
+           
+
+            {/* BOTTOM BANNER CONFIRMATION */}
+            <BannerConfirmationT />
+          </>
+        )}
+      </>
+    </>
   );
 }

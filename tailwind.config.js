@@ -44,6 +44,8 @@ export default {
           100: "#2899C7",
         },
         grn: {
+          10: "#e0fef0",
+          20: "#e0feef",
           30: "#e7f7ef",
           50: "#A6E5C6",
           70: "#66CC9B",

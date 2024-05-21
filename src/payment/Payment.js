@@ -2,47 +2,37 @@
 
 // import { useHistory } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import React, { useState, useEffect, useContext, Suspense, lazy } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
-import { StepperContext, StepperProvider } from "./context/steeperContext";
 import Booking from "./Booking/Booking";
 import Itinerary from "./itinerary/Itinerary";
 import SkeletonPay from "../utils/skeleton/SkeletonPay";
 import { useToken } from "../config/context/AuthContext";
 import LanguageContext from "../language/LanguageContext";
+import { BookingContext } from "./context/BookingContext";
 import { useCartAxios } from "../components/Cart/CartAxios";
 import { scrollToTop } from "../utils/pageConfig/scrollToTop";
 import EmptyItinerary from "./itinerary/Alerts/EmptyItinerary";
-import { useIsMobile, useIsMobileNew } from "../config/Mobile/isMobile";
-import { StepsToPayments, StepsToPaymentsM } from "../hooks/StepsToPay";
-import axiosWithInterceptor from "../config/Others/axiosWithInterceptor";
+import DetailsPayment from "./itinerary/others/DetailsPayment";
 import ConfirmReservation from "./Confirmation/ConfirmReservation";
-import { BannerState } from "../components/bannerJsx/bannerPaymentConfirmed";
+import { StepsToPayments, StepsToPaymentsM } from "../hooks/StepsToPay";
 import { DialogPaymentItinerary } from "./Utils/DialogPaymenItitnerary";
+import axiosWithInterceptor from "../config/Others/axiosWithInterceptor";
 
 import "../assets/styles/web/App.css";
 import "../assets/styles/web/Tour.css";
 import "../assets/styles/web/Hotel.css";
 import "../assets/styles/web/Payment.css";
 import "../assets/styles/mobile/PaymentMobile.css";
-import BannerConfirmationT from "@/components/bannerJsx/bannerConfirmationT";
-
-// import Logo from "../assets/images/logos/logo-royal-vacations-text.png";
-
-const DetailsPayment = lazy(() => import("./itinerary/others/DetailsPayment"));
-const ReservationShortInfo = lazy(() =>
-  import("./itinerary/others/DetailReservation")
-);
 
 export default function Payment() {
+  const { step, handleStepChange, openDialog } = useContext(BookingContext);
   const { token } = useToken();
   const [data, setData] = useState(null);
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
 
   const [showClr, setShowClr] = useState(null);
   const { itineraryData, cartData } = useCartAxios();
-  const isMobile = useIsMobile();
-  const isMobileNew = useIsMobileNew();
   const [changeButton, setChangeButton] = useState(0);
 
   useEffect(() => {
@@ -139,124 +129,111 @@ export default function Payment() {
   // const history = useHistory();
   const handleStart = () => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
-    // history.push(baseUrl);
   };
-
+  console.log(openDialog);
   return (
     <>
-      {data && (
-        <StepperProvider>
-          <StepperContext.Consumer>
-            {({ step, handleStepChange }) => (
-              <div className="personal-container background-payment-step">
-                {step !== 3 && (
-                  <div className=" max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0" />
-                )}
-                <Container>
+      <div className={`w-full h-full relative bg-[#f6f6f6]`}>
+        {openDialog && (
+          <div className="backdrop-brightness-50 w-full h-full absolute z-[1]" />
+        )}
+        <Container>
+          <>
+            {/* BACKGROUND WHITE */}
+            {step !== 3 && (
+              <div className=" max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0" />
+            )}
 
-                  {step === 3 && <BannerState />}
-
-                  <div className="container-payment-steeps-info">
-                    <div className="w-full lg:w-[68%] xl:w-[90%] pr-[20px] container-steeps-payment">
-                      <>
-                        {step >= 1 && step <= 3 ? (
-                          <div className="row-steeper-i p-0">
-                            <StepsToPaymentsM
-                              step={step}
-                              handleStepChange={handleStepChange}
-                            />
-                            <StepsToPayments
-                              step={step}
-                              handleStepChange={handleStepChange}
-                            />
-                          </div>
-                        ) : null}
-                      </>
-
-                      {data && data.items && (
-                        <div className="m-min-h mb-3">
-                          {step === 1 && <Itinerary dataItinerary={data} />}
-                          {step === 2 && (
-                            <Booking
-                              dataItinerary={data}
-                              step={step}
-                              handleStepChange={handleStepChange}
-                              changeButton={changeButton}
-                              hasACtivities={hasACtivities}
-                            />
-                          )}
-                          {step === 3 && <ConfirmReservation />}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white">
-                      <Suspense fallback={null}>
-                        {step === 3 ? (
-                          <ReservationShortInfo />
-                        ) : (
-                          <DetailsPayment
-                            data={data}
+            {data && (
+              <>
+                <div>
+                  {/* ITINERARY AND BOOKING VIEW */}
+                  {step !== 3 && (
+                    <div className="flex min-h-[42rem]">
+                      {/* LEFT INFORMATION */}
+                      <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
+                        <div className="h-auto mt-[31.6px] mb-[28px] lg:mt-[4rem] lg:mb-[6rem] p-0">
+                          <StepsToPaymentsM
                             step={step}
                             handleStepChange={handleStepChange}
                           />
+                          <StepsToPayments
+                            step={step}
+                            handleStepChange={handleStepChange}
+                          />
+                        </div>
+
+                        {data.items && (
+                          <div className="m-min-h mb-3">
+                            {step === 1 && <Itinerary dataItinerary={data} />}
+                            {step === 2 && (
+                              <Booking
+                                dataItinerary={data}
+                                step={step}
+                                handleStepChange={handleStepChange}
+                                changeButton={changeButton}
+                                hasACtivities={hasACtivities}
+                              />
+                            )}
+                          </div>
                         )}
-                      </Suspense>
+                      </div>
+
+                      {/* RIGHT INFORMATION */}
+                      <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white">
+                        <DetailsPayment
+                          data={data}
+                          step={step}
+                          handleStepChange={handleStepChange}
+                        />
+                      </div>
                     </div>
-                    {/* )} */}
-                  </div>
-                  {step === 3 && <BannerConfirmationT />}
-                </Container>
+                  )}
+                </div>
 
-                {data && data.items && (
-                  <DialogPaymentItinerary
-                    handleStepChange={handleStepChange}
-                    reservationData={data}
-                    step={step}
-                    setChangeButton={setChangeButton}
-                  />
-                )}
-              </div>
+                {/* CONFIRMATION VIEW */}
+                {step === 3 && <ConfirmReservation />}
+              </>
             )}
-          </StepperContext.Consumer>
-        </StepperProvider>
-      )}
+          </>
 
-      <Container>{!data && skeletonShow && <SkeletonPay />}</Container>
+          {/* SKELETON */}
+          <div>{!data && skeletonShow && <SkeletonPay />}</div>
 
-      {showClr && (showClr.message === "CLR" || showClr.message === "CNF") && (
-        <>
-          {/* <Container className="container-itinerary-no-data">
-            <h2 className="itinerary-no-show">
-              {languageData.cart.subtitleItinerary}
-            </h2>
-            <p className="itinerary-no-text padding-bottom">
-              {languageData.cart.textMessage}
-            </p>
-            <button className="button-start-itinerary" onClick={handleStart}>
-              {languageData.cart.buttonPay}
-            </button>
-          </Container> */}
-          
-          <EmptyItinerary />
-        </>
-      )}
+          {/* EMPTY CART ALERT */}
+          {showClr &&
+            (showClr.message === "CLR" || showClr.message === "CNF") && (
+              <EmptyItinerary />
+            )}
 
-      {errorAlertBooking === true && (
-        <Container className="container-itinerary-no-data">
-          <img
-            className="name-logo m-0"
-            src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
-            alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
-          />
-          <h2 className="itinerary-no-show">
-            {languageData.Alerts.itinerary.title}
-          </h2>
-          <p className="itinerary-no-text padding-bottom">
-            {languageData.Alerts.itinerary.contact} 800 953 0342
-          </p>
+          {/* ERROR ALERT  */}
+          {errorAlertBooking === true && (
+            <div className="container-itinerary-no-data">
+              <img
+                className="name-logo m-0"
+                src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
+                alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
+              />
+              <h2 className="itinerary-no-show">
+                {languageData.Alerts.itinerary.title}
+              </h2>
+              <p className="itinerary-no-text padding-bottom">
+                {languageData.Alerts.itinerary.contact} 800 953 0342
+              </p>
+            </div>
+          )}
         </Container>
-      )}
+
+        {/* DIALOG INFORMATION MOBILE */}
+        {data && data.items && (
+          <DialogPaymentItinerary
+            handleStepChange={handleStepChange}
+            reservationData={data}
+            step={step}
+            setChangeButton={setChangeButton}
+          />
+        )}
+      </div>
     </>
   );
 }

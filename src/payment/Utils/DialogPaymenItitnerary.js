@@ -3,15 +3,12 @@ import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
 
 import ModalShare from "../../utils/booking/ModalShare";
+import { BookingContext } from "../context/BookingContext";
 import LanguageContext from "../../language/LanguageContext";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
 import { ShareContainer } from "../../utils/booking/ShareContainer";
-import { StepperContext } from "../context/steeperContext";
 import { DialogItineraryMobile } from "../itinerary/others/DialogItineraryMobile";
 
-import IconRightBl from "../../assets/icons/utils/payment/right-bl.svg";
-import IconShowLessW from "../../assets/icons/utils/payment/show_less_w.svg";
-import IconShareW from "../../assets/icons/utils/payment/share-w.svg";
 
 export function DialogPaymentItinerary(props) {
   const { handleStepChange, reservationData, step, setChangeButton } = props;
@@ -26,14 +23,25 @@ export function DialogPaymentItinerary(props) {
     }
   };
 
-  const [openDialog, setOpenDialog] = useState(false);
+  // NEW CONTEXT
   const {
     termsAccept,
     policyAccept,
     buttonActive,
     progressCount,
     countNumber,
-  } = useContext(StepperContext);
+    openDialog,
+    setOpenDialog,
+  } = useContext(BookingContext);
+
+  // OLD CONTEXT
+  // const {
+  //   termsAccept,
+  //   policyAccept,
+  //   buttonActive,
+  //   progressCount,
+  //   countNumber,
+  // } = useContext(StepperContext);
 
   const isMobile = useIsMobileNew();
   const [smShow, setSmShow] = useState(false);
@@ -43,16 +51,16 @@ export function DialogPaymentItinerary(props) {
   };
   return (
     <>
-      {reservationData && (
+      {!openDialog && reservationData && (
         <div className="lg:hidden border-t-0 bg-white sticky bottom-0 left-0 w-full h-auto ">
           {step !== 3 ? (
             <div className="rounded-t-[12px] relative h-full pt-[1.2rem] pb-[1rem] px-[1.2rem] shadow-[0px_-4px_14px_-3px_rgb(0,0,0,52%)]">
               <div
-                className="absolute top-[-16px] w-[3rem] h-[3rem] rounded-full left-0 right-0 mx-auto bg-white z-[3] shadow-[0px_-12px_12px_-11px]"
+                className="absolute top-[-16px] w-[3rem] h-[3rem] rounded-full left-0 right-0 mx-auto bg-white z-[3] shadow-[0px_-12px_12px_-11px] cursor-pointer"
                 onClick={() => setOpenDialog(true)}
               >
                 <Image
-                  className="absolute top-[13px] left-[11px] !w-1/2"
+                  className="absolute top-[13px] left-0 right-0 mx-auto w-[14px] h-[7px]"
                   src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-70.svg`}
                   width={14}
                   height={7}
@@ -116,7 +124,12 @@ export function DialogPaymentItinerary(props) {
                       className="py-[10px] px-[2.1rem] flex items-center justify-center bg-yw-100 border-0 rounded-full m-b text-nowrap gap-x-[0.3rem] text-fs-10"
                     >
                       {languageData.itinerary.detailsPayment.completePayment}
-                      <Image src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-100.svg`} width={6} height={13} alt="arrow right icon"/>
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-100.svg`}
+                        width={6}
+                        height={13}
+                        alt="arrow right icon"
+                      />
                     </button>
                   )}
 
@@ -157,41 +170,52 @@ export function DialogPaymentItinerary(props) {
               </div>
             </div>
           ) : (
-            <div className="container-confirmation">
+            <div className="flex justify-between px-6 pt-6 !pb-5 relative bg-bl-100 rounded-t-xl items-center">
               <div
-                className="circle-open-dialog-c"
+                className="absolute left-0 right-0 mx-auto w-9 h-9 rounded-full bg-bl-100 top-[-14px] flex items-center justify-center"
                 onClick={() => setOpenDialog(true)}
               >
-                <Image className="icon-show-less !w-1/2" src={IconShowLessW} />
+                <Image
+                  className="absolute top-[16px] w-[14px] h-[7px]"
+                  alt="show less icon"
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-w.svg`}
+                  height={7}
+                  width={14}
+                />
               </div>
 
-              <div className="d-flex flex-column">
-                <span className="total-confirmation-text">Totall</span>
+              <div className="flex flex-col gap-y-1">
+                <span className="m-b text-fs-16 text-white">Total</span>
 
-                <div className="total-confirmation-text">
-                  MXN $
-                  <span className="total-confirmation-price">
-                    <span>
-                      {Math.floor(reservationData.summary.totalCurrentPrice)
-                        .toLocaleString("es-MX", { currency: "MXN" })
-                        .replace(".00", "")}
-                      .
-                    </span>
+                <div className="flex items-end gap-x-1 text-white m-b">
+                  <p className="text-fs-14 mb-[3px]">MXN</p>
+                  <p className="m-0 text-fs-20">
+                    $
+                    {Math.floor(reservationData.summary.totalCurrentPrice)
+                      .toLocaleString("es-MX", { currency: "MXN" })
+                      .replace(".00", "")}
+                    .
                     <sup>
                       {(reservationData.summary.totalCurrentPrice % 1)
                         .toFixed(2)
                         .slice(2)}
                     </sup>{" "}
-                  </span>
+                  </p>
                 </div>
               </div>
 
               <bottom
                 onClick={() => setSmShow(!smShow)}
-                className="share-confirmation"
+                className="bg-or-100 rounded-full px-4 py-2 flex items-center gap-x-2 text-white text-fs-12 m-b"
               >
-                <Image className="share-icon-confirmed" src={IconShareW} />
-                Compartir
+                <Image
+                  className="!w-4 h-[18px]"
+                  alt="share icon modal"
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
+                  width={16}
+                  height={18}
+                />
+                {languageData.shareLink.share}
               </bottom>
             </div>
           )}
@@ -204,8 +228,6 @@ export function DialogPaymentItinerary(props) {
       />
 
       <DialogItineraryMobile
-        open={openDialog}
-        onClose={() => setOpenDialog(!openDialog)}
         setChangeButton={setChangeButton}
         dataItinerary={reservationData}
         setSmShow={() => setSmShow(true)}

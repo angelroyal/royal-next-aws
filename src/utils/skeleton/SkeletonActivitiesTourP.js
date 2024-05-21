@@ -3,7 +3,7 @@ import { Skeleton } from "@mui/material";
 
 export function SkeletonActivitiesTourP() {
   return (
-    <div className="form-activity">
+    <div className="py-[32px] px-[24px] w-full rounded-[19px] bg-white">
       <Skeleton
         variant="text"
         animation="wave"

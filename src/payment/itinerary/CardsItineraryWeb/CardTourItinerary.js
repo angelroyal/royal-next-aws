@@ -33,7 +33,6 @@ export default function TourCardItinerary({ itemActivity }) {
           setIsRemove(false);
           setLoader(false);
           setItinerary(Math.floor(Math.random() * 100) + 1);
-
         })
         .catch((error) => {
           console.error(error);
@@ -107,7 +106,9 @@ export default function TourCardItinerary({ itemActivity }) {
                 </div>
 
                 <div className="flex gap-[4px] flex-col w-[65%] pl-[20px] max-sm:pl-[10px]">
-                  <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">{itemActivity.title}</h2>
+                  <h2 className="m-b text-fs-21 w-[94%] leading-[24px] max-md:text-fs-16 !line-clamp-2">
+                    {itemActivity.title}
+                  </h2>
 
                   <div className="w-full flex flex-col justify-evenly gap-[8px]">
                     {itemActivity.address && (
@@ -151,7 +152,7 @@ export default function TourCardItinerary({ itemActivity }) {
                   {itemActivity.title}
                 </h2>
 
-                <div className="h-full flex justify-between flex-wrap max-lg:flex-col flex-row">
+                <div className="h-full flex justify-between max-lg:flex-col flex-row gap-x-[24px]">
                   <div className="max-lg:hidden w-1/2 flex justify-start flex-col max-lg:w-full gap-[4px]">
                     {itemActivity.address && (
                       <div className="flex gap-[4px] m-s-b text-bl-100 text-fs-10">
@@ -173,7 +174,7 @@ export default function TourCardItinerary({ itemActivity }) {
                         height={14.7}
                       />
 
-                      <span>
+                      <span className="truncate">
                         {itemActivity.tourists &&
                           itemActivity.tourists.categories.map(
                             (tourist, index) =>

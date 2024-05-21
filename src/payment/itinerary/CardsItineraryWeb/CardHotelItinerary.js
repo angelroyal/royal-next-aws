@@ -77,7 +77,7 @@ export default function CardHotelItinerary(props) {
 
   return (
     <>
-      <div className="flex gap-x-2 items-start">
+      <div className="flex gap-x-2 items-start mb-[17px]">
         <Image
           className="w-4"
           src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
@@ -88,11 +88,12 @@ export default function CardHotelItinerary(props) {
 
         <div className="flex flex-col gap-y-5 w-full">
           {/* DAY,TIME HOTEL */}
-          <div className="flex gap-x-4 max-lg:!flex-row">
+          <div className="flex gap-x-4 flex-wrap max-lg:gap-y-[6px]">
             <div>
               <span className="m-b text-fs-16 text-or-100 m-0">
                 {languageData.dayOfWeek[dayOfWeek]}
               </span>{" "}
+
               <span className="m-m text-fs-16 text-gry-70 mr-2 pr-2 border-r-2 border-gyr-100">
                 {dateFormatCheckIn}
               </span>{" "}
@@ -161,7 +162,7 @@ export default function CardHotelItinerary(props) {
                       width={11}
                       height={14}
                     />
-                    <span className="text-bl-100 text-fs-10 m-s-b truncate">
+                    <span className="text-bl-100 text-fs-10 m-s-b truncate max-lg:text-wrap">
                       {itemHotel.address}
                     </span>
                   </div>

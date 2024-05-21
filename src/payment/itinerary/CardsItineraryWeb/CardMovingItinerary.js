@@ -30,7 +30,7 @@ export default function CardMovingItinerary(props) {
           <Image
             className="w-[10px] h-[10px] absolute right-4 top-4"
             src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
-            alt="close"
+            alt="close card icon"
             width={10}
             height={10}
           />
