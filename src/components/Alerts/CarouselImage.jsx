@@ -21,13 +21,14 @@ export function CarouselImage() {
       loop={true}
     >
       {Images.map((image, index) => (
-        <SwiperSlide key={index} className="!h-[380px] md:!h-[530px]">
+        // !h-[380px] md:!h-[530px]
+        <SwiperSlide key={index} className="!h-[380px] md:!h-full">
           <Image
             src={image}
-            alt="inactivity banner home rounded-md"
+            alt="inactivity banner home"
             width={452}
             height={350}
-            className="w-full h-full object-cover"
+            className="w-full h-full rounded-md object-cover"
           />
         </SwiperSlide>
       ))}

@@ -15,7 +15,6 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { UpdateAutocompleteTour } from "@/config/Others/UpdateAutocompleteTour";
 
 export function PopularState({ tour = false }) {
-  // console.log(tour);
   const [popularState, setPopularState] = useState([]);
   const { language, languageData } = useContext(LanguageContext);
   const router = useRouter();

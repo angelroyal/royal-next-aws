@@ -127,7 +127,7 @@ export function BannerHomeKnowMore() {
 
   return (
     <div className="flex h-[408px] mb-10 mt-16 lg:mt-32 max-lg:flex-col max-lg:h-auto">
-      <div className="flex flex-col justify-center w-[50%] p-12 lg:py-12 lg:pr-12 bg-white rounded-tl-lg rounded-bl-lg max-lg:rounded-tr-lg max-lg:rounded-bl-none max-lg:w-full  max-lg:items-start">
+      <div className="flex flex-col justify-center w-[50%] lg:py-12 lg:px-12 bg-white rounded-tl-lg rounded-bl-lg max-lg:rounded-tr-lg max-lg:rounded-bl-none max-lg:w-full max-lg:items-center">
         {/* FIX BOOSTRAP mb-5 - mb-[20px */}
         <h2 className="m-s-b text-fs-28 mb-[20px]">
           {languageData.titleBanners.bannerHoteldecided.havenDecided}
@@ -135,14 +135,14 @@ export function BannerHomeKnowMore() {
 
         {/* FIX BOOSTRAP mb-5 - mb-[20px */}
         <div className="mb-[20px] w-[84%]">
-          <span className="m-m text-fs-20 mb-[20px] m-m ">
+          <p className="m-0 text-fs-20 mb-[20px] m-m max-lg:text-center">
             {languageData.titleBanners.bannerHoteldecided.dontWorry}
             <span className="m-m text-bl-100">
               {" "}
               {languageData.titleBanners.bannerHoteldecided.hereSimplify}{" "}
             </span>
             {languageData.titleBanners.bannerHoteldecided.planning}
-          </span>
+          </p>
         </div>
 
         <a

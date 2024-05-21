@@ -1,4 +1,3 @@
-import { useRouter } from "next/navigation";
 
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";

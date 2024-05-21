@@ -31,7 +31,6 @@ export function SearchDestinationA({
   // GET ZONES AND CLEAN INPUT IF CHANGE AUTO COMPLETE
   useEffect(() => {
     if (selectedAutoComplete) {
-      // console.log("if");
       setIsSearch(true);
       const selectTransport = async (destinationId, language) => {
         const response = await getTransportation(destinationId, language);

@@ -6,7 +6,6 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function CardHotelHome(props) {
   const { hotel } = props;
-  console.log(hotel);
 
   const { languageData } = useContext(LanguageContext);
   const [isHovered, setIsHovered] = useState(false);

@@ -21,7 +21,6 @@ export default function FilterTransport() {
     });
     setSelectedFilters(newSelectedFilters);
   }, [filters, setSelectedFilters]);
-  console.log(filters);
   const handleCheckboxChange = (categoryIndex, optionIndex) => {
     setFilters((prevFilters) => {
       return prevFilters.map((category, idx) => {

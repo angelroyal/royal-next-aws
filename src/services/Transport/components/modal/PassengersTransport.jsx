@@ -6,7 +6,6 @@ export default function PassengersTransport(props) {
   const { transport } = props;
   const { passenger, setPassenger } = useContext(ModalTransportContext);
   const { languageData } = useContext(LanguageContext);
-  console.log(transport);
 
   const addPassenger = () => {
     if (passenger < transport.places) {
@@ -17,13 +16,6 @@ export default function PassengersTransport(props) {
   const removePassenger = () => {
     setPassenger((prev) => (prev > 0 ? prev - 1 : 0));
   };
-
-  // const handlePassengerChange = (event) => {
-  //   if (passenger < transport.places) {
-  //     const value = Math.max(0, parseInt(event.target.value, 10));
-  //     setPassenger(isNaN(value) ? 0 : value);
-  //   }
-  // };
 
   return (
     <div className="flex flex-col gap-[16px]">

@@ -5,19 +5,21 @@ import { saveToCart } from "../../Api/requestHotel";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
+import NotificationType from "@/components/Alerts/Notifications/NotificationType";
+import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 
 export default function AddCartHotel() {
   const router = useRouter();
   const { fetchData } = useCartAxios();
-  const { languageData, language } = useContext(LanguageContext);
   const [isLoading, setIsLoading] = useState(false);
+  const { notification, showNotification, hideNotification } =
+    useNotification();
+  const { languageData, language } = useContext(LanguageContext);
 
   const { selectedRooms, requestBodyRooms, keyHotel, setIsFailedReservation } =
     useContext(RoomsHotelContext);
 
   // HANDLE ADD CART HOTEL
-  console.log(selectedRooms);
-
   const handleReserveNow = async () => {
     try {
       setIsLoading(true);
@@ -51,6 +53,12 @@ export default function AddCartHotel() {
       }
 
       const response = await saveToCart(saveRequestCart);
+      showNotification(
+        "success",
+        "¡Hotel agregado!",
+        "Todo listo para tu estancia.",
+        5000
+      );
 
       const cartUid = response.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
@@ -60,17 +68,25 @@ export default function AddCartHotel() {
       );
       fetchData(cartUid);
       setTimeout(() => {
-        // router.push(`${language}/booking?uid=${cartUid}`);
         router.push(`/${language}/booking?uid=${cartUid}`);
       }, 2000);
     } catch (error) {
-      console.error(error);
+
+      // CODE GUILLERMO ALERT MODAL
+      // console.error(error);
       setIsLoading(false);
-      if (error.response.status >= 400) {
-        setIsFailedReservation(true);
-      } else {
-        setIsFailedReservation(false);
-      }
+      // if (error.response && error.response.status >= 400) {
+      //   setIsFailedReservation(true);
+      // } else {
+      //   setIsFailedReservation(false);
+      // }
+
+      showNotification(
+        "error",
+        "Error al agregar hotel",
+        "Hubo un problema al agregar el hotel. Por favor, inténtalo de nuevo.",
+        5000
+      );      
     }
   };
 
@@ -85,6 +101,16 @@ export default function AddCartHotel() {
           ? languageData.cart.loadingText
           : languageData.detailHotel.buttonPrincipal}
       </button>
+
+      {notification && notification.visible && (
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+        />
+      )}
     </>
   );
 }

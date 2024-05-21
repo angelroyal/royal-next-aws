@@ -14,10 +14,12 @@ export default function Home() {
       <TokenProvider>
         <CartAxiosProvider>
           <Token />
-          <Navigation />
-          <HomeHotel />
-          <ContactUs />
-          <FormContactClient/>
+          <div className="max-md:overflow-x-hidden">
+            <Navigation />
+            <HomeHotel />
+            <ContactUs />
+            <FormContactClient />
+          </div>
           <Footer />
         </CartAxiosProvider>
       </TokenProvider>

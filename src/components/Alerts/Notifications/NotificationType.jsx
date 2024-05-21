@@ -1,9 +1,13 @@
 // DoneNotification.js
 import React, { useState, useEffect } from "react";
 
-export default function NotificationType({ type, title, message }) {
-  const duration = 5000; // 5 seconds
-  const [visible, setVisible] = useState(true);
+export default function NotificationType({
+  type,
+  title,
+  message,
+  duration,
+  onClose,
+}) {
   const [progress, setProgress] = useState(0);
 
   const icons = {
@@ -15,7 +19,7 @@ export default function NotificationType({ type, title, message }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setVisible(false);
+      onClose();
     }, duration);
 
     const interval = setInterval(() => {
@@ -26,13 +30,7 @@ export default function NotificationType({ type, title, message }) {
       clearTimeout(timer);
       clearInterval(interval);
     };
-  }, [duration]);
-
-  const handleClose = () => {
-    setVisible(false);
-  };
-
-  if (!visible) return null;
+  }, [duration, onClose]);
 
   return (
     <div className="w-[369px] fixed top-5 right-5 z-50 bg-white shadow-xl py-[12px] px-[20px] rounded-t transform transition-transform translate-x-0 animate-slide-in">
@@ -56,12 +54,12 @@ export default function NotificationType({ type, title, message }) {
         {/* CLOSE ICON */}
         <div>
           <img
-          className="cursor-pointer"
+            className="cursor-pointer"
             src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-50.svg`}
             alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} - Close`}
             width={10}
             height={10}
-            onClick={handleClose}
+            onClick={onClose}
           />
         </div>
       </div>
@@ -73,4 +71,3 @@ export default function NotificationType({ type, title, message }) {
     </div>
   );
 }
-

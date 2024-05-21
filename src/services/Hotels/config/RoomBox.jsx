@@ -14,7 +14,6 @@ function Room({ listing = false, OnApply }) {
   const { languageData } = useContext(LanguageContext);
   useEffect(() => {
     const roomData = JSON.parse(localStorage.getItem("roomData"));
-    // console.log(roomData);
     if (roomData) {
       setTotalRooms(roomData.length);
     }

@@ -22,7 +22,7 @@ export async function getTransportation(destinationId, lang) {
       return response.data;
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -35,7 +35,7 @@ export async function getListingTransports(lang, ids) {
       return response.data;
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }
@@ -48,7 +48,7 @@ export const saveToCartTransport = async (requestData) => {
     );
     return response.data;
   } catch (error) {
-    console.log("error",error);
+    console.error("error",error);
     throw error;
   }
 };
