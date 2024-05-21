@@ -150,7 +150,7 @@ export function FormContactClient() {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden bg-white px-[24px] pt-[8px] pb-[24px] md:p-[24px] shadow-xl transition-all sm:my-8  sm:w-[925px] sm:p-6 mb-auto mt-auto">
+              <Dialog.Panel className="rounded-lg relative transform overflow-hidden bg-white px-[24px] pt-[8px] pb-[24px] md:p-[24px] shadow-xl transition-all sm:my-8 sm:w-[925px] sm:p-6 mb-auto mt-auto">
                 <div className="flex gap-x-[24px] relative pt-[26px] md:pt-[0] flex-col md:flex-row max-md:items-center">
                   <button className="border-0 focus:outline-none absolute right-0 top-0 w-4 h-4 z-[2]" onClick={() => setOpen(false)}>
                     <Image

@@ -12,7 +12,11 @@ import ExploreActivitiesHome from "@/components/Home/ExploreActivitiesHome";
 import PopularDestinationsHome from "@/components/Home/PopularDestinationsHome";
 import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
-import BannersHeaderHome, { BannersHomeExclusiveDiscounts, BannersHomeOffers, BannersHomeOffersNow } from "@/components/Home/BannersHome";
+import BannersHeaderHome, {
+  BannersHomeExclusiveDiscounts,
+  BannersHomeOffers,
+  BannersHomeOffersNow,
+} from "@/components/Home/BannersHome";
 
 export default function Home() {
   return (
@@ -24,7 +28,7 @@ export default function Home() {
             <Navigation />
 
             <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
-              <BannersHeaderHome/>
+              <BannersHeaderHome />
               <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center">
                 <SearchBox />
               </div>

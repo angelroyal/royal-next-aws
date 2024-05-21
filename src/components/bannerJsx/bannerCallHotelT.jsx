@@ -18,7 +18,7 @@ export default function BannerCallHotelT() {
           alt='Banner-Call-Center'
           width={1272}
           height={246}
-          className='select-none'/>
+          className='select-none w-full'/>
 
         <div className="absolute w-[62%] ml-[60px] top-[26%] left-0 max-xl:ml-[89px] max-lg:ml-[20px] max-sm:top-[12%]">
           <h2 className="m-b text-fsw-24 text-bl-100 text-left mb-[10px] max-lg:mb-0 max-sm:text-fs-10 max-[425px]:text-fsw-32">
