@@ -204,6 +204,30 @@ export const es = {
     confirmButton: "Ir al inicio"
   },
 
+  // LP RECOMMENDATION
+  recommendations: {
+    titleReadyH: "!Tu próximo destino está listo!",
+    titleReadyT: "!Tu próximo aventura está listo!",
+    subtitleReady: "Revisa los detalles completos en tu carrito.",
+    reservationDate: "Fecha reserva:",
+    titleKeep: "Sigue explorando",
+    subtitleKeep: "No te detengas aquí. Descubre más destinos emocionantes y planifica tu próxima aventura.",
+    btnBack: "Volver al inicio",
+
+     hotel: {
+      titleRecommedation: "Alojamientos que pueden gustarte",
+     },
+
+     tour: {
+      titleRecommedation: "Añade más diversión a tus vacaciones",
+     },
+
+     transport: {
+      titleRecommedation: "¿Ya sabes como llegar?",
+      btnchoose:"Elegir transporte"
+     },
+  },
+
   /*********************************************************/
   ////////////////////////  HOME //////////////////////////////
   /*********************************************************/
@@ -214,7 +238,7 @@ export const es = {
     limitedPromotions: "Promociones y ofertas válidas durante tiempo limitado.",
   },
 
-  ExploreActivitiesHome: {
+  exploreActivitiesHome: {
     titleExplore: "Explora una variedad de actividades",
     weRecommended: "Te recomendamos aquí los mejores tours de México.",
     bestHotels: "Los mejores hoteles para tu estancia",
@@ -225,6 +249,7 @@ export const es = {
     offersDates: "Ofertas para las fechas",
     btnViewOffers: "ver todas las ofertas",
   },
+
 
   /*********************************************************/
   //////////////////////// 𝓗𝓞𝓣𝓔𝓛 HOTEL 𝓗𝓞𝓣𝓔𝓛 //////////////////////////////
@@ -1310,7 +1335,7 @@ export const es = {
     email: "Email",
     copyLink: "Copiar Enlace",
     copy: "Enlace copiado",
-    share:"Compartir"
+    share: "Compartir"
   },
 
   alertsPayment: {
@@ -1346,6 +1371,7 @@ export const es = {
   /*******************************************************************************/
   //////////////////////// 𝓣𝓔𝓧𝓣 𝓑𝓐𝓝𝓝𝓔𝓡𝓢 TEXT BANNERS 𝓣𝓔𝓧𝓣 𝓑𝓐𝓝𝓝𝓔𝓡𝓢 //////////////////////////////
   /*****************************************************************************/
+
 
   titleBanners: {
     // titleHotelH: "Todo lo que necesitas para viajar en un solo lugar",

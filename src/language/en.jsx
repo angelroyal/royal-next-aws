@@ -13,8 +13,8 @@ export const en = {
     titleBl: "Call us!",
     subtitle: "Get benefits and personalized help by dialing our number.",
     followNetwork: "Follow us to know more.",
-    title:"Doubts to choose a hotel?",
-    description:"Share your information with us and an advisor will contact you."
+    title: "Doubts to choose a hotel?",
+    description: "Share your information with us and an advisor will contact you."
   },
 
   alertHelp: {
@@ -201,6 +201,30 @@ export const en = {
     confirmButton: "Go to the home"
   },
 
+  // LP RECOMMENDATION
+  recommendations: {
+    titleReadyH: "Your next destination is ready!",
+    titleReadyT: "Your next adventure is ready!",
+    subtitleReady: "Check the full details in your cart.",
+    reservationDate: "Reservation date:",
+    titleKeep: "Keep exploring",
+    subtitleKeep: "Don't stop here. Discover more exciting destinations and plan your next adventure.",
+    btnBack: "Back to the beginning",
+
+    hotel: {
+      titleRecommedation: "Accommodations you might like",
+    },
+
+    tour: {
+      titleRecommedation: "Add more fun to your vacation",
+    },
+
+    transport: {
+      titleRecommedation: "Do you already know how to get there?",
+      btnchoose: "Choose transportation"
+    },
+  },
+
   /*********************************************************/
   ////////////////////////  HOME //////////////////////////////
   /*********************************************************/
@@ -211,7 +235,7 @@ export const en = {
     limitedPromotions: "Promotions and offers valid for a limited time.",
   },
 
-  ExploreActivitiesHome: {
+  exploreActivitiesHome: {
     titleExplore: "Explore a variety of activities",
     weRecommended: "We recommend the best tours in Mexico here.",
     bestHotels: "The best hotels for your stay",
@@ -1307,7 +1331,7 @@ export const en = {
     email: "Email",
     copyLink: "Copy Link",
     copy: "Copy Link",
-    share:"Share"
+    share: "Share"
   },
 
   alertsPayment: {

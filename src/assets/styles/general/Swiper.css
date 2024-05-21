@@ -483,6 +483,7 @@
   display: none;
 }
 
+
 /* END SWIPER POPULAR DESTINATIONS HOME */
 
 /* SWIPER ENJOY STAY HOME */
@@ -566,5 +567,15 @@
   background: #fff;
   font-weight: bold;
   --swiper-navigation-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  #swiper-tour-recommendation>div.swiper-button-prev {
+    display: none;
+  }
+  
+  #swiper-tour-recommendation>div.swiper-button-next {
+   display: none;
+  }
 }
 /*END SWIPER TOUR RECOMMENDATION */

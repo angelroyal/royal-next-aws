@@ -5,12 +5,10 @@ import { BestHotelCart } from "./BestHotelCart";
 import { LodgingBestPrice } from "../Skeleton/HotelInformationSkeleton";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../../../../assets/styles/general/Swiper.css";
 
 export function LodgingsView({ hotels }) {
-
   return hotels ? (
     <>
       {/* TWO SWIPER */}

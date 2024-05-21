@@ -2,14 +2,17 @@
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "../../../assets/styles/general/Swiper.css";
+
 import Image from "next/image";
 import { Pagination } from "swiper/modules";
-import "../../../assets/styles/general/Swiper.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useContext, useState } from "react";
+
 import LanguageContext from "@/language/LanguageContext";
 
 export default function PromotedRoutes() {
+  
   const { languageData } = useContext(LanguageContext);
   const [menuPromoted, setMenuPromoted] = useState(0);
   const listOptions = [
@@ -88,6 +91,7 @@ export default function PromotedRoutes() {
 
       {/* CARDS TRANSPORT MOBILE SWIPER */}
       <div className="lg:hidden block relative">
+
         <Swiper
           slidesPerView={5}
           spaceBetween={24}
@@ -124,7 +128,7 @@ export default function PromotedRoutes() {
           {[...Array(8)].map((_, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white">
-                <PromotedRoutesCard key={index} />
+                <PromotedRoutesCard key={index}/>
               </div>
             </SwiperSlide>
           ))}
@@ -134,7 +138,7 @@ export default function PromotedRoutes() {
   );
 }
 
-export function PromotedRoutesCard() {
+export function PromotedRoutesCard( {recommended} ) {
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -219,7 +223,7 @@ export function PromotedRoutesCard() {
         </div>
 
         {/* MODALITIES */}
-        <div className="flex flex-col gap-1">
+        <div className={`flex flex-col gap-1 ${recommended && "hidden"}`}>
           <span className="text-gry-100 text-fs-12 m-m">
             {languageData.modalTour.modalities}
           </span>
@@ -236,7 +240,7 @@ export function PromotedRoutesCard() {
       </div>
 
       {/* PRICE */}
-      <div className="flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between ">
+      <div className={`flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between ${recommended && "hidden"}`}>
         <div className="flex flex-col">
           <span className="text-fs-10 text-gry-100">
             {languageData.cartTour.from}

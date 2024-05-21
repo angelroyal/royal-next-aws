@@ -1,15 +1,15 @@
 "use client";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "@/assets/styles/general/Swiper.css";
+
 import axios from "axios";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useEffect, useState } from "react";
 
 import CardTopActivities from "@/services/Tours/Home/CardTopActivities";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "@/assets/styles/general/Swiper.css";
 
 export default function TopActivities() {
 
@@ -36,10 +36,10 @@ export default function TopActivities() {
   }, []);
 
   return (
-    <div className="bg-white p-[36px] relative rounded-lg my-[28px]">
+    <div className="bg-white p-[36px] relative rounded-lg my-[28px] max-md:p-[20px]">
       <div className="mb-[36px]">
         {/* TITLE */}
-        <span className="m-b text-fs-20">Añade más diversión a tus vacaciones</span>
+        <span className="m-b text-fs-20 max-md:text-fs-16">Añade más diversión a tus vacaciones</span>
       </div>
 
       <Swiper
@@ -54,10 +54,10 @@ export default function TopActivities() {
             slidesPerView: 1,
           },
           500: {
-            slidesPerView: 1.2,
+            slidesPerView: 1.5,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 2.8,
           },
           1024: {
             slidesPerView: 3,
@@ -66,7 +66,7 @@ export default function TopActivities() {
             slidesPerView: 4,
           },
           1536: {
-            slidesPerView: 4.5,
+            slidesPerView: 4.8,
           },
         }}
       >
@@ -77,9 +77,6 @@ export default function TopActivities() {
             </SwiperSlide>
           ))}
       </Swiper>
-
-
-
 
     </div>
   );

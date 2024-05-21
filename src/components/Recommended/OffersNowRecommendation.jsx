@@ -10,8 +10,8 @@ export default function OffersNowRecommendation() {
     const { languageData } = useContext(LanguageContext);
 
     return (
-        <div className="flex flex-col bg-white p-[36px] rounded-lg">
-            <span className="m-b text-fs-20 ">
+        <div className="flex flex-col bg-white p-[36px] rounded-lg mb-[28px] h-[28rem] gap-[8px]">
+            <span className="m-b text-fs-20 max-md:text-fs-16">
                 {languageData.bannersHome.currentOffers}
             </span>
 
