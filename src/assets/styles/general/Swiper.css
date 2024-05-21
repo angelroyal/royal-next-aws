@@ -473,10 +473,12 @@
   --swiper-navigation-size: 14px;
 }
 
+#swiper-tour-recommendation>div.swiper-button-prev.swiper-button-disabled,
 #swiper-popular-destinations-home>div.swiper-button-prev.swiper-button-disabled {
   display: none;
 }
 
+#swiper-tour-recommendation>div.swiper-button-next.swiper-button-disabled,
 #swiper-popular-destinations-home>div.swiper-button-next.swiper-button-disabled {
   display: none;
 }
@@ -534,3 +536,35 @@
 }
 
 /* END SWIPER ENJOY STAY HOME */
+
+/* SWIPER TOUR RECOMMENDATION */
+#swiper-tour-recommendation>div.swiper-button-prev {
+  top: 250px;
+  left: 14px;
+  color: black;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
+  background: #fff;
+  z-index: 11;
+  border-right: 1px solid hsla(0, 0%, 56.9%, .444);
+  z-index: 4;
+  --swiper-navigation-size: 14px;
+}
+
+#swiper-tour-recommendation>div.swiper-button-next {
+  z-index: 4;
+  top: 250px;
+  right: 14px;
+  border-radius: 50%;
+  color: black;
+  height: 40px;
+  width: 40px;
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
+  background: #fff;
+  font-weight: bold;
+  --swiper-navigation-size: 14px;
+}
+/*END SWIPER TOUR RECOMMENDATION */

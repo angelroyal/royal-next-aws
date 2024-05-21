@@ -154,11 +154,9 @@ export function BannersHomeExclusiveDiscounts() {
 
 export function BannersHomeOffersNow() {
   const { languageData } = useContext(LanguageContext);
-  const offersNow = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`;
-  const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
 
   return (
-    <div className="flex flex-col my-[180px] max-sm:my-[90px]">
+    <div className="flex flex-col">
       <span className="m-b text-fs-28 ">
         {languageData.bannersHome.currentOffers}
       </span>
@@ -167,6 +165,20 @@ export function BannersHomeOffersNow() {
         {languageData.bannersHome.limitedPromotions}
       </span>
 
+      <OffersNow/>
+
+    </div>
+  );
+}
+
+
+export function OffersNow() {
+
+  const offersNow = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`;
+  const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
+
+  return (
+    <>
       <div className="w-full flex h-[250px] gap-[2vw] max-lg:hidden justify-between">
         <div className="w-[50%]">
           <img
@@ -215,6 +227,7 @@ export function BannersHomeOffersNow() {
         </Swiper>
       </div>
       {/* END SWIPER MOBILE BANNER OFFERS NOW */}
-    </div>
-  );
+    </>
+  )
 }
+

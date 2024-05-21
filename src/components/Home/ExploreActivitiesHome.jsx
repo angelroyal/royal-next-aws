@@ -79,7 +79,7 @@ export default function ExploreActivitiesHome() {
                         src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/arrow-right.svg`}
                         width={16}
                         height={12}
-                        alt="icon-calendar"
+                        alt="icon-arrow"
                       />
                     </button>
                   </div>
