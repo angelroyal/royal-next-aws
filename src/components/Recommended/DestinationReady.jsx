@@ -11,7 +11,7 @@ export default function DestinationReady() {
     const { languageData } = useContext(LanguageContext);
 
     return (
-        <div className='h-[180px] rounded-lg p-[36px] bg-white mb-[28px] flex justify-between items-center max-md:flex-col max-md:h-[356px] max-md:items-start'>
+        <div className='h-[180px] rounded-lg p-[36px] bg-white mb-[28px] mt-[32px] flex justify-between items-center max-md:flex-col max-md:h-[356px] max-md:items-start'>
 
             <div className="flex flex-col gap-[8px]">
 

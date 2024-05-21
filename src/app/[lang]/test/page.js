@@ -17,9 +17,9 @@ export default function Home() {
         <TokenProvider>
           <CartAxiosProvider>
             <Token />
+            <div className="bg-[#f6f6f6]">
             <Navigation />
 
-            <div className="bg-[#f6f6f6]">
               <Container>
 
                 <DestinationReady />
@@ -29,9 +29,9 @@ export default function Home() {
                 <KeepExploring/>
         
               </Container>
-            </div>
 
             <Footer />
+            </div>
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>
