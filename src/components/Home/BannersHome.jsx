@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
 import React from "react";
+import Image from "next/image";
 
 export default function BannersHeaderHome() {
   return (
@@ -39,12 +40,25 @@ export function BannersHomeOffers() {
           modules={[Navigation]}
         >
           {[...Array(5)].map((_, index) => (
-            <SwiperSlide className="!rounded-lg" key={index}>
+            <SwiperSlide className="!rounded-lg relative" key={index}>
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}banners/home/Rectangle 372.png`}
                 alt="banner-offers"
                 className="w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
               />
+
+              <button className="absolute left-[20px] lg:left-[49px] bottom-[87px] lg:bottom-[114px] bg-white rounded-full flex items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
+                <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
+                  Reservar ahora
+                </p>
+                <Image
+                  className="w-[12px] lg:w-[16px] h-[8px] lg:h-[12px]"
+                  width={16}
+                  height={12}
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-or-100.svg`}
+                  alt="arrows-right-or-100"
+                />
+              </button>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -69,9 +83,7 @@ export function BannersHomeExclusiveDiscounts() {
   return (
     <div className="w-full">
       <div className="flex w-full 2xl:gap-[2vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px]">
-
         <div className="2xl:w-fit 2xl:gap-[2vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:block max-md:flex max-md:justify-between max-sm:hidden">
-
           <div className="w-[280px] shadow-3xl rounded-lg">
             <img
               src={bannerDiscounts}
@@ -142,11 +154,13 @@ export function BannersHomeExclusiveDiscounts() {
       </div>
 
       <div className="m-m text-fs-12 text-gry-100 flex justify-center gap-1">
-        <span>{languageData.bannersHome.textTyC}{" "}<span className="m-s-b text-black decoration-solid">
-          {" "}
-          {languageData.bannersHome.here}
-        </span></span>
-
+        <span>
+          {languageData.bannersHome.textTyC}{" "}
+          <span className="m-s-b text-black decoration-solid">
+            {" "}
+            {languageData.bannersHome.here}
+          </span>
+        </span>
       </div>
     </div>
   );
@@ -165,15 +179,12 @@ export function BannersHomeOffersNow() {
         {languageData.bannersHome.limitedPromotions}
       </span>
 
-      <OffersNow/>
-
+      <OffersNow />
     </div>
   );
 }
 
-
 export function OffersNow() {
-
   const offersNow = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`;
   const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
 
@@ -228,6 +239,5 @@ export function OffersNow() {
       </div>
       {/* END SWIPER MOBILE BANNER OFFERS NOW */}
     </>
-  )
+  );
 }
-
