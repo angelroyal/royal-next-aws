@@ -19,7 +19,7 @@ export default function BannersHeaderHome() {
         src={`${process.env.NEXT_PUBLIC_URL}img/home/banner-home-top.webp`}
         width="1366px"
         height="480px"
-        alt="Banner-transport-home-top"
+        alt="Banner-home-top"
         className="w-full h-full object-cover select-none"
       ></img>
     </div>
