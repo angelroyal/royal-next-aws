@@ -153,9 +153,11 @@ export function PromotedRoutesCard({ recommended }) {
       />
 
       <div className="flex flex-col gap-[16px]">
+
         {/* LOCATION , NAME TRANSPORT , TYPE */}
         <div className="flex flex-col gap-1">
-          <div className="flex gap-2">
+
+          <div className="flex gap-2 items-center">
             <Image
               src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
               alt="icon location"
