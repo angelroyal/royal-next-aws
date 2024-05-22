@@ -333,14 +333,14 @@
 
 /* SWIPER BANNER HOME OFFERS*/
 #swiper-banner-home-offers>div.swiper-button-prev {
-  top: 337px;
+  top: 357px;
   left: 48px;
   width: 56px;
   height: 56px;
 }
 
 #swiper-banner-home-offers>div.swiper-button-next {
-  top: 337px;
+  top: 357px;
   left: 115px;
   width: 56px;
   height: 56px;
@@ -356,13 +356,19 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   #swiper-banner-home-offers>div.swiper-button-prev {
     top: 193px;
+    left: 24px;
+    width: 40px;
+    height: 40px;
   }
 
   #swiper-banner-home-offers>div.swiper-button-next {
     top: 193px;
+    left: 70px;
+    width: 40px;
+    height: 40px;
   }
 }
 

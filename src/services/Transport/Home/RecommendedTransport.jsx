@@ -24,6 +24,7 @@ export default function RecommendedTransport() {
         <h2 className='mb-[32px] text-fs-24 m-b'>{languageData.CardHomeTransport.titleRecommended}</h2>
 
         <Swiper
+          data-aos="fade-up"
           slidesPerView={5}
           spaceBetween={24}
           className="!static"
@@ -114,7 +115,7 @@ export default function RecommendedTransport() {
                   >
                     {languageData.containerModalHotel.policies}
                     {openPolicy === index && (
-                      <PolicyCardTransportWhite/>
+                      <PolicyCardTransportWhite />
                     )}
                   </span>
 

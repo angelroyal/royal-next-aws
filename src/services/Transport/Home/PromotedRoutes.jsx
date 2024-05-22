@@ -78,7 +78,10 @@ export default function PromotedRoutes() {
       </div>
 
       {/* CARDS TRANSPORT DESKTOP*/}
-      <div className="flex gap-4 flex-wrap max-lg:hidden justify-between">
+      <div
+        data-aos="fade-up"
+        className="flex gap-4 flex-wrap max-lg:hidden justify-between"
+      >
         {[...Array(8)].map((_, index) => (
           <div
             key={index}
@@ -262,7 +265,7 @@ export function PromotedRoutesCard({ recommended }) {
           >
             {languageData.containerModalHotel.policies}
             {openPolicy === true && (
-              <PolicyCardTransportWhite/>
+              <PolicyCardTransportWhite />
             )}
           </span>
 

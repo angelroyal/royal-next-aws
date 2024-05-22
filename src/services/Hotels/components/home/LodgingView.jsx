@@ -53,7 +53,7 @@ export function LodgingsView({ hotels }) {
                 <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
                   <BestHotelCart
                     hotel={hotel}
-                   
+
                   />
                 </div>
               </SwiperSlide>
@@ -63,7 +63,10 @@ export function LodgingsView({ hotels }) {
       {/*END TWO SWIPER */}
 
       {/* <div className=" lg:flex flex-wrap justify-between gap-x-[16px] gap-y-[24px] hidden"> */}
-      <div className=" grid grid-cols-5 gap-x-[16px] gap-y-[24px] max-2xl:grid-cols-4 max-xl:grid-cols-3 max-lg:hidden">
+      <div
+        data-aos="fade-up"
+        className=" grid grid-cols-5 gap-x-[16px] gap-y-[24px] max-2xl:grid-cols-4 max-xl:grid-cols-3 max-lg:hidden"
+      >
         {Object.values(hotels)
           .slice(0, 10)
           .map((hotel, index) => (
@@ -72,7 +75,7 @@ export function LodgingsView({ hotels }) {
               <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
                 <BestHotelCart
                   hotel={hotel}
-               
+
                 />
               </div>
             </div>
