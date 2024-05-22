@@ -1,17 +1,16 @@
 "use client";
 
-import { useContext } from "react";
-import { Navigation } from "swiper/modules";
-import BannerCardHome from "./BannerCardHome";
-import { Swiper, SwiperSlide } from "swiper/react";
-import LanguageContext from "@/language/LanguageContext";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import React from "react";
 import Image from "next/image";
+import { useContext } from "react";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import BannerCardHome from "./BannerCardHome";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function BannersHeaderHome() {
   return (

@@ -498,7 +498,7 @@
 /* END SWIPER ENJOY STAY HOME */
 
 /* SWIPER TOUR RECOMMENDATION */
-#swiper-banner-home>div.swiper-button-prev,
+
 #swiper-tour-recommendation>div.swiper-button-prev {
   top: 250px;
   left: 14px;
@@ -506,7 +506,7 @@
   height: 40px;
 }
 
-#swiper-banner-home>div.swiper-button-next,
+
 #swiper-tour-recommendation>div.swiper-button-next {
   top: 250px;
   right: 14px;
@@ -530,11 +530,19 @@
 #swiper-banner-home>div.swiper-button-prev {
   opacity: 0.5;
   color: gray;
+  top: 227px;
+  left: 14px;
+  width: 40px;
+  height: 40px;
 }
 
 #swiper-banner-home>div.swiper-button-next {
   opacity: 0.5;
   color: gray;
+  top: 227px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
 }
 
 #swiper-banner-home>div.swiper-button-next:hover {
