@@ -6,8 +6,9 @@ import TransportRecommendation from "@/components/Recommended/Transport/Transpor
 export default function OrderRecommendation() {
 
     let order;
-    const service = "tour";
+    const service = "hotel";
 
+    // IS HOTEL
     if (service === 'hotel') {
         order =
             <div>
@@ -15,6 +16,8 @@ export default function OrderRecommendation() {
                 <OffersNowRecommendation />
                 <TransportRecommendation />
             </div>;
+
+    // IS TOUR
     } else if (service === 'tour') {
         order =
             <div>
@@ -22,6 +25,7 @@ export default function OrderRecommendation() {
                 <OffersNowRecommendation />
                 <TransportRecommendation />
             </div>;
+    // IS TRANSPORT
     } else if (service === 'transport') {
         order =
             <div>

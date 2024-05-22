@@ -1,18 +1,17 @@
 "use client";
 
-import axios from "axios";
-// import Image from "next/image";
-import moment from "moment/moment";
-import CardTopActivities from "./CardTopActivities";
-// import { TotalStars } from "@/components/General/Stars";
-import LanguageContext from "@/language/LanguageContext";
-import React, { useContext, useEffect, useState } from "react";
-import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "@/assets/styles/general/Swiper.css";
+
+import axios from "axios";
+import moment from "moment/moment";
+import React, { useContext, useEffect, useState } from "react";
+
+import CardTopActivities from "./CardTopActivities";
+import LanguageContext from "@/language/LanguageContext";
+import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
 
 export default function TopActivities() {
   const [tours, setTours] = useState([]);

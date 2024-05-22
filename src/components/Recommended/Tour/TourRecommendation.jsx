@@ -11,6 +11,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import CardTopActivities from "@/services/Tours/Home/CardTopActivities";
+import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
 
 export default function TopActivities() {
 
@@ -38,8 +39,11 @@ export default function TopActivities() {
   }, []);
 
   return (
+
     <div className="bg-white p-[36px] relative rounded-lg my-[28px] max-md:p-[20px]">
+
       <div className="mb-[36px]">
+
         {/* TITLE */}
         <span className="m-b text-fs-20 max-md:text-fs-16">{languageData.recommendations.tour.titleRecommedation}</span>
       </div>
@@ -72,12 +76,21 @@ export default function TopActivities() {
           },
         }}
       >
+        {/* CART TOUR */}
         {tours.length > 0
-          && tours.map((tour, index) => (
+          ? tours.map((tour, index) => (
             <SwiperSlide key={index} className="!rounded-lg">
               <CardTopActivities tour={tour} key={index} />
             </SwiperSlide>
-          ))}
+          )) :
+
+          [...Array(5)].map((_, index) => (
+            <SwiperSlide key={index} className="!rounded-lg">
+              <CardTopActivitiesSkeleton />
+            </SwiperSlide>
+          ))
+
+        }
       </Swiper>
 
     </div>

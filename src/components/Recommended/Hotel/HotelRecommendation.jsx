@@ -14,6 +14,7 @@ import { BestHotelCart } from '@/services/Hotels/components/home/BestHotelCart'
 export default function HotelRecommendation() {
 
     const { languageData } = useContext(LanguageContext);
+
     // TEST TO PAINT CARDHOTEL
     const hotelMap = {
         "code": 3982,
@@ -38,8 +39,9 @@ export default function HotelRecommendation() {
     return (
         <>
             <div className="bg-white p-[36px] relative rounded-lg my-[28px]">
+
+                {/* TITLE */}
                 <div className="mb-[36px]">
-                    {/* TITLE */}
                     <span className="m-b text-fs-20">{languageData.recommendations.hotel.titleRecommedation}</span>
                 </div>
 
@@ -71,6 +73,7 @@ export default function HotelRecommendation() {
                         },
                     }}
                 >
+                    {/* CARD HOTEL */}
                     {[...Array(10)].map((_, index) => (
                         <SwiperSlide key={index} className="!rounded-lg">
                             <BestHotelCart hotel={hotelMap} />

@@ -223,6 +223,11 @@ export function BannerHomeHotelSwiper() {
       slidesPerView={3}
       spaceBetween={15}
       className="h-[19rem]"
+      modules={[Autoplay]}
+      autoplay={{
+        delay: 5000,
+      }}
+      loop={true}
       breakpoints={{
         0: {
           slidesPerView: 0.5,
