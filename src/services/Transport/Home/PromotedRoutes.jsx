@@ -10,9 +10,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useContext, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
+import PolicyCardTransportWhite from "../components/ToulTip/PolicyCardTransportWhite";
 
 export default function PromotedRoutes() {
-  
+
   const { languageData } = useContext(LanguageContext);
   const [menuPromoted, setMenuPromoted] = useState(0);
   const listOptions = [
@@ -21,7 +22,7 @@ export default function PromotedRoutes() {
       icon: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-w.svg`,
       iconActive: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-b.svg`,
       name: "private",
-      alt:`icon-beach ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
+      alt: `icon-beach ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     },
 
     {
@@ -29,7 +30,7 @@ export default function PromotedRoutes() {
       icon: `${process.env.NEXT_PUBLIC_URL}icons/family/family-w.svg`,
       iconActive: `${process.env.NEXT_PUBLIC_URL}icons/family/family-b.svg`,
       name: "shared",
-      alt:`icon-family ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
+      alt: `icon-family ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     },
   ];
 
@@ -46,11 +47,10 @@ export default function PromotedRoutes() {
           <button
             key={index}
             onClick={() => setMenuPromoted(index)}
-            className={`${
-              menuPromoted === index
-                ? "bg-or-100 rounded-3xl text-white"
-                : "text-gry-100"
-            } flex gap-2 py-2 px-4 justify-center items-center h-max`}
+            className={`${menuPromoted === index
+              ? "bg-or-100 rounded-3xl text-white"
+              : "text-gry-100"
+              } flex gap-2 py-2 px-4 justify-center items-center h-max`}
           >
             {menuPromoted === index ? (
               <Image
@@ -128,7 +128,7 @@ export default function PromotedRoutes() {
           {[...Array(8)].map((_, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white">
-                <PromotedRoutesCard key={index}/>
+                <PromotedRoutesCard key={index} />
               </div>
             </SwiperSlide>
           ))}
@@ -138,7 +138,9 @@ export default function PromotedRoutes() {
   );
 }
 
-export function PromotedRoutesCard( {recommended} ) {
+export function PromotedRoutesCard({ recommended }) {
+
+  const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -241,14 +243,27 @@ export function PromotedRoutesCard( {recommended} ) {
 
       {/* PRICE */}
       <div className={`flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between ${recommended && "hidden"}`}>
+
         <div className="flex flex-col">
+
           <span className="text-fs-10 text-gry-100">
             {languageData.cartTour.from}
           </span>
+
           <span className="m-b text-fs-16">MXN $5,000</span>
-          <span className="text-bl-100 text-fs-10 cursor-pointer">
+
+          {/* CANCELATION POLICES */}
+          <span
+            className="text-bl-100 text-fs-10 cursor-pointer relative"
+            onMouseOver={() => setOpenPolicy(true)}
+            onMouseLeave={() => setOpenPolicy(false)}
+          >
             {languageData.containerModalHotel.policies}
+            {openPolicy === true && (
+              <PolicyCardTransportWhite/>
+            )}
           </span>
+
         </div>
 
         <bottom className="flex items-center px-[23px] py-[12px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit text-nowrap cursor-pointer">
