@@ -44,14 +44,16 @@ export default function HomeTransport() {
             </div>
 
             <Container>
-              <BannerHomeTransport />
-              <TipsBooking />
-              <RecommendedTransport />
-              <BannerSafelyTransport />
-              <PromotedRoutes />
-              <BannerDiscoverPossibilities />
-              <div className="mb-16">
-                <CartTourOptions />
+              <div className="max-md:overflow-x-hidden">
+                <BannerHomeTransport />
+                <TipsBooking />
+                <RecommendedTransport />
+                <BannerSafelyTransport />
+                <PromotedRoutes />
+                <BannerDiscoverPossibilities />
+                <div className="mb-16">
+                  <CartTourOptions />
+                </div>
               </div>
             </Container>
             {/* END LP */}
