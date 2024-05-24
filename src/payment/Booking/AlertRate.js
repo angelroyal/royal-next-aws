@@ -25,6 +25,7 @@ export function AlertRate(props) {
   }, [alertShowRate]);
 
   const handleUpdatePrice = async () => {
+    console.log(infoDataRate);
     const requestPayload = {
       items: infoDataRate.priceChanges.map((change) => ({
         type: "hotel",
