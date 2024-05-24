@@ -25,8 +25,6 @@ export default function BannersHeaderHome() {
     { key: 8, value: false },
   ]);
 
-  console.log(dashedOne);
-
   useEffect(() => {
     const interval = 30000 / dashedOne.length;
 
