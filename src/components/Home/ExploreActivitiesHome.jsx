@@ -44,15 +44,22 @@ export default function ExploreActivitiesHome() {
             onSwiper={setFirstSwiper}
             controller={{ control: secondSwiper }}
           >
-            {[...Array(5)].map((_, index) => (
-              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" key={index}>
+           
+              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]">
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`}
                   alt="banner-offers"
                   className="h-full w-full select-none object-cover"
                 />
               </SwiperSlide>
-            ))}
+              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" >
+                <img
+                  src={"https://www.royalvacationsmexico.com/static/media/banner_hotel.353834a1.webp"}
+                  alt="banner-offers"
+                  className="h-full w-full select-none object-cover"
+                />
+              </SwiperSlide>
+           
 
             <div className="h-[314px] absolute bottom-0 w-full z-[2]">
               <img src={`${process.env.NEXT_PUBLIC_URL}img/home/curve-yellow.png`} alt="curve yellow" className="w-full h-full" />
@@ -72,7 +79,7 @@ export default function ExploreActivitiesHome() {
             onSwiper={setSecondSwiper}
             controller={{ control: firstSwiper }}
           >
-            {[...Array(5)].map((_, index) => (
+            {[...Array(2)].map((_, index) => (
               <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" key={index}>
 
                 <div className="absolute bottom-0 pb-[49px] pl-[47.5px] pr-[59.5px] pt-[30px] flex flex-col gap-[8px] max-sm:pb-[20px] z-[4]">

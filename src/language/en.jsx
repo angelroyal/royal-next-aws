@@ -1357,10 +1357,17 @@ export const en = {
     buttonRate: "See new prices",
     rateAlert: "Open Rate Alert",
     paymentFailed: "The payment could not be processed",
+    btnUnderstood:"Understood",
+    textSuccess:"We have sent a confirmation to your email with all the information about your purchase. If you have any questions or need assistance, don't hesitate to contact us.",
+    textDeclinedPayment:"We're sorry, your payment could not be processed. Please check that your card details and billing address are correct.",
+    btnRetry:"Retry",
+    dataSafe:"Your data is safe with us.",
+    textProcessing: "This may take a few moments. Please do not close this window or reload the page.",
     textAlert: {
       PP: "Processing payment",
       PF: "We could not process your payment",
-      PE: "Successful payment"
+      PE: "Successful payment",
+      PD: "Payment declined",
     }
   },
 
