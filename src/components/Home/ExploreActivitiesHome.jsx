@@ -1,19 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import { useContext } from "react";
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import CardTourHome from "./CardTourHome";
-import LanguageContext from "@/language/LanguageContext";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
+import Image from "next/image";
+import { useContext, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Controller } from "swiper/modules";
+
+import CardTourHome from "./CardTourHome";
+import LanguageContext from "@/language/LanguageContext";
+
 export default function ExploreActivitiesHome() {
+
   const { languageData } = useContext(LanguageContext);
+  const [firstSwiper, setFirstSwiper] = useState(null);
+  const [secondSwiper, setSecondSwiper] = useState(null);
 
   return (
     <div className="flex flex-col my-[180px] max-sm:my-[90px]">
@@ -28,64 +31,73 @@ export default function ExploreActivitiesHome() {
       </span>
 
       <div className="w-full flex h-[717px] gap-[5vw] max-lg:flex-col max-lg:h-auto max-xl:gap-[12px]">
+
         {/* SWIPER EXPLORE ACTIVITIES HOME */}
-        <div className="w-[45%] relative max-lg:w-full max-lg:h-[500px]">
+        <div className="w-[50%] relative max-lg:w-full max-lg:h-[500px] overflow-hidden rounded-lg">
+          {/* SWIPER IMG */}
           <Swiper
             slidesPerView={1}
             className="h-full rounded-lg"
             id="swiper-home-explore-activities"
             initialSlide={0}
-            navigation
-            modules={[Navigation]}
+            modules={[Controller]}
+            onSwiper={setFirstSwiper}
+            controller={{ control: secondSwiper }}
           >
             {[...Array(5)].map((_, index) => (
-              <SwiperSlide className="!rounded-lg shadow-3xl" key={index}>
+              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" key={index}>
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`}
                   alt="banner-offers"
-                  className="h-full w-full rounded-lg select-none object-cover"
+                  className="h-full w-full select-none object-cover"
                 />
-
-                <div className="w-[190px] h-[190px] rounded-full border-[32px] border-yw-100 absolute top-[-114px] right-[-31px]" />
-
-                <div className="h-[395px] absolute bottom-0 w-full">
-                  <div style={{ height: 138, overflow: "hidden" }}>
-                    <svg
-                      viewBox="0 0 500 150"
-                      preserveAspectRatio="none"
-                      style={{ height: "100%", width: "100%" }}
-                    >
-                      <path
-                        d="M429.73,151.48 C487.30,161.36 500.84,102.14 502.54,72.55 L512.13,156.42 L506.49,183.06 Z"
-                        style={{ stroke: "none", fill: "#FCB41E" }}
-                      />
-                    </svg>
-                  </div>
-
-                  <div className="w-full h-[80%] bg-yw-100 rounded-tl-[50px]" />
-
-                  <div className="absolute bottom-0 pb-[49px] pl-[47.5px] pr-[59.5px] flex flex-col gap-[8px] max-sm:pb-[20px]">
-                    <h3 className="text-fs-28 m-s-b">Cancún</h3>
-
-                    <p className="m-m text-fs-14">
-                      En Cancún encontrarás fascinantes sitios arqueológicos
-                      como el cercano complejo de ruinas mayas de Tulum y la
-                      misteriosa ciudad precolombina de Chichén Itzá.
-                    </p>
-
-                    <button className="m-b text-fs-16 flex items-center w-fit px-[24px] py-[10px] bg-white rounded-full gap-[8px] hover:!bg-gry-30">
-                      {languageData.titleBanners.bannerHoteldecided.knowMore}
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/arrow-right.svg`}
-                        width={16}
-                        height={12}
-                        alt="icon-arrow"
-                      />
-                    </button>
-                  </div>
-                </div>
               </SwiperSlide>
             ))}
+
+            <div className="h-[314px] absolute bottom-0 w-full z-[2]">
+              <img src={`${process.env.NEXT_PUBLIC_URL}img/home/curve-yellow.png`} alt="curve yellow" className="w-full h-full" />
+            </div>
+
+            <div className="w-[190px] h-[190px] rounded-full border-[32px] border-yw-100 absolute top-[-114px] right-[-31px] z-[2]" />
+          </Swiper>
+
+          {/* SWIPER TEXT */}
+          <Swiper
+            slidesPerView={1}
+            className="h-full rounded-lg !absolute top-0 w-full"
+            id="swiper-home-explore-activities"
+            initialSlide={0}
+            navigation
+            modules={[Navigation, Controller]}
+            onSwiper={setSecondSwiper}
+            controller={{ control: firstSwiper }}
+          >
+            {[...Array(5)].map((_, index) => (
+              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" key={index}>
+
+                <div className="absolute bottom-0 pb-[49px] pl-[47.5px] pr-[59.5px] pt-[30px] flex flex-col gap-[8px] max-sm:pb-[20px] z-[4]">
+                  <h3 className="text-fs-28 m-s-b">Cancún</h3>
+
+                  <p className="m-m text-fs-14">
+                    En Cancún encontrarás fascinantes sitios arqueológicos
+                    como el cercano complejo de ruinas mayas de Tulum y la
+                    misteriosa ciudad precolombina de Chichén Itzá.
+                  </p>
+
+                  <button className="m-b text-fs-16 flex items-center w-fit px-[24px] py-[10px] bg-white rounded-full gap-[8px] hover:!bg-gry-30">
+                    {languageData.titleBanners.bannerHoteldecided.knowMore}
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/arrow-right.svg`}
+                      width={16}
+                      height={12}
+                      alt="icon-arrow"
+                    />
+                  </button>
+                </div>
+
+              </SwiperSlide>
+            ))}
+
           </Swiper>
         </div>
 
