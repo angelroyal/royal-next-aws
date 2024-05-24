@@ -5,6 +5,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import NotificationType from "../Alerts/Notifications/NotificationType";
+import { useNotification } from "../Alerts/Notifications/useNotification";
 
 export default function BannerDiscoverPossibilities() {
   const phoneRegex = /^\d{0,10}$/;
@@ -13,10 +14,8 @@ export default function BannerDiscoverPossibilities() {
   const [namePerson, setNamePerson] = useState("");
   const { languageData } = useContext(LanguageContext);
   const [valueInputs, setValuesInputs] = useState(false);
-
-  const [showNotificationDone, setShowNotificationDone] = useState(false);
-  const [showNotificationError, setShowNotificationError] = useState(false);
-  const [showNotificationWarning, setShowNotificationWarning] = useState(false);
+  const { notification, showNotification, hideNotification } =
+    useNotification();
 
   // ADD NAME
   const addNamePerson = (e) => {
@@ -49,10 +48,12 @@ export default function BannerDiscoverPossibilities() {
   // SEND MESSAGE TO TELEGRAM GROUP
   const handleSubmit = () => {
     if (!valueInputs) {
-      setShowNotificationWarning(true);
-      setTimeout(() => {
-        setShowNotificationWarning(false);
-      }, 5000);
+      showNotification(
+        "warning",
+        "Advertencia",
+        "Por favor, completa todos los campos correctamente.",
+        5000
+      );
       return;
     }
 
@@ -66,19 +67,24 @@ export default function BannerDiscoverPossibilities() {
       )
       .then((response) => {
         if (response) {
-          setShowNotificationDone(true);
+          showNotification(
+            "success",
+            "Enviado",
+            "Mensaje enviado correctamente.",
+            5000
+          );
+
           setNamePerson("");
           setPhone("");
-          setTimeout(() => {
-            setShowNotificationDone(false);
-          }, 5000);
         }
       })
       .catch((error) => {
-        setShowNotificationError(true);
-        setTimeout(() => {
-          setShowNotificationError(false);
-        }, 5000);
+        showNotification(
+          "error",
+          "Error",
+          "Ups ocurrio un error al enviar su informacion.",
+          5000
+        );
       });
   };
 
@@ -97,12 +103,18 @@ export default function BannerDiscoverPossibilities() {
         />
 
         <div className="absolute flex flex-col ml-[60px] max-lg:mx-[40px] max-lg:mt-[90px] max-sm:mt-[40px]">
-          <h2 className="m-b text-fs-34 ">
-            {languageData.bannerTransportHome.discoverOptions}
-          </h2>
-          <span className="m-s-b text-fs-16 w-[70%] mt-[10px]">
-            {languageData.bannerTransportHome.getKnowBetter}
-          </span>
+
+          <div className="flex flex-col w-full max-md:items-center ">
+
+            <h2 className="m-b text-fs-34 max-md:text-center">
+              {languageData.bannerTransportHome.discoverOptions}
+            </h2>
+
+            <span className="m-s-b text-fs-16 w-[70%] mt-[10px] max-md:w-full max-md:text-center">
+              {languageData.bannerTransportHome.getKnowBetter}
+            </span>
+
+          </div>
 
           <div className="flex gap-2 mt-[35px] max-lg:flex-col">
             <input
@@ -128,27 +140,13 @@ export default function BannerDiscoverPossibilities() {
         </div>
       </div>
 
-      {showNotificationDone && (
+      {notification && notification.visible && (
         <NotificationType
-          type="success"
-          title="Enviado"
-          message="Mensaje enviado correctamente."
-        />
-      )}
-
-      {showNotificationError && (
-        <NotificationType
-          type="error"
-          title="Error"
-          message="Ups ocurrio un error al enviar su informacion."
-        />
-      )}
-
-      {showNotificationWarning && (
-        <NotificationType
-          type="warning"
-          title="Advertencia"
-          message="Por favor, completa todos los campos correctamente."
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
         />
       )}
     </>

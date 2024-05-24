@@ -21,7 +21,7 @@ export const HomeHotel = () => {
     <>
       <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
         <BannerHomeHotelTop />
-        <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center">
+        <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
           <SearchBox />
         </div>
       </div>
