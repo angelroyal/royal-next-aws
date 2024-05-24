@@ -9,30 +9,39 @@ export default function OrderRecommendation() {
     const service = "hotel";
 
     // IS HOTEL
-    if (service === 'hotel') {
-        order =
-            <div>
-                <TourRecommendation />
-                <OffersNowRecommendation />
-                <TransportRecommendation />
-            </div>;
-
-    // IS TOUR
-    } else if (service === 'tour') {
-        order =
-            <div>
-                <HotelRecommendation />
-                <OffersNowRecommendation />
-                <TransportRecommendation />
-            </div>;
-    // IS TRANSPORT
-    } else if (service === 'transport') {
-        order =
-            <div>
-                <HotelRecommendation />
-                <OffersNowRecommendation />
-                <TourRecommendation />
-            </div>;
+    switch (service) {
+        case "hotel":
+            {
+                order =
+                    <div>
+                        <TourRecommendation />
+                        <OffersNowRecommendation />
+                        <TransportRecommendation />
+                    </div>;
+            }
+            break;
+        // IS TOUR
+        case "tour":
+            {
+                order =
+                    <div>
+                        <HotelRecommendation />
+                        <OffersNowRecommendation />
+                        <TransportRecommendation />
+                    </div>;
+            }
+            break;
+        // IS TRANSPORT
+        case "transport":
+            {
+                order =
+                    <div>
+                        <HotelRecommendation />
+                        <OffersNowRecommendation />
+                        <TourRecommendation />
+                    </div>
+            }
+            break;
 
     }
 
