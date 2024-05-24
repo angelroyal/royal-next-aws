@@ -17,8 +17,10 @@ import BannersHeaderHome, {
   BannersHomeOffers,
   BannersHomeOffersNow,
 } from "@/components/Home/BannersHome";
+import WaveLine from "@/components/Home/WaveHome";
 
 export default function Home() {
+  
   return (
     <>
       <LanguageProvider>
@@ -26,6 +28,9 @@ export default function Home() {
           <CartAxiosProvider>
             <Token />
             <Navigation />
+
+            
+            
 
             <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
               <BannersHeaderHome />
@@ -44,6 +49,8 @@ export default function Home() {
                 <ChainsHome />
                 <EnjoyStayHome />
                 <TransportBanner />
+
+                <WaveLine />
                 <BannerDiscoverPossibilities />
               </div>
             </Container>

@@ -5,14 +5,42 @@ import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
 import Image from "next/image";
-import { useContext } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useContext, useState, useEffect } from "react";
 
 import BannerCardHome from "./BannerCardHome";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function BannersHeaderHome() {
+
+  const [dashedOne, setDashedOne] = useState([
+    { key: 1, value: true },
+    { key: 2, value: false },
+    { key: 3, value: false },
+    { key: 4, value: false },
+    { key: 5, value: false },
+    { key: 6, value: false },
+    { key: 7, value: false },
+    { key: 8, value: false },
+  ]);
+
+  console.log(dashedOne);
+
+  useEffect(() => {
+    const interval = 30000 / dashedOne.length;
+
+    dashedOne.forEach((item, index) => {
+      setTimeout(() => {
+        setDashedOne((prevDashedOne) =>
+          prevDashedOne.map((el) =>
+            el.key === item.key ? { ...el, value: true } : el
+          )
+        );
+      }, interval * index);
+    });
+  }, []);
+
   return (
     <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
       <img
