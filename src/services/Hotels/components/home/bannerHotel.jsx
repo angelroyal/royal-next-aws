@@ -1,26 +1,39 @@
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
 import Image from "next/image";
 import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 
 import { BannerConfig } from "../../config/BannersConfigH";
 import LanguageContext from "../../../../language/LanguageContext";
 
-import "swiper/css";
-import "swiper/css/effect-fade";
-
 export function BannerHomeHotelTop() {
   return (
     <>
-      <div className="h-[442px] md:h-72 2xl:h-[480px] w-full">
-        <img
-          className="object-cover	w-full h-full object-center select-none"
-          src={BannerConfig.bannerTop.img}
-          alt="banner-top"
-          width="100%"
-          height="100%"
-        />
-      </div>
+      <Swiper
+        className="h-[442px] md:h-72 2xl:h-[480px] w-full"
+        slidesPerView={1}
+        id="swiper-banner-home"
+        navigation
+        modules={[Navigation]}
+        loop={true}
+      >
+        {[...Array(2)].map((_, index) => (
+          <SwiperSlide key={index}>
+            <img
+              className="object-cover	w-full h-full object-center select-none"
+              src={BannerConfig.bannerTop.img}
+              alt="banner-top"
+              width="100%"
+              height="100%"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
 
       {/* <div className="h-[442px] md:h-72 2xl:h-[480px] w-full">
         <video
@@ -223,6 +236,11 @@ export function BannerHomeHotelSwiper() {
       slidesPerView={3}
       spaceBetween={15}
       className="h-[19rem]"
+      modules={[Autoplay]}
+      autoplay={{
+        delay: 5000,
+      }}
+      loop={true}
       breakpoints={{
         0: {
           slidesPerView: 0.5,

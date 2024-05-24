@@ -146,7 +146,7 @@ export default function TransportPriceCart(props) {
         onMouseLeave={() => setOpenPolicy(false)}
         className="text-center"
       >
-        <span className="relative text-center text-fs-14 m-s-b text-bl-100 cursor-pointer relative">
+        <span className="relative text-center text-fs-14 m-s-b text-bl-100 cursor-pointer">
           {languageData.containerModalHotel.policies}
           {openPolicy === true && (
             <CancelPolicyTransportWhite cancellation={transport.cancellation} />

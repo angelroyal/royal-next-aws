@@ -103,12 +103,18 @@ export default function BannerDiscoverPossibilities() {
         />
 
         <div className="absolute flex flex-col ml-[60px] max-lg:mx-[40px] max-lg:mt-[90px] max-sm:mt-[40px]">
-          <h2 className="m-b text-fs-34 ">
-            {languageData.bannerTransportHome.discoverOptions}
-          </h2>
-          <span className="m-s-b text-fs-16 w-[70%] mt-[10px]">
-            {languageData.bannerTransportHome.getKnowBetter}
-          </span>
+
+          <div className="flex flex-col w-full max-md:items-center ">
+
+            <h2 className="m-b text-fs-34 max-md:text-center">
+              {languageData.bannerTransportHome.discoverOptions}
+            </h2>
+
+            <span className="m-s-b text-fs-16 w-[70%] mt-[10px] max-md:w-full max-md:text-center">
+              {languageData.bannerTransportHome.getKnowBetter}
+            </span>
+
+          </div>
 
           <div className="flex gap-2 mt-[35px] max-lg:flex-col">
             <input

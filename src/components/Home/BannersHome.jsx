@@ -1,17 +1,16 @@
 "use client";
 
-import { useContext, useState, useEffect } from "react";
-import { Navigation } from "swiper/modules";
-import BannerCardHome from "./BannerCardHome";
-import { Swiper, SwiperSlide } from "swiper/react";
-import LanguageContext from "@/language/LanguageContext";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import React from "react";
 import Image from "next/image";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useContext, useState, useEffect } from "react";
+
+import BannerCardHome from "./BannerCardHome";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function BannersHeaderHome() {
 
@@ -48,7 +47,7 @@ export default function BannersHeaderHome() {
         src={`${process.env.NEXT_PUBLIC_URL}img/home/banner-home-top.webp`}
         width="1366px"
         height="480px"
-        alt="Banner-transport-home-top"
+        alt="Banner-home-top"
         className="w-full h-full object-cover select-none"
       ></img>
     </div>

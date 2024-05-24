@@ -1,13 +1,14 @@
 "use client";
 
-import Image from "next/image";
-import { useContext } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import LanguageContext from "@/language/LanguageContext";
-
 import "swiper/css";
 import "../../../assets/styles/general/Swiper.css";
 
+import Image from "next/image";
+import { useContext } from "react";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import LanguageContext from "@/language/LanguageContext";
 
 export function BannerHomeTour() {
     return (
@@ -32,6 +33,11 @@ export function BannerHomeTourSwiper() {
         <Swiper
             slidesPerView={3}
             spaceBetween={16}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 5000,
+            }}
+            loop={true}
             className="h-[19rem] mb-16"
             id="swiper-banner-home-tour"
             initialSlide={0}
