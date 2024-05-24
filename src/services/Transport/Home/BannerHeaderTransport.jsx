@@ -4,18 +4,22 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 
-export function BannerHomeTop() {
+export function BannerHeaderTransport() {
     return (
         <Swiper
             className="h-[442px] md:h-72 2xl:h-[480px] w-full"
             slidesPerView={1}
             id="swiper-banner-home"
             navigation
-            modules={[Navigation]}
+            modules={[Navigation,Autoplay]}
             loop={true}
+            cssMode={true}
+            autoplay={{
+                delay: 6000,
+            }}
         >
             {[...Array(2)].map((_, index) => (
                 <SwiperSlide key={index}>

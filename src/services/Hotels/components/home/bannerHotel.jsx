@@ -18,20 +18,34 @@ export function BannerHomeHotelTop() {
         slidesPerView={1}
         id="swiper-banner-home"
         navigation
-        modules={[Navigation]}
+        modules={[Navigation,Autoplay]}
         loop={true}
+        cssMode={true}
+        autoplay={{
+          delay: 6000,
+        }}
       >
-        {[...Array(2)].map((_, index) => (
-          <SwiperSlide key={index}>
-            <img
-              className="object-cover	w-full h-full object-center select-none"
-              src={BannerConfig.bannerTop.img}
-              alt="banner-top"
-              width="100%"
-              height="100%"
-            />
-          </SwiperSlide>
-        ))}
+
+        <SwiperSlide>
+          <img
+            className="object-cover	w-full h-full object-center select-none"
+            src={BannerConfig.bannerTop.img}
+            alt="banner-top"
+            width="100%"
+            height="100%"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide >
+          <img
+            className="object-cover	w-full h-full object-center select-none"
+            src="https://www.royalvacationsmexico.com/static/media/banner_hotel.353834a1.webp"
+            alt="banner-top-second"
+            width="100%"
+            height="100%"
+          />
+        </SwiperSlide>
+
       </Swiper>
 
 
