@@ -17,7 +17,6 @@ export const ListingHotelProvider = ({ children }) => {
   const [orderHotel, setOrderHotel] = useState(2);
   const [mapHotels, setMapHotels] = useState(null);
   const [selectedFilters, setSelectedFilters] = useState({});
-  // console.log(selectedFilters);
   const [pricing, setPricing] = useState({ min: "", max: "" });
   const [combinedHotelData, setCombinedHotelData] = useState(null);
   

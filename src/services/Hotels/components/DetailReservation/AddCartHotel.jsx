@@ -63,7 +63,7 @@ export default function AddCartHotel() {
         "success",
         "¡Hotel agregado!",
         "Todo listo para tu estancia.",
-        50000
+        5000
       );
 
       const cartUid = response.cart;
@@ -75,17 +75,11 @@ export default function AddCartHotel() {
       fetchData(cartUid);
       setTimeout(() => {
         router.push(EntitiesRecommendations(language, "hotel", hotelInfo, cartUid));
-      }, 2000);
+      }, 5000);
+
     } catch (error) {
       console.log(error);
-      // CODE GUILLERMO ALERT MODAL
-      // console.error(error);
       setIsLoading(false);
-      // if (error.response && error.response.status >= 400) {
-      //   setIsFailedReservation(true);
-      // } else {
-      //   setIsFailedReservation(false);
-      // }
 
       showNotification(
         "error",
