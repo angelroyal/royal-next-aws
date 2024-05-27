@@ -22,11 +22,9 @@ export default function ConfirmReservation() {
     setTotalItemsInCart,
   } = useCartAxios();
 
+  const [smShow, setSmShow] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [dataConfirmation, setDataConfirmation] = useState(null);
-
-  const [smShow, setSmShow] = useState(false);
-
   const { setInfoReservation, handleStepChange } = useContext(BookingContext);
 
   const handleOpenModal = () => {

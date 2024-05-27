@@ -1,14 +1,14 @@
+// src/config/Others/axiosWithInterceptor.js
 import axios from "axios";
 
 const getLanguage = () => {
   if (typeof window !== "undefined") {
-    return localStorage.getItem('language') || 'en';
+    return localStorage.getItem("language") || "en";
   }
-  return 'en';
+  return "en";
 };
 
 const language = getLanguage();
-
 const clientIP = "187.188.15.87";
 
 const axiosWithInterceptor = axios.create({
@@ -24,11 +24,16 @@ axiosWithInterceptor.interceptors.request.use(
       }
     }
     config.headers["X-Client-IP"] = clientIP;
-
     return config;
   },
   (error) => {
-    Promise.reject(error);
+    // Enviar mensaje a Slack en caso de error en la solicitud
+    axios.post("https://royal-next-aws.vercel.app/api/sendToSlack", {
+      title: "Request Error",
+      errorType: "Request Error",
+      errorDetails: error,
+    });
+    return Promise.reject(error);
   }
 );
 
@@ -37,6 +42,12 @@ axiosWithInterceptor.interceptors.response.use(
     return response;
   },
   (error) => {
+    // Enviar mensaje a Slack en caso de error en la respuesta
+    axios.post("https://royal-next-aws.vercel.app/api/sendToSlack", {
+      title: "Response Error",
+      errorType: "Response Error",
+      errorDetails: error,
+    });
     return Promise.reject(error);
   }
 );
