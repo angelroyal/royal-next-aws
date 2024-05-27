@@ -57,7 +57,7 @@ export default function AddCartHotel() {
         "success",
         "¡Hotel agregado!",
         "Todo listo para tu estancia.",
-        5000
+        50000
       );
 
       const cartUid = response.cart;

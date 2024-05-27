@@ -13,8 +13,6 @@ import { FormDataProvider } from "../context/FormDataContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { SkeletonActivitiesTourP } from "../../utils/skeleton/SkeletonActivitiesTourP.js";
 
-import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
-
 export default function Booking(props) {
   const { dataItinerary, changeButton } = props;
 

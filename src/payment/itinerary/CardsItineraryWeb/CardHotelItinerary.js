@@ -15,8 +15,6 @@ import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
-import "@/assets/styles/web/Hotel.css";
-import "../../../../src/assets/styles/mobile/HotelMobile.css";
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
 
 export default function CardHotelItinerary(props) {
