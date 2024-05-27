@@ -198,8 +198,8 @@ export default function EnjoyStayHome() {
           className="h-full w-full rounded-l-lg max-lg:rounded-t-lg max-lg:rounded-l-0"
         />
 
-        <div className="absolute bottom-0 flex flex-col gap-[16px] pb-[90px] pl-[49px] w-[80%] max-md:pb-[45px] max-xl:pb-[24px] max-lg:pb-[81px]">
-          <h2 className="text-white m-s-b text-fs-32 max-xl:text-fs-28 max-lg:text-fs-32 max-md:text-fs-28 ">
+        <div className="absolute bottom-0 flex flex-col gap-[16px] pb-[90px] pl-[49px] w-[80%] max-2xl:pb-[65px] max-md:pb-[45px] max-xl:pb-[55px] max-lg:pb-[81px]">
+          <h2 className="text-white m-s-b text-fs-32 max-xl:text-fs-28 max-lg:text-fs-32 max-md:text-fs-28 leading-[1.13]">
             {languageData.enjoyStayHome.titleEnjoy}
           </h2>
 
