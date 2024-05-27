@@ -23,9 +23,6 @@ export default function AddCartTour(props) {
   const { dataTour, hourTour, dayTour, selectModality, codeNameTour } =
     useContext(DetailTourContext);
 
-  console.log(dataTour);
-  console.log(dayTour);
-
   const handleAddCartTour = async () => {
     try {
       setIsLoader(true);

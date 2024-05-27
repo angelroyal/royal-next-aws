@@ -20,7 +20,6 @@ export default function FiltersHotels({listing=false}) {
   const [showMore, setShowMore] = useState({});
   const { languageData } = useContext(LanguageContext);
   const [filters, setFilters] = useState(initialFilters);
-  console.log(filters);
   const { setSelectedFilters } = useContext(ListingHotelContext);
 
   //   UPDATE FILTERS SELECTED

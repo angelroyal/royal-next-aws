@@ -66,8 +66,6 @@ export default function AddCartHotel() {
         5000
       );
 
-      // console.log(response);
-
       const cartUid = response.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
       localStorage.setItem(
@@ -75,8 +73,6 @@ export default function AddCartHotel() {
         JSON.stringify({ uid: cartUid, expirationTime })
       );
       fetchData(cartUid);
-      console.log(hotelInfo);
-
       setTimeout(() => {
         router.push(EntitiesRecommendations(language, "hotel", hotelInfo, cartUid));
       }, 2000);

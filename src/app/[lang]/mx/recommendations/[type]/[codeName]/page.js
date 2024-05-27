@@ -10,8 +10,6 @@ import DestinationReady from "@/components/Recommended/DestinationReady";
 import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 
 export default function Home({ params, searchParams }) {
-  console.log("params", params);
-  console.log(searchParams);
   return (
     <>
       <LanguageProvider>
