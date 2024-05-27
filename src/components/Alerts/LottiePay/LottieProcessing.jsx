@@ -18,11 +18,12 @@ export default function LottieProcessing() {
 
     function openModal() {
         setIsOpen(true)
-
-        setTimeout(() => {
-            setIsOpen(false)
-          }, 3000);
     }
+
+
+    setTimeout(() => {
+        setIsOpen(false)
+    }, 3000);
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
@@ -50,7 +51,7 @@ export default function LottieProcessing() {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-fit max-w-md transform rounded-lg shadow-3xl overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="w-fit max-w-md transform rounded-lg overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
 
                                 {/* // LOTTIE PROCESSING */}
                                 <div className='bg-white rounded-lg shadow-3xl px-[24px] pt-[12px] pb-[47px] w-[423px] h-[485px] flex flex-col items-center gap-[8px] max-sm:w-full'>

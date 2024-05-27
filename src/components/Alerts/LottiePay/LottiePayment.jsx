@@ -10,7 +10,7 @@ import animationSuccess from "@/assets/animations/success.json";
 
 export default function LottiePayment() {
 
-    const isSuccess = true;
+    const isSuccess = false;
     const [isOpen, setIsOpen] = useState(true)
     const { languageData } = useContext(LanguageContext);
 
@@ -22,6 +22,10 @@ export default function LottiePayment() {
     function openModal() {
         setIsOpen(true)
     }
+
+    setTimeout(() => {
+        setIsOpen(false)
+    }, 6000);
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
@@ -49,19 +53,10 @@ export default function LottiePayment() {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-fit max-w-md transform rounded-lg shadow-3xl overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="w-fit max-w-md transform rounded-lg overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
 
                                 {/* // LOTTIE PAYMENT */}
                                 <div className='bg-white  px-[24px] pt-[24px] pb-[48px] w-[423px] h-[485px] flex flex-col items-center justify-end relative max-sm:w-full'>
-
-                                    <img
-                                        src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-70.svg`}
-                                        width={12}
-                                        height={12}
-                                        alt="icon-close"
-                                        className="cursor-pointer absolute top-[20px] right-[20px]"
-                                        onClick={closeModal}
-                                    />
 
                                     {isSuccess ?
                                         <>

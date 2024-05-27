@@ -43,7 +43,7 @@ export default function LottieStayWuw() {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-fit max-w-md transform rounded-lg shadow-3xl overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="w-fit max-w-md transform rounded-lg overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
 
                                 {/* // LOTTIE STAYWUW*/}
                                 <div className='bg-white rounded-lg shadow-3xl px-[24px] pt-[24px] pb-[48px] w-[423px] h-[485px] flex flex-col items-center relative justify-end max-sm:w-full'>
@@ -72,7 +72,7 @@ export default function LottieStayWuw() {
                                     <p className='text-fs-12 text-gry-100 m-m text-center mb-[24px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.consectetur adipisicing elit</p>
 
                                     <button
-                                        className='text-white bg-bl-100 px-[16px] py-[14px] text-fs-12 m-s-b rounded-full hover:bg-bl-110'
+                                        className='text-white bg-bl-100 px-[16px] py-[14px] text-fs-12 m-s-b rounded-full hover:bg-bl-110 focus:outline-none'
                                         onClick={closeModal}
                                     >
                                         Button Label

@@ -32,8 +32,8 @@ export default function Home() {
                 <KeepExploring />
                 
                 <div className="flex gap-[10px] max-lg:flex-col">
-                  <LottiePayment />
                   <LottieStayWuw/>
+                  <LottiePayment />
                   <LottieProcessing />
                 </div>
 
