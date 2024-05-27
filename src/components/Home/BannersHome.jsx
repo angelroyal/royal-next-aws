@@ -5,8 +5,8 @@ import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
 import Image from "next/image";
-import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 import { useContext, useState, useEffect } from "react";
 
 import BannerCardHome from "./BannerCardHome";
@@ -40,22 +40,46 @@ export default function BannersHeaderHome() {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
-      <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/home/banner-home-top.webp`}
-        width="1366px"
-        height="480px"
-        alt="Banner-home-top"
-        className="w-full h-full object-cover select-none"
-      ></img>
-    </div>
+    <Swiper
+      className="h-[442px] md:h-72 2xl:h-[480px] w-full"
+      slidesPerView={1}
+      id="swiper-banner-home"
+      navigation
+      modules={[Navigation, Autoplay]}
+      loop={true}
+      cssMode={true}
+      autoplay={{
+        delay: 6000,
+      }}
+    >
+      {[...Array(2)].map((_, index) => (
+        <SwiperSlide key={index}>
+          <img
+            src={`${process.env.NEXT_PUBLIC_URL}img/home/banner-home-top.webp`}
+                width="1366px"
+                height="480px"
+                alt="Banner-home-top"
+                className="w-full h-full object-cover select-none"
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    // <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
+    //   <img
+    //     src={`${process.env.NEXT_PUBLIC_URL}img/home/banner-home-top.webp`}
+    //     width="1366px"
+    //     height="480px"
+    //     alt="Banner-home-top"
+    //     className="w-full h-full object-cover select-none"
+    //   ></img>
+    // </div>
   );
 }
 
 export function BannersHomeOffers() {
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
-      <div className="w-[70%] max-md:w-full max-sm:h-[250px]">
+      <div className="w-[70%] max-md:w-full max-sm:h-[250px] z-0">
         <Swiper
           slidesPerView={1}
           className="h-full rounded-lg"

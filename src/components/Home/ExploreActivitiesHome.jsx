@@ -33,7 +33,7 @@ export default function ExploreActivitiesHome() {
       <div className="w-full flex h-[717px] gap-[5vw] max-lg:flex-col max-lg:h-auto max-xl:gap-[12px]">
 
         {/* SWIPER EXPLORE ACTIVITIES HOME */}
-        <div className="w-[50%] relative max-lg:w-full max-lg:h-[500px] overflow-hidden rounded-lg">
+        <div className="w-[50%] relative max-lg:w-full max-lg:h-[500px] overflow-hidden rounded-lg shadow-3xl">
           {/* SWIPER IMG */}
           <Swiper
             slidesPerView={1}
@@ -44,15 +44,22 @@ export default function ExploreActivitiesHome() {
             onSwiper={setFirstSwiper}
             controller={{ control: secondSwiper }}
           >
-            {[...Array(5)].map((_, index) => (
-              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" key={index}>
+           
+              <SwiperSlide className="!rounded-lg z-[1]">
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`}
                   alt="banner-offers"
                   className="h-full w-full select-none object-cover"
                 />
               </SwiperSlide>
-            ))}
+              <SwiperSlide className="!rounded-lg z-[1]" >
+                <img
+                  src={"https://www.royalvacationsmexico.com/static/media/banner_hotel.353834a1.webp"}
+                  alt="banner-offers"
+                  className="h-full w-full select-none object-cover"
+                />
+              </SwiperSlide>
+           
 
             <div className="h-[314px] absolute bottom-0 w-full z-[2]">
               <img src={`${process.env.NEXT_PUBLIC_URL}img/home/curve-yellow.png`} alt="curve yellow" className="w-full h-full" />
@@ -72,8 +79,8 @@ export default function ExploreActivitiesHome() {
             onSwiper={setSecondSwiper}
             controller={{ control: firstSwiper }}
           >
-            {[...Array(5)].map((_, index) => (
-              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" key={index}>
+            {[...Array(2)].map((_, index) => (
+              <SwiperSlide className="!rounded-lg z-[1]" key={index}>
 
                 <div className="absolute bottom-0 pb-[49px] pl-[47.5px] pr-[59.5px] pt-[30px] flex flex-col gap-[8px] max-sm:pb-[20px] z-[4]">
                   <h3 className="text-fs-28 m-s-b">Cancún</h3>

@@ -214,18 +214,18 @@ export const es = {
     subtitleKeep: "No te detengas aquí. Descubre más destinos emocionantes y planifica tu próxima aventura.",
     btnBack: "Volver al inicio",
 
-     hotel: {
+    hotel: {
       titleRecommedation: "Alojamientos que pueden gustarte",
-     },
+    },
 
-     tour: {
+    tour: {
       titleRecommedation: "Añade más diversión a tus vacaciones",
-     },
+    },
 
-     transport: {
+    transport: {
       titleRecommedation: "¿Ya sabes como llegar?",
-      btnchoose:"Elegir transporte"
-     },
+      btnchoose: "Elegir transporte"
+    },
   },
 
   /*********************************************************/
@@ -1361,10 +1361,17 @@ export const es = {
     buttonRate: "Ver nuevos precios",
     rateAlert: "Abrir Alerta de Tarifa",
     paymentFailed: "El pago no pudo ser procesado",
+    btnUnderstood: "Entendido",
+    textSuccess: "Hemos enviado una confirmación a tu correo electrónico con toda la información de tu compra. Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos.",
+    textDeclinedPayment: "Lo sentimos, tu pago no pudo ser procesado. Verifica que los datos de tu tarjeta y la dirección de facturación sean correctos.",
+    btnRetry: "Reintentar",
+    dataSafe: "Tus datos están seguros con nosotros.",
+    textProcessing: "Esto puede tardar unos momentos. Por favor, no cierres esta ventana ni recargues la página",
     textAlert: {
       PP: "Procesando pago",
       PF: "No hemos podido procesar tu pago.",
-      PE: "Pago exitoso"
+      PE: "Pago exitoso",
+      PD: "Pago declinado",
     }
   },
 
