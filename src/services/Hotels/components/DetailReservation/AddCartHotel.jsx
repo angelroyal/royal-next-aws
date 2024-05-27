@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
+import React, { useContext, useState } from "react";
 
 import { saveToCart } from "../../Api/requestHotel";
 import LanguageContext from "@/language/LanguageContext";
@@ -7,6 +7,7 @@ import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 import NotificationType from "@/components/Alerts/Notifications/NotificationType";
 import { useNotification } from "@/components/Alerts/Notifications/useNotification";
+import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 
 export default function AddCartHotel() {
   const router = useRouter();
@@ -16,8 +17,13 @@ export default function AddCartHotel() {
     useNotification();
   const { languageData, language } = useContext(LanguageContext);
 
-  const { selectedRooms, requestBodyRooms, keyHotel, setIsFailedReservation } =
-    useContext(RoomsHotelContext);
+  const {
+    selectedRooms,
+    requestBodyRooms,
+    keyHotel,
+    setIsFailedReservation,
+    hotelInfo,
+  } = useContext(RoomsHotelContext);
 
   // HANDLE ADD CART HOTEL
   const handleReserveNow = async () => {
@@ -60,6 +66,8 @@ export default function AddCartHotel() {
         5000
       );
 
+      // console.log(response);
+
       const cartUid = response.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
       localStorage.setItem(
@@ -67,11 +75,13 @@ export default function AddCartHotel() {
         JSON.stringify({ uid: cartUid, expirationTime })
       );
       fetchData(cartUid);
+      console.log(hotelInfo);
+
       setTimeout(() => {
-        router.push(`/${language}/booking?uid=${cartUid}`);
+        router.push(EntitiesRecommendations(language, "hotel", hotelInfo, cartUid));
       }, 2000);
     } catch (error) {
-
+      console.log(error);
       // CODE GUILLERMO ALERT MODAL
       // console.error(error);
       setIsLoading(false);
@@ -86,7 +96,7 @@ export default function AddCartHotel() {
         "Error al agregar hotel",
         "Hubo un problema al agregar el hotel. Por favor, inténtalo de nuevo.",
         5000
-      );      
+      );
     }
   };
 
