@@ -1,20 +1,17 @@
 import Image from "next/image";
 import React, { useContext, useEffect } from "react";
 
+import CardsItinerary from "./others/CardsItinerary";
+import { BookingContext } from "../context/BookingContext";
 import LanguageContext from "../../language/LanguageContext";
 import { scrollToTop } from "../../utils/pageConfig/scrollToTop";
-import StructureItineraryWeb from "./others/StructureItineraryWeb";
-import { AlertNoAvailability, AlertUpdate } from "../Booking/AlertRate";
-
 import { isAnyHotelUnavailable } from "../config/itineraryHelpers";
-
-import { BookingContext } from "../context/BookingContext";
+import { AlertNoAvailability, AlertUpdate } from "../Booking/AlertRate";
 
 export default function Itinerary(props) {
   const { dataItinerary } = props;
   const { languageData } = useContext(LanguageContext);
   const { handleStepChange } = useContext(BookingContext);
-
   const isButtonDisabled = isAnyHotelUnavailable(dataItinerary);
 
   useEffect(() => {
@@ -27,14 +24,12 @@ export default function Itinerary(props) {
     scrollToTop();
   }, []);
 
-  // MOBILE
-  // const isMobile = useIsMobileNew();
-
   return (
     <div className="m-scroll-i">
+
+      {/* TITLE ITINERARY */}
       <div className="display-title-button-share">
-        <div className="flex !gap-x-2 w-full items-start justify-start items-start !mb-2">
-          {/* <IconRoyal className="icon-royal-itinerary" /> */}
+        <div className="flex !gap-x-2 w-full items-start justify-start !mb-2">
           <Image
             className="w-[27px] h-[25px]"
             src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw.svg`}
@@ -46,18 +41,20 @@ export default function Itinerary(props) {
             {languageData.itinerary.titleItinerary}
           </h1>
         </div>
-
-        {/* {!isMobile && <ModalShare className="modal-style-share" />} */}
       </div>
 
       <h2 className="text-fs-14 m-m text-black mb-[36px]">
         {languageData.itinerary.subtitleItinerary}
       </h2>
 
-      <StructureItineraryWeb dataItinerary={dataItinerary} />
+      {/* CARDS RETURN SHOW */}
+      <CardsItinerary dataItinerary={dataItinerary} />
 
+      {/* ALERT UPDATE PRICES */}
       <AlertUpdate priceChanged={dataItinerary.priceChanged} />
 
+
+      {/* ALERT NO AVAILABILITY PRICES */}
       {isButtonDisabled && (
         <AlertNoAvailability isNoAvailability={isButtonDisabled} />
       )}

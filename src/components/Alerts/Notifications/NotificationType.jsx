@@ -34,7 +34,7 @@ export default function NotificationType({
 
   return (
     <div className="w-[369px] fixed top-5 right-5 z-50 bg-white shadow-xl py-[12px] px-[20px] rounded-t transform transition-transform translate-x-0 animate-slide-in">
-      <div className="flex justify-start items-center">
+      <div className="flex justify-between items-center">
         {/* ICON NOTIFICATION */}
         <div className="mr-[11.5px]">
           <img

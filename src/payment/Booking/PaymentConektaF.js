@@ -1,3 +1,5 @@
+import "../../assets/styles/web/Payment.css";
+
 import React, {
   useState,
   useEffect,

@@ -5,9 +5,9 @@ import CardHotelItinerary from "../CardsItineraryWeb/CardHotelItinerary";
 import CardMovingItinerary from "../CardsItineraryWeb/CardMovingItinerary";
 import CardTourConfirmation from "@/payment/Confirmation/CardTourConfirmation";
 import CardHotelConfirmation from "@/payment/Confirmation/CardHotelConfirmation";
-import CardTourItinerary from "../../../payment/itinerary/CardsItineraryWeb/CardTourItinerary";
+import CardTourItinerary from "../CardsItineraryWeb/CardTourItinerary";
 
-export default function StructureItineraryWeb(props) {
+export default function CardsItinerary(props) {
   const { dataItinerary } = props;
   const { step } = useContext(BookingContext);
 
