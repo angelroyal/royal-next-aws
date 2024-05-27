@@ -9,11 +9,12 @@ import animationSuccess from "@/assets/animations/success.json";
 
 export default function LottiePayment() {
 
-    const isSuccess = true;
+    const isSuccess = false;
     const { languageData } = useContext(LanguageContext);
 
     return (
 
+        // LOTTIE PAYMENT
         <div className='bg-white rounded-lg shadow-3xl px-[24px] pt-[24px] pb-[48px] w-[423px] h-[485px] flex flex-col items-center justify-end relative max-sm:w-full'>
 
             <img
@@ -49,5 +50,6 @@ export default function LottiePayment() {
             }
 
         </div>
+        // END LOTTIE PAYMENT
     )
 }

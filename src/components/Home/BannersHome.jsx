@@ -79,7 +79,7 @@ export default function BannersHeaderHome() {
 export function BannersHomeOffers() {
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
-      <div className="w-[70%] max-md:w-full max-sm:h-[250px]">
+      <div className="w-[70%] max-md:w-full max-sm:h-[250px] z-0">
         <Swiper
           slidesPerView={1}
           className="h-full rounded-lg"
