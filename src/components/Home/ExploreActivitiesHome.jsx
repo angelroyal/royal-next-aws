@@ -33,7 +33,7 @@ export default function ExploreActivitiesHome() {
       <div className="w-full flex h-[717px] gap-[5vw] max-lg:flex-col max-lg:h-auto max-xl:gap-[12px]">
 
         {/* SWIPER EXPLORE ACTIVITIES HOME */}
-        <div className="w-[50%] relative max-lg:w-full max-lg:h-[500px] overflow-hidden rounded-lg">
+        <div className="w-[50%] relative max-lg:w-full max-lg:h-[500px] overflow-hidden rounded-lg shadow-3xl">
           {/* SWIPER IMG */}
           <Swiper
             slidesPerView={1}
@@ -71,7 +71,7 @@ export default function ExploreActivitiesHome() {
           {/* SWIPER TEXT */}
           <Swiper
             slidesPerView={1}
-            className="h-full rounded-lg !absolute top-0 w-full shadow-3xl"
+            className="h-full rounded-lg !absolute top-0 w-full"
             id="swiper-home-explore-activities"
             initialSlide={0}
             navigation
