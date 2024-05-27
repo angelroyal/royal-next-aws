@@ -48,6 +48,7 @@ export default function Tour(props) {
               <DayCalendar
                 tourSchedule={tourData.activity.schedule}
                 tourData={tourData.activity}
+                params={params}
               />
               <HoursSelect />
               <ModalitiesTicket tourData={tourData} />

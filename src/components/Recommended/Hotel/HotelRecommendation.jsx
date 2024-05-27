@@ -10,31 +10,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { BestHotelCart } from '@/services/Hotels/components/home/BestHotelCart'
+import { shuffleHotelTypes } from "@/services/Hotels/config/shuffleHotelTypes";
 
 export default function HotelRecommendation() {
 
     const { languageData } = useContext(LanguageContext);
 
-    // TEST TO PAINT CARDHOTEL
-    const hotelMap = {
-        "code": 3982,
-        "name": "Loreto Bay Golf Resort and Spa",
-        "codeName": "loreto-bay-golf-resort-and-spa",
-        "image": "https://api.sandboxmexico.com/assets/images/hotels/606/057753a_hb_a_007.webp",
-        "destinationCodeName": "loreto",
-        "price": 131.84,
-        "stars": 4,
-        "address": "Mision de Loreto S/N, Colonia Nopolo",
-        "es": {
-            "destination": "Loreto",
-            "country": "mexico"
-        },
-        "en": {
-            "destination": "Loreto",
-            "country": "mexico"
-        }
-    };
-    // END TEST TO PAINT CARDHOTEL
+    const hotels = shuffleHotelTypes;
 
     return (
         <>
@@ -74,7 +56,7 @@ export default function HotelRecommendation() {
                     }}
                 >
                     {/* CARD HOTEL */}
-                    {[...Array(10)].map((_, index) => (
+                    {hotels[0][1].slice(0, 10).map((hotelMap, index) => (
                         <SwiperSlide key={index} className="!rounded-lg">
                             <BestHotelCart hotel={hotelMap} />
                         </SwiperSlide>
