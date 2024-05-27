@@ -45,14 +45,14 @@ export default function ExploreActivitiesHome() {
             controller={{ control: secondSwiper }}
           >
            
-              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]">
+              <SwiperSlide className="!rounded-lg z-[1]">
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`}
                   alt="banner-offers"
                   className="h-full w-full select-none object-cover"
                 />
               </SwiperSlide>
-              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" >
+              <SwiperSlide className="!rounded-lg z-[1]" >
                 <img
                   src={"https://www.royalvacationsmexico.com/static/media/banner_hotel.353834a1.webp"}
                   alt="banner-offers"
@@ -71,7 +71,7 @@ export default function ExploreActivitiesHome() {
           {/* SWIPER TEXT */}
           <Swiper
             slidesPerView={1}
-            className="h-full rounded-lg !absolute top-0 w-full"
+            className="h-full rounded-lg !absolute top-0 w-full shadow-3xl"
             id="swiper-home-explore-activities"
             initialSlide={0}
             navigation
@@ -80,7 +80,7 @@ export default function ExploreActivitiesHome() {
             controller={{ control: firstSwiper }}
           >
             {[...Array(2)].map((_, index) => (
-              <SwiperSlide className="!rounded-lg shadow-3xl z-[1]" key={index}>
+              <SwiperSlide className="!rounded-lg z-[1]" key={index}>
 
                 <div className="absolute bottom-0 pb-[49px] pl-[47.5px] pr-[59.5px] pt-[30px] flex flex-col gap-[8px] max-sm:pb-[20px] z-[4]">
                   <h3 className="text-fs-28 m-s-b">Cancún</h3>
