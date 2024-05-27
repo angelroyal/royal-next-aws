@@ -88,7 +88,7 @@ export default function SendHotel() {
       );
     } else {
       router.push(
-        `${language}/mx/${dataSearch.codeName}-${dataSearch.country}/hotels?${query}`
+        `/${language}/mx/${dataSearch.codeName}-${dataSearch.country}/hotels?${query}`
       );
     }
   };
