@@ -9,7 +9,8 @@ import { HoursSelect } from "./HoursSelect";
 import { Container } from "@/config/Others/Container";
 import SkeletonDetailTour from "../Skeleton/SkeletonDetailTour";
 import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import { getAvailabilityTour } from "../../Api/requestTour";
 
 export default function Tour(props) {
   const { params, tourMetaData, searchParams } = props;
@@ -18,9 +19,7 @@ export default function Tour(props) {
   useEffect(() => {
     const fetchTourData = async () => {
       try {
-        const response = await axiosWithInterceptor.get(
-          `v1/activities/${params.id}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
-        );
+        const response = await getAvailabilityTour(params.id, searchParams)
         setTourData(response.data);
       } catch (error) {
         console.error("Failed to fetch tour data:", error);
