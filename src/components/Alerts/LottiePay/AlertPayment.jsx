@@ -8,8 +8,9 @@ import LanguageContext from "@/language/LanguageContext";
 import animationFailure from "@/assets/animations/failure.json";
 import animationSuccess from "@/assets/animations/success.json";
 
-export default function LottiePayment() {
-  const isSuccess = false;
+export default function AlertPayment() {
+  
+  const isSuccess = true;
   const [isOpen, setIsOpen] = useState(true);
   const { languageData } = useContext(LanguageContext);
 

@@ -9,10 +9,9 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import KeepExploring from "@/components/Recommended/KeepExploring";
 import DestinationReady from "@/components/Recommended/DestinationReady";
 import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
-import LottiePayment from "@/components/Alerts/LottiePay/LottiePayment";
-import LottieProcessing from "@/components/Alerts/LottiePay/LottieProcessing";
-import LottieStayWuw from "@/components/Alerts/LottiePay/LottieStayWuw";
 
+import ClientDataT from "@/payment/Booking/ClientDataT";
+// import ActivityFormT from "@/payment/Booking/ActivityFormT";
 export default function Home() {
   return (
     <>
@@ -31,11 +30,8 @@ export default function Home() {
 
                 <KeepExploring />
                 
-                <div className="flex gap-[10px] max-lg:flex-col">
-                  <LottieStayWuw/>
-                  <LottiePayment />
-                  <LottieProcessing />
-                </div>
+                <ClientDataT/>
+                {/* <ActivityFormT/> */}
 
               </Container>
 

@@ -2,7 +2,8 @@ import Image from "next/image";
 import { Row, Col } from "react-bootstrap";
 import React, { useContext, useState, useEffect } from "react";
 
-import ClientData from "./ClientData";
+import ClientDataT from "./ClientDataT";
+// import ClientData from "./ClientData";
 import { ActivityForm } from "./ActivityForm";
 import { FormClientRH } from "./ClientDataRH";
 import PaymentConektaF from "./PaymentConektaF";
@@ -12,8 +13,8 @@ import { FormDataProvider } from "../context/FormDataContext";
 // import { getCombinedActivitys } from "../Services/PaybokingServices.js";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { SkeletonActivitiesTourP } from "../../utils/skeleton/SkeletonActivitiesTourP.js";
-
-import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
+import { ActivityFormT } from "./ActivityFormT";
+import PaymentConektaFT from "./PaymentConektaFT";
 
 export default function Booking(props) {
   const { dataItinerary, changeButton } = props;
@@ -94,7 +95,8 @@ export default function Booking(props) {
         <div className="pt-[36px] flex flex-col gap-y-[36px]">
           {/* Passing the handleUserDataChange function as a prop */}
 
-          <ClientData onUserDataChange={handleUserDataChange} />
+          {/* <ClientData onUserDataChange={handleUserDataChange} /> */}
+          <ClientDataT onUserDataChange={handleUserDataChange} />
 
           <FormClientRH
             dataItinerary={dataItinerary.items}
@@ -103,10 +105,14 @@ export default function Booking(props) {
 
           {activityPreBooking && activityPreBooking.length > 0 && (
             <div className="py-[32px] px-[24px] w-full rounded-[19px] bg-white">
-              <h2 className="title-data">
+              <h2 className="m-b text-fs-21 text-black">
                 {languageData.paymentActivities.activities}
               </h2>
-              <ActivityForm
+              {/* <ActivityForm
+                activityPreBooking={activityPreBooking}
+                setFormActivityItems={setFormActivityItems}
+              /> */}
+              <ActivityFormT
                 activityPreBooking={activityPreBooking}
                 setFormActivityItems={setFormActivityItems}
               />
@@ -115,7 +121,14 @@ export default function Booking(props) {
 
           {!activityPreBooking && <SkeletonActivitiesTourP />}
 
-          <PaymentConektaF
+          {/* <PaymentConektaF
+            hotelRH={hotelRH}
+            userData={userData}
+            changeButton={changeButton}
+            onAlertDataChange={handleAlertDataChange}
+            formActivityItems={formActivityItems}
+          /> */}
+          <PaymentConektaFT
             hotelRH={hotelRH}
             userData={userData}
             changeButton={changeButton}
