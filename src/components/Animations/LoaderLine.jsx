@@ -1,4 +1,12 @@
-export function loaderLine({ progress = 0 }) {
+import { useEffect, useState } from "react";
+
+export function loaderLine({ progress }) {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(()=>{
+
+  },[progress])
+
   return (
     <div className="w-full h-[12px] bg-gry-50">
       <div

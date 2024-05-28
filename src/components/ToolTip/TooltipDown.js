@@ -10,8 +10,8 @@ export const TooltipDown = styled(({ className, ...props }) => (
     arrow={true}
 
     // PROPIEDADES QUE LOS MANTIENEN ACTIVO
-    // onClose={false}
-    // open={true}
+    onClose={false}
+    open={true}
   />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {

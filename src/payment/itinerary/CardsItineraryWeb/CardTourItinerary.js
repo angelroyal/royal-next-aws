@@ -7,6 +7,7 @@ import LanguageContext from "../../../language/LanguageContext";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { TooltipDown } from "../../../components/ToolTip/TooltipDown";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
+import { PolicyCancelationToulTip } from "@/services/Tours/components/ToolTip/ToulTip";
 
 export default function TourCardItinerary({ itemActivity }) {
   const { setItinerary, fetchData } = useCartAxios();
@@ -48,6 +49,10 @@ export default function TourCardItinerary({ itemActivity }) {
   // DAY OF WEEK
   const dayOfWeek = moment(itemActivity.date).format("dddd");
   const url = process.env.REACT_APP_URL_SITE + "/policy";
+
+  // console.log(itemActivity);
+
+  const [isHover, setIsHover] = useState(false);
 
   return (
     itemActivity && (
@@ -217,38 +222,63 @@ export default function TourCardItinerary({ itemActivity }) {
                         itemActivity.cancelPolicies.length > 0 &&
                         itemActivity.cancelPolicies.map(
                           (cancelPolicy, index) => (
-                            <TooltipDown
-                              key={index}
-                              disableFocusListener
-                              disableTouchListener
-                              title={
-                                cancelPolicy ? (
-                                  <React.Fragment>
-                                    {languageData.roomsCancellations.percentage}{" "}
-                                    {cancelPolicy.hours}{" "}
-                                    {languageData.roomsCancellations.from}{" "}
-                                    {`${cancelPolicy.penalty}${
-                                      cancelPolicy.type === "percent" ? "%" : ""
-                                    }`}
-                                    {languageData.roomsCancellations.total}{" "}
-                                    <a
-                                      className="text-bl-100 no-underline"
-                                      href={url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                    >
-                                      {languageData.roomsCancellations.terms}{" "}
-                                    </a>
-                                  </React.Fragment>
-                                ) : (
-                                  <div>No data</div>
-                                )
-                              }
-                            >
-                              <div className="text-bl-100 m-s-b text-fs-8 cursor-pointer">
-                                {languageData.containerModalHotel.policies}
+                            <>
+                              {/* <TooltipDown
+                                key={index}
+                                disableFocusListener
+                                disableTouchListener
+                                title={
+                                  cancelPolicy ? (
+                                    <React.Fragment>
+                                      {
+                                        languageData.roomsCancellations
+                                          .percentage
+                                      }{" "}
+                                      {cancelPolicy.hours}{" "}
+                                      {languageData.roomsCancellations.from}{" "}
+                                      {`${cancelPolicy.penalty}${
+                                        cancelPolicy.type === "percent"
+                                          ? "%"
+                                          : ""
+                                      }`}
+                                      {languageData.roomsCancellations.total}{" "}
+                                      <a
+                                        className="text-bl-100 no-underline"
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {languageData.roomsCancellations.terms}{" "}
+                                      </a>
+                                    </React.Fragment>
+                                  ) : (
+                                    <div>No data</div>
+                                  )
+                                }
+                              ></TooltipDown> */}
+
+                              <div className="text-bl-100 m-s-b text-fs-8 cursor-pointer relative">
+                                <span
+                                  onMouseLeave={() => setIsHover(false)}
+                                  onMouseEnter={() => setIsHover(true)}
+                                >
+                                  {languageData.containerModalHotel.policies}
+                                </span>
+
+                                  {/* <div className="absolute z-[3] w-[351px] lg:w-[600px] mx-auto left-0 translate-x-[-67%] lg:translate-x-[-43%] top-[25px]">
+                                    <PolicyCancelationToulTip
+                                      cancelPolicy={cancelPolicy}
+                                    />
+                                  </div> */}
+                                {isHover && (
+                                  <div className="absolute z-[3] w-[351px] lg:w-[600px] mx-auto left-0 translate-x-[-67%] lg:translate-x-[-43%] top-[25px]">
+                                    <PolicyCancelationToulTip
+                                      cancelPolicy={cancelPolicy}
+                                    />
+                                  </div>
+                                )}
                               </div>
-                            </TooltipDown>
+                            </>
                           )
                         )}
                     </div>
