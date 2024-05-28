@@ -27,12 +27,21 @@ axiosWithInterceptor.interceptors.request.use(
     return config;
   },
   (error) => {
-    // Enviar mensaje a Slack en caso de error en la solicitud
-    axios.post("https://royal-next-aws.vercel.app/api/sendToSlack", {
-      title: "Request Error",
-      errorType: "Request Error",
-      errorDetails: error,
-    });
+    axios
+      .post("https://sandboxmexico.com/logger/SendToSlackDev.php", {
+        title: "Request Error",
+        errorType: "Request Error",
+        errorDetails: {
+          message: error.message,
+          stack: error.stack,
+          config: error.config,
+          code: error.code,
+          status: error.response ? error.response.status : null,
+        },
+      })
+      .catch((err) =>
+        console.error("Failed to send request error to PHP endpoint:", err)
+      );
     return Promise.reject(error);
   }
 );
@@ -42,12 +51,21 @@ axiosWithInterceptor.interceptors.response.use(
     return response;
   },
   (error) => {
-    // Enviar mensaje a Slack en caso de error en la respuesta
-    axios.post("https://royal-next-aws.vercel.app/api/sendToSlack", {
-      title: "Response Error",
-      errorType: "Response Error",
-      errorDetails: error,
-    });
+    axios
+      .post("https://sandboxmexico.com/logger/SendToSlackDev.php", {
+        title: "Response Error",
+        errorType: "Response Error",
+        errorDetails: {
+          message: error.message,
+          stack: error.stack,
+          config: error.config,
+          code: error.code,
+          status: error.response ? error.response.status : null,
+        },
+      })
+      .catch((err) =>
+        console.error("Failed to send response error to PHP endpoint:", err)
+      );
     return Promise.reject(error);
   }
 );
