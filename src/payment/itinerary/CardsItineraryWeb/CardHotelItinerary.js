@@ -1,11 +1,7 @@
 import moment from "moment";
 import Image from "next/image";
-import Accordion from "@mui/material/Accordion";
 import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
 
 import { TotalStars } from "@/components/General/Stars";
 import { useIsMobile } from "../../../config/Mobile/isMobile";
@@ -16,6 +12,7 @@ import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
+import { Disclosure } from "@headlessui/react";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -67,14 +64,24 @@ export default function CardHotelItinerary(props) {
     }
   };
 
-  const [expanded, setExpanded] = useState(null);
+  // OPEN ACCORDION FUNCTION
+  const [accordionOpen, setAccordionOpen] = useState(null);
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : null);
+  const handleAccordion = (index) => {
+    if (index === accordionOpen) {
+      setAccordionOpen(null);
+    } else {
+      setAccordionOpen(index);
+    }
   };
 
   return (
     <>
+      {/* <div className="absolute mx-auto my-auto">
+        <div className="flex items-center justify-center min-h-auto">
+          <div className="w-16 h-16 border-t-4 border-bl-100 border-solid rounded-full animate-spin" />
+        </div>
+      </div> */}
       <div className="flex gap-x-2 items-start mb-[17px]">
         <Image
           className="w-4"
@@ -91,7 +98,6 @@ export default function CardHotelItinerary(props) {
               <span className="m-b text-fs-16 text-or-100 m-0">
                 {languageData.dayOfWeek[dayOfWeek]}
               </span>{" "}
-
               <span className="m-m text-fs-16 text-gry-70 mr-2 pr-2 border-r-2 border-gyr-100">
                 {dateFormatCheckIn}
               </span>{" "}
@@ -199,7 +205,7 @@ export default function CardHotelItinerary(props) {
                   </div>
                 </div>
 
-                <div className="w-auto max-lg:hidden flex flex-col gap-y-1 w-full justify-center">
+                <div className="w-auto max-lg:hidden flex flex-col gap-y-1 justify-center">
                   <span className="text-fs-10 text-gry-100 m-m">
                     {languageData.cartTour.taxesText}
                   </span>
@@ -281,127 +287,154 @@ export default function CardHotelItinerary(props) {
               </div>
 
               {/* FIRST ACCORDION */}
-
-              <div className="rounded-lg bg-gry-30 w-full h-auto">
+              <div className="rounded-lg bg-gry-30 w-full h-auto !pt-4 !px-4">
                 {itemHotel.rooms &&
                   itemHotel.rooms.map((roomInfo, index) => (
-                    <div key={index}>
-                      <Accordion
-                        id="accordion-hotel-itinerary-one"
-                        expanded={expanded === index}
-                        onChange={handleChange(index)}
-                      >
-                        <AccordionSummary
-                          expandIcon={<ExpandMoreIcon />}
-                          aria-controls="panel1-content"
-                          id="panel1-header"
-                        >
-                          <div className="flex items-center m-b text-fs-12 text-black">
-                            x{roomInfo.quantity} {roomInfo.name}
-                          </div>
-                        </AccordionSummary>
+                    <div
+                      className={`bg-gry-30 pb-[19px] mb-[19px] ${
+                        itemHotel.rooms.length - 1 !== index &&
+                        "border-b border-gry-50"
+                      }`}
+                      key={index}
+                      onClick={() => handleAccordion(index)}
+                    >
+                      <Disclosure defaultOpen={index === accordionOpen}>
+                        <>
+                          <Disclosure.Button className="flex justify-between items-center m-b w-full">
+                            <div className="flex items-center m-b text-fs-12 text-black">
+                              x{roomInfo.quantity} {roomInfo.name}
+                            </div>
 
-                        {/* DETAILS FIRST ACCORDION */}
+                            <Image
+                              width={14}
+                              height={14}
+                              alt="arrow-icons"
+                              src={`${
+                                process.env.NEXT_PUBLIC_URL
+                              }icons/arrows/${
+                                accordionOpen === index
+                                  ? "up-100.svg"
+                                  : "down-100.svg"
+                              }`}
+                            />
+                          </Disclosure.Button>
 
-                        <AccordionDetails>
-                          {roomInfo.occupancies &&
-                            roomInfo.occupancies.map((roomBed, index) => (
-                              <div key={index}>
-                                <div className="mb-2.5 text-fs-11 text-gry-100 m-s-b text-nowrap">
-                                  {/* TEXT ROOM /LP 15-02-24 */}
-                                  <span>
-                                    {languageData.itinerary.detailsPayment.room}{" "}
-                                    {index + 1}
-                                  </span>
-                                </div>
+                          {/* DETAILS FIRST ACCORDION */}
 
-                                <div className="flex flex-wrap gap-x-2 gap-y-2 items-center">
-                                  <div className="flex gap-x-2 items-center">
-                                    <Image
-                                      className="w-[14px] h-[15px]"
-                                      src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
-                                      alt="icon-adult-b"
-                                      width={14}
-                                      height={15}
-                                    />
-
-                                    <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
-                                      {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
-                                      {roomBed.adults}{" "}
-                                      {languageData.modalHotel.adults}{" "}
-                                      {roomBed.children}{" "}
-                                      {languageData.modalHotel.children}
+                          <div
+                            className={` transition-opacity ease-in duration-700 flex flex-col gap-y-[12px] mt-[7px] ${
+                              accordionOpen === index
+                                ? "opacity-100"
+                                : "opacity-0"
+                            } `}
+                          >
+                            {roomInfo.occupancies &&
+                              roomInfo.occupancies.map((roomBed, item) => (
+                                <div
+                                  key={item}
+                                  className={`${
+                                    accordionOpen === index ? "block" : "hidden"
+                                  }`}
+                                >
+                                  <div className="mb-2.5 text-fs-11 text-gry-100 m-s-b text-nowrap">
+                                    {/* TEXT ROOM /LP 15-02-24 */}
+                                    <span>
+                                      {
+                                        languageData.itinerary.detailsPayment
+                                          .room
+                                      }{" "}
+                                      {item + 1}
                                     </span>
                                   </div>
 
-                                  {/* MAP ROOM BEDS */}
-                                  {roomBed.beds &&
-                                    roomBed.beds.map((bed, index) => (
-                                      <div
-                                        key={index}
-                                        className="flex gap-2 items-center"
-                                      >
-                                        <Image
-                                          src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
-                                          alt="icon Room"
-                                          className="w-[14px] h-[15px]"
-                                          width={14}
-                                          height={15}
-                                        />{" "}
-                                        <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
-                                          {bed.number} {bed.type}
-                                        </span>
-                                      </div>
-                                    ))}
-
-                                  {/* NON REFUNDABLE */}
-
-                                  <div className="flex items-center">
-                                    {roomBed.refundable === false && (
+                                  <div className="flex flex-wrap gap-x-2 gap-y-2 items-center">
+                                    <div className="flex gap-x-2 items-center">
                                       <Image
-                                        className="w-[15px] mr-[5px]"
-                                        src={ErrorIcon}
-                                        alt="icon error"
+                                        className="w-[14px] h-[15px]"
+                                        src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                                        alt="icon-adult-b"
+                                        width={14}
+                                        height={15}
                                       />
-                                    )}
-                                    {roomBed.refundable === true && (
-                                      <Image
-                                        className="w-[15px] mr-[5px]"
-                                        src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
-                                        alt="icon done"
-                                        width={12}
-                                        height={10}
-                                      />
-                                    )}
 
-                                    <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
-                                      {!roomBed.refundable &&
-                                        languageData.itinerary.nonRefundable}
-                                      {roomBed.refundable &&
-                                        languageData.itinerary.refundable}
-                                    </span>
-                                  </div>
-
-                                  {/* EATING PLAN */}
-                                  {roomBed.eatingPlan && (
-                                    <div className="flex items-center">
-                                      <Image
-                                        className="w-[15px] mr-[5px]"
-                                        src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
-                                        alt="icon done"
-                                        width={12}
-                                        height={10}
-                                      />
-                                      <span className="text-fs-10 text-nowrap m-b text-grn-100">
-                                        {roomBed.eatingPlan}
+                                      <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                                        {/* TEXT ADULTS AND CHILDREN /LP 15-02-24 */}
+                                        {roomBed.adults}{" "}
+                                        {languageData.modalHotel.adults}{" "}
+                                        {roomBed.children}{" "}
+                                        {languageData.modalHotel.children}
                                       </span>
                                     </div>
-                                  )}
+
+                                    {/* MAP ROOM BEDS */}
+                                    {roomBed.beds &&
+                                      roomBed.beds.map((bed, item) => (
+                                        <div
+                                          key={item}
+                                          className="flex gap-2 items-center"
+                                        >
+                                          <Image
+                                            src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                                            alt="icon Room"
+                                            className="w-[14px] h-[15px]"
+                                            width={14}
+                                            height={15}
+                                          />{" "}
+                                          <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                                            {bed.number} {bed.type}
+                                          </span>
+                                        </div>
+                                      ))}
+
+                                    {/* NON REFUNDABLE */}
+
+                                    <div className="flex items-center">
+                                      {roomBed.refundable === false && (
+                                        <Image
+                                          className="w-[15px] mr-[5px]"
+                                          src={ErrorIcon}
+                                          alt="icon error"
+                                        />
+                                      )}
+                                      {roomBed.refundable === true && (
+                                        <Image
+                                          className="w-[15px] mr-[5px]"
+                                          src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
+                                          alt="icon done"
+                                          width={12}
+                                          height={10}
+                                        />
+                                      )}
+
+                                      <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                                        {!roomBed.refundable &&
+                                          languageData.itinerary.nonRefundable}
+                                        {roomBed.refundable &&
+                                          languageData.itinerary.refundable}
+                                      </span>
+                                    </div>
+
+                                    {/* EATING PLAN */}
+                                    {roomBed.eatingPlan && (
+                                      <div className="flex items-center">
+                                        <Image
+                                          className="w-[15px] mr-[5px]"
+                                          src={`${process.env.NEXT_PUBLIC_URL}icons/done/done-g.svg`}
+                                          alt="icon done"
+                                          width={12}
+                                          height={10}
+                                        />
+                                        <span className="text-fs-10 text-nowrap m-b text-grn-100">
+                                          {roomBed.eatingPlan}
+                                        </span>
+                                      </div>
+                                    )}
+                                  </div>
                                 </div>
-                              </div>
-                            ))}
-                        </AccordionDetails>
-                      </Accordion>
+                              ))}
+                          </div>
+                        </>
+                      </Disclosure>
                     </div>
                   ))}
               </div>

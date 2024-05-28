@@ -40,15 +40,13 @@ export default function FaqsWeb(props) {
       <div className="w-full">
         {faqsConfig[openSection].map((value, index) => (
           <div
+            key={index}
             onClick={() => handleAccordionClick(openSection, index.toString())}
             className={`${
               faqsConfig[openSection].length - 1 === index && "border-b-2"
             } border-t-2 border-gry-70 py-3`}
           >
-            <Disclosure
-              key={index}
-              defaultOpen={index.toString() === activeKey}
-            >
+            <Disclosure defaultOpen={index.toString() === activeKey}>
               <>
                 <Disclosure.Button className="flex justify-between items-center m-b w-full">
                   {languageData.faqs.questions[value.question]}
