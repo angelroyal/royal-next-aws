@@ -4,7 +4,7 @@ import React, { useContext, useState } from "react";
 
 import ModalTransport from "../modal/ModalTransport";
 import LanguageContext from "@/language/LanguageContext";
-import CancelPolicyTransport from "../ToulTip/CancelPolicyTransport";
+import CancelPolicyTransport from "../ToolTip/CancelPolicyTransport";
 import ListingTransportContext from "../../context/ListingTransportContext";
 
 import "swiper/css";
