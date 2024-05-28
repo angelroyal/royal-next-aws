@@ -11,7 +11,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function CardTransport() {
-
   const [openModal, setOpenModal] = useState(false);
   const [openPolicy, setOpenPolicy] = useState(null);
   const { languageData } = useContext(LanguageContext);
@@ -22,12 +21,11 @@ export default function CardTransport() {
     setSelectedTransport(transport);
     setOpenModal(true);
   };
-  
+
   return (
     <>
       {dataTransportF &&
         dataTransportF.map((transport, index) => (
-          // <div key={index} className="max-sm:px-4">
           <div key={index}>
             <div className="shadow-3xl flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col lg:h-[194px] max-sm:max-h-[35rem]">
               <div className="w-[30%] relative max-lg:w-full max-lg:h-[225px]">
@@ -42,7 +40,6 @@ export default function CardTransport() {
                 </div>
               </div>
 
-              {/* CONTAINER 60 */}
               <div className="w-[70%] p-[20px] max-lg:w-full flex justify-between max-md:flex-col">
                 <div className="flex flex-col w-full">
                   <h2 className="text-fs-18 m-b mb-0 truncate">
@@ -51,7 +48,6 @@ export default function CardTransport() {
 
                   <div className="flex flex-col lg:flex-row w-full">
                     <div className="w-full lg:w-[80%] flex flex-col justify-evenly">
-                      {/* TRANSPORT ROUND OR PRIVATE */}
                       <div className="pt-2 pb-[1.2rem]">
                         <span className="text-gry-70 m-b text-fs-12 mr-[8px]">
                           {languageData.CardHomeTransport.typeTrip}
@@ -63,7 +59,6 @@ export default function CardTransport() {
 
                       <div className="flex gap-3">
                         <div className="flex flex-col gap-2">
-                          {/* PEOPLES */}
                           <div className="text-fs-12 flex text-gry-100 items-center text-nowrap truncate">
                             <img
                               className="mr-[5px]"
@@ -75,7 +70,6 @@ export default function CardTransport() {
                             {transport.places} {languageData.CardHomeTransport.people}
                           </div>
 
-                          {/* BAGGAGE */}
                           <div className="text-fs-12 flex text-gry-100 items-center text-nowrap truncate">
                             <img
                               className="mr-[5px]"
@@ -89,7 +83,6 @@ export default function CardTransport() {
                         </div>
 
                         <div className="flex flex-col gap-2">
-                          {/* SERVICE TRANSPORT */}
                           <div className="text-fs-12 flex text-gry-100 items-center text-nowrap truncate">
                             <img
                               className="mr-[5px]"
@@ -103,7 +96,6 @@ export default function CardTransport() {
                               : languageData.CardHomeTransport.sharedService}
                           </div>
 
-                          {/* BAGGAGE */}
                           <div className="text-fs-12 flex text-gry-100 items-center text-nowrap truncate">
                             <img
                               className="mr-[5px]"
@@ -119,8 +111,7 @@ export default function CardTransport() {
                     </div>
                   </div>
                 </div>
-                
-                {/* PRICE */}
+
                 <div className="flex-col flex items-end gap-[4px] max-md:flex-row max-md:justify-between max-md:border-t max-md:border-gry-50 max-md:mt-[10px] max-md:pt-[10px max-md:items-center">
                   <div className="flex-col flex items-end gap-[4px]">
                     <div className="pt-1 flex items-center gap-[8px]">
@@ -157,7 +148,7 @@ export default function CardTransport() {
                     {languageData.CardHomeTransport.reserveBtn}
                   </button>
 
-                  {openModal && (
+                  {selectedTransport && selectedTransport.id === transport.id && openModal && (
                     <ModalTransport
                       isOpen={openModal}
                       onClose={() => setOpenModal(false)}

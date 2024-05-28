@@ -38,7 +38,6 @@ export default function ListingHotelW() {
   const clickPaginator = (event, value) => {
     handlePageChange(event, value);
   };
-  
 
   useEffect(() => {
     scrollToTop();
@@ -111,22 +110,11 @@ export default function ListingHotelW() {
               {/* CARD */}
               {combinedHotelData &&
                 combinedHotelData.map((hotel, index) => (
-                  <>
-                    <CardHotelT
-                      key={index}
-                      hotel={hotel}
-                      requestQueryParams={requestQueryParams}
-                    />{" "}
-                    {/* <HotelCard
-                      key={index}
-                      index={index}
-                      hotel={hotel}
-                      availableNights={numNights}
-                      availablePeople={totalPeople}
-                      isClickPaginator={isClickPaginator}
-                      setClickPaginator={setClickPaginator}
-                    /> */}
-                  </>
+                  <CardHotelT
+                    key={index}
+                    hotel={hotel}
+                    requestQueryParams={requestQueryParams}
+                  />
                 ))}
 
               {/* PAGINATION */}
