@@ -1,14 +1,14 @@
 "use client";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
 import React, { useContext, useState } from "react";
 
 import ModalTransport from "../modal/ModalTransport";
 import LanguageContext from "@/language/LanguageContext";
 import CancelPolicyTransport from "../ToolTip/CancelPolicyTransport";
 import ListingTransportContext from "../../context/ListingTransportContext";
-
-import "swiper/css";
-import "swiper/css/pagination";
 
 export default function CardTransport() {
   const [openModal, setOpenModal] = useState(false);
@@ -130,7 +130,7 @@ export default function CardTransport() {
                       onMouseOver={() => setOpenPolicy(index)}
                       onMouseLeave={() => setOpenPolicy(null)}
                     >
-                      <span className="relative text-center text-fs-10 m-s-b text-bl-100 cursor-pointer relative">
+                      <span className="relative text-center text-fs-10 m-s-b text-bl-100 cursor-pointer">
                         {languageData.containerModalHotel.policies}
                         {openPolicy === index && <CancelPolicyTransport cancellation={transport.cancellation} />}
                       </span>

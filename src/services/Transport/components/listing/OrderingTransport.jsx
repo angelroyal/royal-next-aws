@@ -6,7 +6,9 @@ import ListingTransportContext from "../../context/ListingTransportContext";
 
 export default function OrderingTransport() {
   const { languageData } = useContext(LanguageContext);
-  const { orderHotel, setOrderHotel, dataTransportF } = useContext(ListingTransportContext);
+  const { orderHotel, setOrderHotel, dataTransportF } = useContext(
+    ListingTransportContext
+  );
 
   const handleOrderingFilters = (event) => {
     const selectedValue = +event.target.value;
@@ -17,7 +19,10 @@ export default function OrderingTransport() {
   return (
     <>
       <div className="flex justify-between items-center my-[32px]">
-        <span className="m-s-b text-fs-20">{languageData.listingTour.weFound} {dataTransportF.length} {languageData.CardHomeTransport.vehicles}</span>
+        <span className="m-s-b text-fs-20">
+          {languageData.listingTour.weFound} {dataTransportF.length}{" "}
+          {languageData.CardHomeTransport.vehicles}
+        </span>
 
         {orderingTransport.items.length > 0 && (
           <div className="relative">
@@ -28,12 +33,12 @@ export default function OrderingTransport() {
               {languageData.filtersHotel.order}
             </label>
             <select
-              className="pt-[1.2rem] mt-2 block rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-bl-70 sm:text-sm sm:leading-6 text-fs-14 w-[164px] h-[48px]"
+              className="pt-[1.2rem] mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-bl-70 sm:text-sm sm:leading-6 text-fs-14"
               value={orderHotel}
               onChange={(event) => handleOrderingFilters(event)}
             >
               {orderingTransport.items.map((item, index) => (
-                <option key={index} value={item.value} className="m-s-b text-fs-12 truncate">
+                <option key={index} value={item.value}>
                   {languageData.orderByHotel[item.label]}
                 </option>
               ))}
