@@ -10,7 +10,7 @@ import { useContext, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import LanguageContext from "@/language/LanguageContext";
-import PolicyCardTransportWhite from "../components/ToulTip/PolicyCardTransportWhite";
+import PolicyCardTransportWhite from "../components/ToolTip/PolicyCardTransportWhite";
 
 export default function RecommendedTransport() {
 

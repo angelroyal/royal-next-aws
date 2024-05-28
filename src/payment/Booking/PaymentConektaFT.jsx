@@ -402,13 +402,13 @@ import React, {
           id="card-form"
           onSubmit={handleSubmit}
         >
-          <div className="form-payment">
-            <div className="title-payment-form">
+          <div className="py-[2rem] px-[1.5rem] bg-white mt-[2.5rem] mb-[1.6rem] rounded-[19px] max-lg:p-[1rem]">
+            <div className="m-b text-fs-21 text-black">
               {languageData.booking.paymentConekta.titleForm}
             </div>
   
-            <div className="container-payment-information">
-              <div className="card-payment-info-back-front">
+            <div className="flex gap-[2rem] mt-[1.2rem] max-2xl:flex-col max-md:mb-[1.7rem]">
+              <div className="w-full flex justify-center">
                 <Suspense fallback={null}>
                   <CardPayment
                     isCVV={isCVV}
@@ -422,16 +422,16 @@ import React, {
                 </Suspense>
               </div>
   
-              <div className="form-data-card-payment d-flex flex-column justify-content-center gap-3 width100">
-                <div className="d-block">
-                  <Form.Label htmlFor="nameCard" className="name-client-card">
+              <div className="flex flex-col justify-center gap-3 w-full">
+                <div className="block">
+                  <label htmlFor="nameCard" className="m-s-b text-fs-13 mb-[.5rem]">
                     {languageData.booking.paymentConekta.textNameTitular}{" "}
-                    <span className="input-obligations">*</span>
-                  </Form.Label>
+                    <span className="text-red-100">*</span>
+                  </label>
   
                   <input
                     id="nameCard"
-                    className="enter-data-client"
+                    className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
                     data-conekta="card[name]"
                     placeholder={
                       languageData.booking.paymentConekta.placeholderNameTitular
@@ -442,19 +442,19 @@ import React, {
                   />
                 </div>
   
-                <div className="d-block">
-                  <Form.Label
+                <div className="block">
+                  <label
                     htmlFor="numberCard"
-                    className="subtitle-name-client payment"
+                    className="mt-[22px] m-b text-fs-12 mb-[.5rem]"
                   >
                     {languageData.booking.paymentConekta.textNumberCard}{" "}
-                    <span className="input-obligations">*</span>
-                  </Form.Label>
+                    <span className="text-red-100">*</span>
+                  </label>
   
-                  <div className="position-relative">
+                  <div className="relative">
                     <input
                       id="numberCard"
-                      className="enter-data-client"
+                      className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
                       data-conekta="card[number]"
                       placeholder={
                         languageData.booking.paymentConekta.placeholderNumberCard
@@ -467,15 +467,15 @@ import React, {
                   </div>
                 </div>
   
-                <div className="d-flex justify-content-between gap-2">
-                  <div className="d-flex flex-column">
-                    <Form.Label
+                <div className="flex justify-between gap-2">
+                  <div className="flex flex-col">
+                    <label
                       htmlFor="expirationDate"
-                      className="subtitle-name-client payment"
+                      className="mt-0 m-s-b text-fs-13 mb-[.5rem]"
                     >
                       {languageData.booking.paymentConekta.textDate}{" "}
-                      <span className="input-obligations">*</span>
-                    </Form.Label>
+                      <span className="text-red-100">*</span>
+                    </label>
   
                     <input
                       className="enter-data-client"
