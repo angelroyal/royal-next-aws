@@ -6,7 +6,7 @@ import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import { saveToCartTransport } from "../../Api/requestTransport";
 import ModalTransportContext from "../../context/ModalTransportContext";
-import CancelPolicyTransportWhite from "../ToulTip/CancelPolicyTransportWhite";
+import CancelPolicyTransportWhite from "../ToolTip/CancelPolicyTransportWhite";
 import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 
 export default function TransportPriceCart(props) {
