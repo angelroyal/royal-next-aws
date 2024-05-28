@@ -4,7 +4,7 @@ import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function LottieStayWuw() {
+export default function AlertGeneric() {
   const [isOpen, setIsOpen] = useState(true);
 
   function closeModal() {

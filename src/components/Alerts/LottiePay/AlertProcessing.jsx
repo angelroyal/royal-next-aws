@@ -7,13 +7,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import LanguageContext from "@/language/LanguageContext";
 import animationLoading from "@/assets/animations/loadingFly.json";
 
-export default function LottieProcessing() {
+export default function AlertProcessing() {
   const [isOpen, setIsOpen] = useState(true);
   const { languageData } = useContext(LanguageContext);
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   function openModal() {
     setIsOpen(true);
