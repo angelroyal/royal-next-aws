@@ -21,7 +21,6 @@ export default function AddCartHotel() {
     selectedRooms,
     requestBodyRooms,
     keyHotel,
-    setIsFailedReservation,
     hotelInfo,
   } = useContext(RoomsHotelContext);
 
@@ -63,7 +62,7 @@ export default function AddCartHotel() {
         "success",
         "¡Hotel agregado!",
         "Todo listo para tu estancia.",
-        5000
+        3000
       );
 
       const cartUid = response.cart;
@@ -75,7 +74,7 @@ export default function AddCartHotel() {
       fetchData(cartUid);
       setTimeout(() => {
         router.push(EntitiesRecommendations(language, "hotel", hotelInfo, cartUid));
-      }, 5000);
+      }, 3000);
 
     } catch (error) {
       console.log(error);
@@ -85,7 +84,7 @@ export default function AddCartHotel() {
         "error",
         "Error al agregar hotel",
         "Hubo un problema al agregar el hotel. Por favor, inténtalo de nuevo.",
-        5000
+        3000
       );
     }
   };
