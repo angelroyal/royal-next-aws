@@ -170,7 +170,7 @@ export function AlertUpdate(props) {
   };
 
   useEffect(() => {
-    if (priceChanged === false) {
+    if (priceChanged === true) {
       handleOpenModal();
     }
   }, []);
