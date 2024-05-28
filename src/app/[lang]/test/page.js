@@ -11,6 +11,7 @@ import DestinationReady from "@/components/Recommended/DestinationReady";
 import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 
 import ClientDataT from "@/payment/Booking/ClientDataT";
+import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 // import ActivityFormT from "@/payment/Booking/ActivityFormT";
 export default function Home() {
   return (
@@ -23,16 +24,15 @@ export default function Home() {
               <Navigation />
 
               <Container>
-
                 <DestinationReady />
 
                 <OrderRecommendation />
 
                 <KeepExploring />
-                
-                <ClientDataT/>
-                {/* <ActivityFormT/> */}
 
+                <ClientDataT />
+                {/* <ActivityFormT/> */}
+                <AlertPayment></AlertPayment>
               </Container>
 
               <Footer />

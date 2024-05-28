@@ -130,9 +130,9 @@ export function BannersHomeExclusiveDiscounts() {
   const bannerDiscountsSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts-second.jpg`;
 
   return (
-    <div className="w-full">
-      <div className="flex w-full 2xl:gap-[2vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px]">
-        <div className="2xl:w-fit 2xl:gap-[2vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:block max-md:flex max-md:justify-between max-sm:hidden">
+    <>
+      <div className="flex w-full 2xl:gap-[1vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px] justify-between">
+        <div className="2xl:w-fit 2xl:gap-[2vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:flex max-md:justify-between max-sm:hidden">
           <div className="w-[280px] shadow-3xl rounded-lg">
             <img
               src={bannerDiscounts}
@@ -178,7 +178,7 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
         {/* END SWIPER MOBILE */}
 
-        <div className="2xl:w-[56.6%] w-[60.6%] shadow-3xl rounded-lg max-sm:h-[250px] max-2xl:w-[52.6%] max-xl:w-[39.6%] max-lg:w-[63.6%] max-md:w-full max-md:h-[280px] ">
+        <div className="2xl:w-[54.6%] w-[60.6%] shadow-3xl rounded-lg max-sm:h-[250px] max-2xl:w-[52.6%] max-xl:w-[39.6%] max-lg:w-[63.6%] max-md:w-full max-md:h-[280px] ">
           <Swiper
             slidesPerView={1}
             className="h-full rounded-lg"
@@ -211,7 +211,7 @@ export function BannersHomeExclusiveDiscounts() {
           </a>
         </span>
       </div>
-    </div>
+    </>
   );
 }
 
