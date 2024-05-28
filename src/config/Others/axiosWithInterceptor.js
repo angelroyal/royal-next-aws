@@ -1,15 +1,14 @@
+import sendToSlack from "@/utils/errorBoundary/slackNotifier";
 import axios from "axios";
 
 const getLanguage = () => {
   if (typeof window !== "undefined") {
-    return localStorage.getItem('language') || 'en';
+    return localStorage.getItem("language") || "en";
   }
-  return 'en';
+  return "en";
 };
 
-// Usamos la función para obtener el idioma
 const language = getLanguage();
-
 const clientIP = "187.188.15.87";
 
 const axiosWithInterceptor = axios.create({
@@ -25,11 +24,21 @@ axiosWithInterceptor.interceptors.request.use(
       }
     }
     config.headers["X-Client-IP"] = clientIP;
-
     return config;
   },
   (error) => {
-    Promise.reject(error);
+    sendToSlack("Request Error: " + error.message, {
+      message: error.message,
+      stack: error.stack,
+      config: {
+        url: error.config.url,
+        method: error.config.method,
+        data: error.config.data,
+      },
+      code: error.code,
+      status: error.response ? error.response.status : null,
+    });
+    return Promise.reject(error);
   }
 );
 
@@ -38,6 +47,17 @@ axiosWithInterceptor.interceptors.response.use(
     return response;
   },
   (error) => {
+    sendToSlack("Response Error: " + error.message, {
+      message: error.message,
+      stack: error.stack,
+      config: {
+        url: error.config.url,
+        method: error.config.method,
+        data: error.config.data,
+      },
+      code: error.code,
+      status: error.response ? error.response.status : null,
+    });
     return Promise.reject(error);
   }
 );

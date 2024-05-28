@@ -2,31 +2,8 @@ import React, { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import SearchBox from "../../hooks/SearchBox";
 import { Transfer } from "../../config/Others/imagesBanners";
 import LanguageContext from "../../language/LanguageContext";
-
-export function BannerHomeTop() {
-  const { languageData } = useContext(LanguageContext);
-
-  return (
-    <div className="container content-image-moving">
-      <img
-        src={Transfer.bannerHome.image}
-        alt={Transfer.bannerHome.alt}
-        width="100%"
-      />
-
-      <h1 className="text-image-new-h1">
-        {languageData.titleBanners[Transfer.bannerHome.title]}
-      </h1>
-
-      <div className="element-tabMoving container">
-        <SearchBox />
-      </div>
-    </div>
-  );
-}
 
 export function BannerHomeDown() {
   const { languageData } = useContext(LanguageContext);

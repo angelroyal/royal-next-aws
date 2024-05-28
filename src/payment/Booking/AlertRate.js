@@ -25,7 +25,6 @@ export function AlertRate(props) {
   }, [alertShowRate]);
 
   const handleUpdatePrice = async () => {
-    console.log(infoDataRate);
     const requestPayload = {
       items: infoDataRate.priceChanges.map((change) => ({
         type: "hotel",
@@ -171,7 +170,7 @@ export function AlertUpdate(props) {
   };
 
   useEffect(() => {
-    if (priceChanged === true) {
+    if (priceChanged === false) {
       handleOpenModal();
     }
   }, []);

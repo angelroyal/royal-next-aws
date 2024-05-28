@@ -1,12 +1,13 @@
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 
+import { ErrorAlert } from "../Alerts/AlertsTransport";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import { saveToCartTransport } from "../../Api/requestTransport";
 import ModalTransportContext from "../../context/ModalTransportContext";
 import CancelPolicyTransportWhite from "../ToulTip/CancelPolicyTransportWhite";
-import { ErrorAlert } from "../Alerts/AlertsTransport";
+import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 
 export default function TransportPriceCart(props) {
   const { transport } = props;
@@ -90,8 +91,16 @@ export default function TransportPriceCart(props) {
         JSON.stringify({ uid: cartUid, expirationTime })
       );
       fetchData(cartUid);
+
+      const InfoTransport = {
+        name: transport.label,
+        date: departureDate,
+      };
+
       setTimeout(() => {
-        router.push(`/${language}/booking?uid=${cartUid}`);
+        router.push(
+          EntitiesRecommendations(language, "transport", InfoTransport, cartUid)
+        );
       }, 2000);
     } catch (error) {
       console.error("error", error);
@@ -133,8 +142,9 @@ export default function TransportPriceCart(props) {
       </div>
 
       <button
-        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 rounded-full text-center ${!isButtonEnabled ? "cursor-not-allowed" : "hover:bg-bl-110"
-          }`}
+        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 rounded-full text-center ${
+          !isButtonEnabled ? "cursor-not-allowed" : "hover:bg-bl-110"
+        }`}
         onClick={handleReserveNow}
         disabled={!isButtonEnabled}
       >

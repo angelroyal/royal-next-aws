@@ -125,7 +125,7 @@ export function BannersHomeOffers() {
 }
 
 export function BannersHomeExclusiveDiscounts() {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const bannerDiscounts = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts.jpg`;
   const bannerDiscountsSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts-second.jpg`;
 
@@ -205,10 +205,10 @@ export function BannersHomeExclusiveDiscounts() {
       <div className="m-m text-fs-12 text-gry-100 flex justify-center gap-1">
         <span>
           {languageData.bannersHome.textTyC}{" "}
-          <span className="m-s-b text-black decoration-solid">
+          <a className="text- m-s-b text-black underline decoration-solid"  href={`/${language}/tyc`} target="_blank" >
             {" "}
             {languageData.bannersHome.here}
-          </span>
+          </a>
         </span>
       </div>
     </div>
