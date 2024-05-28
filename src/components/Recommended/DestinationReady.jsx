@@ -9,7 +9,6 @@ import LanguageContext from "@/language/LanguageContext";
 export default function DestinationReady({ type, reservationDetails }) {
   const router = useRouter();
 
-
   // DATE VALIDATE
   let date = null;
 
@@ -19,7 +18,7 @@ export default function DestinationReady({ type, reservationDetails }) {
       checkOut: reservationDetails.checkOut,
     };
   } else {
-    date = reservationDetails.date;
+    date = reservationDetails?.date;
   }
 
   const service = type;

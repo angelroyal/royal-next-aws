@@ -1,4 +1,4 @@
-// src/config/Others/axiosWithInterceptor.js
+import sendToSlack from "@/utils/errorBoundary/slackNotifier";
 import axios from "axios";
 
 const getLanguage = () => {
@@ -27,21 +27,17 @@ axiosWithInterceptor.interceptors.request.use(
     return config;
   },
   (error) => {
-    axios
-      .post("https://sandboxmexico.com/logger/SendToSlackDev.php", {
-        title: "Request Error",
-        errorType: "Request Error",
-        errorDetails: {
-          message: error.message,
-          stack: error.stack,
-          config: error.config,
-          code: error.code,
-          status: error.response ? error.response.status : null,
-        },
-      })
-      .catch((err) =>
-        console.error("Failed to send request error to PHP endpoint:", err)
-      );
+    sendToSlack("Request Error: " + error.message, {
+      message: error.message,
+      stack: error.stack,
+      config: {
+        url: error.config.url,
+        method: error.config.method,
+        data: error.config.data,
+      },
+      code: error.code,
+      status: error.response ? error.response.status : null,
+    });
     return Promise.reject(error);
   }
 );
@@ -51,21 +47,17 @@ axiosWithInterceptor.interceptors.response.use(
     return response;
   },
   (error) => {
-    axios
-      .post("https://sandboxmexico.com/logger/SendToSlackDev.php", {
-        title: "Response Error",
-        errorType: "Response Error",
-        errorDetails: {
-          message: error.message,
-          stack: error.stack,
-          config: error.config,
-          code: error.code,
-          status: error.response ? error.response.status : null,
-        },
-      })
-      .catch((err) =>
-        console.error("Failed to send response error to PHP endpoint:", err)
-      );
+    sendToSlack("Response Error: " + error.message, {
+      message: error.message,
+      stack: error.stack,
+      config: {
+        url: error.config.url,
+        method: error.config.method,
+        data: error.config.data,
+      },
+      code: error.code,
+      status: error.response ? error.response.status : null,
+    });
     return Promise.reject(error);
   }
 );
