@@ -13,6 +13,7 @@ import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
+import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -462,12 +463,7 @@ export default function CardHotelItinerary(props) {
           </div>
         </div>
       </div>
-
-      {loader && (
-        <div className="progress-loader">
-          <CircularProgress />
-        </div>
-      )}
+      {loader && <LinearProgress />}
     </>
   );
 }

@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../../../assets/styles/web/App.css";
 
 import Payment from "@/payment/Payment";
 import Token from "@/components/General/Token";

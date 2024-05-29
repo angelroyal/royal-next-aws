@@ -187,11 +187,16 @@ export default {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0)' },
         },
+        linearIndeterminate: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
 
       animation: {
         'slide-up': 'slide-up 1s forwards',
         'slide-in': 'slide-in 0.5s forwards',
+        linearIndeterminate: 'linearIndeterminate 1.5s infinite linear',
       },
 
       boxShadow: {

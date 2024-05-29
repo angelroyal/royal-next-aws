@@ -77,11 +77,6 @@ export function LanguageSelector() {
           height={8}
         />
       </div>
-      {/* <div className="m-language">
-      <Suspense fallback={null}>
-        <SelectLanguage />
-      </Suspense>
-    </div> */}
     </>
   );
 }

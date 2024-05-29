@@ -10,9 +10,6 @@ import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 import SearchTransport from "@/services/Transport/components/Search/SearchTransport";
 import { MobilSearchSkeleton } from "@/services/Hotels/components/Skeleton/HotelListingSkeleton";
 
-import "../../assets/styles/web/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 export default function SearchBoxMobile() {
   const [activeTab, setActiveTab] = useState(null);
   const { languageData } = useContext(LanguageContext);

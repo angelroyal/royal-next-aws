@@ -1,35 +1,24 @@
 import React, { useState, useContext, useEffect } from "react";
-// import { TextField } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
   AccordionActions,
-  //   FormGroup,
-  //   FormControlLabel,
-  //   Checkbox,
   Button,
   Slider,
   Box,
 } from "@mui/material";
 
-// import LanguageContext from "../../../language/LanguageContext";
 
-// import { ReactComponent as ArrowIcon } from "../../../assets/icons/tour/listing/down-arrow.svg"
-// import { ReactComponent as ArrowUpIcon } from "../../../assets/icons/tour/listing/up-arrow.svg";
 import IconStar from "../../../../assets/icons/utils/others/Star-filter.svg";
 import { getFilterTours } from "./allFilters";
-// import { getFilterTours } from "../Services/allFilters";
-// import { orderData } from "../../context/tourUtils";
 import { filterStart, getFilters } from "./filtersTours";
 import { orderData } from "../../context/orderData";
 import LanguageContext from "@/language/LanguageContext";
 import Image from "next/image";
 
-// import { orderData } from "../../Context/tourUtils";
 
-// export default function FilterTour({ updateURL }) {
 export default function FilterTour(props) {
   //Props
   const { auxTourData, setAuxTourData, tourData, setChangeTours, orderTour } =
