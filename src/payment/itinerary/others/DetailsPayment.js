@@ -135,7 +135,7 @@ export default function DetailsPayment(props) {
                   <Image src={IconCreditCart} alt="icons credit carts" />
                 </div>
 
-                <div className="flex justify-between flex-wrap items-center">
+                <div className="flex flex-col items-center gap-y-[12px]">
                   <ModalShare itinerary={true} className="modal-style-share" />
 
                   {step === 1 ? (
