@@ -1,23 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import LanguageContext from "@/language/LanguageContext";
 
-export default function AlertGeneric() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
+export default function AlertGeneric({
+  title = null,
+  description = null,
+  cancelPolicy = null,
+  openAlert,
+  setCloseAlert,
+}) {
   return (
-    <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={openModal}>
+    <Transition appear show={openAlert} as={Fragment}>
+      <Dialog as="div" className="relative z-10" onClose={setCloseAlert}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -50,7 +47,7 @@ export default function AlertGeneric() {
                     height={12}
                     alt="icon-close"
                     className="cursor-pointer absolute top-[20px] right-[20px]"
-                    onClick={closeModal}
+                    onClick={setCloseAlert}
                   />
 
                   <img
@@ -63,18 +60,17 @@ export default function AlertGeneric() {
 
                   {/* <Lottie className="w-[300px] h-[300px]" animationData={animationLoading} /> */}
 
-                  <span className="text-fs-20 m-s-b mb-[8px]">
-                    Lorem ipsum.
-                  </span>
+                  {title && (
+                    <span className="text-fs-20 m-s-b mb-[8px]">{title}</span>
+                  )}
 
                   <p className="text-fs-12 text-gry-100 m-m text-center mb-[24px]">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit.consectetur adipisicing elit
+                    {description && description}
                   </p>
 
                   <button
                     className="text-white bg-bl-100 px-[16px] py-[14px] text-fs-12 m-s-b rounded-full hover:bg-bl-110 focus:outline-none"
-                    onClick={closeModal}
+                    onClick={setCloseAlert}
                   >
                     Button Label
                   </button>
