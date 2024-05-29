@@ -1,7 +1,6 @@
 import moment from "moment";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
-import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
 
 import { TotalStars } from "@/components/General/Stars";
