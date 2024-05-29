@@ -17,6 +17,7 @@ export default function ListingTransport(props) {
   const { setDataTransport, dataTransportF } = useContext(
     ListingTransportContext
   );
+
   setDataTransport(data);
 
   return (
@@ -54,6 +55,7 @@ export default function ListingTransport(props) {
       <div className="my-7">
         <BannerCallHotelT />
       </div>
+      
     </Container>
   );
 }

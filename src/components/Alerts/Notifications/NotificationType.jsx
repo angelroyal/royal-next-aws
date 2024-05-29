@@ -1,13 +1,7 @@
-// DoneNotification.js
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function NotificationType({
-  type,
-  title,
-  message,
-  duration,
-  onClose,
-}) {
+export default function NotificationType(props) {
+  const { type, title, message, duration, onClose } = props;
   const [progress, setProgress] = useState(0);
 
   const icons = {
@@ -15,6 +9,13 @@ export default function NotificationType({
     warning: "warning.svg",
     error: "error.svg",
     info: "info.svg",
+  };
+
+  const colors = {
+    success: "#10AC61",
+    warning: "#FCB41E",
+    error: "#ED2630",
+    info: "#2743A6",
   };
 
   useEffect(() => {
@@ -65,8 +66,12 @@ export default function NotificationType({
       </div>
       {/* LINE PROGRESS */}
       <div
-        className="fixed bottom-0 left-0 h-1 bg-blue-500"
-        style={{ width: `${progress}%`, transition: "width 0.1s linear" }}
+        className="fixed bottom-0 left-0 h-1"
+        style={{
+          width: `${progress}%`,
+          backgroundColor: colors[type],
+          transition: "width 0.1s linear",
+        }}
       />
     </div>
   );

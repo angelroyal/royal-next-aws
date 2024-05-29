@@ -37,7 +37,9 @@ export default async function DetailPageHotel({ searchParams }) {
     const response = await axiosWithInterceptor.get(
       `v1/transports/destinations/${searchParams.destinationId}/zones/${searchParams.zoneFromId}/${searchParams.zoneToId}/vehicles?round=${roundQueryParam}`
     );
+
     const transportData = response.data;
+
     return (
       <LanguageProvider>
         <TokenProvider>
