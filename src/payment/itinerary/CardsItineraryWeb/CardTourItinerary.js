@@ -5,10 +5,11 @@ import React, { useContext, useState } from "react";
 
 import LanguageContext from "../../../language/LanguageContext";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
-import { TooltipDown } from "../../../components/ToolTip/TooltipDown";
+import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
-export default function TourCardItinerary({ itemActivity }) {
+export default function TourCardItinerary({key, itemActivity }) {
+  // console.log(key);
   const { setItinerary, fetchData } = useCartAxios();
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
@@ -47,7 +48,8 @@ export default function TourCardItinerary({ itemActivity }) {
 
   // DAY OF WEEK
   const dayOfWeek = moment(itemActivity.date).format("dddd");
-  const url = process.env.REACT_APP_URL_SITE + "/policy";
+
+  const [openAlert, setOpenAlert] = useState(false);
 
   return (
     itemActivity && (
@@ -198,7 +200,7 @@ export default function TourCardItinerary({ itemActivity }) {
                       </span>
                     </div>
 
-                    <div className="w-1/2 flex flex-col justify-center gap-[4px] max-sm:w-fit">
+                    <div className="w-1/2 flex flex-col justify-center gap-[4px] max-lg:items-end max-sm:w-fit">
                       <span className="m-s-b text-fs-10 text-gry-100 text-nowrap">
                         {languageData.modalTourOptions.taxes}
                       </span>
@@ -216,39 +218,24 @@ export default function TourCardItinerary({ itemActivity }) {
                       {itemActivity.cancelPolicies &&
                         itemActivity.cancelPolicies.length > 0 &&
                         itemActivity.cancelPolicies.map(
-                          (cancelPolicy, index) => (
-                            <TooltipDown
-                              key={index}
-                              disableFocusListener
-                              disableTouchListener
-                              title={
-                                cancelPolicy ? (
-                                  <React.Fragment>
-                                    {languageData.roomsCancellations.percentage}{" "}
-                                    {cancelPolicy.hours}{" "}
-                                    {languageData.roomsCancellations.from}{" "}
-                                    {`${cancelPolicy.penalty}${
-                                      cancelPolicy.type === "percent" ? "%" : ""
-                                    }`}
-                                    {languageData.roomsCancellations.total}{" "}
-                                    <a
-                                      className="text-bl-100 no-underline"
-                                      href={url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                    >
-                                      {languageData.roomsCancellations.terms}{" "}
-                                    </a>
-                                  </React.Fragment>
-                                ) : (
-                                  <div>No data</div>
-                                )
-                              }
-                            >
-                              <div className="text-bl-100 m-s-b text-fs-8 cursor-pointer">
-                                {languageData.containerModalHotel.policies}
+                          (cancelPolicy, item) => (
+                            <>
+                              <div
+                                key={item}
+                                className="text-bl-100 m-s-b text-fs-8 cursor-pointer relative"
+                              >
+                                <span onClick={() => setOpenAlert(true)}>
+                                  {languageData.containerModalHotel.policies}
+                                </span>
+
+                                <AlertPyC
+                                  openAlert={openAlert}
+                                  setOpenAlert={() => setOpenAlert(false)}
+                                  description={"policy"}
+                                  cancelPolicy={cancelPolicy}
+                                />
                               </div>
-                            </TooltipDown>
+                            </>
                           )
                         )}
                     </div>

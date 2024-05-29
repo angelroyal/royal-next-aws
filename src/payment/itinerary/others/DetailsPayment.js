@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import { CircularProgress } from "@mui/material";
+import React, { useContext, useEffect } from "react";
 
 import {
   DescriptionHotel,
@@ -13,8 +13,6 @@ import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
 
 import IconCreditCart from "../../../assets/images/others/credit-card.svg";
-import IconRightBlack from "../../../assets/icons/utils/payment/right-bl.svg";
-import LogoFlyRoyal from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 
 import "@/assets/styles/mobile/AppMobile.css";
 import "@/assets/styles/mobile/PaymentMobile.css";
@@ -58,7 +56,7 @@ export default function DetailsPayment(props) {
   return (
     <>
       {/* h-full */}
-      <div className="flex w-full h-full lg:h-max pt-[28px] pb-[20px] px-6 lg:pt-[4.6rem] lg:pl-[24px] lg:pb-[24px] flex-col gap-y-[40px] sticky top-0">
+      <div className="flex w-full h-full lg:h-max pt-[28px] pb-[20px] px-6 lg:pt-[4.6rem] lg:pl-[24px] lg:pb-[24px] flex-col gap-y-[40px] sticky top-0 will-change-transform">
         {/* TITLE AND LOGO */}
         {data && (
           <>
@@ -77,9 +75,7 @@ export default function DetailsPayment(props) {
             </div>
 
             {/* INFO PRICE AND TOTAL*/}
-            {/* <div className="cont-info-price-info-itinerary"> */}
             <div className="w-full lg:!pb-4 lg:mb-[18px] h-full relative">
-              {/* mb-[9rem] */}
               <div className="flex flex-col mb-[3rem]">
                 {data.summary.hotels.length > 0 && (
                   <DescriptionHotel hotel={data.summary.hotels} />
@@ -186,333 +182,10 @@ export default function DetailsPayment(props) {
                   )}
                 </div>
               </div>
-
-              {/* {!isMobile && (
-                <div className="info-hotel-flex-colum">
-                  <div className="spa-bet">
-                    <span className="text-black-info-i-g">Total</span>
-                    <span className="text-black-info-i">
-                      $
-                      {Math.floor(data.summary.totalCurrentPrice)
-                        .toLocaleString("es-MX", { currency: "MXN" })
-                        .replace(".00", "")}
-                      .
-                      <sup>
-                        {(data.summary.totalCurrentPrice % 1)
-                          .toFixed(2)
-                          .slice(2)}
-                      </sup>
-                    </span>
-                  </div>
-                </div>
-              )} */}
             </div>
-
-            {/* <div className="container-next-step width100">
-              <div className="cont-icons-payments-itinerary">
-                <Image src={IconCreditCart} alt="icons credit carts" />
-              </div>
-
-              {isMobile && (
-                <div className="info-hotel-flex-colum">
-                  <div className="spa-bet">
-                    <span className="text-black-info-i-g">Total</span>
-                    <span className="text-black-info-i">
-                      $
-                      {Math.floor(data.summary.totalCurrentPrice)
-                        .toLocaleString("es-MX", { currency: "MXN" })
-                        .replace(".00", "")}
-                      .
-                      <sup>
-                        {(data.summary.totalCurrentPrice % 1)
-                          .toFixed(2)
-                          .slice(2)}
-                      </sup>
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              {step > 0 && step <= 2 && (
-                <div className="cont-share-to-complete-payment">
-                  {step === 1 && (
-                    <ModalShare
-                      itinerary={true}
-                      className="modal-style-share"
-                    />
-                  )}
-
-                  {isMobile && step === 2 && (
-                    <ModalShare
-                      itinerary={true}
-                      className="modal-style-share"
-                    />
-                  )}
-
-                  {step === 1 && (
-                    <div
-                      className="complete-payment-i"
-                      onClick={() => nextStep()}
-                    >
-                      <span className="text-black-info-i-m">
-                        {languageData.itinerary.detailsPayment.completePayment}
-                      </span>
-
-                      <Image src={IconRightBlack} alt="icon right" />
-                    </div>
-                  )}
-
-                  {step === 2 && isMobile && (
-                    <div>
-                      <button
-                        type="submit"
-                        onClick={() => paymentReservation()}
-                        className={`button-payment-details ${
-                          !policyAccept || !termsAccept || !buttonActive
-                            ? "disabled"
-                            : ""
-                        } ${
-                          policyAccept && termsAccept
-                            ? "add-padding-container"
-                            : "disabled-padding-button"
-                        } `}
-                        disabled={
-                          !policyAccept || !termsAccept || !buttonActive
-                        }
-                      >
-                        {languageData.booking.paymentConekta.buttonForms}{" "}
-                        {policyAccept && termsAccept && (
-                          <div className="position-relative d-inline-flex justify-content-center">
-                            <CircularProgress
-                              variant="determinate"
-                              value={progressCount}
-                              id="circle-count"
-                            />
-                            <div className="count-number">{countNumber}</div>
-                          </div>
-                        )}
-                      </button>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div> */}
           </>
         )}
       </div>
     </>
   );
 }
-
-// HOLD DETAILS PAYMENT
-// <div className="container-details-payment">
-//   <div className="divider-details-info">
-
-//     {/* DATA HOTELS */}
-//     {itemSummary.hotels && (
-//       <>
-//         <div className="titles-details">
-//           {languageData.itinerary.detailsPayment.hotelPayment}
-//         </div>
-
-//         {itemSummary.hotels.map((hotel, index) => (
-//           <ul className="list-details-payment p-0" key={index}>
-//             {/* NAME HOTEL HOTEL */}
-//             <li className="details-hotels-text">{hotel.name}</li>
-
-//             {/* ROOMS NAMES & PRICE INDIVIDUAL */}
-//             {hotel.rooms.map((room, index) => (
-//               <Row className="row-divider" key={index}>
-//                 <Col sm={8} className="col-divider-hotel-payment p-0">
-//                   <div className="details-room-text">{room.name}</div>
-//                 </Col>
-
-//                 <Col sm={4} className="col-price-unit p-0">
-//                   <div className="price-payment-hotel">
-//                     $
-//                     {Math.floor(room.currentPrice)
-//                       .toLocaleString("es-MX", { currency: "MXN" })
-//                       .replace(".00", "")}
-//                     .
-//                     <sup>{(room.currentPrice % 1).toFixed(2).slice(2)}</sup>
-//                   </div>
-
-//                   {/* CHANGE PRICE UPDATE */}
-//                   {room.previousPrice && (
-//                     <div className="update-price-before">
-//                       $
-//                       {Math.floor(room.previousPrice)
-//                         .toLocaleString("es-MX", { currency: "MXN" })
-//                         .replace(".00", "")}
-//                       .
-//                       <sup>
-//                         {(room.previousPrice % 1).toFixed(2).slice(2)}
-//                       </sup>
-//                     </div>
-//                   )}
-//                 </Col>
-//               </Row>
-//             ))}
-//           </ul>
-//         ))}
-//       </>
-//     )}
-
-//     {/* {itemSummary.hotels && (
-//       <Row className="row-divider">
-//         <Col sm={8} className="col-divider-hotel-payment">
-//           <div className="titles-details">
-//             {languageData.itinerary.detailsPayment.hotelPayment}
-//           </div>
-//           <ul className="list-details-payment">
-//             {itemSummary.hotels.rooms.map((hotelName, index) => (
-//               <li key={index} className="details-hotels-text">
-//                 {hotelName}
-//               </li>
-//             ))}
-//           </ul>
-//         </Col>
-//         <Col sm={4} className="col-price-unit">
-//           <div className="price-payment-hotel">
-//             $
-//             {Math.floor(itemSummary.hotels.totalCurrentPrice)
-//               .toLocaleString("es-MX", { currency: "MXN" })
-//               .replace(".00", "")}
-//             .
-//             <sup>
-//               {(itemSummary.hotels.totalCurrentPrice % 1)
-//                 .toFixed(2)
-//                 .slice(2)}
-//             </sup>
-//           </div>
-
-//           CHANGE PRICE UPDATE
-//           <div className="update-price-before">$00,000.<sup>00</sup></div>
-//         </Col>
-//       </Row>
-//     )} */}
-
-//     {/* DATA ACTIVITIES */}
-//     {itemSummary.activities && (
-//       <Row className="row-divider">
-//         <Col sm={8} className="col-divider-tour-payment">
-//           <div className="titles-details">
-//             {languageData.itinerary.detailsPayment.tourPayment}
-//           </div>
-//           <ul className="list-details-payment">
-//             {itemSummary.activities.names && itemSummary.activities.names.map((hotelName, index) => (
-//               <li key={index} className="details-Tours-text">
-//                 {hotelName}
-//               </li>
-//             ))}
-//           </ul>
-//         </Col>
-
-//         <Col sm={4} className="col-price-tour">
-//           <span className="price-payment-tour">
-//             $
-//             {Math.floor(itemSummary.activities.totalCurrentPrice)
-//               .toLocaleString("es-MX", { currency: "MXN" })
-//               .replace(".00", "")}
-//             .
-//             <sup>
-//               {(itemSummary.activities.totalCurrentPrice % 1)
-//                 .toFixed(2)
-//                 .slice(2)}
-//             </sup>
-//           </span>
-//         </Col>
-//       </Row>
-//     )}
-
-//     {/* DATA TRANSPORT */}
-//     {itemSummary.transportations && (
-//       <Row className="row-divider">
-//         <Col sm={8} className="col-divider-moving-payment">
-//           <div className="titles-details">
-//             {languageData.itinerary.detailsPayment.transferPayment}
-//           </div>
-//           <ul className="list-details-payment">
-//             {itemSummary.transportations.names && itemSummary.transportations.names.map((hotelName, index) => (
-//               <li key={index} className="details-Moving-text">
-//                 {hotelName}
-//               </li>
-//             ))}
-//           </ul>
-//         </Col>
-
-//         <Col sm={4} className="col-price-moving">
-//           <span className="price-payment-moving">
-//             $
-//             {Math.floor(itemSummary.transportations.totalCurrentPrice)
-//               .toLocaleString("es-MX", { currency: "MXN" })
-//               .replace(".00", "")}
-//             .
-//             <sup>
-//               {(itemSummary.transportations.totalCurrentPrice % 1)
-//                 .toFixed(2)
-//                 .slice(2)}
-//             </sup>
-//           </span>
-//         </Col>
-//       </Row>
-//     )}
-
-//     {/* DATA TAXES */}
-//     <Row className="row-divider-taxes">
-//       <Col sm={8} className="col-divider-taxes-payment">
-//         <div className="taxes-details-payment">
-//           {languageData.itinerary.detailsPayment.taxesPayment}
-//         </div>
-//       </Col>
-
-//       <Col sm={4} className="col-price-moving">
-//         <span className="price-payment-moving">
-//           $
-//           {Math.floor(itemSummary.taxes)
-//             .toLocaleString("es-MX", { currency: "MXN" })
-//             .replace(".00", "")}
-//           .<sup>{(itemSummary.taxes % 1).toFixed(2).slice(2)}</sup>
-//         </span>
-//       </Col>
-//     </Row>
-//   </div>
-
-//   {/* PRICE TOTAL */}
-//   <div className="h-line-payment" />
-//   <Row className="m-3">
-//     <Col sm={4} className="col-divider-hotel-payment p-0">
-//       <span className="total-price-payment">
-//         {languageData.itinerary.detailsPayment.total}
-//       </span>
-//     </Col>
-
-//     <Col sm={8} className="text-right p-0">
-//       <span className="letter-price-payment">
-//         {languageData.itinerary.detailsPayment.letterPrice}
-//       </span>
-//       <span className="price-payment">
-//         $
-//         {Math.floor(itemSummary.totalCurrentPrice)
-//           .toLocaleString("es-MX", { currency: "MXN" })
-//           .replace(".00", "")}
-//         .
-//         <sup>{(itemSummary.totalCurrentPrice % 1).toFixed(2).slice(2)}</sup>
-//       </span>
-
-//       {/* CHANGE PRICE UPDATE */}
-//       {itemSummary.totalPreviousPrice && (
-//         <div className="update-price-before">
-//           $
-//           {Math.floor(itemSummary.totalPreviousPrice)
-//             .toLocaleString("es-MX", { currency: "MXN" })
-//             .replace(".00", "")}
-//           .
-//           <sup>
-//             {(itemSummary.totalPreviousPrice % 1).toFixed(2).slice(2)}
-//           </sup>
-//         </div>
-//       )}
-//     </Col>
-//   </Row>
-// </div>

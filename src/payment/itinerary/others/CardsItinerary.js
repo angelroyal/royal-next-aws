@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
 import { BookingContext } from "@/payment/context/BookingContext";
+import CardTourItinerary from "../CardsItineraryWeb/CardTourItinerary";
 import CardHotelItinerary from "../CardsItineraryWeb/CardHotelItinerary";
 import CardMovingItinerary from "../CardsItineraryWeb/CardMovingItinerary";
 import CardTourConfirmation from "@/payment/Confirmation/CardTourConfirmation";
 import CardHotelConfirmation from "@/payment/Confirmation/CardHotelConfirmation";
-import CardTourItinerary from "../CardsItineraryWeb/CardTourItinerary";
 
 export default function CardsItinerary(props) {
   const { dataItinerary } = props;
