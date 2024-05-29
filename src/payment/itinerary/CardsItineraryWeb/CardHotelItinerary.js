@@ -1,7 +1,6 @@
 import moment from "moment";
 import Image from "next/image";
 import Accordion from "@mui/material/Accordion";
-import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -16,6 +15,7 @@ import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
+import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -91,7 +91,6 @@ export default function CardHotelItinerary(props) {
               <span className="m-b text-fs-16 text-or-100 m-0">
                 {languageData.dayOfWeek[dayOfWeek]}
               </span>{" "}
-
               <span className="m-m text-fs-16 text-gry-70 mr-2 pr-2 border-r-2 border-gyr-100">
                 {dateFormatCheckIn}
               </span>{" "}
@@ -434,12 +433,7 @@ export default function CardHotelItinerary(props) {
           </div>
         </div>
       </div>
-
-      {loader && (
-        <div className="progress-loader">
-          <CircularProgress />
-        </div>
-      )}
+      {loader && <LinearProgress />}
     </>
   );
 }

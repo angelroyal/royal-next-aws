@@ -1,10 +1,9 @@
 "use client";
-import Dropdown from "react-bootstrap/Dropdown";
-import { useState, useEffect, useContext, useRef, Fragment } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 
 import RoomMenu from "./RoomMenu";
-import LanguageContext from "../../../language/LanguageContext";
 import { Menu } from "@headlessui/react";
+import LanguageContext from "../../../language/LanguageContext";
 
 function Room({ listing = false, OnApply }) {
   const [showDropdown, setShowDropdown] = useState(false);

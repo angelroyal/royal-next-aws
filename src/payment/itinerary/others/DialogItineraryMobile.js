@@ -5,9 +5,6 @@ import ReservationShortInfo from "./DetailReservation";
 import { BookingContext } from "@/payment/context/BookingContext";
 import DetailsPayment from "./DetailsPayment";
 
-// import "@/assets/styles/mobile/AppMobile.css";
-// import "@/assets/styles/mobile/PaymentMobile.css";
-// import "@/assets/styles/mobile/DialogSearchHotel.css";
 
 export function DialogItineraryMobile(props) {
   const { dataItinerary, setChangeButton, setSmShow } = props;

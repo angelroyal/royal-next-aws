@@ -11,8 +11,6 @@ import { useToken } from "../../../../config/context/AuthContext";
 import LanguageContext from "../../../../language/LanguageContext";
 import ListingHotelContext from "../../context/ListingHotelContext";
 import { scrollToTop } from "../../../../utils/pageConfig/scrollToTop";
-// import SearchBoxMobile from "../../../components/searchMobil/SearchBoxMobile";
-// import { BannerListingHotelBottom } from "../../../components/bannerJsx/bannerListingHotel";
 import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
@@ -75,7 +73,6 @@ export default function ListingHotelW() {
 
   return (
     <Container>
-      {/* <BannerListingHotelTop /> */}
       <div className="flex flex-col xl:flex-row md:justify-between">
         <div className="w-full xl:w-[28%] mt-10">
           <SearchBoxMobile />

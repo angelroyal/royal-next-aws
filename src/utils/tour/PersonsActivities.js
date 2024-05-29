@@ -191,6 +191,7 @@ export default function PersonsActivities({ OnApply, listing }) {
           />
 
           <span className="flex m-s-b flex-col gap-y-[3px] text-fs-12 items-start py-0 px-[10px]">
+           
             <p className="m-0 m-s-b text-fs-10 text-gry-70 w-max">
               {languageData.SearchBox.tabTour.people}
             </p>
@@ -205,6 +206,7 @@ export default function PersonsActivities({ OnApply, listing }) {
                 ]
               }`}
             </p>
+          
           </span>
         </Menu.Button>
       </div>
