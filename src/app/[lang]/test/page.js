@@ -12,6 +12,8 @@ import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 
 import ClientDataT from "@/payment/Booking/ClientDataT";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
+import Loading from "@/components/General/Loading";
+import LoadingProgress from "@/components/General/LoadingProgress";
 // import ActivityFormT from "@/payment/Booking/ActivityFormT";
 export default function Home() {
   return (
@@ -33,6 +35,11 @@ export default function Home() {
                 <ClientDataT />
                 {/* <ActivityFormT/> */}
                 <AlertPayment></AlertPayment>
+                <Loading
+                width={"w-[30px]"}
+                height={"w-[30px]"}/>
+                <LoadingProgress/>
+
               </Container>
 
               <Footer />

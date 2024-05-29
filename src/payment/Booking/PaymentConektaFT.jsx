@@ -6,7 +6,7 @@ import React, {
     lazy,
     useRef,
   } from "react";
-  import { Form } from "react-bootstrap";
+  
   import { CircularProgress } from "@mui/material";
   
   import LanguageContext from "../../language/LanguageContext";
@@ -23,7 +23,7 @@ import React, {
   import { BookingContext } from "../context/BookingContext";
   
   const AlertBooking = lazy(() => import("./AlertBooking"));
-  const CardPayment = lazy(() => import("../Utils/CardPayment"));
+  const CardPaymentT = lazy(() => import("../Utils/CardPaymentT"));
   
   export default function PaymentConektaFT(props) {
     const {
@@ -410,7 +410,7 @@ import React, {
             <div className="flex gap-[2rem] mt-[1.2rem] max-2xl:flex-col max-md:mb-[1.7rem]">
               <div className="w-full flex justify-center">
                 <Suspense fallback={null}>
-                  <CardPayment
+                  <CardPaymentT
                     isCVV={isCVV}
                     nameCard={nameCard}
                     expirationMonth={expirationMonth}
@@ -445,7 +445,7 @@ import React, {
                 <div className="block">
                   <label
                     htmlFor="numberCard"
-                    className="mt-[22px] m-b text-fs-12 mb-[.5rem]"
+                    className="m-b text-fs-12 mb-[.5rem]"
                   >
                     {languageData.booking.paymentConekta.textNumberCard}{" "}
                     <span className="text-red-100">*</span>
@@ -478,7 +478,7 @@ import React, {
                     </label>
   
                     <input
-                      className="enter-data-client"
+                      className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
                       placeholder={
                         languageData.booking.paymentConekta.placeholderDate
                       }
@@ -498,18 +498,18 @@ import React, {
                     />
                   </div>
   
-                  <div className="d-flex flex-column">
-                    <Form.Label
+                  <div className="flex flex-col">
+                    <label
                       htmlFor="cvvCard"
-                      className="subtitle-name-client payment"
+                      className="mt-0 m-s-b text-fs-13 mb-[.5rem]"
                     >
                       {languageData.booking.paymentConekta.textCvv}{" "}
-                      <span className="input-obligations">*</span>
-                    </Form.Label>
+                      <span className="text-red-100">*</span>
+                    </label>
   
                     <input
                       id="cvvCard"
-                      className="enter-data-client"
+                      className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
                       data-conekta="card[cvc]"
                       placeholder={languageData.booking.paymentConekta.textCvv}
                       value={cvvCard}
@@ -524,7 +524,7 @@ import React, {
             <div className="flex justify-between items-center">
               {/* TERMS & CONDITIONS */}
               <div className="flex flex-col gap-y-[9px]">
-                <div className="flex gap-x-2 items-start">
+                <div className="flex gap-x-2 items-center">
                   <input
                     className="max-md:mt-[3px]"
                     type="checkbox"
@@ -537,14 +537,14 @@ import React, {
                   />{" "}
                   <label
                     htmlFor="policy"
-                    className="clauses flex flex-wrap gap-[3px]"
+                    className="m-m text-gry-100 text-fs-14 flex flex-wrap gap-[3px]"
                     style={{
                       cursor: isUserDataValid ? "pointer" : "not-allowed",
                     }}
                   >
                     {languageData.booking.paymentConekta.textClauses}
                     <a
-                      className="label-link-payment"
+                      className="text-bl-100 no-underline"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={process.env.REACT_APP_URL_SITE + "/conditions"}
@@ -554,7 +554,7 @@ import React, {
                   </label>
                 </div>
   
-                <div className="flex gap-x-2 items-start">
+                <div className="flex gap-x-2 items-center">
                   <input
                     className="max-md:mt-[3px]"
                     type="checkbox"
@@ -567,14 +567,14 @@ import React, {
                   />{" "}
                   <label
                     htmlFor="terms"
-                    className="clauses flex flex-wrap gap-[3px]"
+                    className="m-m text-gry-100 text-fs-14 flex flex-wrap gap-[3px]"
                     style={{
                       cursor: isUserDataValid ? "pointer" : "not-allowed",
                     }}
                   >
                     {languageData.booking.paymentConekta.textClauses}{" "}
                     <a
-                      className="label-link-payment"
+                      className="text-bl-100 no-underline"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={process.env.REACT_APP_URL_SITE + "/privacy"}
@@ -586,30 +586,30 @@ import React, {
               </div>
   
               {/* BUTTON AND COUNT PAY */}
-              <div className="payment-styles">
+              <div className="flex justify-end my-[1rem] mx-0">
                 <button
                   type="submit"
                   ref={buttonRef}
-                  className={`button-payment-details ${
+                  className={`border-transparent bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] ${
                     !policyChecked || !termsChecked || !isButtonEnabled
-                      ? "disabled"
+                      ? "bg-yw-50 cursor-not-allowed"
                       : ""
                   } ${
                     policyChecked && termsChecked
-                      ? "add-padding-container hover:bg-yw-110"
-                      : "disabled-padding-button"
+                      ? "px-[64px] py-[13px] hover:bg-yw-110"
+                      : "px-[80px] py-[16px]"
                   }`}
                   disabled={!policyChecked || !termsChecked || !isButtonEnabled}
                 >
                   {languageData.booking.paymentConekta.buttonForms}{" "}
                   {policyChecked && termsChecked && (
-                    <div className="position-relative d-inline-flex justify-content-center">
+                    <div className="relative inline-flex justify-center">
                       <CircularProgress
                         variant="determinate"
                         value={progress}
                         id="circle-count"
                       />
-                      <div className="count-number">{countdown}</div>
+                      <div className="absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center m-s-b max-lg:text-fs-12">{countdown}</div>
                     </div>
                   )}
                 </button>
@@ -636,7 +636,7 @@ import React, {
           </div>
   
           {/* IT IS NOT SHOWN TO THE USER BUT WE USE IT FOR OUT DATA */}
-          <div className="d-none">
+          <div className="hidden">
             <input
               type="text"
               defaultValue={String(expirationMonth)}
