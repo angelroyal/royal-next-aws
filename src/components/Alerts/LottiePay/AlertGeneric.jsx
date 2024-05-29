@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useContext } from "react";
-import { Fragment, useState } from "react";
+import React from "react";
+import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import LanguageContext from "@/language/LanguageContext";
 
 export default function AlertGeneric({
   title = null,

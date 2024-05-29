@@ -1,5 +1,6 @@
-import LanguageContext from "@/language/LanguageContext";
 import { useContext, useEffect, useRef } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
 
 export function AlertPyC({
   openAlert,

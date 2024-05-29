@@ -1,5 +1,6 @@
 import moment from "moment";
 import Image from "next/image";
+import { Disclosure } from "@headlessui/react";
 import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
 
@@ -12,7 +13,6 @@ import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
-import { Disclosure } from "@headlessui/react";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -77,11 +77,6 @@ export default function CardHotelItinerary(props) {
 
   return (
     <>
-      {/* <div className="absolute mx-auto my-auto">
-        <div className="flex items-center justify-center min-h-auto">
-          <div className="w-16 h-16 border-t-4 border-bl-100 border-solid rounded-full animate-spin" />
-        </div>
-      </div> */}
       <div className="flex gap-x-2 items-start mb-[17px]">
         <Image
           className="w-4"

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import { CircularProgress } from "@mui/material";
+import React, { useContext, useEffect } from "react";
 
 import {
   DescriptionHotel,
@@ -13,8 +13,6 @@ import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
 
 import IconCreditCart from "../../../assets/images/others/credit-card.svg";
-import IconRightBlack from "../../../assets/icons/utils/payment/right-bl.svg";
-import LogoFlyRoyal from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 
 import "@/assets/styles/mobile/AppMobile.css";
 import "@/assets/styles/mobile/PaymentMobile.css";
@@ -77,9 +75,7 @@ export default function DetailsPayment(props) {
             </div>
 
             {/* INFO PRICE AND TOTAL*/}
-            {/* <div className="cont-info-price-info-itinerary"> */}
             <div className="w-full lg:!pb-4 lg:mb-[18px] h-full relative">
-              {/* mb-[9rem] */}
               <div className="flex flex-col mb-[3rem]">
                 {data.summary.hotels.length > 0 && (
                   <DescriptionHotel hotel={data.summary.hotels} />
