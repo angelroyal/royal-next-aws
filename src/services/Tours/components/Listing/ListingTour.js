@@ -22,7 +22,6 @@ import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
 
-import "../../../../assets/styles/web/Tour/StyleFIlterTour.css";
 
 export default function ListingTour() {
   const {

@@ -5,7 +5,6 @@ import React, { useState, useEffect, useMemo, useContext } from "react";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
-import "../../assets/styles/general/SearchHotel.css";
 
 const API_ENDPOINT = `v1/activity`;
 function SearchTour({ closeDialog, onSelectTour, listing = false }) {

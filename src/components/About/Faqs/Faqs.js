@@ -6,7 +6,6 @@ import React, { useContext } from "react";
 import { faqsConfig } from "@/config/Others/faqsConfig";
 import LanguageContext from "@/language/LanguageContext";
 
-import "../../../assets/styles/web/About.css";
 import IconAdd from "../../../assets/icons/utils/others/add.svg";
 import IconRemove from "../../../assets/icons/utils/others/remove.svg";
 import { Disclosure } from "@headlessui/react";

@@ -1,6 +1,5 @@
 import * as React from "react";
 import Skeleton from "@mui/material/Skeleton";
-import "../../assets/styles/web/SkeletonConfirmPay.css";
 
 import { useIsMobile } from "../../config/Mobile/isMobile";
 import { Rating } from "@mui/material";

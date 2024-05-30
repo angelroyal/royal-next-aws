@@ -13,8 +13,6 @@ import DoneIcon from "../../assets/icons/tour/modal/done_active.svg";
 import IconLocationBorder from "../../assets/icons/utils/others/location-border.svg";
 import LocationIcon from "../../assets/icons/utils/searchBox/location-autocomplete.svg";
 
-import "@/assets/styles/mobile/HotelMobile.css"
-import "@/assets/styles/web/Hotel.css"
 export default function CardHotelConfirmation(props) {
   const { languageData } = useContext(LanguageContext);
   const { itemHotel } = props;

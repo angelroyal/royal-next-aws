@@ -6,7 +6,6 @@ import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
-import "../../../assets/styles/general/SearchHotel.css";
 
 const API_ENDPOINT = `v1/destinations/search`;
 
