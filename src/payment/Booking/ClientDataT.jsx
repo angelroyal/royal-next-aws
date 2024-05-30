@@ -6,73 +6,72 @@ import React, { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function ClientDataT(props) {
+  const { languageData } = useContext(LanguageContext);
 
-    const { languageData } = useContext(LanguageContext);
+  const [email, setEmail] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isEmailValidated, setIsEmailValidated] = useState(false);
+  const phoneRegex = /^\d{0,10}$/;
+  const nameRegexIndividual = /^[A-Za-z ]{1,40}$/;
 
-    const [email, setEmail] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [isEmailValid, setIsEmailValid] = useState(true);
-    const [isEmailValidated, setIsEmailValidated] = useState(false);
-    const phoneRegex = /^\d{0,10}$/;
-    const nameRegexIndividual = /^[A-Za-z ]{1,40}$/;
-  
-    const handleFirstNameChange = (e) => {
-      const value = e.target.value;
-      if (nameRegexIndividual.test(value) || value === "") {
-        setFirstName(value);
-      }
-    };
-  
-    const handleLastNameChange = (e) => {
-      const value = e.target.value;
-      if (nameRegexIndividual.test(value) || value === "") {
-        setLastName(value);
-      }
-    };
-  
-    // EMAIL VERIFICATION
-    const handleEmailChange = (e) => {
-      const value = e.target.value;
-      setEmail(value);
-    };
-  
-    const handleEmailBlur = () => {
-      const value = email;
-      if (validator.isEmail(value) || value === "") {
-        setIsEmailValid(true);
-      } else {
-        setIsEmailValid(false);
-      }
-      setIsEmailValidated(true);
-    };
-  
-    const handlePhoneNumberChange = (e) => {
-      const value = e.target.value;
-      if (phoneRegex.test(value) || value === "") {
-        setPhoneNumber(value);
-      }
-    };
-  
-    useEffect(() => {
-      const isFormValid =
-        nameRegexIndividual.test(firstName) &&
-        nameRegexIndividual.test(lastName) &&
-        (validator.isEmail(email) || email === "") &&
-        (phoneRegex.test(phoneNumber) || phoneNumber === "");
-  
-      if (isFormValid) {
-        const userData = {
-          firstName,
-          lastName,
-          email,
-          phoneNumber,
-        };
-        props.onUserDataChange(userData);
-      }
-    }, [firstName, lastName, email, phoneNumber]);
-  
+  const handleFirstNameChange = (e) => {
+    const value = e.target.value;
+    if (nameRegexIndividual.test(value) || value === "") {
+      setFirstName(value);
+    }
+  };
+
+  const handleLastNameChange = (e) => {
+    const value = e.target.value;
+    if (nameRegexIndividual.test(value) || value === "") {
+      setLastName(value);
+    }
+  };
+
+  // EMAIL VERIFICATION
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+  };
+
+  const handleEmailBlur = () => {
+    const value = email;
+    if (validator.isEmail(value) || value === "") {
+      setIsEmailValid(true);
+    } else {
+      setIsEmailValid(false);
+    }
+    setIsEmailValidated(true);
+  };
+
+  const handlePhoneNumberChange = (e) => {
+    const value = e.target.value;
+    if (phoneRegex.test(value) || value === "") {
+      setPhoneNumber(value);
+    }
+  };
+
+  useEffect(() => {
+    const isFormValid =
+      nameRegexIndividual.test(firstName) &&
+      nameRegexIndividual.test(lastName) &&
+      (validator.isEmail(email) || email === "") &&
+      (phoneRegex.test(phoneNumber) || phoneNumber === "");
+
+    if (isFormValid) {
+      const userData = {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+      };
+      props.onUserDataChange(userData);
+    }
+  }, [firstName, lastName, email, phoneNumber]);
+
   return (
     <>
       <div className="w-full bg-white rounded-2xl pt-[2rem] pb-[3rem] px-[1.8rem]">
@@ -81,10 +80,11 @@ export default function ClientDataT(props) {
         </div>
 
         <div className="flex justify-between gap-[1.5rem] items-end max-md:flex-col">
-
           <div className="flex flex-col w-full h-full">
-
-            <label htmlFor="firstName" className="mt-[22px] m-b text-fs-12 text-gry-100">
+            <label
+              htmlFor="firstName"
+              className="mt-[22px] m-b text-fs-12 text-gry-100"
+            >
               {languageData.booking.clientData.textName}{" "}
               <span className="text-red-100">*</span>
             </label>
@@ -92,7 +92,7 @@ export default function ClientDataT(props) {
             <input
               id="firstName"
               type="name"
-              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none focus:outline-none border border-[#ebebeb] placeholder:text-fs-12 placeholder:text-gry-70"
+              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none focus:outline-none border border-[#ebebeb] placeholder:text-fs-10 placeholder:text-gry-70 placeholder:m-b"
               placeholder={languageData.booking.clientData.placeholderName}
               value={firstName}
               onChange={handleFirstNameChange}
@@ -101,7 +101,10 @@ export default function ClientDataT(props) {
           </div>
 
           <div className="flex flex-col w-full h-full">
-            <label htmlFor="lastName" className="mt-[16px] m-b text-fs-12 text-gry-100">
+            <label
+              htmlFor="lastName"
+              className="mt-[16px] m-b text-fs-12 text-gry-100"
+            >
               {languageData.booking.clientData.textLastName}{" "}
               <span className="text-red-100">*</span>
             </label>
@@ -114,12 +117,14 @@ export default function ClientDataT(props) {
               onChange={handleLastNameChange}
             />
           </div>
-
         </div>
 
         <div className="flex justify-between gap-[1.5rem] items-start">
           <div className="flex flex-col w-full h-full">
-            <label htmlFor="email" className="mt-[16px] m-b text-fs-12 text-gry-100">
+            <label
+              htmlFor="email"
+              className="mt-[16px] m-b text-fs-12 text-gry-100"
+            >
               {languageData.booking.clientData.textEmail}
               <span className="text-red-100">*</span>
             </label>
@@ -141,7 +146,10 @@ export default function ClientDataT(props) {
           </div>
 
           <div className="flex flex-col w-full h-full">
-            <label htmlFor="phoneNumber" className="mt-[16px] m-b text-fs-12 text-gry-100">
+            <label
+              htmlFor="phoneNumber"
+              className="mt-[16px] m-b text-fs-12 text-gry-100"
+            >
               {languageData.booking.clientData.textPhone}{" "}
               <span className="text-red-100">*</span>
             </label>

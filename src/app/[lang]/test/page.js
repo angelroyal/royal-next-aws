@@ -36,9 +36,10 @@ export default function Home() {
                 {/* <ActivityFormT/> */}
                 <AlertPayment></AlertPayment>
                 <Loading
-                width={"w-[30px]"}
-                height={"w-[30px]"}/>
-                <LoadingProgress/>
+                width={"w-[50px]"}
+                height={"w-[50px]"}/>
+                <LoadingProgress
+                count={21}/>
 
               </Container>
 

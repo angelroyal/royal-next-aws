@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CircularProgress } from "@mui/material";
 import React, { useContext, useEffect } from "react";
 
 import {
@@ -11,12 +10,12 @@ import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
-
 import IconCreditCart from "../../../assets/images/others/credit-card.svg";
 
 import "@/assets/styles/mobile/AppMobile.css";
 import "@/assets/styles/mobile/PaymentMobile.css";
 import "../../../../src/assets/styles/web/Tour.css";
+import LoadingProgress from "@/components/General/LoadingProgress";
 
 export default function DetailsPayment(props) {
   const { data, step, setChangeButton } = props;
@@ -156,26 +155,30 @@ export default function DetailsPayment(props) {
                     <button
                       type="submit"
                       onClick={() => paymentReservation()}
-                      className={`button-payment-details ${
+                      className={`bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto ${
                         !policyAccept || !termsAccept || !buttonActive
-                          ? "disabled"
-                          : ""
+                          ? "cursor-not-allowed bg-yw-50"
+                          : "hover:bg-yw-110"
                       } ${
                         policyAccept && termsAccept
-                          ? "add-padding-container"
-                          : "disabled-padding-button"
+                          ? "py-[13px] px-[64px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
+                          : "py-[16px] px-[80px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
                       } `}
                       disabled={!policyAccept || !termsAccept || !buttonActive}
                     >
                       {languageData.booking.paymentConekta.buttonForms}
                       {policyAccept && termsAccept && (
-                        <div className="position-relative d-inline-flex justify-content-center">
-                          <CircularProgress
+                        <div className="relative inline-flex justify-center lg:hidden">
+                          {/* <CircularProgress
                             variant="determinate"
                             value={progressCount}
                             id="circle-count"
                           />
-                          <div className="count-number">{countNumber}</div>
+                          <div className="count-number">{countNumber}</div> */}
+                          <LoadingProgress
+                            value={progressCount}
+                            count={countNumber}
+                          />
                         </div>
                       )}
                     </button>

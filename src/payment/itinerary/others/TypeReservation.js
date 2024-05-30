@@ -12,17 +12,17 @@ export function DescriptionHotel({ hotel }) {
 
       {hotel &&
         hotel.map((info, item) => (
-          <div className="d-flex flex-column mt-1 gap-y-2" key={item}>
-            <span className="m-m text-[0.75rem] text-justify w-full pb-[6px]">{info.name}</span>
+          <div className="flex flex-col mt-1 gap-y-2" key={item}>
+            <span className="m-b text-fs-[0.75rem] text-justify w-full pb-[6px]">{info.name}</span>
 
-            <span className="text-or-info-i-s">{languageData.itinerary.detailsPayment.rooms}</span>
+            <span className="m-s-b text-or-100 text-fs-10 leading-[12px]">{languageData.itinerary.detailsPayment.rooms}</span>
 
             {/* ROOMS */}
             <div className="flex flex-col !gap-y-2">
               {info.rooms &&
                 info.rooms.map((room, item) => (
                   <div className="flex !pl-2 justify-between items-start " key={item}>
-                    <span className="text-black-info-i-s room-name">
+                    <span className="text-fs-12 m-m leading-[1.75] text-[#1a202c]">
                       {room.name}
                     </span>
                     <span className="text-fs-12 m-b text-justify">
@@ -52,7 +52,7 @@ export function TourDescription(props) {
           tours.map((tour, index) => (
             <div key={index} className="flex flex-col !gap-y-2">
               <div className="flex !pl-2 justify-between items-start ">
-                <span className="m-m text-[0.75rem] text-justify w-full pb-[6px] w-[40%]">
+                <span className="m-m text-[0.75rem] text-justify w-full pb-[6px]">
                   {tour.title}
                 </span>
                 <span className="text-fs-12 m-b text-justify">

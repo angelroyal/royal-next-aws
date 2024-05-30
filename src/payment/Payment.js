@@ -58,7 +58,7 @@ export default function Payment() {
       )}
 
       <Container>
-        <>
+        <div className="mx-[70px] max-2xl:mx-0">
           {/* BACKGROUND WHITE STEP */}
           {step !== 3 && (
             <div className="max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0" />
@@ -113,7 +113,7 @@ export default function Payment() {
               {step === 3 && <ConfirmReservation />}
             </>
           )}
-        </>
+        </div>
 
         {!data && skeletonShow && <SkeletonPay />}
 

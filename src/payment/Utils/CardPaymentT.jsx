@@ -114,7 +114,7 @@ export default function CardPaymentT(props) {
 
   return (
     <div
-      className="w-full h-[15em] flex relative bg-gradient-to-r from-[#6c87e9] to-[#2743a6] rounded-l-xl rounded-tr-[1.8rem] rounded-br-xl transition-transform duration-500 transform-style-preserve-3d"
+      className="w-full h-[15em] flex relative bg-gradient-to-r from-[#6c87e9] to-[#2743a6] rounded-l-xl rounded-tr-[1.8rem] rounded-br-xl transition-transform duration-500 transform-style-preserve-3d max-xl:w-[88%] max-md:w-full"
       //   onClick={() => changeCard()}
       id="card-payment"
     >

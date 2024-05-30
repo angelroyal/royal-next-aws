@@ -83,7 +83,7 @@ export function DialogPaymentItinerary(props) {
                 </div>
 
                 {/* Dialog  */}
-                <div className="d-flex justify-content-between mt-3">
+                <div className="flex justify-between mt-3">
                   <div className="text-fs-16 m-b ">Total</div>
 
                   <div className="m-b text-black">
@@ -103,7 +103,7 @@ export function DialogPaymentItinerary(props) {
                   </div>
                 </div>
 
-                <div className="d-flex justify-content-between mt-2">
+                <div className="flex justify-between mt-2">
                   {step === 1 && (
                     <ModalShare
                       itinerary={true}

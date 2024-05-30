@@ -194,14 +194,9 @@ export default {
       },
 
       animation: {
-<<<<<<< Updated upstream
         'slide-up': 'slide-up 1s forwards',
         'slide-in': 'slide-in 0.5s forwards',
         linearIndeterminate: 'linearIndeterminate 1.5s infinite linear',
-=======
-        "slide-up": "slide-up 1s forwards",
-        "slide-in": "slide-in 0.5s forwards",
->>>>>>> Stashed changes
       },
 
       boxShadow: {
