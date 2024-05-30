@@ -90,9 +90,9 @@ export default function ClientDataT(props) {
             </label>
 
             <input
-              id="firstName"
+              // id="firstName"
               type="name"
-              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none focus:outline-none border border-[#ebebeb] placeholder:text-fs-10 placeholder:text-gry-70 placeholder:m-b"
+              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none focus:outline-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
               placeholder={languageData.booking.clientData.placeholderName}
               value={firstName}
               onChange={handleFirstNameChange}
@@ -110,8 +110,8 @@ export default function ClientDataT(props) {
             </label>
 
             <input
-              id="lastName"
-              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none placeholder:text-fs-12 placeholder:text-gry-70"
+              // id="lastName"
+              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
               placeholder={languageData.booking.clientData.placeholderLastName}
               value={lastName}
               onChange={handleLastNameChange}
@@ -130,9 +130,9 @@ export default function ClientDataT(props) {
             </label>
 
             <input
-              id="email"
+              // id="email"
               type="email"
-              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none  placeholder:text-fs-12 placeholder:text-gry-70"
+              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none  placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
               placeholder={languageData.booking.clientData.placeholderEmail}
               value={email}
               onChange={handleEmailChange}
@@ -155,8 +155,8 @@ export default function ClientDataT(props) {
             </label>
 
             <input
-              id="phoneNumber"
-              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none placeholder:text-fs-12 placeholder:text-gry-70"
+              // id="phoneNumber"
+              className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
               placeholder={languageData.booking.clientData.placeholderPhone}
               value={phoneNumber}
               onChange={handlePhoneNumberChange}

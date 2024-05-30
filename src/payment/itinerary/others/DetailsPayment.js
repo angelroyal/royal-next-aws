@@ -10,6 +10,7 @@ import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
+import LoadingProgress from "@/components/General/LoadingProgress";
 import IconCreditCart from "../../../assets/images/others/credit-card.svg";
 
 export default function DetailsPayment(props) {
@@ -129,8 +130,8 @@ export default function DetailsPayment(props) {
                   <Image src={IconCreditCart} alt="icons credit carts" />
                 </div>
 
-                <div className="flex flex-col items-center gap-y-[12px]">
-                  <ModalShare itinerary={true} className="modal-style-share" />
+                <div className="flex justify-between flex-nowrap gap-[13px] items-center">
+                  <ModalShare itinerary={true} className="w-[30%]" />
 
                   {step === 1 ? (
                     <button
@@ -156,23 +157,19 @@ export default function DetailsPayment(props) {
                           : "hover:bg-yw-110"
                       } ${
                         policyAccept && termsAccept
-                          ? "py-[13px] px-[64px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
-                          : "py-[16px] px-[80px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
+                          ? "py-[13px] px-[40px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
+                          : "py-[16px] px-[40px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
                       } `}
                       disabled={!policyAccept || !termsAccept || !buttonActive}
                     >
                       {languageData.booking.paymentConekta.buttonForms}
                       {policyAccept && termsAccept && (
                         <div className="relative inline-flex justify-center lg:hidden">
-                          {/* <CircularProgress
-                            variant="determinate"
-                            value={progressCount}
-                            id="circle-count"
-                          />
-                          <div className="count-number">{countNumber}</div> */}
                           <LoadingProgress
                             value={progressCount}
                             count={countNumber}
+                            width={"w-[30px]"}
+                            height={"h-[30px]"}
                           />
                         </div>
                       )}

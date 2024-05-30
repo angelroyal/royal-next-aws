@@ -1,14 +1,13 @@
 import Image from "next/image";
-import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
 
 import ModalShare from "../../utils/booking/ModalShare";
 import { BookingContext } from "../context/BookingContext";
 import LanguageContext from "../../language/LanguageContext";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
+import LoadingProgress from "@/components/General/LoadingProgress";
 import { ShareContainer } from "../../utils/booking/ShareContainer";
 import { DialogItineraryMobile } from "../itinerary/others/DialogItineraryMobile";
-
 
 export function DialogPaymentItinerary(props) {
   const { handleStepChange, reservationData, step, setChangeButton } = props;
@@ -105,17 +104,11 @@ export function DialogPaymentItinerary(props) {
 
                 <div className="flex justify-between mt-2">
                   {step === 1 && (
-                    <ModalShare
-                      itinerary={true}
-                      className="modal-style-share"
-                    />
+                    <ModalShare itinerary={true} className="w-[30%]" />
                   )}
 
                   {isMobile && step === 2 && (
-                    <ModalShare
-                      itinerary={true}
-                      className="modal-style-share"
-                    />
+                    <ModalShare itinerary={true} className="w-[30%]" />
                   )}
 
                   {step === 1 && (
@@ -138,14 +131,14 @@ export function DialogPaymentItinerary(props) {
                       <button
                         onClick={() => paymentReservation()}
                         type="submit"
-                        className={`button-payment-details  ${
+                        className={`" bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto"  ${
                           !policyAccept || !termsAccept || !buttonActive
-                            ? "disabled"
-                            : ""
+                            ? "cursor-not-allowed bg-yw-50"
+                            : "hover:bg-yw-110"
                         } ${
                           policyAccept && termsAccept
-                            ? "add-padding-container"
-                            : "disabled-padding-button"
+                            ? "py-[13px] px-[64px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
+                            : "py-[16px] px-[80px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
                         } `}
                         disabled={
                           !policyAccept || !termsAccept || !buttonActive
@@ -153,14 +146,14 @@ export function DialogPaymentItinerary(props) {
                       >
                         {languageData.booking.paymentConekta.buttonForms}{" "}
                         {policyAccept && termsAccept && (
-                          <div className="position-relative d-inline-flex justify-content-center">
-                            <CircularProgress
-                              variant="determinate"
+                          <div className="relative inline-flex justify-center md:hidden">
+                            
+                            <LoadingProgress
                               value={progressCount}
-                              id="circle-count"
+                              count={countNumber}
+                              width={"w-[30px]"}
+                              height={"h-[30px]"}
                             />
-
-                            <div className="count-number">{countNumber}</div>
                           </div>
                         )}
                       </button>

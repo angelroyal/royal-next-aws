@@ -411,6 +411,7 @@ export default function PaymentConektaFT(props) {
             </div>
 
             <div className="flex flex-col justify-center gap-3 w-full">
+              {/* CARDHOLDER */}
               <div className="block">
                 <label
                   htmlFor="nameCard"
@@ -421,8 +422,8 @@ export default function PaymentConektaFT(props) {
                 </label>
 
                 <input
-                  id="nameCard"
-                  className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
+                  // id="nameCard"
+                  className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
                   data-conekta="card[name]"
                   placeholder={
                     languageData.booking.paymentConekta.placeholderNameTitular
@@ -433,6 +434,7 @@ export default function PaymentConektaFT(props) {
                 />
               </div>
 
+              {/* CARD NUMBER */}
               <div className="block">
                 <label
                   htmlFor="numberCard"
@@ -444,8 +446,8 @@ export default function PaymentConektaFT(props) {
 
                 <div className="relative">
                   <input
-                    id="numberCard"
-                    className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
+                    // id="numberCard"
+                    className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
                     data-conekta="card[number]"
                     placeholder={
                       languageData.booking.paymentConekta.placeholderNumberCard
@@ -459,6 +461,7 @@ export default function PaymentConektaFT(props) {
               </div>
 
               <div className="flex justify-between gap-2">
+                {/* EXPIRATION DATE */}
                 <div className="flex flex-col">
                   <label
                     htmlFor="expirationDate"
@@ -469,7 +472,7 @@ export default function PaymentConektaFT(props) {
                   </label>
 
                   <input
-                    className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
+                    className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
                     placeholder={
                       languageData.booking.paymentConekta.placeholderDate
                     }
@@ -489,6 +492,7 @@ export default function PaymentConektaFT(props) {
                   />
                 </div>
 
+                {/* CVV */}
                 <div className="flex flex-col">
                   <label
                     htmlFor="cvvCard"
@@ -499,8 +503,8 @@ export default function PaymentConektaFT(props) {
                   </label>
 
                   <input
-                    id="cvvCard"
-                    className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none"
+                    // id="cvvCard"
+                    className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] text-black border border-[#ebebeb] focus:outline-none placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
                     data-conekta="card[cvc]"
                     placeholder={languageData.booking.paymentConekta.textCvv}
                     value={cvvCard}
@@ -595,15 +599,9 @@ export default function PaymentConektaFT(props) {
                 {languageData.booking.paymentConekta.buttonForms}{" "}
                 {policyChecked && termsChecked && (
                   <div className="relative inline-flex justify-center">
-                    {/* <CircularProgress
-                      variant="determinate"
-                      value={progress}
-                      id="circle-count"
-                    /> */}
-
                     <LoadingProgress
-                      width={"w-[40px]"}
-                      height={"h-[40px]"}
+                      width={"w-[30px]"}
+                      height={"h-[30px]"}
                       text={"text-fs-16"}
                       value={progress}
                       count={countdown}
