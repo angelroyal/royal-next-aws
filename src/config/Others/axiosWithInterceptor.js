@@ -1,5 +1,5 @@
-import sendToSlack from "@/utils/errorBoundary/slackNotifier";
 import axios from "axios";
+import sendToSlack from "@/utils/errorBoundary/slackNotifier";
 
 const getLanguage = () => {
   if (typeof window !== "undefined") {

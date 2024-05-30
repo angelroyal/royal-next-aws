@@ -161,14 +161,6 @@ export default {
         "br-24": "1.5rem",
       },
 
-      // SCREENS
-      // screens: {
-      //   'sm': {'min': '640px', 'max': '767px'},
-      //   'md': {'min': '768px', 'max': '1023px'},
-      //   'lg': {'min': '1024px', 'max': '1279px'},
-      //   'xl': {'min': '1280px', 'max': '1535px'},
-      //   '2xl': {'min': '1536px'},
-      // },
       keyframes: {
         skeletonLoading: {
           "0%": {
@@ -178,10 +170,14 @@ export default {
             background: "#c9c7c7",
           },
         },
-        "slide-up": {
-          "0%": { bottom: "0vw" },
-          "100%": { bottom: "90%" },
-          "95%": { bottom: "93%" },
+        'dot-flashing': {
+          '0%': { backgroundColor: '#9880ff' },
+          '50%, 100%': { backgroundColor: 'rgba(152, 128, 255, 0.2)' },
+        },
+        'slide-up': {
+          '0%': { bottom: '0vw' },
+          '100%': { bottom: '90%' },
+          '95%': { bottom: '93%' },
         },
         "slide-in": {
           "0%": { transform: "translateX(100%)" },

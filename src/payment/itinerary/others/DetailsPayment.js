@@ -12,11 +12,6 @@ import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
 import IconCreditCart from "../../../assets/images/others/credit-card.svg";
 
-import "@/assets/styles/mobile/AppMobile.css";
-import "@/assets/styles/mobile/PaymentMobile.css";
-import "../../../../src/assets/styles/web/Tour.css";
-import LoadingProgress from "@/components/General/LoadingProgress";
-
 export default function DetailsPayment(props) {
   const { data, step, setChangeButton } = props;
 
