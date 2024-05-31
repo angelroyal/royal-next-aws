@@ -160,8 +160,8 @@ export default function ListingTour() {
           </div>
           <div className="w-full xl:w-8/12 relative">
             {currentTours && (
-              <div className="order-and-data-tour">
-                <h5 className="text-we-found-tour">
+              <div className="flex items-center justify-between my-[1.6rem] mx-0">
+                <h5 className="m-s-b">
                   <span>{languageData.listingTour.weFound}</span>{" "}
                   {auxTourData.activities.length}{" "}
                   <span>{languageData.listingTour.excursionsActivities}</span>
