@@ -9,7 +9,7 @@ export function AlertRate(props) {
   const { alertShowRate, infoDataRate, cartUid } = props;
   const { languageData } = useContext(LanguageContext);
 
-  const [smShow, setSmShow] = useState(true);
+  const [smShow, setSmShow] = useState(false);
 
   const handleOpenModal = () => {
     setSmShow(true);
@@ -128,7 +128,7 @@ export function AlertRate(props) {
 export function AlertUpdate(props) {
   const { priceChanged } = props;
 
-  const [smShow, setSmShow] = useState(true);
+  const [smShow, setSmShow] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
   const handleOpenModal = () => {
