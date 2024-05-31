@@ -20,6 +20,8 @@ export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;
   const { languageData, language } = useContext(LanguageContext);
 
+  console.log(requestQueryParams);
+
   //   PARAMS URL
   const searchParams =
     typeof window !== "undefined"

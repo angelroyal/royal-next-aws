@@ -52,10 +52,10 @@ export function TourDescription(props) {
           tours.map((tour, index) => (
             <div key={index} className="flex flex-col !gap-y-2">
               <div className="flex !pl-2 justify-between items-start ">
-                <span className="m-m text-[0.75rem] text-justify w-full pb-[6px]">
+                <span className="m-m text-[0.75rem] text-justify pb-[6px] w-[70%]">
                   {tour.title}
                 </span>
-                <span className="text-fs-12 m-b text-justify">
+                <span className="text-fs-12 m-b text-justify w-[20%]">
                   $
                   {Math.floor(tour.currentPrice)
                     .toLocaleString("es-MX", { currency: "MXN" })

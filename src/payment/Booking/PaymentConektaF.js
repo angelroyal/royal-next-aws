@@ -11,10 +11,9 @@ import React, {
 import { Form } from "react-bootstrap";
 import { CircularProgress } from "@mui/material";
 
+import { AlertRate } from "./AlertRate";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-
-import { AlertRate } from "./AlertRate";
 
 import SuccessData from "../../assets/animations/success.json";
 import FailureData from "../../assets/animations/failure.json";

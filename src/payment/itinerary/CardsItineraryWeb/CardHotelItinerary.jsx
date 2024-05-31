@@ -9,10 +9,10 @@ import LanguageContext from "../../../language/LanguageContext";
 import UnavailableCardHotel from "../others/UnavailableCardHotel";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { ImageNotFound } from "../../../config/Others/ImageNotFound";
+import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
-import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -453,7 +453,7 @@ export default function CardHotelItinerary(props) {
             )}
             {/* END REMOVE CARD */}
 
-            {itemHotel.available === false && (
+            {itemHotel.available === true && (
               <>
                 <UnavailableCardHotel destination={itemHotel} />
                 <div className="overlay" />
