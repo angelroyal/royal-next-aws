@@ -6,14 +6,8 @@ import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import KeepExploring from "@/components/Recommended/KeepExploring";
-import DestinationReady from "@/components/Recommended/DestinationReady";
-import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
+import PaginationT from "@/components/General/PaginationT";
 
-import ClientDataT from "@/payment/Booking/ClientDataT";
-import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
-import Loading from "@/components/General/Loading";
-import LoadingProgress from "@/components/General/LoadingProgress";
 // import ActivityFormT from "@/payment/Booking/ActivityFormT";
 export default function Home() {
   return (
@@ -26,20 +20,14 @@ export default function Home() {
               <Navigation />
 
               <Container>
-                <DestinationReady />
 
-                <OrderRecommendation />
+               <div className="my-[50px]">
 
-                <KeepExploring />
-
-                <ClientDataT />
-                {/* <ActivityFormT/> */}
-                <AlertPayment></AlertPayment>
-                <Loading
-                width={"w-[50px]"}
-                height={"w-[50px]"}/>
-                <LoadingProgress
-                count={21}/>
+                <PaginationT
+                page={1}
+                count={7}
+                />
+               </div>
 
               </Container>
 

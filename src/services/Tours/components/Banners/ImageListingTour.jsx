@@ -19,7 +19,7 @@ export default function ImageListingTour() {
         height="100%"
       />
       <div className="flex flex-col text-white items-center absolute">
-        <h2 className="m-s-b text-fs-32 max-sm:text-fs-28">
+        <h2 className="m-s-b text-fs-32 max-sm:text-fs-28 text-center">
           {languageData.bannerListingTour.TourMexico}
         </h2>
         <span className="m-s-b text-fs-20">
