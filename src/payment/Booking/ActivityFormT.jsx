@@ -1,9 +1,12 @@
 "use client";
 
-import LanguageContext from "@/language/LanguageContext";
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 
-export const ActivityFormT = ({ activityPreBooking, setFormActivityItems }) => {
+import LanguageContext from "@/language/LanguageContext";
+import { PaymentContext } from "../context/PaymentContext";
+
+export const ActivityFormT = ({ activityPreBooking }) => {
+  const { setFormActivityItems } = useContext(PaymentContext);
 
   const { languageData } = useContext(LanguageContext);
   const [formData, setFormData] = useState({});
@@ -106,156 +109,173 @@ export const ActivityFormT = ({ activityPreBooking, setFormActivityItems }) => {
   };
   return (
     <>
-      {activityPreBooking.map((activity, activityIndex) => (
-        <div key={activity.id}>
-          {/* TITLE TOUR */}
-          <div className="mt-[16px] m-b text-fs-12 mb-1 flex">
-            <img
-              src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-o.svg`}
-              alt="icon tour orange"
-              width={20}
-              height={17}
-              className="ml-[.25rem] mr-[.5rem] w-[20px] h-[17px]"
-            />
-            {activity.name}
-          </div>
+      <div className="py-[32px] px-[24px] w-full rounded-[19px] bg-white mt-10">
+        <h2 className="m-b text-fs-21 text-black">
+          {languageData.paymentActivities.activities}
+        </h2>
 
-          {/* SECTION INPUT DYNAMIC */}
-          <div className="p-[1.3rem] mb-3 bg-gry-30 rounded-[9px]">
-            {activity.details.booking.map((bookingItem, bookingIndex) => (
-              <div key={bookingItem.id}>
-                {/* INPUT REQUIRED */}
-                <label>
-                  <p className="m-s-b text-fs-14 m-0">{bookingItem.label}</p>
-                  {bookingItem.required && (
-                    <span className="text-red-100">*</span>
-                  )}
-                </label>
+        {activityPreBooking.map((activity, activityIndex) => (
+          <div key={activity.id}>
+            {/* TITLE TOUR */}
+            <div className="mt-[16px] m-b text-fs-12 mb-1 flex">
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-o.svg`}
+                alt="icon tour orange"
+                width={20}
+                height={17}
+                className="ml-[.25rem] mr-[.5rem] w-[20px] h-[17px]"
+              />
+              {activity.name}
+            </div>
 
-                {/* DYNAMIC INPUTS */}
-                <input
-                  type={bookingItem.type}
-                  className="block w-full py-[0.375rem] px-[0.75rem] text-fs-16 leading-[1.5] appearance-none rounded-[.375rem] m-m mb-2 focus:outline-none focus:border focus:border-[#7EC2DD] focus:shadow-3xl focus:shadow-[#7EC2DD]"
-                  value={
-                    formData[activityIndex] &&
-                    formData[activityIndex].booking &&
-                    formData[activityIndex].booking[bookingIndex] &&
-                    formData[activityIndex].booking[bookingIndex][
-                      bookingItem.id
-                    ]
-                  }
-                  onChange={(e) =>
-                    handleInputChange(
-                      e,
-                      activityIndex,
-                      "booking",
-                      null,
-                      bookingIndex,
-                      bookingItem.id,
-                      bookingItem.required
-                    )
-                  }
-                />
-              </div>
-            ))}
-          </div>
+            {/* SECTION INPUT DYNAMIC */}
+            <div className="p-[1.3rem] mb-3 bg-gry-30 rounded-[9px]">
+              {activity.details.booking.map((bookingItem, bookingIndex) => (
+                <div key={bookingItem.id}>
+                  {/* INPUT REQUIRED */}
+                  <label>
+                    <p className="m-s-b text-fs-14 m-0">{bookingItem.label}</p>
+                    {bookingItem.required && (
+                      <span className="text-red-100">*</span>
+                    )}
+                  </label>
 
-          {/* PASSENGERS CONTAIN */}
-          {activity.details.passengers && (
-            <div>
-              {/* TITLE TOUR */}
-              <div className="mt-[16px] m-b text-fs-12 mb-1 flex">
-                <img
-                  src="https://sandboxmexico.com/assets/icons/adults/adults-o.svg"
-                  alt="no found"
-                  className="mr-2 ml-1"
-                />
-                Información de pasajero
-              </div>
-
-              {activity.details.passengers.map((passengerGroup, groupIndex) => (
-                <div key={groupIndex} className="p-[1.3rem] bg-[#f4f4f4] rounded-[9px] mb-3">
-                  <div className="m-b text-fs-16 mb-2">
-                    Persona #{groupIndex + 1}
-                  </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    {passengerGroup.map((passenger, passengerIndex) => (
-                      <div key={passenger.id}>
-                        <label>
-                          <b>{passenger.label}</b>
-                          {passenger.required && (
-                            <span className="text-red-100">*</span>
-                          )}
-                        </label>
-                        {passenger.type === "select" ? (
-                          <select
-                            className="mb-2"
-                            value={
-                              formData[activityIndex] &&
-                              formData[activityIndex].passengers &&
-                              formData[activityIndex].passengers[groupIndex] &&
-                              formData[activityIndex].passengers[groupIndex][
-                                passengerIndex
-                              ] &&
-                              formData[activityIndex].passengers[groupIndex][
-                                passengerIndex
-                              ][passenger.id]
-                            }
-                            onChange={(e) =>
-                              handleInputChange(
-                                e,
-                                activityIndex,
-                                "passengers",
-                                groupIndex,
-                                passengerIndex,
-                                passenger.id,
-                                passenger.required
-                              )
-                            }
-                          >
-                            {passenger.options.map((option, optionIndex) => (
-                              <option key={optionIndex} value={option.id}>
-                                {languageData.countries[option.text]}
-                              </option>
-                            ))}
-                          </select>
-                        ) : (
-                          <input
-                            type="text"
-                            className="m-0 rounded-lg m-b w-full py-[7px] px-[16px] text-fs-14 leading-[1.5] appearance-none focus:outline-none border border-[#ebebeb] placeholder:text-fs-12 placeholder:text-gry-70 mb-2"
-                            value={
-                              formData[activityIndex] &&
-                              formData[activityIndex].passengers &&
-                              formData[activityIndex].passengers[groupIndex] &&
-                              formData[activityIndex].passengers[groupIndex][
-                                passengerIndex
-                              ] &&
-                              formData[activityIndex].passengers[groupIndex][
-                                passengerIndex
-                              ][passenger.id]
-                            }
-                            onChange={(e) =>
-                              handleInputChange(
-                                e,
-                                activityIndex,
-                                "passengers",
-                                groupIndex,
-                                passengerIndex,
-                                passenger.id,
-                                passenger.required
-                              )
-                            }
-                          />
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                  {/* DYNAMIC INPUTS */}
+                  <input
+                    type={bookingItem.type}
+                    className="block w-full py-[0.375rem] px-[0.75rem] text-fs-16 leading-[1.5] appearance-none rounded-[.375rem] m-m mb-2 focus:outline-none focus:border focus:border-[#7EC2DD] focus:shadow-3xl focus:shadow-[#7EC2DD]"
+                    value={
+                      formData[activityIndex] &&
+                      formData[activityIndex].booking &&
+                      formData[activityIndex].booking[bookingIndex] &&
+                      formData[activityIndex].booking[bookingIndex][
+                        bookingItem.id
+                      ]
+                    }
+                    onChange={(e) =>
+                      handleInputChange(
+                        e,
+                        activityIndex,
+                        "booking",
+                        null,
+                        bookingIndex,
+                        bookingItem.id,
+                        bookingItem.required
+                      )
+                    }
+                  />
                 </div>
               ))}
             </div>
-          )}
-        </div>
-      ))}
+
+            {/* PASSENGERS CONTAIN */}
+            {activity.details.passengers && (
+              <div>
+                {/* TITLE TOUR */}
+                <div className="mt-[16px] m-b text-fs-12 mb-1 flex">
+                  <img
+                    src="https://sandboxmexico.com/assets/icons/adults/adults-o.svg"
+                    alt="no found"
+                    className="mr-2 ml-1"
+                  />
+                  Información de pasajero
+                </div>
+
+                {activity.details.passengers.map(
+                  (passengerGroup, groupIndex) => (
+                    <div
+                      key={groupIndex}
+                      className="p-[1.3rem] bg-[#f4f4f4] rounded-[9px] mb-3"
+                    >
+                      <div className="m-b text-fs-16 mb-2">
+                        Persona #{groupIndex + 1}
+                      </div>
+                      <div className="grid grid-cols-3 gap-3">
+                        {passengerGroup.map((passenger, passengerIndex) => (
+                          <div key={passenger.id}>
+                            <label>
+                              <b>{passenger.label}</b>
+                              {passenger.required && (
+                                <span className="text-red-100">*</span>
+                              )}
+                            </label>
+                            {passenger.type === "select" ? (
+                              <select
+                                className="mb-2"
+                                value={
+                                  formData[activityIndex] &&
+                                  formData[activityIndex].passengers &&
+                                  formData[activityIndex].passengers[
+                                    groupIndex
+                                  ] &&
+                                  formData[activityIndex].passengers[
+                                    groupIndex
+                                  ][passengerIndex] &&
+                                  formData[activityIndex].passengers[
+                                    groupIndex
+                                  ][passengerIndex][passenger.id]
+                                }
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    e,
+                                    activityIndex,
+                                    "passengers",
+                                    groupIndex,
+                                    passengerIndex,
+                                    passenger.id,
+                                    passenger.required
+                                  )
+                                }
+                              >
+                                {passenger.options.map(
+                                  (option, optionIndex) => (
+                                    <option key={optionIndex} value={option.id}>
+                                      {languageData.countries[option.text]}
+                                    </option>
+                                  )
+                                )}
+                              </select>
+                            ) : (
+                              <input
+                                type="text"
+                                className="m-0 rounded-lg m-b w-full py-[7px] px-[16px] text-fs-14 leading-[1.5] appearance-none focus:outline-none border border-[#ebebeb] placeholder:text-fs-12 placeholder:text-gry-70 mb-2"
+                                value={
+                                  formData[activityIndex] &&
+                                  formData[activityIndex].passengers &&
+                                  formData[activityIndex].passengers[
+                                    groupIndex
+                                  ] &&
+                                  formData[activityIndex].passengers[
+                                    groupIndex
+                                  ][passengerIndex] &&
+                                  formData[activityIndex].passengers[
+                                    groupIndex
+                                  ][passengerIndex][passenger.id]
+                                }
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    e,
+                                    activityIndex,
+                                    "passengers",
+                                    groupIndex,
+                                    passengerIndex,
+                                    passenger.id,
+                                    passenger.required
+                                  )
+                                }
+                              />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </>
   );
-}
+};

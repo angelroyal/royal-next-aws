@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Row, Col } from "react-bootstrap";
 import React, { useContext, useState, useEffect } from "react";
 
-import ClientDataT from "./ClientDataT";
+import ClientDataT from "./Forms/FormClientData";
 // import ClientData from "./ClientData";
 import { ActivityForm } from "./ActivityForm";
 import { FormClientRH } from "./ClientDataRH";
@@ -15,10 +15,12 @@ import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 import { SkeletonActivitiesTourP } from "../../utils/skeleton/SkeletonActivitiesTourP.js";
 import { ActivityFormT } from "./ActivityFormT";
 import PaymentConektaFT from "./PaymentConektaFT";
+import FormCentral from "./Forms/FormCentral";
 
 export default function Booking(props) {
-  const { dataItinerary, changeButton } = props;
+  const { dataItinerary, hasActivities } = props;
 
+  console.log(hasActivities);
   const [userData, setUserData] = useState({});
   const [showAlert, setShowAlert] = useState(null);
   const [hotelRH, setRoomsRH] = useState([]);
@@ -60,6 +62,7 @@ export default function Booking(props) {
       const cartId = searchParams.get("uid");
       const response = await axiosWithInterceptor.get(`${url}${cartId}`);
       setActivityPreBooking(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -71,6 +74,10 @@ export default function Booking(props) {
 
   return (
     <FormDataProvider>
+      <div>
+        ----------------------------------------------------------------
+      </div>
+
       <div>
         {/* SHOW ALERTS MSG */}
         <AlertTextBooking showAlert={showAlert} />
@@ -88,38 +95,40 @@ export default function Booking(props) {
           </h1>
         </div>
 
-        <h2 className="text-fs-14 m-m text-black">
+        <h2 className="text-fs-14 m-m text-black mb-3">
           {languageData.booking.subtitleComplete}
         </h2>
+
+        <FormCentral
+          activityPreBooking={activityPreBooking}
+          activityTrue={hasActivities}
+        />
 
         <div className="pt-[36px] flex flex-col gap-y-[36px]">
           {/* Passing the handleUserDataChange function as a prop */}
 
           {/* <ClientData onUserDataChange={handleUserDataChange} /> */}
-          <ClientDataT onUserDataChange={handleUserDataChange} />
+          {/* <ClientDataT onUserDataChange={handleUserDataChange} /> */}
 
           <FormClientRH
             dataItinerary={dataItinerary.items}
             onRHDataChange={handleRHChange}
           />
 
-          {activityPreBooking && activityPreBooking.length > 0 && (
+          {/* {activityPreBooking && activityPreBooking.length > 0 && (
             <div className="py-[32px] px-[24px] w-full rounded-[19px] bg-white">
               <h2 className="m-b text-fs-21 text-black">
                 {languageData.paymentActivities.activities}
               </h2>
-              {/* <ActivityForm
-                activityPreBooking={activityPreBooking}
-                setFormActivityItems={setFormActivityItems}
-              /> */}
+
               <ActivityFormT
                 activityPreBooking={activityPreBooking}
                 setFormActivityItems={setFormActivityItems}
               />
             </div>
-          )}
+          )} */}
 
-          {!activityPreBooking && <SkeletonActivitiesTourP />}
+          {/* {!activityPreBooking && <SkeletonActivitiesTourP />} */}
 
           {/* <PaymentConektaF
             hotelRH={hotelRH}
@@ -128,13 +137,13 @@ export default function Booking(props) {
             onAlertDataChange={handleAlertDataChange}
             formActivityItems={formActivityItems}
           /> */}
-          <PaymentConektaFT
+          {/*      <PaymentConektaFT
             hotelRH={hotelRH}
             userData={userData}
             changeButton={changeButton}
             onAlertDataChange={handleAlertDataChange}
             formActivityItems={formActivityItems}
-          />
+          /> */}
         </div>
       </div>
     </FormDataProvider>

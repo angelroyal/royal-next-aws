@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
+import { PaymentContext } from "../context/PaymentContext";
 import VisaIcon from "../../assets/icons/utils/payment/visa.svg";
 import ChipCard from "../../assets/icons/utils/payment/chip-card.svg";
 import FondBackIcon from "../../assets/icons/utils/others/font-royal.png";
@@ -10,8 +11,9 @@ import MasterCardIcon from "../../assets/icons/utils/payment/master-card.svg";
 
 const numberCardDefault = "xxxxxxxxxxxxxxxx";
 
-export default function CardPaymentT(props) {
+export default function CardPaymentT() {
   const [isBack, setIsBack] = useState(false);
+  const [cardType, setCardType] = useState(null);
   const { languageData } = useContext(LanguageContext);
 
   const {
@@ -21,8 +23,25 @@ export default function CardPaymentT(props) {
     expirationYear,
     cvvCard,
     numberCard,
-    cardType,
-  } = props;
+  } = useContext(PaymentContext);
+
+  const handleNumberCardChange = () => {
+    const truncatedCardNumber = numberCard.slice(0, 16);
+
+    if (truncatedCardNumber === "") {
+      setCardType(null);
+    } else if (truncatedCardNumber.startsWith("4")) {
+      setCardType("Visa");
+    } else if (truncatedCardNumber.startsWith("5")) {
+      setCardType("MasterCard");
+    } else if (truncatedCardNumber.startsWith("3")) {
+      setCardType("Amex");
+    }
+  };
+
+  useEffect(() => {
+    handleNumberCardChange();
+  }, [numberCard]);
 
   const cartTypeSvg = () => {
     if (cardType) {
@@ -68,20 +87,6 @@ export default function CardPaymentT(props) {
     }
   }, [isCVV]);
 
-  //   const numberSpace = () => {
-  //     let result = ["xxxx", "xxxx", "xxxx", "xxxx"];
-  //     let numberCardCl = [];
-  //     let actualNumberCard = numberCard && numberCard;
-  //     for (let i = 0; i < actualNumberCard.length; i += 4) {
-  //       numberCardCl.push(actualNumberCard.slice(i, i + 4) + " ");
-  //     }
-
-  //     if (numberCardCl.length > 3) {
-  //       result[result.length - 1] = numberCardCl[numberCardCl.length - 1];
-  //     }
-  //     return result;
-  //   };
-
   const numberSpace = () => {
     let result = [];
     let actualNumberCard = numberCard ? numberCard : numberCardDefault;
@@ -94,13 +99,11 @@ export default function CardPaymentT(props) {
   };
 
   const card = document.getElementById("card-payment");
+
   const changeCard = () => {
-    // setIsBack((prevStat) => !prevStat);
     if (card) {
       rotateCard();
     }
-
-    // const changeI = ((prevStat) => !prevStat);
   };
 
   const rotateCard = () => {
@@ -115,12 +118,10 @@ export default function CardPaymentT(props) {
   return (
     <div
       className="w-full h-[15em] flex relative bg-gradient-to-r from-[#6c87e9] to-[#2743a6] rounded-l-xl rounded-tr-[1.8rem] rounded-br-xl transition-transform duration-500 transform-style-preserve-3d max-xl:w-[88%] max-md:w-full"
-      //   onClick={() => changeCard()}
       id="card-payment"
     >
       {isBack === false && (
         <>
-          {/* src={IconLogo} */}
           <Image
             className="absolute top-0 right-[3px] h-[96%] w-auto opacity-10 max-md:h-[90%]"
             width={44}

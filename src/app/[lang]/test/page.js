@@ -10,7 +10,7 @@ import KeepExploring from "@/components/Recommended/KeepExploring";
 import DestinationReady from "@/components/Recommended/DestinationReady";
 import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 
-import ClientDataT from "@/payment/Booking/ClientDataT";
+import ClientDataT from "@/payment/Booking/Forms/FormClientData";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 import Loading from "@/components/General/Loading";
 import LoadingProgress from "@/components/General/LoadingProgress";
