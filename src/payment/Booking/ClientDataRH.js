@@ -1,5 +1,3 @@
-import "../../assets/styles/web/AccordionFrom.css";
-
 import Image from "next/image";
 import { Form } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
