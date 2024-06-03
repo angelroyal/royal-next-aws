@@ -33,7 +33,11 @@ export default function FormClientData() {
   const handleFieldChange = (field, setter) => (e) => {
     const value = e.target.value;
     if (field === "phoneNumber" && !phoneRegex.test(value)) return;
-    if ((field === "firstName" || field === "lastName") && !nameRegexIndividual.test(value)) return;
+    if (
+      (field === "firstName" || field === "lastName") &&
+      !nameRegexIndividual.test(value)
+    )
+      return;
 
     setter(value);
     setValidation((prev) => ({
@@ -119,6 +123,7 @@ export default function FormClientData() {
             <span className="text-red-100">*</span>
           </label>
           <input
+            id="email"
             type="email"
             className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none  placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
             placeholder={languageData.booking.clientData.placeholderEmail}
@@ -127,6 +132,7 @@ export default function FormClientData() {
             onBlur={handleBlur("email", email)}
             required
           />
+
           {!validation.email.valid && validation.email.touched && (
             <div className="bg-red-50 rounded-lg px-[10px] py-[20px] border border-red-70 tm-s-b">
               {languageData.booking.invalidEmail}

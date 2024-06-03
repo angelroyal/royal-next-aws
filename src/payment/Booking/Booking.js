@@ -71,7 +71,6 @@ export default function Booking(props) {
   useEffect(() => {
     fetchData();
   }, []);
-  
 
   return (
     <FormDataProvider>
@@ -98,6 +97,7 @@ export default function Booking(props) {
 
         <FormCentral
           activityPreBooking={activityPreBooking}
+          dataItinerary={dataItinerary.items}
           activityTrue={hasActivities}
         />
 
@@ -107,10 +107,10 @@ export default function Booking(props) {
           {/* <ClientData onUserDataChange={handleUserDataChange} /> */}
           {/* <ClientDataT onUserDataChange={handleUserDataChange} /> */}
 
-          <FormClientRH
+          {/* <FormClientRH
             dataItinerary={dataItinerary.items}
             onRHDataChange={handleRHChange}
-          />
+          /> */}
 
           {/* {activityPreBooking && activityPreBooking.length > 0 && (
             <div className="py-[32px] px-[24px] w-full rounded-[19px] bg-white">

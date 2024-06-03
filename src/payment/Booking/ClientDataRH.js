@@ -8,12 +8,17 @@ import {
   ProcessDataHB,
   processItineraryData,
 } from "../config/processData";
+import { PaymentContext } from "../context/PaymentContext";
 import LanguageContext from "../../language/LanguageContext";
-import HotelOrangeIcon from "../../assets/icons/utils/payment/hotel-orange.svg";
+
 import HotelBlackIcon from "../../assets/icons/utils/payment/hotel-black.svg";
+import HotelOrangeIcon from "../../assets/icons/utils/payment/hotel-orange.svg";
 
 export function FormClientRH(props) {
-  const { dataItinerary, onRHDataChange } = props;
+  const {
+     setRoomsRH
+  } = useContext(PaymentContext);
+  const { dataItinerary } = props;
   const { languageData } = useContext(LanguageContext);
 
   const [formData, setFormData] = useState([]);
@@ -79,7 +84,7 @@ export function FormClientRH(props) {
   // SEND INFO PAYMENT
   const handleSubmit = () => {
     const submissionData = formData.map(({ key, ...rest }) => rest);
-    onRHDataChange(submissionData);
+    setRoomsRH(submissionData);
   };
 
   // NEXT ROOM

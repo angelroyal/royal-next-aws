@@ -23,6 +23,9 @@ const PaymentProviderContext = ({ children }) => {
   // ACTIVITIES
   const [formActivityItems, setFormActivityItems] = useState(null);
 
+  // RATE HAWK
+  const [hotelRH, setRoomsRH] = useState([]);
+
   return (
     <PaymentContext.Provider
       value={{
@@ -50,7 +53,10 @@ const PaymentProviderContext = ({ children }) => {
         setTermsChecked,
         isCVV,
         setIsCVV,
-        formActivityItems, setFormActivityItems
+        formActivityItems,
+        setFormActivityItems,
+        hotelRH,
+        setRoomsRH,
       }}
     >
       {children}

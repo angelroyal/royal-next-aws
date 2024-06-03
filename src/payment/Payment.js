@@ -33,42 +33,15 @@ export default function Payment() {
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
   const { step, handleStepChange, openDialog } = useContext(BookingContext);
 
-  // useEffect(() => {
-  //   loadConektaScripts();
-
-  //   return () => {
-  //     unloadConektaScripts();
-  //   };
-  // }, []);
-
   useEffect(() => {
-    const loadConektaScripts = () => {
-      const script1 = document.createElement("script");
-      script1.src =
-        "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
-      script1.type = "text/javascript";
-      document.body.appendChild(script1);
-
-      const script2 = document.createElement("script");
-      script2.src = "https://cdn.conekta.io/js/latest/conekta.js";
-      script2.type = "text/javascript";
-      document.body.appendChild(script2);
-    };
-
     loadConektaScripts();
-
-    const unloadConektaScripts = () => {
-      const scripts = document.querySelectorAll("script[src*='conekta.js']");
-      scripts.forEach((script) => {
-        script.parentNode.removeChild(script);
-      });
-    };
 
     return () => {
       unloadConektaScripts();
     };
   }, []);
 
+ 
   useEffect(() => {
     scrollToTop();
     fetchDataItinerary(
