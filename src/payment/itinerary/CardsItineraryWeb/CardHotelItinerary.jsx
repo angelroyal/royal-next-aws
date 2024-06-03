@@ -9,10 +9,10 @@ import LanguageContext from "../../../language/LanguageContext";
 import UnavailableCardHotel from "../others/UnavailableCardHotel";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { ImageNotFound } from "../../../config/Others/ImageNotFound";
+import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
-import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -436,15 +436,14 @@ export default function CardHotelItinerary(props) {
             </div>
 
             {/* REMOVE CARD */}
-
             {iconRemove && (
               <>
                 <div
-                  className="container-remove-itinerary"
+                  className="absolute left-0 top-0 w-full h-full bg-[#96969691] rounded-lg"
                   onClick={() => cancelRemove()}
                 />
                 <div
-                  className="remove-reservation-itinerary"
+                  className="absolute right-0 top-0 h-full px-[22px] flex items-center justify-center cursor-pointer bg-red-100 rounded-r-lg text-fs-16 text-white m-s-b"
                   onClick={() => removeReservation(itemHotel.code)}
                 >
                   {languageData.cart.remove}

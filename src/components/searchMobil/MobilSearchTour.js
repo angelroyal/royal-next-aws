@@ -81,9 +81,9 @@ export default function MobilSearchTour() {
 
         <PersonsActivities OnApply={setRoomData} listing={true} />
 
-        <div className="margin-search-tab button-room-page">
+        <div className="flex justify-center mb-[30px] relative">
           <button
-            className={`button-search-page-search ${
+            className={`bg-or-100 rounded-[42px] text-white m-b my-[10px] text-fs-14 py-[8px] px-[30px] w-full hover:bg-or-110 ${
               !selectedOption || !selectedDate ? "disabled" : ""
             }`}
             variant="contained"

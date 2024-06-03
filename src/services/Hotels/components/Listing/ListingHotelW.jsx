@@ -50,6 +50,7 @@ export default function ListingHotelW() {
           decodeURIComponent(searchParams.get("occupancies"))
         ),
       };
+      // console.log(requestBody);
       setRequestQueryParams(requestBody);
       setCombinedHotelData(null);
       handleFetchPostHotels(requestBody);

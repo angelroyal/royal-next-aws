@@ -61,7 +61,7 @@ export default function Payment() {
       <Container>
         <div className="mx-[70px] max-2xl:mx-0">
           {/* BACKGROUND WHITE STEP */}
-          {step !== 3 && (
+          {step !== 3 && !errorAlertBooking && (
             <div className="max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0" />
           )}
 
@@ -121,18 +121,29 @@ export default function Payment() {
           )}
 
         {errorAlertBooking && (
-          <div className="container-itinerary-no-data">
+          <div className="py-[21vh] flex flex-col items-center justify-center">
             <img
-              className="name-logo m-0"
+              className="w-[174px] h-auto m-0"
+              width={174}
+              height={50}
               src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
               alt={process.env.NEXT_PUBLIC_NAME_COMPANY}
             />
-            <h2 className="itinerary-no-show">
+            <h2 className="m-s-b text-or-100 text-fs-20 text-center">
               {languageData.Alerts.itinerary.title}
             </h2>
-            <p className="itinerary-no-text padding-bottom">
-              {languageData.Alerts.itinerary.contact} 800 953 0342
-            </p>
+            <a
+              className="text-nowrap m-m text-fs-14 text-gry-100 text-center flex cursor-pointer"
+              href="tel:8009530342"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {languageData.Alerts.itinerary.contact}{" "}
+              <p className="m-0 ml-[4px] m-s-b hover:text-or-100">
+                {" "}
+                800 953 0342
+              </p>
+            </a>
           </div>
         )}
       </Container>

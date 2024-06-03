@@ -1,21 +1,26 @@
 
-import Link from "next/link";
-import Image from "next/image";
-import React, { useContext } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination,Navigation } from "swiper/modules";
-import { TotalStars } from "@/components/General/Stars";
-import LanguageContext from "@/language/LanguageContext";
-import { calculateNights } from "../../utils/calculateNights";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../../../../assets/styles/general/Swiper.css";
 
+import Link from "next/link";
+import Image from "next/image";
+import React, { useContext } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination,Navigation } from "swiper/modules";
+
+import { TotalStars } from "@/components/General/Stars";
+import LanguageContext from "@/language/LanguageContext";
+import { calculateNights } from "../../utils/calculateNights";
+
+
+
 export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;
   const { languageData, language } = useContext(LanguageContext);
+
+  console.log(requestQueryParams);
 
   //   PARAMS URL
   const searchParams =

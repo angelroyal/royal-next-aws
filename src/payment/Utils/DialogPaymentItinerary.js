@@ -51,7 +51,7 @@ export function DialogPaymentItinerary(props) {
   return (
     <>
       {!openDialog && reservationData && (
-        <div className="lg:hidden border-t-0 bg-white sticky bottom-0 left-0 w-full h-auto ">
+        <div className="lg:hidden border-t-0 bg-white sticky bottom-0 left-0 w-full h-auto z-[2]">
           {step !== 3 ? (
             <div className="rounded-t-[12px] relative h-full pt-[1.2rem] pb-[1rem] px-[1.2rem] shadow-[0px_-4px_14px_-3px_rgb(0,0,0,52%)]">
               <div
