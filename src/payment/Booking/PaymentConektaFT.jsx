@@ -6,10 +6,12 @@ import CardPaymentT from "../Utils/CardPaymentT";
 import { BookingContext } from "../context/BookingContext";
 import LanguageContext from "../../language/LanguageContext";
 import { useIsMobileNew } from "../../config/Mobile/isMobile";
+import SuccessData from "../../assets/animations/success.json";
+import FailureData from "../../assets/animations/failure.json";
+import LoadingData from "../../assets/animations/loadingFly.json";
 import LoadingProgress from "@/components/General/LoadingProgress";
 import { handleErrorsAxios } from "../../config/Logger/handleErrors";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 
 export default function PaymentConektaFT(props) {
   const {
@@ -20,6 +22,9 @@ export default function PaymentConektaFT(props) {
     formActivityItems,
   } = props;
 
+  const [showModal, setShowModal] = useState(false);
+  const [animationData, setAnimationData] = useState(LoadingData);
+  const [alertText, setAlertText] = useState("PP");
   const [uid, setUid] = useState(null);
 
   const { languageData } = useContext(LanguageContext);
@@ -31,6 +36,7 @@ export default function PaymentConektaFT(props) {
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [countdown, setCountdown] = useState(30);
   const [progress, setProgress] = useState(10);
+  const [alertRateVisible, setAlertRateVisible] = useState(false);
   const [dataRate, setDataRate] = useState(null);
 
   const [isUserDataValid, setIsUserDataValid] = useState(false);
@@ -175,17 +181,53 @@ export default function PaymentConektaFT(props) {
         cardNumber: lastFourDigits,
         ...(hotelRH ? { guests: hotelRH } : {}),
         ...(formActivityItems ? { items: formActivityItems } : {}),
+        // ...(required ? {
+        //   items: [
+        //     {
+        //       type: 'activity',
+        //       id: '153697',
+        //       details: [
+        //         {
+        //           id: 'comentarios-65df5f8ba9dc34.42369804',
+        //           value: '',
+        //         }
+        //       ]
+        //     }
+        //   ]
+        //  } : {}),
       })
       .then((response) => {
-        console.log("jjsjsjs");
+        setAnimationData(SuccessData);
+        setAlertText("PE");
+        setTimeout(() => {
+          setShowModal(false);
+          handleStepChange(3);
+        }, 3000);
       })
       .catch((error) => {
-        console.log("error");
+        handleErrorsAxios(error);
+        setAnimationData(FailureData);
+        setAlertText("PF");
+        setTermsChecked(false);
+        setPolicyChecked(false);
+        setPolicyAccept(false);
+        setTermsAccept(false);
+        setTimeout(() => {
+          setShowModal(false);
+        }, 3000);
+
+        // LIST ALERTS
+        if (
+          error.response &&
+          [400, 402, 404, 500].includes(error.response.status)
+        ) {
+          onAlertDataChange(error.response.data);
+        }
       });
   };
 
   const conektaErrorResponseHandler = (response) => {
-    setAnimationData("FailureData");
+    setAnimationData(FailureData);
     setAlertText("PF");
     setTermsChecked(false);
     setPolicyChecked(false);
@@ -201,7 +243,7 @@ export default function PaymentConektaFT(props) {
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
     setShowModal(true);
-    setAnimationData("LoadingData");
+    setAnimationData(LoadingData);
     setAlertText("PP");
     // event.preventDefault();
     const form = event.target;
@@ -211,6 +253,10 @@ export default function PaymentConektaFT(props) {
       conektaErrorResponseHandler
     );
     event.preventDefault();
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const [expirationMonth, setExpirationMonth] = useState(null);
@@ -250,6 +296,8 @@ export default function PaymentConektaFT(props) {
 
   // Function to handle the request and countdown
   const checkStatus = () => {
+    setAlertRateVisible(false);
+
     if ((policyChecked || termsChecked) && !requestMade) {
       setRequestMade(true);
       startCountdown();
@@ -309,6 +357,12 @@ export default function PaymentConektaFT(props) {
     }, 30000);
   };
 
+  const openModalRate = () => {
+    setAlertRateVisible(true);
+  };
+
+  // OTHERS FUNCTIONS
+
   const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
   window.Conekta.setPublicKey(conektaPublicKey);
 
@@ -328,7 +382,6 @@ export default function PaymentConektaFT(props) {
       }
     }
   }, [countdown, progress]);
-
   return (
     <>
       <form
@@ -560,6 +613,24 @@ export default function PaymentConektaFT(props) {
                   </div>
                 )}
               </button>
+
+              {/* COUNT */}
+              {/* <div className="count-down">
+                  {policyChecked && termsChecked && (
+                    <>
+                      <span className="payment-in-text">
+                        {languageData.payment.paymentIn}
+                      </span>
+                      <div className="position-relative d-inline-flex justify-content-center">
+                        <CircularProgress
+                          variant="determinate"
+                          value={progress}
+                        />
+                        <div className="count-number">{countdown}</div>
+                      </div>
+                    </>
+                  )}
+                </div> */}
             </div>
           </div>
         </div>
@@ -581,6 +652,24 @@ export default function PaymentConektaFT(props) {
           />
         </div>
       </form>
+
+      {/* ALERTS BOOKING */}
+      <>
+        {showModal && (
+          <AlertBooking
+            show={showModal}
+            handleClose={handleCloseModal}
+            animationData={animationData}
+            alertText={alertText}
+          />
+        )}
+      </>
+
+      <AlertRate
+        alertShowRate={alertRateVisible}
+        infoDataRate={dataRate}
+        cartUid={uid}
+      />
     </>
   );
 }

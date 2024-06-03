@@ -75,10 +75,6 @@ export default function Booking(props) {
   return (
     <FormDataProvider>
       <div>
-        ----------------------------------------------------------------
-      </div>
-
-      <div>
         {/* SHOW ALERTS MSG */}
         <AlertTextBooking showAlert={showAlert} />
 
