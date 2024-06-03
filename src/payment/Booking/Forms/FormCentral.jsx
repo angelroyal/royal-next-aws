@@ -10,7 +10,7 @@ import { SkeletonActivitiesTourP } from "@/utils/skeleton/SkeletonActivitiesTour
 import { handleSubmitPayment as handleSubmitPaymentFunction } from "../ActionsForms/conektaHandlers";
 
 export default function FormCentral(props) {
-  const { activityPreBooking, activityTrue } = props;
+  const { activityPreBooking } = props;
   const {
     firstName,
     lastName,
@@ -62,6 +62,9 @@ export default function FormCentral(props) {
     );
   };
 
+  window.Conekta.setPublicKey(conektaPublicKey);
+  const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
+
   return (
     <>
       <form
@@ -76,14 +79,11 @@ export default function FormCentral(props) {
           <ActivityFormT activityPreBooking={activityPreBooking} />
         )}
 
-        {!activityPreBooking && activityTrue && activityTrue === true && (
-          <SkeletonActivitiesTourP />
-        )}
+        {!activityPreBooking && <SkeletonActivitiesTourP />}
 
         <FormCreditCard />
       </form>
 
-      {/* ALERTS */}
       <AlertPayment
         animationData={animationData}
         isOpen={isOpen}

@@ -71,6 +71,7 @@ export default function Booking(props) {
   useEffect(() => {
     fetchData();
   }, []);
+  
 
   return (
     <FormDataProvider>

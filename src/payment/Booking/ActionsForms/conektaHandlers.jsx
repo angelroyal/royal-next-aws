@@ -29,7 +29,7 @@ export const conektaSuccessResponseHandler = (token, paymentData, setAnimationDa
 };
 
 export const handleSubmitPayment = (event, paymentData, setAnimationData, handleStepChange, closeModalAfterDelay) => {
-  event.preventDefault(); // Prevent default form submission
+  event.preventDefault();
 
   const form = event.target;
 
