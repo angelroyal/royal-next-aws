@@ -194,20 +194,6 @@ export default function PaymentConektaF(props) {
         cardNumber: lastFourDigits,
         ...(hotelRH ? { guests: hotelRH } : {}),
         ...(formActivityItems ? { items: formActivityItems } : {}),
-        // ...(required ? {
-        //   items: [
-        //     {
-        //       type: 'activity',
-        //       id: '153697',
-        //       details: [
-        //         {
-        //           id: 'comentarios-65df5f8ba9dc34.42369804',
-        //           value: '',
-        //         }
-        //       ]
-        //     }
-        //   ]
-        //  } : {}),
       })
       .then((response) => {
         setAnimationData(SuccessData);

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const sendToSlack = async (message, errorDetails) => {
   try {
-    await axios.post("https://sandboxmexico.com/logger/SendToSlackDev.php", {
+    await axios.post("https://sandboxmexico.com/logger/SendToSlackDeva.php", {
       text: message,
       attachments: [
         {

@@ -10,6 +10,7 @@ export const fetchDataItinerary = async (
   setData(null);
   setSkeletonShow(true);
   try {
+    
     const url = "/v1/carts/";
     const searchParams = new URLSearchParams(window.location.search);
     const cartId = searchParams.get("uid");

@@ -38,9 +38,7 @@ export default function ListingHotelW() {
   };
 
   useEffect(() => {
-    scrollToTop();
-    // QUERY PARAMS POST AXIOS
-    if (typeof window !== "undefined") {
+    if (token) {
       const searchParams = new URLSearchParams(window.location.search);
       const requestBody = {
         code: searchParams.get("code"),
@@ -54,15 +52,10 @@ export default function ListingHotelW() {
       };
       // console.log(requestBody);
       setRequestQueryParams(requestBody);
-
-      if (requestBody) {
-        if (token) {
-          setCombinedHotelData(null);
-          handleFetchPostHotels(requestBody);
-        }
-      }
+      setCombinedHotelData(null);
+      handleFetchPostHotels(requestBody);
     }
-  }, [/* window.location.search, */ token]);
+  }, [token]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -72,6 +65,7 @@ export default function ListingHotelW() {
     scrollToTop();
   }, [currentPage]);
 
+    
   return (
     <Container>
       <div className="flex flex-col xl:flex-row md:justify-between">
