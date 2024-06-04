@@ -5,13 +5,13 @@ import { BookingContext } from "../context/BookingContext";
 import ConfirmationEmail from "../Email/ConfirmationEmail";
 import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
 import { useCartAxios } from "../../components/Cart/CartAxios";
+import CardsItinerary from "../itinerary/others/CardsItinerary";
+import { fetchDataConfirmation } from "../Api/fetchDataItinerary";
+import SkeletonConfirmPay from "@/utils/skeleton/SkeletonConfirmPay";
 import { StepsToPayments, StepsToPaymentsM } from "@/hooks/StepsToPay";
-import SkeletonConfirmPay from "../../utils/skeleton/SkeletonConfirmPay";
 import ReservationShortInfo from "../itinerary/others/DetailReservation";
 import { BannerState } from "@/components/bannerJsx/bannerPaymentConfirmed";
 import BannerConfirmationT from "@/components/bannerJsx/bannerConfirmationT";
-import CardsItinerary from "../itinerary/others/CardsItinerary";
-import { fetchDataConfirmation } from "../Api/fetchDataItinerary";
 
 export default function ConfirmReservation() {
   const { fetchData, setCartData, setItinerary, setTotalItemsInCart } =
@@ -62,7 +62,7 @@ export default function ConfirmReservation() {
 
   return (
     <>
-      <SkeletonConfirmPay />
+      {/* <SkeletonConfirmPay /> */}
       {isLoading && <SkeletonConfirmPay />}
 
       <>

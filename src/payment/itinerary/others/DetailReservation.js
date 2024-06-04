@@ -166,7 +166,7 @@ export default function ReservationShortInfo(props) {
 
       {dataItinerary && (
         <>
-          <div className="flex sticky bottom-0 lg:hidden flex justify-between py-[1.5rem] px-[1.5rem] bg-bl-100 rounder-t-xl items-center">
+          <div className="sticky bottom-0 lg:hidden flex justify-between py-[1.5rem] px-[1.5rem] bg-bl-100 rounder-t-xl items-center">
             <div className="d-flex flex-column gap-y-1">
               <span className="text-white text-fs-16 m-b">Total</span>
 
