@@ -61,7 +61,7 @@ export default function DestinationReady({ type, reservationDetails }) {
 
         <div className="h-[88px] w-[277] bg-gry-50 flex flex-col p-[16px] gap-[8px] rounded-lg">
           {/* NAME */}
-          <span className="m-b text-fs-16">{reservationDetails.name}</span>
+          <span className="m-b text-fs-16 flex items-center gap-x-[8px]"><Image src={`${process.env.NEXT_PUBLIC_URL}icons/check/check-g.svg`} width={16} height={16} alt="done name" className="w-[16px] h-[16px]"/> {reservationDetails.name}</span>
 
           {/* DATE */}
           <span className="m-m text-gry-100 text-fs-14 flex items-center">
