@@ -562,7 +562,7 @@ export const es = {
 
   // LP BANNERTOUR 
   bannerTour: {
-    subtitleBannerTour: `Viaja a donde quieras al mejor precio con ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
+    subtitleBannerTour: `Viaja donde quieras al mejor precio con ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
   },
 
   bannersFooter: {
