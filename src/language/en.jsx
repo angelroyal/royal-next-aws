@@ -557,7 +557,7 @@ export const en = {
 
   // LP BANNERTOUR 
   bannerTour: {
-    subtitleBannerTour: `Travel wherever you want at the best price with ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
+    subtitleBannerTour: `Travel where you want at the best price with ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
   },
 
   bannersFooter: {

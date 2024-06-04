@@ -24,8 +24,9 @@ export default function Home() {
                <div className="my-[50px]">
 
                 <PaginationT
-                page={1}
-                count={7}
+                pageChange={2}
+                count={6}
+                onChange={3}
                 />
                </div>
 
