@@ -34,7 +34,6 @@ const Calendar = ({ onDateChange, listing = false, hotelDetails = false }) => {
   );
   const [fullDateRange, setFullDateRange] = useState(false);
   // const [reserverDate, setReverseDate] = useState(false);
-  console.log(arrayMouths);
 
   // Boton antes o despues para las fechas
   const handleClick = (position = false) => {

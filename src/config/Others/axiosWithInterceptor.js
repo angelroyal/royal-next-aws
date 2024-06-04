@@ -1,22 +1,29 @@
-import axios from 'axios';
+import axios from "axios";
 
-const language = typeof window !== 'undefined' ? localStorage.getItem('language') || 'es' : 'es';
+const language =
+  typeof window !== "undefined"
+    ? localStorage.getItem("language") || "es"
+    : "es";
+
+const clientIP = "187.188.15.87";
 
 const axiosWithInterceptor = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_ROYAL + '/' + language,
+  baseURL: process.env.NEXT_PUBLIC_API_ROYAL + "/" + language,
 });
 
 axiosWithInterceptor.interceptors.request.use(
-  config => {
-    if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('token');
+  (config) => {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
       if (token) {
         config.headers.Authorization = `${token}`;
       }
     }
+    config.headers["X-Client-IP"] = clientIP;
+
     return config;
   },
-  error => {
+  (error) => {
     Promise.reject(error);
   }
 );
