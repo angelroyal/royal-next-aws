@@ -1,81 +1,69 @@
 "use client";
 
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import { useEffect, useState } from "react";
-// const data = [
-//     "1", "2", "3", "4", "5", "6"];
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
-export default function PaginationT({ count }) {
+export default function PaginationT({ count, pageChange, onChange }) {
   // { count, page, onChange }
-  // console.log(count);
-  // console.log(page);
-  // console.log(onChange);
 
-  // const numbers = Array.from({ length: count }, (_, index) => index + 1);
-
-  // const increment = () => {
-  //   if (change < count) {
-  //     setChange(change + 1);
-  //   }
-  // };
-
-  // const decrement = () => {
-  //   if (change > 1) {
-  //     setChange(change - 1);
-  //   }
-  // };
-  // test pagination
-  const pages = 5;
+  const pages = count;
 
   const numberOfPages = [];
   for (let i = 1; i <= pages; i++) {
     numberOfPages.push(i);
   }
 
-  const [changeBtn, setChangeBtn] = useState(1);
+  
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([]);
 
   useEffect(() => {
     let tempNumberOfPages = [...arrOfCurrButtons];
 
-    let dotsLeft = "... "
-    let dotsRight = ' ...'
-    let dotsInitial = "..."
+    let dotsInitial = "...";
+    let dotsRight = " ...";
+    let dotsLeft = "... ";
 
-    if (changeBtn >= 1 && changeBtn <= 3) {
+    if (pageChange >= 1 && pageChange <= 3) {
       tempNumberOfPages = [1, 2, 3, 4, dotsInitial, numberOfPages.length];
-    } else if (changeBtn === 4) {
-      const sliced = numberOfPages.slice(0, 4);
-      tempNumberOfPages = [...sliced, dotsInitial, numberOfPages.length];
-    }
-    else if (changeBtn === 4) {
-      const sliced = numberOfPages.slice(0, 3);
-      tempNumberOfPages = [...sliced];
-    }
-    else if(changeBtn > 4 && changeBtn < numberOfPages.length - 2){
-      const sliced1 = numberOfPages.slice(changeBtn - 2, changeBtn)
-      const sliced2 = numberOfPages.slice(changeBtn, changeBtn + 1)
-      tempNumberOfPages = ([1, dotsLeft , ...sliced1, ...sliced2 , dotsRight , numberOfPages.length])
-    }
-    else if(changeBtn > numberOfPages.length - 3){
-      const sliced = numberOfPages.slice(numberOfPages.length - 4)
-      tempNumberOfPages = ([1, dotsLeft , ...sliced])
     }
 
-    else if (changeBtn === dotsInitial){
-      setChangeBtn(arrOfCurrButtons[arrOfCurrButtons.length - 3] + 1)
+    if (pages === 1) {
+      tempNumberOfPages = [1];
+    } else if (pages === 2) {
+      tempNumberOfPages = [1, 2];
+    } else if (pages === 3) {
+      tempNumberOfPages = [1, 2, 3];
+    } else if (pages === 4) {
+      tempNumberOfPages = [1, 2, 3, 4];
+    } else if (pages === 5) {
+      tempNumberOfPages = [1, 2, 3, 4, 5];
+    } else if (pages === 6) {
+      tempNumberOfPages = [1, 2, 3, 4, 5, 6];
+    } else if (pageChange > 4 && pageChange < numberOfPages.length - 2) {
+      const sliced1 = numberOfPages.slice(pageChange - 2, pageChange);
+      const sliced2 = numberOfPages.slice(pageChange, pageChange + 1);
+      tempNumberOfPages = [
+        1,
+        dotsLeft,
+        ...sliced1,
+        ...sliced2,
+        dotsRight,
+        numberOfPages.length,
+      ];
+    } else if (pageChange > numberOfPages.length - 3) {
+      const sliced = numberOfPages.slice(numberOfPages.length - 4);
+      tempNumberOfPages = [1, dotsLeft, ...sliced];
+    } else if (pageChange === dotsInitial) {
+      onChange(arrOfCurrButtons[arrOfCurrButtons.length - 3] + 1);
+    } else if (pageChange === dotsRight) {
+      onChange(arrOfCurrButtons[3] + 2);
+    } else if (pageChange === dotsLeft) {
+      onChange(arrOfCurrButtons[3] - 2);
     }
-    else if (changeBtn === dotsRight){
-      setChangeBtn(arrOfCurrButtons[3] + 2)
-    }
-    else if (changeBtn === dotsLeft){
-      setChangeBtn(arrOfCurrButtons[3] - 2)
-    }
-
 
     setArrOfCurrButtons(tempNumberOfPages);
-  }, [changeBtn]);
-  // end test pagination
+  }, [pageChange]);
+ 
 
   return (
     <div className="flex items-center justify-between bg-white w-fit">
@@ -85,26 +73,27 @@ export default function PaginationT({ count }) {
             className="isolate inline-flex -space-x-px rounded-md gap-[8px] "
             aria-label="Pagination"
           >
+            {/* PAGINATION PREV */}
             <a
               href="#"
-              className="relative bg-gry-50 inline-flex items-center rounded-full h-[28px] w-[28px] px-1 py-1 text-gry-100 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 "
-              onClick={() =>
-                setChangeBtn((prev) => (prev === 1 ? prev : prev - 1))
-              }
-              // onClick={decrement}
+              className={`${
+                pageChange === 1 ? "!bg-gry-30 !text-gry-70" : ""
+              } relative bg-gry-50 inline-flex items-center rounded-full h-[28px] w-[28px] px-1 py-1 text-gry-100 focus:outline-offset-0`}
+              onClick={() => onChange((prev) => (prev === 1 ? prev : prev - 1))}
             >
               <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
             </a>
-            {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
-            {arrOfCurrButtons.map((page ,index) => {
+
+            {arrOfCurrButtons.map((page, index) => {
               return (
+                // PAGINATION NUMBERS
                 <a
                   key={index}
                   href="#"
-                  onClick={() => setChangeBtn(page)}
+                  onClick={() => onChange(page)}
                   aria-current="page"
                   className={`${
-                    changeBtn === page ? "!bg-or-100 !text-white" : ""
+                    pageChange === page ? "!bg-or-100 !text-white" : ""
                   } relative z-10 inline-flex rounded-full items-center bg-gry-50 h-[28px] w-[28px] justify-center text-sm font-semibold text-gry-100 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}
                 >
                   {page}
@@ -112,12 +101,14 @@ export default function PaginationT({ count }) {
               );
             })}
 
+            {/* PAGINATION NEXT */}
             <a
               href="#"
-              className="relative inline-flex items-center bg-gry-50 rounded-full h-[28px] w-[28px] px-1 py-1 text-gry-100 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-              // onClick={increment}
+              className={`${
+                pageChange === pages ? "!bg-gry-30 !text-gry-70" : ""
+              } relative bg-gry-50 inline-flex items-center rounded-full h-[28px] w-[28px] px-1 py-1 text-gry-100 focus:outline-offset-0`}
               onClick={() =>
-                setChangeBtn((prev) =>
+                onChange((prev) =>
                   prev === numberOfPages.length ? prev : prev + 1
                 )
               }

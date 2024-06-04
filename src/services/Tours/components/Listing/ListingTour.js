@@ -1,6 +1,5 @@
 "use client";
 
-import { Pagination } from "@mui/material";
 import React, { useEffect, useContext, useState } from "react";
 
 // EXPORT NEW
@@ -15,13 +14,13 @@ import OrderingTour from "./OrderingTour";
 import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
 import ImageListingTour from "../Banners/ImageListingTour";
+import PaginationT from "@/components/General/PaginationT";
 import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
 import { BannerDestinationTour } from "../Banners/BannerTour";
 import { useTourContext } from "../../context/ListingTourContext";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
-import PaginationT from "@/components/General/PaginationT";
 
 export default function ListingTour() {
   const {
@@ -208,30 +207,13 @@ export default function ListingTour() {
             )}
 
             {auxTourData && currentTours && (
-              <div className="pagination pagination-cards-hotel">
-                <Pagination
-                  count={Math.ceil(
-                    auxTourData.activities.length / toursPerPage
-                  )}
-                  page={currentPage}
-                  onChange={handleChangePage}
-                  color="primary"
-                />
-                {/* <Pagination
-                  count={Math.ceil(
-                    auxTourData.activities.length / toursPerPage
-                  )}
-                  page={currentPage}
-                  onChange={handleChangePage}
-                  color="primary"
-                /> */}
-
+              <div className="flex justify-center py-[1.5rem]">
                 <PaginationT
                   count={Math.ceil(
                     auxTourData.activities.length / toursPerPage
                   )}
-                  page={currentPage}
-                  // onChange={handleChangePage}
+                  pageChange={currentPage}
+                  onChange={setCurrentPage}
                 />
               </div>
             )}
