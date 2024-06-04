@@ -12,13 +12,25 @@ const originDashedOne = [
   { key: 4, value: false },
   { key: 5, value: false },
   { key: 6, value: false },
-  { key: 7, value: false }
+  { key: 7, value: false },
+];
+
+const originDashedTwo = [
+  { key: 0, value: false },
+  { key: 1, value: false },
+  { key: 2, value: false },
+  { key: 3, value: false },
+  { key: 4, value: false },
+  { key: 5, value: false },
+  { key: 6, value: false },
+  { key: 7, value: false },
 ];
 
 export default function TipsBooking() {
   const { languageData } = useContext(LanguageContext);
   const [dashedOne, setDashedOne] = useState(originDashedOne);
-//   console.log("hola",dashedOne);
+
+  const [dashedTwo, setDashedTwo] = useState(originDashedTwo);
 
   const [cartAnimate, setCartAnimate] = useState(1);
 
@@ -32,12 +44,24 @@ export default function TipsBooking() {
           )
         );
       }, interval * index);
-    //   console.log(dashedOne);
+    });
+  };
+
+  const AnimateDashedTwo = () => {
+    const interval = 3000 / dashedTwo.length;
+    dashedTwo.forEach((item, index) => {
+      setTimeout(() => {
+        setDashedTwo((prevDashedTwo) =>
+          prevDashedTwo.map((el) =>
+            el.key === item.key ? { ...el, value: true } : el
+          )
+        );
+      }, interval * index);
     });
   };
 
   const CartActual = () => {
-    setDashedOne(originDashedOne);
+    // setDashedOne(originDashedOne);
     const interval = 3000 / dashedOne.length;
     let initAnimate = cartAnimate;
     setTimeout(() => {
@@ -52,22 +76,17 @@ export default function TipsBooking() {
 
   useEffect(() => {
     CartActual();
-    AnimateDashed();
+    if (cartAnimate == 1) {
+      AnimateDashed();
+    } else if (cartAnimate == 2) {
+      AnimateDashedTwo();
+    }
+
+    if (cartAnimate == 1) {
+      setDashedOne(originDashedOne);
+      setDashedTwo(originDashedTwo);
+    }
   }, [cartAnimate]);
-
-  //   const AnimateDashed = () => {
-  //     const interval = 3000 / dashedOne.length;
-
-  //     return dashedOne.forEach((item, index) => {
-  //       setTimeout(() => {
-  //         setDashedOne((prevDashedOne) =>
-  //           prevDashedOne.map((el) =>
-  //             el.key === item.key ? { ...el, value: true } : el
-  //           )
-  //         );
-  //       }, interval * index);
-  //     });
-  //   };
 
   return (
     <div className="flex flex-col items-center my-32">
@@ -81,12 +100,12 @@ export default function TipsBooking() {
           <div className="p-[4px] bg-white shadow-3xl mb-[16px]">
             <div
               className={`${
-                cartAnimate === 1 ? "bg-or-100" : "bg-gry-50"
+                cartAnimate === 1 || cartAnimate > 1 ? "bg-or-100" : "bg-gry-50"
               } w-[80px] h-[80px] flex items-center justify-center border-2 border-white rounded-lg`}
             >
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/location/${
-                  cartAnimate === 1 ? "location-w.svg" : "location-on-bl.svg"
+                  cartAnimate === 1 || cartAnimate > 1 ? "location-w.svg" : "location-on-bl.svg"
                 }`}
                 alt="icon-location"
                 width={24}
@@ -112,7 +131,7 @@ export default function TipsBooking() {
               className={`${
                 dashed.key === 0 || dashed.key === 7 ? "w-[7px]" : "w-[10px]"
               } h-[3px] relative ${
-                dashed.value && cartAnimate === 1 ? "bg-or-100" : "bg-gry-50"
+                dashed.value ? "bg-or-100" : "bg-gry-50"
               } ${StepsBannerStyle(dashed.key, 1)}`}
             />
           ))}
@@ -129,12 +148,12 @@ export default function TipsBooking() {
           <div className="p-[4px] bg-white mb-[16px] shadow-3xl">
             <div
               className={`${
-                cartAnimate === 2 ? "bg-or-100" : "bg-gry-50"
+                cartAnimate === 2 || cartAnimate > 2 ? "bg-or-100" : "bg-gry-50"
               } w-[80px] h-[80px] flex items-center justify-center border-2 border-white rounded-lg`}
             >
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/${
-                  cartAnimate === 2
+                  cartAnimate === 2 || cartAnimate > 2
                     ? "calendar-done-w.svg"
                     : "calendar-bl-100.svg"
                 }`}
@@ -156,13 +175,13 @@ export default function TipsBooking() {
 
         {/* LINE BOTTOM DASHED */}
         <div className="flex max-md:h-[8rem] max-md:items-center w-[116px] relative justify-around max-md:rotate-[90deg]">
-          {dashedOne.map((dashed, index) => (
+          {dashedTwo.map((dashed, index) => (
             <div
               key={index}
               className={`!w-[10px] ${
                 dashed.key === 0 || dashed.key === 7 ? "w-[7px]" : "w-[10px]"
               } h-[3px] relative ${
-                dashed.value === true && cartAnimate === 2
+                dashed.value === true
                   ? "bg-or-100"
                   : "bg-gry-50"
               } ${StepsBannerStyle(dashed.key, 2)}`}
@@ -182,14 +201,12 @@ export default function TipsBooking() {
             >
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/general/${
-                  cartAnimate === 3 ? "airport-bl.svg" : "airport-bl.svg"
+                  cartAnimate === 3 ? "airport-w.svg" : "airport-bl.svg"
                 }`}
                 alt="icon-location"
                 width={33}
                 height={21}
-                className={`${
-                  cartAnimate === 3 && "bg-white"
-                } w-[33px] h-[21px]`}
+                className={`w-[33px] h-[21px]`}
               />
             </div>
           </div>
