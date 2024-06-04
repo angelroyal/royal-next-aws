@@ -1219,6 +1219,7 @@ export const en = {
     cancellations: "Cancellations",
     cancellationsText: `Please remember that cancellations for reservations, hotels, transportation, or tours are handled directly through the ${process.env.NEXT_PUBLIC_NAME_COMPANY} support line. We recommend that you get in touch with us for any cancellation or modification requests.`,
     doubts: "Do you have any doubts?",
+    reservationNo:"No. reservation:",
 
     bookingData: {
       titleBookingData: "Booking data",

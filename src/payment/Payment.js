@@ -9,7 +9,7 @@ import {
 import Booking from "./Booking/Booking";
 import Itinerary from "./itinerary/Itinerary";
 import { Container } from "@/config/Others/Container";
-import SkeletonPay from "../utils/skeleton/SkeletonPay";
+import SkeletonPay from "@/utils/skeleton/SkeletonPay";
 import LanguageContext from "../language/LanguageContext";
 import { BookingContext } from "./context/BookingContext";
 import { useCartAxios } from "../components/Cart/CartAxios";

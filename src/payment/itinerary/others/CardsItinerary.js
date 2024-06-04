@@ -12,7 +12,7 @@ export default function CardsItinerary(props) {
   const { step } = useContext(BookingContext);
 
   return (
-    <>
+    <div className="flex flex-col gap-y-6">
       {dataItinerary.items.map((item, index) => {
         if (item.type === "transport") {
           return <CardMovingItinerary />;
@@ -41,6 +41,6 @@ export default function CardsItinerary(props) {
         }
         return null;
       })}
-    </>
+    </div>
   );
 }
