@@ -48,7 +48,7 @@ export default function CookieBanner() {
             <button
               className="flex flex-row justify-center items-center px-[32px] py-[11.5px] rounded-full border-2 border-bl-100 m-b text-bl-100 hover:!text-white hover:!bg-bl-100"
               onClick={handleAcceptCookies}
-              // id="cookie-banner"
+              id="banner-cookie-staywuw"
             >
               {languageData.cookie.accept}
             </button>

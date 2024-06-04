@@ -9,11 +9,9 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import LanguageContext from "@/language/LanguageContext";
-import { PromotedRoutesCard } from "@/services/Transport/Home/PromotedRoutes";
-
+import { CatalogueRoutesCard } from "@/services/Transport/Home/RecommendedTransport";
 export default function TransportRecommendation() {
     
-    const isRecommended = true;
     const { languageData } = useContext(LanguageContext);
 
     return (
@@ -61,7 +59,7 @@ export default function TransportRecommendation() {
                 {[...Array(10)].map((_, index) => (
                     <SwiperSlide key={index} className="!rounded-lg">
                         <div className="flex flex-col gap-2 p-[16px] rounded-lg bg-white shadow-3xl">
-                            <PromotedRoutesCard recommended={isRecommended}/>
+                            <CatalogueRoutesCard recommended={true}/>
                         </div>
                     </SwiperSlide>
                 ))}
