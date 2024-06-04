@@ -13,7 +13,7 @@ import LanguageContext from "../../../../language/LanguageContext";
 export function BannerHomeHotelTop() {
   return (
     <>
-      <Swiper
+      {/* <Swiper
         className="h-[442px] md:h-72 2xl:h-[480px] w-full"
         slidesPerView={1}
         id="swiper-banner-home"
@@ -46,21 +46,17 @@ export function BannerHomeHotelTop() {
           />
         </SwiperSlide>
 
-      </Swiper>
+      </Swiper> */}
 
-
-      {/* <div className="h-[442px] md:h-72 2xl:h-[480px] w-full">
-        <video
-          className="object-cover w-full h-full object-center select-none"
-          src="https://sandboxmexico.com/assets/test/aEvkEmejemplo.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          Tu navegador no soporta videos.
-        </video>
-        </div> */}
+      <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
+        <img
+          className="object-cover	w-full h-full object-center select-none"
+          src={BannerConfig.bannerTop.img}
+          alt="banner-top-second"
+          width="1366px"
+          height="480px"
+        />
+      </div>
     </>
   );
 }
@@ -68,7 +64,7 @@ export function BannerHomeHotelTop() {
 export function BannerHomeHotelUp() {
   const Random =
     BannerConfig.bannerUp.text[
-    Math.floor(Math.random() * BannerConfig.bannerUp.text.length)
+      Math.floor(Math.random() * BannerConfig.bannerUp.text.length)
     ];
 
   return (
@@ -326,7 +322,6 @@ export function BannerHomeHotelSwiper() {
 }
 
 export function BannerHomeHotelD() {
-
   const { languageData } = useContext(LanguageContext);
   const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
   const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
@@ -348,11 +343,21 @@ export function BannerHomeHotelD() {
 
       <div className="relative flex justify-center w-3/12">
         <div className="relative w-full flex justify-center ">
-          <Image src={bannerTraveling} width={266} height={235} className="w-full rounded-lg select-none" alt="Banner Experimenta los mejores tours" />
+          <Image
+            src={bannerTraveling}
+            width={266}
+            height={235}
+            className="w-full rounded-lg select-none"
+            alt="Banner Experimenta los mejores tours"
+          />
 
           <div className="absolute top-[39px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[12%] max-sm:top-[40px]">
-            <h2 className="m-b w-9/12 text-white text-fs-28 mb-4 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fsw-48 max-sm:text-fs-24">{languageData.titleBanners.titleTourMexico}</h2>
-            <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-22 text-left max-2xl:text-fs-18 max-xl:text-fs-16 max-lg:text-fsw-38 max-sm:text-fsw-64" >{languageData.titleBanners.subtitleTourM}</h4>
+            <h2 className="m-b w-9/12 text-white text-fs-28 mb-4 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fsw-48 max-sm:text-fs-24">
+              {languageData.titleBanners.titleTourMexico}
+            </h2>
+            <h4 className="m-m w-9/12 text-[#BEE0EE] text-fs-22 text-left max-2xl:text-fs-18 max-xl:text-fs-16 max-lg:text-fsw-38 max-sm:text-fsw-64">
+              {languageData.titleBanners.subtitleTourM}
+            </h4>
           </div>
         </div>
       </div>
