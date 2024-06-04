@@ -204,8 +204,7 @@ export default function EnjoyStayHome() {
           </h2>
 
           <span className="text-white m-m text-fs-14">
-            {languageData.enjoyStayHome.offersDates}:{" "}
-            <b>del 29 de abril al 14 de mayo.</b>
+            <b>Del 29 de abril al 14 de mayo.</b>
           </span>
 
           <span className="text-white m-m text-fs-16">
