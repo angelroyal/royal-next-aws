@@ -13,7 +13,6 @@ import LanguageContext from "@/language/LanguageContext";
 import PolicyCardTransportWhite from "../components/ToolTip/PolicyCardTransportWhite";
 
 export default function PromotedRoutes() {
-
   const { languageData } = useContext(LanguageContext);
   const [menuPromoted, setMenuPromoted] = useState(0);
   const listOptions = [
@@ -47,10 +46,11 @@ export default function PromotedRoutes() {
           <button
             key={index}
             onClick={() => setMenuPromoted(index)}
-            className={`${menuPromoted === index
-              ? "bg-or-100 rounded-3xl text-white"
-              : "text-gry-100"
-              } flex gap-2 py-2 px-4 justify-center items-center h-max`}
+            className={`${
+              menuPromoted === index
+                ? "bg-or-100 rounded-3xl text-white"
+                : "text-gry-100"
+            } flex gap-2 py-2 px-4 justify-center items-center h-max`}
           >
             {menuPromoted === index ? (
               <Image
@@ -82,7 +82,7 @@ export default function PromotedRoutes() {
         data-aos="fade-up"
         className="flex gap-4 flex-wrap max-lg:hidden justify-between"
       >
-        {[...Array(8)].map((_, index) => (
+        {[...Array(10)].map((_, index) => (
           <div
             key={index}
             className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white w-[280px]"
@@ -94,7 +94,6 @@ export default function PromotedRoutes() {
 
       {/* CARDS TRANSPORT MOBILE SWIPER */}
       <div className="lg:hidden block relative">
-
         <Swiper
           slidesPerView={5}
           spaceBetween={24}
@@ -142,7 +141,6 @@ export default function PromotedRoutes() {
 }
 
 export function PromotedRoutesCard({ recommended }) {
-
   const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
@@ -156,9 +154,10 @@ export function PromotedRoutesCard({ recommended }) {
       />
 
       <div className="flex flex-col gap-[16px]">
-
         {/* LOCATION , NAME TRANSPORT , TYPE */}
         <div className="flex flex-col gap-1">
+
+          <span className="text-fs-12 m-m text-gry-100">Vehiculo Standard</span>
 
           <div className="flex gap-2 items-center">
             <Image
@@ -168,10 +167,8 @@ export function PromotedRoutesCard({ recommended }) {
               height={12}
               className="w-[12px] h-[12px]"
             />
-            <span className="text-fs-12 m-m text-gry-100">cancun</span>
+            <span className="text-fs-16 m-b">cancun</span>
           </div>
-
-          <span className="text-fs-16 m-b">Vehiculo Standard</span>
 
           <div className="flex gap-1">
             <span className="text-fs-12 text-gry-100 m-m">
@@ -247,10 +244,12 @@ export function PromotedRoutesCard({ recommended }) {
       </div>
 
       {/* PRICE */}
-      <div className={`flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between ${recommended && "hidden"}`}>
-
+      <div
+        className={`flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between ${
+          recommended && "hidden"
+        }`}
+      >
         <div className="flex flex-col">
-
           <span className="text-fs-10 text-gry-100">
             {languageData.cartTour.from}
           </span>
@@ -264,15 +263,13 @@ export function PromotedRoutesCard({ recommended }) {
             onMouseLeave={() => setOpenPolicy(false)}
           >
             {languageData.containerModalHotel.policies}
-            {openPolicy === true && (
-              <PolicyCardTransportWhite />
-            )}
+            {openPolicy === true && <PolicyCardTransportWhite />}
           </span>
-
         </div>
 
         <bottom className="flex items-center px-[23px] py-[12px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit text-nowrap cursor-pointer">
-          {languageData.CardHomeTransport.reserveBtn}
+          {/* {languageData.CardHomeTransport.reserveBtn} */}
+          {languageData.cartTour.seeDetails}
         </bottom>
       </div>
       {/* </div> */}

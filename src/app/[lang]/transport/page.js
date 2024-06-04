@@ -10,7 +10,7 @@ import TipsBooking from "@/services/Transport/Home/TipsBooking";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import PromotedRoutes from "@/services/Transport/Home/PromotedRoutes";
 import CartTourOptions from "@/services/Hotels/components/home/TourRecommended";
-import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
+// import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
 import { BannerHeaderTransport } from "@/services/Transport/Home/BannerHeaderTransport";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { BannerHomeTransport, BannerSafelyTransport } from "@/services/Transport/Home/bannerTransport";
@@ -47,9 +47,9 @@ export default function HomeTransport() {
               <div className="max-md:overflow-x-hidden">
                 <BannerHomeTransport />
                 <TipsBooking />
-                <RecommendedTransport />
-                <BannerSafelyTransport />
+                {/* <RecommendedTransport /> */}
                 <PromotedRoutes />
+                <BannerSafelyTransport />
                 <BannerDiscoverPossibilities />
                 <div className="mb-16">
                   <CartTourOptions />

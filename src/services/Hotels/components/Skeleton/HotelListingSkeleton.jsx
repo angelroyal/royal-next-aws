@@ -14,7 +14,7 @@ export function HotelCardSkeleton() {
             {/* SKELETON CARD */}
             {[...Array(10)].map((_, index) => (
                 <div key={index} className="max-sm:px-4">
-                    <div className="bg-gry-30 lg:h-[230px] max-sm:max-h-[35rem] max-sm:max-h-[35rem] w-full my-[20px] rounded-lg flex max-lg:flex-col">
+                    <div className="bg-gry-30 lg:h-[230px] max-sm:max-h-[35rem] w-full my-[20px] rounded-lg flex max-lg:flex-col">
 
                         <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-[30%] h-full rounded-l-lg max-lg:w-full max-lg:h-[225px] max-lg:rounded-none max-lg:rounded-t-lg" />
 
@@ -31,7 +31,7 @@ export function HotelCardSkeleton() {
                                     <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[25px] w-[150px] rounded-lg" />
                                 </div>
 
-                                <div className="w-2/5 max-lg:w-full max-lg:items-start flex flex-col items-center gap-2 ml-[10px] max-lg:ml-0 border-l border-gry-70 max-lg:border-l-0 max-lg:border-t max-lg:flex-row  max-lg:justify-between max-lg:items-center">
+                                <div className="w-2/5 max-lg:w-full flex flex-col items-center gap-2 ml-[10px] max-lg:ml-0 border-l border-[#ebebeb] max-lg:border-l-0 max-lg:border-t max-lg:flex-row  max-lg:justify-between max-lg:items-center">
 
                                     <div className="flex flex-col items-center max-lg:items-start gap-2">
                                         <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[70px] max-lg:mt-2" />
