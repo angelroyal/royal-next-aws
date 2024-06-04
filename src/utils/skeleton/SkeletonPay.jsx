@@ -1,15 +1,19 @@
-export default function SkeletonPay() {
+export default function SkeletonPay({ confirmation = false }) {
   return (
     <div className="flex ">
       <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
         <StepsSkeleton />
         <StepsSkeletonMobile />
-        <CartsReservationSkeleton />
+        {confirmation ? "" : <CartsReservationSkeleton />}
         <CartDetailsSkeleton />
       </div>
 
-      <div className=" hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white">
-        <DetailsReservationSkeleton />
+      <div
+        className={`hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] ${
+          !confirmation && "bg-white"
+        }`}
+      >
+        <DetailsReservationSkeleton confirmation={confirmation}/>
       </div>
     </div>
   );
@@ -82,9 +86,9 @@ function CartDetailsSkeleton() {
   ));
 }
 
-function DetailsReservationSkeleton() {
+function DetailsReservationSkeleton({confirmation}) {
   return (
-    <div className="w-full block sticky top-0 mt-[4rem] h-max">
+    <div className={`w-full block sticky top-0 mt-[4rem] h-max ${confirmation && 'bg-white rounded-lg py-[32px] px-[24px]'}`}>
       <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-full mb-[40px]" />
 
       <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[173px] w-full mb-[40px]" />

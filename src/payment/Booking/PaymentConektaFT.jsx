@@ -390,7 +390,7 @@ export default function PaymentConektaFT(props) {
         id="card-form"
         onSubmit={handleSubmit}
       >
-        <div className="py-[2rem] px-[1.5rem] bg-white mt-[2.5rem] mb-[1.6rem] rounded-[19px] max-lg:p-[1rem]">
+        <div className="py-[2rem] px-[1.5rem] bg-white mb-[1.6rem] rounded-[19px] max-lg:p-[1rem]">
           <div className="m-b text-fs-21 text-black">
             {languageData.booking.paymentConekta.titleForm}
           </div>

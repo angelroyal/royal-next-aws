@@ -1222,6 +1222,7 @@ export const es = {
     cancellations: "Cancelaciones",
     cancellationsText: `Recuerda que las cancelaciones de reservaciones, hotel, transporte o tours se gestionan directamente a través de la línea de soporte de ${process.env.NEXT_PUBLIC_NAME_COMPANY}. Te recomendamos que te pongas en contacto con nosotros para cualquier solicitud de cancelación o modificación.`,
     doubts: "¿Tienes dudas?",
+    reservationNo:"No. reserva:",
 
     bookingData: {
       titleBookingData: "Datos de reserva",

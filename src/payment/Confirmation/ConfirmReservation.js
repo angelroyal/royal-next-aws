@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useContext } from "react";
 
 import { TotalPriceBL } from "./TotalPriceBl";
@@ -15,12 +14,8 @@ import CardsItinerary from "../itinerary/others/CardsItinerary";
 import { fetchDataConfirmation } from "../Api/fetchDataItinerary";
 
 export default function ConfirmReservation() {
-  const {
-    fetchData,
-    setCartData,
-    setItinerary,
-    setTotalItemsInCart,
-  } = useCartAxios();
+  const { fetchData, setCartData, setItinerary, setTotalItemsInCart } =
+    useCartAxios();
 
   const [smShow, setSmShow] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -67,6 +62,7 @@ export default function ConfirmReservation() {
 
   return (
     <>
+      <SkeletonConfirmPay />
       {isLoading && <SkeletonConfirmPay />}
 
       <>
@@ -100,8 +96,11 @@ export default function ConfirmReservation() {
             </div>
 
             {/* TOTAL PRICE CONFIRMATION */}
-            <TotalPriceBL smShow={smShow} handleCloseModal={handleCloseModal} handleIconClick={handleIconClick} />
-           
+            <TotalPriceBL
+              smShow={smShow}
+              handleCloseModal={handleCloseModal}
+              handleIconClick={handleIconClick}
+            />
 
             {/* BOTTOM BANNER CONFIRMATION */}
             <BannerConfirmationT />
