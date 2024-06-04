@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
@@ -61,7 +62,6 @@ export default function TipsBooking() {
   };
 
   const CartActual = () => {
-    // setDashedOne(originDashedOne);
     const interval = 3000 / dashedOne.length;
     let initAnimate = cartAnimate;
     setTimeout(() => {
@@ -105,7 +105,9 @@ export default function TipsBooking() {
             >
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/location/${
-                  cartAnimate === 1 || cartAnimate > 1 ? "location-w.svg" : "location-on-bl.svg"
+                  cartAnimate === 1 || cartAnimate > 1
+                    ? "location-w.svg"
+                    : "location-on-bl.svg"
                 }`}
                 alt="icon-location"
                 width={24}
@@ -135,13 +137,7 @@ export default function TipsBooking() {
               } ${StepsBannerStyle(dashed.key, 1)}`}
             />
           ))}
-          {/* <img
-            src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-up.svg`}
-            alt="icon-dashed-up"
-            className="absolute opacity-50 my-auto top-[-23px] max-md:hidden max-[991px]:w-[80px]"
-          /> */}
         </div>
-        {/* <img src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-right.svg`} alt='icon-dashed-right' className='md:hidden w-[30px] ml-[73px]' /> */}
 
         {/* CALENDAR */}
         <div className="flex flex-col p-[20px] items-center w-[165px]">
@@ -181,15 +177,11 @@ export default function TipsBooking() {
               className={`!w-[10px] ${
                 dashed.key === 0 || dashed.key === 7 ? "w-[7px]" : "w-[10px]"
               } h-[3px] relative ${
-                dashed.value === true
-                  ? "bg-or-100"
-                  : "bg-gry-50"
+                dashed.value === true ? "bg-or-100" : "bg-gry-50"
               } ${StepsBannerStyle(dashed.key, 2)}`}
             />
           ))}
-          {/* <img src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-down.svg`} alt='icon-dashed-down' className='absolute pb-[5.5rem] max-md:hidden max-[991px]:w-[80px]' /> */}
         </div>
-        {/* <img src={`${process.env.NEXT_PUBLIC_URL}icons/general/dashed-left.svg`} alt='icon-dashed-left' className='md:hidden w-[30px] ml-[45px] ' /> */}
 
         {/* AIRPORT */}
         <div className="flex flex-col p-[20px] items-center w-[165px]">
