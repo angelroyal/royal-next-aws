@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 
 import ClientDataT from "./FormClientData";
 import FormCreditCard from "./FormCreditCard";
+import { FormClientRH } from "../ClientDataRH";
 import { ActivityFormT } from "../ActivityFormT";
 import { PaymentContext } from "@/payment/context/PaymentContext";
 import { BookingContext } from "@/payment/context/BookingContext";
@@ -10,7 +11,7 @@ import { SkeletonActivitiesTourP } from "@/utils/skeleton/SkeletonActivitiesTour
 import { handleSubmitPayment as handleSubmitPaymentFunction } from "../ActionsForms/conektaHandlers";
 
 export default function FormCentral(props) {
-  const { activityPreBooking, activityTrue } = props;
+  const { activityPreBooking, activityTrue, dataItinerary } = props;
   const {
     firstName,
     lastName,
@@ -19,6 +20,7 @@ export default function FormCentral(props) {
     nameCard,
     numberCard,
     formActivityItems,
+    hotelRH,
   } = useContext(PaymentContext);
 
   const { handleStepChange } = useContext(BookingContext);
@@ -38,6 +40,7 @@ export default function FormCentral(props) {
     cartId: uid,
     cardTitular: nameCard,
     cardNumber: numberCard.slice(-4),
+    ...(hotelRH ? { guests: hotelRH } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
   };
 
@@ -62,6 +65,9 @@ export default function FormCentral(props) {
     );
   };
 
+  const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
+  window.Conekta.setPublicKey(conektaPublicKey);
+
   return (
     <>
       <form
@@ -71,19 +77,19 @@ export default function FormCentral(props) {
         onSubmit={handleSubmitPayment}
       >
         <ClientDataT />
+        {dataItinerary && <FormClientRH dataItinerary={dataItinerary} />}
 
         {activityPreBooking && activityPreBooking.length > 0 && (
           <ActivityFormT activityPreBooking={activityPreBooking} />
         )}
 
-        {!activityPreBooking && activityTrue && activityTrue === true && (
+        {!activityPreBooking && activityTrue === true && (
           <SkeletonActivitiesTourP />
         )}
 
         <FormCreditCard />
       </form>
 
-      {/* ALERTS */}
       <AlertPayment
         animationData={animationData}
         isOpen={isOpen}

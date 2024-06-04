@@ -44,7 +44,7 @@ export default function TourCard(props) {
   return (
     <>
       <div className="flex bg-white rounded-lg border border-[#ebebeb] shadow-3xl gap-[5px] mb-[1rem] w-full max-lg:flex-col lg:h-[235px] max-sm:max-h-[35rem]">
-        <div className="h-full m-0 p-0 relative w-[30%] rounded-l-lg max-lg:w-full max-lg:h-[225px]">
+        <div className="h-full m-0 p-0 relative w-[30%] rounded-l-lg max-lg:w-full max-lg:h-[225px] max-lg:!rounded-bl-none">
           <Swiper
             slidesPerView={1}
             loop={true}
@@ -53,7 +53,7 @@ export default function TourCard(props) {
               clickable: true,
             }}
             modules={[Pagination, Navigation]}
-            className="!rounded-tl-lg max-lg:!rounded-t-lg !h-full"
+            className="!rounded-l-lg max-lg:!rounded-t-lg !h-full max-lg:!rounded-bl-none"
             id="card-hotel-t"
           >
             {tour.images && tour.images.length > 0 ? (
@@ -61,7 +61,7 @@ export default function TourCard(props) {
                 <SwiperSlide
                   key={index}
                   id={`dotsSwiperHotel${index}`}
-                  style={{ width: 280, height: "100%" }}
+                  style={{ width: 293, height: "100%" }}
                 >
                   <img
                     className="object-cover !h-full select-none"

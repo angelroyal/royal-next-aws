@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import LanguageContext from "@/language/LanguageContext";
 
 import { Container } from "@/config/Others/Container";
+import LanguageContext from "@/language/LanguageContext";
 
 // import LanguageContext from "../../../language/LanguageContext";
 
@@ -30,9 +30,9 @@ export function BannerDestinationTour(props) {
         />
         <div className=" bg-gradient-to-r from-bl-100 from-10% via-[#6796ee] via-30% absolute top-0 h-full w-full" />
       </div>
-      <div className="flex flex-col bottom-[27%] left-[8%] absolute gap-y-[4px] z-[3]">
+      <div className="flex flex-col bottom-[27%] left-[8%] max-md:bottom-[37%] absolute gap-y-[4px] z-[3]">
         <Container>
-          <h2 className="text-white flex flex-col m-b text-fs-56 justify-between m-0 w-full max-lg:text-fs-30 max-md:text-fs-24">
+          <h2 className="text-white flex flex-col m-b text-fs-56 justify-between m-0 w-full max-xl:text-fs-40 max-lg:text-fs-30 max-md:text-fs-24">
             <span>
               {/* <IconRoyal className="icon-banner-t-l" />*/}{" "}
               {destination.name}, {destination.country}

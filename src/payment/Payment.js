@@ -41,6 +41,7 @@ export default function Payment() {
     };
   }, []);
 
+ 
   useEffect(() => {
     scrollToTop();
     fetchDataItinerary(

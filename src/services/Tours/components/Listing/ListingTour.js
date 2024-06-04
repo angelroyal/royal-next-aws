@@ -21,7 +21,7 @@ import { useTourContext } from "../../context/ListingTourContext";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
-
+import PaginationT from "@/components/General/PaginationT";
 
 export default function ListingTour() {
   const {
@@ -60,7 +60,7 @@ export default function ListingTour() {
       })
       .catch((error) => {
         console.error(error);
-        setTourData([])
+        setTourData([]);
       });
   }, []);
 
@@ -99,7 +99,6 @@ export default function ListingTour() {
     }
   }, [currentPage]);
 
-
   // useEffect(() => {
   //   if (changeTours > 0 || !isNaN(currentPage)) {
   //     setCurrentTours(
@@ -136,9 +135,7 @@ export default function ListingTour() {
 
   return (
     <>
-      {!tourData && (
-        <BannerListingSkeleton />
-      )}
+      {!tourData && <BannerListingSkeleton />}
 
       {tourData && <BannerDestinationTour destination={tourData.destination} />}
 
@@ -172,9 +169,7 @@ export default function ListingTour() {
 
             {!currentTours && !tourData && <WeFoundTourSkeleton />}
 
-            {tourData && tourData.length == 0 && (
-              <NotFoundDestination />
-            )}
+            {tourData && tourData.length == 0 && <NotFoundDestination />}
             {/* <div className="cont-found-ordering-tour-skeleton">
               {!auxTourData && (
                 <Skeleton
@@ -221,6 +216,22 @@ export default function ListingTour() {
                   page={currentPage}
                   onChange={handleChangePage}
                   color="primary"
+                />
+                {/* <Pagination
+                  count={Math.ceil(
+                    auxTourData.activities.length / toursPerPage
+                  )}
+                  page={currentPage}
+                  onChange={handleChangePage}
+                  color="primary"
+                /> */}
+
+                <PaginationT
+                  count={Math.ceil(
+                    auxTourData.activities.length / toursPerPage
+                  )}
+                  page={currentPage}
+                  // onChange={handleChangePage}
                 />
               </div>
             )}
