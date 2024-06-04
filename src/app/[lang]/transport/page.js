@@ -9,7 +9,7 @@ import TipsBooking from "@/services/Transport/Home/TipsBooking";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import PromotedRoutes from "@/services/Transport/Home/PromotedRoutes";
 import CartTourOptions from "@/services/Hotels/components/home/TourRecommended";
-import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
+// import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
 import { BannerHeaderTransport } from "@/services/Transport/Home/BannerHeaderTransport";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import {
