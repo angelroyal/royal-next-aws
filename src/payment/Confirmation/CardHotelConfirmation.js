@@ -47,7 +47,7 @@ export default function CardHotelConfirmation(props) {
           </ul>
         </div>
 
-        <div className="flex flex-col rounded-lg bg-white p-4 w-full">
+        <div className="flex flex-col rounded-lg bg-white p-4 w-[732px] max-xl:w-full">
           {/* FATHER ONE */}
 
           <div className="flex gap-x-4 sm:gap-x-7 items-center">
