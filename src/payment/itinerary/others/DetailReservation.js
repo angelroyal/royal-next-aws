@@ -4,7 +4,6 @@ import React, { useContext, useEffect } from "react";
 
 import LanguageContext from "../../../language/LanguageContext";
 import { BookingContext } from "@/payment/context/BookingContext";
-import { SkeletonConfirmPaymentDetails } from "../../../utils/skeleton/SkeletonConfirmPaymentDetails";
 
 export default function ReservationShortInfo(props) {
   const { setSmShow, dataItinerary } = props;
@@ -204,7 +203,5 @@ export default function ReservationShortInfo(props) {
         </>
       )}
     </>
-  ) : (
-    <SkeletonConfirmPaymentDetails />
-  );
+  ) : null;
 }

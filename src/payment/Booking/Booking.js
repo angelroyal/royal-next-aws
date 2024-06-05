@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useContext, useState, useEffect } from "react";
 
 import FormCentral from "./Forms/FormCentral";
-import AlertTextBooking from "./AlertTextBooking";
 import LanguageContext from "../../language/LanguageContext";
 import { FormDataProvider } from "../context/FormDataContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
