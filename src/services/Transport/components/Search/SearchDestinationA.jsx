@@ -145,7 +145,7 @@ export function SearchDestinationA({
             displayValue={(person) => person?.label}
             placeholder={
               isSearch
-                ? "Buscando rutas..."
+                ? languageData.SearchBox.tabHotel.textSearching
                 : languageData.SearchBox.tabHotel.textDestination
             }
           />

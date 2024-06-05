@@ -53,6 +53,7 @@ export const es = {
       titleText: "Encuentra el hotel ideal",
       autocomplete: "Destino",
       textDestination: "¿A dónde vas?",
+      textSearching: "Buscando rutas...",
       textResults: "No se encontraron resultados",
       date: "Fecha",
       dateText: "Llegada",
@@ -246,7 +247,7 @@ export const es = {
 
   enjoyStayHome: {
     titleEnjoy: "Disfruta de tu estancia en hoteles exclusivos",
-    offersDates: "Ofertas para las fechas",
+    // offersDates: "Ofertas para las fechas",
     btnViewOffers: "ver todas las ofertas",
   },
 

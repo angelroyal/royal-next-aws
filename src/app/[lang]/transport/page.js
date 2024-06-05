@@ -1,4 +1,3 @@
-
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
@@ -10,10 +9,13 @@ import TipsBooking from "@/services/Transport/Home/TipsBooking";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import PromotedRoutes from "@/services/Transport/Home/PromotedRoutes";
 import CartTourOptions from "@/services/Hotels/components/home/TourRecommended";
-import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
+// import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
 import { BannerHeaderTransport } from "@/services/Transport/Home/BannerHeaderTransport";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
-import { BannerHomeTransport, BannerSafelyTransport } from "@/services/Transport/Home/bannerTransport";
+import {
+  BannerHomeTransport,
+  BannerSafelyTransport,
+} from "@/services/Transport/Home/bannerTransport";
 
 export const metadata = {
   title: "StayWuw.com | Únete a los Tours Más Emocionantes de México",
@@ -36,8 +38,7 @@ export default function HomeTransport() {
 
             {/* SearchTransport */}
             <div className="relative flex justify-center align-center mb-[240px] lg:mb-[160px]">
-
-              <BannerHeaderTransport/>
+              <BannerHeaderTransport />
               <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
                 <SearchBox />
               </div>
@@ -47,9 +48,9 @@ export default function HomeTransport() {
               <div className="max-md:overflow-x-hidden">
                 <BannerHomeTransport />
                 <TipsBooking />
-                <RecommendedTransport />
-                <BannerSafelyTransport />
+                {/* <RecommendedTransport /> */}
                 <PromotedRoutes />
+                <BannerSafelyTransport />
                 <BannerDiscoverPossibilities />
                 <div className="mb-16">
                   <CartTourOptions />
