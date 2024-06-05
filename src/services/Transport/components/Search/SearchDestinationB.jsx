@@ -108,7 +108,7 @@ export function SearchDestinationB({
             width="16px"
             height="20px"
             src={`${process.env.NEXT_PUBLIC_URL}icons/general/globe.svg`}
-            alt="transport-b"
+            alt="icon globe"
           />
 
           <p className="m-0 top-2.5 left-[2.5rem] absolute text-gry-70 m-m text-fs-10">

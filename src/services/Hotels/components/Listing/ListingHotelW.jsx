@@ -1,6 +1,6 @@
 "use client";
 
-import { Pagination } from "@mui/material";
+// import { Pagination } from "@mui/material";
 import React, { useEffect, useContext, useState } from "react";
 
 import OrderingHotel from "./OrderingHotel";
@@ -16,6 +16,7 @@ import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import { HotelCardSkeleton } from "../Skeleton/HotelListingSkeleton";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
+import PaginationT from "@/components/General/PaginationT";
 
 export default function ListingHotelW() {
   const { token } = useToken();
@@ -111,13 +112,19 @@ export default function ListingHotelW() {
 
               {/* PAGINATION */}
               {combinedHotelData && (
-                <div className="pagination pagination-cards-hotel">
-                  <Pagination
+                <div className="flex justify-center py-[1.5rem]">
+                  {/* <Pagination
                     count={totalPages}
                     page={currentPage}
                     onChange={clickPaginator}
                     // onChange={handlePageChange}
                     color="primary"
+                  /> */}
+
+                  <PaginationT
+                  count={totalPages}
+                  pageChange={currentPage}
+                  onChange={setCurrentPage}
                   />
                 </div>
               )}

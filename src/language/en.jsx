@@ -57,6 +57,7 @@ export const en = {
       textDestinationA:"Where are you departing from?",
       textDestinationB:"What is your destination?",
       textSearching: "Searching for routes...",
+      textSearchingH:"Search for a hotel or destination",
       textResults: "No results found",
       date: "Date",
       dateText: "Arrival",
