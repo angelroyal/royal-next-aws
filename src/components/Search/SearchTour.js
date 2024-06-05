@@ -119,7 +119,7 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
           } `}
         >
           <img
-            className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
+            className="absolute left-4 bottom-0 top-0 my-auto w-[16px] h-[20px]"
             width="16px"
             height="20px"
             src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}

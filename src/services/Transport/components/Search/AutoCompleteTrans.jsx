@@ -93,10 +93,10 @@ export function AutoCompleteTrans({
           } focus:outline-none`}
         >
           <img
-            className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
+            className="absolute left-4 bottom-0 top-0 my-auto w-[20px] h-[20px]"
             width="16px"
             height="20px"
-            src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/city.svg`}
             alt="location-b"
           />
 
@@ -110,7 +110,7 @@ export function AutoCompleteTrans({
             }`}
             onChange={(event) => handleLetter(event)}
             displayValue={(person) => person?.label}
-            placeholder={languageData.SearchBox.tabHotel.textDestination}
+            placeholder={languageData.SearchBox.tabHotel.textCity}
           />
 
           {resultAutocomplete && (

@@ -104,15 +104,15 @@ export function SearchDestinationB({
           } focus:outline-none`}
         >
           <img
-            className="absolute left-4 bottom-0 top-0 my-auto W-[16px] h-[20px]"
+            className="absolute left-4 bottom-0 top-0 my-auto w-[20px] h-[20px] text-gry-100"
             width="16px"
             height="20px"
-            src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/globe.svg`}
             alt="transport-b"
           />
 
           <p className="m-0 top-2.5 left-[2.5rem] absolute text-gry-70 m-m text-fs-10">
-            {languageData.SearchBox.tabTransport.to}
+            {languageData.SearchBox.tabHotel.autocomplete}
           </p>
 
           <Combobox.Input
@@ -121,7 +121,7 @@ export function SearchDestinationB({
             }`}
             onChange={(event) => handleLetter(event)}
             displayValue={(related) => related?.label}
-            placeholder={languageData.SearchBox.tabHotel.textDestination}
+            placeholder={languageData.SearchBox.tabHotel.textDestinationB}
           />
           <Combobox.Options className="px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
             {filterRelates.map((related, index) => (
@@ -139,6 +139,9 @@ export function SearchDestinationB({
       </div>
     </Combobox>
   ) : (
-    <DisabledInputTransportRelated isListing={isListing} languageData={languageData} />
+    <DisabledInputTransportRelated
+      isListing={isListing}
+      languageData={languageData}
+    />
   );
 }

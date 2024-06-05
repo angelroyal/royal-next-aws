@@ -127,15 +127,15 @@ export function SearchDestinationA({
           } focus:outline-none `}
         >
           <img
-            className="absolute left-4 bottom-0 top-0 my-auto w-[16px] h-[20px]"
+            className="absolute left-4 bottom-0 top-0 my-auto w-[20px] h-[20px]"
             width="16px"
             height="20px"
-            src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/road.svg`}
             alt="transport-b"
           />
 
           <p className="m-0 top-2.5 left-[2.5rem] absolute text-gry-70 m-m text-fs-10">
-            {languageData.SearchBox.tabTransport.from}
+            {languageData.SearchBox.tabHotel.startingPoint}
           </p>
           <Combobox.Input
             className={`placeholder:m-m placeholder:text-gry-70 m-b font-extrabold h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[30px] pr-4 pl-[2.4rem] shadow-sm focus:outline-none text-fs-12 ${
@@ -146,7 +146,7 @@ export function SearchDestinationA({
             placeholder={
               isSearch
                 ? languageData.SearchBox.tabHotel.textSearching
-                : languageData.SearchBox.tabHotel.textDestination
+                : languageData.SearchBox.tabHotel.textDestinationA
             }
           />
 
