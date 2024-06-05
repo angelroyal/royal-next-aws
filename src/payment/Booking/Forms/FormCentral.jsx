@@ -77,6 +77,7 @@ export default function FormCentral(props) {
         onSubmit={handleSubmitPayment}
       >
         <ClientDataT />
+
         {dataItinerary && <FormClientRH dataItinerary={dataItinerary} />}
 
         {activityPreBooking && activityPreBooking.length > 0 && (
