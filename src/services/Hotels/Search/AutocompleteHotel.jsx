@@ -1,12 +1,16 @@
 import _ from "lodash";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 
+
+import LanguageContext from "@/language/LanguageContext";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 const API_ENDPOINT = `v1/destinations/search`;
 
 export default function AutocompleteHotel() {
+  const { languageData } = useContext(LanguageContext);
+  
   const [input, setInput] = useState("");
 
   const storedDataSearch =
@@ -85,20 +89,20 @@ export default function AutocompleteHotel() {
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
           alt="Location Icon"
-          className="w-5 h-5 mr-2 absolute top-[18px] left-[7px]"
+          className="w-[16px] h-[20px] mr-2 absolute top-[18px] left-[7px]"
         />
         <label
           htmlFor="search-input"
           className="m-b absolute top-[11px] left-[32px] text-fs-10 text-gry-70 "
         >
-          Destinos
+          {languageData.SearchBox.tabHotel.autocomplete}
         </label>
         <Combobox value={selectedItem} onChange={handleSelect}>
           <Combobox.Input
             className="placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[22px] pr-4 pl-[32px] shadow-sm focus:outline-none text-fs-12"
             onChange={handleChange}
             displayValue={(item) => (item ? item.label : "")}
-            placeholder={!input ? "Buscar hotel o destino" : ""}
+            placeholder={!input ? languageData.SearchBox.tabHotel.textSearchingH : ""}
           />
           <Transition
             show={isOpen}
@@ -127,7 +131,7 @@ export default function AutocompleteHotel() {
                         <img
                           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
                           alt="Location Icon"
-                          className="w-5 h-5 mr-2"
+                          className="w-[16px] h-[20] mr-2"
                         />
                         <span>Destinos</span>
                       </div>

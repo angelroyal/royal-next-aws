@@ -58,6 +58,7 @@ export const es = {
       textDestinationA:"¿Desde dónde sales?",
       textDestinationB:"¿Cuál es tu destino?",
       textSearching: "Buscando rutas...",
+      textSearchingH:"Buscar hotel o destino",
       textResults: "No se encontraron resultados",
       date: "Fecha",
       dateText: "Llegada",

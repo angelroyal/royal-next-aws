@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 
 import PriceHotels from "./PriceHotels";
+import { initialFilters } from "./filtersHotelJson";
 import LanguageContext from "../../../language/LanguageContext";
 import ListingHotelContext from "../context/ListingHotelContext";
-import { initialFilters } from "./filtersHotelJson";
 
 export default function FiltersHotels({ listing = false }) {
   const [showMore, setShowMore] = useState({});
@@ -72,12 +72,12 @@ export default function FiltersHotels({ listing = false }) {
 
   return (
     <>
-      <div className={`${listing === false && "container-all-filters"}`}>
+      <div className={`${listing === false && "bg-white rounded-lg p-[24px] shadow-3xl border border-[#ebebeb] mt-[16px]"}`}>
         <div className="p-2">
-          <div className="filter-title text-fs-17 flex w-full items-start">
+          <div className="text-fs-16 m-b flex w-full items-start">
             {languageData.containerFilterHotel.titleFilter}
           </div>
-          <div className="h-line" />
+          <div className="border-t border-[#ebebeb] my-[10px]" />
           <PriceHotels />
         </div>
 
@@ -89,10 +89,10 @@ export default function FiltersHotels({ listing = false }) {
               : 4;
             return (
               <div key={`${filterGroup}-${index}`}>
-                <div className="h-line" />
+                <div className="border-t border-[#ebebeb] my-[10px]" />
                 <div className="accordion-filter my-4">
                   <div
-                    className="accordion-summary-filters flex justify-between items-center cursor-pointer"
+                    className="mb-[16px] accordion-summary-filters flex justify-between items-center cursor-pointer"
                     onClick={() => handleShowMore(filterGroup)}
                   >
                     <div className="filter-subtitle text-fs-15 font-bold">
@@ -104,14 +104,15 @@ export default function FiltersHotels({ listing = false }) {
                           ]
                         : filters[filterGroup].title}
                     </div>
+
                     <span className="ml-2">
                       <img
-                        src={`/icons/arrows/${
+                        src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/${
                           showMore[filterGroup] ? "up" : "down"
                         }-100.svg`}
                         alt="Expand Icon"
-                        width={24}
-                        height={24}
+                        width={16}
+                        height={16}
                       />
                     </span>
                   </div>
@@ -142,7 +143,7 @@ export default function FiltersHotels({ listing = false }) {
                       ))}
                       {filterItems.items.length > 4 && (
                         <button
-                          className="button-showMore text-primary text-sm flex items-center mt-2"
+                          className="flex items-center mt-2 text-bl-100 m-b pt-[10px] text-fs-12"
                           onClick={() => handleShowMore(filterGroup)}
                         >
                           {showMore[filterGroup] ? (
@@ -150,7 +151,7 @@ export default function FiltersHotels({ listing = false }) {
                               <span>{languageData.showOptions.showLess}</span>
                               <img
                                 className="ml-2"
-                                src={`/icons/arrows/up-100.svg`}
+                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/up-100.svg`}
                                 alt="ArrowUpIcon"
                                 width={12}
                                 height={12}
@@ -161,7 +162,7 @@ export default function FiltersHotels({ listing = false }) {
                               <span>{languageData.showOptions.showMore}</span>
                               <img
                                 className="ml-2"
-                                src={`/icons/arrows/down-100.svg`}
+                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/down-100.svg`}
                                 alt="ArrowDownIcon"
                                 width={12}
                                 height={12}
