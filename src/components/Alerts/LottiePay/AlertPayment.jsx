@@ -12,7 +12,7 @@ import animationLoading from "@/assets/animations/loadingFly.json";
 const AnimationContent = ({ animationData, languageData, closeModal }) => {
   if (animationData === "LoadingData") {
     return (
-      <div className="bg-white rounded-lg shadow-3xl px-[24px] pt-[12px] pb-[47px] w-[423px] h-[485px] flex flex-col items-center gap-[8px] max-sm:w-full">
+      <div className="bg-white rounded-lg px-[24px] pt-[12px] pb-[47px] w-[423px] h-[485px] flex flex-col items-center gap-[8px] max-sm:w-full">
         <Lottie
           className="w-[300px] h-[300px]"
           animationData={animationLoading}

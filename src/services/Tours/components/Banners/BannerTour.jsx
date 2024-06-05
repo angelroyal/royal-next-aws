@@ -24,7 +24,7 @@ export function BannerDestinationTour(props) {
         <img
           className="h-full object-cover object-center brightness-90 z-[1]"
           width="100%"
-          src={destination.image}
+          // src={destination.image}
           alt="banner-tour-listing"
           data-aos-anchor-placement="top-center"
         />
@@ -35,10 +35,10 @@ export function BannerDestinationTour(props) {
           <h2 className="text-white flex flex-col m-b text-fs-56 justify-between m-0 w-full max-xl:text-fs-40 max-lg:text-fs-30 max-md:text-fs-24">
             <span>
               {/* <IconRoyal className="icon-banner-t-l" />*/}{" "}
-              {destination.name}, {destination.country}
+              {/* {destination.name}, {destination.country} */}
             </span>
             <span className="m-m text-fs-16 mt-[12px] w-full max-md:text-fs-12">
-              {languageData.bannerTour.subtitleBannerTour}
+              {/* {languageData?.bannerTour.subtitleBannerTour} */}
             </span>
           </h2>
         </Container>
