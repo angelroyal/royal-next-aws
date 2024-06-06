@@ -37,7 +37,7 @@ export default function RecommendedTransport() {
         </h2>
 
         <Swiper
-          data-aos="fade-up"
+          // data-aos="fade-up"
           slidesPerView={5}
           spaceBetween={24}
           className="!static"
@@ -71,7 +71,7 @@ export default function RecommendedTransport() {
           {/* CARD TRANSPORT */}
           {transportData.map((transport, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white">
+              <div className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white h-[22rem]">
                 <CatalogueRoutesCard transport={transport} />
               </div>
             </SwiperSlide>
@@ -89,13 +89,15 @@ export function CatalogueRoutesCard({ transport }) {
   return (
     <>
       {/* IMG TRANSPORT */}
-      <Image
-        src={transport.img}
-        width={216}
-        height={164}
-        alt={transport.name}
-        className="select-none"
-      />
+      <div className="w-full flex justify-center items-center">
+        <Image
+          src={transport.img}
+          width={216}
+          height={164}
+          alt={transport.name}
+          className="select-none"
+        />
+      </div>
       {/* NAME TRANSPORT */}
       <div className="flex flex-col gap-[16px]">
         <span className="text-fs-16 m-b mt-[16px]">{transport.name}</span>
@@ -106,7 +108,7 @@ export function CatalogueRoutesCard({ transport }) {
             {languageData.CardHomeTransport.features}
           </span>
 
-          <div className="flex flex-wrap mb-[6px] gap-2">
+          <div className="flex flex-wrap gap-2">
             <div className="flex gap-2">
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
@@ -132,19 +134,18 @@ export function CatalogueRoutesCard({ transport }) {
                 {languageData.CardHomeTransport.suitcases}
               </span>
             </div>
-
-            <div className="flex gap-2">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`}
-                width={12.1}
-                height={14.1}
-                alt="icon baggage"
-              />
-              <span className="m-m text-fs-12">
-                {transport.facilities.handSuitcase}{" "}
-                {languageData.CardHomeTransport.suitcases}
-              </span>
-            </div>
+          </div>
+          <div className="flex gap-2">
+            <Image
+              src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`}
+              width={12.1}
+              height={14.1}
+              alt="icon baggage"
+            />
+            <span className="m-m text-fs-12">
+              {transport.facilities.handSuitcase}{" "}
+              {languageData.CardHomeTransport.handLuggage}
+            </span>
           </div>
         </div>
 
