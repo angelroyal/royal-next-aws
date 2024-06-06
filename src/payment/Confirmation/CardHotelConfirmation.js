@@ -25,7 +25,7 @@ export default function CardHotelConfirmation(props) {
         height={192}
       />
 
-      <div className="flex flex-col gap-y-5 max-sm:w-full">
+      <div className="flex flex-col gap-y-5 w-full">
         {/* DAY,TIME HOTEL */}
         <div className="max-md:flex-col flex gap-x-4">
           <div className="text-fs-16 m-b">
@@ -51,7 +51,7 @@ export default function CardHotelConfirmation(props) {
           {/* FATHER ONE */}
 
           <div className="flex gap-x-4 sm:gap-x-7 items-center">
-            <div className=" w-[132px] h-[114px]">
+            <div className="w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
               {/* <div className="w-[77px] h-[66px] sm:w-[132px] sm:h-[114px]"> */}
               {itemHotel.image ? (
                 <img
@@ -59,7 +59,7 @@ export default function CardHotelConfirmation(props) {
                   alt="hotel"
                   width={132}
                   height={114}
-                  className="rounded-lg w-full h-full"
+                  className="rounded-lg w-full h-full object-cover"
                 />
               ) : (
                 <ImageNotFound />
@@ -75,7 +75,7 @@ export default function CardHotelConfirmation(props) {
               <div className="flex gap-x-[165px]">
                 {/* LEFT INFORMATION */}
                 <div className="flex flex-col gap-y-1 items-start">
-                  <span className="flex items-center gap-x-1">
+                  <span className="flex items-center gap-x-1 mt-[8px]">
                     <Image
                       className="w-[12px]"
                       src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}

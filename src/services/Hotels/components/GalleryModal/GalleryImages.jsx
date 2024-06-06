@@ -22,10 +22,11 @@ export function GalleryImages({ images }) {
     <div className=" w-full lg:w-[52%] select-none">
       <Swiper
         navigation={true}
-        style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
-        }}
+        // style={{
+        //   "--swiper-navigation-color": "#fff",
+        //   "--swiper-pagination-color": "#fff",
+        // }}
+        id="style-swiper-modal-hotel"
         spaceBetween={10}
         slidesPerView={1}
         thumbs={{ swiper: thumbsSwiper }}
