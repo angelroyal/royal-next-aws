@@ -1,6 +1,5 @@
 "use client";
 
-// CSS
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -20,9 +19,10 @@ import {
   parseQueryParams,
   formatAdultsAndChildren,
 } from "../../utils/utilsDetailHotel";
+import ImageGet from "@/utils/others/ImageGet";
 
 export default function RoomsDetails(codeHotel) {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
   const {
     roomsData,
     handleFetchPostRooms,
@@ -40,28 +40,28 @@ export default function RoomsDetails(codeHotel) {
   // Filter rooms to avoid visual duplicates, except selected ones
   const filteredGroupedRooms = roomsData
     ? Object.entries(
-      roomsData.rooms.reduce((acc, room) => {
-        if (!acc[room.name]) {
-          acc[room.name] = [];
-        }
-        acc[room.name].push(room);
+        roomsData.rooms.reduce((acc, room) => {
+          if (!acc[room.name]) {
+            acc[room.name] = [];
+          }
+          acc[room.name].push(room);
+          return acc;
+        }, {})
+      ).reduce((acc, [groupName, rooms]) => {
+        const filteredRooms = rooms.filter(
+          (room) =>
+            !selectedRooms.some(
+              (selectedRoom) => selectedRoom.idRoom === room.idRoom
+            ) ||
+            selectedRooms.some(
+              (selectedRoom) =>
+                selectedRoom.idRoom === room.idRoom &&
+                selectedRoom.rateIndex === room.rateIndex
+            )
+        );
+        acc[groupName] = filteredRooms;
         return acc;
       }, {})
-    ).reduce((acc, [groupName, rooms]) => {
-      const filteredRooms = rooms.filter(
-        (room) =>
-          !selectedRooms.some(
-            (selectedRoom) => selectedRoom.idRoom === room.idRoom
-          ) ||
-          selectedRooms.some(
-            (selectedRoom) =>
-              selectedRoom.idRoom === room.idRoom &&
-              selectedRoom.rateIndex === room.rateIndex
-          )
-      );
-      acc[groupName] = filteredRooms;
-      return acc;
-    }, {})
     : {};
 
   if (!roomsData) {
@@ -120,21 +120,18 @@ export default function RoomsDetails(codeHotel) {
                     return (
                       <SwiperSlide
                         key={index}
-                        className={`bg-transparent shadow-sm rounded-lg ${isSelected ? "border-2 border-bl-70" : ""
-                          }`}
+                        className={`bg-transparent shadow-sm rounded-lg ${
+                          isSelected ? "border-2 border-bl-70" : ""
+                        }`}
                       >
-                        <div
-                          className="p-4 rounded-lg border border-gry-30 bg-white"
-                        >
+                        <div className="p-4 rounded-lg border border-gry-30 bg-white">
                           <div className="flex flex-col gap-y-4 ">
                             {/* IMAGE ROOM */}
                             <div className="relative w-full h-[222px] overflow-hidden rounded-lg">
-                              <img
-                                src={room.image}
-                                className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
-                                width={40}
-                                height={40}
-                                alt="room"
+                              <ImageGet
+                                imageUrl={room.image}
+                                type={"hotel"}
+                                language={language}
                               />
 
                               {/* EATING PLAN */}

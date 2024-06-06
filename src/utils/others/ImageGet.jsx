@@ -2,13 +2,14 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { ImageNotFoundType } from "./ImageNotFoundType";
 
-export default function ImageGet() {
+export default function ImageGet({ imageUrl, type, language }) {
   const [imageSize, setImageSize] = useState({ width: 0, height: 0, url: "" });
 
   useEffect(() => {
     axios
-      .get("/api/image")
+      .get(`/api/image?imageUrl=${imageUrl}`)
       .then((response) => {
         const { imageUrl } = response.data;
         const image = new Image();
@@ -33,13 +34,22 @@ export default function ImageGet() {
 
   return (
     <div>
-      {imageSize.url && (
-        <div>
-          <img src={imageSize.url} alt="Imagen" />
-          <p>
-            Tamaño de la imagen: {imageSize.width}x{imageSize.height} px
-          </p>
-        </div>
+      {imageSize.url ? (
+        <img
+          src={imageSize.url}
+          className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
+          width={40}
+          height={40}
+          alt="room"
+        />
+      ) : (
+        <img
+          src={ImageNotFoundType(type, language)}
+          className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
+          width={40}
+          height={40}
+          alt="room"
+        />
       )}
     </div>
   );

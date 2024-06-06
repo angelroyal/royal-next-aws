@@ -2,20 +2,18 @@ import Image from "next/image";
 import { Form } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
 
+import LanguageContext from "@/language/LanguageContext";
+import { PaymentContext } from "@/payment/context/PaymentContext";
 import {
   ProcessDataHB,
   processItineraryData,
-} from "../config/processData";
-import { PaymentContext } from "../context/PaymentContext";
-import LanguageContext from "../../language/LanguageContext";
+} from "@/payment/config/processData";
 
-import HotelBlackIcon from "../../assets/icons/utils/payment/hotel-black.svg";
-import HotelOrangeIcon from "../../assets/icons/utils/payment/hotel-orange.svg";
+import HotelBlackIcon from "../../../assets/icons/utils/payment/hotel-black.svg";
+import HotelOrangeIcon from "../../../assets/icons/utils/payment/hotel-orange.svg";
 
 export function FormClientRH(props) {
-  const {
-     setRoomsRH
-  } = useContext(PaymentContext);
+  const { setRoomsRH } = useContext(PaymentContext);
   const { dataItinerary } = props;
   const { languageData } = useContext(LanguageContext);
 
@@ -114,9 +112,17 @@ export function FormClientRH(props) {
                   onClick={() => setActiveHotelIndex(index)}
                 >
                   {index === activeHotelIndex ? (
-                    <Image src={HotelOrangeIcon} alt="HotelOrangeIcon" className="hotel-icon-from-o" />
+                    <Image
+                      src={HotelOrangeIcon}
+                      alt="HotelOrangeIcon"
+                      className="hotel-icon-from-o"
+                    />
                   ) : (
-                    <Image src={HotelBlackIcon} alt="HotelBlackIcon" className="hotel-icon-form" />
+                    <Image
+                      src={HotelBlackIcon}
+                      alt="HotelBlackIcon"
+                      className="hotel-icon-form"
+                    />
                   )}
                   <h3>{hotel.name}</h3>
                 </div>
@@ -148,7 +154,6 @@ export function FormClientRH(props) {
                                       {languageData.booking.adult}{" "}
                                       {adultIndex + 1}
                                     </Form.Label>
-
                                     <input
                                       type="text"
                                       name="firstName"
@@ -354,10 +359,12 @@ export function FormClientRH(props) {
                   processedDataHB.map((room, item) => (
                     <div key={item}>
                       <div className="title-rh d-flex align-items-center gap-2">
-                        <Image src={HotelBlackIcon} alt="HotelBlackIcon" className="hotel-icon-from-o" />
-                        <h3>
-                          {room.name}{" "}
-                        </h3>
+                        <Image
+                          src={HotelBlackIcon}
+                          alt="HotelBlackIcon"
+                          className="hotel-icon-from-o"
+                        />
+                        <h3>{room.name} </h3>
                       </div>
 
                       <div className="close-accordion-booking">

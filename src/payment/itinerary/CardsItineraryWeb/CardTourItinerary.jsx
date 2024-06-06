@@ -1,6 +1,5 @@
 import moment from "moment";
 import Image from "next/image";
-import { CircularProgress } from "@mui/material";
 import React, { useContext, useState } from "react";
 
 import LanguageContext from "../../../language/LanguageContext";
@@ -263,7 +262,7 @@ export default function TourCardItinerary({key, itemActivity }) {
         {loader && (
           <div className="w-full h-full fixed flex justify-center items-center top-0 left-0 z-[3] overflow-y-hidden bg-[#c9c9c940]">
             {/* MUI */}
-            <CircularProgress />
+            {/* <CircularProgress /> */}
           </div>
         )}
       </>

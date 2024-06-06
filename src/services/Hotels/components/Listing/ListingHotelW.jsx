@@ -1,6 +1,5 @@
 "use client";
 
-// import { Pagination } from "@mui/material";
 import React, { useEffect, useContext, useState } from "react";
 
 import OrderingHotel from "./OrderingHotel";
