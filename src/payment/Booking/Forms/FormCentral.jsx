@@ -7,9 +7,9 @@ import { ActivityFormT } from "../ActivityFormT";
 import { PaymentContext } from "@/payment/context/PaymentContext";
 import { BookingContext } from "@/payment/context/BookingContext";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
-import { SkeletonActivitiesTourP } from "@/utils/skeleton/SkeletonActivitiesTourP";
 import { handleSubmitPayment as handleSubmitPaymentFunction } from "../ActionsForms/conektaHandlers";
 import { FormClientRH } from "./ClientDataRH";
+import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonactivitiesTourPT";
 
 export default function FormCentral(props) {
   const { activityPreBooking, activityTrue, dataItinerary } = props;
@@ -86,7 +86,7 @@ export default function FormCentral(props) {
         )}
 
         {!activityPreBooking && activityTrue === true && (
-          <SkeletonActivitiesTourP />
+          <SkeletonActivitiesTourPT />
         )}
 
         <FormCreditCard />
