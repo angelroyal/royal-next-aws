@@ -1178,6 +1178,9 @@ export const es = {
       placeholderEmail: "micorreo@ejemplo.com",
       textPhone: "Teléfono",
       placeholderPhone: "Ingresa tu número",
+      titleClientData:"Datos de reservación",
+      notSpecifyName:"No es necesario especificar nombre.",
+      continue:"Continuar",
     },
     paymentConekta: {
       titleForm: "Método de pago",

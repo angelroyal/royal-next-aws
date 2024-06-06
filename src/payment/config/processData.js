@@ -1,5 +1,6 @@
 export function processItineraryData(dataItinerary) {
   // FILTERS HOTEL FROM RH
+  // const filteredDataRH = dataItinerary.filter(item => item.provider === 'hb');
   const filteredDataRH = dataItinerary.filter(item => item.provider === 'rh');
   const processedDataRH = filteredDataRH.map((item) => {
     const { key: id, name, rooms } = item;
