@@ -9,8 +9,6 @@ import LanguageContext from "@/language/LanguageContext";
 import { filterStart, getFilters } from "./filtersTours";
 import IconStar from "../../../../assets/icons/utils/others/Star-filter.svg";
 
-// MUI SLIDER REMOVE
-import { Slider } from "@mui/material";
 
 export default function FilterTour(props) {
   const [isOpen, setIsOpen] = useState(true);
