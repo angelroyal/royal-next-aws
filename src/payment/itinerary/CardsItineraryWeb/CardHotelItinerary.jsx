@@ -135,7 +135,7 @@ export default function CardHotelItinerary(props) {
                 <img
                   src={itemHotel.image ? itemHotel.image : ImageNotFound}
                   alt="hotel"
-                  className=" w-full h-full rounded-lg"
+                  className="w-full h-full rounded-lg object-cover"
                 />
               </div>
 
