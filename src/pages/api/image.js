@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
-  const imageUrl = 'https://staywuw.com/api2/assets/images/hotels/16/006882a_hb_p_001.webp';
+  const {imageUrl} = req.query;
   
   try {
     const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
