@@ -245,6 +245,7 @@ export const es = {
   },
 
   exploreActivitiesHome: {
+    titleExploreTransport: "Los mejores hoteles con excelente transporte para tu estancia",
     titleExplore: "Explora una variedad de actividades",
     weRecommended: "Te recomendamos aquí los mejores tours de México.",
     bestHotels: "Los mejores hoteles para tu estancia",

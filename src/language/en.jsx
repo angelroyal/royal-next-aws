@@ -242,6 +242,7 @@ export const en = {
   },
 
   exploreActivitiesHome: {
+    titleExploreTransport: "The best hotels with excellent transportation for your stay",
     titleExplore: "Explore a variety of activities",
     weRecommended: "We recommend the best tours in Mexico here.",
     bestHotels: "The best hotels for your stay",
