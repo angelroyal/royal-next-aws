@@ -3,19 +3,19 @@
 import React, { useEffect, useContext, useState } from "react";
 
 import OrderingHotel from "./OrderingHotel";
-import FiltersHotels from "../../utils/FiltersHotels";
 import { Container } from "@/config/Others/Container";
+import FiltersHotels from "../../utils/FiltersHotels";
+import PaginationT from "@/components/General/PaginationT";
 import { AnimatedNumber } from "../../utils/AnimatedNumber";
 import { useToken } from "../../../../config/context/AuthContext";
 import LanguageContext from "../../../../language/LanguageContext";
 import ListingHotelContext from "../../context/ListingHotelContext";
+import { HotelCardSkeleton } from "../Skeleton/HotelListingSkeleton";
 import { scrollToTop } from "../../../../utils/pageConfig/scrollToTop";
-import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
 import BannerCallHotelT from "@/components/bannerJsx/bannerCallHotelT";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
-import { HotelCardSkeleton } from "../Skeleton/HotelListingSkeleton";
+import CardHotelT from "@/services/Hotels/components/Listing/CardHotelT";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
-import PaginationT from "@/components/General/PaginationT";
 
 export default function ListingHotelW() {
   const { token } = useToken();
@@ -65,7 +65,6 @@ export default function ListingHotelW() {
     scrollToTop();
   }, [currentPage]);
 
-    
   return (
     <Container>
       <div className="flex flex-col xl:flex-row md:justify-between">
@@ -78,7 +77,6 @@ export default function ListingHotelW() {
 
         <div className="w-full xl:w-8/12 relative">
           {/* SKELETON */}
-          {/* {!combinedHotelData && <SkeletonChildren />} */}
           {!combinedHotelData && <HotelCardSkeleton />}
 
           {combinedHotelData && combinedHotelData.length > 0 && (
@@ -90,9 +88,6 @@ export default function ListingHotelW() {
                     <AnimatedNumber targetNumber={totalFilteredHotels} />
                   )}{" "}
                   {languageData.filtersHotel.resultsHotel}
-                  {/* {totalFilteredHotels > 1
-                    ? languageData.filtersHotel.resultFound
-                    : languageData.filtersHotel.resultsHotel}{" "} */}
                 </h2>
 
                 {/* ORDER */}
@@ -112,18 +107,10 @@ export default function ListingHotelW() {
               {/* PAGINATION */}
               {combinedHotelData && (
                 <div className="flex justify-center py-[1.5rem]">
-                  {/* <Pagination
-                    count={totalPages}
-                    page={currentPage}
-                    onChange={clickPaginator}
-                    // onChange={handlePageChange}
-                    color="primary"
-                  /> */}
-
                   <PaginationT
-                  count={totalPages}
-                  pageChange={currentPage}
-                  onChange={setCurrentPage}
+                    count={totalPages}
+                    pageChange={currentPage}
+                    onChange={setCurrentPage}
                   />
                 </div>
               )}

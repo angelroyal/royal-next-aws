@@ -3,9 +3,9 @@ import moment from "moment";
 import React, { useState, useContext, useEffect } from "react";
 
 import CalendarDay from "../../hooks/CalendarDay";
-import SearchTour from "../../components/Search/SearchTour";
+import SearchTour from "../Search/SearchTour";
 import LanguageContext from "../../language/LanguageContext";
-import PersonsActivities from "../../utils/tour/PersonsActivities";
+import PersonsActivities from "@/utils/tour/PersonsActivities";
 
 export default function MobilSearchTour() {
   const [roomData, setRoomData] = useState([]);

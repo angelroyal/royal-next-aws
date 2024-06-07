@@ -48,7 +48,19 @@ export const saveToCartTransport = async (requestData) => {
     );
     return response.data;
   } catch (error) {
-    console.error("error",error);
+    console.error("error", error);
     throw error;
   }
 };
+
+export async function GetPromotedRoutes(id, lang) {
+  try {
+    const response = await axiosWithInterceptor.get(
+      `${process.env.NEXT_PUBLIC_API_ROYAL}/${lang}/v1/destinations/${id}/transfers/promotions`
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}

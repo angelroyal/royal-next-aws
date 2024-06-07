@@ -34,9 +34,11 @@ export default async function DetailPageHotel({ searchParams }) {
         ? 0
         : "";
 
-    const response = await axiosWithInterceptor.get(
-      `v1/transports/destinations/${searchParams.destinationId}/zones/${searchParams.zoneFromId}/${searchParams.zoneToId}/vehicles?round=${roundQueryParam}`
-    );
+        console.log("1");
+        const response = await axiosWithInterceptor.get(
+          `v1/transports/destinations/${searchParams.destinationId}/zones/${searchParams.zoneFromId}/${searchParams.zoneToId}/vehicles?round=${roundQueryParam}`
+        );
+        console.log("2");
 
     const transportData = response.data;
 

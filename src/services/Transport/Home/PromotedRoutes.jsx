@@ -7,14 +7,17 @@ import "../../../assets/styles/general/Swiper.css";
 import Image from "next/image";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import PolicyCardTransportWhite from "../components/ToolTip/PolicyCardTransportWhite";
+import { GetPromotedRoutes } from "../Api/requestTransport";
+import { PromotedRoutesSkeleton } from "../components/Skeleton/PromotedRoutersSkeleton";
 
 export default function PromotedRoutes() {
-  const { languageData } = useContext(LanguageContext);
-  const [menuPromoted, setMenuPromoted] = useState(0);
+  const { languageData, language } = useContext(LanguageContext);
+  const [menuPromoted, setMenuPromoted] = useState(1);
+
   const listOptions = [
     {
       id: 1,
@@ -23,7 +26,6 @@ export default function PromotedRoutes() {
       name: "private",
       alt: `icon-beach ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
     },
-
     {
       id: 2,
       icon: `${process.env.NEXT_PUBLIC_URL}icons/family/family-w.svg`,
@@ -33,6 +35,49 @@ export default function PromotedRoutes() {
     },
   ];
 
+  const [transports, setTransports] = useState(null);
+  const [filterTransports, setFiltersTransports] = useState(null);
+  // const [isEmptyPrivate, setIsEmptyPrivate] = useState(false);
+  // const [isEmptyShared, setIsEmptyShared] = useState(false);
+
+  // GET TRANSPORTS PROMOTIONS
+  useEffect(() => {
+    const getTransports = async () => {
+      try {
+        const response = await GetPromotedRoutes("719395", language);
+        setTransports(response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getTransports();
+  }, []);
+
+  // DIVIDED TRANSPORT BY TYPE
+  useEffect(() => {
+    switch (menuPromoted) {
+      case 1:
+        filterTransportByType(false);
+        break;
+      case 2:
+        filterTransportByType(true);
+        break;
+    }
+
+
+  }, [menuPromoted, transports]);
+
+  // FILTER TRANSPORTS BY TYPE
+  const filterTransportByType = (isPrivate) => {
+    let transportsOrigin = transports;
+    if (transportsOrigin) {
+      setFiltersTransports(
+        transportsOrigin.filter((transport) => transport.isShared === isPrivate)
+      );
+    }
+  };
+
+  // console.log("transports", filterTransports);
   return (
     <div className="my-[10px]">
       {/* TITLE */}
@@ -45,14 +90,14 @@ export default function PromotedRoutes() {
         {listOptions.map((option, index) => (
           <button
             key={index}
-            onClick={() => setMenuPromoted(index)}
+            onClick={() => setMenuPromoted(option.id)}
             className={`${
-              menuPromoted === index
+              menuPromoted === option.id
                 ? "bg-or-100 rounded-3xl text-white"
                 : "text-gry-100"
             } flex gap-2 py-2 px-4 justify-center items-center h-max`}
           >
-            {menuPromoted === index ? (
+            {menuPromoted === option.id ? (
               <Image
                 src={option.icon}
                 alt={option.alt}
@@ -77,70 +122,77 @@ export default function PromotedRoutes() {
         ))}
       </div>
 
-      {/* CARDS TRANSPORT DESKTOP*/}
-      <div
-        data-aos="fade-up"
-        className="flex gap-4 flex-wrap max-lg:hidden justify-between"
-      >
-        {[...Array(10)].map((_, index) => (
+      {filterTransports ? (
+        <>
+          {/* CARDS TRANSPORT DESKTOP*/}
           <div
-            key={index}
-            className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white w-[280px]"
+            data-aos="fade-up"
+            className="grid gap-4 grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-lg:hidden justify-between"
           >
-            <PromotedRoutesCard />
-          </div>
-        ))}
-      </div>
-
-      {/* CARDS TRANSPORT MOBILE SWIPER */}
-      <div className="lg:hidden block relative">
-        <Swiper
-          slidesPerView={5}
-          spaceBetween={24}
-          className=""
-          id="swiper-shuffle-hotel"
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            350: {
-              slidesPerView: 1.5,
-            },
-            580: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 2.5,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            1250: {
-              slidesPerView: 4,
-            },
-            1440: {
-              slidesPerView: 4.5,
-            },
-          }}
-        >
-          {[...Array(8)].map((_, index) => (
-            <SwiperSlide key={index}>
-              <div className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white">
-                <PromotedRoutesCard key={index} />
+            {filterTransports.map((transport, index) => (
+              <div
+                key={index}
+                className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white w-[280px]"
+              >
+                <PromotedRoutesCard transport={transport} />
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+            ))}
+          </div>
+
+          {/* CARDS TRANSPORT MOBILE SWIPER */}
+          <div className="lg:hidden block relative">
+            <Swiper
+              slidesPerView={5}
+              spaceBetween={24}
+              className=""
+              id="swiper-shuffle-hotel"
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                350: {
+                  slidesPerView: 1.5,
+                },
+                580: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 2.5,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+                1250: {
+                  slidesPerView: 4,
+                },
+                1440: {
+                  slidesPerView: 4.5,
+                },
+              }}
+            >
+              {filterTransports.map((transport, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex flex-col gap-2 p-[16px] border-2 border-[#EBEBEB] rounded-lg bg-white">
+                    <PromotedRoutesCard transport={transport} />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </>
+      ) : (
+        <PromotedRoutesSkeleton />
+      )}
     </div>
   );
 }
 
-export function PromotedRoutesCard({ recommended }) {
+export function PromotedRoutesCard({ transport }) {
+  console.log(transport);
   const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
@@ -156,7 +208,6 @@ export function PromotedRoutesCard({ recommended }) {
       <div className="flex flex-col gap-[16px]">
         {/* LOCATION , NAME TRANSPORT , TYPE */}
         <div className="flex flex-col gap-1">
-
           <span className="text-fs-12 m-m text-gry-100">Vehiculo Standard</span>
 
           <div className="flex gap-2 items-center">
@@ -227,17 +278,16 @@ export function PromotedRoutesCard({ recommended }) {
         </div>
 
         {/* MODALITIES */}
-        <div className={`flex flex-col gap-1 ${recommended && "hidden"}`}>
+        <div className={`flex flex-col gap-1`}>
           <span className="text-gry-100 text-fs-12 m-m">
             {languageData.modalTour.modalities}
           </span>
 
           <div className="flex gap-2 mb-[15.5px]">
             <div className="bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12">
-              {languageData.CardHomeTransport.private}
-            </div>
-            <div className="bg-gry-50 text-gry-100 rounded-full px-[8px] py-[4px] m-s-b text-fs-12">
-              {languageData.CardHomeTransport.shared}
+              {transport.isShared
+                ? languageData.CardHomeTransport.shared
+                : languageData.CardHomeTransport.private}
             </div>
           </div>
         </div>
@@ -245,9 +295,7 @@ export function PromotedRoutesCard({ recommended }) {
 
       {/* PRICE */}
       <div
-        className={`flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between ${
-          recommended && "hidden"
-        }`}
+        className={`flex gap-2 border-t-2 border-[#EBEBEB] pt-[16px] items-center justify-between `}
       >
         <div className="flex flex-col">
           <span className="text-fs-10 text-gry-100">
