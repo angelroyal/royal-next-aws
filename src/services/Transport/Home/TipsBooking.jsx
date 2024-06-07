@@ -121,7 +121,7 @@ export default function TipsBooking() {
             {languageData.tipsBooking.chooseLocation}
           </span>
           <span className="text-gry-100 text-fs-12 text-center">
-            Lorem ipsum dolor sit amet
+            {languageData.tipsBooking.chooseLocationDescription}
           </span>
         </div>
 
@@ -165,7 +165,7 @@ export default function TipsBooking() {
             {languageData.tipsBooking.pickUpDate}
           </span>
           <span className="text-gry-100 text-fs-12 text-center">
-            Lorem ipsum dolor sit amet
+            {languageData.tipsBooking.pickUpDateDescription}
           </span>
         </div>
 
@@ -207,7 +207,7 @@ export default function TipsBooking() {
             {languageData.tipsBooking.bookCar}
           </span>
           <span className="text-gry-100 text-fs-12 text-center">
-            Lorem ipsum dolor sit amet
+            {languageData.tipsBooking.bookCarDescription}
           </span>
         </div>
       </div>

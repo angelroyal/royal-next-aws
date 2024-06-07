@@ -773,8 +773,11 @@ export const es = {
   tipsBooking: {
     titleBookSteps: "Reserva tu traslado en 3 pasos",
     chooseLocation: "Elige la ubicación",
+    chooseLocationDescription:"Tu estancia perfecta comienza con la ubicación ideal.",
     pickUpDate: "Fecha de recolección",
+    pickUpDateDescription: "Selecciona el día que más te convenga.",
     bookCar: "Reserva tu coche",
+    bookCarDescription: "Elige y reserva el auto perfecto para ti",
   },
 
   CardHomeTransport: {
