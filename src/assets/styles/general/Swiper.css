@@ -38,13 +38,13 @@
   box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
 }
 
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
-  color: black !important;
+/* .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+  color: black;
 }
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
-  color: black !important;
-}
+  color: black;
+} */
 /* END NAVIGATION WHITE CIRCLE STYLE*/
 
 /* STYLE SWIPER PAGINATION CardHotelT LISTING HOTEL*/
@@ -168,6 +168,7 @@
 /*END SWIPER SHUFFLE HOTEL */
 
 /* SWIPER POPULAR ESTATES  AND RECOMMENDED TRANSPORT*/
+
 #swiper-popular-estates>div.swiper-button-prev,
 #swiper-recommended-transport>div.swiper-button-prev {
   top: 5px;
@@ -386,7 +387,7 @@
   top: 20px;
   left: auto;
   right: 50px;
-  color: #eb741e;
+  color: #eb741e !important;
   height: 30px;
   width: 30px;
   font-weight: bold;
@@ -401,7 +402,7 @@
   z-index: 4;
   top: 20px;
   right: 20px;
-  color: #eb741e;
+  color: #eb741e !important;
   height: 30px;
   width: 30px;
   box-shadow: 2px 0 12px 0 rgba(0, 0, 0, .11);
@@ -589,3 +590,17 @@
 }
 
 /* END SWIPER HOME BANNER */
+
+/* MODAL HOTEL */
+
+#style-swiper-modal-hotel > div.swiper-button-prev{
+  --swiper-navigation-size: 33px;
+  font-weight: bold;
+}
+
+#style-swiper-modal-hotel > div.swiper-button-next{
+  --swiper-navigation-size: 33px;
+  font-weight: bold;
+}
+/* END MODAL HOTEL */
+

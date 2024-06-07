@@ -1,3 +1,5 @@
+"use client";
+
 import moment from "moment";
 import Image from "next/image";
 import React, { useContext } from "react";
@@ -24,7 +26,7 @@ export default function CardTourConfirmation(props) {
           height={192}
         />
 
-        <div className="flex flex-col gap-y-[20px] items-start max-sm:w-full">
+        <div className="flex flex-col gap-y-[20px] items-start w-full">
           <div className="flex gap-x-[5px] m-b text-fs-16">
             <span className="text-or-100 ">
               {languageData.dayOfWeek[dayOfWeek]}
@@ -36,27 +38,27 @@ export default function CardTourConfirmation(props) {
           </div>
 
           {/* ITINERARY CARD */}
-          <div className="p-4 max-sm:pl-5 max-sm:pr-[34px] max-sm:py-4 bg-white rounded-lg h-auto max-sm:flex max-sm:flex-col max-sm:w-full">
+          <div className="p-4 max-sm:pl-5 max-sm:pr-[34px] max-sm:py-4 bg-white rounded-lg h-auto max-sm:flex max-sm:flex-col max-sm:w-full w-[732px] max-xl:w-full">
             <div className="flex gap-x-8">
               {/* IMAGE TOUR */}
               <img
-                className="w-[133px] h-[117px] object-cover rounded-lg"
+                className="w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px] object-cover rounded-lg"
                 src={itemActivity.image ? itemActivity.image : ""}
                 alt="gallery tour"
                 width={133}
                 height={117}
               />
 
-              <div className="flex flex-col gap-y-4 justify-center">
+              <div className="flex flex-col gap-y-4 justify-center w-full">
                 {/* TITLE */}
                 <h2 className="m-b text-fs-16 text-black">
                   {itemActivity.name}
                 </h2>
 
-                <div className="flex gap-x-[24px]">
-                  <div className="flex gap-x-6 items-start">
+                <div className="flex gap-x-[24px] justify-between">
+                  <div className="flex gap-x-6 items-start w-1/2 max-lg:w-full">
                     {/* LEFT INFORMATION */}
-                    <div className="flex flex-col gap-y-[1]">
+                    <div className="flex flex-col gap-y-[1] w-full gap-2">
                       <div className="flex gap-x-1 items-start">
                         <Image
                           className="w-[11px] h-[14px]"
@@ -92,7 +94,7 @@ export default function CardTourConfirmation(props) {
                   <div className="hidden sm:flex sm:gap-x-[95px] ">
                     {/* RIGHT INFORMATION */}
                     <div className="flex flex-col gap-y-1">
-                      <p className="m-0 text-fs-8 text-gry-100 m-s-b">
+                      <p className="m-0 text-fs-10 text-gry-100 m-s-b">
                         {languageData.confirmation.cardTour.duration}
                       </p>
                       <h3 className="m-0 text-fs-12 text-black m-s-b">
@@ -102,7 +104,7 @@ export default function CardTourConfirmation(props) {
 
                     {/* PRICE TOUR */}
                     <div className="flex flex-col gap-y-1 items-start mr-[26px]">
-                      <p className="text-fs-8 text-gry-100 m-s-b">
+                      <p className="text-fs-10 text-gry-100 m-s-b">
                         {languageData.modalTourOptions.taxes}
                       </p>
 
@@ -135,7 +137,7 @@ export default function CardTourConfirmation(props) {
             <div className="sm:hidden border-t border-gry-70 mt-2 pt-[16px] w-full flex justify-between">
               {/* RIGHT INFORMATION */}
               <div className="flex flex-col gap-y-1">
-                <p className="m-0 text-fs-8 text-gry-100 m-s-b">
+                <p className="m-0 text-fs-10 text-gry-100 m-s-b">
                   {languageData.confirmation.cardTour.duration}
                 </p>
                 <h3 className="m-0 text-fs-12 text-black m-b">

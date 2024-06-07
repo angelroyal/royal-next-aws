@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Form } from "react-bootstrap";
+// import { Form } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
@@ -9,8 +9,8 @@ import {
   processItineraryData,
 } from "@/payment/config/processData";
 
-import HotelBlackIcon from "../../../assets/icons/utils/payment/hotel-black.svg";
-import HotelOrangeIcon from "../../../assets/icons/utils/payment/hotel-orange.svg";
+// import HotelBlackIcon from `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`;
+// import HotelOrangeIcon from `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
 export function FormClientRH(props) {
   const { setRoomsRH } = useContext(PaymentContext);
@@ -21,6 +21,9 @@ export function FormClientRH(props) {
   const processedDataRH = processItineraryData(dataItinerary);
   const processedDataHB = ProcessDataHB(dataItinerary);
   const [activeHotelIndex, setActiveHotelIndex] = useState(0);
+
+  const HotelBlackIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`;
+  const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
   // VALIDATE INPUTS TYPE TEXT
   const handleKeyPress = (event) => {
@@ -100,42 +103,48 @@ export function FormClientRH(props) {
     <>
       {processedDataRH && processedDataRH.length > 0 ? (
         // <div className="">
-        <div className="form-client accordion-form">
-          <h3 className="title-data">Datos de reservación</h3>
+        <div className="w-full bg-white rounded-[19px] px-[1.8rem] pt-[2rem] pb-[3rem] mt-[2.5rem]">
+          <h3 className="m-b text-fs-21 mb-[.5rem]">
+            {languageData.booking.clientData.titleClientData}
+          </h3>
 
-          <div className="d-flex flex-column gap-3">
+          <div className="flex flex-col gap-4">
             {processedDataRH.map((hotel, index) => (
               <div key={index}>
                 {/* TITLE HOTEL */}
                 <div
-                  className={`title-rh d-flex align-items-center gap-2`}
+                  className={`m-b flex items-center gap-2`}
                   onClick={() => setActiveHotelIndex(index)}
                 >
                   {index === activeHotelIndex ? (
                     <Image
                       src={HotelOrangeIcon}
                       alt="HotelOrangeIcon"
-                      className="hotel-icon-from-o"
+                      width={20}
+                      height={17}
+                      className="w-[1.7rem] h-auto"
                     />
                   ) : (
                     <Image
                       src={HotelBlackIcon}
                       alt="HotelBlackIcon"
-                      className="hotel-icon-form"
+                      className="w-[1.5rem] h-auto"
+                      width={20}
+                      height={17}
                     />
                   )}
-                  <h3>{hotel.name}</h3>
+                  <h3 className="text-fs-20">{hotel.name}</h3>
                 </div>
 
                 {/* SHOW ROOM INDEX */}
                 {index === activeHotelIndex ? (
                   <>
                     <>
-                      <div className="container-inputs-form">
+                      <div className="py-[20px] px-[36px] mt-[18px] mb-[12px] justify-between flex flex-col bg-gry-30 rounded-[9px]">
                         {hotel.roomDetails.map((room, roomIndex) => (
                           <div key={roomIndex}>
                             {/* NAME ROOM INDEX */}
-                            <span className="room-number-form">
+                            <span className="m-b text-fs-16 flex mb-[1rem]">
                               {room.roomName}{" "}
                             </span>
 
@@ -144,20 +153,20 @@ export function FormClientRH(props) {
                               (_, adultIndex) => (
                                 <div
                                   key={`adult-${adultIndex}`}
-                                  className="container-input-rh"
+                                  className="flex justify-evenly items-end mb-[1.1rem] gap-[2rem]"
                                 >
-                                  <div className="width100">
-                                    <Form.Label
+                                  <div className="w-full flex-col">
+                                    <label
                                       htmlFor="firstName"
-                                      className="subtitle-form"
+                                      className="mb-[.2rem] m-s-b text-fs-13"
                                     >
                                       {languageData.booking.adult}{" "}
                                       {adultIndex + 1}
-                                    </Form.Label>
+                                    </label>
                                     <input
                                       type="text"
                                       name="firstName"
-                                      className="enter-data-client"
+                                      className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                                       placeholder={
                                         languageData.booking.clientData
                                           .placeholderName
@@ -182,11 +191,11 @@ export function FormClientRH(props) {
                                     />
                                   </div>
 
-                                  <div className="width100">
+                                  <div className="w-full">
                                     <input
                                       type="text"
                                       name="lastName"
-                                      className="enter-data-client"
+                                      className="m-0 rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                                       placeholder={
                                         languageData.booking.clientData
                                           .placeholderLastName
@@ -219,23 +228,23 @@ export function FormClientRH(props) {
                               (_, childIndex) => (
                                 <div
                                   key={`child-${childIndex}`}
-                                  className="container-input-rh"
+                                  className="flex justify-evenly items-end mb-[1.1rem] gap-[2rem]"
                                 >
-                                  <div className="width100">
+                                  <div className="w-full">
                                     {/* NAME CHILDREN INDEX */}
-                                    <Form.Label
+                                    <label
                                       htmlFor="firstName"
-                                      className="subtitle-form"
+                                      className="m-s-b text-fs-12 mb-[.2rem]"
                                     >
                                       {languageData.booking.children}{" "}
                                       {childIndex + 1}
-                                    </Form.Label>
+                                    </label>
 
                                     {/* FIRST NAME CHILDREN */}
                                     <input
                                       type="text"
                                       name="firstName"
-                                      className="enter-data-client"
+                                      className="m-0 rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                                       placeholder={
                                         languageData.booking.clientData
                                           .placeholderName
@@ -261,11 +270,11 @@ export function FormClientRH(props) {
                                   </div>
 
                                   {/* CHILDREN LAST NAME */}
-                                  <div className="width100">
+                                  <div className="w-full">
                                     <input
                                       type="text"
                                       name="lastName"
-                                      className="enter-data-client"
+                                      className="m-0 rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                                       placeholder={
                                         languageData.booking.clientData
                                           .placeholderLastName
@@ -291,11 +300,11 @@ export function FormClientRH(props) {
                                   </div>
 
                                   {/* CHILDREN AGE */}
-                                  <div className="width100">
+                                  <div className="w-full">
                                     <input
                                       type="number"
                                       name="age"
-                                      className="enter-data-client"
+                                      className="m-0 rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                                       placeholder={
                                         languageData.SearchBox.tabTour
                                           .personsActivities.age
@@ -329,23 +338,23 @@ export function FormClientRH(props) {
                       </div>
 
                       {/* BUTTON NEXT ROOM  */}
-                      <div className="d-flex justify-content-end">
+                      <div className="flex justify-end">
                         {activeHotelIndex < processedDataRH.length - 1 && (
                           <button
                             onClick={handleContinue}
-                            className="next-form"
+                            className="bg-bl-100 text-white rounded-full px-[1.5rem] py-[.5rem] m-s-b text-fs-13"
                           >
-                            Continuar
+                            {languageData.booking.clientData.continue}
                           </button>
                         )}
                       </div>
                     </>
                   </>
                 ) : (
-                  <div className="close-accordion-booking">
+                  <div className="bg-gry-30 rounded-[9px] w-full px-[36px] py-[24px]">
                     {hotel.roomDetails &&
                       hotel.roomDetails.map((value, item) => (
-                        <h3 className="room-number-form" key={item}>
+                        <h3 className="m-0 m-b text-fs-16 flex" key={item}>
                           {value.roomName}
                         </h3>
                       ))}
@@ -358,18 +367,20 @@ export function FormClientRH(props) {
                 {processedDataHB &&
                   processedDataHB.map((room, item) => (
                     <div key={item}>
-                      <div className="title-rh d-flex align-items-center gap-2">
+                      <div className="m-s-b flex items-center gap-2">
                         <Image
                           src={HotelBlackIcon}
                           alt="HotelBlackIcon"
-                          className="hotel-icon-from-o"
+                          className="w-[1.7rem] h-auto"
+                          width={20}
+                          height={17}
                         />
-                        <h3>{room.name} </h3>
+                        <h3 className="text-fs-20 m-0">{room.name} </h3>
                       </div>
 
-                      <div className="close-accordion-booking">
-                        <h3 className="form-not-required-rh">
-                          No es necesario especificar nombre.
+                      <div className="bg-gry-30 rounded-[9px] w-full px-[36px] py-[24px]">
+                        <h3 className="m-s-b text-fs-16 text-gry-70">
+                          {languageData.booking.clientData.notSpecifyName}
                         </h3>
                       </div>
                     </div>
