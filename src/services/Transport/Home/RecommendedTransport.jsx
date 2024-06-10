@@ -10,7 +10,8 @@ import { useContext, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import LanguageContext from "@/language/LanguageContext";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import { getCatalogueTransport } from "@/components/Recommended/Api/RequestRecommendation";
 
 export default function RecommendedTransport() {
   const { languageData } = useContext(LanguageContext);
@@ -18,14 +19,21 @@ export default function RecommendedTransport() {
   const [transportData, setTransportData] = useState([]);
 
   useEffect(() => {
-    axiosWithInterceptor
-      .get("v1/transport-catalogue")
-      .then((response) => {
+    const responseCatalogue = async ()=>{
+      const response = await getCatalogueTransport();
+      if(response){
         setTransportData(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the transport data!", error);
-      });
+      }
+    }
+    responseCatalogue()
+    // axiosWithInterceptor
+    //   .get("v1/transport-catalogue")
+    //   .then((response) => {
+    //     setTransportData(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("There was an error fetching the transport data!", error);
+    //   });
   }, []);
 
   return (
@@ -85,6 +93,7 @@ export default function RecommendedTransport() {
 
 export function CatalogueRoutesCard({ transport }) {
   const { languageData } = useContext(LanguageContext);
+  console.log(transport);
 
   return (
     <>
@@ -98,6 +107,7 @@ export function CatalogueRoutesCard({ transport }) {
           className="select-none"
         />
       </div>
+
       {/* NAME TRANSPORT */}
       <div className="flex flex-col gap-[16px]">
         <span className="text-fs-16 m-b mt-[16px]">{transport.name}</span>

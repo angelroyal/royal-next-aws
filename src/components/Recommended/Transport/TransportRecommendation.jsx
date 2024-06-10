@@ -4,15 +4,30 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import LanguageContext from "@/language/LanguageContext";
+import { getCatalogueTransport } from "../Api/RequestRecommendation";
 import { CatalogueRoutesCard } from "@/services/Transport/Home/RecommendedTransport";
 export default function TransportRecommendation() {
     
     const { languageData } = useContext(LanguageContext);
+
+    const [transportCatalogs, setTransportCatalogs] = useState([]);
+
+    useEffect(() => {
+      const responseCatalogue = async ()=>{
+        const response = await getCatalogueTransport();
+        console.log(response);
+        if(response){
+          setTransportCatalogs(response.data);
+        }
+      }
+      responseCatalogue();
+    }, []);
+
 
     return (
 
@@ -56,10 +71,10 @@ export default function TransportRecommendation() {
                 }}
             >
                 {/* CART TRANSPORT */}
-                {[...Array(10)].map((_, index) => (
+                {transportCatalogs.length > 0 && transportCatalogs.map((transportData, index) => (
                     <SwiperSlide key={index} className="!rounded-lg">
                         <div className="flex flex-col gap-2 p-[16px] rounded-lg bg-white shadow-3xl">
-                            <CatalogueRoutesCard recommended={true}/>
+                            <CatalogueRoutesCard transport={transportData} recommended={true}/>
                         </div>
                     </SwiperSlide>
                 ))}
