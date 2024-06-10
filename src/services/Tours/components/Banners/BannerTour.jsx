@@ -8,7 +8,6 @@ import LanguageContext from "@/language/LanguageContext";
 // import { useTourContext } from "../../Context/ListingTourContext";
 
 // import { ReactComponent as IconRoyal } from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
-// import { ReactComponent as IconCallW } from "../../../assets/icons/utils/navigation/call-center-w.svg";
 
 export function BannerDestinationTour(props) {
   const { destination } = props;

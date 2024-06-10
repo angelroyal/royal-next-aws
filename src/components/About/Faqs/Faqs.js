@@ -2,18 +2,20 @@
 
 import Image from "next/image";
 import React, { useContext } from "react";
+import { Disclosure } from "@headlessui/react";
 
 import { faqsConfig } from "@/config/Others/faqsConfig";
 import LanguageContext from "@/language/LanguageContext";
 
-import IconAdd from "../../../assets/icons/utils/others/add.svg";
-import IconRemove from "../../../assets/icons/utils/others/remove.svg";
-import { Disclosure } from "@headlessui/react";
 
 export default function FaqsWeb(props) {
   const { setOpenSection, openSection, activeKey, handleAccordionClick } =
     props;
   const { languageData } = useContext(LanguageContext);
+
+  const IconAdd = `${process.env.NEXT_PUBLIC_URL}icons/add/add-70.svg`
+  const IconRemove = `${process.env.NEXT_PUBLIC_URL}icons/remove/remove-o.svg`
+
   return (
     <div className="flex flex-col lg:flex-row">
       <div className="flex flex-col lg:w-3/5 max-lg:pb-6">
@@ -52,6 +54,8 @@ export default function FaqsWeb(props) {
                   <Image
                     alt={value.question}
                     src={activeKey === index.toString() ? IconRemove : IconAdd}
+                    width={15}
+                    height={15}
                   />
                 </Disclosure.Button>
                 <div

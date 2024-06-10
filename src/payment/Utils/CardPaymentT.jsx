@@ -3,11 +3,8 @@ import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { PaymentContext } from "../context/PaymentContext";
-import VisaIcon from "../../assets/icons/utils/payment/visa.svg";
-import ChipCard from "../../assets/icons/utils/payment/chip-card.svg";
 import FondBackIcon from "../../assets/icons/utils/others/font-royal.png";
-import AmexIcon from "../../assets/icons/utils/payment/american-express.svg";
-import MasterCardIcon from "../../assets/icons/utils/payment/master-card.svg";
+
 
 const numberCardDefault = "xxxxxxxxxxxxxxxx";
 
@@ -51,7 +48,9 @@ export default function CardPaymentT() {
             <Image
               className="h-[1.5rem] w-auto"
               alt="type-card-payment"
-              src={VisaIcon}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/visa-card.svg`}
+              width={14}
+              height={5}
             />
           );
         case "MasterCard":
@@ -59,7 +58,9 @@ export default function CardPaymentT() {
             <Image
               className="h-[1.5rem] w-auto"
               alt="type-card-payment"
-              src={MasterCardIcon}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/master-card.svg`}
+              width={26}
+              height={17}
             />
           );
         case "Amex":
@@ -67,7 +68,9 @@ export default function CardPaymentT() {
             <Image
               className="h-[1.5rem] w-auto"
               alt="type-card-payment"
-              src={AmexIcon}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/amex-card.svg`}
+              width={40}
+              height={13}
             />
           );
         default:
@@ -133,8 +136,10 @@ export default function CardPaymentT() {
           <div className="w-full h-auto backface-hidden relative flex flex-col justify-end gap-[3rem] items-center mt-[2rem] mx-[16px] mb-[1.6rem] rotate-y-0">
             <Image
               className="absolute left-0 top-0 w-[2.6rem] h-auto opacity-80 !shadow-[0_9px_24px_1px_rgba(0,0,0,0.58)]"
-              src={ChipCard}
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/chip-card.svg`}
               alt="chip icon"
+              width={32}
+              height={25}
             />
 
             <div className="m-b text-fs-24 text-white w-full flex justify-start gap-[0.5rem] tracking-[3px] max-2xl:gap-[1rem] max-md:text-fs-21 max-md:gap-[0.4rem]">

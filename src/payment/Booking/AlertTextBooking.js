@@ -3,13 +3,12 @@ import React, { useContext } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
 
-import MarkDeclined from "../../assets/icons/hotel/modal/mark-decline-card.svg";
 
 export default function AlertTextBooking(props) {
   const { showAlert } = props;
 
   const { languageData } = useContext(LanguageContext);
-
+  const MarkDeclined = `${process.env.NEXT_PUBLIC_URL}icons/error/error-r.svg`
   return (
     <>
       {/* The payment has been processed or the reservation has been completed. */}

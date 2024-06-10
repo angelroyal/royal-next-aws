@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 
 import LanguageContext from "../../../language/LanguageContext";
 
-import IconLocationBorder from "../../../assets/icons/utils/others/location-border.svg";
 import moment from "moment";
 
 export default function CardMovingItinerary(props) {

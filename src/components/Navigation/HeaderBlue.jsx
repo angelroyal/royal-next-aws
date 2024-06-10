@@ -18,7 +18,7 @@ export default function HeaderBlue() {
             rel="noopener noreferrer"
           >
             <img
-              src="https://sandboxmexico.com/assets/icons/call/call-w.svg"
+              src={`${process.env.NEXT_PUBLIC_URL}icons/call/call-w.svg`}
               alt={`call icon${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
               width={17}
               height={18}

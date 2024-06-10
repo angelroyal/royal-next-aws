@@ -60,11 +60,12 @@ export default function ContactUs() {
                     ${delayClass ? "bounce2" : "animations-icon"
                     }`}>
                     <Image
-                        src="https://sandboxmexico.com/assets/icons/call/call-w.svg"
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/call/call-w.svg`}
                         alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} call icon`}
                         width={18}
                         height={18}
                         className='w-[18px] h-[18px]'
+
                     />
                 </div>
             }

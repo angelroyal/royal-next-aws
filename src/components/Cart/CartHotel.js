@@ -6,17 +6,13 @@ import { useCartAxios } from "./CartAxios";
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
-import IconDate from "../../assets/icons/utils/payment/date.svg";
-import IconPerson from "../../assets/icons/utils/payment/person.svg";
-import IconRoom from "../../assets/icons/utils/payment/cart-room.svg";
-import IconHotel from "../../assets/icons/utils/navigation/hotel.svg";
-import IconNight from "../../assets/icons/utils/payment/night-room.svg";
-
 export default function CartHotel(props) {
   const { setItinerary, removeHotelById } = useCartAxios();
   const { hotelGetCart, cartId } = props;
   const [showDelete, setShowDelete] = useState({});
   const { languageData } = useContext(LanguageContext);
+
+  const IconHotel = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`;
 
   const handleDeleteClick = (hotel) => {
     const hotelId = hotel.id;
@@ -92,24 +88,44 @@ export default function CartHotel(props) {
 
             <div className="cart-detail-information">
               <span className="cart-text-content">
-                <Image src={IconDate} alt="icon date" />{" "}
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
+                  alt="icon date"
+                  width={24}
+                  height={24}
+                />{" "}
                 <span className="cart-text-detail">
                   {moment(hotel.checkIn).format("DD/MM/YY")}
                 </span>
               </span>
 
               <span className="cart-text-content">
-                <Image src={IconNight} alt="icon night" />{" "}
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/night/night-b.svg`}
+                  alt="icon night"
+                  width={24}
+                  height={24}
+                />{" "}
                 <span className="cart-text-detail">2</span>
               </span>
 
               <span className="cart-text-content">
-                <Image src={IconRoom} alt="icon room" />{" "}
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                  alt="icon room"
+                  width={24}
+                  height={24}
+                />{" "}
                 <span className="cart-text-detail">{hotel.rooms}</span>
               </span>
 
               <span className="cart-text-content">
-                <Image src={IconPerson} alt="icon person" />{" "}
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                  alt="icon person"
+                  width={24}
+                  height={24}
+                />{" "}
                 <span className="cart-text-detail">
                   {hotel.adults + hotel.children}
                 </span>

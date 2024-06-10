@@ -7,7 +7,7 @@ import { getFilterTours } from "./allFilters";
 import { orderData } from "../../context/orderData";
 import LanguageContext from "@/language/LanguageContext";
 import { filterStart, getFilters } from "./filtersTours";
-import IconStar from "../../../../assets/icons/utils/others/Star-filter.svg";
+
 
 
 export default function FilterTour(props) {
@@ -656,8 +656,10 @@ export default function FilterTour(props) {
                             {key > 0 ? (
                               [...Array(values.value)].map((value, index) => (
                                 <Image
-                                  src={IconStar}
+                                  src={`${process.env.NEXT_PUBLIC_URL}icons/general/Star-filter.svg`}
                                   alt="IconStar"
+                                  width={11}
+                                  height={11}
                                   key={index}
                                 />
                               ))

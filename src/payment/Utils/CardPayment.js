@@ -5,12 +5,7 @@ import "../../assets/styles/web/CardPayment.css";
 import LanguageContext from "../../language/LanguageContext";
 
 import FondBackIcon from "../../assets/icons/utils/others/font-royal.png";
-import ChipCard from "../../assets/icons/utils/payment/chip-card.svg";
-import RoyalLetterIcon from "../../assets/icons/utils/others/royal-letter.svg";
-import IconLogo from "../../assets/icons/utils/payment/icon-logo-transparent.svg";
-import MasterCardIcon from "../../assets/icons/utils/payment/master-card.svg";
-import AmexIcon from "../../assets/icons/utils/payment/american-express.svg";
-import VisaIcon from "../../assets/icons/utils/payment/visa.svg";
+
 
 const numberCardDefault = "xxxxxxxxxxxxxxxx";
 
@@ -32,11 +27,35 @@ export default function CardPayment(props) {
     if (cardType) {
       switch (cardType) {
         case "Visa":
-          return <Image className="type-card-payment" alt="type-card-payment" src={VisaIcon} />;
+          return (
+            <Image
+              className="type-card-payment"
+              alt="type-card-payment"
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/visa-card.svg`}
+              width={14}
+              height={5}
+            />
+          );
         case "MasterCard":
-          return <Image className="type-card-payment" alt="type-card-payment" src={MasterCardIcon} />;
+          return (
+            <Image
+              className="type-card-payment"
+              alt="type-card-payment"
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/master-card.svg`}
+              width={26}
+              height={17}
+            />
+          );
         case "Amex":
-          return <Image className="type-card-payment" alt="type-card-payment" src={AmexIcon} />;
+          return (
+            <Image
+              className="type-card-payment"
+              alt="type-card-payment"
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/amex-card.svg`}
+              width={40}
+              height={13}
+            />
+          );
         default:
           return "";
       }
@@ -106,11 +125,23 @@ export default function CardPayment(props) {
     >
       {isBack === false && (
         <>
-        {/* src={IconLogo} */}
-          <Image className="icon-logo-transparent" width={44} height={44} src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw-wt.svg`} alt="logo transparent cart"/>
+          {/* src={IconLogo} */}
+          <Image
+            className="icon-logo-transparent"
+            width={44}
+            height={44}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw-wt.svg`}
+            alt="logo transparent cart"
+          />
 
           <div className="front-card">
-            <Image className="chip-icon" src={ChipCard} alt="chip icon"/>
+            <Image
+              className="chip-icon"
+              src={`${process.env.NEXT_PUBLIC_URL}icons/payment/chip-card.svg`}
+              alt="chip icon"
+              width={32}
+              height={25}
+            />
 
             <div className="number-card">
               {numberSpace().map((value, item) => (
@@ -160,8 +191,13 @@ export default function CardPayment(props) {
             alt="font back card"
             className="font-back-card"
           />
-          {/* src={RoyalLetterIcon} */}
-          <Image className="royal-name-card-back" src={`${process.env.NEXT_PUBLIC_URL}icons/general/principal-logo-blank.svg`} width={22} height={22} alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon letter`}/>
+          <Image
+            className="royal-name-card-back"
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/principal-logo-blank.svg`}
+            width={22}
+            height={22}
+            alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon letter`}
+          />
 
           <div className="back-card">
             <div className="d-flex flex-column py-4 hight100 width100">

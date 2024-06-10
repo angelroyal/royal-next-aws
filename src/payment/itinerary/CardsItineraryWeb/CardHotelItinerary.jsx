@@ -12,7 +12,6 @@ import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
-import ErrorIcon from "../../../assets/icons/utils/others/error-r.svg";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -387,8 +386,10 @@ export default function CardHotelItinerary(props) {
                                       {roomBed.refundable === false && (
                                         <Image
                                           className="w-[15px] mr-[5px]"
-                                          src={ErrorIcon}
+                                          src={`${process.env.NEXT_PUBLIC_URL}icons/error/error-r.svg`}
                                           alt="icon error"
+                                          width={12}
+                                          height={10}
                                         />
                                       )}
                                       {roomBed.refundable === true && (
