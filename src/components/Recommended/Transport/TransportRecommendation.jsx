@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import LanguageContext from "@/language/LanguageContext";
 import { getCatalogueTransport } from "../Api/RequestRecommendation";
 import { CatalogueRoutesCard } from "@/services/Transport/Home/RecommendedTransport";
+import CardGalleryTransportSkeleton from "@/components/Skeleton/CardGalleryTransportSkeleton";
 export default function TransportRecommendation() {
     
     const { languageData } = useContext(LanguageContext);
@@ -48,7 +49,7 @@ export default function TransportRecommendation() {
                 id="swiper-tour-recommendation"
                 navigation
                 modules={[Navigation]}
-                className="mySwiper !static mb-0"
+                className="mySwiper !static mb-0 h-[22rem]"
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
@@ -71,13 +72,20 @@ export default function TransportRecommendation() {
                 }}
             >
                 {/* CART TRANSPORT */}
-                {transportCatalogs.length > 0 && transportCatalogs.map((transportData, index) => (
+                {transportCatalogs.length > 0 
+                ? transportCatalogs.map((transportData, index) => (
                     <SwiperSlide key={index} className="!rounded-lg">
                         <div className="flex flex-col gap-2 p-[16px] rounded-lg bg-white shadow-3xl">
                             <CatalogueRoutesCard transport={transportData} recommended={true}/>
                         </div>
                     </SwiperSlide>
-                ))}
+                )):
+                [...Array(5)].map((_, index) => (
+                    <SwiperSlide key={index} className="flex flex-col gap-2 p-[16px] rounded-lg bg-white shadow-3xl">
+                      <CardGalleryTransportSkeleton />
+                    </SwiperSlide>
+                  ))
+                }
 
             </Swiper>
         </div>
