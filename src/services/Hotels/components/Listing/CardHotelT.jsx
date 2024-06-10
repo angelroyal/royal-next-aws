@@ -1,4 +1,3 @@
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -8,19 +7,17 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination,Navigation } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 import { calculateNights } from "../../utils/calculateNights";
 
-
-
 export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;
   const { languageData, language } = useContext(LanguageContext);
 
-  console.log(requestQueryParams);
+  // console.log(hotel);
 
   //   PARAMS URL
   const searchParams =
@@ -45,7 +42,7 @@ export default function CardHotelT(props) {
   }
 
   const buildUrlWithParams = (queryParams) => {
-    const destination  = searchParams.get("codeNameHotel");
+    const destination = searchParams.get("codeNameHotel");
 
     const baseUrl = `/${language}/mx/${destination}-mexico/${destination}-hotels/${hotel.codeName}`;
 
@@ -63,12 +60,10 @@ export default function CardHotelT(props) {
   return (
     <>
       {hotel && (
-        // <div className="max-sm:px-4">
         <div className="">
           <div className="flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col lg:h-[230px] max-sm:max-h-[35rem]">
             <div className="w-[30%] relative max-lg:w-full max-lg:h-[225px]">
               <Swiper
-                // spaceBetween={30}
                 id="card-hotel-t"
                 slidesPerView={1}
                 loop={true}
@@ -76,14 +71,14 @@ export default function CardHotelT(props) {
                 pagination={{
                   clickable: true,
                 }}
-                modules={[Pagination,Navigation]}
+                modules={[Pagination, Navigation]}
                 className="!h-[87%] !rounded-tl-lg max-lg:!rounded-t-lg"
               >
                 {hotel.images.map((image, index) => (
                   <SwiperSlide>
                     <img
                       key={index}
-                      className="w-full h-full object-cover "
+                      className={`w-full h-full object-cover`}
                       src={image}
                       alt="card"
                     />
@@ -101,7 +96,10 @@ export default function CardHotelT(props) {
                 />
               )}
 
-              <div className="h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none">
+              <div
+              // bg-[#fcb41e8c]
+                className={`h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none`}
+              >
                 {languageData.eatingPlan[hotel.eatingPlan]}
               </div>
             </div>
@@ -145,7 +143,6 @@ export default function CardHotelT(props) {
 
                   {/* PENDIENTE */}
                   <p className="m-m text-fs-10 text-gry-70 !mb-1">
-                    {/* {hotel.description} */}
                     {hotel.description.length > 165
                       ? `${hotel.description.substring(0, 165)}...`
                       : hotel.description}
@@ -182,7 +179,7 @@ export default function CardHotelT(props) {
                 </div>
 
                 {/* INFO PRICE */}
-                <div className="w-2/5 border-l border-gry-[#ebebeb] flex flex-col pl-[23px] items-center justify-end max-lg:w-full max-lg:border-t max-lg:border-l-0 max-lg:mt-2 max-lg:pt-2 max-lg:flex-row max-lg:justify-between max-lg:pl-0 justify-center">
+                <div className="w-2/5 border-l border-gry-[#ebebeb] flex flex-col pl-[23px] items-center max-lg:w-full max-lg:border-t max-lg:border-l-0 max-lg:mt-2 max-lg:pt-2 max-lg:flex-row max-lg:justify-between max-lg:pl-0 justify-center">
                   <div className="flex flex-col items-start lg:items-center ">
                     <span className="m-b text-red-100 text-fs-12">
                       ¡{languageData.cardHotel.titleSpace}{" "}
@@ -223,7 +220,6 @@ export default function CardHotelT(props) {
                   </div>
 
                   <Link
-                    // href={`/hotel/${hotel.codeName}?${requestQueryParams}`}
                     href={buildUrlWithParams(requestQueryParams)}
                     target="_blank"
                     className="no-underline bg-yw-100 text-black text-fs-12 m-b px-[20px] lg:px-[40px] py-[8px] rounded-full hover:bg-yw-110 text-nowrap"

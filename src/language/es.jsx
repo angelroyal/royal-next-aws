@@ -245,6 +245,7 @@ export const es = {
   },
 
   exploreActivitiesHome: {
+    titleExploreTransport: "Los mejores hoteles con excelente transporte para tu estancia",
     titleExplore: "Explora una variedad de actividades",
     weRecommended: "Te recomendamos aquí los mejores tours de México.",
     bestHotels: "Los mejores hoteles para tu estancia",
@@ -772,8 +773,11 @@ export const es = {
   tipsBooking: {
     titleBookSteps: "Reserva tu traslado en 3 pasos",
     chooseLocation: "Elige la ubicación",
+    chooseLocationDescription:"Tu estancia perfecta comienza con la ubicación ideal.",
     pickUpDate: "Fecha de recolección",
+    pickUpDateDescription: "Selecciona el día que más te convenga.",
     bookCar: "Reserva tu coche",
+    bookCarDescription: "Elige y reserva el auto perfecto para ti",
   },
 
   CardHomeTransport: {

@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { TextField } from "@mui/material";
-import { Add, Remove } from "@mui/icons-material/";
 import LanguageContext from "../../language/LanguageContext";
 import React, {
   useState,
@@ -191,7 +189,6 @@ export default function PersonsActivities({ OnApply, listing }) {
           />
 
           <span className="flex m-s-b flex-col gap-y-[3px] text-fs-12 items-start py-0 px-[10px]">
-           
             <p className="m-0 m-s-b text-fs-10 text-gry-70 w-max">
               {languageData.SearchBox.tabTour.people}
             </p>
@@ -206,7 +203,6 @@ export default function PersonsActivities({ OnApply, listing }) {
                 ]
               }`}
             </p>
-          
           </span>
         </Menu.Button>
       </div>
@@ -252,11 +248,20 @@ export default function PersonsActivities({ OnApply, listing }) {
                               handlenumAdultChange(room.adult - 1, index)
                             }
                             aria-label="Reduce el número de Adultos"
-                            className={`${
-                              room.adult === 1 ? "text-gry-70" : "text-bl-100"
-                            } m-s-b`}
                           >
-                            <Remove />
+                            <Image
+                              src={`${
+                                process.env.NEXT_PUBLIC_URL
+                              }icons/remove/${
+                                room.adult === 1
+                                  ? "remove-100.svg"
+                                  : "remove-bl.svg"
+                              }`}
+                              width={15}
+                              height={15}
+                              alt="srv remove icons"
+                              className="mr-[5px]"
+                            />
                           </button>
                           <span
                             className="m-m text-fs-15"
@@ -272,7 +277,13 @@ export default function PersonsActivities({ OnApply, listing }) {
                             className="text-bl-100 m-s-b"
                             aria-label="Aumenta el número de Adultos"
                           >
-                            <Add />
+                            <Image
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/add/add-bl.svg`}
+                              width={15}
+                              height={15}
+                              alt="add icon"
+                              className="w-[15px] h-[15px] ml-[5px]"
+                            />
                           </button>
                         </div>
                       </div>
@@ -290,11 +301,20 @@ export default function PersonsActivities({ OnApply, listing }) {
                             disabled={room.child === 0}
                             onClick={() => removeChild(index)}
                             aria-label="Reduce el número de Niños"
-                            className={`${
-                              room.child === 0 ? "text-gry-70" : "text-bl-100"
-                            } m-s-b`}
                           >
-                            <Remove />
+                            <Image
+                              src={`${
+                                process.env.NEXT_PUBLIC_URL
+                              }icons/remove/${
+                                room.child === 0
+                                  ? "remove-100.svg"
+                                  : "remove-bl.svg"
+                              }`}
+                              width={15}
+                              height={15}
+                              alt="srv remove icons"
+                              className="mr-[5px]"
+                            />
                           </button>
 
                           <span
@@ -311,7 +331,13 @@ export default function PersonsActivities({ OnApply, listing }) {
                             aria-label="Aumenta el número de Niños"
                             className="text-bl-100 m-s-b"
                           >
-                            <Add />
+                            <Image
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/add/add-bl.svg`}
+                              width={15}
+                              height={15}
+                              alt="add icon"
+                              className="w-[15px] h-[15px] ml-[5px]"
+                            />
                           </button>
                         </div>
                       </div>
@@ -334,11 +360,11 @@ export default function PersonsActivities({ OnApply, listing }) {
                               key={childIndex}
                               className="flex-text-children"
                             >
-                              <TextField
-                                id="outlined-number"
+                              <input
+                                type="number"
+                                className="m-m text-fs-16 w-[44px] border border-gry-100 rounded-md focus:outline-none text-center"
                                 label={
-                                  languageData.SearchBox.tabTour
-                                    .personsActivities.age
+                                  languageData.SearchBox.tabHotel.roomBox.age
                                 }
                                 value={room.ages[childIndex]}
                                 onChange={(event) =>
@@ -348,24 +374,14 @@ export default function PersonsActivities({ OnApply, listing }) {
                                     index
                                   )
                                 }
-                                type="number"
                                 required
-                                variant="outlined"
-                                size="small"
-                                style={{ width: 80 }}
-                                inputProps={{
-                                  maxLength: 2,
-                                  max: 12,
-                                  min: 0,
-                                  onKeyPress: (event) => {
-                                    if (!/[0-9]/.test(event.key)) {
-                                      event.preventDefault();
-                                    }
-                                  },
-                                }}
-                                error={ageError}
-                                helperText={ageError ? "0-17 años" : ""}
                               />
+                              {ageError && (
+                                <p className="m-0 text-sm text-red-600 absolute bottom-[-17px] right-0">
+                                  0-12{" "}
+                                  {languageData.itinerary.tourItinerary.years}
+                                </p>
+                              )}
                             </div>
                           </div>
                         ))}

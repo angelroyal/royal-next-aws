@@ -1,13 +1,15 @@
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
 import Footer from "@/components/Footer/Footer";
+import ChainsHome from "@/components/Home/ChainsHome";
 import { Container } from "@/config/Others/Container";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
+import EnjoyStayHome from "@/components/Home/EnjoyStayHome";
 import { TokenProvider } from "@/config/context/AuthContext";
 import TipsBooking from "@/services/Transport/Home/TipsBooking";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
-import PromotedRoutes from "@/services/Transport/Home/PromotedRoutes";
+// import PromotedRoutes from "@/services/Transport/Home/PromotedRoutes";
 import CartTourOptions from "@/services/Hotels/components/home/TourRecommended";
 import RecommendedTransport from "@/services/Transport/Home/RecommendedTransport";
 import { BannerHeaderTransport } from "@/services/Transport/Home/BannerHeaderTransport";
@@ -48,7 +50,12 @@ export default function HomeTransport() {
               <div className="max-md:overflow-x-hidden">
                 <BannerHomeTransport />
                 <TipsBooking />
-                <PromotedRoutes />
+                
+                {/* <PromotedRoutes /> */}
+
+                <ChainsHome typePage={"transport"} />
+                <EnjoyStayHome />
+
                 <BannerSafelyTransport />
                 <BannerDiscoverPossibilities />
                 <RecommendedTransport />

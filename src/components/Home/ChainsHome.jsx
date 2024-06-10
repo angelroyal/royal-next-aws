@@ -9,7 +9,7 @@ import LanguageContext from "@/language/LanguageContext";
 import "swiper/css";
 
 
-export default function ChainsHome() {
+export default function ChainsHome({typePage=null}) {
 
     const { languageData } = useContext(LanguageContext);
 
@@ -22,7 +22,7 @@ export default function ChainsHome() {
 
     return (
         <div className="mb-[56px]">
-            <h2 className="m-b text-fs-28 mb-[36px]">{languageData.exploreActivitiesHome.bestHotels}</h2>
+            <h2 className="m-b text-fs-28 mb-[36px]">{typePage ? languageData.exploreActivitiesHome.titleExploreTransport :languageData.exploreActivitiesHome.bestHotels}</h2>
 
             <div className="h-[135px]">
                 <Swiper
