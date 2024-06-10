@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-import ButtonUp from "../../assets/icons/hotel/listing/up.svg";
 // SCROLL
 
 export const scrollToTop = () => {
@@ -11,6 +10,8 @@ export const scrollToTop = () => {
 };
 
 export function ScrollButton() {
+  const ButtonUp = `${process.env.NEXT_PUBLIC_URL}icons/general/up-scroll.svg`;
+
   const [isOccult, setOccult] = useState(false);
 
   const handleScrollTop = async () => {
@@ -35,7 +36,13 @@ export function ScrollButton() {
   return (
     isOccult && (
       <div onClick={handleScrollTop}>
-        <Image src={ButtonUp} alt="ButtonUp" className="fixed bottom-[9rem] right-[14px] width-[50px] h-[50px] flex justify-center items-center cursor-pointer z-[1000]" />
+        <Image
+          src={ButtonUp}
+          alt="ButtonUpScroll"
+          width={50}
+          height={50}
+          className="fixed bottom-[9rem] right-[14px] width-[50px] h-[50px] flex justify-center items-center cursor-pointer z-[1000]"
+        />
       </div>
     )
   );

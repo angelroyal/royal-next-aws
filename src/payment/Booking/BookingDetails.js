@@ -6,18 +6,18 @@ import LanguageContext from "../../language/LanguageContext";
 
 import OpenDialogLine from "../../assets/images/others/line-open-dialog.png";
 import IconCreditCard from "../../assets/images/others/credit-card.svg";
-import IconShowLess from "../../assets/icons/hotel/modal/show_less.svg";
 
 export function BookingDetails(props) {
   const { itemSummary } = props;
-  const { languageData } = useContext(LanguageContext);
   const [openDialog, setOpenDialog] = useState(false);
+  const { languageData } = useContext(LanguageContext);
+  const IconShowLess = `${process.env.NEXT_PUBLIC_URL}icons/arrows/up-70.svg`
   return (
     <>
       <div className="box-inferior booking-container" onClick={()=>setOpenDialog(true)}>
         <div className="button-open-booking">
           <img src={OpenDialogLine} alt="OpenDialogLine" style={{ width: "100%" }} />
-          <Image src={IconShowLess} alt="IconShowLess" className="icon-show-less !w-[50%]" />
+          <Image src={IconShowLess} alt="IconShowLess" className="icon-show-less !w-[50%]" width={50} height={50}/>
         </div>
 
         <div className="d-flex p-3">
