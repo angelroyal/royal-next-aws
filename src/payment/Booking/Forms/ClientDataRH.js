@@ -133,7 +133,7 @@ export function FormClientRH(props) {
                       height={17}
                     />
                   )}
-                  <h3 className="text-fs-20">{hotel.name}</h3>
+                  <h3 className="text-fs-20 max-md:text-fs-18">{hotel.name}</h3>
                 </div>
 
                 {/* SHOW ROOM INDEX */}
@@ -153,7 +153,7 @@ export function FormClientRH(props) {
                               (_, adultIndex) => (
                                 <div
                                   key={`adult-${adultIndex}`}
-                                  className="flex justify-evenly items-end mb-[1.1rem] gap-[2rem]"
+                                  className="flex justify-evenly items-end mb-[1.1rem] gap-[2rem] max-lg:flex-col max-lg:gap-[1rem]"
                                 >
                                   <div className="w-full flex-col">
                                     <label
@@ -375,7 +375,7 @@ export function FormClientRH(props) {
                           width={20}
                           height={17}
                         />
-                        <h3 className="text-fs-20 m-0">{room.name} </h3>
+                        <h3 className="text-fs-20 m-0 max-md:text-fs-18">{room.name} </h3>
                       </div>
 
                       <div className="bg-gry-30 rounded-[9px] w-full px-[36px] py-[24px]">
