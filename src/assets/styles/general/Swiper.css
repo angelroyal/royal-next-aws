@@ -596,11 +596,13 @@
 #style-swiper-modal-hotel > div.swiper-button-prev{
   --swiper-navigation-size: 33px;
   font-weight: bold;
+  color: #fff;
 }
 
 #style-swiper-modal-hotel > div.swiper-button-next{
   --swiper-navigation-size: 33px;
   font-weight: bold;
+  color: #fff;
 }
 /* END MODAL HOTEL */
 

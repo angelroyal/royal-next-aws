@@ -7,7 +7,7 @@
   bottom: 18rem;
 }
 
-.swiper-button-next:after,
+/* .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
   content: "next";
   color: #fff;
@@ -17,4 +17,4 @@
 .swiper-rtl .swiper-button-next:after {
   content: "prev";
   color: #fff;
-}
+} */
