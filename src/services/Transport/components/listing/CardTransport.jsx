@@ -21,7 +21,7 @@ export default function CardTransport() {
     setSelectedTransport(transport);
     setOpenModal(true);
   };
-
+  // console.log(dataTransportF);
   return (
     <>
       {dataTransportF &&
@@ -36,7 +36,9 @@ export default function CardTransport() {
                 />
 
                 <div className="absolute bottom-0 w-[100%] h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none">
-                  {transport.type === "private" ? languageData.CardHomeTransport.private : languageData.CardHomeTransport.shared}
+                  {transport.type === "private"
+                    ? languageData.CardHomeTransport.private
+                    : languageData.CardHomeTransport.shared}
                 </div>
               </div>
 
@@ -53,7 +55,9 @@ export default function CardTransport() {
                           {languageData.CardHomeTransport.typeTrip}
                         </span>
                         <span className="text-fs-14 m-b">
-                          {transport.round === false ? languageData.CardHomeTransport.roundTrip : languageData.CardHomeTransport.oneWay }
+                          {transport.round === false
+                            ? languageData.CardHomeTransport.roundTrip
+                            : languageData.CardHomeTransport.oneWay}
                         </span>
                       </div>
 
@@ -67,7 +71,8 @@ export default function CardTransport() {
                               height={18}
                               alt="card adult"
                             />{" "}
-                            {transport.places} {languageData.CardHomeTransport.people}
+                            {transport.places}{" "}
+                            {languageData.CardHomeTransport.people}
                           </div>
 
                           <div className="text-fs-12 flex text-gry-100 items-center text-nowrap truncate">
@@ -78,7 +83,8 @@ export default function CardTransport() {
                               height={16}
                               alt="card baggage"
                             />{" "}
-                            {transport.hand_suitcase} {languageData.CardHomeTransport.handLuggage}
+                            {transport.hand_suitcase}{" "}
+                            {languageData.CardHomeTransport.handLuggage}
                           </div>
                         </div>
 
@@ -104,7 +110,8 @@ export default function CardTransport() {
                               height={16}
                               alt="card baggage"
                             />{" "}
-                            {transport.large_suitcase} {languageData.CardHomeTransport.suitcases}
+                            {transport.large_suitcase}{" "}
+                            {languageData.CardHomeTransport.suitcases}
                           </div>
                         </div>
                       </div>
@@ -132,7 +139,11 @@ export default function CardTransport() {
                     >
                       <span className="relative text-center text-fs-10 m-s-b text-bl-100 cursor-pointer">
                         {languageData.containerModalHotel.policies}
-                        {openPolicy === index && <CancelPolicyTransport cancellation={transport.cancellation} />}
+                        {openPolicy === index && (
+                          <CancelPolicyTransport
+                            cancellation={transport.cancellation}
+                          />
+                        )}
                       </span>
                     </div>
 
@@ -148,13 +159,15 @@ export default function CardTransport() {
                     {languageData.CardHomeTransport.reserveBtn}
                   </button>
 
-                  {selectedTransport && selectedTransport.id === transport.id && openModal && (
-                    <ModalTransport
-                      isOpen={openModal}
-                      onClose={() => setOpenModal(false)}
-                      transport={selectedTransport}
-                    />
-                  )}
+                  {selectedTransport &&
+                    selectedTransport.id === transport.id &&
+                    openModal && (
+                      <ModalTransport
+                        isOpen={openModal}
+                        onClose={() => setOpenModal(false)}
+                        transport={selectedTransport}
+                      />
+                    )}
                 </div>
               </div>
             </div>

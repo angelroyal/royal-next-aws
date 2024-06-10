@@ -37,6 +37,10 @@ export default function TransportPriceCart(props) {
   const isButtonEnabled = passenger > 0 && departureDate && departureTime;
 
   const handleReserveNow = async () => {
+    // PARSE TRANSPORT TYPE TO NUMBER
+    const typeTransport =
+      transport.type === "shared" ? 1 : transport.type === "private" ? 2 : "";
+
     // PRICE RESERVED
     let calculatedPrice =
       transport.type === "shared"
@@ -60,13 +64,13 @@ export default function TransportPriceCart(props) {
 
       // REQUEST BODY ADD CART
       const saveRequestCart = {
-        from: zoneFromId,
-        to: zoneToId,
+        from: parseInt(zoneFromId),
+        to: parseInt(zoneToId),
         pax: passenger,
-        type: transport.type,
+        type: typeTransport,
         price: calculatedPrice,
         vehicleId: transport.id,
-        destinationId: destinationId,
+        destinationId: parseInt(destinationId),
         departureDate: departureDate,
         departureTime: departureTime,
         ...(comebackDate ? { comebackDate: comebackDate } : {}),
@@ -142,8 +146,10 @@ export default function TransportPriceCart(props) {
       </div>
 
       <button
-        className={`py-[14px] bg-bl-100 text-white m-b text-fs-12 rounded-full text-center ${
-          !isButtonEnabled ? "cursor-not-allowed" : "hover:bg-bl-110"
+        className={`py-[14px]  text-white m-b text-fs-12 rounded-full text-center ${
+          !isButtonEnabled
+            ? "cursor-not-allowed bg-bl-70"
+            : "hover:bg-bl-110 bg-bl-100"
         }`}
         onClick={handleReserveNow}
         disabled={!isButtonEnabled}

@@ -4,24 +4,32 @@ import React, { useContext } from "react";
 import LanguageContext from "../../../language/LanguageContext";
 
 import IconLocationBorder from "../../../assets/icons/utils/others/location-border.svg";
-
+import moment from "moment";
 
 export default function CardMovingItinerary(props) {
   const { languageData } = useContext(LanguageContext);
+  const { itemTransport } = props;
+
+  console.log(itemTransport);
+
+  // DAY OF WEEK
+  const dayOfWeek = moment(itemTransport.date).format("dddd");
 
   return (
     <div className="flex gap-x-2 items-start">
       <Image
-        className="w-4"
-        src={IconLocationBorder}
-        alt="IconLocationBorder"
+        src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
+        alt="Icon Location Border"
         width={16}
+        height={200}
       />
 
       <div className="flex flex-col gap-y-5">
         <span className="flex gap-x-1">
-          <h3 className="m-b text-fs-16 text-or-100 m-0">Lunes</h3>{" "}
-          <h3 className="m-m text-fs-16 text-gry-70 m-0">01/22/2024 | 02:00pm</h3>
+          <h3 className="m-b text-fs-16 text-or-100 m-0">{languageData.dayOfWeek[dayOfWeek]}</h3>{" "}
+          <h3 className="m-m text-fs-16 text-gry-70 m-0">
+            01/22/2024 | 02:00pm
+          </h3>
         </span>
 
         {/* CARD TRANSPORT ITINERARY */}
