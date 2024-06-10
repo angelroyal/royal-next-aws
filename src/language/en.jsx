@@ -1118,6 +1118,11 @@ export const en = {
       optionRound: "Round",
       optionSimple: "Simple",
       optionOther: "Other case",
+      pyc:{
+        text1: "You have",
+        text2: "hours to cancel ",
+        text3:"your transportation reservation."
+      }
     },
     tourItinerary: {
       titleTour: "Tours",

@@ -6,8 +6,9 @@ export function AlertPyC({
   openAlert,
   setOpenAlert,
   title,
-  description,
+  description=null,
   cancelPolicy,
+  cardView
 }) {
   const ref = useRef(null);
 
@@ -28,7 +29,7 @@ export function AlertPyC({
     openAlert && (
       <div
         ref={ref}
-        className="cursor-auto absolute z-[2] shadow-3xl bg-white rounded-lg w-[316px] md:w-[458px] translate-x-[-67%] md:translate-x-[-50%] h-auto p-4 flex flex-col items-center"
+        className={`cursor-auto absolute z-[2] shadow-3xl bg-white rounded-lg w-[316px] ${cardView === "transport" ? 'md:w-[248px]' : ' md:w-[458px]'} translate-x-[-67%] md:translate-x-[-50%] h-auto p-4 flex flex-col items-center`}
       >
         <img
           src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-70.svg`}
@@ -51,7 +52,9 @@ export function AlertPyC({
           {title && <span className="text-fs-20 m-s-b mb-[8px]">{title}</span>}
 
           <p className="text-fs-12 text-gry-100 m-m text-center mb-[24px]">
-            {description == "policy" ? PolicyAlert(cancelPolicy) : description}
+            {description == "policy"
+              ? PolicyAlert(cancelPolicy)
+              : CancelationHours(cancelPolicy)}
           </p>
         </div>
       </div>
@@ -77,5 +80,16 @@ export function PolicyAlert(cancelPolicy) {
         {languageData.roomsCancellations.terms}{" "}
       </a>
     </>
+  );
+}
+
+export function CancelationHours(hours) {
+  const { languageData } = useContext(LanguageContext);
+  return (
+    <div className="flex flex-wrap text-fs-14 text-black m-s-b gap-x-[3px] text-wrap justify-center">
+      <span>{languageData.itinerary.movingItinerary.pyc.text1}</span> <span>{hours}</span>
+      <span>{languageData.itinerary.movingItinerary.pyc.text2}</span>
+      <span>{languageData.itinerary.movingItinerary.pyc.text3}</span>
+    </div>
   );
 }
