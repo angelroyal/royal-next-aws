@@ -10,7 +10,6 @@ export const fetchDataItinerary = async (
   setData(null);
   setSkeletonShow(true);
   try {
-    
     const url = "/v1/carts/";
     const searchParams = new URLSearchParams(window.location.search);
     const cartId = searchParams.get("uid");
@@ -98,4 +97,44 @@ export const fetchDataConfirmation = async (
     console.error("Error al realizar la petición:", error);
     setIsLoading(false);
   }
+};
+
+// ITINERARY ENDPOINTS
+
+// REMOVE CART HOTEL
+export async function removeHotelItinerary(cartUid, cartHotelId) {
+  try {
+    const response = await axiosWithInterceptor.delete(
+      `v1/carts/${cartUid}/hotel/${cartHotelId}`
+    );
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+// REMOVE CART TRANSPORT
+export async function removeTransportItinerary(cartUid, cartTransportId) {
+  try {
+    const response = await axiosWithInterceptor.delete(`v1/carts/${cartUid}/transports/${cartTransportId}`);
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+// BOOKING ENDPOINTS
+export const SendPaymentRequest = (paymentData) => {
+  return axiosWithInterceptor
+    .post("v1/payment", paymentData)
+    .then((response) => {
+      console.log("Payment successful:", response);
+      return response;
+    })
+    .catch((error) => {
+      console.log("Payment error:", error);
+      throw error;
+    });
 };

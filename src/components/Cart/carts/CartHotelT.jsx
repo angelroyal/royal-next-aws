@@ -4,8 +4,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 import { useCartAxios } from "../CartAxios";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import { removeHotelItinerary } from "@/payment/Api/fetchDataItinerary";
 import { calculateNights } from "@/services/Hotels/utils/calculateNights";
+// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export default function CartHotelT(props) {
   const { hotel, cartId, setIsLoader, isLoader } = props;
@@ -22,19 +23,31 @@ export default function CartHotelT(props) {
 
     const hotelId = hotel.id;
     setIsLoader(true);
-    axiosWithInterceptor
-      .delete(`v1/carts/${cartId}/hotel/${hotelId}`)
-      .then((response) => {
-        removeHotelById(hotelId);
-        setShowDelete({ ...showDelete });
-        setItinerary(Math.floor(Math.random() * 100) + 1);
-        setIsLoader(false);
-        setLoadingHotels({});
-      })
-      .catch((error) => {
-        setIsLoader(false);
-        alert("Ups ocurrio un error en eliminar el carro");
-      });
+    removeHotelItinerary(cartId, hotelId).then((response) => {
+      removeHotelById(hotelId);
+      setShowDelete({ ...showDelete });
+      setItinerary(Math.floor(Math.random() * 100) + 1);
+      setIsLoader(false);
+      setLoadingHotels({});
+    })
+    .catch((error) => {
+      setIsLoader(false);
+      alert("Ups ocurrio un error en eliminar el carro");
+    });
+
+    // axiosWithInterceptor
+    //   .delete(`v1/carts/${cartId}/hotel/${hotelId}`)
+    //   .then((response) => {
+    //     removeHotelById(hotelId);
+    //     setShowDelete({ ...showDelete });
+    //     setItinerary(Math.floor(Math.random() * 100) + 1);
+    //     setIsLoader(false);
+    //     setLoadingHotels({});
+    //   })
+    //   .catch((error) => {
+    //     setIsLoader(false);
+    //     alert("Ups ocurrio un error en eliminar el carro");
+    //   });
   };
 
   const toggleDelete = (hotelId) => {
