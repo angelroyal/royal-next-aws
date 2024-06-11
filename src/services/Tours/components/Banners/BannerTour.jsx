@@ -3,17 +3,13 @@ import React, { useContext } from "react";
 import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
 
-// import LanguageContext from "../../../language/LanguageContext";
-
 // import { useTourContext } from "../../Context/ListingTourContext";
 
-// import { ReactComponent as IconRoyal } from "../../../assets/icons/utils/payment/icon-royal-vacations.svg";
 
 export function BannerDestinationTour(props) {
   const { destination } = props;
   // const { totalResults } = useTourContext();
   const { languageData } = useContext(LanguageContext);
-console.log(destination);
   return (
     <picture
       className="inline-block h-[13rem] min-h-[13rem] relative w-full "

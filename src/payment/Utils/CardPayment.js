@@ -4,8 +4,6 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../assets/styles/web/CardPayment.css";
 import LanguageContext from "../../language/LanguageContext";
 
-import FondBackIcon from "../../assets/icons/utils/others/font-royal.png";
-
 
 const numberCardDefault = "xxxxxxxxxxxxxxxx";
 
@@ -187,9 +185,11 @@ export default function CardPayment(props) {
       {isBack === true && (
         <>
           <Image
-            src={FondBackIcon}
-            alt="font back card"
-            className="font-back-card"
+           src={`${process.env.NEXT_PUBLIC_URL}img/payment/font-card-payment.png`}
+           alt="font back card"
+           className="absolute w-full h-full rounded-l-xl rounded-tr-[1.8rem] rounded-br-xl"
+           width={336}
+           height={206}
           />
           <Image
             className="royal-name-card-back"
