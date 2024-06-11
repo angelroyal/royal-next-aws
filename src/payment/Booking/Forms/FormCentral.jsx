@@ -2,14 +2,13 @@ import { useContext, useState } from "react";
 
 import ClientDataT from "./FormClientData";
 import FormCreditCard from "./FormCreditCard";
-// import { FormClientRH } from "../ClientDataRH";
+import { FormClientRH } from "./ClientDataRH";
 import { ActivityFormT } from "../ActivityFormT";
 import { PaymentContext } from "@/payment/context/PaymentContext";
 import { BookingContext } from "@/payment/context/BookingContext";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
+import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT";
 import { handleSubmitPayment as handleSubmitPaymentFunction } from "../ActionsForms/conektaHandlers";
-import { FormClientRH } from "./ClientDataRH";
-import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonactivitiesTourPT";
 
 export default function FormCentral(props) {
   const { activityPreBooking, activityTrue, dataItinerary } = props;
