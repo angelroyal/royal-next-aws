@@ -11,7 +11,6 @@ import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
 import LoadingProgress from "@/components/General/LoadingProgress";
-import IconCreditCart from "../../../assets/images/others/credit-card.svg";
 
 export default function DetailsPayment(props) {
   const { data, step, setChangeButton } = props;
@@ -126,8 +125,29 @@ export default function DetailsPayment(props) {
                       </sup>
                     </p>
                   </div>
-
-                  <Image src={IconCreditCart} alt="icons credit carts" />
+                  {/* ICONS CREDIT CART */}
+                  <div className="flex flex-nowrap gap-2">
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/payment/visa.svg`}
+                      width={48}
+                      height={29}
+                    />
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/payment/master.svg`}
+                      width={49}
+                      height={29}
+                    />
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/payment/amex.svg`}
+                      width={48}
+                      height={29}
+                    />
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/payment/spei.svg`}
+                      width={77}
+                      height={32}
+                    />
+                  </div>
                 </div>
 
                 <div className="flex justify-between flex-nowrap gap-[13px] items-center">

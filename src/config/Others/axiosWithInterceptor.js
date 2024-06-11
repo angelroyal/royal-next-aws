@@ -1,5 +1,5 @@
 import axios from "axios";
-import sendToSlack from "@/utils/errorBoundary/slackNotifier";
+// import sendToSlack from "@/utils/errorBoundary/slackNotifier";
 
 const getLanguage = () => {
   if (typeof window !== "undefined") {
@@ -27,17 +27,17 @@ axiosWithInterceptor.interceptors.request.use(
     return config;
   },
   (error) => {
-    sendToSlack("Request Error: " + error.message, {
-      message: error.message,
-      stack: error.stack,
-      config: {
-        url: error.config.url,
-        method: error.config.method,
-        data: error.config.data,
-      },
-      code: error.code,
-      status: error.response ? error.response.status : null,
-    });
+    // sendToSlack("Request Error: " + error.message, {
+    //   message: error.message,
+    //   stack: error.stack,
+    //   config: {
+    //     url: error.config.url,
+    //     method: error.config.method,
+    //     data: error.config.data,
+    //   },
+    //   code: error.code,
+    //   status: error.response ? error.response.status : null,
+    // });
     return Promise.reject(error);
   }
 );

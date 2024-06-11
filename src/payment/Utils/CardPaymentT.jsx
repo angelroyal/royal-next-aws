@@ -3,8 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { PaymentContext } from "../context/PaymentContext";
-import FondBackIcon from "../../assets/icons/utils/others/font-royal.png";
-
 
 const numberCardDefault = "xxxxxxxxxxxxxxxx";
 
@@ -186,9 +184,11 @@ export default function CardPaymentT() {
       {isBack === true && (
         <>
           <Image
-            src={FondBackIcon}
+            src={`${process.env.NEXT_PUBLIC_URL}img/payment/font-card-payment.png`}
             alt="font back card"
             className="absolute w-full h-full rounded-l-xl rounded-tr-[1.8rem] rounded-br-xl"
+            width={336}
+            height={206}
           />
           {/* src={RoyalLetterIcon} */}
           <Image

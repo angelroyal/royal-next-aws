@@ -6,7 +6,7 @@ export default function ButtonConfirmation() {
             <div className='circ-button-confirm-mobile'>
                 <img
                     className="icons-info-tour"
-                    src="https://sandboxmexico.com/assets/icons/arrows/up-w.svg"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-w.svg`}
                     alt="arrow-up-w"
                 />
             </div>
@@ -17,7 +17,7 @@ export default function ButtonConfirmation() {
             <div className="share-confirm-test-tour">
                 <img
                     className="icons-info-tour"
-                    src="https://sandboxmexico.com/assets/icons/share/share-w.svg"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
                     alt="share-icon"
                 />
                 <span className='text-confirm-share-w'>Compartir</span>

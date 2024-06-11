@@ -6,8 +6,6 @@ import CartTour from "./CartTour";
 import CartHotel from "./CartHotel";
 import { useCartAxios } from "./CartAxios";
 import LanguageContext from "../../language/LanguageContext";
-import IconRoyal from "../../assets/icons/utils/payment/icon-royal-vacations.svg";
-
 export default function CartGet({ onCloseMenu }) {
   const router = useRouter();
   const [cartUid, setCartUid] = useState(null);
@@ -112,7 +110,13 @@ export default function CartGet({ onCloseMenu }) {
       {!cartInfo && (
         <>
           {/* <IconRoyal className="margin-top" /> */}
-          <Image src={IconRoyal} className="margin-top" alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`} />
+          <Image
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw.svg`}
+            alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon`}
+            className="margin-top"
+            width={27}
+            height={25}
+          />
           <h2 className="cart-no-show">{languageData.cart.subtitleBooking}</h2>
           <p className="cart-no-text padding-bottom">
             {languageData.cart.textMessage}

@@ -131,7 +131,7 @@ export default function ListingTour() {
     updatePage(newPage);
     scrollToTop();
   };
-
+console.log(tourData);
   return (
     <>
       {!tourData && <BannerListingSkeleton />}

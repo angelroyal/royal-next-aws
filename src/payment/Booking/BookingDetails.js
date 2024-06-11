@@ -5,19 +5,31 @@ import { DialogBooking } from "./MDialogBooking";
 import LanguageContext from "../../language/LanguageContext";
 
 import OpenDialogLine from "../../assets/images/others/line-open-dialog.png";
-import IconCreditCard from "../../assets/images/others/credit-card.svg";
 
 export function BookingDetails(props) {
   const { itemSummary } = props;
   const [openDialog, setOpenDialog] = useState(false);
   const { languageData } = useContext(LanguageContext);
-  const IconShowLess = `${process.env.NEXT_PUBLIC_URL}icons/arrows/up-70.svg`
+  const IconShowLess = `${process.env.NEXT_PUBLIC_URL}icons/arrows/up-70.svg`;
   return (
     <>
-      <div className="box-inferior booking-container" onClick={()=>setOpenDialog(true)}>
+      <div
+        className="box-inferior booking-container"
+        onClick={() => setOpenDialog(true)}
+      >
         <div className="button-open-booking">
-          <img src={OpenDialogLine} alt="OpenDialogLine" style={{ width: "100%" }} />
-          <Image src={IconShowLess} alt="IconShowLess" className="icon-show-less !w-[50%]" width={50} height={50}/>
+          <img
+            src={OpenDialogLine}
+            alt="OpenDialogLine"
+            style={{ width: "100%" }}
+          />
+          <Image
+            src={IconShowLess}
+            alt="IconShowLess"
+            className="icon-show-less !w-[50%]"
+            width={50}
+            height={50}
+          />
         </div>
 
         <div className="d-flex p-3">
@@ -36,7 +48,28 @@ export function BookingDetails(props) {
           </div>
 
           <div className="m-i-pay-currency">
-            <Image src={IconCreditCard} alt="IconCreditCard" className="m-credit-c" />
+            <div className="flex flex-nowrap gap-2">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_URL}icons/payment/visa.svg`}
+                width={48}
+                height={29}
+              />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_URL}icons/payment/master.svg`}
+                width={49}
+                height={29}
+              />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_URL}icons/payment/amex.svg`}
+                width={48}
+                height={29}
+              />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_URL}icons/payment/spei.svg`}
+                width={77}
+                height={32}
+              />
+            </div>
             <div className="m-i-margin-r">
               <div className="m-i-total-c">Total:</div>
 
@@ -57,7 +90,11 @@ export function BookingDetails(props) {
           </div>
         </div>
       </div>
-      <DialogBooking open={openDialog} closeDialog={()=> setOpenDialog(false)} itemSummary={itemSummary}/>
+      <DialogBooking
+        open={openDialog}
+        closeDialog={() => setOpenDialog(false)}
+        itemSummary={itemSummary}
+      />
     </>
   );
 }
