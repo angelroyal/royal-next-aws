@@ -4,9 +4,6 @@ import React, { useState, useContext } from "react";
 import { ShareContainer } from "./ShareContainer";
 import LanguageContext from "../../language/LanguageContext";
 
-import ShareIcon from "../../assets/icons/utils/payment/share.svg";
-import ShareOr from "../../assets/icons/utils/payment/share-or.svg";
-import ShareActiveIcon from "../../assets/icons/utils/payment/share-active.svg";
 
 export default function ModalShare({ itinerary = false }) {
   const { languageData } = useContext(LanguageContext);
@@ -56,11 +53,11 @@ export default function ModalShare({ itinerary = false }) {
           onClick={handleIconClick}
         >
           {itinerary ? (
-            <Image src={ShareOr} alt="share orange" />
+            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-o.svg`} alt="share orange" width={24} height={24}/>
           ) : iconActive ? (
-            <Image src={ShareActiveIcon} alt="share active" />
+            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-b-o.svg`} alt="share active" width={24} height={24}/>
           ) : (
-            <Image src={ShareIcon} alt="share icon" />
+            <Image src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-b.svg`} alt="share icon" width={24} height={24}/>
           )}
         </div>
 

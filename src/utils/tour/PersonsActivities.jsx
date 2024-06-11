@@ -8,7 +8,6 @@ import React, {
   Fragment,
 } from "react";
 
-import Person2OutlinedIcon from "../../assets/icons/utils/searchBox/person-autocomplete.svg";
 import { Menu, Transition } from "@headlessui/react";
 
 export default function PersonsActivities({ OnApply, listing }) {
@@ -182,7 +181,7 @@ export default function PersonsActivities({ OnApply, listing }) {
           } border-2 border-gray-200 rounded py-2.5 px-4 relative h-[56px] !flex gap-x-2 items-center`}
         >
           <Image
-            src={Person2OutlinedIcon}
+            src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
             width={16}
             height={22}
             alt="icon-person"
