@@ -48,14 +48,16 @@
 /* END NAVIGATION WHITE CIRCLE STYLE*/
 
 /* STYLE SWIPER PAGINATION CardHotelT LISTING HOTEL*/
-#card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+#card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active,
+#swiper-gallery-tour>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: white !important;
   width: 6px !important;
   height: 6px !important;
   margin: 5px !important;
 }
 
-#card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span {
+#card-hotel-t>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span,
+#swiper-gallery-tour>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal>span {
   margin: 5px !important;
   width: 6px !important;
   height: 6px !important;
@@ -507,6 +509,14 @@
   #swiper-home-enjoy-stay>div.swiper-button-next {
     right: 18px;
   }
+
+  #swiper-popular-destinations-home>div.swiper-button-prev {
+    display: none;
+  }
+  
+  #swiper-popular-destinations-home>div.swiper-button-next {
+    display: none;
+  }
 }
 
 /* END SWIPER ENJOY STAY HOME */
@@ -606,3 +616,16 @@
 }
 /* END MODAL HOTEL */
 
+/* GALLERY TOUR */
+#swiper-gallery-tour > div.swiper-button-prev{
+  --swiper-navigation-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#swiper-gallery-tour > div.swiper-button-next{
+  --swiper-navigation-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+/* END GALLERY TOUR */
