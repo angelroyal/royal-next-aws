@@ -1,7 +1,6 @@
 "use client";
 
-import { useContext } from "react";
-import { sendPaymentRequest } from "../Api/paymentApi";
+import { SendPaymentRequest } from "@/payment/Api/fetchDataItinerary";
 
 export const conektaErrorResponseHandler = (response, setAnimationData, closeModalAfterDelay) => {
   console.log("error", response);
@@ -12,7 +11,7 @@ export const conektaErrorResponseHandler = (response, setAnimationData, closeMod
 export const conektaSuccessResponseHandler = (token, paymentData, setAnimationData, handleStepChange, closeModalAfterDelay) => {
   paymentData.token = token.id;
 
-  sendPaymentRequest(paymentData)
+  SendPaymentRequest(paymentData)
     .then((response) => {
       console.log("Payment processed successfully.", response);
       setAnimationData("SuccessData");

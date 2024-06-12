@@ -9,9 +9,8 @@ import LanguageContext from "../../../language/LanguageContext";
 import UnavailableCardHotel from "../others/UnavailableCardHotel";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { ImageNotFound } from "../../../config/Others/ImageNotFound";
+import { removeHotelItinerary } from "@/payment/Api/fetchDataItinerary";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
-import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
-
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
@@ -42,24 +41,16 @@ export default function CardHotelItinerary(props) {
   const removeReservation = (uidHotel) => {
     setLoader(true);
     if (cartHotelId === uidHotel) {
-      const reservationRemove = async () => {
-        axiosWithInterceptor
-          .delete(`v1/carts/${cartUid}/hotel/${cartHotelId}`)
-          .then((response) => {
-            fetchData(cartUid);
-            setIconRemove(false);
-            // setLoader(false);
-            setItinerary(Math.floor(Math.random() * 100) + 1);
-          })
-          .catch((error) => {
-            console.error(error);
-            setLoader(false);
-          })
-          .finally(() => {
-            // setLoader(false);
-          });
-      };
-      reservationRemove();
+      removeHotelItinerary(cartUid, cartHotelId)
+        .then((response) => {
+          fetchData(cartUid);
+          setIconRemove(false);
+          setItinerary(Math.floor(Math.random() * 100) + 1);
+        })
+        .catch((error) => {
+          console.error(error);
+          setLoader(false);
+        });
     }
   };
 

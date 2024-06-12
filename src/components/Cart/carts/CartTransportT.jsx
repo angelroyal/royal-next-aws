@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { useCartAxios } from "../CartAxios";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
 
 export default function CartTransportT(props) {
   const { transport, cartId, isLoader, setIsLoader } = props;
@@ -23,6 +24,8 @@ export default function CartTransportT(props) {
 
   // FUNCTION DELETED TRANSPORT AXIOS
   const handleDeleteClick = (transport) => {
+    console.log(transport);
+    return
     setLoadingTransports((prevLoadingTransports) => ({
       ...prevLoadingTransports,
       [transport.id]: true,
@@ -31,8 +34,7 @@ export default function CartTransportT(props) {
     const transportId = transport.id;
     setIsLoader(true);
 
-    axiosWithInterceptor
-      .delete(`v1/carts/${cartId}/transports/${transportId}`)
+    removeTransportItinerary(cartId, transportId)
       .then((response) => {
         removeTransportById(transportId);
         setShowDelete({ ...showDelete });
@@ -44,6 +46,20 @@ export default function CartTransportT(props) {
         setIsLoader(false);
         alert("Ups ocurrio un error en eliminar el carro");
       });
+
+    // axiosWithInterceptor
+    //   .delete(`v1/carts/${cartId}/transports/${transportId}`)
+    //   .then((response) => {
+    //     removeTransportById(transportId);
+    //     setShowDelete({ ...showDelete });
+    //     setItinerary(Math.floor(Math.random() * 100) + 1);
+    //     setIsLoader(false);
+    //     setLoadingTransports({});
+    //   })
+    //   .catch((error) => {
+    //     setIsLoader(false);
+    //     alert("Ups ocurrio un error en eliminar el carro");
+    //   });
   };
 
   return (
