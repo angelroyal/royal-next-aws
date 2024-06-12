@@ -47,17 +47,17 @@ axiosWithInterceptor.interceptors.response.use(
     return response;
   },
   (error) => {
-    sendToSlack("Response Error: " + error.message, {
-      message: error.message,
-      stack: error.stack,
-      config: {
-        url: error.config.url,
-        method: error.config.method,
-        data: error.config.data,
-      },
-      code: error.code,
-      status: error.response ? error.response.status : null,
-    });
+    // sendToSlack("Response Error: " + error.message, {
+    //   message: error.message,
+    //   stack: error.stack,
+    //   config: {
+    //     url: error.config.url,
+    //     method: error.config.method,
+    //     data: error.config.data,
+    //   },
+    //   code: error.code,
+    //   status: error.response ? error.response.status : null,
+    // });
     return Promise.reject(error);
   }
 );

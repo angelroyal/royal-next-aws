@@ -86,7 +86,7 @@ export default function CardHotelItinerary(props) {
               <span className="m-m text-fs-16 text-gry-70 mr-2 pr-2 border-r-2 border-gyr-100">
                 {dateFormatCheckIn}
               </span>{" "}
-              <span className="m-m text-fs-16 text-gry-70 m-0">14:00pm</span>
+              <span className="m-m text-fs-16 text-gry-70 m-0">02:00pm</span>
             </div>
 
             <ul className="m-0 p-0">

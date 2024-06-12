@@ -1,19 +1,23 @@
+
 export default function SkeletonPay({ confirmation = false }) {
   return (
-    <div className="flex ">
-      <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
-        <StepsSkeleton />
-        <StepsSkeletonMobile />
-        {confirmation ? "" : <CartsReservationSkeleton />}
-        <CartDetailsSkeleton />
-      </div>
+    <div className="mx-[70px] max-2xl:mx-0">
+      <div className="flex ">
+        <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
+          <StepsSkeleton />
+          <StepsSkeletonMobile />
+          {confirmation ? "" : <CartsReservationSkeleton />}
+          <CartDetailsSkeleton />
+        </div>
 
-      <div
-        className={`hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] ${
-          !confirmation && "bg-white"
-        }`}
-      >
-        <DetailsReservationSkeleton confirmation={confirmation} />
+        <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white z-[1]">
+          <DetailsReservationSkeleton confirmation={confirmation} />
+        </div>
+        <div
+          className={`max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0 ${
+            !confirmation && "bg-white"
+          }`}
+        />
       </div>
     </div>
   );

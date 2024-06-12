@@ -22,15 +22,12 @@ export default function CardMovingItinerary(props) {
 
   // REMOVE TRANSPORT FROM SHOPPING CART
   const removeReservation = (uidTransport) => {
-    console.log("uidTransport", uidTransport);
     const searchParams = new URLSearchParams(window.location.search);
     const cartUid = searchParams.get("uid");
-    // console.log(cartUid);
-    // return;
-    const transportId = uidTransport.key;
+    const transportId = uidTransport.id;
     setLoader(true);
 
-    if (itemTransport.key === transportId) {
+    if (itemTransport.id === transportId) {
       removeTransportItinerary(cartUid, transportId)
         .then((result) => {
           removeTransportById(transportId);
@@ -65,9 +62,10 @@ export default function CardMovingItinerary(props) {
               {languageData.dayOfWeek[dayOfWeek]}
             </h3>{" "}
             <h3 className="m-m text-fs-16 text-gry-70 m-0">
-              {itemTransport.date} | {moment(`${itemTransport.date}T${itemTransport.time}`)
-                  .format("h:mma")
-                  .toLowerCase()}
+              {moment(itemTransport.date).format("MM/DD/YYYY")} |{" "}
+              {moment(`${itemTransport.date}T${itemTransport.time}`)
+                .format("h:mma")
+                .toLowerCase()}
             </h3>
           </span>
 

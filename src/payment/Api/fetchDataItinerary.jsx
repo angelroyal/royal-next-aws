@@ -14,7 +14,7 @@ export const fetchDataItinerary = async (
     const searchParams = new URLSearchParams(window.location.search);
     const cartId = searchParams.get("uid");
     const response = await axiosWithInterceptor.get(`${url}${cartId}/schedule`);
-
+    console.log(response);
     const filterDataItinerary = response.data.items.filter(
       (object) => object.type === "activity"
     );
@@ -26,6 +26,7 @@ export const fetchDataItinerary = async (
     setData(response.data);
     setSkeletonShow(false);
   } catch (error) {
+    console.log("error", error);
     handleFetchError(error, setShowClr, setErrorAlertBooking);
     setData(null);
     setSkeletonShow(false);
@@ -117,7 +118,9 @@ export async function removeHotelItinerary(cartUid, cartHotelId) {
 // REMOVE CART TRANSPORT
 export async function removeTransportItinerary(cartUid, cartTransportId) {
   try {
-    const response = await axiosWithInterceptor.delete(`v1/carts/${cartUid}/transports/${cartTransportId}`);
+    const response = await axiosWithInterceptor.delete(
+      `v1/carts/${cartUid}/transports/${cartTransportId}`
+    );
     return response;
   } catch (error) {
     console.log(error);

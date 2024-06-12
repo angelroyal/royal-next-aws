@@ -9,6 +9,7 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function PriceModalTransport(props) {
   const { transport } = props;
+  // console.log(transport);
   const { passenger } = useContext(ModalTransportContext);
   const { languageData } = useContext(LanguageContext);
   return (

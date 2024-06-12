@@ -41,6 +41,7 @@ export default function Payment() {
     };
   }, []);
 
+  console.log(data);
  
   useEffect(() => {
     scrollToTop();
@@ -62,7 +63,7 @@ export default function Payment() {
       <Container>
         <div className="mx-[70px] max-2xl:mx-0">
           {/* BACKGROUND WHITE STEP */}
-          {step !== 3 && !errorAlertBooking && (
+          {step !== 3 && !errorAlertBooking && data && (
             <div className="max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0" />
           )}
 
@@ -97,7 +98,7 @@ export default function Payment() {
                       )}
                     </div>
 
-                    <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white">
+                    <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white z-[1]">
                       <DetailsPayment
                         data={data}
                         step={step}
@@ -114,7 +115,7 @@ export default function Payment() {
           )}
         </div>
 
-        {!data && skeletonShow && <SkeletonPay />}
+        {data === null && skeletonShow && <SkeletonPay />}
 
         {showClr &&
           (showClr.message === "CLR" || showClr.message === "CNF") && (

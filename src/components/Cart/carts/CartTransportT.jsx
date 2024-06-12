@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { useCartAxios } from "../CartAxios";
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
 
 export default function CartTransportT(props) {
   const { transport, cartId, isLoader, setIsLoader } = props;
+  console.log(transport);
 
   const [showDelete, setShowDelete] = useState({});
   const { setItinerary, removeTransportById } = useCartAxios();
@@ -24,8 +24,8 @@ export default function CartTransportT(props) {
 
   // FUNCTION DELETED TRANSPORT AXIOS
   const handleDeleteClick = (transport) => {
-    console.log(transport);
-    return
+    // console.log(transport);
+    // return
     setLoadingTransports((prevLoadingTransports) => ({
       ...prevLoadingTransports,
       [transport.id]: true,
@@ -75,9 +75,10 @@ export default function CartTransportT(props) {
         <div className="p-2 gap-4 flex justify-between w-full max-sm:w-[86%]">
           {/* IMAGE CART */}
           <img
-            src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`}
+            src={transport.image ? transport.image : ''}
+            // src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`}
             alt="img-cart-tour"
-            className="w-[100px] h-[100px] rounded-lg object-cover"
+            className="w-[100px] h-[100px] rounded-lg object-cover object-right"
           />
 
           {/* INFO CART */}

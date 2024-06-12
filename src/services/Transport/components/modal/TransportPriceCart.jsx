@@ -79,6 +79,13 @@ export default function TransportPriceCart(props) {
         vehicleImage: transport.image,
         vehicleLabel: transport.label,
         cancelPolicyHours: transport.cancellation,
+        places: transport.places,
+        suitcases: [
+          {
+            largeSuitcase: transport.large_suitcase,
+            handSuitcase: transport.hand_suitcase,
+          },
+        ],
       };
 
       // IF UID EXIST ADD UID
