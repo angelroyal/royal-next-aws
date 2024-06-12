@@ -977,6 +977,10 @@ export const es = {
       hotelAcapulco: "Hoteles en Acapulco",
       hotelPuertoVallarta: "Hoteles en Puerto Vallarta",
     },
+
+    links:"Enlaces",
+    followUs:"Síguenos",
+    acceptCreditCards:"Aceptamos tarjetas de crédito",
   },
 
   ourHistory: {

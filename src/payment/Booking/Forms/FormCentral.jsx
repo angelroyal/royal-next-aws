@@ -9,7 +9,7 @@ import { BookingContext } from "@/payment/context/BookingContext";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 import { handleSubmitPayment as handleSubmitPaymentFunction } from "../ActionsForms/conektaHandlers";
 import { FormClientRH } from "./ClientDataRH";
-import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonactivitiesTourPT";
+import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT";
 
 export default function FormCentral(props) {
   const { activityPreBooking, activityTrue, dataItinerary } = props;

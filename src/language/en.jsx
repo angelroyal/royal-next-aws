@@ -978,6 +978,10 @@ export const en = {
       hotelAcapulco: "Hotels in Acapulco",
       hotelPuertoVallarta: "Hotels in Puerto Vallarta",
     },
+
+    links:"Links",
+    followUs:"Follow us",
+    acceptCreditCards:"We accept credit cards",
   },
 
   ourHistory: {

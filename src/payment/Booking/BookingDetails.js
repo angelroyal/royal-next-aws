@@ -53,21 +53,25 @@ export function BookingDetails(props) {
                 src={`${process.env.NEXT_PUBLIC_URL}icons/payment/visa.svg`}
                 width={48}
                 height={29}
+                alt="icon visa"
               />
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/payment/master.svg`}
                 width={49}
                 height={29}
+                alt="icon master card"
               />
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/payment/amex.svg`}
                 width={48}
                 height={29}
+                alt="icon american card"
               />
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/payment/spei.svg`}
                 width={77}
                 height={32}
+                alt="icon spei card"
               />
             </div>
             <div className="m-i-margin-r">
