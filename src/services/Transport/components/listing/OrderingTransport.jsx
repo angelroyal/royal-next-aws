@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useContext } from "react";
 
 import LanguageContext from "../../../../language/LanguageContext";
@@ -33,7 +34,7 @@ export default function OrderingTransport() {
               {languageData.filtersHotel.order}
             </label>
             <select
-              className="pt-[1.2rem] mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-bl-70 sm:text-sm sm:leading-6 text-fs-14"
+              className="pt-[1.2rem] mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300  appearance-none focus:outline-none sm:text-sm sm:leading-6 text-fs-14"
               value={orderHotel}
               onChange={(event) => handleOrderingFilters(event)}
             >
@@ -43,6 +44,14 @@ export default function OrderingTransport() {
                 </option>
               ))}
             </select>
+
+            <Image
+            src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/down-100.svg`}
+            width={12}
+            height={12}
+            alt="icon-arrow down"
+            className="h-3 w-3 absolute right-[20px] top-[26px]"
+          />
           </div>
         )}
       </div>
