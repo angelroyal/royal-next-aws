@@ -41,7 +41,7 @@ export default function CardMovingItinerary(props) {
     }
   };
 
-  // console.log(itemTransport);
+  console.log(itemTransport);
 
   // DAY OF WEEK
   const dayOfWeek = moment(itemTransport.date).format("dddd");
@@ -116,18 +116,40 @@ export default function CardMovingItinerary(props) {
                       </p>
                     </span>
 
-                    <span className="flex items-center gap-x-1">
-                      <Image
-                        className="w-[14px] h-[13px]"
-                        src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
-                        alt="location bl"
-                        width={14}
-                        height={13}
-                      />
+                    <span className="flex flex-col gap-y-[3px]">
+                      {itemTransport.suitcases && (
+                        <>
+                          <div className="flex gap-x-[3px] items-center">
+                            <Image
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-bl.svg`}
+                              alt="icon baggage blue"
+                              width={10.6}
+                              height={12.3}
+                            />
 
-                      <p className="m-0 text-fs-10 text-gry-100">
-                        Modelo: KNSJKD
-                      </p>
+                            <p className="m-0 text-fs-10 text-gry-100">
+                              {itemTransport.suitcases[0].handSuitcase /
+                                itemTransport.places}{" "}
+                              {languageData.CardHomeTransport.handLuggage}
+                            </p>
+                          </div>
+                          
+                          <div className="flex gap-x-[3px] items-center">
+                            <Image
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-bl.svg`}
+                              alt="icon baggage blue"
+                              width={10.6}
+                              height={12.3}
+                            />
+
+                            <p className="m-0 text-fs-10 text-gry-100">
+                              {itemTransport.suitcases[0].largeSuitcase /
+                                itemTransport.places}{" "}
+                              {languageData.CardHomeTransport.suitcases}
+                            </p>
+                          </div>
+                        </>
+                      )}
                     </span>
                   </div>
 

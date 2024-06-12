@@ -12,7 +12,6 @@ export default function Itinerary(props) {
   const { dataItinerary } = props;
   const { languageData } = useContext(LanguageContext);
   const { handleStepChange } = useContext(BookingContext);
-  console.log(dataItinerary);
   const isButtonDisabled = isAnyHotelUnavailable(dataItinerary);
 
   useEffect(() => {

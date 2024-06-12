@@ -29,7 +29,6 @@ export default function Payment() {
   const { languageData } = useContext(LanguageContext);
   const [skeletonShow, setSkeletonShow] = useState(true);
   const [hasActivities, setHasActivities] = useState(false);
-  // console.log(hasActivities);
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
   const { step, handleStepChange, openDialog } = useContext(BookingContext);
 
@@ -41,7 +40,6 @@ export default function Payment() {
     };
   }, []);
 
-  console.log(data);
  
   useEffect(() => {
     scrollToTop();
