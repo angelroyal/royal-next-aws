@@ -104,7 +104,7 @@ export function CatalogueRoutesCard({ transport }) {
           width={216}
           height={164}
           alt={transport.name}
-          className="select-none"
+          className="select-none aspect-[32/15]"
         />
       </div>
 
@@ -125,6 +125,7 @@ export function CatalogueRoutesCard({ transport }) {
                 width={12.8}
                 height={13.4}
                 alt="icon adult"
+                className="aspect-square"
               />
               <span className="m-m text-fs-12">
                 {transport.capacity} {languageData.CardHomeTransport.people}
@@ -138,6 +139,7 @@ export function CatalogueRoutesCard({ transport }) {
                 width={12.1}
                 height={14.1}
                 alt="icon baggage"
+                className="aspect-square"
               />
               <span className="m-m text-fs-12">
                 {transport.facilities.largeSuitcase}{" "}
@@ -151,6 +153,7 @@ export function CatalogueRoutesCard({ transport }) {
               width={12.1}
               height={14.1}
               alt="icon baggage"
+              className="aspect-square"
             />
             <span className="m-m text-fs-12">
               {transport.facilities.handSuitcase}{" "}
