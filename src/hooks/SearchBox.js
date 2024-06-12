@@ -32,13 +32,13 @@ export default function SearchBox() {
         view = process.env.NEXT_PUBLIC_HOME;
         break;
       case "hotel":
-        view = `/${language}/hotel`;
+        view = `/${language}/hotels`;
         break;
       case "tour":
-        view = `/${language}/tour`;
+        view = `/${language}/tours`;
         break;
       case "transport":
-        view = `/${language}/transport`;
+        view = `/${language}/transports`;
         break;
     }
 
@@ -90,7 +90,7 @@ export default function SearchBox() {
           >
             <span
               className={`${
-                currentActiveIcon === "tour"
+                currentActiveIcon === "tours"
                   ? //  currentActiveIcon === "tours"
                     "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
@@ -119,7 +119,7 @@ export default function SearchBox() {
           >
             <span
               className={`${
-                currentActiveIcon === "transport"
+                currentActiveIcon === "transports"
                   ? //  currentActiveIcon === "tours"
                     "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
@@ -157,7 +157,7 @@ export default function SearchBox() {
                 ) : (
                   ""
                 )}
-                {currentActiveIcon === "transport" && <SearchTransport />}
+                {currentActiveIcon === "transports" && <SearchTransport />}
               </>
             ) : (
               <SearchHomeSkeleton />

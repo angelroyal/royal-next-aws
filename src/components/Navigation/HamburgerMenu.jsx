@@ -72,7 +72,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
 
               {/* TOUR LINK */}
               <Link
-                href={`/${language}/tour`}
+                href={`/${language}/tours`}
                 passHref
                 className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
               >
@@ -90,7 +90,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
 
               {/* TRANSPORT LINK */}
               <Link
-                href={`/${language}/transport`}
+                href={`/${language}/transports`}
                 passHref
                 className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
               >

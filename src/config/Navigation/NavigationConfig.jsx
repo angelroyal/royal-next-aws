@@ -1,13 +1,19 @@
 import LanguageContext from "@/language/LanguageContext";
 import { useContext, useEffect, useState } from "react";
 
-export const NavigationURL = ["hotels", "tour", "tours", "transport", "hotel"];
+export const NavigationURL = [
+  "hotels",
+  "tour",
+  "tours",
+  "transport",
+  "transports",
+  "hotel",
+];
 
 export function NavigationConfig() {
   const [activeRouter, setActiveRouter] = useState(null);
-  const {language } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
-  
   useEffect(() => {
     const path = window.location.pathname;
 
@@ -18,12 +24,12 @@ export function NavigationConfig() {
         actualRouter = pathRouter.filter((value) => value === url);
       }
     });
-    
+
     if (path === "/") {
       setActiveRouter("hotels");
     }
 
-    if (path === `/${language}/hotel`) {
+    if (path === `/${language}/hotels`) {
       setActiveRouter(`hotel`);
     }
 

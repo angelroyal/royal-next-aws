@@ -187,7 +187,7 @@ export default function FooterT() {
 
               {/* HOME HOTELS */}
               <Link
-                href={`/${language}/hotel`}
+                href={`/${language}/hotels`}
                 className={`${
                   footerBlue ? "text-white" : "text-black"
                 } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
@@ -197,7 +197,7 @@ export default function FooterT() {
 
               {/* HOME TOUR */}
               <Link
-                href={`/${language}/tour`}
+                href={`/${language}/tours`}
                 className={`${
                   footerBlue ? "text-white" : "text-black"
                 } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
@@ -207,7 +207,7 @@ export default function FooterT() {
 
               {/* HOME TRANSPORT */}
               <Link
-                href={`/${language}/transport`}
+                href={`/${language}/transports`}
                 className={`${
                   footerBlue ? "text-white" : "text-black"
                 } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}

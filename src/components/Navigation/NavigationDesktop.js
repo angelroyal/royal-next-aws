@@ -20,6 +20,8 @@ export default function NavigationDesktop() {
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
 
+  console.log(routerActual);
+
   useEffect(() => {
     setCurrentActiveIcon(routerActual);
   }, [routerActual]);
@@ -62,7 +64,7 @@ export default function NavigationDesktop() {
 
                 {/* HOTEL LINK */}
                 <Link
-                 href={`/${language}/hotel`}
+                 href={`/${language}/hotels`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline"
                 >
@@ -74,7 +76,7 @@ export default function NavigationDesktop() {
                   />
                   <span
                     className={`${
-                      currentActiveIcon === "hotels" || currentActiveIcon === "hotel" && "text-or-100"
+                      currentActiveIcon === "hotels" || currentActiveIcon === "hotel" ? "text-or-100" : ''
                     }`}
                   >
                     {languageData.SearchBox.tabHotel.hotel}
@@ -83,7 +85,7 @@ export default function NavigationDesktop() {
 
                 {/* TOUR LINK */}
                 <Link
-                  href={`/${language}/tour`}
+                  href={`/${language}/tours`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
@@ -103,7 +105,7 @@ export default function NavigationDesktop() {
                
                 {/* TRANSPORT LINK */}
                 <Link
-                  href={`/${language}/transport`}
+                  href={`/${language}/transports`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
