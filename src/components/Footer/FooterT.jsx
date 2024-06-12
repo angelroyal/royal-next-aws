@@ -41,7 +41,7 @@ const Hotels = {
 export default function FooterT() {
 
   // FALSE TO CHANGE TO THE WHITE FOOTER
-  const footerBlue = false;
+  const footerBlue = true;
 
   const [isOpen] = useState(true);
   const year = new Date().getFullYear();
