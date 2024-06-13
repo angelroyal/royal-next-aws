@@ -68,7 +68,7 @@ export default function ListingHotelW() {
   return (
     <Container>
       <div className="flex flex-col xl:flex-row md:justify-between">
-        <div className="w-full xl:w-[28%] mt-10">
+        <div className="w-full xl:w-[28%] 2xl:w-[24%] mt-10">
           <SearchBoxMobile />
           <div className="hidden xl:block">
             <FiltersHotels />

@@ -59,9 +59,21 @@ export default function DestinationReady({ type, reservationDetails }) {
           </button>
         </div>
 
-        <div className="h-[88px] w-[277] bg-grn-30 flex flex-col p-[16px] gap-[8px] rounded-lg">
+        <div className="w-[350px] max-lg:w-full bg-grn-30 flex flex-col p-[16px] gap-[8px] rounded-lg">
           {/* NAME */}
-          <span className="m-b text-fs-16 flex items-center gap-x-[8px]"><Image src={`${process.env.NEXT_PUBLIC_URL}icons/check/check-g.svg`} width={16} height={16} alt="done name" className="w-[16px] h-[16px]"/> {reservationDetails.name}</span>
+          <div className="flex gap-2">
+            <Image
+              src={`${process.env.NEXT_PUBLIC_URL}icons/check/check-g.svg`}
+              width={16}
+              height={16}
+              alt="done name"
+              className="w-[16px] h-[20px] pt-[4px]"
+            />
+            <span className="m-b text-fs-16 items-center gap-x-[8px] !box-orient-vertical !line-clamp-2 !overflow-hidden !text-ellipsis">
+              {" "}
+              {reservationDetails.name}
+            </span>
+          </div>
 
           {/* DATE */}
           <span className="m-m text-gry-100 text-fs-14 flex items-center">
