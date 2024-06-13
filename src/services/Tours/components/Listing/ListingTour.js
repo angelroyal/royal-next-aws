@@ -21,7 +21,7 @@ import { useTourContext } from "../../context/ListingTourContext";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
-
+import { FilterTourMobile } from "./FilterTourMobile";
 export default function ListingTour() {
   const {
     tourData,
@@ -131,7 +131,7 @@ export default function ListingTour() {
     updatePage(newPage);
     scrollToTop();
   };
-console.log(tourData);
+  console.log(tourData);
   return (
     <>
       {!tourData && <BannerListingSkeleton />}
@@ -140,18 +140,20 @@ console.log(tourData);
 
       <Container>
         <div className="flex flex-col xl:flex-row md:justify-between">
-          <div className="w-full xl:w-[28%] mt-10">
+          <div className="w-full xl:w-[28%] 2xl:w-[24%] mt-10">
             <SearchBoxMobile className="margin-bottom" />
 
             {auxTourData && (
-              <FilterTour
-                className="margin-bottom"
-                tourData={tourData}
-                setAuxTourData={setAuxTourData}
-                auxTourData={auxTourData}
-                setChangeTours={setChangeTours}
-                orderTour={orderTour}
-              />
+              <div className="max-xl:hidden">
+                <FilterTour
+                  className="margin-bottom"
+                  tourData={tourData}
+                  setAuxTourData={setAuxTourData}
+                  auxTourData={auxTourData}
+                  setChangeTours={setChangeTours}
+                  orderTour={orderTour}
+                />
+              </div>
             )}
           </div>
           <div className="w-full xl:w-8/12 relative">
@@ -220,6 +222,15 @@ console.log(tourData);
           </div>
         </div>
       </Container>
+      <FilterTourMobile
+        className="margin-bottom"
+        // tourData={tourData}
+        changeTours={changeTours}
+        setAuxTourData={setAuxTourData}
+        auxTourData={auxTourData}
+        setChangeTours={setChangeTours}
+        // orderTour={orderTour}
+      />
     </>
   );
 }

@@ -32,27 +32,16 @@ export function ButtonSearch(props) {
   };
   const routerActual = NavigationConfig();
 
-  const isTransport = () => {
-    if (
-      (routerActual && routerActual === "transport") ||
-      routerActual === "transports"
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   return (
     <div className={`flex justify-between w-full gap-x-4`}>
-      {isListing && isTransport && (
+      {(isListing && (routerActual === "transport" || routerActual === "transports")) && (
         <button
           className={`py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center text-bl-100 m-b text-fs-12 ${
             isListing && "block xl:hidden"
           }`}
           onClick={() => setOpenFilter(true)}
         >
-          Filtros
+          {languageData.ListingPhrases.filters}
         </button>
       )}
 

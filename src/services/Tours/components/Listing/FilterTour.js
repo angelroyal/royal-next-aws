@@ -163,7 +163,7 @@ export default function FilterTour(props) {
 
   return (
     <>
-      <div className="border border-[#ebebeb] rounded-lg shadow-3xl h-auto w-full mt-[25px] p-[24px]">
+      <div className="border border-[#ebebeb] rounded-lg shadow-3xl h-auto w-full mt-[25px] p-[24px] max-xl:!border-white max-xl:!shadow-none">
         <div className="flex justify-between mb-[10px]">
           <h7 className="flex align-center m-b text-fs-16">
             {languageData.titlesFilterTour.filterResults}

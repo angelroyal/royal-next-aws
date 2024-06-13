@@ -14,7 +14,7 @@ export default function PriceModalTransport(props) {
   const { languageData } = useContext(LanguageContext);
   return (
     <div className=" w-1/2 max-md:w-full">
-      <div className="m-[16px] ">
+      <div className="m-[16px] max-sm:m-0">
         {/* CART VEHICLE*/}
         <div className="border border-[#ebebeb] rounded-lg p-[16px] mb-[24px] flex flex-col gap-[8px]">
           <span className="m-s-b text-fs-20 ">{transport.label}</span>

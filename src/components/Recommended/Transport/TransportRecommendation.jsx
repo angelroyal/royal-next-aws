@@ -34,7 +34,7 @@ export default function TransportRecommendation() {
 
         <div className='bg-white rounded-lg p-[36px] relative'>
 
-            <div className='flex justify-between items-center mb-[36px] max-md:flex-col max-md:items-start'>
+            <div className='flex justify-between items-center mb-[36px] max-md:flex-col max-md:items-start gap-3'>
 
                 {/* TITLE */}
                 <span className='text-fs-20 m-b max-md:text-fs-16'>{languageData.recommendations.transport.titleRecommedation}</span>

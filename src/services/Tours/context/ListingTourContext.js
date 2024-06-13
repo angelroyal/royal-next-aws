@@ -18,6 +18,7 @@ export const TourProvider = ({ children }) => {
   const [totalResults, setTotalResults] = useState(0);
   const [tourInfo, setTourInfo] = useState(null);
   const [tourPrice, setTourPrice] = useState(0);
+  const [openFilter, setOpenFilter] = useState(false);
 
   const updateTourData = (newData) => {
     const sortedData = orderData(newData, orderTour);
@@ -53,8 +54,10 @@ export const TourProvider = ({ children }) => {
     tourInfo,
     setTourInfo,
     setCurrentPage,
-    tourPrice, 
-    setTourPrice
+    tourPrice,
+    setTourPrice,
+    openFilter,
+    setOpenFilter,
   };
 
   return (

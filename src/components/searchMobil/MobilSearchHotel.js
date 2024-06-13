@@ -108,7 +108,7 @@ export default function MobilSearchHotel() {
                 className="py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center block xl:hidden text-bl-100 m-b text-fs-12"
                 onClick={() => setOpenFilter(true)}
               >
-                Filtros
+                {languageData.ListingPhrases.filters}
               </button>
             ))}
 

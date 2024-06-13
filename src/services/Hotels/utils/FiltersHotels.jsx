@@ -151,10 +151,10 @@ export default function FiltersHotels({ listing = false }) {
                               <span>{languageData.showOptions.showLess}</span>
                               <img
                                 className="ml-2"
-                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/up-100.svg`}
-                                alt="ArrowUpIcon"
-                                width={12}
-                                height={12}
+                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/up-bl.svg`}
+                                alt="ArrowUpIcon blue"
+                                width={11}
+                                height={11}
                               />
                             </div>
                           ) : (
@@ -162,10 +162,10 @@ export default function FiltersHotels({ listing = false }) {
                               <span>{languageData.showOptions.showMore}</span>
                               <img
                                 className="ml-2"
-                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/down-100.svg`}
-                                alt="ArrowDownIcon"
-                                width={12}
-                                height={12}
+                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/down-bl.svg`}
+                                alt="ArrowDownIcon blue"
+                                width={11}
+                                height={11}
                               />
                             </div>
                           )}
