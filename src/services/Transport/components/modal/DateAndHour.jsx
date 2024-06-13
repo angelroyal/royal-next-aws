@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
+
 import LanguageContext from "@/language/LanguageContext";
 import ModalTransportContext from "../../context/ModalTransportContext";
 
 export default function DateAndHour(props) {
   const { transport } = props;
+  const { languageData } = useContext(LanguageContext);
 
   const {
     departureTime,
@@ -20,16 +22,24 @@ export default function DateAndHour(props) {
   const handleDepartureDateChange = (e) => {
     setDepartureDate(e.target.value);
   };
+
   const handleComebackDateChange = (e) => {
     setComebackDate(e.target.value);
   };
+
   const handleDepartureTimeChange = (e) => {
     setDepartureTime(e.target.value);
   };
+
   const handleComebackTimeChange = (e) => {
     setComebackTime(e.target.value);
   };
-  const { languageData } = useContext(LanguageContext);
+  
+  const searchParams = new URLSearchParams(window.location.search);
+
+  const typeTransport = searchParams.get("type");
+
+  
   return (
     <>
       <div className="flex w-full gap-[24px] mb-[36px]">
@@ -72,7 +82,7 @@ export default function DateAndHour(props) {
       </div>
 
       {/* ROUND */}
-      {transport.round && (
+      {typeTransport === "round" && (
         <div className="flex w-full gap-[24px] mb-[36px]">
           {/* DATE */}
           <div className="w-1/2">
