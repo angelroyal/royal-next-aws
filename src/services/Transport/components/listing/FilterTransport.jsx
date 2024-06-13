@@ -60,7 +60,7 @@ export default function FilterTransport() {
 
   return (
     <>
-      <div className="mt-4 p-6 border border-[#EBEBEB] rounded-md bg-white">
+      <div className="mt-4 p-6 border border-[#EBEBEB] rounded-md bg-white max-xl:border-none">
         {/*TEXT FILTER RESULT AND BTN RESET */}
         <div className="flex justify-between mb-[12.5px]">
           <span className="text-fs-16 m-b">

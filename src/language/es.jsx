@@ -1674,6 +1674,7 @@ export const es = {
     find: "Buscar",
     filter: "Filtrar",
     order: "Ordenar",
+    filters:"Filtros",
   },
 
   Alerts: {

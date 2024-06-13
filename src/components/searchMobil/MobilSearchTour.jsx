@@ -1,11 +1,12 @@
 import moment from "moment";
-
 import React, { useState, useContext, useEffect } from "react";
 
-import CalendarDay from "../../hooks/CalendarDay";
 import SearchTour from "../Search/SearchTour";
+import CalendarDay from "../../hooks/CalendarDay";
 import LanguageContext from "../../language/LanguageContext";
 import PersonsActivities from "@/utils/tour/PersonsActivities";
+import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
+import { useTourContext } from "@/services/Tours/context/ListingTourContext";
 
 export default function MobilSearchTour() {
   const [roomData, setRoomData] = useState([]);
@@ -72,6 +73,10 @@ export default function MobilSearchTour() {
     }
   };
 
+  const routerActual = NavigationConfig();
+
+  const { setOpenFilter } = useTourContext();
+
   return (
     <div className="!p-5 shadow-3xl">
       <div className="flex flex-col gap-y-3">
@@ -81,7 +86,16 @@ export default function MobilSearchTour() {
 
         <PersonsActivities OnApply={setRoomData} listing={true} />
 
-        <div className="flex justify-center mb-[30px] relative">
+        <div className="flex justify-between mb-[30px] relative w-full gap-x-4 max-xl:mb-0">
+          {routerActual === "tour" ||
+            (routerActual === "tours" && (
+              <button
+                className={`py-[8px] px-8 my-[10px] rounded-[50px] border-2 border-bl-100 text-center text-bl-100 m-b text-fs-12 xl:hidden`}
+                onClick={() => setOpenFilter(true)}
+              >
+                {languageData.ListingPhrases.filters}
+              </button>
+            ))}
           <button
             className={`bg-or-100 rounded-[42px] text-white m-b my-[10px] text-fs-14 py-[8px] px-[30px] w-full hover:bg-or-110 flex gap-[10px] justify-center items-center ${
               !selectedOption || !selectedDate ? "disabled" : ""

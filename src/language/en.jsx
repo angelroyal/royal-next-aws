@@ -1673,6 +1673,7 @@ export const en = {
     find: "Find",
     filter: "Filter",
     order: "Order",
+    filters:"Filters",
   },
 
   Alerts: {
