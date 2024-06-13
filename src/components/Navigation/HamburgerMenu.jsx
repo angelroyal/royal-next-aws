@@ -51,7 +51,8 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
             <div className="space-y-7 py-6">
               {/* HOTEL LINK */}
               <Link
-                href={`${process.env.NEXT_PUBLIC_HOME}`}
+                href={`/${language}/hotels`}
+                // href={`${process.env.NEXT_PUBLIC_HOME}`}
                 passHref
                 className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
               >
@@ -63,7 +64,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                 />
                 <span
                   className={`${
-                    currentActiveIcon === "hotel" && "text-or-100"
+                    currentActiveIcon === "hotels" && "text-or-100"
                   }`}
                 >
                   {languageData.SearchBox.tabHotel.hotel}
@@ -82,7 +83,12 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   className="pr-2"
                 />
                 <span
-                  className={`${ currentActiveIcon === "tours" || currentActiveIcon === "tour" ? "text-or-100" : ""}`}
+                  className={`${
+                    currentActiveIcon === "tours" ||
+                    currentActiveIcon === "tour"
+                      ? "text-or-100"
+                      : ""
+                  }`}
                 >
                   Tours
                 </span>
@@ -102,7 +108,12 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   height="23px"
                 />
                 <span
-                  className={`${ currentActiveIcon === "transports" || currentActiveIcon === "transport" ? "text-or-100" : ""}`}
+                  className={`${
+                    currentActiveIcon === "transports" ||
+                    currentActiveIcon === "transport"
+                      ? "text-or-100"
+                      : ""
+                  }`}
                 >
                   {languageData.modalHotelOptions.titleTransfer}
                 </span>
