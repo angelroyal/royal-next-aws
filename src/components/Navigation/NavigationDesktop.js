@@ -70,7 +70,10 @@ export default function NavigationDesktop() {
                 >
                   {" "}
                   <img
-                    src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-${
+                      currentActiveIcon === "hotels" || currentActiveIcon === "hotel" ? "o.svg" : "b.svg"
+                    }`}
+                    // src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel- b.svg`}
                     alt="done green"
                     className="pr-2"
                   />
@@ -90,7 +93,9 @@ export default function NavigationDesktop() {
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
                   <img
-                    src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-${
+                      currentActiveIcon === "tours" || currentActiveIcon === "tour" ? "o.svg" : "b.svg"
+                    }`}
                     alt="done green"
                     className="pr-2"
                   />
@@ -110,7 +115,9 @@ export default function NavigationDesktop() {
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
                 >
                   <img
-                    src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-${
+                      currentActiveIcon === "transports" || currentActiveIcon === "transport" ? "o.svg" : "b.svg"
+                    }`}
                     alt="done green"
                     className="pr-2"
                   />
