@@ -39,14 +39,13 @@ const Hotels = {
 };
 
 export default function FooterT() {
-
   // FALSE TO CHANGE TO THE WHITE FOOTER
   const footerBlue = true;
 
   const [isOpen] = useState(true);
   const year = new Date().getFullYear();
+  const [isHovered, setIsHovered] = useState(null);
   const { languageData, language } = useContext(LanguageContext);
-
   const sendHotel = (hotelInfo) => {
     const encodedRoomData = encodeURIComponent(
       JSON.stringify([{ adults: 2, children: [] }])
@@ -135,9 +134,11 @@ export default function FooterT() {
                 href="mailto:info@StayWuw.com"
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${
-                    footerBlue ? "w.svg" : "b.svg"
-                  }`}
+                  // src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${footerBlue ? "w.svg" : "b.svg"}`}
+                  src={footerBlue
+                    ? `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "w-o.svg" : "w.svg"}`
+                    : `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "b-o.svg" : "b.svg"}`
+                }
                   alt="icon mail footer"
                   width={20}
                   height={20}
@@ -155,11 +156,16 @@ export default function FooterT() {
               <a
                 className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5 items-start w-full"
                 href="https://www.google.com/maps/place/Royal+Vacations+M%C3%A9xico/@21.1627042,-86.8270667,17z/data=!4m10!1m2!2m1!1sRoyal+Vacations+M%C3%A9xico!3m6!1s0x8f4c2df6381c1c45:0x2a631cb9dd8567ff!8m2!3d21.1652997!4d-86.8250255!15sChdSb3lhbCBWYWNhdGlvbnMgTcOpeGljb5IBDXRyYXZlbF9hZ2VuY3ngAQA!16s%2Fg%2F11rv1nkff4?entry=ttu"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-${
-                    footerBlue ? "w.svg" : "b.svg"
-                  }`}
+                  src={footerBlue
+                      ? `${process.env.NEXT_PUBLIC_URL}icons/location/location-${isHovered ? "w-o.svg" : "w.svg"}`
+                      : `${process.env.NEXT_PUBLIC_URL}icons/location/location-${isHovered ? "b-o.svg" : "b.svg"}`
+                  }
+                  // src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-${footerBlue ? "w.svg" : "b.svg"}`}
+
                   alt="icon location footer"
                   width={20}
                   height={20}
