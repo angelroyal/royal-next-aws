@@ -11,6 +11,10 @@ import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT"
 import { handleSubmitPayment as handleSubmitPaymentFunction } from "../ActionsForms/conektaHandlers";
 
 export default function FormCentral(props) {
+
+  const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
+  window.Conekta.setPublicKey(conektaPublicKey);
+  
   const { activityPreBooking, activityTrue, dataItinerary } = props;
   const {
     firstName,
@@ -64,9 +68,6 @@ export default function FormCentral(props) {
       closeModalAfterDelay
     );
   };
-
-  const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
-  window.Conekta.setPublicKey(conektaPublicKey);
 
   return (
     <>

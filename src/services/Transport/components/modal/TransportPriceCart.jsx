@@ -31,7 +31,7 @@ export default function TransportPriceCart(props) {
     departureTime,
     comebackTime,
   } = useContext(ModalTransportContext);
-  console.log(transport);
+  // console.log(transport);
 
   // PRICE AND BUTTON ENABLED
   const priceShared = transport.price * passenger;
@@ -81,6 +81,7 @@ export default function TransportPriceCart(props) {
         vehicleLabel: transport.label,
         cancelPolicyHours: transport.cancellation,
         places: transport.places,
+        round: transport.round,
         suitcases: [
           {
             largeSuitcase: transport.large_suitcase,
