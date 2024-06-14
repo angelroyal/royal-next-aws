@@ -20,8 +20,6 @@ export default function NavigationDesktop() {
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
 
-  console.log(routerActual);
-
   useEffect(() => {
     setCurrentActiveIcon(routerActual);
   }, [routerActual]);

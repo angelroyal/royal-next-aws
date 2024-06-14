@@ -6,6 +6,7 @@ import moment from "moment/moment";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 import React, { useContext, useEffect, useState } from 'react'
+import { getNextMonth } from "@/config/Others/getNextMonth";
 
 export default function CardTopActivities({ tour }) {
 
@@ -34,11 +35,12 @@ export default function CardTopActivities({ tour }) {
     }, []);
 
     const sentTour = (tourInfo) => {
-        const today = moment();
+        const body = { dateStart: getNextMonth() };
+        const query = new URLSearchParams(body).toString();
 
         window.open(
             `/${language}/mx/${tourInfo.destinationCodeName}-${tourInfo[language || "es"].country
-            }/tours/${tourInfo.codeName}`,
+            }/tours/${tourInfo.codeName}?${query}`,
             "_blank"
         );
     };
