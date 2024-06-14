@@ -13,6 +13,7 @@ export default function CartMobile() {
   const [open, setOpen] = useState(true);
   const [cartUid, setCartUid] = useState(null);
   const { cartData, fetchData } = useCartAxios();
+  const [isLoader, setIsLoader] = useState(false);
   const [cartInfo, setCartInfo] = useState(
     cartData && cartData.cartItems ? cartData.cartItems : null
   );
@@ -23,10 +24,21 @@ export default function CartMobile() {
   }, []);
 
   useEffect(() => {
-    if (cartData && cartData.cartItems && cartData.cartItems.length === 0) {
-      setCartInfo(null);
-    } else if (cartData && cartData.cartItems) {
+    if (
+      (cartData &&
+        cartData.cartItems &&
+        cartData.cartItems.activities &&
+        cartData.cartItems.activities.length > 0) ||
+      (cartData &&
+        cartData.cartItems.hotels &&
+        cartData.cartItems.hotels.length > 0) ||
+      (cartData &&
+        cartData.cartItems.transportations &&
+        cartData.cartItems.transportations.length > 0)
+    ) {
       setCartInfo(cartData.cartItems);
+    } else {
+      setCartInfo(null);
     }
   }, [cartData]);
 
@@ -108,8 +120,8 @@ export default function CartMobile() {
                                     item={item}
                                     itemType={type}
                                     cartId={cartUid}
-                                    // setIsLoader={setIsLoader}
-                                    // isLoader={isLoader}
+                                    setIsLoader={setIsLoader}
+                                    isLoader={isLoader}
                                   />
                                 ))
                             )}
