@@ -18,6 +18,7 @@ export default function DetailsPayment(props) {
   const isMobile = useIsMobileNew();
   const { languageData } = useContext(LanguageContext);
 
+  console.log(data);
   // NEW CONTEXT
   const {
     termsAccept,
@@ -80,7 +81,7 @@ export default function DetailsPayment(props) {
                 )}
 
                 {data.summary.transportations.length > 0 && (
-                  <TransportDescription tours={data.summary.transportations} />
+                  <TransportDescription transport={data.summary.transportations} />
                 )}
 
                 <div

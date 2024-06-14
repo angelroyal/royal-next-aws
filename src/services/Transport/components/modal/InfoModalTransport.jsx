@@ -23,7 +23,7 @@ export default function InfoModalTransport(props) {
         <span className="text-gry-100 text-fs-12 m-s-b">{languageData.confirmation.cardMoving.typeTravel}</span>
 
         <div className="text-gry-100 text-fs-12 m-s-b py-[8px] px-[16px] bg-gry-50 rounded-full w-fit">
-          {transport.round === true ? languageData.CardHomeTransport.oneWay : languageData.CardHomeTransport.roundTrip}
+          {transport.round === false ? languageData.CardHomeTransport.oneWay : languageData.CardHomeTransport.roundTrip}
         </div>
       </div>
 
