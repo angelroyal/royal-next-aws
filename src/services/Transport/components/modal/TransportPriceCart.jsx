@@ -31,6 +31,7 @@ export default function TransportPriceCart(props) {
     departureTime,
     comebackTime,
   } = useContext(ModalTransportContext);
+  console.log(transport);
 
   // PRICE AND BUTTON ENABLED
   const priceShared = transport.price * passenger;
@@ -103,9 +104,11 @@ export default function TransportPriceCart(props) {
       );
       fetchData(cartUid);
 
+      console.log(transport);
       const InfoTransport = {
         name: transport.label,
         date: departureDate,
+        // codeName: transport.codeName,
       };
 
       setTimeout(() => {

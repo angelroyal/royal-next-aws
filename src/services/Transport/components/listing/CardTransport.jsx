@@ -56,8 +56,8 @@ export default function CardTransport() {
                         </span>
                         <span className="text-fs-14 m-b">
                           {transport.round === false
-                            ? languageData.CardHomeTransport.roundTrip
-                            : languageData.CardHomeTransport.oneWay}
+                            ? languageData.CardHomeTransport.oneWay
+                            : languageData.CardHomeTransport.roundTrip}
                         </span>
                       </div>
 

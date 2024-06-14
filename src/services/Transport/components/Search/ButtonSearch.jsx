@@ -19,14 +19,16 @@ export function ButtonSearch(props) {
   const [openFilter, setOpenFilter] = useState(false);
 
   const getTransportsLists = async () => {
-    const ids = {
+    const body = {
       destinationId: selectedAutoComplete.id,
       zoneFromId: selectDestinationA.id,
       zoneToId: selectDestinationB.id,
       type: travelType,
     };
+    // console.log(body);
+    // return
 
-    const params = new URLSearchParams(ids).toString();
+    const params = new URLSearchParams(body).toString();
     const transportRout = `/${language}/mx/${selectedAutoComplete.codeName}-${selectedAutoComplete.country}/transport?${params}`;
     router.push(transportRout);
   };
