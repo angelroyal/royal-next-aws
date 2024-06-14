@@ -41,7 +41,6 @@ export default function CardMovingItinerary(props) {
     }
   };
 
-  console.log(itemTransport);
 
   // DAY OF WEEK
   const dayOfWeek = moment(itemTransport.date).format("dddd");

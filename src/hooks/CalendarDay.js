@@ -3,7 +3,7 @@ import flatpickr from "flatpickr";
 import React, { useEffect, useRef, useContext } from "react";
 import LanguageContext from "../language/LanguageContext";
 
-export default function CalendarDay({ onDateChange, listing = false }) {
+export default function CalendarDay({ onDateChange, listing = false}) {
   const calendarRef = useRef(null);
 
   useEffect(() => {
