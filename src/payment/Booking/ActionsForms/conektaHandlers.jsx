@@ -28,9 +28,9 @@ export const conektaSuccessResponseHandler = (token, paymentData, setAnimationDa
 };
 
 export const handleSubmitPayment = (event, paymentData, setAnimationData, handleStepChange, closeModalAfterDelay) => {
+  const form = event.target;
   event.preventDefault();
 
-  const form = event.target;
 
   setAnimationData("LoadingData");
 
