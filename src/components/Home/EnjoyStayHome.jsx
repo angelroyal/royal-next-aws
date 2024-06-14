@@ -4,14 +4,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardHotelHome from "./CardHotelHome";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function EnjoyStayHome() {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   const hotelsEnjoy = [
     {
@@ -187,6 +187,35 @@ export default function EnjoyStayHome() {
     },
   ];
 
+  const openListing = () => {
+    window.open(`/${language}/mx/cancun-mexico/`, "_blank");
+  };
+
+  // LP
+  const calculateFutureDates = () => {
+    const formatDate = (date) => {
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0"); // Los meses empiezan en 0
+      const year = String(date.getFullYear()).slice(-2); // Solo los últimos dos dígitos del año
+      return `${day}/${month}/${year}`;
+    };
+  
+    const today = new Date();
+    const twoWeeksAhead = new Date(today);
+    twoWeeksAhead.setDate(today.getDate() + 14);
+  
+    const threeWeeksAhead = new Date(today);
+    threeWeeksAhead.setDate(today.getDate() + 21);
+  
+    return {
+      twoWeeksAhead: formatDate(twoWeeksAhead),
+      threeWeeksAhead: formatDate(threeWeeksAhead),
+    };
+  };
+
+  const dates = calculateFutureDates();
+  // LP
+
   return (
     <div className="flex h-[448px] w-full rounded-lg max-lg:flex-col max-lg:h-auto">
       {/* TEXT AND BTN SEE OFFERS */}
@@ -202,8 +231,9 @@ export default function EnjoyStayHome() {
             {languageData.enjoyStayHome.titleEnjoy}
           </h2>
 
+          {/* Date */}
           <span className="text-white m-m text-fs-14">
-            <b>Del 29 de abril al 14 de mayo.</b>
+            <b>{dates.twoWeeksAhead}-{dates.threeWeeksAhead}</b>
           </span>
 
           <span className="text-white m-m text-fs-16">
@@ -211,7 +241,10 @@ export default function EnjoyStayHome() {
             consectetur adipisicing elit.{" "}
           </span>
 
-          <button className="px-[16px] py-[14px] bg-or-100 text-white text-fs-14 m-s-b rounded-full w-fit hover:!bg-or-110 mt-[20px]">
+          <button
+            onClick={() => openListing()}
+            className="px-[16px] py-[14px] bg-or-100 text-white text-fs-14 m-s-b rounded-full w-fit hover:!bg-or-110 mt-[20px]"
+          >
             {languageData.enjoyStayHome.btnViewOffers}
           </button>
         </div>

@@ -61,6 +61,13 @@ export default function ExploreActivitiesHome() {
     router.push(newURL);
   };
 
+  // LP
+  const [randomNumber, setRandomNumber] = useState(generateRandomNumber());
+
+  function generateRandomNumber() {
+    return Math.floor(Math.random() * 4); // Genera un número entre 0 y 3
+  }
+  
   return (
     <div className="flex flex-col my-[180px] max-sm:my-[90px]">
       {/* TITLE EXPLORE ACTIVITIES HOME*/}
@@ -89,13 +96,13 @@ export default function ExploreActivitiesHome() {
           >
             {activities ? (
               activities.map((activity, index) => (
-                <SwiperSlide className="!rounded-lg z-[1]" key={index}>
+                <SwiperSlide className="!rounded-lg z-[1]" key={index}>     
                   <Image
-                    src={activity.image}
+                    src={activity.activities[randomNumber].image}
                     alt="activity home"
                     width={547}
                     height={717}
-                    className="h-full w-full select-none object-cover"
+                    className="h-[73%] w-full select-none object-cover max-lg:h-[61%]"
                   />
                 </SwiperSlide>
               ))
@@ -130,7 +137,7 @@ export default function ExploreActivitiesHome() {
             {activities &&
               activities.map((activity, index) => (
                 <SwiperSlide className="!rounded-lg z-[1]" key={index}>
-                  <div className="absolute bottom-0 pb-[49px] pl-[32.5px] pr-[17.5px] md:pl-[47.5px] md:pr-[59.5px] pt-[30px] flex flex-col gap-[8px] max-sm:pb-[20px] z-[4]">
+                  <div className="absolute bottom-0 pb-[49px] pl-[32.5px] pr-[17.5px] md:pl-[47.5px] md:pr-[59.5px] pt-[30px] flex flex-col gap-[8px] max-sm:pb-[20px] z-[4] max-xl:pb-[10px] max-lg:pb-[49px]">
                     <h3 className="text-fs-28 m-s-b">
                       {activity.destinationName}
                     </h3>
