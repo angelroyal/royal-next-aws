@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import LanguageContext from "../../../../language/LanguageContext";
 import { homeRecommendedTour } from "@/config/Others/HomeRecommendedTour";
+import { getNextMonth } from "@/config/Others/getNextMonth";
 
 
 export default function CartTourOptions() {
@@ -16,10 +17,12 @@ export default function CartTourOptions() {
   const tourData = homeRecommendedTour;
 
   const sentTour = (tourInfo) => {
+    const body = { dateStart: getNextMonth() };
+    const query = new URLSearchParams(body).toString();
     window.open(
       `/${language}/mx/${tourInfo.destinationCodeName}-${
         tourInfo[language || "es"].country
-      }/tours/${tourInfo.codeName}`,
+      }/tours/${tourInfo.codeName}?${query}`,
       "_blank"
     );
   };

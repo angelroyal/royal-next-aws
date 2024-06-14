@@ -8,6 +8,7 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function InfoModalTransport(props) {
   const { transport } = props;
+  console.log(transport);
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -37,7 +38,8 @@ export default function InfoModalTransport(props) {
         />
 
         <div className="text-gry-100 m-s-b text-fs-12">
-          Aeropuesto internacional de cancun
+          {/* Aeropuesto internacional de cancun */}
+          {transport.zoneFromLabel}
         </div>
       </div>
 
@@ -51,7 +53,8 @@ export default function InfoModalTransport(props) {
         />
 
         <div className="text-gry-100 m-s-b text-fs-12">
-          Hotel nickelodeon Riviera maya
+          {/* Hotel nickelodeon Riviera maya */}
+          {transport.zoneToLabel}
         </div>
       </div>
 
