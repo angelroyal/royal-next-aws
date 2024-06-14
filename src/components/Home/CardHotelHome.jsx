@@ -7,11 +7,19 @@ import LanguageContext from "@/language/LanguageContext";
 export default function CardHotelHome(props) {
   const { hotel } = props;
 
-  const { languageData } = useContext(LanguageContext);
+  const searchHotel = (hotel) => {
+    window.open(
+      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
+      "_blank"
+    );
+  };
+
+  const { languageData , language } = useContext(LanguageContext);
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
+      onClick={() => searchHotel(hotel)}
       className="shadow-3xl rounded-lg max-w-[330px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -47,7 +55,9 @@ export default function CardHotelHome(props) {
             width={11}
             height={14}
           />
-          <span className="text-bl-100 m-s-b text-fs-12 truncate">{hotel.address}</span>
+          <span className="text-bl-100 m-s-b text-fs-12 truncate">
+            {hotel.address}
+          </span>
         </div>
 
         <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">

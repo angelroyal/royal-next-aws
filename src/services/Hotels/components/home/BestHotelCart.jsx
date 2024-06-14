@@ -10,6 +10,7 @@ export function BestHotelCart({ hotel }) {
   const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
+    
     window.open(
       `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
       "_blank"

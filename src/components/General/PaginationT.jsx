@@ -70,7 +70,7 @@ export default function PaginationT({ count, pageChange, onChange }) {
         break;
     }
     setArrOfCurrButtons(tempNumberOfPages);
-  }, [pageChange]);
+  }, [pageChange, count]);
 
   return (
     <div className="flex items-center justify-between bg-white w-fit">

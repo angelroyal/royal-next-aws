@@ -214,9 +214,9 @@ export default function RoomMenu(props) {
       leaveFrom="transform opacity-100 scale-100"
       leaveTo="transform opacity-0 scale-95"
     >
-      <Menu.Items className="absolute right-0 z-[2] mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <Menu.Items className="absolute right-0 z-[3] mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <Menu.Item id="roomsContainer">
-          <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border border-2 rounded-lg">
+          <div className="overflow-y-scroll scroll-page-blue max-h-80 relative flex flex-col justify-center-between bg-white border-2 rounded-lg">
             <div className="pt-4 pl-3 pr-3 z-10">
               {rooms.map((room, index) => (
                 <div
