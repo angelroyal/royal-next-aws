@@ -71,7 +71,7 @@ export default function NavigationDesktop() {
                     src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-${
                       currentActiveIcon === "hotels" || currentActiveIcon === "hotel" ? "o.svg" : "b.svg"
                     }`}
-                    // src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel- b.svg`}
+                    // src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
                     alt="done green"
                     className="pr-2"
                   />

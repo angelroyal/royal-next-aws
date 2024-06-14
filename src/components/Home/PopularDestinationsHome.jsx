@@ -13,7 +13,6 @@ import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import UpdateAutocomplete from "@/config/Others/UpdateAutocomplete";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-
 export default function PopularDestinationsHome() {
   const router = useRouter();
   const [popularState, setPopularState] = useState(null);
@@ -112,7 +111,7 @@ export default function PopularDestinationsHome() {
           },
         }}
       >
-        {popularState &&
+        {popularState ?
           popularState.map((popular, index) => (
             <SwiperSlide
               className="!rounded-lg cursor-pointer"
@@ -147,7 +146,14 @@ export default function PopularDestinationsHome() {
                 </div>
               </div>
             </SwiperSlide>
-          ))}
+          )):
+          [...Array(5)].map((_, index) => (
+          
+          <SwiperSlide key={index}>
+            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[280px] rounded-lg"/>
+          </SwiperSlide>
+        ))
+          }
       </Swiper>
     </div>
   );
