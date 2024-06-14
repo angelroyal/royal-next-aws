@@ -174,7 +174,7 @@ export const getFilters = (data) => {
     data.types.forEach(item => {
       filters.category.items.push({
         label: item.description,
-        value: item.id,
+        value: item.key,
         checked: false
       });
     });

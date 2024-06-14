@@ -100,17 +100,17 @@ export default function CardMovingItinerary(props) {
                 </h2>
 
                 <div className="flex gap-x-6 items-start">
-                  <div className="flex flex-col w-[227px] gap-y-2">
+                  <div className="flex flex-col w-[227px] gap-y-1">
                     <span className="flex items-center gap-x-1">
                       <Image
                         className="w-[11px] h-[14px]"
-                        src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
                         alt="location bl"
                         width={11}
                         height={14}
                       />
 
-                      <p className="text-bl-100 text-fs-10 m-0 m-s-b">
+                      <p className="text-gry-100 text-fs-10 m-0 m-s-b">
                         {itemTransport.fromLabel}
                       </p>
                     </span>
@@ -120,7 +120,7 @@ export default function CardMovingItinerary(props) {
                         <>
                           <div className="flex gap-x-[3px] items-center">
                             <Image
-                              src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-bl.svg`}
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`}
                               alt="icon baggage blue"
                               width={10.6}
                               height={12.3}
@@ -135,7 +135,7 @@ export default function CardMovingItinerary(props) {
                           
                           <div className="flex gap-x-[3px] items-center">
                             <Image
-                              src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-bl.svg`}
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`}
                               alt="icon baggage blue"
                               width={10.6}
                               height={12.3}

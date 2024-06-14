@@ -134,11 +134,11 @@ export default function FooterT() {
                 href="mailto:info@StayWuw.com"
               >
                 <Image
-                  // src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${footerBlue ? "w.svg" : "b.svg"}`}
-                  src={footerBlue
-                    ? `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "w-o.svg" : "w.svg"}`
-                    : `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "b-o.svg" : "b.svg"}`
-                }
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${footerBlue ? "w.svg" : "b.svg"}`}
+                //   src={footerBlue
+                //     ? `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "w-o.svg" : "w.svg"}`
+                //     : `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "b-o.svg" : "b.svg"}`
+                // }
                   alt="icon mail footer"
                   width={20}
                   height={20}

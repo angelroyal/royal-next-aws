@@ -7,9 +7,9 @@ const getFilterCheckbox = (dataTour,filter) => {
 
   let activities = newDataTours.activities.filter(obj => {
     // Verificar si el objeto tiene la propiedad typologies y es un array
-    if (Array.isArray(obj.typologies)) {
+    if (Array.isArray(obj.types)) {
         // Verificar si alguno de los IDs de typologies coincide con los del filtro
-        return obj.typologies.some(typology => filter.includes(typology.id));
+        return obj.types.some(typology => filter.includes(typology.key));
     } else {
         // Si no hay typologies o no es un array, descartar el objeto
         return false;
@@ -28,7 +28,7 @@ const getFilterStars = (dataTour,filter) => {
     return dataTour;
   }
 
-  const activities = newDataTours.activities.filter(objeto => filter.includes(objeto.star_rating));
+  const activities = newDataTours.activities.filter(objeto => filter.includes(objeto.starRating));
 
   newDataTours.activities = activities;
   return newDataTours;
