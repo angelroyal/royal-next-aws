@@ -42,6 +42,7 @@ export default async function DetailPageHotel({ searchParams }) {
 
     const transportData = response.data;
 
+    
     return (
       <LanguageProvider>
         <TokenProvider>
