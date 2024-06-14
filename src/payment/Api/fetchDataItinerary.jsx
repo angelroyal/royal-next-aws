@@ -14,7 +14,7 @@ export const fetchDataItinerary = async (
     const searchParams = new URLSearchParams(window.location.search);
     const cartId = searchParams.get("uid");
     const response = await axiosWithInterceptor.get(`${url}${cartId}/schedule`);
-    console.log(response);
+    // console.log("response",response.data);
     const filterDataItinerary = response.data.items.filter(
       (object) => object.type === "activity"
     );
