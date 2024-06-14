@@ -81,7 +81,6 @@ export default function TransportPriceCart(props) {
         vehicleLabel: transport.label,
         cancelPolicyHours: transport.cancellation,
         places: transport.places,
-        round: transport.round,
         suitcases: [
           {
             largeSuitcase: transport.large_suitcase,
@@ -90,6 +89,7 @@ export default function TransportPriceCart(props) {
         ],
       };
 
+      // console.log(saveRequestCart);
       // IF UID EXIST ADD UID
       if (cartId) {
         saveRequestCart.cartId = cartId;
@@ -105,7 +105,7 @@ export default function TransportPriceCart(props) {
       );
       fetchData(cartUid);
 
-      console.log(transport);
+      // console.log(transport);
       const InfoTransport = {
         name: transport.label,
         date: departureDate,

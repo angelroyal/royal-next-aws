@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
+import { CalendaRDate } from "@/components/General/CalendarDate";
 import ModalTransportContext from "../../context/ModalTransportContext";
+import moment from "moment";
 
 export default function DateAndHour(props) {
   const { transport } = props;
@@ -20,11 +22,15 @@ export default function DateAndHour(props) {
 
   // Manejadores para los cambios en los inputs
   const handleDepartureDateChange = (e) => {
-    setDepartureDate(e.target.value);
+    const dateSelected = moment(e[0]).format("YYYY-MM-DD");
+    setDepartureDate(dateSelected);
   };
 
   const handleComebackDateChange = (e) => {
-    setComebackDate(e.target.value);
+    // console.log(e);
+    // setComebackDate(e.target.value);
+    const dateSelected = moment(e[0]).format("YYYY-MM-DD");
+    setComebackDate(dateSelected);
   };
 
   const handleDepartureTimeChange = (e) => {
@@ -34,30 +40,51 @@ export default function DateAndHour(props) {
   const handleComebackTimeChange = (e) => {
     setComebackTime(e.target.value);
   };
-  
+
   const searchParams = new URLSearchParams(window.location.search);
 
   const typeTransport = searchParams.get("type");
 
-  
+  const [isOpenCalendarOne, setIsOpenCalendarOne] = useState(false);
+  const [isOpenCalendarTwo, setIsOpenCalendarTwo] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpenCalendarOne(true);
+      setIsOpenCalendarTwo(true);
+    }, 200);
+  }, []);
+
   return (
     <>
       <div className="flex w-full gap-[24px] mb-[36px]">
         {/* DATE */}
         <div className="w-1/2">
           <span>{languageData.SearchBox.tabHotel.date}</span>
-          <div className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative">
+          <div
+            className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative"
+            // onClick={openCalendar}
+          >
             <img
               className="w-[14px] h-[16px]"
               src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
               alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
             />
-            <input
-              type="date"
-              className="focus:outline-0 bg-white text-fs-12 m-m time-input"
-              value={departureDate || ""}
-              onChange={handleDepartureDateChange}
-            />
+            {isOpenCalendarOne ? (
+              <CalendaRDate
+                handelDate={handleDepartureDateChange}
+                setIsOpen={setIsOpenCalendarOne}
+                isOpen={isOpenCalendarOne}
+              />
+            ) : (
+              <input
+                className="m-b text-fs-12 focus:outline-none w-full cursor-pointe"
+                placeholder={
+                  languageData.SearchBox.tabTransportation.autoCompleteArrival
+                }
+                readOnly
+              />
+            )}
           </div>
         </div>
 
@@ -93,12 +120,21 @@ export default function DateAndHour(props) {
                 src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
                 alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
               />
-              <input
-                type="date"
-                className="focus:outline-0 bg-white text-fs-12 m-m time-input"
-                value={comebackDate || ""}
-                onChange={handleComebackDateChange}
-              />
+              {isOpenCalendarOne ? (
+                <CalendaRDate
+                  handelDate={handleComebackDateChange}
+                  setIsOpen={setIsOpenCalendarTwo}
+                  isOpen={isOpenCalendarTwo}
+                />
+              ) : (
+                <input
+                  className="m-b text-fs-12 focus:outline-none w-full cursor-pointe"
+                  placeholder={
+                    languageData.SearchBox.tabTransportation.autoCompleteArrival
+                  }
+                  readOnly
+                />
+              )}
             </div>
           </div>
 
