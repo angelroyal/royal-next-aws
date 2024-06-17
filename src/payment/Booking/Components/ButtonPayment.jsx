@@ -21,7 +21,7 @@ export default function ButtonPayment() {
   };
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center max-sm:flex-col">
       {/* TERMS & CONDITIONS */}
       <div className="flex flex-col gap-y-[9px]">
         {/* INPUT POLICY */}

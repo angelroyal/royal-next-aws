@@ -155,7 +155,7 @@ export default function DetailsPayment(props) {
                   </div>
                 </div>
 
-                <div className="flex justify-between flex-nowrap gap-[13px] items-center">
+                <div className="flex justify-center flex-nowrap gap-[13px] items-center">
                   <ModalShare itinerary={true} className="w-[30%]" />
 
                   {step === 1 && (
