@@ -56,15 +56,27 @@ export default function DateAndHour(props) {
     }, 200);
   }, []);
 
+  useEffect(() => {
+    if (isOpenCalendarOne === false) {
+      setTimeout(() => {
+        setIsOpenCalendarOne(true);
+      }, 200);
+    }
+
+    if (isOpenCalendarTwo === false) {
+      setTimeout(() => {
+        setIsOpenCalendarTwo(true);
+      }, 200);
+    }
+  }, [isOpenCalendarOne, isOpenCalendarTwo]);
+
   return (
     <>
       <div className="flex w-full gap-[24px] mb-[36px]">
         {/* DATE */}
         <div className="w-1/2">
           <span>{languageData.SearchBox.tabHotel.date}</span>
-          <div
-            className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative"
-          >
+          <div className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative">
             <img
               className="w-[14px] h-[16px]"
               src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
@@ -79,7 +91,7 @@ export default function DateAndHour(props) {
               />
             ) : (
               <input
-                className="m-b text-fs-12 focus:outline-none w-full cursor-pointe"
+                className="m-b text-fs-12 focus:outline-none w-full cursor-pointer"
                 placeholder={
                   languageData.SearchBox.tabTransportation.autoCompleteArrival
                 }
