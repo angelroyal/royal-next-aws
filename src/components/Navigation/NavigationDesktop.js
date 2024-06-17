@@ -105,7 +105,7 @@ export default function NavigationDesktop() {
                         ? "o.svg"
                         : "b.svg"
                     }`}
-                    alt="done green"
+                    alt="icon hotel"
                     className="pr-2"
                   />
                   <span
@@ -141,7 +141,7 @@ export default function NavigationDesktop() {
                         ? "o.svg"
                         : "b.svg"
                     }`}
-                    alt="done green"
+                    alt="icon tour"
                     className="pr-2"
                   />
                   <span
@@ -172,14 +172,13 @@ export default function NavigationDesktop() {
                 > */}
                   <img
                     src={`${
-                      process.env.NEXT_PUBLIC_URL
-                    }icons/transport/transport-${
+                      process.env.NEXT_PUBLIC_URL}icons/transport/transport-${
                       currentActiveIcon === "transports" ||
                       currentActiveIcon === "transport"
                         ? "o.svg"
                         : "b.svg"
                     }`}
-                    alt="done green"
+                    alt="icon transport"
                     className="pr-2"
                   />
                   <span

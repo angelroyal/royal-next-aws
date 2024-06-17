@@ -75,8 +75,14 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
                 > */}{" "}
                 <img
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
-                  alt="hospedaje-menu"
+                  // src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`}
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-${
+                    currentActiveIcon === "hotels" ||
+                    currentActiveIcon === "hotel"
+                      ? "o.svg"
+                      : "b.svg"
+                  }`}
+                  alt="hotel-menu"
                   className="pr-2"
                 />
                 <span
@@ -102,7 +108,13 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
                 > */}
                 <img
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
+                  // src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-${
+                    currentActiveIcon === "tours" ||
+                    currentActiveIcon === "tour"
+                      ? "o.svg"
+                      : "b.svg"
+                  }`}
                   alt="tour-menu"
                   className="pr-2"
                 />
@@ -131,23 +143,31 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
                   passHref
                   className="flex items-center pr-4 text-gry-100 m-b hover:text-or-100 no-underline	"
                 > */}
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
-                    alt="tour-menu"
-                    className="pr-2"
-                    width="32px"
-                    height="23px"
-                  />
-                  <span
-                    className={`${
-                      currentActiveIcon === "transports" ||
-                      currentActiveIcon === "transport"
-                        ? "text-or-100"
-                        : ""
-                    }`}
-                  >
-                    {languageData.modalHotelOptions.titleTransfer}
-                  </span>
+                <img
+                  // src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+                  src={`${
+                    process.env.NEXT_PUBLIC_URL
+                  }icons/transport/transport-${
+                    currentActiveIcon === "transports" ||
+                    currentActiveIcon === "transport"
+                      ? "o.svg"
+                      : "b.svg"
+                  }`}
+                  alt="transport-menu"
+                  className="pr-2"
+                  width="32px"
+                  height="23px"
+                />
+                <span
+                  className={`${
+                    currentActiveIcon === "transports" ||
+                    currentActiveIcon === "transport"
+                      ? "text-or-100"
+                      : ""
+                  }`}
+                >
+                  {languageData.modalHotelOptions.titleTransfer}
+                </span>
                 {/* </Link> */}
               </div>
             </div>
