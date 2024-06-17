@@ -39,19 +39,22 @@ export default function SearchBox() {
         view = process.env.NEXT_PUBLIC_HOME;
         break;
       case "hotel":
-        view = `/${language}/hotels`;
+        // view = `/${language}/hotels`;
+        view = window.open(`/${language}/hotels`, "_self");
         break;
       case "tour":
-        view = `/${language}/tours`;
+        // view = `/${language}/tours`;
+        view = window.open(`/${language}/tours`, "_self");
         break;
       case "transport":
-        view = `/${language}/transports`;
+        // view = `/${language}/transports`;
+        view = window.open(`/${language}/transports`, "_self");
         break;
     }
 
-    if (view != null) {
-      router.push(view);
-    }
+    // if (view != null) {
+    //   router.push(view);
+    // }
   };
 
   return (
@@ -63,7 +66,7 @@ export default function SearchBox() {
         >
           <Tab
             className="focus:outline-none focus:ring-transparent"
-            onClick={() => handleTabChange("hotels")}
+            onClick={() => handleTabChange("hotel")}
             style={{ padding: "0" }}
             // ref={targetRef}
           >

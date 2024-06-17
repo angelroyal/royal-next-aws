@@ -195,8 +195,8 @@ export default function EnjoyStayHome() {
   const calculateFutureDates = () => {
     const formatDate = (date) => {
       const day = String(date.getDate()).padStart(2, "0");
-      const month = String(date.getMonth() + 1).padStart(2, "0"); // Los meses empiezan en 0
-      const year = String(date.getFullYear()); // Solo los últimos dos dígitos del año
+      const month = String(date.getMonth() + 1).padStart(2, "0"); 
+      const year = String(date.getFullYear()); 
       return `${year}-${month}-${day}`;
       // return `${day}/${month}/${year}`;
 

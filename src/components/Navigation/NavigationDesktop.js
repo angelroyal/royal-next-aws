@@ -24,6 +24,24 @@ export default function NavigationDesktop() {
     setCurrentActiveIcon(routerActual);
   }, [routerActual]);
 
+  // LP RELOAD HOME
+  // const [typeHome, setTypeHome] = useState("");
+  // console.log(typeHome);
+
+  const changeHome = () => {
+    window.open(`/`, "_self");
+  };
+  const changeHotels = () => {
+    window.open(`/${language}/hotels`, "_self");
+  };
+  const changeTour = () => {
+    window.open(`/${language}/tours`, "_self");
+  };
+  const changeTransport = () => {
+    window.open(`/${language}/transports`, "_self");
+  };
+  // LP END
+  
   return (
     <div className="relative md:top-[-22px] mt-[38px] md:mt-0 max-sm:mt-[20px]">
       <Container>
@@ -44,88 +62,138 @@ export default function NavigationDesktop() {
           >
             <div className="flex md:flex-1 justify-between">
               {/* HOME HOTEL LINK */}
-              <Link
-                className="m-1.5"
-                href={`${process.env.NEXT_PUBLIC_HOME}`}
-                passHref
+              <div
+                className="m-1.5 cursor-pointer"
+                onClick={() => {
+                  // setTypeHome("hotels");
+                  changeHome();
+                }}
               >
-                <img
-                  src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
-                  alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
-                  width={200}
-                  height={100}
-                  className="max-sm:w-[140px] max-sm:h-[40px]"
-                />
-              </Link>
+                {/* <Link
+                  className="m-1.5"
+                  href={`${process.env.NEXT_PUBLIC_HOME}`}
+                  passHref
+                > */}
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
+                    alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
+                    width={200}
+                    height={100}
+                    className="max-sm:w-[140px] max-sm:h-[40px]"
+                  />
+                {/* </Link> */}
+              </div>
 
               <div className="hidden md:items-center md:flex md:gap-x-7">
-
                 {/* HOTEL LINK */}
-                <Link
-                 href={`/${language}/hotels`}
+                <div
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+                  onClick={() => {
+                    // setTypeHome("hotels");
+                    changeHotels();
+                  }}
+                >
+                  {/* <Link
+                  href={`/${language}/hotels`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline"
-                >
-                  {" "}
+                > */}{" "}
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-${
-                      currentActiveIcon === "hotels" || currentActiveIcon === "hotel" ? "o.svg" : "b.svg"
+                      currentActiveIcon === "hotels" ||
+                      currentActiveIcon === "hotel"
+                        ? "o.svg"
+                        : "b.svg"
                     }`}
                     alt="done green"
                     className="pr-2"
                   />
                   <span
                     className={`${
-                      currentActiveIcon === "hotels" || currentActiveIcon === "hotel" ? "text-or-100" : ''
+                      currentActiveIcon === "hotels" ||
+                      currentActiveIcon === "hotel"
+                        ? "text-or-100"
+                        : ""
                     }`}
                   >
                     {languageData.SearchBox.tabHotel.hotel}
                   </span>
-                </Link>
+                  {/* </Link> */}
+                </div>
 
                 {/* TOUR LINK */}
-                <Link
+                <div
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+                  onClick={() => {
+                    // setTypeHome("tours");
+                    changeTour();
+                  }}
+                >
+                  {/* <Link
                   href={`/${language}/tours`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
-                >
+                > */}
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-${
-                      currentActiveIcon === "tours" || currentActiveIcon === "tour" ? "o.svg" : "b.svg"
+                      currentActiveIcon === "tours" ||
+                      currentActiveIcon === "tour"
+                        ? "o.svg"
+                        : "b.svg"
                     }`}
                     alt="done green"
                     className="pr-2"
                   />
                   <span
                     className={`${
-                     currentActiveIcon === "tours" || currentActiveIcon === "tour" ? "text-or-100"
-                    : ''}`}
+                      currentActiveIcon === "tours" ||
+                      currentActiveIcon === "tour"
+                        ? "text-or-100"
+                        : ""
+                    }`}
                   >
                     Tours
                   </span>
-                </Link>
-               
+                  {/* </Link> */}
+                </div>
+
                 {/* TRANSPORT LINK */}
-                <Link
+                <div
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+                  onClick={() => {
+                    // setTypeHome("tours");
+                    changeTransport();
+                  }}
+                >
+                  {/* <Link
                   href={`/${language}/transports`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
-                >
+                > */}
                   <img
-                    src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-${
-                      currentActiveIcon === "transports" || currentActiveIcon === "transport" ? "o.svg" : "b.svg"
+                    src={`${
+                      process.env.NEXT_PUBLIC_URL
+                    }icons/transport/transport-${
+                      currentActiveIcon === "transports" ||
+                      currentActiveIcon === "transport"
+                        ? "o.svg"
+                        : "b.svg"
                     }`}
                     alt="done green"
                     className="pr-2"
                   />
                   <span
                     className={`${
-                     currentActiveIcon === "transports" || currentActiveIcon === "transport" ? "text-or-100"
-                    : ''}`}
+                      currentActiveIcon === "transports" ||
+                      currentActiveIcon === "transport"
+                        ? "text-or-100"
+                        : ""
+                    }`}
                   >
                     {languageData.modalHotelOptions.titleTransfer}
                   </span>
-                </Link>
+                  {/* </Link> */}
+                </div>
               </div>
             </div>
 
