@@ -38,7 +38,7 @@ export function BannerHomeTourSwiper() {
               delay: 5000,
             }}
             loop={true}
-            className="h-[19rem] mb-16"
+            className="h-[19rem] mb-16 !z-0"
             id="swiper-banner-home-tour"
             initialSlide={0}
             breakpoints={{
@@ -69,7 +69,7 @@ export function BannerHomeTourSwiper() {
             {/*END ONE CARD IMAGE AND TEXT */}
 
             {/*TWO CARD TEXT */}
-            <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+            <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
                 <div className="relative w-full flex justify-center ">
                     <Image src={bannerTraveling} width={266} height={235} className="w-full rounded-lg select-none" alt="Banner Experimenta los mejores tours" />
 
@@ -82,7 +82,7 @@ export function BannerHomeTourSwiper() {
             {/*END TWO CARD TEXT */}
 
             {/* THREE CARD IMAGE TOUR */}
-            <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+            <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
                 <div className="w-full flex justify-center">
                     <Image src={bannerTour} width={266} height={235} className="w-full rounded-lg select-none object-cover object-bottom" alt="Banner tour mes de feb" />
                 </div>

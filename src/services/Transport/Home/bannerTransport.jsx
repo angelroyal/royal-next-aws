@@ -38,7 +38,7 @@ export function BannerHomeTransportSwiper() {
         delay: 5000,
       }}
       loop={true}
-      className="h-[19rem] mb-16"
+      className="h-[19rem] mb-16 !z-0"
       id="swiper-banner-home-tour"
       initialSlide={0}
       breakpoints={{
@@ -85,7 +85,7 @@ export function BannerHomeTransportSwiper() {
       {/*END ONE CARD TRANSPORT */}
 
       {/*TWO CARD TRANSPORT */}
-      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
           <Image
             src={bannerCardSecond}
@@ -99,7 +99,7 @@ export function BannerHomeTransportSwiper() {
       {/*END TWO CARD TRANSPORT */}
 
       {/* THREE CARD TRANSPORT */}
-      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
           <Image
             src={bannerCardFinish}
