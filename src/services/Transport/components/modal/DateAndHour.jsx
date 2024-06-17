@@ -1,9 +1,12 @@
+import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
-import { CalendaRDate } from "@/components/General/CalendarDate";
+import {
+  CalendarDate,
+  CalendarDateRounded,
+} from "@/components/General/CalendarDate";
 import ModalTransportContext from "../../context/ModalTransportContext";
-import moment from "moment";
 
 export default function DateAndHour(props) {
   const { transport } = props;
@@ -24,11 +27,10 @@ export default function DateAndHour(props) {
   const handleDepartureDateChange = (e) => {
     const dateSelected = moment(e[0]).format("YYYY-MM-DD");
     setDepartureDate(dateSelected);
+    setComebackDate(null);
   };
 
   const handleComebackDateChange = (e) => {
-    // console.log(e);
-    // setComebackDate(e.target.value);
     const dateSelected = moment(e[0]).format("YYYY-MM-DD");
     setComebackDate(dateSelected);
   };
@@ -71,10 +73,11 @@ export default function DateAndHour(props) {
               alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
             />
             {isOpenCalendarOne ? (
-              <CalendaRDate
+              <CalendarDate
                 handelDate={handleDepartureDateChange}
                 setIsOpen={setIsOpenCalendarOne}
                 isOpen={isOpenCalendarOne}
+                starDate={departureDate}
               />
             ) : (
               <input
@@ -121,10 +124,12 @@ export default function DateAndHour(props) {
                 alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
               />
               {isOpenCalendarOne ? (
-                <CalendaRDate
+                <CalendarDateRounded
                   handelDate={handleComebackDateChange}
                   setIsOpen={setIsOpenCalendarTwo}
                   isOpen={isOpenCalendarTwo}
+                  starDate={departureDate}
+                  comebackDate={comebackDate}
                 />
               ) : (
                 <input
