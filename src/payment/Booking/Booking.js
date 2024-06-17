@@ -31,7 +31,7 @@ export default function Booking(props) {
   return (
     <FormDataProvider>
       <>
-        <div className="flex !gap-x-2 w-full items-start justify-start items-start !mb-2">
+        <div className="flex !gap-x-2 w-full items-start justify-start !mb-2">
           <Image
             className="w-[27px] h-[25px]"
             src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw.svg`}
