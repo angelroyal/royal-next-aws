@@ -143,15 +143,11 @@ export function BannersHomeExclusiveDiscounts() {
   }, []);
 
   useEffect(() => {
-    console.log(randomNumber);
     if (randomNumber) {
       const hotelList = shuffleTypes.find((item) => item[randomNumber]);
-      console.log(hotelList);
       setShuffle(Object.values(hotelList[randomNumber]).slice(0, 6));
     }
   }, [randomNumber]);
-
-  console.log(shuffle);
 
   const searchHotel = (hotel) => {
     window.open(

@@ -39,6 +39,7 @@ const handleFetchError = (error, setShowClr, setErrorAlertBooking) => {
 
     switch (error.response.status) {
       case 404:
+      case 400:
         setShowClr(errorMessage);
         break;
       case 500:
