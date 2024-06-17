@@ -155,10 +155,10 @@ export default function DetailsPayment(props) {
                   </div>
                 </div>
 
-                <div className="flex justify-between flex-nowrap gap-[13px] items-center">
+                <div className="flex justify-center flex-nowrap gap-[13px] items-center">
                   <ModalShare itinerary={true} className="w-[30%]" />
 
-                  {step === 1 ? (
+                  {step === 1 && (
                     <button
                       onClick={() => nextStep()}
                       className="rounded-full py-[10px] px-[27px] flex !gap-x-2 bg-yw-100 items-center border-0 focus:outline-none text-fs-10 text-black m-b"
@@ -172,33 +172,33 @@ export default function DetailsPayment(props) {
                         className="w-[6px] h-[13px]"
                       />
                     </button>
-                  ) : (
-                    <button
-                      type="submit"
-                      onClick={() => paymentReservation()}
-                      className={`bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto ${
-                        !policyAccept || !termsAccept || !buttonActive
-                          ? "cursor-not-allowed bg-yw-50"
-                          : "hover:bg-yw-110"
-                      } ${
-                        policyAccept && termsAccept
-                          ? "py-[13px] px-[40px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
-                          : "py-[16px] px-[40px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
-                      } `}
-                      disabled={!policyAccept || !termsAccept || !buttonActive}
-                    >
-                      {languageData.booking.paymentConekta.buttonForms}
-                      {policyAccept && termsAccept && (
-                        <div className="relative inline-flex justify-center lg:hidden">
-                          <LoadingProgress
-                            value={progressCount}
-                            count={countNumber}
-                            width={"w-[30px]"}
-                            height={"h-[30px]"}
-                          />
-                        </div>
-                      )}
-                    </button>
+                  // ) : (
+                  //   // <button
+                  //   //   type="submit"
+                  //   //   onClick={() => paymentReservation()}
+                  //   //   className={`bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto ${
+                  //   //     !policyAccept || !termsAccept || !buttonActive
+                  //   //       ? "cursor-not-allowed bg-yw-50"
+                  //   //       : "hover:bg-yw-110"
+                  //   //   } ${
+                  //   //     policyAccept && termsAccept
+                  //   //       ? "py-[13px] px-[40px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
+                  //   //       : "py-[16px] px-[40px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
+                  //   //   } `}
+                  //   //   disabled={!policyAccept || !termsAccept || !buttonActive}
+                  //   // >
+                  //   //   {languageData.booking.paymentConekta.buttonForms}
+                  //   //   {policyAccept && termsAccept && (
+                  //   //     <div className="relative inline-flex justify-center lg:hidden">
+                  //   //       <LoadingProgress
+                  //   //         value={progressCount}
+                  //   //         count={countNumber}
+                  //   //         width={"w-[30px]"}
+                  //   //         height={"h-[30px]"}
+                  //   //       />
+                  //   //     </div>
+                  //   //   )}
+                  //   // </button>
                   )}
                 </div>
               </div>

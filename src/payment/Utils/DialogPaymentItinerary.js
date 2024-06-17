@@ -128,7 +128,7 @@ export function DialogPaymentItinerary(props) {
 
                   {step === 2 && (
                     <div>
-                      <button
+                      {/* <button
                         onClick={() => paymentReservation()}
                         type="submit"
                         className={`" bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto"  ${
@@ -156,7 +156,7 @@ export function DialogPaymentItinerary(props) {
                             />
                           </div>
                         )}
-                      </button>
+                      </button> */}
                     </div>
                   )}
                 </div>

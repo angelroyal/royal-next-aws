@@ -21,7 +21,7 @@ export default function ButtonPayment() {
   };
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center max-sm:flex-col">
       {/* TERMS & CONDITIONS */}
       <div className="flex flex-col gap-y-[9px]">
         {/* INPUT POLICY */}
@@ -80,7 +80,8 @@ export default function ButtonPayment() {
       </div>
 
       {/* BUTTON AND COUNT PAY */}
-      <div className="flex justify-end my-[1rem] mx-0 max-md:hidden">
+      {/* <div className="flex justify-end my-[1rem] mx-0 max-md:hidden"> */}
+      <div className="flex justify-end my-[1rem] mx-0">
         <button
           type="submit"
           className="border-transparent bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] px-[64px] py-[13px] hover:bg-yw-110"
