@@ -237,14 +237,14 @@ export default function EnjoyStayHome() {
   return (
     <div className="flex h-[448px] w-full rounded-lg max-lg:flex-col max-lg:h-auto">
       {/* TEXT AND BTN SEE OFFERS */}
-      <div className="w-[40%] relative max-lg:w-full max-lg:h-[448px] max-lg:rounded-t-lg max-lg:bg-bl-100">
+      <div className="w-[40%] relative max-lg:w-full max-lg:h-[330px] max-lg:rounded-t-lg max-lg:bg-bl-100">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}banners/home/Frame-1693.jpg`}
           alt="fondo azul con palmeras"
           className="h-full w-full rounded-l-lg max-lg:rounded-t-lg max-lg:rounded-l-0"
         />
 
-        <div className="absolute bottom-0 flex flex-col gap-[86px] pb-[111px] pl-[49px] w-[80%] max-2xl:pb-[65px] max-xl:pb-[92px] max-md:pb-[65px]">
+        <div className="absolute bottom-0 flex flex-col gap-[86px] pb-[111px] pl-[49px] max-lg:pr-[49px] w-[80%] max-2xl:pb-[65px] max-xl:pb-[92px] max-lg:pb-[70px] max-lg:w-full max-lg:gap-[20px] max-md:pb-[65px] max-sm:pb-[50px]">
           <h2 className="text-white m-s-b text-fs-38 max-xl:text-fs-28 max-lg:text-fs-40 leading-[1.13] max-sm:text-fs-34">
             {languageData.enjoyStayHome.titleEnjoy}
           </h2>

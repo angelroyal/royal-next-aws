@@ -29,7 +29,7 @@ export function AlertPyC({
     openAlert && (
       <div
         ref={ref}
-        className={`cursor-auto absolute z-[2] shadow-3xl bg-white rounded-lg w-[316px] ${cardView === "transport" ? 'md:w-[248px]' : ' md:w-[458px]'} translate-x-[-67%] md:translate-x-[-50%] h-auto p-4 flex flex-col items-center`}
+        className={`cursor-auto absolute z-[4] shadow-3xl bg-white rounded-lg w-[316px] ${cardView === "transport" ? 'md:w-[248px]' : ' md:w-[458px]'} translate-x-[-67%] md:translate-x-[-50%] h-auto p-4 flex flex-col items-center`}
       >
         <img
           src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-70.svg`}

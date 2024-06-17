@@ -47,6 +47,7 @@ export default function TourCardItinerary({key, itemActivity }) {
 
   // DAY OF WEEK
   const dayOfWeek = moment(itemActivity.date).format("dddd");
+  const dateFormat = moment(itemActivity.date).format("DD/MM/YY");
 
   const [openAlert, setOpenAlert] = useState(false);
 
@@ -68,7 +69,8 @@ export default function TourCardItinerary({key, itemActivity }) {
                 {languageData.dayOfWeek[dayOfWeek]}
               </span>
               <span className="m-m text-fs-16 text-[#a6a6a6]">
-                {itemActivity.date}
+                {/* {itemActivity.date} */}
+                {dateFormat}
               </span>
               <span className="m-m text-fs-16 text-[#a6a6a6]">|</span>
               <span className="m-m text-fs-16 text-[#a6a6a6]">02:00pm</span>

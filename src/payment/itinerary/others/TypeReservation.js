@@ -59,7 +59,7 @@ export function TourDescription(props) {
                 <span className="m-m text-[0.75rem] text-justify pb-[6px] w-[70%]">
                   {tour.title}
                 </span>
-                <span className="text-fs-12 m-b text-justify w-[20%]">
+                <span className="text-fs-12 m-b text-justify w-fit">
                   $
                   {Math.floor(tour.currentPrice)
                     .toLocaleString("es-MX", { currency: "MXN" })
