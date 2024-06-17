@@ -39,7 +39,7 @@ export default function CardTourHome({ activity }) {
 
       <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col h-[109px]">
         <div className="m-s-b pt-1 text-fs-14 text-start truncate mb-[4px]">
-          {activity.name}
+          {activity.activityName}
         </div>
 
         <div className="mb-[4px]">

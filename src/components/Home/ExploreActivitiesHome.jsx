@@ -67,7 +67,7 @@ export default function ExploreActivitiesHome() {
   function generateRandomNumber() {
     return Math.floor(Math.random() * 4); // Genera un número entre 0 y 3
   }
-  
+
   return (
     <div className="flex flex-col my-[180px] max-sm:my-[90px]">
       {/* TITLE EXPLORE ACTIVITIES HOME*/}
@@ -96,7 +96,7 @@ export default function ExploreActivitiesHome() {
           >
             {activities ? (
               activities.map((activity, index) => (
-                <SwiperSlide className="!rounded-lg z-[1]" key={index}>     
+                <SwiperSlide className="!rounded-lg z-[1]" key={index}>
                   <Image
                     src={activity.activities[randomNumber].image}
                     alt="activity home"
@@ -165,9 +165,11 @@ export default function ExploreActivitiesHome() {
         {/*CARDS TOUR EXPLORE ACTIVITIES HOME */}
         <div className="w-[55%] grid grid-cols-2 max-sm:grid-cols-1 gap-[16px] max-lg:w-full gap-x-[46px] max-xl:gap-[12px]">
           {resultActivities
-            ? resultActivities.activities.map((activity, index) => (
-                <CardTourHome activity={activity} key={index} />
-              ))
+            ? resultActivities.activities
+                .slice(0, 4)
+                .map((activity, index) => (
+                  <CardTourHome activity={activity} key={index} />
+                ))
             : [...Array(4)].map((_, index) => <CartActivities key={index} />)}
         </div>
       </div>
