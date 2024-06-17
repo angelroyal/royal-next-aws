@@ -3,7 +3,12 @@ import LanguageContext from "@/language/LanguageContext";
 import { useContext } from "react";
 
 export function TransportBanner() {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
+
+  const transportHome = () => {
+    window.open(`/${language}/transports`, "_self");
+  };
+
   return (
     <section className="flex bg-white flex-col max-lg:items-center lg:flex-row h-max my-16 md:mt-[131px] md:mb-32 shadow-3xl">
       <div
@@ -18,8 +23,12 @@ export function TransportBanner() {
           {languageData.bannerTransportHome.textBookNow}
         </p>
 
-        <button className="rounded-full py-[20px] px-[41px] bg-bl-100 text-white w-max m-s-b text-fs-12 hover:bg-bl-110">
-          {languageData.bannerTransportHome.chooseDates}
+        <button
+          className="rounded-full py-[20px] px-[41px] bg-bl-100 text-white w-max m-s-b text-fs-12 hover:bg-bl-110"
+          onClick={transportHome}
+        >
+          {/* {languageData.bannerTransportHome.chooseDates} */}
+          {languageData.bannerTransportHome.bookTransportation}
         </button>
       </div>
 
@@ -31,8 +40,6 @@ export function TransportBanner() {
           src={`${process.env.NEXT_PUBLIC_URL}banners/vehicle/tiggo-7-pro.webp`}
           alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} tiggo car`}
           className="absolute z-[1] bottom-[75px] right-0 left-[139px] mx-auto select-none max-xl:!left-0"
-          // width="auto"
-          // height="100%"
           width={452}
           height={226}
         />

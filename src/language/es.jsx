@@ -758,6 +758,7 @@ export const es = {
     discoverOptions: "Descubre tus posibilidades aquí",
     getKnowBetter: "Nos encantaría conocerte mejor. Compártenos tus datos y permítenos brindarte una atención personalizada.",
     sendBtn: "Enviar",
+    bookTransportation:"Reservar transporte"
   },
 
   bannerTransport: {

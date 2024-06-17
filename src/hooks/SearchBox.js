@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import { useRouter } from "next/navigation";
-import React, { useContext, useEffect, useState } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
@@ -15,6 +21,7 @@ import SearchTransport from "@/services/Transport/components/Search/SearchTransp
 export default function SearchBox() {
   const { languageData, language } = useContext(LanguageContext);
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
+
   const router = useRouter();
 
   // GET ACTIVITY SERVICE
@@ -58,6 +65,7 @@ export default function SearchBox() {
             className="focus:outline-none focus:ring-transparent"
             onClick={() => handleTabChange("hotels")}
             style={{ padding: "0" }}
+            // ref={targetRef}
           >
             <span
               className={`${

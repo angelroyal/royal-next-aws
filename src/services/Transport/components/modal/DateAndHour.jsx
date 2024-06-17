@@ -9,7 +9,6 @@ import {
 import ModalTransportContext from "../../context/ModalTransportContext";
 
 export default function DateAndHour(props) {
-  const { transport } = props;
   const { languageData } = useContext(LanguageContext);
 
   const {
@@ -65,7 +64,6 @@ export default function DateAndHour(props) {
           <span>{languageData.SearchBox.tabHotel.date}</span>
           <div
             className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative"
-            // onClick={openCalendar}
           >
             <img
               className="w-[14px] h-[16px]"
