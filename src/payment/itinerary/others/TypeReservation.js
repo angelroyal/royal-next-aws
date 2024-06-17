@@ -59,7 +59,7 @@ export function TourDescription(props) {
                 <span className="m-m text-[0.75rem] text-justify pb-[6px] w-[70%]">
                   {tour.title}
                 </span>
-                <span className="text-fs-12 m-b text-justify w-[20%]">
+                <span className="text-fs-12 m-b text-justify w-fit">
                   $
                   {Math.floor(tour.currentPrice)
                     .toLocaleString("es-MX", { currency: "MXN" })
@@ -85,7 +85,7 @@ export function TourDescription(props) {
 
 export function TransportDescription({transport}) {
   const { languageData } = useContext(LanguageContext);
-console.log(transport);
+// console.log(transport);
   return (
     <div className="flex flex-col !gap-y-2 border-b border-gry-70 !pb-4 mb-[18px]">
       <span className="text-fs-[1.12rem] m-b text-gry-100">{languageData.confirmation.cardMoving.titleMoving}</span>

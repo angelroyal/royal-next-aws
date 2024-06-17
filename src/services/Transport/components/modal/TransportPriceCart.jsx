@@ -16,6 +16,7 @@ export default function TransportPriceCart(props) {
   const { language } = useContext(LanguageContext);
   const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
+  const [isLoader, setIsLoader] = useState(false);
 
   const [alert, setAlert] = useState({
     isAlert: false,
@@ -38,6 +39,7 @@ export default function TransportPriceCart(props) {
   const isButtonEnabled = passenger > 0 && departureDate && departureTime;
 
   const handleReserveNow = async () => {
+    setIsLoader(true);
     // PARSE TRANSPORT TYPE TO NUMBER
     const typeTransport =
       transport.type === "shared" ? 1 : transport.type === "private" ? 2 : "";
@@ -81,7 +83,6 @@ export default function TransportPriceCart(props) {
         vehicleLabel: transport.label,
         cancelPolicyHours: transport.cancellation,
         places: transport.places,
-        round: transport.round,
         suitcases: [
           {
             largeSuitcase: transport.large_suitcase,
@@ -90,6 +91,7 @@ export default function TransportPriceCart(props) {
         ],
       };
 
+      // console.log(saveRequestCart);
       // IF UID EXIST ADD UID
       if (cartId) {
         saveRequestCart.cartId = cartId;
@@ -105,7 +107,7 @@ export default function TransportPriceCart(props) {
       );
       fetchData(cartUid);
 
-      console.log(transport);
+      // console.log(transport);
       const InfoTransport = {
         name: transport.label,
         date: departureDate,
@@ -119,6 +121,7 @@ export default function TransportPriceCart(props) {
       }, 2000);
     } catch (error) {
       console.error("error", error);
+      setIsLoader(false);
       if (error.response.status >= 400) {
         setAlert({
           isAlert: true,
@@ -158,14 +161,16 @@ export default function TransportPriceCart(props) {
 
       <button
         className={`py-[14px]  text-white m-b text-fs-12 rounded-full text-center ${
-          !isButtonEnabled
+          !isButtonEnabled || isLoader
             ? "cursor-not-allowed bg-bl-70"
             : "hover:bg-bl-110 bg-bl-100"
         }`}
         onClick={handleReserveNow}
         disabled={!isButtonEnabled}
       >
-        {languageData.modalArrive.buttonArrive}
+        {isLoader
+          ? languageData.cart.loadingText
+          : languageData.modalArrive.buttonArrive}
       </button>
 
       <div

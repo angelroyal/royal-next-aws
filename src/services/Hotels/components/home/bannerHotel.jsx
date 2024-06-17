@@ -5,7 +5,7 @@ import "swiper/css/effect-fade";
 import Image from "next/image";
 import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 
 import { BannerConfig } from "../../config/BannersConfigH";
 import LanguageContext from "../../../../language/LanguageContext";
@@ -245,7 +245,7 @@ export function BannerHomeHotelSwiper() {
     <Swiper
       slidesPerView={3}
       spaceBetween={15}
-      className="h-[19rem]"
+      className="h-[19rem] !z-0"
       modules={[Autoplay]}
       autoplay={{
         delay: 5000,
@@ -282,7 +282,7 @@ export function BannerHomeHotelSwiper() {
       </SwiperSlide>
 
       {/*TWO CARD TEXT */}
-      <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
           <Image
             src={bannerTraveling}
@@ -305,7 +305,7 @@ export function BannerHomeHotelSwiper() {
       {/*TWO CARD TEXT */}
 
       {/* THREE CARD IMAGE HOTEL */}
-      <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
           <Image
             src={bannerTour}

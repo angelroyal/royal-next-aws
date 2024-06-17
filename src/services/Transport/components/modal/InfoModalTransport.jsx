@@ -8,7 +8,7 @@ import LanguageContext from "@/language/LanguageContext";
 
 export default function InfoModalTransport(props) {
   const { transport } = props;
-  console.log(transport);
+  // console.log(transport);
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -30,14 +30,14 @@ export default function InfoModalTransport(props) {
       {/* FROM , TO */}
       <span className="text-gry-100 text-fs-12 m-s-b">{languageData.confirmation.cardMoving.from}</span>
 
-      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[324px] mb-[16px]">
+      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[90%] mb-[16px] max-sm:max-w-full">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
           alt="Location Icon"
           className="w-[12.7] h-[16px] mr-2"
         />
 
-        <div className="text-gry-100 m-s-b text-fs-12">
+        <div className="text-gry-100 m-s-b text-fs-12 truncate">
           {/* Aeropuesto internacional de cancun */}
           {transport.zoneFromLabel}
         </div>
@@ -45,14 +45,14 @@ export default function InfoModalTransport(props) {
 
       <span className="text-gry-100 text-fs-12 m-s-b">{languageData.confirmation.cardMoving.to}</span>
 
-      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[324px]  mb-[16px]">
+      <div className="flex bg-[#f1f6ff] rounded-[4px] gap-[8px] py-[10px] pl-[16px] max-w-[90%]  mb-[16px] max-sm:max-w-full">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
           alt="Location Icon"
           className="w-[12.7] h-[16px] mr-2"
         />
 
-        <div className="text-gry-100 m-s-b text-fs-12">
+        <div className="text-gry-100 m-s-b text-fs-12 truncate">
           {/* Hotel nickelodeon Riviera maya */}
           {transport.zoneToLabel}
         </div>

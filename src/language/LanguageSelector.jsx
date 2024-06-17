@@ -58,7 +58,7 @@ export function LanguageSelector() {
           />
         )}
         <select
-          className="appearance-none px-[3px] focus:outline-none"
+          className="w-max block border-0 bg-transparent focus:outline-none m-s-b text-gry-100 appearance-none px-[3px]"
           name="select"
           onChange={handleChange}
           value={actualLanguage}

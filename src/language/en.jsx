@@ -251,7 +251,7 @@ export const en = {
   enjoyStayHome: {
     titleEnjoy: "Enjoy your stay in exclusive hotels",
     // offersDates: "Offers for the dates",
-    btnViewOffers: "View all offers",
+    btnViewOffers: "View hotels",
   },
 
   /*********************************************************/
@@ -754,6 +754,7 @@ export const en = {
     discoverOptions: "Discover your options here",
     getKnowBetter: "We'd love to get to know you better. Please share your information with us and allow us to provide you with personalized attention.",
     sendBtn: "Send",
+    bookTransportation:"Book transportation"
   },
 
   bannerTransport: {

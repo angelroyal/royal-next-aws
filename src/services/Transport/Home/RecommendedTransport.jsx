@@ -93,7 +93,6 @@ export default function RecommendedTransport() {
 
 export function CatalogueRoutesCard({ transport }) {
   const { languageData } = useContext(LanguageContext);
-  console.log(transport);
 
   return (
     <>

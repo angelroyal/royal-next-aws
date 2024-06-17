@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import moment from "moment";
+import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
+import {
+  CalendarDate,
+  CalendarDateRounded,
+} from "@/components/General/CalendarDate";
 import ModalTransportContext from "../../context/ModalTransportContext";
 
 export default function DateAndHour(props) {
-  const { transport } = props;
   const { languageData } = useContext(LanguageContext);
 
   const {
@@ -20,11 +24,14 @@ export default function DateAndHour(props) {
 
   // Manejadores para los cambios en los inputs
   const handleDepartureDateChange = (e) => {
-    setDepartureDate(e.target.value);
+    const dateSelected = moment(e[0]).format("YYYY-MM-DD");
+    setDepartureDate(dateSelected);
+    setComebackDate(null);
   };
 
   const handleComebackDateChange = (e) => {
-    setComebackDate(e.target.value);
+    const dateSelected = moment(e[0]).format("YYYY-MM-DD");
+    setComebackDate(dateSelected);
   };
 
   const handleDepartureTimeChange = (e) => {
@@ -34,30 +41,51 @@ export default function DateAndHour(props) {
   const handleComebackTimeChange = (e) => {
     setComebackTime(e.target.value);
   };
-  
+
   const searchParams = new URLSearchParams(window.location.search);
 
   const typeTransport = searchParams.get("type");
 
-  
+  const [isOpenCalendarOne, setIsOpenCalendarOne] = useState(false);
+  const [isOpenCalendarTwo, setIsOpenCalendarTwo] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpenCalendarOne(true);
+      setIsOpenCalendarTwo(true);
+    }, 200);
+  }, []);
+
   return (
     <>
       <div className="flex w-full gap-[24px] mb-[36px]">
         {/* DATE */}
         <div className="w-1/2">
           <span>{languageData.SearchBox.tabHotel.date}</span>
-          <div className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative">
+          <div
+            className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative"
+          >
             <img
               className="w-[14px] h-[16px]"
               src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
               alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
             />
-            <input
-              type="date"
-              className="focus:outline-0 bg-white text-fs-12 m-m time-input"
-              value={departureDate || ""}
-              onChange={handleDepartureDateChange}
-            />
+            {isOpenCalendarOne ? (
+              <CalendarDate
+                handelDate={handleDepartureDateChange}
+                setIsOpen={setIsOpenCalendarOne}
+                isOpen={isOpenCalendarOne}
+                starDate={departureDate}
+              />
+            ) : (
+              <input
+                className="m-b text-fs-12 focus:outline-none w-full cursor-pointe"
+                placeholder={
+                  languageData.SearchBox.tabTransportation.autoCompleteArrival
+                }
+                readOnly
+              />
+            )}
           </div>
         </div>
 
@@ -93,12 +121,23 @@ export default function DateAndHour(props) {
                 src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
                 alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
               />
-              <input
-                type="date"
-                className="focus:outline-0 bg-white text-fs-12 m-m time-input"
-                value={comebackDate || ""}
-                onChange={handleComebackDateChange}
-              />
+              {isOpenCalendarOne ? (
+                <CalendarDateRounded
+                  handelDate={handleComebackDateChange}
+                  setIsOpen={setIsOpenCalendarTwo}
+                  isOpen={isOpenCalendarTwo}
+                  starDate={departureDate}
+                  comebackDate={comebackDate}
+                />
+              ) : (
+                <input
+                  className="m-b text-fs-12 focus:outline-none w-full cursor-pointe"
+                  placeholder={
+                    languageData.SearchBox.tabTransportation.autoCompleteArrival
+                  }
+                  readOnly
+                />
+              )}
             </div>
           </div>
 

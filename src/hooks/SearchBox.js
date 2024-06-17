@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import { useRouter } from "next/navigation";
-import React, { useContext, useEffect, useState } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
@@ -15,6 +21,7 @@ import SearchTransport from "@/services/Transport/components/Search/SearchTransp
 export default function SearchBox() {
   const { languageData, language } = useContext(LanguageContext);
   const [currentActiveIcon, setCurrentActiveIcon] = useState(null);
+
   const router = useRouter();
 
   // GET ACTIVITY SERVICE
@@ -32,19 +39,22 @@ export default function SearchBox() {
         view = process.env.NEXT_PUBLIC_HOME;
         break;
       case "hotel":
-        view = `/${language}/hotels`;
+        // view = `/${language}/hotels`;
+        view = window.open(`/${language}/hotels`, "_self");
         break;
       case "tour":
-        view = `/${language}/tours`;
+        // view = `/${language}/tours`;
+        view = window.open(`/${language}/tours`, "_self");
         break;
       case "transport":
-        view = `/${language}/transports`;
+        // view = `/${language}/transports`;
+        view = window.open(`/${language}/transports`, "_self");
         break;
     }
 
-    if (view != null) {
-      router.push(view);
-    }
+    // if (view != null) {
+    //   router.push(view);
+    // }
   };
 
   return (
@@ -56,8 +66,9 @@ export default function SearchBox() {
         >
           <Tab
             className="focus:outline-none focus:ring-transparent"
-            onClick={() => handleTabChange("hotels")}
+            onClick={() => handleTabChange("hotel")}
             style={{ padding: "0" }}
+            // ref={targetRef}
           >
             <span
               className={`${

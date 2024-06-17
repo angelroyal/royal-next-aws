@@ -11,9 +11,9 @@ import { useContext, useState, useEffect } from "react";
 
 import BannerCardHome from "./BannerCardHome";
 import LanguageContext from "@/language/LanguageContext";
+import { shuffleHotelTypes } from "@/services/Hotels/config/shuffleHotelTypes";
 
 export default function BannersHeaderHome() {
-
   const [dashedOne, setDashedOne] = useState([
     { key: 1, value: true },
     { key: 2, value: false },
@@ -129,6 +129,36 @@ export function BannersHomeExclusiveDiscounts() {
   const bannerDiscounts = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts.jpg`;
   const bannerDiscountsSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts-second.jpg`;
 
+  const shuffleTypes = shuffleHotelTypes;
+  // console.log(shuffleTypes);
+  const [randomNumber, setRandomNumber] = useState(null);
+
+  const [shuffle, setShuffle] = useState(null);
+
+  useEffect(() => {
+    const generateRandomNumber = () => {
+      return Math.floor(Math.random() * 4); // Genera un número entre 0 y 3
+    };
+    setRandomNumber(generateRandomNumber());
+  }, []);
+
+  useEffect(() => {
+    console.log(randomNumber);
+    if (randomNumber) {
+      const hotelList = shuffleTypes.find((item) => item[randomNumber]);
+      console.log(hotelList);
+      setShuffle(Object.values(hotelList[randomNumber]).slice(0, 6));
+    }
+  }, [randomNumber]);
+
+  console.log(shuffle);
+
+  const searchHotel = (hotel) => {
+    window.open(
+      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
+      "_blank"
+    );
+  };
   return (
     <>
       <div className="flex w-full 2xl:gap-[1vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px] justify-between">
@@ -187,17 +217,22 @@ export function BannersHomeExclusiveDiscounts() {
             navigation
             modules={[Navigation]}
           >
-            {[...Array(5)].map((_, index) => (
-              <SwiperSlide className="!rounded-lg" key={index}>
-                <img
-                  src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/BannerHomeTour.webp`}
-                  alt="banner-offers"
-                  className=" relarive h-full w-full rounded-lg select-none"
-                />
+            {shuffle &&
+              shuffle.map((hotel, index) => (
+                <SwiperSlide
+                  className="!rounded-lg cursor-pointer"
+                  key={index}
+                  onClick={() => searchHotel(hotel)}
+                >
+                  <img
+                    src={hotel.image}
+                    alt="banner-offers"
+                    className="object-cover relative h-full w-full rounded-lg select-none"
+                  />
 
-                <BannerCardHome />
-              </SwiperSlide>
-            ))}
+                  <BannerCardHome hotel={hotel} />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>
@@ -205,7 +240,11 @@ export function BannersHomeExclusiveDiscounts() {
       <div className="m-m text-fs-12 text-gry-100 flex justify-center gap-1">
         <span>
           {languageData.bannersHome.textTyC}{" "}
-          <a className="text- m-s-b text-black underline decoration-solid"  href={`/${language}/tyc`} target="_blank" >
+          <a
+            className="text- m-s-b text-black underline decoration-solid"
+            href={`/${language}/tyc`}
+            target="_blank"
+          >
             {" "}
             {languageData.bannersHome.here}
           </a>

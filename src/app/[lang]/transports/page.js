@@ -30,6 +30,7 @@ export const metadata = {
 };
 
 export default function HomeTransport() {
+
   return (
     <>
       <LanguageProvider>
@@ -50,13 +51,13 @@ export default function HomeTransport() {
               <div className="max-md:overflow-x-hidden">
                 <BannerHomeTransport />
                 <TipsBooking />
-                
+
                 {/* <PromotedRoutes /> */}
 
                 <ChainsHome typePage={"transport"} />
                 <EnjoyStayHome />
 
-                <BannerSafelyTransport />
+                <BannerSafelyTransport/>
                 <BannerDiscoverPossibilities />
                 <RecommendedTransport />
                 <div className="mb-16">

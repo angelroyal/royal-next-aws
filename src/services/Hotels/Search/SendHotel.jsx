@@ -69,6 +69,7 @@ export default function SendHotel() {
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
     const dataSearch = JSON.parse(localStorage.getItem("dataSearch"));
+    // console.log(dataSearch);
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
     const requestBody = {
       codeNameHotel: dataSearch.codeName,
@@ -86,22 +87,20 @@ export default function SendHotel() {
         `/${language}/mx/${dataSearch.destination}-${dataSearch.country}/${dataSearch.destination}-hotels/${dataSearch.codeName}?${query}`,
         "_blank"
       );
+
     } else {
       router.push(
         `/${language}/mx/${dataSearch.codeName}-${dataSearch.country}/hotels?${query}`
       );
     }
   };
-
   const [isHotelResults, setIsHotelResults] = useState(false);
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const currentPath = window.location.pathname;
       setIsHotelResults(currentPath.endsWith("/hotel/results"));
     }
   }, []);
-
   return (
     <div
       className={`flex ${

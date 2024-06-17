@@ -38,7 +38,7 @@ export function BannerHomeTransportSwiper() {
         delay: 5000,
       }}
       loop={true}
-      className="h-[19rem] mb-16"
+      className="h-[19rem] mb-16 !z-0"
       id="swiper-banner-home-tour"
       initialSlide={0}
       breakpoints={{
@@ -85,7 +85,7 @@ export function BannerHomeTransportSwiper() {
       {/*END ONE CARD TRANSPORT */}
 
       {/*TWO CARD TRANSPORT */}
-      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
           <Image
             src={bannerCardSecond}
@@ -99,7 +99,7 @@ export function BannerHomeTransportSwiper() {
       {/*END TWO CARD TRANSPORT */}
 
       {/* THREE CARD TRANSPORT */}
-      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !bg-gry-30 !flex !justify-center !bg-white">
+      <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
           <Image
             src={bannerCardFinish}
@@ -140,9 +140,9 @@ export function BannerHomeTransportD() {
           <span className="m-b text-fs-28">
             {languageData.bannerTransport.secureJourney}
           </span>
-          <bottom className="px-[24px] py-[16px] bg-yw-100 hover:bg-yw-110 m-s-b text-fs-14 w-fit rounded-full cursor-pointer">
+          <div className="px-[24px] py-[16px] bg-yw-100 m-s-b text-fs-14 w-fit rounded-full">
             {languageData.bannerTransport.bookNowBtn}
-          </bottom>
+          </div>
         </div>
         <div className="w-[60%] !bg-white">
           <Image
@@ -181,7 +181,7 @@ export function BannerHomeTransportD() {
             <span className="m-s-b text-white pl-[10px] py-[10px] text-nowrap max-xl:text-fs-12">
               {languageData.bannerTransport.getOff}
             </span>
-            <span className="m-s-b text-black p-[10px] bg-white rounded-lg ml-[10px] text-nowrap max-xl:text-fs-12 cursor-pointer hover:bg-gry-30">
+            <span className="m-s-b text-black p-[10px] bg-white rounded-lg ml-[10px] text-nowrap max-xl:text-fs-12">
               {languageData.titleBanners.bannerHoteldecided.knowMore}
             </span>
           </div>
@@ -191,8 +191,17 @@ export function BannerHomeTransportD() {
   );
 }
 
-export function BannerSafelyTransport() {
+export function BannerSafelyTransport({ scrollToTarget }) {
   const { languageData } = useContext(LanguageContext);
+
+  const handleButtonClick = () => {
+    if (typeof window !== 'undefined') {
+      const targetElement = document.getElementById('tab-search-home');
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
   return (
     <div className="bg-gry-30 rounded-lg flex gap-[16px] max-lg:flex-col my-32">
       <img
@@ -214,7 +223,10 @@ export function BannerSafelyTransport() {
         <span className="m-m text-fs-16">
           {languageData.bannerTransport.ourDrivers}
         </span>
-        <button className="px-[16px] py-[16px] rounded-full bg-yw-100 text-fs-14 m-s-b hover:bg-yw-110">
+        <button
+          className="px-[16px] py-[16px] rounded-full bg-yw-100 text-fs-14 m-s-b hover:bg-yw-110"
+          onClick={handleButtonClick}
+        >
           {languageData.bannerTransport.bookTransferBtn}
         </button>
       </div>

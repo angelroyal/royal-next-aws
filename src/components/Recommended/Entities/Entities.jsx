@@ -4,7 +4,7 @@ export function EntitiesRecommendations(
   infoReservation,
   cartUid
 ) {
-  console.log(infoReservation);
+  // console.log(infoReservation);
   let shortInfoReservation = {
     name: infoReservation.name,
     cartUid: cartUid,

@@ -4,14 +4,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardHotelHome from "./CardHotelHome";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function EnjoyStayHome() {
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   const hotelsEnjoy = [
     {
@@ -187,31 +187,82 @@ export default function EnjoyStayHome() {
     },
   ];
 
+  const openListing = () => {
+    window.open(`/${language}/mx/cancun-mexico/hotels?${query}`);
+  };
+
+  // LP DATE
+  const calculateFutureDates = () => {
+    const formatDate = (date) => {
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0"); 
+      const year = String(date.getFullYear()); 
+      return `${year}-${month}-${day}`;
+      // return `${day}/${month}/${year}`;
+
+    };
+  
+    const today = new Date();
+    const twoWeeksAhead = new Date(today);
+    twoWeeksAhead.setDate(today.getDate() + 14);
+  
+    const threeWeeksAhead = new Date(today);
+    threeWeeksAhead.setDate(today.getDate() + 21);
+  
+    return {
+      twoWeeksAhead: formatDate(twoWeeksAhead),
+      threeWeeksAhead: formatDate(threeWeeksAhead),
+    };
+  };
+
+  const dates = calculateFutureDates();
+  // LP
+
+  // LP PERSON
+  const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
+  const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
+  // 
+  const requestBody = {
+    codeNameHotel: "cancun",
+    destination: "Cancún",
+    codeName: "cancun",
+    code: 18,
+    type: "destination",
+    "check-in": dates.twoWeeksAhead,
+    "check-out": dates.threeWeeksAhead,
+    occupancies: encodedRoomData,
+  };
+
+  const query = new URLSearchParams(requestBody).toString();
   return (
     <div className="flex h-[448px] w-full rounded-lg max-lg:flex-col max-lg:h-auto">
       {/* TEXT AND BTN SEE OFFERS */}
-      <div className="w-[40%] relative max-lg:w-full max-lg:h-[448px] max-lg:rounded-t-lg max-lg:bg-bl-100">
+      <div className="w-[40%] relative max-lg:w-full max-lg:h-[330px] max-lg:rounded-t-lg max-lg:bg-bl-100">
         <img
           src={`${process.env.NEXT_PUBLIC_URL}banners/home/Frame-1693.jpg`}
           alt="fondo azul con palmeras"
           className="h-full w-full rounded-l-lg max-lg:rounded-t-lg max-lg:rounded-l-0"
         />
 
-        <div className="absolute bottom-0 flex flex-col gap-[16px] pb-[90px] pl-[49px] w-[80%] max-2xl:pb-[65px] max-md:pb-[45px] max-xl:pb-[55px] max-lg:pb-[81px]">
-          <h2 className="text-white m-s-b text-fs-32 max-xl:text-fs-28 max-lg:text-fs-32 max-md:text-fs-28 leading-[1.13]">
+        <div className="absolute bottom-0 flex flex-col gap-[86px] pb-[111px] pl-[49px] max-lg:pr-[49px] w-[80%] max-2xl:pb-[65px] max-xl:pb-[92px] max-lg:pb-[70px] max-lg:w-full max-lg:gap-[20px] max-md:pb-[65px] max-sm:pb-[50px]">
+          <h2 className="text-white m-s-b text-fs-38 max-xl:text-fs-28 max-lg:text-fs-40 leading-[1.13] max-sm:text-fs-34">
             {languageData.enjoyStayHome.titleEnjoy}
           </h2>
 
-          <span className="text-white m-m text-fs-14">
-            <b>Del 29 de abril al 14 de mayo.</b>
-          </span>
+          {/* Date */}
+          {/* <span className="text-white m-m text-fs-14">
+            <b>{dates.twoWeeksAhead} - {dates.threeWeeksAhead}</b>
+          </span> */}
 
-          <span className="text-white m-m text-fs-16">
+          {/* <span className="text-white m-m text-fs-16">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             consectetur adipisicing elit.{" "}
-          </span>
+          </span> */}
 
-          <button className="px-[16px] py-[14px] bg-or-100 text-white text-fs-14 m-s-b rounded-full w-fit hover:!bg-or-110 mt-[20px]">
+          <button
+            onClick={() => openListing()}
+            className="px-[16px] py-[14px] bg-or-100 text-white text-fs-14 m-s-b rounded-full w-fit hover:!bg-or-110 mt-[20px]"
+          >
             {languageData.enjoyStayHome.btnViewOffers}
           </button>
         </div>
