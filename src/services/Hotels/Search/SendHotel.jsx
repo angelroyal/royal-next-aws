@@ -69,7 +69,7 @@ export default function SendHotel() {
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
     const dataSearch = JSON.parse(localStorage.getItem("dataSearch"));
-    console.log(dataSearch);
+    // console.log(dataSearch);
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
     const requestBody = {
       codeNameHotel: dataSearch.codeName,
@@ -82,7 +82,6 @@ export default function SendHotel() {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
-    console.log(query);
     if (dataSearch.type === "hotel") {
       window.open(
         `/${language}/mx/${dataSearch.destination}-${dataSearch.country}/${dataSearch.destination}-hotels/${dataSearch.codeName}?${query}`,

@@ -21,7 +21,7 @@ export default function TransportRecommendation() {
     useEffect(() => {
       const responseCatalogue = async ()=>{
         const response = await getCatalogueTransport();
-        console.log(response);
+        // console.log(response);
         if(response){
           setTransportCatalogs(response.data);
         }

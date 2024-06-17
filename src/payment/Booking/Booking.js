@@ -18,7 +18,7 @@ export default function Booking(props) {
       const cartId = searchParams.get("uid");
       const response = await axiosWithInterceptor.get(`${url}${cartId}`);
       setActivityPreBooking(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.error(error);
     }

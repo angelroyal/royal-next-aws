@@ -192,7 +192,6 @@ export default function PromotedRoutes() {
 }
 
 export function PromotedRoutesCard({ transport }) {
-  console.log(transport);
   const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
 

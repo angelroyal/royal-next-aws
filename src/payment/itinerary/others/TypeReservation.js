@@ -85,7 +85,7 @@ export function TourDescription(props) {
 
 export function TransportDescription({transport}) {
   const { languageData } = useContext(LanguageContext);
-console.log(transport);
+// console.log(transport);
   return (
     <div className="flex flex-col !gap-y-2 border-b border-gry-70 !pb-4 mb-[18px]">
       <span className="text-fs-[1.12rem] m-b text-gry-100">{languageData.confirmation.cardMoving.titleMoving}</span>

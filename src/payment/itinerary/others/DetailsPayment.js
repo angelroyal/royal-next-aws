@@ -18,7 +18,7 @@ export default function DetailsPayment(props) {
   const isMobile = useIsMobileNew();
   const { languageData } = useContext(LanguageContext);
 
-  console.log(data);
+  // console.log(data);
   // NEW CONTEXT
   const {
     termsAccept,

@@ -91,7 +91,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
 
 export default function AlertPayment({ animationData, isOpen, closeModal }) {
   const { languageData } = useContext(LanguageContext);
-  console.log(animationData);
+  // console.log(animationData);
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
