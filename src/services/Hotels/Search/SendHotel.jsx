@@ -82,12 +82,12 @@ export default function SendHotel() {
       occupancies: encodedRoomData,
     };
     const query = new URLSearchParams(requestBody).toString();
+    console.log(query);
     if (dataSearch.type === "hotel") {
       window.open(
         `/${language}/mx/${dataSearch.destination}-${dataSearch.country}/${dataSearch.destination}-hotels/${dataSearch.codeName}?${query}`,
         "_blank"
       );
-console.log(dataSearch.country);
 
     } else {
       router.push(
