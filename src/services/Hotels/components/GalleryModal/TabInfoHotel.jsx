@@ -10,11 +10,10 @@ import { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import { AmenitiesIcons } from "@/components/General/Amenities";
 
-
 const tabs = [
   { name: "information", icon: InformationCircleIcon },
-  { name: "amenities", icon: MegaphoneIcon  },
-  { name: "schedules", icon: ClockIcon  },
+  { name: "amenities", icon: MegaphoneIcon },
+  { name: "schedules", icon: ClockIcon },
 ];
 
 export default function TabInfoHotel(props) {
@@ -72,8 +71,11 @@ export default function TabInfoHotel(props) {
                       >
                         {languageData.modalHotel.showLess}
                         <img
-                          src="https://sandboxmexico.com/assets/icons/arrows/up-bl.svg"
+                          // src="https://sandboxmexico.com/assets/icons/arrows/up-bl.svg"
+                          src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-bl.svg`}
                           alt="show less"
+                          width={14}
+                          height={14}
                         />
                       </button>
                     </span>
@@ -94,8 +96,11 @@ export default function TabInfoHotel(props) {
                         >
                           {languageData.modalHotel.showMore}
                           <img
-                            src="https://sandboxmexico.com/assets/icons/arrows/down-bl.svg"
+                            // src="https://sandboxmexico.com/assets/icons/arrows/down-bl.svg"
+                            src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/down-bl.svg`}
                             alt="show more"
+                            width={14}
+                            height={14}
                           />
                         </button>
                       </span>
@@ -124,7 +129,9 @@ export default function TabInfoHotel(props) {
       case "schedules":
         return (
           <div className="block">
-            <div className="mb-2 m-b text-fs-20">{languageData.modalHotelOptions.findOutSchedules}</div>
+            <div className="mb-2 m-b text-fs-20">
+              {languageData.modalHotelOptions.findOutSchedules}
+            </div>
             <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
               <li>Check-in: 15:00 pm</li>
               <li>Check-out: 15:00 pm</li>
@@ -154,7 +161,7 @@ export default function TabInfoHotel(props) {
                   selectedTab.name === tab.name
                     ? "border-or-70 text-or-100"
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline m-0 !ml-0 !mr-0 cursor-pointer`}
+                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline !ml-0 !mr-0 cursor-pointer`}
                 aria-current={
                   selectedTab.name === tab.name ? "page" : undefined
                 }

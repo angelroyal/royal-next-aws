@@ -146,12 +146,12 @@ export default function CardHotelItinerary(props) {
                   <div className="flex items-center gap-x-1">
                     <Image
                       className="w-[11px] h-[14px]"
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
                       alt="icon-location-bl"
                       width={11}
                       height={14}
                     />
-                    <span className="text-bl-100 text-fs-10 m-s-b truncate max-lg:text-wrap">
+                    <span className="text-gry-100 text-fs-10 m-s-b truncate max-lg:text-wrap">
                       {itemHotel.address}
                     </span>
                   </div>

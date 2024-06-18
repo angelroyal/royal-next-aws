@@ -158,9 +158,9 @@ export default function TourCardItinerary({key, itemActivity }) {
                 <div className="h-full flex justify-between max-lg:flex-col flex-row gap-x-[24px]">
                   <div className="max-lg:hidden w-1/2 flex justify-start flex-col max-lg:w-full gap-[4px]">
                     {itemActivity.address && (
-                      <div className="flex gap-[4px] m-s-b text-bl-100 text-fs-10">
+                      <div className="flex gap-[4px] m-s-b text-gry-100 text-fs-10">
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                          src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
                           alt="LocationIcon"
                           width={14}
                           height={14.7}
