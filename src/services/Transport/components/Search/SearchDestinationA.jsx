@@ -157,7 +157,7 @@ export function SearchDestinationA({
                 <Combobox.Option
                   key={index}
                   value={destination}
-                  className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px]"
+                  className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px] hover:bg-gry-30"
                   onClick={() => selectNewDestinationA(destination)}
                 >
                   <p className="m-0">

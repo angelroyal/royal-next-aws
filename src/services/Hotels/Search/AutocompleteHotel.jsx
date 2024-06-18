@@ -2,7 +2,6 @@ import _ from "lodash";
 import React, { useState, useEffect, useContext } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 
-
 import LanguageContext from "@/language/LanguageContext";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
@@ -10,7 +9,7 @@ const API_ENDPOINT = `v1/destinations/search`;
 
 export default function AutocompleteHotel() {
   const { languageData } = useContext(LanguageContext);
-  
+
   const [input, setInput] = useState("");
 
   const storedDataSearch =
@@ -102,7 +101,9 @@ export default function AutocompleteHotel() {
             className="placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[22px] pr-4 pl-[32px] shadow-sm focus:outline-none text-fs-12"
             onChange={handleChange}
             displayValue={(item) => (item ? item.label : "")}
-            placeholder={!input ? languageData.SearchBox.tabHotel.textSearchingH : ""}
+            placeholder={
+              !input ? languageData.SearchBox.tabHotel.textSearchingH : ""
+            }
           />
           <Transition
             show={isOpen}
@@ -124,7 +125,9 @@ export default function AutocompleteHotel() {
                           alt="Hotel Icon"
                           className="w-5 h-5 mr-2"
                         />
-                        <span className="text-fs-16 m-b text-black">Hoteles</span>
+                        <span className="text-fs-16 m-b text-black">
+                          Hoteles
+                        </span>
                       </div>
                     ) : (
                       <div className="flex items-center">
@@ -133,7 +136,12 @@ export default function AutocompleteHotel() {
                           alt="Location Icon"
                           className="w-[16px] h-[20] mr-2"
                         />
-                        <span className="text-fs-16 m-b text-black">{languageData.searchMobilHotel.autocompleteDestination}</span>
+                        <span className="text-fs-16 m-b text-black">
+                          {
+                            languageData.searchMobilHotel
+                              .autocompleteDestination
+                          }
+                        </span>
                       </div>
                     )}
                   </div>
@@ -141,7 +149,7 @@ export default function AutocompleteHotel() {
                     <Combobox.Option key={item.key} value={item}>
                       {({ active }) => (
                         <div
-                          className={`p-2 ${
+                          className={`p-2 cursor-pointer ${
                             active ? "bg-gry-30" : "text-gray-900"
                           }`}
                           onClick={() => handleSelect(item)}

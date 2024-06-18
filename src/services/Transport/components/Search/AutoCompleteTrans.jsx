@@ -124,10 +124,10 @@ export function AutoCompleteTrans({
                   <Combobox.Option
                     key={index}
                     value={autoComplete}
-                    className="text-gry-100 m-m text-fs-12 cursor-pointer text-start"
+                    className="text-gry-100 m-m text-fs-12 cursor-pointer py-[6px] text-start hover:bg-gry-30"
                     onClick={() => selectNewDestinationA(autoComplete)}
                   >
-                    <p className="my-3.5">
+                    <p className="m-0">
                       {getDestination(query, autoComplete.label)}
                     </p>
                   </Combobox.Option>

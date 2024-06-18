@@ -189,7 +189,7 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
                     >
                       {({ active }) => (
                         <div
-                          className={`p-2 text-start ${
+                          className={`p-2 text-start cursor-pointer ${
                             active ? "bg-gry-30" : "text-gray-900"
                           }`}
                         >
