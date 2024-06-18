@@ -124,7 +124,7 @@ export default function AutocompleteHotel() {
                           alt="Hotel Icon"
                           className="w-5 h-5 mr-2"
                         />
-                        <span>Hoteles</span>
+                        <span className="text-fs-16 m-b text-black">Hoteles</span>
                       </div>
                     ) : (
                       <div className="flex items-center">
@@ -133,7 +133,7 @@ export default function AutocompleteHotel() {
                           alt="Location Icon"
                           className="w-[16px] h-[20] mr-2"
                         />
-                        <span>Destinos</span>
+                        <span className="text-fs-16 m-b text-black">{languageData.searchMobilHotel.autocompleteDestination}</span>
                       </div>
                     )}
                   </div>
