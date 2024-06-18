@@ -76,7 +76,7 @@ export default function DateAndHour(props) {
         {/* DATE */}
         <div className="w-1/2">
           <span>{languageData.SearchBox.tabHotel.date}</span>
-          <div className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative">
+          <div className="flex px-[16px] py-[12.8px] border border-[#ebebeb] items-center gap-2 relative">
             <img
               className="w-[14px] h-[16px]"
               src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}

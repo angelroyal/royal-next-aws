@@ -45,10 +45,10 @@ export function ErrorAlert({ infoAlert, setAlert }) {
                       />
                     </div>
 
-                    <div className="ml-3">
-                      <h3 className="text-sm font-medium text-red-800">
+                    <div className="ml-3 w-full">
+                      <div className="text-sm font-medium max-w-[32rem] max-sm:w-[300px] text-red-800">
                         {infoAlert.title}
-                      </h3>
+                      </div>
 
                       <div className="mt-2 text-sm text-red-700">
                         <p className="m-0 text-wrap">{infoAlert.message}</p>
