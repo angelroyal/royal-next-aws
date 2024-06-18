@@ -133,7 +133,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
               {activity.details.booking.map((bookingItem, bookingIndex) => (
                 <div key={bookingItem.id}>
                   {/* INPUT REQUIRED */}
-                  <label>
+                  <label className="flex gap-1">
                     <p className="m-s-b text-fs-14 m-0">{bookingItem.label}</p>
                     {bookingItem.required && (
                       <span className="text-red-100">*</span>

@@ -132,12 +132,12 @@ export function BannersHomeExclusiveDiscounts() {
   const shuffleTypes = shuffleHotelTypes;
   // console.log(shuffleTypes);
   const [randomNumber, setRandomNumber] = useState(null);
-
+// console.log(randomNumber);
   const [shuffle, setShuffle] = useState(null);
 
   useEffect(() => {
     const generateRandomNumber = () => {
-      return Math.floor(Math.random() * 4); // Genera un número entre 0 y 3
+      return Math.floor(Math.random() * 3) + 1; // Genera un número entre 0 y 3
     };
     setRandomNumber(generateRandomNumber());
   }, []);
