@@ -76,9 +76,27 @@ export default function AddCartTour(props) {
         );
       }, 1000);
     } catch (error) {
+      console.error("error 1", error);
       setIsLoader(false);
-      console.error(error);
-      if (error.response.status >= 405) {
+      if (error.response.status === 422) {
+        setAlert({
+          alert: true,
+          type: "warning",
+          title: languageData.Alerts.tour.maxPerson.title,
+          message: languageData.Alerts.tour.maxPerson.message,
+        });
+      }
+
+      if (error.response.status === 400) {
+        setAlert({
+          alert: true,
+          type: "warning",
+          title: languageData.Alerts.tour.NotAvailability.title,
+          message: languageData.Alerts.tour.NotAvailability.message,
+        });
+      }
+
+      if (error.response.status >= 405 && error.response.status !== 422) {
         setAlert({
           alert: true,
           type: "error",
@@ -86,14 +104,6 @@ export default function AddCartTour(props) {
           message: languageData.Alerts.tour.tourDetails.message,
         });
       }
-      //   if (
-      //     error.response.data.message ===
-      //       "La fecha de salida debe ser 2 días después de la fecha actual" ||
-      //     error.response.data.message ===
-      //       "ApiStatusCode: 422, ApiMessage: not availability, ApiInternalCode: 422"
-      //   ) {
-      //     setErrorAxios({ error: true, message: error.response.data.message });
-      //   }
     }
   };
 

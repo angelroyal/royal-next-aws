@@ -1686,7 +1686,17 @@ export const es = {
       tourDetails: {
         title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!",
         message: "Por favor, inténtalo más tarde."
+      },
+      maxPerson:{
+        title: "¡Se necesitan más personas para el Tour!",
+        message: "Por favor agrega una persona más a la actividad."
+      },
+
+      NotAvailability:{
+        title:"Sin disponibilidad",
+        message:"Por favor selecciona otras fechas"
       }
+
     },
 
     itinerary: {

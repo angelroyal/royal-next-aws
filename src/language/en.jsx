@@ -1685,6 +1685,14 @@ export const en = {
       tourDetails: {
         title: "Oops, there was a problem adding to the shopping cart!",
         message: "Please try again later."
+      },
+      maxPerson:{
+        title:"More People Needed for the Tour!",
+        message:"Please add one more person to the activity."
+      },
+      NotAvailability:{
+        title:"No Availability",
+        message:"Please select other dates"
       }
     },
 
