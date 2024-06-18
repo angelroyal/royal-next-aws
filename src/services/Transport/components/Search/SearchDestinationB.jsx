@@ -123,12 +123,12 @@ export function SearchDestinationB({
             displayValue={(related) => related?.label}
             placeholder={languageData.SearchBox.tabHotel.textDestinationB}
           />
-          <Combobox.Options className="px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+          <Combobox.Options className="scroll-page-blue px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
             {filterRelates.map((related, index) => (
               <Combobox.Option
                 key={index}
                 value={related}
-                className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px]"
+                className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px] hover:bg-gry-30"
                 onClick={() => selectNewDestinationB(related)}
               >
                 <p className="m-0">{getDestination(query, related.label)}</p>

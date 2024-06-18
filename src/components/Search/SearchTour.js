@@ -4,7 +4,7 @@ import React, { useState, useEffect, useMemo, useContext } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
-
+import Image from "next/image";
 
 const API_ENDPOINT = `v1/activity`;
 function SearchTour({ closeDialog, onSelectTour, listing = false }) {
@@ -149,19 +149,21 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
             leaveTo="transform scale-95 opacity-0"
           >
             <Combobox.Options
-              className={`px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm`}
+              className={`scroll-page-blue px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm`}
             >
               {Object.entries(optionsSearch).map(([type, items]) => (
                 <div key={type}>
                   <div className="px-3 py-2 text-lg font-semibold text-gray-700 cursor-default">
                     {type === "activity" ? (
                       <div className="flex items-center">
-                        <img
-                          src={`${process.env.NEXT_PUBLIC_URL}/icons/hotel/hotel-b.svg`}
-                          alt="Hotel Icon"
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_URL}/icons/tour/tour-b.svg`}
+                          alt="Tours Icon"
+                          width={16}
+                          height={20}
                           className="w-5 h-5 mr-2"
                         />
-                        <span>Hoteles</span>
+                        <span className="text-fs-16 m-b text-black">Tours</span>
                       </div>
                     ) : (
                       <div className="flex items-center">
@@ -170,7 +172,12 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
                           alt="Location Icon"
                           className="w-5 h-5 mr-2"
                         />
-                        <span>Destinos</span>
+                        <span className="text-fs-16 m-b text-black">
+                          {
+                            languageData.searchMobilHotel
+                              .autocompleteDestination
+                          }
+                        </span>
                       </div>
                     )}
                   </div>
@@ -182,7 +189,7 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
                     >
                       {({ active }) => (
                         <div
-                          className={`p-2 text-start ${
+                          className={`p-2 text-start cursor-pointer ${
                             active ? "bg-gry-30" : "text-gray-900"
                           }`}
                         >
@@ -200,46 +207,6 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
               )}
             </Combobox.Options>
           </Transition>
-          {/* <Combobox.Options
-            className={`px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm ${
-              filtersTours.length === 0 && "cursor-auto"
-            }`}
-          >
-            {filtersTours.length > 0 &&
-              filtersTours.map((option, index) => (
-                <Combobox.Option
-                  key={index}
-                  value={option}
-                  className="text-gry-100 m-m text-fs-12 cursor-pointer text-start flex gap-x-[5px] items-start my-3.5"
-                >
-                  {option.type === "destination" ? (
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
-                      alt="icon location"
-                      width={16}
-                      height={16}
-                      className="icon-location-tour"
-                    />
-                  ) : (
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/tour/tour-b.svg`}
-                      width={16}
-                      height={16}
-                      alt="icon tour"
-                    />
-                  )}
-                  <p className="m-0">
-                    {getDestination(inputAutocomplete, option.label)}
-                  </p>
-                </Combobox.Option>
-              ))}
-
-            {optionsSearch.length === 0 && inputAutocomplete.length >= 3 && (
-              <p className="m-0 text-start cursor-auto">
-                {languageData.SearchBox.tabTour.text}
-              </p>
-            )}
-          </Combobox.Options> */}
         </Combobox.Button>
       </div>
     </Combobox>

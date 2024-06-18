@@ -150,14 +150,14 @@ export function SearchDestinationA({
             }
           />
 
-          <Combobox.Options className="px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+          <Combobox.Options className="scroll-page-blue px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
             {destinations &&
               filterTransport &&
               filterTransport.map((destination, index) => (
                 <Combobox.Option
                   key={index}
                   value={destination}
-                  className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px]"
+                  className="text-gry-100 m-m text-fs-12 cursor-pointer text-start py-[6px] hover:bg-gry-30"
                   onClick={() => selectNewDestinationA(destination)}
                 >
                   <p className="m-0">

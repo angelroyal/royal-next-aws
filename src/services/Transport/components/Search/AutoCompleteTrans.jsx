@@ -115,7 +115,7 @@ export function AutoCompleteTrans({
 
           {resultAutocomplete && (
             <Combobox.Options
-              className={`px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm ${
+              className={`scroll-page-blue px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm ${
                 resultAutocomplete.length === 0 && "cursor-auto"
               }`}
             >
@@ -124,10 +124,10 @@ export function AutoCompleteTrans({
                   <Combobox.Option
                     key={index}
                     value={autoComplete}
-                    className="text-gry-100 m-m text-fs-12 cursor-pointer text-start"
+                    className="text-gry-100 m-m text-fs-12 cursor-pointer py-[6px] text-start hover:bg-gry-30"
                     onClick={() => selectNewDestinationA(autoComplete)}
                   >
-                    <p className="my-3.5">
+                    <p className="m-0">
                       {getDestination(query, autoComplete.label)}
                     </p>
                   </Combobox.Option>
