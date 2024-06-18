@@ -22,7 +22,7 @@ export default function BannerCardHome({ hotel }) {
           <span className="text-fs-16">
             {" "}
             MXN{" "}
-            {Math.floor(hotel.price)
+            ${Math.floor(hotel.price)
               .toLocaleString("es-MX", { currency: "MXN" })
               .replace(".00", "")}
             .<sup>{(hotel.price % 1).toFixed(2).slice(2)}</sup>

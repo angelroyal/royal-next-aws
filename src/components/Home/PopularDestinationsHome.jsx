@@ -56,7 +56,7 @@ export default function PopularDestinationsHome() {
       codeNameHotel: popular.codeName,
       destination: popular.name,
       codeName: popular.codeName,
-      code: popular.id,
+      code: popular.code,
       type: "destination",
       "check-in": checkIn,
       "check-out": checkOut,
