@@ -1,12 +1,13 @@
+"use client";
 import moment from "moment";
 import Image from "next/image";
 import React, { useContext, useState } from "react";
 
-import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
-import LanguageContext from "../../../language/LanguageContext";
-import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
 import { useCartAxios } from "@/components/Cart/CartAxios";
+import LanguageContext from "../../../language/LanguageContext";
+import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
+import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
 
 export default function CardMovingItinerary(props) {
   const { languageData } = useContext(LanguageContext);
@@ -14,8 +15,8 @@ export default function CardMovingItinerary(props) {
   const [openAlert, setOpenAlert] = useState(false);
   const [loader, setLoader] = useState(false);
   const { setItinerary, removeTransportById } = useCartAxios();
-  const { itemTransport } = props;
 
+  const { itemTransport } = props;
   const cancelRemove = () => {
     if (iconRemove === true) setIconRemove(false);
   };
@@ -40,7 +41,6 @@ export default function CardMovingItinerary(props) {
         });
     }
   };
-
 
   // DAY OF WEEK
   const dayOfWeek = moment(itemTransport.date).format("dddd");
@@ -86,7 +86,8 @@ export default function CardMovingItinerary(props) {
               </button>
 
               <Image
-                className="object-cover object-right w-[133px] h-[118px]"
+                className="rounded-[8px] w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px] object-cover object-right"
+                // className="object-cover object-right w-[133px] h-[118px]"
                 src={itemTransport.image}
                 // src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`}
                 alt="card transport"
@@ -99,8 +100,9 @@ export default function CardMovingItinerary(props) {
                   {itemTransport.title}
                 </h2>
 
-                <div className="flex gap-x-6 items-start">
-                  <div className="flex flex-col w-[227px] gap-y-1">
+                <div className="flex gap-x-6 items-start justify-between">
+                  {/* <div className="flex flex-col w-[227px] gap-y-1 max-md:w-[65%]"> */}
+                  <div className="flex flex-col w-1/2 gap-y-1 max-md:w-[65%]">
                     <span className="flex items-center gap-x-1">
                       <Image
                         className="w-[11px] h-[14px]"
@@ -110,12 +112,12 @@ export default function CardMovingItinerary(props) {
                         height={14}
                       />
 
-                      <p className="text-gry-100 text-fs-10 m-0 m-s-b">
+                      <p className="text-gry-100 text-fs-10 m-0 m-s-b truncate">
                         {itemTransport.fromLabel}
                       </p>
                     </span>
 
-                    <span className="flex flex-col gap-y-[3px]">
+                    <span className="flex flex-col gap-y-[3px] ">
                       {itemTransport.suitcases && (
                         <>
                           <div className="flex gap-x-[3px] items-center">
@@ -132,7 +134,7 @@ export default function CardMovingItinerary(props) {
                               {languageData.CardHomeTransport.handLuggage}
                             </p>
                           </div>
-                          
+
                           <div className="flex gap-x-[3px] items-center">
                             <Image
                               src={`${process.env.NEXT_PUBLIC_URL}icons/baggage/baggage-b.svg`}
@@ -171,7 +173,7 @@ export default function CardMovingItinerary(props) {
                           height={13}
                         />
 
-                        <p className="m-0 text-fs-10 text-gry-100 m-s-b">
+                        <p className="m-0 text-fs-10 text-gry-100 m-s-b text-nowrap">
                           {itemTransport.tourists}{" "}
                           {itemTransport.tourists > 1
                             ? languageData.cardHotel.people
@@ -199,16 +201,16 @@ export default function CardMovingItinerary(props) {
                         </p>
                       </span>
 
-                      <div className="relative">
-                        <p className="text-bl-100 text-fs-8 m-s-b">
+                      <div onClick={() => setOpenAlert(true)}>
+                        <span className="relative text-bl-100 text-fs-8 m-s-b text-nowrap cursor-pointer">
                           {languageData.containerModalHotel.policies}
-                        </p>
+                        </span>
 
                         <AlertPyC
                           openAlert={openAlert}
                           setOpenAlert={() => setOpenAlert(false)}
-                          description={"policy"}
                           cancelPolicy={itemTransport.cancelPolicies}
+                          cardView={"transport"}
                         />
                       </div>
                     </div>
@@ -237,7 +239,7 @@ export default function CardMovingItinerary(props) {
                     height={13}
                   />
 
-                  <p className="m-0 text-fs-10 text-gry-100 m-s-b">
+                  <p className="m-0 text-fs-10 text-gry-100 m-s-b text-nowrap">
                     {itemTransport.tourists}
                     {itemTransport.tourists > 1
                       ? languageData.cardHotel.people
