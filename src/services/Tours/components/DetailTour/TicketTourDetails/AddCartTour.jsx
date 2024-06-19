@@ -78,14 +78,14 @@ export default function AddCartTour(props) {
     } catch (error) {
       console.error("error 1", error);
       setIsLoader(false);
-      if (error.response.status === 422) {
-        setAlert({
-          alert: true,
-          type: "warning",
-          title: languageData.Alerts.tour.maxPerson.title,
-          message: languageData.Alerts.tour.maxPerson.message,
-        });
-      }
+      // if (error.response.status === 422) {
+      //   setAlert({
+      //     alert: true,
+      //     type: "warning",
+      //     title: languageData.Alerts.tour.maxPerson.title,
+      //     message: languageData.Alerts.tour.maxPerson.message,
+      //   });
+      // }
 
       if (error.response.status === 400) {
         setAlert({
@@ -96,7 +96,8 @@ export default function AddCartTour(props) {
         });
       }
 
-      if (error.response.status >= 405 && error.response.status !== 422) {
+      // if (error.response.status >= 405 && error.response.status !== 422) {
+      if (error.response.status >= 405) {
         setAlert({
           alert: true,
           type: "error",
