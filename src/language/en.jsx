@@ -5,7 +5,7 @@ export const en = {
   },
 
   navBar: {
-    contact: "Contact"
+    contact: "Contact",
   },
 
   specialOffer: {
@@ -14,7 +14,8 @@ export const en = {
     subtitle: "Get benefits and personalized help by dialing our number.",
     followNetwork: "Follow us to know more.",
     title: "Doubts to choose a hotel?",
-    description: "Share your information with us and an advisor will contact you."
+    description:
+      "Share your information with us and an advisor will contact you.",
   },
 
   alertHelp: {
@@ -31,7 +32,7 @@ export const en = {
     call: "Choose when we can call you.",
     sendNow: "Send now",
     followNetwork: "Follow us to know more.",
-    contact: "Contact us"
+    contact: "Contact us",
   },
 
   navigation: {
@@ -52,12 +53,12 @@ export const en = {
       titleText: "Find the ideal hotel",
       autocomplete: "Destination",
       textDestination: "Where are you going?",
-      startingPoint:"Starting Point",
-      textCity:"Where are you heading?",
-      textDestinationA:"Where are you departing from?",
-      textDestinationB:"What is your destination?",
+      startingPoint: "Starting Point",
+      textCity: "Where are you heading?",
+      textDestinationA: "Where are you departing from?",
+      textDestinationB: "What is your destination?",
       textSearching: "Searching for routes...",
-      textSearchingH:"Search for a hotel or destination",
+      textSearchingH: "Search for a hotel or destination",
       textResults: "No results found",
       date: "Date",
       dateText: "Arrival",
@@ -78,7 +79,7 @@ export const en = {
     tabTransport: {
       city: "City",
       from: "From",
-      to: "To"
+      to: "To",
     },
 
     tabTour: {
@@ -96,8 +97,9 @@ export const en = {
       people: "People",
       button: "Search",
       // LP 27-Feb-24
-      subtitleTopActivities: "Discover our top activities for exciting and cultural moments",
-      // 
+      subtitleTopActivities:
+        "Discover our top activities for exciting and cultural moments",
+      //
       personsActivities: {
         titlePeople: "Tour",
         adult: "Adults",
@@ -106,7 +108,7 @@ export const en = {
         age: "Age",
         button: "Apply",
       },
-      transportText: "Transportation"
+      transportText: "Transportation",
     },
     tabTransportation: {
       titleTransportation: "Transportation",
@@ -134,15 +136,15 @@ export const en = {
   },
 
   mobile: {
-    informationMobile:
-      `The ${process.env.NEXT_PUBLIC_NAME_COMPANY} team is currently engaged in the development of a mobile version of its platform. So far, the platform is only available in its web version.`,
+    informationMobile: `The ${process.env.NEXT_PUBLIC_NAME_COMPANY} team is currently engaged in the development of a mobile version of its platform. So far, the platform is only available in its web version.`,
   },
 
   cart: {
     titleBooking: "Your reservation",
     subtitleBooking: "Your cart is empty",
     subtitleItinerary: "Your itinerary is empty",
-    textRoomEmpty: "Select new dates to check availability for your next adventure.",
+    textRoomEmpty:
+      "Select new dates to check availability for your next adventure.",
     roomEmpty: "No rooms available",
     textMessage: "Start planning your next adventure",
     total: "Total:",
@@ -190,7 +192,8 @@ export const en = {
 
   nestedModal: {
     alertTitle: "Warning!",
-    alertText: "You are about to remove all selected rooms from your reservation. Do you want to proceed with the action?",
+    alertText:
+      "You are about to remove all selected rooms from your reservation. Do you want to proceed with the action?",
     confirmButton: "Ok",
     cancelButton: "Cancel",
   },
@@ -204,7 +207,7 @@ export const en = {
   pageError: {
     titleAlert: "Oops, there was a mistake!",
     textAlert: "We couldn't find this destination.",
-    confirmButton: "Go to the home"
+    confirmButton: "Go to the home",
   },
 
   // LP RECOMMENDATION
@@ -214,7 +217,8 @@ export const en = {
     subtitleReady: "Check the full details in your cart.",
     reservationDate: "Reservation date:",
     titleKeep: "Keep exploring",
-    subtitleKeep: "Don't stop here. Discover more exciting destinations and plan your next adventure.",
+    subtitleKeep:
+      "Don't stop here. Discover more exciting destinations and plan your next adventure.",
     btnBack: "Back to the beginning",
 
     hotel: {
@@ -227,7 +231,7 @@ export const en = {
 
     transport: {
       titleRecommedation: "Do you already know how to get there?",
-      btnchoose: "Choose transportation"
+      btnchoose: "Choose transportation",
     },
   },
 
@@ -235,14 +239,16 @@ export const en = {
   ////////////////////////  HOME //////////////////////////////
   /*********************************************************/
   bannersHome: {
-    textTyC: "**Prices and discounts valid on selected services and subject to availability at the time of purchase. Check terms and conditions by clicking",
+    textTyC:
+      "**Prices and discounts valid on selected services and subject to availability at the time of purchase. Check terms and conditions by clicking",
     here: "Here",
     currentOffers: "Current offers",
     limitedPromotions: "Promotions and offers valid for a limited time.",
   },
 
   exploreActivitiesHome: {
-    titleExploreTransport: "The best hotels with excellent transportation for your stay",
+    titleExploreTransport:
+      "The best hotels with excellent transportation for your stay",
     titleExplore: "Explore a variety of activities",
     weRecommended: "We recommend the best tours in Mexico here.",
     bestHotels: "The best hotels for your stay",
@@ -280,7 +286,7 @@ export const en = {
     order: "Order by:",
     selection: "Select",
     // LP
-    resultFound: "accommodations in"
+    resultFound: "accommodations in",
   },
 
   cardHotel: {
@@ -347,13 +353,14 @@ export const en = {
     roomsFound: "rooms found",
     selectedRoom: "Selected room",
     chosenRooms: "Chosen rooms",
-    toView: "To view rooms in this category, please remove selections from the pre-cart.",
+    toView:
+      "To view rooms in this category, please remove selections from the pre-cart.",
     missingRooms: {
       text1: "room",
       text2: "left",
       text3: "to add!",
-      completeRooms: "You have chosen all your rooms"
-    }
+      completeRooms: "You have chosen all your rooms",
+    },
   },
 
   modalSearchHotel: {
@@ -400,7 +407,7 @@ export const en = {
     taxesText: "Taxes included",
     buttonPrincipal: "Book now",
     alert: "Warning!! Rooms will be removed",
-    addRoomMessage: "Add Room"
+    addRoomMessage: "Add Room",
   },
 
   hotelTypes: {
@@ -430,18 +437,19 @@ export const en = {
   roomsCancellations: {
     percentage: "Cancel before",
     from: "your reservation with a charge of",
-    total: "of the total amount of your reservation. For more information visit our",
-    terms: "cancellation terms."
+    total:
+      "of the total amount of your reservation. For more information visit our",
+    terms: "cancellation terms.",
   },
 
   tourPolicyCancelation: {
     title: "Types of cancellations",
     before: "Before",
-    penalty: "penalty"
+    penalty: "penalty",
   },
 
   cancelationTransport: {
-    cancelation: "Cancel before"
+    cancelation: "Cancel before",
   },
 
   titlesFilterHotel: {
@@ -493,7 +501,7 @@ export const en = {
     PriceHigh: "Price: high to low",
     PriceLowest: "Price: lowest to highest",
     Duration: "Duration from shortest to longest",
-    DurationM: "Duration from longest to shortest"
+    DurationM: "Duration from longest to shortest",
   },
 
   modalHotelOptions: {
@@ -533,7 +541,7 @@ export const en = {
     LI: "Lunch Included",
     DI: "Dinner Included",
     OR: "Room Only",
-    CB: "Special Breakfast"
+    CB: "Special Breakfast",
   },
 
   // LP TOUR RECOMMENDED HOME HOTEL
@@ -542,7 +550,8 @@ export const en = {
     title: "How to enjoy your trip to the fullest?",
     subtitle: "From exploring",
     subtitle2: " +100 historical sites,",
-    subtitle3: " we have everything you need to create unforgettable memories. Plan your itinerary with us and make every moment count on your trip!",
+    subtitle3:
+      " we have everything you need to create unforgettable memories. Plan your itinerary with us and make every moment count on your trip!",
   },
   // END LP TOUR RECOMMENDED HOME HOTEL
 
@@ -555,21 +564,22 @@ export const en = {
     tourPrice: "Tours from",
   },
 
-  // LP LISTING TOUR 
+  // LP LISTING TOUR
   listingTour: {
     weFound: "We found",
     excursionsActivities: "excursions and activities",
   },
   //END LP LISTING TOUR
 
-  // LP BANNERTOUR 
+  // LP BANNERTOUR
   bannerTour: {
     subtitleBannerTour: `Travel where you want at the best price with ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
   },
 
   bannersFooter: {
     destination: "San Antonio Mulix Cenote in Mérida",
-    descriptionOfTheDestination: "A natural corner near Mérida. Clear waters, green surroundings. Swimming and snorkeling. Explore the beauty of Mérida at its best!",
+    descriptionOfTheDestination:
+      "A natural corner near Mérida. Clear waters, green surroundings. Swimming and snorkeling. Explore the beauty of Mérida at its best!",
   },
 
   bannerListingTour: {
@@ -642,10 +652,12 @@ export const en = {
 
     OccupancyTours: {
       selectYourTickets: "Select your tickets",
-      subtitleSelectYourTickets: "Upon selecting your tickets, you will be able to view the summary in your shopping cart.",
+      subtitleSelectYourTickets:
+        "Upon selecting your tickets, you will be able to view the summary in your shopping cart.",
       changeSelection: "Change selection",
       reserve: "Reserve",
-      dateNotAvailable: "This date is not available. Please choose another one.",
+      dateNotAvailable:
+        "This date is not available. Please choose another one.",
     },
   },
 
@@ -749,12 +761,14 @@ export const en = {
   /*********************************************************/
   bannerTransportHome: {
     titleDisposal: "Transportation at your disposal",
-    textBookNow: "Book now and enjoy competitive rates, safety, and punctuality on every journey. Your comfort is our priority. Join us and make your travels memorable from the very first moment.",
+    textBookNow:
+      "Book now and enjoy competitive rates, safety, and punctuality on every journey. Your comfort is our priority. Join us and make your travels memorable from the very first moment.",
     chooseDates: "Choose dates",
     discoverOptions: "Discover your options here",
-    getKnowBetter: "We'd love to get to know you better. Please share your information with us and allow us to provide you with personalized attention.",
+    getKnowBetter:
+      "We'd love to get to know you better. Please share your information with us and allow us to provide you with personalized attention.",
     sendBtn: "Send",
-    bookTransportation:"Book transportation"
+    bookTransportation: "Book transportation",
   },
 
   bannerTransport: {
@@ -763,14 +777,16 @@ export const en = {
     firstTime: "First time with us?",
     getOff: "Get 10% off",
     titleTravelSafely: "Travel safely and peacefully",
-    ourDrivers: "Our professional drivers guarantee you a hassle-free journey, providing you with the confidence you need on every trip",
+    ourDrivers:
+      "Our professional drivers guarantee you a hassle-free journey, providing you with the confidence you need on every trip",
     bookTransferBtn: "Book a transfer",
   },
 
   tipsBooking: {
     titleBookSteps: "Book your transfer in 3 steps",
     chooseLocation: "Choose the location",
-    chooseLocationDescription: "Your perfect stay begins with the ideal location.",
+    chooseLocationDescription:
+      "Your perfect stay begins with the ideal location.",
     pickUpDate: "Pick-up date",
     pickUpDateDescription: "Select the day that suits you best.",
     bookCar: "Reserve your car",
@@ -814,13 +830,13 @@ export const en = {
     travelInsurance: "Travel insurance",
     babySeat: "Baby seat",
     privateService: "The total price corresponds to the full private service.",
-    sharedService: "The total price is determined by adding the cost for each passenger.",
+    sharedService:
+      "The total price is determined by adding the cost for each passenger.",
   },
 
   /************************************************************/
   //////////////////////// 𝓜𝓞𝓥𝓘𝓝𝓖 MOVING 𝓜𝓞𝓥𝓘𝓝𝓖 //////////////////////////////
   /************************************************************/
-
 
   homeMoving: {
     titleCarouselTransport: "Transportation service",
@@ -854,7 +870,7 @@ export const en = {
     modalTitle: "Book your transfer now!",
     modalSubtitle: "Fill in the following information to book",
     modalTextInf: "No information.",
-    alertError: "Departure date must be 2 days after current date"
+    alertError: "Departure date must be 2 days after current date",
   },
 
   modalArrive: {
@@ -946,7 +962,6 @@ export const en = {
     textAlready: "Transport Ready!",
   },
 
-
   /***********************************************************/
   //////////////////////// 𝓐𝓑𝓞𝓤𝓣 𝓤𝓢 FOOTER 𝓐𝓑𝓞𝓤𝓣 𝓤𝓢 //////////////////////////////
   /************************************************************/
@@ -980,15 +995,14 @@ export const en = {
       hotelPuertoVallarta: "Hotels in Puerto Vallarta",
     },
 
-    links:"Links",
-    followUs:"Follow us",
-    acceptCreditCards:"We accept credit cards",
+    links: "Links",
+    followUs: "Follow us",
+    acceptCreditCards: "We accept credit cards",
   },
 
   ourHistory: {
     titleWhoWeAre: "Who we are?",
-    textOurTeam:
-      `Behind ${process.env.NEXT_PUBLIC_NAME_COMPANY} there is more than a search and booking website; there is a professional and passionate team dedicated to helping you live incredible experiences discovering Mexico and the world.`,
+    textOurTeam: `Behind ${process.env.NEXT_PUBLIC_NAME_COMPANY} there is more than a search and booking website; there is a professional and passionate team dedicated to helping you live incredible experiences discovering Mexico and the world.`,
     textExperiences:
       "From the beginning the goal was to create exceptional experiences in every trip, with a focus on total satisfaction of travelers' needs, offering a platform where they can book with ease.",
     textAgreements:
@@ -1024,8 +1038,7 @@ export const en = {
     cancellations: "Cancellations",
     questions: {
       questionRoyal: "About us?",
-      textRoyal:
-        `${process.env.NEXT_PUBLIC_NAME_COMPANY} is the trade name of VIAJES BAMO S.A DE C.V. We focus on providing tourism services among other activities related to travel for personal enjoyment. Legally incorporated under Mexican regulations, under Public Deed number 2701. Volume Twelve Second, Volume D, before the Faith of Lic.Ricardo Dehesa Cortés, of Notary Office 90 in Playa del Carmen, Quintana Roo, Mexico.`,
+      textRoyal: `${process.env.NEXT_PUBLIC_NAME_COMPANY} is the trade name of VIAJES BAMO S.A DE C.V. We focus on providing tourism services among other activities related to travel for personal enjoyment. Legally incorporated under Mexican regulations, under Public Deed number 2701. Volume Twelve Second, Volume D, before the Faith of Lic.Ricardo Dehesa Cortés, of Notary Office 90 in Playa del Carmen, Quintana Roo, Mexico.`,
       questionDirection: "Where are we located?",
       textDirection:
         "Our offices are located at Av.Tulum and Av. Nader, Sm.2, Mz.1, Lt.44 Andador Vl, C.P.77500; Cancun, Q.R; but for your convenience, we also make reservations via telephone and online, always guaranteeing you a personalized and attentive service.",
@@ -1033,10 +1046,8 @@ export const en = {
       textBooking: "Booking with us is 100% secure",
       brand:
         "We are a registered trademark with all rights reserved. You can access our RFC, in case you wish to do so",
-      nationalRegistration:
-        `We have a National Tourism Registry (RNT). This guarantees that we are legally registered with the Ministry of Tourism. You can verify it directly in their official website under our commercial name: ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
-      website:
-        "Our Facebook page is registered and certified by the company",
+      nationalRegistration: `We have a National Tourism Registry (RNT). This guarantees that we are legally registered with the Ministry of Tourism. You can verify it directly in their official website under our commercial name: ${process.env.NEXT_PUBLIC_NAME_COMPANY}.`,
+      website: "Our Facebook page is registered and certified by the company",
       confirmation:
         "With every purchase, we give you a confirmation number, which can be verified with the hotel almost immediately.",
       creditCard:
@@ -1059,10 +1070,8 @@ export const en = {
       customerService:
         "If you have any additional questions, you can call +52 800 953 0342 and we will gladly assist you.",
       questionCreditCard: "What are the available forms of payment?",
-      textCreditCard:
-        `${process.env.NEXT_PUBLIC_NAME_COMPANY} accepts from bank transfers and deposits, up to convenience store payments. For another part, it is important that you know when making payment with credit card, you can get great benefits such as accessible and attractive promotions for your next vacation`,
-      questionConsultant:
-        "What to do if the advisor does not contact you?",
+      textCreditCard: `${process.env.NEXT_PUBLIC_NAME_COMPANY} accepts from bank transfers and deposits, up to convenience store payments. For another part, it is important that you know when making payment with credit card, you can get great benefits such as accessible and attractive promotions for your next vacation`,
+      questionConsultant: "What to do if the advisor does not contact you?",
       textConsultant:
         "Tranquilo, this may be due to the high demand for calls we keep during the day. If it has been more than 24 hours since you sent your form, you can call 800 953 0342, always having at hand the name and surname under which the registration was made. One of our executives will get back to you as soon as possible.",
       questionPackage: "Can packages be reserved?",
@@ -1074,10 +1083,8 @@ export const en = {
       textFlight:
         "Yes, you can! However, at the moment, our prices do not include flights due to the variation of rates (according to travel dates and origin-destination points). If you are interested in purchasing a flight, please contact one of our consultants and they will be happy to offer you preferential prices",
 
-      questionDates:
-        "How to make changes to reservations?",
-      textDates:
-        `Of course! If you request a change of dates, we only require that you be notified via email to: info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com at least 20 business days prior to your arrival date at the hotel. Adjustments will be subject to price and availability variations`,
+      questionDates: "How to make changes to reservations?",
+      textDates: `Of course! If you request a change of dates, we only require that you be notified via email to: info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com at least 20 business days prior to your arrival date at the hotel. Adjustments will be subject to price and availability variations`,
       questionCancellation: "What to do if you need to cancel?",
       textCancellation:
         "Unfortunately, most of our packages are non-refundable. In the event that you are unable to travel, we can help you arrange a change of dates subject to price and availability variations. In the event that your package is refundable, you can check the refund conditions and penalties in the Terms of Service section, available in our Terms and Conditions, or call our reservation center.",
@@ -1123,11 +1130,11 @@ export const en = {
       optionRound: "Round",
       optionSimple: "Simple",
       optionOther: "Other case",
-      pyc:{
+      pyc: {
         text1: "You have",
         text2: "hours to cancel ",
-        text3:"your transportation reservation."
-      }
+        text3: "your transportation reservation.",
+      },
     },
     tourItinerary: {
       titleTour: "Tours",
@@ -1150,7 +1157,7 @@ export const en = {
       textAdults: "adults",
       textChild: "child",
       textChildren: "children",
-      rooms: "Room"
+      rooms: "Room",
     },
   },
 
@@ -1159,7 +1166,6 @@ export const en = {
     comments: "Comments",
     writeHere: "Write here",
     selectAnOption: "Select an option",
-
   },
 
   payment: {
@@ -1168,7 +1174,7 @@ export const en = {
     titlePayment: "Payment",
     titleConfirmations: "Confirmation",
     paymentIn: "Payment in",
-    nextForm: "Next"
+    nextForm: "Next",
   },
 
   booking: {
@@ -1189,9 +1195,9 @@ export const en = {
       placeholderEmail: "myemail@example.com",
       textPhone: "Phone",
       placeholderPhone: "Enter your number",
-      titleClientData:"Reservation details",
-      notSpecifyName:"It is not necessary to specify a name.",
-      continue:"Continue",
+      titleClientData: "Reservation details",
+      notSpecifyName: "It is not necessary to specify a name.",
+      continue: "Continue",
     },
     paymentConekta: {
       titleForm: "Payment method",
@@ -1214,8 +1220,7 @@ export const en = {
         cardHolder: "Cardholder",
         nameAndSurname: "Name and surname",
         //LUIS END 2-02-24
-      }
-
+      },
     },
     invalidEmail: "Invalid email",
   },
@@ -1227,14 +1232,16 @@ export const en = {
     letterTotal: "MXN$",
     total: "Total:",
     successPaymentTitle: "All prepared. Your reservation is ready!",
-    successPaymentText: "You will shortly receive an email with a copy of your itinerary. We hope you have a great experience!",
+    successPaymentText:
+      "You will shortly receive an email with a copy of your itinerary. We hope you have a great experience!",
     startText: "Start",
     yourDestination: "Your destination",
     waiting: "Pending confirmation",
     // LP
     confirmationNumber: "Your confirmation number is:",
     reservationDetails: "Reservation details",
-    textInformative: "Use your confirmation number in case you need to make changes to your reservation, check its status, or for any other management related to your trip.",
+    textInformative:
+      "Use your confirmation number in case you need to make changes to your reservation, check its status, or for any other management related to your trip.",
     titular: "Name",
     email: "Email",
     phone: "Phone",
@@ -1242,7 +1249,7 @@ export const en = {
     cancellations: "Cancellations",
     cancellationsText: `Please remember that cancellations for reservations, hotels, transportation, or tours are handled directly through the ${process.env.NEXT_PUBLIC_NAME_COMPANY} support line. We recommend that you get in touch with us for any cancellation or modification requests.`,
     doubts: "Do you have any doubts?",
-    reservationNo:"No. reservation:",
+    reservationNo: "No. reservation:",
 
     bookingData: {
       titleBookingData: "Booking data",
@@ -1260,7 +1267,8 @@ export const en = {
       infoReservation: "Reservation Details",
       infoPayment: "Payment details",
       alertNoAvailability: "Availability was lost in one of your reservations!",
-      alertNoAvailabilityText: "Feel free to explore new dates or perform a search."
+      alertNoAvailabilityText:
+        "Feel free to explore new dates or perform a search.",
     },
     cardMoving: {
       titleMoving: "Transfer",
@@ -1355,25 +1363,31 @@ export const en = {
     email: "Email",
     copyLink: "Copy Link",
     copy: "Copy Link",
-    share: "Share"
+    share: "Share",
   },
 
   alertsPayment: {
     declined: "Payment declined",
-    textDeclined: "We had a problem with your payment, please call your bank to verify your payment",
+    textDeclined:
+      "We had a problem with your payment, please call your bank to verify your payment",
     unavailable: "Hotel in high demand.... Reservations Sold Out!",
     unavailableText1: "We regret to inform you that at the moment ",
     unavailableText2: "is not available.",
     alertGeneral: "Oops, something went wrong!",
-    alertGeneralText: "We regret to inform you that a server problem has occurred. Please contact us for assistance.",
+    alertGeneralText:
+      "We regret to inform you that a server problem has occurred. Please contact us for assistance.",
     dataIncorrect: "Warning: Authentication Problem",
-    dataIncorrectText: "Your card information is incorrect. Please verify your information and try again",
+    dataIncorrectText:
+      "Your card information is incorrect. Please verify your information and try again",
     alertPrice: "Dear customer",
-    alertPriceText: "The price of your reservation has changed due to hotel availability. We invite you to check the details of your reservation again for the most up-to-date information.",
+    alertPriceText:
+      "The price of your reservation has changed due to hotel availability. We invite you to check the details of your reservation again for the most up-to-date information.",
     alertPassengers: "Oops, something went wrong!",
-    alertPassengersText: "The number of passengers in the reservation has been exceeded. Please verify your reservation information and try again.",
+    alertPassengersText:
+      "The number of passengers in the reservation has been exceeded. Please verify your reservation information and try again.",
     alertAmount: "Amount Limit Exceeded!",
-    alertAmountText: "Sorry, but you have exceeded the maximum amount of $95,000. Please review and adjust your reservations.",
+    alertAmountText:
+      "Sorry, but you have exceeded the maximum amount of $95,000. Please review and adjust your reservations.",
     rateTitle: "Sorry!",
     rateText: "The following rates have changed:",
     updatePrice: "Updated rate",
@@ -1381,18 +1395,21 @@ export const en = {
     buttonRate: "See new prices",
     rateAlert: "Open Rate Alert",
     paymentFailed: "The payment could not be processed",
-    btnUnderstood:"Understood",
-    textSuccess:"We have sent a confirmation to your email with all the information about your purchase. If you have any questions or need assistance, don't hesitate to contact us.",
-    textDeclinedPayment:"We're sorry, your payment could not be processed. Please check that your card details and billing address are correct.",
-    btnRetry:"Retry",
-    dataSafe:"Your data is safe with us.",
-    textProcessing: "This may take a few moments. Please do not close this window or reload the page.",
+    btnUnderstood: "Understood",
+    textSuccess:
+      "We have sent a confirmation to your email with all the information about your purchase. If you have any questions or need assistance, don't hesitate to contact us.",
+    textDeclinedPayment:
+      "We're sorry, your payment could not be processed. Please check that your card details and billing address are correct.",
+    btnRetry: "Retry",
+    dataSafe: "Your data is safe with us.",
+    textProcessing:
+      "This may take a few moments. Please do not close this window or reload the page.",
     textAlert: {
       PP: "Processing payment",
       PF: "We could not process your payment",
       PE: "Successful payment",
       PD: "Payment declined",
-    }
+    },
   },
 
   /*******************************************************************************/
@@ -1440,7 +1457,8 @@ export const en = {
     altTourF: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Family Travel.`,
 
     titleTransferBest: "A Safe Trip?",
-    subtitleTransferB: "The best private transportation option you can find here.",
+    subtitleTransferB:
+      "The best private transportation option you can find here.",
     altTransferB: `${process.env.NEXT_PUBLIC_NAME_COMPANY} The Best Transportation`,
 
     titleTransferSafe: "Compare in our catalog and book in advance.",
@@ -1451,8 +1469,10 @@ export const en = {
     subtitleTransferT: "Travel safely and at the lowest price!",
     altTransferT: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Travel Transportations`,
 
-    titleCallCenter: "Do you have doubts with your reservation? Call now, we will help you resolve your doubts",
-    subtitleCallCenter1: "You need something else and can't find it, call us at", //*******
+    titleCallCenter:
+      "Do you have doubts with your reservation? Call now, we will help you resolve your doubts",
+    subtitleCallCenter1:
+      "You need something else and can't find it, call us at", //*******
     subtitleCallCenter2: ", one of our advisors can help you",
     altCallCenter: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Reservations Reservation Assistance`,
 
@@ -1487,7 +1507,7 @@ export const en = {
     principalBannerH: {
       title1: "Find the rest you are looking for",
       title2: "The best hotels in Mexico",
-      title3: "Hotels in Mexico at the best price"
+      title3: "Hotels in Mexico at the best price",
     },
 
     cardListingImage: {
@@ -1522,36 +1542,30 @@ export const en = {
       dontWorry: "Don't worry.",
       hereSimplify: "We are here to simplify",
       planning: "your trip planning, making it exciting and hassle-free.",
-
     },
     //END LP BANNER SELFIE BEACH AND CITY /12-03-24
   },
-
 
   /*******************************************************************************/
   //////////////////////// 𝓜𝓔𝓣𝓐𝓔𝓣𝓘𝓠𝓤𝓔𝓣𝓐𝓢 METAETIQUETAS 𝓜𝓔𝓣𝓐𝓔𝓣𝓘𝓠𝓤𝓔𝓣𝓐𝓢 //////////////////////////////
   /*****************************************************************************/
 
-
   metaHome: {
     metaHotel: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Home Hotel`,
-      description:
-        `Exceptional Lodging Experiences in Mexico - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Gives You Access to the Best Hotels in Emblematic Destinations`,
+      description: `Exceptional Lodging Experiences in Mexico - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Gives You Access to the Best Hotels in Emblematic Destinations`,
       keywords:
         "Lodging in Mexico, Booking Hotels, Popular Destinations, Plan your destination",
     },
     metaTour: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Home Tour`,
-      description:
-        `Live Unique Experiences in Mexico with ${process.env.NEXT_PUBLIC_NAME_COMPANY} - Book Tours to Connect with History, Nature and Culture of the Country`,
+      description: `Live Unique Experiences in Mexico with ${process.env.NEXT_PUBLIC_NAME_COMPANY} - Book Tours to Connect with History, Nature and Culture of the Country`,
       keywords:
         "Tours in Mexico, Adventures, Different Activities, Tourist Destinations",
     },
     metaMoving: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Home Transfer`,
-      description:
-        `Arrive in Cancun in Style - Book Comfortable and Safe Transfers with ${process.env.NEXT_PUBLIC_NAME_COMPANY} and Start Your Vacation on the Right Foot`,
+      description: `Arrive in Cancun in Style - Book Comfortable and Safe Transfers with ${process.env.NEXT_PUBLIC_NAME_COMPANY} and Start Your Vacation on the Right Foot`,
       keywords:
         "Transportation Service, Arrive on Time, Destination, Transfers",
     },
@@ -1560,22 +1574,19 @@ export const en = {
   metaResults: {
     metaHotel: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Results Hotel`,
-      description:
-        `Hotels for Every Taste - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Offers You a Collection of Accommodation Options in Mexico Just a Click Away`,
+      description: `Hotels for Every Taste - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Offers You a Collection of Accommodation Options in Mexico Just a Click Away`,
       keywords:
         "Accommodations, Hotel Search, Best Hotels in Mexico, Lodging Deals, Booking Assistance",
     },
     metaTour: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Results Tour`,
-      description:
-        `Your Portal to Booking Tours in Mexico - Find, Compare, and Book Tours in Fascinating Mexican Destinations with ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
+      description: `Your Portal to Booking Tours in Mexico - Find, Compare, and Book Tours in Fascinating Mexican Destinations with ${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
       keywords:
         "Tourist Activities, Discover the Best Tour, Booking Assistance, Tour Search",
     },
     metaMoving: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Results Moving`,
-      description:
-        `Custom Transfers in Cancun - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Provides Personalized Transportation Options to Meet Your Needs`,
+      description: `Custom Transfers in Cancun - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Provides Personalized Transportation Options to Meet Your Needs`,
       keywords:
         "Arrive on Time, Cancun Transfer Search, Airport Transfers, Shared Transportation, Booking Assistance",
     },
@@ -1609,22 +1620,18 @@ export const en = {
   metaFooter: {
     metaHistory: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Our History`,
-      description:
-        `About Us - Discover the Passion and Commitment that Drive ${process.env.NEXT_PUBLIC_NAME_COMPANY} to Provide You with the Best Travel Experiences`,
-      keywords:
-        `Who we are, Service Quality, About ${process.env.NEXT_PUBLIC_NAME_COMPANY}, Success Story`,
+      description: `About Us - Discover the Passion and Commitment that Drive ${process.env.NEXT_PUBLIC_NAME_COMPANY} to Provide You with the Best Travel Experiences`,
+      keywords: `Who we are, Service Quality, About ${process.env.NEXT_PUBLIC_NAME_COMPANY}, Success Story`,
     },
     metaTerms: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Terms and Conditions`,
       description:
         "Book with Confidence - Our Terms and Conditions Define Our Commitment to Service Excellence",
-      keywords:
-        `${process.env.NEXT_PUBLIC_NAME_COMPANY} Terms and Conditions, Booking Policy, Website Usage, Customer Responsibilities`,
+      keywords: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Terms and Conditions, Booking Policy, Website Usage, Customer Responsibilities`,
     },
     metaPrivacy: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Privacy Policy`,
-      description:
-        `Your Information, Your Control - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Gives You Control over Your Personal Data per Our Privacy Policy`,
+      description: `Your Information, Your Control - ${process.env.NEXT_PUBLIC_NAME_COMPANY} Gives You Control over Your Personal Data per Our Privacy Policy`,
       keywords:
         "Privacy Policy, Customer Data Management, Data Confidentiality, Data Security, Rights",
     },
@@ -1637,10 +1644,8 @@ export const en = {
     },
     metaQuestion: {
       title: `${process.env.NEXT_PUBLIC_NAME_COMPANY} - Frequently Asked Questions`,
-      description:
-        `Your Queries, Our Answers - ${process.env.NEXT_PUBLIC_NAME_COMPANY} is Committed to Providing Assistance at Every Step of Your Journey`,
-      keywords:
-        `Frequently Asked Questions, Customer Assistance, Help and Support, About ${process.env.NEXT_PUBLIC_NAME_COMPANY}, FAQs, Services`,
+      description: `Your Queries, Our Answers - ${process.env.NEXT_PUBLIC_NAME_COMPANY} is Committed to Providing Assistance at Every Step of Your Journey`,
+      keywords: `Frequently Asked Questions, Customer Assistance, Help and Support, About ${process.env.NEXT_PUBLIC_NAME_COMPANY}, FAQs, Services`,
     },
     author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
@@ -1674,26 +1679,26 @@ export const en = {
     find: "Find",
     filter: "Filter",
     order: "Order",
-    filters:"Filters",
+    filters: "Filters",
   },
 
   Alerts: {
     hotel: {
-      title: "Oops, there was a problem adding to the shopping cart!"
+      title: "Oops, there was a problem adding to the shopping cart!",
     },
     tour: {
       tourDetails: {
         title: "Oops, there was a problem adding to the shopping cart!",
-        message: "Please try again later."
+        message: "Please try again later.",
       },
-      maxPerson:{
-        title:"More People Needed for the Tour!",
-        message:"Please add one more person to the activity."
+      maxPerson: {
+        title: "More People Needed for the Tour!",
+        message: "Please add one more person to the activity.",
       },
-      NotAvailability:{
-        title:"No Availability",
-        message:"Please select other dates"
-      }
+      NotAvailability: {
+        title: "No Availability",
+        message: "Please select other dates",
+      },
     },
 
     itinerary: {
@@ -1701,6 +1706,21 @@ export const en = {
       contact: "Contact us at",
     },
 
+    notification: {
+      hotel: {
+        errorTitle: "Error adding hotel",
+        errorSubtitle:"There was a problem adding the hotel. Please try again.",
+        successTitle: "Hotel added!",
+        successSubtitle: "Everything is ready for your stay.",
+      },
+
+      transport: {
+        errorTitle: "Error adding transportation",
+        errorSubtitle:"There was a problem adding the transportation. Please try again.",
+        successTitle: "Transportation added!",
+        successSubtitle: "Everything is ready for your trip.",
+      },
+    },
   },
 
   countries: {
