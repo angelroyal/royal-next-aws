@@ -10,6 +10,11 @@ import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import { creditsCard } from "./Config";
 import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
+import { AboutFooter, AboutMobile } from "./AboutFooter";
+import {
+  MexicoHotelsFooter,
+  MexicoHotelsFooterMobile,
+} from "./MexicoHotelsFooter";
 
 const Hotels = {
   acapulco: {
@@ -245,150 +250,35 @@ export default function FooterT() {
             </div>
 
             {/* ABOUT */}
-            <div
-              className="flex flex-col"
-              onClick={() => handleAccordionClick(0)}
-            >
-              <Disclosure >
-                <>
-                  <Disclosure.Button className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none">
-                    <span
-                      className={`${
-                        footerBlue ? "text-white" : "text-black"
-                      } text-fs-16 m-s-b `}
-                    >
-                      {languageData.footer.about.titleAbout}
-                    </span>
-                    <ChevronUpIcon
-                      className={`${
-                        positionOpen === 0 ? "rotate-180 transform" : ""
-                      } h-5 w-5  md:hidden ${
-                        footerBlue ? "text-white" : "text-black"
-                      } `}
-                    />
-                  </Disclosure.Button>
-
-                  {positionOpen === 0 && (
-                    <div className="pb-2 pt-2 text-sm text-gray-500">
-                      <div className="flex flex-col gap-[8px]">
-                        {/* OUR HISTORY */}
-                        <Link
-                          href={`/${language}/history`}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
-                        >
-                          {languageData.footer.about.titleHistory}
-                        </Link>
-
-                        {/* FAQS */}
-                        <Link
-                          href={`/${language}/faqs`}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
-                        >
-                          {languageData.footer.about.titleQuestions}
-                        </Link>
-
-                        {/* TYC */}
-                        <Link
-                          href={`/${language}/tyc`}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
-                        >
-                          {languageData.footer.about.titleConditions}
-                        </Link>
-
-                        {/* PRIVACY POLICY */}
-                        <Link
-                          href={`/${language}/privacy`}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
-                        >
-                          {languageData.footer.about.titlePrivacy}
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </>
-              </Disclosure>
+            <div className="sm:hidden block">
+              <AboutMobile
+                handleAccordionClick={handleAccordionClick}
+                footerBlue={footerBlue}
+                positionOpen={positionOpen}
+              />
             </div>
-            {/*END ABOUT */}
+
+            <div className="hidden sm:block">
+              <AboutFooter footerBlue={footerBlue} />
+            </div>
 
             {/* MEXICO HOTELS */}
-            <div
-              className="flex flex-col"
-              onClick={() => handleAccordionClick(1)}
-            >
-              <Disclosure >
-                <>
-                  <Disclosure.Button className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none">
-                    <span
-                      className={`${
-                        footerBlue ? "text-white" : "text-black"
-                      } text-fs-16 m-s-b `}
-                    >
-                      {languageData.footer.hotelsMexico.titleHotel}
-                    </span>
-                    <ChevronUpIcon
-                      className={`${
-                        positionOpen === 1 ? "rotate-180 transform" : ""
-                      } h-5 w-5 md:hidden ${
-                        footerBlue ? "text-white" : "text-black"
-                      }`}
-                    />
-                  </Disclosure.Button>
+            <div className="sm:hidden block">
+              <MexicoHotelsFooterMobile
+                handleAccordionClick={handleAccordionClick}
+                footerBlue={footerBlue}
+                positionOpen={positionOpen}
+                sendHotel={sendHotel}
+                Hotels={Hotels}
+              />
+            </div>
 
-                  {positionOpen === 1 && (
-                    <div className="pb-2 pt-2 text-sm text-gray-500">
-                      <div className="flex flex-col gap-[8px]">
-                        {/* HOTELS CANCUN */}
-                        <Link
-                          href={sendHotel(Hotels.cancun)}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline cursor-pointer w-fit`}
-                        >
-                          {languageData.footer.hotelsMexico.hotelCancun}
-                        </Link>
-
-                        {/* HOTELS MAZATLAN */}
-                        <Link
-                          href={sendHotel(Hotels.mazatlan)}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline cursor-pointer w-fit`}
-                        >
-                          {languageData.footer.hotelsMexico.hotelMazatlan}
-                        </Link>
-
-                        {/* HOTELS ACAPULCO */}
-                        <Link
-                          href={sendHotel(Hotels.acapulco)}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline cursor-pointer w-fit`}
-                        >
-                          {languageData.footer.hotelsMexico.hotelAcapulco}
-                        </Link>
-
-                        {/* HOTELS PUERTO VALLARTA */}
-                        <Link
-                          href={sendHotel(Hotels.puertoVallarta)}
-                          className={`${
-                            footerBlue ? "text-white" : "text-black"
-                          } text-fs-12 m-m hover:!text-or-100 no-underline cursor-pointer w-fit`}
-                        >
-                          {languageData.footer.hotelsMexico.hotelPuertoVallarta}
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </>
-              </Disclosure>
+            <div className="hidden sm:block">
+              <MexicoHotelsFooter
+                footerBlue={footerBlue}
+                sendHotel={sendHotel}
+                Hotels={Hotels}
+              />
             </div>
             {/* END MEXICO HOTELS */}
 
