@@ -1,5 +1,5 @@
 
-export default function SkeletonPay({ confirmation = false }) {
+export default function SkeletonPay({ confirmation = false, step }) {
   return (
     <div className="mx-[70px] max-2xl:mx-0">
       <div className="flex ">
@@ -10,11 +10,11 @@ export default function SkeletonPay({ confirmation = false }) {
           <CartDetailsSkeleton />
         </div>
 
-        <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] bg-white z-[1]">
+        <div className={`hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] ${step !== 3 && 'bg-white'} z-[1]`}>
           <DetailsReservationSkeleton confirmation={confirmation} />
         </div>
         <div
-          className={`max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full bg-white top-0 ${
+          className={`max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full ${step !== 3 && 'bg-white'} top-0 ${
             !confirmation && "bg-white"
           }`}
         />

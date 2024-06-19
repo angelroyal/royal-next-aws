@@ -20,7 +20,8 @@ export default function ConfirmReservation() {
   const [smShow, setSmShow] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [dataConfirmation, setDataConfirmation] = useState(null);
-  const { setInfoReservation, handleStepChange } = useContext(BookingContext);
+  const { setInfoReservation, handleStepChange, step } =
+    useContext(BookingContext);
 
   const handleOpenModal = () => {
     setSmShow(true);
@@ -62,7 +63,7 @@ export default function ConfirmReservation() {
 
   return (
     <>
-      {isLoading && <SkeletonConfirmPay />}
+      {isLoading && <SkeletonConfirmPay step={step} />}
 
       <>
         {dataConfirmation && (

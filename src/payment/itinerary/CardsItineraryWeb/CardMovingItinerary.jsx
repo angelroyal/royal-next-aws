@@ -16,7 +16,7 @@ export default function CardMovingItinerary(props) {
   const [loader, setLoader] = useState(false);
   const { setItinerary, removeTransportById } = useCartAxios();
 
-  const { itemTransport } = props;
+  const { itemTransport, confirmation = false } = props;
   const cancelRemove = () => {
     if (iconRemove === true) setIconRemove(false);
   };
@@ -70,20 +70,22 @@ export default function CardMovingItinerary(props) {
 
           {/* CARD TRANSPORT ITINERARY */}
           <div className="bg-white pl-4 pr-[37px] xl:px-4 py-4  flex max-xl:flex-col rounded-lg relative w-[732px] max-xl:w-full shadow-3xl">
-            {/* REMOVE RESERVATION */}
             <div className="flex items-center gap-x-2 lg:gap-x-8">
-              <button
-                className="border-0 absolute right-4 top-4"
-                onClick={() => setIconRemove(true)}
-              >
-                <Image
-                  className="w-[10px] h-[10px] "
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
-                  alt="close card icon"
-                  width={10}
-                  height={10}
-                />
-              </button>
+              {/* REMOVE RESERVATION */}
+              {!confirmation && (
+                <button
+                  className="border-0 absolute right-4 top-4"
+                  onClick={() => setIconRemove(true)}
+                >
+                  <Image
+                    className="w-[10px] h-[10px] "
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
+                    alt="close card icon"
+                    width={10}
+                    height={10}
+                  />
+                </button>
+              )}
 
               <Image
                 className="rounded-[8px] w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px] object-cover object-right"
@@ -283,7 +285,7 @@ export default function CardMovingItinerary(props) {
             </div>
 
             {/* REMOVE CARD */}
-            {iconRemove && (
+            {iconRemove && !confirmation && (
               <>
                 <div
                   className="absolute left-0 top-0 w-full h-full bg-[#96969691] rounded-lg"

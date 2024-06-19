@@ -15,8 +15,17 @@ export default function CardsItinerary(props) {
   return (
     <div className="flex flex-col gap-y-6">
       {dataItinerary.items.map((item, index) => {
-        if (item.type === "transportation") {
-          return <CardMovingItinerary itemTransport={item} />;
+        if (item.type === "transport" || item.type === "transportation") {
+          return (
+            <div key={index}>
+              {step === 1 ? (
+                <CardMovingItinerary itemTransport={item} />
+              ) : (
+                <CardMovingItinerary itemTransport={item} confirmation={true} />
+              )}
+            </div>
+          );
+          // return <CardMovingItinerary itemTransport={item} />;
         } else if (item.type === "activity") {
           return (
             <div key={index}>

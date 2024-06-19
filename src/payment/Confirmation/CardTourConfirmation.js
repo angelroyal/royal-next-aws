@@ -19,11 +19,10 @@ export default function CardTourConfirmation(props) {
     itemActivity && (
       <div className="flex items-start gap-x-2">
         <Image
-          className="w-[12px]"
           src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
-          alt="IconLocationBorder"
-          width={12}
-          height={192}
+          alt="Icon Location Border"
+          width={16}
+          height={200}
         />
 
         <div className="flex flex-col gap-y-[20px] items-start w-full">
@@ -32,9 +31,9 @@ export default function CardTourConfirmation(props) {
               {languageData.dayOfWeek[dayOfWeek]}
             </span>
 
-            <span className="text-gry-70">{itemActivity.date}</span>
-            <span className="text-gry-70">|</span>
-            <span className="text-gry-70">02:00pm</span>
+            <span className="text-gry-70 m-m">{itemActivity.date}</span>
+            <span className="text-gry-70 m-m">|</span>
+            <span className="text-gry-70 m-m">02:00pm</span>
           </div>
 
           {/* ITINERARY CARD */}
@@ -80,7 +79,7 @@ export default function CardTourConfirmation(props) {
                           alt="icon-adult"
                           width={14}
                           height={14}
-                        ></img>
+                        />
 
                         <span className="m-s-b text-fs-10 text-gry-100">
                           {itemActivity.peoples}{" "}
