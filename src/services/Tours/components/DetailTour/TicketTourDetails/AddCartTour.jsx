@@ -3,20 +3,26 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
-import { AlertTourDetails } from "../../AlertsTour/AlertTours";
+// import { AlertTourDetails } from "../../AlertsTour/AlertTours";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import DetailTourContext from "@/services/Tours/context/DetailTourContext";
 import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
+import NotificationType from "@/components/Alerts/Notifications/NotificationType";
+import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 
 export default function AddCartTour(props) {
   const { totalPrice, tourists, isLoader, setIsLoader } = props;
   const { fetchData } = useCartAxios();
-  const [alert, setAlert] = useState({
-    alert: false,
-    type: null,
-    title: null,
-    message: null,
-  });
+  // const [alert, setAlert] = useState({
+  //   alert: false,
+  //   type: null,
+  //   title: null,
+  //   message: null,
+  // });
+
+  const { notification, showNotification, hideNotification } =
+    useNotification();
+
   const router = useRouter();
 
   const { languageData, language } = useContext(LanguageContext);
@@ -70,11 +76,18 @@ export default function AddCartTour(props) {
         codeName: codeNameTour,
       };
 
+      showNotification(
+        "success",
+        languageData.Alerts.notification.tour.successTitle,
+        languageData.Alerts.notification.tour.successSubtitle,
+        3000
+      );
+
       setTimeout(() => {
         router.push(
           EntitiesRecommendations(language, "tour", InfoTour, cartUid)
         );
-      }, 1000);
+      }, 3000);
     } catch (error) {
       console.error("error 1", error);
       setIsLoader(false);
@@ -88,22 +101,35 @@ export default function AddCartTour(props) {
       // }
 
       if (error.response.status === 400) {
-        setAlert({
-          alert: true,
-          type: "warning",
-          title: languageData.Alerts.tour.NotAvailability.title,
-          message: languageData.Alerts.tour.NotAvailability.message,
-        });
+        // setAlert({
+        //   alert: true,
+        //   type: "warning",
+        //   title: languageData.Alerts.tour.NotAvailability.title,
+        //   message: languageData.Alerts.tour.NotAvailability.message,
+        // });
+        showNotification(
+          "warning",
+          languageData.Alerts.tour.tourDetails.title,
+          languageData.Alerts.tour.tourDetails.message,
+          2000
+        );
       }
 
       // if (error.response.status >= 405 && error.response.status !== 422) {
       if (error.response.status >= 405) {
-        setAlert({
-          alert: true,
-          type: "error",
-          title: languageData.Alerts.tour.tourDetails.title,
-          message: languageData.Alerts.tour.tourDetails.message,
-        });
+        // setAlert({
+        //   alert: true,
+        //   type: "error",
+        //   title: languageData.Alerts.tour.tourDetails.title,
+        //   message: languageData.Alerts.tour.tourDetails.message,
+        // });
+
+        showNotification(
+          "error",
+          languageData.Alerts.tour.tourDetails.title,
+          languageData.Alerts.tour.tourDetails.message,
+          3000
+        );
       }
     }
   };
@@ -141,7 +167,9 @@ export default function AddCartTour(props) {
       <button
         onClick={() => handleAddCartTour()}
         className={`rounded-full w-full py-3.5 text-black text-center text-fs-12 m-s-b bg-yw-100 hover:bg-yw-110 ${
-          isButtonDisabled || isLoader ? "opacity-50 cursor-not-allowed hover:bg-yw-100" : ""
+          isButtonDisabled || isLoader
+            ? "opacity-50 cursor-not-allowed hover:bg-yw-100"
+            : ""
         }`}
         disabled={isButtonDisabled || isLoader}
       >
@@ -149,10 +177,20 @@ export default function AddCartTour(props) {
           ? languageData.cart.loadingText
           : languageData.modalTour.OccupancyTours.reserve}
       </button>
-      {alert.alert && (
+      {/* {alert.alert && (
         <div ref={ref}>
           <AlertTourDetails alertInfo={alert} />
         </div>
+      )} */}
+
+      {notification && notification.visible && (
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+        />
       )}
     </>
   );

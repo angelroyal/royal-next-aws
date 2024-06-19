@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 
-import { ErrorAlert } from "../Alerts/AlertsTransport";
+// import { ErrorAlert } from "../Alerts/AlertsTransport";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import { saveToCartTransport } from "../../Api/requestTransport";
@@ -118,18 +118,18 @@ export default function TransportPriceCart(props) {
         // codeName: transport.codeName,
       };
 
+      showNotification(
+        "success",
+        languageData.Alerts.notification.transport.successTitle,
+        languageData.Alerts.notification.transport.successSubtitle,
+        3000
+      );
+
       setTimeout(() => {
         router.push(
           EntitiesRecommendations(language, "transport", InfoTransport, cartUid)
         );
-
-        showNotification(
-          "success",
-          languageData.Alerts.notification.transport.successTitle,
-          languageData.Alerts.notification.transport.successSubtitle,
-          2000
-        );
-      }, 3000);
+      }, 2000);
     } catch (error) {
       console.error("error", error);
       setIsLoader(false);
