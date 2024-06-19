@@ -79,20 +79,22 @@ export default function UnavailableCardHotel(props) {
 
   return (
     <>
-      <div className="absolute right-[20px] bottom-[2rem] gap-x-[12px] flex z-[1]">
+      <div className="absolute gap-x-[12px] flex z-[5] top-0 left-0 w-full h-full rounded-lg justify-end items-end p-[33px] px-[20px] ">
+
+      <button
+          onClick={() => sendListingHotel(destination)}
+          className="text-bl-100 m-s-b text-fs-14 rounded-full bg-white border-2 border-bl-100 !py-[9px] !px-[14px] hover:!text-white hover:bg-bl-110 w-fit h-fit !contrast-100"
+        >
+          {languageData.unavailableCardHotel.changeHotel}
+        </button>
+
         <button
           onClick={() => handleDetailsHotel()}
-          className="text-white m-m text-fs-14 rounded-md bg-or-100 !py-1 !px-2 hover:bg-or-110"
+          className="text-white text-fs-14 m-s-b rounded-full bg-bl-100 !py-[10px] !px-[14px] hover:bg-bl-110 w-fit h-fit"
         >
           {languageData.unavailableCardHotel.updateDate}
         </button>
 
-        <button
-          onClick={() => sendListingHotel(destination)}
-          className="text-white m-m text-fs-14 rounded-md bg-or-100 !py-1 !px-2 hover:bg-or-110"
-        >
-          {languageData.unavailableCardHotel.changeHotel}
-        </button>
       </div>
     </>
   );
