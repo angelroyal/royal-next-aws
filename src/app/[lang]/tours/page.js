@@ -1,6 +1,7 @@
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterT from "@/components/Footer/FooterT";
 import { Container } from "@/config/Others/Container";
 import ContactUs from "@/components/General/ContactUs";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -48,7 +49,7 @@ export default function Home() {
               <BannerFooterTour />
             </Container>
             <ContactUs />
-            <Footer />
+            <FooterT />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>

@@ -1,6 +1,7 @@
 
 import Token from "@/components/General/Token";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterT from "@/components/Footer/FooterT";
 import ContactUs from "@/components/General/ContactUs";
 import { TokenProvider } from "@/config/context/AuthContext";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -29,7 +30,7 @@ export default function Home() {
           <Navigation />
           <ListTour />
           <ContactUs />
-          <Footer />
+          <FooterT />
         </CartAxiosProvider>
       </TokenProvider>
     </LanguageProvider>

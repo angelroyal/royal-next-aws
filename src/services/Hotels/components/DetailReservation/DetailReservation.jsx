@@ -205,7 +205,7 @@ export default function DetailReservation() {
               className={`${
                 selectedRooms.length === 0 &&
                 "cursor-not-allowed brightness-[0.6]"
-              } top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border border-gry-100`}
+              } top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border-gry-100`}
             >
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-bl-100-cle.svg`}

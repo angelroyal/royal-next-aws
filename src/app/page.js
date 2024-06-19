@@ -5,7 +5,8 @@ import BannersHeaderHome, {
 } from "@/components/Home/BannersHome";
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterT from "@/components/Footer/FooterT";
 import WaveLine from "@/components/Home/WaveHome";
 import ChainsHome from "@/components/Home/ChainsHome";
 import { Container } from "@/config/Others/Container";
@@ -52,7 +53,7 @@ export default function Home() {
               </div>
             </Container>
 
-            <Footer />
+            <FooterT />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>

@@ -1,7 +1,8 @@
 // "use client";
 
 import Token from "@/components/General/Token";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterT from "@/components/Footer/FooterT";
 import Page404 from "@/components/General/Page404";
 import { Container } from "@/config/Others/Container";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -117,7 +118,7 @@ export default async function DetailPageHotel({ params }) {
                 <ReservationFailed />
                 <DetailReservation />
               </div>
-              <Footer />
+              <FooterT />
             </RoomsHotelProvider>
           </CartAxiosProvider>
         </TokenProvider>
@@ -131,7 +132,7 @@ export default async function DetailPageHotel({ params }) {
             <Token />
             <Navigation hotelDetails={true} />
             <Page404 />
-            <Footer />
+            <FooterT />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>

@@ -8,6 +8,8 @@ import { saveToCartTransport } from "../../Api/requestTransport";
 import ModalTransportContext from "../../context/ModalTransportContext";
 import CancelPolicyTransportWhite from "../ToolTip/CancelPolicyTransportWhite";
 import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
+import NotificationType from "@/components/Alerts/Notifications/NotificationType";
+import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 
 export default function TransportPriceCart(props) {
   const { transport } = props;
@@ -17,6 +19,8 @@ export default function TransportPriceCart(props) {
   const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
   const [isLoader, setIsLoader] = useState(false);
+  const { notification, showNotification, hideNotification } =
+    useNotification();
 
   const [alert, setAlert] = useState({
     isAlert: false,
@@ -128,10 +132,19 @@ export default function TransportPriceCart(props) {
           title: languageData.Alerts.tour.tourDetails.title,
           message: languageData.Alerts.tour.tourDetails.message,
         });
+        showNotification(
+          "error",
+          "Error al agregar hotel",
+          "Hubo un problema al agregar el hotel. Por favor, inténtalo de nuevo.",
+          3000
+        );
       }
     }
   };
 
+
+ 
+console.log(notification);
   return (
     <div className="flex flex-col gap-[8px]">
       <div className="flex justify-between items-center">
@@ -186,6 +199,15 @@ export default function TransportPriceCart(props) {
         </span>
       </div>
       <ErrorAlert infoAlert={alert} setAlert={setAlert} />
+      {notification && notification.visible && (
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+        />
+      )}
     </div>
   );
 }

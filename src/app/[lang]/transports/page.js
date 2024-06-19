@@ -1,6 +1,7 @@
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterT from "@/components/Footer/FooterT";
 import ChainsHome from "@/components/Home/ChainsHome";
 import { Container } from "@/config/Others/Container";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -67,7 +68,7 @@ export default function HomeTransport() {
             </Container>
             {/* END LP */}
 
-            <Footer />
+            <FooterT />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>

@@ -1,5 +1,6 @@
 import Token from "@/components/General/Token";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterT from "@/components/Footer/FooterT";
 import Page404 from "@/components/General/Page404";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
@@ -51,7 +52,7 @@ export default async function DetailPageHotel({ searchParams }) {
               <Token />
               <Navigation />
               <ListingTransport data={transportData.vehicles} />
-              <Footer />
+              <FooterT />
             </ListingTransportProvider>
           </CartAxiosProvider>
         </TokenProvider>
@@ -66,7 +67,7 @@ export default async function DetailPageHotel({ searchParams }) {
             <Token />
             <Navigation />
             <Page404 />
-            <Footer />
+            <FooterT />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>

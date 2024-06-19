@@ -1,6 +1,7 @@
 import Payment from "@/payment/Payment";
 import Token from "@/components/General/Token";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
+import FooterT from "@/components/Footer/FooterT";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
@@ -19,7 +20,7 @@ export default function Home() {
             <PaymentProviderContext>
               <Payment />
             </PaymentProviderContext>
-            <Footer />
+            <FooterT />
           </BookingProviderContext>
         </CartAxiosProvider>
       </TokenProvider>
