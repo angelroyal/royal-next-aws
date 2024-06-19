@@ -89,7 +89,7 @@ export default function AddCartHotel() {
   return (
     <>
       <button
-        className="rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max hover:bg-yw-110"
+        className={`rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max ${!isLoading &&'hover:bg-yw-110'}`}
         onClick={handleReserveNow}
         disabled={isLoading}
       >
