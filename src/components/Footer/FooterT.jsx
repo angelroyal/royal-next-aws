@@ -42,10 +42,14 @@ export default function FooterT() {
   // FALSE TO CHANGE TO THE WHITE FOOTER
   const footerBlue = true;
 
-  const [isOpen] = useState(true);
+  // const [isOpen] = useState(true);
   const year = new Date().getFullYear();
   const [isHovered, setIsHovered] = useState(null);
   const { languageData, language } = useContext(LanguageContext);
+  const [positionOpen, setPositionOpen] = useState(0);
+
+  console.log(positionOpen);
+
   const sendHotel = (hotelInfo) => {
     const encodedRoomData = encodeURIComponent(
       JSON.stringify([{ adults: 2, children: [] }])
@@ -70,6 +74,15 @@ export default function FooterT() {
     const query = new URLSearchParams(requestBody).toString();
     // location.reload()
     return `/${language}/mx/${hotelInfo.codeName}/hotels?${query}`;
+  };
+
+  const handleAccordionClick = (open) => {
+    if (positionOpen === open) {
+      //CLICK ON THE OPEN QUESTION, CLOSE IT
+      setPositionOpen(null);
+    } else {
+      setPositionOpen(open);
+    }
   };
 
   return (
@@ -134,11 +147,13 @@ export default function FooterT() {
                 href="mailto:info@StayWuw.com"
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${footerBlue ? "w.svg" : "b.svg"}`}
-                //   src={footerBlue
-                //     ? `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "w-o.svg" : "w.svg"}`
-                //     : `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "b-o.svg" : "b.svg"}`
-                // }
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${
+                    footerBlue ? "w.svg" : "b.svg"
+                  }`}
+                  //   src={footerBlue
+                  //     ? `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "w-o.svg" : "w.svg"}`
+                  //     : `${process.env.NEXT_PUBLIC_URL}icons/mail/mail-${isHovered ? "b-o.svg" : "b.svg"}`
+                  // }
                   alt="icon mail footer"
                   width={20}
                   height={20}
@@ -160,9 +175,18 @@ export default function FooterT() {
                 onMouseLeave={() => setIsHovered(false)}
               >
                 <Image
-                  src={footerBlue
-                      ? `${process.env.NEXT_PUBLIC_URL}icons/location/location-${isHovered ? "w-o.svg" : "w.svg"}`
-                      : `${process.env.NEXT_PUBLIC_URL}icons/location/location-${isHovered ? "b-o.svg" : "b.svg"}`
+                  src={
+                    footerBlue
+                      ? `${
+                          process.env.NEXT_PUBLIC_URL
+                        }icons/location/location-${
+                          isHovered ? "w-o.svg" : "w.svg"
+                        }`
+                      : `${
+                          process.env.NEXT_PUBLIC_URL
+                        }icons/location/location-${
+                          isHovered ? "b-o.svg" : "b.svg"
+                        }`
                   }
                   // src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-${footerBlue ? "w.svg" : "b.svg"}`}
 
@@ -223,28 +247,31 @@ export default function FooterT() {
             </div>
 
             {/* ABOUT */}
-            <div className="flex flex-col">
-              <Disclosure defaultOpen={isOpen}>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none">
-                      <span
-                        className={`${
-                          footerBlue ? "text-white" : "text-black"
-                        } text-fs-16 m-s-b `}
-                      >
-                        {languageData.footer.about.titleAbout}
-                      </span>
-                      <ChevronUpIcon
-                        className={`${
-                          open ? "rotate-180 transform" : ""
-                        } h-5 w-5  md:hidden ${
-                          footerBlue ? "text-white" : "text-black"
-                        } `}
-                      />
-                    </Disclosure.Button>
+            <div
+              className="flex flex-col"
+              onClick={() => handleAccordionClick(0)}
+            >
+              <Disclosure >
+                <>
+                  <Disclosure.Button className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none">
+                    <span
+                      className={`${
+                        footerBlue ? "text-white" : "text-black"
+                      } text-fs-16 m-s-b `}
+                    >
+                      {languageData.footer.about.titleAbout}
+                    </span>
+                    <ChevronUpIcon
+                      className={`${
+                        positionOpen === 0 ? "rotate-180 transform" : ""
+                      } h-5 w-5  md:hidden ${
+                        footerBlue ? "text-white" : "text-black"
+                      } `}
+                    />
+                  </Disclosure.Button>
 
-                    <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
+                  {positionOpen === 0 && (
+                    <div className="pb-2 pt-2 text-sm text-gray-500">
                       <div className="flex flex-col gap-[8px]">
                         {/* OUR HISTORY */}
                         <Link
@@ -286,36 +313,39 @@ export default function FooterT() {
                           {languageData.footer.about.titlePrivacy}
                         </Link>
                       </div>
-                    </Disclosure.Panel>
-                  </>
-                )}
+                    </div>
+                  )}
+                </>
               </Disclosure>
             </div>
             {/*END ABOUT */}
 
             {/* MEXICO HOTELS */}
-            <div className="flex flex-col">
-              <Disclosure defaultOpen={isOpen}>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none">
-                      <span
-                        className={`${
-                          footerBlue ? "text-white" : "text-black"
-                        } text-fs-16 m-s-b `}
-                      >
-                        {languageData.footer.hotelsMexico.titleHotel}
-                      </span>
-                      <ChevronUpIcon
-                        className={`${
-                          open ? "rotate-180 transform" : ""
-                        } h-5 w-5 md:hidden ${
-                          footerBlue ? "text-white" : "text-black"
-                        }`}
-                      />
-                    </Disclosure.Button>
+            <div
+              className="flex flex-col"
+              onClick={() => handleAccordionClick(1)}
+            >
+              <Disclosure >
+                <>
+                  <Disclosure.Button className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none">
+                    <span
+                      className={`${
+                        footerBlue ? "text-white" : "text-black"
+                      } text-fs-16 m-s-b `}
+                    >
+                      {languageData.footer.hotelsMexico.titleHotel}
+                    </span>
+                    <ChevronUpIcon
+                      className={`${
+                        positionOpen === 1 ? "rotate-180 transform" : ""
+                      } h-5 w-5 md:hidden ${
+                        footerBlue ? "text-white" : "text-black"
+                      }`}
+                    />
+                  </Disclosure.Button>
 
-                    <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
+                  {positionOpen === 1 && (
+                    <div className="pb-2 pt-2 text-sm text-gray-500">
                       <div className="flex flex-col gap-[8px]">
                         {/* HOTELS CANCUN */}
                         <Link
@@ -357,9 +387,9 @@ export default function FooterT() {
                           {languageData.footer.hotelsMexico.hotelPuertoVallarta}
                         </Link>
                       </div>
-                    </Disclosure.Panel>
-                  </>
-                )}
+                    </div>
+                  )}
+                </>
               </Disclosure>
             </div>
             {/* END MEXICO HOTELS */}
