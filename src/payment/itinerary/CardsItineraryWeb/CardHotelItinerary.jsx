@@ -3,12 +3,12 @@ import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import React, { useContext, useState } from "react";
 
+import ImageGet from "@/utils/others/ImageGet";
 import { TotalStars } from "@/components/General/Stars";
 import { useIsMobile } from "../../../config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import UnavailableCardHotel from "../others/UnavailableCardHotel";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
-import { ImageNotFound } from "../../../config/Others/ImageNotFound";
 import { removeHotelItinerary } from "@/payment/Api/fetchDataItinerary";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 
@@ -17,7 +17,7 @@ export default function CardHotelItinerary(props) {
   const { setItinerary, fetchData } = useCartAxios();
   const isMobile = useIsMobile();
 
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   const dateFormatCheckIn = moment(itemHotel.checkIn).format("DD/MM/YY");
   const dateFormatCheckOut = moment(itemHotel.checkOut).format("DD/MM/YY");
@@ -122,11 +122,19 @@ export default function CardHotelItinerary(props) {
 
             <div className="flex gap-x-8 items-center max-sm:gap-[10px]">
               <div className="w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
-                <img
+                <ImageGet
+                  imageUrl={itemHotel.image}
+                  type={"hotel"}
+                  language={language}
+                  width={133}
+                  height={117}
+                  altDescription={"hotel rooms itinerary"}
+                />
+                {/* <img
                   src={itemHotel.image ? itemHotel.image : ImageNotFound}
                   alt="hotel"
                   className="w-full h-full rounded-lg object-cover"
-                />
+                /> */}
               </div>
 
               <div className="flex justify-between my-auto w-[74%] max-sm:w-[65%]">
@@ -444,7 +452,8 @@ export default function CardHotelItinerary(props) {
             )}
             {/* END REMOVE CARD */}
 
-            {itemHotel.available === false && (
+            {itemHotel.available === true && (
+            // {itemHotel.available === false && (
               <>
                 <UnavailableCardHotel destination={itemHotel} />
                 <div className="overlay" />

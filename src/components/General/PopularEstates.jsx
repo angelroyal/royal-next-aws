@@ -74,7 +74,7 @@ export function PopularState({ tour = false }) {
         codeNameHotel: destinationInfo.codeName,
         destination: destinationInfo.name,
         codeName: destinationInfo.codeName,
-        code: destinationInfo.id,
+        code: destinationInfo.code,
         type: "destination",
         "check-in": checkIn,
         "check-out": checkOut,

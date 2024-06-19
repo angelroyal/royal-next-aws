@@ -45,24 +45,10 @@ export default function UnavailableCardHotel(props) {
   // GOO DETAILS HOTEL
   const handleDetailsHotel = () => {
     handleDeleteClick();
-
-    const occupancies = JSON.stringify([{ adults: 1, children: [1] }]);
-    const requestBody = {
-      codeNameHotel: "grand-oasis-palm-all-inclusive",
-      code: destination.destinationCode,
-      codeName: "cancun",
-      "check-in": destination.checkIn,
-      "check-out": destination.checkOut,
-      occupancy: encodeURIComponent(occupancies),
-    };
-
-    const query = new URLSearchParams(requestBody).toString();
     handleCloseModal();
-
     router.push(
-      `/${language}/mx/cancun-mexico/cancun-hotels/grand-oasis-palm-all-inclusive?${query}`
+      `/${language}/mx/${destination.destinationCodeName}-mexico/${destination.destinationCodeName}-hotels/${destination.codeName}`
     );
-    // router.push(`/${language}/mx/${destination.codeNameHotel}-mexico/${destination.codeNameHotel}-hotels/${destination.codeName}?${query}`);
   };
 
   //   LISTING
@@ -71,24 +57,23 @@ export default function UnavailableCardHotel(props) {
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
 
     const requestBody = {
-      codeNameHotel: "cancun",
+      codeNameHotel: destination.destinationCodeName,
       destination: destination.destinationName,
-      codeName: "cancun",
+      codeName: destination.destinationCodeName,
       code: destination.destinationCode,
       "check-in": destination.checkIn,
       "check-out": destination.checkOut,
       occupancies: encodedRoomData,
     };
-
     sendDataSearch(destination);
-
     // PUSH RESULT HOTEL
     const query = new URLSearchParams(requestBody).toString();
     handleCloseModal();
 
     setTimeout(() => {
-      router.push(`/${language}/mx/cancun-mexico/hotels?${query}`);
-      // router.push(`/${language}/mx/${destination.codeNameHotel}-mexico/hotel?${query}`);
+      router.push(
+        `/${language}/mx/${destination.destinationCodeName}-mexico/hotels?${query}`
+      );
     }, 1200);
   };
 

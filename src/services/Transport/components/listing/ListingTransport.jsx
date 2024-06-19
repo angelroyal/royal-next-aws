@@ -17,7 +17,7 @@ export default function ListingTransport(props) {
   const { setDataTransport, dataTransportF } = useContext(
     ListingTransportContext
   );
-  // console.log(data);
+  console.log(data);
   setDataTransport(data);
 
   return (
