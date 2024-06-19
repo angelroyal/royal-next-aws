@@ -1718,6 +1718,11 @@ export const es = {
         successTitle:"Transportation added!",
         successSubtitle:"Everything is ready for your trip.",
       },
+
+      tour:{
+        successTitle:"¡Tour agregado!",
+        successSubtitle:"Todo listo para tu aventura.",
+      }
     },
 
   },

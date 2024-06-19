@@ -1720,6 +1720,11 @@ export const en = {
         successTitle: "Transportation added!",
         successSubtitle: "Everything is ready for your trip.",
       },
+
+      tour:{
+        successTitle:"Tour added!",
+        successSubtitle:"Everything is ready for your adventure.",
+      }
     },
   },
 
