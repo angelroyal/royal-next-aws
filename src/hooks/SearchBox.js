@@ -137,7 +137,7 @@ export default function SearchBox() {
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
               <Image
-                className="max-lg:w-4 max-lg:h-4"
+                className="w-[29px] h-[25px] max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
                   currentActiveIcon === "transport" ||
                   currentActiveIcon === "transports"

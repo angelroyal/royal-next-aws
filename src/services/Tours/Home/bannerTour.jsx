@@ -51,12 +51,12 @@ export function BannerHomeTourSwiper() {
                 768: {
                     slidesPerView: 1.5,
                 },
-                1024: {
-                    slidesPerView: 2.5,
-                },
-                1440: {
-                    slidesPerView: 3,
-                },
+                // 1024: {
+                //     slidesPerView: 2.5,
+                // },
+                // 1440: {
+                //     slidesPerView: 2.5,
+                // },
 
             }}>
 

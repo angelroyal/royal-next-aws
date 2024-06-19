@@ -98,7 +98,7 @@ export function CatalogueRoutesCard({ transport }) {
     <>
       {/* IMG TRANSPORT */}
       <div className="w-full flex justify-center items-center">
-        <Image
+        <img
           src={transport.img}
           width={216}
           height={164}

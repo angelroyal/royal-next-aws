@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import moment from "moment";
-import Image from "next/image";
+// import Image from "next/image";
 import { useContext, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 
@@ -67,10 +67,10 @@ export default function Footer() {
 
   return (
     <>
-      <Image
+      <img
         src={`${process.env.NEXT_PUBLIC_URL}general/line-footer-or.svg`}
         alt="line-footer-or"
-        className="w-full z-[3]"
+        className="w-full z-[3] h-[32px]"
         width={1136}
         height={32}
       />

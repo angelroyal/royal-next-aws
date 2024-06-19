@@ -184,7 +184,8 @@ export default function PersonsActivities({ OnApply, listing }) {
             src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
             width={16}
             height={22}
-            alt="icon-person"
+            alt="icon-person-tour"
+            className="w-[16px] h-[22px]"
           />
 
           <span className="flex m-s-b flex-col gap-y-[3px] text-fs-12 items-start py-0 px-[10px]">

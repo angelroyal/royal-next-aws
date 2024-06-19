@@ -261,12 +261,12 @@ export function BannerHomeHotelSwiper() {
         768: {
           slidesPerView: 1.5,
         },
-        1024: {
-          slidesPerView: 2.5,
-        },
-        1440: {
-          slidesPerView: 3,
-        },
+        // 1024: {
+        //   slidesPerView: 2.5,
+        // },
+        // 1440: {
+        //   slidesPerView: 3,
+        // },
       }}
     >
       <SwiperSlide className="!w-[48%] max-lg:!w-full  !bg-white">

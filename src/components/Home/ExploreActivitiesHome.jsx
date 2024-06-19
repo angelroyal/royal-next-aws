@@ -154,6 +154,7 @@ export default function ExploreActivitiesHome() {
                         width={16}
                         height={12}
                         alt="icon-arrow"
+                        className="w-[16px] h-[12px]"
                       />
                     </button>
                   </div>
