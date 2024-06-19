@@ -185,8 +185,8 @@ export default function Footer() {
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-w.svg`}
                   alt="icon-location"
-                  width="11px"
-                  height="14px"
+                  width={11}
+                  height={14}
                 />
                 <p className="hover:!text-or-100 no-underline text-white leading-5 w-full text-wrap m-0">
                   {languageData.footer.contact.location}
