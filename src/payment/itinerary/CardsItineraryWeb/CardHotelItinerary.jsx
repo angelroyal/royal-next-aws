@@ -23,7 +23,7 @@ export default function CardHotelItinerary(props) {
   const dateFormatCheckOut = moment(itemHotel.checkOut).format("DD/MM/YY");
 
   const [loader, setLoader] = useState(false);
-
+  console.log(itemHotel);
   // DAY OF WEEK
   const dayOfWeek = moment(itemHotel.date).format("dddd");
 
@@ -67,7 +67,7 @@ export default function CardHotelItinerary(props) {
 
   return (
     <>
-      <div className="flex gap-x-2 items-start mb-[17px]">
+      <div className={`flex gap-x-2 items-start mb-[17px]`}>
         <Image
           className="w-4"
           src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
@@ -112,7 +112,9 @@ export default function CardHotelItinerary(props) {
               <Image
                 src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
                 alt="icon close"
-                className="w-[10px] h-[10px] absolute right-4 top-4"
+                className={`w-[10px] h-[10px] absolute right-4 top-4 ${
+                  itemHotel.available === false && "opacity-50"
+                }`}
                 width={10}
                 height={10}
               />
@@ -120,8 +122,14 @@ export default function CardHotelItinerary(props) {
 
             {/* FATHER ONE */}
 
-            <div className="flex gap-x-8 items-center max-sm:gap-[10px]">
-              <div className="w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
+            <div
+              className={` flex gap-x-8 items-center max-sm:gap-[10px] ${
+                itemHotel.available === false && "opacity-50"
+              }`}
+            >
+              <div
+                className={`w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]`}
+              >
                 <ImageGet
                   imageUrl={itemHotel.image}
                   type={"hotel"}
@@ -273,7 +281,11 @@ export default function CardHotelItinerary(props) {
 
             {/* FATHER TWO */}
 
-            <div className="w-full mt-6 max-sm:mt-0">
+            <div
+              className={` w-full mt-6 max-sm:mt-0 ${
+                itemHotel.available === false && "opacity-50"
+              }`}
+            >
               <div className="text-or-100 text-fs-10 m-s-b !mb-4">
                 {/* TEXT ROOMS YOU RESERVED /LP 15-02-24 */}
                 <span>{languageData.itinerary.roomsYouReserved}</span>
@@ -452,8 +464,8 @@ export default function CardHotelItinerary(props) {
             )}
             {/* END REMOVE CARD */}
 
-            {/* {itemHotel.available === false && ( */}
-            {itemHotel.available === true && (
+            {/* {itemHotel.available === true && ( */}
+            {itemHotel.available === false && (
               <>
                 <UnavailableCardHotel destination={itemHotel} />
                 <div className="overlay" />
