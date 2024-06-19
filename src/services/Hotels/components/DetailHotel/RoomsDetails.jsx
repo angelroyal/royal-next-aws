@@ -132,6 +132,9 @@ export default function RoomsDetails(codeHotel) {
                                 imageUrl={room.image}
                                 type={"hotel"}
                                 language={language}
+                                width={40}
+                                height={40}
+                                altDescription={"rooms"}
                               />
 
                               {/* EATING PLAN */}

@@ -11,13 +11,14 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 import { LimitPriceAlert } from "../AlertsHotel/HotelInformationAlerts";
 import { calculateNights } from "../../utils/calculateNights";
 import moment from "moment";
+import ImageGet from "@/utils/others/ImageGet";
 
 export default function DetailReservation() {
   const limitPrice = 95000;
   const [open, setOpen] = useState(false);
   const [priceRooms, setTotalPrice] = useState(0);
   const [isLimitPrice, setISLimitPrice] = useState(false);
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   const [diffDate, setDiffDate] = useState(null);
   const [totalPerson, setTotalPerson] = useState(null);
@@ -161,14 +162,15 @@ export default function DetailReservation() {
 
                   {open === false && selectedRooms.length > 0 && (
                     <div className="absolute top-0 right-[2rem] md:bottom-0 md:left-0 md:right-0 mx-auto my-auto w-max flex items-center">
-                      <div className="relative">
-                        <img
-                          src={selectedRooms[0].image}
-                          alt={selectedRooms[0].name}
-                          className="rounded-md object-cover w-[2.5rem] h-[2.5rem]"
+                      <div className="relative w-[2.5rem] h-[2.5rem]">
+                        <ImageGet
+                          imageUrl={selectedRooms[0].image}
+                          type={"hotel"}
+                          language={language}
                           width={30}
                           height={30}
-                        />{" "}
+                          altDescription={selectedRooms[0].name}
+                        />
                         {selectedRooms.length > 0 && (
                           <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${selectedRooms.length}`}</span>
                         )}{" "}

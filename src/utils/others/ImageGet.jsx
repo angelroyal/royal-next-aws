@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ImageNotFoundType } from "./ImageNotFoundType";
 
-export default function ImageGet({ imageUrl, type, language }) {
+export default function ImageGet({ imageUrl, type, language, width, height, altDescription }) {
   const [imageSize, setImageSize] = useState({ width: 0, height: 0, url: "" });
 
   useEffect(() => {
@@ -38,17 +38,17 @@ export default function ImageGet({ imageUrl, type, language }) {
         <img
           src={imageSize.url}
           className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
-          width={40}
-          height={40}
-          alt="room"
+          width={width}
+          height={height}
+          alt={altDescription}
         />
       ) : (
         <img
           src={ImageNotFoundType(type, language)}
           className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
-          width={40}
-          height={40}
-          alt="room"
+          width={width}
+          height={height}
+          alt={altDescription}
         />
       )}
     </div>
