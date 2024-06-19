@@ -140,7 +140,7 @@ export default function AddCartTour(props) {
       <button
         onClick={() => handleAddCartTour()}
         className={`rounded-full w-full py-3.5 text-black text-center text-fs-12 m-s-b bg-yw-100 hover:bg-yw-110 ${
-          isButtonDisabled || isLoader ? "opacity-50 cursor-not-allowed" : ""
+          isButtonDisabled || isLoader ? "opacity-50 cursor-not-allowed hover:bg-yw-100" : ""
         }`}
         disabled={isButtonDisabled || isLoader}
       >
