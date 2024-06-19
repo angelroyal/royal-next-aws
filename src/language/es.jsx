@@ -1704,6 +1704,22 @@ export const es = {
       contact: "Contactanos al",
     },
 
+    notification: {
+      hotel: {
+        errorTitle:"Error al agregar hotel",
+        errorSubtitle:"Hubo un problema al agregar el hotel. Por favor, inténtalo de nuevo.",
+        successTitle:"¡Hotel agregado!",
+        successSubtitle:"Todo listo para tu estancia.",
+      },
+
+      transport: {
+        errorTitle:"Error al agregar transporte",
+        errorSubtitle:"Hubo un problema al agregar el transporte. Por favor, inténtalo de nuevo.",
+        successTitle:"Transportation added!",
+        successSubtitle:"Everything is ready for your trip.",
+      },
+    },
+
   },
 
   countries: {

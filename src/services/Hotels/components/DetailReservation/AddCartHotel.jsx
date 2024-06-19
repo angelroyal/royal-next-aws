@@ -17,12 +17,8 @@ export default function AddCartHotel() {
     useNotification();
   const { languageData, language } = useContext(LanguageContext);
 
-  const {
-    selectedRooms,
-    requestBodyRooms,
-    keyHotel,
-    hotelInfo,
-  } = useContext(RoomsHotelContext);
+  const { selectedRooms, requestBodyRooms, keyHotel, hotelInfo } =
+    useContext(RoomsHotelContext);
 
   // HANDLE ADD CART HOTEL
   const handleReserveNow = async () => {
@@ -60,8 +56,8 @@ export default function AddCartHotel() {
       const response = await saveToCart(saveRequestCart);
       showNotification(
         "success",
-        "¡Hotel agregado!",
-        "Todo listo para tu estancia.",
+        languageData.Alerts.notification.hotel.successTitle,
+        languageData.Alerts.notification.hotel.successSubtitle,
         3000
       );
 
@@ -73,17 +69,18 @@ export default function AddCartHotel() {
       );
       fetchData(cartUid);
       setTimeout(() => {
-        router.push(EntitiesRecommendations(language, "hotel", hotelInfo, cartUid));
+        router.push(
+          EntitiesRecommendations(language, "hotel", hotelInfo, cartUid)
+        );
       }, 3000);
-
     } catch (error) {
       console.log(error);
       setIsLoading(false);
 
       showNotification(
         "error",
-        "Error al agregar hotel",
-        "Hubo un problema al agregar el hotel. Por favor, inténtalo de nuevo.",
+        languageData.Alerts.notification.hotel.errorTitle,
+        languageData.Alerts.notification.hotel.errorSubtitle,
         3000
       );
     }

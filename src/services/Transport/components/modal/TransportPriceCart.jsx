@@ -22,11 +22,11 @@ export default function TransportPriceCart(props) {
   const { notification, showNotification, hideNotification } =
     useNotification();
 
-  const [alert, setAlert] = useState({
-    isAlert: false,
-    title: null,
-    message: null,
-  });
+  // const [alert, setAlert] = useState({
+  //   isAlert: false,
+  //   title: null,
+  //   message: null,
+  // });
 
   //   STATES CONTEXT TRANSPORT
   const {
@@ -122,29 +122,33 @@ export default function TransportPriceCart(props) {
         router.push(
           EntitiesRecommendations(language, "transport", InfoTransport, cartUid)
         );
-      }, 2000);
+
+        showNotification(
+          "success",
+          languageData.Alerts.notification.transport.successTitle,
+          languageData.Alerts.notification.transport.successSubtitle,
+          2000
+        );
+      }, 3000);
     } catch (error) {
       console.error("error", error);
       setIsLoader(false);
       if (error.response.status >= 400) {
-        setAlert({
-          isAlert: true,
-          title: languageData.Alerts.tour.tourDetails.title,
-          message: languageData.Alerts.tour.tourDetails.message,
-        });
+        // setAlert({
+        //   isAlert: true,
+        //   title: languageData.Alerts.tour.tourDetails.title,
+        //   message: languageData.Alerts.tour.tourDetails.message,
+        // });
         showNotification(
           "error",
-          "Error al agregar hotel",
-          "Hubo un problema al agregar el hotel. Por favor, inténtalo de nuevo.",
+          languageData.Alerts.notification.transport.errorTitle,
+          languageData.Alerts.notification.transport.errorSubtitle,
           3000
         );
       }
     }
   };
 
-
- 
-console.log(notification);
   return (
     <div className="flex flex-col gap-[8px]">
       <div className="flex justify-between items-center">
@@ -198,7 +202,7 @@ console.log(notification);
           )}
         </span>
       </div>
-      <ErrorAlert infoAlert={alert} setAlert={setAlert} />
+      {/* <ErrorAlert infoAlert={alert} setAlert={setAlert} /> */}
       {notification && notification.visible && (
         <NotificationType
           type={notification.type}
