@@ -48,8 +48,6 @@ export default function FooterT() {
   const { languageData, language } = useContext(LanguageContext);
   const [positionOpen, setPositionOpen] = useState(0);
 
-  console.log(positionOpen);
-
   const sendHotel = (hotelInfo) => {
     const encodedRoomData = encodeURIComponent(
       JSON.stringify([{ adults: 2, children: [] }])
