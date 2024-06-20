@@ -1,5 +1,8 @@
 "use client"
 
+import "swiper/css";
+import "@/assets/styles/general/Swiper.css";
+
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,7 +27,7 @@ export function CarouselImage() {
     >
       {Images.map((image, index) => (
         // !h-[380px] md:!h-[530px]
-        <SwiperSlide key={index} className="!h-[380px] md:!h-full">
+        <SwiperSlide key={index} className="!h-[380px] md:!h-full flex">
           <Image
             src={image}
             alt="inactivity banner home"
