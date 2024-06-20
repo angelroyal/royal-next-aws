@@ -70,7 +70,7 @@ export default function CardMovingItinerary(props) {
 
           {/* CARD TRANSPORT ITINERARY */}
           <div className="bg-white pl-4 pr-[37px] xl:px-4 py-4  flex max-xl:flex-col rounded-lg relative w-[732px] max-xl:w-full shadow-3xl">
-            <div className="flex items-center gap-x-2 lg:gap-x-8">
+            <div className="flex items-center gap-x-2 lg:gap-x-8 w-full">
               {/* REMOVE RESERVATION */}
               {!confirmation && (
                 <button
@@ -97,12 +97,12 @@ export default function CardMovingItinerary(props) {
                 height={118}
               />
 
-              <div className="flex flex-col gap-y-2">
+              <div className="flex flex-col gap-y-2 w-full">
                 <h2 className="m-b text-fs-16 text-black">
                   {itemTransport.title}
                 </h2>
 
-                <div className="flex gap-x-6 items-start justify-between">
+                <div className="flex gap-x-6 items-start justify-between lg:pr-[21px]">
                   {/* <div className="flex flex-col w-[227px] gap-y-1 max-md:w-[65%]"> */}
                   <div className="flex flex-col w-1/2 gap-y-1 max-md:w-[65%]">
                     <span className="flex items-center gap-x-1">
@@ -131,8 +131,8 @@ export default function CardMovingItinerary(props) {
                             />
 
                             <p className="m-0 text-fs-10 text-gry-100">
-                              {itemTransport.suitcases[0].handSuitcase /
-                                itemTransport.places}{" "}
+                              { Math.trunc(itemTransport.suitcases[0].handSuitcase /
+                                itemTransport.places)}{" "}
                               {languageData.CardHomeTransport.handLuggage}
                             </p>
                           </div>
@@ -146,8 +146,8 @@ export default function CardMovingItinerary(props) {
                             />
 
                             <p className="m-0 text-fs-10 text-gry-100">
-                              {itemTransport.suitcases[0].largeSuitcase /
-                                itemTransport.places}{" "}
+                              { Math.trunc(itemTransport.suitcases[0].largeSuitcase /
+                                itemTransport.places)}{" "}
                               {languageData.CardHomeTransport.suitcases}
                             </p>
                           </div>
