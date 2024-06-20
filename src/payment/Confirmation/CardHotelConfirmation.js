@@ -32,17 +32,17 @@ export default function CardHotelConfirmation(props) {
             <span className="text-or-100">
               {languageData.dayOfWeek[dayOfWeek]}
             </span>{" "}
-            <span className="text-gry-70">{dateFormatCheckIn}</span>{" "}
-            <span className="text-gry-70">|</span>{" "}
-            <span className="text-gry-70">14:00pm</span>
+            <span className="text-gry-70 m-m">{dateFormatCheckIn}</span>{" "}
+            <span className="text-gry-70 m-m">|</span>{" "}
+            <span className="text-gry-70 m-m">14:00pm</span>
           </div>
 
           <ul className="tex-fs-16 m-b list-disc list-inside list-gry-70">
             <li>
               <span className="text-black">Check out</span>{" "}
-              <span className="text-gry-70">{dateFormatCheckOut} </span>
-              <span className="text-gry-70">- </span>
-              <span className="text-gry-70">02:00pm</span>
+              <span className="text-gry-70 m-m">{dateFormatCheckOut} </span>
+              <span className="text-gry-70 m-m">- </span>
+              <span className="text-gry-70 m-m">02:00pm</span>
             </li>
           </ul>
         </div>
@@ -115,6 +115,7 @@ export default function CardHotelConfirmation(props) {
                       />
 
                       <p className="m-0 text-fs-10 m-s-b text-gry-100 flex flex-wrap">
+                        {/* {itemHotel.rooms.length}{" "} */}
                         {itemHotel.totalRooms}{" "}
                         {languageData.itinerary.detailsPayment.rooms}
                       </p>

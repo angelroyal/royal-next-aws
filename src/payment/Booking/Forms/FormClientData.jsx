@@ -28,7 +28,7 @@ export default function FormClientData() {
   });
 
   const phoneRegex = /^\d{0,10}$/;
-  const nameRegexIndividual = /^[A-Za-z ]{1,40}$/;
+  const nameRegexIndividual = /^[A-Za-z ]{0,40}$/;
 
   const handleFieldChange = (field, setter) => (e) => {
     const value = e.target.value;
@@ -122,6 +122,7 @@ export default function FormClientData() {
             {languageData.booking.clientData.textEmail}
             <span className="text-red-100">*</span>
           </label>
+
           <input
             id="email"
             type="email"
@@ -148,6 +149,7 @@ export default function FormClientData() {
             {languageData.booking.clientData.textPhone}{" "}
             <span className="text-red-100">*</span>
           </label>
+
           <input
             className="m-0 rounded-lg m-b w-full pt-[0.7rem] pb-[0.375rem] px-[2.25rem] text-fs-14 leading-[1.5] appearance-none border border-[#ebebeb] focus:outline-none placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b"
             placeholder={languageData.booking.clientData.placeholderPhone}
@@ -156,6 +158,7 @@ export default function FormClientData() {
             onBlur={handleBlur("phoneNumber", phoneNumber)}
             required
           />
+
           {!validation.phoneNumber.valid && validation.phoneNumber.touched && (
             <div className="bg-red-50 rounded-lg px-[10px] py-[20px] border border-red-70 tm-s-b">
               {languageData.booking.invalidPhone}

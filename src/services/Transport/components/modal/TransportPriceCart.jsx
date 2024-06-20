@@ -36,7 +36,13 @@ export default function TransportPriceCart(props) {
     departureTime,
     comebackTime,
   } = useContext(ModalTransportContext);
+
+  const codeNameTransport = (name) => {
+    return name.replace(/ /g, "-").toLowerCase();
+  };
+
   // console.log(transport);
+  // console.log(codeNameTransport(transport.label));
 
   // PRICE AND BUTTON ENABLED
   const priceShared = transport.price * passenger;
@@ -115,7 +121,7 @@ export default function TransportPriceCart(props) {
       const InfoTransport = {
         name: transport.label,
         date: departureDate,
-        // codeName: transport.codeName,
+        codeName: codeNameTransport(transport.label),
       };
 
       showNotification(
@@ -134,11 +140,6 @@ export default function TransportPriceCart(props) {
       console.error("error", error);
       setIsLoader(false);
       if (error.response.status >= 400) {
-        // setAlert({
-        //   isAlert: true,
-        //   title: languageData.Alerts.tour.tourDetails.title,
-        //   message: languageData.Alerts.tour.tourDetails.message,
-        // });
         showNotification(
           "error",
           languageData.Alerts.notification.transport.errorTitle,
