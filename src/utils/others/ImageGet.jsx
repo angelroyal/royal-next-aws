@@ -33,7 +33,7 @@ export default function ImageGet({ imageUrl, type, language, width, height, altD
   }, []);
 
   return (
-    <div>
+    <>
       {imageSize.url ? (
         <img
           src={imageSize.url}
@@ -51,6 +51,6 @@ export default function ImageGet({ imageUrl, type, language, width, height, altD
           alt={altDescription}
         />
       )}
-    </div>
+    </>
   );
 }

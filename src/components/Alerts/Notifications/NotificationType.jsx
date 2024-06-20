@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function NotificationType(props) {
   const { type, title, message, duration, onClose , transport = false } = props;
 
-  console.log('isTransport:',transport);
+  // console.log('isTransport:',transport);
 
   const [progress, setProgress] = useState(0);
   // const isTransport = (false)
