@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 
 import { HamburgerMenu } from "./HamburgerMenu";
