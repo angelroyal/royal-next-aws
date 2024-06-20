@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 
 export default function NotificationType(props) {
-  const { type, title, message, duration, onClose } = props;
+  const { type, title, message, duration, onClose , transport = false } = props;
+
+  console.log('isTransport:',transport);
+
   const [progress, setProgress] = useState(0);
+  // const isTransport = (false)
 
   const icons = {
     success: "success.svg",
@@ -34,7 +38,10 @@ export default function NotificationType(props) {
   }, [duration, onClose]);
 
   return (
-    <div className="w-[369px] fixed top-5 right-5 z-50 bg-white shadow-xl py-[12px] px-[20px] rounded-t transform transition-transform translate-x-0 animate-slide-in">
+    <div
+      className={` w-[369px] fixed top-5 z-50 bg-white shadow-xl py-[12px] px-[20px] rounded-t transform transition-transform animate-slide-in 
+        ${transport ? " right-[18rem]  translate-x-[50%] max-md:right-[10rem] max-sm:right-5 max-sm:top-[30rem]" : " right-5 translate-x-0"}`}
+    >
       <div className="flex justify-between items-center">
         {/* ICON NOTIFICATION */}
         <div className="mr-[11.5px]">

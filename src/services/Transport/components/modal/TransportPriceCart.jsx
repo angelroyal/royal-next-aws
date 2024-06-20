@@ -204,13 +204,16 @@ export default function TransportPriceCart(props) {
       </div>
       {/* <ErrorAlert infoAlert={alert} setAlert={setAlert} /> */}
       {notification && notification.visible && (
-        <NotificationType
-          type={notification.type}
-          title={notification.title}
-          message={notification.message}
-          duration={notification.duration}
-          onClose={hideNotification}
-        />
+        // <div className="relative">
+          <NotificationType
+            type={notification.type}
+            title={notification.title}
+            message={notification.message}
+            duration={notification.duration}
+            onClose={hideNotification}
+            transport={true}
+          />
+        // </div>
       )}
     </div>
   );
