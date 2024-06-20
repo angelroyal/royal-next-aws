@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import LanguageProvider from "@/language/LanguageProvider";
 import CookieBanner from "@/components/General/CookieBanner";
 import AosInitializer from "@/config/Animation/AosInitializer";
+import { FormContactClient } from "@/components/Alerts/FormContactClient";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -90,6 +91,7 @@ export default function RootLayout({ children }) {
           {children}
           <AosInitializer />
           <CookieBanner />
+          <FormContactClient />
         </LanguageProvider>
       </body>
     </html>
