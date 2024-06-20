@@ -185,7 +185,7 @@ export default function CardMovingItinerary(props) {
                     </div>
 
                     <div className="flex flex-col gap-y-1 items-start max-xl:hidden">
-                      <p className="text-fs-8 text-gry-100 m-m mb-1">
+                      <p className="text-fs-10 text-gry-100 m-s-b mb-1 text-nowrap">
                         {languageData.cart.taxes}
                       </p>
 
