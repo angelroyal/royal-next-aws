@@ -10,7 +10,7 @@ import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
-import LoadingProgress from "@/components/General/LoadingProgress";
+// import LoadingProgress from "@/components/General/LoadingProgress";
 
 export default function DetailsPayment(props) {
   const { data, step, setChangeButton } = props;

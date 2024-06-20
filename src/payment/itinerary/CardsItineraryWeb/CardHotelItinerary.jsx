@@ -23,7 +23,7 @@ export default function CardHotelItinerary(props) {
   const dateFormatCheckOut = moment(itemHotel.checkOut).format("DD/MM/YY");
 
   const [loader, setLoader] = useState(false);
-  console.log(itemHotel);
+  // console.log(itemHotel);
   // DAY OF WEEK
   const dayOfWeek = moment(itemHotel.date).format("dddd");
 

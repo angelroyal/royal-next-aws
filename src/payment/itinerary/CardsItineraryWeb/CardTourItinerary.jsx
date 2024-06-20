@@ -8,7 +8,7 @@ import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 export default function TourCardItinerary({key, itemActivity }) {
-  console.log(itemActivity);
+  // console.log(itemActivity);
   const { setItinerary, fetchData } = useCartAxios();
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
@@ -50,7 +50,7 @@ export default function TourCardItinerary({key, itemActivity }) {
   const dateFormat = moment(itemActivity.date).format("DD/MM/YY");
 
   const [openAlert, setOpenAlert] = useState(false);
-console.log(openAlert);
+// console.log(openAlert);
   return (
     itemActivity && (
       <>
