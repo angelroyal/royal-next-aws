@@ -28,7 +28,7 @@ export default function FormClientData() {
   });
 
   const phoneRegex = /^\d{0,10}$/;
-  const nameRegexIndividual = /^[A-Za-z ]{1,40}$/;
+  const nameRegexIndividual = /^[A-Za-z ]{0,40}$/;
 
   const handleFieldChange = (field, setter) => (e) => {
     const value = e.target.value;
