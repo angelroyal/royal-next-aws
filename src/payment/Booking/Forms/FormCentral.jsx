@@ -14,7 +14,8 @@ export default function FormCentral(props) {
   const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
   window.Conekta.setPublicKey(conektaPublicKey);
 
-  const { activityPreBooking, activityTrue, dataItinerary,transportTrue } = props;
+  const { activityPreBooking, activityTrue, dataItinerary, transportTrue } =
+    props;
   const {
     firstName,
     lastName,
@@ -68,6 +69,7 @@ export default function FormCentral(props) {
     );
   };
 
+
   return (
     <>
       <form
@@ -84,10 +86,11 @@ export default function FormCentral(props) {
           <ActivityFormT activityPreBooking={activityPreBooking} />
         )}
 
-        {!activityPreBooking && activityTrue === true || transportTrue === true ? (
-          <SkeletonActivitiesTourPT />
-        ): <></>}
-        
+        {activityTrue === true || transportTrue === true ? (
+          !activityPreBooking && <SkeletonActivitiesTourPT />
+        ) : (
+          <></>
+        )}
 
         <FormCreditCard />
       </form>
