@@ -14,7 +14,7 @@ export const es = {
     titleBl: "¡Llámanos!",
     subtitle: "Obtén beneficios y ayuda personalizada marcando a nuestro número.",
     followNetwork: "Síguenos para saber más.",
-    title: "¿Dudas para elegir un hotel?",
+    title: "¿Tienes alguna duda?",
     description: "Compártenos tus datos y un asesor se comunicará contigo."
   },
 
