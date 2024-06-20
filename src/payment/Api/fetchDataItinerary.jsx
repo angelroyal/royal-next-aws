@@ -4,6 +4,7 @@ export const fetchDataItinerary = async (
   setData,
   setSkeletonShow,
   setHasActivities,
+  setHasTransport,
   setShowClr,
   setErrorAlertBooking
 ) => {
@@ -19,8 +20,14 @@ export const fetchDataItinerary = async (
       (object) => object.type === "activity"
     );
 
+    const filterDataTransport = response.data.items.filter(
+      (object) => object.type === "transportation"
+    );
     if (filterDataItinerary.length > 0) {
       setHasActivities(true);
+    }
+    if (filterDataTransport.length > 0) {
+      setHasTransport(true);
     }
 
     setData(response.data);

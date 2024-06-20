@@ -7,10 +7,9 @@ import { FormDataProvider } from "../context/FormDataContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
 
 export default function Booking(props) {
-  const { dataItinerary, hasActivities } = props;
+  const { dataItinerary, hasActivities,hasTransport } = props;
   const { languageData } = useContext(LanguageContext);
   const [activityPreBooking, setActivityPreBooking] = useState(null);
-
   const fetchData = async () => {
     try {
       const url = "/v1/pre-booking/";
@@ -52,6 +51,7 @@ export default function Booking(props) {
           activityPreBooking={activityPreBooking}
           dataItinerary={dataItinerary.items}
           activityTrue={hasActivities}
+          transportTrue={hasTransport}
         />
       </>
     </FormDataProvider>

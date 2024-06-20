@@ -29,9 +29,9 @@ export default function Payment() {
   const { languageData } = useContext(LanguageContext);
   const [skeletonShow, setSkeletonShow] = useState(true);
   const [hasActivities, setHasActivities] = useState(false);
+  const [hasTransport, setHasTransport] = useState(false);
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
   const { step, handleStepChange, openDialog } = useContext(BookingContext);
-
   useEffect(() => {
     loadConektaScripts();
 
@@ -47,9 +47,11 @@ export default function Payment() {
       setData,
       setSkeletonShow,
       setHasActivities,
+      setHasTransport,
       setShowClr,
       setErrorAlertBooking
     );
+    
   }, [itineraryData]);
 
   return (
@@ -90,6 +92,7 @@ export default function Payment() {
                             <Booking
                               dataItinerary={data}
                               hasActivities={hasActivities}
+                              hasTransport={hasTransport}
                             />
                           )}
                         </div>
