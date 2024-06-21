@@ -6,13 +6,15 @@ import LanguageContext from "../../../language/LanguageContext";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
+import { BookingContext } from "@/payment/context/BookingContext";
 
-export default function TourCardItinerary({key, itemActivity }) {
+export default function TourCardItinerary({ key, itemActivity }) {
   // console.log(itemActivity);
-  const { setItinerary, fetchData } = useCartAxios();
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
+  const { setItinerary, fetchData } = useCartAxios();
   const { languageData } = useContext(LanguageContext);
+  const { removeIsLoader, setRemoveIsLoader } = useContext(BookingContext);
 
   const cancelRemove = () => {
     if (isRemove) {
@@ -23,8 +25,10 @@ export default function TourCardItinerary({key, itemActivity }) {
   const searchParams = new URLSearchParams(window.location.search);
   const cartUid = searchParams.get("uid");
 
+  // REMOVE TOUR
   const handleRemoveTour = (cardTourID) => {
     setLoader(true);
+    setRemoveIsLoader(true);
     const reservationRemove = async () => {
       axiosWithInterceptor
         .delete(`v1/carts/${cartUid}/activity/${cardTourID}`)
@@ -33,13 +37,12 @@ export default function TourCardItinerary({key, itemActivity }) {
           setIsRemove(false);
           setLoader(false);
           setItinerary(Math.floor(Math.random() * 100) + 1);
+          setRemoveIsLoader(false);
         })
         .catch((error) => {
           console.error(error);
           setLoader(false);
-        })
-        .finally(() => {
-          // setLoader(false);
+          setRemoveIsLoader(false);
         });
     };
     reservationRemove();
@@ -50,7 +53,7 @@ export default function TourCardItinerary({key, itemActivity }) {
   const dateFormat = moment(itemActivity.date).format("DD/MM/YY");
 
   const [openAlert, setOpenAlert] = useState(false);
-// console.log(openAlert);
+  // console.log(openAlert);
   return (
     itemActivity && (
       <>
@@ -79,17 +82,19 @@ export default function TourCardItinerary({key, itemActivity }) {
             {/* ITINERARY CARD */}
 
             <div className="w-[732px] max-xl:w-full flex rounded-[8px] p-[16px] shadow-3xl bg-white mt-[12px] border border-[#ebebeb] relative mb-[15px] max-lg:flex-col max-lg:px-[20px] ">
-              <div
-                className="absolute right-[1rem] top-[1rem] cursor-pointer"
-                onClick={() => setIsRemove(true)}
-              >
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
-                  alt="CloseIcon"
-                  width={10}
-                  height={10}
-                />
-              </div>
+              {!removeIsLoader && (
+                <div
+                  className="absolute right-[1rem] top-[1rem] cursor-pointer"
+                  onClick={() => setIsRemove(true)}
+                >
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
+                    alt="CloseIcon"
+                    width={10}
+                    height={10}
+                  />
+                </div>
+              )}
 
               <div className="max-lg:hidden rounded-[8px] w-[133px] h-[117.7px]">
                 <img

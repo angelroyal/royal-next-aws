@@ -9,25 +9,26 @@ import { useIsMobile } from "../../../config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import UnavailableCardHotel from "../others/UnavailableCardHotel";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
+import { BookingContext } from "@/payment/context/BookingContext";
 import { removeHotelItinerary } from "@/payment/Api/fetchDataItinerary";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 
 export default function CardHotelItinerary(props) {
   const { itemHotel } = props;
-  const { setItinerary, fetchData } = useCartAxios();
-  const isMobile = useIsMobile();
 
+  const isMobile = useIsMobile();
+  const [loader, setLoader] = useState(false);
+  const { setItinerary, fetchData } = useCartAxios();
+  const [iconRemove, setIconRemove] = useState(false);
   const { languageData, language } = useContext(LanguageContext);
+  const { removeIsLoader, setRemoveIsLoader } = useContext(BookingContext);
 
   const dateFormatCheckIn = moment(itemHotel.checkIn).format("DD/MM/YY");
   const dateFormatCheckOut = moment(itemHotel.checkOut).format("DD/MM/YY");
 
-  const [loader, setLoader] = useState(false);
   // console.log(itemHotel);
   // DAY OF WEEK
   const dayOfWeek = moment(itemHotel.date).format("dddd");
-
-  const [iconRemove, setIconRemove] = useState(false);
 
   const cancelRemove = () => {
     if (iconRemove === true) setIconRemove(false);
@@ -40,16 +41,19 @@ export default function CardHotelItinerary(props) {
 
   const removeReservation = (uidHotel) => {
     setLoader(true);
+    setRemoveIsLoader(true);
     if (cartHotelId === uidHotel) {
       removeHotelItinerary(cartUid, cartHotelId)
         .then((response) => {
           fetchData(cartUid);
           setIconRemove(false);
           setItinerary(Math.floor(Math.random() * 100) + 1);
+          setRemoveIsLoader(false);
         })
         .catch((error) => {
           console.error(error);
           setLoader(false);
+          setRemoveIsLoader(false);
         });
     }
   };
@@ -108,17 +112,20 @@ export default function CardHotelItinerary(props) {
             {/* CLOSE BUTTON */}
 
             {/* <CloseIcon /> */}
-            <button onClick={() => setIconRemove(true)}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
-                alt="icon close"
-                className={`w-[10px] h-[10px] absolute right-4 top-4 ${
-                  itemHotel.available === false && "opacity-50"
-                }`}
-                width={10}
-                height={10}
-              />
-            </button>
+
+            {!removeIsLoader && (
+              <button onClick={() => setIconRemove(true)}>
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
+                  alt="icon close"
+                  className={`w-[10px] h-[10px] absolute right-4 top-4 ${
+                    itemHotel.available === false && "opacity-50"
+                  }`}
+                  width={10}
+                  height={10}
+                />
+              </button>
+            )}
 
             {/* FATHER ONE */}
 

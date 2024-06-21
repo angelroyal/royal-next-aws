@@ -12,6 +12,7 @@ const BookingProviderContext = ({ children }) => {
   const [progressCount, setProgressCount] = useState(null);
   const [infoReservation, setInfoReservation] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
+  const [removeIsLoader, setRemoveIsLoader] = useState(false);
 
   const handleStepChange = (newStep) => {
     setStep(newStep);
@@ -36,6 +37,8 @@ const BookingProviderContext = ({ children }) => {
         setInfoReservation,
         openDialog,
         setOpenDialog,
+        removeIsLoader,
+        setRemoveIsLoader,
       }}
     >
       {children}

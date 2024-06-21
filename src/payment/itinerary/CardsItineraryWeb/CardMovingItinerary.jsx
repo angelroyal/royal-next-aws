@@ -8,13 +8,16 @@ import LanguageContext from "../../../language/LanguageContext";
 import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
+import { BookingContext } from "@/payment/context/BookingContext";
 
 export default function CardMovingItinerary(props) {
-  const { languageData } = useContext(LanguageContext);
-  const [iconRemove, setIconRemove] = useState(false);
-  const [openAlert, setOpenAlert] = useState(false);
   const [loader, setLoader] = useState(false);
+  const [openAlert, setOpenAlert] = useState(false);
+  const [iconRemove, setIconRemove] = useState(false);
+  const { languageData } = useContext(LanguageContext);
   const { setItinerary, removeTransportById } = useCartAxios();
+
+  const { removeIsLoader, setRemoveIsLoader } = useContext(BookingContext);
 
   const { itemTransport, confirmation = false } = props;
   const cancelRemove = () => {
@@ -23,6 +26,8 @@ export default function CardMovingItinerary(props) {
 
   // REMOVE TRANSPORT FROM SHOPPING CART
   const removeReservation = (uidTransport) => {
+    // removeIsLoader
+    setRemoveIsLoader(true);
     const searchParams = new URLSearchParams(window.location.search);
     const cartUid = searchParams.get("uid");
     const transportId = uidTransport.id;
@@ -34,9 +39,11 @@ export default function CardMovingItinerary(props) {
           removeTransportById(transportId);
           setItinerary(Math.floor(Math.random() * 100) + 1);
           setLoader(false);
+          setRemoveIsLoader(false);
         })
         .catch((error) => {
           console.log(error);
+          setRemoveIsLoader(false);
           throw error;
         });
     }
@@ -72,7 +79,7 @@ export default function CardMovingItinerary(props) {
           <div className="bg-white pl-4 pr-[37px] xl:px-4 py-4  flex max-xl:flex-col rounded-lg relative w-[732px] max-xl:w-full shadow-3xl">
             <div className="flex items-center gap-x-2 lg:gap-x-8 w-full">
               {/* REMOVE RESERVATION */}
-              {!confirmation && (
+              {!confirmation && !removeIsLoader ? (
                 <button
                   className="border-0 absolute right-4 top-4"
                   onClick={() => setIconRemove(true)}
@@ -85,6 +92,8 @@ export default function CardMovingItinerary(props) {
                     height={10}
                   />
                 </button>
+              ) : (
+                <></>
               )}
 
               <Image
@@ -131,8 +140,10 @@ export default function CardMovingItinerary(props) {
                             />
 
                             <p className="m-0 text-fs-10 text-gry-100">
-                              { Math.trunc(itemTransport.suitcases[0].handSuitcase /
-                                itemTransport.places)}{" "}
+                              {Math.trunc(
+                                itemTransport.suitcases[0].handSuitcase /
+                                  itemTransport.places
+                              )}{" "}
                               {languageData.CardHomeTransport.handLuggage}
                             </p>
                           </div>
@@ -146,8 +157,10 @@ export default function CardMovingItinerary(props) {
                             />
 
                             <p className="m-0 text-fs-10 text-gry-100">
-                              { Math.trunc(itemTransport.suitcases[0].largeSuitcase /
-                                itemTransport.places)}{" "}
+                              {Math.trunc(
+                                itemTransport.suitcases[0].largeSuitcase /
+                                  itemTransport.places
+                              )}{" "}
                               {languageData.CardHomeTransport.suitcases}
                             </p>
                           </div>
