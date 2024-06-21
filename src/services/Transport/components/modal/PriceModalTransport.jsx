@@ -53,7 +53,7 @@ export default function PriceModalTransport(props) {
                 height={12.3}
               />
               <span className="text-fs-12 m-m">
-                {transport.hand_suitcase / transport.places} {`${languageData.CardHomeTransport.handLuggage} p.p`}
+                {Math.trunc(transport.hand_suitcase / transport.places)} {`${languageData.CardHomeTransport.handLuggage} p.p`}
               </span>
             </div>
 
@@ -66,7 +66,7 @@ export default function PriceModalTransport(props) {
                 height={12.3}
               />
               <span className="text-fs-12 m-m">
-                {transport.large_suitcase / transport.places} {`${languageData.CardHomeTransport.suitcases} p.p`}
+                {Math.trunc(transport.large_suitcase / transport.places)} {`${languageData.CardHomeTransport.suitcases} p.p`}
               </span>
             </div>
 
