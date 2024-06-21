@@ -75,7 +75,9 @@ export default function DateAndHour(props) {
       <div className="flex w-full gap-[24px] mb-[36px]">
         {/* DATE */}
         <div className="w-1/2">
-          <span>{languageData.SearchBox.tabHotel.date}</span>
+          <span className="text-fs-12 m-s-b text-gry-100">
+            {languageData.SearchBox.tabHotel.date}
+          </span>
           <div className="flex px-[16px] py-[12.8px] border border-[#ebebeb] items-center gap-2 relative">
             <img
               className="w-[14px] h-[16px]"
@@ -103,7 +105,9 @@ export default function DateAndHour(props) {
 
         {/* HOUR */}
         <div className="w-1/2">
-          <div>{languageData.ModalTransport.Schedule}</div>
+          <div className="text-fs-12 m-s-b text-gry-100">
+            {languageData.ModalTransport.Schedule}
+          </div>
           <div className="flex py-[11.5px] px-[16px] border border-[#ebebeb] items-center gap-2 relative">
             <img
               className=""
@@ -126,7 +130,9 @@ export default function DateAndHour(props) {
         <div className="flex w-full gap-[24px] mb-[36px]">
           {/* DATE */}
           <div className="w-1/2">
-            <span>Fecha</span>
+            <span className="text-fs-12 m-s-b text-gry-100">
+              {languageData.SearchBox.tabHotel.date}
+            </span>
             <div className="flex px-[16px] py-[11.5px] border border-[#ebebeb] items-center gap-2 relative">
               <img
                 className="w-[14px] h-[16px]"
@@ -155,7 +161,9 @@ export default function DateAndHour(props) {
 
           {/* HOUR */}
           <div className="w-1/2">
-            <div>Horario</div>
+            <div className="text-fs-12 m-s-b text-gry-100">
+              {languageData.ModalTransport.Schedule}
+            </div>
             <div className="flex py-[11.5px] px-[16px] border border-[#ebebeb] items-center gap-2 relative">
               <img
                 className=""

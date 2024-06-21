@@ -206,7 +206,7 @@ export function FormContactClient() {
                           alt="adult icon"
                           width={16}
                           height={17}
-                          className="opacity-55 grayscale absolute left-4 top-0 bottom-0 my-auto"
+                          className="w-[16px] h-[17px] opacity-55 grayscale absolute left-4 top-0 bottom-0 my-auto"
                         />
 
                         <input
@@ -225,7 +225,7 @@ export function FormContactClient() {
                           alt="adult icon"
                           width={16}
                           height={17}
-                          className="opacity-55 grayscale absolute left-4 top-0 bottom-0 my-auto"
+                          className="w-[16px] h-[17px] opacity-55 grayscale absolute left-4 top-0 bottom-0 my-auto"
                         />
 
                         <input
@@ -259,7 +259,7 @@ export function FormContactClient() {
                       <div className="flex gap-x-6 justify-center">
                         {icons.map((icon, index) => (
                           <a href={icon.href} target="_blank" key={index}>
-                            <Image
+                            <img
                               src={`${process.env.NEXT_PUBLIC_URL}${icon.url}`}
                               alt={icon.alt}
                               className="h-6 w-6"

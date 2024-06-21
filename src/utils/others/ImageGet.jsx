@@ -40,7 +40,7 @@ export default function ImageGet({
         setIsLoader(false);
         console.error("Error al obtener la imagen desde el endpoint:", error);
       });
-  }, []);
+  }, [imageUrl]);
 
   return (
     <>
