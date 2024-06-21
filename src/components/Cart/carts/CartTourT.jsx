@@ -86,6 +86,7 @@ export default function CartTourT(props) {
                 width={12}
                 height={12}
                 alt="icon-calendar"
+                className="w-[12px] h-[12px]"
               />
 
               <span className=" m-m text-gry-100 text-fs-12">
@@ -104,6 +105,7 @@ export default function CartTourT(props) {
                   width={12}
                   height={12}
                   alt="icon-adult"
+                  className="w-[12px] h-[12px]"
                 />
                 <span className=" m-m text-fs-12 text-gry-100">
                   {totalTourist(activity.tourists)}

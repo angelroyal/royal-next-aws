@@ -83,6 +83,7 @@ export default function CartTransportT(props) {
                 width={12}
                 height={12}
                 alt="icon-calendar"
+                className="w-[12px] h-[12px]"
               />
 
               <span className=" m-m text-gry-100 text-fs-12">
@@ -110,6 +111,7 @@ export default function CartTransportT(props) {
                   width={12}
                   height={12}
                   alt="icon-transport"
+                  className="w-[12px] h-[12px]"
                 />
                 <span className=" m-m text-fs-12 text-gry-100">
                   {transport.trip === "shared"
@@ -124,6 +126,7 @@ export default function CartTransportT(props) {
                   width={12}
                   height={12}
                   alt="icon-adult"
+                  className="w-[12px] h-[12px]"
                 />
                 <span className=" m-m text-fs-12 text-gry-100">
                   {transport.tourists}
@@ -149,6 +152,7 @@ export default function CartTransportT(props) {
               width={16}
               height={16}
               alt="icon-delete-w"
+              className="w-[16px] h-[16px]"
             />
           </div>
         ) : (
@@ -166,6 +170,7 @@ export default function CartTransportT(props) {
               width={16}
               height={16}
               alt="icon-delete-w"
+              className="w-[16px] h-[16px]"
             />
           </div>
         )}

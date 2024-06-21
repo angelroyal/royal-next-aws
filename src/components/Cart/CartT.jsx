@@ -65,7 +65,7 @@ export default function CartT(props) {
               width={8}
               height={8}
               alt="icon-close"
-              className="mr-2 cursor-pointer"
+              className="mr-2 cursor-pointer w-[8px] h-[8px]"
               onClick={() => closeCart()}
             />
           </div>

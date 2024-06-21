@@ -132,6 +132,7 @@ export default function FooterT() {
                     alt="icon call footer"
                     width={20}
                     height={20}
+                    className="w-[20px] h-[20px]"
                   />
                   <span
                     className={`${
@@ -160,6 +161,7 @@ export default function FooterT() {
                   alt="icon mail footer"
                   width={20}
                   height={20}
+                  className="w-[20px] h-[20px]"
                 />
                 <span
                   className={`${
