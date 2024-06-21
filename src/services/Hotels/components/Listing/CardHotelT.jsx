@@ -12,6 +12,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 import { calculateNights } from "../../utils/calculateNights";
+import ImageGet from "@/utils/others/ImageGet";
 
 export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;
@@ -75,12 +76,14 @@ export default function CardHotelT(props) {
                 className="!h-[87%] !rounded-tl-lg max-lg:!rounded-t-lg"
               >
                 {hotel.images.map((image, index) => (
-                  <SwiperSlide>
-                    <img
-                      key={index}
-                      className={`w-full h-full object-cover`}
-                      src={image}
-                      alt="card"
+                  <SwiperSlide key={index}>
+                    <ImageGet
+                      imageUrl={image}
+                      type={"hotel"}
+                      language={language}
+                      width={294}
+                      height={198}
+                      altDescription={"image hotel listing card"}
                     />
                   </SwiperSlide>
                 ))}
@@ -97,7 +100,7 @@ export default function CardHotelT(props) {
               )}
 
               <div
-              // bg-[#fcb41e8c]
+                // bg-[#fcb41e8c]
                 className={`h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none`}
               >
                 {languageData.eatingPlan[hotel.eatingPlan]}

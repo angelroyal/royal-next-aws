@@ -9,9 +9,10 @@ import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
+import ImageGet from "@/utils/others/ImageGet";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
-import ImageNotFount from "../../../../assets/images/banners/es/no-image-available.png";
+import { ImageNotFoundType } from "@/utils/others/ImageNotFoundType";
 
 // import { TourDialogInfo } from "./TourDialogInfo";
 
@@ -63,19 +64,19 @@ export default function TourCard(props) {
                   id={`dotsSwiperHotel${index}`}
                   style={{ width: 293, height: "100%" }}
                 >
-                  <img
-                    className="object-cover !h-full select-none"
-                    alt="tours list"
-                    src={tourImage}
-                    width={"100%"}
-                    height={"100%"}
-                    effect="blur"
+                  <ImageGet
+                    imageUrl={tourImage}
+                    type={"tour"}
+                    language={language}
+                    width={294}
+                    height={233}
+                    altDescription={"tour image listing"}
                   />
                 </SwiperSlide>
               ))
             ) : (
               <img
-                src={ImageNotFount}
+                src={ImageNotFoundType("tour", language)}
                 alt="notFount"
                 className="object-cover rounded-l-lg"
               ></img>

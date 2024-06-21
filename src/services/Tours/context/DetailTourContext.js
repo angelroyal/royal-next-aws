@@ -8,8 +8,10 @@ export const DetailTourProvider = ({ children }) => {
   const [dataTour, setDataTour] = useState(null);
   const [dayTour, setDayTour] = useState(null);
   const [hourTour, setHourTour] = useState(null);
+  const [isLoader, setIsLoader] = useState(false);
   const [codeNameTour, setCodeNameTour] = useState(null);
   const [selectModality, setSelectModality] = useState(null);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true); 
 
   return (
     <DetailTourContext.Provider
@@ -24,6 +26,10 @@ export const DetailTourProvider = ({ children }) => {
         setSelectModality,
         codeNameTour,
         setCodeNameTour,
+        isLoader, 
+        setIsLoader,
+        isButtonDisabled, 
+        setIsButtonDisabled
       }}
     >
       {children}

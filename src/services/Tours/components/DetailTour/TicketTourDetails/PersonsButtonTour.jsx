@@ -1,8 +1,12 @@
 "use client";
 
+import DetailTourContext from "@/services/Tours/context/DetailTourContext";
+import { useContext } from "react";
+
 export function PersonsButtonTour(props) {
   const { categories, setCategories } = props;
 
+  const { isLoader, isButtonDisabled } = useContext(DetailTourContext);
 
   const handleAddPerson = (categoryId) => {
     const newCategories = categories.map((category) => {
@@ -33,10 +37,10 @@ export function PersonsButtonTour(props) {
 
         <div className="flex h-[32px] justify-between items-center lg:w-[64%] xl:w-[56%] w-[56%] rounded bg-white">
           <button
-            disabled={category.count === 0}
+            disabled={category.count === 0 || isButtonDisabled || isLoader}
             onClick={() => handleRemovePerson(category.id)}
             className={`${
-              category.count === 0
+              category.count === 0 || isButtonDisabled || isLoader
                 ? "cursor-not-allowed"
                 : "hover:bg-gry-30 rounded-l"
             } flex justify-center items-center h-full w-8`}
@@ -54,8 +58,9 @@ export function PersonsButtonTour(props) {
           </span>
 
           <button
-            className={`cursor-pointer w-[32px] flex justify-center items-center h-full hover:bg-gry-30 rounded-r`}
+            className={` ${ isLoader ? 'cursor-not-allowed' : 'cursor-pointer hover:bg-gry-30'} w-[32px] flex justify-center items-center h-full rounded-r`}
             onClick={() => handleAddPerson(category.id)}
+            disabled={isLoader}
           >
             <img
               src={`${process.env.NEXT_PUBLIC_URL}icons/add/add-or.svg`}

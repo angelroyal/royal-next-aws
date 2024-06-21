@@ -3,22 +3,15 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
-// import { AlertTourDetails } from "../../AlertsTour/AlertTours";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import DetailTourContext from "@/services/Tours/context/DetailTourContext";
-import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 import NotificationType from "@/components/Alerts/Notifications/NotificationType";
 import { useNotification } from "@/components/Alerts/Notifications/useNotification";
+import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 
 export default function AddCartTour(props) {
-  const { totalPrice, tourists, isLoader, setIsLoader } = props;
+  const { tourists, totalPrice } = props;
   const { fetchData } = useCartAxios();
-  // const [alert, setAlert] = useState({
-  //   alert: false,
-  //   type: null,
-  //   title: null,
-  //   message: null,
-  // });
 
   const { notification, showNotification, hideNotification } =
     useNotification();
@@ -26,8 +19,17 @@ export default function AddCartTour(props) {
   const router = useRouter();
 
   const { languageData, language } = useContext(LanguageContext);
-  const { dataTour, hourTour, dayTour, selectModality, codeNameTour } =
-    useContext(DetailTourContext);
+  const {
+    dataTour,
+    hourTour,
+    dayTour,
+    selectModality,
+    codeNameTour,
+    isLoader,
+    setIsLoader,
+    isButtonDisabled,
+    setIsButtonDisabled,
+  } = useContext(DetailTourContext);
 
   const handleAddCartTour = async () => {
     try {
@@ -91,22 +93,8 @@ export default function AddCartTour(props) {
     } catch (error) {
       console.error("error 1", error);
       setIsLoader(false);
-      // if (error.response.status === 422) {
-      //   setAlert({
-      //     alert: true,
-      //     type: "warning",
-      //     title: languageData.Alerts.tour.maxPerson.title,
-      //     message: languageData.Alerts.tour.maxPerson.message,
-      //   });
-      // }
 
       if (error.response.status === 400) {
-        // setAlert({
-        //   alert: true,
-        //   type: "warning",
-        //   title: languageData.Alerts.tour.NotAvailability.title,
-        //   message: languageData.Alerts.tour.NotAvailability.message,
-        // });
         showNotification(
           "warning",
           languageData.Alerts.tour.tourDetails.title,
@@ -115,15 +103,7 @@ export default function AddCartTour(props) {
         );
       }
 
-      // if (error.response.status >= 405 && error.response.status !== 422) {
       if (error.response.status >= 405) {
-        // setAlert({
-        //   alert: true,
-        //   type: "error",
-        //   title: languageData.Alerts.tour.tourDetails.title,
-        //   message: languageData.Alerts.tour.tourDetails.message,
-        // });
-
         showNotification(
           "error",
           languageData.Alerts.tour.tourDetails.title,
@@ -133,8 +113,6 @@ export default function AddCartTour(props) {
       }
     }
   };
-
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const ref = useRef(null);
 
@@ -177,11 +155,6 @@ export default function AddCartTour(props) {
           ? languageData.cart.loadingText
           : languageData.modalTour.OccupancyTours.reserve}
       </button>
-      {/* {alert.alert && (
-        <div ref={ref}>
-          <AlertTourDetails alertInfo={alert} />
-        </div>
-      )} */}
 
       {notification && notification.visible && (
         <NotificationType

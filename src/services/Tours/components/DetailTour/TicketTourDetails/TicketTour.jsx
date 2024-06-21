@@ -12,9 +12,10 @@ import { CancelPolicyToulTip } from "./CancelPolicy";
 
 export function TicketsTour(props) {
   const { setIsModality, isModality, tourData } = props;
+
+  
   const { languageData } = useContext(LanguageContext);
-  const { selectModality } = useContext(DetailTourContext);
-  const [isLoader, setIsLoader] = useState(false);
+  const { selectModality,isLoader } = useContext(DetailTourContext);
 
   const [openPolicy, setOpenPolicy] = useState(false);
 
@@ -188,7 +189,8 @@ export function TicketsTour(props) {
                 </span>
               </div>
             </div>
-            <AddCartTour tourists={selectionsArray} totalPrice={totalPrice} isLoader={isLoader} setIsLoader={setIsLoader} />
+
+            <AddCartTour tourists={selectionsArray} totalPrice={totalPrice} />
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function PopularDestinationsHome() {
   useEffect(() => {
     getPopularStates();
   }, []);
-1
+  1;
   // AXIOS GET
   const getPopularStates = async () => {
     try {
@@ -111,49 +111,52 @@ export default function PopularDestinationsHome() {
           },
         }}
       >
-        {popularState ?
-          popularState.map((popular, index) => (
-            <SwiperSlide
-              className="!rounded-lg cursor-pointer"
-              key={index}
-              onClick={() => sendDestination(popular)}
-            >
-              <div className="h-[280px] relative overflow-hidden rounded-lg">
-                {/* IMAGE */}
-                <img
-                  src={popular.imageUrl}
-                  alt="banner-offers"
-                  className="brightness-[.65] w-full h-full rounded-lg select-none object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.85]"
-                />
+        {popularState
+          ? popularState.map((popular, index) => (
+              <SwiperSlide
+                className="!rounded-lg cursor-pointer"
+                key={index}
+                onClick={() => sendDestination(popular)}
+              >
+                <div className="h-[280px] relative overflow-hidden rounded-lg">
+                  {/* IMAGE */}
 
-                <div className="flex flex-col pl-[16px] pb-[16px] absolute bottom-0 gap-[4px]">
-                  {/* TITLE */}
-                  <span className="m-b text-white text-fs-14">
-                    {popular.name}
-                  </span>
+                  {!popular.imageUrl ? (
+                    <div className="w-full h-full rounded-lg animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+                  ) : (
+                    <img
+                      src={popular.imageUrl}
+                      alt="banner-offers"
+                      className="brightness-[.65] w-full h-full rounded-lg select-none object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.85]"
+                    />
+                  )}
 
-                  {/* PRICE */}
-                  <span className="flex items-center gap-1 m-m text-white text-fs-12">
-                    {languageData.homeDestinations[0].titleTop.textHotel}
-                    <span className="text-fs-14">
-                      MXN $
-                      {Math.floor(popular.price)
-                        .toLocaleString("es-MX", { currency: "MXN" })
-                        .replace(".00", "")}
-                      .<sup>{(popular.price % 1).toFixed(2).slice(2)}</sup>
+                  <div className="flex flex-col pl-[16px] pb-[16px] absolute bottom-0 gap-[4px]">
+                    {/* TITLE */}
+                    <span className="m-b text-white text-fs-14">
+                      {popular.name}
                     </span>
-                  </span>
+
+                    {/* PRICE */}
+                    <span className="flex items-center gap-1 m-m text-white text-fs-12">
+                      {languageData.homeDestinations[0].titleTop.textHotel}
+                      <span className="text-fs-14">
+                        MXN $
+                        {Math.floor(popular.price)
+                          .toLocaleString("es-MX", { currency: "MXN" })
+                          .replace(".00", "")}
+                        .<sup>{(popular.price % 1).toFixed(2).slice(2)}</sup>
+                      </span>
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          )):
-          [...Array(5)].map((_, index) => (
-          
-          <SwiperSlide key={index}>
-            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[280px] rounded-lg"/>
-          </SwiperSlide>
-        ))
-          }
+              </SwiperSlide>
+            ))
+          : [...Array(5)].map((_, index) => (
+              <SwiperSlide key={index}>
+                <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[280px] rounded-lg" />
+              </SwiperSlide>
+            ))}
       </Swiper>
     </div>
   );

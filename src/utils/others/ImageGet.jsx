@@ -4,8 +4,16 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ImageNotFoundType } from "./ImageNotFoundType";
 
-export default function ImageGet({ imageUrl, type, language, width, height, altDescription }) {
+export default function ImageGet({
+  imageUrl,
+  type,
+  language,
+  width,
+  height,
+  altDescription,
+}) {
   const [imageSize, setImageSize] = useState({ width: 0, height: 0, url: "" });
+  const [isLoader, setIsLoader] = useState(true);
 
   useEffect(() => {
     axios
@@ -26,18 +34,22 @@ export default function ImageGet({ imageUrl, type, language, width, height, altD
         image.onerror = () => {
           console.error("Error al cargar la imagen.");
         };
+        setIsLoader(false);
       })
       .catch((error) => {
+        setIsLoader(false);
         console.error("Error al obtener la imagen desde el endpoint:", error);
       });
   }, []);
 
   return (
     <>
-      {imageSize.url ? (
+      {isLoader ? (
+        <div className="w-full h-full rounded-lg animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+      ) : imageSize.url ? (
         <img
           src={imageSize.url}
-          className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
+          className="w-full h-full object-cover rounded-t-lg transition-transform duration-500 transform hover:scale-105"
           width={width}
           height={height}
           alt={altDescription}
@@ -45,7 +57,7 @@ export default function ImageGet({ imageUrl, type, language, width, height, altD
       ) : (
         <img
           src={ImageNotFoundType(type, language)}
-          className="w-full h-full object-cover rounded-lg transition-transform duration-500 transform hover:scale-105"
+          className="w-full h-full object-cover rounded-t-lg transition-transform duration-500 transform hover:scale-105"
           width={width}
           height={height}
           alt={altDescription}
