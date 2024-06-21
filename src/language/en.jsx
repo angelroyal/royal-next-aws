@@ -1402,8 +1402,9 @@ export const en = {
       "We're sorry, your payment could not be processed. Please check that your card details and billing address are correct.",
     btnRetry: "Retry",
     dataSafe: "Your data is safe with us.",
+    mayTake:"This may take a while",
     textProcessing:
-      "This may take a few moments. Please do not close this window or reload the page.",
+      "Please do not close this window or reload the page.",
     textAlert: {
       PP: "Processing payment",
       PF: "We could not process your payment",

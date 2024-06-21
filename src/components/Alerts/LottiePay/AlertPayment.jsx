@@ -18,9 +18,15 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
           animationData={animationLoading}
         />
 
-        <span className="text-fs-20 m-s-b">
-          {languageData.alertsPayment.textAlert.PP}...
-        </span>
+        <div className="flex flex-col items-center">
+          <span className="text-fs-20 m-s-b">
+            {languageData.alertsPayment.textAlert.PP}...
+          </span>
+
+          <span className="m-m text-fs-18">
+            {languageData.alertsPayment.mayTake}
+          </span>
+        </div>
 
         <div className="flex gap-[6px] items-center">
           <img

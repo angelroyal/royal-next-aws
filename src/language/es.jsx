@@ -1390,7 +1390,8 @@ export const es = {
     textDeclinedPayment: "Lo sentimos, tu pago no pudo ser procesado. Verifica que los datos de tu tarjeta y la dirección de facturación sean correctos.",
     btnRetry: "Reintentar",
     dataSafe: "Tus datos están seguros con nosotros.",
-    textProcessing: "Esto puede tardar unos momentos. Por favor, no cierres esta ventana ni recargues la página",
+    mayTake:"Esto puede demorar",
+    textProcessing: "Por favor, no cierres esta ventana ni recargues la página",
     textAlert: {
       PP: "Procesando pago",
       PF: "No hemos podido procesar tu pago.",

@@ -15,9 +15,9 @@ export default function AlertProcessing() {
     setIsOpen(true);
   }
 
-  setTimeout(() => {
-    setIsOpen(false);
-  }, 3000);
+  // setTimeout(() => {
+  //   setIsOpen(false);
+  // }, 13000);
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -52,10 +52,15 @@ export default function AlertProcessing() {
                     className="w-[300px] h-[300px]"
                     animationData={animationLoading}
                   />
+                  <div className="flex flex-col items-center">
+                    <span className="text-fs-20 m-s-b">
+                      {languageData.alertsPayment.textAlert.PP}...
+                    </span>
 
-                  <span className="text-fs-20 m-s-b">
-                    {languageData.alertsPayment.textAlert.PP}...
-                  </span>
+                    <span className="m-m text-fs-18">
+                      {languageData.alertsPayment.mayTake}
+                    </span>
+                  </div>
 
                   <div className="flex gap-[6px] items-center">
                     <img
