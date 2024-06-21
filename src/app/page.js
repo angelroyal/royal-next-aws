@@ -10,6 +10,7 @@ import FooterT from "@/components/Footer/FooterT";
 import WaveLine from "@/components/Home/WaveHome";
 import ChainsHome from "@/components/Home/ChainsHome";
 import { Container } from "@/config/Others/Container";
+import ContactUs from "@/components/General/ContactUs";
 import LanguageProvider from "@/language/LanguageProvider";
 import EnjoyStayHome from "@/components/Home/EnjoyStayHome";
 import Navigation from "@/components/Navigation/Navigation";
@@ -21,15 +22,14 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 
 export default function Home() {
-  
   return (
     <>
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
             <Token />
-            <Navigation />            
-            
+            <Navigation />
+
             <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
               <BannersHeaderHome />
               <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
@@ -52,7 +52,7 @@ export default function Home() {
                 <BannerDiscoverPossibilities />
               </div>
             </Container>
-
+            <ContactUs />
             <FooterT />
           </CartAxiosProvider>
         </TokenProvider>

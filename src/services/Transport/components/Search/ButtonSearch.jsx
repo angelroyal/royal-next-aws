@@ -49,8 +49,8 @@ export function ButtonSearch(props) {
 
       <button
         className={`w-full ${
-          !isListing && "lg:w-auto py-[20px]"
-        } rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white py-[8.5px] px-4 ${
+          !isListing ? "lg:w-auto py-[20px]" : "py-[8.5px]"
+        } rounded-[50px] flex gap-2 items-center justify-center m-b text-fs-12 text-white  px-4 ${
           !selectedAutoComplete || !selectDestinationA || !selectDestinationB
             ? "bg-or-50 cursor-not-allowed"
             : "bg-or-100 hover:!bg-or-110"
