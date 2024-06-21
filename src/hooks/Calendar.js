@@ -86,7 +86,7 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
           </span>
 
           <input
-            className={`${hotelDetails && "bg-gry-30"
+            className={`${hotelDetails && "bg-white"
               } mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
             type="text"
             ref={calendarRef}
