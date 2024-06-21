@@ -6,7 +6,7 @@ import { useContext } from "react";
 export function PersonsButtonTour(props) {
   const { categories, setCategories } = props;
 
-  const { isLoader, isButtonDisabled } = useContext(DetailTourContext);
+  const { isLoader } = useContext(DetailTourContext);
 
   const handleAddPerson = (categoryId) => {
     const newCategories = categories.map((category) => {
@@ -37,10 +37,10 @@ export function PersonsButtonTour(props) {
 
         <div className="flex h-[32px] justify-between items-center lg:w-[64%] xl:w-[56%] w-[56%] rounded bg-white">
           <button
-            disabled={category.count === 0 || isButtonDisabled || isLoader}
+            disabled={category.count === 0 || isLoader}
             onClick={() => handleRemovePerson(category.id)}
             className={`${
-              category.count === 0 || isButtonDisabled || isLoader
+              category.count === 0 || isLoader
                 ? "cursor-not-allowed"
                 : "hover:bg-gry-30 rounded-l"
             } flex justify-center items-center h-full w-8`}
