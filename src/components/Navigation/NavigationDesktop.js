@@ -78,7 +78,7 @@ export default function NavigationDesktop() {
                     alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
                     width={200}
                     height={100}
-                    className="max-sm:w-[140px] max-sm:h-[40px]"
+                    className="max-sm:w-[140px] max-sm:h-[40px] select-none"
                   />
                 {/* </Link> */}
               </div>

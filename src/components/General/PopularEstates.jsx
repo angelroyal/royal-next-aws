@@ -136,7 +136,7 @@ export function PopularState({ tour = false }) {
                     <img
                       src={popularState[0].imageUrl}
                       alt={`${popularState[0].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                      className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5] select-none"
                     />
                   ) : (
                     <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
@@ -198,7 +198,7 @@ export function PopularState({ tour = false }) {
                       <img
                         src={destination.imageUrl}
                         alt={`${destination.name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                        className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                        className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5] select-none"
                       />
                     ) : (
                       <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
@@ -230,7 +230,7 @@ export function PopularState({ tour = false }) {
                     <img
                       src={popularState[4].imageUrl}
                       alt={`${popularState[4].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                      className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5] select-none"
                       width="100%"
                       height="100%"
                     />
@@ -260,7 +260,7 @@ export function PopularState({ tour = false }) {
                     <img
                       src={popularState[5].imageUrl}
                       alt={`${popularState[5].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                      className="h-full rounded-lg object-cover brightness-[.7] select-none  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      className="h-full rounded-lg object-cover brightness-[.7]  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5] select-none"
                       width="100%"
                       height="100%"
                     />

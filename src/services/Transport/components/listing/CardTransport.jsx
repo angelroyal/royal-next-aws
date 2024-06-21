@@ -30,7 +30,7 @@ export default function CardTransport() {
             <div className="shadow-3xl flex border border-gry-50 rounded-lg mb-[10px] bg-white w-full gap-2 my-[20px] max-lg:flex-col lg:h-[194px] max-sm:max-h-[35rem]">
               <div className="w-[30%] relative max-lg:w-full max-lg:h-[225px]">
                 <img
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain select-none"
                   src={transport.image}
                   alt="card"
                 />
