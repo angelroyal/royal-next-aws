@@ -104,6 +104,7 @@ export default function TourCard(props) {
                     alt="IconLocationBlue"
                     height={14}
                     width={11}
+                    className="w-[14px] h-[11px]"
                   />
                   <span className="text-bl-100 m-s-b text-fs-12 leading-[16px]">
                     {tour.address}

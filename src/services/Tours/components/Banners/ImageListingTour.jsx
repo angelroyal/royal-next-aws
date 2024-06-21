@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 // import LanguageContext from "../language/LanguageContext";
-import Image from "next/image";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function ImageListingTour() {
@@ -9,7 +8,7 @@ export default function ImageListingTour() {
 
   return (
     <div className="relative flex items-center justify-center h-[270px] mb-[1rem] rounded-lg">
-      <Image
+      <img
         className="h-full w-full object-cover absolute rounded-lg"
         src={`${process.env.NEXT_PUBLIC_URL}banners/tours/banner-listing-tour.webp`}
         alt="banner listing tour"

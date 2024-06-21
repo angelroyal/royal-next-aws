@@ -80,7 +80,7 @@ export default function PriceModalTransport(props) {
                 alt="icon usb"
                 width={16}
                 height={16}
-                className="select-none"
+                className="select-none w-[16px] h-[16px]"
               />
               <span className="text-fs-12 m-m">{languageData.ModalTransport.charger}</span>
             </div>
@@ -103,7 +103,7 @@ export default function PriceModalTransport(props) {
                 alt="icon usb"
                 width={16}
                 height={16}
-                className="select-none"
+                className="select-none w-[16px] h-[16px]"
               />
               <span className="text-fs-12 m-m">{languageData.ModalTransport.travelInsurance}</span>
             </div>
