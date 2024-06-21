@@ -132,11 +132,15 @@ export function PopularState({ tour = false }) {
                   className="relative rounded-lg md:w-[23%] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[0])}
                 >
-                  <img
-                    src={popularState[0].imageUrl}
-                    alt={`${popularState[0].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
-                  />
+                  {popularState[0].imageUrl ? (
+                    <img
+                      src={popularState[0].imageUrl}
+                      alt={`${popularState[0].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                      className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                    />
+                  ) : (
+                    <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+                  )}
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 m-b">
                       {popularState[0].name}
@@ -155,13 +159,18 @@ export function PopularState({ tour = false }) {
                   className="relative rounded-lg md:w-[77%] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[1])}
                 >
-                  <img
-                    src={popularState[1].imageUrl}
-                    alt={`${popularState[1].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none w-full transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
-                    width="100%"
-                    height="100%"
-                  />
+                  {popularState[1].imageUrl ? (
+                    <img
+                      src={popularState[1].imageUrl}
+                      alt={`${popularState[1].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                      className="h-full rounded-lg object-cover brightness-[.7] select-none w-full transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      width="100%"
+                      height="100%"
+                    />
+                  ) : (
+                    <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+                  )}
+
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 md:text-fs-20 m-b">
                       {popularState[1].name}
@@ -185,11 +194,15 @@ export function PopularState({ tour = false }) {
                     className="relative rounded-lg md:h-[246px] w-full cursor-pointer overflow-hidden"
                     onClick={() => sendDestination(destination)}
                   >
-                    <img
-                      src={destination.imageUrl}
-                      alt={`${destination.name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                      className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
-                    />
+                    {destination.imageUrl ? (
+                      <img
+                        src={destination.imageUrl}
+                        alt={`${destination.name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                        className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      />
+                    ) : (
+                      <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+                    )}
                     <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                       <span className="m-b text-fs-14">{destination.name}</span>
                       <span className="text-fs-10 m-m">
@@ -213,13 +226,17 @@ export function PopularState({ tour = false }) {
                   className="relative rounded-lg md:w-[23%] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[4])}
                 >
-                  <img
-                    src={popularState[4].imageUrl}
-                    alt={`${popularState[4].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
-                    width="100%"
-                    height="100%"
-                  />
+                  {popularState[4].imageUrl ? (
+                    <img
+                      src={popularState[4].imageUrl}
+                      alt={`${popularState[4].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                      className="brightness-[.7] absolute inset-0 w-full h-full object-cover transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      width="100%"
+                      height="100%"
+                    />
+                  ) : (
+                    <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+                  )}
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 m-b">
                       {popularState[4].name}
@@ -239,13 +256,18 @@ export function PopularState({ tour = false }) {
                   className="relative rounded-lg md:w-[77%] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[5])}
                 >
-                  <img
-                    src={popularState[5].imageUrl}
-                    alt={`${popularState[5].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
-                    width="100%"
-                    height="100%"
-                  />
+                  {popularState[5].imageUrl ? (
+                    <img
+                      src={popularState[5].imageUrl}
+                      alt={`${popularState[5].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                      className="h-full rounded-lg object-cover brightness-[.7] select-none  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      width="100%"
+                      height="100%"
+                    />
+                  ) : (
+                    <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+                  )}
+
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="text-fs-14 md:text-fs-20 m-b">
                       {popularState[5].name}
@@ -266,13 +288,18 @@ export function PopularState({ tour = false }) {
                   className="relative rounded-lg md:h-[246px] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[6])}
                 >
-                  <img
-                    src={popularState[6].imageUrl}
-                    alt={`${popularState[6].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
-                    width="100%"
-                    height="100%"
-                  />
+                  {popularState[6].imageUrl ? (
+                    <img
+                      src={popularState[6].imageUrl}
+                      alt={`${popularState[6].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                      className="h-full rounded-lg object-cover brightness-[.7] select-none transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      width="100%"
+                      height="100%"
+                    />
+                  ) : (
+                    <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+                  )}
+
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
                       {popularState[6].name}
@@ -291,13 +318,18 @@ export function PopularState({ tour = false }) {
                   className="relative rounded-lg md:h-[246px] w-full cursor-pointer overflow-hidden"
                   onClick={() => sendDestination(popularState[0])}
                 >
-                  <img
-                    src={popularState[0].imageUrl}
-                    alt={`${popularState[0].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
-                    className="h-full rounded-lg object-cover brightness-[.7] select-none  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
-                    width="100%"
-                    height="100%"
-                  />
+                  {popularState[0].imageUrl ? (
+                    <img
+                      src={popularState[0].imageUrl}
+                      alt={`${popularState[0].name} ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+                      className="h-full rounded-lg object-cover brightness-[.7] select-none  transition-transform duration-500 transform scale-100 hover:scale-105 hover:brightness-[.5]"
+                      width="100%"
+                      height="100%"
+                    />
+                  ) : (
+                    <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+                  )}
+
                   <div className="absolute flex flex-col bottom-0 text-white p-4 text-left">
                     <span className="m-b text-fs-14">
                       {popularState[0].name}
