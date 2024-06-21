@@ -103,7 +103,8 @@ export default function FooterT() {
             }`}
             width={200}
             height={57.5}
-            className="py-[46.2px]"
+            className="py-[46.2px]  select-none"
+            alt="logo white footer"
           />
 
           <div className="flex justify-between w-full max-lg:flex-wrap max-sm:flex-col gap-y-[40px]">
@@ -132,7 +133,7 @@ export default function FooterT() {
                     alt="icon call footer"
                     width={20}
                     height={20}
-                    className="w-[20px] h-[20px]"
+                    className="w-[20px] h-[20px] select-none"
                   />
                   <span
                     className={`${
@@ -161,7 +162,7 @@ export default function FooterT() {
                   alt="icon mail footer"
                   width={20}
                   height={20}
-                  className="w-[20px] h-[20px]"
+                  className="w-[20px] h-[20px]  select-none"
                 />
                 <span
                   className={`${
@@ -198,7 +199,7 @@ export default function FooterT() {
                   alt="icon location footer"
                   width={20}
                   height={20}
-                  className="w-[20px] h-[20px]"
+                  className="w-[20px] h-[20px] select-none"
                 />
                 <span
                   className={`${
@@ -309,6 +310,7 @@ export default function FooterT() {
                     alt="icon whats footer"
                     width={20}
                     height={20}
+                    className=" select-none"
                   />
                 </a>
 
@@ -326,6 +328,7 @@ export default function FooterT() {
                     alt="icon face footer"
                     width={20}
                     height={20}
+                    className=" select-none"
                   />
                 </a>
 
@@ -343,6 +346,7 @@ export default function FooterT() {
                     alt="icon instagram footer"
                     width={20}
                     height={20}
+                    className=" select-none"
                   />
                 </a>
               </div>
@@ -364,7 +368,7 @@ export default function FooterT() {
                 {creditsCard.map((card, index) => (
                   <img
                     key={index}
-                    className="mx-1"
+                    className="mx-1  select-none"
                     src={`${process.env.NEXT_PUBLIC_URL}${card.image}`}
                     alt={card.alt}
                     width="45px"

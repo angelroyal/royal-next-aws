@@ -26,7 +26,7 @@ export default function PriceModalTransport(props) {
           <img
             src={transport.image}
             alt="img-transport"
-            className="w-[100%] h-[150px] object-cover"
+            className="w-[100%] h-[150px] object-cover select-none"
           />
 
           <div className="flex flex-wrap gap-[8px]">
@@ -37,6 +37,7 @@ export default function PriceModalTransport(props) {
                 alt="icon adult blue"
                 width={12.8}
                 height={13.4}
+                className="select-none"
               />
 
               <span className="text-fs-12 m-m">
@@ -51,6 +52,7 @@ export default function PriceModalTransport(props) {
                 alt="icon baggage blue"
                 width={10.6}
                 height={12.3}
+                className="select-none"
               />
               <span className="text-fs-12 m-m">
                 {Math.trunc(transport.hand_suitcase / transport.places)} {`${languageData.CardHomeTransport.handLuggage} p.p`}
@@ -64,6 +66,7 @@ export default function PriceModalTransport(props) {
                 alt="icon baggage blue"
                 width={10.6}
                 height={12.3}
+                className="select-none"
               />
               <span className="text-fs-12 m-m">
                 {Math.trunc(transport.large_suitcase / transport.places)} {`${languageData.CardHomeTransport.suitcases} p.p`}
@@ -77,6 +80,7 @@ export default function PriceModalTransport(props) {
                 alt="icon usb"
                 width={16}
                 height={16}
+                className="select-none"
               />
               <span className="text-fs-12 m-m">{languageData.ModalTransport.charger}</span>
             </div>
@@ -88,6 +92,7 @@ export default function PriceModalTransport(props) {
                 alt="icon air blue"
                 width={13.3}
                 height={13.3}
+                className="select-none"
               />
               <span className="text-fs-12 m-m">{languageData.ModalTransport.airConditioning}</span>
             </div>
@@ -98,6 +103,7 @@ export default function PriceModalTransport(props) {
                 alt="icon usb"
                 width={16}
                 height={16}
+                className="select-none"
               />
               <span className="text-fs-12 m-m">{languageData.ModalTransport.travelInsurance}</span>
             </div>
@@ -108,6 +114,7 @@ export default function PriceModalTransport(props) {
                 alt="icon child-care"
                 width={12.8}
                 height={13.4}
+                className="select-none"
               />
               <span className="text-fs-12 m-m">{languageData.ModalTransport.babySeat}</span>
             </div>
