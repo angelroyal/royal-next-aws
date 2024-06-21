@@ -19,7 +19,7 @@ export default function HeaderBlue() {
           >
             <img
               src={`${process.env.NEXT_PUBLIC_URL}icons/call/call-w.svg`}
-              alt={`call icon${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
+              alt={`call icon ${process.env.NEXT_PUBLIC_NAME_COMPANY}`}
               width={17}
               height={18}
             />

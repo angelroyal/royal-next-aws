@@ -135,7 +135,7 @@ export default function CardHotelItinerary(props) {
               }`}
             >
               <div
-                className={`w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]`}
+                className={`w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px] rounded-lg overflow-hidden`}
               >
                 <ImageGet
                   imageUrl={itemHotel.image}

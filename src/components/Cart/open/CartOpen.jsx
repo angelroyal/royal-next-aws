@@ -56,7 +56,7 @@ export default function CartOpen() {
           onClick={() => setOpenCart(!openCart)}
         >
           <Image
-            className="w-auto h-auto"
+            className="w-[26px] h-[22px]"
             src={`${process.env.NEXT_PUBLIC_URL}icons/cart/cart-o.svg`}
             width={26}
             height={22}
@@ -77,7 +77,7 @@ export default function CartOpen() {
           src={`${process.env.NEXT_PUBLIC_URL}icons/cart/cart-b.svg`}
           width={26}
           height={22}
-          className="w-auto h-auto"
+          className="w-[26px] h-[22px]"
           alt="icon-cart"
           onClick={() => setOpenCart(!openCart)}
         />
