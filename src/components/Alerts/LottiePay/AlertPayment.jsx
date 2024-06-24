@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 import LanguageContext from "@/language/LanguageContext";
@@ -69,7 +69,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
     );
   }
 
-  if (animationData === "ErrorData") {
+  if (animationData === "FailureData") {
     return (
       <>
         <Lottie
@@ -118,14 +118,9 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
             {languageData.alertsPayment.btnRetry}
           </button>
         </div>
-      </>
-    );
-  }
 
-  if (animationData === "FailureData") {
-    return (
-      <>
-        <Lottie
+        {/* OLD ALERT ERROR */}
+        {/* <Lottie
           className="w-[185px] h-[185px] mb-[38px]"
           animationData={animationFailure}
         />
@@ -140,7 +135,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
           onClick={closeModal}
         >
           {languageData.alertsPayment.btnRetry}
-        </button>
+        </button> */}
       </>
     );
   }

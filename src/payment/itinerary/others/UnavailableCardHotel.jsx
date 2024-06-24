@@ -44,6 +44,8 @@ export default function UnavailableCardHotel(props) {
 
   // GOO DETAILS HOTEL
   const handleDetailsHotel = () => {
+    // console.log(destination);
+    // return
     handleDeleteClick();
     handleCloseModal();
     router.push(
@@ -53,6 +55,8 @@ export default function UnavailableCardHotel(props) {
 
   //   LISTING
   const sendListingHotel = (destination) => {
+    // console.log(destination);
+    // return
     handleDeleteClick();
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
 
