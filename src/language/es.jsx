@@ -1392,11 +1392,15 @@ export const es = {
     dataSafe: "Tus datos están seguros con nosotros.",
     mayTake:"Esto puede demorar",
     textProcessing: "Por favor, no cierres esta ventana ni recargues la página",
+    textErrorProcessed:"Parece que tu pago ha sido procesado, pero ocurrió un error en nuestro servidor. Por favor, revisa tu correo electrónico para verificar si recibiste una confirmación de pago.",
+    textErrorPersists:"Si el problema persiste, no dudes en contactar a nuestro equipo de soporte al número",
+    callAdvisor:"Llamar a un asesor",
     textAlert: {
       PP: "Procesando pago",
       PF: "No hemos podido procesar tu pago.",
       PE: "Pago exitoso",
       PD: "Pago declinado",
+      EO: "Ha ocurrido un error",
     }
   },
 

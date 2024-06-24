@@ -1403,13 +1403,16 @@ export const en = {
     btnRetry: "Retry",
     dataSafe: "Your data is safe with us.",
     mayTake:"This may take a while",
-    textProcessing:
-      "Please do not close this window or reload the page.",
+    textProcessing:"Please do not close this window or reload the page.",
+    textErrorProcessed:"It seems your payment has been processed, but there was an error on our server. Please check your email to verify if you received a payment confirmation.",
+    textErrorPersists:"If the issue persists, feel free to contact our support team at the number",
+    callAdvisor:"To call an advisor",
     textAlert: {
       PP: "Processing payment",
       PF: "We could not process your payment",
       PE: "Successful payment",
       PD: "Payment declined",
+      EO: "An error has occurred"
     },
   },
 
