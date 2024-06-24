@@ -23,7 +23,7 @@ export const conektaSuccessResponseHandler = (token, paymentData, setAnimationDa
     .catch((error) => {
       console.log("There was an error processing the payment.", error);
       setAnimationData("FailureData");
-      closeModalAfterDelay();
+      // closeModalAfterDelay();
     });
 };
 
