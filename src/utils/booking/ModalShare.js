@@ -49,7 +49,7 @@ export default function ModalShare({ itinerary = false }) {
     <>
       <div className={`flex cursor-pointer items-center gap-x-[8px]`}>
         <div
-          className={`${iconActive ? "active" : ""}`}
+          className={`${iconActive ? "active" : ""} w-[16px] h-[18px]`}
           onClick={handleIconClick}
         >
           {itinerary ? (
