@@ -2,15 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
 
-import ImageNoFoundEn from "../../assets/images/others/image-not-found.jpg";
-import ImageNoFoundEs from "../../assets/images/others/image-not-found-es.jpg";
-import ImageNoFoundEnD from "../../assets/images/others/image-not-found-d.jpg";
-import ImageNoFoundEsD from "../../assets/images/others/image-not-found-d-es.jpg";
-
 export function ImageNotFound() {
   const [languageActual, setLanguageActual] = useState("es");
-  
-  const {language} = useContext(LanguageContext) 
+
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     const actualLanguage = language;
@@ -19,12 +14,24 @@ export function ImageNotFound() {
     }
   }, [language]);
 
-  return languageActual === "es" ? <img className="object-fit-cover width100 height100 rounded-start" src={ImageNoFoundEs} alt={ImageNoFoundEs}/> : <img className="object-fit-cover width100 height100 rounded-start" src={ImageNoFoundEn} alt={ImageNoFoundEn}/>;
+  return languageActual === "es" ? (
+    <img
+      className="object-fit-cover width100 height100 rounded-start"
+      src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-m-h-es.webp`}
+      alt="no-availability-m-h-es"
+    />
+  ) : (
+    <img
+      className="object-fit-cover width100 height100 rounded-start"
+      src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-m-h-en.webp`}
+      alt="no-availability-m-h-en"
+    />
+  );
 }
 
 export function ImageNotFoundModalHotel() {
   const [languageActual, setLanguageActual] = useState("es");
-  const {language} = useContext(LanguageContext) 
+  const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     const actualLanguage = language;
@@ -33,5 +40,17 @@ export function ImageNotFoundModalHotel() {
     }
   }, [language]);
 
-  return languageActual === "es" ? <img className="object-fit-cover width100 image-modal-hotel selected-image" src={ImageNoFoundEsD} alt={ImageNoFoundEsD}/> : <img className="object-fit-cover width100 image-modal-hotel selected-image" src={ImageNoFoundEnD} alt={ImageNoFoundEnD}/>;
+  return languageActual === "es" ? (
+    <img
+      className="object-fit-cover width100 image-modal-hotel selected-image"
+      src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-h-es.webp`}
+      alt="no-availability-d-h-es"
+    />
+  ) : (
+    <img
+      className="object-fit-cover width100 image-modal-hotel selected-image"
+      src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-h-en.webp`}
+      alt="no-availability-d-h-en"
+    />
+  );
 }

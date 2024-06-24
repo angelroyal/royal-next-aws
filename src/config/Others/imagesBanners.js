@@ -1,104 +1,88 @@
-import BannerTourH from "../../assets/images/banners/tour/safe_travel.webp";
-// import BannerTourH from "../../assets/images/banners/tour/tour_banner.webp";
-import BannerHotelH from "../../assets/images/banners/hotel/banner_hotel.webp";
-import BannerHotelHMobile from "../../assets/images/banners/hotel/banner-hotel-movil.webp";
-import BannerTourP from "../../assets/images/banners/tour/tour_royal_banner.webp";
-// import BannerFaqHelp from "../../assets/images/banners/others/banner-faq-help.webp";
-import BannerHotelC from "../../assets/images/banners/hotel/banner-card-hotel.webp";
-import MBannerHotelC from "../../assets/images/banners/hotel/m-banner-card-hotel.webp";
-// import BannerAboutUs from "../../assets/images/banners/others/banner-about-us.webp";
-import BannerHotelP from "../../assets/images/banners/hotel/hotel_royal_banner.webp";
-import BannerHotelPMobile from "../../assets/images/banners/hotel/hotel_royal_banner_mobile.webp";
-import BannerContact from "../../assets/images/banners/others/contact_reservation.webp";
-import BannerCallCenter from "../../assets/images/banners/hotel/call_center_agent.webp";
-import BannerCallCenterMobile from "../../assets/images/banners/hotel/call_center_agent_mobile.webp";
-import BannerHotelL from "../../assets/images/banners/hotel/banner_search_contact.webp";
-import BannerHotelLMobile from "../../assets/images/banners/hotel/banner_search_contact_mobile.webp";
-import BannerTourTraveling from "../../assets/images/banners/tour/traveling_banner.webp";
-import BannerTransferH from "../../assets/images/banners/transportation/safe_travel.webp";
-import BannerTourFamily from "../../assets/images/banners/tour/traveling_family_banner.webp";
-import BannerTourMexico from "../../assets/images/banners/tour/traveling_mexico_banner.webp";
-import BannerTransferP from "../../assets/images/banners/transportation/safe_private_transfer.webp";
-import BannerTransferSafe from "../../assets/images/banners/transportation/private_transfer_safe.webp";
-import BannerTransferBest from "../../assets/images/banners/transportation/private_transfer_best.webp";
-import BannerTransferTravel from "../../assets/images/banners/transportation/private_transfer_travel.webp";
-import ContactReservation from "../../assets/images/banners/others/contact_reservation.webp";
 
 export const hotel = {
   bannerHome: {
-    imageW: BannerHotelH,
+    // https://sandboxmexico.com/assets/banners/desktop/hotel-d.webp
+    imageW: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/hotel-d.webp`,
     alt: "altHotelH",
     title: "titleHotelH",
-    data:[
-      {title:"title1"},
-      {title:"title2"},
-      {title:"title3"}
-    ],
-    imageM: BannerHotelHMobile,
+    data: [{ title: "title1" }, { title: "title2" }, { title: "title3" }],
+    // https://sandboxmexico.com/assets/banners/mobile/hotel-m.webp
+    imageM: `${process.env.NEXT_PUBLIC_URL}banners/mobile/hotel-m.webp`,
   },
   bannerPrincipal: {
-    imageW: BannerHotelP,
+    // https://sandboxmexico.com/assets/banners/desktop/home-d.webp
+    imageW: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/home-d.webp`,
     alt: "altHotelP",
     // title: "titleHotelP",
     // paragraph: "subtitleHotelP",
-    imageM: BannerHotelPMobile,
+    // https://sandboxmexico.com/assets/banners/mobile/home-m.webp
+    imageM: `${process.env.NEXT_PUBLIC_URL}banners/mobile/home-m.webp`,
     data: [
-      { title: "title1", description: "subtitle1"},
-      { title: "title2", description: "subtitle2"},
-      { title: "title3", description: "subtitle3"}
-  ],
+      { title: "title1", description: "subtitle1" },
+      { title: "title2", description: "subtitle2" },
+      { title: "title3", description: "subtitle3" },
+    ],
   },
   bannerListing: {
-    image: BannerHotelL,
+    // https://sandboxmexico.com/assets/banners/desktop/search-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/search-d.webp`,
     alt: "altListing",
     // title: "titleListing",
     paragraph: "subtitleListing",
-    imageMobile: BannerHotelLMobile,
-    data:[
-      {title:"titleListing1"},
-      {title:"titleListing2"},
-      {title:"titleListing3"},
-      {title:"titleListing4"},
-      {title:"titleListing5"},
-    ]
+    // https://sandboxmexico.com/assets/banners/mobile/search-m.webp
+    imageMobile:`${process.env.NEXT_PUBLIC_URL}banners/mobile/search-m.webp`,
+    data: [
+      { title: "titleListing1" },
+      { title: "titleListing2" },
+      { title: "titleListing3" },
+      { title: "titleListing4" },
+      { title: "titleListing5" },
+    ],
   },
   bannerCallCenter: {
-    image: BannerCallCenter,
+    // https://sandboxmexico.com/assets/banners/desktop/call-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/call-d.webp`,
     alt: "altCallCenter",
     title: "titleCallCenter",
     paragraph1: "subtitleCallCenter1",
     paragraph2: "subtitleCallCenter2",
-    imageMobile: BannerCallCenterMobile,
+    // https://sandboxmexico.com/assets/banners/mobile/call-m.webp
+    imageMobile: `${process.env.NEXT_PUBLIC_URL}banners/mobile/call-m.webp`,
   },
 };
 
 export const Tour = {
   bannerHome: {
-    image: BannerTourH,
-    imageM:"",
+    // https://sandboxmexico.com/assets/banners/desktop/safe-travel-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/safe-travel-d.webp`,
+    imageM: "",
     alt: "altTourH",
     title: "titleTourH",
   },
   bannerPrincipal: {
-    image: BannerTourP,
+    // https://sandboxmexico.com/assets/banners/desktop/tour-royal-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/tour-royal-d.webp`,
     alt: "altTourP",
     title: "titleTourP",
     paragraph: "subtitleTourP",
   },
   bannerFamily: {
-    image: BannerTourFamily,
+    // https://sandboxmexico.com/assets/banners/desktop/traveling-fam-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/traveling-fam-d.webp`,
     alt: "altTourF",
     title: "titleTourFamily",
     paragraph: "subtitleTourF",
   },
   bannerMexico: {
-    image: BannerTourMexico,
+    // https://sandboxmexico.com/assets/banners/desktop/traveling-mex-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/traveling-mex-d.webp`,
     alt: "altTourM",
     title: "titleTourMexico",
     paragraph: "subtitleTourM",
   },
   bannerTraveling: {
-    image: BannerTourTraveling,
+    // https://sandboxmexico.com/assets/banners/desktop/traveling-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/traveling-d.webp`,
     alt: "altTourT",
     title: "titleTourTraveling",
     paragraph: "subtitleTourT",
@@ -107,30 +91,35 @@ export const Tour = {
 
 export const Transfer = {
   bannerHome: {
-    image: BannerTransferH,
+    // https://sandboxmexico.com/assets/banners/desktop/safe-travel-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/safe-travel-d.webp`,
     alt: "altTransferH",
     title: "titleTransferH",
   },
   bannerPrincipal: {
-    image: BannerTransferP,
+    // https://sandboxmexico.com/assets/banners/desktop/safe-priv-trans-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/safe-priv-trans-d.webp`,
     alt: "altTransferP",
     title: "titleTransferP",
     paragraph: "subtitleTransferP",
   },
   bannerBest: {
-    image: BannerTransferBest,
+    // https://sandboxmexico.com/assets/banners/desktop/priv-trans-best-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/priv-trans-best-d.webp`,
     alt: "altTransferB",
     title: "titleTransferBest",
     paragraph: "subtitleTransferB",
   },
   bannerSafe: {
-    image: BannerTransferSafe,
+    // https://sandboxmexico.com/assets/banners/desktop/priv-trans-safe-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/priv-trans-safe-d.webp`,
     alt: "altTransferS",
     title: "titleTransferSafe",
     paragraph: "subtitleTransferS",
   },
   bannerTravel: {
-    image: BannerTransferTravel,
+    // https://sandboxmexico.com/assets/banners/desktop/priv-trans-travel-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/desktop/priv-trans-travel-d.webp`,
     alt: "altTransferT",
     title: "titleTransferTravel",
     paragraph: "subtitleTransferT",
@@ -151,7 +140,8 @@ export const Others = {
     text: "paragraph",
   },
   bannerContact: {
-    image: BannerContact,
+    // https://sandboxmexico.com/assets/banners/desktop/cont-reserv-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/cont-reserv-d.webp`,
     alt: "altContact",
     title: "titleContact",
     paragraph: "subtitleContact",
@@ -161,40 +151,42 @@ export const Others = {
     alt: "altAboutUs",
     title: "titleAboutUs",
   },
-  bannerConfirmPayment:{
-    image: ContactReservation,
+  bannerConfirmPayment: {
+    // https://sandboxmexico.com/assets/banners/desktop/cont-reserv-d.webp
+    image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/cont-reserv-d.webp`,
     alt: "confirmedPayment",
     title: "titleConfirmedPayment",
-    paragraph: "subTitleConfirmedPayment"
-  }
+    paragraph: "subTitleConfirmedPayment",
+  },
 };
 
 export const CardListing = {
   imgListing: [
+    // https://sandboxmexico.com/assets/banners/desktop/card-hotel-d.webp
     {
       id: 1,
-      image: BannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-d.webp`,
       alt: "altCard",
       title: "titleCard1",
       paragraph: "subtitleCard1",
     },
     {
       id: 2,
-      image: BannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-d.webp`,
       alt: "altCard",
       title: "titleCard2",
       paragraph: "subtitleCard2",
     },
     {
       id: 3,
-      image: BannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-d.webp`,
       alt: "altCard",
       title: "titleCard3",
       paragraph: "subtitleCard3",
     },
     {
       id: 3,
-      image: BannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-d.webp`,
       alt: "altCard",
       title: "titleCard4",
       paragraph: "subtitleCard4",
@@ -203,30 +195,31 @@ export const CardListing = {
 };
 export const MobileCardListing = {
   imgListing: [
+    // https://sandboxmexico.com/assets/banners/mobile/card-hotel-m.webp
     {
       id: 1,
-      image: MBannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-m.webp`,
       alt: "altCard",
       title: "titleCard1",
       paragraph: "subtitleCard1",
     },
     {
       id: 2,
-      image: MBannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-m.webp`,
       alt: "altCard",
       title: "titleCard2",
       paragraph: "subtitleCard2",
     },
     {
       id: 3,
-      image: MBannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-m.webp`,
       alt: "altCard",
       title: "titleCard3",
       paragraph: "subtitleCard3",
     },
     {
       id: 3,
-      image: MBannerHotelC,
+      image: `${process.env.NEXT_PUBLIC_URL}banners/desktop/card-hotel-m.webp`,
       alt: "altCard",
       title: "titleCard4",
       paragraph: "subtitleCard4",
