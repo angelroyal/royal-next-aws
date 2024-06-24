@@ -162,7 +162,7 @@ export default function DetailReservation() {
 
                   {open === false && selectedRooms.length > 0 && (
                     <div className="absolute top-0 right-[2rem] md:bottom-0 md:left-0 md:right-0 mx-auto my-auto w-max flex items-center">
-                      <div className="relative w-[2.5rem] h-[2.5rem]">
+                      <div className="relative w-[2.5rem] h-[2.5rem] rounded-lg overflow-hidden">
                         <ImageGet
                           imageUrl={selectedRooms[0].image}
                           type={"hotel"}
@@ -171,10 +171,10 @@ export default function DetailReservation() {
                           height={30}
                           altDescription={selectedRooms[0].name}
                         />
+                      </div>
                         {selectedRooms.length > 0 && (
                           <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${selectedRooms.length}`}</span>
                         )}{" "}
-                      </div>
                     </div>
                   )}
 
