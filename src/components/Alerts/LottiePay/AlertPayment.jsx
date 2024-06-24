@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 import LanguageContext from "@/language/LanguageContext";
@@ -88,7 +88,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
         <p className="text-fs-12 text-gry-100 m-m text-center mb-[20px]">
           {languageData.alertsPayment.textErrorPersists}{" "}
           <a
-            className="no-underline"
+            className="no-underline focus:outline-none"
             href="tel:8009530342"
             target="_blank"
             rel="noopener noreferrer"
@@ -129,6 +129,51 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
           className="w-[185px] h-[185px] mb-[38px]"
           animationData={animationFailure}
         />
+
+        <span className="text-fs-20 m-s-b text-red-100 mb-[8px]">
+          {languageData.alertsPayment.textAlert.EO}
+        </span>
+
+        <span className="text-fs-12 text-gry-100 m-m text-center mb-[20px]">
+          {languageData.alertsPayment.textErrorProcessed}
+        </span>
+
+        <p className="text-fs-12 text-gry-100 m-m text-center mb-[20px]">
+          {languageData.alertsPayment.textErrorPersists}{" "}
+          <a
+            className="no-underline"
+            href="tel:8009530342"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <b className="m-b cursor-pointer">
+              {languageData.navigation.number}
+            </b>
+          </a>
+        </p>
+
+        <div className="flex gap-[24px]">
+          <a
+            className="flex gap-2 no-underline m-s-b items-center"
+            href="tel:8009530342"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="border-2 border-bl-100 text-bl-100 text-fs-12 m-s-b rounded-full px-[16px] py-[14px] hover:bg-bl-100 hover:!text-white">
+              {languageData.alertsPayment.callAdvisor}
+            </button>
+          </a>
+
+          <button className="rounded-full text-white bg-red-100 px-[16px] py-[14px] hover:bg-red-110">
+            {languageData.alertsPayment.btnRetry}
+          </button>
+        </div>
+
+        {/* OLD ALERT ERROR */}
+        {/* <Lottie
+          className="w-[185px] h-[185px] mb-[38px]"
+          animationData={animationFailure}
+        />
         <span className="text-fs-20 m-s-b text-red-100 mb-[8px]">
           {languageData.alertsPayment.textAlert.PD}
         </span>
@@ -140,7 +185,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
           onClick={closeModal}
         >
           {languageData.alertsPayment.btnRetry}
-        </button>
+        </button> */}
       </>
     );
   }
