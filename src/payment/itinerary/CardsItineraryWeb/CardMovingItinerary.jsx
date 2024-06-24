@@ -298,7 +298,7 @@ export default function CardMovingItinerary(props) {
             </div>
 
             {/* REMOVE CARD */}
-            {iconRemove && !confirmation && (
+            {iconRemove && !confirmation && !removeIsLoader && (
               <>
                 <div
                   className="absolute left-0 top-0 w-full h-full bg-[#96969691] rounded-lg"
