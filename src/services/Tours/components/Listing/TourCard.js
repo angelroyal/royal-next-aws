@@ -84,7 +84,7 @@ export default function TourCard(props) {
           </Swiper>
         </div>
 
-        <div className="px-[20px] py-[20px]">
+        <div className="px-[20px] py-[20px] w-full">
           <h2 className="m-b text-fs-18 leading-[19.5px] truncate w-[90%] mb-[6px]">
             {tour.name}
           </h2>
