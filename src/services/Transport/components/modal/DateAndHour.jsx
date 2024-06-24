@@ -104,7 +104,7 @@ export default function DateAndHour(props) {
         </div>
 
         {/* HOUR */}
-        <div className="w-1/2">
+        <div className="w-1/2 flex flex-col justify-end">
           <div className="text-fs-12 m-s-b text-gry-100">
             {languageData.ModalTransport.Schedule}
           </div>
@@ -160,7 +160,7 @@ export default function DateAndHour(props) {
           </div>
 
           {/* HOUR */}
-          <div className="w-1/2">
+          <div className="w-1/2 flex flex-col justify-end">
             <div className="text-fs-12 m-s-b text-gry-100">
               {languageData.ModalTransport.Schedule}
             </div>
