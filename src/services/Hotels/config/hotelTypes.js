@@ -1,51 +1,51 @@
-import IconBeach from "../../assets/icons/hotel/home/beach.svg";
-import IconBeachActive from "../../assets/icons/hotel/home/beach-active.svg";
-import IconFamily from "../../assets/icons/hotel/home/family.svg";
-import IconFamilyActive from "../../assets/icons/hotel/home/family-active.svg";
-import IconRomantic from "../../assets/icons/hotel/home/romantic.svg";
-import IconRomanticActive from "../../assets/icons/hotel/home/romantic-active.svg";
-import IconBusiness from "../../assets/icons/hotel/home/business.svg";
-import IconBusinessActive from "../../assets/icons/hotel/home/business-active.svg";
-import IconAdults from "../../assets/icons/hotel/home/adults.svg";
-import IconAdultsActive from "../../assets/icons/hotel/home/adults-active.svg";
-import IconPet from "../../assets/icons/hotel/home/petfriendly.svg";
-import IconPetActive from "../../assets/icons/hotel/home/petfriendly-active.svg";
 
 export const hotelTypes = [
     {
       id: 1,
       label: "beach",
-      icon: IconBeach,
-      iconActive: IconBeachActive,
+      // https://sandboxmexico.com/assets/icons/beach/beach-b.svg
+      icon: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-b.svg`,
+      // https://sandboxmexico.com/assets/icons/beach/beach-b-o.svg
+      iconActive: `${process.env.NEXT_PUBLIC_URL}icons/beach/beach-b-o.svg`,
     },
     {
       id: 2,
       label: "family",
-      icon: IconFamily,
-      iconActive: IconFamilyActive,
+      // https://sandboxmexico.com/assets/icons/family/family-b.svg
+      icon: `${process.env.NEXT_PUBLIC_URL}icons/family/family-b.svg`,
+      // https://sandboxmexico.com/assets/icons/family/family-b-o.svg
+      iconActive: `${process.env.NEXT_PUBLIC_URL}icons/family/family-b-o.svg`,
     },
     {
       id: 3,
       label: "romantic",
-      icon: IconRomantic,
-      iconActive: IconRomanticActive,
+      // https://sandboxmexico.com/assets/icons/romantic/romantic-b.svg
+      icon: `${process.env.NEXT_PUBLIC_URL}icons/romantic/romantic-b.svg`,
+      // https://sandboxmexico.com/assets/icons/romantic/romantic-b-o.svg
+      iconActive: `${process.env.NEXT_PUBLIC_URL}icons/romantic/romantic-b-o.svg`,
     },
     {
       id: 4,
       label: "business",
-      icon: IconBusiness,
-      iconActive: IconBusinessActive,
+      // https://sandboxmexico.com/assets/icons/business/business-b.svg
+      icon: `${process.env.NEXT_PUBLIC_URL}icons/business/business-b.svg`,
+      // https://sandboxmexico.com/assets/icons/business/business-b-o.svg
+      iconActive: `${process.env.NEXT_PUBLIC_URL}icons/business/business-b-o.svg`,
     },
     {
       id: 5,
       label: "adults",
-      icon: IconAdults,
-      iconActive: IconAdultsActive,
+      // https://sandboxmexico.com/assets/icons/adults/adults-b.svg
+      icon: `${process.env.NEXT_PUBLIC_URL}icons/adults/adults-b.svg`,
+      // https://sandboxmexico.com/assets/icons/adults/adults-b-o.svg
+      iconActive: `${process.env.NEXT_PUBLIC_URL}icons/adults/adults-b-o.svg`,
     },
     {
       id: 6,
       label: "petFriendly",
-      icon: IconPet,
-      iconActive: IconPetActive,
+      // https://sandboxmexico.com/assets/icons/pet/pet-b.svg
+      icon: `${process.env.NEXT_PUBLIC_URL}icons/pet/pet-b.svg`,
+      // https://sandboxmexico.com/assets/icons/pet/pet-b-o.svg
+      iconActive: `${process.env.NEXT_PUBLIC_URL}icons/pet/pet-b-o.svg`,
     },
   ]; 

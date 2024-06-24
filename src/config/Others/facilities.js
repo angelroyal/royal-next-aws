@@ -1,59 +1,59 @@
-import GolfIcon from "../../assets/icons/hotel/listing/golf.svg";
-import GolfActiveIcon from "../../assets/icons/hotel/listing/golf-active.svg";
-import GymIcon from "../../assets/icons/hotel/listing/gym.svg";
-import GymActiveIcon from "../../assets/icons/hotel/listing/gym-active.svg";
-import KidsIcon from "../../assets/icons/hotel/listing/kids-club.svg";
-import KidsActiveIcon from "../../assets/icons/hotel/listing/kids-club-active.svg";
-import PoolIcon from "../../assets/icons/hotel/listing/pool.svg";
-import PoolActive from "../../assets/icons/hotel/listing/pool-active.svg";
-import RestaurantIcon from "../../assets/icons/hotel/listing/restaurant.svg";
-import RestaurantActiveIcon from "../../assets/icons/hotel/listing/restaurant-active.svg";
-import RoomService from "../../assets/icons/hotel/listing/service-room.svg";
-import RoomServiceActive from "../../assets/icons/hotel/listing/service-room-active.svg";
-import SpaIcon from "../../assets/icons/hotel/listing/spa.svg";
-import SpaActiveIcon from "../../assets/icons/hotel/listing/spa-active.svg";
-import WifiIcon from "../../assets/icons/hotel/listing/wifi.svg";
-import WifiActiveIcon from "../../assets/icons/hotel/listing/wifi-active.svg";
 
 export const facilities = {
   "wi-fi": {
-    default: WifiIcon,
-    active: WifiActiveIcon,
+    // https://sandboxmexico.com/assets/icons/wifi/wifi-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/wifi/wifi-b.svg`,
+    // https://sandboxmexico.com/assets/icons/wifi/wifi-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/wifi/wifi-b-o.svg`,
     label: "wifi",
   },
   golf: {
-    default: GolfIcon,
-    active: GolfActiveIcon,
+    // https://sandboxmexico.com/assets/icons/golf/golf-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/golf/golf-b.svg`,
+    // https://sandboxmexico.com/assets/icons/golf/golf-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/golf/golf-b-o.svg`,
     label: "golf",
   },
   pool: {
-    default: PoolIcon,
-    active: PoolActive,
+    // https://sandboxmexico.com/assets/icons/pool/pool-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/pool/pool-b.svg`,
+    // https://sandboxmexico.com/assets/icons/pool/pool-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/pool/pool-b-o.svg`,
     label: "pool",
   },
   restaurant: {
-    default: RestaurantIcon,
-    active: RestaurantActiveIcon,
+    // https://sandboxmexico.com/assets/icons/restaurant/restaurant-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/restaurant/restaurant-b.svg`,
+    // https://sandboxmexico.com/assets/icons/restaurant/restaurant-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/restaurant/restaurant-b-o.svg`,
     label: "restaurant",
   },
   gym: {
-    default: GymIcon,
-    active: GymActiveIcon,
+    // https://sandboxmexico.com/assets/icons/gym/gym-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/gym/gym-b.svg`,
+    // https://sandboxmexico.com/assets/icons/gym/gym-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/gym/gym-b-o.svg`,
     label: "gym",
   },
   spa: {
-    default: SpaIcon,
-    active: SpaActiveIcon,
+    // https://sandboxmexico.com/assets/icons/spa/spa-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/spa/spa-b.svg`,
+    // https://sandboxmexico.com/assets/icons/spa/spa-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/spa/spa-b-o.svg`,
     label: "spa",
   },
   "kids-club": {
-    default: KidsIcon,
-    active: KidsActiveIcon,
+    // https://sandboxmexico.com/assets/icons/kids/kids-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/kids/kids-b.svg`,
+    // https://sandboxmexico.com/assets/icons/kids/kids-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/kids/kids-b-o.svg`,
     label: "kids",
   },
   "room-service": {
-    default: RoomService,
-    active: RoomServiceActive,
+    // https://sandboxmexico.com/assets/icons/rooms/rooms-b.svg
+    default: `${process.env.NEXT_PUBLIC_URL}icons/rooms/rooms-b.svg`,
+    // https://sandboxmexico.com/assets/icons/rooms/rooms-b-o.svg
+    active: `${process.env.NEXT_PUBLIC_URL}icons/rooms/rooms-b-o.svg`,
     label: "roomService",
   },
 };

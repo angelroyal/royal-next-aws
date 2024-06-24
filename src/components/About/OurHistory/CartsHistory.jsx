@@ -1,12 +1,11 @@
 import "swiper/css";
+
 import Image from "next/image";
 import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import LanguageContext from "../../../language/LanguageContext";
 import { CardHistoryConfig } from "../../../config/Others/CardHistoryContent";
-
-import CardHistory from "../../../assets/images/others/card-container-h.png";
 
 export default function CardsHistory() {
   const { languageData } = useContext(LanguageContext);
@@ -38,9 +37,9 @@ export default function CardsHistory() {
     >
       {CardHistoryConfig.map((info, item) => (
         <SwiperSlide className="relative" key={item}>
-          <Image
+          <img
             className="w-full h-full"
-            src={CardHistory}
+            src={`${process.env.NEXT_PUBLIC_URL}img/general/card-container-history.png`}
             alt="content cart history"
           />
 
