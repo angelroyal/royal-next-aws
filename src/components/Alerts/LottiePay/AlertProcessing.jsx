@@ -64,12 +64,12 @@ export default function AlertProcessing() {
                   <p className="text-fs-12 text-gry-100 m-m text-center mb-[20px]">
                     {languageData.alertsPayment.textErrorPersists}{" "}
                     <a
-                      className="no-underline"
+                      className="no-underline focus:outline-none"
                       href="tel:8009530342"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <b className="m-b cursor-pointer">
+                      <b className="m-b cursor-pointer no-underline">
                         {languageData.navigation.number}
                       </b>
                     </a>
@@ -86,7 +86,7 @@ export default function AlertProcessing() {
                         {languageData.alertsPayment.callAdvisor}
                       </button>
                     </a>
-                    
+
                     <button className="rounded-full text-white bg-red-100 px-[16px] py-[14px] hover:bg-red-110">
                       {languageData.alertsPayment.btnRetry}
                     </button>

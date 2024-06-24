@@ -88,7 +88,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
         <p className="text-fs-12 text-gry-100 m-m text-center mb-[20px]">
           {languageData.alertsPayment.textErrorPersists}{" "}
           <a
-            className="no-underline"
+            className="no-underline focus:outline-none"
             href="tel:8009530342"
             target="_blank"
             rel="noopener noreferrer"
