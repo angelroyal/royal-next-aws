@@ -166,7 +166,6 @@ export default function PersonsActivities({ OnApply, listing }) {
   //   };
   // }, []);
 
-  console.log(rooms);
   return (
     <Menu
       as="div"

@@ -203,8 +203,6 @@ export default function RoomMenu(props) {
     });
   }, [rooms]);
 
-  console.log(rooms);
-
   return (
     <Transition
       show={showDropdown}
