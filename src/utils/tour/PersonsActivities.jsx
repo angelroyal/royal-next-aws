@@ -71,7 +71,7 @@ export default function PersonsActivities({ OnApply, listing }) {
     const newRooms = [...rooms];
     if (newRooms[roomIndex].child < 10) {
       newRooms[roomIndex].child++;
-      newRooms[roomIndex].ages.push("");
+      newRooms[roomIndex].ages.push(0);
       setRooms(newRooms);
       setTotalChildren(totalChildren + 1);
     }
@@ -166,6 +166,7 @@ export default function PersonsActivities({ OnApply, listing }) {
   //   };
   // }, []);
 
+  console.log(rooms);
   return (
     <Menu
       as="div"
