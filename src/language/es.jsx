@@ -985,7 +985,7 @@ export const es = {
   },
 
   ourHistory: {
-    titleWhoWeAre: "¿Quienes somos?",
+    titleWhoWeAre: "¿Quiénes somos?",
     textOurTeam:
       `Detrás de ${process.env.NEXT_PUBLIC_NAME_COMPANY} hay más que un sitio web de búsquedas y reservas; existe un equipo profesional y apasionado por los viajes, con la dedicación de ayudarte a vivir increíbles experiencias descubriendo México y el mundo.`,
     textExperiences:
@@ -999,13 +999,13 @@ export const es = {
     textImageRenovation:
       "En la actualidad se renovó la imagen y mejoró el sitio web con las opiniones de cada uno de los viajeros que han brindado su confianza. Ésta historia comenzó hace 8 años y seguirá avanzando con tu confianza.",
     titleServiceQuality:
-      `${process.env.NEXT_PUBLIC_NAME_COMPANY} ofreciendote calidad en sus servicios`,
+      `${process.env.NEXT_PUBLIC_NAME_COMPANY} ofreciéndote calidad en sus servicios`,
     titleHotelService: "Hoteles",
     textHotelService:
-      "El hotel ideal para tus necesidades lo encontraras con nosotros.",
+      "El hotel ideal para tus necesidades lo encontrarás con nosotros.",
     titleTransportationService: "Traslados",
     textTransportationService:
-      "Traslado sin tiempos largos de espera, comodos y seguros del Aeropuerto a tu Hotel.",
+      "Traslado sin tiempos largos de espera, cómodos y seguros del Aeropuerto a tu Hotel.",
     titleTourService: "Tours",
     textTourService:
       "Gran variedad de actividades en los mejores destinos de México.",
@@ -1461,7 +1461,7 @@ export const es = {
 
     titleCallCenter: "¿Dudas con tu reservación? Llama ahora, nosotros te ayudamos a resolver tus dudas",
     // titleCallCenter: "¿Necesitas ayuda para reservar? Llámanos",
-    subtitleCallCenter1: "Necesitas algo más y no lo encuentras, llamanos al", //*******
+    subtitleCallCenter1: "Necesitas algo más y no lo encuentras, llámanos al", //*******
     subtitleCallCenter2: ", uno de nuestros asesores te puede ayudar",
     altCallCenter: `${process.env.NEXT_PUBLIC_NAME_COMPANY} Asistencia en Reservas`,
 
@@ -1529,7 +1529,7 @@ export const es = {
       knowMore: "Saber más",
       dontWorry: "No te preocupes.",
       hereSimplify: "Estamos aquí para simplificar",
-      planning: "la planeacion de tu viaje, haciendola emocionante y sin complicaciones.",
+      planning: "la planeación de tu viaje, haciéndola emocionante y sin complicaciones.",
     }
     //END LP BANNER SELFIE BEACH AND CITY /12-03-24
   },
