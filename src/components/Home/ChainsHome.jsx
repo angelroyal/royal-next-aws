@@ -2,130 +2,117 @@
 
 import Image from "next/image";
 import { useContext } from "react";
-import { Autoplay } from 'swiper/modules';
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import LanguageContext from "@/language/LanguageContext";
 
 import "swiper/css";
 
+export default function ChainsHome({ typePage = null }) {
+  const { languageData } = useContext(LanguageContext);
+  const hotels = [
+    {
+      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-riu.jpg`,
+      description: "Logo Oasis chains",
+      width: 184,
+      height: 81,
+      class: "select-none",
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-nick.jpg`,
+      description: "Logo Riu chains",
+      width: 156,
+      height: 101,
+      class: "select-none",
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-oasis.jpg`,
+      description: "Logo Iberostar chains",
+      width: 185,
+      height: 135,
+      class: "select-none",
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-dorado.jpg`,
+      description: "Logo Barcelo chains",
+      width: 156,
+      height: 101,
+      class: "select-none",
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-barcelo.jpg`,
+      description: "Logo Nickelodeon chains",
+      width: 156,
+      height: 101,
+      class: "select-none object-cover",
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-iberostar.jpg`,
+      description: "Logo El Dorado chains",
+      width: 156,
+      height: 101,
+      class: "select-none",
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-barcelo.jpg`,
+      description: "Logo Barcelo chains",
+      width: 156,
+      height: 101,
+      class: "select-none",
+    },
+  ];
 
-export default function ChainsHome({typePage=null}) {
+  return (
+    <div className="mb-[56px]">
+      <h2 className="m-b text-fs-28 mb-[36px]">
+        {typePage
+          ? languageData.exploreActivitiesHome.titleExploreTransport
+          : languageData.exploreActivitiesHome.bestHotels}
+      </h2>
 
-    const { languageData } = useContext(LanguageContext);
-
-    const logoRiu = `${process.env.NEXT_PUBLIC_URL}img/home/logo-riu.jpg`;
-    const logoNick = `${process.env.NEXT_PUBLIC_URL}img/home/logo-nick.jpg`;
-    const logoOasis = `${process.env.NEXT_PUBLIC_URL}img/home/logo-oasis.jpg`;
-    const logoDorado = `${process.env.NEXT_PUBLIC_URL}img/home/logo-dorado.jpg`;
-    const logoBarcelo = `${process.env.NEXT_PUBLIC_URL}img/home/logo-barcelo.jpg`;
-    const logoIberostar = `${process.env.NEXT_PUBLIC_URL}img/home/logo-iberostar.jpg`;
-
-    return (
-        <div className="mb-[56px]">
-            <h2 className="m-b text-fs-28 mb-[36px]">{typePage ? languageData.exploreActivitiesHome.titleExploreTransport :languageData.exploreActivitiesHome.bestHotels}</h2>
-
-            <div className="h-[135px]">
-                <Swiper
-                    slidesPerView={6}
-                    spaceBetween={24}
-                    className="h-full rounded-lg mySwiper"
-                    initialSlide={0}
-                    loop={true}
-                    modules={[Autoplay]}
-                    autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
-                    }}
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 2,
-                        },
-                        428: {
-                            slidesPerView: 3,
-                        },
-                        800: {
-                            slidesPerView: 4,
-                        },
-                        1024: {
-                            slidesPerView: 6,
-                        },
-                    }}
-                >
-
-                    <SwiperSlide className="!rounded-lg !flex !items-center">
-                        <Image
-                            src={logoOasis}
-                            alt='Logo Oasis chains'
-                            className="select-none"
-                            width={184}
-                            height={81}
-                        />
-                    </SwiperSlide>
-
-
-                    <SwiperSlide className="!rounded-lg !flex !items-center">
-                        <Image
-                            src={logoRiu}
-                            alt='Logo Riu chains'
-                            className="select-none"
-                            width={156}
-                            height={101}
-                        />
-                    </SwiperSlide>
-
-                    <SwiperSlide className="!rounded-lg !flex !items-center">
-                        <Image
-                            src={logoIberostar}
-                            alt='Logo Iberostar chains'
-                            className="select-none"
-                            width={185}
-                            height={135}
-                        />
-                    </SwiperSlide>
-
-                    <SwiperSlide className="!rounded-lg !flex !items-center">
-                        <Image
-                            src={logoBarcelo}
-                            alt='Logo Barcelo chains'
-                            className="select-none"
-                            width={156}
-                            height={101}
-                        />
-                    </SwiperSlide>
-
-
-                    <SwiperSlide className="!rounded-lg !flex !items-center">
-                        <Image
-                            src={logoNick}
-                            alt='Logo Nickelodeon chains'
-                            className="select-none object-cover"
-                            width={156}
-                            height={101}
-                        />
-                    </SwiperSlide>
-
-                    <SwiperSlide className="!rounded-lg !flex !items-center">
-                        <Image
-                            src={logoDorado}
-                            alt='Logo El Dorado chains'
-                            className="select-none"
-                            width={156}
-                            height={101}
-                        />
-                    </SwiperSlide>
-
-                    <SwiperSlide className="!rounded-lg !flex !items-center">
-                        <Image
-                            src={logoBarcelo}
-                            alt='Logo Barcelo chains'
-                            className="select-none"
-                            width={156}
-                            height={101}
-                        />
-                    </SwiperSlide>
-
-                </Swiper>
-            </div>
-        </div>
-    )
+      <div className="h-[135px]">
+        <Swiper
+          slidesPerView={6}
+          spaceBetween={24}
+          className="h-full rounded-lg mySwiper"
+          initialSlide={0}
+          loop={true}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+            },
+            428: {
+              slidesPerView: 3,
+            },
+            800: {
+              slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 6,
+            },
+          }}
+        >
+          {hotels.map((hotel, index) => (
+            <SwiperSlide
+              className="!rounded-lg !flex !items-center"
+              key={index}
+            >
+              <Image
+                src={hotel.url}
+                alt={hotel.description}
+                className={hotel.class}
+                width={hotel.width}
+                height={hotel.height}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  );
 }
