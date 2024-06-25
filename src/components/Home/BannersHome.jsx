@@ -233,7 +233,7 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
       </div>
 
-      <div className="m-m text-fs-12 text-gry-100 flex justify-center gap-1">
+      <div className="m-m text-fs-12 text-gry-100 flex justify-center gap-1 max-md:mb-[80px]">
         <span>
           {languageData.bannersHome.textTyC}{" "}
           <a

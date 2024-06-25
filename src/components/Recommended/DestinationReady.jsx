@@ -31,7 +31,7 @@ export default function DestinationReady({ type, reservationDetails }) {
 
   return (
     date && (
-      <div className="h-[180px] rounded-lg p-[36px] bg-white mb-[28px] mt-[32px] flex justify-between items-center max-md:flex-col max-md:h-[356px] max-md:items-start">
+      <div className="h-[180px] rounded-lg p-[36px] bg-white mb-[28px] mt-[32px] flex justify-between items-center max-md:flex-col max-md:items-start max-lg:h-auto max-lg:gap-[30px]">
         <div className="flex flex-col gap-[8px]">
           {/* TITLE TOUR OR (HOTEL AND TRANSPORT) */}
           <span className="m-b text-fs-24 max-md:text-fs-20">
