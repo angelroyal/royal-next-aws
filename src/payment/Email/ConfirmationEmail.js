@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const isDevelopment = process.env.REACT_APP_EMAIL_DEV === "true";
+const isDevelopment = process.env.NEXT_PUBLIC_EMAIL_DEV === "true";
 
 let API_ENDPOINT;
 
 if (isDevelopment) {
-  API_ENDPOINT = "https://api.sandboxmexico.com/confirmation/start";
+  API_ENDPOINT = "https://staywuw.com/api2/confirmation/start";
 } else {
   API_ENDPOINT = "https://api.royalvacationsmexico.com/confirmation/start";
 }

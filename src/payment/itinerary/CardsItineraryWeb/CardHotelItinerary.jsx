@@ -119,7 +119,7 @@ export default function CardHotelItinerary(props) {
                   src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
                   alt="icon close"
                   className={`w-[10px] h-[10px] absolute right-4 top-4 ${
-                    itemHotel.available === false && "opacity-50"
+                    itemHotel.available === false && "opacity-45"
                   }`}
                   width={10}
                   height={10}
@@ -131,7 +131,7 @@ export default function CardHotelItinerary(props) {
 
             <div
               className={` flex gap-x-8 items-center max-sm:gap-[10px] ${
-                itemHotel.available === false && "opacity-50"
+                itemHotel.available === false && "opacity-45"
               }`}
             >
               <div
@@ -145,11 +145,6 @@ export default function CardHotelItinerary(props) {
                   height={117}
                   altDescription={"hotel rooms itinerary"}
                 />
-                {/* <img
-                  src={itemHotel.image ? itemHotel.image : ImageNotFound}
-                  alt="hotel"
-                  className="w-full h-full rounded-lg object-cover"
-                /> */}
               </div>
 
               <div className="flex justify-between my-auto w-[74%] max-sm:w-[65%]">
@@ -222,17 +217,17 @@ export default function CardHotelItinerary(props) {
                     <p className="text-fs-12 m-0">MXN</p>
                     <p className="text-fs-16 m-0">
                       $
-                      {Math.floor(itemHotel.price)
+                      {Math.floor(itemHotel.price ? itemHotel.price : 0 )
                         .toLocaleString("es-MX", { currency: "MXN" })
                         .replace(".00", "")}
-                      .<sup>{(itemHotel.price % 1).toFixed(2).slice(2)}</sup>
+                      .<sup>{(itemHotel.price ? itemHotel.price % 1 : 0 % 1).toFixed(2).slice(2)}</sup>
                     </p>
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-between border-y border-[#ebebeb] items-start py-[0.6rem] my-[1rem] lg:!hidden">
+            <div className={`${itemHotel.available === false && "opacity-45"} flex justify-between border-y border-[#ebebeb] items-start py-[0.6rem] my-[1rem] lg:!hidden`}>
               <div className="flex flex-col gap-y-[1rem]">
                 <div className="flex gap-x-2 items-center">
                   <Image
@@ -276,10 +271,10 @@ export default function CardHotelItinerary(props) {
                     <p className="text-fs-12 m-0">MXN</p>
                     <p className="text-fs-16 m-0">
                       $
-                      {Math.floor(itemHotel.price)
+                      {Math.floor(itemHotel.price ? itemHotel.price : 0 )
                         .toLocaleString("es-MX", { currency: "MXN" })
                         .replace(".00", "")}
-                      .<sup>{(itemHotel.price % 1).toFixed(2).slice(2)}</sup>
+                      .<sup>{(itemHotel.price ? itemHotel.price % 1 : 0 % 1).toFixed(2).slice(2)}</sup>
                     </p>
                   </span>
                 </div>
@@ -290,7 +285,7 @@ export default function CardHotelItinerary(props) {
 
             <div
               className={` w-full mt-6 max-sm:mt-0 ${
-                itemHotel.available === false && "opacity-50"
+                itemHotel.available === false && "opacity-45"
               }`}
             >
               <div className="text-or-100 text-fs-10 m-s-b !mb-4">
@@ -485,3 +480,6 @@ export default function CardHotelItinerary(props) {
     </>
   );
 }
+
+
+// http://localhost:3000/es/mx/ciudad-de-mexico-mexico/ciudad-de-mexico-hotels/fontan-reforma?codeNameHotel=fontan-reforma&code=49&type=destination&codeName=ciudad-de-mexico&check-in=2024-08-15&check-out=2024-08-24&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
