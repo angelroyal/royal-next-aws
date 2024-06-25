@@ -29,7 +29,6 @@ export default function ChainsHome({typePage=null}) {
                     slidesPerView={6}
                     spaceBetween={24}
                     className="h-full rounded-lg mySwiper"
-                    id="swiper-banner-home-offers"
                     initialSlide={0}
                     loop={true}
                     modules={[Autoplay]}

@@ -258,6 +258,7 @@ export const en = {
     titleEnjoy: "Enjoy your stay in exclusive hotels",
     // offersDates: "Offers for the dates",
     btnViewOffers: "View hotels",
+    bookNowBtn: "Book now",
   },
 
   /*********************************************************/

@@ -517,6 +517,13 @@
   #swiper-popular-destinations-home>div.swiper-button-next {
     display: none;
   }
+  #swiper-banner-home-offers>div.swiper-button-prev {
+    display: none;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-next {
+    display: none;
+  }
 }
 
 /* END SWIPER ENJOY STAY HOME */

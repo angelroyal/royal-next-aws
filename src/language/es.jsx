@@ -255,6 +255,7 @@ export const es = {
     titleEnjoy: "Disfruta de tu estancia en hoteles exclusivos",
     // offersDates: "Ofertas para las fechas",
     btnViewOffers: "Ver Hoteles",
+    bookNowBtn: "Reservar ahora",
   },
 
 

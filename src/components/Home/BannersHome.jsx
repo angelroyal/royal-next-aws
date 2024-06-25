@@ -77,6 +77,7 @@ export default function BannersHeaderHome() {
 }
 
 export function BannersHomeOffers() {
+  const { languageData } = useContext(LanguageContext);
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
       <div className="w-[70%] max-md:w-full max-sm:h-[440px] z-0">
@@ -104,7 +105,7 @@ export function BannersHomeOffers() {
 
               <button className="absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[87px] lg:bottom-[114px] bg-white rounded-full flex items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
                 <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
-                  Reservar ahora
+                  {languageData.enjoyStayHome.bookNowBtn}
                 </p>
 
                 <Image
