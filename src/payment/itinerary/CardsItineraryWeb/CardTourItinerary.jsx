@@ -5,9 +5,10 @@ import React, { useContext, useState } from "react";
 import LanguageContext from "../../../language/LanguageContext";
 import { useCartAxios } from "../../../components/Cart/CartAxios";
 import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
-import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 import { BookingContext } from "@/payment/context/BookingContext";
-import Loading from "@/components/General/Loading";
+import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
+import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
+
 export default function TourCardItinerary({ key, itemActivity }) {
   // console.log(itemActivity);
   const [loader, setLoader] = useState(false);
@@ -108,10 +109,8 @@ export default function TourCardItinerary({ key, itemActivity }) {
                 />
               </div>
 
-              <div className= {` flex lg:hidden ${
-                isRemove && "opacity-50"
-              }`}>
-               <div className="rounded-[8px] w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
+              <div className={` flex lg:hidden ${isRemove && "opacity-50"}`}>
+                <div className="rounded-[8px] w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
                   <img
                     className="w-full h-full rounded-[8px] object-cover"
                     src={itemActivity.image ? itemActivity.image : ""}
@@ -161,9 +160,11 @@ export default function TourCardItinerary({ key, itemActivity }) {
                 </div>
               </div>
 
-              <div className={` w-[80%] pl-[32px] flex flex-col justify-center gap-[8px] max-lg:mt-[8px] max-lg:pt-[16px] max-lg:border-t max-lg:border-[#ebebeb] max-lg:w-full max-lg:pl-0 ${
-                isRemove && "opacity-50"
-              }`}>
+              <div
+                className={` w-[80%] pl-[32px] flex flex-col justify-center gap-[8px] max-lg:mt-[8px] max-lg:pt-[16px] max-lg:border-t max-lg:border-[#ebebeb] max-lg:w-full max-lg:pl-0 ${
+                  isRemove && "opacity-50"
+                }`}
+              >
                 <h2 className="max-lg:hidden text-fs-16 m-b text-black pt-[13px] pb-[10px] truncate">
                   {itemActivity.title}
                 </h2>
@@ -274,13 +275,7 @@ export default function TourCardItinerary({ key, itemActivity }) {
             </div>
           </div>
         </div>
-        {loader && (
-          <div className="w-full h-full fixed flex justify-center items-center top-0 left-0 z-[3] overflow-y-hidden bg-[#c9c9c940]">
-            {/* MUI */}
-            {/* <CircularProgress /> */}
-            <Loading width={"w-[30px]"} height={"h-[30px]"}/>
-          </div>
-        )}
+        {loader && <LinearProgress />}
       </>
     )
   );
