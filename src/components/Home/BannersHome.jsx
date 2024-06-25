@@ -79,7 +79,7 @@ export default function BannersHeaderHome() {
 export function BannersHomeOffers() {
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
-      <div className="w-[70%] max-md:w-full max-sm:h-[250px] z-0">
+      <div className="w-[70%] max-md:w-full max-sm:h-[440px] z-0">
         <Swiper
           slidesPerView={1}
           className="h-full rounded-lg"
@@ -93,7 +93,13 @@ export function BannersHomeOffers() {
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}banners/home/Rectangle 372.png`}
                 alt="banner-offers"
-                className="w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
+                className="md:block hidden w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
+              />
+
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}banners/home/offer-home-m.jpg`}
+                alt="banner-offers"
+                className="block md:hidden w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
               />
 
               <button className="absolute left-[20px] lg:left-[49px] bottom-[87px] lg:bottom-[114px] bg-white rounded-full flex items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">

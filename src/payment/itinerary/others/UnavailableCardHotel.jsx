@@ -14,6 +14,8 @@ export default function UnavailableCardHotel(props) {
   const [fetchSend, setFetchSend] = useState(false);
   const { languageData, language } = useContext(LanguageContext);
 
+  // console.log(destination);
+
   const sendDataSearch = (destination) => {
     const dataLocalSend = destination;
     UpdateAutocomplete({ dataLocalSend });
@@ -44,8 +46,6 @@ export default function UnavailableCardHotel(props) {
 
   // GOO DETAILS HOTEL
   const handleDetailsHotel = () => {
-    // console.log(destination);
-    // return
     handleDeleteClick();
     handleCloseModal();
     router.push(
@@ -55,8 +55,6 @@ export default function UnavailableCardHotel(props) {
 
   //   LISTING
   const sendListingHotel = (destination) => {
-    // console.log(destination);
-    // return
     handleDeleteClick();
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
 
@@ -83,18 +81,18 @@ export default function UnavailableCardHotel(props) {
 
   return (
     <>
-      <div className="absolute gap-x-[12px] flex z-[5] top-0 left-0 w-full h-full rounded-lg justify-end items-end p-[33px] px-[20px] ">
+      <div className="absolute gap-x-[12px] flex  top-0 left-0 w-full h-full rounded-lg justify-end items-end p-[33px] px-[20px] ">
 
       <button
           onClick={() => sendListingHotel(destination)}
-          className="text-bl-100 m-s-b text-fs-14 rounded-full bg-white border-2 border-bl-100 !py-[9px] !px-[14px] hover:!text-white hover:bg-bl-110 w-fit h-fit !contrast-100"
+          className="text-bl-100 m-s-b text-fs-12 rounded-full bg-white border-2 border-bl-100 !py-[9px] !px-[14px] hover:!text-white hover:bg-bl-110 w-fit h-fit !contrast-100"
         >
           {languageData.unavailableCardHotel.changeHotel}
         </button>
 
         <button
           onClick={() => handleDetailsHotel()}
-          className="text-white text-fs-14 m-s-b rounded-full bg-bl-100 !py-[10px] !px-[14px] hover:bg-bl-110 w-fit h-fit"
+          className="text-white text-fs-12 m-s-b rounded-full bg-bl-100 !py-[10px] !px-[14px] hover:bg-bl-110 w-fit h-fit"
         >
           {languageData.unavailableCardHotel.updateDate}
         </button>
