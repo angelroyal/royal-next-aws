@@ -102,10 +102,11 @@ export function BannersHomeOffers() {
                 className="block md:hidden w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
               />
 
-              <button className="absolute left-[20px] lg:left-[49px] bottom-[87px] lg:bottom-[114px] bg-white rounded-full flex items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
+              <button className="absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[87px] lg:bottom-[114px] bg-white rounded-full flex items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
                 <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
                   Reservar ahora
                 </p>
+
                 <Image
                   className="w-[12px] lg:w-[16px] h-[8px] lg:h-[12px]"
                   width={16}
@@ -299,7 +300,7 @@ export function OffersNow() {
       </div>
 
       {/* SWIPER MOBILE BANNER OFFERS NOW */}
-      <div className="lg:hidden h-[278px]">
+      <div className="lg:hidden lg:h-[278px]">
         <Swiper
           slidesPerView={1}
           className="h-full rounded-lg"
@@ -311,7 +312,7 @@ export function OffersNow() {
               <img
                 src={offersNow}
                 alt="banner-offers"
-                className="h-full w-full rounded-lg select-none object-cover"
+                className="h-full w-full rounded-lg select-none object-contain lg:object-cover"
               />
             </div>
           </SwiperSlide>
@@ -321,7 +322,7 @@ export function OffersNow() {
               <img
                 src={offersNowSecond}
                 alt="banner-offers"
-                className="h-full w-full rounded-lg select-none object-cover"
+                className="h-full w-full rounded-lg select-none object-contain lg:object-cover"
               />
             </div>
           </SwiperSlide>
