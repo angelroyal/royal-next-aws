@@ -70,7 +70,7 @@ export default function RoomsDetails(codeHotel) {
 
   return (
     <>
-      <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 ">
+      <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 max-md:ml-0">
         <span>
           {roomsData.totalRooms} {languageData.modalHotel.roomsFound}
         </span>
@@ -81,7 +81,7 @@ export default function RoomsDetails(codeHotel) {
         if (rooms.length > 0) {
           return (
             <div key={roomType} className="mb-[4rem] ">
-              <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 ">
+              <h2 className="text-fs-14 text-black m-b mb-4 ml-auto mr-auto lg:mx-0 w-max pr-4 max-md:ml-0">
                 {roomType}
               </h2>
               <div className="relative pr-4 lg:pr-9">
