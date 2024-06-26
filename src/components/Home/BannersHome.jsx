@@ -280,6 +280,9 @@ export function OffersNow() {
   const offersNow = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`;
   const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
 
+  const offersNowMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-2-m.jpg`;
+  const offersNowSecondMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-m.jpg`;
+
   return (
     <>
       <div className="w-full flex gap-[2vw] max-lg:hidden justify-between">
@@ -311,9 +314,9 @@ export function OffersNow() {
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">
               <img
-                src={offersNow}
+                src={offersNowMobile}
                 alt="banner-offers"
-                className="h-full w-full rounded-lg select-none object-contain lg:object-cover"
+                className="h-full w-full rounded-lg select-none object-cover"
               />
             </div>
           </SwiperSlide>
@@ -321,9 +324,9 @@ export function OffersNow() {
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">
               <img
-                src={offersNowSecond}
+                src={offersNowSecondMobile}
                 alt="banner-offers"
-                className="h-full w-full rounded-lg select-none object-contain lg:object-cover"
+                className="h-full w-full rounded-lg select-none object-cover"
               />
             </div>
           </SwiperSlide>
