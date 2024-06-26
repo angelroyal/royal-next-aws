@@ -52,9 +52,10 @@ export default function DestinationReady({ type, reservationDetails }) {
             {languageData.cartTour.seeDetails}
             <Image
               src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/arrow-right-w.svg`}
-              width={16}
-              height={12}
+              width={20}
+              height={15}
               alt="icon-arrow"
+              className="w-[20px] h-[15px]"
             />
           </button>
         </div>

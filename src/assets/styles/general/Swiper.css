@@ -88,8 +88,6 @@
 #card-hotel-t>div.swiper-button-prev:hover {
   opacity: 1;
 }
-
-
 /* END SWIPER PAGINATION CardHotelT LISTING HOTEL*/
 
 /* SWIPER ROOMS DETAILS */
@@ -112,7 +110,6 @@
 #room-details>div.swiper-button-next::after {
   font-size: 1.3rem;
 }
-
 /* END SWIPER ROOMS DETAILS */
 
 /* SWIPER ROOMS DETAILS */
@@ -135,7 +132,6 @@
 #room-details>div.swiper-button-next::after {
   font-size: 1.3rem;
 }
-
 /* END SWIPER ROOMS DETAILS */
 
 /* SWIPER SHUFFLE HOTEL */
@@ -154,23 +150,9 @@
 #swiper-shuffle-hotel>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   z-index: 4;
 }
-
-@media screen and (max-width: 1536px) {
-  .colum-two:nth-of-type(n+9) {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .colum-two:nth-of-type(n+7) {
-    display: none;
-  }
-}
-
 /*END SWIPER SHUFFLE HOTEL */
 
 /* SWIPER POPULAR ESTATES  AND RECOMMENDED TRANSPORT*/
-
 #swiper-popular-estates>div.swiper-button-prev,
 #swiper-recommended-transport>div.swiper-button-prev {
   top: 5px;
@@ -215,24 +197,12 @@
   font-weight: bold;
   --swiper-navigation-size: 20px;
 }
-
-@media screen and (max-width: 1024px) {
-  #swiper-recommended-transport>div.swiper-button-next {
-    display: none;
-  }
-
-  #swiper-recommended-transport>div.swiper-button-prev {
-    display: none;
-  }
-}
-
 /*END SWIPER POPULAR ESTATES AND RECOMMENDED TRANSPORT*/
 
 /* BANNERTOUR CLIP-PATH IMAGE WITH DIAGONAL */
 .clip-custom {
   clip-path: polygon(0% 70rem, 39% 0%, 179rem 0%, 32rem 27rem, 0rem 27rem)
 }
-
 /* END BANNERTOUR CLIP-PATH IMAGE WITH DIAGONAL */
 
 /* SWIPER TOUR DETAILS CARDS DATE */
@@ -249,7 +219,6 @@
 #dates-tour-modal>div.swiper-button-prev::after {
   display: none;
 }
-
 /* END SWIPER TOUR DETAILS CARDS DATE */
 
 
@@ -259,21 +228,18 @@
   width: 8px !important;
   height: 8px !important;
 }
-
 /* END IMAGES TOUR LISTING */
 
 /* PAGINATION TOUR RECOMMENDED */
 #swiper-recommended-hotel>div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: -5px !important;
 }
-
 /*END PAGINATION TOUR RECOMMENDED */
 
 /* SWIPER TRANSPORT (PAGINATION) PROMOTED ROUTES*/
 #swiper-shuffle-hotel>div.swiper-wrapper {
   padding-bottom: 40px;
 }
-
 /*END SWIPER TRANSPORT (PAGINATION) PROMOTED ROUTES*/
 
 /* ANIMATION ContactUs.jsx */
@@ -325,9 +291,9 @@
     bottom: 2rem;
   }
 }
-
 /*END ANIMATION ContactUs.jsx */
 
+/* TIME INPUT MODAL TRANSPORT */
 .time-input::-webkit-calendar-picker-indicator {
   background: transparent;
   bottom: 0;
@@ -340,6 +306,7 @@
   top: 0;
   width: auto;
 }
+/* END TIME INPUT MODAL TRANSPORT */
 
 /* SWIPER BANNER HOME OFFERS*/
 #swiper-banner-home-offers>div.swiper-button-prev {
@@ -355,33 +322,6 @@
   width: 56px;
   height: 56px;
 }
-
-@media only screen and (max-width: 1280px) {
-  #swiper-banner-home-offers>div.swiper-button-prev {
-    top: 280px;
-  }
-
-  #swiper-banner-home-offers>div.swiper-button-next {
-    top: 280px;
-  }
-}
-
-@media only screen and (max-width: 1023px) {
-  #swiper-banner-home-offers>div.swiper-button-prev {
-    top: 193px;
-    left: 24px;
-    width: 40px;
-    height: 40px;
-  }
-
-  #swiper-banner-home-offers>div.swiper-button-next {
-    top: 193px;
-    left: 70px;
-    width: 40px;
-    height: 40px;
-  }
-}
-
 /*END SWIPER BANNER HOME OFFERS*/
 
 /* SWIPER EXCLUSIVE DISCOUNTS HOME */
@@ -412,7 +352,6 @@
   font-weight: bold;
   --swiper-navigation-size: 20px;
 }
-
 /*END SWIPER EXCLUSIVE DISCOUNTS HOME */
 
 /* SWIPER HOME EXPLORE ACTIVITIES */
@@ -429,24 +368,6 @@
   width: 56px;
   height: 56px;
 }
-
-@media only screen and (max-width: 1024px) {
-  #swiper-home-explore-activities>div.swiper-button-prev {
-    display: none;
-  }
-
-  #swiper-home-explore-activities>div.swiper-button-next {
-    display: none;
-  }
-}
-
-
-@media screen and (max-width: 640px) {
-  .colum-one:nth-of-type(n+3) {
-    display: none;
-  }
-}
-
 /* END SWIPER HOME EXPLORE ACTIVITIES */
 
 /* SWIPER POPULAR DESTINATIONS HOME */
@@ -473,7 +394,6 @@
 #swiper-popular-destinations-home>div.swiper-button-next.swiper-button-disabled {
   display: none;
 }
-
 /* END SWIPER POPULAR DESTINATIONS HOME */
 
 /* SWIPER ENJOY STAY HOME */
@@ -490,46 +410,9 @@
   width: 40px;
   height: 40px;
 }
-
-@media only screen and (max-width: 1536px) {
-  #swiper-home-enjoy-stay>div.swiper-button-prev {
-    left: 48px;
-  }
-
-  #swiper-home-enjoy-stay>div.swiper-button-next {
-    right: 60px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #swiper-home-enjoy-stay>div.swiper-button-prev {
-    left: 20px;
-  }
-
-  #swiper-home-enjoy-stay>div.swiper-button-next {
-    right: 18px;
-  }
-
-  #swiper-popular-destinations-home>div.swiper-button-prev {
-    display: none;
-  }
-  
-  #swiper-popular-destinations-home>div.swiper-button-next {
-    display: none;
-  }
-  #swiper-banner-home-offers>div.swiper-button-prev {
-    display: none;
-  }
-
-  #swiper-banner-home-offers>div.swiper-button-next {
-    display: none;
-  }
-}
-
 /* END SWIPER ENJOY STAY HOME */
 
 /* SWIPER TOUR RECOMMENDATION */
-
 #swiper-tour-recommendation>div.swiper-button-prev {
   top: 250px;
   left: 14px;
@@ -544,17 +427,6 @@
   width: 40px;
   height: 40px;
 }
-
-@media screen and (max-width: 768px) {
-  #swiper-tour-recommendation>div.swiper-button-prev {
-    display: none;
-  }
-
-  #swiper-tour-recommendation>div.swiper-button-next {
-    display: none;
-  }
-}
-
 /*END SWIPER TOUR RECOMMENDATION */
 
 /* SWIPER HOME BANNER */
@@ -585,31 +457,9 @@
   opacity: 1;
   color: black;
 }
-
-@media only screen and (max-width: 1536px) {
-  #swiper-banner-home>div.swiper-button-prev {
-    top: 134px;
-  }
-
-  #swiper-banner-home>div.swiper-button-next {
-    top: 134px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #swiper-banner-home>div.swiper-button-prev {
-    display: none;
-  }
-
-  #swiper-banner-home>div.swiper-button-next {
-    display: none;
-  }
-}
-
 /* END SWIPER HOME BANNER */
 
 /* MODAL HOTEL */
-
 #style-swiper-modal-hotel > div.swiper-button-prev{
   --swiper-navigation-size: 33px;
   font-weight: bold;
@@ -636,3 +486,125 @@
   color: #fff;
 }
 /* END GALLERY TOUR */
+
+/* SWIPER MOBILE MEDIA QUERIES */
+@media only screen and (max-width: 1536px) {
+
+  #swiper-banner-home>div.swiper-button-prev {
+    top: 134px;
+  }
+
+  #swiper-banner-home>div.swiper-button-next {
+    top: 134px;
+  }
+
+  #swiper-home-enjoy-stay>div.swiper-button-prev {
+    left: 48px;
+  }
+
+  #swiper-home-enjoy-stay>div.swiper-button-next {
+    right: 60px;
+  }
+
+  .colum-two:nth-of-type(n+9) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+
+  .colum-two:nth-of-type(n+7) {
+    display: none;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-prev {
+    top: 280px;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-next {
+    top: 280px;
+  }
+
+}
+
+@media only screen and (max-width: 1023px) {
+
+  #swiper-home-explore-activities>div.swiper-button-prev {
+    display: none;
+  }
+
+  #swiper-home-explore-activities>div.swiper-button-next {
+    display: none;
+  }
+
+  #swiper-recommended-transport>div.swiper-button-next {
+    display: none;
+  }
+
+  #swiper-recommended-transport>div.swiper-button-prev {
+    display: none;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-prev {
+    top: 193px;
+    left: 24px;
+    width: 40px;
+    height: 40px;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-next {
+    top: 193px;
+    left: 70px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  #swiper-banner-home>div.swiper-button-prev {
+    display: none;
+  }
+
+  #swiper-banner-home>div.swiper-button-next {
+    display: none;
+  }
+
+  #swiper-tour-recommendation>div.swiper-button-prev {
+    display: none;
+  }
+
+  #swiper-tour-recommendation>div.swiper-button-next {
+    display: none;
+  }
+
+  #swiper-home-enjoy-stay>div.swiper-button-prev {
+    display: none;
+  }
+
+  #swiper-home-enjoy-stay>div.swiper-button-next {
+    display: none;
+  }
+
+  #swiper-popular-destinations-home>div.swiper-button-prev {
+    display: none;
+  }
+  
+  #swiper-popular-destinations-home>div.swiper-button-next {
+    display: none;
+  }
+  #swiper-banner-home-offers>div.swiper-button-prev {
+    display: none;
+  }
+
+  #swiper-banner-home-offers>div.swiper-button-next {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .colum-one:nth-of-type(n+3) {
+    display: none;
+  }
+}
+/* END SWIPER MOBILE MEDIA QUERIES */

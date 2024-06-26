@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import { useContext } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -102,7 +102,7 @@ export default function ChainsHome({ typePage = null }) {
               className="!rounded-lg !flex !items-center"
               key={index}
             >
-              <Image
+              <img
                 src={hotel.url}
                 alt={hotel.description}
                 className={hotel.class}
