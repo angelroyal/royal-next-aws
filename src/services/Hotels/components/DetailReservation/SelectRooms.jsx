@@ -58,7 +58,7 @@ export default function SelectRooms({ close }) {
                 className="p-2 flex gap-x-4 md:w-full border border-gry-30 rounded-md"
                 key={index}
               >
-                <div className="rounded-lg h-[80px] w-[80px] object-cover">
+                <div className="rounded-lg h-[80px] w-[100px] object-cover overflow-hidden">
                   <ImageGet
                     imageUrl={reservation.image}
                     type={"hotel"}

@@ -1727,8 +1727,8 @@ export const es = {
       transport: {
         errorTitle:"Error al agregar transporte",
         errorSubtitle:"Hubo un problema al agregar el transporte. Por favor, inténtalo de nuevo.",
-        successTitle:"Transportation added!",
-        successSubtitle:"Everything is ready for your trip.",
+        successTitle:"¡Transporte agregado!",
+        successSubtitle:"Todo listo para tu viaje.",
       },
 
       tour:{
