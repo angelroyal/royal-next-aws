@@ -56,7 +56,7 @@ export default function TourCardItinerary({ key, itemActivity }) {
   return (
     itemActivity && (
       <>
-        <div className="relative mt-[22px]">
+        <div className="relative my-[10px]">
           <Image
             className="absolute"
             src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
@@ -205,7 +205,7 @@ export default function TourCardItinerary({ key, itemActivity }) {
                     </div>
                   </div>
 
-                  <div className="w-1/2 flex items-start justify-between max-lg:w-full">
+                  <div className="w-1/2 flex items-start justify-between max-lg:w-full ">
                     <div className="flex flex-col items-center justify-center max-lg:items-start">
                       <span className="m-s-b text-fs-10 text-gry-100 text-nowrap">
                         {languageData.confirmation.cardTour.duration}
