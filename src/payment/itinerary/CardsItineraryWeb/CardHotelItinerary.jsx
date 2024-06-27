@@ -152,8 +152,8 @@ export default function CardHotelItinerary(props) {
 
                     <TotalStars
                       stars={itemHotel.stars}
-                      width={"w-[12]"}
-                      height={"h-[12]"}
+                      width={"w-[12px]"}
+                      height={"h-[12px]"}
                     />
                   </div>
 

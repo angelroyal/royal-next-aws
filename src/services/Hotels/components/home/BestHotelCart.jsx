@@ -42,7 +42,7 @@ export function BestHotelCart({ hotel }) {
         </div>
 
         <div className="mb-[4px]">
-          <TotalStars name="read-only" stars={hotel.stars} />
+          <TotalStars name="read-only" stars={hotel.stars} width={"w-[14px]"} height={"h-[14px]"}/>
         </div>
 
         <div className="flex gap-1 mb-[11px]">
