@@ -35,7 +35,7 @@ export default function CartTransportT(props) {
 
     removeTransportItinerary(cartId, transportId)
       .then((response) => {
-        removeTransportById(transportId);
+        removeTransportById(transport);
         setShowDelete({ ...showDelete });
         setItinerary(Math.floor(Math.random() * 100) + 1);
         setIsLoader(false);

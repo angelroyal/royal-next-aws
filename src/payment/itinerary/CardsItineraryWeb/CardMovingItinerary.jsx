@@ -16,37 +16,34 @@ export default function CardMovingItinerary(props) {
   const [iconRemove, setIconRemove] = useState(false);
   const { languageData } = useContext(LanguageContext);
   const { setItinerary, removeTransportById } = useCartAxios();
-
   const { removeIsLoader, setRemoveIsLoader } = useContext(BookingContext);
 
   const { itemTransport, confirmation = false } = props;
+
   const cancelRemove = () => {
     if (iconRemove === true) setIconRemove(false);
   };
 
   // REMOVE TRANSPORT FROM SHOPPING CART
-  const removeReservation = (uidTransport) => {
-    // removeIsLoader
+  const removeReservation = (transportInfo) => {
     setRemoveIsLoader(true);
     const searchParams = new URLSearchParams(window.location.search);
     const cartUid = searchParams.get("uid");
-    const transportId = uidTransport.id;
+    const transportId = transportInfo.id;
     setLoader(true);
 
-    if (itemTransport.id === transportId) {
-      removeTransportItinerary(cartUid, transportId)
-        .then((result) => {
-          removeTransportById(transportId);
-          setItinerary(Math.floor(Math.random() * 100) + 1);
-          setLoader(false);
-          setRemoveIsLoader(false);
-        })
-        .catch((error) => {
-          console.log(error);
-          setRemoveIsLoader(false);
-          throw error;
-        });
-    }
+    removeTransportItinerary(cartUid, transportId)
+      .then((result) => {
+        removeTransportById(transportInfo);
+        setItinerary(Math.floor(Math.random() * 100) + 1);
+        setLoader(false);
+        setRemoveIsLoader(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setRemoveIsLoader(false);
+        throw error;
+      });
   };
 
   // DAY OF WEEK
@@ -316,7 +313,14 @@ export default function CardMovingItinerary(props) {
           </div>
         </div>
       </div>
-      {loader && <LinearProgress />}
+      {loader && (
+        <>
+        {
+
+        }
+          <LinearProgress />
+        </>
+      )}
     </>
   );
 }

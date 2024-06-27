@@ -21,7 +21,6 @@ export default function CardTransport() {
     setSelectedTransport(transport);
     setOpenModal(true);
   };
-  // console.log(dataTransportF);
   return (
     <>
       {dataTransportF &&

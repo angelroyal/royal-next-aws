@@ -10,8 +10,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
-import PolicyCardTransportWhite from "../components/ToolTip/PolicyCardTransportWhite";
 import { GetPromotedRoutes } from "../Api/requestTransport";
+import PolicyCardTransportWhite from "../components/ToolTip/PolicyCardTransportWhite";
 import { PromotedRoutesSkeleton } from "../components/Skeleton/PromotedRoutersSkeleton";
 
 export default function PromotedRoutes() {
@@ -37,8 +37,6 @@ export default function PromotedRoutes() {
 
   const [transports, setTransports] = useState(null);
   const [filterTransports, setFiltersTransports] = useState(null);
-  // const [isEmptyPrivate, setIsEmptyPrivate] = useState(false);
-  // const [isEmptyShared, setIsEmptyShared] = useState(false);
 
   // GET TRANSPORTS PROMOTIONS
   useEffect(() => {
@@ -77,7 +75,6 @@ export default function PromotedRoutes() {
     }
   };
 
-  // console.log("transports", filterTransports);
   return (
     <div className="my-[10px]">
       {/* TITLE */}
@@ -315,7 +312,6 @@ export function PromotedRoutesCard({ transport }) {
         </div>
 
         <bottom className="flex items-center px-[23px] py-[12px] text-fs-12 text-white bg-bl-100 rounded-full hover:bg-bl-110 w-fit text-nowrap cursor-pointer">
-          {/* {languageData.CardHomeTransport.reserveBtn} */}
           {languageData.cartTour.seeDetails}
         </bottom>
       </div>

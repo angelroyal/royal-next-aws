@@ -1,14 +1,14 @@
 
+import "@/assets/styles/general/Swiper.css";
+
 import React, { useContext } from "react";
 
 import DateAndHour from "./DateAndHour";
-import "@/assets/styles/general/Swiper.css";
 import PassengersTransport from "./PassengersTransport";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function InfoModalTransport(props) {
   const { transport } = props;
-  // console.log(transport);
   const { languageData } = useContext(LanguageContext);
 
   return (

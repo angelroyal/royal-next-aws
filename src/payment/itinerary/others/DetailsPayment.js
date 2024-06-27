@@ -18,7 +18,6 @@ export default function DetailsPayment(props) {
   const isMobile = useIsMobileNew();
   const { languageData } = useContext(LanguageContext);
 
-  // console.log(data);
   // NEW CONTEXT
   const {
     termsAccept,
@@ -50,7 +49,6 @@ export default function DetailsPayment(props) {
 
   return (
     <>
-      {/* h-full */}
       <div className="flex w-full h-full lg:h-max pt-[28px] pb-[20px] px-6 lg:pt-[4.6rem] lg:pl-[24px] lg:pb-[24px] flex-col gap-y-[40px] sticky top-0 will-change-transform">
         {/* TITLE AND LOGO */}
         {data && (
@@ -63,6 +61,7 @@ export default function DetailsPayment(props) {
                 width={27}
                 height={25}
               />
+              
               {/* TEXT PAYMENT DETAILS /LP 15-02-24 */}
               <span className="text-black m-b text-fs-24">
                 {languageData.itinerary.paymentDetails}

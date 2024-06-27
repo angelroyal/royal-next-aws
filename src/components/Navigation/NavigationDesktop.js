@@ -2,13 +2,12 @@
 
 import React, { useContext, useEffect, useState } from "react";
 
-import { HamburgerMenu } from "./HamburgerMenu";
-import { Container } from "@/config/Others/Container";
-import { LanguageSelector } from "@/language/LanguageSelector";
-
 import CartOpen from "../Cart/open/CartOpen";
+import { HamburgerMenu } from "./HamburgerMenu";
 import { SelectCurrency } from "./SelectCurrency";
+import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
+import { LanguageSelector } from "@/language/LanguageSelector";
 import { NavigationConfig } from "@/config/Navigation/NavigationConfig";
 
 export default function NavigationDesktop() {
@@ -22,10 +21,6 @@ export default function NavigationDesktop() {
   useEffect(() => {
     setCurrentActiveIcon(routerActual);
   }, [routerActual]);
-
-  // LP RELOAD HOME
-  // const [typeHome, setTypeHome] = useState("");
-  // console.log(typeHome);
 
   const changeHome = () => {
     window.open(`/`, "_self");

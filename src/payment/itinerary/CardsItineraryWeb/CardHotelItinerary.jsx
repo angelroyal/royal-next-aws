@@ -26,7 +26,6 @@ export default function CardHotelItinerary(props) {
   const dateFormatCheckIn = moment(itemHotel.checkIn).format("DD/MM/YY");
   const dateFormatCheckOut = moment(itemHotel.checkOut).format("DD/MM/YY");
 
-  // console.log(itemHotel);
   // DAY OF WEEK
   const dayOfWeek = moment(itemHotel.date).format("dddd");
 
@@ -111,8 +110,6 @@ export default function CardHotelItinerary(props) {
           <div className="bg-white p-[16px] rounded-lg flex-col flex gap-x-8 relative w-[732px] max-xl:w-full shadow-3xl">
             {/* CLOSE BUTTON */}
 
-            {/* <CloseIcon /> */}
-
             {!removeIsLoader && (
               <button onClick={() => setIconRemove(true)}>
                 <Image
@@ -128,7 +125,6 @@ export default function CardHotelItinerary(props) {
             )}
 
             {/* FATHER ONE */}
-
             <div
               className={` flex gap-x-8 items-center max-sm:gap-[10px] ${
                 itemHotel.available === false && "opacity-45"
@@ -169,6 +165,7 @@ export default function CardHotelItinerary(props) {
                       width={11}
                       height={14}
                     />
+                    
                     <span className="text-gry-100 text-fs-10 m-s-b truncate max-lg:text-wrap">
                       {itemHotel.address}
                     </span>

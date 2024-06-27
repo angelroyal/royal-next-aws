@@ -118,24 +118,6 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
             {languageData.alertsPayment.btnRetry}
           </button>
         </div>
-
-        {/* OLD ALERT ERROR */}
-        {/* <Lottie
-          className="w-[185px] h-[185px] mb-[38px]"
-          animationData={animationFailure}
-        />
-        <span className="text-fs-20 m-s-b text-red-100 mb-[8px]">
-          {languageData.alertsPayment.textAlert.PD}
-        </span>
-        <p className="text-fs-12 m-m text-gry-100 text-center mb-[24px]">
-          {languageData.alertsPayment.textDeclinedPayment}
-        </p>
-        <button
-          className="text-white bg-red-100 rounded-full px-[16px] py-[14px] text-fs-12 m-s-b hover:bg-red-70 focus:outline-none"
-          onClick={closeModal}
-        >
-          {languageData.alertsPayment.btnRetry}
-        </button> */}
       </>
     );
   }
@@ -145,7 +127,6 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
 
 export default function AlertPayment({ animationData, isOpen, closeModal }) {
   const { languageData } = useContext(LanguageContext);
-  // console.log(animationData);
 
   return (
     <Transition appear show={isOpen} as={Fragment}>

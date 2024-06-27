@@ -33,10 +33,6 @@ export default function ListingHotelW() {
     handleFetchPostHotels,
   } = useContext(ListingHotelContext);
 
-  const clickPaginator = (event, value) => {
-    handlePageChange(event, value);
-  };
-
   useEffect(() => {
     if (token) {
       const searchParams = new URLSearchParams(window.location.search);
@@ -50,7 +46,6 @@ export default function ListingHotelW() {
           decodeURIComponent(searchParams.get("occupancies"))
         ),
       };
-      // console.log(requestBody);
       setRequestQueryParams(requestBody);
       setCombinedHotelData(null);
       handleFetchPostHotels(requestBody);

@@ -14,8 +14,6 @@ export default function UnavailableCardHotel(props) {
   const [fetchSend, setFetchSend] = useState(false);
   const { languageData, language } = useContext(LanguageContext);
 
-  // console.log(destination);
-
   const sendDataSearch = (destination) => {
     const dataLocalSend = destination;
     UpdateAutocomplete({ dataLocalSend });

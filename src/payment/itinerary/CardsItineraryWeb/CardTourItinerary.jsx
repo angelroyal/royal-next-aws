@@ -10,7 +10,6 @@ import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 import axiosWithInterceptor from "../../../config/Others/axiosWithInterceptor";
 
 export default function TourCardItinerary({ key, itemActivity }) {
-  // console.log(itemActivity);
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
   const { setItinerary, fetchData } = useCartAxios();
@@ -54,7 +53,6 @@ export default function TourCardItinerary({ key, itemActivity }) {
   const dateFormat = moment(itemActivity.date).format("DD/MM/YY");
 
   const [openAlert, setOpenAlert] = useState(false);
-  // console.log(openAlert);
   return (
     itemActivity && (
       <>

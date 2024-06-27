@@ -9,16 +9,14 @@ import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
+import ImageGet from "@/utils/others/ImageGet";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 import { calculateNights } from "../../utils/calculateNights";
-import ImageGet from "@/utils/others/ImageGet";
 
 export default function CardHotelT(props) {
   const { hotel, requestQueryParams } = props;
   const { languageData, language } = useContext(LanguageContext);
-
-  // console.log(hotel);
 
   //   PARAMS URL
   const searchParams =

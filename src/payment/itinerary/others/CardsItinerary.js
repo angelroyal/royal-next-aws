@@ -10,7 +10,6 @@ import CardHotelConfirmation from "@/payment/Confirmation/CardHotelConfirmation"
 export default function CardsItinerary(props) {
   const { dataItinerary } = props;
   const { step } = useContext(BookingContext);
-  // console.log(dataItinerary);
 
   return (
     <div className="flex flex-col gap-y-6">
@@ -25,7 +24,6 @@ export default function CardsItinerary(props) {
               )}
             </div>
           );
-          // return <CardMovingItinerary itemTransport={item} />;
         } else if (item.type === "activity") {
           return (
             <div key={index}>

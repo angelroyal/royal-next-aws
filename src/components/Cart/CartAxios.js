@@ -122,11 +122,20 @@ export const CartAxiosProvider = ({ children }) => {
     }
   };
 
-  const removeTransportById = (transportId) => {
+  const removeTransportById = (transportInfo) => {
     if (cartData && cartData.cartItems && cartData.cartItems.transportations) {
-      const updatedActivities = cartData.cartItems.transportations.filter(
-        (transport) => transport.id !== transportId
-      );
+      let updatedActivities;
+      if (transportInfo.reference) {
+        updatedActivities = cartData.cartItems.transportations.filter(
+          (transport) =>
+            transport.id !== transportInfo.id &&
+            transport.id !== transportInfo.reference
+        );
+      } else {
+        updatedActivities = cartData.cartItems.transportations.filter(
+          (transport) => transport.id !== transportInfo.id
+        );
+      }
 
       const updatedCartData = {
         ...cartData,

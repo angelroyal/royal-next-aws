@@ -12,6 +12,7 @@ import {
 } from "../Skeleton/TourListingSkeleton";
 import OrderingTour from "./OrderingTour";
 import { Container } from "@/config/Others/Container";
+import { FilterTourMobile } from "./FilterTourMobile";
 import LanguageContext from "@/language/LanguageContext";
 import ImageListingTour from "../Banners/ImageListingTour";
 import PaginationT from "@/components/General/PaginationT";
@@ -21,7 +22,7 @@ import { useTourContext } from "../../context/ListingTourContext";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
-import { FilterTourMobile } from "./FilterTourMobile";
+
 export default function ListingTour() {
   const {
     tourData,
@@ -94,7 +95,6 @@ export default function ListingTour() {
         auxTourData &&
           auxTourData.activities.slice(indexOfFirstTour, indexOfLastTour)
       );
-      // setCurrentPage(1);
     }
   }, [currentPage]);
 
@@ -131,7 +131,7 @@ export default function ListingTour() {
     updatePage(newPage);
     scrollToTop();
   };
-  // console.log(tourData);
+
   return (
     <>
       {!tourData && <BannerListingSkeleton />}
@@ -171,28 +171,12 @@ export default function ListingTour() {
             {!currentTours && !tourData && <WeFoundTourSkeleton />}
 
             {tourData && tourData.length == 0 && <NotFoundDestination />}
-            {/* <div className="cont-found-ordering-tour-skeleton">
-              {!auxTourData && (
-                <Skeleton
-                  variant="text"
-                  sx={{ fontSize: "1.25rem", width: "60%" }}
-                />
-              )}
-
-              {!auxTourData && (
-                <Skeleton
-                  variant="text"
-                  sx={{ fontSize: "3rem", width: "20%" }}
-                />
-              )}
-            </div> */}
 
             {!tourData && <CardTourSkeleton />}
 
             {currentTours && (
               <>
                 {currentTours
-                  // .filter((tour) => !tour.name.toLowerCase().includes("free"))
                   .map((tour, index) => (
                     <div key={index}>
                       <TourCard
@@ -224,12 +208,10 @@ export default function ListingTour() {
       </Container>
       <FilterTourMobile
         className="margin-bottom"
-        // tourData={tourData}
         changeTours={changeTours}
         setAuxTourData={setAuxTourData}
         auxTourData={auxTourData}
         setChangeTours={setChangeTours}
-        // orderTour={orderTour}
       />
     </>
   );

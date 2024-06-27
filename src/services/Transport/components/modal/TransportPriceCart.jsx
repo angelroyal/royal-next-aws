@@ -1,15 +1,14 @@
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 
-// import { ErrorAlert } from "../Alerts/AlertsTransport";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import { saveToCartTransport } from "../../Api/requestTransport";
 import ModalTransportContext from "../../context/ModalTransportContext";
 import CancelPolicyTransportWhite from "../ToolTip/CancelPolicyTransportWhite";
-import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 import NotificationType from "@/components/Alerts/Notifications/NotificationType";
 import { useNotification } from "@/components/Alerts/Notifications/useNotification";
+import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 
 export default function TransportPriceCart(props) {
   const { transport } = props;
@@ -40,9 +39,6 @@ export default function TransportPriceCart(props) {
   const codeNameTransport = (name) => {
     return name.replace(/ /g, "-").toLowerCase();
   };
-
-  // console.log(transport);
-  // console.log(codeNameTransport(transport.label));
 
   // PRICE AND BUTTON ENABLED
   const priceShared = transport.price * passenger;
@@ -99,9 +95,9 @@ export default function TransportPriceCart(props) {
             handSuitcase: transport.hand_suitcase,
           },
         ],
+        round: transport.round,
       };
 
-      // console.log(saveRequestCart);
       // IF UID EXIST ADD UID
       if (cartId) {
         saveRequestCart.cartId = cartId;
@@ -117,7 +113,6 @@ export default function TransportPriceCart(props) {
       );
       fetchData(cartUid);
 
-      // console.log(transport);
       const InfoTransport = {
         name: transport.label,
         date: departureDate,
@@ -203,18 +198,16 @@ export default function TransportPriceCart(props) {
           )}
         </span>
       </div>
-      {/* <ErrorAlert infoAlert={alert} setAlert={setAlert} /> */}
+
       {notification && notification.visible && (
-        // <div className="relative">
-          <NotificationType
-            type={notification.type}
-            title={notification.title}
-            message={notification.message}
-            duration={notification.duration}
-            onClose={hideNotification}
-            transport={true}
-          />
-        // </div>
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+          transport={true}
+        />
       )}
     </div>
   );

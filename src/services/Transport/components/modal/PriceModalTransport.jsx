@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useContext } from "react";
 
 import TransportPriceCart from "./TransportPriceCart";
-import ModalTransportContext from "../../context/ModalTransportContext";
 import LanguageContext from "@/language/LanguageContext";
+import ModalTransportContext from "../../context/ModalTransportContext";
 
 export default function PriceModalTransport(props) {
   const { transport } = props;
-  // console.log(transport);
   const { passenger } = useContext(ModalTransportContext);
   const { languageData } = useContext(LanguageContext);
+
   return (
     <div className=" w-1/2 max-md:w-full">
       <div className="m-[16px] max-sm:m-0">
@@ -20,7 +20,9 @@ export default function PriceModalTransport(props) {
           <span className="m-s-b text-fs-20 ">{transport.label}</span>
 
           <div className="py-[8px] px-[16px] text-white bg-black rounded-full w-fit text-fs-12">
-            {transport.type === "shared" ? languageData.filterTransport.shared : languageData.filterTransport.private}
+            {transport.type === "shared"
+              ? languageData.filterTransport.shared
+              : languageData.filterTransport.private}
           </div>
 
           <img
@@ -41,7 +43,8 @@ export default function PriceModalTransport(props) {
               />
 
               <span className="text-fs-12 m-m">
-                {passenger}/{transport.places} {languageData.modalArrive.subtitlePeople}
+                {passenger}/{transport.places}{" "}
+                {languageData.modalArrive.subtitlePeople}
               </span>
             </div>
 
@@ -54,8 +57,10 @@ export default function PriceModalTransport(props) {
                 height={12.3}
                 className="select-none"
               />
+
               <span className="text-fs-12 m-m">
-                {Math.trunc(transport.hand_suitcase / transport.places)} {`${languageData.CardHomeTransport.handLuggage} p.p`}
+                {Math.trunc(transport.hand_suitcase / transport.places)}{" "}
+                {`${languageData.CardHomeTransport.handLuggage} p.p`}
               </span>
             </div>
 
@@ -68,8 +73,10 @@ export default function PriceModalTransport(props) {
                 height={12.3}
                 className="select-none"
               />
+
               <span className="text-fs-12 m-m">
-                {Math.trunc(transport.large_suitcase / transport.places)} {`${languageData.CardHomeTransport.suitcases} p.p`}
+                {Math.trunc(transport.large_suitcase / transport.places)}{" "}
+                {`${languageData.CardHomeTransport.suitcases} p.p`}
               </span>
             </div>
 
@@ -82,7 +89,9 @@ export default function PriceModalTransport(props) {
                 height={16}
                 className="select-none w-[16px] h-[16px]"
               />
-              <span className="text-fs-12 m-m">{languageData.ModalTransport.charger}</span>
+              <span className="text-fs-12 m-m">
+                {languageData.ModalTransport.charger}
+              </span>
             </div>
 
             {/* A/C */}
@@ -94,7 +103,9 @@ export default function PriceModalTransport(props) {
                 height={13.3}
                 className="select-none"
               />
-              <span className="text-fs-12 m-m">{languageData.ModalTransport.airConditioning}</span>
+              <span className="text-fs-12 m-m">
+                {languageData.ModalTransport.airConditioning}
+              </span>
             </div>
 
             <div className="flex gap-[8px]">
@@ -105,7 +116,10 @@ export default function PriceModalTransport(props) {
                 height={16}
                 className="select-none w-[16px] h-[16px]"
               />
-              <span className="text-fs-12 m-m">{languageData.ModalTransport.travelInsurance}</span>
+
+              <span className="text-fs-12 m-m">
+                {languageData.ModalTransport.travelInsurance}
+              </span>
             </div>
 
             <div className="flex gap-[8px]">
@@ -116,17 +130,18 @@ export default function PriceModalTransport(props) {
                 height={13.4}
                 className="select-none"
               />
-              <span className="text-fs-12 m-m">{languageData.ModalTransport.babySeat}</span>
+              
+              <span className="text-fs-12 m-m">
+                {languageData.ModalTransport.babySeat}
+              </span>
             </div>
           </div>
 
           <div className="bg-grn-30 py-[8px] px-[15px] rounded-bl-lg">
             <span className="text-grn-100 m-s-b text-fs-12">
-              {transport.type === "private" ? (
-                languageData.ModalTransport.privateService
-              ) : (
-                languageData.ModalTransport.sharedService
-              )}
+              {transport.type === "private"
+                ? languageData.ModalTransport.privateService
+                : languageData.ModalTransport.sharedService}
             </span>
           </div>
         </div>

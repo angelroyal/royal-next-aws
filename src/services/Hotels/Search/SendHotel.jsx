@@ -69,7 +69,6 @@ export default function SendHotel() {
   // SEND LINK SECOND LISTING
   const sendAutocomplete = () => {
     const dataSearch = JSON.parse(localStorage.getItem("dataSearch"));
-    // console.log(dataSearch);
     const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
     const requestBody = {
       codeNameHotel: dataSearch.codeName,

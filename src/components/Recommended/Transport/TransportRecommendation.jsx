@@ -4,9 +4,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import React, { useContext, useEffect, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { getCatalogueTransport } from "../Api/RequestRecommendation";
@@ -24,7 +24,6 @@ export default function TransportRecommendation() {
   useEffect(() => {
     const responseCatalogue = async () => {
       const response = await getCatalogueTransport();
-      // console.log(response);
       if (response) {
         setTransportCatalogs(response.data);
       }

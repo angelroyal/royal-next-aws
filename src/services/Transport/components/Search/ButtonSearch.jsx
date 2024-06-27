@@ -25,8 +25,6 @@ export function ButtonSearch(props) {
       zoneToId: selectDestinationB.id,
       type: travelType,
     };
-    // console.log(body);
-    // return
 
     const params = new URLSearchParams(body).toString();
     const transportRout = `/${language}/mx/${selectedAutoComplete.codeName}-${selectedAutoComplete.country}/transport?${params}`;
