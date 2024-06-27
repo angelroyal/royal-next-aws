@@ -1699,11 +1699,14 @@ export const es = {
         title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!",
         message: "Por favor, inténtalo más tarde."
       },
+      choseDate:{
+        title:"Política de Fecha de Salida",
+        message:"La fecha de salida debe ser 2 días después de la fecha actual"
+      },
       maxPerson:{
         title: "¡Se necesitan más personas para el Tour!",
         message: "Por favor agrega una persona más a la actividad."
       },
-
       NotAvailability:{
         title:"Sin disponibilidad",
         message:"Por favor selecciona otras fechas"
@@ -1729,6 +1732,9 @@ export const es = {
         errorSubtitle:"Hubo un problema al agregar el transporte. Por favor, inténtalo de nuevo.",
         successTitle:"¡Transporte agregado!",
         successSubtitle:"Todo listo para tu viaje.",
+        warningTitle:"Comparación de Costos de Vehículos",
+        warningSubtitle:"El vehículo seleccionado es más caro que uno privado. Por favor, elija otra opción.",
+        
       },
 
       tour:{

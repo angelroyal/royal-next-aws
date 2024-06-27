@@ -97,13 +97,22 @@ export default function AddCartTour(props) {
       if (error.response.status === 400) {
         showNotification(
           "warning",
-          languageData.Alerts.tour.tourDetails.title,
-          languageData.Alerts.tour.tourDetails.message,
-          2000
+          languageData.Alerts.tour.choseDate.title,
+          languageData.Alerts.tour.choseDate.message,
+          5000
         );
       }
 
-      if (error.response.status >= 405) {
+      if (error.response.status === 422) {
+        showNotification(
+          "warning",
+          languageData.Alerts.tour.maxPerson.title,
+          languageData.Alerts.tour.maxPerson.message,
+          5000
+        );
+      }
+
+      if (error.response.status >= 405 && error.response.status !== 422) {
         showNotification(
           "error",
           languageData.Alerts.tour.tourDetails.title,
