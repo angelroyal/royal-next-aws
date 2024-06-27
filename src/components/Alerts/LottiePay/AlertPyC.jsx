@@ -6,9 +6,10 @@ export function AlertPyC({
   openAlert,
   setOpenAlert,
   title,
-  description=null,
+  description = null,
   cancelPolicy,
-  cardView
+  cardView,
+  isHours = false
 }) {
   const ref = useRef(null);
 
@@ -29,7 +30,9 @@ export function AlertPyC({
     openAlert && (
       <div
         ref={ref}
-        className={`cursor-auto absolute z-[4] shadow-3xl bg-white rounded-lg w-[316px] ${cardView === "transport" ? 'md:w-[248px]' : ' md:w-[458px]'} translate-x-[-67%] md:translate-x-[-50%] h-auto p-4 flex flex-col items-center`}
+        className={`cursor-auto absolute z-[4] shadow-3xl bg-white rounded-lg w-[316px] ${
+          cardView === "transport" ? "md:w-[248px]" : " md:w-[458px]"
+        } translate-x-[-67%] md:translate-x-[-50%] h-auto p-4 flex flex-col items-center`}
       >
         <img
           src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-70.svg`}
@@ -53,7 +56,7 @@ export function AlertPyC({
 
           <p className="text-fs-12 text-gry-100 m-m text-center mb-[24px]">
             {description == "policy"
-              ? PolicyAlert(cancelPolicy)
+              ? PolicyAlert(cancelPolicy, isHours)
               : CancelationHours(cancelPolicy)}
           </p>
         </div>
@@ -62,13 +65,13 @@ export function AlertPyC({
   );
 }
 
-export function PolicyAlert(cancelPolicy) {
+export function PolicyAlert(cancelPolicy, isHours) {
   const { languageData, language } = useContext(LanguageContext);
   const url = `/${language}/policy`;
   return (
     <>
-      {languageData.roomsCancellations.percentage} {cancelPolicy.hours}{" "}
-      {languageData.roomsCancellations.from}{" "}
+      {languageData.roomsCancellations.percentage} {language != "en" && isHours ? "de" : "del"} {cancelPolicy.hours}{" "}
+      {languageData.durationTour.hPlural} {languageData.roomsCancellations.from}{" "}
       {`${cancelPolicy.penalty}${cancelPolicy.type === "percent" ? "% " : ""}`}
       {languageData.roomsCancellations.total}{" "}
       <a
@@ -87,7 +90,8 @@ export function CancelationHours(hours) {
   const { languageData } = useContext(LanguageContext);
   return (
     <div className="flex flex-wrap text-fs-14 text-black m-s-b gap-x-[3px] text-wrap justify-center">
-      <span>{languageData.itinerary.movingItinerary.pyc.text1}</span> <span>{hours}</span>
+      <span>{languageData.itinerary.movingItinerary.pyc.text1}</span>{" "}
+      <span>{hours}</span>
       <span>{languageData.itinerary.movingItinerary.pyc.text2}</span>
       <span>{languageData.itinerary.movingItinerary.pyc.text3}</span>
     </div>

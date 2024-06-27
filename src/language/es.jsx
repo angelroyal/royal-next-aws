@@ -434,7 +434,7 @@ export const es = {
   },
 
   roomsCancellations: {
-    percentage: "Cancela antes del",
+    percentage: "Cancela antes",
     from: "tu reservación con un cargo del",
     total: "del total de su reservación. Más información visita nuestros",
     terms: "términos de cancelación.",

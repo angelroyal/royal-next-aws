@@ -246,6 +246,7 @@ export default function TourCardItinerary({ key, itemActivity }) {
                                   setOpenAlert={() => setOpenAlert(false)}
                                   description={"policy"}
                                   cancelPolicy={cancelPolicy}
+                                  isHours={true}
                                 />
                               </div>
                             </>
