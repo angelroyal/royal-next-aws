@@ -6,12 +6,12 @@ export function DescriptionHotel({ hotel }) {
   const { languageData } = useContext(LanguageContext);
   return (
     <div className="flex flex-col !gap-y-2 border-b border-gry-70 !pb-4 mb-[18px]">
-      <span className="text-fs-[1.12rem] m-b text-gry-100">Hotel</span>
+      <span className="text-fs-16 m-b text-gry-100">Hotel</span>
 
       {hotel &&
         hotel.map((info, item) => (
           <div className="flex flex-col mt-1 gap-y-2" key={item}>
-            <span className="m-b text-fs-[0.75rem] text-justify w-full pb-[6px]">
+            <span className="m-m text-fs-12 text-justify w-full pb-[6px]">
               {info.name}
             </span>
 
@@ -27,7 +27,7 @@ export function DescriptionHotel({ hotel }) {
                     className="flex !pl-2 justify-between items-start "
                     key={item}
                   >
-                    <span className="text-fs-12 m-m leading-[1.75] text-[#1a202c]">
+                    <span className="text-fs-12 m-m leading-[1.75] text-[#1a202c] truncate">
                       {room.name}
                     </span>
 
@@ -88,7 +88,7 @@ export function TransportDescription({ transport }) {
         transport.map((transport, index) => (
           <div key={index} className="flex flex-col !gap-y-2">
             <div className="flex !pl-2 justify-between items-start ">
-              <span className="m-m text-[0.75rem] text-justify w-full pb-[6px]">
+              <span className="m-m text-12 text-justify w-full pb-[6px]">
                 {transport.round
                   ? languageData.CardHomeTransport.roundTrip
                   : languageData.CardHomeTransport.oneWay}

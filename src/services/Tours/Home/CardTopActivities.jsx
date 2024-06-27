@@ -70,7 +70,7 @@ export default function CardTopActivities({ tour }) {
                 </div>
 
                 <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-                    <div className="m-s-b pt-1 text-fs-14 text-start truncate max-sm:w-[250px]">
+                    <div className="m-s-b pt-1 text-fs-14 text-start truncate max-sm:w-[250px] mb-[4px]">
                         {validateLanguageName(language, tour).name}{" "}
                     </div>
 
@@ -83,7 +83,7 @@ export default function CardTopActivities({ tour }) {
                         height={"14px"}
                     />
 
-                    <div className="flex gap-1 mb-[26px]">
+                    <div className="flex gap-1 mb-[26px] mt-[6px]">
                         <Image
                             className="w-auto h-auto"
                             src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
@@ -97,11 +97,11 @@ export default function CardTopActivities({ tour }) {
                     </div>
 
                     <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col text-fs-12">
                             <span className="m-m text-black text-fs-12 text-start">
                                 {languageData.cartTour.from}
                             </span>
-                            <span className="m-s-b text-or-100 text-fs-12">
+                            <span className="m-s-b text-or-100">
                                 MXN{" "}
                                 <span className="m-b text-fs-16">
                                     $
@@ -119,9 +119,9 @@ export default function CardTopActivities({ tour }) {
                         </div>
 
                         <button
-                            className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap ${isHovered
+                            className={`m-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap ${isHovered
                                 ? "bg-bl-100 text-white"
-                                : "text-bl-100 border-bl-100"
+                                : "text-black border-bl-100"
                                 }`}
                         >
                             {languageData.cartTour.seeDetails}

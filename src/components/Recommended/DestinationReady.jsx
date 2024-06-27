@@ -60,7 +60,7 @@ export default function DestinationReady({ type, reservationDetails }) {
           </button>
         </div>
 
-        <div className="w-[350px] max-lg:w-full bg-grn-30 flex flex-col p-[16px] gap-[8px] rounded-lg">
+        <div className="min-w-[350px] max-lg:w-full bg-grn-30 flex flex-col p-[16px] gap-[8px] rounded-lg max-w-[500px]">
           {/* NAME */}
           <div className="flex gap-2">
             <Image
@@ -70,7 +70,7 @@ export default function DestinationReady({ type, reservationDetails }) {
               alt="done name"
               className="w-[16px] h-[20px] pt-[4px]"
             />
-            <span className="m-b text-fs-16 items-center gap-x-[8px] !box-orient-vertical !line-clamp-2 !overflow-hidden !text-ellipsis">
+            <span className="m-b text-fs-16 items-center gap-x-[8px] truncate">
               {" "}
               {reservationDetails.name}
             </span>

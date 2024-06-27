@@ -140,7 +140,7 @@ export function BannersHomeExclusiveDiscounts() {
   return (
     <>
       <div className="flex w-full 2xl:gap-[1vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px] justify-between">
-        <div className="2xl:w-fit 2xl:gap-[2vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:flex max-md:justify-between max-sm:hidden">
+        <div className="2xl:w-fit 2xl:gap-[3vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:flex max-md:justify-between max-sm:hidden">
           <div className="w-[280px] shadow-3xl rounded-lg">
             <img
               src={bannerDiscounts}

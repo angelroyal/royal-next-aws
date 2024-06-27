@@ -88,17 +88,17 @@ export default function AutocompleteHotel() {
         <img
           src={`${process.env.NEXT_PUBLIC_URL}/icons/location/location-b.svg`}
           alt="Location Icon"
-          className="w-[16px] h-[20px] mr-2 absolute top-[18px] left-[7px]"
+          className="w-[16px] h-[20px] ml-2 absolute top-[18px] left-[7px]"
         />
         <label
           htmlFor="search-input"
-          className="m-b absolute top-[11px] left-[32px] text-fs-10 text-gry-70 "
+          className="m-b absolute top-[11px] left-[38px] text-fs-10 text-gry-70 "
         >
           {languageData.SearchBox.tabHotel.autocomplete}
         </label>
         <Combobox value={selectedItem} onChange={handleSelect}>
           <Combobox.Input
-            className="placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[22px] pr-4 pl-[32px] shadow-sm focus:outline-none text-fs-12"
+            className="placeholder:m-m placeholder:text-gry-70 m-b font-extrabold w-full lg:w-[290px] h-[56px] border-2 border-gray-200 rounded bg-white pb-2.5 pt-[22px] pr-4 pl-[36px] shadow-sm focus:outline-none text-fs-12"
             onChange={handleChange}
             displayValue={(item) => (item ? item.label : "")}
             placeholder={

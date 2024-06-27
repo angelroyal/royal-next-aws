@@ -107,7 +107,7 @@ export default function CardHotelT(props) {
 
             <div className="w-[70%] p-[20px] max-lg:w-full">
               {/* NAME AND STARS HOTEL */}
-              <h2 className="text-fs-16 m-b mb-0 truncate">{hotel.name}</h2>
+              <h2 className="text-fs-16 m-b mb-1 truncate">{hotel.name}</h2>
               <TotalStars
                 stars={hotel.stars}
                 className="!text-fs-12 !gap-[2px]"
@@ -115,9 +115,9 @@ export default function CardHotelT(props) {
                 height={"h-[14px]"}
               />
 
-              <div className="flex max-lg:flex-col">
+              <div className="flex max-lg:flex-col mt-1">
                 {/* INFO HOTEL*/}
-                <div className="w-3/5  pr-[23px] max-lg:w-full flex flex-col gap-[8px] mt-1">
+                <div className="w-3/5  pr-[23px] max-lg:w-full flex flex-col gap-[9px] mt-1">
                   <div className="flex gap-1">
                     <Image
                       className="w-[11px] h-[14px]"
@@ -152,7 +152,7 @@ export default function CardHotelT(props) {
                   </p>
 
                   {hotel.exclusiveDeal < 4 ? (
-                    <div className="flex bg-[#FFF0BD] px-[10px] py-[3px] items-center w-fit rounded-lg gap-1">
+                    <div className="flex bg-[#FFF0BD] px-[10px] py-[5px] items-center w-fit rounded-lg gap-1 mt-[10px]">
                       <Image
                         className="w-4 h-4"
                         src={`${process.env.NEXT_PUBLIC_URL}icons/info/solicited.svg`}
@@ -166,7 +166,7 @@ export default function CardHotelT(props) {
                       </span>
                     </div>
                   ) : hotel.exclusiveDeal >= 5 && hotel.exclusiveDeal <= 10 ? (
-                    <div className="flex bg-[#FFF0BD] px-[10px] py-[3px] items-center w-fit rounded-lg gap-1">
+                    <div className="flex bg-[#FFF0BD] px-[10px] py-[5px] items-center w-fit rounded-lg gap-1">
                       <Image
                         className="w-4 h-4"
                         src={`${process.env.NEXT_PUBLIC_URL}icons/info/solicited.svg`}
@@ -190,7 +190,7 @@ export default function CardHotelT(props) {
                     </span>
 
                     <h2 className="m-b text-fs-16 flex items-center gap-1 text-nowrap">
-                      <span className="m-s-b text-fs-12">
+                      <span className="m-s-b text-fs-10">
                         {languageData.cartTour.from}{" "}
                       </span>
                       {hotel.currency} $
@@ -203,14 +203,14 @@ export default function CardHotelT(props) {
                     <div className="flex gap-1 mb-1 items-center min-h-">
                       {hotel.offers && hotel.percentageDiscount && (
                         <>
-                          <div className="m-s-b text-gry-100 text-fs-10">
+                          <del className="m-s-b text-gry-100 text-fs-12">
                             MXN ${" "}
                             {Math.floor(hotel.offers)
                               .toLocaleString("es-MX", { currency: "MXN" })
                               .replace(".00", "")}
                             .<sup>{(hotel.offers % 1).toFixed(2).slice(2)}</sup>
-                          </div>
-                          <div className="bg-red-100 text-white text-fs-12 px-[8px] py-[2px] rounded-r-md">
+                          </del>
+                          <div className="bg-red-100 text-white text-fs-10 m-b px-[8px] py-[2px] rounded-r-md">
                             {hotel.percentageDiscount}%
                           </div>
                         </>
@@ -225,9 +225,9 @@ export default function CardHotelT(props) {
                   <Link
                     href={buildUrlWithParams(requestQueryParams)}
                     target="_blank"
-                    className="no-underline bg-yw-100 text-black text-fs-12 m-b px-[20px] lg:px-[40px] py-[8px] rounded-full hover:bg-yw-110 text-nowrap"
+                    className="no-underline m-b bg-yw-100 text-black text-fs-12 m-b px-[20px] lg:px-[40px] py-[8px] rounded-full hover:bg-yw-110 text-nowrap"
                   >
-                    {languageData.cardHotel.buttonShow}
+                    {languageData.cartTour.seeDetails}
                   </Link>
                 </div>
               </div>

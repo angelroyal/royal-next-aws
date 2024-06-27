@@ -289,7 +289,7 @@ export const es = {
   },
 
   cardHotel: {
-    titleSpace: "Solo quedan",
+    titleSpace: "Sólo quedan",
     night: "Noche,",
     nights: "Noches,",
     person: "Persona",

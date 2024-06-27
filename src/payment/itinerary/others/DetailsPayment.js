@@ -126,7 +126,7 @@ export default function DetailsPayment(props) {
                     </p>
                   </div>
                   {/* ICONS CREDIT CART */}
-                  <div className="flex flex-nowrap gap-2">
+                  <div className="flex flex-nowrap gap-2 justify-end">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_URL}icons/payment/visa.svg`}
                       width={48}
@@ -154,13 +154,13 @@ export default function DetailsPayment(props) {
                   </div>
                 </div>
 
-                <div className="flex justify-center flex-nowrap gap-[13px] items-center">
+                <div className="flex justify-center flex-nowrap gap-[51px] items-center">
                   <ModalShare itinerary={true} className="w-[30%]" />
 
                   {step === 1 && (
                     <button
                       onClick={() => nextStep()}
-                      className="rounded-full py-[10px] px-[27px] flex !gap-x-2 bg-yw-100 items-center border-0 focus:outline-none text-fs-10 text-black m-b"
+                      className="rounded-full py-[10px] px-[27px] flex !gap-x-2 bg-yw-100 items-center border-0 focus:outline-none text-fs-10 text-black m-b text-nowrap"
                     >
                       {languageData.itinerary.detailsPayment.completePayment}
                       <Image

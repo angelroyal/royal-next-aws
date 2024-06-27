@@ -10,7 +10,6 @@ export function BestHotelCart({ hotel }) {
   const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
-    
     window.open(
       `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
       "_blank"
@@ -42,7 +41,12 @@ export function BestHotelCart({ hotel }) {
         </div>
 
         <div className="mb-[4px]">
-          <TotalStars name="read-only" stars={hotel.stars} width={"w-[14px]"} height={"h-[14px]"}/>
+          <TotalStars
+            name="read-only"
+            stars={hotel.stars}
+            width={"w-[14px]"}
+            height={"h-[14px]"}
+          />
         </div>
 
         <div className="flex gap-1 mb-[11px]">
@@ -64,7 +68,14 @@ export function BestHotelCart({ hotel }) {
               {languageData.cartTour.from}
             </span>
             <span className="m-b text-or-100 text-fs-12">
-              MXN <span className="m-b text-fs-16">${hotel.price}</span>
+              MXN{" "}
+              <span className="m-b text-fs-16">
+                $
+                {Math.floor(hotel.price)
+                  .toLocaleString("es-MX", { currency: "MXN" })
+                  .replace(".00", "")}
+                .<sup>{(hotel.price % 1).toFixed(2).slice(2)}</sup>
+              </span>
             </span>
           </div>
 

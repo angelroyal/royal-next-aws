@@ -144,8 +144,8 @@ export default function CardHotelItinerary(props) {
               </div>
 
               <div className="flex justify-between my-auto w-[74%] max-sm:w-[65%]">
-                <div className="flex flex-col gap-y-1">
-                  <div className="d-flex title-start">
+                <div className="flex flex-col gap-y-2">
+                  <div className="d-flex title-start gap-2">
                     <span className="text-fs-16 m-b text-black !line-clamp-2">
                       {itemHotel.name}
                     </span>
@@ -157,7 +157,7 @@ export default function CardHotelItinerary(props) {
                     />
                   </div>
 
-                  <div className="flex items-center gap-x-1">
+                  <div className="flex items-center gap-[6px]">
                     <Image
                       className="w-[11px] h-[14px]"
                       src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-b.svg`}
@@ -295,7 +295,7 @@ export default function CardHotelItinerary(props) {
                 {itemHotel.rooms &&
                   itemHotel.rooms.map((roomInfo, index) => (
                     <div
-                      className={`bg-gry-30 pb-[19px] mb-[19px] ${
+                      className={`bg-gry-30 pb-[11px] mb-[19px] ${
                         itemHotel.rooms.length - 1 !== index &&
                         "border-b border-gry-50"
                       }`}

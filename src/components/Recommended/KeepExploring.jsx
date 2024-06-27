@@ -25,7 +25,7 @@ export default function KeepExploring() {
       </div>
 
       <button
-        className="bg-yw-100 m-b text-fs-12 hover:bg-yw-110 px-[24px] py-[14px] rounded-full"
+        className="bg-yw-100 m-b text-fs-12 hover:bg-yw-110 px-[24px] pb-[13px] pt-[14px] rounded-full"
         onClick={() => handleHome()}
       >
         {languageData.recommendations.btnBack}
