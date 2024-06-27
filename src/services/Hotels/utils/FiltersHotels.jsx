@@ -1,3 +1,5 @@
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import React, { useEffect, useState, useContext } from "react";
 
 import PriceHotels from "./PriceHotels";
@@ -10,6 +12,8 @@ export default function FiltersHotels({ listing = false }) {
   const { languageData } = useContext(LanguageContext);
   const [filters, setFilters] = useState(initialFilters);
   const { setSelectedFilters } = useContext(ListingHotelContext);
+
+  // console.log("filters",filters);
 
   // Update selected filters
   useEffect(() => {
@@ -72,7 +76,12 @@ export default function FiltersHotels({ listing = false }) {
 
   return (
     <>
-      <div className={`${listing === false && "bg-white rounded-lg p-[24px] shadow-3xl border border-[#ebebeb] mt-[16px]"}`}>
+      <div
+        className={`${
+          listing === false &&
+          "bg-white rounded-lg p-[24px] shadow-3xl border border-[#ebebeb] mt-[16px]"
+        }`}
+      >
         <div className="p-2">
           <div className="text-fs-16 m-b flex w-full items-start">
             {languageData.containerFilterHotel.titleFilter}
@@ -81,103 +90,113 @@ export default function FiltersHotels({ listing = false }) {
           <PriceHotels />
         </div>
 
-        <div>
+        <>
           {Object.keys(filters).map((filterGroup, index) => {
             const filterItems = filters[filterGroup];
             const maxItems = showMore[filterGroup]
               ? filterItems.items.length
-              : 4;
+              : filterItems.length;
             return (
-              <div key={`${filterGroup}-${index}`}>
-                <div className="border-t border-[#ebebeb] my-[10px]" />
-                <div className="accordion-filter my-4">
-                  <div
-                    className="mb-[16px] accordion-summary-filters flex justify-between items-center cursor-pointer"
-                    onClick={() => handleShowMore(filterGroup)}
-                  >
-                    <div className="filter-subtitle text-fs-15 font-bold">
-                      {languageData.titlesFilterHotel[
-                        filters[filterGroup].title
-                      ]
-                        ? languageData.titlesFilterHotel[
+              <div className="border-t border-[#ebebeb]">
+                <Disclosure defaultOpen={true}>
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none">
+                        <div className="filter-subtitle text-fs-15 font-bold">
+                          {languageData.titlesFilterHotel[
                             filters[filterGroup].title
                           ]
-                        : filters[filterGroup].title}
-                    </div>
-
-                    <span className="ml-2">
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/${
-                          showMore[filterGroup] ? "up" : "down"
-                        }-100.svg`}
-                        alt="Expand Icon"
-                        width={16}
-                        height={16}
-                      />
-                    </span>
-                  </div>
-
-                  <div className="accordion-details">
-                    <div className="form-group">
-                      {filterItems.items.slice(0, maxItems).map((filterItem, index) => (
-                        <div
-                          className="form-control-label flex items-center mb-2"
-                          key={`${filterGroup}-${index}${filterItem.value}`}
-                        >
-                          <input
-                            type="checkbox"
-                            name={`${filterGroup}_${filterItem.value}`}
-                            value={filterItem.value}
-                            onChange={(event) =>
-                              handleCheckbox(event, filterGroup)
-                            }
-                            checked={filterItem.checked}
-                            className="mr-2"
-                          />
-                          <label className="text-sm">
-                            {languageData.optionsFilterHotel[filterItem.label]
-                              ? languageData.optionsFilterHotel[filterItem.label]
-                              : filterItem.label}
-                          </label>
+                            ? languageData.titlesFilterHotel[
+                                filters[filterGroup].title
+                              ]
+                            : filters[filterGroup].title}
                         </div>
-                      ))}
-                      {filterItems.items.length > 4 && (
-                        <button
-                          className="flex items-center mt-2 text-bl-100 m-b pt-[10px] text-fs-12"
-                          onClick={() => handleShowMore(filterGroup)}
-                        >
-                          {showMore[filterGroup] ? (
-                            <div className="flex items-center">
-                              <span>{languageData.showOptions.showLess}</span>
-                              <img
-                                className="ml-2"
-                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/up-bl.svg`}
-                                alt="ArrowUpIcon blue"
-                                width={11}
-                                height={11}
+                        <ChevronUpIcon
+                          className={`${
+                            open ? "rotate-180 transform" : ""
+                          } h-5 w-5`}
+                        />
+                      </Disclosure.Button>
+
+                      <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
+                        {filterItems.items
+                          .slice(0, maxItems)
+                          .map((filterItem, index) => (
+                            <div
+                              className="form-control-label flex items-center mb-2"
+                              key={`${filterGroup}-${index}${filterItem.value}`}
+                            >
+                              <input
+                                type="checkbox"
+                                name={`${filterGroup}_${filterItem.value}`}
+                                value={filterItem.value}
+                                onChange={(event) =>
+                                  handleCheckbox(event, filterGroup)
+                                }
+                                checked={filterItem.checked}
+                                className="mr-2"
                               />
+                              <label className="text-sm">
+                                {languageData.optionsFilterHotel[
+                                  filterItem.label
+                                ]
+                                  ? languageData.optionsFilterHotel[
+                                      filterItem.label
+                                    ]
+                                  : filterItem.label}
+                              </label>
                             </div>
-                          ) : (
-                            <div className="flex items-center">
-                              <span>{languageData.showOptions.showMore}</span>
-                              <img
-                                className="ml-2"
-                                src={`${process.env.NEXT_PUBLIC_URL}/icons/arrows/down-bl.svg`}
-                                alt="ArrowDownIcon blue"
-                                width={11}
-                                height={11}
-                              />
-                            </div>
-                          )}
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                          ))}
+                        {filterItems.items.length > 4 && (
+                          <>
+                            <Disclosure defaultOpen={false}>
+                              {({ open }) => (
+                                <>
+                                  <Disclosure.Button
+                                    className="flex w-full rounded-lg py-2 text-left text-sm font-medium focus:outline-none"
+                                    onClick={() => handleShowMore(filterGroup)}
+                                  >
+                                    <h6>
+                                      <u className="text-bl-100 text-fs-14 m-b">
+                                        {showMore[filterGroup] ? (
+                                          <>
+                                            {
+                                              languageData.containerFilterTour
+                                                .showLess
+                                            }{" "}
+                                          </>
+                                        ) : (
+                                          <>
+                                            {
+                                              languageData.containerFilterTour
+                                                .showMore
+                                            }{" "}
+                                          </>
+                                        )}
+                                      </u>
+                                    </h6>
+                                    <ChevronUpIcon
+                                      className={`${
+                                        open ? "rotate-180 transform" : ""
+                                      } h-5 w-5 text-bl-100`}
+                                      onClick={() =>
+                                        handleShowMore(filterGroup)
+                                      }
+                                    />
+                                  </Disclosure.Button>
+                                </>
+                              )}
+                            </Disclosure>
+                          </>
+                        )}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
               </div>
             );
           })}
-        </div>
+        </>
       </div>
     </>
   );

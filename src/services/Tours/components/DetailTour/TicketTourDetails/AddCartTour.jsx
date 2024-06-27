@@ -94,6 +94,7 @@ export default function AddCartTour(props) {
       console.error("error 1", error);
       setIsLoader(false);
 
+      // CHOSE DATE ALERT
       if (error.response.status === 400) {
         showNotification(
           "warning",
@@ -103,15 +104,28 @@ export default function AddCartTour(props) {
         );
       }
 
-      if (error.response.status === 422) {
+      // QUANTITY PERSON ALERT
+      if (
+        error.response.status === 422 &&
+        error.response.data.message ===
+          "The quantity of people on the activity is less than the configurated."
+      ) {
         showNotification(
           "warning",
           languageData.Alerts.tour.maxPerson.title,
           languageData.Alerts.tour.maxPerson.message,
           5000
         );
+        // GENERAL ALERT
       }
-
+      if (error.response.data.message === "not availability") {
+        showNotification(
+          "warning",
+          languageData.Alerts.tour.NotAvailability.title,
+          languageData.Alerts.tour.NotAvailability.message,
+          5000
+        );
+      }
       if (error.response.status >= 405 && error.response.status !== 422) {
         showNotification(
           "error",

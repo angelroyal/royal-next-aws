@@ -116,7 +116,7 @@ export default function RoomMenu(props) {
     const newRooms = [...rooms];
     if (newRooms[roomIndex].child < 4) {
       newRooms[roomIndex].child++;
-      newRooms[roomIndex].ages.push(0);
+      newRooms[roomIndex].ages.push(1);
       setRooms(newRooms);
     }
   };

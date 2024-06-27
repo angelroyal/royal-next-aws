@@ -8,8 +8,6 @@ import { orderData } from "../../context/orderData";
 import LanguageContext from "@/language/LanguageContext";
 import { filterStart, getFilters } from "./filtersTours";
 
-
-
 export default function FilterTour(props) {
   const [isOpen, setIsOpen] = useState(true);
   //Props
@@ -178,92 +176,10 @@ export default function FilterTour(props) {
 
         <div className="w-full border-t border-[#ebebeb]"></div>
 
-        {/* ACCORDION RANGE PRICE */}
-        {/* <Accordion defaultExpanded className="cont-accordion-filter-tour">
-          <AccordionSummary
-            className="accordion-summary-filter-tour"
-            expandIcon={<ExpandMoreIcon />}
-          >
-            <h6 className="title-filters-accordion-tour">
-              {languageData.titlesFilterTour.priceRange}
-            </h6>
-          </AccordionSummary>
-
-          <AccordionDetails>
-            <div className="d-flex justify-content-between">
-              <div className="d-flex flex-column gap-2">
-                <span className="text-grey-filter-tour-s">
-                  {languageData.titlesFilterTour.minimum}
-                </span>
-                <span className="text-grey-filter-tour-s">
-                  ${rangeValue[0].toLocaleString()}
-                </span>
-              </div>
-
-              <div className="d-flex flex-column gap-2">
-                <span className="text-grey-filter-tour-s">
-                  {languageData.titlesFilterTour.maximum}
-                </span>
-                <span className="text-grey-filter-tour-s">
-                  ${rangeValue[1].toLocaleString()}
-                </span>
-              </div>
-            </div>
-
-            <Box sx={{ width: "100%" }}>
-              <Slider
-                getAriaLabel={() => "Temperature range"}
-                value={rangeValue}
-                onChange={handleChange}
-                valueLabelDisplay="auto"
-                className="slider-filter-range-price"
-                min={0}
-                max={40000}
-              />
-            </Box>
-
-            <div className="d-flex justify-content-between">
-              <div className="min-and-max-cont">
-                <span className="text-grey-filter-tour-s">
-                  {languageData.SearchBox.tabTour.from}
-                </span>
-                <input
-                  type="text"
-                  className="cont-number-range-price"
-                  placeholder={languageData.SearchBox.tabTour.from}
-                  value={range[0]}
-                  onChange={(e) => handleInputChange(0, e.target.value)}
-                />
-              </div>
-              <div className="min-and-max-cont">
-                <span className="text-grey-filter-tour-s">
-                  {languageData.titlesFilterTour.to}
-                </span>
-                <input
-                  type="text"
-                  className="cont-number-range-price"
-                  placeholder={languageData.titlesFilterTour.to}
-                  value={range[1]}
-                  onChange={(e) => handleInputChange(1, e.target.value)}
-                />
-              </div>
-            </div>
-          </AccordionDetails>
-
-          <AccordionActions>
-            <button
-              className="btn-apply-range-price hover:bg-bl-100 hover:!text-white"
-              onClick={handleApplyClick}
-            >
-              {languageData.containerFilterHotel.button}
-            </button>
-          </AccordionActions>
-        </Accordion> */}
-
         <Disclosure defaultOpen={isOpen}>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none ">
                 <h6 className="m-b text-fs-14">
                   {languageData.titlesFilterTour.priceRange}
                 </h6>
@@ -273,41 +189,6 @@ export default function FilterTour(props) {
               </Disclosure.Button>
 
               <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
-                {/* <div className="flex justify-between">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-gry-100 m-m text-fs-12">
-                      {languageData.titlesFilterTour.minimum}
-                    </span>
-                    <span className="text-gry-100 m-m text-fs-12">
-                      ${rangeValue[0].toLocaleString()}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <span className="text-gry-100 m-m text-fs-12">
-                      {languageData.titlesFilterTour.maximum}
-                    </span>
-                    <span className="text-gry-100 m-m text-fs-12">
-                      ${rangeValue[1].toLocaleString()}
-                    </span>
-                  </div>
-                </div> */}
-
-                {/* PENDIENTE MUI SLIDER */}
-                {/* <div className="w-full">
-                  <Slider
-                    getAriaLabel={() => "Temperature range"}
-                    value={rangeValue}
-                    onChange={handleChange}
-                    valueLabelDisplay="auto"
-                    className="!text-bl-100"
-                    min={0}
-                    max={40000}
-                  />
-                </div> */}
-
-                {/*END PENDIENTE MUI SLIDER */}
-
                 <div className="flex justify-between">
                   <div className="flex flex-col">
                     <span className="text-fs-12 text-gry-100 m-m">
@@ -360,90 +241,10 @@ export default function FilterTour(props) {
             return (
               // ACCORDION CATEGORY
               <>
-                {/* <Accordion
-                  defaultExpanded
-                  disableGutters
-                  className="cont-accordion-filter-tour"
-                  key={`${filterGroup}-${index}`}
-                >
-                  <AccordionSummary
-                    className="accordion-summary-filter-tour"
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls={`panel${index + 1}a-content`}
-                    id={`panel${index + 1}a-header`}
-                  >
-                    <h6 className="title-filters-accordion-tour">
-                      {
-                        languageData.titlesFilterTour[
-                          filters[filterGroup].title
-                        ]
-                      }
-                    </h6>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {filterItems.items
-                      .slice(0, maxItems)
-                      .map((filterItem, index) => {
-                        return (
-                          <div className="d-flex gap-2 mb-1 ">
-                            <input
-                              id="all-category-a"
-                              type="checkbox"
-                              name={`${index}_${filterGroup}_${filterItem.value}`}
-                              value={filterItem.value}
-                              onChange={(event) =>
-                                handleCheckbox(event, "checkbox")
-                              }
-                              checked={filterItem.checked}
-                              className="filters-tour-checkbox"
-                            />
-                            <label
-                              for="all-category-a"
-                              className="text-black-filter-s cont-checkbox-cursor"
-                            >
-                              {languageData.optionsFilterTour[filterItem.label]
-                                ? languageData.optionsFilterTour[
-                                    filterItem.label
-                                  ]
-                                : filterItem.label}
-                            </label>
-                          </div>
-                        );
-                      })}
-
-                    {filterItems.items.length > 4 && (
-                      <Accordion className="cont-accordion-filter-tour">
-                        <AccordionSummary
-                          // expandIcon={<ExpandMoreIcon />}
-                          className="cont-accordion-filter-tour-see-more"
-                        >
-                          <h7>
-                            <u
-                              className="text-blue-filter-tour-s"
-                              onClick={() => handleShowMore(filterGroup)}
-                            >
-                              {showMore[filterGroup] ? (
-                                <>
-                                  {languageData.containerFilterTour.showLess}{" "}
-                                  
-                                </>
-                              ) : (
-                                <>
-                                  {languageData.containerFilterTour.showMore}{" "}
-                                  
-                                </>
-                              )}
-                            </u>
-                          </h7>
-                        </AccordionSummary>
-                      </Accordion>
-                    )}
-                  </AccordionDetails>
-                </Accordion> */}
                 <Disclosure defaultOpen={isOpen}>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none ">
                         <h6 className="m-b text-fs-14">
                           {
                             languageData.titlesFilterTour[
@@ -493,19 +294,18 @@ export default function FilterTour(props) {
                         <Disclosure defaultOpen={!isOpen}>
                           {({ open }) => (
                             <>
-                              <Disclosure.Button className="flex w-full rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                              <Disclosure.Button
+                                className="flex w-full rounded-lg py-2 text-left text-sm font-medium focus:outline-none"
+                                onClick={() => handleShowMore(filterGroup)}
+                              >
                                 <h6>
-                                  <u
-                                    className="text-bl-100 text-fs-14 m-b"
-                                    onClick={() => handleShowMore(filterGroup)}
-                                  >
+                                  <u className="text-bl-100 text-fs-14 m-b">
                                     {showMore[filterGroup] ? (
                                       <>
                                         {
                                           languageData.containerFilterTour
                                             .showLess
                                         }{" "}
-                                        {/* <ArrowUpIcon /> */}
                                       </>
                                     ) : (
                                       <>
@@ -540,75 +340,10 @@ export default function FilterTour(props) {
 
         <div className="w-full border-t border-[#ebebeb]"></div>
 
-        {/* ACCORDION STARS */}
-
-        {/* <Accordion defaultExpanded className="cont-accordion-filter-tour">
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            className="accordion-summary-filter-tour"
-          >
-            <h6 className="title-filters-accordion-tour">
-              {languageData.titlesFilterHotel.Star}
-            </h6>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className="d-flex gap-4">
-              <div
-                className={
-                  auxStart > 2
-                    ? "cont-stars-filter-tour-two"
-                    : "cont-stars-filter-tour"
-                }
-              >
-                {filtersStarts.stars.items.length > 0 &&
-                  filtersStarts.stars.items.map((values, key) => (
-                    <div
-                      key={key}
-                      className={
-                        key === 0 || key === 5
-                          ? "d-flex gap-2"
-                          : "d-flex gap-1 mb-1"
-                      }
-                    >
-                      <input
-                        id="all-stars-a"
-                        type="checkbox"
-                        name={`${key}_stars_${values.value}`}
-                        value={values.value}
-                        onChange={(event) => handleCheckbox(event, "stars")}
-                        checked={values.checked}
-                        className="filters-tour-checkbox"
-                      />
-                      <label
-                        for="all-stars-a"
-                        className={
-                          key > 0
-                            ? "star-center-gap cont-checkbox-cursor"
-                            : "text-black-filter-s cont-checkbox-cursor"
-                        }
-                      >
-                        {key > 0 ? (
-                          [...Array(values.value)].map((value, index) => (
-                            <Image src={IconStar} alt="IconStar" key={index} />
-                          ))
-                        ) : (
-                          <span>
-                            {languageData.optionsFilterHotel.allStart}
-                          </span>
-                        )}
-                      </label>
-                      {auxStart < 2 && key > 2 && setAuxStart(3)}
-                    </div>
-                  ))}
-              </div>
-            </div>
-          </AccordionDetails>
-        </Accordion> */}
-
         <Disclosure defaultOpen={isOpen}>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none">
                 <h6 className="text-fs-14 m-b">
                   {languageData.titlesFilterHotel.Star}
                 </h6>
@@ -620,11 +355,7 @@ export default function FilterTour(props) {
               <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
                 <div className="flex gap-4">
                   <div
-                    className={
-                      auxStart > 2
-                        ? "flex flex-col gap-[7px]"
-                        : ""
-                    }
+                    className={auxStart > 2 ? "flex flex-col gap-[7px]" : ""}
                   >
                     {filtersStarts.stars.items.length > 0 &&
                       filtersStarts.stars.items.map((values, key) => (
