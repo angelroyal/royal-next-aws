@@ -8,8 +8,6 @@ import { orderData } from "../../context/orderData";
 import LanguageContext from "@/language/LanguageContext";
 import { filterStart, getFilters } from "./filtersTours";
 
-
-
 export default function FilterTour(props) {
   const [isOpen, setIsOpen] = useState(true);
   //Props
@@ -181,7 +179,7 @@ export default function FilterTour(props) {
         <Disclosure defaultOpen={isOpen}>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none ">
                 <h6 className="m-b text-fs-14">
                   {languageData.titlesFilterTour.priceRange}
                 </h6>
@@ -191,7 +189,6 @@ export default function FilterTour(props) {
               </Disclosure.Button>
 
               <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
-
                 <div className="flex justify-between">
                   <div className="flex flex-col">
                     <span className="text-fs-12 text-gry-100 m-m">
@@ -238,7 +235,6 @@ export default function FilterTour(props) {
         <>
           {Object.keys(filters).map((filterGroup, index) => {
             const filterItems = filters[filterGroup];
-            // console.log(filterItems);
             const maxItems = showMore[filterGroup]
               ? filterItems.items.length
               : filterItems.length;
@@ -248,7 +244,7 @@ export default function FilterTour(props) {
                 <Disclosure defaultOpen={isOpen}>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none ">
                         <h6 className="m-b text-fs-14">
                           {
                             languageData.titlesFilterTour[
@@ -298,19 +294,18 @@ export default function FilterTour(props) {
                         <Disclosure defaultOpen={!isOpen}>
                           {({ open }) => (
                             <>
-                              <Disclosure.Button className="flex w-full rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+                              <Disclosure.Button
+                                className="flex w-full rounded-lg py-2 text-left text-sm font-medium focus:outline-none"
+                                onClick={() => handleShowMore(filterGroup)}
+                              >
                                 <h6>
-                                  <u
-                                    className="text-bl-100 text-fs-14 m-b"
-                                    onClick={() => handleShowMore(filterGroup)}
-                                  >
+                                  <u className="text-bl-100 text-fs-14 m-b">
                                     {showMore[filterGroup] ? (
                                       <>
                                         {
                                           languageData.containerFilterTour
                                             .showLess
                                         }{" "}
-                                        {/* <ArrowUpIcon /> */}
                                       </>
                                     ) : (
                                       <>
@@ -348,7 +343,7 @@ export default function FilterTour(props) {
         <Disclosure defaultOpen={isOpen}>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+              <Disclosure.Button className="flex w-full justify-between rounded-lg py-2 text-left text-sm font-medium focus:outline-none">
                 <h6 className="text-fs-14 m-b">
                   {languageData.titlesFilterHotel.Star}
                 </h6>
@@ -360,11 +355,7 @@ export default function FilterTour(props) {
               <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
                 <div className="flex gap-4">
                   <div
-                    className={
-                      auxStart > 2
-                        ? "flex flex-col gap-[7px]"
-                        : ""
-                    }
+                    className={auxStart > 2 ? "flex flex-col gap-[7px]" : ""}
                   >
                     {filtersStarts.stars.items.length > 0 &&
                       filtersStarts.stars.items.map((values, key) => (
