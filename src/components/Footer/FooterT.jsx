@@ -353,7 +353,7 @@ export default function FooterT() {
             </div>
           </div>
 
-          <div className="flex justify-between items-end w-full pt-[36px] border-t border-[#d1d2d5] max-md:gap-[40px] max-md:flex-col max-md:items-start">
+          <div className="flex justify-between items-end w-[99%] pt-[36px] border-t border-[#d1d2d5] max-md:gap-[40px] max-md:flex-col max-md:items-start">
             {/* ACCEPT CREDIT CARD */}
             <div className="flex flex-col gap-[8px]">
               <span

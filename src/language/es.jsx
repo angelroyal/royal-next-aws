@@ -229,11 +229,12 @@ export const es = {
     },
 
     transport: {
-      titleRecommedation: "¿Ya sabes como llegar?",
+      titleRecommedation: "¿Ya sabes cómo llegar?",
       btnchoose: "Elegir transporte"
     },
   },
 
+  // #region HOME
   /*********************************************************/
   ////////////////////////  HOME //////////////////////////////
   /*********************************************************/
@@ -258,7 +259,7 @@ export const es = {
     bookNowBtn: "Reservar ahora",
   },
 
-
+// #region HOTEL
   /*********************************************************/
   //////////////////////// 𝓗𝓞𝓣𝓔𝓛 HOTEL 𝓗𝓞𝓣𝓔𝓛 //////////////////////////////
   /*********************************************************/
@@ -552,6 +553,7 @@ export const es = {
   },
   // END LP TOUR RECOMMENDED HOME HOTEL
 
+  // #region TOUR
   /*********************************************************/
   //////////////////////// 𝓣𝓞𝓤𝓡 TOUR 𝓣𝓞𝓤𝓡 //////////////////////////////
   /*********************************************************/
@@ -749,6 +751,7 @@ export const es = {
     textAlready: "Tour ¡Listo!",
   },
 
+  // #region TRANSPORT
   /*********************************************************/
   ////////////////////////  TRANSPORT //////////////////////////////
   /*********************************************************/
@@ -801,7 +804,7 @@ export const es = {
   },
 
   filterTransport: {
-    category: "Categoria",
+    category: "Categoría",
     baggage: "Equipaje",
     seats: "Asientos",
     all: "Todos",
@@ -822,6 +825,7 @@ export const es = {
     sharedService: "El precio total se determina sumando el costo por cada pasajero.",
   },
 
+  //#region MOVING 
   /************************************************************/
   //////////////////////// 𝓜𝓞𝓥𝓘𝓝𝓖 MOVING 𝓜𝓞𝓥𝓘𝓝𝓖 //////////////////////////////
   /************************************************************/
@@ -947,6 +951,7 @@ export const es = {
     textAlready: "Transporte ¡Listo!",
   },
 
+  // #region ABOUT US , FOOTER
   /***********************************************************/
   //////////////////////// 𝓐𝓑𝓞𝓤𝓣 𝓤𝓢 FOOTER 𝓐𝓑𝓞𝓤𝓣 𝓤𝓢 //////////////////////////////
   /************************************************************/
@@ -1086,6 +1091,7 @@ export const es = {
     },
   },
 
+  // #region PAYMENT
   /*********************************************************/
   //////////////////////// 𝓟𝓐𝓨𝓜𝓔𝓝𝓣 PAYMENT 𝓟𝓐𝓨𝓜𝓔𝓝𝓣 //////////////////////////////
   /*********************************************************/
@@ -1324,7 +1330,7 @@ export const es = {
     Wednesday: "Miércoles",
     Thursday: "Jueves",
     Friday: "Viernes",
-    Saturday: "Sabado",
+    Saturday: "Sábado",
     Sunday: "Domingo",
   },
 
@@ -1721,8 +1727,8 @@ export const es = {
       transport: {
         errorTitle:"Error al agregar transporte",
         errorSubtitle:"Hubo un problema al agregar el transporte. Por favor, inténtalo de nuevo.",
-        successTitle:"Transportation added!",
-        successSubtitle:"Everything is ready for your trip.",
+        successTitle:"¡Transporte agregado!",
+        successSubtitle:"Todo listo para tu viaje.",
       },
 
       tour:{
