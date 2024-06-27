@@ -26,7 +26,7 @@ export function HotelInfo(props) {
 
       <h1 className="m-b text-fs-24">{hotel.name}</h1>
 
-      <TotalStars stars={hotel.stars} />
+      <TotalStars stars={hotel.stars} width={"w-[16px]"} height={"h-[16px]"}/>
 
       <div className="mt-3 flex mb-[6]">
         <img

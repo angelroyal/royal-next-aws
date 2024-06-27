@@ -111,6 +111,8 @@ export default function CardHotelT(props) {
               <TotalStars
                 stars={hotel.stars}
                 className="!text-fs-12 !gap-[2px]"
+                width={"w-[14px]"}
+                height={"h-[14px]"}
               />
 
               <div className="flex max-lg:flex-col">

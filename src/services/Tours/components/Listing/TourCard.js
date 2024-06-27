@@ -129,7 +129,7 @@ export default function TourCard(props) {
                   <IconBaggage className="icons-card-tour-w" />
                 </div> */}
 
-              <div className="flex items-center rounded border border-[#ebebeb] h-[42px] p-[.5rem] w-max">
+              <div className="flex items-center rounded border border-[#ebebeb] bg-[#ebebeb] h-[42px] p-[.5rem] w-max">
                 <span className="text-gry-100 m-s-b text-fs-10 leading-[28px]">
                   {languageData.cartTour.duration}{" "}
                   {tour.duration ? tour.duration : "Sin información"}
