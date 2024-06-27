@@ -1696,6 +1696,10 @@ export const en = {
         title: "Oops, there was a problem adding to the shopping cart!",
         message: "Please try again later.",
       },
+      choseDate:{
+        title:"Departure Date Policy",
+        message:"The departure date must be 2 days after the current date."
+      },
       maxPerson: {
         title: "More People Needed for the Tour!",
         message: "Please add one more person to the activity.",
@@ -1724,6 +1728,8 @@ export const en = {
         errorSubtitle:"There was a problem adding the transportation. Please try again.",
         successTitle: "Transportation added!",
         successSubtitle: "Everything is ready for your trip.",
+        warningTitle:"Vehicle Cost Comparison",
+        warningSubtitle:"The selected vehicle is more expensive than a private one. Please choose another option.",
       },
 
       tour:{

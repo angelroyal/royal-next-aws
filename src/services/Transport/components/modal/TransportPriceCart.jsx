@@ -134,7 +134,15 @@ export default function TransportPriceCart(props) {
     } catch (error) {
       console.error("error", error);
       setIsLoader(false);
-      if (error.response.status >= 400) {
+      if(error.response.status === 422){
+        showNotification(
+          "warning",
+          languageData.Alerts.notification.transport.warningTitle,
+          languageData.Alerts.notification.transport.warningSubtitle,
+          5000
+        );
+      }
+      if (error.response.status >= 400  && error.response.status !== 422 ) {
         showNotification(
           "error",
           languageData.Alerts.notification.transport.errorTitle,
@@ -173,7 +181,7 @@ export default function TransportPriceCart(props) {
       </div>
 
       <button
-        className={`py-[14px]  text-white m-b text-fs-12 rounded-full text-center ${
+        className={`py-[14px] text-white m-b text-fs-12 rounded-full text-center ${
           !isButtonEnabled || isLoader
             ? "cursor-not-allowed bg-bl-70"
             : "hover:bg-bl-110 bg-bl-100"
