@@ -94,6 +94,7 @@ export default function AddCartTour(props) {
       console.error("error 1", error);
       setIsLoader(false);
 
+      // CHOSE DATE ALERT
       if (error.response.status === 400) {
         showNotification(
           "warning",
@@ -103,6 +104,7 @@ export default function AddCartTour(props) {
         );
       }
 
+      // QUANTITY PERSON ALERT
       if (error.response.status === 422 && error.response.data.message === "The quantity of people on the activity is less than the configurated.") {
         showNotification(
           "warning",
@@ -110,6 +112,7 @@ export default function AddCartTour(props) {
           languageData.Alerts.tour.maxPerson.message,
           5000
         );
+        // GENERAL ALERT
       }else if (error.response.status >= 405 || error.response.data.message == "not availability") {
         showNotification(
           "error",
