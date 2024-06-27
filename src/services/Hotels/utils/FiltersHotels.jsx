@@ -11,6 +11,8 @@ export default function FiltersHotels({ listing = false }) {
   const [filters, setFilters] = useState(initialFilters);
   const { setSelectedFilters } = useContext(ListingHotelContext);
 
+  // console.log("filters",filters);
+
   // Update selected filters
   useEffect(() => {
     const newSelectedFilters = {};
@@ -86,7 +88,7 @@ export default function FiltersHotels({ listing = false }) {
             const filterItems = filters[filterGroup];
             const maxItems = showMore[filterGroup]
               ? filterItems.items.length
-              : 4;
+              : filterItems.length;
             return (
               <div key={`${filterGroup}-${index}`}>
                 <div className="border-t border-[#ebebeb] my-[10px]" />

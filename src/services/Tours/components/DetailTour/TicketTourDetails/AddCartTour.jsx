@@ -105,7 +105,11 @@ export default function AddCartTour(props) {
       }
 
       // QUANTITY PERSON ALERT
-      if (error.response.status === 422 && error.response.data.message === "The quantity of people on the activity is less than the configurated.") {
+      if (
+        error.response.status === 422 &&
+        error.response.data.message ===
+          "The quantity of people on the activity is less than the configurated."
+      ) {
         showNotification(
           "warning",
           languageData.Alerts.tour.maxPerson.title,
@@ -113,7 +117,16 @@ export default function AddCartTour(props) {
           5000
         );
         // GENERAL ALERT
-      }else if (error.response.status >= 405 || error.response.data.message == "not availability") {
+      }
+      if (error.response.data.message === "not availability") {
+        showNotification(
+          "warning",
+          languageData.Alerts.tour.NotAvailability.title,
+          languageData.Alerts.tour.NotAvailability.message,
+          5000
+        );
+      }
+      if (error.response.status >= 405 && error.response.status !== 422) {
         showNotification(
           "error",
           languageData.Alerts.tour.tourDetails.title,
