@@ -103,16 +103,14 @@ export default function AddCartTour(props) {
         );
       }
 
-      if (error.response.status === 422) {
+      if (error.response.status === 422 && error.response.data.message === "The quantity of people on the activity is less than the configurated.") {
         showNotification(
           "warning",
           languageData.Alerts.tour.maxPerson.title,
           languageData.Alerts.tour.maxPerson.message,
           5000
         );
-      }
-
-      if (error.response.status >= 405 && error.response.status !== 422) {
+      }else if (error.response.status >= 405 || error.response.data.message == "not availability") {
         showNotification(
           "error",
           languageData.Alerts.tour.tourDetails.title,
