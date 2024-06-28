@@ -71,11 +71,11 @@ export default function CardHotelHome(props) {
           </div>
 
           <button
-            className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap 
+            className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap  
                         ${
                           isHovered
                             ? "bg-bl-100 text-white"
-                            : "text-bl-100 border-bl-100"
+                            : "text-bl-100 "
                         }`}
           >
             {languageData.cartTour.seeDetails}

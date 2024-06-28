@@ -149,8 +149,8 @@ export function BannerHomeKnowMore() {
   const selfie = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/selfie.png`;
 
   return (
-    <div className="flex h-[408px] mb-10 mt-16 lg:mt-32 max-lg:flex-col max-lg:h-auto">
-      <div className="flex flex-col justify-center w-[50%] lg:py-12 lg:px-12 bg-white rounded-tl-lg rounded-bl-lg max-lg:rounded-tr-lg max-lg:rounded-bl-none max-lg:w-full max-lg:items-center">
+    <div className="flex h-[408px] mb-10 mt-16 lg:mt-32 max-lg:flex-col max-lg:h-auto shadow-3xl">
+      <div className="flex flex-col justify-center w-[50%] py-[44px] lg:py-12 lg:px-12 bg-white rounded-tl-lg rounded-bl-lg max-lg:rounded-tr-lg max-lg:rounded-bl-none max-lg:w-full max-lg:items-center">
         {/* FIX BOOSTRAP mb-5 - mb-[20px */}
         <h2 className="m-s-b text-fs-28 mb-[20px]">
           {languageData.titleBanners.bannerHoteldecided.havenDecided}

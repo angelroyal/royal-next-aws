@@ -10,10 +10,10 @@ export function TransportBanner() {
   };
 
   return (
-    <section className="flex bg-white flex-col max-lg:items-center lg:flex-row h-max my-16 md:mt-[131px] md:mb-32 shadow-3xl">
+    <section className="flex bg-white flex-col max-lg:items-center lg:flex-row h-max my-16 md:mt-[131px] md:mb-32 shadow-3xl rounded-lg">
       <div
         data-aos="fade-right"
-        className="flex justify-center px-8 py-14 md:px-16 w-full lg:pr-0 items-start md:py-[88px] flex-col gap-y-2.5 lg:w-4/5 gap-y-5"
+        className="flex justify-center px-8 py-14 md:px-16 w-full lg:pr-0 items-start md:py-[88px] flex-col lg:w-4/5 gap-y-5"
       >
         <h3 className="m-b text-fs-32">
           {languageData.bannerTransportHome.titleDisposal}
