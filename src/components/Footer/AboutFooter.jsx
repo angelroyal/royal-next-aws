@@ -26,7 +26,7 @@ export function AboutMobile({
             </span>
             <ChevronUpIcon
               className={`${
-                positionOpen === 0 ? "rotate-180 transform" : ""
+                positionOpen === 0 ? "" : "rotate-180 transform"
               } h-5 w-5  md:hidden ${
                 footerBlue ? "text-white" : "text-black"
               } `}

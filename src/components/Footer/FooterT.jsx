@@ -305,7 +305,7 @@ export default function FooterT() {
                 >
                   <Image
                     src={`${process.env.NEXT_PUBLIC_URL}icons/whats/whats-${
-                      footerBlue ? "w.svg" : "b.svg"
+                      footerBlue ? "bg-w.svg" : "b.svg"
                     }`}
                     alt="icon whats footer"
                     width={20}

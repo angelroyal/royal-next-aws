@@ -27,7 +27,7 @@ export function MexicoHotelsFooterMobile({
             </span>
             <ChevronUpIcon
               className={`${
-                positionOpen === 1 ? "rotate-180 transform" : ""
+                positionOpen === 1 ? "" : "rotate-180 transform"
               } h-5 w-5 md:hidden ${footerBlue ? "text-white" : "text-black"}`}
             />
           </Disclosure.Button>
