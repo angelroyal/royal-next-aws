@@ -80,7 +80,7 @@ export default function TourCardItinerary({ key, itemActivity }) {
 
             {/* ITINERARY CARD */}
 
-            <div className="w-[732px] max-xl:w-full flex rounded-[8px] p-[16px] shadow-3xl bg-white mt-[12px] border border-[#ebebeb] relative mb-[15px] max-lg:flex-col max-lg:px-[20px] ">
+            <div className="w-[732px] max-xl:w-full flex rounded-[8px] p-[16px] shadow-3xl bg-white mt-[12px] border border-[#ebebeb] relative max-lg:flex-col max-lg:px-[20px] ">
               {!removeIsLoader && (
                 <div
                   className="absolute right-[1rem] top-[1rem] cursor-pointer"

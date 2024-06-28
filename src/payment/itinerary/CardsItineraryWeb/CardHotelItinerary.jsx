@@ -79,7 +79,7 @@ export default function CardHotelItinerary(props) {
           height={200}
         />
 
-        <div className="flex flex-col gap-y-5 w-full">
+        <div className="flex flex-col gap-[12px] w-full">
           {/* DAY,TIME HOTEL */}
           <div className="flex gap-x-4 flex-wrap max-lg:gap-y-[6px]">
             <div>

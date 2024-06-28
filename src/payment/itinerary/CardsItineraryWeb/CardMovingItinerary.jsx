@@ -59,7 +59,7 @@ export default function CardMovingItinerary(props) {
           height={200}
         />
 
-        <div className="flex flex-col gap-y-5 w-full">
+        <div className="flex flex-col gap-y-3 w-full">
           <span className="flex gap-x-1">
             <h3 className="m-b text-fs-16 text-or-100 m-0">
               {languageData.dayOfWeek[dayOfWeek]}

@@ -129,7 +129,7 @@ export function ShareContainer({ smShow, handleCloseModal }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 mb-auto mt-auto">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white p-[48px] max-md:p-[36px] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg mb-auto mt-auto">
                 <div className="absolute right-0 top-0 pr-4 pt-4 block">
                   <button
                     type="button"
@@ -142,15 +142,15 @@ export function ShareContainer({ smShow, handleCloseModal }) {
                 </div>
 
                 <div className="sm:flex sm:items-center sm:flex-col">
-                  <h3 className="m-0 pb-[2.5rem] text-fs-16 m-b text-center">
+                  <h3 className="m-0 pb-[48px] text-fs-20 m-b text-center text-black">
                     {languageData.shareLink.titleShareModal}
                   </h3>
 
-                  <div className="flex gap-x-6 flex-wrap justify-center">
+                  <div className="flex gap-x-[56px] flex-wrap justify-center max-md:gap-x-[48px] max-sm:gap-x-[30px]">
                     {typeShared.map((shared, index) => (
                       <div
                         key={index}
-                        className="flex flex-col items-center cursor-pointer"
+                        className="flex flex-col items-center cursor-pointer gap-2"
                         onClick={() => handleSharedType(shared.value)}
                         onMouseEnter={() => handleMouseOver(shared.value)}
                         onMouseLeave={handleMouseOut}
@@ -167,8 +167,8 @@ export function ShareContainer({ smShow, handleCloseModal }) {
                           height={33}
                         />
                         <div
-                          className={`m-b text-fs-14 ${
-                            activeIcon === shared.value && "text-or-100"
+                          className={`m-b text-fs-14 text-gry-100 ${
+                            activeIcon === shared.value && "!text-or-100"
                           }`}
                         >
                           {languageData.shareLink[shared.label]}
