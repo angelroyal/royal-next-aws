@@ -137,6 +137,7 @@ function SearchTour({ closeDialog, onSelectTour, listing = false }) {
             onChange={(event) => letterInput(event)}
             displayValue={(tour) => tour && tour.label}
             placeholder={languageData.SearchBox.tabTour.destinationText}
+            autoComplete="off"
           />
 
           <Transition

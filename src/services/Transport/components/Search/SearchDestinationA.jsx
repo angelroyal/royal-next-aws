@@ -148,6 +148,7 @@ export function SearchDestinationA({
                 ? languageData.SearchBox.tabHotel.textSearching
                 : languageData.SearchBox.tabHotel.textDestinationA
             }
+            autoComplete="off"
           />
 
           <Combobox.Options className="scroll-page-blue px-2 absolute z-[2] mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
@@ -176,6 +177,10 @@ export function SearchDestinationA({
     </Combobox>
   ) : (
     // INPUT DISABLED TRANSPORT
-    <DisabledInputTransport isListing={isListing} languageData={languageData} isSearch={isSearch} />
+    <DisabledInputTransport
+      isListing={isListing}
+      languageData={languageData}
+      isSearch={isSearch}
+    />
   );
 }
