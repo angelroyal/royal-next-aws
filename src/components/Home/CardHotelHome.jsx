@@ -71,7 +71,7 @@ export default function CardHotelHome(props) {
           </div>
 
           <button
-            className={`m-s-b  text-fs-12 min-h-8 rounded-3xl border-2  px-4 py-2 text-nowrap  
+            className={`m-s-b text-fs-12 min-h-8 rounded-3xl border-2 px-4 py-2 text-nowrap border-bl-100 
                         ${
                           isHovered
                             ? "bg-bl-100 text-white"
