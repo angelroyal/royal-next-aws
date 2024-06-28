@@ -112,11 +112,9 @@ export const ActivityFormT = ({ activityPreBooking }) => {
 
     if (allRequiredFieldsFilled) {
       setFormActivityItems(filteredFormData);
-    } else {
-      alert(
-        'Por favor, complete todos los campos requeridos antes de continuar.'
-      );
     }
+
+    return allRequiredFieldsFilled;
   };
 
   return (
