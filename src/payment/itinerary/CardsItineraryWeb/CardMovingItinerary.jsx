@@ -51,7 +51,7 @@ export default function CardMovingItinerary(props) {
 
   return (
     <>
-      <div className="flex gap-x-2 items-start">
+      <div className="flex gap-x-2 items-start my-[10px]">
         <Image
           src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
           alt="Icon Location Border"
@@ -108,7 +108,7 @@ export default function CardMovingItinerary(props) {
                   {itemTransport.title}
                 </h2>
 
-                <div className="flex gap-x-6 items-start justify-between lg:pr-[21px]">
+                <div className="flex gap-x-6 items-start justify-between lg:pr-[32px]">
                   {/* <div className="flex flex-col w-[227px] gap-y-1 max-md:w-[65%]"> */}
                   <div className="flex flex-col w-1/2 gap-y-1 max-md:w-[65%]">
                     <span className="flex items-center gap-x-1">
@@ -195,7 +195,7 @@ export default function CardMovingItinerary(props) {
                     </div>
 
                     <div className="flex flex-col gap-y-1 items-start max-xl:hidden">
-                      <p className="text-fs-10 text-gry-100 m-s-b mb-1 text-nowrap">
+                      <p className="text-fs-10 text-gry-100 m-s-b text-nowrap">
                         {languageData.cart.taxes}
                       </p>
 
@@ -213,10 +213,10 @@ export default function CardMovingItinerary(props) {
                         </p>
                       </span>
 
-                      <div onClick={() => setOpenAlert(true)}>
-                        <span className="relative text-bl-100 text-fs-8 m-s-b text-nowrap cursor-pointer">
+                      <div onClick={() => setOpenAlert(true)} className="relative text-bl-100 text-fs-8 m-s-b text-nowrap cursor-pointer">
+                        {/* <span className="relative text-bl-100 text-fs-8 m-s-b text-nowrap cursor-pointer"> */}
                           {languageData.containerModalHotel.policies}
-                        </span>
+                        {/* </span> */}
 
                         <AlertPyC
                           openAlert={openAlert}

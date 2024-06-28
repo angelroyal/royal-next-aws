@@ -56,7 +56,7 @@ export default function TourCardItinerary({ key, itemActivity }) {
   return (
     itemActivity && (
       <>
-        <div className="relative mt-[22px]">
+        <div className="relative my-[10px]">
           <Image
             className="absolute"
             src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}

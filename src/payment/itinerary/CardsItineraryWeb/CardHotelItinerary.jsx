@@ -70,7 +70,7 @@ export default function CardHotelItinerary(props) {
 
   return (
     <>
-      <div className={`flex gap-x-2 items-start mb-[17px]`}>
+      <div className={`flex gap-x-2 items-start my-[10px]`}>
         <Image
           className="w-4"
           src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-border.svg`}
@@ -172,7 +172,7 @@ export default function CardHotelItinerary(props) {
                   </div>
 
                   <div className="flex gap-x-4 max-lg:!hidden">
-                    <div className="flex gap-x-1 items-center">
+                    <div className="flex gap-[6px] items-center">
                       <Image
                         className="w-[14px] h-[15px]"
                         src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
@@ -188,7 +188,7 @@ export default function CardHotelItinerary(props) {
                       </span>
                     </div>
 
-                    <div className="flex gap-2 items-center text-fs-10 text-gry-100 m-s-b">
+                    <div className="flex gap-[6px] items-center text-fs-10 text-gry-100 m-s-b">
                       <Image
                         className="w-[14px] h-[15px]"
                         src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
