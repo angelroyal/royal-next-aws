@@ -16,14 +16,14 @@ export const ActivityFormT = ({ activityPreBooking }) => {
       initialFormData[activityIndex] = {
         booking: activity.details.booking.map((item) => ({
           id: item.id,
-          value: '',
+          value: "",
           required: item.required,
         })),
         passengers: activity.details.passengers
           ? activity.details.passengers.map((group) =>
               group.map((passenger) => ({
                 id: passenger.id,
-                value: '',
+                value: "",
                 required: passenger.required,
               }))
             )
@@ -49,8 +49,8 @@ export const ActivityFormT = ({ activityPreBooking }) => {
   ) => {
     let newValue = e.target.value;
 
-    if (e.target.tagName === 'SELECT' && label === 'Only hand bags?') {
-      newValue = e.target.value === 'true';
+    if (e.target.tagName === "SELECT" && label === "Only hand bags?") {
+      newValue = e.target.value === "true";
     }
 
     const updatedItem = { id, value: newValue, required: isRequired };
@@ -59,7 +59,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
     updatedFormData[activityIndex][itemType] =
       updatedFormData[activityIndex][itemType] || [];
 
-    if (itemType === 'passengers') {
+    if (itemType === "passengers") {
       updatedFormData[activityIndex][itemType][groupIndex] =
         updatedFormData[activityIndex][itemType][groupIndex] || [];
       updatedFormData[activityIndex][itemType][groupIndex][itemIndex] =
@@ -96,7 +96,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
       if (activity.passengers) {
         activity.passengers.forEach((group) => {
           group.forEach((item) => {
-            if (item.required && (!item.value || item.value === '')) {
+            if (item.required && (!item.value || item.value === "")) {
               allRequiredFieldsFilled = false;
             }
             activityData.details.passengers.push({
@@ -146,9 +146,10 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                   )}
                 </label>
 
-                {bookingItem.label === 'Only hand bags?' ? (
+                {bookingItem.label === "Only hand bags?" ? (
                   <select
                     className="block w-full py-[0.375rem] px-[0.75rem] text-fs-16 leading-[1.5] appearance-none rounded-[.375rem] m-m mb-2 focus:outline-none focus:border focus:border-[#7EC2DD] focus:shadow-3xl focus:shadow-[#7EC2DD]"
+                    required={bookingItem.required}
                     value={
                       formData[activityIndex] &&
                       formData[activityIndex].booking &&
@@ -159,7 +160,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                       handleInputChange(
                         e,
                         activityIndex,
-                        'booking',
+                        "booking",
                         null,
                         bookingIndex,
                         bookingItem.id,
@@ -173,6 +174,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                   </select>
                 ) : (
                   <input
+                    required={bookingItem.required}
                     type={bookingItem.type}
                     className="block w-full py-[0.375rem] px-[0.75rem] text-fs-16 leading-[1.5] appearance-none rounded-[.375rem] m-m mb-2 focus:outline-none focus:border focus:border-[#7EC2DD] focus:shadow-3xl focus:shadow-[#7EC2DD]"
                     value={
@@ -185,7 +187,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                       handleInputChange(
                         e,
                         activityIndex,
-                        'booking',
+                        "booking",
                         null,
                         bookingIndex,
                         bookingItem.id,
@@ -227,9 +229,10 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                             <span className="text-red-100">*</span>
                           )}
                         </label>
-                        {passenger.type === 'select' ? (
+                        {passenger.type === "select" ? (
                           <select
                             className="mb-2"
+                            required={passenger.required}
                             value={
                               formData[activityIndex] &&
                               formData[activityIndex].passengers &&
@@ -245,7 +248,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                               handleInputChange(
                                 e,
                                 activityIndex,
-                                'passengers',
+                                "passengers",
                                 groupIndex,
                                 passengerIndex,
                                 passenger.id,
@@ -261,6 +264,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                           </select>
                         ) : (
                           <input
+                            required={passenger.required}
                             type="text"
                             className="m-0 rounded-lg m-b w-full py-[7px] px-[16px] text-fs-14 leading-[1.5] appearance-none focus:outline-none border border-[#ebebeb] placeholder:text-fs-12 placeholder:text-gry-70 mb-2"
                             value={
@@ -278,7 +282,7 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                               handleInputChange(
                                 e,
                                 activityIndex,
-                                'passengers',
+                                "passengers",
                                 groupIndex,
                                 passengerIndex,
                                 passenger.id,
