@@ -205,15 +205,22 @@ export default function TourCardItinerary({ key, itemActivity }) {
                     </div>
                   </div>
 
-                  <div className="w-1/2 flex items-start justify-between max-lg:w-full">
-                    <div className="flex flex-col items-center justify-center max-lg:items-start">
-                      <span className="m-s-b text-fs-10 text-gry-100 text-nowrap">
-                        {languageData.confirmation.cardTour.duration}
-                      </span>
-                      <span className="text-black text-fs-14 m-b">
-                        {itemActivity.duration}
-                      </span>
-                    </div>
+                  <div
+                    className={`${
+                      itemActivity.duration ? "justify-between" : "justify-end"
+                    } w-1/2 flex items-start  max-lg:w-full`}
+                  >
+                    {itemActivity.duration && (
+                      <div className="flex flex-col items-center justify-center max-lg:items-start">
+                        <span className="m-s-b text-fs-10 text-gry-100 text-nowrap">
+                          {languageData.confirmation.cardTour.duration}
+                        </span>
+
+                        <span className="text-black text-fs-14 m-b">
+                          {itemActivity.duration}
+                        </span>
+                      </div>
+                    )}
 
                     <div className="w-1/2 flex flex-col justify-center gap-[4px] max-lg:items-end max-sm:w-fit">
                       <span className="m-s-b text-fs-10 text-gry-100 text-nowrap">
