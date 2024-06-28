@@ -48,7 +48,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
 
   if (animationData === "SuccessData") {
     return (
-      <>
+      <div className="bg-white px-[24px] pt-[24px] pb-[48px] w-[423px] h-[485px] flex flex-col items-center justify-end relative max-sm:w-full">
         <Lottie
           className="w-[185px] h-[185px] mb-[20px]"
           animationData={animationSuccess}
@@ -65,13 +65,13 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
         >
           {languageData.alertsPayment.btnUnderstood}
         </button>
-      </>
+      </div>
     );
   }
 
   if (animationData === "FailureData") {
     return (
-      <>
+      <div className="bg-white rounded-lg shadow-3xl px-[24px] pt-[24px] pb-[48px] w-[423px] h-[548px] flex flex-col items-center gap-[8px] max-sm:w-full">
         <Lottie
           className="w-[185px] h-[185px] mb-[38px]"
           animationData={animationFailure}
@@ -118,7 +118,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
             {languageData.alertsPayment.btnRetry}
           </button>
         </div>
-      </>
+      </div>
     );
   }
 
@@ -155,13 +155,13 @@ export default function AlertPayment({ animationData, isOpen, closeModal }) {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-fit max-w-md transform rounded-lg overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
-                <div className="bg-white px-[24px] pt-[24px] pb-[48px] w-[423px] h-[485px] flex flex-col items-center justify-end relative max-sm:w-full">
+                {/* <div className="bg-white px-[24px] pt-[24px] pb-[48px] w-[423px] h-[485px] flex flex-col items-center justify-end relative max-sm:w-full"> */}
                   <AnimationContent
                     animationData={animationData}
                     languageData={languageData}
                     closeModal={closeModal}
                   />
-                </div>
+                {/* </div> */}
               </Dialog.Panel>
             </Transition.Child>
           </div>

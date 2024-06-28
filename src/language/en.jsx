@@ -1200,6 +1200,14 @@ export const en = {
       notSpecifyName: "It is not necessary to specify a name.",
       continue: "Continue",
     },
+
+    ActivityForm:{
+      yes: "Yes",
+      no: "No",
+      passengerInfo:"Passenger information",
+      person:"Person",
+    },
+
     paymentConekta: {
       titleForm: "Payment method",
       textNameTitular: "Cardholder",

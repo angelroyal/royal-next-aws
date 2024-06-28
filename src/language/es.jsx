@@ -1203,6 +1203,14 @@ export const es = {
       notSpecifyName:"No es necesario especificar nombre.",
       continue:"Continuar",
     },
+
+    ActivityForm:{
+      yes: "Sí",
+      no: "No",
+      passengerInfo:"Información de pasajero",
+      person:"Persona",
+    },
+
     paymentConekta: {
       titleForm: "Método de pago",
       textNameTitular: "Titular de la tarjeta",

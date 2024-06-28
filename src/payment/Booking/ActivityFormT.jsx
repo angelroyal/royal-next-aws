@@ -169,8 +169,12 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                       )
                     }
                   >
-                    <option value="true">Sí</option>
-                    <option value="false">No</option>
+                    <option value="true">
+                      {languageData.booking.ActivityForm.yes}
+                    </option>
+                    <option value="false">
+                      {languageData.booking.ActivityForm.no}
+                    </option>
                   </select>
                 ) : (
                   <input
@@ -205,11 +209,13 @@ export const ActivityFormT = ({ activityPreBooking }) => {
             <div>
               <div className="mt-[16px] m-b text-fs-12 mb-1 flex">
                 <img
-                  src="https://sandboxmexico.com/assets/icons/adults/adults-o.svg"
-                  alt="no found"
-                  className="mr-2 ml-1"
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/adults/adults-o.svg`}
+                  width={20}
+                  height={17}
+                  alt="icons adults"
+                  className="mr-2 ml-1 w-[20px] h-[17px]"
                 />
-                Información de pasajero
+                {languageData.booking.ActivityForm.passengerInfo}
               </div>
 
               {activity.details.passengers.map((passengerGroup, groupIndex) => (
@@ -218,13 +224,13 @@ export const ActivityFormT = ({ activityPreBooking }) => {
                   className="p-[1.3rem] bg-[#f4f4f4] rounded-[9px] mb-3"
                 >
                   <div className="m-b text-fs-16 mb-2">
-                    Persona #{groupIndex + 1}
+                    {languageData.booking.ActivityForm.person} #{groupIndex + 1}
                   </div>
                   <div className="grid grid-cols-3 gap-3">
                     {passengerGroup.map((passenger, passengerIndex) => (
                       <div key={passenger.id}>
                         <label>
-                          <b>{passenger.label}</b>
+                          <span className="m-s-b text-fs-14 m-0">{passenger.label}</span>
                           {passenger.required && (
                             <span className="text-red-100">*</span>
                           )}
