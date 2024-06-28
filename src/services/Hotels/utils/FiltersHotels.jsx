@@ -179,9 +179,9 @@ export default function FiltersHotels({ listing = false }) {
                                       className={`${
                                         open ? "rotate-180 transform" : ""
                                       } h-5 w-5 text-bl-100`}
-                                      onClick={() =>
-                                        handleShowMore(filterGroup)
-                                      }
+                                      // onClick={() =>
+                                      //   handleShowMore(filterGroup)
+                                      // }
                                     />
                                   </Disclosure.Button>
                                 </>

@@ -322,7 +322,7 @@ export default function FilterTour(props) {
                                   className={`${
                                     open ? "rotate-180 transform" : ""
                                   } h-5 w-5 text-bl-100`}
-                                  onClick={() => handleShowMore(filterGroup)}
+                                  // onClick={() => handleShowMore(filterGroup)}
                                 />
                               </Disclosure.Button>
                             </>
