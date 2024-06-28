@@ -126,7 +126,7 @@ export default function TipsBooking() {
         </div>
 
         {/* LINE TOP DASHED */}
-        <div className="flex max-md:h-[8rem] max-md:items-center w-[116px] relative justify-around max-md:rotate-[90deg]">
+        <div className="flex max-md:h-[8rem] max-md:items-center w-[116px] relative justify-around max-md:rotate-[90deg] md:mb-16">
           {dashedOne.map((dashed, index) => (
             <div
               key={index}
@@ -170,7 +170,7 @@ export default function TipsBooking() {
         </div>
 
         {/* LINE BOTTOM DASHED */}
-        <div className="flex max-md:h-[8rem] max-md:items-center w-[116px] relative justify-around max-md:rotate-[90deg]">
+        <div className="flex max-md:h-[8rem] max-md:items-center w-[116px] relative justify-around max-md:rotate-[90deg] md:mb-16">
           {dashedTwo.map((dashed, index) => (
             <div
               key={index}

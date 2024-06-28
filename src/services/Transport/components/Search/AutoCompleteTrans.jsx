@@ -111,6 +111,7 @@ export function AutoCompleteTrans({
             onChange={(event) => handleLetter(event)}
             displayValue={(person) => person?.label}
             placeholder={languageData.SearchBox.tabHotel.textCity}
+            autoComplete="off"
           />
 
           {resultAutocomplete && (

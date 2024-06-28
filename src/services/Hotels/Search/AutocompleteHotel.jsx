@@ -104,6 +104,7 @@ export default function AutocompleteHotel() {
             placeholder={
               !input ? languageData.SearchBox.tabHotel.textSearchingH : ""
             }
+            autoComplete="off"
           />
           <Transition
             show={isOpen}

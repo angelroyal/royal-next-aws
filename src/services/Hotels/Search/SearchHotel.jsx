@@ -6,7 +6,6 @@ import { useIsMobile } from "@/config/Mobile/isMobile";
 import LanguageContext from "../../../language/LanguageContext";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
-
 const API_ENDPOINT = `v1/destinations/search`;
 
 function SearchHotel(props) {
@@ -125,6 +124,7 @@ function SearchHotel(props) {
             onChange={handleChange}
             displayValue={(item) => (item ? item.label : "")}
             placeholder={!inputAutocomplete ? "Buscar hotel o destino" : ""}
+            autoComplete="off"
           />
 
           <Transition
