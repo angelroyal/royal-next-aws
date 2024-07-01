@@ -7,11 +7,10 @@ import DetailTour from "./DetailTour";
 import DayCalendar from "./DayCalendar";
 import { HoursSelect } from "./HoursSelect";
 import { Container } from "@/config/Others/Container";
+import LanguageContext from "@/language/LanguageContext";
+import { getAvailabilityTour } from "../../Api/requestTour";
 import SkeletonDetailTour from "../Skeleton/SkeletonDetailTour";
 import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
-// import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-import { getAvailabilityTour } from "../../Api/requestTour";
-import LanguageContext from "@/language/LanguageContext";
 
 export default function Tour(props) {
   const { params, tourMetaData, searchParams } = props;
