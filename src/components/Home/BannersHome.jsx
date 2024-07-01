@@ -79,7 +79,8 @@ export function BannersHomeOffers() {
                 className="block md:hidden w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
               />
 
-              <button className="absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[60px] lg:bottom-[114px] bg-white rounded-full flex items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
+              {/* HIDDEN BUTTON BANNER */}
+              <button className="hidden absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[60px] lg:bottom-[114px] bg-white rounded-full items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
                 <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
                   {languageData.enjoyStayHome.bookNowBtn}
                 </p>
