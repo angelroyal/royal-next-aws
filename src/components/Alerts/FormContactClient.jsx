@@ -135,14 +135,14 @@ export function FormContactClient() {
     }
   }, []);
 
-  const esRutaBooking = currentRoute === `/${language}/booking`;
+  // const bookingRoute = currentRoute === `/${language}/booking`;
   // console.log(currentRoute);
-  // console.log(esRutaBooking);
+  // console.log(bookingRoute);
   // END LP
 
   return (
     <>
-      {esRutaBooking ? null : (
+      {currentRoute === `/${language}/booking` ? null : (
         <Transition.Root show={open} as={Fragment}>
           <Dialog className="relative z-10" onClose={setOpen}>
             <Transition.Child
