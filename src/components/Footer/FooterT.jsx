@@ -179,7 +179,7 @@ export default function FooterT() {
                 <span
                   className={`${
                     footerBlue ? "text-white" : "text-black"
-                  } text-fs-12 m-s-b hover:!text-or-100 no-underline`}
+                  } ${isHovered === "EML" && "!text-or-100" } text-fs-12 m-s-b no-underline`}
                 >
                   info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com
                 </span>
