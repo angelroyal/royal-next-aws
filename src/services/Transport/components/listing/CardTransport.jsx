@@ -152,7 +152,7 @@ export default function CardTransport() {
                   </div>
 
                   <button
-                    className="bg-yw-100 py-[10px] px-[50px] rounded-full m-b text-fs-12 hover:bg-yw-110 max-sm:px-[20px]"
+                    className="bg-yw-100 py-[10px] px-[50px] rounded-full m-b text-fs-12 hover:bg-yw-110 max-sm:px-[20px] focus:outline-none"
                     onClick={() => openCartDetails(transport)}
                   >
                     {languageData.CardHomeTransport.reserveBtn}
