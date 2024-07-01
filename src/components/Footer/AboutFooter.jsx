@@ -1,9 +1,9 @@
+import Link from "next/link";
+import { useContext } from "react";
+import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
-import { Disclosure } from "@headlessui/react";
-import { useContext } from "react";
 import LanguageContext from "@/language/LanguageContext";
-import Link from "next/link";
 
 export function AboutMobile({
   handleAccordionClick,
@@ -16,7 +16,10 @@ export function AboutMobile({
     <div className="flex flex-col">
       <Disclosure>
         <>
-          <Disclosure.Button onClick={() => handleAccordionClick(0)} className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none">
+          <Disclosure.Button
+            onClick={() => handleAccordionClick(0)}
+            className="flex w-full gap-[15px] max-sm:justify-between rounded-lg text-left text-sm font-medium focus:outline-none"
+          >
             <span
               className={`${
                 footerBlue ? "text-white" : "text-black"
@@ -85,7 +88,7 @@ export function AboutMobile({
   );
 }
 
-export function AboutFooter({footerBlue}) {
+export function AboutFooter({ footerBlue }) {
   const { languageData, language } = useContext(LanguageContext);
   return (
     <div className="flex flex-col">

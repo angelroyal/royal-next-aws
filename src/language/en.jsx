@@ -1201,11 +1201,11 @@ export const en = {
       continue: "Continue",
     },
 
-    ActivityForm:{
+    ActivityForm: {
       yes: "Yes",
       no: "No",
-      passengerInfo:"Passenger information",
-      person:"Person",
+      passengerInfo: "Passenger information",
+      person: "Person",
     },
 
     paymentConekta: {
@@ -1411,17 +1411,19 @@ export const en = {
       "We're sorry, your payment could not be processed. Please check that your card details and billing address are correct.",
     btnRetry: "Retry",
     dataSafe: "Your data is safe with us.",
-    mayTake:"This may take a while",
-    textProcessing:"Please do not close this window or reload the page.",
-    textErrorProcessed:"It seems your payment has been processed, but there was an error on our server. Please check your email to verify if you received a payment confirmation.",
-    textErrorPersists:"If the issue persists, feel free to contact our support team at the number",
-    callAdvisor:"To call an advisor",
+    mayTake: "This may take a while",
+    textProcessing: "Please do not close this window or reload the page.",
+    textErrorProcessed:
+      "It seems your payment has been processed, but there was an error on our server. Please check your email to verify if you received a payment confirmation.",
+    textErrorPersists:
+      "If the issue persists, feel free to contact our support team at the number",
+    callAdvisor: "To call an advisor",
     textAlert: {
       PP: "Processing payment",
       PF: "We could not process your payment",
       PE: "Successful payment",
       PD: "Payment declined",
-      EO: "An error has occurred"
+      EO: "An error has occurred",
     },
   },
 
@@ -1700,13 +1702,14 @@ export const en = {
       title: "Oops, there was a problem adding to the shopping cart!",
     },
     tour: {
+      notAvailability: "No dates available. Please try again later.",
       tourDetails: {
         title: "Oops, there was a problem adding to the shopping cart!",
         message: "Please try again later.",
       },
-      choseDate:{
-        title:"Departure Date Policy",
-        message:"The departure date must be 2 days after the current date."
+      choseDate: {
+        title: "Departure Date Policy",
+        message: "The departure date must be 2 days after the current date.",
       },
       maxPerson: {
         title: "More People Needed for the Tour!",
@@ -1726,24 +1729,27 @@ export const en = {
     notification: {
       hotel: {
         errorTitle: "Error adding hotel",
-        errorSubtitle:"There was a problem adding the hotel. Please try again.",
+        errorSubtitle:
+          "There was a problem adding the hotel. Please try again.",
         successTitle: "Hotel added!",
         successSubtitle: "Everything is ready for your stay.",
       },
 
       transport: {
         errorTitle: "Error adding transportation",
-        errorSubtitle:"There was a problem adding the transportation. Please try again.",
+        errorSubtitle:
+          "There was a problem adding the transportation. Please try again.",
         successTitle: "Transportation added!",
         successSubtitle: "Everything is ready for your trip.",
-        warningTitle:"Vehicle Cost Comparison",
-        warningSubtitle:"The selected vehicle is more expensive than a private one. Please choose another option.",
+        warningTitle: "Vehicle Cost Comparison",
+        warningSubtitle:
+          "The selected vehicle is more expensive than a private one. Please choose another option.",
       },
 
-      tour:{
-        successTitle:"Tour added!",
-        successSubtitle:"Everything is ready for your adventure.",
-      }
+      tour: {
+        successTitle: "Tour added!",
+        successSubtitle: "Everything is ready for your adventure.",
+      },
     },
   },
 

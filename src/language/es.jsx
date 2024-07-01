@@ -1703,6 +1703,7 @@ export const es = {
       title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!"
     },
     tour: {
+      notAvailability:"No hay fechas disponibles. Por favor, intenta nueva mente más tarde.",
       tourDetails: {
         title: "Ups ¡Ocurrio un problema al agregar al carrito de compras!",
         message: "Por favor, inténtalo más tarde."
