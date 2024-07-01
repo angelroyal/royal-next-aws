@@ -52,7 +52,7 @@ export default function FormCentral(props) {
     setIsOpen(false);
   };
 
-  const closeModalAfterDelay = () => {
+  const closeModalAfterDelay = () => { 
     setTimeout(() => {
       setIsOpen(false);
     }, 3000);
