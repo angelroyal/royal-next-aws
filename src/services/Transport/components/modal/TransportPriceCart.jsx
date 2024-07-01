@@ -177,21 +177,21 @@ export default function TransportPriceCart(props) {
           break;
 
         // EXPENSIVE PRICE
-        // case "":
-        //   showNotification(
-        //     "warning",
-        //     languageData.Alerts.notification.transport.expensivePriceTitle,
-        //     languageData.Alerts.notification.transport.expensivePriceMessage,
-        //     5000
-        //   );
-        //   break;
+        case "VTX":
+          showNotification(
+            "warning",
+            languageData.Alerts.notification.transport.expensivePriceTitle,
+            languageData.Alerts.notification.transport.expensivePriceMessage,
+            5000
+          );
+          break;
 
         default:
           showNotification(
             "error",
             languageData.Alerts.notification.transport.errorTitle,
             languageData.Alerts.notification.transport.errorSubtitle,
-            3000
+            5000
           );
           break;
       }
