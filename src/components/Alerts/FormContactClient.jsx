@@ -126,13 +126,23 @@ export function FormContactClient() {
   };
 
   // LP
-  const currentRoute = window.location.pathname;
+  // const currentRoute = window.location.pathname;
+  const [currentRoute, setCurrentRoute] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentRoute(window.location.pathname);
+    }
+  }, []);
+
+  const esRutaBooking = currentRoute === `/${language}/booking`;
   // console.log(currentRoute);
+  // console.log(esRutaBooking);
   // END LP
 
   return (
     <>
-      {currentRoute === `/${language}/booking` ? null : (
+      {esRutaBooking ? null : (
         <Transition.Root show={open} as={Fragment}>
           <Dialog className="relative z-10" onClose={setOpen}>
             <Transition.Child

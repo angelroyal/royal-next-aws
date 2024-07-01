@@ -1383,10 +1383,7 @@ export const es = {
     copyLink: "Copiar Enlace",
     copy: "Enlace copiado",
     share: "Compartir",
-<<<<<<< HEAD
     download:"Descargar",
-=======
->>>>>>> b1b99861195cbee96219feb9c65f0d3f1c574c16
   },
 
   alertsPayment: {
