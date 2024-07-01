@@ -71,7 +71,7 @@ export default function FiltersHotel() {
                   </span>
                   <input
                     type="number"
-                    className="w-[132px] border border-gry-70 rounded m-m text-fs-12 text-black py-[6px] px-[16px]"
+                    className="w-[132px] border border-gry-70 rounded m-m text-fs-12 text-black py-[6px] px-[16px] focus:outline-none no-underline"
                     placeholder={languageData.SearchBox.tabTour.from}
                   />
                 </div>

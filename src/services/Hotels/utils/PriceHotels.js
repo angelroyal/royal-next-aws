@@ -30,7 +30,7 @@ export default function PriceHotels() {
           <input
             type="number"
             name="min"
-            className="w-[132px] border border-gry-70 rounded m-m text-fs-12 text-black py-[6px] px-[16px]"
+            className="w-[132px] border border-gry-70 rounded m-m text-fs-12 text-black py-[6px] px-[16px] focus:outline-none no-underline"
             placeholder={languageData.SearchBox.tabTour.from}
             value={tempPricing.min}
             onChange={handlePriceChange}
@@ -44,7 +44,7 @@ export default function PriceHotels() {
           <input
             type="number"
             name="max"
-            className="w-[132px] border border-gry-70 rounded m-m text-fs-12 text-black py-[6px] px-[16px]"
+            className="w-[132px] border border-gry-70 rounded m-m text-fs-12 text-black py-[6px] px-[16px] focus:outline-none no-underline"
             placeholder={languageData.titlesFilterTour.to}
             value={tempPricing.max}
             onChange={handlePriceChange}
