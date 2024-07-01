@@ -196,7 +196,7 @@ export default function FilterTour(props) {
                     </span>
                     <input
                       type="text"
-                      className="border border-gry-70 rounded text-fs-13 py-[6px] px-[15px] w-[100px]"
+                      className="border border-gry-70 rounded text-fs-13 py-[6px] px-[15px] w-[100px] focus:outline-none no-underline"
                       placeholder={languageData.SearchBox.tabTour.from}
                       value={range[0]}
                       onChange={(e) => handleInputChange(0, e.target.value)}
@@ -208,7 +208,7 @@ export default function FilterTour(props) {
                     </span>
                     <input
                       type="text"
-                      className="border border-gry-70 rounded text-fs-13 py-[6px] px-[15px] w-[100px]"
+                      className="border border-gry-70 rounded text-fs-13 py-[6px] px-[15px] w-[100px] focus:outline-none no-underline"
                       placeholder={languageData.titlesFilterTour.to}
                       value={range[1]}
                       onChange={(e) => handleInputChange(1, e.target.value)}
