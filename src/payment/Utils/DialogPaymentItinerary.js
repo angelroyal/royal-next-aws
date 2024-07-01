@@ -196,20 +196,36 @@ export function DialogPaymentItinerary(props) {
                   </p>
                 </div>
               </div>
-
-              <bottom
-                onClick={() => setSmShow(!smShow)}
-                className="bg-or-100 rounded-full px-4 py-2 flex items-center gap-x-2 text-white text-fs-12 m-b"
-              >
-                <Image
-                  className="!w-4 h-[18px]"
-                  alt="share icon modal"
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
-                  width={16}
-                  height={18}
-                />
-                {languageData.shareLink.share}
-              </bottom>
+              <div className="flex gap-1">
+                {/* BTN SHARE */}
+                <button
+                  onClick={() => setSmShow(!smShow)}
+                  className="border border-white rounded-full flex gap-2 py-[.4rem] px-4"
+                >
+                  <Image
+                    className="!w-4 h-[18px]"
+                    alt="share icon modal"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
+                    width={16}
+                    height={18}
+                  />
+                  {/* {languageData.shareLink.share} */}
+                </button>
+                {/* BTN DOWNLOAD */}
+                <button
+                  onClick={() => setSmShow(!smShow)}
+                  className="bg-or-100 rounded-full px-4 py-2 flex items-center gap-x-2 text-white text-fs-12 m-b"
+                >
+                  <Image
+                    className="!w-4 h-[18px]"
+                    alt="download icon modal"
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/download-i/download-w.svg`}
+                    width={16}
+                    height={18}
+                  />
+                  {languageData.shareLink.download}
+                </button>
+              </div>
             </div>
           )}
         </div>

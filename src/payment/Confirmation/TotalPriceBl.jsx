@@ -8,7 +8,7 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
   const { infoReservation } = useContext(BookingContext);
   const { languageData } = useContext(LanguageContext);
   return (
-    <div className="hidden lg:flex justify-between mt-[1.6rem] w-full py-[0.9rem] pl-[40px] !pr-4 bg-bl-100 rounded-bl-[2.4rem] !pr-4 !rounded-br-lg">
+    <div className="hidden lg:flex justify-between mt-[1.6rem] w-full py-[0.9rem] pl-[40px] bg-bl-100 rounded-bl-[2.4rem] !pr-4 !rounded-br-lg">
       <span className="flex items-center gap-x-1 text-white m-b text-fs-14">
         {languageData.confirmation.bookingData.numberConfirmation}:
         <div className="h-[20px] !px-2 !py-1 bg-grn-10 rounded text-fs-10 m-b text-grn-100 text-center">
@@ -28,9 +28,9 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
             .<sup>{(infoReservation.totalPrice % 1).toFixed(2).slice(2)}</sup>
           </p>
         </span>
-
+        {/* BTN SHARE */}
         <button
-          className="bg-or-100 rounded-full flex gap-2 py-2 px-4"
+          className="border border-white rounded-full flex gap-2 py-[.4rem] px-4"
           onClick={handleIconClick}
         >
           <Image
@@ -41,7 +41,24 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
           />
 
           <span className="m-b text-white text-fs-12">
-            {languageData.shareLink.titleShare}
+            {languageData.shareLink.share}
+          </span>
+        </button>
+
+        {/* BTN DOWNLOAD */}
+        <button
+          className="bg-or-100 rounded-full flex gap-2 py-2 px-4"
+          onClick={handleIconClick}
+        >
+          <Image
+            src={`${process.env.NEXT_PUBLIC_URL}icons/download-i/download-w.svg`}
+            alt="icon-download"
+            width={16}
+            height={18}
+          />
+
+          <span className="m-b text-white text-fs-12">
+            {languageData.shareLink.downloadItinerary}
           </span>
         </button>
 

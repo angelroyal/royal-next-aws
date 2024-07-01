@@ -1369,12 +1369,14 @@ export const es = {
 
   shareLink: {
     titleShare: "Compartir Itinerario",
+    downloadItinerary:"Descargar Itinerario",
     titleShareModal: "Comparte tu itinerario con tus amigos",
     whatsApp: "Whatsapp",
     email: "Email",
     copyLink: "Copiar Enlace",
     copy: "Enlace copiado",
-    share: "Compartir"
+    share: "Compartir",
+    download:"Descargar",
   },
 
   alertsPayment: {
