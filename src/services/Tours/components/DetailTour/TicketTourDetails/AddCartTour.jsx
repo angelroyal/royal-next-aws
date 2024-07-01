@@ -94,38 +94,49 @@ export default function AddCartTour(props) {
       console.error("error 1", error);
       setIsLoader(false);
 
-      // CHOSE DATE ALERT
-      if (error.response.status === 400) {
-        showNotification(
-          "warning",
-          languageData.Alerts.tour.choseDate.title,
-          languageData.Alerts.tour.choseDate.message,
-          5000
-        );
+      switch (error.response.data.message) {
+        // CHOSE OTHER DATE ALERT
+        case "DNV":
+        case "La fecha de salida debe ser 2 días después de la fecha actual":
+          showNotification(
+            "warning",
+            languageData.Alerts.tour.choseDate.title,
+            languageData.Alerts.tour.choseDate.message,
+            5000
+          );
+          break;
+
+        // QUANTITY PERSON ALERT
+        case "The quantity of people on the activity is less than the configurated.":
+          showNotification(
+            "warning",
+            languageData.Alerts.tour.maxPerson.title,
+            languageData.Alerts.tour.maxPerson.message,
+            5000
+          );
+          break;
+
+          // GENERAL ALERT AND NOT AVAILABILITY ACTIVITY
+        case "NAV":
+        case "unexpected provider error occurred, description not added in database yet":
+          showNotification(
+            "warning",
+            languageData.Alerts.tour.NotAvailability.title,
+            languageData.Alerts.tour.NotAvailability.message,
+            5000
+          );
+          break;
+
+        default:
+          showNotification(
+            "error",
+            languageData.Alerts.tour.tourDetails.title,
+            languageData.Alerts.tour.tourDetails.message,
+            3000
+          );
+          break;
       }
 
-      // QUANTITY PERSON ALERT
-      if (
-        error.response.status === 422 &&
-        error.response.data.message ===
-          "The quantity of people on the activity is less than the configurated."
-      ) {
-        showNotification(
-          "warning",
-          languageData.Alerts.tour.maxPerson.title,
-          languageData.Alerts.tour.maxPerson.message,
-          5000
-        );
-        // GENERAL ALERT
-      }
-      if (error.response.data.message === "not availability") {
-        showNotification(
-          "warning",
-          languageData.Alerts.tour.NotAvailability.title,
-          languageData.Alerts.tour.NotAvailability.message,
-          5000
-        );
-      }
       if (error.response.status >= 405 && error.response.status !== 422) {
         showNotification(
           "error",

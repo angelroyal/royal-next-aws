@@ -134,21 +134,66 @@ export default function TransportPriceCart(props) {
     } catch (error) {
       console.error("error", error);
       setIsLoader(false);
-      if(error.response.status === 422){
-        showNotification(
-          "warning",
-          languageData.Alerts.notification.transport.warningTitle,
-          languageData.Alerts.notification.transport.warningSubtitle,
-          5000
-        );
-      }
-      if (error.response.status >= 400  && error.response.status !== 422 ) {
-        showNotification(
-          "error",
-          languageData.Alerts.notification.transport.errorTitle,
-          languageData.Alerts.notification.transport.errorSubtitle,
-          3000
-        );
+
+      switch (error.response.data.message) {
+        // The price does not correspond
+        case "PRE":
+          showNotification(
+            "warning",
+            languageData.Alerts.notification.transport.doesNotPriceTitle,
+            languageData.Alerts.notification.transport.doesNotPriceMessage,
+            5000
+          );
+          break;
+
+        // SELECT OTHER DATE
+        case "DIP":
+          showNotification(
+            "warning",
+            languageData.Alerts.notification.transport.selectOtherDateTitle,
+            languageData.Alerts.notification.transport.selectOtherDateMessage,
+            5000
+          );
+          break;
+
+        // NOT AVAILABILITY
+        case "DHV":
+          showNotification(
+            "warning",
+            languageData.Alerts.notification.transport.notAvailableTitle,
+            languageData.Alerts.notification.transport.notAvailableMessage,
+            5000
+          );
+          break;
+
+        // PAXES LIMIT
+        case "NBE":
+          showNotification(
+            "warning",
+            languageData.Alerts.notification.transport.paxesLimitTitle,
+            languageData.Alerts.notification.transport.paxesLimitMessage,
+            5000
+          );
+          break;
+
+        // EXPENSIVE PRICE
+        // case "":
+        //   showNotification(
+        //     "warning",
+        //     languageData.Alerts.notification.transport.expensivePriceTitle,
+        //     languageData.Alerts.notification.transport.expensivePriceMessage,
+        //     5000
+        //   );
+        //   break;
+
+        default:
+          showNotification(
+            "error",
+            languageData.Alerts.notification.transport.errorTitle,
+            languageData.Alerts.notification.transport.errorSubtitle,
+            3000
+          );
+          break;
       }
     }
   };

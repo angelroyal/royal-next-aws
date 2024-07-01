@@ -1741,9 +1741,19 @@ export const en = {
           "There was a problem adding the transportation. Please try again.",
         successTitle: "Transportation added!",
         successSubtitle: "Everything is ready for your trip.",
-        warningTitle: "Vehicle Cost Comparison",
-        warningSubtitle:
+        expensivePriceTitle: "Vehicle Cost Comparison",
+        expensivePriceMessage:
           "The selected vehicle is more expensive than a private one. Please choose another option.",
+        selectOtherDateTitle: "Date Policy",
+        selectOtherDateMessage: "The date must be from today onwards.",
+        notAvailableTitle: "Vehicle Availability",
+        notAvailableMessage:
+          "The vehicle is not available for the selected date and time.",
+        paxesLimitTitle: "Excess passengers",
+        paxesLimitMessage: "The passengers exceed the vehicle's capacity.",
+        doesNotPriceTitle: "The price does not correspond",
+        doesNotPriceMessage:
+          "The displayed price does not match the final price.",
       },
 
       tour: {
