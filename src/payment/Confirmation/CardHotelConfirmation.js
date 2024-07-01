@@ -298,16 +298,16 @@ export default function CardHotelConfirmation(props) {
                                     src={`${process.env.NEXT_PUBLIC_URL}icons/${
                                       roomBed.cancelPolicies
                                         .cancellationCode === "NOR"
-                                        ? "error/error-r.svg"
-                                        : "done/done-g.svg"
+                                        ? "done/done-g.svg"
+                                        : "error/error-r.svg"
                                     }`}
                                     width={10}
                                     height={10}
                                     alt={`${
                                       roomBed.cancelPolicies
                                         .cancellationCode === "NOR"
-                                        ? "error icon confirmation"
-                                        : "done icon confirmation"
+                                        ? "done icon confirmation"
+                                        : "error icon confirmation"
                                     }`}
                                     className="w-[10px] h-[10px]"
                                   />
@@ -315,14 +315,14 @@ export default function CardHotelConfirmation(props) {
                                     className={`m-0 text-fs-10 m-s-b ${
                                       roomBed.cancelPolicies
                                         .cancellationCode === "NOR"
-                                        ? "text-gry-100"
-                                        : "text-grn-100"
+                                        ? "text-grn-100"
+                                        : "text-gry-100"
                                     }`}
                                   >
                                     {roomBed.cancelPolicies.cancellationCode ===
                                     "NOR"
-                                      ? languageData.itinerary.nonRefundable
-                                      : languageData.itinerary.refundable}
+                                      ? languageData.itinerary.refundable
+                                      : languageData.itinerary.nonRefundable}
                                   </p>
                                 </div>
                               )}
