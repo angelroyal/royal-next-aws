@@ -20,17 +20,22 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
     // const cartId = "1ef38802-3c19-616c-9b76-3f67f7113acas";
     const cartId = searchParams.get("uid");
     setIsDownloading(true);
+    // CHECK TO KNOW IF THE PDF EXISTS
     GetConfirmationPDF(cartId, language)
       .then((response) => {
         if (response.status === 200) {
-          const sizePDF = SizePDF(
+          // CHECK IF THE PDF HAS CONTENT
+          SizePDF(
             `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${cartId}?lang=${language}`
           )
             .then((response) => {
               if (response > 0) {
+                // DOWNLOAD PDF
                 window.open(
                   `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${cartId}?lang=${language}`
                 );
+
+                // DOWNLOAD PDF SUCCESSFUL ALERT
                 showNotification(
                   "success",
                   languageData.shareLink.downloadSuccess,
@@ -38,6 +43,7 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
                   5000
                 );
               } else {
+                // ALERT EMPTY PDF
                 showNotification(
                   "warning",
                   languageData.shareLink.PDFNotFound,
