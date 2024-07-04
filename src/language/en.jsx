@@ -1373,6 +1373,7 @@ export const en = {
     downloadFiledTitle:"Download failed",
     downloadFiledMessage:"Reservation PDF not found.",
     downloadSuccess:"Successful download",
+    PDFNotFound:"PDF not found",
     titleShareModal: "Share your itinerary with your friends",
     whatsApp: "Whatsapp",
     email: "Email",

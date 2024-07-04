@@ -159,3 +159,16 @@ export async function GetConfirmationPDF(uid, language) {
     throw error;
   }
 }
+
+
+
+export async function SizePDF(pdfUrl){
+  try {
+    const headResponse = await axios.head(pdfUrl);
+      const contentLength = headResponse.headers['content-length'];
+      console.log(`El tamaño del archivo es: ${contentLength} bytes`);
+      return contentLength
+  } catch (error) {
+    console.log(error);
+  }
+}

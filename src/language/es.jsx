@@ -1382,6 +1382,7 @@ export const es = {
     downloadFiledTitle:"Descarga fallida",
     downloadFiledMessage:"No se encontró el PDF de la reservación.",
     downloadSuccess:"Descarga exitosa",
+    PDFNotFound:"No se encontró el PDF",
     titleShareModal: "Comparte tu itinerario con tus amigos",
     whatsApp: "Whatsapp",
     email: "Email",

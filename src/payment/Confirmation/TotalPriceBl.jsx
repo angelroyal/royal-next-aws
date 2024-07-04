@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { BookingContext } from "../context/BookingContext";
-import { GetConfirmationPDF } from "../Api/fetchDataItinerary";
+import { GetConfirmationPDF, SizePDF } from "../Api/fetchDataItinerary";
 import { ShareContainer } from "@/utils/booking/ShareContainer";
 import NotificationType from "@/components/Alerts/Notifications/NotificationType";
 import { useNotification } from "@/components/Alerts/Notifications/useNotification";
@@ -23,18 +23,39 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
     GetConfirmationPDF(cartId, language)
       .then((response) => {
         if (response.status === 200) {
-          window.open(
+          const sizePDF = SizePDF(
             `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${cartId}?lang=${language}`
-          );
-
-          showNotification(
-            "success",
-            languageData.shareLink.downloadSuccess,
-            "",
-            5000
-          );
+          )
+            .then((response) => {
+              if (response > 0) {
+                window.open(
+                  `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${cartId}?lang=${language}`
+                );
+                showNotification(
+                  "success",
+                  languageData.shareLink.downloadSuccess,
+                  "",
+                  5000
+                );
+              } else {
+                showNotification(
+                  "warning",
+                  languageData.shareLink.PDFNotFound,
+                  "",
+                  5000
+                );
+              }
+            })
+            .catch((error) => {
+              console.log("error", error);
+              showNotification(
+                "error",
+                languageData.shareLink.downloadFiledTitle,
+                languageData.shareLink.downloadFiledMessage,
+                5000
+              );
+            });
         }
-
         setIsDownloading(false);
       })
       .catch((error) => {
