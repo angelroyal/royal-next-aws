@@ -42,13 +42,13 @@ export function ImageNotFoundModalHotel() {
 
   return languageActual === "es" ? (
     <img
-      className="object-fit-cover width100 image-modal-hotel selected-image"
+      className="object-cover w-full image-modal-hotel selected-image"
       src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-h-es.webp`}
       alt="no-availability-d-h-es"
     />
   ) : (
     <img
-      className="object-fit-cover width100 image-modal-hotel selected-image"
+      className="object-cover w-full image-modal-hotel selected-image"
       src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-h-en.webp`}
       alt="no-availability-d-h-en"
     />
