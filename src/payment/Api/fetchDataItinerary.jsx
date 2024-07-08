@@ -1,4 +1,5 @@
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import axios from "axios";
 
 export const fetchDataItinerary = async (
   setData,
@@ -147,3 +148,27 @@ export const SendPaymentRequest = (paymentData) => {
       throw error;
     });
 };
+
+export async function GetConfirmationPDF(uid, language) {
+  try {
+    const url = `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${uid}?lang=${language}&available=true`
+    const response = await axios.get(url);
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+
+
+export async function SizePDF(pdfUrl){
+  try {
+    const headResponse = await axios.head(pdfUrl);
+      const contentLength = headResponse.headers['content-length'];
+      console.log(`El tamaño del archivo es: ${contentLength} bytes`);
+      return contentLength
+  } catch (error) {
+    console.log(error);
+  }
+}

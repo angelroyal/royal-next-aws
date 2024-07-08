@@ -215,6 +215,7 @@ export const es = {
     titleReadyH: "!Tu próximo destino está listo!",
     titleReadyT: "!Tu próximo aventura está listo!",
     subtitleReady: "Revisa los detalles completos en tu carrito.",
+    checkInAndOut: "Check in y check out:",
     reservationDate: "Fecha reserva:",
     titleKeep: "Sigue explorando",
     subtitleKeep:
@@ -1377,6 +1378,11 @@ export const es = {
   shareLink: {
     titleShare: "Compartir Itinerario",
     downloadItinerary:"Descargar Itinerario",
+    downloadingItinerary:"Descargando Itinerario...",
+    downloadFiledTitle:"Descarga fallida",
+    downloadFiledMessage:"No se encontró el PDF de la reservación.",
+    downloadSuccess:"Descarga exitosa",
+    PDFNotFound:"No se encontró el PDF",
     titleShareModal: "Comparte tu itinerario con tus amigos",
     whatsApp: "Whatsapp",
     email: "Email",

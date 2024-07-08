@@ -215,6 +215,7 @@ export const en = {
     titleReadyH: "Your next destination is ready!",
     titleReadyT: "Your next adventure is ready!",
     subtitleReady: "Check the full details in your cart.",
+    checkInAndOut: "Check in and check out:",
     reservationDate: "Reservation date:",
     titleKeep: "Keep exploring",
     subtitleKeep:
@@ -1368,6 +1369,11 @@ export const en = {
   shareLink: {
     titleShare: "Share Itinerary",
     downloadItinerary:"Download itinerary",
+    downloadingItinerary:"Downloading itinerary...",
+    downloadFiledTitle:"Download failed",
+    downloadFiledMessage:"Reservation PDF not found.",
+    downloadSuccess:"Successful download",
+    PDFNotFound:"PDF not found",
     titleShareModal: "Share your itinerary with your friends",
     whatsApp: "Whatsapp",
     email: "Email",
