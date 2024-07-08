@@ -7,7 +7,7 @@ let API_ENDPOINT;
 if (isDevelopment) {
   API_ENDPOINT = "https://staywuw.com/api2/confirmation/start";
 } else {
-  API_ENDPOINT = "https://api.royalvacationsmexico.com/confirmation/start";
+  API_ENDPOINT = "https://staywuw.com/api1/confirmation/start";
 }
 
 export default function ConfirmationEmail(props) {
