@@ -77,8 +77,11 @@ export default function DestinationReady({ type, reservationDetails }) {
           </div>
 
           {/* DATE */}
-          <span className="m-m text-gry-100 text-fs-14 flex items-center">
-            {languageData.recommendations.reservationDate}{" "}
+          <span className="m-m text-gry-100 text-fs-14 flex items-center gap-x-1">
+            {service === "hotel"
+              ? languageData.recommendations.checkInAndOut
+              : languageData.recommendations.reservationDate}
+
             {service === "hotel" ? (
               <div className="flex items-start mr-[4px]">
                 <p className="m-0 !border-r pr-[4px] mr-[4px] !border-gry-100 ">

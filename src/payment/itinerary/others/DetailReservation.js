@@ -191,13 +191,15 @@ export default function ReservationShortInfo(props) {
               className="rounded-full py-[6.8px] bg-or-100 !px-4 flex items-center gap-x-2 text-white text-fs-10 m-b"
             >
               <Image
-                src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
-                alt="share icon reservation"
-                className="!w-4 h-[18px]"
-                width={14}
+                src={`${process.env.NEXT_PUBLIC_URL}icons/download-i/download-w.svg`}
+                alt="icon-download"
+                width={16}
                 height={18}
               />
-              {languageData.shareLink.titleShare}
+
+              <span className="m-b text-white text-fs-12">
+                {languageData.shareLink.downloadItinerary}
+              </span>
             </bottom>
           </div>
         </>

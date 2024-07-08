@@ -126,8 +126,18 @@ export function FormContactClient() {
   };
 
   // LP
-  const currentRoute = window.location.pathname;
+  // const currentRoute = window.location.pathname;
+  const [currentRoute, setCurrentRoute] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentRoute(window.location.pathname);
+    }
+  }, []);
+
+  // const bookingRoute = currentRoute === `/${language}/booking`;
   // console.log(currentRoute);
+  // console.log(bookingRoute);
   // END LP
 
   return (
