@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import React, { useState, useEffect, useContext } from "react";
 
 import {
@@ -25,7 +26,6 @@ export default function Payment() {
   const [data, setData] = useState(null);
   const { itineraryData } = useCartAxios();
   const [showClr, setShowClr] = useState(null);
-  const [changeButton, setChangeButton] = useState(0);
   const { languageData } = useContext(LanguageContext);
   const [skeletonShow, setSkeletonShow] = useState(true);
   const [hasActivities, setHasActivities] = useState(false);
@@ -40,7 +40,7 @@ export default function Payment() {
     };
   }, []);
 
- 
+
   useEffect(() => {
     scrollToTop();
     fetchDataItinerary(
@@ -51,11 +51,20 @@ export default function Payment() {
       setShowClr,
       setErrorAlertBooking
     );
-    
+
   }, [itineraryData]);
 
   return (
     <div className="w-full h-full relative bg-[#f6f6f6]">
+      <Script
+        src="https://js.openpay.mx/openpay.v1.min.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://js.openpay.mx/openpay-data.v1.min.js"
+        strategy="beforeInteractive"
+      />
+
       {openDialog && (
         <div className="backdrop-brightness-50 w-full h-full absolute z-[1]" />
       )}
@@ -156,7 +165,6 @@ export default function Payment() {
           handleStepChange={handleStepChange}
           reservationData={data}
           step={step}
-          setChangeButton={setChangeButton}
         />
       )}
     </div>
