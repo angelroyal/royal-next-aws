@@ -268,6 +268,26 @@ export const es = {
   //////////////////////// 𝓗𝓞𝓣𝓔𝓛 HOTEL 𝓗𝓞𝓣𝓔𝓛 //////////////////////////////
   /*********************************************************/
 
+  reviewsHotel: {
+    opinions: "escribió una opinión",
+    readMore: "Leer más",
+    readLess: "Leer menos",
+    mostRecent: "Más recientes",
+    mostNotable: "Más destacados",
+    tripadvisorRating: "Valoración general en Tripadvisor",
+    opinions: "opiniones",
+    guestReviews: "Opiniones de huéspedes",
+    showAllOptions: "Mostrar todas las opciones",
+    viewReviews:"ver opiniones",
+    travelType: {
+      family: "Viaje de familia",
+      couple: "Viaje de pareja",
+      alone: "Viaje solo",
+      business: "Viaje negocio",
+      friends: "Viaje de amigos",
+    },
+  },
+
   homeDestinations: [
     {
       titleTop: {
@@ -1377,19 +1397,19 @@ export const es = {
 
   shareLink: {
     titleShare: "Compartir Itinerario",
-    downloadItinerary:"Descargar Itinerario",
-    downloadingItinerary:"Descargando Itinerario...",
-    downloadFiledTitle:"Descarga fallida",
-    downloadFiledMessage:"No se encontró el PDF de la reservación.",
-    downloadSuccess:"Descarga exitosa",
-    PDFNotFound:"No se encontró el PDF",
+    downloadItinerary: "Descargar Itinerario",
+    downloadingItinerary: "Descargando Itinerario...",
+    downloadFiledTitle: "Descarga fallida",
+    downloadFiledMessage: "No se encontró el PDF de la reservación.",
+    downloadSuccess: "Descarga exitosa",
+    PDFNotFound: "No se encontró el PDF",
     titleShareModal: "Comparte tu itinerario con tus amigos",
     whatsApp: "Whatsapp",
     email: "Email",
     copyLink: "Copiar Enlace",
     copy: "Enlace copiado",
     share: "Compartir",
-    download:"Descargar",
+    download: "Descargar",
   },
 
   alertsPayment: {

@@ -31,16 +31,16 @@ export const saveToCart = async (requestData) => {
 };
 
 export async function GetReviewsTripe(locationId) {
-  console.log(locationId);
-  const options = {
-    method: "GET",
-    url: `https://api.content.tripadvisor.com/api/v1/location/${locationId}/reviews`,
-    params: { key: "2267BAB9C20C49D88CBF1F6DB6478E0C", language: "en" },
-    headers: { accept: "application/json" },
-  };
+  // console.log(locationId);
+  // const options = {
+  //   method: "GET",
+  //   url: `https://api.content.tripadvisor.com/api/v1/location/${locationId}/reviews`,
+  //   params: { key: "2267BAB9C20C49D88CBF1F6DB6478E0C", language: "en" },
+  //   headers: { accept: "application/json" },
+  // };
 
   try {
-    const response = await axios.request(options);
+    const response = await axios.get(`https://staywuw.com/api2?locationId=${locationId}`);
     return response;
   } catch (error) {
     console.log(error);

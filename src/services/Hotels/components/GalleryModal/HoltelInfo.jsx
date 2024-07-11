@@ -3,10 +3,21 @@
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 import { useContext } from "react";
+import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export function HotelInfo(props) {
   const { hotel } = props;
   const { languageData } = useContext(LanguageContext);
+  const { reviewsData } = useContext(RoomsHotelContext);
+
+  const handleButtonClick = () => {
+    if (typeof window !== "undefined") {
+      const targetElement = document.getElementById("review-trip-advisor");
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <>
@@ -20,13 +31,37 @@ export function HotelInfo(props) {
             height={12}
           />
 
-          <span className="text-fs-12 text-nowrap ">{languageData.modalHotel.Highly}</span>
+          <span className="text-fs-12 text-nowrap ">
+            {languageData.modalHotel.Highly}
+          </span>
         </div>
       )}
 
       <h1 className="m-b text-fs-24">{hotel.name}</h1>
 
-      <TotalStars stars={hotel.stars} width={"w-[16px]"} height={"h-[16px]"}/>
+      <div className="flex items-center gap-x-2">
+        <TotalStars
+          stars={hotel.stars}
+          width={"w-[16px]"}
+          height={"h-[16px]"}
+        />
+
+        <button
+          className="flex gap-x-2 text-bl-100 text-fs-12 m-m focus:outline-none"
+          onClick={handleButtonClick}
+        >
+          <img
+            src={`${process.env.NEXT_PUBLIC_URL}img/general/tripadvisor-logo-circle-green.png`}
+            alt="tripadvisor icon"
+            width={24}
+            height={24}
+          />
+          
+          {`(${reviewsData ? reviewsData.length : '...'}) ${
+            languageData.reviewsHotel.viewReviews
+          }`}
+        </button>
+      </div>
 
       <div className="mt-3 flex mb-[6]">
         <img

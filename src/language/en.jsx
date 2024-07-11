@@ -266,6 +266,26 @@ export const en = {
   //////////////////////// 𝓗𝓞𝓣𝓔𝓛 HOTEL 𝓗𝓞𝓣𝓔𝓛 //////////////////////////////
   /*********************************************************/
 
+  reviewsHotel: {
+    opinions: "wrote an opinion",
+    readMore: "Read more",
+    readLess: "Read less",
+    mostRecent: "Most recent",
+    mostNotable: "Most notable",
+    tripadvisorRating:"Overall rating on Tripadvisor",
+    opinions:"opinions",
+    guestReviews:"Guest reviews",
+    showAllOptions:"Show all options",
+    viewReviews:"view reviews",
+    travelType:{
+      family:"Family trip",
+      couple:"Couple trip",
+      alone:"Travel alone",
+      business :"Business  trip",
+      friends:"Friends trip",
+    }
+  },
+
   homeDestinations: [
     {
       titleTop: {
@@ -1368,19 +1388,19 @@ export const en = {
 
   shareLink: {
     titleShare: "Share Itinerary",
-    downloadItinerary:"Download itinerary",
-    downloadingItinerary:"Downloading itinerary...",
-    downloadFiledTitle:"Download failed",
-    downloadFiledMessage:"Reservation PDF not found.",
-    downloadSuccess:"Successful download",
-    PDFNotFound:"PDF not found",
+    downloadItinerary: "Download itinerary",
+    downloadingItinerary: "Downloading itinerary...",
+    downloadFiledTitle: "Download failed",
+    downloadFiledMessage: "Reservation PDF not found.",
+    downloadSuccess: "Successful download",
+    PDFNotFound: "PDF not found",
     titleShareModal: "Share your itinerary with your friends",
     whatsApp: "Whatsapp",
     email: "Email",
     copyLink: "Copy Link",
     copy: "Copy Link",
     share: "Share",
-    download:"Download",
+    download: "Download",
   },
 
   alertsPayment: {

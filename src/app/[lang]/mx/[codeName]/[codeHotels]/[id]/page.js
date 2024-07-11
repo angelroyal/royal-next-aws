@@ -15,7 +15,7 @@ import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext"
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
-import { ReviewsHotel } from "@/services/Hotels/components/DetailHotel/ReviewsHotel";
+import { ReviewsHotel } from "@/services/Hotels/components/DetailHotel/Reviews/ReviewsHotel";
 
 export async function generateMetadata({ params }) {
   try {
