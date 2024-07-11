@@ -60,6 +60,7 @@ export default function FormCentral(props) {
     cartId: uid,
     cardTitular: nameCard,
     cardNumber: numberCard.slice(-4),
+    serviceType: paymentProvider.toLowerCase(),
     ...(hotelRH ? { guests: hotelRH } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
     ...(process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY" ? {
