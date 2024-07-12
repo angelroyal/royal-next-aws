@@ -15,9 +15,6 @@ import {
   openpaySuccessResponseHandler,
 } from "../ActionsForms/paymentHandlers";
 
-const openpayId = process.env.NEXT_PUBLIC_OPENPAY_ID;
-const openpayApiKey = process.env.NEXT_PUBLIC_OPENPAY_API_KEY;
-
 export default function FormCentral(props) {
   const paymentProvider = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER;
 
@@ -55,6 +52,7 @@ export default function FormCentral(props) {
       window.OpenPay.setId(process.env.NEXT_PUBLIC_OPENPAY_ID);
       window.OpenPay.setApiKey(process.env.NEXT_PUBLIC_OPENPAY_API_KEY);
       window.OpenPay.setSandboxMode(true);
+      console.log("entro a openpay para setear credenciales");
     }
   }, [paymentProvider]);
 
