@@ -20,27 +20,36 @@ import DetailsPayment from "./itinerary/others/DetailsPayment";
 import ConfirmReservation from "./Confirmation/ConfirmReservation";
 import { StepsToPayments, StepsToPaymentsM } from "../hooks/StepsToPay";
 import { DialogPaymentItinerary } from "./Utils/DialogPaymentItinerary";
+import { loadOpenpayScripts, unloadOpenpayScripts } from "./config/openpayScripts";
 
 export default function Payment() {
   const [data, setData] = useState(null);
   const { itineraryData } = useCartAxios();
   const [showClr, setShowClr] = useState(null);
-  const [changeButton, setChangeButton] = useState(0);
   const { languageData } = useContext(LanguageContext);
   const [skeletonShow, setSkeletonShow] = useState(true);
   const [hasActivities, setHasActivities] = useState(false);
   const [hasTransport, setHasTransport] = useState(false);
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
   const { step, handleStepChange, openDialog } = useContext(BookingContext);
+
   useEffect(() => {
-    loadConektaScripts();
+    if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+      loadConektaScripts();
+    } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+      loadOpenpayScripts();
+    }
 
     return () => {
-      unloadConektaScripts();
+      if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+        unloadConektaScripts();
+      } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+        unloadOpenpayScripts();
+      }
     };
   }, []);
 
- 
+
   useEffect(() => {
     scrollToTop();
     fetchDataItinerary(
@@ -51,11 +60,12 @@ export default function Payment() {
       setShowClr,
       setErrorAlertBooking
     );
-    
+
   }, [itineraryData]);
 
   return (
     <div className="w-full h-full relative bg-[#f6f6f6]">
+
       {openDialog && (
         <div className="backdrop-brightness-50 w-full h-full absolute z-[1]" />
       )}
@@ -156,7 +166,6 @@ export default function Payment() {
           handleStepChange={handleStepChange}
           reservationData={data}
           step={step}
-          setChangeButton={setChangeButton}
         />
       )}
     </div>

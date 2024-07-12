@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import ClientDataT from "./FormClientData";
 import FormCreditCard from "./FormCreditCard";
@@ -8,14 +8,23 @@ import { PaymentContext } from "@/payment/context/PaymentContext";
 import { BookingContext } from "@/payment/context/BookingContext";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT";
-import { handleSubmitPayment as handleSubmitPaymentFunction } from "../ActionsForms/conektaHandlers";
+import {
+  conektaErrorResponseHandler,
+  conektaSuccessResponseHandler,
+  openpayErrorResponseHandler,
+  openpaySuccessResponseHandler,
+} from "../ActionsForms/paymentHandlers";
 
 export default function FormCentral(props) {
-  const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
-  window.Conekta.setPublicKey(conektaPublicKey);
+  const paymentProvider = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER;
 
-  const { activityPreBooking, activityTrue, dataItinerary, transportTrue } =
-    props;
+  const {
+    activityPreBooking,
+    activityTrue,
+    dataItinerary,
+    transportTrue,
+  } = props;
+
   const {
     firstName,
     lastName,
@@ -25,16 +34,29 @@ export default function FormCentral(props) {
     numberCard,
     formActivityItems,
     hotelRH,
+    expirationMonth,
+    expirationYear,
+    cvvCard
   } = useContext(PaymentContext);
 
   const { handleStepChange } = useContext(BookingContext);
 
-  const [animationData, setAnimationData] = useState("LoadingData");
   const [isOpen, setIsOpen] = useState(false);
+  const [animationData, setAnimationData] = useState("LoadingData");
 
   const searchParams = new URLSearchParams(window.location.search);
   const uid = searchParams.get("uid");
 
+  useEffect(() => {
+    if (paymentProvider === "OPENPAY") {
+      window.OpenPay.setId(process.env.NEXT_PUBLIC_OPENPAY_ID);
+      window.OpenPay.setApiKey(process.env.NEXT_PUBLIC_OPENPAY_API_KEY);
+      window.OpenPay.setSandboxMode(true);
+      console.log("entro a openpay para setear credenciales");
+    }
+  }, [paymentProvider]);
+
+  // PAYLOAD PAYMENT
   const paymentData = {
     name: firstName,
     lastname: lastName,
@@ -44,31 +66,53 @@ export default function FormCentral(props) {
     cartId: uid,
     cardTitular: nameCard,
     cardNumber: numberCard.slice(-4),
+    serviceType: paymentProvider.toLowerCase(),
     ...(hotelRH ? { guests: hotelRH } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
+    ...(paymentProvider === "OPENPAY" ? {
+      deviceId: window.OpenPay.deviceData.setup("card-form"),
+      description: "solo si es para openpay"
+    } : {})
   };
 
   const closeModal = () => {
     setIsOpen(false);
   };
 
-  const closeModalAfterDelay = () => { 
+  const closeModalAfterDelay = () => {
     setTimeout(() => {
       setIsOpen(false);
     }, 3000);
   };
 
   const handleSubmitPayment = (event) => {
+    event.preventDefault();
     setIsOpen(true);
-    handleSubmitPaymentFunction(
-      event,
-      paymentData,
-      setAnimationData,
-      handleStepChange,
-      closeModalAfterDelay
-    );
-  };
+    setAnimationData("LoadingData");
 
+    if (paymentProvider === "CONEKTA") {
+      const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
+      window.Conekta.setPublicKey(conektaPublicKey);
+
+      window.Conekta.Token.create(
+        event.target,
+        (token) => conektaSuccessResponseHandler(token, paymentData, setAnimationData, handleStepChange, closeModalAfterDelay),
+        (response) => conektaErrorResponseHandler(response, setAnimationData, closeModalAfterDelay)
+      );
+    } else if (paymentProvider === "OPENPAY") {
+      window.OpenPay.token.create(
+        {
+          "card_number": numberCard,
+          "holder_name": nameCard,
+          "expiration_year": expirationYear.slice(-2),
+          "expiration_month": expirationMonth,
+          "cvv2": cvvCard,
+        },
+        (response) => openpaySuccessResponseHandler(response, paymentData, setAnimationData, handleStepChange, closeModalAfterDelay),
+        (error) => openpayErrorResponseHandler(error, setAnimationData, closeModalAfterDelay)
+      );
+    }
+  };
 
   return (
     <>
@@ -88,9 +132,7 @@ export default function FormCentral(props) {
 
         {activityTrue === true || transportTrue === true ? (
           !activityPreBooking && <SkeletonActivitiesTourPT />
-        ) : (
-          <></>
-        )}
+        ) : null}
 
         <FormCreditCard />
       </form>

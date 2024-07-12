@@ -18,6 +18,9 @@ export const RoomsHotelProvider = ({ children }) => {
     date: null,
   });
 
+  // REVIEWS TRIPADVISOR
+  const [reviewsData, setReviewData] = useState(null);
+
   const handleFetchPostRooms = async (requestBody) => {
     setRoomsData(null);
     try {
@@ -45,6 +48,8 @@ export const RoomsHotelProvider = ({ children }) => {
         setIsFailedReservation,
         hotelInfo,
         setHotelInfo,
+        reviewsData,
+        setReviewData,
       }}
     >
       {children}

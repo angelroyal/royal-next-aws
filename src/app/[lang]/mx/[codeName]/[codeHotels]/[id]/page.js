@@ -15,6 +15,7 @@ import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext"
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
+import { ReviewsHotel } from "@/services/Hotels/components/DetailHotel/ReviewsHotel";
 
 export async function generateMetadata({ params }) {
   try {
@@ -56,6 +57,7 @@ export default async function DetailPageHotel({ params }) {
     );
 
     const hotelData = response.data;
+    console.log(hotelData);
 
     const jsonLd = {
       "@context": "https://schema.org",
@@ -114,6 +116,7 @@ export default async function DetailPageHotel({ params }) {
                   </section>
                   <GalleryModal codeName={params.codeName} hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />
+                  <ReviewsHotel locationId={hotelData.locationId}/>
                 </Container>
                 <ReservationFailed />
                 <DetailReservation />
