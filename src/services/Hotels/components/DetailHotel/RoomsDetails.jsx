@@ -124,7 +124,7 @@ export default function RoomsDetails(codeHotel) {
                           isSelected ? "border-2 border-bl-70" : ""
                         }`}
                       >
-                        <div className="p-4 rounded-lg border border-gry-30 bg-white">
+                        <div className="p-4 rounded-lg border border-gry-30 bg-white min-h-[33.7rem] flex flex-col justify-between">
                           <div className="flex flex-col gap-y-4 ">
                             {/* IMAGE ROOM */}
                             <div className="relative w-full h-[222px] overflow-hidden rounded-lg">
