@@ -13,6 +13,10 @@ const BookingProviderContext = ({ children }) => {
   const [infoReservation, setInfoReservation] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [removeIsLoader, setRemoveIsLoader] = useState(false);
+  const [scheduleItinerary, setScheduleItinerary] = useState(null);
+  const [openTaxesNotIncluded, setOpenTaxesNotIncluded] = useState(false);
+  const [roomsWithTaxesNotIncluded, setRoomsWithTaxesNotIncluded] =
+    useState(null);
 
   const handleStepChange = (newStep) => {
     setStep(newStep);
@@ -39,6 +43,12 @@ const BookingProviderContext = ({ children }) => {
         setOpenDialog,
         removeIsLoader,
         setRemoveIsLoader,
+        scheduleItinerary,
+        setScheduleItinerary,
+        openTaxesNotIncluded,
+        setOpenTaxesNotIncluded,
+        roomsWithTaxesNotIncluded,
+        setRoomsWithTaxesNotIncluded,
       }}
     >
       {children}

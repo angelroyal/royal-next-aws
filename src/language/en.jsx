@@ -272,18 +272,35 @@ export const en = {
     readLess: "Read less",
     mostRecent: "Most recent",
     mostNotable: "Most notable",
-    tripadvisorRating:"Overall rating on Tripadvisor",
-    opinions:"opinions",
-    guestReviews:"Guest reviews",
-    showAllOptions:"Show all options",
-    viewReviews:"view reviews",
-    travelType:{
-      family:"Family trip",
-      couple:"Couple trip",
-      alone:"Travel alone",
-      business :"Business  trip",
-      friends:"Friends trip",
-    }
+    tripadvisorRating: "Overall rating on Tripadvisor",
+    opinions: "opinions",
+    guestReviews: "Guest reviews",
+    showAllOptions: "Show all options",
+    viewReviews: "view reviews",
+    travelerRating: "Traveler rating",
+    timeOfYear: "Time of year",
+    startFilter: {
+      excellent: "Excellent",
+      god: "God",
+      regular: "Regular",
+      bad: "Bad",
+      terrible: "Terrible",
+    },
+    filterTravelType:{
+      family:"Family",
+      couples:"Couples",
+      solo:"Solo",
+      business:"Business",
+      friends:"Friends",
+      none:"NONE",
+    },
+    travelType: {
+      family: "Family trip",
+      couple: "Couple trip",
+      alone: "Travel alone",
+      business: "Business  trip",
+      friends: "Friends trip",
+    },
   },
 
   homeDestinations: [
@@ -325,6 +342,13 @@ export const en = {
     unavailable: "not available",
     from: "from",
     to: " ",
+    alertTaxesNotIncluded:{
+      title: "Taxes not included",
+      message:
+        "Please note that room prices do not include additional taxes. Be sure to review the cost breakdown before finalizing your reservation.",
+      continue:"Continue",
+      removeRooms:"Cancel room",
+    }
   },
 
   unavailableCardHotel: {
@@ -1126,7 +1150,7 @@ export const en = {
     roomsYouReserved: "Rooms you reserved",
     nonRefundable: "Non refundable",
     refundable: "Refundable",
-
+    taxesNotInclude:"Taxes not included",
     detailsPayment: {
       titleDetailsPayment: "Payment Detail",
       hotelPayment: "Hotel",
@@ -1711,10 +1735,12 @@ export const en = {
   },
 
   language: {
+    All:"All languages",
     language: "language",
     ESP: "Spanish",
     EN: "English",
     FR: "French",
+    PTR:"Portuguese",
   },
 
   ListingPhrases: {

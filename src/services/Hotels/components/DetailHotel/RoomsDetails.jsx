@@ -68,6 +68,8 @@ export default function RoomsDetails(codeHotel) {
     return <RoomsSelectedSkeleton />;
   }
 
+  // console.log(filteredGroupedRooms);
+
   return (
     <>
       <h4 className="text-gry-100 text-fs-12 m-s-b mt-6 mb-9 w-max ml-auto mr-auto lg:mx-0 max-md:ml-0">

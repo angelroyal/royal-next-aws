@@ -278,7 +278,24 @@ export const es = {
     opinions: "opiniones",
     guestReviews: "Opiniones de huéspedes",
     showAllOptions: "Mostrar todas las opciones",
-    viewReviews:"ver opiniones",
+    viewReviews: "ver opiniones",
+    travelerRating: "Calificación de viajeros",
+    timeOfYear: "Época del año",
+    startFilter: {
+      excellent: "Excelente",
+      god: "Muy bien",
+      regular: "Medio",
+      bad: "Malo",
+      terrible: "Terrible",
+    },
+    filterTravelType: {
+      family: "Familia",
+      couples: "Pareja",
+      solo: "Solo",
+      business: "Negocios",
+      friends: "Amigos",
+      none: "Otros",
+    },
     travelType: {
       family: "Viaje de familia",
       couple: "Viaje de pareja",
@@ -326,6 +343,13 @@ export const es = {
     unavailable: "Sin disponibilidad",
     from: "de",
     to: "A",
+    alertTaxesNotIncluded: {
+      title: "Impuestos no incluidos",
+      message:
+        "Tenga en cuenta que los precios de la habitación no incluyen impuestos adicionales. Asegúrese de revisar el desglose de costos antes de finalizar su reserva.",
+      continue: "Continuar",
+      removeRooms: "Cancelar habitación",
+    },
   },
 
   unavailableCardHotel: {
@@ -1133,6 +1157,7 @@ export const es = {
     roomsYouReserved: "Habitaciones que reservaste",
     nonRefundable: "No reembolsable",
     refundable: "Rembolsable",
+    taxesNotInclude: "Impuestos no incluidos",
 
     detailsPayment: {
       titleDetailsPayment: "Detalle de pago",
@@ -1719,10 +1744,12 @@ export const es = {
     author: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
   },
   language: {
+    All: "Todos los idiomas",
     language: "Idioma",
     ESP: "Español",
     EN: "Ingles",
     FR: "Frances",
+    PTR: "Portugues",
   },
 
   ListingPhrases: {

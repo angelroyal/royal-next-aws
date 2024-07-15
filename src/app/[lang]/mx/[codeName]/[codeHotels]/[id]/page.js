@@ -13,9 +13,10 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import DetailsHotel from "@/services/Hotels/components/DetailHotel/DetailHotel";
 import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext";
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
+import { ReviewsHotel } from "@/services/Hotels/components/DetailHotel/Reviews/ReviewsHotel";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
 import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
-import { ReviewsHotel } from "@/services/Hotels/components/DetailHotel/Reviews/ReviewsHotel";
+import { TaxesNotIncludeRoomDetails } from "@/services/Hotels/components/AlertsHotel/TaxesAlert";
 
 export async function generateMetadata({ params }) {
   try {
@@ -116,8 +117,13 @@ export default async function DetailPageHotel({ params }) {
                   </section>
                   <GalleryModal codeName={params.codeName} hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />
-                  <ReviewsHotel locationId={hotelData.locationId}/>
+                  
+                  {/* REVIEWS */}
+                  {/* <ReviewsHotel locationId={hotelData.locationId}/> */}
                 </Container>
+
+                {/* TAXES NOT INCLUDE */}
+                <TaxesNotIncludeRoomDetails />
                 <ReservationFailed />
                 <DetailReservation />
               </div>

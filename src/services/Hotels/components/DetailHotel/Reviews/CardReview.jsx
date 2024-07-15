@@ -1,8 +1,9 @@
-import { TotalStars } from "@/components/General/Stars";
-import { TruncateLetters } from "@/components/General/TruncateLetters";
-import LanguageContext from "@/language/LanguageContext";
 import moment from "moment";
 import { useContext, useState } from "react";
+
+import { TotalStars } from "@/components/General/Stars";
+import LanguageContext from "@/language/LanguageContext";
+import { TruncateLetters } from "@/components/General/TruncateLetters";
 
 export function CardReview({ hotelReview, isModal = false }) {
   const [showMore, setShowMore] = useState(true);
@@ -113,7 +114,9 @@ export function CardReview({ hotelReview, isModal = false }) {
               className="text-bl-100 text-fs-12 m-b cursor-pointer underline decoration-solid decoration-bl-100"
               onClick={() => setShowMore(!showMore)}
             >
-              {showMore ? languageData.reviewsHotel.readMore: languageData.reviewsHotel.readLess}
+              {showMore
+                ? languageData.reviewsHotel.readMore
+                : languageData.reviewsHotel.readLess}
             </a>
           )}
         </div>

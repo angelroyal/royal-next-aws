@@ -1,5 +1,6 @@
 import { useContext } from "react";
 
+import { TravelerRating } from "./TravelerRating";
 import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "@/services/Hotels/context/RoomsHotelContext";
 
@@ -12,16 +13,18 @@ export function Ratings({ modal = false }) {
       <div className="flex justify-between items-start max-lg:flex-col max-lg:gap-y-2.5">
         <div className={`flex flex-col ${!modal ? "gap-y-6" : "gap-y-12"} `}>
           <h2 className="text-gray-700 text-xl font-semibold mb-2 md:mb-0">
-            {modal ? languageData.reviewsHotel.guestReviews : languageData.reviewsHotel.opinions}
+            {modal
+              ? languageData.reviewsHotel.guestReviews
+              : languageData.reviewsHotel.opinions}
           </h2>
 
-          {/* Contenedor de calificación general */}
+          {/* GENERAL QUALIFICATION */}
           <div className="flex items-center">
             <button className="bg-[#2743A6] text-white text-base px-3 py-2 rounded-lg font-bold mb-2">
               5.0
             </button>
 
-            {/* STARTS */}
+            {/* STARTS GENERAL*/}
             <div className="ml-2">{/* <Stars /> */}</div>
 
             <div className="bg-[#ffffff] text-gray-900 py-2 ml-2 text-sm font-light">

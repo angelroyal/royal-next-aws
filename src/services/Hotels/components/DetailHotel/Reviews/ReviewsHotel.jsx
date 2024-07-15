@@ -1,19 +1,23 @@
 "use client";
 
 import { useContext, useEffect } from "react";
-import { GetReviewsTripe } from "../../../Api/requestHotel";
-import RoomsHotelContext from "../../../context/RoomsHotelContext";
+
+import { Ratings } from "./Ratings";
 import { CardReview } from "./CardReview";
 import { AllReviews } from "./AllReviews";
+import { GetReviewsTripe } from "../../../Api/requestHotel";
+import RoomsHotelContext from "../../../context/RoomsHotelContext";
 
 export function ReviewsHotel({ locationId }) {
-  const { setReviewData, reviewDataFilter } = useContext(RoomsHotelContext);
+  const { setReviewData, reviewDataFilter, ratingStartFilter } =
+    useContext(RoomsHotelContext);
 
   useEffect(() => {
     GetReviewsTripe(locationId)
       .then((result) => {
         if (result && result.data) {
           setReviewData(result.data.data);
+          ratingStartFilter(result.data.data);
         }
       })
       .catch((error) => {
@@ -27,7 +31,7 @@ export function ReviewsHotel({ locationId }) {
       id="review-trip-advisor"
     >
       {/* RATING FILTER */}
-      <></>
+      <Ratings />
 
       {/* CART REVIEW */}
       <div className="flex flex-col gap-y-6">

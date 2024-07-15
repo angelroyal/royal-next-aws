@@ -3,6 +3,10 @@
 import React, { createContext, useEffect, useState } from "react";
 
 import { postRoomsToAPI } from "../Api/requestHotel";
+import {
+  filterByOrderReviews,
+  filterBySelectedReviews,
+} from "../utils/FiltersReviews";
 
 const RoomsHotelContext = createContext();
 
@@ -17,6 +21,7 @@ export const RoomsHotelProvider = ({ children }) => {
     name: null,
     date: null,
   });
+  const [roomSelected, setRoomSelected] = useState(null);
 
   // REVIEWS TRIPADVISOR
   const [reviewsData, setReviewData] = useState(null);
@@ -45,21 +50,26 @@ export const RoomsHotelProvider = ({ children }) => {
     }
   };
 
-  // REVIEWS
+  // useEffect(() => {
+  //   if (reviewsData) {
+  //     ratingStartFilter();
+  //   }
+  // }, [reviewsData]);
+
+  // REVIEWS FUNCTIONS FILTERS
   useEffect(() => {
     if (reviewsData) {
-      console.log(reviewsData);
       let filter = [...reviewsData];
 
-      // filter = filterByOrder(reviewsData, orderReview);
+      filter = filterByOrderReviews(reviewsData, orderReview);
 
-      // filter = filterBySelectedTrip(
-      //   filter,
-      //   startQualification,
-      //   months,
-      //   travelType,
-      //   language
-      // );
+      filter = filterBySelectedReviews(
+        filter,
+        startQualification,
+        months,
+        travelType,
+        language
+      );
 
       setReviewDataFilter(filter);
     }
@@ -72,16 +82,9 @@ export const RoomsHotelProvider = ({ children }) => {
     orderReview,
   ]);
 
-  useEffect(() => {
-    if (reviewsData) {
-      ratingStartFilter();
-    }
-  }, [reviewsData]);
-
-  const ratingStartFilter = () => {
+  const ratingStartFilter = (reviews) => {
     const updateStarting = [...starRating];
-
-    reviewsData.forEach((starts) => {
+    reviews.map((starts) => {
       switch (starts.rating) {
         case 5:
           updateStarting[0].value += 1;
@@ -119,6 +122,8 @@ export const RoomsHotelProvider = ({ children }) => {
         setIsFailedReservation,
         hotelInfo,
         setHotelInfo,
+        roomSelected, 
+        setRoomSelected,
         reviewsData,
         setReviewData,
         reviewDataFilter,
@@ -135,6 +140,7 @@ export const RoomsHotelProvider = ({ children }) => {
         setLanguage,
         starRating,
         setStartRating,
+        ratingStartFilter
       }}
     >
       {children}

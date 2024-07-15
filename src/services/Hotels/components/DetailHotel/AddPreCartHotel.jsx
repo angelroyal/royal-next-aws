@@ -5,7 +5,8 @@ import LanguageContext from "@/language/LanguageContext";
 export default function AddPreCartHotel(props) {
   const { languageData } = useContext(LanguageContext);
   const { room } = props;
-  const { selectedRooms, setSelectedRooms } = useContext(RoomsHotelContext);
+  const { selectedRooms, setSelectedRooms, setRoomSelected } =
+    useContext(RoomsHotelContext);
 
   const handleAddDetailHotelMaxPrice = (room) => {
     const persons = parseInt(room.adultChildren.split(".")[0]);
@@ -29,8 +30,8 @@ export default function AddPreCartHotel(props) {
 
     const updatedSelectedRooms = [...selectedRooms, data];
     setSelectedRooms(updatedSelectedRooms);
+    setRoomSelected(room);
   };
-
 
   return (
     <button

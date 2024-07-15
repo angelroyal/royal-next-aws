@@ -27,6 +27,8 @@ export default function DetailsPayment(props) {
     progressCount,
     setOpenDialog,
     handleStepChange,
+    setOpenTaxesNotIncluded,
+    setRoomsWithTaxesNotIncluded,
   } = useContext(BookingContext);
 
   const paymentReservation = () => {
@@ -47,6 +49,17 @@ export default function DetailsPayment(props) {
     window.scrollTo(0, 0);
   }, []);
 
+  // FILTER TAXES NOT INCLUDED ROOMS
+  useEffect(() => {
+    if (data && data.summary) {
+      const taxesNotIncluded = data.summary.hotels.forEach((element) =>
+        element.rooms.filter((room) => room)
+      );
+      console.log(taxesNotIncluded);
+      setRoomsWithTaxesNotIncluded(taxesNotIncluded);
+    }
+  }, [data]);
+
   return (
     <>
       <div className="flex w-full h-full lg:h-max pt-[28px] pb-[20px] px-6 lg:pt-[4.6rem] lg:pl-[24px] lg:pb-[24px] flex-col gap-y-[40px] sticky top-0 will-change-transform">
@@ -61,7 +74,7 @@ export default function DetailsPayment(props) {
                 width={27}
                 height={25}
               />
-              
+
               {/* TEXT PAYMENT DETAILS /LP 15-02-24 */}
               <span className="text-black m-b text-fs-24">
                 {languageData.itinerary.paymentDetails}
@@ -80,7 +93,9 @@ export default function DetailsPayment(props) {
                 )}
 
                 {data.summary.transportations.length > 0 && (
-                  <TransportDescription transport={data.summary.transportations} />
+                  <TransportDescription
+                    transport={data.summary.transportations}
+                  />
                 )}
 
                 <div
@@ -102,6 +117,29 @@ export default function DetailsPayment(props) {
                       .<sup>{(data.summary.taxes % 1).toFixed(2).slice(2)}</sup>
                     </span>
                   </div>
+                  
+                  {/* TAXES NOT INCLUDED */}
+                  {/* {!data.summary?.taxesNotInclude && (
+                    <div className="flex justify-between items-center">
+                      <span
+                        className="text-fs-12 m-m text-red-100 underline cursor-pointer"
+                        onClick={() => setOpenTaxesNotIncluded(true)}
+                      >
+                        {languageData.itinerary.taxesNotInclude}
+                      </span>
+
+                      <span className="text-black m-b text-fs-12">
+                        $
+                        {Math.floor(data.summary.taxes)
+                          .toLocaleString("es-MX", { currency: "MXN" })
+                          .replace(".00", "")}
+                        .
+                        <sup>
+                          {(data.summary.taxes % 1).toFixed(2).slice(2)}
+                        </sup>
+                      </span>
+                    </div>
+                  )} */}
                 </div>
               </div>
 
@@ -171,33 +209,33 @@ export default function DetailsPayment(props) {
                         className="w-[6px] h-[13px]"
                       />
                     </button>
-                  // ) : (
-                  //   // <button
-                  //   //   type="submit"
-                  //   //   onClick={() => paymentReservation()}
-                  //   //   className={`bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto ${
-                  //   //     !policyAccept || !termsAccept || !buttonActive
-                  //   //       ? "cursor-not-allowed bg-yw-50"
-                  //   //       : "hover:bg-yw-110"
-                  //   //   } ${
-                  //   //     policyAccept && termsAccept
-                  //   //       ? "py-[13px] px-[40px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
-                  //   //       : "py-[16px] px-[40px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
-                  //   //   } `}
-                  //   //   disabled={!policyAccept || !termsAccept || !buttonActive}
-                  //   // >
-                  //   //   {languageData.booking.paymentConekta.buttonForms}
-                  //   //   {policyAccept && termsAccept && (
-                  //   //     <div className="relative inline-flex justify-center lg:hidden">
-                  //   //       <LoadingProgress
-                  //   //         value={progressCount}
-                  //   //         count={countNumber}
-                  //   //         width={"w-[30px]"}
-                  //   //         height={"h-[30px]"}
-                  //   //       />
-                  //   //     </div>
-                  //   //   )}
-                  //   // </button>
+                    // ) : (
+                    //   // <button
+                    //   //   type="submit"
+                    //   //   onClick={() => paymentReservation()}
+                    //   //   className={`bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto ${
+                    //   //     !policyAccept || !termsAccept || !buttonActive
+                    //   //       ? "cursor-not-allowed bg-yw-50"
+                    //   //       : "hover:bg-yw-110"
+                    //   //   } ${
+                    //   //     policyAccept && termsAccept
+                    //   //       ? "py-[13px] px-[40px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
+                    //   //       : "py-[16px] px-[40px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
+                    //   //   } `}
+                    //   //   disabled={!policyAccept || !termsAccept || !buttonActive}
+                    //   // >
+                    //   //   {languageData.booking.paymentConekta.buttonForms}
+                    //   //   {policyAccept && termsAccept && (
+                    //   //     <div className="relative inline-flex justify-center lg:hidden">
+                    //   //       <LoadingProgress
+                    //   //         value={progressCount}
+                    //   //         count={countNumber}
+                    //   //         width={"w-[30px]"}
+                    //   //         height={"h-[30px]"}
+                    //   //       />
+                    //   //     </div>
+                    //   //   )}
+                    //   // </button>
                   )}
                 </div>
               </div>

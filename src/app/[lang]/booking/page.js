@@ -8,6 +8,7 @@ import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import { BookingProviderContext } from "@/payment/context/BookingContext";
 import { PaymentProviderContext } from "@/payment/context/PaymentContext";
+import { ModalTaxesNotInclude } from "@/payment/itinerary/Alerts/ModalTaxesNotInclude";
 
 export default function Home() {
   return (
@@ -20,6 +21,9 @@ export default function Home() {
             <PaymentProviderContext>
               <Payment />
             </PaymentProviderContext>
+
+            <ModalTaxesNotInclude/>
+            
             <FooterT />
           </BookingProviderContext>
         </CartAxiosProvider>
