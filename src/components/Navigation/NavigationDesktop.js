@@ -43,7 +43,7 @@ export default function NavigationDesktop() {
         <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem] max-sm:pb-0">
           <div className="hidden md:flex justify-end items-center">
             <SelectCurrency />
-            <span className="pl-[19px] pr-[19px]">|</span>
+            <span className="pl-[10px] pr-[10px]">|</span>
             <LanguageSelector />
 
             {/* <Cart /> */}
