@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import React, { useState, useEffect, useContext } from "react";
 
 import {
@@ -21,6 +20,7 @@ import DetailsPayment from "./itinerary/others/DetailsPayment";
 import ConfirmReservation from "./Confirmation/ConfirmReservation";
 import { StepsToPayments, StepsToPaymentsM } from "../hooks/StepsToPay";
 import { DialogPaymentItinerary } from "./Utils/DialogPaymentItinerary";
+import { loadOpenpayScripts, unloadOpenpayScripts } from "./config/openpayScripts";
 
 export default function Payment() {
   const [data, setData] = useState(null);
@@ -32,11 +32,20 @@ export default function Payment() {
   const [hasTransport, setHasTransport] = useState(false);
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
   const { step, handleStepChange, openDialog } = useContext(BookingContext);
+
   useEffect(() => {
-    loadConektaScripts();
+    if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+      loadConektaScripts();
+    } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+      loadOpenpayScripts();
+    }
 
     return () => {
-      unloadConektaScripts();
+      if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+        unloadConektaScripts();
+      } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+        unloadOpenpayScripts();
+      }
     };
   }, []);
 
@@ -56,14 +65,6 @@ export default function Payment() {
 
   return (
     <div className="w-full h-full relative bg-[#f6f6f6]">
-      <Script
-        src="https://js.openpay.mx/openpay.v1.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script
-        src="https://js.openpay.mx/openpay-data.v1.min.js"
-        strategy="beforeInteractive"
-      />
 
       {openDialog && (
         <div className="backdrop-brightness-50 w-full h-full absolute z-[1]" />

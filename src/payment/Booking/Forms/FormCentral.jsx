@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import ClientDataT from "./FormClientData";
 import FormCreditCard from "./FormCreditCard";
@@ -14,9 +14,6 @@ import {
   openpayErrorResponseHandler,
   openpaySuccessResponseHandler,
 } from "../ActionsForms/paymentHandlers";
-
-const openpayId = process.env.NEXT_PUBLIC_OPENPAY_ID;
-const openpayApiKey = process.env.NEXT_PUBLIC_OPENPAY_API_KEY;
 
 export default function FormCentral(props) {
   const paymentProvider = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER;
@@ -50,6 +47,15 @@ export default function FormCentral(props) {
   const searchParams = new URLSearchParams(window.location.search);
   const uid = searchParams.get("uid");
 
+  useEffect(() => {
+    if (paymentProvider === "OPENPAY") {
+      window.OpenPay.setId(process.env.NEXT_PUBLIC_OPENPAY_ID);
+      window.OpenPay.setApiKey(process.env.NEXT_PUBLIC_OPENPAY_API_KEY);
+      window.OpenPay.setSandboxMode(true);
+      console.log("entro a openpay para setear credenciales");
+    }
+  }, [paymentProvider]);
+
   // PAYLOAD PAYMENT
   const paymentData = {
     name: firstName,
@@ -60,9 +66,10 @@ export default function FormCentral(props) {
     cartId: uid,
     cardTitular: nameCard,
     cardNumber: numberCard.slice(-4),
+    serviceType: paymentProvider.toLowerCase(),
     ...(hotelRH ? { guests: hotelRH } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
-    ...(process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY" ? {
+    ...(paymentProvider === "OPENPAY" ? {
       deviceId: window.OpenPay.deviceData.setup("card-form"),
       description: "solo si es para openpay"
     } : {})
@@ -78,7 +85,6 @@ export default function FormCentral(props) {
     }, 3000);
   };
 
-  // PROVIDER PAY CONEKTA OR OPEN PAY
   const handleSubmitPayment = (event) => {
     event.preventDefault();
     setIsOpen(true);
@@ -94,11 +100,6 @@ export default function FormCentral(props) {
         (response) => conektaErrorResponseHandler(response, setAnimationData, closeModalAfterDelay)
       );
     } else if (paymentProvider === "OPENPAY") {
-
-      window.OpenPay.setId(openpayId);
-      window.OpenPay.setApiKey(openpayApiKey);
-      window.OpenPay.setSandboxMode(true);
-
       window.OpenPay.token.create(
         {
           "card_number": numberCard,
