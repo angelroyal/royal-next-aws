@@ -50,12 +50,6 @@ export const RoomsHotelProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (reviewsData) {
-  //     ratingStartFilter();
-  //   }
-  // }, [reviewsData]);
-
   // REVIEWS FUNCTIONS FILTERS
   useEffect(() => {
     if (reviewsData) {
@@ -83,8 +77,15 @@ export const RoomsHotelProvider = ({ children }) => {
   ]);
 
   const ratingStartFilter = (reviews) => {
-    const updateStarting = [...starRating];
-    reviews.map((starts) => {
+    const updateStarting = [
+      { name: "excellent", value: 0, key: 5 },
+      { name: "god", value: 0, key: 4 },
+      { name: "regular", value: 0, key: 3 },
+      { name: "bad", value: 0, key: 2 },
+      { name: "terrible", value: 0, key: 1 },
+    ];
+
+    reviews.forEach((starts) => {
       switch (starts.rating) {
         case 5:
           updateStarting[0].value += 1;
@@ -122,7 +123,7 @@ export const RoomsHotelProvider = ({ children }) => {
         setIsFailedReservation,
         hotelInfo,
         setHotelInfo,
-        roomSelected, 
+        roomSelected,
         setRoomSelected,
         reviewsData,
         setReviewData,
@@ -140,7 +141,7 @@ export const RoomsHotelProvider = ({ children }) => {
         setLanguage,
         starRating,
         setStartRating,
-        ratingStartFilter
+        ratingStartFilter,
       }}
     >
       {children}

@@ -28,8 +28,8 @@ export function Ratings({ modal = false }) {
             <div className="ml-2">{/* <Stars /> */}</div>
 
             <div className="bg-[#ffffff] text-gray-900 py-2 ml-2 text-sm font-light">
-              {reviewsData && reviewsData.length}{" "}
-              {languageData.reviewsHotel.opinions}
+              {reviewsData &&
+                `${reviewsData.length} ${languageData.reviewsHotel.opinions}`}
             </div>
           </div>
         </div>

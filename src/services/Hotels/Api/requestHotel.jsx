@@ -40,7 +40,31 @@ export async function GetReviewsTripe(locationId) {
   // };
 
   try {
-    const response = await axios.get(`https://staywuw.com/api2?locationId=${locationId}`);
+    const response = await axios.get(
+      `https://staywuw.com/api2?locationId=${locationId}`
+    );
+    // const response = await axios.request(options);
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function GetLocationDetails(locationId) {
+  const options = {
+    method: "GET",
+    url: `https://api.content.tripadvisor.com/api/v1/location/${locationId}/details`,
+    params: {
+      key: "2267BAB9C20C49D88CBF1F6DB6478E0C",
+      language: "en",
+      currency: "USD",
+    },
+    headers: { accept: "application/json" },
+  };
+  try {
+    // const response = await axios.get();
+    const response = await axios.request(options);
     return response;
   } catch (error) {
     console.log(error);

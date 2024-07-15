@@ -117,9 +117,11 @@ export default async function DetailPageHotel({ params }) {
                   </section>
                   <GalleryModal codeName={params.codeName} hotel={hotelData} />
                   <DetailsHotel codeHotel={params.id} />
-                  
+
                   {/* REVIEWS */}
-                  {/* <ReviewsHotel locationId={hotelData.locationId}/> */}
+                  {hotelData.locationId && (
+                    <ReviewsHotel locationId={hotelData.locationId} />
+                  )}
                 </Container>
 
                 {/* TAXES NOT INCLUDE */}
