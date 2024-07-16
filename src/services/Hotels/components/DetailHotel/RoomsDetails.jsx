@@ -263,7 +263,7 @@ export default function RoomsDetails(codeHotel) {
                               </span>
 
                               <div className="rounded bg-grn-30 text-grn-100 m-m text-fs-10 py-1 px-2 w-max">
-                                {languageData.cart.taxes}
+                                {room?.taxesNotIncluded ? languageData.cardHotel.alertTaxesNotIncluded.title :languageData.cart.taxes}
                               </div>
                             </div>
 

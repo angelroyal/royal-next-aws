@@ -11,9 +11,8 @@ export function ModalTaxesNotInclude() {
     openTaxesNotIncluded,
     setOpenTaxesNotIncluded,
     roomsWithTaxesNotIncluded,
+    totalTaxesNotIncluded,
   } = useContext(BookingContext);
-  //   console.log(openTaxesNotIncluded);
-  console.log(roomsWithTaxesNotIncluded);
 
   const { languageData } = useContext(LanguageContext);
 
@@ -37,32 +36,41 @@ export function ModalTaxesNotInclude() {
               </h1>
 
               <div className="flex flex-col gap-y-5 border-b border-gry-50 pb-9">
-                {[...Array(3)].map((hotel, index) => (
-                  <div key={index}>
-                    <h2 className="mb-2.5 text-fs-14 text-black m-b">
-                      Oasis Smart Cancún
-                    </h2>
+                {roomsWithTaxesNotIncluded &&
+                  roomsWithTaxesNotIncluded?.map((hotel, index) => (
+                    <div key={index}>
+                      <h2 className="mb-2.5 text-fs-14 text-black m-b">
+                        {hotel.name}
+                      </h2>
 
-                    <div className="block">
-                      {[...Array(2)].map((room, index) => (
-                        <div
-                          className={`flex justify-between items-center ${
-                            2 - 1 !== index &&
-                            "border-b border-gry-50 mb-2.5 pb-2.5"
-                          }`}
-                        >
-                          <p className="text-fs-12 m-m">
-                            Suite Imperial con vista al Mar
-                          </p>
+                      <div className="block">
+                        {hotel.rooms.map((room, index) => (
+                          <div
+                            className={`flex justify-between items-center ${
+                              hotel.rooms.length - 1 !== index &&
+                              "border-b border-gry-50 mb-2.5 pb-2.5"
+                            }`}
+                          >
+                            <p className="text-fs-12 m-m">{room.name}</p>
 
-                          <p className="m-0 text-fs-12 m-b text-black">
-                            $6,000 MXN
-                          </p>
-                        </div>
-                      ))}
+                            <p className="m-0 text-fs-12 m-b text-black">
+                              ${" "}
+                              {Math.floor(room.taxesNotIncluded.amount)
+                                .toLocaleString("es-MX", { currency: "MXN" })
+                                .replace(".00", "")}
+                              .
+                              <sup>
+                                {(room.taxesNotIncluded.amount % 1)
+                                  .toFixed(2)
+                                  .slice(2)}
+                              </sup>{" "}
+                              MXN
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
 
               <div className="flex justify-between items-center">
@@ -70,18 +78,22 @@ export function ModalTaxesNotInclude() {
                   {languageData.itinerary.detailsPayment.totalTaxesNotIncluded}
                 </p>
 
-                <p className="m-0 text-fs-14 text-black m-b">$24,000 MXN</p>
+                <p className="m-0 text-fs-14 text-black m-b">
+                  $
+                  {Math.floor(totalTaxesNotIncluded)
+                    .toLocaleString("es-MX", { currency: "MXN" })
+                    .replace(".00", "")}
+                  .<sup>{(totalTaxesNotIncluded % 1).toFixed(2).slice(2)}</sup>{" "}
+                  MXN
+                </p>
               </div>
 
-              <button className="focus:outline-none text-white text-fs-12 rounded-full bg-bl-100 px-4 py-3.5 w-max mx-auto" onClick={()=>setOpenTaxesNotIncluded(!openTaxesNotIncluded)}>
+              <button
+                className="focus:outline-none text-white text-fs-12 rounded-full bg-bl-100 px-4 py-3.5 w-max mx-auto"
+                onClick={() => setOpenTaxesNotIncluded(!openTaxesNotIncluded)}
+              >
                 {languageData.itinerary.detailsPayment.accept}
               </button>
-
-              {/* {
-                roomsWithTaxesNotIncluded.hotels.map((rooms, index)=>(
-                    <></>
-                ))
-            } */}
             </div>
           </div>
         </div>

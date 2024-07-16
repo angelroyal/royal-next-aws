@@ -29,6 +29,7 @@ export default function DetailsPayment(props) {
     handleStepChange,
     setOpenTaxesNotIncluded,
     setRoomsWithTaxesNotIncluded,
+    setTotalTaxesNotIncluded,
   } = useContext(BookingContext);
 
   const paymentReservation = () => {
@@ -52,11 +53,26 @@ export default function DetailsPayment(props) {
   // FILTER TAXES NOT INCLUDED ROOMS
   useEffect(() => {
     if (data && data.summary) {
-      const taxesNotIncluded = data.summary.hotels.forEach((element) =>
-        element.rooms.filter((room) => room)
-      );
-      console.log(taxesNotIncluded);
+      let taxesNotIncluded = data.summary.hotels
+        .map((hotel) => {
+          const filteredRooms = hotel.rooms.filter(
+            (room) => room.taxesNotIncluded
+          );
+          if (filteredRooms.length > 0) {
+            return {
+              name: hotel.name,
+              rooms: filteredRooms,
+            };
+          }
+          return null;
+        })
+        .filter((hotel) => hotel !== null);
       setRoomsWithTaxesNotIncluded(taxesNotIncluded);
+      setTotalTaxesNotIncluded(
+        data.summary?.TotalTaxesNotIncluded
+          ? data.summary?.TotalTaxesNotIncluded
+          : 0
+      );
     }
   }, [data]);
 
@@ -117,29 +133,30 @@ export default function DetailsPayment(props) {
                       .<sup>{(data.summary.taxes % 1).toFixed(2).slice(2)}</sup>
                     </span>
                   </div>
-                  
-                  {/* TAXES NOT INCLUDED */}
-                  {/* {!data.summary?.taxesNotInclude && (
-                    <div className="flex justify-between items-center">
-                      <span
-                        className="text-fs-12 m-m text-red-100 underline cursor-pointer"
-                        onClick={() => setOpenTaxesNotIncluded(true)}
-                      >
-                        {languageData.itinerary.taxesNotInclude}
-                      </span>
 
-                      <span className="text-black m-b text-fs-12">
-                        $
-                        {Math.floor(data.summary.taxes)
-                          .toLocaleString("es-MX", { currency: "MXN" })
-                          .replace(".00", "")}
-                        .
-                        <sup>
-                          {(data.summary.taxes % 1).toFixed(2).slice(2)}
-                        </sup>
-                      </span>
-                    </div>
-                  )} */}
+                  {/* TAXES NOT INCLUDED */}
+                  {data.summary?.TotalTaxesNotIncluded &&
+                    data.summary?.TotalTaxesNotIncluded > 0 && (
+                      <div className="flex justify-between items-center">
+                        <span
+                          className="text-fs-12 m-m text-red-100 underline cursor-pointer"
+                          onClick={() => setOpenTaxesNotIncluded(true)}
+                        >
+                          {languageData.itinerary.taxesNotInclude}
+                        </span>
+
+                        <span className="text-black m-b text-fs-12">
+                          $
+                          {Math.floor(data.summary.taxes)
+                            .toLocaleString("es-MX", { currency: "MXN" })
+                            .replace(".00", "")}
+                          .
+                          <sup>
+                            {(data.summary.taxes % 1).toFixed(2).slice(2)}
+                          </sup>
+                        </span>
+                      </div>
+                    )}
                 </div>
               </div>
 

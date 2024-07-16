@@ -17,6 +17,7 @@ const BookingProviderContext = ({ children }) => {
   const [openTaxesNotIncluded, setOpenTaxesNotIncluded] = useState(false);
   const [roomsWithTaxesNotIncluded, setRoomsWithTaxesNotIncluded] =
     useState(null);
+  const [totalTaxesNotIncluded, setTotalTaxesNotIncluded] = useState(0);
 
   const handleStepChange = (newStep) => {
     setStep(newStep);
@@ -49,6 +50,8 @@ const BookingProviderContext = ({ children }) => {
         setOpenTaxesNotIncluded,
         roomsWithTaxesNotIncluded,
         setRoomsWithTaxesNotIncluded,
+        totalTaxesNotIncluded,
+        setTotalTaxesNotIncluded,
       }}
     >
       {children}

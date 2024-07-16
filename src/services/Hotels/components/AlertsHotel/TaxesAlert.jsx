@@ -1,9 +1,10 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
-import RoomsHotelContext from "../../context/RoomsHotelContext";
-import LanguageContext from "@/language/LanguageContext";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useContext, useEffect, useState } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
+import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export function TaxesNotIncludeRoomDetails() {
   const { roomSelected, setRoomSelected, selectedRooms, setSelectedRooms } =
@@ -12,10 +13,9 @@ export function TaxesNotIncludeRoomDetails() {
   const { languageData } = useContext(LanguageContext);
 
   useEffect(() => {
-    console.log(roomSelected);
-    // if (roomSelected) {
-    //   setOpenAlert(!openAlert);
-    // }
+    if (roomSelected && roomSelected?.taxesNotIncluded) {
+      setOpenAlert(!openAlert);
+    }
   }, [roomSelected]);
 
   // DELETED PRE CART ROOM
