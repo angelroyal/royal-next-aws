@@ -57,7 +57,7 @@ export function HotelInfo(props) {
             height={24}
           />
           
-          {`(${reviewsData ? reviewsData.length : '...'}) ${
+          {`(${reviewsData ? reviewsData.length : '0'}) ${
             languageData.reviewsHotel.viewReviews
           }`}
         </button>
