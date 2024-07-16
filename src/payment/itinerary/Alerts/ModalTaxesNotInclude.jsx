@@ -73,7 +73,7 @@ export function ModalTaxesNotInclude() {
                 <p className="m-0 text-fs-14 text-black m-b">$24,000 MXN</p>
               </div>
 
-              <button className="focus:outline-none text-white text-fs-12 rounded-full bg-bl-100 px-4 py-3.5 w-max mx-auto">
+              <button className="focus:outline-none text-white text-fs-12 rounded-full bg-bl-100 px-4 py-3.5 w-max mx-auto" onClick={()=>setOpenTaxesNotIncluded(!openTaxesNotIncluded)}>
                 {languageData.itinerary.detailsPayment.accept}
               </button>
 

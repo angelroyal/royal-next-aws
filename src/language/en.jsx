@@ -1165,7 +1165,7 @@ export const en = {
       rooms: "Rooms",
       //LUIS 15-02-24
       totalTaxesNotIncluded: "Total taxes not included",
-      accept:"Accept"
+      accept: "Accept",
     },
     buttonPayment: "Pay",
     movingItinerary: {

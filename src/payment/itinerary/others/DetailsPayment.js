@@ -119,7 +119,7 @@ export default function DetailsPayment(props) {
                   </div>
                   
                   {/* TAXES NOT INCLUDED */}
-                  {!data.summary?.taxesNotInclude && (
+                  {/* {!data.summary?.taxesNotInclude && (
                     <div className="flex justify-between items-center">
                       <span
                         className="text-fs-12 m-m text-red-100 underline cursor-pointer"
@@ -139,7 +139,7 @@ export default function DetailsPayment(props) {
                         </sup>
                       </span>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
 
