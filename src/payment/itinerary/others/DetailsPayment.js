@@ -69,8 +69,8 @@ export default function DetailsPayment(props) {
         .filter((hotel) => hotel !== null);
       setRoomsWithTaxesNotIncluded(taxesNotIncluded);
       setTotalTaxesNotIncluded(
-        data.summary?.TotalTaxesNotIncluded
-          ? data.summary?.TotalTaxesNotIncluded
+        data.summary?.totalTaxesNotIncluded
+          ? data.summary?.totalTaxesNotIncluded
           : 0
       );
     }
@@ -135,8 +135,8 @@ export default function DetailsPayment(props) {
                   </div>
 
                   {/* TAXES NOT INCLUDED */}
-                  {data.summary?.TotalTaxesNotIncluded &&
-                    data.summary?.TotalTaxesNotIncluded > 0 && (
+                  {data.summary?.totalTaxesNotIncluded &&
+                    data.summary?.totalTaxesNotIncluded > 0 && (
                       <div className="flex justify-between items-center">
                         <span
                           className="text-fs-12 m-m text-red-100 underline cursor-pointer"
