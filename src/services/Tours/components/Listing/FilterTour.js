@@ -387,7 +387,7 @@ export default function FilterTour(props) {
                             {key > 0 ? (
                               [...Array(values.value)].map((value, index) => (
                                 <Image
-                                  src={`${process.env.NEXT_PUBLIC_URL}icons/general/Star-filter.svg`}
+                                  src={`${process.env.NEXT_PUBLIC_URL}icons/stars/full-star.svg`}
                                   alt="IconStar"
                                   width={11}
                                   height={11}

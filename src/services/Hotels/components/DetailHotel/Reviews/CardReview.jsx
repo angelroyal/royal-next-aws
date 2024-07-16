@@ -42,7 +42,7 @@ export function CardReview({ hotelReview, isModal = false }) {
       }`}
     >
       {/* LEFT CARD */}
-      <div className={`flex items-start gap-x-2 h-max w-full lg:w-[35%]`}>
+      <div className={`flex items-start gap-x-2 h-max w-full  ${!isModal && 'lg:w-[40%]' }`}>
         {/* USER IMAGE */}
         <img
           src={

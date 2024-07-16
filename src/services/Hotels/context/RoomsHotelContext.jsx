@@ -22,6 +22,7 @@ export const RoomsHotelProvider = ({ children }) => {
     date: null,
   });
   const [roomSelected, setRoomSelected] = useState(null);
+  const [locationDetails, setLocationDetails] = useState(null);
 
   // REVIEWS TRIPADVISOR
   const [reviewsData, setReviewData] = useState(null);
@@ -142,6 +143,8 @@ export const RoomsHotelProvider = ({ children }) => {
         starRating,
         setStartRating,
         ratingStartFilter,
+        locationDetails,
+        setLocationDetails,
       }}
     >
       {children}

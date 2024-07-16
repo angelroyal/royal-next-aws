@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { TravelerRating } from "./TravelerRating";
 import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "@/services/Hotels/context/RoomsHotelContext";
+import { TotalStars } from "@/components/General/Stars";
 
 export function Ratings({ modal = false }) {
   const { languageData } = useContext(LanguageContext);
-  const { reviewsData } = useContext(RoomsHotelContext);
+  const { reviewsData, locationDetails } = useContext(RoomsHotelContext);
 
   return (
     <div className="mb-10 flex flex-col gap-y-6">
@@ -20,12 +21,17 @@ export function Ratings({ modal = false }) {
 
           {/* GENERAL QUALIFICATION */}
           <div className="flex items-center">
-            <button className="bg-[#2743A6] text-white text-base px-3 py-2 rounded-lg font-bold mb-2">
-              5.0
-            </button>
-
-            {/* STARTS GENERAL*/}
-            <div className="ml-2">{/* <Stars /> */}</div>
+            {locationDetails && (
+              <>
+                <button className="bg-[#2743A6] text-white text-base px-3 py-2 rounded-lg font-bold mb-2">
+                  {locationDetails.rating}
+                </button>
+                {/* STARTS GENERAL */}
+                <div className="ml-2">
+                  <TotalStars stars={locationDetails.rating}/>
+                </div>
+              </>
+            )}
 
             <div className="bg-[#ffffff] text-gray-900 py-2 ml-2 text-sm font-light">
               {reviewsData &&
