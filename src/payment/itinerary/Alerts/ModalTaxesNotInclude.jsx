@@ -3,8 +3,8 @@
 import { useContext } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
-import { BookingContext } from "@/payment/context/BookingContext";
 import LanguageContext from "@/language/LanguageContext";
+import { BookingContext } from "@/payment/context/BookingContext";
 
 export function ModalTaxesNotInclude() {
   const {
