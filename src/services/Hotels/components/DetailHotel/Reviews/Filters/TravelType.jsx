@@ -87,7 +87,7 @@ const FilterType = () => {
                 travelType.length > 0 && travelType.includes(travel.value)
               }
             />
-            <span className="text-black text-fs-12 m-m">{travel.label}</span>
+            <span className="text-black text-fs-12 m-m">{languageData.reviewsHotel.filterTravelType[travel.label]}</span>
           </div>
         ))}
 

@@ -4,6 +4,7 @@ import { TravelerRating } from "./TravelerRating";
 import LanguageContext from "@/language/LanguageContext";
 import { TotalStars } from "@/components/General/Stars";
 import RoomsHotelContext from "@/services/Hotels/context/RoomsHotelContext";
+import { TripAdvisorButton } from "./TripAdvisorButton";
 
 export function Ratings({ modal = false }) {
   const { languageData } = useContext(LanguageContext);
@@ -26,10 +27,10 @@ export function Ratings({ modal = false }) {
                 <div className="bg-[#2743A6] text-white text-base px-3 py-2 rounded-lg font-bold mb-2">
                   {locationDetails.rating}
                 </div>
-                
+
                 {/* STARTS GENERAL */}
                 <div className="ml-2">
-                  <TotalStars stars={locationDetails.rating}/>
+                  <TotalStars stars={locationDetails.rating} />
                 </div>
               </>
             )}
@@ -41,28 +42,8 @@ export function Ratings({ modal = false }) {
           </div>
         </div>
 
-        {!modal && (
-          <button className="bg-white text-black text-fs-12 m-m p-2 rounded-full border border-gry-70 flex items-center gap-x-2">
-            <img
-              className="w-6 h-6"
-              src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg"
-              alt="logo tripavisor"
-              loading="lazy"
-              width={24}
-              height={24}
-            />
-
-            <span>{languageData.reviewsHotel.tripadvisorRating}</span>
-
-            <img
-              className="w-[17px] h-[18px]"
-              src={`${process.env.NEXT_PUBLIC_URL}icons/general/help-grn.svg`}
-              alt="question icon"
-              width={17}
-              height={17}
-            />
-          </button>
-        )}
+        {/* TRIPADVISOR BUTTON */}
+        <TripAdvisorButton modal={modal} />
       </div>
 
       {/* FILTERS*/}

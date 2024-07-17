@@ -279,6 +279,8 @@ export const en = {
     viewReviews: "view reviews",
     travelerRating: "Traveler rating",
     timeOfYear: "Time of year",
+    tripAdvisorButton:
+      "Ratings are based on genuine traveler reviews collected from Tripadvisor, the world's largest travel community.",
     startFilter: {
       excellent: "Excellent",
       god: "God",
@@ -286,13 +288,13 @@ export const en = {
       bad: "Bad",
       terrible: "Terrible",
     },
-    filterTravelType:{
-      family:"Family",
-      couples:"Couples",
-      solo:"Solo",
-      business:"Business",
-      friends:"Friends",
-      none:"NONE",
+    filterTravelType: {
+      family: "Family",
+      couples: "Couples",
+      solo: "Solo",
+      business: "Business",
+      friends: "Friends",
+      none: "NONE",
     },
     travelType: {
       family: "Family trip",
@@ -342,13 +344,13 @@ export const en = {
     unavailable: "not available",
     from: "from",
     to: " ",
-    alertTaxesNotIncluded:{
+    alertTaxesNotIncluded: {
       title: "Taxes not included",
       message:
         "Please note that room prices do not include additional taxes. Be sure to review the cost breakdown before finalizing your reservation.",
-      continue:"Continue",
-      removeRooms:"Cancel room",
-    }
+      continue: "Continue",
+      removeRooms: "Cancel room",
+    },
   },
 
   unavailableCardHotel: {
@@ -1150,7 +1152,7 @@ export const en = {
     roomsYouReserved: "Rooms you reserved",
     nonRefundable: "Non refundable",
     refundable: "Refundable",
-    taxesNotInclude:"Taxes not included",
+    taxesNotInclude: "Taxes not included",
     detailsPayment: {
       titleDetailsPayment: "Payment Detail",
       hotelPayment: "Hotel",
@@ -1735,12 +1737,12 @@ export const en = {
   },
 
   language: {
-    All:"All languages",
+    All: "All languages",
     language: "Language",
     ESP: "Spanish",
     EN: "English",
     FR: "French",
-    PTR:"Portuguese",
+    PTR: "Portuguese",
   },
 
   ListingPhrases: {

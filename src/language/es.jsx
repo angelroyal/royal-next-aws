@@ -281,6 +281,7 @@ export const es = {
     viewReviews: "ver opiniones",
     travelerRating: "Calificación de viajeros",
     timeOfYear: "Época del año",
+    tripAdvisorButton:"Las valoraciones están basadas en comentarios auténticos de viajeros recopilados de Tripadvisor, la mayor comunidad de viajes del mundo.",
     startFilter: {
       excellent: "Excelente",
       god: "Muy bien",
