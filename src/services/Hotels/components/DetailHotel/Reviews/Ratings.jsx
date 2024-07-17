@@ -23,9 +23,9 @@ export function Ratings({ modal = false }) {
           <div className="flex items-center">
             {locationDetails && (
               <>
-                <button className="bg-[#2743A6] text-white text-base px-3 py-2 rounded-lg font-bold mb-2">
+                <div className="bg-[#2743A6] text-white text-base px-3 py-2 rounded-lg font-bold mb-2">
                   {locationDetails.rating}
-                </button>
+                </div>
                 
                 {/* STARTS GENERAL */}
                 <div className="ml-2">

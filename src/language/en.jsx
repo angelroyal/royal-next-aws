@@ -1736,7 +1736,7 @@ export const en = {
 
   language: {
     All:"All languages",
-    language: "language",
+    language: "Language",
     ESP: "Spanish",
     EN: "English",
     FR: "French",

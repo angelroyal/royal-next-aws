@@ -22,9 +22,9 @@ export const RoomsHotelProvider = ({ children }) => {
     date: null,
   });
   const [roomSelected, setRoomSelected] = useState(null);
-  const [locationDetails, setLocationDetails] = useState(null);
-
+  
   // REVIEWS TRIPADVISOR
+  const [locationDetails, setLocationDetails] = useState(null);
   const [reviewsData, setReviewData] = useState(null);
   const [reviewDataFilter, setReviewDataFilter] = useState(null);
   const [orderReview, setOrderReview] = useState(2);
