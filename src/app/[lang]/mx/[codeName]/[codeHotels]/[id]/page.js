@@ -15,8 +15,8 @@ import { RoomsHotelProvider } from "@/services/Hotels/context/RoomsHotelContext"
 import { GalleryModal } from "@/services/Hotels/components/GalleryModal/GalleryModal";
 import { ReviewsHotel } from "@/services/Hotels/components/DetailHotel/Reviews/ReviewsHotel";
 import DetailReservation from "@/services/Hotels/components/DetailReservation/DetailReservation";
-import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
 import { TaxesNotIncludeRoomDetails } from "@/services/Hotels/components/AlertsHotel/TaxesAlert";
+import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/HotelInformationAlerts";
 
 export async function generateMetadata({ params }) {
   try {
@@ -58,7 +58,6 @@ export default async function DetailPageHotel({ params }) {
     );
 
     const hotelData = response.data;
-    console.log(hotelData);
 
     const jsonLd = {
       "@context": "https://schema.org",
@@ -126,7 +125,9 @@ export default async function DetailPageHotel({ params }) {
 
                 {/* TAXES NOT INCLUDE */}
                 <TaxesNotIncludeRoomDetails />
+
                 <ReservationFailed />
+
                 <DetailReservation />
               </div>
               <FooterT />

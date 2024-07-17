@@ -2,8 +2,8 @@ import { useContext } from "react";
 
 import { TravelerRating } from "./TravelerRating";
 import LanguageContext from "@/language/LanguageContext";
-import RoomsHotelContext from "@/services/Hotels/context/RoomsHotelContext";
 import { TotalStars } from "@/components/General/Stars";
+import RoomsHotelContext from "@/services/Hotels/context/RoomsHotelContext";
 
 export function Ratings({ modal = false }) {
   const { languageData } = useContext(LanguageContext);
@@ -26,6 +26,7 @@ export function Ratings({ modal = false }) {
                 <button className="bg-[#2743A6] text-white text-base px-3 py-2 rounded-lg font-bold mb-2">
                   {locationDetails.rating}
                 </button>
+                
                 {/* STARTS GENERAL */}
                 <div className="ml-2">
                   <TotalStars stars={locationDetails.rating}/>
