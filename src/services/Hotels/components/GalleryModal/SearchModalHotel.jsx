@@ -1,7 +1,7 @@
 "use client";
 
 import moment from "moment";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Calendar from "@/hooks/Calendar";
 import Room from "../../config/RoomBox";
@@ -10,8 +10,14 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export function SearchModalHotel() {
   const { languageData } = useContext(LanguageContext);
-  const { requestBodyRooms, handleFetchPostRooms, setRequestBodyRooms } =
-    useContext(RoomsHotelContext);
+  const {
+    requestBodyRooms,
+    handleFetchPostRooms,
+    setRequestBodyRooms,
+    selectedDateCalendar,
+  } = useContext(RoomsHotelContext);
+
+  // console.log("selectedDateCalendar", selectedDateCalendar);
 
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
 
@@ -20,7 +26,10 @@ export function SearchModalHotel() {
     formattedCheckOut: null,
   });
 
+  useEffect(() => {}, []);
+
   const handleDateChange = (dates) => {
+    // console.log("dates", dates);
     setSelectedDates((prevDates) => {
       if (dates && dates.length >= 2) {
         const formattedCheckIn = moment(dates[0]).format("YYYY-MM-DD");
@@ -36,10 +45,10 @@ export function SearchModalHotel() {
   };
 
   const handleUpdateRooms = () => {
-    const checkInDate =
-      selectedDates.formattedCheckIn || requestBodyRooms.CheckIn;
-    const checkOutDate =
-      selectedDates.formattedCheckOut || requestBodyRooms.CheckOut;
+    let checkInDate =
+      selectedDates.formattedCheckIn || requestBodyRooms["check-in"];
+    let checkOutDate =
+      selectedDates.formattedCheckOut || requestBodyRooms["check-out"];
 
     const queryParams = {
       code: requestBodyRooms.code,
