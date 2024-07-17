@@ -49,10 +49,14 @@ export default function FormCentral(props) {
 
   useEffect(() => {
     if (paymentProvider === "OPENPAY") {
-      window.OpenPay.setId(process.env.NEXT_PUBLIC_OPENPAY_ID);
-      window.OpenPay.setApiKey(process.env.NEXT_PUBLIC_OPENPAY_API_KEY);
-      window.OpenPay.setSandboxMode(true);
-      console.log("entro a openpay para setear credenciales");
+      if (window.OpenPay) {
+        window.OpenPay.setId(process.env.NEXT_PUBLIC_OPENPAY_ID);
+        window.OpenPay.setApiKey(process.env.NEXT_PUBLIC_OPENPAY_API_KEY);
+        window.OpenPay.setSandboxMode(true);
+        console.log("OpenPay credentials set");
+      } else {
+        console.error("OpenPay library is not loaded");
+      }
     }
   }, [paymentProvider]);
 
@@ -69,7 +73,7 @@ export default function FormCentral(props) {
     serviceType: paymentProvider.toLowerCase(),
     ...(hotelRH ? { guests: hotelRH } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
-    ...(paymentProvider === "OPENPAY" ? {
+    ...(paymentProvider === "OPENPAY" && window.OpenPay && window.OpenPay.deviceData ? {
       deviceId: window.OpenPay.deviceData.setup("card-form"),
       description: "solo si es para openpay"
     } : {})
