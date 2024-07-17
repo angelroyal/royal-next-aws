@@ -10,8 +10,6 @@ export function HotelInfo(props) {
   const { languageData } = useContext(LanguageContext);
   const { reviewsData, locationDetails } = useContext(RoomsHotelContext);
 
-  console.log(locationDetails);
-
   const handleButtonClick = () => {
     if (typeof window !== "undefined") {
       const targetElement = document.getElementById("review-trip-advisor");
