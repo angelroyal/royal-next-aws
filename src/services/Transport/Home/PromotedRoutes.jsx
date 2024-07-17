@@ -61,8 +61,6 @@ export default function PromotedRoutes() {
         filterTransportByType(true);
         break;
     }
-
-
   }, [menuPromoted, transports]);
 
   // FILTER TRANSPORTS BY TYPE
@@ -192,6 +190,10 @@ export function PromotedRoutesCard({ transport }) {
   const [openPolicy, setOpenPolicy] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
+  const dataDialogWhite = {
+    text: languageData.tourPolicyCancelation.title,
+  };
+
   return (
     <>
       {/*IMAGE TRANSPORT*/}
@@ -307,7 +309,9 @@ export function PromotedRoutesCard({ transport }) {
             onMouseLeave={() => setOpenPolicy(false)}
           >
             {languageData.containerModalHotel.policies}
-            {openPolicy === true && <PolicyCardTransportWhite />}
+            {openPolicy === true && (
+              <PolicyCardTransportWhite dataDialogWhite={dataDialogWhite} />
+            )}
           </span>
         </div>
 

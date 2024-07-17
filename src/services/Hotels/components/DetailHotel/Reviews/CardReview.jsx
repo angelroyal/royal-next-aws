@@ -10,7 +10,6 @@ export function CardReview({ hotelReview, isModal = false }) {
   const { languageData } = useContext(LanguageContext);
 
   const tripeType = (tripType) => {
-    // console.log(tripType);
     let travelText;
     switch (tripType) {
       case "Family":
@@ -19,12 +18,12 @@ export function CardReview({ hotelReview, isModal = false }) {
       case "Couples":
         travelText = languageData.reviewsHotel.travelType.couple;
         break;
-      //   case "Friends getaway":
-      //     travelText = languageData.reviewsHotel.travelType.alone;
-      //     break;
-      //   case "Friends getaway":
-      //     travelText = languageData.reviewsHotel.travelType.business;
-      //     break;
+      case "Solo travel":
+        travelText = languageData.reviewsHotel.travelType.alone;
+        break;
+      case "Business":
+        travelText = languageData.reviewsHotel.travelType.business;
+        break;
       case "Friends getaway":
         travelText = languageData.reviewsHotel.travelType.friends;
         break;
@@ -42,7 +41,11 @@ export function CardReview({ hotelReview, isModal = false }) {
       }`}
     >
       {/* LEFT CARD */}
-      <div className={`flex items-start gap-x-2 h-max w-full lg:w-[35%]`}>
+      <div
+        className={`flex items-start gap-x-2 h-max w-full  ${
+          !isModal && "lg:w-[40%]"
+        }`}
+      >
         {/* USER IMAGE */}
         <img
           src={
@@ -91,7 +94,11 @@ export function CardReview({ hotelReview, isModal = false }) {
             {Math.round(hotelReview.rating)}/5
           </p>
 
-          <TotalStars stars={hotelReview.rating} />
+          <TotalStars
+            stars={hotelReview.rating}
+            width={"w-[16px]"}
+            height={"w-[16px]"}
+          />
         </div>
 
         {/* REVIEW TITLE */}

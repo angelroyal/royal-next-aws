@@ -8,7 +8,7 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 export function HotelInfo(props) {
   const { hotel } = props;
   const { languageData } = useContext(LanguageContext);
-  const { reviewsData } = useContext(RoomsHotelContext);
+  const { reviewsData, locationDetails } = useContext(RoomsHotelContext);
 
   const handleButtonClick = () => {
     if (typeof window !== "undefined") {
@@ -40,14 +40,16 @@ export function HotelInfo(props) {
       <h1 className="m-b text-fs-24">{hotel.name}</h1>
 
       <div className="flex items-center gap-x-2">
-        <TotalStars
-          stars={hotel.stars}
-          width={"w-[16px]"}
-          height={"h-[16px]"}
-        />
+        <div className="cursor-pointer" onClick={handleButtonClick}>
+          <TotalStars
+            stars={locationDetails?.rating ? locationDetails?.rating : 0}
+            width={"w-[16px]"}
+            height={"h-[16px]"}
+          />
+        </div>
 
         <button
-          className="flex gap-x-2 text-bl-100 text-fs-12 m-m focus:outline-none"
+          className="flex items-center gap-x-2 text-bl-100 text-fs-12 m-m focus:outline-none"
           onClick={handleButtonClick}
         >
           <img
@@ -56,8 +58,8 @@ export function HotelInfo(props) {
             width={24}
             height={24}
           />
-          
-          {`(${reviewsData ? reviewsData.length : '...'}) ${
+
+          {`(${reviewsData ? reviewsData.length : "0"}) ${
             languageData.reviewsHotel.viewReviews
           }`}
         </button>

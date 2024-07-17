@@ -279,6 +279,8 @@ export const en = {
     viewReviews: "view reviews",
     travelerRating: "Traveler rating",
     timeOfYear: "Time of year",
+    tripAdvisorButton:
+      "Ratings are based on genuine traveler reviews collected from Tripadvisor, the world's largest travel community.",
     startFilter: {
       excellent: "Excellent",
       god: "God",
@@ -1738,7 +1740,7 @@ export const en = {
 
   language: {
     All: "All languages",
-    language: "language",
+    language: "Language",
     ESP: "Spanish",
     EN: "English",
     FR: "French",

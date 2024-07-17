@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useContext } from "react";
 
-import RoomsHotelContext from "@/services/Hotels/context/RoomsHotelContext";
 import LanguageContext from "@/language/LanguageContext";
+import RoomsHotelContext from "@/services/Hotels/context/RoomsHotelContext";
 
 const ordering = {
   selected: "",
@@ -38,7 +38,7 @@ export function OrderReview() {
       </label>
 
       <select
-        className="pt-[1.2rem] py-1.5 pl-4 pr-10 mt-2 block w-full rounded-lg border-[1.5px] border-gry-70 text-black focus:ring-2  sm:leading-6 text-fs-14 appearance-none focus:outline-none bg-white  m-s-b"
+        className="pt-[1.2rem] py-1.5 pl-4 pr-10 mt-2 block w-full rounded-lg border-[1.5px] border-gry-70 text-black focus:ring-2  sm:leading-6 text-fs-14 appearance-none focus:outline-none bg-white m-s-b"
         value={orderReview}
         onChange={(event) => handleOrderingFilters(event)}
       >

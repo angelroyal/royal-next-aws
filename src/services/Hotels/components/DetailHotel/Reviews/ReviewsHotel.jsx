@@ -5,14 +5,28 @@ import { useContext, useEffect } from "react";
 import { Ratings } from "./Ratings";
 import { CardReview } from "./CardReview";
 import { AllReviews } from "./AllReviews";
-import { GetReviewsTripe } from "../../../Api/requestHotel";
 import RoomsHotelContext from "../../../context/RoomsHotelContext";
+import { GetLocationDetails, GetReviewsTripe } from "../../../Api/requestHotel";
 
 export function ReviewsHotel({ locationId }) {
-  const { setReviewData, reviewDataFilter, ratingStartFilter } =
-    useContext(RoomsHotelContext);
+  const {
+    setReviewData,
+    reviewDataFilter,
+    ratingStartFilter,
+    setLocationDetails,
+  } = useContext(RoomsHotelContext);
 
   useEffect(() => {
+    // GET DETAILS HOTEL
+    GetLocationDetails(locationId)
+      .then((response) => {
+        setLocationDetails(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // GET REVIEWS HOTEL
     GetReviewsTripe(locationId)
       .then((result) => {
         if (result && result.data) {

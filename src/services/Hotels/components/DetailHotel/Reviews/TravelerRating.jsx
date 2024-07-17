@@ -10,8 +10,10 @@ export function TravelerRating({ modal }) {
           : "gap-y-[36px] flex-col"
       }`}
     >
+      {/* STARTS FILTER */}
       <TravelerRatingStart />
 
+      {/* MONTHS, TYPE, LANGUAGE, FILTERS */}
       <Filters modal={modal} />
     </div>
   );

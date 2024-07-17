@@ -6,7 +6,7 @@ import { TravelType } from "./TravelType";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function Filters({ modal }) {
-  const [isOpen, setIsOpen] = useState(false); // Estado para controlar si el dropdown está abierto o cerrado
+  const [isOpen, setIsOpen] = useState(false);
   const { languageData } = useContext(LanguageContext);
 
   const handleToggle = () => {
@@ -41,6 +41,7 @@ export default function Filters({ modal }) {
         </svg>
       </div>
 
+      {/* DESK VERSION  */}
       <div
         className={`hidden lg:flex max-md:flex-col md:flex-wrap ${
           modal ? "md:gap-x-16" : "md:gap-x-14 gap-y-4"
@@ -56,6 +57,7 @@ export default function Filters({ modal }) {
         <Language />
       </div>
 
+      {/* MOBILE VERSION */}
       <div
         className={`lg:hidden flex max-md:flex-col md:flex-wrap max-md:gap-y-4 ${
           modal ? "md:gap-x-16" : "md:gap-x-14"
