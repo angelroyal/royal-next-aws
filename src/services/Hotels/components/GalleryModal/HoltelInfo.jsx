@@ -9,6 +9,7 @@ export function HotelInfo(props) {
   const { hotel } = props;
   const { languageData } = useContext(LanguageContext);
   const { reviewsData, locationDetails } = useContext(RoomsHotelContext);
+  console.log(hotel);
 
   const handleButtonClick = () => {
     if (typeof window !== "undefined") {
@@ -42,7 +43,7 @@ export function HotelInfo(props) {
       <div className="flex items-center gap-x-2">
         <div className="cursor-pointer" onClick={handleButtonClick}>
           <TotalStars
-            stars={locationDetails?.rating ? locationDetails?.rating : 0}
+            stars={locationDetails?.rating ? locationDetails?.rating : hotel.stars}
             width={"w-[16px]"}
             height={"h-[16px]"}
           />
