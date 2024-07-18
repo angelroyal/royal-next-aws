@@ -9,7 +9,9 @@ import RoomsHotelContext from "../../../context/RoomsHotelContext";
 import { GetLocationDetails, GetReviewsTripe } from "../../../Api/requestHotel";
 
 export function ReviewsHotel({ locationId }) {
+  // console.log(locationId);
   const {
+    reviewsData,
     setReviewData,
     reviewDataFilter,
     ratingStartFilter,
@@ -39,32 +41,35 @@ export function ReviewsHotel({ locationId }) {
       });
   }, []);
 
+
   return (
-    <div
-      className="bg-white rounded-lg py-6 px-9 mt-6"
-      id="review-trip-advisor"
-    >
-      {/* RATING FILTER */}
-      <Ratings />
+    reviewsData && reviewsData.length > 0 && (
+      <div
+        className="bg-white rounded-lg py-6 px-9 mt-6"
+        id="review-trip-advisor"
+      >
+        {/* RATING FILTER */}
+        <Ratings />
 
-      {/* CART REVIEW */}
-      <div className="flex flex-col gap-y-6">
-        {reviewDataFilter &&
-          reviewDataFilter.slice(0, 5).map((hotelReview, index) => (
-            <div
-              key={index}
-              className={`${
-                reviewDataFilter.slice(0, 5).length - 1 !== index &&
-                "border-b-2 border-gray-200"
-              }`}
-            >
-              {/* CART REVIEW */}
-              <CardReview hotelReview={hotelReview} />
-            </div>
-          ))}
+        {/* CART REVIEW */}
+        <div className="flex flex-col gap-y-6">
+          {reviewDataFilter &&
+            reviewDataFilter.slice(0, 5).map((hotelReview, index) => (
+              <div
+                key={index}
+                className={`${
+                  reviewDataFilter.slice(0, 5).length - 1 !== index &&
+                  "border-b-2 border-gray-200"
+                }`}
+              >
+                {/* CART REVIEW */}
+                <CardReview hotelReview={hotelReview} />
+              </div>
+            ))}
 
-        <AllReviews />
+          <AllReviews />
+        </div>
       </div>
-    </div>
+    )
   );
 }
