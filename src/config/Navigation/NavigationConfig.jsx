@@ -26,7 +26,7 @@ export function NavigationConfig() {
     });
 
     if (path === "/") {
-      setActiveRouter("hotels");
+      setActiveRouter("home");
     }
 
     if (path === `/${language}/hotels`) {

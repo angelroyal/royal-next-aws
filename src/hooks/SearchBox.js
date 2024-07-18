@@ -3,13 +3,7 @@
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import { useRouter } from "next/navigation";
-import React, {
-  useContext,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import ResultTour from "@/components/Search/ResultTour";
 import LanguageContext from "../language/LanguageContext";
@@ -35,26 +29,19 @@ export default function SearchBox() {
   const handleTabChange = (eventKey) => {
     let view = null;
     switch (eventKey) {
-      case "hotels":
+      case "home":
         view = process.env.NEXT_PUBLIC_HOME;
         break;
       case "hotel":
-        // view = `/${language}/hotels`;
         view = window.open(`/${language}/hotels`, "_self");
         break;
       case "tour":
-        // view = `/${language}/tours`;
         view = window.open(`/${language}/tours`, "_self");
         break;
       case "transport":
-        // view = `/${language}/transports`;
         view = window.open(`/${language}/transports`, "_self");
         break;
     }
-
-    // if (view != null) {
-    //   router.push(view);
-    // }
   };
 
   return (
@@ -72,7 +59,7 @@ export default function SearchBox() {
           >
             <span
               className={`${
-                currentActiveIcon === "hotels" || currentActiveIcon === "hotel"
+                currentActiveIcon === "hotels" || currentActiveIcon === "home"
                   ? "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
@@ -80,8 +67,7 @@ export default function SearchBox() {
               <Image
                 className="max-lg:w-4 max-lg:h-4"
                 src={`${process.env.NEXT_PUBLIC_URL}${
-                  currentActiveIcon === "hotels" ||
-                  currentActiveIcon === "hotel"
+                  currentActiveIcon === "hotels" || currentActiveIcon === "home"
                     ? "icons/hotel/hotel-w.svg"
                     : "icons/hotel/hotel-b.svg"
                 }`}
@@ -102,8 +88,7 @@ export default function SearchBox() {
             <span
               className={`${
                 currentActiveIcon === "tours"
-                  ? //  currentActiveIcon === "tours"
-                    "bg-bl-100 text-white"
+                  ? "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
@@ -131,8 +116,7 @@ export default function SearchBox() {
             <span
               className={`${
                 currentActiveIcon === "transports"
-                  ? //  currentActiveIcon === "tours"
-                    "bg-bl-100 text-white"
+                  ? "bg-bl-100 text-white"
                   : "bg-gry-50 text-gry-100"
               } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
             >
@@ -158,7 +142,7 @@ export default function SearchBox() {
             {currentActiveIcon ? (
               <>
                 {currentActiveIcon === "hotels" ||
-                currentActiveIcon === "hotel" ? (
+                currentActiveIcon === "home" ? (
                   <SendHotel />
                 ) : null}
 

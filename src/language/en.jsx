@@ -294,7 +294,7 @@ export const en = {
       solo: "Solo",
       business: "Business",
       friends: "Friends",
-      none: "NONE",
+      none: "Others",
     },
     travelType: {
       family: "Family trip",
