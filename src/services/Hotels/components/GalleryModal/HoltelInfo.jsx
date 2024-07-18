@@ -43,7 +43,9 @@ export function HotelInfo(props) {
       <div className="flex items-center gap-x-2">
         <div className="cursor-pointer" onClick={handleButtonClick}>
           <TotalStars
-            stars={locationDetails?.rating ? locationDetails?.rating : hotel.stars}
+            stars={
+              locationDetails?.rating ? locationDetails?.rating : hotel.stars
+            }
             width={"w-[16px]"}
             height={"h-[16px]"}
           />
