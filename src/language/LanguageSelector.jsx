@@ -154,7 +154,12 @@ export function LanguageSelector() {
                   className="icon-spanish"
                 />
               )}
-              <span className="block truncate">{selected.name}</span>
+               {actualLanguage === "es" ? (
+                <span className="block truncate">ESP</span>
+              ) : (
+                <span className="block truncate">ENG</span>
+              )}
+              {/* <span className="block truncate">{selected.name}</span> */}
               <span className="pointer-events-none absolute right-0 flex items-center justify-center pr-2">
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/down-100.svg`}
