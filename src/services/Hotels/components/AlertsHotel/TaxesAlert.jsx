@@ -35,7 +35,7 @@ export function TaxesNotIncludeRoomDetails() {
   return (
     openAlert && (
       <div className="fixed z-[4] top-0 left-0 w-full h-full backdrop-brightness-50 bg-white/30 flex items-center justify-center">
-        <div className="max-lg:w-[80%] w-[50%] h-auto bg-white rounded-lg sticky top-0 bottom-0 my-auto p-6">
+        <div className="max-md:w-[80%] w-[350px] h-auto bg-white rounded-lg sticky top-0 bottom-0 my-auto p-6">
           <div className="flex w-full h-auto justify-end">
             <button
               className="border-0 focus:outline-none"
@@ -55,12 +55,12 @@ export function TaxesNotIncludeRoomDetails() {
                 {languageData.cardHotel.alertTaxesNotIncluded.title}
               </h2>
 
-              <h4 className="m-m text-fs-12 text-justify">
+              <h4 className="m-m text-fs-12 text-center">
                 {languageData.cardHotel.alertTaxesNotIncluded.message}
               </h4>
             </div>
 
-            <div className="flex max-lg:flex-col max-lg:gap-y-3 justify-center gap-x-6 items-center">
+            <div className="flex max-md:flex-col max-lg:gap-y-3 justify-center gap-x-6 items-center">
               <button
                 className="px-4 py-2 bg-red-100 text-white text-fs-12 rounded-xl focus:outline-none"
                 onClick={deleteRoom}
