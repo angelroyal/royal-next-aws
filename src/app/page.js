@@ -21,6 +21,7 @@ import PopularDestinationsHome from "@/components/Home/PopularDestinationsHome";
 import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { BannerStepsItinerary } from "@/components/Home/BannerStepsItinerary";
+import { UserExperienceBanner } from "@/components/Home/UserExperience/UserExperienceBanner";
 
 export default function Home() {
   return (
@@ -43,12 +44,19 @@ export default function Home() {
                 <BannersHomeOffers />
                 <BannersHomeExclusiveDiscounts />
                 <BannersHomeOffersNow />
-                <ExploreActivitiesHome />
               </div>
             </Container>
 
+            {/* TOP HOTEL REVIEWS */}
+            <UserExperienceBanner />
+
+            <Container>
+              <ExploreActivitiesHome />
+            </Container>
+
+            {/* BANNER STEP */}
             <BannerStepsItinerary />
-            
+
             <Container>
               <div className="max-md:overflow-x-hidden">
                 <PopularDestinationsHome />
