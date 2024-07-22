@@ -12,7 +12,7 @@ export function BannerStepsItinerary() {
 
   return (
     <div className="bg-gry-50">
-      <div className="flex gap-x-10 mt-[180px] max-md:justify-center max-lg:flex-col-reverse p-5">
+      <div className="flex gap-x-[110px]  max-md:justify-center max-lg:flex-col-reverse p-5">
         {/* LEFT CARD */}
         <div className="lg:flex lg:flex-row lg:w-1/2 justify-end h-max my-auto max-lg:mt-7">
           <PaymentBannerMobile />
