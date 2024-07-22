@@ -319,6 +319,38 @@ export const en = {
     },
   ],
 
+  homeBanners: {
+    bannerSteps: {
+      title: {
+        design: "Design the",
+        perfect: "perfect itinerary",
+        trip: "for your trip",
+      },
+      stepsNumber: {
+        stepOne: {
+          title: "Create your travel package",
+          description:
+            "Choose your transportation, accommodation, and favorite activity.",
+        },
+        stepTwo: {
+          title: "Add reservation details",
+          description:
+            "Provide your contact information, dates, and preferences.",
+        },
+        stepThree: {
+          title: "Make the payment",
+          description:
+            "Choose your payment method and confirm your reservation.",
+        },
+        stepFour: {
+          title: "Download your itinerary",
+          description:
+            "Upon completing your purchase, you will receive a downloadable itinerary receipt in your email.",
+        },
+      },
+    },
+  },
+
   filtersHotel: {
     titleFilter: "Search hotel",
     results: "Results:",

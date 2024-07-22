@@ -281,7 +281,8 @@ export const es = {
     viewReviews: "ver opiniones",
     travelerRating: "Calificación de viajeros",
     timeOfYear: "Época del año",
-    tripAdvisorButton:"Las valoraciones están basadas en comentarios auténticos de viajeros recopilados de Tripadvisor, la mayor comunidad de viajes del mundo.",
+    tripAdvisorButton:
+      "Las valoraciones están basadas en comentarios auténticos de viajeros recopilados de Tripadvisor, la mayor comunidad de viajes del mundo.",
     startFilter: {
       excellent: "Excelente",
       god: "Muy bien",
@@ -318,6 +319,36 @@ export const es = {
       titleType: "Hospedajes al mejor precio",
     },
   ],
+
+  homeBanners: {
+    bannerSteps: {
+      title: {
+        design: "Diseña el",
+        perfect: "itinerario perfecto",
+        trip: "para tu viaje",
+      },
+
+      stepsNumber: {
+        stepOne: {
+          title: "Arma tu paquete turístico",
+          description: "Elige tu transporte, alojamiento y actividad favorita.",
+        },
+        stepTwo: {
+          title: "Agrega los detalles de reservación",
+          description: "Proporciona tus datos de contacto, fechas y preferencias.",
+        },
+        stepThree: {
+          title: "Realiza el pago",
+          description: "Elige tu método de pago y confirma tu reservación.",
+        },
+        stepFour: {
+          title: "Descarga tu itinerario",
+          description:
+            "Al finalizar tu compra, recibirás un recibo de itinerario descargable en tu correo electrónico.",
+        },
+      },
+    },
+  },
 
   filtersHotel: {
     titleFilter: "Buscar hotel",
