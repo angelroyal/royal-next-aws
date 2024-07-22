@@ -48,7 +48,7 @@ export default function Home() {
             </Container>
 
             {/* TOP HOTEL REVIEWS */}
-            <UserExperienceBanner />
+            {/* <UserExperienceBanner /> */}
 
             <Container>
               <ExploreActivitiesHome />
