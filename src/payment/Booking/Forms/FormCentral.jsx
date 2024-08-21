@@ -157,7 +157,7 @@ export default function FormCentral(props) {
         {dataItinerary && (
           <>
             {/* FORM PROVIDER HB */}
-            <FormClientHB dataItinerary={dataItinerary}/>
+            <FormClientHB dataItinerary={dataItinerary} />
 
             {/* FORM PROVIDER RH */}
 

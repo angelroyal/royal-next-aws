@@ -20,7 +20,7 @@ export default function FormClientHB({ dataItinerary }) {
   const initialResponsibles = hbItineraries.flatMap((itinerary) =>
     itinerary.rooms.flatMap((room, roomIndex) =>
       Array.from({ length: room.quantity }).map((_, qtyIndex) => ({
-        roomId: `${itinerary.name}-${roomIndex}`,
+        roomId: `${itinerary.name}-${roomIndex}-${qtyIndex}`,
         firstName: "",
         lastName: "",
       }))
