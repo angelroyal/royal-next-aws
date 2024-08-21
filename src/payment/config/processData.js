@@ -33,6 +33,4 @@ export function ProcessDataHB(dataItinerary){
   })
 
   return processedDataHB;
-
-
 }

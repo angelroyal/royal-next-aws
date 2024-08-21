@@ -14,16 +14,13 @@ import {
   openpayErrorResponseHandler,
   openpaySuccessResponseHandler,
 } from "../ActionsForms/paymentHandlers";
+import FormClientHB from "./FormClientHB";
 
 export default function FormCentral(props) {
   const paymentProvider = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER;
 
-  const {
-    activityPreBooking,
-    activityTrue,
-    dataItinerary,
-    transportTrue,
-  } = props;
+  const { activityPreBooking, activityTrue, dataItinerary, transportTrue } =
+    props;
 
   const {
     firstName,
@@ -36,7 +33,7 @@ export default function FormCentral(props) {
     hotelRH,
     expirationMonth,
     expirationYear,
-    cvvCard
+    cvvCard,
   } = useContext(PaymentContext);
 
   const { handleStepChange } = useContext(BookingContext);
@@ -73,10 +70,14 @@ export default function FormCentral(props) {
     serviceType: paymentProvider.toLowerCase(),
     ...(hotelRH ? { guests: hotelRH } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
-    ...(paymentProvider === "OPENPAY" && window.OpenPay && window.OpenPay.deviceData ? {
-      deviceId: window.OpenPay.deviceData.setup("card-form"),
-      description: "solo si es para openpay"
-    } : {})
+    ...(paymentProvider === "OPENPAY" &&
+    window.OpenPay &&
+    window.OpenPay.deviceData
+      ? {
+          deviceId: window.OpenPay.deviceData.setup("card-form"),
+          description: "solo si es para openpay",
+        }
+      : {}),
   };
 
   const closeModal = () => {
@@ -100,20 +101,44 @@ export default function FormCentral(props) {
 
       window.Conekta.Token.create(
         event.target,
-        (token) => conektaSuccessResponseHandler(token, paymentData, setAnimationData, handleStepChange, closeModalAfterDelay),
-        (response) => conektaErrorResponseHandler(response, setAnimationData, closeModalAfterDelay)
+        (token) =>
+          conektaSuccessResponseHandler(
+            token,
+            paymentData,
+            setAnimationData,
+            handleStepChange,
+            closeModalAfterDelay
+          ),
+        (response) =>
+          conektaErrorResponseHandler(
+            response,
+            setAnimationData,
+            closeModalAfterDelay
+          )
       );
     } else if (paymentProvider === "OPENPAY") {
       window.OpenPay.token.create(
         {
-          "card_number": numberCard,
-          "holder_name": nameCard,
-          "expiration_year": expirationYear.slice(-2),
-          "expiration_month": expirationMonth,
-          "cvv2": cvvCard,
+          card_number: numberCard,
+          holder_name: nameCard,
+          expiration_year: expirationYear.slice(-2),
+          expiration_month: expirationMonth,
+          cvv2: cvvCard,
         },
-        (response) => openpaySuccessResponseHandler(response, paymentData, setAnimationData, handleStepChange, closeModalAfterDelay),
-        (error) => openpayErrorResponseHandler(error, setAnimationData, closeModalAfterDelay)
+        (response) =>
+          openpaySuccessResponseHandler(
+            response,
+            paymentData,
+            setAnimationData,
+            handleStepChange,
+            closeModalAfterDelay
+          ),
+        (error) =>
+          openpayErrorResponseHandler(
+            error,
+            setAnimationData,
+            closeModalAfterDelay
+          )
       );
     }
   };
@@ -126,17 +151,27 @@ export default function FormCentral(props) {
         id="card-form"
         onSubmit={handleSubmitPayment}
       >
+        {/* GENERAL INFO CLIENT */}
         <ClientDataT />
 
-        {dataItinerary && <FormClientRH dataItinerary={dataItinerary} />}
+        {dataItinerary && (
+          <>
+            {/* FORM PROVIDER HB */}
+            <FormClientHB dataItinerary={dataItinerary}/>
+
+            {/* FORM PROVIDER RH */}
+
+            <FormClientRH dataItinerary={dataItinerary} />
+          </>
+        )}
 
         {activityPreBooking && activityPreBooking.length > 0 && (
           <ActivityFormT activityPreBooking={activityPreBooking} />
         )}
 
-        {activityTrue === true || transportTrue === true ? (
-          !activityPreBooking && <SkeletonActivitiesTourPT />
-        ) : null}
+        {activityTrue === true || transportTrue === true
+          ? !activityPreBooking && <SkeletonActivitiesTourPT />
+          : null}
 
         <FormCreditCard />
       </form>

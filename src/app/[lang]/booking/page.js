@@ -16,15 +16,19 @@ export default function Home() {
       <TokenProvider>
         <CartAxiosProvider>
           <BookingProviderContext>
+
             <Token />
+
             <Navigation />
+
             <PaymentProviderContext>
               <Payment />
             </PaymentProviderContext>
-
-            <ModalTaxesNotInclude/>
+            
+            <ModalTaxesNotInclude />
             
             <FooterT />
+
           </BookingProviderContext>
         </CartAxiosProvider>
       </TokenProvider>

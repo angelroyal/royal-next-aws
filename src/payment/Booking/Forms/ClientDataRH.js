@@ -5,12 +5,8 @@ import React, { useContext, useEffect, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import { PaymentContext } from "@/payment/context/PaymentContext";
 import {
-  ProcessDataHB,
   processItineraryData,
 } from "@/payment/config/processData";
-
-// import HotelBlackIcon from `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`;
-// import HotelOrangeIcon from `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
 export function FormClientRH(props) {
   const { setRoomsRH } = useContext(PaymentContext);
@@ -19,7 +15,6 @@ export function FormClientRH(props) {
 
   const [formData, setFormData] = useState([]);
   const processedDataRH = processItineraryData(dataItinerary);
-  const processedDataHB = ProcessDataHB(dataItinerary);
   const [activeHotelIndex, setActiveHotelIndex] = useState(0);
 
   const HotelBlackIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-b.svg`;
@@ -362,31 +357,6 @@ export function FormClientRH(props) {
                 )}
               </div>
             ))}
-            {
-              <>
-                {processedDataHB &&
-                  processedDataHB.map((room, item) => (
-                    <div key={item}>
-                      <div className="m-s-b flex items-center gap-2">
-                        <Image
-                          src={HotelBlackIcon}
-                          alt="HotelBlackIcon"
-                          className="w-[1.7rem] h-auto"
-                          width={20}
-                          height={17}
-                        />
-                        <h3 className="text-fs-20 m-0 max-md:text-fs-18">{room.name} </h3>
-                      </div>
-
-                      <div className="bg-gry-30 rounded-[9px] w-full px-[36px] py-[24px]">
-                        <h3 className="m-s-b text-fs-16 text-gry-70">
-                          {languageData.booking.clientData.notSpecifyName}
-                        </h3>
-                      </div>
-                    </div>
-                  ))}
-              </>
-            }
           </div>
         </div>
       ) : null}
