@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState, useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { PaymentContext } from "@/payment/context/PaymentContext";
 
@@ -7,44 +7,42 @@ export default function FormClientHB({ dataItinerary }) {
   console.log(dataItinerary);
   const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
-  const { setRoomsRH } = useContext(PaymentContext);
+  const { roomHolders, setRoomHolders } = useContext(PaymentContext);
 
   const hbItineraries = dataItinerary.filter(
-    (itinerary) => itinerary.provider === "hb"
+    (itinerary) => itinerary.provider === 'hb'
   );
 
   if (hbItineraries.length === 0) {
     return <div>No valid provider found</div>;
   }
 
-  const initialResponsibles = hbItineraries.flatMap((itinerary) =>
-    itinerary.rooms.flatMap((room, roomIndex) =>
-      Array.from({ length: room.quantity }).map((_, qtyIndex) => ({
-        roomId: `${itinerary.name}-${roomIndex}-${qtyIndex}`,
-        firstName: "",
-        lastName: "",
-      }))
-    )
-  );
+  // Inicializar solo si roomHolders está vacío
+  useEffect(() => {
+    if (Object.keys(roomHolders).length === 0) {
+      const initialRoomHolders = hbItineraries.reduce((acc, itinerary) => {
+        acc[itinerary.code] = itinerary.rooms.flatMap((room, roomIndex) =>
+          Array.from({ length: room.quantity }).map((_, qtyIndex) => ({
+            roomId: `${room.code}.${qtyIndex}`,
+            firstName: '',
+            lastName: '',
+          }))
+        );
+        return acc;
+      }, {});
+  
+      setRoomHolders(initialRoomHolders);
+    }
+  }, []); // Dependencias vacías para que se ejecute solo una vez
 
-  const [responsibles, setResponsibles] = useState(initialResponsibles);
-
-  const handleChange = (roomId, field, value) => {
-    const updatedResponsibles = responsibles.map((responsible) =>
-      responsible.roomId === roomId
-        ? { ...responsible, [field]: value }
-        : responsible
-    );
-    setResponsibles(updatedResponsibles);
-
-    setRoomsRH((prevRooms) => {
-      const filteredRooms =
-        prevRooms?.filter((room) => room.roomId !== roomId) || [];
-      const newRoom = updatedResponsibles.find(
-        (responsible) => responsible.roomId === roomId
-      );
-      return [...filteredRooms, newRoom];
-    });
+  const handleChange = (code, roomId, field, value) => {
+    const updatedRoomHolders = {
+      ...roomHolders,
+      [code]: roomHolders[code].map((holder) =>
+        holder.roomId === roomId ? { ...holder, [field]: value } : holder
+      ),
+    };
+    setRoomHolders(updatedRoomHolders);
   };
 
   return (
@@ -68,7 +66,7 @@ export default function FormClientHB({ dataItinerary }) {
 
           {itinerary.rooms.map((room, roomIndex) =>
             Array.from({ length: room.quantity }).map((_, qtyIndex) => (
-              <div key={`${itinerary.name}-${roomIndex}-${qtyIndex}`}>
+              <div key={`${itinerary.code}-${roomIndex}-${qtyIndex}`}>
                 <h3 className="text-fs-10 max-md:text-fs-18 mt-[1.5rem] m-b text-gry-100 italic">
                   - {room.name} #{qtyIndex + 1}
                 </h3>
@@ -86,16 +84,16 @@ export default function FormClientHB({ dataItinerary }) {
                       className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                       type="text"
                       value={
-                        responsibles.find(
-                          (responsible) =>
-                            responsible.roomId ===
-                            `${itinerary.name}-${roomIndex}-${qtyIndex}`
-                        )?.firstName || ""
+                        roomHolders[itinerary.code]?.find(
+                          (holder) =>
+                            holder.roomId === `${room.code}.${qtyIndex}`
+                        )?.firstName || ''
                       }
                       onChange={(e) =>
                         handleChange(
-                          `${itinerary.name}-${roomIndex}-${qtyIndex}`,
-                          "firstName",
+                          itinerary.code,
+                          `${room.code}.${qtyIndex}`,
+                          'firstName',
                           e.target.value
                         )
                       }
@@ -109,20 +107,20 @@ export default function FormClientHB({ dataItinerary }) {
 
                     <input
                       required
-                      placeholder="First name"
+                      placeholder="Last name"
                       className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                       type="text"
                       value={
-                        responsibles.find(
-                          (responsible) =>
-                            responsible.roomId ===
-                            `${itinerary.name}-${roomIndex}-${qtyIndex}`
-                        )?.lastName || ""
+                        roomHolders[itinerary.code]?.find(
+                          (holder) =>
+                            holder.roomId === `${room.code}.${qtyIndex}`
+                        )?.lastName || ''
                       }
                       onChange={(e) =>
                         handleChange(
-                          `${itinerary.name}-${roomIndex}-${qtyIndex}`,
-                          "lastName",
+                          itinerary.code,
+                          `${room.code}.${qtyIndex}`,
+                          'lastName',
                           e.target.value
                         )
                       }

@@ -34,6 +34,7 @@ export default function FormCentral(props) {
     expirationMonth,
     expirationYear,
     cvvCard,
+    roomHolders
   } = useContext(PaymentContext);
 
   const { handleStepChange } = useContext(BookingContext);
@@ -69,6 +70,7 @@ export default function FormCentral(props) {
     cardNumber: numberCard.slice(-4),
     serviceType: paymentProvider.toLowerCase(),
     ...(hotelRH ? { guests: hotelRH } : {}),
+    ...(roomHolders ? { roomHolders: roomHolders } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
     ...(paymentProvider === "OPENPAY" &&
     window.OpenPay &&

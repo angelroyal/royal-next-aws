@@ -1,214 +1,120 @@
-{
-  "1": [
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
+[
+  {
+      "type": "activity",
+      "key": 1,
+      "provider": "ct",
+      "date": "2024-08-27",
+      "address": "Terminal de autobuses ADO Cancún.",
+      "duration": "10h",
+      "title": "Autobús turístico de Cancún",
+      "tourists": {
+          "id": 0,
+          "rate": "Billete de 1 día",
+          "categories": [
+              {
+                  "id": 1,
+                  "category": "Adultos extranjeros",
+                  "quantity": 1
+              }
+          ]
       },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    },
-
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
+      "image": "https://cdn2.civitatis.com/mexico/cancun/autobus-turistico-cancun.jpg",
+      "itemId": 220,
+      "price": 232.5,
+      "cancelPolicies": [
+          {
+              "hours": 24,
+              "penalty": 0,
+              "type": "percent"
+          }
+      ]
+  },
+  {
+      "type": "hotel",
+      "code": 554,
+      "provider": "hb",
+      "date": "2024-09-12",
+      "checkIn": "2024-09-12",
+      "checkOut": "2024-09-14",
+      "name": "NYX Cancun",
+      "codeName": "nyx-cancun",
+      "destinationName": "Cancun",
       "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    }
-  ],
-  "2": [
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    },
-
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    }
-  ],
-  "4": [
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    },
-
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    }
-  ],
-  "4": [
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    },
-
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    }
-  ],
-  "5": [
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    },
-
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    }
-  ],
-  "6": [
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    },
-
-    {
-      "code": 6270,
-      "name": "The Pyramid Cancun",
-      "codeName": "the-pyramid-cancun",
-      "image": "https://api.sandboxmexico.com/assets/images/hotels/1265/148066a_hb_a_001.webp",
-      "destinationCodeName": "cancun",
-      "price": 287.54,
-      "es": {
-        "destination": "Cancún",
-        "country": "mexico"
-      },
-      "en": {
-        "destination": "Cancun",
-        "country": "mexico"
-      }
-    }
-  ]
-}
-
-
+      "destinationCode": 18,
+      "address": "Blvd. Kukulcan Km 11.5 Zona Hotelera",
+      "stars": 3,
+      "totalAdults": 5,
+      "totalChildren": 1,
+      "totalRooms": 3,
+      "rooms": [
+          {
+              "code": "DBL.ST",
+              "name": "STANDARD ROOM",
+              "quantity": 1,
+              "occupancies": [
+                  {
+                      "eatingPlan": "Desayuno incluido",
+                      "beds": [
+                          {
+                              "number": 1,
+                              "type": "Cama Queen size de 150 a 154 de ancho"
+                          },
+                          {
+                              "number": 1,
+                              "type": "Cama Queen size de 150 a 154 de ancho"
+                          }
+                      ],
+                      "adults": 2,
+                      "children": 0,
+                      "refundable": true
+                  }
+              ]
+          },
+          {
+              "code": "DBL.DX",
+              "name": "DELUXE ROOM",
+              "quantity": 2,
+              "occupancies": [
+                  {
+                      "eatingPlan": "Desayuno incluido",
+                      "beds": [
+                          {
+                              "number": 1,
+                              "type": "Cama king size 150-183 ancho"
+                          },
+                          {
+                              "number": 1,
+                              "type": "Cama king size 150-183 ancho"
+                          }
+                      ],
+                      "adults": 2,
+                      "children": 0,
+                      "refundable": true
+                  },
+                  {
+                      "eatingPlan": "Desayuno incluido",
+                      "beds": [
+                          {
+                              "number": 1,
+                              "type": "Cama king size 150-183 ancho"
+                          },
+                          {
+                              "number": 1,
+                              "type": "Cama king size 150-183 ancho"
+                          }
+                      ],
+                      "adults": 1,
+                      "children": 1,
+                      "childrenAges": [
+                          "1"
+                      ],
+                      "refundable": true
+                  }
+              ]
+          }
+      ],
+      "price": 23210.3,
+      "available": true,
+      "image": "https://staywuw.com/api2/assets/images/hotels//301/008387a_hb_a_015.webp"
+  }
+]
