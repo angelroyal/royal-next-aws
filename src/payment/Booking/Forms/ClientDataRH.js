@@ -1,12 +1,11 @@
 import Image from "next/image";
-// import { Form } from "react-bootstrap";
 import React, { useContext, useEffect, useState } from "react";
 
-import LanguageContext from "@/language/LanguageContext";
-import { PaymentContext } from "@/payment/context/PaymentContext";
 import {
   processItineraryData,
 } from "@/payment/config/processData";
+import LanguageContext from "@/language/LanguageContext";
+import { PaymentContext } from "@/payment/context/PaymentContext";
 
 export function FormClientRH(props) {
   const { setRoomsRH } = useContext(PaymentContext);

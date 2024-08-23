@@ -1,5 +1,12 @@
 import { useContext, useState, useEffect } from "react";
 
+import {
+  conektaErrorResponseHandler,
+  conektaSuccessResponseHandler,
+  openpayErrorResponseHandler,
+  openpaySuccessResponseHandler,
+} from "../ActionsForms/paymentHandlers";
+import FormClientHB from "./FormClientHB";
 import ClientDataT from "./FormClientData";
 import FormCreditCard from "./FormCreditCard";
 import { FormClientRH } from "./ClientDataRH";
@@ -8,13 +15,6 @@ import { PaymentContext } from "@/payment/context/PaymentContext";
 import { BookingContext } from "@/payment/context/BookingContext";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT";
-import {
-  conektaErrorResponseHandler,
-  conektaSuccessResponseHandler,
-  openpayErrorResponseHandler,
-  openpaySuccessResponseHandler,
-} from "../ActionsForms/paymentHandlers";
-import FormClientHB from "./FormClientHB";
 
 export default function FormCentral(props) {
   const paymentProvider = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER;
@@ -115,7 +115,6 @@ export default function FormCentral(props) {
           conektaErrorResponseHandler(
             response,
             setAnimationData,
-            closeModalAfterDelay
           )
       );
     } else if (paymentProvider === "OPENPAY") {
@@ -139,7 +138,6 @@ export default function FormCentral(props) {
           openpayErrorResponseHandler(
             error,
             setAnimationData,
-            closeModalAfterDelay
           )
       );
     }

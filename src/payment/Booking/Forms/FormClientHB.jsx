@@ -1,23 +1,22 @@
 import Image from "next/image";
 import { useContext, useEffect } from "react";
 
+import LanguageContext from "@/language/LanguageContext";
 import { PaymentContext } from "@/payment/context/PaymentContext";
 
 export default function FormClientHB({ dataItinerary }) {
-  console.log(dataItinerary);
-  const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
-
+  const { languageData } = useContext(LanguageContext);
   const { roomHolders, setRoomHolders } = useContext(PaymentContext);
+  const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
   const hbItineraries = dataItinerary.filter(
     (itinerary) => itinerary.provider === 'hb'
   );
 
   if (hbItineraries.length === 0) {
-    return <div>No valid provider found</div>;
+    return null;
   }
 
-  // Inicializar solo si roomHolders está vacío
   useEffect(() => {
     if (Object.keys(roomHolders).length === 0) {
       const initialRoomHolders = hbItineraries.reduce((acc, itinerary) => {
@@ -33,7 +32,7 @@ export default function FormClientHB({ dataItinerary }) {
   
       setRoomHolders(initialRoomHolders);
     }
-  }, []); // Dependencias vacías para que se ejecute solo una vez
+  }, []);
 
   const handleChange = (code, roomId, field, value) => {
     const updatedRoomHolders = {
@@ -48,7 +47,7 @@ export default function FormClientHB({ dataItinerary }) {
   return (
     <div className="w-full bg-white rounded-[19px] px-[1.8rem] pt-[2rem] pb-[3rem] mt-[2.5rem]">
       <h2 className="text-fs-18 text-black m-b italic">
-        * Complete los Detalles de los Responsables de Habitación * 
+        * {languageData.formHb.title} * 
       </h2>
 
       {hbItineraries.map((itinerary, itineraryIndex) => (
@@ -74,13 +73,13 @@ export default function FormClientHB({ dataItinerary }) {
                 <div className="flex justify-evenly items-end mb-[1.1rem] gap-[2rem] max-lg:flex-col max-lg:gap-[1rem]">
                   <div className="w-full flex-col">
                     <label className="mt-[16px] m-b text-fs-12 text-gry-100">
-                      First Name:
+                    {languageData.formHb.firstname}:
                     </label>
                     <span className="text-red-100">*</span>
 
                     <input
                       required
-                      placeholder="First name"
+                      placeholder={languageData.formHb.firstnamePlaceholder}
                       className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                       type="text"
                       value={
@@ -101,13 +100,13 @@ export default function FormClientHB({ dataItinerary }) {
                   </div>
                   <div className="w-full flex-col">
                     <label className="mt-[16px] m-b text-fs-12 text-gry-100">
-                      Last Name:
+                    {languageData.formHb.lastname}:
                     </label>
                     <span className="text-red-100">*</span>
 
                     <input
                       required
-                      placeholder="Last name"
+                      placeholder={languageData.formHb.lastnamePlaceholder}
                       className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
                       type="text"
                       value={

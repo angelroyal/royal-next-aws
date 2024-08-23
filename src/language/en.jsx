@@ -1268,7 +1268,7 @@ export const en = {
     adult: "Adult",
     children: "Children",
     clientData: {
-      titleForm: "Enter the following data",
+      titleForm: "Complete Your Personal Information",
       textName: "Name",
       placeholderName: "Enter names",
       textLastName: "LastName",
@@ -1502,7 +1502,7 @@ export const en = {
     mayTake: "This may take a while",
     textProcessing: "Please do not close this window or reload the page.",
     textErrorProcessed:
-      "It seems your payment has been processed, but there was an error on our server. Please check your email to verify if you received a payment confirmation.",
+      "Unfortunately, we were unable to process your payment due to an error. Please review your card details and try again.",
     textErrorPersists:
       "If the issue persists, feel free to contact our support team at the number",
     callAdvisor: "To call an advisor",
@@ -1851,6 +1851,14 @@ export const en = {
         successSubtitle: "Everything is ready for your adventure.",
       },
     },
+  },
+
+  formHb: {
+    title: "Complete the Room Holder Details",
+    firstname: "First Name",
+    firstnamePlaceholder: "Enter the first name",
+    lastname: "Last Name",
+    lastnamePlaceholder: "Enter the last name",
   },
 
   countries: {

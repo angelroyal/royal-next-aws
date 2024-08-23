@@ -127,7 +127,7 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
 
 export default function AlertPayment({ animationData, isOpen, closeModal }) {
   const { languageData } = useContext(LanguageContext);
-
+  
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -155,12 +155,11 @@ export default function AlertPayment({ animationData, isOpen, closeModal }) {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-fit max-w-md transform rounded-lg overflow-hidden bg-white text-left align-middle shadow-xl transition-all">
-                {/* <div className="bg-white px-[24px] pt-[24px] pb-[48px] w-[423px] h-[485px] flex flex-col items-center justify-end relative max-sm:w-full"> */}
-                  <AnimationContent
-                    animationData={animationData}
-                    languageData={languageData}
-                    closeModal={closeModal}
-                  />
+                <AnimationContent
+                  animationData={animationData}
+                  languageData={languageData}
+                  closeModal={closeModal}
+                />
                 {/* </div> */}
               </Dialog.Panel>
             </Transition.Child>

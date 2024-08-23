@@ -335,7 +335,8 @@ export const es = {
         },
         stepTwo: {
           title: "Agrega los detalles de reservación",
-          description: "Proporciona tus datos de contacto, fechas y preferencias.",
+          description:
+            "Proporciona tus datos de contacto, fechas y preferencias.",
         },
         stepThree: {
           title: "Realiza el pago",
@@ -1274,7 +1275,7 @@ export const es = {
     adult: "Adulto",
     children: "Menor",
     clientData: {
-      titleForm: "Ingresa los siguientes datos",
+      titleForm: "Complete su Información Personal",
       textName: "Nombre",
       placeholderName: "Ingresa nombres",
       textLastName: "Apellido",
@@ -1510,7 +1511,7 @@ export const es = {
     mayTake: "Esto puede demorar",
     textProcessing: "Por favor, no cierres esta ventana ni recargues la página",
     textErrorProcessed:
-      "Parece que tu pago ha sido procesado, pero ocurrió un error en nuestro servidor. Por favor, revisa tu correo electrónico para verificar si recibiste una confirmación de pago.",
+      "Lamentablemente, no pudimos completar tu pago debido a un error. Por favor, revisa los detalles de tu tarjeta e inténtalo nuevamente.",
     textErrorPersists:
       "Si el problema persiste, no dudes en contactar a nuestro equipo de soporte al número",
     callAdvisor: "Llamar a un asesor",
@@ -1862,6 +1863,15 @@ export const es = {
       },
     },
   },
+
+  formHb: {
+    title: "Complete los Detalles de los Responsables de Habitación",
+    firstname: "Nombre",
+    firstnamePlaceholder: "Ingrese el nombre",
+    lastname: "Apellido",
+    lastnamePlaceholder: "Ingrese el apellido",
+  },
+  
 
   countries: {
     ABW: "Aruba",
