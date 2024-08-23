@@ -71,7 +71,6 @@ export default function TabInfoHotel(props) {
                       >
                         {languageData.modalHotel.showLess}
                         <img
-                          // src="https://sandboxmexico.com/assets/icons/arrows/up-bl.svg"
                           src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-bl.svg`}
                           alt="show less"
                           width={14}
