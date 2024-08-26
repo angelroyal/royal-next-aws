@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
       streetAddress: "Av Náder",
     },
     faxNumber: "+52 800 953 0342",
-    logo: "https://sandboxmexico.com/assets/royal/principal-logo.svg",
+    logo: `${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`,
     founder: "Stay Wuw company",
     foundingDate: "2024",
     foundingLocation: "Mexico",

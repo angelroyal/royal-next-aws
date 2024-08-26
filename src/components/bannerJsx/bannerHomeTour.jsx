@@ -56,7 +56,7 @@ export function BannersFooterTour() {
         <div className="image-right-home-tour">
           <img
             className="image-radius"
-            src="https://sandboxmexico.com/assets/banners/tours/Feb2024/cenote-san-antonio.webp"
+            src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/cenote-san-antonio.webp`}
             alt="cenote-san-antonio"
             width="100%"
             height={"100%"}
@@ -110,7 +110,7 @@ export function BannersFooterTour() {
           <div className="position-new-titles-tour-col-img">
             <img
               className="image-radius"
-              src="https://sandboxmexico.com/assets/banners/tours/Feb2024/xplor-feb24.webp"
+              src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`}
               alt="Banner-tour-feb2024"
               width="100%"
               height="100%"

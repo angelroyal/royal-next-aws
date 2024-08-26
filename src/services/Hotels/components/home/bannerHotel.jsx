@@ -86,7 +86,7 @@ export function BannerIcons() {
     <div className="flex m-b my-6 overflow-x-auto">
       <div className="mx-5 hover:text-or-100 grid place-items-center">
         <img
-          src="https://sandboxmexico.com/assets/icons/beach/beach-b.svg"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/beach/beach-b.svg`}
           alt="icon-beach-b"
           width={16}
           height={16}
@@ -95,7 +95,7 @@ export function BannerIcons() {
       </div>
       <div className="mx-5 hover:text-or-100 grid place-items-center">
         <img
-          src="https://sandboxmexico.com/assets/icons/family/family-b.svg"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/family/family-b.svg`}
           alt="icon-family-b"
           width={16}
           height={16}
@@ -104,7 +104,7 @@ export function BannerIcons() {
       </div>
       <div className="mx-5 hover:text-or-100 grid place-items-center">
         <img
-          src="https://sandboxmexico.com/assets/icons/romantic/romantic-b.svg"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/romantic/romantic-b.svg`}
           alt="icon-romantic-b"
           width={16}
           height={16}
@@ -113,7 +113,7 @@ export function BannerIcons() {
       </div>
       <div className="mx-5 hover:text-or-100 grid place-items-center">
         <img
-          src="https://sandboxmexico.com/assets/icons/business/business-b.svg"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/business/business-b.svg`}
           alt="icon-business-b"
           width={16}
           height={16}
@@ -122,7 +122,7 @@ export function BannerIcons() {
       </div>
       <div className="mx-5 hover:text-or-100 grid place-items-center">
         <img
-          src="https://sandboxmexico.com/assets/icons/adults/adults-b.svg"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/adults/adults-b.svg`}
           alt="icon-adults-b"
           width={16}
           height={16}
@@ -131,7 +131,7 @@ export function BannerIcons() {
       </div>
       <div className="mx-5 hover:text-or-100 grid place-items-center">
         <img
-          src="https://sandboxmexico.com/assets/icons/pet/pet-b.svg"
+          src={`${process.env.NEXT_PUBLIC_URL}icons/pet/pet-b.svg`}
           alt="icon-pet-b"
           width={16}
           height={16}
@@ -272,7 +272,7 @@ export function BannerHomeHotelSwiper() {
       <SwiperSlide className="!w-[48%] max-lg:!w-full  !bg-white">
         <div className="w-full flex justify-center !bg-white">
           <Image
-            src={excDiscounts}
+            src={excDiscounts ? excDiscounts : ""}
             width={547}
             height={235}
             className="w-full h-[19rem] rounded-lg object-cover object-center select-none"
@@ -332,7 +332,7 @@ export function BannerHomeHotelD() {
       <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
         <div className="w-full h-full flex justify-center !bg-white overflow-hidden rounded-lg">
           <Image
-            src={excDiscounts}
+            src={excDiscounts ? excDiscounts : ""}
             width={547}
             height={235}
             className="w-full h-full rounded-lg object-cover object-center select-none transition-transform duration-500 transform scale-100 hover:scale-105"

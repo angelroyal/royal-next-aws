@@ -103,7 +103,7 @@ function Room({ listing = false, OnApply }) {
             {/* <Person2OutlinedIcon className="icon-person-search" /> */}
             <img
               className="h-3.5 w-3.5 invert"
-              src="https://sandboxmexico.com/assets/icons/adult/adult-b.svg"
+              src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
               alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon adult`}
             />
             <div className="flex flex-col items-start">
