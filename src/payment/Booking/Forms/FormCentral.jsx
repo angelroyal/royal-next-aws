@@ -34,7 +34,7 @@ export default function FormCentral(props) {
     expirationMonth,
     expirationYear,
     cvvCard,
-    roomHolders
+    roomHolders,
   } = useContext(PaymentContext);
 
   const { handleStepChange } = useContext(BookingContext);
@@ -44,19 +44,8 @@ export default function FormCentral(props) {
 
   const searchParams = new URLSearchParams(window.location.search);
   const uid = searchParams.get("uid");
-
-  useEffect(() => {
-    if (paymentProvider === "OPENPAY") {
-      if (window.OpenPay) {
-        window.OpenPay.setId(process.env.NEXT_PUBLIC_OPENPAY_ID);
-        window.OpenPay.setApiKey(process.env.NEXT_PUBLIC_OPENPAY_API_KEY);
-        window.OpenPay.setSandboxMode(true);
-        console.log("OpenPay credentials set");
-      } else {
-        console.error("OpenPay library is not loaded");
-      }
-    }
-  }, [paymentProvider]);
+  const dev = window.OpenPay.deviceData.setup("card-form");
+  console.log(dev);
 
   // PAYLOAD PAYMENT
   const paymentData = {
@@ -111,11 +100,7 @@ export default function FormCentral(props) {
             handleStepChange,
             closeModalAfterDelay
           ),
-        (response) =>
-          conektaErrorResponseHandler(
-            response,
-            setAnimationData,
-          )
+        (response) => conektaErrorResponseHandler(response, setAnimationData)
       );
     } else if (paymentProvider === "OPENPAY") {
       window.OpenPay.token.create(
@@ -134,11 +119,7 @@ export default function FormCentral(props) {
             handleStepChange,
             closeModalAfterDelay
           ),
-        (error) =>
-          openpayErrorResponseHandler(
-            error,
-            setAnimationData,
-          )
+        (error) => openpayErrorResponseHandler(error, setAnimationData)
       );
     }
   };
