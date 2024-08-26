@@ -38,7 +38,7 @@ export default function HeaderBlue() {
             >
               <img
                 className="w-4 h-4"
-                src="https://sandboxmexico.com/assets/icons/whats/whats-w.svg"
+                src={`${process.env.NEXT_PUBLIC_URL}icons/whats/whats-w.svg`}
                 alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon whatsapp`}
               />
             </a>
@@ -50,7 +50,7 @@ export default function HeaderBlue() {
             >
               <img
                 className="w-4 h-4"
-                src="https://sandboxmexico.com/assets/icons/face/face-w.svg"
+                src={`${process.env.NEXT_PUBLIC_URL}icons/face/face-w.svg`}
                 alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon facebook`}
               />
             </a>
@@ -62,7 +62,7 @@ export default function HeaderBlue() {
             >
               <img
                 className="w-4 h-4"
-                src="https://sandboxmexico.com/assets/icons/insta/insta-w.svg"
+                src={`${process.env.NEXT_PUBLIC_URL}icons/insta/insta-w.svg`}
                 alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY}icon instagram`}
               />
             </a>

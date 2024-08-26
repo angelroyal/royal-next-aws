@@ -10,7 +10,7 @@
 // // } from "@heroicons/react/20/outline";
 
 
-// const iconInfo = `https://sandboxmexico.com/assets/icons/alert/alert-100.svg`;
+// const iconInfo = `${process.env.NEXT_PUBLIC_URL}icons/alert/alert-100.svg`;
 
 // const tabs = [
 //   { name: "informacion", href: "#", icon: InformationCircleIcon },

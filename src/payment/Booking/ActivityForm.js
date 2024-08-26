@@ -164,7 +164,7 @@ export const ActivityForm = ({ activityPreBooking, setFormActivityItems }) => {
               {/* TITLE TOUR */}
               <div className="subtitle-data-client form-label mb-1 flex">
                 <img
-                  src="https://sandboxmexico.com/assets/icons/adults/adults-o.svg"
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/adults/adults-o.svg`}
                   alt="no found"
                   className="me-2 ms-1"
                 />
