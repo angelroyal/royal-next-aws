@@ -10,7 +10,7 @@ export const scrollToTop = () => {
 };
 
 export function ScrollButton() {
-  const ButtonUp = `${process.env.NEXT_PUBLIC_URL}icons/general/up-scroll.svg`;
+  const ButtonUp = `${process.env.NEXT_PUBLIC_URL}icons/arrows/up-100-cle.svg`;
 
   const [isOccult, setOccult] = useState(false);
 
