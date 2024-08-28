@@ -50,7 +50,7 @@ export default function AlertGeneric({
                   />
 
                   <img
-                    src={`${process.env.NEXT_PUBLIC_URL}/icons/general/infotipo-staywuw.svg`}
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw.svg`}
                     alt="icon-logo"
                     width={145}
                     height={145}

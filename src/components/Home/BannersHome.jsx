@@ -42,7 +42,7 @@ export default function BannersHeaderHome() {
   return (
     <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/home/banner-home-top.webp`}
+        src={`https://apicrm.staywuw.com/images/home/bannerHome/laptop/banner-home-top.webp`}
         width="1366px"
         height="480px"
         alt="Banner-home-top"

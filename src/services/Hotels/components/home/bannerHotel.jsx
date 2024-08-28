@@ -144,8 +144,8 @@ export function BannerIcons() {
 
 export function BannerHomeKnowMore() {
   const { languageData } = useContext(LanguageContext);
-  const beach = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/beach.jpg`;
-  const city = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/city.jpg`;
+  const beach = `${process.env.NEXT_PUBLIC_URL}banners/hotel/Feb2024/beach.webp`;
+  const city = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/city.webp`;
   const selfie = `${process.env.NEXT_PUBLIC_URL}/banners/hotel/Feb2024/selfie.png`;
 
   return (

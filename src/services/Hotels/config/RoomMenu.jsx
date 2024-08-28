@@ -260,8 +260,8 @@ export default function RoomMenu(props) {
                         <Image
                           src={`${
                             room.adult === 1
-                              ? `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-70.svg`
-                              : `${process.env.NEXT_PUBLIC_URL}/icons/remove/remove-bl.svg`
+                              ? `${process.env.NEXT_PUBLIC_URL}icons/remove/remove-70.svg`
+                              : `${process.env.NEXT_PUBLIC_URL}icons/remove/remove-bl.svg`
                           }`}
                           alt="remove icon"
                           width={14}
