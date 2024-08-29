@@ -7,6 +7,7 @@ import "@/assets/styles/general/Swiper.css";
 import Image from "next/image";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
 import { useContext, useState, useEffect } from "react";
 
 import BannerCardHome from "./BannerCardHome";
@@ -68,14 +69,40 @@ export default function BannersHeaderHome(props) {
   return (
     <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
       {getImg ? (
-        <img
-          src={getImg.home.bannerHome[deviceType]}
-          width="1366px"
-          height="480px"
-          alt="Banner Home"
-          className="w-full h-full object-cover select-none"
-        />
+        <Swiper
+          className="h-[442px] md:h-72 2xl:h-[480px] w-full"
+          slidesPerView={1}
+          id="swiper-banner-home"
+          navigation
+          modules={[Navigation, Autoplay]}
+          loop={true}
+          cssMode={true}
+          autoplay={{
+            delay: 6000,
+          }}
+        >
+          {getImg.home.bannerHome[deviceType].map(
+            (imgCarrousel, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={imgCarrousel}
+                  className="object-cover	w-full h-full object-center select-none"
+                  alt="banner-top-second"
+                  width="100%"
+                  height="100%"
+                />
+              </SwiperSlide>
+            )
+          )}
+        </Swiper>
       ) : (
+        // <img
+        //   src={getImg.home.bannerHome[deviceType]}
+        //   width="1366px"
+        //   height="480px"
+        //   alt="Banner Home"
+        //   className="w-full h-full object-cover select-none"
+        // />
         <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
       )}
     </div>
@@ -440,16 +467,15 @@ export function OffersNow(props) {
 
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">
-            {getImg ? (
+              {getImg ? (
                 <img
-                src={getImg.home.bannerYellow[deviceType]}
-                alt="banner yellow tablet and mobile"
-                className="h-full w-full rounded-lg select-none object-cover"
-              />
+                  src={getImg.home.bannerYellow[deviceType]}
+                  alt="banner yellow tablet and mobile"
+                  className="h-full w-full rounded-lg select-none object-cover"
+                />
               ) : (
                 <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
               )}
-             
             </div>
           </SwiperSlide>
         </Swiper>
