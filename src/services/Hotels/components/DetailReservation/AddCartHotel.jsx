@@ -45,6 +45,7 @@ export default function AddCartHotel() {
           price: room.netPrice,
           boardCode: room.boardCode,
           hash: room.hash,
+          cancellationPolicies: room.cancellationPolicies,
         })),
       };
 

@@ -102,12 +102,12 @@ export function CardReview({ hotelReview, isModal = false }) {
         </div>
 
         {/* REVIEW TITLE */}
-        <span class="m-s-b text-black text-fs-16">
+        <span className="m-s-b text-black text-fs-16">
           <h2>{hotelReview.title}</h2>
         </span>
 
         {/* REVIEW MESSAGE  */}
-        <div class="text-gry-100 flex flex-col gap-y-5 text-justify text-fs-12 m-m">
+        <div className="text-gry-100 flex flex-col gap-y-5 text-justify text-fs-12 m-m">
           <p>
             {isModal
               ? showMore

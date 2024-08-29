@@ -9,6 +9,7 @@ export default function AddPreCartHotel(props) {
     useContext(RoomsHotelContext);
 
   const handleAddDetailHotelMaxPrice = (room) => {
+
     const persons = parseInt(room.adultChildren.split(".")[0]);
     const data = {
       code: room.code,
@@ -26,6 +27,13 @@ export default function AddPreCartHotel(props) {
       boardCode: room.boardCode,
       hash: room.hash,
       image: room.image,
+      cancellationPolicies: {
+        cancellationCode: room.cancellationCode,
+        policy: {
+          from: room.cancellationPolicies.from,
+          percentage: room.cancellationPolicies.percentage,
+        },
+      },
     };
 
     const updatedSelectedRooms = [...selectedRooms, data];

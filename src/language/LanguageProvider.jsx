@@ -7,7 +7,6 @@ import { en } from "./en";
 
 function LanguageProvider(props) {
   const [language, setLanguage] = useState("en");
-
   const [currency, setCurrency] =useState("MXN");
 
   useEffect(()=>{
