@@ -31,8 +31,6 @@ export default function AddCartHotel() {
         const { uid } = JSON.parse(uidCart);
         cartId = uid;
       }
-      console.log(selectedRooms);
-      
 
       // REQUEST BODY ADD CART
       const saveRequestCart = {

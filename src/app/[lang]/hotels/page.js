@@ -1,5 +1,4 @@
 import Token from "@/components/General/Token";
-// import Footer from "@/components/Footer/Footer";
 import FooterT from "@/components/Footer/FooterT";
 import ContactUs from "@/components/General/ContactUs";
 import LanguageProvider from "@/language/LanguageProvider";
@@ -9,6 +8,7 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import HomeHotel from "@/services/Hotels/components/home/HomeHotel";
 
 export default function Home() {
+  
   return (
     <LanguageProvider>
       <TokenProvider>

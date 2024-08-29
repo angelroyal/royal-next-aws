@@ -72,3 +72,21 @@ export async function GetLocationDetails(locationId) {
   }
 }
 
+// export const lodgings = async (id) => {
+//   try {
+//     let response = await axiosWithInterceptor.get(
+//       `v1/hotels/shuffle?items=12`,
+//       {
+//         params: {
+//           hotelType: id,
+//         },
+//       }
+//     );
+//     if (response.data) {
+//       return response.data;
+//     }
+//   } catch (error) {
+//     console.eror(error);
+//     throw error;
+//   }
+// };

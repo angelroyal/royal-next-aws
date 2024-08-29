@@ -12,8 +12,13 @@ import { useContext, useState, useEffect } from "react";
 import BannerCardHome from "./BannerCardHome";
 import LanguageContext from "@/language/LanguageContext";
 import { shuffleHotelTypes } from "@/services/Hotels/config/shuffleHotelTypes";
+import { ImageContext } from "@/context/ImageContext";
 
-export default function BannersHeaderHome() {
+export default function BannersHeaderHome(props) {
+  const {dataImg} = props;
+  const { getImg, setGetImg } = useContext(ImageContext);
+  console.log(getImg);
+
   const [dashedOne, setDashedOne] = useState([
     { key: 1, value: true },
     { key: 2, value: false },
@@ -37,6 +42,8 @@ export default function BannersHeaderHome() {
         );
       }, interval * index);
     });
+    setGetImg(dataImg);
+
   }, []);
 
   return (
