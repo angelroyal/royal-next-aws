@@ -15,10 +15,6 @@ import { shuffleHotelTypes } from "@/services/Hotels/config/shuffleHotelTypes";
 import { ImageContext } from "@/context/ImageContext";
 
 export default function BannersHeaderHome(props) {
-  const {dataImg} = props;
-  const { getImg, setGetImg } = useContext(ImageContext);
-  console.log(getImg);
-
   const [dashedOne, setDashedOne] = useState([
     { key: 1, value: true },
     { key: 2, value: false },
@@ -43,83 +39,141 @@ export default function BannersHeaderHome(props) {
       }, interval * index);
     });
     setGetImg(dataImg);
+  }, []);
 
+  const { dataImg } = props;
+  const { getImg, setGetImg } = useContext(ImageContext);
+
+  // DISPLAY LAP , TAB and MOB
+  const [deviceType, setDeviceType] = useState(null);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width > 1024) {
+        setDeviceType("laptop");
+      } else if (width > 640 && width <= 1024) {
+        setDeviceType("tablet");
+      } else if (width <= 640) {
+        setDeviceType("mobile");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
-      <img
-        src={`https://apicrm.staywuw.com/images/home/bannerHome/laptop/banner-home-top.webp`}
-        width="1366px"
-        height="480px"
-        alt="Banner-home-top"
-        className="w-full h-full object-cover select-none"
-      ></img>
+      {getImg ? (
+        <img
+          src={getImg.home.bannerHome[deviceType]}
+          width="1366px"
+          height="480px"
+          alt="Banner Home"
+          className="w-full h-full object-cover select-none"
+        />
+      ) : (
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
+      )}
     </div>
   );
 }
 
-export function BannersHomeOffers() {
+export function BannersHomeOffers(props) {
   const { languageData } = useContext(LanguageContext);
+
+  const { dataImg } = props;
+  const { getImg, setGetImg } = useContext(ImageContext);
+
+  // DISPLAY LAP , TAB and MOB
+  const [deviceType, setDeviceType] = useState(null);
+  useEffect(() => {
+    setGetImg(dataImg);
+
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width > 1024) {
+        setDeviceType("laptop");
+      } else if (width > 640 && width <= 1024) {
+        setDeviceType("tablet");
+      } else if (width <= 640) {
+        setDeviceType("mobile");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [dataImg]);
+
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
       <div className="w-[70%] max-md:w-full max-sm:h-[440px] z-0">
-        <Swiper
-          slidesPerView={1}
-          className="h-full rounded-lg"
-          id="swiper-banner-home-offers"
-          initialSlide={0}
-          navigation
-          modules={[Navigation]}
-        >
-          {[...Array(5)].map((_, index) => (
-            <SwiperSlide className="!rounded-lg relative" key={index}>
-              <img
-                src={`${process.env.NEXT_PUBLIC_URL}banners/home/Rectangle 372.png`}
-                alt="banner-offers"
-                className="md:block hidden w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
-              />
+        {getImg ? (
+          <Swiper
+            slidesPerView={1}
+            className="h-full rounded-lg"
+            id="swiper-banner-home-offers"
+            initialSlide={0}
+            navigation
+            modules={[Navigation]}
+          >
+            {getImg.home.offertsCarrousel[deviceType].map(
+              (imgCarrousel, index) => (
+                <SwiperSlide className="!rounded-lg relative" key={index}>
+                  <img
+                    src={imgCarrousel}
+                    alt="banner-offers"
+                    className="md:block  w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
+                  />
 
-              <img
-                src={`${process.env.NEXT_PUBLIC_URL}banners/home/offer-home-m.jpg`}
-                alt="banner-offers"
-                className="block md:hidden w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
-              />
+                  {/* HIDDEN BUTTON BANNER */}
+                  <button className="hidden absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[60px] lg:bottom-[114px] bg-white rounded-full items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
+                    <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
+                      {languageData.enjoyStayHome.bookNowBtn}
+                    </p>
 
-              {/* HIDDEN BUTTON BANNER */}
-              <button className="hidden absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[60px] lg:bottom-[114px] bg-white rounded-full items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
-                <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
-                  {languageData.enjoyStayHome.bookNowBtn}
-                </p>
-
-                <Image
-                  className="w-[12px] lg:w-[16px] h-[8px] lg:h-[12px]"
-                  width={16}
-                  height={12}
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-or-100.svg`}
-                  alt="arrows-right-or-100"
-                />
-              </button>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                    <Image
+                      className="w-[12px] lg:w-[16px] h-[8px] lg:h-[12px]"
+                      width={16}
+                      height={12}
+                      src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-or-100.svg`}
+                      alt="arrows-right-or-100"
+                    />
+                  </button>
+                </SwiperSlide>
+              )
+            )}
+          </Swiper>
+        ) : (
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+        )}
       </div>
 
       <div className="w-[30%] max-md:w-full">
-        <img
-          src={`${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-offers-second.jpg`}
-          className="h-full w-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
-          alt="Banner Experimenta los mejores tours"
-        />
+        {getImg ? (
+          <img
+            src={getImg.home.offerBaggage[deviceType]}
+            className="h-full w-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
+            alt="Banner Experimenta los mejores tours"
+          />
+        ) : (
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+        )}
       </div>
     </div>
   );
 }
 
-export function BannersHomeExclusiveDiscounts() {
+export function BannersHomeExclusiveDiscounts(props) {
   const { languageData, language } = useContext(LanguageContext);
-  const bannerDiscounts = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts.jpg`;
-  const bannerDiscountsSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts-second.jpg`;
+  // const bannerDiscounts = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts.jpg`;
+  // const bannerDiscountsSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts-second.jpg`;
 
   const shuffleTypes = shuffleHotelTypes;
   const [randomNumber, setRandomNumber] = useState(null);
@@ -145,24 +199,59 @@ export function BannersHomeExclusiveDiscounts() {
       "_blank"
     );
   };
+
+  // IMG MARK
+  const { dataImg } = props;
+  const { getImg, setGetImg } = useContext(ImageContext);
+
+  // DISPLAY LAP , TAB and MOB
+  const [deviceType, setDeviceType] = useState(null);
+  useEffect(() => {
+    setGetImg(dataImg);
+
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width > 1024) {
+        setDeviceType("laptop");
+      } else if (width > 640 && width <= 1024) {
+        setDeviceType("tablet");
+      } else if (width <= 640) {
+        setDeviceType("mobile");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [dataImg]);
   return (
     <>
       <div className="flex w-full 2xl:gap-[1vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px] justify-between">
         <div className="2xl:w-fit 2xl:gap-[3vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:flex max-md:justify-between max-sm:hidden">
           <div className="w-[280px] shadow-3xl rounded-lg">
-            <img
-              src={bannerDiscounts}
-              className="w-full h-full rounded-lg select-none aspect-square object-contain"
-              alt="banner discounts"
-            />
+            {getImg ? (
+              <img
+                src={getImg.home.offerHotel[deviceType]}
+                className="w-full h-full rounded-lg select-none aspect-square object-contain"
+                alt="banner offers hotel"
+              />
+            ) : (
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+            )}
           </div>
 
           <div className="w-[280px] shadow-3xl rounded-lg">
-            <img
-              src={bannerDiscountsSecond}
-              className="w-full h-full rounded-lg select-none aspect-square"
-              alt="banner discounts second"
-            />
+            {getImg ? (
+              <img
+                src={getImg.home.offerTour[deviceType]}
+                className="w-full h-full rounded-lg select-none aspect-square"
+                alt="banner discounts second"
+              />
+            ) : (
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+            )}
           </div>
         </div>
 
@@ -175,19 +264,27 @@ export function BannersHomeExclusiveDiscounts() {
           >
             <SwiperSlide className="!rounded-lg">
               <div className="rounded-lg">
-                <img
-                  src={bannerDiscounts}
-                  className="w-full h-full rounded-lg select-none"
-                />
+                {getImg ? (
+                  <img
+                    src={getImg.home.offerHotel[deviceType]}
+                    className="w-full h-full rounded-lg select-none"
+                  />
+                ) : (
+                  <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+                )}
               </div>
             </SwiperSlide>
 
             <SwiperSlide className="!rounded-lg">
               <div className="rounded-lg">
-                <img
-                  src={bannerDiscountsSecond}
-                  className="w-full h-full rounded-lg select-none"
-                />
+                {getImg ? (
+                  <img
+                    src={getImg.home.offerTour[deviceType]}
+                    className="w-full h-full rounded-lg select-none"
+                  />
+                ) : (
+                  <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+                )}
               </div>
             </SwiperSlide>
           </Swiper>
@@ -240,7 +337,7 @@ export function BannersHomeExclusiveDiscounts() {
   );
 }
 
-export function BannersHomeOffersNow() {
+export function BannersHomeOffersNow(dataImg) {
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -253,35 +350,69 @@ export function BannersHomeOffersNow() {
         {languageData.bannersHome.limitedPromotions}
       </span>
 
-      <OffersNow />
+      <OffersNow dataImg={dataImg.dataImg} />
     </div>
   );
 }
 
-export function OffersNow() {
-  const offersNow = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`;
-  const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
+export function OffersNow(props) {
+  // const offersNow = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`;
+  // const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
 
-  const offersNowMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-2-m.jpg`;
-  const offersNowSecondMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-m.jpg`;
+  // const offersNowMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-2-m.jpg`;
+  // const offersNowSecondMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-m.jpg`;
+
+  const { dataImg } = props;
+  const { getImg, setGetImg } = useContext(ImageContext);
+
+  // DISPLAY LAP , TAB and MOB
+  const [deviceType, setDeviceType] = useState(null);
+  useEffect(() => {
+    setGetImg(dataImg);
+
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width > 1024) {
+        setDeviceType("laptop");
+      } else if (width > 640 && width <= 1024) {
+        setDeviceType("tablet");
+      } else if (width <= 640) {
+        setDeviceType("mobile");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [dataImg]);
 
   return (
     <>
       <div className="w-full flex gap-[2vw] max-lg:hidden justify-between">
         <div className="w-[50%]">
-          <img
-            src={offersNowSecond}
-            alt="banner-offers"
-            className="w-full rounded-lg select-none "
-          />
+          {getImg ? (
+            <img
+              src={getImg.home.bannerBlue[deviceType]}
+              alt="banner-offers"
+              className="w-full rounded-lg select-none "
+            />
+          ) : (
+            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+          )}
         </div>
 
         <div className="w-[50%] ">
-          <img
-            src={offersNow}
-            alt="banner-offers"
-            className="w-full rounded-lg select-none object-cover"
-          />
+          {getImg ? (
+            <img
+              src={getImg.home.bannerYellow[deviceType]}
+              alt="banner-offers"
+              className="w-full rounded-lg select-none object-cover"
+            />
+          ) : (
+            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+          )}
         </div>
       </div>
 
@@ -295,21 +426,30 @@ export function OffersNow() {
         >
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">
-              <img
-                src={offersNowMobile}
-                alt="banner-offers"
-                className="h-full w-full rounded-lg select-none object-cover"
-              />
+              {getImg ? (
+                <img
+                  src={getImg.home.bannerBlue[deviceType]}
+                  alt="banner-offers"
+                  className="h-full w-full rounded-lg select-none object-cover"
+                />
+              ) : (
+                <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+              )}
             </div>
           </SwiperSlide>
 
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">
-              <img
-                src={offersNowSecondMobile}
-                alt="banner-offers"
+            {getImg ? (
+                <img
+                src={getImg.home.bannerYellow[deviceType]}
+                alt="banner yellow tablet and mobile"
                 className="h-full w-full rounded-lg select-none object-cover"
               />
+              ) : (
+                <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+              )}
+             
             </div>
           </SwiperSlide>
         </Swiper>

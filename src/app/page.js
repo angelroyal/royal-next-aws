@@ -28,7 +28,7 @@ import { ImageProvider } from "@/context/ImageContext";
 export default async function DetailPageHotel({ params }) {
   try {
     const response = await axios.get(
-      `https://apicrm.staywuw.com/api/getImages/all`
+      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`
     );
 
     const dataImg = response.data;
@@ -50,9 +50,9 @@ export default async function DetailPageHotel({ params }) {
 
               <Container>
                 <div className="max-md:overflow-x-hidden">
-                  <BannersHomeOffers />
-                  <BannersHomeExclusiveDiscounts />
-                  <BannersHomeOffersNow />
+                  <BannersHomeOffers dataImg={dataImg}/>
+                  <BannersHomeExclusiveDiscounts dataImg={dataImg}/>
+                  <BannersHomeOffersNow dataImg={dataImg}/>
                 </div>
               </Container>
 
@@ -69,7 +69,7 @@ export default async function DetailPageHotel({ params }) {
               <Container>
                 <div className="max-md:overflow-x-hidden">
                   <PopularDestinationsHome />
-                  <ChainsHome />
+                  <ChainsHome dataImg={dataImg}/>
                   <EnjoyStayHome />
                   <TransportBanner />
 

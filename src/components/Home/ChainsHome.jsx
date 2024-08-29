@@ -1,15 +1,17 @@
 "use client";
 
-// import Image from "next/image";
-import { useContext } from "react";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import LanguageContext from "@/language/LanguageContext";
-
 import "swiper/css";
 
-export default function ChainsHome({ typePage = null }) {
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useContext, useEffect, useState } from "react";
+
+import { ImageContext } from "@/context/ImageContext";
+import LanguageContext from "@/language/LanguageContext";
+
+export default function ChainsHome(props, { typePage = null }) {
   const { languageData } = useContext(LanguageContext);
+
   const hotels = [
     {
       url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-riu.jpg`,
@@ -62,6 +64,34 @@ export default function ChainsHome({ typePage = null }) {
     },
   ];
 
+  const { dataImg } = props;
+  const { getImg, setGetImg } = useContext(ImageContext);
+
+  // DISPLAY LAP , TAB and MOB
+  const [deviceType, setDeviceType] = useState(null);
+  useEffect(() => {
+    setGetImg(dataImg);
+
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width > 1024) {
+        setDeviceType("laptop");
+      } else if (width > 640 && width <= 1024) {
+        setDeviceType("tablet");
+      } else if (width <= 640) {
+        setDeviceType("mobile");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [dataImg]);
+
+  console.log(getImg);
+
   return (
     <div className="mb-[56px]">
       <h2 className="m-b text-fs-28 mb-[36px]">
@@ -71,47 +101,51 @@ export default function ChainsHome({ typePage = null }) {
       </h2>
 
       <div className="h-[135px]">
-        <Swiper
-          slidesPerView={6}
-          spaceBetween={24}
-          className="h-full rounded-lg mySwiper"
-          initialSlide={0}
-          loop={true}
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 2,
-            },
-            428: {
-              slidesPerView: 3,
-            },
-            800: {
-              slidesPerView: 4,
-            },
-            1024: {
-              slidesPerView: 6,
-            },
-          }}
-        >
-          {hotels.map((hotel, index) => (
-            <SwiperSlide
-              className="!rounded-lg !flex !items-center"
-              key={index}
-            >
-              <img
-                src={hotel.url}
-                alt={hotel.description}
-                className={hotel.class}
-                width={hotel.width}
-                height={hotel.height}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {getImg ? (
+          <Swiper
+            slidesPerView={6}
+            spaceBetween={24}
+            className="h-full rounded-lg mySwiper"
+            initialSlide={0}
+            loop={true}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+              },
+              428: {
+                slidesPerView: 3,
+              },
+              800: {
+                slidesPerView: 4,
+              },
+              1024: {
+                slidesPerView: 6,
+              },
+            }}
+          >
+            {getImg.home.hotelChains[deviceType].map((hotel, index) => (
+              <SwiperSlide
+                className="!rounded-lg !flex !items-center"
+                key={index}
+              >
+                <img
+                  src={hotel}
+                  alt="Hotel Chains"
+                  className="select-none"
+                  // width={hotel.width}
+                  // height={hotel.height}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+        )}
       </div>
     </div>
   );
