@@ -4,30 +4,53 @@ import "swiper/css";
 import "../../../assets/styles/general/Swiper.css";
 
 import Image from "next/image";
-import { useContext } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useContext, useEffect, useState } from "react";
 
+import { ImageContext } from "@/context/ImageContext";
 import LanguageContext from "@/language/LanguageContext";
 
 export function BannerHomeTransport() {
+  // DISPLAY LAP , TAB and MOB
+  const [deviceType, setDeviceType] = useState(null);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width > 1024) {
+        setDeviceType("laptop");
+      } else if (width > 640 && width <= 1024) {
+        setDeviceType("tablet");
+      } else if (width <= 640) {
+        setDeviceType("mobile");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div className="max-lg:hidden">
-        <BannerHomeTransportD />
+        <BannerHomeTransportD deviceType={deviceType} />
       </div>
       <div className="lg:hidden">
-        <BannerHomeTransportSwiper />
+        <BannerHomeTransportSwiper deviceType={deviceType} />
       </div>
     </>
   );
 }
 
-export function BannerHomeTransportSwiper() {
-  const bannerCartLeading = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport.jpg`;
-  const bannerCardSecond = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport-2.jpg`;
-  const bannerCardFinish = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home%20transport-3.jpg`;
-
+export function BannerHomeTransportSwiper(props) {
+  // const bannerCartLeading = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport.jpg`;
+  // const bannerCardSecond = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport-2.jpg`;
+  // const bannerCardFinish = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home%20transport-3.jpg`;
+  const { deviceType } = props;
+  const { getImg } = useContext(ImageContext);
   const { languageData } = useContext(LanguageContext);
   return (
     <Swiper
@@ -72,13 +95,17 @@ export function BannerHomeTransportSwiper() {
             </bottom>
           </div>
           <div className="w-[60%] !bg-white">
-            <Image
-              src={bannerCartLeading}
-              width={378}
-              height={235}
-              className="w-full h-[19rem] rounded-lg object-contain object-center select-none "
-              alt="Banner Exc Discounts"
-            />
+            {getImg ? (
+              <Image
+                src={getImg.transporte.bannerCar[deviceType]}
+                width={378}
+                height={235}
+                className="w-full h-[19rem] rounded-lg object-contain object-center select-none "
+                alt="banner transport"
+              />
+            ) : (
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+            )}
           </div>
         </div>
       </SwiperSlide>
@@ -87,13 +114,17 @@ export function BannerHomeTransportSwiper() {
       {/*TWO CARD TRANSPORT */}
       <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
-          <Image
-            src={bannerCardSecond}
-            width={266}
-            height={235}
-            className="w-full rounded-lg select-none"
-            alt="Banner Experimenta los mejores tours"
-          />
+          {getImg ? (
+            <Image
+              src={getImg.transporte.bannerBlue[deviceType]}
+              width={266}
+              height={235}
+              className="w-full rounded-lg select-none"
+              alt="Banner Experimenta los mejores tours"
+            />
+          ) : (
+            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+          )}
         </div>
       </SwiperSlide>
       {/*END TWO CARD TRANSPORT */}
@@ -101,13 +132,17 @@ export function BannerHomeTransportSwiper() {
       {/* THREE CARD TRANSPORT */}
       <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
-          <Image
-            src={bannerCardFinish}
-            width={266}
-            height={235}
-            className="w-full rounded-lg select-none object-cover object-bottom"
-            alt="Banner tour mes de feb"
-          />
+          {getImg ? (
+            <Image
+              src={getImg.transporte.bannerTransport[deviceType]}
+              width={266}
+              height={235}
+              className="w-full rounded-lg select-none object-cover object-bottom"
+              alt="Banner tour mes de feb"
+            />
+          ) : (
+            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+          )}
           <div className="absolute bottom-[30px] left-[33px] max-xl:top-[32px] max-xl:left-[33px] max-sm:left-[12%] max-sm:top-[40px]">
             <h2 className="m-b w-9/12 text-white text-fs-44 mb-5 text-left max-2xl:text-fs-22 max-xl:text-fs-18 max-lg:text-fsw-48 max-sm:text-fs-24">
               {languageData.bannerTransport.firstTime}
@@ -128,13 +163,17 @@ export function BannerHomeTransportSwiper() {
   );
 }
 
-export function BannerHomeTransportD() {
-  const bannerCartLeading = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport.jpg`;
-  const bannerCardSecond = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport-2.jpg`;
-  const bannerCardFinish = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home%20transport-3.jpg`;
+export function BannerHomeTransportD(props) {
+  // const bannerCartLeading = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport.jpg`;
+  // const bannerCardSecond = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home-transport-2.jpg`;
+  // const bannerCardFinish = `${process.env.NEXT_PUBLIC_URL}banners/transport/banner-home%20transport-3.jpg`;
+
+  const { deviceType } = props;
+  const { getImg } = useContext(ImageContext);
   const { languageData } = useContext(LanguageContext);
+
   return (
-    <div className="flex gap-[16px]">
+    <div className="flex gap-[16px] min-h-[320px]">
       <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
         <div className="w-[40%] flex flex-col pl-[25px] gap-3 max-sm:!w-[58%]">
           <span className="m-b text-fs-28">
@@ -145,34 +184,49 @@ export function BannerHomeTransportD() {
           </div>
         </div>
         <div className="w-[60%] !bg-white">
-          <Image
-            src={bannerCartLeading}
-            width={378}
-            height={235}
-            className="w-full h-[19rem] rounded-lg object-contain object-center select-none "
-            alt="Banner Exc Discounts"
-          />
+          {getImg ? (
+            <Image
+              // src={bannerCartLeading}
+              src={getImg.transporte.bannerCar[deviceType]}
+              width={378}
+              height={235}
+              className="w-full h-[19rem] rounded-lg object-contain object-center select-none "
+              alt="Banner Exc Discounts"
+            />
+          ) : (
+            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+          )}
         </div>
       </div>
 
       <div className="relative flex justify-center w-3/12">
-        <Image
-          src={bannerCardSecond}
-          width={266}
-          height={235}
-          className="w-full rounded-lg select-none"
-          alt="Banner Experimenta los mejores tours"
-        />
+        {getImg ? (
+          <Image
+            // src={bannerCardSecond}
+            src={getImg.transporte.bannerBlue[deviceType]}
+            width={266}
+            height={235}
+            className="w-full rounded-lg select-none"
+            alt="Banner Experimenta los mejores tours"
+          />
+        ) : (
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+        )}
       </div>
 
       <div className=" flex justify-center w-3/12 relative">
-        <Image
-          src={bannerCardFinish}
-          width={266}
-          height={235}
-          className="w-full rounded-lg select-none object-cover object-bottom"
-          alt="Banner tour mes de feb"
-        />
+        {getImg ? (
+          <Image
+            // src={bannerCardFinish}
+            src={getImg.transporte.bannerTransport[deviceType]}
+            width={266}
+            height={235}
+            className="w-full rounded-lg select-none object-cover object-bottom"
+            alt="Banner tour mes de feb"
+          />
+        ) : (
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+        )}
         <div className="absolute bottom-[30px] left-[33px] max-xl:top-[32px] max-xl:left-[2px] max-sm:left-[12%] max-sm:top-[40px]">
           <h2 className="m-b w-9/12 text-white text-fs-44 mb-5 text-left max-2xl:text-fs-30">
             {languageData.bannerTransport.firstTime}
@@ -195,10 +249,10 @@ export function BannerSafelyTransport({ scrollToTarget }) {
   const { languageData } = useContext(LanguageContext);
 
   const handleButtonClick = () => {
-    if (typeof window !== 'undefined') {
-      const targetElement = document.getElementById('tab-search-home');
+    if (typeof window !== "undefined") {
+      const targetElement = document.getElementById("tab-search-home");
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        targetElement.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
