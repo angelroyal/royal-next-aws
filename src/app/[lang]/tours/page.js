@@ -1,9 +1,12 @@
+import axios from "axios";
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
-// import Footer from "@/components/Footer/Footer";
 import FooterT from "@/components/Footer/FooterT";
+import Page404 from "@/components/General/Page404";
+// import Footer from "@/components/Footer/Footer";
 import { Container } from "@/config/Others/Container";
 import ContactUs from "@/components/General/ContactUs";
+import { ImageProvider } from "@/context/ImageContext";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
@@ -25,34 +28,87 @@ export const metadata = {
   content: "width=device-width, initial-scale=1.0",
 };
 
-export default function Home() {
-  return (
-    <>
+export default async function Home() {
+  // return (
+  //   <>
+  //     <LanguageProvider>
+  //       <TokenProvider>
+  //         <CartAxiosProvider>
+  //           <Token />
+  //           <Navigation />
+
+  //           <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
+  //             <BannerHeaderTour />
+  //             <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
+  //               <SearchBox />
+  //             </div>
+  //           </div>
+
+  //           <Container>
+  //             <BannerHomeTour />
+  //             <BannerCallHotelT />
+  //             <PopularState tour={true} />
+  //             <TopActivities />
+  //             <BannerFooterTour />
+  //           </Container>
+  //           <ContactUs />
+  //           <FooterT />
+  //         </CartAxiosProvider>
+  //       </TokenProvider>
+  //     </LanguageProvider>
+  //   </>
+  // );
+
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`
+    );
+
+    const dataImg = response.data;
+
+    return (
+      <>
+        <ImageProvider>
+          <LanguageProvider>
+            <TokenProvider>
+              <CartAxiosProvider>
+                <Token />
+                <Navigation />
+
+                <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
+                  <BannerHeaderTour dataImg={dataImg} />
+                  <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
+                    <SearchBox />
+                  </div>
+                </div>
+
+                <Container>
+                  <BannerHomeTour />
+                  <BannerCallHotelT />
+                  <PopularState tour={true} />
+                  <TopActivities />
+                  <BannerFooterTour />
+                </Container>
+                <ContactUs />
+                <FooterT />
+              </CartAxiosProvider>
+            </TokenProvider>
+          </LanguageProvider>
+        </ImageProvider>
+      </>
+    );
+  } catch (error) {
+    return (
       <LanguageProvider>
         <TokenProvider>
           <CartAxiosProvider>
             <Token />
-            <Navigation />
-
-            <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
-              <BannerHeaderTour />
-              <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
-                <SearchBox />
-              </div>
-            </div>
-            
-            <Container>
-              <BannerHomeTour />
-              <BannerCallHotelT />
-              <PopularState tour={true} />
-              <TopActivities />
-              <BannerFooterTour />
-            </Container>
-            <ContactUs />
+            <Navigation hotelDetails={true} />
+            <Page404 />
             <FooterT />
           </CartAxiosProvider>
         </TokenProvider>
       </LanguageProvider>
-    </>
-  );
+    );
+  }
 }

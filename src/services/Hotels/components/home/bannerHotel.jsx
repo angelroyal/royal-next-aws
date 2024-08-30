@@ -244,8 +244,7 @@ export function BannerHomeKnowMore() {
 }
 
 export function BannerExcDiscounts() {
-  const { getImg } = useContext(ImageContext);
-
+  
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {

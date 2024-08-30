@@ -1,13 +1,14 @@
+import axios from "axios";
 import Token from "@/components/General/Token";
 import FooterT from "@/components/Footer/FooterT";
+import Page404 from "@/components/General/Page404";
 import ContactUs from "@/components/General/ContactUs";
+import { ImageProvider } from "@/context/ImageContext";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import HomeHotel from "@/services/Hotels/components/home/HomeHotel";
-import axios from "axios";
-import { ImageProvider } from "@/context/ImageContext";
 
 export default async function Home({ params }) {
   try {
