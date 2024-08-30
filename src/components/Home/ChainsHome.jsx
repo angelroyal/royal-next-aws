@@ -9,68 +9,66 @@ import { useContext, useEffect, useState } from "react";
 import { ImageContext } from "@/context/ImageContext";
 import LanguageContext from "@/language/LanguageContext";
 
-export default function ChainsHome(props, { typePage = null }) {
+export default function ChainsHome({ typePage = null }) {
   const { languageData } = useContext(LanguageContext);
 
-  const hotels = [
-    {
-      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-riu.jpg`,
-      description: "Logo Oasis chains",
-      width: 184,
-      height: 81,
-      class: "select-none",
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-nick.jpg`,
-      description: "Logo Riu chains",
-      width: 156,
-      height: 101,
-      class: "select-none",
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-oasis.jpg`,
-      description: "Logo Iberostar chains",
-      width: 185,
-      height: 135,
-      class: "select-none",
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-dorado.jpg`,
-      description: "Logo Barcelo chains",
-      width: 156,
-      height: 101,
-      class: "select-none",
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-barcelo.jpg`,
-      description: "Logo Nickelodeon chains",
-      width: 156,
-      height: 101,
-      class: "select-none object-cover",
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-iberostar.jpg`,
-      description: "Logo El Dorado chains",
-      width: 156,
-      height: 101,
-      class: "select-none",
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-barcelo.jpg`,
-      description: "Logo Barcelo chains",
-      width: 156,
-      height: 101,
-      class: "select-none",
-    },
-  ];
+  // const hotels = [
+  //   {
+  //     url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-riu.jpg`,
+  //     description: "Logo Oasis chains",
+  //     width: 184,
+  //     height: 81,
+  //     class: "select-none",
+  //   },
+  //   {
+  //     url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-nick.jpg`,
+  //     description: "Logo Riu chains",
+  //     width: 156,
+  //     height: 101,
+  //     class: "select-none",
+  //   },
+  //   {
+  //     url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-oasis.jpg`,
+  //     description: "Logo Iberostar chains",
+  //     width: 185,
+  //     height: 135,
+  //     class: "select-none",
+  //   },
+  //   {
+  //     url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-dorado.jpg`,
+  //     description: "Logo Barcelo chains",
+  //     width: 156,
+  //     height: 101,
+  //     class: "select-none",
+  //   },
+  //   {
+  //     url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-barcelo.jpg`,
+  //     description: "Logo Nickelodeon chains",
+  //     width: 156,
+  //     height: 101,
+  //     class: "select-none object-cover",
+  //   },
+  //   {
+  //     url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-iberostar.jpg`,
+  //     description: "Logo El Dorado chains",
+  //     width: 156,
+  //     height: 101,
+  //     class: "select-none",
+  //   },
+  //   {
+  //     url: `${process.env.NEXT_PUBLIC_URL}img/home/logo-barcelo.jpg`,
+  //     description: "Logo Barcelo chains",
+  //     width: 156,
+  //     height: 101,
+  //     class: "select-none",
+  //   },
+  // ];
 
-  const { dataImg } = props;
-  const { getImg, setGetImg } = useContext(ImageContext);
+  const { getImg } = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-    setGetImg(dataImg);
 
     const handleResize = () => {
       const width = window.innerWidth;
@@ -88,9 +86,7 @@ export default function ChainsHome(props, { typePage = null }) {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [dataImg]);
-
-  console.log(getImg);
+  }, []);
 
   return (
     <div className="mb-[56px]">

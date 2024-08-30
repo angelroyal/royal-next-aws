@@ -16,18 +16,22 @@ import TourRecommended from "@/services/Hotels/components/home/TourRecommended";
 import { TransportBanner } from "@/services/Hotels/components/home/TransportBanner";
 // import BtnShowNotification from "@/components/Alerts/Notifications/BtnShowNotification";
 
-export const HomeHotel = () => {
+export const HomeHotel = (props) => {
+  const { dataImg } = props;
+
+  console.log(dataImg);
+
   return (
     <>
       <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
-        <BannerHomeHotelTop />
+        <BannerHomeHotelTop dataImg={dataImg} />
         <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
           <SearchBox />
         </div>
       </div>
 
       <Container>
-        <BannerExcDiscounts />
+        <BannerExcDiscounts dataImg={dataImg}/>
         <PopularState />
         <ShuffleHotel />
         <TransportBanner />

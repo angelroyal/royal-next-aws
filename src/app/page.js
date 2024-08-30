@@ -50,9 +50,9 @@ export default async function DetailPageHotel({ params }) {
 
               <Container>
                 <div className="max-md:overflow-x-hidden">
-                  <BannersHomeOffers dataImg={dataImg}/>
-                  <BannersHomeExclusiveDiscounts dataImg={dataImg}/>
-                  <BannersHomeOffersNow dataImg={dataImg}/>
+                  <BannersHomeOffers/>
+                  <BannersHomeExclusiveDiscounts/>
+                  <BannersHomeOffersNow/>
                 </div>
               </Container>
 
@@ -69,7 +69,7 @@ export default async function DetailPageHotel({ params }) {
               <Container>
                 <div className="max-md:overflow-x-hidden">
                   <PopularDestinationsHome />
-                  <ChainsHome dataImg={dataImg}/>
+                  <ChainsHome/>
                   <EnjoyStayHome />
                   <TransportBanner />
 

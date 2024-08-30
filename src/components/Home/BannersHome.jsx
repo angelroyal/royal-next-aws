@@ -81,19 +81,17 @@ export default function BannersHeaderHome(props) {
             delay: 6000,
           }}
         >
-          {getImg.home.bannerHome[deviceType].map(
-            (imgCarrousel, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={imgCarrousel}
-                  className="object-cover	w-full h-full object-center select-none"
-                  alt="banner-top-second"
-                  width="100%"
-                  height="100%"
-                />
-              </SwiperSlide>
-            )
-          )}
+          {getImg.home.bannerHome[deviceType].map((imgCarrousel, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={imgCarrousel}
+                className="object-cover	w-full h-full object-center select-none"
+                alt="banner-principal-home"
+                width="100%"
+                height="100%"
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       ) : (
         // <img
@@ -109,16 +107,14 @@ export default function BannersHeaderHome(props) {
   );
 }
 
-export function BannersHomeOffers(props) {
+export function BannersHomeOffers() {
   const { languageData } = useContext(LanguageContext);
 
-  const { dataImg } = props;
-  const { getImg, setGetImg } = useContext(ImageContext);
+  const { getImg } = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-    setGetImg(dataImg);
 
     const handleResize = () => {
       const width = window.innerWidth;
@@ -136,7 +132,7 @@ export function BannersHomeOffers(props) {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [dataImg]);
+  }, []);
 
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
@@ -197,7 +193,7 @@ export function BannersHomeOffers(props) {
   );
 }
 
-export function BannersHomeExclusiveDiscounts(props) {
+export function BannersHomeExclusiveDiscounts() {
   const { languageData, language } = useContext(LanguageContext);
   // const bannerDiscounts = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts.jpg`;
   // const bannerDiscountsSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-home-discounts-second.jpg`;
@@ -228,13 +224,13 @@ export function BannersHomeExclusiveDiscounts(props) {
   };
 
   // IMG MARK
-  const { dataImg } = props;
-  const { getImg, setGetImg } = useContext(ImageContext);
+  
+  const { getImg } = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-    setGetImg(dataImg);
+   
 
     const handleResize = () => {
       const width = window.innerWidth;
@@ -252,7 +248,7 @@ export function BannersHomeExclusiveDiscounts(props) {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [dataImg]);
+  }, []);
   return (
     <>
       <div className="flex w-full 2xl:gap-[1vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px] justify-between">
@@ -364,7 +360,7 @@ export function BannersHomeExclusiveDiscounts(props) {
   );
 }
 
-export function BannersHomeOffersNow(dataImg) {
+export function BannersHomeOffersNow() {
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -377,25 +373,23 @@ export function BannersHomeOffersNow(dataImg) {
         {languageData.bannersHome.limitedPromotions}
       </span>
 
-      <OffersNow dataImg={dataImg.dataImg} />
+      <OffersNow />
     </div>
   );
 }
 
-export function OffersNow(props) {
+export function OffersNow() {
   // const offersNow = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now.jpg`;
   // const offersNowSecond = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-offers-now-2.jpg`;
 
   // const offersNowMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-2-m.jpg`;
   // const offersNowSecondMobile = `${process.env.NEXT_PUBLIC_URL}banners/home/banner-publicity-m.jpg`;
 
-  const { dataImg } = props;
-  const { getImg, setGetImg } = useContext(ImageContext);
+  const { getImg } = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-    setGetImg(dataImg);
 
     const handleResize = () => {
       const width = window.innerWidth;
@@ -413,7 +407,7 @@ export function OffersNow(props) {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [dataImg]);
+  }, []);
 
   return (
     <>
