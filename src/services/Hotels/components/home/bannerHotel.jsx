@@ -243,16 +243,12 @@ export function BannerHomeKnowMore() {
   );
 }
 
-export function BannerExcDiscounts(props) {
-  const { dataImg } = props;
-  console.log(dataImg);
-  const { getImg, setGetImg } = useContext(ImageContext);
+export function BannerExcDiscounts() {
+  const { getImg } = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-    setGetImg(dataImg);
-
     const handleResize = () => {
       const width = window.innerWidth;
 
@@ -269,33 +265,29 @@ export function BannerExcDiscounts(props) {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [dataImg]);
-  console.log(deviceType);
+  }, []);
 
   return (
     <>
       <div className="max-lg:hidden">
-        <BannerHomeHotelD dataImg={dataImg} deviceType={deviceType} />
+        <BannerHomeHotelD deviceType={deviceType} />
       </div>
       <div className="lg:hidden">
-        <BannerHomeHotelSwiper dataImg={dataImg} deviceType={deviceType} />
+        <BannerHomeHotelSwiper deviceType={deviceType} />
       </div>
     </>
   );
 }
 export function BannerHomeHotelSwiper(props) {
-  const { dataImg } = props;
+
   const { deviceType } = props;
-
-  // console.log(deviceType);
-
-  // console.log(dataImg);
-
-  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
-  const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
-  const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
-
+  const { getImg } = useContext(ImageContext);
   const { languageData } = useContext(LanguageContext);
+
+  
+  // const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
+  // const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
+  // const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
 
   return (
     <Swiper
@@ -317,20 +309,14 @@ export function BannerHomeHotelSwiper(props) {
         768: {
           slidesPerView: 1.5,
         },
-        // 1024: {
-        //   slidesPerView: 2.5,
-        // },
-        // 1440: {
-        //   slidesPerView: 3,
-        // },
       }}
     >
       <SwiperSlide className="!w-[48%] max-lg:!w-full  !bg-white">
-        {dataImg.hotel.bannerDestination[deviceType] ? (
+        {getImg ? (
           <div className="w-full flex justify-center !bg-white">
             <Image
               // src={excDiscounts ? excDiscounts : ""}
-              src={dataImg.hotel.bannerDestination[deviceType]}
+              src={getImg.hotel.bannerDestination[deviceType]}
               width={547}
               height={235}
               className="w-full h-[19rem] rounded-lg object-cover object-center select-none"
@@ -345,10 +331,10 @@ export function BannerHomeHotelSwiper(props) {
       {/*TWO CARD TEXT */}
       <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
-          {dataImg.hotel.bannerBlue[deviceType] ? (
+          {getImg ? (
             <Image
               // src={bannerTraveling}
-              src={dataImg.hotel.bannerBlue[deviceType]}
+              src={getImg.hotel.bannerBlue[deviceType]}
               width={266}
               height={235}
               className="w-full rounded-lg select-none"
@@ -372,13 +358,17 @@ export function BannerHomeHotelSwiper(props) {
       {/* THREE CARD IMAGE HOTEL */}
       <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
-          <Image
-            src={bannerTour}
-            width={266}
-            height={235}
-            className="w-full rounded-lg select-none object-cover object-bottom"
-            alt="Banner tour mes de feb"
-          />
+          {getImg ? (
+            <Image
+              src={getImg.hotel.bannerTour[deviceType]}
+              width={266}
+              height={235}
+              className="w-full rounded-lg select-none object-cover object-bottom"
+              alt="Banner tour mes de feb"
+            />
+          ) : (
+            <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+          )}
         </div>
       </SwiperSlide>
       {/* THREE CARD IMAGE HOTEL */}
@@ -387,22 +377,23 @@ export function BannerHomeHotelSwiper(props) {
 }
 
 export function BannerHomeHotelD(props) {
-  const { dataImg } = props;
-  const { deviceType } = props;
 
+  const { deviceType } = props;
+  const { getImg } = useContext(ImageContext);
   const { languageData } = useContext(LanguageContext);
-  const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
-  const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
-  const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
+
+  // const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
+  // const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
+  // const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
 
   return (
     <div className="flex gap-[16px] h-[318px] mb-[40px]">
       <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
         <div className="w-full h-full flex justify-center !bg-white overflow-hidden rounded-lg">
-          {dataImg.hotel.bannerDestination[deviceType] ? (
+          {getImg ? (
             <Image
               // src={excDiscounts ? excDiscounts : ""}
-              src={dataImg.hotel.bannerDestination[deviceType]}
+              src={getImg.hotel.bannerDestination[deviceType]}
               width={547}
               height={235}
               className="w-full h-full rounded-lg object-cover object-center select-none transition-transform duration-500 transform scale-100 hover:scale-105"
@@ -416,10 +407,10 @@ export function BannerHomeHotelD(props) {
 
       <div className="relative flex justify-center w-3/12">
         <div className="relative w-full flex justify-center ">
-          {dataImg.hotel.bannerBlue[deviceType] ? (
+          {getImg ? (
             <Image
               // src={bannerTraveling}
-              src={dataImg.hotel.bannerBlue[deviceType]}
+              src={getImg.hotel.bannerBlue[deviceType]}
               width={266}
               height={235}
               className="w-full rounded-lg select-none"
@@ -441,9 +432,9 @@ export function BannerHomeHotelD(props) {
 
       <div className=" flex justify-center w-3/12 relative">
         <div className="w-full flex justify-center overflow-hidden rounded-lg">
-          {dataImg.hotel.bannerTour[deviceType] ? (
+          {getImg ? (
             <Image
-              src={dataImg.hotel.bannerTour[deviceType]}
+              src={getImg.hotel.bannerTour[deviceType]}
               width={266}
               height={235}
               className="w-full rounded-lg select-none object-cover object-bottom transition-transform duration-500 transform scale-100 hover:scale-105"

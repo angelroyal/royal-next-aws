@@ -19,7 +19,7 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 export const HomeHotel = (props) => {
   const { dataImg } = props;
 
-  console.log(dataImg);
+  // console.log(dataImg);
 
   return (
     <>
@@ -31,7 +31,7 @@ export const HomeHotel = (props) => {
       </div>
 
       <Container>
-        <BannerExcDiscounts dataImg={dataImg}/>
+        <BannerExcDiscounts/>
         <PopularState />
         <ShuffleHotel />
         <TransportBanner />
