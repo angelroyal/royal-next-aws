@@ -29,7 +29,7 @@ export default function BannerFooterTour() {
   }, []);
 
   return (
-    <div className="my-[120px] w-full max-sm:my-[30px]">
+    <div className="my-[120px] w-full max-sm:my-[30px] rounded-lg">
       {getImg ? (
         <>
           <Image
@@ -39,7 +39,7 @@ export default function BannerFooterTour() {
             height={469}
             alt="banner-footer-tour"
             // className="w-[99%] h-auto select-none max-md:hidden"
-            className="w-[99%] h-auto select-none"
+            className="w-[99%] h-auto select-none rounded-lg"
           />
 
           {/* <Image

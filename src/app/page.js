@@ -32,6 +32,7 @@ export default async function DetailPageHotel({ params }) {
     );
 
     const dataImg = response.data;
+console.log(dataImg);
 
     return (
       <ImageProvider>
