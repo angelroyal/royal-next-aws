@@ -16,6 +16,9 @@ import { shuffleHotelTypes } from "@/services/Hotels/config/shuffleHotelTypes";
 import { ImageContext } from "@/context/ImageContext";
 
 export default function BannersHeaderHome(props) {
+  const { dataImg } = props;
+  const { getImg, setGetImg } = useContext(ImageContext);
+
   const [dashedOne, setDashedOne] = useState([
     { key: 1, value: true },
     { key: 2, value: false },
@@ -42,8 +45,7 @@ export default function BannersHeaderHome(props) {
     setGetImg(dataImg);
   }, []);
 
-  const { dataImg } = props;
-  const { getImg, setGetImg } = useContext(ImageContext);
+  
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
@@ -66,6 +68,8 @@ export default function BannersHeaderHome(props) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  console.log("home",dataImg);
+  
   return (
     <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
       {getImg ? (

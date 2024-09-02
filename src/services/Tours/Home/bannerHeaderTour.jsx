@@ -39,6 +39,7 @@ export default function BannerHeaderTour(props) {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+console.log("data img tour",dataImg);
 
   return (
     // BANNER TOUR HEADER
