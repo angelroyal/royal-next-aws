@@ -65,7 +65,6 @@ export default async function Home() {
     );
 
     const dataImg = response.data;
-console.log(dataImg);
 
     return (
       <>

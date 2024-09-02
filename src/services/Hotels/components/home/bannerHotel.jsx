@@ -4,21 +4,19 @@ import "swiper/css/effect-fade";
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { useContext, useEffect, useState } from "react";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 
 import { ImageContext } from "@/context/ImageContext";
 import { BannerConfig } from "../../config/BannersConfigH";
 import LanguageContext from "../../../../language/LanguageContext";
 
-export function BannerHomeHotelTop(props) {
-  const { dataImg } = props;
-  const { getImg, setGetImg } = useContext(ImageContext);
+export function BannerHomeHotelTop() {
+  const { getImg} = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-    setGetImg(dataImg);
 
     const handleResize = () => {
       const width = window.innerWidth;
@@ -36,7 +34,7 @@ export function BannerHomeHotelTop(props) {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [dataImg]);
+  }, []);
 
   return (
     <>
