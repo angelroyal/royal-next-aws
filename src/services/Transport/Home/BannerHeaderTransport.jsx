@@ -36,6 +36,9 @@ export function BannerHeaderTransport(props) {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  console.log("transport",dataImg);
+  
   return (
     <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
       {getImg ? (
