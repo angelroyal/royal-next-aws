@@ -68,7 +68,9 @@ export default function BannersHeaderHome(props) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  console.log("home",dataImg);
+  console.log("dataImg",dataImg.home.bannerHome);
+
+  console.log("getImg",getImg.home.bannerHome);
   
   return (
     <div className="relative flex items-center justify-center h-[442px] md:h-72 2xl:h-[480px] w-full ">
@@ -482,3 +484,5 @@ export function OffersNow() {
     </>
   );
 }
+
+
