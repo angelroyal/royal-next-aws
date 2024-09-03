@@ -26,41 +26,6 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { ImageProvider } from "@/context/ImageContext";
 
-
-// We'll prerender only the params from `generateStaticParams` at build time.
-// If a request comes in for a path that hasn't been generated,
-// Next.js will server-render the page on-demand.
-export const dynamicParams = true; // or false, to 404 on unknown paths
-
-// This function generates the static paths that will be pre-rendered at build time.
-export async function generateStaticParams() {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`
-  );
-  const dataImg = response.data;
-
-  // Aquí, ajustarás esta función para devolver los parámetros adecuados para tu aplicación.
-  // Asumiendo que tu estructura de datos tiene secciones que pueden requerir rutas específicas.
-
-  const paths = [];
-
-  // Por ejemplo, si quisieras generar rutas para cada banner de cada sección:
-  Object.keys(dataImg).forEach((section) => {
-    const banners = dataImg[section];
-    Object.keys(banners).forEach((bannerType) => {
-      if (Array.isArray(banners[bannerType])) {
-        banners[bannerType].forEach((img, index) => {
-          paths.push({ id: `${section}-${bannerType}-${index}` });
-        });
-      } else {
-        paths.push({ id: `${section}-${bannerType}` });
-      }
-    });
-  });
-
-  return paths;
-}
-
 export default async function DetailPageHotel({ params }) {
   try {
     const response = await axios.get(
