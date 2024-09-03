@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useContext, useEffect } from "react";
-
+// import React, { useContext, useEffect } from "react";
+import React, { useEffect,useContext } from 'react';
 import SearchBox from "@/hooks/SearchBox";
 import { Container } from "@/config/Others/Container";
 import {
