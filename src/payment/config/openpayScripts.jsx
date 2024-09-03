@@ -46,7 +46,6 @@ export const loadOpenpayScripts = () => {
         window.OpenPay.setId(process.env.NEXT_PUBLIC_OPENPAY_ID);
         window.OpenPay.setApiKey(process.env.NEXT_PUBLIC_OPENPAY_API_KEY);
         window.OpenPay.setSandboxMode(true);
-        console.log("OpenPay credentials set");
       } else {
         console.error("OpenPay library is not loaded");
       }

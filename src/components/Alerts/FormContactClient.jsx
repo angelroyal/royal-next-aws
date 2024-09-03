@@ -47,7 +47,7 @@ export function FormContactClient() {
   const resetInactivityTimer = () => {
     clearTimeout(inactivityTimer);
     // inactivityTimer = setTimeout(() => setOpen(true), 1000);
-    inactivityTimer = setTimeout(() => setOpen(true), 130000);
+    inactivityTimer = setTimeout(() => setOpen(true), 400000);
   };
 
   const handleActivity = () => {
@@ -134,11 +134,6 @@ export function FormContactClient() {
       setCurrentRoute(window.location.pathname);
     }
   }, []);
-
-  // const bookingRoute = currentRoute === `/${language}/booking`;
-  // console.log(currentRoute);
-  // console.log(bookingRoute);
-  // END LP
 
   return (
     <>

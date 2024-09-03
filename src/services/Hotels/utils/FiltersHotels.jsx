@@ -13,8 +13,6 @@ export default function FiltersHotels({ listing = false }) {
   const [filters, setFilters] = useState(initialFilters);
   const { setSelectedFilters } = useContext(ListingHotelContext);
 
-  // console.log("filters",filters);
-
   // Update selected filters
   useEffect(() => {
     const newSelectedFilters = {};

@@ -17,8 +17,6 @@ export function SearchModalHotel() {
     selectedDateCalendar,
   } = useContext(RoomsHotelContext);
 
-  // console.log("selectedDateCalendar", selectedDateCalendar);
-
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
 
   const [selectedDates, setSelectedDates] = useState({
@@ -29,7 +27,6 @@ export function SearchModalHotel() {
   useEffect(() => {}, []);
 
   const handleDateChange = (dates) => {
-    // console.log("dates", dates);
     setSelectedDates((prevDates) => {
       if (dates && dates.length >= 2) {
         const formattedCheckIn = moment(dates[0]).format("YYYY-MM-DD");

@@ -33,7 +33,6 @@ export const fetchDataItinerary = async (
     setData(response.data);
     setSkeletonShow(false);
   } catch (error) {
-    console.log("error", error);
     handleFetchError(error, setShowClr, setErrorAlertBooking);
     setData(null);
     setSkeletonShow(false);

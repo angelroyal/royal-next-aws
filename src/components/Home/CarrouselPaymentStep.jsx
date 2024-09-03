@@ -13,7 +13,6 @@ export function CarrouselPaymentStep({setActiveStep}) {
     setActiveStep(slidesBanner[currentSlideIndex].step);
   };
 
-  //   console.log(activeStep);
   return (
     <div className="relative lg:rotate-3 lg:block  w-[299px] h-[443px] max-lg:mx-auto">
       {/* IMAGE MOCKUP PHONE */}

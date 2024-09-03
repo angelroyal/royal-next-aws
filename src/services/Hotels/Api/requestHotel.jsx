@@ -31,7 +31,6 @@ export const saveToCart = async (requestData) => {
 };
 
 export async function GetReviewsTripe(locationId) {
-  // console.log(locationId);
   // const options = {
   //   method: "GET",
   //   url: `https://api.content.tripadvisor.com/api/v1/location/${locationId}/reviews`,

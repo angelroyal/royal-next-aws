@@ -61,11 +61,16 @@ export default function ExploreActivitiesHome() {
     router.push(newURL);
   };
 
-  // LP
   const [randomNumber, setRandomNumber] = useState(generateRandomNumber());
 
+  useEffect(() => {
+    if (activities) {
+      setRandomNumber(generateRandomNumber());
+    }
+  }, [activities]);
+  
   function generateRandomNumber() {
-    return Math.floor(Math.random() * 4); // Genera un número entre 0 y 3
+    return Math.floor(Math.random() * 4);
   }
 
   return (
@@ -97,7 +102,7 @@ export default function ExploreActivitiesHome() {
             {activities ? (
               activities.map((activity, index) => (
                 <SwiperSlide className="!rounded-lg z-[1]" key={index}>
-                  <Image
+                  <img
                     src={activity.activities[randomNumber].image}
                     alt="activity home"
                     width={547}

@@ -9,7 +9,6 @@ export function HotelInfo(props) {
   const { hotel } = props;
   const { languageData } = useContext(LanguageContext);
   const { reviewsData, locationDetails } = useContext(RoomsHotelContext);
-  // console.log(hotel);
 
   const handleButtonClick = () => {
     if (typeof window !== "undefined") {

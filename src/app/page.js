@@ -6,7 +6,6 @@ import BannersHeaderHome, {
 } from "@/components/Home/BannersHome";
 import SearchBox from "@/hooks/SearchBox";
 import Token from "@/components/General/Token";
-// import Footer from "@/components/Footer/Footer";
 import FooterT from "@/components/Footer/FooterT";
 import WaveLine from "@/components/Home/WaveHome";
 import Page404 from "@/components/General/Page404";

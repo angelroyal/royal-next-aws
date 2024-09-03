@@ -40,7 +40,6 @@ export default function CardMovingItinerary(props) {
         setRemoveIsLoader(false);
       })
       .catch((error) => {
-        console.log(error);
         setRemoveIsLoader(false);
         throw error;
       });

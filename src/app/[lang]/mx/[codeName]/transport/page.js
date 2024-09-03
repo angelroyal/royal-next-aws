@@ -59,7 +59,6 @@ export default async function DetailPageHotel({ searchParams }) {
       </LanguageProvider>
     );
   } catch (error) {
-    console.log(error);
     return (
       <LanguageProvider>
         <TokenProvider>
