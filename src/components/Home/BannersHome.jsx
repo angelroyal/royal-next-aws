@@ -18,6 +18,8 @@ import { ImageContext } from "@/context/ImageContext";
 export default function BannersHeaderHome(props) {
   const { dataImg } = props;
   const { getImg, setGetImg } = useContext(ImageContext);
+  console.log("peticion", dataImg?.home?.bannerHome);
+  console.log("contexto", getImg?.home?.bannerHome);
 
   const [dashedOne, setDashedOne] = useState([
     { key: 1, value: true },
@@ -44,8 +46,6 @@ export default function BannersHeaderHome(props) {
     });
     setGetImg(dataImg);
   }, []);
-
-  
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
@@ -96,13 +96,6 @@ export default function BannersHeaderHome(props) {
           ))}
         </Swiper>
       ) : (
-        // <img
-        //   src={getImg.home.bannerHome[deviceType]}
-        //   width="1366px"
-        //   height="480px"
-        //   alt="Banner Home"
-        //   className="w-full h-full object-cover select-none"
-        // />
         <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
       )}
     </div>
@@ -116,7 +109,6 @@ export function BannersHomeOffers() {
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-
     const handleResize = () => {
       const width = window.innerWidth;
 
@@ -225,14 +217,12 @@ export function BannersHomeExclusiveDiscounts() {
   };
 
   // IMG MARK
-  
+
   const { getImg } = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-   
-
     const handleResize = () => {
       const width = window.innerWidth;
 
@@ -391,7 +381,6 @@ export function OffersNow() {
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-
     const handleResize = () => {
       const width = window.innerWidth;
 
@@ -479,5 +468,3 @@ export function OffersNow() {
     </>
   );
 }
-
-
