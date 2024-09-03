@@ -24,10 +24,17 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { ImageProvider } from "@/context/ImageContext";
 
-export default async function DetailPageHotel({ params }) {
+export default async function DetailPageHotel() {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`
+      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`,
+      {
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache',
+          'Expires': '0',
+        },
+      }
     );
 
     const dataImg = response.data;
