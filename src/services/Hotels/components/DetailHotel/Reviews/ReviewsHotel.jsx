@@ -9,7 +9,6 @@ import RoomsHotelContext from "../../../context/RoomsHotelContext";
 import { GetLocationDetails, GetReviewsTripe } from "../../../Api/requestHotel";
 
 export function ReviewsHotel({ locationId }) {
-  // console.log(locationId);
   const {
     reviewsData,
     setReviewData,

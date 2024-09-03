@@ -45,7 +45,6 @@ export default function FormCentral(props) {
   const searchParams = new URLSearchParams(window.location.search);
   const uid = searchParams.get("uid");
   const dev = window.OpenPay.deviceData.setup("card-form");
-  console.log(dev);
 
   // PAYLOAD PAYMENT
   const paymentData = {

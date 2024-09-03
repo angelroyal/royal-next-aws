@@ -135,11 +135,6 @@ export function FormContactClient() {
     }
   }, []);
 
-  // const bookingRoute = currentRoute === `/${language}/booking`;
-  // console.log(currentRoute);
-  // console.log(bookingRoute);
-  // END LP
-
   return (
     <>
       {currentRoute === `/${language}/booking` ? null : (

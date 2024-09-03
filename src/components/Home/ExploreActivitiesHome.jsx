@@ -97,7 +97,7 @@ export default function ExploreActivitiesHome() {
             {activities ? (
               activities.map((activity, index) => (
                 <SwiperSlide className="!rounded-lg z-[1]" key={index}>
-                  <Image
+                  <img
                     src={activity.activities[randomNumber].image}
                     alt="activity home"
                     width={547}

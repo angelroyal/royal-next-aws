@@ -53,7 +53,6 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
               }
             })
             .catch((error) => {
-              console.log("error", error);
               showNotification(
                 "error",
                 languageData.shareLink.downloadFiledTitle,
@@ -66,7 +65,6 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
       })
       .catch((error) => {
         setIsDownloading(false);
-        console.log(error);
         if (error.response.status >= 400) {
           showNotification(
             "error",
