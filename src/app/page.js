@@ -33,6 +33,7 @@ export default async function DetailPageHotel() {
           'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
           'Pragma': 'no-cache',
           'Expires': '0',
+          'Surrogate-Control': 'no-store'
         },
         params: {
           timestamp: new Date().getTime(),
@@ -49,14 +50,14 @@ export default async function DetailPageHotel() {
             <CartAxiosProvider>
               <Token />
               <Navigation />
-
+              
               <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
                 <BannersHeaderHome dataImg={dataImg}/>
                 <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
                   <SearchBox />
                 </div>
               </div>
-
+              
               <Container>
                 <div className="max-md:overflow-x-hidden">
                   <BannersHomeOffers/>
@@ -65,14 +66,10 @@ export default async function DetailPageHotel() {
                 </div>
               </Container>
 
-              {/* TOP HOTEL REVIEWS */}
-              {/* <UserExperienceBanner /> */}
-
               <Container>
                 <ExploreActivitiesHome />
               </Container>
 
-              {/* BANNER STEP */}
               <BannerStepsItinerary />
 
               <Container>
