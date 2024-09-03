@@ -30,9 +30,12 @@ export default async function DetailPageHotel() {
       `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`,
       {
         headers: {
-          'Cache-Control': 'no-cache',
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
           'Pragma': 'no-cache',
           'Expires': '0',
+        },
+        params: {
+          timestamp: new Date().getTime(),
         },
       }
     );
