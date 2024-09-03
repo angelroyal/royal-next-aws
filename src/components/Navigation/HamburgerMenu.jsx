@@ -22,6 +22,9 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
   }, [routerActual]);
 
   // LP RELOAD HOME
+  const changeHome = () => {
+    window.open(`/`, "_self");
+  };
   const changeHotels = () => {
     window.open(`/${language}/hotels`, "_self");
   };
@@ -61,6 +64,34 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
             </div>
 
             <div className="space-y-7 py-6">
+              {/* HOME LINK */}
+              <div
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+                  onClick={() => {
+                    changeHome();
+                  }}
+                >
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/general/home-${
+                      currentActiveIcon === "home"
+                        ? "o.svg"
+                        : "b.svg"
+                    }`}
+                    alt="icon hotel"
+                    className="pr-2 pb-1"
+                  />
+                  <span
+                    className={`${
+                      currentActiveIcon === "home"
+                        ? "text-or-100"
+                        : ""
+                    }`}
+                  >
+                    {/* {languageData.SearchBox.tabHotel.hotel} */}
+                    Home
+                  </span>
+                </div>
+
               {/* HOTEL LINK */}
               <div
                 onClick={() => {

@@ -34,8 +34,8 @@ export default function NavigationDesktop() {
   const changeTransport = () => {
     window.open(`/${language}/transports`, "_self");
   };
-  
-  
+console.log(currentActiveIcon);
+
   return (
     <div className="relative md:top-[-22px] mt-[38px] md:mt-0 max-sm:mt-[20px]">
       <Container>
@@ -68,17 +68,45 @@ export default function NavigationDesktop() {
                   href={`${process.env.NEXT_PUBLIC_HOME}`}
                   passHref
                 > */}
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
-                    alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
-                    width={200}
-                    height={100}
-                    className="max-sm:w-[140px] max-sm:h-[40px] select-none"
-                  />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_URL}royal/principal-logo.svg`}
+                  alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} logo`}
+                  width={200}
+                  height={100}
+                  className="max-sm:w-[140px] max-sm:h-[40px] select-none"
+                />
                 {/* </Link> */}
               </div>
 
               <div className="hidden md:items-center md:flex md:gap-x-7">
+                {/* HOME LINK */}
+                <div
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+                  onClick={() => {
+                    changeHome();
+                  }}
+                >
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/general/home-${
+                      currentActiveIcon === "home"
+                        ? "o.svg"
+                        : "b.svg"
+                    }`}
+                    alt="icon hotel"
+                    className="pr-2 pb-1"
+                  />
+                  <span
+                    className={`${
+                      currentActiveIcon === "home"
+                        ? "text-or-100"
+                        : ""
+                    }`}
+                  >
+                    {/* {languageData.SearchBox.tabHotel.hotel} */}
+                    Home
+                  </span>
+                </div>
+
                 {/* HOTEL LINK */}
                 <div
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
@@ -166,7 +194,8 @@ export default function NavigationDesktop() {
                 > */}
                   <img
                     src={`${
-                      process.env.NEXT_PUBLIC_URL}icons/transport/transport-${
+                      process.env.NEXT_PUBLIC_URL
+                    }icons/transport/transport-${
                       currentActiveIcon === "transports" ||
                       currentActiveIcon === "transport"
                         ? "o.svg"
