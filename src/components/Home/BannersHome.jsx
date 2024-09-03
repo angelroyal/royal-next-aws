@@ -110,7 +110,6 @@ export default function BannersHeaderHome(props) {
 }
 
 export function BannersHomeOffers() {
-  console.log(getImg);
   const { languageData } = useContext(LanguageContext);
   const { getImg } = useContext(ImageContext);
 
