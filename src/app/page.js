@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import axios from "axios";
 import BannersHeaderHome, {
   BannersHomeExclusiveDiscounts,
@@ -24,16 +26,52 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { ImageProvider } from "@/context/ImageContext";
 
-export default async function DetailPageHotel() {
+
+// We'll prerender only the params from `generateStaticParams` at build time.
+// If a request comes in for a path that hasn't been generated,
+// Next.js will server-render the page on-demand.
+export const dynamicParams = true; // or false, to 404 on unknown paths
+
+// This function generates the static paths that will be pre-rendered at build time.
+export async function generateStaticParams() {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`
+  );
+  const dataImg = response.data;
+
+  // Aquí, ajustarás esta función para devolver los parámetros adecuados para tu aplicación.
+  // Asumiendo que tu estructura de datos tiene secciones que pueden requerir rutas específicas.
+
+  const paths = [];
+
+  // Por ejemplo, si quisieras generar rutas para cada banner de cada sección:
+  Object.keys(dataImg).forEach((section) => {
+    const banners = dataImg[section];
+    Object.keys(banners).forEach((bannerType) => {
+      if (Array.isArray(banners[bannerType])) {
+        banners[bannerType].forEach((img, index) => {
+          paths.push({ id: `${section}-${bannerType}-${index}` });
+        });
+      } else {
+        paths.push({ id: `${section}-${bannerType}` });
+      }
+    });
+  });
+
+  return paths;
+}
+
+export default async function DetailPageHotel({ params }) {
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`,
       {
         headers: {
-          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-          'Pragma': 'no-cache',
-          'Expires': '0',
-          'Surrogate-Control': 'no-store'
+          "Cache-Control":
+            "no-store, no-cache, must-revalidate, proxy-revalidate",
+          Pragma: "no-cache",
+          Expires: "0",
+          "Surrogate-Control": "no-store",
         },
         params: {
           timestamp: new Date().getTime(),
@@ -50,19 +88,19 @@ export default async function DetailPageHotel() {
             <CartAxiosProvider>
               <Token />
               <Navigation />
-              
+
               <div className="relative flex justify-center align-center mb-[256px] lg:mb-[118px]">
-                <BannersHeaderHome dataImg={dataImg}/>
+                <BannersHeaderHome dataImg={dataImg} />
                 <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
                   <SearchBox />
                 </div>
               </div>
-              
+
               <Container>
                 <div className="max-md:overflow-x-hidden">
-                  <BannersHomeOffers/>
-                  <BannersHomeExclusiveDiscounts/>
-                  <BannersHomeOffersNow/>
+                  <BannersHomeOffers />
+                  <BannersHomeExclusiveDiscounts />
+                  <BannersHomeOffersNow />
                 </div>
               </Container>
 
@@ -75,9 +113,11 @@ export default async function DetailPageHotel() {
               <Container>
                 <div className="max-md:overflow-x-hidden">
                   <PopularDestinationsHome />
-                  <ChainsHome/>
+                  <ChainsHome dataImg={dataImg.home.hotelChains} />
                   <EnjoyStayHome />
-                  <TransportBanner />
+                  <TransportBanner
+                    dataImg={dataImg.transporte.bannerTransportHome}
+                  />
 
                   <WaveLine />
                   <BannerDiscoverPossibilities />
