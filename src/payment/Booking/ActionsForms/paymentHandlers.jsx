@@ -48,7 +48,6 @@ export const openpaySuccessResponseHandler = (
 
   SendPaymentRequest(paymentData)
     .then((response) => {
-      console.log("Payment processed successfully.", response);
       setAnimationData("SuccessData");
       setTimeout(() => {
         handleStepChange(3);
