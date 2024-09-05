@@ -43,7 +43,6 @@ export default async function DetailPageHotel({ params }) {
         },
       }
     );
-
     const dataImg = response.data;
 
     return (
@@ -78,11 +77,9 @@ export default async function DetailPageHotel({ params }) {
               <Container>
                 <div className="max-md:overflow-x-hidden">
                   <PopularDestinationsHome />
-                  <ChainsHome dataImg={dataImg.home.hotelChains} />
+                  <ChainsHome />
                   <EnjoyStayHome />
-                  <TransportBanner
-                    dataImg={dataImg.transporte.bannerTransportHome}
-                  />
+                  <TransportBanner/>
 
                   <WaveLine />
                   <BannerDiscoverPossibilities />
@@ -97,6 +94,8 @@ export default async function DetailPageHotel({ params }) {
       </ImageProvider>
     );
   } catch (error) {
+    console.log("error img",error);
+
     return (
       <LanguageProvider>
         <TokenProvider>

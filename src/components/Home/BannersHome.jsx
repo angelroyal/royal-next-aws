@@ -18,8 +18,8 @@ import { ImageContext } from "@/context/ImageContext";
 export default function BannersHeaderHome(props) {
   const { dataImg } = props;
   const { getImg, setGetImg } = useContext(ImageContext);
-  console.log("peticion", dataImg?.home?.bannerHome);
-  console.log("contexto", getImg?.home?.bannerHome);
+  // console.log("peticion", dataImg?.home?.bannerHome);
+  // console.log("contexto", getImg?.home?.bannerHome);
 
   const [dashedOne, setDashedOne] = useState([
     { key: 1, value: true },
@@ -83,17 +83,29 @@ export default function BannersHeaderHome(props) {
             delay: 6000,
           }}
         >
-          {getImg.home.bannerHome[deviceType].map((imgCarrousel, index) => (
-            <SwiperSlide key={index}>
+          {getImg?.home?.bannerHome?.[deviceType]?.length === 0 ? (
+            <SwiperSlide>
               <img
-                src={imgCarrousel}
-                className="object-cover	w-full h-full object-center select-none"
-                alt="banner-principal-home"
-                width="100%"
-                height="100%"
+                src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h.jpg`}
+                alt="no-availability"
+                className="w-full h-full"
               />
             </SwiperSlide>
-          ))}
+          ) : (
+            getImg?.home?.bannerHome?.[deviceType]?.map(
+              (imgCarrousel, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    src={imgCarrousel}
+                    className="object-cover w-full h-full object-center select-none"
+                    alt="banner-principal-home"
+                    width="100%"
+                    height="100%"
+                  />
+                </SwiperSlide>
+              )
+            )
+          )}
         </Swiper>
       ) : (
         <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
@@ -139,30 +151,40 @@ export function BannersHomeOffers() {
             navigation
             modules={[Navigation]}
           >
-            {getImg.home.offertsCarrousel[deviceType].map(
-              (imgCarrousel, index) => (
-                <SwiperSlide className="!rounded-lg relative" key={index}>
-                  <img
-                    src={imgCarrousel}
-                    alt="banner-offers"
-                    className="md:block  w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
-                  />
-
-                  {/* HIDDEN BUTTON BANNER */}
-                  <button className="hidden absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[60px] lg:bottom-[114px] bg-white rounded-full items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
-                    <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
-                      {languageData.enjoyStayHome.bookNowBtn}
-                    </p>
-
-                    <Image
-                      className="w-[12px] lg:w-[16px] h-[8px] lg:h-[12px]"
-                      width={16}
-                      height={12}
-                      src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-or-100.svg`}
-                      alt="arrows-right-or-100"
+            {getImg?.home?.offertsCarrousel?.[deviceType]?.length === 0 ? (
+              <SwiperSlide>
+                <img
+                  src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h.jpg`}
+                  alt="no-availability"
+                  className="w-full h-full"
+                />
+              </SwiperSlide>
+            ) : (
+              getImg.home.offertsCarrousel[deviceType].map(
+                (imgCarrousel, index) => (
+                  <SwiperSlide className="!rounded-lg relative" key={index}>
+                    <img
+                      src={imgCarrousel}
+                      alt="banner-offers"
+                      className="md:block  w-full select-none object-cover max-sm:h-full" // Cambiado de object-contain a object-cover
                     />
-                  </button>
-                </SwiperSlide>
+
+                    {/* HIDDEN BUTTON BANNER */}
+                    <button className="hidden absolute left-0 max-lg:right-0 w-fit max-lg:mx-auto lg:left-[49px] bottom-[60px] lg:bottom-[114px] bg-white rounded-full items-center h-[38px] lg:h-[44px] px-[18px] lg:px-[22px] hover:bg-gry-30 focus:outline-none border-0 gap-x-[6px]">
+                      <p className="m-0 text-or-100 m-b text-fs-12 lg:text-fs-16">
+                        {languageData.enjoyStayHome.bookNowBtn}
+                      </p>
+
+                      <Image
+                        className="w-[12px] lg:w-[16px] h-[8px] lg:h-[12px]"
+                        width={16}
+                        height={12}
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/right-or-100.svg`}
+                        alt="arrows-right-or-100"
+                      />
+                    </button>
+                  </SwiperSlide>
+                )
               )
             )}
           </Swiper>
@@ -172,7 +194,15 @@ export function BannersHomeOffers() {
       </div>
 
       <div className="w-[30%] max-md:w-full">
-        {getImg ? (
+        {getImg?.home?.offerBaggage?.[deviceType]?.length === 0 ? (
+          <SwiperSlide>
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          </SwiperSlide>
+        ) : getImg ? (
           <img
             src={getImg.home.offerBaggage[deviceType]}
             className="h-full w-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
@@ -245,7 +275,13 @@ export function BannersHomeExclusiveDiscounts() {
       <div className="flex w-full 2xl:gap-[1vw] gap-[10px] h-[280px] my-[32px] max-md:flex-col max-md:h-auto max-lg:h-[252px] justify-between">
         <div className="2xl:w-fit 2xl:gap-[3vw] w-[570px] flex gap-[10px] max-lg:w-full max-lg:hidden max-md:flex max-md:justify-between max-sm:hidden">
           <div className="w-[280px] shadow-3xl rounded-lg">
-            {getImg ? (
+            {getImg?.home?.offerHotel?.[deviceType]?.length === 0 ? (
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+                alt="no-availability"
+                className="w-full h-full object-cover"
+              />
+            ) : getImg ? (
               <img
                 src={getImg.home.offerHotel[deviceType]}
                 className="w-full h-full rounded-lg select-none aspect-square object-contain"
@@ -257,7 +293,13 @@ export function BannersHomeExclusiveDiscounts() {
           </div>
 
           <div className="w-[280px] shadow-3xl rounded-lg">
-            {getImg ? (
+            {getImg?.home?.offerTour?.[deviceType]?.length === 0 ? (
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+                alt="no-availability"
+                className="w-full h-full object-cover"
+              />
+            ) : getImg ? (
               <img
                 src={getImg.home.offerTour[deviceType]}
                 className="w-full h-full rounded-lg select-none aspect-square"
@@ -266,6 +308,15 @@ export function BannersHomeExclusiveDiscounts() {
             ) : (
               <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
             )}
+            {/* {getImg ? (
+              <img
+                src={getImg.home.offerTour[deviceType]}
+                className="w-full h-full rounded-lg select-none aspect-square"
+                alt="banner discounts second"
+              />
+            ) : (
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
+            )} */}
           </div>
         </div>
 
@@ -278,7 +329,13 @@ export function BannersHomeExclusiveDiscounts() {
           >
             <SwiperSlide className="!rounded-lg">
               <div className="rounded-lg">
-                {getImg ? (
+                {getImg?.home?.offerHotel?.[deviceType]?.length === 0 ? (
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+                    alt="no-availability"
+                    className="w-full h-full object-cover"
+                  />
+                ) : getImg ? (
                   <img
                     src={getImg.home.offerHotel[deviceType]}
                     className="w-full h-full rounded-lg select-none"
@@ -291,7 +348,13 @@ export function BannersHomeExclusiveDiscounts() {
 
             <SwiperSlide className="!rounded-lg">
               <div className="rounded-lg">
-                {getImg ? (
+                {getImg?.home?.offerTour?.[deviceType]?.length === 0 ? (
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+                    alt="no-availability"
+                    className="w-full h-full object-cover"
+                  />
+                ) : getImg ? (
                   <img
                     src={getImg.home.offerTour[deviceType]}
                     className="w-full h-full rounded-lg select-none"
@@ -403,7 +466,13 @@ export function OffersNow() {
     <>
       <div className="w-full flex gap-[2vw] max-lg:hidden justify-between">
         <div className="w-[50%]">
-          {getImg ? (
+          {getImg?.home?.bannerBlue?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+              alt="no-availability"
+              className="w-full h-[60%] object-cover"
+            />
+          ) : getImg ? (
             <img
               src={getImg.home.bannerBlue[deviceType]}
               alt="banner-offers"
@@ -415,7 +484,13 @@ export function OffersNow() {
         </div>
 
         <div className="w-[50%] ">
-          {getImg ? (
+          {getImg?.home?.bannerYellow?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+              alt="no-availability"
+              className="w-full h-[60%] object-cover"
+            />
+          ) : getImg ? (
             <img
               src={getImg.home.bannerYellow[deviceType]}
               alt="banner-offers"
@@ -437,7 +512,13 @@ export function OffersNow() {
         >
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">
-              {getImg ? (
+              {getImg?.home?.bannerBlue?.[deviceType]?.length === 0 ? (
+                <img
+                  src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+                  alt="no-availability"
+                  className="w-full h-full object-cover"
+                />
+              ) : getImg ? (
                 <img
                   src={getImg.home.bannerBlue[deviceType]}
                   alt="banner-offers"
@@ -451,7 +532,13 @@ export function OffersNow() {
 
           <SwiperSlide className="!rounded-lg">
             <div className="w-full h-full">
-              {getImg ? (
+              {getImg?.home?.bannerYellow?.[deviceType]?.length === 0 ? (
+                <img
+                  src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+                  alt="no-availability"
+                  className="w-full h-full object-cover"
+                />
+              ) : getImg ? (
                 <img
                   src={getImg.home.bannerYellow[deviceType]}
                   alt="banner yellow tablet and mobile"

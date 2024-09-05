@@ -34,7 +34,7 @@ export default function NavigationDesktop() {
   const changeTransport = () => {
     window.open(`/${language}/transports`, "_self");
   };
-console.log(currentActiveIcon);
+// console.log(currentActiveIcon);
 
   return (
     <div className="relative md:top-[-22px] mt-[38px] md:mt-0 max-sm:mt-[20px]">
