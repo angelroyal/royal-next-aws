@@ -69,7 +69,6 @@ export default function ChainsHome({ typePage = null }) {
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-
     const handleResize = () => {
       const width = window.innerWidth;
 
@@ -124,20 +123,35 @@ export default function ChainsHome({ typePage = null }) {
               },
             }}
           >
-            {getImg.home.hotelChains[deviceType].map((hotel, index) => (
-              <SwiperSlide
-                className="!rounded-lg !flex !items-center"
-                key={index}
-              >
-                <img
-                  src={hotel}
-                  alt="Hotel Chains"
-                  className="select-none"
-                  // width={hotel.width}
-                  // height={hotel.height}
-                />
-              </SwiperSlide>
-            ))}
+            {getImg?.home?.hotelChains?.[deviceType]?.length === 0
+              ? [...Array(7)].map((_, index) => (
+                  <SwiperSlide
+                    className="!rounded-lg !flex !items-center"
+                    key={index}
+                  >
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+                      alt="no-availability"
+                      className="w-full h-full object-cover"
+                      width={150}
+                      height={100}
+                    />
+                  </SwiperSlide>
+                ))
+              : getImg.home.hotelChains[deviceType].map((hotel, index) => (
+                  <SwiperSlide
+                    className="!rounded-lg !flex !items-center"
+                    key={index}
+                  >
+                    <img
+                      src={hotel}
+                      alt="Hotel Chains"
+                      className="select-none"
+                      // width={hotel.width}
+                      // height={hotel.height}
+                    />
+                  </SwiperSlide>
+                ))}
           </Swiper>
         ) : (
           <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
