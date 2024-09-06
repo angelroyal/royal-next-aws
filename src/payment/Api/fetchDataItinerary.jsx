@@ -150,7 +150,7 @@ export const SendPaymentRequest = (paymentData) => {
 
 export async function GetConfirmationPDF(uid, language) {
   try {
-    const url = `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${uid}?lang=${language}&available=true`
+    const url = `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${uid}?lang=${language}&available=true`
     const response = await axios.get(url);
     return response;
   } catch (error) {
