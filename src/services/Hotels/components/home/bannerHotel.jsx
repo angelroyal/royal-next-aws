@@ -12,12 +12,11 @@ import { BannerConfig } from "../../config/BannersConfigH";
 import LanguageContext from "../../../../language/LanguageContext";
 
 export function BannerHomeHotelTop() {
-  const { getImg} = useContext(ImageContext);
+  const { getImg } = useContext(ImageContext);
 
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
-
     const handleResize = () => {
       const width = window.innerWidth;
 
@@ -52,17 +51,29 @@ export function BannerHomeHotelTop() {
               delay: 6000,
             }}
           >
-            {getImg.hotel.bannerHotel[deviceType].map((imgCarrousel, index) => (
-              <SwiperSlide key={index}>
+            {getImg?.hotel?.bannerHotel?.[deviceType]?.length === 0 ? (
+              <SwiperSlide>
                 <img
-                  className="object-cover	w-full h-full object-center select-none"
-                  src={imgCarrousel}
-                  alt="banner-principal-hotel"
-                  width="100%"
-                  height="100%"
+                  src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h.jpg`}
+                  alt="no-availability"
+                  className="w-full h-full"
                 />
               </SwiperSlide>
-            ))}
+            ) : (
+              getImg.hotel.bannerHotel[deviceType].map(
+                (imgCarrousel, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      className="object-cover	w-full h-full object-center select-none"
+                      src={imgCarrousel}
+                      alt="banner-principal-hotel"
+                      width="100%"
+                      height="100%"
+                    />
+                  </SwiperSlide>
+                )
+              )
+            )}
           </Swiper>
         ) : (
           <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
@@ -242,7 +253,6 @@ export function BannerHomeKnowMore() {
 }
 
 export function BannerExcDiscounts() {
-  
   // DISPLAY LAP , TAB and MOB
   const [deviceType, setDeviceType] = useState(null);
   useEffect(() => {
@@ -276,12 +286,10 @@ export function BannerExcDiscounts() {
   );
 }
 export function BannerHomeHotelSwiper(props) {
-
   const { deviceType } = props;
   const { getImg } = useContext(ImageContext);
   const { languageData } = useContext(LanguageContext);
 
-  
   // const excDiscounts = `${process.env.NEXT_PUBLIC_URL}test/tour-banner-home.jpg`;
   // const bannerTraveling = `${process.env.NEXT_PUBLIC_URL}general/Banner-Traveling.webp`;
   // const bannerTour = `${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/xplor-feb24.webp`;
@@ -309,7 +317,13 @@ export function BannerHomeHotelSwiper(props) {
       }}
     >
       <SwiperSlide className="!w-[48%] max-lg:!w-full  !bg-white">
-        {getImg ? (
+        {getImg?.hotel?.bannerDestination?.[deviceType]?.length === 0 ? (
+          <img
+            src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h.jpg`}
+            alt="no-availability banner blue"
+            className="w-full h-full object-cover"
+          />
+        ) : getImg ? (
           <div className="w-full flex justify-center !bg-white">
             <Image
               // src={excDiscounts ? excDiscounts : ""}
@@ -317,7 +331,7 @@ export function BannerHomeHotelSwiper(props) {
               width={547}
               height={235}
               className="w-full h-[19rem] rounded-lg object-cover object-center select-none"
-              alt="Banner Exc Discounts"
+              alt="Banner destination hotel swiper"
             />
           </div>
         ) : (
@@ -328,7 +342,13 @@ export function BannerHomeHotelSwiper(props) {
       {/*TWO CARD TEXT */}
       <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
-          {getImg ? (
+          {getImg?.hotel?.bannerBlue?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+              alt="no-availability banner blue"
+              className="w-full h-full object-cover"
+            />
+          ) : getImg ? (
             <Image
               // src={bannerTraveling}
               src={getImg.hotel.bannerBlue[deviceType]}
@@ -355,7 +375,13 @@ export function BannerHomeHotelSwiper(props) {
       {/* THREE CARD IMAGE HOTEL */}
       <SwiperSlide className="!w-[25%] max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
-          {getImg ? (
+          {getImg?.hotel?.bannerTour?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+              alt="no-availability banner blue"
+              className="w-full h-full object-cover"
+            />
+          ) : getImg ? (
             <Image
               src={getImg.hotel.bannerTour[deviceType]}
               width={266}
@@ -374,7 +400,6 @@ export function BannerHomeHotelSwiper(props) {
 }
 
 export function BannerHomeHotelD(props) {
-
   const { deviceType } = props;
   const { getImg } = useContext(ImageContext);
   const { languageData } = useContext(LanguageContext);
@@ -387,14 +412,20 @@ export function BannerHomeHotelD(props) {
     <div className="flex gap-[16px] h-[318px] mb-[40px]">
       <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
         <div className="w-full h-full flex justify-center !bg-white overflow-hidden rounded-lg">
-          {getImg ? (
+          {getImg?.hotel?.bannerDestination?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h.jpg`}
+              alt="no-availability banner destination hotel"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               // src={excDiscounts ? excDiscounts : ""}
               src={getImg.hotel.bannerDestination[deviceType]}
               width={547}
               height={235}
               className="w-full h-full rounded-lg object-cover object-center select-none transition-transform duration-500 transform scale-100 hover:scale-105"
-              alt="Banner Exc Discounts"
+              alt="Banner destination hotel"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -404,7 +435,13 @@ export function BannerHomeHotelD(props) {
 
       <div className="relative flex justify-center w-3/12">
         <div className="relative w-full flex justify-center ">
-          {getImg ? (
+          {getImg?.hotel?.bannerBlue?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+              alt="no-availability banner blue"
+              className="w-full h-full object-cover"
+            />
+          ) : getImg ? (
             <Image
               // src={bannerTraveling}
               src={getImg.hotel.bannerBlue[deviceType]}
@@ -429,7 +466,13 @@ export function BannerHomeHotelD(props) {
 
       <div className=" flex justify-center w-3/12 relative">
         <div className="w-full flex justify-center overflow-hidden rounded-lg">
-          {getImg ? (
+          {getImg?.hotel?.bannerTour?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
+              alt="no-availability banner blue"
+              className="w-full h-full object-cover"
+            />
+          ) : getImg ? (
             <Image
               src={getImg.hotel.bannerTour[deviceType]}
               width={266}

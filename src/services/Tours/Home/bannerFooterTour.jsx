@@ -30,7 +30,13 @@ export default function BannerFooterTour() {
 
   return (
     <div className="my-[120px] w-full max-sm:my-[30px] rounded-lg">
-      {getImg ? (
+      {getImg?.tour?.bannerLocation?.[deviceType]?.length === 0 ? (
+        <img
+          src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t.jpg`}
+          alt="no-availability"
+          className="w-full h-[469px] object-cover"
+        />
+      ) : getImg ? (
         <>
           <Image
             // src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/banner-tour.webp`}

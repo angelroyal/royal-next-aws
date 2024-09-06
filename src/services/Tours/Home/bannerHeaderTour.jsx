@@ -57,17 +57,30 @@ export default function BannerHeaderTour(props) {
             delay: 6000,
           }}
         >
-          {getImg.tour.bannerTour[deviceType].map((imgCarrousel, index) => (
-            <SwiperSlide className="!flex items-center justify-center" key={index}>
+          {getImg?.tour?.bannerTour?.[deviceType]?.length === 0 ? (
+            <SwiperSlide>
               <img
-                src={imgCarrousel}
-                className="object-cover	w-full h-full object-center select-none"
-                alt="banner-principal-home"
-                width="100%"
-                height="100%"
+                src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t.jpg`}
+                alt="no-availability principal banner tour"
+                className="w-full h-full"
               />
             </SwiperSlide>
-          ))}
+          ) : (
+            getImg.tour.bannerTour[deviceType].map((imgCarrousel, index) => (
+              <SwiperSlide
+                className="!flex items-center justify-center"
+                key={index}
+              >
+                <img
+                  src={imgCarrousel}
+                  className="object-cover	w-full h-full object-center select-none"
+                  alt="banner-principal-tour"
+                  width="100%"
+                  height="100%"
+                />
+              </SwiperSlide>
+            ))
+          )}
         </Swiper>
       ) : (
         <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full" />
@@ -78,4 +91,3 @@ export default function BannerHeaderTour(props) {
     </div>
   );
 }
-

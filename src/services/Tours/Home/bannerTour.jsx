@@ -77,7 +77,13 @@ export function BannerHomeTourSwiper(props) {
       {/* ONE CARD IMAGE AND TEXT */}
       <SwiperSlide className="!w-[48%] max-lg:!w-full max-sm:!w-full !bg-gry-30 !rounded-lg">
         <div className="w-full flex justify-center !bg-white">
-          {getImg ? (
+          {getImg?.tour?.bannerDestination?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               //   src={`${process.env.NEXT_PUBLIC_URL}test/hotel-banner-home.jpg`}
               src={getImg.tour.bannerDestination[deviceType]}
@@ -96,7 +102,13 @@ export function BannerHomeTourSwiper(props) {
       {/*TWO CARD TEXT */}
       <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
-          {getImg ? (
+          {getImg?.tour?.bannerBlue?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               //   src={bannerTraveling}
               src={getImg.tour.bannerBlue[deviceType]}
@@ -123,9 +135,15 @@ export function BannerHomeTourSwiper(props) {
       {/* THREE CARD IMAGE TOUR */}
       <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
-          {getImg ? (
+          {getImg?.tour?.bannerText?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
-            //   src={bannerTour}
+              //   src={bannerTour}
               src={getImg.tour.bannerText[deviceType]}
               width={266}
               height={235}
@@ -153,7 +171,13 @@ export function BannerHomeTourD(props) {
     <div className="flex gap-[16px] h-[318px] mb-[40px]">
       <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
         <div className="w-full h-full flex justify-center !bg-white overflow-hidden rounded-lg">
-          {getImg ? (
+          {getImg?.tour?.bannerDestination?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               width={547}
               height={235}
@@ -170,7 +194,13 @@ export function BannerHomeTourD(props) {
 
       <div className="relative flex justify-center w-3/12">
         <div className="relative w-full flex justify-center ">
-          {getImg ? (
+          {getImg?.tour?.bannerBlue?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               width={266}
               height={235}
@@ -196,7 +226,13 @@ export function BannerHomeTourD(props) {
 
       <div className=" flex justify-center w-3/12 relative">
         <div className="w-full flex justify-center overflow-hidden rounded-lg">
-          {getImg ? (
+          {getImg?.tour?.bannerText?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               width={266}
               height={235}
