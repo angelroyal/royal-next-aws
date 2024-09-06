@@ -12,7 +12,7 @@ export async function getCatalogueTransport() {
 
 export const fetchTopActivities = async () => {
   try {
-    const response = await axiosWithInterceptor.get(`activities/promotions`);
+    const response = await axiosWithInterceptor.get(`v1/activities/promotions`);
 
     if (response.data && response.status === 200) {
       const shuffledDestinations = response.data
