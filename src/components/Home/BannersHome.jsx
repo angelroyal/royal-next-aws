@@ -18,8 +18,6 @@ import { ImageContext } from "@/context/ImageContext";
 export default function BannersHeaderHome(props) {
   const { dataImg } = props;
   const { getImg, setGetImg } = useContext(ImageContext);
-  console.log("peticion", dataImg?.home?.bannerHome);
-  console.log("contexto", getImg?.home?.bannerHome);
 
   const [dashedOne, setDashedOne] = useState([
     { key: 1, value: true },

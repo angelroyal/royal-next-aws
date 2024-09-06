@@ -1,13 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+import { ImageContext } from "@/context/ImageContext";
 import LanguageContext from "@/language/LanguageContext";
 
-export default function DestinationReady({ type, reservationDetails }) {
+export default function DestinationReady({ type, reservationDetails, dataImg }) {
   const router = useRouter();
+  const { setGetImg } = useContext(ImageContext);
+
+  useEffect(() => {
+    setGetImg(dataImg);
+  }, []);
 
   // DATE VALIDATE
   let date = null;
