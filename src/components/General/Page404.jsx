@@ -11,7 +11,7 @@ export default function Page404() {
   return (
     <Container>
       <div className="flex max-md:flex-col items-center">
-        {/* <Lottie className=" m-[3rem] ml-[10rem] max-2xl:ml-[4.3rem] max-lg:ml-[3rem] min-h-[35vh] min-w-[35vh] aspect-square" animationData={animationData} /> */}
+        <Lottie className=" m-[3rem] ml-[10rem] max-2xl:ml-[4.3rem] max-lg:ml-[3rem] min-h-[35vh] min-w-[35vh] aspect-square" animationData={animationData} />
 
         <div className="ml-[3rem] max-sm:ml-0 flex flex-col justify-center items-start max-md:items-center mb-4">
           <div className="m-b text-fs-24 text-bl-100">

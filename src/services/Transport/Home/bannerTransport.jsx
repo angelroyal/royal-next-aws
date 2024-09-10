@@ -95,7 +95,13 @@ export function BannerHomeTransportSwiper(props) {
             </bottom>
           </div>
           <div className="w-[60%] !bg-white">
-            {getImg ? (
+            {getImg?.transporte?.bannerCar?.[deviceType]?.length === 0 ? (
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+                alt="no-availability"
+                className="w-full h-full"
+              />
+            ) : getImg ? (
               <Image
                 src={getImg.transporte.bannerCar[deviceType]}
                 width={378}
@@ -114,7 +120,13 @@ export function BannerHomeTransportSwiper(props) {
       {/*TWO CARD TRANSPORT */}
       <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="relative w-full flex justify-center ">
-          {getImg ? (
+          {getImg?.transporte?.bannerBlue?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               src={getImg.transporte.bannerBlue[deviceType]}
               width={266}
@@ -132,7 +144,13 @@ export function BannerHomeTransportSwiper(props) {
       {/* THREE CARD TRANSPORT */}
       <SwiperSlide className="!w-1/4 max-lg:!w-1/2 max-sm:!w-full !flex !justify-center !bg-white">
         <div className="w-full flex justify-center">
-          {getImg ? (
+          {getImg?.transporte?.bannerTransport?.[deviceType]?.length === 0 ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          ) : getImg ? (
             <Image
               src={getImg.transporte.bannerTransport[deviceType]}
               width={266}
@@ -184,14 +202,22 @@ export function BannerHomeTransportD(props) {
           </div>
         </div>
         <div className="w-[60%] !bg-white">
-          {getImg ? (
+          {getImg?.transporte?.bannerCar?.[deviceType]?.length === 0 ? (
+            <SwiperSlide>
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+                alt="no-availability"
+                className="w-full h-full"
+              />
+            </SwiperSlide>
+          ) : getImg ? (
             <Image
               // src={bannerCartLeading}
               src={getImg.transporte.bannerCar[deviceType]}
               width={378}
               height={235}
               className="w-full h-[19rem] rounded-lg object-contain object-center select-none "
-              alt="Banner Exc Discounts"
+              alt="Banner transport banner car"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -200,7 +226,15 @@ export function BannerHomeTransportD(props) {
       </div>
 
       <div className="relative flex justify-center w-3/12">
-        {getImg ? (
+        {getImg?.transporte?.bannerBlue?.[deviceType]?.length === 0 ? (
+          <SwiperSlide>
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          </SwiperSlide>
+        ) : getImg ? (
           <Image
             // src={bannerCardSecond}
             src={getImg.transporte.bannerBlue[deviceType]}
@@ -215,7 +249,15 @@ export function BannerHomeTransportD(props) {
       </div>
 
       <div className=" flex justify-center w-3/12 relative">
-        {getImg ? (
+        {getImg?.transporte?.bannerTransport?.[deviceType]?.length === 0 ? (
+          <SwiperSlide>
+            <img
+              src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
+              alt="no-availability"
+              className="w-full h-full"
+            />
+          </SwiperSlide>
+        ) : getImg ? (
           <Image
             // src={bannerCardFinish}
             src={getImg.transporte.bannerTransport[deviceType]}
