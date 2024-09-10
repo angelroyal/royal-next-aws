@@ -1,6 +1,7 @@
 export const revalidate = 60;
 
 import axios from "axios";
+import { cookies } from "next/headers";
 import BannersHeaderHome, {
   BannersHomeExclusiveDiscounts,
   BannersHomeOffers,
@@ -28,8 +29,12 @@ import { ImageProvider } from "@/context/ImageContext";
 
 export default async function DetailPageHotel({ params }) {
   try {
+    const cookiesStore = cookies();
+    const language = cookiesStore.get("language")?.value || "en";
+    console.log(language);
+
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`,
+      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${language}/all`,
       {
         headers: {
           "Cache-Control":
@@ -79,7 +84,7 @@ export default async function DetailPageHotel({ params }) {
                   <PopularDestinationsHome />
                   <ChainsHome />
                   <EnjoyStayHome />
-                  <TransportBanner/>
+                  <TransportBanner />
 
                   <WaveLine />
                   <BannerDiscoverPossibilities />
@@ -94,7 +99,7 @@ export default async function DetailPageHotel({ params }) {
       </ImageProvider>
     );
   } catch (error) {
-    console.log("error img",error);
+    console.log("error img", error);
 
     return (
       <LanguageProvider>
