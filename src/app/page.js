@@ -1,6 +1,7 @@
 export const revalidate = 60;
 
 import axios from "axios";
+import { cookies } from "next/headers";
 import BannersHeaderHome, {
   BannersHomeExclusiveDiscounts,
   BannersHomeOffers,
@@ -28,6 +29,10 @@ import { ImageProvider } from "@/context/ImageContext";
 
 export default async function DetailPageHotel({ params }) {
   try {
+    const cookiesStore = cookies();
+    const language = cookiesStore.get("language")?.value || "en";
+    console.log(language);
+
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}getImages/${language}/all`,
       {
