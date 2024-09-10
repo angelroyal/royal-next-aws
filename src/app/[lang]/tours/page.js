@@ -28,7 +28,7 @@ export const metadata = {
   content: "width=device-width, initial-scale=1.0",
 };
 
-export default async function Home() {
+export default async function Home({ params }) {
   // return (
   //   <>
   //     <LanguageProvider>
@@ -58,10 +58,9 @@ export default async function Home() {
   //     </LanguageProvider>
   //   </>
   // );
-
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`
+      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
     );
 
     const dataImg = response.data;

@@ -11,7 +11,6 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 import HomeHotel from "@/services/Hotels/components/home/HomeHotel";
 
 export default async function Home({ params }) {
-  console.log(params);
   
   try {
     const response = await axios.get(

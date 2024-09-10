@@ -33,7 +33,7 @@ export const metadata = {
   content: "width=device-width, initial-scale=1.0",
 };
 
-export default async function HomeTransport() {
+export default async function HomeTransport({ params }) {
   // return (
   //   <>
   //     <ImageProvider>
@@ -81,7 +81,7 @@ export default async function HomeTransport() {
 
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`
+      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
     );
 
     const dataImg = response.data;
