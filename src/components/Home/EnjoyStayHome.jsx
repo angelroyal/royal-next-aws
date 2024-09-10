@@ -249,16 +249,6 @@ export default function EnjoyStayHome() {
             {languageData.enjoyStayHome.titleEnjoy}
           </h2>
 
-          {/* Date */}
-          {/* <span className="text-white m-m text-fs-14">
-            <b>{dates.twoWeeksAhead} - {dates.threeWeeksAhead}</b>
-          </span> */}
-
-          {/* <span className="text-white m-m text-fs-16">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            consectetur adipisicing elit.{" "}
-          </span> */}
-
           <button
             onClick={() => openListing()}
             className="px-[16px] py-[14px] bg-or-100 text-white text-fs-14 m-s-b rounded-full w-fit hover:!bg-or-110 mt-[20px]"

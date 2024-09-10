@@ -26,13 +26,13 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
         if (response.status === 200) {
           // CHECK IF THE PDF HAS CONTENT
           SizePDF(
-            `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${cartId}?lang=${language}`
+            `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${cartId}?lang=${language}`
           )
             .then((response) => {
               if (response > 0) {
                 // DOWNLOAD PDF
                 window.open(
-                  `${process.env.NEXT_PUBLIC_PDF}dowloand-pdf/${cartId}?lang=${language}`
+                  `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${cartId}?lang=${language}`
                 );
 
                 // DOWNLOAD PDF SUCCESSFUL ALERT
