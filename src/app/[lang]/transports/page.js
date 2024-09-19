@@ -111,7 +111,7 @@ export default async function HomeTransport({ params }) {
                     {/* <PromotedRoutes /> */}
 
                     <ChainsHome typePage={"transport"} />
-                    <EnjoyStayHome />
+                    {/* <EnjoyStayHome /> */}
 
                     <BannerSafelyTransport />
                     <BannerDiscoverPossibilities />
