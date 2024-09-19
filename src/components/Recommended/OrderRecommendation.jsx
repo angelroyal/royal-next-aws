@@ -13,7 +13,7 @@ export default function OrderRecommendation({ type }) {
       {
         order = (
           <>
-            {/* <TourRecommendation /> */}
+            <TourRecommendation />
             <OffersNowRecommendation />
             <TransportRecommendation />
             <HotelRecommendation />
@@ -29,7 +29,7 @@ export default function OrderRecommendation({ type }) {
             <HotelRecommendation />
             <OffersNowRecommendation />
             <TransportRecommendation />
-            {/* <TourRecommendation /> */}
+            <TourRecommendation />
           </>
         );
       }
@@ -41,7 +41,7 @@ export default function OrderRecommendation({ type }) {
           <>
             <HotelRecommendation />
             <OffersNowRecommendation />
-            {/* <TourRecommendation /> */}
+            <TourRecommendation />
             <TransportRecommendation />
           </>
         );

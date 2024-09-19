@@ -83,7 +83,7 @@ export default async function DetailPageHotel({ params }) {
                 <div className="max-md:overflow-x-hidden">
                   <PopularDestinationsHome />
                   <ChainsHome />
-                  {/* <EnjoyStayHome /> */}
+                  <EnjoyStayHome />
                   <TransportBanner />
 
                   <WaveLine />
