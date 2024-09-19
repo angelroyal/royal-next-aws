@@ -16,7 +16,7 @@ import Page404 from "@/components/General/Page404";
 export default async function Details({ params, searchParams }) {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/all`,
+      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
       {
         headers: {
           "Cache-Control":
