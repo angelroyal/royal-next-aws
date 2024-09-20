@@ -7,7 +7,7 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 const API_ENDPOINT = `v1/destinations/search`;
 
-export default function AutocompleteHotel() {
+export default function AutocompleteHotel({ onSelectItem }) {
   const { languageData } = useContext(LanguageContext);
 
   const [input, setInput] = useState("");
@@ -63,6 +63,7 @@ export default function AutocompleteHotel() {
     setSelectedItem(item);
     setInput(item.label);
     localStorage.setItem("dataSearch", JSON.stringify(item));
+    onSelectItem(item);
     setIsOpen(false);
   };
 

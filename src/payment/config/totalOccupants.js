@@ -81,17 +81,3 @@ export function TotalOccupanciesModal(props) {
   const totalPerson = totalPeopleData === 0 ? "0" : totalPeopleData;
   return `${totalNights} ${language.cardHotel[pluralNight]} ${totalPerson} ${language.cardHotel[pluralPerson]} `;
 }
-
-// RETURN PARSE NEW DATE TO MXN
-export function ParseDateRangeDate(props) {
-  const { validFirstDay, validSecondDay } = props;
-
-  const splitFirsDate = validFirstDay.split("-");
-  const splitSecondDate = validSecondDay.split("-");
-
-  const parseFirstDate = `${splitFirsDate[2]}/${splitFirsDate[1]}/${splitFirsDate[0]}`;
-  const parseSecondDate = `${splitSecondDate[2]}/${splitSecondDate[1]}/${splitSecondDate[0]}`;
-
-  return `${parseFirstDate} - ${parseSecondDate}`;
-}
-

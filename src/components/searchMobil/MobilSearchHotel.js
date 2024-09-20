@@ -12,82 +12,57 @@ export default function MobilSearchHotel() {
   const { languageData, language } = useContext(LanguageContext);
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
   const [selectedDates, setSelectedDates] = useState(null);
-  const [validFirstDay, setValidFirstDay] = useState(null);
-  const [validSecondDay, setValidSecondDay] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
     const storedSelectedDates = localStorage.getItem("selectedDates");
-    const storedValidFirstDay = localStorage.getItem("validFirstDay");
-    const storedValidSecondDay = localStorage.getItem("validSecondDay");
+    const storedRoomData = localStorage.getItem("roomData");
 
     if (storedSelectedDates) {
       setSelectedDates(JSON.parse(storedSelectedDates));
     }
 
-    if (selectedDates) {
-      //test
-    }
-
-    if (storedValidFirstDay) {
-      setValidFirstDay(storedValidFirstDay);
-    }
-
-    if (storedValidSecondDay) {
-      setValidSecondDay(storedValidSecondDay);
-    }
-
-    const storedRoomData = localStorage.getItem("roomData");
     if (storedRoomData) {
-      const parsedRoomData = JSON.parse(storedRoomData);
-      setRoomData(parsedRoomData);
+      setRoomData(JSON.parse(storedRoomData));
     }
   }, []);
 
   const handleDateChange = (selectedDates) => {
     setSelectedDates(selectedDates);
     localStorage.setItem("selectedDates", JSON.stringify(selectedDates));
-
-    if (selectedDates && selectedDates.length >= 2) {
-      const FormatCheckIn = selectedDates[0];
-      const CheckIn = moment(FormatCheckIn).format("YYYY-MM-DD");
-      setValidFirstDay(CheckIn);
-      localStorage.setItem("validFirstDay", CheckIn);
-
-      const FormatCheckOut = selectedDates[1];
-      const CheckOut = moment(FormatCheckOut).format("YYYY-MM-DD");
-      setValidSecondDay(CheckOut);
-      localStorage.setItem("validSecondDay", CheckOut);
-    }
   };
 
   const sendAutocomplete = () => {
-    // setShowModal(true);
-    const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
-    const requestBody = {
-      codeNameHotel: selectedOption.codeName,
-      destination: selectedOption.label,
-      codeName: selectedOption.codeName,
-      code: selectedOption.key,
-      type: selectedOption.type,
-      "check-in": validFirstDay,
-      "check-out": validSecondDay,
-      occupancies: encodedRoomData,
-    };
+    if (selectedDates && selectedDates.length >= 2) {
+      const checkIn = moment(selectedDates[0]).format("YYYY-MM-DD");
+      const checkOut = moment(selectedDates[1]).format("YYYY-MM-DD");
 
-    const query = new URLSearchParams(requestBody).toString();
+      const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
+      const requestBody = {
+        codeNameHotel: selectedOption.codeName,
+        destination: selectedOption.label,
+        codeName: selectedOption.codeName,
+        code: selectedOption.key,
+        type: selectedOption.type,
+        "check-in": checkIn,
+        "check-out": checkOut,
+        occupancies: encodedRoomData,
+      };
 
-    if (selectedOption.type === "hotel") {
-      const newTabURL = `/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`;
-      window.open(newTabURL, "_blank");
-    } else {
-      const newPath = `/${language}/mx/${selectedOption.codeName}-${selectedOption.country}/hotels?${query}`;
-      window.location.href = newPath;
+      const query = new URLSearchParams(requestBody).toString();
+
+      if (selectedOption.type === "hotel") {
+        window.open(
+          `/${language}/mx/${selectedOption.destination}-${selectedOption.country}/${selectedOption.destination}-hotels/${selectedOption.codeName}?${query}`,
+          "_blank"
+        );
+      } else {
+        window.location.href = `/${language}/mx/${selectedOption.codeName}-${selectedOption.country}/hotels?${query}`;
+      }
     }
   };
 
   const [openFilter, setOpenFilter] = useState(false);
-
   const routerActual = NavigationConfig();
 
   return (
@@ -102,23 +77,22 @@ export default function MobilSearchHotel() {
         <Room listing={true} OnApply={setRoomData} />
 
         <div className="flex justify-between gap-x-4">
-          {routerActual === "hotel" ||
-            (routerActual === "hotels" && (
-              <button
-                className="py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center block xl:hidden text-bl-100 m-b text-fs-12"
-                onClick={() => setOpenFilter(true)}
-              >
-                {languageData.ListingPhrases.filters}
-              </button>
-            ))}
+          {routerActual === "hotel" || routerActual === "hotels" ? (
+            <button
+              className="py-[8.5px] px-8 rounded-[50px] border-2 border-bl-100 text-center block xl:hidden text-bl-100 m-b text-fs-12"
+              onClick={() => setOpenFilter(true)}
+            >
+              {languageData.ListingPhrases.filters}
+            </button>
+          ) : null}
 
           <button
-            className={` ${
+            className={`${
               routerActual === "hotel" || routerActual === "hotels"
                 ? "w-[60%] lg:w-full"
                 : "w-full"
-            }  rounded-[50px] justify-center flex gap-x-2.5 items-center justify-content-center m-b text-fs-12 text-white py-[8.5px] px-8 lg:px-4 ${
-              !selectedOption || !validFirstDay || !validSecondDay
+            } rounded-[50px] justify-center flex gap-x-2.5 items-center justify-content-center m-b text-fs-12 text-white py-[8.5px] px-8 lg:px-4 ${
+              !selectedOption || !selectedDates || selectedDates.length < 2
                 ? "bg-or-50"
                 : "bg-or-100 hover:!bg-or-110"
             }`}
@@ -126,7 +100,9 @@ export default function MobilSearchHotel() {
             color="primary"
             size="large"
             onClick={sendAutocomplete}
-            disabled={!selectedOption || !validFirstDay || !validSecondDay}
+            disabled={
+              !selectedOption || !selectedDates || selectedDates.length < 2
+            }
             sx={{ mt: 2 }}
           >
             {languageData.SearchBox.tabHotel.buttonSearch}

@@ -1,13 +1,6 @@
 import axios from "axios";
 
-
 let API_ENDPOINT = `${process.env.NEXT_PUBLIC_ROYAL_URL}confirmation/start`;
-
-// const isDevelopment = process.env.NEXT_PUBLIC_EMAIL_DEV === "true";
-// if (isDevelopment) {
-// } else {
-//   API_ENDPOINT = "${process.env.NEXT_PUBLIC_ROYAL_URL}confirmation/start";
-// }
 
 export default function ConfirmationEmail(props) {
   const { requestBody } = props;

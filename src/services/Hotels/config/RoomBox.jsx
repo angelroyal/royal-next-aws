@@ -5,56 +5,50 @@ import RoomMenu from "./RoomMenu";
 import { Menu } from "@headlessui/react";
 import LanguageContext from "../../../language/LanguageContext";
 
-function Room({ listing = false, OnApply }) {
+function Room({ listing = false, OnApply, roomData }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [totalRooms, setTotalRooms] = useState(1);
   const [totalPeople, setTotalPeople] = useState({ adults: 2, children: 0 });
 
   const { languageData } = useContext(LanguageContext);
+
   useEffect(() => {
-    const roomData = JSON.parse(localStorage.getItem("roomData"));
-    if (roomData) {
+    if (roomData && roomData.length) {
       setTotalRooms(roomData.length);
+      const totalAdults = roomData.reduce((sum, room) => sum + room.adults, 0);
+      const totalChildren = roomData.reduce(
+        (sum, room) => sum + room.children.length,
+        0
+      );
+      setTotalPeople({ adults: totalAdults, children: totalChildren });
     }
-    const totalAdults = JSON.parse(localStorage.getItem("adultsHotel") || 2);
-    const totalChildren = JSON.parse(
-      localStorage.getItem("childrenHotel") || 0
-    );
-    setTotalPeople({ adults: totalAdults, children: totalChildren });
-  }, []);
+  }, [roomData]);
 
   const handleRoomData = (roomData) => {
     OnApply(roomData);
   };
 
   const roomPlural = (room) => {
-    if (room == 1) {
-      return "room";
-    } else {
-      return "rooms";
-    }
+    return room === 1 ? "room" : "rooms";
   };
 
   const adultPlural = (adult) => {
-    if (adult == 1) {
-      return "textAdult";
-    } else {
-      return "textAdults";
-    }
+    return adult === 1 ? "textAdult" : "textAdults";
   };
 
   const childrenPlural = (children) => {
-    if (children == 1) {
-      return "textChild";
-    } else {
-      return "textChildren";
-    }
+    return children === 1 ? "textChild" : "textChildren";
   };
 
-  // FUNCTION TO CLOSE MENU
   const ref = useRef(null);
 
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
     document.addEventListener("click", handleClickOutside);
 
     return () => {
@@ -62,26 +56,16 @@ function Room({ listing = false, OnApply }) {
     };
   }, []);
 
-  const handleClickOutside = (event) => {
-    if (ref.current && !ref.current.contains(event.target)) {
-      setShowDropdown(false);
-    }
-  };
-  // END FUNCTION TO CLOSE MENU
-
   return (
     <Menu
       as="div"
-      className={`${
-        listing ? "w-full" : "w-full lg:w-[296px]"
-      } relative inline-block`}
+      className={`${listing ? "w-full" : "w-full lg:w-[296px]"} relative inline-block`}
+      ref={ref}
     >
       <div>
         <Menu.Button
           onClick={() => setShowDropdown(true)}
-          className={`${
-            listing ? "w-full" : "w-full lg:w-[296px]"
-          } border-2 border-gray-200 rounded py-2.5 px-4 relative h-[56px] !flex gap-x-2 items-center`}
+          className={`${listing ? "w-full" : "w-full lg:w-[296px]"} border-2 border-gray-200 rounded py-2.5 px-4 relative h-[56px] flex gap-x-2 items-center`}
         >
           <span className="flex items-center gap-2 border-r-2 border-gry-70 pr-3.5">
             <img
@@ -98,9 +82,8 @@ function Room({ listing = false, OnApply }) {
                 {totalRooms} {languageData.modalHotel[roomPlural(totalRooms)]}
               </span>
             </div>
-          </span>{" "}
+          </span>
           <span className="flex items-center gap-2 pl-3.5">
-            {/* <Person2OutlinedIcon className="icon-person-search" /> */}
             <img
               className="h-3.5 w-3.5 invert"
               src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
@@ -127,14 +110,17 @@ function Room({ listing = false, OnApply }) {
           </span>
         </Menu.Button>
       </div>
-      <RoomMenu
-        showRoom={handleRoomData}
-        showDropdown={showDropdown}
-        showDrop={setShowDropdown}
-        people={setTotalPeople}
-        roomsTotal={setTotalRooms}
-        onClose={setShowDropdown}
-      />
+
+      {showDropdown && (
+        <RoomMenu
+          showRoom={handleRoomData}
+          showDropdown={showDropdown}
+          showDrop={setShowDropdown}
+          people={setTotalPeople}
+          roomsTotal={setTotalRooms}
+          onClose={() => setShowDropdown(false)}
+        />
+      )}
     </Menu>
   );
 }

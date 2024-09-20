@@ -3,21 +3,32 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/l10n/es.js";
 import "flatpickr/dist/flatpickr.min.css";
 import React, { useEffect, useRef, useContext } from "react";
-
 import LanguageContext from "../language/LanguageContext";
 
 function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
   const calendarRef = useRef(null);
-  // const language = localStorage.getItem("language") || "es";
   const language =
     typeof localStorage !== "undefined"
       ? localStorage.getItem("language") || "es"
       : "es";
 
   useEffect(() => {
+    let calendarInstance;
+
     const handleDateChange = (selectedDates) => {
-      onDateChange(selectedDates);
-      localStorage.setItem("selectedDates", JSON.stringify(selectedDates));
+      if (selectedDates.length === 1) {
+        const startDate = selectedDates[0];
+        const maxDate = new Date(
+          startDate.getTime() + 30 * 24 * 60 * 60 * 1000
+        );
+
+        calendarInstance.set("maxDate", maxDate);
+      }
+
+      if (selectedDates.length === 2) {
+        onDateChange(selectedDates);
+        localStorage.setItem("selectedDates", JSON.stringify(selectedDates));
+      }
     };
 
     const storedDates = localStorage.getItem("selectedDates");
@@ -26,13 +37,12 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
       const startDate = new Date(selectedDates[0]);
       const currentDate = new Date();
 
-      // ACCEPT DATE SELECTED 0
       const minDate =
         startDate.getTime() - currentDate.getTime() < 48 * 60 * 60 * 1000
           ? startDate
           : new Date(currentDate.getTime() + 48 * 60 * 60 * 1000);
 
-      flatpickr(calendarRef.current, {
+      calendarInstance = flatpickr(calendarRef.current, {
         mode: "range",
         dateFormat: "d/m/y",
         minDate: minDate,
@@ -49,7 +59,7 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
         disableMobile: true,
       });
     } else {
-      flatpickr(calendarRef.current, {
+      calendarInstance = flatpickr(calendarRef.current, {
         mode: "range",
         dateFormat: "d/m/y",
         minDate: new Date(new Date().getTime() + 48 * 60 * 60 * 1000),
@@ -65,12 +75,21 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
         disableMobile: true,
       });
     }
+
+    return () => {
+      if (calendarInstance) {
+        calendarInstance.destroy();
+      }
+    };
   }, []);
+
   const { languageData } = useContext(LanguageContext);
+
   return (
     <div
-      className={`${listing === false && "lg:w-[290px]"
-        } border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full `}
+      className={`${
+        listing === false && "lg:w-[290px]"
+      } border-2 border-gray-200 rounded py-2.5 px-4 flex items-center w-full `}
     >
       <div className="flex items-center gap-2 w-full">
         {listing === false && (
@@ -86,12 +105,12 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
           </span>
 
           <input
-            className={`${hotelDetails && "bg-white"
-              } mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
+            className={`${
+              hotelDetails && "bg-white"
+            } mt-3 m-b text-fs-12 focus:outline-none w-full cursor-pointer`}
             type="text"
             ref={calendarRef}
             placeholder={languageData.SearchBox.tabHotel.dateText}
-          // id="check-in"
           />
         </div>
       </div>
