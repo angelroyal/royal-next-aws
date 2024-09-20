@@ -1,14 +1,13 @@
 import axios from "axios";
 
-const isDevelopment = process.env.NEXT_PUBLIC_EMAIL_DEV === "true";
 
-let API_ENDPOINT;
+let API_ENDPOINT = `${process.env.NEXT_PUBLIC_ROYAL_URL}confirmation/start`;
 
-if (isDevelopment) {
-  API_ENDPOINT = "https://staywuw.com/api2/confirmation/start";
-} else {
-  API_ENDPOINT = "https://staywuw.com/api1/confirmation/start";
-}
+// const isDevelopment = process.env.NEXT_PUBLIC_EMAIL_DEV === "true";
+// if (isDevelopment) {
+// } else {
+//   API_ENDPOINT = "${process.env.NEXT_PUBLIC_ROYAL_URL}confirmation/start";
+// }
 
 export default function ConfirmationEmail(props) {
   const { requestBody } = props;
