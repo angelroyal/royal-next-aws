@@ -7,7 +7,7 @@ export async function getActivitiesHome() {
       return response;
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }

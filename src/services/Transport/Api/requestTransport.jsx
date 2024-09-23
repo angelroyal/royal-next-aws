@@ -60,7 +60,7 @@ export async function GetPromotedRoutes(id, lang) {
     );
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }

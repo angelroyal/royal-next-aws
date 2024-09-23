@@ -45,7 +45,7 @@ export async function GetReviewsTripe(locationId) {
     // const response = await axios.request(options);
     return response;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }
@@ -66,7 +66,7 @@ export async function GetLocationDetails(locationId) {
     // const response = await axios.request(options);
     return response;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }

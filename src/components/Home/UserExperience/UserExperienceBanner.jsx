@@ -13,7 +13,7 @@ import { Container } from "@/config/Others/Container";
 import { FeedbackCardTitle } from "./FeedbackCardTitle";
 
 export function UserExperienceBanner() {
-  // console.log(reviewsDataInfo);
+
   return (
     <div className="relative w-full bg-bl-100 mt-[180px]">
       {/* CURVE IMAGE TOP */}

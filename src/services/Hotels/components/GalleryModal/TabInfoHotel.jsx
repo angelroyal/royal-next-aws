@@ -25,8 +25,6 @@ export default function TabInfoHotel(props) {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [shortHotelDescription, setShortHotelDescription] = useState(null);
 
-  console.log(hotel);
-
   const { languageData } = useContext(LanguageContext);
 
   const handleTabClick = (tab) => {

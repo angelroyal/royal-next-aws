@@ -24,7 +24,7 @@ export function ReviewsHotel({ locationId }) {
         setLocationDetails(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
 
     // GET REVIEWS HOTEL
@@ -36,7 +36,7 @@ export function ReviewsHotel({ locationId }) {
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }, []);
 

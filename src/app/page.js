@@ -31,7 +31,6 @@ export default async function DetailPageHotel({ params }) {
   try {
     const cookiesStore = cookies();
     const language = cookiesStore.get("language")?.value || "en";
-    console.log(language);
 
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}getImages/${language}/all`,
@@ -99,8 +98,6 @@ export default async function DetailPageHotel({ params }) {
       </ImageProvider>
     );
   } catch (error) {
-    console.log("error img", error);
-
     return (
       <LanguageProvider>
         <TokenProvider>
