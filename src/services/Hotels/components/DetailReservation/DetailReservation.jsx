@@ -105,6 +105,20 @@ export default function DetailReservation() {
     };
   }, []);
 
+  // LP ANIMATION
+  const [isBouncing, setIsBouncing] = useState(false);
+
+  useEffect(() => {
+    if (selectedRooms.length > 0) {
+      triggerAnimation();
+    }
+  }, [selectedRooms.length]);
+
+  function triggerAnimation() {
+    setIsBouncing(true);
+    setTimeout(() => setIsBouncing(false), 3700); 
+  }
+
   return (
     <>
       {isVisible && (
@@ -176,7 +190,10 @@ export default function DetailReservation() {
                         />
                       </div>
                       {selectedRooms.length > 0 && (
-                        <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${selectedRooms.length}`}</span>
+                        <span className={`absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b ${isBouncing && "animate-bounce"}`}>
+                          {isBouncing && <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bl-100 opacity-75"/>}
+                          {`+${selectedRooms.length}`}
+                        </span>
                       )}{" "}
                     </div>
                   )}
