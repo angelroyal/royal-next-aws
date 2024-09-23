@@ -161,7 +161,10 @@ export default function DetailReservation() {
                   </div>
 
                   {open === false && selectedRooms.length > 0 && (
-                    <div className="absolute top-0 right-[2rem] md:bottom-0 md:left-0 md:right-0 mx-auto my-auto w-max flex items-center">
+                    <div
+                      className="absolute top-0 right-[2rem] md:bottom-0 md:left-0 md:right-0 mx-auto my-auto w-max flex items-center cursor-pointer"
+                      onClick={() => setOpen(true)}
+                    >
                       <div className="relative w-[2.5rem] h-[2.5rem] rounded-lg overflow-hidden">
                         <ImageGet
                           imageUrl={selectedRooms[0].image}
@@ -172,9 +175,9 @@ export default function DetailReservation() {
                           altDescription={selectedRooms[0].name}
                         />
                       </div>
-                        {selectedRooms.length > 0 && (
-                          <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${selectedRooms.length}`}</span>
-                        )}{" "}
+                      {selectedRooms.length > 0 && (
+                        <span className="absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b">{`+${selectedRooms.length}`}</span>
+                      )}{" "}
                     </div>
                   )}
 
@@ -208,6 +211,7 @@ export default function DetailReservation() {
               } top-[-2.4rem] absolute left-0 right-0 mx-auto border-0  md:top-[-37px] w-[44px] h-[44px] flex justify-center items-center z-[3] border-gry-100`}
             >
               <img
+                className={`${open && "rotate-180"}`}
                 src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/up-bl-100-cle.svg`}
                 alt="arrows"
               />

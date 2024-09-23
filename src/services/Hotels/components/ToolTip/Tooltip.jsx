@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import LanguageContext from "@/language/LanguageContext";
 
-const Tooltip = ({ text, children }) => {
+export const Tooltip = ({ bgColor, text, children }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const handleMouseEnter = () => {
@@ -18,7 +18,7 @@ const Tooltip = ({ text, children }) => {
         {children}
       </div>
       {showTooltip && (
-        <div className="bg-black text-white text-xs rounded py-1 px-2 absolute z-10">
+        <div className={`text-white text-xs rounded py-1 px-2 absolute z-10 ${bgColor}`}>
           {text}
         </div>
       )}
@@ -32,6 +32,7 @@ const ToolTipRefundable = ({room}) => {
 
   return (
     <Tooltip
+    bgColor={"bg-black"}
       text={
         room.cancellationPolicies ? (
           <React.Fragment>

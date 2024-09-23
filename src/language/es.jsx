@@ -377,9 +377,9 @@ export const es = {
     from: "de",
     to: "A",
     alertTaxesNotIncluded: {
-      title: "Impuestos no incluidos",
+      title: "Precios sin impuestos incluidos",
       message:
-        "Tenga en cuenta que los precios de la habitación no incluyen impuestos adicionales. Asegúrese de revisar el desglose de costos antes de finalizar su reserva.",
+        "Recuerde que los precios mostrados para las habitaciones no incluyen los impuestos adicionales. Le recomendamos revisar el desglose completo de los costos antes de confirmar su reserva.",
       continue: "Continuar",
       removeRooms: "Cancelar habitación",
     },
@@ -1871,7 +1871,6 @@ export const es = {
     lastname: "Apellido",
     lastnamePlaceholder: "Ingrese el apellido",
   },
-  
 
   countries: {
     ABW: "Aruba",

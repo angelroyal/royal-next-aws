@@ -379,7 +379,7 @@ export const en = {
     alertTaxesNotIncluded: {
       title: "Taxes not included",
       message:
-        "Please note that room prices do not include additional taxes. Be sure to review the cost breakdown before finalizing your reservation.",
+        "Please note that the room prices do not include additional taxes. We recommend reviewing the full cost breakdown before finalizing your reservation.",
       continue: "Continue",
       removeRooms: "Cancel room",
     },

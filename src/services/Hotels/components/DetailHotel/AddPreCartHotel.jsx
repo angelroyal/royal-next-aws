@@ -1,14 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
-import RoomsHotelContext from "../../context/RoomsHotelContext";
 import LanguageContext from "@/language/LanguageContext";
+import RoomsHotelContext from "../../context/RoomsHotelContext";
+
 export default function AddPreCartHotel(props) {
   const { languageData } = useContext(LanguageContext);
   const { room } = props;
-  const { selectedRooms, setSelectedRooms, setRoomSelected } =
-    useContext(RoomsHotelContext);
+  const {
+    selectedRooms,
+    setSelectedRooms,
+    setRoomSelected,
+    setOpenAlert,
+  } = useContext(RoomsHotelContext);
 
   const handleAddDetailHotelMaxPrice = (room) => {
+    console.log(room);
 
     const persons = parseInt(room.adultChildren.split(".")[0]);
     const data = {
@@ -36,20 +42,29 @@ export default function AddPreCartHotel(props) {
       },
     };
 
-    const updatedSelectedRooms = [...selectedRooms, data];
-    setSelectedRooms(updatedSelectedRooms);
-    setRoomSelected(room);
+    if (room?.taxesNotIncluded) {
+      setOpenAlert(true);
+      setRoomSelected(data);
+    } else {
+      handleRooms(data);
+    }
+  };
+
+  const handleRooms = (newRoom) => {
+    setSelectedRooms((rooms) => [...rooms, newRoom]);
   };
 
   return (
-    <button
-      className=" cursor-pointer border-0 rounded-full bg-bl-100 text-white text-fs-12 m-s-b py-3.5 px-4 hover:bg-bl-110"
-      onClick={() => handleAddDetailHotelMaxPrice(room)}
-      disabled={selectedRooms.some(
-        (selectedRoom) => selectedRoom.idRoom === room.idRoom
-      )}
-    >
-      {languageData.containerModalHotel.buttonModal}
-    </button>
+    <>
+      <button
+        className=" cursor-pointer border-0 rounded-full bg-bl-100 text-white text-fs-12 m-s-b py-3.5 px-4 hover:bg-bl-110"
+        onClick={() => handleAddDetailHotelMaxPrice(room)}
+        disabled={selectedRooms.some(
+          (selectedRoom) => selectedRoom.idRoom === room.idRoom
+        )}
+      >
+        {languageData.containerModalHotel.buttonModal}
+      </button>
+    </>
   );
 }

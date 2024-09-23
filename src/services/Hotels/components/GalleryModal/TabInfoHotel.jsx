@@ -5,8 +5,9 @@ import {
   MegaphoneIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
+import { Tooltip } from "../ToolTip/Tooltip";
 import LanguageContext from "@/language/LanguageContext";
 import { AmenitiesIcons } from "@/components/General/Amenities";
 
@@ -19,10 +20,12 @@ const tabs = [
 export default function TabInfoHotel(props) {
   const { hotel } = props;
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-  const [showFullDescription, setShowFullDescription] = useState(false);
   const [isLimitLetters, setIsLimitLetters] = useState(false);
-  const [shortHotelDescription, setShortHotelDescription] = useState(null);
   const [hotelDescription, setHotelDescription] = useState(null);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  const [shortHotelDescription, setShortHotelDescription] = useState(null);
+
+  console.log(hotel);
 
   const { languageData } = useContext(LanguageContext);
 
@@ -117,6 +120,18 @@ export default function TabInfoHotel(props) {
           <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100">
             {hotel.facilities.map((facility, index) => (
               <li className="flex items-center gap-x-2 mb-2" key={index}>
+                {/* <Tooltip
+                  bgColor={"bg-gry-50"}
+                  text={
+                    <React.Fragment>
+                      <p className="text-grn-100 m-s-b text-fs-11 text-nowrap">
+                        Amenidad con costo adicional
+                      </p>
+                    </React.Fragment>
+                  }
+                >
+                  {AmenitiesIcons(facility)} {facility}
+                  </Tooltip> */}
                 {AmenitiesIcons(facility)} {facility}
               </li>
             ))}
