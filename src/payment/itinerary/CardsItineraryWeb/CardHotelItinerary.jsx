@@ -165,7 +165,7 @@ export default function CardHotelItinerary(props) {
                       width={11}
                       height={14}
                     />
-                    
+
                     <span className="text-gry-100 text-fs-10 m-s-b truncate max-lg:text-wrap">
                       {itemHotel.address}
                     </span>
@@ -214,17 +214,26 @@ export default function CardHotelItinerary(props) {
                     <p className="text-fs-12 m-0">MXN</p>
                     <p className="text-fs-16 m-0">
                       $
-                      {Math.floor(itemHotel.price ? itemHotel.price : 0 )
+                      {Math.floor(itemHotel.price ? itemHotel.price : 0)
                         .toLocaleString("es-MX", { currency: "MXN" })
                         .replace(".00", "")}
-                      .<sup>{(itemHotel.price ? itemHotel.price % 1 : 0 % 1).toFixed(2).slice(2)}</sup>
+                      .
+                      <sup>
+                        {(itemHotel.price ? itemHotel.price % 1 : 0 % 1)
+                          .toFixed(2)
+                          .slice(2)}
+                      </sup>
                     </p>
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className={`${itemHotel.available === false && "opacity-45"} flex justify-between border-y border-[#ebebeb] items-start py-[0.6rem] my-[1rem] lg:!hidden`}>
+            <div
+              className={`${
+                itemHotel.available === false && "opacity-45"
+              } flex justify-between border-y border-[#ebebeb] items-start py-[0.6rem] my-[1rem] lg:!hidden`}
+            >
               <div className="flex flex-col gap-y-[1rem]">
                 <div className="flex gap-x-2 items-center">
                   <Image
@@ -268,10 +277,15 @@ export default function CardHotelItinerary(props) {
                     <p className="text-fs-12 m-0">MXN</p>
                     <p className="text-fs-16 m-0">
                       $
-                      {Math.floor(itemHotel.price ? itemHotel.price : 0 )
+                      {Math.floor(itemHotel.price ? itemHotel.price : 0)
                         .toLocaleString("es-MX", { currency: "MXN" })
                         .replace(".00", "")}
-                      .<sup>{(itemHotel.price ? itemHotel.price % 1 : 0 % 1).toFixed(2).slice(2)}</sup>
+                      .
+                      <sup>
+                        {(itemHotel.price ? itemHotel.price % 1 : 0 % 1)
+                          .toFixed(2)
+                          .slice(2)}
+                      </sup>
                     </p>
                   </span>
                 </div>
@@ -436,6 +450,12 @@ export default function CardHotelItinerary(props) {
                                       </div>
                                     )}
                                   </div>
+
+                                  {roomBed.rateComment && (
+                                    <div className="text-fs-10 m-m text-gry-100 mt-4">
+                                      <b>Comentarios:</b>{roomBed.rateComment}
+                                    </div>
+                                  )}
                                 </div>
                               ))}
                           </div>
@@ -463,7 +483,6 @@ export default function CardHotelItinerary(props) {
             )}
             {/* END REMOVE CARD */}
 
-            {/* {itemHotel.available === true && ( */}
             {itemHotel.available === false && (
               <>
                 <UnavailableCardHotel destination={itemHotel} />
@@ -477,6 +496,3 @@ export default function CardHotelItinerary(props) {
     </>
   );
 }
-
-
-// http://localhost:3000/es/mx/ciudad-de-mexico-mexico/ciudad-de-mexico-hotels/fontan-reforma?codeNameHotel=fontan-reforma&code=49&type=destination&codeName=ciudad-de-mexico&check-in=2024-08-15&check-out=2024-08-24&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D

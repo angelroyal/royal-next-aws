@@ -326,6 +326,13 @@ export default function CardHotelConfirmation(props) {
                                   </p>
                                 </div>
                               )}
+
+                            {roomBed.rateComment && (
+                              <div className="text-fs-10 m-m text-gry-100 mt-4">
+                                <b>Comentarios:</b>
+                                {roomBed.rateComment}
+                              </div>
+                            )}
                           </div>
                         ))}
                     </div>
