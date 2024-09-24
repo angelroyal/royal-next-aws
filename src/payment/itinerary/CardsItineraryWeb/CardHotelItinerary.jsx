@@ -116,7 +116,7 @@ export default function CardHotelItinerary(props) {
                   src={`${process.env.NEXT_PUBLIC_URL}icons/close/close-100.svg`}
                   alt="icon close"
                   className={`w-[10px] h-[10px] absolute right-4 top-4 ${
-                    itemHotel.available === false && "opacity-45"
+                    itemHotel.available === false && "z-[1]"
                   }`}
                   width={10}
                   height={10}
@@ -470,11 +470,11 @@ export default function CardHotelItinerary(props) {
             {iconRemove && (
               <>
                 <div
-                  className="absolute left-0 top-0 w-full h-full bg-[#96969691] rounded-lg"
+                  className="z-[10] absolute left-0 top-0 w-full h-full bg-[#96969691] rounded-lg "
                   onClick={() => cancelRemove()}
                 />
                 <div
-                  className="absolute right-0 top-0 h-full px-[22px] flex items-center justify-center cursor-pointer bg-red-100 rounded-r-lg text-fs-16 text-white m-s-b"
+                  className="z-[10] absolute right-0 top-0 h-full px-[22px] flex items-center justify-center cursor-pointer bg-red-100 rounded-r-lg text-fs-16 text-white m-s-b"
                   onClick={() => removeReservation(itemHotel.code)}
                 >
                   {languageData.cart.remove}
