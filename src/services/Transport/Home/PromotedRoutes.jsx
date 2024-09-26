@@ -45,7 +45,7 @@ export default function PromotedRoutes() {
         const response = await GetPromotedRoutes("719395", language);
         setTransports(response);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     getTransports();

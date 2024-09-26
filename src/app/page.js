@@ -27,11 +27,10 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { ImageProvider } from "@/context/ImageContext";
 
-export default async function DetailPageHotel({ params }) {
+export default async function DetailPageHotel() {
   try {
     const cookiesStore = cookies();
     const language = cookiesStore.get("language")?.value || "en";
-    console.log(language);
 
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}getImages/${language}/all`,
@@ -99,8 +98,6 @@ export default async function DetailPageHotel({ params }) {
       </ImageProvider>
     );
   } catch (error) {
-    console.log("error img", error);
-
     return (
       <LanguageProvider>
         <TokenProvider>

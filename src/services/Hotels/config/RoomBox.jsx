@@ -5,27 +5,25 @@ import RoomMenu from "./RoomMenu";
 import { Menu } from "@headlessui/react";
 import LanguageContext from "../../../language/LanguageContext";
 
-function Room({ listing = false, OnApply, roomData }) {
+function Room({ listing = false }) {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [totalRooms, setTotalRooms] = useState(1);
-  const [totalPeople, setTotalPeople] = useState({ adults: 2, children: 0 });
-
+  const [roomData, setRoomData] = useState([]);
   const { languageData } = useContext(LanguageContext);
 
   useEffect(() => {
-    if (roomData && roomData.length) {
-      setTotalRooms(roomData.length);
-      const totalAdults = roomData.reduce((sum, room) => sum + room.adults, 0);
-      const totalChildren = roomData.reduce(
-        (sum, room) => sum + room.children.length,
-        0
-      );
-      setTotalPeople({ adults: totalAdults, children: totalChildren });
+    const storedRoomData = JSON.parse(localStorage.getItem("roomData"));
+    if (storedRoomData) {
+      setRoomData(storedRoomData);
     }
-  }, [roomData]);
+  }, []);
 
-  const handleRoomData = (roomData) => {
-    OnApply(roomData);
+  const totalRooms = roomData.length;
+  const totalAdults = roomData.reduce((sum, room) => sum + room.adults, 0);
+  const totalChildren = roomData.reduce((sum, room) => sum + room.children.length, 0);
+
+  const handleRoomData = (updatedRoomData) => {
+    setRoomData(updatedRoomData);
+    localStorage.setItem("roomData", JSON.stringify(updatedRoomData));
   };
 
   const roomPlural = (room) => {
@@ -42,20 +40,6 @@ function Room({ listing = false, OnApply, roomData }) {
 
   const ref = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
   return (
     <Menu
       as="div"
@@ -71,7 +55,7 @@ function Room({ listing = false, OnApply, roomData }) {
             <img
               className="h-4 w-4 invert"
               src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
-              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon room`}
+              alt="icon room"
             />
             <div className="flex flex-col items-start">
               <span className="text-fs-10 m-s-b text-gry-70">
@@ -87,7 +71,7 @@ function Room({ listing = false, OnApply, roomData }) {
             <img
               className="h-3.5 w-3.5 invert"
               src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
-              alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon adult`}
+              alt="icon adult"
             />
             <div className="flex flex-col items-start">
               <span className="text-fs-10 m-s-b text-gry-70">
@@ -95,14 +79,12 @@ function Room({ listing = false, OnApply, roomData }) {
               </span>
 
               <span className="m-s-b text-fs-12 text-gry-100 text-nowrap">
-                {`${totalPeople.adults} ${
-                  languageData.itinerary.tourItinerary[
-                    adultPlural(totalPeople.adults)
-                  ]
+                {`${totalAdults} ${
+                  languageData.itinerary.tourItinerary[adultPlural(totalAdults)]
                 }`}{" "}
-                {`${totalPeople.children} ${
+                {`${totalChildren} ${
                   languageData.itinerary.tourItinerary[
-                    childrenPlural(totalPeople.children)
+                    childrenPlural(totalChildren)
                   ]
                 }`}
               </span>
@@ -116,8 +98,6 @@ function Room({ listing = false, OnApply, roomData }) {
           showRoom={handleRoomData}
           showDropdown={showDropdown}
           showDrop={setShowDropdown}
-          people={setTotalPeople}
-          roomsTotal={setTotalRooms}
           onClose={() => setShowDropdown(false)}
         />
       )}
@@ -126,3 +106,4 @@ function Room({ listing = false, OnApply, roomData }) {
 }
 
 export default Room;
+

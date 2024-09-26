@@ -14,7 +14,6 @@ export default function AddPreCartHotel(props) {
   } = useContext(RoomsHotelContext);
 
   const handleAddDetailHotelMaxPrice = (room) => {
-    console.log(room);
 
     const persons = parseInt(room.adultChildren.split(".")[0]);
     const data = {

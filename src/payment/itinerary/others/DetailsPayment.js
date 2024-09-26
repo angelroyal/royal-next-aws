@@ -10,34 +10,21 @@ import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
-// import LoadingProgress from "@/components/General/LoadingProgress";
 
 export default function DetailsPayment(props) {
-  const { data, step, setChangeButton } = props;
+  const { data, step } = props;
 
   const isMobile = useIsMobileNew();
   const { languageData } = useContext(LanguageContext);
 
   // NEW CONTEXT
   const {
-    termsAccept,
-    policyAccept,
-    buttonActive,
-    countNumber,
-    progressCount,
     setOpenDialog,
     handleStepChange,
     setOpenTaxesNotIncluded,
     setRoomsWithTaxesNotIncluded,
     setTotalTaxesNotIncluded,
   } = useContext(BookingContext);
-
-  const paymentReservation = () => {
-    if (isMobile) {
-      setOpenDialog(false);
-    }
-    setChangeButton(Math.floor(Math.random() * 100) + 1);
-  };
 
   const nextStep = () => {
     if (isMobile) {
@@ -144,24 +131,12 @@ export default function DetailsPayment(props) {
                         >
                           {languageData.itinerary.taxesNotInclude}
                         </span>
-
-                        <span className="text-black m-b text-fs-12">
-                          $
-                          {Math.floor(data.summary.taxes)
-                            .toLocaleString("es-MX", { currency: "MXN" })
-                            .replace(".00", "")}
-                          .
-                          <sup>
-                            {(data.summary.taxes % 1).toFixed(2).slice(2)}
-                          </sup>
-                        </span>
                       </div>
                     )}
                 </div>
               </div>
 
               {/* FOOTER SECTION DETAILS */}
-              {/* absolute */}
               <div className="flex w-full flex-col gap-y-[20px] lg:gap-y-[40px] sticky !bottom-0 bg-white">
                 <div className="flex flex-col-reverse lg:flex-col gap-y-[20px] lg:gap-y-[40px]">
                   <div className="flex justify-between">
@@ -180,6 +155,7 @@ export default function DetailsPayment(props) {
                       </sup>
                     </p>
                   </div>
+
                   {/* ICONS CREDIT CART */}
                   <div className="flex flex-nowrap gap-2 justify-end">
                     <Image
@@ -226,33 +202,6 @@ export default function DetailsPayment(props) {
                         className="w-[6px] h-[13px]"
                       />
                     </button>
-                    // ) : (
-                    //   // <button
-                    //   //   type="submit"
-                    //   //   onClick={() => paymentReservation()}
-                    //   //   className={`bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] max-xl:py-[9px] max-xl:px-[54px] max-lg:py-[10px] max-lg:px-[32px] max-md:text-fs-13 max-md:m-b max-md max-md:h-auto ${
-                    //   //     !policyAccept || !termsAccept || !buttonActive
-                    //   //       ? "cursor-not-allowed bg-yw-50"
-                    //   //       : "hover:bg-yw-110"
-                    //   //   } ${
-                    //   //     policyAccept && termsAccept
-                    //   //       ? "py-[13px] px-[40px] max-md:py-[0.2rem] max-md:px-[2.1rem]"
-                    //   //       : "py-[16px] px-[40px] max-md:py-[0.5rem] max-md:px-[2.1rem]"
-                    //   //   } `}
-                    //   //   disabled={!policyAccept || !termsAccept || !buttonActive}
-                    //   // >
-                    //   //   {languageData.booking.paymentConekta.buttonForms}
-                    //   //   {policyAccept && termsAccept && (
-                    //   //     <div className="relative inline-flex justify-center lg:hidden">
-                    //   //       <LoadingProgress
-                    //   //         value={progressCount}
-                    //   //         count={countNumber}
-                    //   //         width={"w-[30px]"}
-                    //   //         height={"h-[30px]"}
-                    //   //       />
-                    //   //     </div>
-                    //   //   )}
-                    //   // </button>
                   )}
                 </div>
               </div>

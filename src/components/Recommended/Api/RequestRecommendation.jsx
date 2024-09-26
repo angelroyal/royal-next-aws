@@ -5,7 +5,7 @@ export async function getCatalogueTransport() {
     const response = await axiosWithInterceptor.get("v1/transport-catalogue");
     return response;
   } catch (error) {
-    console.log("There was an error fetching the transport data!", error);
+    console.error("There was an error fetching the transport data!", error);
     throw error;
   }
 }
@@ -15,7 +15,7 @@ export const fetchTopActivities = async () => {
     const response = await axiosWithInterceptor.get(`v1/activities/promotions`);
 
     if (response.data && response.status === 200) {
-      const shuffledDestinations = response.data
+      const shuffledDestinations = response.data['top-activities']
         .slice(0, 10)
         .sort(() => 0.5 - Math.random());
       return shuffledDestinations;
@@ -27,3 +27,4 @@ export const fetchTopActivities = async () => {
     return [];
   }
 };
+

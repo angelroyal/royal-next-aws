@@ -117,7 +117,7 @@ export async function removeHotelItinerary(cartUid, cartHotelId) {
     );
     return response;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }
@@ -130,7 +130,7 @@ export async function removeTransportItinerary(cartUid, cartTransportId) {
     );
     return response;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }
@@ -143,31 +143,28 @@ export const SendPaymentRequest = (paymentData) => {
       return response;
     })
     .catch((error) => {
-      console.log("Payment error:", error);
+      console.error("Payment error:", error);
       throw error;
     });
 };
 
 export async function GetConfirmationPDF(uid, language) {
   try {
-    const url = `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${uid}?lang=${language}&available=true`
+    const url = `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${uid}?lang=${language}&available=true`;
     const response = await axios.get(url);
     return response;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 }
 
-
-
-export async function SizePDF(pdfUrl){
+export async function SizePDF(pdfUrl) {
   try {
     const headResponse = await axios.head(pdfUrl);
-      const contentLength = headResponse.headers['content-length'];
-      console.log(`El tamaño del archivo es: ${contentLength} bytes`);
-      return contentLength
+    const contentLength = headResponse.headers["content-length"];
+    return contentLength;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

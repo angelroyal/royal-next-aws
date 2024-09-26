@@ -20,12 +20,10 @@ import { ReservationFailed } from "@/services/Hotels/components/AlertsHotel/Hote
 
 export async function generateMetadata({ params }) {
   try {
-    // METHOD AXIOS
     const response = await axiosWithInterceptor.get(
       `v1/hotels/${params.id}/rooms`
     );
 
-    // METADATA DETAIL HOTEL
     const hotelMetaData = response.data;
 
     return {
@@ -46,7 +44,6 @@ export async function generateMetadata({ params }) {
     };
   } catch (error) {
     console.error("Error fetching hotel metadata:", error);
-    // Handle error here
     return null;
   }
 }
