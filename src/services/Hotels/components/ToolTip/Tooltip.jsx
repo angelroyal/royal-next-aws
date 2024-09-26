@@ -29,7 +29,7 @@ export const Tooltip = ({ bgColor, text, children }) => {
 const ToolTipRefundable = ({room}) => {
   const { languageData } = useContext(LanguageContext);
   const url = process.env.REACT_APP_URL_SITE + "/policy";
-
+  
   return (
     <Tooltip
     bgColor={"bg-black"}

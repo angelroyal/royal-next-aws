@@ -5,11 +5,10 @@ import { useContext, useEffect, useState } from "react";
 import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
-import ImageGet from "@/utils/others/ImageGet";
 
 export default function SelectRooms({ close }) {
   const [isComplete, setIsComplete] = useState(false);
-  const { languageData, language } = useContext(LanguageContext);
+  const { languageData} = useContext(LanguageContext);
   const { selectedRooms, setSelectedRooms, requestBodyRooms } =
     useContext(RoomsHotelContext);
 
@@ -59,13 +58,12 @@ export default function SelectRooms({ close }) {
                 key={index}
               >
                 <div className="rounded-lg h-[80px] w-[100px] object-cover overflow-hidden">
-                  <ImageGet
-                    imageUrl={reservation.image}
-                    type={"hotel"}
-                    language={language}
+                  <img
+                    src={reservation.image}
+                    alt={reservation.name}
+                    className="w-full h-full object-cover"
                     width={80}
                     height={80}
-                    altDescription={selectedRooms[0].name}
                   />
                 </div>
 

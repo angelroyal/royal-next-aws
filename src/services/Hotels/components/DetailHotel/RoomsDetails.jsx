@@ -35,7 +35,7 @@ export default function RoomsDetails(codeHotel) {
     const queryParams = parseQueryParams(urlSearchParams, codeHotel);
     setRequestBodyRooms(queryParams);
     handleFetchPostRooms(queryParams);
-  }, []);
+  }, []);  
 
   // Filter rooms to avoid visual duplicates, except selected ones
   const filteredGroupedRooms = roomsData
@@ -128,14 +128,15 @@ export default function RoomsDetails(codeHotel) {
                           <div className="flex flex-col gap-y-4 ">
                             {/* IMAGE ROOM */}
                             <div className="relative w-full h-[222px] overflow-hidden rounded-lg">
-                              <ImageGet
+                              <img src={room.image} width={40} height={40} alt="room" className="w-full h-full" />
+                              {/* <ImageGet
                                 imageUrl={room.image}
                                 type={"hotel"}
                                 language={language}
                                 width={40}
                                 height={40}
                                 altDescription={"rooms"}
-                              />
+                              /> */}
 
                               {/* EATING PLAN */}
                               <div className="absolute w-full bottom-0 left-0 bg-black rounded-b-lg flex justify-center items-center">
@@ -261,7 +262,10 @@ export default function RoomsDetails(codeHotel) {
                               </span>
 
                               <div className="rounded bg-grn-30 text-grn-100 m-m text-fs-10 py-1 px-2 w-max">
-                                {room?.taxesNotIncluded ? languageData.cardHotel.alertTaxesNotIncluded.title :languageData.cart.taxes}
+                                {room?.taxesNotIncluded
+                                  ? languageData.cardHotel.alertTaxesNotIncluded
+                                      .title
+                                  : languageData.cart.taxes}
                               </div>
                             </div>
 

@@ -7,6 +7,7 @@ import {
   filterByOrderReviews,
   filterBySelectedReviews,
 } from "../utils/FiltersReviews";
+import { ImageModification } from "@/utils/others/ImageModification";
 
 const RoomsHotelContext = createContext();
 
@@ -43,9 +44,14 @@ export const RoomsHotelProvider = ({ children }) => {
 
   const handleFetchPostRooms = async (requestBody) => {
     setRoomsData(null);
+    const lang = localStorage.getItem("language") || "es";
     try {
       const responseData = await postRoomsToAPI(requestBody);
-      setRoomsData(responseData);
+      const newResponse = await ImageModification(responseData, lang);
+
+      console.log(newResponse);
+      
+      setRoomsData(newResponse);
       setKeyHotel(responseData.key);
     } catch (error) {
       console.error(error);
