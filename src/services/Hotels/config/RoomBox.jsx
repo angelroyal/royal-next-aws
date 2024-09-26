@@ -19,7 +19,10 @@ function Room({ listing = false }) {
 
   const totalRooms = roomData.length;
   const totalAdults = roomData.reduce((sum, room) => sum + room.adults, 0);
-  const totalChildren = roomData.reduce((sum, room) => sum + room.children.length, 0);
+  const totalChildren = roomData.reduce(
+    (sum, room) => sum + room.children.length,
+    0
+  );
 
   const handleRoomData = (updatedRoomData) => {
     setRoomData(updatedRoomData);
@@ -43,13 +46,17 @@ function Room({ listing = false }) {
   return (
     <Menu
       as="div"
-      className={`${listing ? "w-full" : "w-full lg:w-[296px]"} relative inline-block`}
+      className={`${
+        listing ? "w-full" : "w-full lg:w-[296px]"
+      } relative inline-block`}
       ref={ref}
     >
       <div>
         <Menu.Button
           onClick={() => setShowDropdown(true)}
-          className={`${listing ? "w-full" : "w-full lg:w-[296px]"} border-2 border-gray-200 rounded py-2.5 px-4 relative h-[56px] flex gap-x-2 items-center`}
+          className={`${
+            listing ? "w-full" : "w-full lg:w-[296px]"
+          } border-2 border-gray-200 rounded py-2.5 px-4 relative h-[56px] flex gap-x-2 items-center`}
         >
           <span className="flex items-center gap-2 border-r-2 border-gry-70 pr-3.5">
             <img
@@ -93,17 +100,14 @@ function Room({ listing = false }) {
         </Menu.Button>
       </div>
 
-      {showDropdown && (
-        <RoomMenu
-          showRoom={handleRoomData}
-          showDropdown={showDropdown}
-          showDrop={setShowDropdown}
-          onClose={() => setShowDropdown(false)}
-        />
-      )}
+      <RoomMenu
+        showRoom={handleRoomData}
+        showDropdown={showDropdown}
+        showDrop={setShowDropdown}
+        onClose={() => setShowDropdown(false)}
+      />
     </Menu>
   );
 }
 
 export default Room;
-

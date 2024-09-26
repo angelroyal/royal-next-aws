@@ -10,20 +10,14 @@ import { ListingHotelMobile } from "@/services/Hotels/components/Listing/Listing
 
 export default function MobilSearchHotel() {
   const { languageData, language } = useContext(LanguageContext);
-  const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
   const [selectedDates, setSelectedDates] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
     const storedSelectedDates = localStorage.getItem("selectedDates");
-    const storedRoomData = localStorage.getItem("roomData");
 
     if (storedSelectedDates) {
       setSelectedDates(JSON.parse(storedSelectedDates));
-    }
-
-    if (storedRoomData) {
-      setRoomData(JSON.parse(storedRoomData));
     }
   }, []);
 
@@ -36,6 +30,10 @@ export default function MobilSearchHotel() {
     if (selectedDates && selectedDates.length >= 2) {
       const checkIn = moment(selectedDates[0]).format("YYYY-MM-DD");
       const checkOut = moment(selectedDates[1]).format("YYYY-MM-DD");
+
+      // Obtener roomData del localStorage
+      const storedRoomData = localStorage.getItem("roomData");
+      const roomData = storedRoomData ? JSON.parse(storedRoomData) : [];
 
       const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
       const requestBody = {
@@ -74,7 +72,7 @@ export default function MobilSearchHotel() {
       <div className="flex flex-col gap-y-3">
         <SearchHotel listing={true} onSelectSearch={setSelectedOption} />
         <Calendar listing={true} onDateChange={handleDateChange} />
-        <Room listing={true} OnApply={setRoomData} />
+        <Room listing={true} />
 
         <div className="flex justify-between gap-x-4">
           {routerActual === "hotel" || routerActual === "hotels" ? (

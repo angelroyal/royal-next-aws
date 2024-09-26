@@ -10,11 +10,18 @@ export default function RoomMenu({ showRoom, showDropdown, onClose }) {
   const { languageData } = useContext(LanguageContext);
 
   useEffect(() => {
-    const roomData = JSON.parse(localStorage.getItem("roomData"));
-    if (roomData) {
-      setRooms(roomData);
+    const roomData = localStorage.getItem("roomData");
+    
+    if (!roomData) {
+      const defaultRooms = [{ adults: 2, children: [] }];
+      localStorage.setItem("roomData", JSON.stringify(defaultRooms));
+      setRooms(defaultRooms);
+    } else {
+      setRooms(JSON.parse(roomData));
     }
   }, []);
+  
+  
 
   const saveRoomData = (roomData) => {
     localStorage.setItem("roomData", JSON.stringify(roomData));
@@ -256,7 +263,7 @@ export default function RoomMenu({ showRoom, showDropdown, onClose }) {
               <div ref={endOfRoomsRef}></div>
             </div>
 
-            <div className="sticky bottom-0 left-0 bg-white p-2">
+            <div className="sticky bottom-0 left-0 bg-white p-2 flex justify-between">
               <button
                 disabled={rooms.length === 10}
                 onClick={addRoom}
