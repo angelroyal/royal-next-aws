@@ -14,44 +14,10 @@ export function SearchModalHotel() {
   const { requestBodyRooms, handleFetchPostRooms, setRequestBodyRooms } =
     useContext(RoomsHotelContext);
 
-  const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
   const [selectedDates, setSelectedDates] = useState({
     formattedCheckIn: null,
     formattedCheckOut: null,
   });
-
-  const router = useRouter();
-
-  useEffect(() => {
-    const storedSelectedDates = localStorage.getItem("selectedDates");
-    const storedRoomData = localStorage.getItem("roomData");
-
-    if (!storedSelectedDates || !storedRoomData) {
-      const params = new URLSearchParams(window.location.search);
-      const checkIn = params.get("check-in");
-      const checkOut = params.get("check-out");
-      const occupancies = params.get("occupancies");
-
-      if (checkIn && checkOut && occupancies) {
-        const formattedCheckIn = moment(checkIn).toISOString();
-        const formattedCheckOut = moment(checkOut).toISOString();
-        const parsedOccupancies = JSON.parse(decodeURIComponent(occupancies));
-
-        const newSelectedDates = [formattedCheckIn, formattedCheckOut];
-        localStorage.setItem("selectedDates", JSON.stringify(newSelectedDates));
-        localStorage.setItem("roomData", JSON.stringify(parsedOccupancies));
-
-        setSelectedDates({
-          formattedCheckIn,
-          formattedCheckOut,
-        });
-        setRoomData(parsedOccupancies);
-      }
-    } else {
-      setSelectedDates(JSON.parse(storedSelectedDates));
-      setRoomData(JSON.parse(storedRoomData));
-    }
-  }, [router]);
 
   const handleDateChange = (dates) => {
     if (dates && dates.length >= 2) {
@@ -62,6 +28,7 @@ export function SearchModalHotel() {
         formattedCheckIn,
         formattedCheckOut,
       });
+
       localStorage.setItem(
         "selectedDates",
         JSON.stringify([formattedCheckIn, formattedCheckOut])
@@ -70,12 +37,11 @@ export function SearchModalHotel() {
   };
 
   const handleUpdateRooms = () => {
-    const checkInDate =
-      moment(selectedDates.formattedCheckIn).format("YYYY-MM-DD") ||
-      requestBodyRooms["check-in"];
-    const checkOutDate =
-      moment(selectedDates.formattedCheckOut).format("YYYY-MM-DD") ||
-      requestBodyRooms["check-out"];
+    const storedRoomData = localStorage.getItem("roomData");
+    const roomData = storedRoomData ? JSON.parse(storedRoomData) : [];
+
+    const checkInDate = moment(selectedDates.formattedCheckIn).format("YYYY-MM-DD");
+    const checkOutDate = moment(selectedDates.formattedCheckOut).format("YYYY-MM-DD");
 
     const queryParams = {
       code: requestBodyRooms.code,
@@ -98,7 +64,7 @@ export function SearchModalHotel() {
 
         <div className="flex flex-col lg:flex-row lg:justify-start lg:gap-x-2 gap-y-2">
           <Calendar onDateChange={handleDateChange} hotelDetails={true} />
-          <Room OnApply={setRoomData} roomData={roomData} />
+          <Room />
 
           <button
             onClick={handleUpdateRooms}
@@ -115,3 +81,5 @@ export function SearchModalHotel() {
     </div>
   );
 }
+
+
