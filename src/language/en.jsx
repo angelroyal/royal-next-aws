@@ -488,6 +488,7 @@ export const en = {
     buttonPrincipal: "Book now",
     alert: "Warning!! Rooms will be removed",
     addRoomMessage: "Add Room",
+    extraCosts: "This amenity has an additional cost."
   },
 
   hotelTypes: {

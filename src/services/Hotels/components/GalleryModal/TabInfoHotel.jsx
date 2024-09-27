@@ -49,7 +49,7 @@ export default function TabInfoHotel(props) {
     };
     getDescriptionPreview();
   }, [hotel]);
-
+  
   const getMessageForTab = (tabName) => {
     switch (tabName) {
       //   INFO HOTEL
@@ -115,22 +115,26 @@ export default function TabInfoHotel(props) {
       case "amenities":
         return (
           <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100">
-            {hotel.facilities.map((facility, index) => (
-              <li className="flex items-center gap-x-2 mb-2" key={index}>
-                {/* <Tooltip
-                  bgColor={"bg-gry-50"}
-                  text={
+            {/* {amenities.map((facility, index) => ( */}
+              {hotel.facilities.map((facility, index) => (
+              <Tooltip
+                key={index}
+                bgColor={facility?.extraCost && "bg-gry-50"}
+                text={
+                  facility?.extraCost && (
                     <React.Fragment>
-                      <p className="text-grn-100 m-s-b text-fs-11 text-nowrap">
-                        Amenidad con costo adicional
+                      <p className="text-grn-100 m-s-b text-fs-11 text-nowrap cursor-default">
+                        {languageData.detailHotel.extraCosts}
                       </p>
                     </React.Fragment>
-                  }
-                >
-                  {AmenitiesIcons(facility)} {facility}
-                  </Tooltip> */}
-                {AmenitiesIcons(facility)} {facility}
-              </li>
+                  )
+                }
+              >
+                <div className="flex items-center gap-x-2 mb-2">
+                  {facility.extraCost && "$"} {AmenitiesIcons(facility)}{" "}
+                  <p className="m-0 cursor-default">{facility.name}</p>
+                </div>
+              </Tooltip>
             ))}
           </div>
         );

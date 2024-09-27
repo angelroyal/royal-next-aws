@@ -8,7 +8,7 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export default function SelectRooms({ close }) {
   const [isComplete, setIsComplete] = useState(false);
-  const { languageData} = useContext(LanguageContext);
+  const { languageData } = useContext(LanguageContext);
   const { selectedRooms, setSelectedRooms, requestBodyRooms } =
     useContext(RoomsHotelContext);
 

@@ -1,11 +1,12 @@
 export const AmenitiesIcons = (amenities) => {
-  switch (amenities) {
+
+  switch (amenities.name) {
     case "restaurant":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/restaurant/restaurant-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -13,10 +14,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "wi-fi":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/wifi/wifi-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -24,10 +25,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "room-service":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/rooms/rooms-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -35,10 +36,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "gym":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/gym/gym-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -46,10 +47,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "pool":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/pool/pool-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -57,10 +58,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "golf":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/golf/golf-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -68,10 +69,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "spa":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/spa/spa-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -79,10 +80,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "kids-club":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/kids/kids-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -90,10 +91,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "baggage":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/baggage/baggage-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -101,10 +102,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "air-conditioning":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/air/air-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
@@ -112,10 +113,10 @@ export const AmenitiesIcons = (amenities) => {
       );
     case "water":
       return (
-        <button tittle={amenities}>
+        <button tittle={amenities.name}>
           <img
             src={`${process.env.NEXT_PUBLIC_URL}/icons/water/water-b.svg`}
-            alt={amenities}
+            alt={amenities.name}
             width={18}
             height={18}
           />
