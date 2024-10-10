@@ -27,7 +27,7 @@ import { TransportBanner } from "@/services/Hotels/components/home/TransportBann
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import { ImageProvider } from "@/context/ImageContext";
 
-export default async function DetailPageHotel({ params }) {
+export default async function DetailPageHotel() {
   try {
     const cookiesStore = cookies();
     const language = cookiesStore.get("language")?.value || "en";

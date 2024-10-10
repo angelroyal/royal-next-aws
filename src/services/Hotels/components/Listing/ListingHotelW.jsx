@@ -25,7 +25,6 @@ export default function ListingHotelW() {
   const {
     totalPages,
     currentPage,
-    handlePageChange,
     setCurrentPage,
     combinedHotelData,
     setCombinedHotelData,
