@@ -91,9 +91,9 @@ export default function ListingHotelW() {
 
               {/* CARD */}
               {combinedHotelData &&
-                combinedHotelData.map((hotel, index) => (
+                combinedHotelData.map((hotel) => (
                   <CardHotelT
-                    key={index}
+                    key={`${hotel.name}-${hotel.location}`} 
                     hotel={hotel}
                     requestQueryParams={requestQueryParams}
                   />

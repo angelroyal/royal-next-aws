@@ -89,13 +89,14 @@ export default function FiltersHotels({ listing = false }) {
         </div>
 
         <>
-          {Object.keys(filters).map((filterGroup, index) => {
+          {/* {Object.keys(filters).map((filterGroup, index) => { */}
+          {Object.keys(filters).map((filterGroup) => {
             const filterItems = filters[filterGroup];
             const maxItems = showMore[filterGroup]
               ? filterItems.items.length
               : filterItems.length;
             return (
-              <div className="border-t border-[#ebebeb]">
+              <div className="border-t border-[#ebebeb]" key={filterGroup}>
                 <Disclosure defaultOpen={true}>
                   {({ open }) => (
                     <>
@@ -117,12 +118,15 @@ export default function FiltersHotels({ listing = false }) {
                       </Disclosure.Button>
 
                       <Disclosure.Panel className="pb-2 pt-2 text-sm text-gray-500">
+                        {/* {filterItems.items
+                          .slice(0, maxItems)
+                          .map((filterItem, index) => ( */} 
                         {filterItems.items
                           .slice(0, maxItems)
-                          .map((filterItem, index) => (
+                          .map((filterItem) => (
                             <div
                               className="form-control-label flex items-center mb-2"
-                              key={`${filterGroup}-${index}${filterItem.value}`}
+                              key={`${filterGroup}-${filterItem.value}`}
                             >
                               <input
                                 type="checkbox"
