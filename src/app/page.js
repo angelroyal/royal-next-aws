@@ -98,6 +98,8 @@ export default async function DetailPageHotel() {
       </ImageProvider>
     );
   } catch (error) {
+    console.log(error);
+    
     return (
       <LanguageProvider>
         <TokenProvider>
