@@ -54,11 +54,11 @@ export default function FiltersHotel() {
               </div>
 
               {/* RANGE */}
-              {/* <div class="relative mb-6 !text-bl-100">
+              {/* <div className="relative mb-6 !text-bl-100">
                 <input
                   id="range"
                   type="range"
-                  class="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer outline-none "
+                  className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer outline-none "
                 ></input>
               </div> */}
               {/*END RANGE */}

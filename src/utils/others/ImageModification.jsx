@@ -12,7 +12,7 @@ export async function ImageModification(roomsInfo, language) {
         };
         return room;
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     })
   );

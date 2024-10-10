@@ -49,8 +49,6 @@ export const RoomsHotelProvider = ({ children }) => {
       const responseData = await postRoomsToAPI(requestBody);
       const newResponse = await ImageModification(responseData, lang);
 
-      console.log(newResponse);
-      
       setRoomsData(newResponse);
       setKeyHotel(responseData.key);
     } catch (error) {

@@ -23,7 +23,6 @@ export async function generateMetadata({ params }) {
     const response = await axiosWithInterceptor.get(
       `v1/hotels/${params.id}/rooms`
     );
-    // console.log(response.data.facilities);
 
     const hotelMetaData = response.data;
 
