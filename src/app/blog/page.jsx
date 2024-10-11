@@ -17,7 +17,6 @@ import { CartAxiosProvider } from "@/components/Cart/CartAxios";
 export default function Blog() {
   return (
     <LanguageProvider>
-      4
       <TokenProvider>
         <CartAxiosProvider>
           <LanguageProvideContext>

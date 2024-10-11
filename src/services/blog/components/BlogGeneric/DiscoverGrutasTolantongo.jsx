@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -64,10 +62,10 @@ export default function DiscoverGrutasTolantongo() {
       </SubtitleP>
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={587}
-        height={391}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={587}
+        // height={391}
         alt="Vista de Grutas Tolantongo en el cual hay algunas personas dentro del agua pasando un momento agradable."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -88,10 +86,10 @@ export default function DiscoverGrutasTolantongo() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={591}
-        height={392}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={591}
+        // height={392}
         alt="Vista de un cuarto de hotel acogedor en el cual se observan 2 camas y una miniatura de la vista del balcón."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

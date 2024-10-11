@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -36,10 +35,10 @@ export default function DiscoverAcapulco() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={917}
-        height={556}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={917}
+        // height={556}
         alt="Piscinas del mejor hotel de Acapulco con vistas panorámicas al mar, rodeadas de áreas de descanso."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -65,10 +64,10 @@ export default function DiscoverAcapulco() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={919}
-        height={578}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={919}
+        // height={578}
         alt="Entrada del hotel Encanto Acapulco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

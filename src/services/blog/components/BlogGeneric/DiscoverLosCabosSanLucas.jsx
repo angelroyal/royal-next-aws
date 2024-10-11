@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -51,10 +49,10 @@ export default function DiscoverLosCabosSanLucas() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={586}
-          height={397}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={586}
+          // height={397}
           alt="Vista del profundo mar azul de Los Cabos en el cual se puede ver la cola de una ballena saliendo a superficie."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -78,10 +76,10 @@ export default function DiscoverLosCabosSanLucas() {
         </SubtitleP>
 
         {/* IMAGE 2 */}
-        <Image
-          src={imgBlogGeneric2}
-          width={582}
-          height={392}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={582}
+          // height={392}
           alt="Vista de una alberca en uno de los hoteles de Los Cabos San Lucas en el que hay camastros junto a sus cortinas. El día es soleado."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

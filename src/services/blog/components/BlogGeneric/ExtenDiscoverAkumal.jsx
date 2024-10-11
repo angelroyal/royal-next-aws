@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -37,10 +36,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={922}
-        height={620}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={922}
+        // height={620}
         alt="Vista de la playa de akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -68,10 +67,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={909}
-        height={547}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={909}
+        // height={547}
         alt="Vista de la zona arqueológica de Akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -110,10 +109,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={913}
-        height={559}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={913}
+        // height={559}
         alt="Increíble vista aérea de la playa de Akumal con botes de pesca"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -139,10 +138,10 @@ export default function ExtenDiscoverAkumal() {
       <SubtitleP> {languageData.ExtenDiscoverAkumal.Characteristics.Characteristic2.Subtitle} </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={920}
-        height={613}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={920}
+        // height={613}
         alt="Persona realizando buceo en las playas de Akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -179,10 +178,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={917}
-        height={566}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={917}
+        // height={566}
         alt="Santuario de Monos de Akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -207,10 +206,10 @@ export default function ExtenDiscoverAkumal() {
 
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={926}
-        height={555}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={926}
+        // height={555}
         alt="Cenote del parque natural de Aktun Chen"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -231,10 +230,10 @@ export default function ExtenDiscoverAkumal() {
       <SubtitleP>{languageData.ExtenDiscoverAkumal.places.place5.Text2}</SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={916}
-        height={575}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={916}
+        // height={575}
         alt="Laguna Yal Ku de Akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -254,10 +253,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={908}
-        height={568}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={908}
+        // height={568}
         alt="Hekab Be Biblioteca de Akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -277,10 +276,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={922}
-        height={556}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={922}
+        // height={556}
         alt="Mexicarte, galería y tienda que celebra el arte y la artesanía mexicana de akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -303,10 +302,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={934}
-        height={591}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={934}
+        // height={591}
         alt="Autobús de Playa del Carmen a Akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -340,10 +339,10 @@ export default function ExtenDiscoverAkumal() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={930}
-        height={603}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={930}
+        // height={603}
         alt="Mejores hoteles de akumal "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -377,10 +376,10 @@ export default function ExtenDiscoverAkumal() {
       <SubtitleP> {languageData.ExtenDiscoverAkumal.faqs.question1.answers.Text1} </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={917}
-        height={592}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={917}
+        // height={592}
         alt="Temporada de anidación de las tortugas en akumal"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

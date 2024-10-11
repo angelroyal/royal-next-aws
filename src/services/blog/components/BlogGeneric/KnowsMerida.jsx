@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -35,10 +34,10 @@ export default function KnowsMerida() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={924}
-        height={598}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={924}
+        // height={598}
         alt="Mejor hotel del mundo en Mérida Yucatán"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -60,10 +59,10 @@ export default function KnowsMerida() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={919}
-        height={478}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={919}
+        // height={478}
         alt="Vista del Fiesta Americana Mérida con sus habitaciones y piscina."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

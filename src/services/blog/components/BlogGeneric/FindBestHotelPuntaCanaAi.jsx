@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
@@ -52,10 +51,10 @@ export default function FindBestHotelPuntaCanaAi() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={593}
-          height={395}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={593}
+          // height={395}
           alt="Vista de dos camastros sobre la arena, frente al mar tranquilo de color azul turquesa."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -78,10 +77,10 @@ export default function FindBestHotelPuntaCanaAi() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={587}
-          height={391}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={587}
+          // height={391}
           alt="Vista de letrero de hotel Secretas CapCana rodeado por unas cuantas palmeras bajo un cielo soleado."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

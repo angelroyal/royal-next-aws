@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -47,10 +45,10 @@ export default function DiscoverMahahual() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={587}
-          height={362}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={587}
+          // height={362}
           alt="Vista de un hotel frente al mar en el que se puede observar a numerosas personas disfrutando del día."
           className="rounded-lg h-[437px] object-cover w-full my-6"
           priority={true} 
@@ -74,10 +72,10 @@ export default function DiscoverMahahual() {
         </SubtitleP>
 
         {/* IMAGE 2 */}
-        <Image
-          src={imgBlogGeneric2}
-          width={589}
-          height={337}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={589}
+          // height={337}
           alt="Vista de una decoración dorada del lobby de uno de los hoteles de Mahahual."
           priority={true} 
           className="rounded-lg h-[437px] object-cover w-full my-6"

@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
@@ -43,8 +42,8 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
+      <img
+        src={imgBlogGeneric1.src}
         width={925}
         height={574}
         alt="Vista del vistoso centro de Campeche en el que se puede observar una pequeña iglesia. Los árboles enmarcan el quiosco principal."
@@ -80,10 +79,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={940}
-        height={546}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={940}
+        // height={546}
         alt="Vista desde otro ángulo del centro de Campeche. Está atardeciendo y la iluminación de las construcciones resalta."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -210,10 +209,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={932}
-        height={676}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={932}
+        // height={676}
         alt="Vista de el centro de Campeche deasde otro ángulo. Es de mañana y hay personas en el parque bajo la sombra de los árboles."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -240,10 +239,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={912}
-        height={605}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={912}
+        // height={605}
         alt="Vista del Fuerte de San Miguel bajo un cielo azul con nubes esparcidas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -267,10 +266,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={924}
-        height={640}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={924}
+        // height={640}
         alt="Vista de la colorido y bello Centro Cultural Casa Nº 6. Se pueden ver algunas sillas vacías y el Sol cayendo sobre el centro de la construcción."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -293,10 +292,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={921}
-        height={589}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={921}
+        // height={589}
         alt="Vista del estético malecón de Campeche despejado en un día soleado e iluminado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -328,10 +327,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={926}
-        height={417}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={926}
+        // height={417}
         alt="Vista de piramide frente a un cielo azul en el que transitan unas cuantas nubes, ubiado en la Zona Arqueológica de Edzná"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -351,10 +350,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={936}
-        height={455}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={936}
+        // height={455}
         alt="Vista de letrero colorido de Isla Aguada. Dos delfines sobre el letrero destacan."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -374,10 +373,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={919}
-        height={519}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={919}
+        // height={519}
         alt="Vista de Andador Calle 59 siendo frecuentado por numerosas personas durante la noche."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -391,10 +390,10 @@ export default function ExtenDiscoveringCampeche() {
       {/* ARRIVE */}
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={928}
-        height={542}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={928}
+        // height={542}
         alt="Vista de un numeroso grupo de personas vestidas para la Fiesta del Polkekén. Las vestimentas son llamativas y coloridas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -448,10 +447,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={921}
-        height={568}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={921}
+        // height={568}
         alt="Vista de restaurante en el que se observan las paredes cargadas de cuadros. Las paredes son rosas y hay diversos relojes antiguos sobre una de las paredes que yace a un costado de la puerta principal."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -527,10 +526,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={922}
-        height={595}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={922}
+        // height={595}
         alt="Vista de una alberca con el agua calmada. Frente a la alberca hay 4 camastros y detrás de estos hay una pared de arbustos volumninosa."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -577,10 +576,10 @@ export default function ExtenDiscoveringCampeche() {
       </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={931}
-        height={361}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={931}
+        // height={361}
         alt="Vista del mar junto a un cuerpo rocoso de tamaño considerable. El agua es azul pronfundo y el cielo está despejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

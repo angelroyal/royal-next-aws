@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -50,10 +48,10 @@ export default function DiscoverHotelRiu() {
 
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={589}
-          height={409}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={589}
+          // height={409}
           alt="Piscinas y zona de estar en el hotel Riu en Cancún"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -74,10 +72,10 @@ export default function DiscoverHotelRiu() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={594}
-          height={373}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={594}
+          // height={373}
           alt="Vista panorámica del Hotel Riu Palace Las Américas"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

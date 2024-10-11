@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { TruncateLetters } from "@/components/General/TruncateLetters";
 
 
@@ -21,10 +20,8 @@ export default function CardsHomeBlog(blog) {
           <div className="flex flex-col gap-4 ">
             {/* IMG CARD */}
             <div className="h-[150px] overflow-hidden max-md:overflow-hidden rounded-lg">
-              <Image
-                src={BlogJG.image}
-                width={1080}
-                height={1080}
+              <img
+                src={BlogJG.image.src}
                 alt="blog card"
                 className="rounded-lg w-full h-full object-cover group-hover:ease-in-out group-hover:scale-110 group-hover:transition-transform group-hover:duration-500 duration-500 ease-in-out select-none" 
               />

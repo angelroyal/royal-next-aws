@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -36,10 +35,10 @@ export default function DiscoverCancun() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={920}
-        height={586}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={920}
+        // height={586}
         alt="Área de piscinas infantiles en el mejor hotel de Cancún para niños, con toboganes y zonas de juegos."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -65,8 +64,8 @@ export default function DiscoverCancun() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
+      <img
+        src={imgBlogGeneric2.src}
         width={917}
         height={544}
         alt="Vista panorámica del área infantil en el hotel Moon Palace The Grand, con juegos y actividades para niños."

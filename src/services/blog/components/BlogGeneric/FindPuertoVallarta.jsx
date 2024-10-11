@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -34,10 +32,10 @@ export default function FindPuertoVallarta() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={913}
-          height={559}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={913}
+          // height={559}
           alt="Malecón de puerto vallarta, ubicado en las costas de méxico"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -57,10 +55,10 @@ export default function FindPuertoVallarta() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={926}
-          height={526}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={926}
+          // height={526}
           alt="Vista de la entrada principal del hotel Hilton Vallarta Riviera All-Inclusive Resort"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -39,10 +38,10 @@ export default function KnowsMiamiBeach() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgMaimi}
-        width={919}
-        height={571}
+      <img
+        src={imgMaimi.src}
+        // width={919}
+        // height={571}
         alt="Piscina al aire libre en Miami Beach, Florida, rodeada de tumbonas y sombrillas con palmeras en el fondo"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -65,10 +64,10 @@ export default function KnowsMiamiBeach() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgMaimi1}
-        width={920}
-        height={578}
+      <img
+        src={imgMaimi1.src}
+        // width={920}
+        // height={578}
         alt="Entrada del hotel Nautilus Sonesta Miami Beach"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

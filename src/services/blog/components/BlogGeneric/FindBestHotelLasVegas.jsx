@@ -1,10 +1,7 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
-
 
 import BT from "./General/BT";
 import TitleH1 from "./General/TitleH1";
@@ -37,10 +34,10 @@ export default function FindBestHotelLasVegas() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={588}
-          height={372}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={588}
+          // height={372}
           alt="Vista de cierre de espectáculo dados por artistas escénicos en un evento principal."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -62,10 +59,10 @@ export default function FindBestHotelLasVegas() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={588}
-          height={360}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={588}
+          // height={360}
           alt="Vista de un hotel de Las Vegas que cuenta con un mini canal que imita a venecia dentro."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

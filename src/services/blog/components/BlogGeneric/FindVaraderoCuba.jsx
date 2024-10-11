@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -33,10 +31,10 @@ export default function FindVaraderoCuba() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={914}
-          height={578}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={914}
+          // height={578}
           alt="Vista panorámica del mejor hotel en Varadero, Cuba con vista al mar"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -64,10 +62,10 @@ export default function FindVaraderoCuba() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={920}
-          height={613}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={920}
+          // height={613}
           alt="Área de piscinas y zona de descanso del hotel Sol Varadero Beach"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

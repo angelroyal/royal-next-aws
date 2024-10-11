@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -36,10 +35,10 @@ export default function ExtenAguascalientes() {
       <SubtitleP>{languageData.ExtenAguascalientes.subtitle1}</SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={926}
-        height={598}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={926}
+        // height={598}
         alt="Vista panorámica del encantador centro de Aguascalientes, destacando su arquitectura y ambiente vibrante"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -65,10 +64,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={920}
-        height={440}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={920}
+        // height={440}
         alt="Vista de las icónicas letras gigantes que representan a la ciudad de Aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -92,10 +91,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={912}
-        height={521}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={912}
+        // height={521}
         alt="Vista del animado centro de la capital de Aguascalientes, con su rica arquitectura e historia"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -111,10 +110,10 @@ export default function ExtenAguascalientes() {
       <SubtitleP> {languageData.ExtenAguascalientes.Characteristics.Characteristic3.Subtitle} </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={926}
-        height={491}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={926}
+        // height={491}
         alt="Encantadora vista del pintoresco parque de Aguascalientes, un lugar ideal para relajarse y disfrutar de la naturaleza."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -140,10 +139,10 @@ export default function ExtenAguascalientes() {
 
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={921}
-        height={591}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={921}
+        // height={591}
         alt="Cristo Roto en Aguascalientes, monumento está ubicado en la presa de San José de Gracia."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -175,10 +174,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={680}
-        height={810}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={680}
+        // height={810}
         alt="Viñedos de Aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -199,10 +198,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={917}
-        height={517}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={917}
+        // height={517}
         alt="Boca de Túnel, aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -233,10 +232,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={912}
-        height={513}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={912}
+        // height={513}
         alt="Isla de San Marcos, aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -260,10 +259,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={913}
-        height={513}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={913}
+        // height={513}
         alt="Museos de Aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -289,10 +288,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={921}
-        height={558}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={921}
+        // height={558}
         alt="Ferias patronales de Aguascalientes, mostrando diversión, colores vibrantes y celebración cultural."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -331,10 +330,10 @@ export default function ExtenAguascalientes() {
       <SubtitleP> {languageData.ExtenAguascalientes.subtitle8} </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={928}
-        height={505}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={928}
+        // height={505}
         alt="Mejores hoteles de Aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -364,10 +363,10 @@ export default function ExtenAguascalientes() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={906}
-        height={584}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={906}
+        // height={584}
         alt="Platos y postres típicos de Aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -439,10 +438,10 @@ export default function ExtenAguascalientes() {
       <SubtitleP> {languageData.ExtenAguascalientes.faqs.question5.answers.Text1} </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={926}
-        height={534}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={926}
+        // height={534}
         alt="Cultura y arte de aguascalientes "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -36,10 +34,10 @@ export default function FindPuertoEscondido() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={923}
-          height={566}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={923}
+          // height={566}
           alt="Vista panorámica del lujoso hotel en Puerto Escondido"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -66,10 +64,10 @@ export default function FindPuertoEscondido() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={926}
-          height={574}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={926}
+          // height={574}
           alt="Vista de la entrada principal del hotel Vivo Resorts"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

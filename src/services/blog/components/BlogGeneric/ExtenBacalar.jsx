@@ -1,6 +1,5 @@
 "use client";
 import BT from "./General/BT";
-import Image from "next/image";
 
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
@@ -39,10 +38,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={927}
-        height={565}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={927}
+        // height={565}
         alt="Vista de las letras gigantes de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -80,10 +79,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={910}
-        height={564}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={910}
+        // height={564}
         alt="Vista panorámica de la laguna de Bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -108,10 +107,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={922}
-        height={553}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={922}
+        // height={553}
         alt="Persona posando junto a la hermosa laguna de Bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -212,10 +211,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={941}
-        height={582}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={941}
+        // height={582}
         alt="Vista panorámica de Bacalar y la laguna de los 7 colores"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -252,10 +251,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={912}
-        height={577}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={912}
+        // height={577}
         alt="Fuerte San Felipe de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -276,10 +275,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={918}
-        height={516}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={918}
+        // height={516}
         alt="Cenote negro de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -294,10 +293,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={925}
-        height={547}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={925}
+        // height={547}
         alt="Vista del Cenote Azul, uno de los más profundos de la zona de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -341,10 +340,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={916}
-        height={569}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={916}
+        // height={569}
         alt="Tirolesas Kan Ki´n de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -368,10 +367,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={921}
-        height={517}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={921}
+        // height={517}
         alt="Canal de Los Piratas de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -397,10 +396,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={920}
-        height={506}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={920}
+        // height={506}
         alt="Rápidos del rio de Bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -422,10 +421,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={930}
-        height={580}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={930}
+        // height={580}
         alt="Servicio y calidad en los mejores hoteles de Bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -479,10 +478,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={921}
-        height={589}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={921}
+        // height={589}
         alt="Mejores restaurantes de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -543,10 +542,10 @@ export default function ExtenBacalar() {
       </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={927}
-        height={630}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={927}
+        // height={630}
         alt="Vista los restos arqueológicos mayas de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

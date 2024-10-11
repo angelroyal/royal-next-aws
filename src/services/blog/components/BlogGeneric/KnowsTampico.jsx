@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -38,10 +37,10 @@ export default function KnowsTampico() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={921}
-        height={598}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={921}
+        // height={598}
         alt="Mejor hotel de Tampico, ubicado en la costa del Golfo de México"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -74,10 +73,10 @@ export default function KnowsTampico() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={916}
-        height={606}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={916}
+        // height={606}
         alt="Vista exterior del Soleare Hotel Boutique con piscinas y área de descanso"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

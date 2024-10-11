@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -38,10 +37,10 @@ export default function ExtenDiscoverChihuahua() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={921}
-        height={583}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={921}
+        // height={583}
         alt='Vista de las "Barrancas de Cobre" con un profundo azul cielo con unas cuantas nubes atiborradas en el horizonte. Se puede observar una persona haciendo tiroleza.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -83,10 +82,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.subtitle3} </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={928}
-        height={603}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={928}
+        // height={603}
         alt='Vista de teleférico atravezando "Las Barrancas de Cobre" através de un cielo azul y lleno de nubes.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -117,10 +116,10 @@ export default function ExtenDiscoverChihuahua() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={909}
-        height={574}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={909}
+        // height={574}
         alt='Vista de una mujer mirando "Las Barrancas de Cobre". El paisaje es verde y frondoso.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -157,10 +156,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.places.place1.Text2} </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={928}
-        height={389}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={928}
+        // height={389}
         alt="Vista de un tren de gran tamaño de color negro en un día soleado y despejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -175,10 +174,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.places.place3.Text2} </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={906}
-        height={575}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={906}
+        // height={575}
         alt="Vista de dos personas tomándose una foto en el Mirado Cerro del Gallego, una persona sujeta la camara y la otra yace sentada sobre la malla de seguridad."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -190,10 +189,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.places.place5.Text1} </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={907}
-        height={567}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={907}
+        // height={567}
         alt="Vista de la imponente Cascada de Cusárare entre la naturaleza verde y copiosa."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -205,10 +204,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.places.place7.Text1} </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={919}
-        height={517}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={919}
+        // height={517}
         alt="Vista del cristalino y tranquilo Lago de Areco bajo un hermoso cielo azul con una cuantas nubes. La naturaleza enmarca el lago."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -221,10 +220,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.places.place9.Text2} </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={927}
-        height={619}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={927}
+        // height={619}
         alt="Vista de letrero de Creel en un día completamente soleado y depejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -236,10 +235,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.places.place11.Text1} </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={927}
-        height={546}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={927}
+        // height={546}
         alt="Vista de una una construcción en el pueblo mágico de Botopilas. Se pueden oberservar unos cuantos árboles."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -262,10 +261,10 @@ export default function ExtenDiscoverChihuahua() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={928}
-        height={564}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={928}
+        // height={564}
         alt="Vista de dos hombres de mediana edad sentados en sillones individuales de color azul en un hotel con aires rústicos en el predomina la madera y los tonos rojos y cafés"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -289,10 +288,10 @@ export default function ExtenDiscoverChihuahua() {
       <SubtitleP> {languageData.ExtenDiscoverChihuahua.paragraphs8.Text1} </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={914}
-        height={585}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={914}
+        // height={585}
         alt="Vista de restaurante con estética impactante ubicado frente a las barrancas de cobre. Se puede observar a unos cuántos comensales en sus mesas"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -330,10 +329,10 @@ export default function ExtenDiscoverChihuahua() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={913}
-        height={609}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={913}
+        // height={609}
         alt='Vista de un hombre de la tercera edad llevando consigo sus maletas a punto de abordar el tren que yace detrás suyo. En el tren se puede leer "Chepe"'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -377,10 +376,10 @@ export default function ExtenDiscoverChihuahua() {
       </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={922}
-        height={538}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={922}
+        // height={538}
         alt="Vista un tren dirigiéndose a su destino mientras pasa a un entre unas pequeñas montañas y un cuerpo de agua. La naturaleza predomina"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

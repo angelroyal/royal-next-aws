@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -38,10 +37,10 @@ export default function KnowsCancun() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={920}
-        height={578}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={920}
+        // height={578}
         alt="Zona del comedor elegante y bien iluminado en el mejor hotel de Cancún, con mesas y sillas dispuestas para los comensales"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -68,10 +67,10 @@ export default function KnowsCancun() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={922}
-        height={554}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={922}
+        // height={554}
         alt="Área de piscinas infantiles y de adultos en el Iberostar Selection Cancún, con diferentes niveles de profundidad y zonas de descanso alrededor"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
