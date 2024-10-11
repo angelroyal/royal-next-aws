@@ -34,51 +34,31 @@ export function LanguageSelector() {
       "en";
 
     const selectedLanguageObject = country.find(
-      (lang) => lang.value === storedLanguage
+      (lang) => lang.value === storedLanguage.toLowerCase()
     );
+
     setSelected(selectedLanguageObject);
+
     setLanguage(storedLanguage);
   }, [setLanguage]);
-
-  // const handleChange = (newSelected) => {
-  //   const newLanguage = newSelected.value;
-  //   const currentPath = window.location.pathname;
-  //   const currentSearch = window.location.search;
-
-  //   localStorage.setItem("language", newLanguage);
-  //   setSelected(newSelected);
-
-  //   if (currentPath === "/") {
-  //     setLanguage(newLanguage);
-  //   } else {
-  //     const newPath = `/${newLanguage}${currentPath.replace(
-  //       /^\/[a-z]{2}(\/|$)/,
-  //       "/"
-  //     )}${currentSearch}`;
-  //     window.location.href = newPath;
-  //   }
-  // };
-
 
   const handleChange = (newSelected) => {
     const newLanguage = newSelected.value;
     const currentPath = window.location.pathname;
     const currentSearch = window.location.search;
-  
+
     localStorage.setItem("language", newLanguage);
     setSelected(newSelected);
-  
-    // Si la ruta es "/" (página principal)
+
     if (currentPath === "/") {
-      setLanguage(newLanguage);  // Cambia el idioma sin redirigir
-    } 
-    // Si la ruta contiene "/blog" y un idioma después de "/blog", cambia solo esa parte
-    else if (currentPath.includes('/blog')) {
-      const newPath = currentPath.replace(/\/blog\/[a-z]{2}(\/|$)/, `/blog/${newLanguage}/`);
+      setLanguage(newLanguage);
+    } else if (currentPath.includes("/blog")) {
+      const newPath = currentPath.replace(
+        /\/blog\/[a-z]{2}(\/|$)/,
+        `/blog/${newLanguage}/`
+      );
       window.location.href = newPath + currentSearch;
-    } 
-    // Comportamiento habitual para cambiar el idioma en rutas normales
-    else {
+    } else {
       const newPath = `/${newLanguage}${currentPath.replace(
         /^\/[a-z]{2}(\/|$)/,
         "/"
@@ -86,8 +66,6 @@ export function LanguageSelector() {
       window.location.href = newPath;
     }
   };
-  
-  
 
   return (
     <div className="w-max block m-s-b text-gry-100">
@@ -95,8 +73,8 @@ export function LanguageSelector() {
         <div className="relative">
           <Listbox.Button className="relative flex gap-1 w-full cursor-default rounded-lg bg-transparent pl-3 pr-7 text-left focus:outline-none items-center">
             <img
-              src={selected.img}
-              alt={`icon ${selected.name}`}
+              src={selected?.img}
+              alt={`icon ${selected?.name}`}
               className="icon-language"
             />
             <span className="block truncate">{selected.name}</span>
