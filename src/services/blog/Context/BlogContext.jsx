@@ -4,7 +4,7 @@ import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { createContext, useContext, useEffect, useState } from "react";
 
 import { BlogJsonG } from "../components/BlogGeneric/General/BlogJson";
-import { FilterBlogInput } from "../configs/FiltersBlog";
+import { FilterBlogInput, FilterCategoryBlog } from "../configs/FiltersBlog";
 
 const BlogContext = createContext();
 
@@ -64,7 +64,7 @@ const BlogProviderContext = ({ children }) => {
       }
 
       if (categorySelected) {
-        console.log(categorySelected);
+        filter = FilterCategoryBlog(categorySelected, filter)
       }
 
       console.log(filter);
@@ -76,13 +76,14 @@ const BlogProviderContext = ({ children }) => {
   return (
     <BlogContext.Provider
       value={{
+        isLoader,
         categories,
+        setIsLoader,
         inputSearch,
         setInputSearch,
         blogDataFilter,
+        categorySelected,
         setCategorySelected,
-        isLoader,
-        setIsLoader,
       }}
     >
       {children}

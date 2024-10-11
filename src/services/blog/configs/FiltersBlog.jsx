@@ -1,5 +1,3 @@
-import { filter } from "lodash";
-
 export function FilterBlogInput(input, blogs) {
   const normalizedInputValue = input;
 
@@ -22,5 +20,19 @@ export function FilterBlogInput(input, blogs) {
           .includes(normalizedInputValue))
   );
 
+  return filterData;
+}
+
+const normalizeText = (text) => {
+  return text
+    .normalize("NFD") // Descompone los caracteres con acentos
+    .replace(/[\u0300-\u036f]/g, "") // Elimina los acentos
+    .toLowerCase();
+};
+
+export function FilterCategoryBlog(category, blogs) {
+  let filterData = blogs.filter((blog) =>
+    blog.type.some((type) => normalizeText(type) === category)
+  );
   return filterData;
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { UseBlogContext } from "@/services/blog/Context/BlogContext";
 
 export default function FilterHomeBlog() {
-  const { categories, setCategorySelected } = UseBlogContext();
+  const { categories, setCategorySelected, categorySelected } = UseBlogContext();
   const [maxCategory, setMaxCategory] = useState(3);
   const [isOpen, setIsOpen] = useState(false);
   
@@ -14,6 +14,10 @@ export default function FilterHomeBlog() {
     );
     setIsOpen(!isOpen);
   };
+  
+
+  console.log(categorySelected);
+  
 
 
   const handleCategory =(value)=>{
@@ -30,7 +34,7 @@ export default function FilterHomeBlog() {
             <button
               onClick={()=>handleCategory(category)}
               key={index}
-              className="rounded-full px-4 py-2 border border-[#ebebeb] text-fs-12 m-m text-gry-100 focus:bg-bl-100 focus:text-white"
+              className={`rounded-full px-4 py-2 text-fs-12 m-m  ${categorySelected === category ? 'bg-bl-100 text-white': 'text-gry-100 border border-[#ebebeb]'}`}
             >
               {category}
             </button>
