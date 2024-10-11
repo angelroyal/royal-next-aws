@@ -11,7 +11,7 @@ import CardsHomeBlogSkeleton from "../../skeleton/CardsHomeBlogSkeleton";
 export default function ListingBlog() {
   // PAGINATION COUNT
   const blogPerPage = 9;
-  const blogJson=BlogJsonG;
+  // const blogJson=BlogJsonG;
   // PAGINATION PAGE CHANGE
   const [auxBlogData, setAuxBlogData] = useState(null);
   const [currentBlog, setCurrentBlog] = useState(null);
@@ -44,7 +44,7 @@ export default function ListingBlog() {
       <div className="flex gap-4 flex-wrap mt-[47px] max-lg:justify-center mb-6">
         {currentBlog ? (
           <>
-            {currentBlog.map((blog, index) => (
+            {currentBlog.sort(() => 0.5 - Math.random()).map((blog, index) => (
               <CardsHomeBlog blog={blog} />
             ))}
           </>
