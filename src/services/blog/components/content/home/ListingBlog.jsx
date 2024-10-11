@@ -6,6 +6,7 @@ import CardsHomeBlog from "./CardsHomeBlog";
 // import PaginationT from "@/app/config/PaginationT";
 import { BlogJsonG } from "../../BlogGeneric/General/BlogJson";
 import PaginationT from "@/components/General/PaginationT";
+import CardsHomeBlogSkeleton from "../../skeleton/CardsHomeBlogSkeleton";
 
 export default function ListingBlog() {
   // PAGINATION COUNT
@@ -41,13 +42,13 @@ export default function ListingBlog() {
     <>
     <div className="relative">
       <div className="flex gap-4 flex-wrap mt-[47px] max-lg:justify-center mb-6">
-        {currentBlog && (
+        {currentBlog ? (
           <>
             {currentBlog.map((blog, index) => (
               <CardsHomeBlog blog={blog} />
             ))}
           </>
-        )}
+        ) : <CardsHomeBlogSkeleton/>}
         
       </div>
       <div className="my-11 max-md:my-11 max-md:flex max-md:justify-center">
