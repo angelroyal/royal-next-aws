@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -35,10 +34,10 @@ export default function DiscoverGuayabitos() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={930}
-        height={508}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={930}
+        // height={508}
         alt="Vista del mejor hotel todo incluido en Guayabitos, intoresco rincón del Pacífico mexicano."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -60,10 +59,10 @@ export default function DiscoverGuayabitos() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={924}
-        height={484}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={924}
+        // height={484}
         alt="Vista de la entrada principal del hotel  Decameron Los Cocos"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

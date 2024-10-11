@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -32,10 +31,10 @@ export default function DiscoverDisney() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={915}
-        height={581}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={915}
+        // height={581}
         alt="Entrada principal del  mejor hotel dentro de Disney Orlando"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -62,10 +61,10 @@ export default function DiscoverDisney() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={926}
-        height={526}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={926}
+        // height={526}
         alt="Vista panoramica del hotel Disney, el Walt Disney World Dolphin"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

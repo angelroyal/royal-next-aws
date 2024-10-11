@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
-
 
 import BT from "./General/BT";
 import TitleH1 from "./General/TitleH1";
@@ -38,10 +36,10 @@ export default function DiscoverMexico() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={918}
-        height={544}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={918}
+        // height={544}
         alt="Vista de la entrada principal del mejor hotel de la Ciudad de México"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -71,10 +69,10 @@ export default function DiscoverMexico() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={923}
-        height={569}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={923}
+        // height={569}
         alt="Vista de entrada principal del hote Four Seasons Hotel México City"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

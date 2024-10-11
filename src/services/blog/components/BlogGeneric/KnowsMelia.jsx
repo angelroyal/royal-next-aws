@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -36,10 +35,10 @@ export default function KnowsMelia() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={918}
-        height={572}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={918}
+        // height={572}
         alt="Vista del area de pscinas del mejor hotel Meliá en Punta Cana"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -61,10 +60,10 @@ export default function KnowsMelia() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={914}
-        height={556}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={914}
+        // height={556}
         alt="Vista de la habitación del hotel Meliá Caribe Beach Resort "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

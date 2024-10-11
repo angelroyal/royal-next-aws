@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -38,10 +37,10 @@ export default function DiscoverCuernavaca() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={922}
-        height={561}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={922}
+        // height={561}
         alt="Vistas de las piscinas y áreas de estar en el mejor hotel de Cuernavaca"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -63,10 +62,10 @@ export default function DiscoverCuernavaca() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={923}
-        height={563}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={923}
+        // height={563}
         alt="Vista de la entrada principal del Anticavilla Restaurant, Hotel & Spa."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

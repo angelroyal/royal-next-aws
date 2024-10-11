@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -33,10 +32,10 @@ export default function DiscoverRivieraMaya() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={923}
-        height={616}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={923}
+        // height={616}
         alt="Área de descanso con vista al mar en el mejor hotel de la Riviera Maya."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -63,10 +62,10 @@ export default function DiscoverRivieraMaya() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={917}
-        height={525}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={917}
+        // height={525}
         alt="Vista de la piscina en el Grand Velas Riviera Maya."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

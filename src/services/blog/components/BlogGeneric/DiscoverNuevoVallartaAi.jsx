@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
@@ -34,10 +33,10 @@ export default function DiscoverNuevoVallartaAi() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={588}
-          height={327}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={588}
+          // height={327}
           alt="Vista de la oriilla del mar en un día completamente soleado con un mar azul profundo."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -61,10 +60,10 @@ export default function DiscoverNuevoVallartaAi() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={585}
-          height={389}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={585}
+          // height={389}
           alt="Vista de alberca de un hotel con numerosos camastros. La alberca está iluminada internamente por luces con tonalidades verdes turquesas y moradas."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

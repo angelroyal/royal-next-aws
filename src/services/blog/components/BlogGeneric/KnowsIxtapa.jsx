@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -51,10 +50,10 @@ export default function KnowsIxtapa() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={942}
-        height={530}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={942}
+        // height={530}
         alt="Área de juegos infantiles del hotel Sunscape Dorado Pacífico Ixtapa "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

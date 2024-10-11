@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -39,10 +38,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={918}
-        height={360}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={918}
+        // height={360}
         alt="Vista de ruinas arqueológicas que están cubiertas por una vegetación de tonalidades verdes y frondosas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -75,10 +74,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={923}
-        height={615}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={923}
+        // height={615}
         alt="Vista de construcción ormentamentada antigua pintada de colores amarillos y rojizoz, es pleno día y la gente concurre el área."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -109,10 +108,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={918}
-        height={610}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={918}
+        // height={610}
         alt="Vista del impactante Cañón del Sumidero protagonizadno la toma."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -158,10 +157,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={916}
-        height={601}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={916}
+        // height={601}
         alt="Vista de un área de comercio en el que principalmente se venden souvenirs. Todo está lleno de coleres llamativos y muy tradicionales."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -187,10 +186,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={913}
-        height={622}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={913}
+        // height={622}
         alt="Vista del interior de una van para turistas vacía en la que se observa una tele en medio de esta."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -241,10 +240,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={926}
-        height={605}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={926}
+        // height={605}
         alt="Vista de las serenas y apacibles cascadas de Agua Azul."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -263,10 +262,10 @@ export default function ExtenChiapasMagic() {
 
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={919}
-        height={591}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={919}
+        // height={591}
         alt="Vista de ruinas mayas rodeadas por una densa vegetación verde."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -285,10 +284,10 @@ export default function ExtenChiapasMagic() {
 
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={913}
-        height={587}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={913}
+        // height={587}
         alt="Vista de el imponente cañón del sumidero a la luz del día. El día es soleado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -300,10 +299,10 @@ export default function ExtenChiapasMagic() {
 
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={921}
-        height={578}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={921}
+        // height={578}
         alt="Vista del parque Aluxes a plena luz del Sol. Se observa a una persona bajo el resguardo de la sombra de la entrada principal."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -320,10 +319,10 @@ export default function ExtenChiapasMagic() {
 
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={929}
-        height={629}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={929}
+        // height={629}
         alt="Vista de un grupo de personas haciendo actividades acuáticas en las aguas de color azul profundo del Parque Nacional Laguna de Montebello"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -339,10 +338,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={931}
-        height={614}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={931}
+        // height={614}
         alt="Vista de las hermosas y pacificas Cascadas de Misol-Ha."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -357,10 +356,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={926}
-        height={593}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={926}
+        // height={593}
         alt="Vista de una calle concurrida por una de las fiestas tradicionales de Chiapas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -401,10 +400,10 @@ export default function ExtenChiapasMagic() {
 
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={926}
-        height={422}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={926}
+        // height={422}
         alt="Vista de un hotel de color azul turquesa iluminado por cuantiosas lamparas cálidas en plena noche."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -442,10 +441,10 @@ export default function ExtenChiapasMagic() {
       </SubtitleP>
 
       {/* IMAGE 14 */}
-      <Image
-        src={imgBlogGeneric14}
-        width={917}
-        height={562}
+      <img
+        src={imgBlogGeneric14.src}
+        // width={917}
+        // height={562}
         alt="Vista de un restaurante con un aire relajado y acogedor. La ilumnación es cálidad y las mesas yacen esperando a los comensales."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

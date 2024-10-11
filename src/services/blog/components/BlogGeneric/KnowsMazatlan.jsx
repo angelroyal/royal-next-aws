@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -29,10 +28,10 @@ export default function KnowsMazatlan() {
       <SubtitleP> {languageData.KnowsMazatlan.subtitle1.Text1} </SubtitleP>
       <SubtitleP> <BT>{languageData.KnowsMazatlan.subtitle1.BT} </BT> </SubtitleP>
 
-      <Image
-        src={imgMazatlan}
-        width={913}
-        height={559}
+      <img
+        src={imgMazatlan.src}
+        // width={913}
+        // height={559}
         alt="Vista de un hotel y playa en Mazatlán, México, con personas caminando por la orilla y el mar en primer plano bajo un cielo despejado"
         className="rounded-lg h-[437px] object-cover w-full my-4"
       />
@@ -57,10 +56,10 @@ export default function KnowsMazatlan() {
 
       <SubtitleP> {languageData.KnowsMazatlan.subtitle2} </SubtitleP>
 
-      <Image
-        src={imgMazatlan1}
-        width={926}
-        height={526}
+      <img
+        src={imgMazatlan1.src}
+        // width={926}
+        // height={526}
         alt="Entrada del Hotel Playa de Mazatlán en Mazatlán, México, con palmeras altas y cielo parcialmente nublado de fondo"
         className="rounded-lg h-[437px] object-cover w-full my-4"
       />

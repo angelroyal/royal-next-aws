@@ -5,7 +5,8 @@ export default function BannerHomeBlog() {
       <div className="w-full h-[192px] bg-blue-800 relative flex items-center">
 
         <img
-          src="/banner-home-blog.jpg"
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog//banner-home-blog.jpg`}
+        
           alt="banner home blog"
           className="w-full h-full max-lg:object-cover"
         />

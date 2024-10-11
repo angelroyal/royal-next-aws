@@ -1,7 +1,6 @@
 
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -35,10 +34,10 @@ export default function DiscoverNewYork() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={589}
-          height={364}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={589}
+          // height={364}
           alt="Área de piscinas y zona de descanso en el mejor hotel para hospedarse en Nueva York"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -58,10 +57,10 @@ export default function DiscoverNewYork() {
         </SubtitleP>
 
         {/* IMAGE 2 */}
-        <Image
-          src={imgBlogGeneric2}
-          width={584}
-          height={364}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={584}
+          // height={364}
           alt="Vista del la habitación del hotel The Dominick Hotel"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

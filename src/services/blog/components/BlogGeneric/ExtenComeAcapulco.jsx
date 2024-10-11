@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -41,10 +40,10 @@ export default function ExtenComeAcapulco() {
       <SubtitleP> {languageData.ExtenComeAcapulco.subtitle1.Text2} </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={922}
-        height={404}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={922}
+        // height={404}
         alt="Vista panorámica de la bahía de Acapulco con numerosos botes en el agua y colinas verdes en el fondo. Palmera en primer plano."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -110,10 +109,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={933}
-        height={483}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={933}
+        // height={483}
         alt="Vista desde arriba de los acantilados de La Quebrada en Acapulco, con el océano azul al fondo y varias personas observando desde una plataforma."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -133,10 +132,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={919}
-        height={570}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={919}
+        // height={570}
         alt="Personas disfrutando del agua en una playa de Acapulco, con un hombre remando un kayak y edificios altos y colinas en el fondo."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -152,10 +151,10 @@ export default function ExtenComeAcapulco() {
       <SubtitleP> {languageData.ExtenComeAcapulco.Characteristics.Characteristic4.Subtitle} </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={915}
-        height={556}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={915}
+        // height={556}
         alt="Vista de una extensa área verde con unas cuantas construcciones a la orilla del mar. El cielo está despejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -198,10 +197,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={936}
-        height={651}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={936}
+        // height={651}
         alt="Vista de un quiosco en medio de un parque. De fondo se pueden observar otras construcciones y un conjunto de árboles"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -222,10 +221,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={916}
-        height={563}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={916}
+        // height={563}
         alt="Vista de un mural de mosaico hecha por el artista mexicano Diego Rivera ubicada en la casa de los vientos."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -241,10 +240,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={703}
-        height={451}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={703}
+        // height={451}
         alt="Vista de un hombre lanzándose en la icónica Quebrada de Acapulco. De fondo se observa un basto mar azul con un cielo completamente despejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -270,10 +269,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={922}
-        height={661}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={922}
+        // height={661}
         alt='Vista del "Museo Histórico de Acapulco". Se observa un cielo azul con unas cuantas nubes, se observa una persona en el umbral de la entrada.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -294,10 +293,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={914}
-        height={626}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={914}
+        // height={626}
         alt='Vista de la "Capilla de la paz" rodeada por numerosos árboles con un cielo totalmente despejado. Se observan algunos turistas frente a la capilla.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -320,10 +319,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={917}
-        height={594}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={917}
+        // height={594}
         alt='Vista de personas en la tirolesa del parque de aventrua "Xtasea". El cielo es completamente azul.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -338,10 +337,10 @@ export default function ExtenComeAcapulco() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={928}
-        height={367}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={928}
+        // height={367}
         alt="Vista de un grupo de personas vestidas para una de las representaciones que toman lugar en la Feria de San Isidro Labrador. Los atuendos son coloridos."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -359,10 +358,10 @@ export default function ExtenComeAcapulco() {
       <SubtitleP> {languageData.ExtenComeAcapulco.paragraph7}</SubtitleP>
 
       {/* Image 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={927}
-        height={573}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={927}
+        // height={573}
         alt='Vista de hotel en el que se observan algunas albercas. El hotel se encuentra frente al mar.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -388,10 +387,10 @@ export default function ExtenComeAcapulco() {
       <SubtitleP> {languageData.ExtenComeAcapulco.subtitle8} </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={918}
-        height={608}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={918}
+        // height={608}
         alt="Vista de un restaurante elegante con un saxofonista ocupando la mayor parte de la toma y diversos comensales al fondo."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -479,10 +478,10 @@ export default function ExtenComeAcapulco() {
       <SubtitleP> {languageData.ExtenComeAcapulco.faqs.question4.answers.Text1} </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric14}
-        width={921}
-        height={517}
+      <img
+        src={imgBlogGeneric14.src}
+        // width={921}
+        // height={517}
         alt="Vista de un coche blanco estacionado frente a la entrada de un hotel."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

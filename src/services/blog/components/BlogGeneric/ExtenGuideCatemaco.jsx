@@ -1,6 +1,5 @@
 "use client";
 import BT from "./General/BT";
-import Image from "next/image";
 
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
@@ -41,10 +40,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={917}
-        height={568}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={917}
+        // height={568}
         alt="Vista del atardecer de Catemaco, Veracruz, México"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -77,10 +76,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={923}
-        height={484}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={923}
+        // height={484}
         alt="Puerto del pueblo de catemaco, ubicado en veracruz"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -112,10 +111,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={917}
-        height={569}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={917}
+        // height={569}
         alt="Vista de la selva tropical y la cascada de Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -172,10 +171,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={919}
-        height={553}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={919}
+        // height={553}
         alt="Ritual en la calle de la ciudad de brujos en México"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -252,10 +251,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={918}
-        height={593}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={918}
+        // height={593}
         alt=" Lago de Catemaco, un cuerpo de agua dulce"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -285,10 +284,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={926}
-        height={488}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={926}
+        // height={488}
         alt="Nanciyaga, santuario ecológico de catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -326,10 +325,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={931}
-        height={511}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={931}
+        // height={511}
         alt="Playa Escondida con sus arenas blancas y aguas tranquilas de catemaco."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -351,10 +350,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={925}
-        height={578}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={925}
+        // height={578}
         alt="Reserva Ecológica La Otra Opción de catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -368,10 +367,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={921}
-        height={480}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={921}
+        // height={480}
         alt="Laguna Poza Reyn, lugar mágico en Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -405,10 +404,10 @@ export default function ExtenGuideCatemaco() {
       </div>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={915}
-        height={555}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={915}
+        // height={555}
         alt="Hoteles acogedores donde puedes hospedarte en Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -464,10 +463,10 @@ export default function ExtenGuideCatemaco() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={914}
-        height={573}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={914}
+        // height={573}
         alt="Platillo de la gastronomía de Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

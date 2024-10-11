@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 // Use Context Language
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
@@ -50,10 +48,10 @@ export default function FindQueretaro() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={916}
-        height={600}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={916}
+        // height={600}
         alt="Imagen de estatua de bronce entre un grupo de personas a plena luz del día."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -82,10 +80,10 @@ export default function FindQueretaro() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={923}
-        height={547}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={923}
+        // height={547}
         alt="find queretaro"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

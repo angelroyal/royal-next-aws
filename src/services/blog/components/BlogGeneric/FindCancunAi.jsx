@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -34,10 +32,10 @@ export default function DiscoverCancunAi() {
           {languageData.FindCancunAi.subtitle1.Text2}
         </SubtitleP>
         {/* IMAGE 1 */}
-        <Image
-          src={imgBlogGeneric1}
-          width={592}
-          height={381}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={592}
+          // height={381}
           alt="Vista en pleno atardecer del hotel HARD ROCK destacando por su impresionante arquitectura."
           className="rounded-lg h-[437px] object-cover w-full my-6"
           priority={true}
@@ -63,10 +61,10 @@ export default function DiscoverCancunAi() {
           {languageData.FindCancunAi.subtitle2.Text2}
         </SubtitleP>
         {/* IMAGE 2 */}
-        <Image
-          src={imgBlogGeneric2}
-          width={587}
-          height={374}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={587}
+          // height={374}
           alt="Vista de una banda de rock tocando en el día."
           className="rounded-lg h-[437px] object-cover w-full my-6"
           priority={true}

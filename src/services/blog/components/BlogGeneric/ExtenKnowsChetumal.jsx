@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -38,10 +37,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={931}
-        height={382}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={931}
+        // height={382}
         alt="Vista la costa. El mar se ve tranquilo y tiene tonos azulados y verdes. Las construcciones frente al mar son discretas y pequeñas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -69,10 +68,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={923}
-        height={603}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={923}
+        // height={603}
         alt="Vista de letrero de de Chetumal. sus tonos son terrosos y una iguana esta posando sobre este letrero."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -111,10 +110,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={927}
-        height={364}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={927}
+        // height={364}
         alt="Vista de un pequeñe muelle solitario bajo el atardecer de tonos naranjas. El agua yace calmada y los árboles se ven a la distancia."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -180,10 +179,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={925}
-        height={488}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={925}
+        // height={488}
         alt="Vista de un vistoso letrero de Chetumal ocupando todo el ancho de la toma. Un cielo despejado se ve en lo alto."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -203,10 +202,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={917}
-        height={509}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={917}
+        // height={509}
         alt="Vista de la sobria y elegante entrada del muse de la cultura maya en Chetumal."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -226,10 +225,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={913}
-        height={589}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={913}
+        // height={589}
         alt="Vista a contra picada de una piramide maya en la zona arqueológica de Dzibanché"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -249,10 +248,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={916}
-        height={520}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={916}
+        // height={520}
         alt="Vista un muelle pequeño frente a la Laguna Milagros. El agua es azul turquesa y el cielo tiene agrupacines de nubes que decoran el cielo azul."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -265,10 +264,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={925}
-        height={520}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={925}
+        // height={520}
         alt="Vista de un cielo imponente reflejado en el mar sobre el que yace un muelle que se extiende hacia dentro del agua."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -289,10 +288,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={913}
-        height={606}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={913}
+        // height={606}
         alt="Vista de una ruina maya rodeada por un bosque espeso en la zona arqueológica de Kohunlich"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -312,10 +311,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={785}
-        height={715}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={785}
+        // height={715}
         alt="Vista desde dentro del cenote Taj Mahal. El Sol entra por una apertura del cenote y deja caer algunos rayos de luz entre el denso color turquesa del agua."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -331,10 +330,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={912}
-        height={585}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={912}
+        // height={585}
         alt="Vista a través de una ventana del aeropuerto por el cual se logra ver un avión estacionado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -361,10 +360,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={920}
-        height={583}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={920}
+        // height={583}
         alt="Vista a contra picada de un hotel de color blanco yeso. Una pequeña alberca con el agua calmada yace en el centro de la toma."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -412,10 +411,10 @@ export default function ExtenKnowsChetumal() {
       </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={920}
-        height={529}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={920}
+        // height={529}
         alt="Vista de un restaurante frente al mar. La luz es cálida y el atardecer cae, hay algunos comensales en sus mesas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

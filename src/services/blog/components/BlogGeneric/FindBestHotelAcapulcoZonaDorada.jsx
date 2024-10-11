@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
-import { LanguageContext } from "../../Context/LanguageContext";
+
 import BT from "./General/BT";
 import TitleH1 from "./General/TitleH1";
 import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
+import { LanguageContext } from "../../Context/LanguageContext";
 
 import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-best-hotel-acapulco-zona-dorada.jpg";
 import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-best-hotel-acapulco-zona-dorada2.jpg";
@@ -32,10 +32,10 @@ export default function FindAcapulcoZonaDorada() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={590}
-          height={371}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={590}
+          // height={371}
           alt="Vista de letrero de Acapulco de espaldas al mar en un día plenamente soleado."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -61,10 +61,10 @@ export default function FindAcapulcoZonaDorada() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={586}
-          height={371}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={586}
+          // height={371}
           alt="Vista de alberca de hotel en un díá soleado. Se alcanza a ver un tobogan que da a la alberca."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

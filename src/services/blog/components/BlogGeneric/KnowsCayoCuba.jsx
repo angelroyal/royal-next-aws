@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -36,10 +35,10 @@ export default function KnowsCayoCuba() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={916}
-        height={595}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={916}
+        // height={595}
         alt="Vista hacia el mar en el mejor hotel en Cayo Santa María "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -65,10 +64,10 @@ export default function KnowsCayoCuba() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={918}
-        height={601}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={918}
+        // height={601}
         alt="Entrada elegante del hotel Royalton Cayo Santa María, rodeada de vegetación tropical."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -38,10 +37,10 @@ export default function DiscoverNuevoVallarta() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={920}
-        height={588}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={920}
+        // height={588}
         alt="Vista desde el balcón de la habitación en el mejor hotel en Nuevo Vallarta"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -76,10 +75,10 @@ export default function DiscoverNuevoVallarta() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={923}
-        height={579}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={923}
+        // height={579}
         alt="Vista de la entrada principal del hotel Grand Velas Riviera Nayarit"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

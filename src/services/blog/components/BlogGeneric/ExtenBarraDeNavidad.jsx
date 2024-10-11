@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -37,10 +36,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={923}
-        height={567}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={923}
+        // height={567}
         alt="Vista de letrero de Barra De Navida en el atardecer frente al denso mar."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -85,10 +84,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={909}
-        height={576}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={909}
+        // height={576}
         alt="Vista de la orilla del mar al atardecer. Hay diversas enbarcaciones encallando y el agua está tranquila."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -117,10 +116,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={923}
-        height={555}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={923}
+        // height={555}
         alt="Vista de un atardecer en el mar. Hay algunas embarcaciones saliendo hacia el mar."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -153,10 +152,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={919}
-        height={580}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={919}
+        // height={580}
         alt="Vista de la orilla del mar. La arena es de un color vibrante y se pueden ver dos colinas llenas de vegetación al fondo."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -182,10 +181,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={918}
-        height={638}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={918}
+        // height={638}
         alt="Vista de 2 trajineras coloridad en llenas de personas. El día está soleado y despejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -216,10 +215,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={918}
-        height={592}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={918}
+        // height={592}
         alt="Vista de un hombre sobre una bicicleta deacansando bajo la sombra de una palmera en el Malecón de Barra de Navidad."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -240,10 +239,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={912}
-        height={580}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={912}
+        // height={580}
         alt="Vista en un atardecer a la orilla del mar en el que se puede observar a un numeroso grupo de aves aterrizando en el agua."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -264,10 +263,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={923}
-        height={594}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={923}
+        // height={594}
         alt="Vista de un mar azul turquesa intenso con un pequeño oleaje. A la distancia se pueden ver diversos hoteles."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -329,10 +328,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={936}
-        height={599}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={936}
+        // height={599}
         alt="Vista al atardecer de hotel a la orilla del mar. Los tonos naranjas prevalecen y se pueden ver a diversos grupos de personas disfrutando del mar."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -368,10 +367,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={907}
-        height={562}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={907}
+        // height={562}
         alt="Vista de una mujer disfrutando de su comida en un restaurante que está frente al mar."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -442,10 +441,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={922}
-        height={569}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={922}
+        // height={569}
         alt="Vista de una carretero que se extiende hacia el horizonte en el que va un coche solitario en un día soleado. A ambos costados la verde vegetación tropical abraza la carretera."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -488,10 +487,10 @@ export default function ExtenBarraDeNavidad() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={922}
-        height={545}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={922}
+        // height={545}
         alt="Vista de la orilla del mar, frente al mar hay una pequeña área verde con un pasto que destaca y una palmera."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

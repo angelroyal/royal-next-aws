@@ -4,19 +4,20 @@ import { useEffect, useState } from "react";
 
 import CardsHomeBlog from "./CardsHomeBlog";
 // import PaginationT from "@/app/config/PaginationT";
-import { BlogJsonG } from "../../BlogGeneric/General/BlogJson";
 import PaginationT from "@/components/General/PaginationT";
+import { UseBlogContext } from "@/services/blog/Context/BlogContext";
+import CardsHomeBlogSkeleton from "../../skeleton/CardsHomeBlogSkeleton";
 
 export default function ListingBlog() {
+  const { blogDataFilter, isLoader } = UseBlogContext();
   // PAGINATION COUNT
   const blogPerPage = 9;
-  const blogJson=BlogJsonG;
   // PAGINATION PAGE CHANGE
   const [auxBlogData, setAuxBlogData] = useState(null);
   const [currentBlog, setCurrentBlog] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  
-// CHANGE PAGE
+
+  // CHANGE PAGE
   useEffect(() => {
     if (!isNaN(currentPage)) {
       setCurrentBlog(
@@ -25,40 +26,48 @@ export default function ListingBlog() {
     }
   }, [currentPage]);
 
-//   SAMPLES OTHER PAGES
+  //   SAMPLES OTHER PAGES
   useEffect(() => {
-    if (BlogJsonG) {
-      setAuxBlogData(BlogJsonG);
-      setCurrentBlog(BlogJsonG.slice(indexOfFirstBlog, indexOfLastBlog));
+    if (blogDataFilter) {
+      setAuxBlogData(blogDataFilter);
+      setCurrentBlog(blogDataFilter.slice(indexOfFirstBlog, indexOfLastBlog));
     }
-  }, [BlogJsonG]);
-
+  }, [blogDataFilter]);
 
   const indexOfLastBlog = currentPage * blogPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogPerPage;
 
   return (
     <>
-    <div className="relative">
-      <div className="flex gap-4 flex-wrap mt-[47px] max-lg:justify-center mb-6">
-        {currentBlog && (
-          <>
-            {currentBlog.map((blog, index) => (
-              <CardsHomeBlog blog={blog} />
-            ))}
-          </>
-        )}
-        
-      </div>
-      <div className="my-11 max-md:my-11 max-md:flex max-md:justify-center">
-        {BlogJsonG && (
-            <PaginationT
-              count={Math.ceil(BlogJsonG.length / blogPerPage)}
-              pageChange={currentPage}
-              onChange={setCurrentPage}
-            />
+      <div className="relative">
+        <div className="flex gap-4 flex-wrap mt-[47px] max-lg:justify-center mb-6">
+          {!isLoader && currentBlog && blogDataFilter.length > 0 ? (
+            <>
+              {currentBlog.map((blog, index) => (
+                <CardsHomeBlog blog={blog} />
+              ))}
+            </>
+          ) : (
+            !isLoader && (
+              <div className="text-center w-full text-fs-18 m-s-b">
+                No se encontró resultados{" "}
+              </div>
+            )
           )}
-      </div>
+
+          {isLoader && <CardsHomeBlogSkeleton />}
+        </div>
+        {!isLoader && blogDataFilter.length > 0 && (
+          <div className="my-11 max-md:my-11 max-md:flex max-md:justify-center">
+            {blogDataFilter && (
+              <PaginationT
+                count={Math.ceil(blogDataFilter.length / blogPerPage)}
+                pageChange={currentPage}
+                onChange={setCurrentPage}
+              />
+            )}
+          </div>
+        )}
       </div>
     </>
   );

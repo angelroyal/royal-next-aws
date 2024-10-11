@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
 
@@ -39,10 +38,10 @@ export default function KnowsPuertoVallarta() {
 
       {/* IMAGE 1 */}
 
-      <Image
-        src={imgBlogGeneric1}
-        width={920}
-        height={556}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={920}
+        // height={556}
         alt="Mejor hotel de Puerto Vallarta, situado en la hermosa costa del Pacífico en el estado de Jalisco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -72,10 +71,10 @@ export default function KnowsPuertoVallarta() {
 
       {/* IMAGE 2 */}
 
-      <Image
-        src={imgBlogGeneric2}
-        width={922}
-        height={536}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={922}
+        // height={536}
         alt="Entrada del hotel Villa Del Palmar Beach Resort & Spa "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

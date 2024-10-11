@@ -1,6 +1,5 @@
 "use client";
 import BT from "./General/BT";
-import Image from "next/image";
 
 import TitleH1 from "./General/TitleH1";
 import TitleH2 from "./General/TitleH2";
@@ -45,10 +44,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 1 */}
-      <Image
-        src={imgBlogGeneric1}
-        width={921}
-        height={581}
+      <img
+        src={imgBlogGeneric1.src}
+        // width={921}
+        // height={581}
         alt="Espectacular vista panorámica de la zona hotelera de Cancún"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -90,10 +89,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 2 */}
-      <Image
-        src={imgBlogGeneric2}
-        width={913}
-        height={561}
+      <img
+        src={imgBlogGeneric2.src}
+        // width={913}
+        // height={561}
         alt="Playa de arena blanca y aguas cristalinas de Cancún"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -120,10 +119,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 3 */}
-      <Image
-        src={imgBlogGeneric3}
-        width={922}
-        height={572}
+      <img
+        src={imgBlogGeneric3.src}
+        // width={922}
+        // height={572}
         alt="Playas de Cancún con el cielo nublado, mostrando el contraste entre la playa y el cielo"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -239,10 +238,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 4 */}
-      <Image
-        src={imgBlogGeneric4}
-        width={911}
-        height={530}
+      <img
+        src={imgBlogGeneric4.src}
+        // width={911}
+        // height={530}
         alt="Foto familiar en las hermosas playas de Cancún, capturando un momento especial junto al mar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -316,10 +315,10 @@ export default function ExtenSecretsCancun() {
       {languageData.ExtenSecretsCancun.Section5.tourist_places.place1.text1}
       </SubtitleP>
       {/* IMAGE 5 */}
-      <Image
-        src={imgBlogGeneric5}
-        width={938}
-        height={494}
+      <img
+        src={imgBlogGeneric5.src}
+        // width={938}
+        // height={494}
         alt="Impresionante vista de la pirámide de Chichén Itzá, una maravilla arquitectónica de la antigua ciudad maya"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -345,10 +344,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 6 */}
-      <Image
-        src={imgBlogGeneric6}
-        width={917}
-        height={575}
+      <img
+        src={imgBlogGeneric6.src}
+        // width={917}
+        // height={575}
         alt="Vista del hermoso Parque Xcaret, un paraíso natural con una gran variedad de actividades y bellezas naturales"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -371,10 +370,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 7 */}
-      <Image
-        src={imgBlogGeneric7}
-        width={997}
-        height={350}
+      <img
+        src={imgBlogGeneric7.src}
+        // width={997}
+        // height={350}
         alt="discover chihuahua"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -400,10 +399,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 8 */}
-      <Image
-        src={imgBlogGeneric8}
-        width={918}
-        height={521}
+      <img
+        src={imgBlogGeneric8.src}
+        // width={918}
+        // height={521}
         alt="Yate navegando en aguas cristalinas frente a las hermosas playas de Cozumel, en el Mar del Caribe"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -425,10 +424,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 9 */}
-      <Image
-        src={imgBlogGeneric9}
-        width={920}
-        height={576}
+      <img
+        src={imgBlogGeneric9.src}
+        // width={920}
+        // height={576}
         alt="Acuario Interactivo de Cancún"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -450,10 +449,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 10 */}
-      <Image
-        src={imgBlogGeneric10}
-        width={926}
-        height={520}
+      <img
+        src={imgBlogGeneric10.src}
+        // width={926}
+        // height={520}
         alt="Torre Escénica de cancún"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -494,10 +493,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 11 */}
-      <Image
-        src={imgBlogGeneric11}
-        width={940}
-        height={483}
+      <img
+        src={imgBlogGeneric11.src}
+        // width={940}
+        // height={483}
         alt="Museo Maya de Cancún"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -519,10 +518,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 12 */}
-      <Image
-        src={imgBlogGeneric12}
-        width={925}
-        height={532}
+      <img
+        src={imgBlogGeneric12.src}
+        // width={925}
+        // height={532}
         alt="Coco Bongo, club de cancún que ofrece espectáculos y música en vivo"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -542,10 +541,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 13 */}
-      <Image
-        src={imgBlogGeneric13}
-        width={919}
-        height={563}
+      <img
+        src={imgBlogGeneric13.src}
+        // width={919}
+        // height={563}
         alt="Hoteles boutique y resorts todo incluido, de cancún"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -596,10 +595,10 @@ export default function ExtenSecretsCancun() {
       </SubtitleP>
 
       {/* IMAGE 14 */}
-      <Image
-        src={imgBlogGeneric14}
-        width={923}
-        height={625}
+      <img
+        src={imgBlogGeneric14.src}
+        // width={923}
+        // height={625}
         alt="Restaurantes con la mejor comida de Cancún"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

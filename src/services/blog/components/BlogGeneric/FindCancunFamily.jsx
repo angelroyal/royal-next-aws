@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
 
 import { useContext } from "react";
 import { LanguageContext } from "../../Context/LanguageContext";
-
 
 import BT from "./General/BT";
 import TitleH1 from "./General/TitleH1";
@@ -36,10 +34,10 @@ export default function FindCancunFamily() {
         </SubtitleP>
         {/* IMAGE 1 */}
 
-        <Image
-          src={imgBlogGeneric1}
-          width={925}
-          height={418}
+        <img
+          src={imgBlogGeneric1.src}
+          // width={925}
+          // height={418}
           alt="Vista del Restaurante del mejor hotel familiar en Cancún."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -62,10 +60,10 @@ export default function FindCancunFamily() {
 
         {/* IMAGE 2 */}
 
-        <Image
-          src={imgBlogGeneric2}
-          width={913}
-          height={564}
+        <img
+          src={imgBlogGeneric2.src}
+          // width={913}
+          // height={564}
           alt="Vista panorámica del hotel familiar Grand Fiesta Americana Coral Beach Cancún"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
