@@ -59,16 +59,12 @@ const BlogProviderContext = ({ children }) => {
       getCategories(blogData);
       let filter = [...blogData];
       if (inputSearch && inputSearch.length > 0) {
-        console.log(inputSearch);
         filter = FilterBlogInput(inputSearch, filter);
       }
 
       if (categorySelected) {
-        filter = FilterCategoryBlog(categorySelected, filter)
+        filter = FilterCategoryBlog(categorySelected, filter);
       }
-
-      console.log(filter);
-
       setBlogDataFilter(filter);
     }
   }, [blogData, inputSearch, categorySelected]);
