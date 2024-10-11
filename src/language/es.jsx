@@ -488,7 +488,7 @@ export const es = {
     buttonPrincipal: "Reserva ahora",
     alert: "Advertencia!! Las habitaciones serán eliminadas",
     addRoomMessage: "Agrega tu habitación",
-    extraCosts: "Esta amenidad cuenta con costo extra"
+    extraCosts: "Esta amenidad cuenta con costo extra",
   },
 
   hotelTypes: {
@@ -1871,6 +1871,10 @@ export const es = {
     firstnamePlaceholder: "Ingrese el nombre",
     lastname: "Apellido",
     lastnamePlaceholder: "Ingrese el apellido",
+    age:"Edad",
+    adult: "Adulto",
+    child: "Niño",
+    formHb: "Seleccione la edad",
   },
 
   countries: {
