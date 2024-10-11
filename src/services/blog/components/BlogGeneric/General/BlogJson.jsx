@@ -484,7 +484,7 @@ export const BlogJsonG = [
     date: "06/05/2024",
     description:
       "¿Alguna vez has soñado con escaparte a un paraíso de aguas turquesa y arenas blancas? Pues Cancún, Quintana Roo, México, es el lugar que estás buscando. ",
-    type: ["Cancun","Playa"],
+    type: ["Cancun", "Playa"],
   },
   {
     lang: "es",
