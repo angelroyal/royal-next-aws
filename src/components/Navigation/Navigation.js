@@ -10,7 +10,7 @@ export default function Navigation({hotelDetails=false}) {
         src={`${process.env.NEXT_PUBLIC_URL}img/home/line-navigation.jpg`}
         alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} line orange`}
         height={8}
-        className="size-full"
+        className="size-full aspect-[174/1]"
       />
       <div className="md:h-[124px] md:pb-2 bg-white border-b border-gry-70">
         <HeaderBlue />
