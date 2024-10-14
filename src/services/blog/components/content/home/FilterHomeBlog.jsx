@@ -1,10 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
 
+import { useContext, useState } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
 import { UseBlogContext } from "@/services/blog/Context/BlogContext";
 import FilterCategorySkeleton from "../../skeleton/FilterCategorySkeleton";
 
 export default function FilterHomeBlog() {
+  const { languageData } = useContext(LanguageContext);
   const { categories, setCategorySelected, isLoader, categorySelected } =
     UseBlogContext();
   const [maxCategory, setMaxCategory] = useState(3);
@@ -24,7 +27,7 @@ export default function FilterHomeBlog() {
   return (
     <>
       <div className="border border-[#ebebeb] rounded-lg p-6 flex flex-col gap-4">
-        <h3 className="m-s-b text-fs-16">Categoría</h3>
+        <h3 className="m-s-b text-fs-16">{languageData.filterTransport.category}</h3>
         {!isLoader ? (
           <>
             <div className="flex gap-4 flex-wrap">
@@ -49,7 +52,7 @@ export default function FilterHomeBlog() {
                 className="flex gap-1 focus:outline-none items-center"
               >
                 <div className="text-bl-100 m-b text-fs-12 underline">
-                  {isOpen ? "Ver menos" : "Ver más"}
+                  {isOpen ? `${languageData.modalHotel.showLess}` : `${languageData.modalMovingOptions.buttonShowMore}`}
                 </div>
                 <img
                   src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/down-bl.svg`}

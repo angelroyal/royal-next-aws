@@ -1,12 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
+import LanguageContext from "@/language/LanguageContext";
 import { BlogJsonG } from "../../BlogGeneric/General/BlogJson";
-import { TruncateLetters } from "@/components/General/TruncateLetters";
-import NewsHomeBlogSkeleton from "../../skeleton/NewsHomeBlogSkeleton";
 import { UseBlogContext } from "@/services/blog/Context/BlogContext";
+import NewsHomeBlogSkeleton from "../../skeleton/NewsHomeBlogSkeleton";
+import { TruncateLetters } from "@/components/General/TruncateLetters";
+
 export default function NewsHomeBlog() {
+
+  const { languageData } = useContext(LanguageContext);
   const [randomBlogs, setRandomBlogs] = useState([]);
   const { isLoader } = UseBlogContext();
   useEffect(() => {
@@ -23,7 +27,7 @@ export default function NewsHomeBlog() {
   };
   return (
     <div className="border border-[#ebebeb] rounded-lg mt-6 p-6">
-      <h3 className="m-s-b text-fs-16 mb-4">Noticias destacadas</h3>
+      <h3 className="m-s-b text-fs-16 mb-4">{languageData.listingBlog.featuredNews}</h3>
       {!isLoader ? (
         randomBlogs.map((blog, index) => (
           <div

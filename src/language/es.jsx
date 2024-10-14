@@ -488,7 +488,7 @@ export const es = {
     buttonPrincipal: "Reserva ahora",
     alert: "Advertencia!! Las habitaciones serán eliminadas",
     addRoomMessage: "Agrega tu habitación",
-    extraCosts: "Esta amenidad cuenta con costo extra"
+    extraCosts: "Esta amenidad cuenta con costo extra",
   },
 
   hotelTypes: {
@@ -1873,6 +1873,14 @@ export const es = {
     lastnamePlaceholder: "Ingrese el apellido",
   },
 
+  // region BLOG
+  listingBlog: {
+    featuredNews: "Noticias destacadas",
+    exploreMexico:"Explora México a través de nuestro Blog",
+    discoverTips:"Descubre consejos, historias y experiencias inolvidables para tu próxima escapada por este hermoso país",
+  },
+
+  // region COUNTRIES
   countries: {
     ABW: "Aruba",
     AFG: "Afganistán",

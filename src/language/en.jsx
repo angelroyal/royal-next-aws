@@ -1861,7 +1861,14 @@ export const en = {
     lastname: "Last Name",
     lastnamePlaceholder: "Enter the last name",
   },
+  // region BLOG
+  listingBlog: {
+    featuredNews: "Featured News",
+    exploreMexico:"Explore Mexico through our Blog",
+    discoverTips:"Discover tips, stories, and unforgettable experiences for your next getaway through this beautiful country",
+  },
 
+  // region COUNTRIES
   countries: {
     ABW: "Aruba",
     AFG: "Afghanistan",

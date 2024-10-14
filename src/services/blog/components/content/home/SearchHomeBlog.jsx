@@ -1,9 +1,12 @@
 "use client"
 
+import { useContext } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
 import { UseBlogContext } from "@/services/blog/Context/BlogContext";
 
-
 export default function SearchHomeBlog() {
+  const { languageData } = useContext(LanguageContext);
   const { inputSearch, setInputSearch } = UseBlogContext();
 
   return (
@@ -26,7 +29,7 @@ export default function SearchHomeBlog() {
             type="search"
             id="default-search"
             className="w-full py-2 px-4 ps-10 text-gry-100 border border-[#ebebeb] rounded-full bg-white  placeholder:text-fs-12 placeholder:italic focus:outline-none"
-            placeholder="Buscar"
+            placeholder={languageData.searchMobilHotel.button}
             required
           />
         </div>
