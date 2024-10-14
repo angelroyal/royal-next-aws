@@ -21,8 +21,8 @@ const BlogProviderContext = ({ children }) => {
   const getAllBlogs = async () => {
     try {
       const response = BlogJsonG;
-      setBlogData(response);
       setIsLoader(false);
+      setBlogData(response);
       // const response = await axiosWithInterceptor.get()
     } catch (error) {
       console.log(error);
@@ -31,24 +31,11 @@ const BlogProviderContext = ({ children }) => {
     }
   };
 
-  const getCategories = (blogs) => {
-    let categoriesFilter = [];
-    blogs.map((blog) => {
-      if (blog.type) {
-        blog.type.map((valueType) => {
-          valueType = valueType
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/[^a-zA-Z0-9 ]/g, "")
-            .toLowerCase();
-          if (!categoriesFilter.includes(valueType)) {
-            categoriesFilter = [...categoriesFilter, valueType];
-          }
-        });
-      }
-    });
-    setCategories(categoriesFilter);
-  };
+  const setValueTypes = ()=>{
+
+  }
+
+ 
 
   useEffect(() => {
     getAllBlogs();
@@ -56,7 +43,6 @@ const BlogProviderContext = ({ children }) => {
 
   useEffect(() => {
     if (blogData) {
-      getCategories(blogData);
       let filter = [...blogData];
       if (inputSearch && inputSearch.length > 0) {
         filter = FilterBlogInput(inputSearch, filter);
@@ -72,10 +58,13 @@ const BlogProviderContext = ({ children }) => {
   return (
     <BlogContext.Provider
       value={{
+        blogData,
         isLoader,
         categories,
+        getAllBlogs,
         setIsLoader,
         inputSearch,
+        setCategories,
         setInputSearch,
         blogDataFilter,
         categorySelected,
