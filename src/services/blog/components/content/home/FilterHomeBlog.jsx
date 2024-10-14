@@ -21,7 +21,23 @@ export default function FilterHomeBlog() {
   };
 
   const handleCategory = (value) => {
-    setCategorySelected(value);
+    if (value === categorySelected) {
+      setCategorySelected("");
+    } else {
+      setCategorySelected(value);
+    }
+
+    // if (!categorySelected) {
+    //   let filterValue = value
+    //   .normalize("NFD")
+    //   .replace(/[\u0300-\u036f]/g, "")
+    //   .replace(/[^a-zA-Z0-9 ]/g, "")
+    //   .toLowerCase();
+
+    //   setCategorySelected(value);
+    // } else {
+    //   setCategorySelected("");
+    // }
   };
 
   return (
@@ -31,19 +47,20 @@ export default function FilterHomeBlog() {
         {!isLoader ? (
           <>
             <div className="flex gap-4 flex-wrap">
-              {categories.slice(0, maxCategory).map((category, index) => (
-                <button
-                  onClick={() => handleCategory(category)}
-                  key={index}
-                  className={`rounded-full px-4 py-2 text-fs-12 m-m  ${
-                    categorySelected === category
-                      ? "bg-bl-100 text-white"
-                      : "text-gry-100 border border-[#ebebeb]"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+              {categories.length > 0 &&
+                categories.slice(0, maxCategory).map((category, index) => (
+                  <button
+                    onClick={() => handleCategory(category.value)}
+                    key={index}
+                    className={`rounded-full px-4 py-2 text-fs-12 m-m  ${
+                      categorySelected === category.value
+                        ? "bg-bl-100 text-white"
+                        : "text-gry-100 border border-[#ebebeb]"
+                    }`}
+                  >
+                    {category.label}
+                  </button>
+                ))}
             </div>
 
             {categories.length > 3 && (

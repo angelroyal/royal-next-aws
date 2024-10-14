@@ -1,8 +1,8 @@
 "use client"
 
+import { LanguageContext } from "@/services/blog/Context/LanguageContext";
 import { useContext } from "react";
 
-import LanguageContext from "@/language/LanguageContext";
 
 export default function BannerHomeBlog() {
   const { languageData } = useContext(LanguageContext);
