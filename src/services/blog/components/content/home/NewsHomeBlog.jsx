@@ -9,7 +9,6 @@ import { TruncateLetters } from "@/components/General/TruncateLetters";
 import { LanguageContext } from "@/services/blog/Context/LanguageContext";
 
 export default function NewsHomeBlog() {
-
   const [randomBlogs, setRandomBlogs] = useState([]);
   const { isLoader } = UseBlogContext();
   const { languageData } = useContext(LanguageContext);
@@ -27,14 +26,18 @@ export default function NewsHomeBlog() {
   };
   return (
     <div className="border border-[#ebebeb] rounded-lg mt-6 p-6">
-      <h3 className="m-s-b text-fs-16 mb-4">{languageData.listingBlog.featuredNews}</h3>
+      <h3 className="m-s-b text-fs-16 mb-4">
+        {languageData.listingBlog.featuredNews}
+      </h3>
       {!isLoader ? (
         randomBlogs.map((blog, index) => (
           <div
             // onClick={() => searchBlog(blog)}
             onClick={() => searchBlog(blog)}
             key={index}
-            className="flex flex-col gap-1 border-b border-[#ebebeb] mt-[15.5px] cursor-pointer"
+            className={`flex flex-col gap-1 mt-[15.5px] cursor-pointer ${
+              randomBlogs.length - 1 !== index && "border-b border-[#ebebeb]"
+            }`}
           >
             <span className="text-[#d1d2d5] text-fs-12 m-m">{blog.date}</span>
 
