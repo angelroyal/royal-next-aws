@@ -71,7 +71,7 @@ export default function ListingBlog() {
           ) : (
             !isLoader && (
               <div className="text-center w-full text-fs-18 m-s-b">
-                No se encontró resultados{" "}
+                {languageData.resultNotFound}
               </div>
             )
           )}

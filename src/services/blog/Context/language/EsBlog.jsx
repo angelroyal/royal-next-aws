@@ -8,6 +8,8 @@ export const EsBlog = {
     hotel: "Hotel",
   },
 
+  resultNotFound:"No se encontró resultados",
+
   // region BLOG
   listingBlog: {
     featuredNews: "Noticias destacadas",
