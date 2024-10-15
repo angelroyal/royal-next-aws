@@ -1,10 +1,12 @@
 "use client";
 
 import { TruncateLetters } from "@/components/General/TruncateLetters";
+import { LanguageContext } from "@/services/blog/Context/LanguageContext";
+import { useContext } from "react";
 
-
-export default function CardsHomeBlog(blog) {
-  const BlogJG = blog.blog;
+export default function CardsHomeBlog({ blog }) {
+  const BlogJG = blog;
+  const { languageData } = useContext(LanguageContext);
 
   const searchBlog = (BlogJG) => {
     window.open(`/blog/${BlogJG.lang}/${BlogJG.codeName}`, "_blank");
@@ -23,7 +25,7 @@ export default function CardsHomeBlog(blog) {
               <img
                 src={BlogJG.image.src}
                 alt="blog card"
-                className="rounded-lg w-full h-full object-cover group-hover:ease-in-out group-hover:scale-110 group-hover:transition-transform group-hover:duration-500 duration-500 ease-in-out select-none" 
+                className="rounded-lg w-full h-full object-cover group-hover:ease-in-out group-hover:scale-110 group-hover:transition-transform group-hover:duration-500 duration-500 ease-in-out select-none"
               />
             </div>
             {/* DATE CARD */}
@@ -33,11 +35,21 @@ export default function CardsHomeBlog(blog) {
               </span>
               {/* NAME CARD */}
               <span className="text-fs-16 m-b">
-                {TruncateLetters(BlogJG.name, 10)}
+                {TruncateLetters(
+                  languageData[BlogJG.name].mainTitle
+                    ? languageData[BlogJG.name].mainTitle
+                    : "...",
+                  10
+                )}
               </span>
               {/* DESCRIPTION */}
               <span className="text-fs-12 m-m text-gry-100 text-justify">
-                {TruncateLetters(BlogJG.description, 21) + " ..."}
+                {TruncateLetters(
+                  languageData[BlogJG.name].description
+                    ? languageData[BlogJG.name].description
+                    : "...",
+                  21
+                ) + " ..."}
               </span>
             </div>
           </div>
@@ -47,7 +59,7 @@ export default function CardsHomeBlog(blog) {
                 key={index}
                 className="rounded-full bg-gry-50 text-gry-100 px-2 py-1 w-fit text-fs-10"
               >
-                {blogT}
+                {languageData.Categories[blogT]}
               </div>
             ))}
           </div>

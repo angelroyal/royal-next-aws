@@ -1,10 +1,35 @@
 export function FilterBlogInput(input, blogs) {
-  const normalizedInputValue = input;
+  const normalizedInputValue = input
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9 ]/g, "")
+    .toLowerCase();
 
   let filterData = blogs.filter(
     (blogInfo) =>
-      (blogInfo.name &&
-        blogInfo.name
+      (blogInfo.nameEs &&
+        blogInfo.nameEs
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-zA-Z0-9 ]/g, "")
+          .toLowerCase()
+          .includes(normalizedInputValue)) ||
+      (blogInfo.nameEn &&
+        blogInfo.nameEn
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-zA-Z0-9 ]/g, "")
+          .toLowerCase()
+          .includes(normalizedInputValue)) ||
+      (blogInfo.descriptionEs &&
+        blogInfo.descriptionEs
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-zA-Z0-9 ]/g, "")
+          .toLowerCase()
+          .includes(normalizedInputValue)) ||
+      (blogInfo.descriptionEn &&
+        blogInfo.descriptionEn
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")
           .replace(/[^a-zA-Z0-9 ]/g, "")

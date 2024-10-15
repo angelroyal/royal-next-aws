@@ -1,5 +1,11 @@
+"use client"
+
+import { LanguageContext } from "@/services/blog/Context/LanguageContext";
+import { useContext } from "react";
+
 
 export default function BannerHomeBlog() {
+  const { languageData } = useContext(LanguageContext);
   return (
     <>
       <div className="w-full h-[192px] bg-blue-800 relative flex items-center">
@@ -13,12 +19,11 @@ export default function BannerHomeBlog() {
 
         <div className="absolute flex flex-col pl-[12rem]  max-2xl:pl-[11rem] max-lg:pl-[20px] max-md:pl-[15px] gap-4">
           <span className="m-m text-white text-fs-32 max-sm:text-fs-16">
-            Explora México a través de nuestro Blog
+            {languageData.listingBlog.exploreMexico}
           </span>
 
           <span className="text-white text-fs-16 ">
-            Descubre consejos, historias y experiencias imperdibles para tu
-            próxima escapada por este hermoso país.
+            {languageData.listingBlog.discoverTips}
           </span>
         </div>
       </div>

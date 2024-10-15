@@ -1,21 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import { BlogJsonG } from "../../BlogGeneric/General/BlogJson";
-import { TruncateLetters } from "@/components/General/TruncateLetters";
-import NewsHomeBlogSkeleton from "../../skeleton/NewsHomeBlogSkeleton";
 import { UseBlogContext } from "@/services/blog/Context/BlogContext";
+import NewsHomeBlogSkeleton from "../../skeleton/NewsHomeBlogSkeleton";
+import { TruncateLetters } from "@/components/General/TruncateLetters";
+import { LanguageContext } from "@/services/blog/Context/LanguageContext";
+
 export default function NewsHomeBlog() {
   const [randomBlogs, setRandomBlogs] = useState([]);
   const { isLoader } = UseBlogContext();
+  const { languageData } = useContext(LanguageContext);
   useEffect(() => {
     const getRandomBlogs = (blogs, count) => {
       const shuffled = [...blogs].sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, count); 
+      return shuffled.slice(0, count);
     };
 
-    setRandomBlogs(getRandomBlogs(BlogJsonG, 3)); 
+    setRandomBlogs(getRandomBlogs(BlogJsonG, 3));
   }, []);
 
   const searchBlog = (blog) => {
@@ -23,21 +26,28 @@ export default function NewsHomeBlog() {
   };
   return (
     <div className="border border-[#ebebeb] rounded-lg mt-6 p-6">
-      <h3 className="m-s-b text-fs-16 mb-4">Noticias destacadas</h3>
+      <h3 className="m-s-b text-fs-16 mb-4">
+        {languageData.listingBlog.featuredNews}
+      </h3>
       {!isLoader ? (
         randomBlogs.map((blog, index) => (
           <div
             // onClick={() => searchBlog(blog)}
             onClick={() => searchBlog(blog)}
             key={index}
-            className="flex flex-col gap-1 border-b border-[#ebebeb] mt-[15.5px] cursor-pointer"
+            className={`flex flex-col gap-1 mt-[15.5px] cursor-pointer ${
+              randomBlogs.length - 1 !== index && "border-b border-[#ebebeb]"
+            }`}
           >
             <span className="text-[#d1d2d5] text-fs-12 m-m">{blog.date}</span>
 
-            <span className="text-fs-14 m-b text-bl-100">{blog.name}</span>
+            <span className="text-fs-14 m-b text-bl-100">
+              {languageData[blog.name].mainTitle}
+            </span>
 
             <span className="text-fs-12 m-m text-gry-100">
-              {TruncateLetters(blog.description, 21) + " ..."}
+              {TruncateLetters(languageData[blog.name].description, 21) +
+                " ..."}
             </span>
             <div className="flex gap-2">
               {blog.type.map((type, index) => (

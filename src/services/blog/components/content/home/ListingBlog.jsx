@@ -1,21 +1,42 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import CardsHomeBlog from "./CardsHomeBlog";
 // import PaginationT from "@/app/config/PaginationT";
 import PaginationT from "@/components/General/PaginationT";
 import { UseBlogContext } from "@/services/blog/Context/BlogContext";
 import CardsHomeBlogSkeleton from "../../skeleton/CardsHomeBlogSkeleton";
+import { LanguageContext } from "@/services/blog/Context/LanguageContext";
 
 export default function ListingBlog() {
-  const { blogDataFilter, isLoader } = UseBlogContext();
+  const { blogDataFilter, isLoader, blogData, setCategories } =
+    UseBlogContext();
+  const { languageData } = useContext(LanguageContext);
   // PAGINATION COUNT
   const blogPerPage = 9;
   // PAGINATION PAGE CHANGE
   const [auxBlogData, setAuxBlogData] = useState(null);
   const [currentBlog, setCurrentBlog] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    if (blogData) {
+      let valueTypes = [];
+      blogData.map((blog) => {
+        blog.type.forEach((typeVal) => {
+          if (!valueTypes.some((type) => type.value === typeVal)) {
+            valueTypes = [
+              ...valueTypes,
+              { value: typeVal, label: languageData.Categories[typeVal] },
+            ];
+          }
+        });
+      });
+
+      setCategories(valueTypes);
+    }
+  }, [blogData]);
 
   // CHANGE PAGE
   useEffect(() => {
@@ -50,7 +71,7 @@ export default function ListingBlog() {
           ) : (
             !isLoader && (
               <div className="text-center w-full text-fs-18 m-s-b">
-                No se encontró resultados{" "}
+                {languageData.resultNotFound}
               </div>
             )
           )}

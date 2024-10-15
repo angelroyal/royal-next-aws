@@ -1861,7 +1861,9 @@ export const en = {
     lastname: "Last Name",
     lastnamePlaceholder: "Enter the last name",
   },
+  
 
+  // region COUNTRIES
   countries: {
     ABW: "Aruba",
     AFG: "Afghanistan",
