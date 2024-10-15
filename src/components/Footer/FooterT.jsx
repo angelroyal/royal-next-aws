@@ -256,6 +256,15 @@ export default function FooterT() {
               >
                 {languageData.modalMovingOptions.titleTransfer}
               </Link>
+              {/* HOME BLOG */}
+              <Link
+                href={`/blog`}
+                className={`${
+                  footerBlue ? "text-white" : "text-black"
+                } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
+              >
+                Blog
+              </Link>
             </div>
 
             {/* ABOUT */}

@@ -17,6 +17,7 @@ export default function NavigationDesktop() {
 
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
+console.log(routerActual);
 
   useEffect(() => {
     setCurrentActiveIcon(routerActual);
@@ -24,6 +25,9 @@ export default function NavigationDesktop() {
 
   const changeHome = () => {
     window.open(`/`, "_self");
+  };
+  const changeBlog = () => {
+    window.open(`/blog`, "_self");
   };
   const changeHotels = () => {
     window.open(`/${language}/hotels`, "_self");
@@ -41,6 +45,34 @@ export default function NavigationDesktop() {
         {/* fix tailwind */}
         <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem] max-sm:pb-0">
           <div className="hidden md:flex justify-end items-center">
+            {/* BLOG LINK */}
+            <div
+                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+                  onClick={() => {
+                    changeBlog();
+                  }}
+                >
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/general/globe-${
+                      currentActiveIcon === "blog"
+                        ? "o.svg"
+                        : "b.svg"
+                    }`}
+                    alt="icon blog"
+                    className="pr-2 pb-1"
+                  />
+                  <span
+                    className={`${
+                      currentActiveIcon === "blog"
+                        ? "text-or-100"
+                        : ""
+                    }`}
+                  >
+                    {/* {languageData.SearchBox.tabHotel.hotel} */}
+                    Blog
+                  </span>
+                </div>
+          <span className="pl-[10px] pr-[10px]">|</span>
             <SelectCurrency />
             <span className="pl-[10px] pr-[10px]">|</span>
             <LanguageSelector />

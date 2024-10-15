@@ -8,6 +8,7 @@ export const NavigationURL = [
   "transport",
   "transports",
   "hotel",
+  "blog"
 ];
 
 export function NavigationConfig() {
