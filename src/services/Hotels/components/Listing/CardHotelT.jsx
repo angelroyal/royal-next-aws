@@ -107,7 +107,13 @@ export default function CardHotelT(props) {
 
             <div className="w-[70%] p-[20px] max-lg:w-full">
               {/* NAME AND STARS HOTEL */}
-              <h2 className="text-fs-16 m-b mb-1 truncate">{hotel.name}</h2>
+
+              <Link
+                href={buildUrlWithParams(requestQueryParams)}
+                target="_blank"
+              >
+                <h2 className="text-fs-16 m-b mb-1 truncate">{hotel.name}</h2>
+              </Link>
               <TotalStars
                 stars={hotel.stars}
                 className="!text-fs-12 !gap-[2px]"

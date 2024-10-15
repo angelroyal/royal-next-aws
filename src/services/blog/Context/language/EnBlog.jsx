@@ -8,6 +8,8 @@ export const EnBlog = {
     hotel: "Hotel",
   },
 
+  resultNotFound:"No results found",
+
   // region BLOG
   listingBlog: {
     featuredNews: "Featured News",

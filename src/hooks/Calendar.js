@@ -14,74 +14,75 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
 
   useEffect(() => {
     let calendarInstance;
+    const currentDate = new Date();
+
+    const storedDates = localStorage.getItem("selectedDates");
+    let validStoredDates = null;
+
+    if (storedDates) {
+      const selectedDates = JSON.parse(storedDates);
+      const [startDate, endDate] = selectedDates;
+
+      if (
+        new Date(startDate) < currentDate ||
+        (endDate && new Date(endDate) < currentDate)
+      ) {
+        localStorage.removeItem("selectedDates");
+      } else {
+        validStoredDates = selectedDates;
+      }
+    }
 
     const handleDateChange = (selectedDates) => {
+      if (selectedDates.length === 0) return;
+
+      const startDate = selectedDates[0];
+
+      if (startDate < currentDate) {
+        alert("La fecha de inicio no puede ser anterior a la fecha actual.");
+        calendarInstance.clear();
+        localStorage.removeItem("selectedDates");
+        return;
+      }
+
       if (selectedDates.length === 1) {
-        const startDate = selectedDates[0];
         const maxDate = new Date(
           startDate.getTime() + 30 * 24 * 60 * 60 * 1000
         );
-
         calendarInstance.set("maxDate", maxDate);
       }
 
       if (selectedDates.length === 2) {
         onDateChange(selectedDates);
         localStorage.setItem("selectedDates", JSON.stringify(selectedDates));
+
+        calendarInstance.set("maxDate", new Date(new Date().getFullYear() + 1, 11, 31));
       }
     };
 
-    const storedDates = localStorage.getItem("selectedDates");
-    if (storedDates) {
-      const selectedDates = JSON.parse(storedDates);
-      const startDate = new Date(selectedDates[0]);
-      const currentDate = new Date();
-
-      const minDate =
-        startDate.getTime() - currentDate.getTime() < 48 * 60 * 60 * 1000
-          ? startDate
-          : new Date(currentDate.getTime() + 48 * 60 * 60 * 1000);
-
-      calendarInstance = flatpickr(calendarRef.current, {
-        mode: "range",
-        dateFormat: "d/m/y",
-        minDate: minDate,
-        maxDate: new Date(new Date().getFullYear() + 1, 11, 31),
-        inline: false,
-        onChange: handleDateChange,
-        locale: {
-          ...flatpickr.l10ns[language],
-          rangeSeparator: " - ",
-          separator: " - ",
-        },
-        defaultDate: selectedDates,
-        showMonths: window.innerWidth < 768 ? 1 : 2,
-        disableMobile: true,
-      });
-    } else {
-      calendarInstance = flatpickr(calendarRef.current, {
-        mode: "range",
-        dateFormat: "d/m/y",
-        minDate: new Date(new Date().getTime() + 48 * 60 * 60 * 1000),
-        maxDate: new Date(new Date().getFullYear() + 1, 11, 31),
-        locale: {
-          ...flatpickr.l10ns[language],
-          rangeSeparator: " - ",
-          separator: " - ",
-        },
-        showMonths: window.innerWidth < 768 ? 1 : 2,
-        inline: false,
-        onChange: handleDateChange,
-        disableMobile: true,
-      });
-    }
+    calendarInstance = flatpickr(calendarRef.current, {
+      mode: "range",
+      dateFormat: "d/m/y",
+      minDate: new Date(new Date().getTime() + 48 * 60 * 60 * 1000),
+      maxDate: new Date(new Date().getFullYear() + 1, 11, 31),
+      locale: {
+        ...flatpickr.l10ns[language],
+        rangeSeparator: " - ",
+        separator: " - ",
+      },
+      showMonths: window.innerWidth < 768 ? 1 : 2,
+      inline: false,
+      onChange: handleDateChange,
+      defaultDate: validStoredDates || null,
+      disableMobile: true,
+    });
 
     return () => {
       if (calendarInstance) {
         calendarInstance.destroy();
       }
     };
-  }, []);
+  }, [onDateChange, language]);
 
   const { languageData } = useContext(LanguageContext);
 
@@ -111,6 +112,7 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
             type="text"
             ref={calendarRef}
             placeholder={languageData.SearchBox.tabHotel.dateText}
+            readOnly
           />
         </div>
       </div>
