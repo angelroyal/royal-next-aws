@@ -1861,9 +1861,9 @@ export const en = {
     lastname: "Last Name",
     lastnamePlaceholder: "Enter the last name",
     age: "Age",
-    adult: "Adulto",
-    child: "Niño",
-    formHb: "Seleccione la edad",
+    adult: "Adult",
+    child: "Child",
+    formHb: "Select the age",
   },
   
 

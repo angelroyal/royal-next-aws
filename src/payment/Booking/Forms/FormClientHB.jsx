@@ -8,8 +8,8 @@ export default function FormClientHB({ dataItinerary }) {
   const { languageData } = useContext(LanguageContext);
   const { roomHolders, setRoomHolders } = useContext(PaymentContext);
 
-  console.log(roomHolders);
-  
+  // console.log(roomHolders);
+
   const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
   const hbItineraries = dataItinerary;
@@ -48,12 +48,10 @@ export default function FormClientHB({ dataItinerary }) {
       }, {});
 
       console.log(initialRoomHolders);
-      
-  
+
       setRoomHolders(initialRoomHolders);
     }
   }, []);
-  
 
   const handleChange = (code, roomId, index, field, value) => {
     const updatedRoomHolders = {
@@ -76,7 +74,7 @@ export default function FormClientHB({ dataItinerary }) {
     const options = [];
     const minAge = type === "child" ? 1 : 13;
     const maxAge = type === "child" ? 12 : 100;
-  
+
     for (let age = minAge; age <= maxAge; age++) {
       options.push(
         <option key={age} value={age}>
@@ -84,10 +82,10 @@ export default function FormClientHB({ dataItinerary }) {
         </option>
       );
     }
-  
+
     return options;
   };
-  
+
   return (
     <div className="w-full bg-white rounded-[19px] px-[1.8rem] pt-[2rem] pb-[3rem] mt-[2.5rem]">
       <h2 className="text-fs-18 text-black m-b italic">
@@ -109,128 +107,145 @@ export default function FormClientHB({ dataItinerary }) {
 
           {itinerary.rooms.map((room, roomIndex) =>
             Array.from({ length: room.quantity }).map((_, qtyIndex) => (
-              <div key={`${itinerary.code}-${roomIndex}-${qtyIndex}`}>
-                <h3 className="text-fs-12 max-md:text-fs-18 mt-[1.5rem] m-b">
-                  Habitacion:{" "}
-                  <span className="text-fs-10 max-md:text-fs-18 mt-[1.5rem] m-b text-gry-100 italic">
-                    {room.name} #{qtyIndex + 1}
-                  </span>
-                </h3>
+              <>
+                <div key={`${itinerary.code}-${roomIndex}-${qtyIndex}`}>
+                  <h3 className="text-fs-12 max-md:text-fs-18 mt-[1.5rem] m-b">
+                    {languageData.itinerary.detailsPayment.room}:{" "}
+                    <span className="text-fs-10 max-md:text-fs-18 mt-[1.5rem] m-b text-gry-100 italic">
+                      {room.name} #{qtyIndex + 1}
+                    </span>
+                  </h3>
 
-                {roomHolders[itinerary.code]
-                  ?.find(
-                    (holder) => holder.roomId === `${room.code}.${qtyIndex}`
-                  )
-                  ?.paxesName.map((pax, paxIndex) => (
-                    <div
-                      key={paxIndex}
-                      className="flex justify-evenly items-end mb-[1.1rem] gap-[2rem] max-lg:flex-col max-lg:gap-[1rem]"
-                    >
-                      <div className="w-full flex-col">
-                        <div className="mt-[16px] m-b text-fs-12 text-gry-100">
-                          {pax.type === "adult"
-                            ? `${languageData.formHb.adult} `
-                            : `${languageData.formHb.child}`}
-                        </div>
+                  {roomHolders[itinerary.code]
+                    ?.find(
+                      (holder) => holder.roomId === `${room.code}.${qtyIndex}`
+                    )
+                    ?.paxesName.map((pax, paxIndex) => (
+                      <div
+                        key={paxIndex}
+                        className="flex justify-evenly items-end mb-[1.1rem] gap-[2rem] max-lg:flex-col max-lg:gap-[1rem]"
+                      >
+                        <div className="w-full flex-col">
+                          <div className="mt-[16px] m-b text-fs-12 text-gry-100 flex gap-2 items-center">
+                            {pax.type === "adult"
+                              ? `${languageData.formHb.adult} `
+                              : `${languageData.formHb.child}`}
 
-                        <label className="mt-[16px] m-b text-fs-12 text-gry-100">
-                          {languageData.formHb.firstname}:
-                        </label>
-                        <span className="text-red-100">*</span>
+                            <Image
+                              width={12}
+                              height={12}
+                              alt="arrow-icons"
+                              src={`${process.env.NEXT_PUBLIC_URL}icons/${
+                                pax.type === "adult"
+                                  ? "adult/adult-b.svg"
+                                  : "kid/kid-b.svg"
+                              }`}
+                            />
+                          </div>
 
-                        <input
-                          required
-                          placeholder={languageData.formHb.firstnamePlaceholder}
-                          className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
-                          type="text"
-                          value={pax.firstName}
-                          onInput={(e) => {
-                            e.target.value = e.target.value.replace(
-                              /[^a-zA-Z\s]/g,
-                              ""
-                            );
-                          }}
-                          onChange={(e) =>
-                            handleChange(
-                              itinerary.code,
-                              `${room.code}.${qtyIndex}`,
-                              paxIndex,
-                              "firstName",
-                              e.target.value
-                            )
-                          }
-                        />
-                      </div>
-                      <div className="w-full flex-col">
-                        <label className="mt-[16px] m-b text-fs-12 text-gry-100">
-                          {languageData.formHb.lastname}:
-                        </label>
-                        <span className="text-red-100">*</span>
+                          <label className="mt-[16px] m-b text-fs-12 text-gry-100">
+                            {languageData.formHb.firstname}:
+                          </label>
+                          <span className="text-red-100">*</span>
 
-                        <input
-                          required
-                          placeholder={languageData.formHb.lastnamePlaceholder}
-                          className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
-                          type="text"
-                          value={pax.lastName}
-                          onInput={(e) => {
-                            e.target.value = e.target.value.replace(
-                              /[^a-zA-Z\s]/g,
-                              ""
-                            );
-                          }}
-                          onChange={(e) =>
-                            handleChange(
-                              itinerary.code,
-                              `${room.code}.${qtyIndex}`,
-                              paxIndex,
-                              "lastName",
-                              e.target.value
-                            )
-                          }
-                        />
-                      </div>
-                      <div className="w-full flex-col">
-                        <label className="mt-[16px] m-b text-fs-12 text-gry-100">
-                          {languageData.formHb.age}:
-                        </label>
-                        <span className="text-red-100">*</span>
-
-                        <div className="relative">
-                          <select
+                          <input
                             required
-                            value={pax.age}
+                            placeholder={
+                              languageData.formHb.firstnamePlaceholder
+                            }
+                            className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
+                            type="text"
+                            value={pax.firstName}
+                            onInput={(e) => {
+                              e.target.value = e.target.value.replace(
+                                /[^a-zA-Z\s]/g,
+                                ""
+                              );
+                            }}
                             onChange={(e) =>
                               handleChange(
                                 itinerary.code,
                                 `${room.code}.${qtyIndex}`,
                                 paxIndex,
-                                "age",
+                                "firstName",
                                 e.target.value
                               )
                             }
+                          />
+                        </div>
+                        <div className="w-full flex-col">
+                          <label className="mt-[16px] m-b text-fs-12 text-gry-100">
+                            {languageData.formHb.lastname}:
+                          </label>
+                          <span className="text-red-100">*</span>
+
+                          <input
+                            required
+                            placeholder={
+                              languageData.formHb.lastnamePlaceholder
+                            }
                             className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none"
-                          >
-                            <option value="" disabled selected>
-                              {languageData.formHb.agePlaceholder}
-                            </option>
-                            {generateAgeOptions(pax.type)} años
-                          </select>
-                          <span className="absolute top-[50%] right-4 transform -translate-y-[50%] pointer-events-none">
-                          <Image
-                              width={14}
-                              height={14}
-                              alt="arrow-icons"
-                              src={`${
-                                process.env.NEXT_PUBLIC_URL
-                              }icons/arrows/down-100.svg`}
-                            />
-                          </span>
+                            type="text"
+                            value={pax.lastName}
+                            onInput={(e) => {
+                              e.target.value = e.target.value.replace(
+                                /[^a-zA-Z\s]/g,
+                                ""
+                              );
+                            }}
+                            onChange={(e) =>
+                              handleChange(
+                                itinerary.code,
+                                `${room.code}.${qtyIndex}`,
+                                paxIndex,
+                                "lastName",
+                                e.target.value
+                              )
+                            }
+                          />
+                        </div>
+                        <div className="w-full flex-col">
+                          <label className="mt-[16px] m-b text-fs-12 text-gry-100">
+                            {languageData.formHb.age}:
+                          </label>
+                          <span className="text-red-100">*</span>
+
+                          <div className="relative">
+                            <select
+                              required
+                              value={pax.age}
+                              onChange={(e) =>
+                                handleChange(
+                                  itinerary.code,
+                                  `${room.code}.${qtyIndex}`,
+                                  paxIndex,
+                                  "age",
+                                  e.target.value
+                                )
+                              }
+                              className="rounded-lg m-b w-full px-[2.25rem] pb-[.375rem] pt-[.7rem] text-fs-14 appearance-none border border-[#ebebeb] placeholder:text-[#d1d2d5] placeholder:italic placeholder:text-fs-12 placeholder:m-s-b focus:outline-none overflow-y-auto scroll-page-gry"
+                            >
+                              <option value="" disabled selected>
+                                {languageData.formHb.age}
+                              </option>
+                              {generateAgeOptions(pax.type)} {languageData.itinerary.tourItinerary.years}
+                            </select>
+                            <span className="absolute top-[50%] right-4 transform -translate-y-[50%] pointer-events-none">
+                              <Image
+                                width={14}
+                                height={14}
+                                alt="arrow-icons"
+                                src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/down-100.svg`}
+                              />
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-              </div>
+                    ))}
+                </div>
+                {qtyIndex !== room.quantity - 1 && <hr className="border-[1.1px] mt-[30px]"/>}
+                
+              </>
             ))
           )}
         </div>
