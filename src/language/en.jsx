@@ -488,7 +488,7 @@ export const en = {
     buttonPrincipal: "Book now",
     alert: "Warning!! Rooms will be removed",
     addRoomMessage: "Add Room",
-    extraCosts: "This amenity has an additional cost."
+    extraCosts: "This amenity has an additional cost.",
   },
 
   hotelTypes: {
@@ -1860,6 +1860,10 @@ export const en = {
     firstnamePlaceholder: "Enter the first name",
     lastname: "Last Name",
     lastnamePlaceholder: "Enter the last name",
+    age: "Age",
+    adult: "Adulto",
+    child: "Niño",
+    formHb: "Seleccione la edad",
   },
   
 
