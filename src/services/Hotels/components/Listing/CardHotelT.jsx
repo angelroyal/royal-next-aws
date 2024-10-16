@@ -98,7 +98,6 @@ export default function CardHotelT(props) {
               )}
 
               <div
-                // bg-[#fcb41e8c]
                 className={`h-[13%] bg-black text-white m-b text-fs-12 flex items-center justify-center rounded-bl-lg max-lg:rounded-none`}
               >
                 {languageData.eatingPlan[hotel.eatingPlan]}

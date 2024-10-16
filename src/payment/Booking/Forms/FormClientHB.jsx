@@ -7,6 +7,9 @@ import { PaymentContext } from "@/payment/context/PaymentContext";
 export default function FormClientHB({ dataItinerary }) {
   const { languageData } = useContext(LanguageContext);
   const { roomHolders, setRoomHolders } = useContext(PaymentContext);
+
+  console.log(roomHolders);
+  
   const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
   const hbItineraries = dataItinerary;
@@ -19,34 +22,38 @@ export default function FormClientHB({ dataItinerary }) {
     if (Object.keys(roomHolders).length === 0) {
       const initialRoomHolders = hbItineraries.reduce((acc, itinerary) => {
         acc[itinerary.code] = itinerary.rooms.flatMap((room, roomIndex) =>
-          Array.from({ length: room.quantity }).map((_, qtyIndex) => ({
+          room.occupancies.map((occupancy, qtyIndex) => ({
             roomId: `${room.code}.${qtyIndex}`,
-            paxesName: room.occupancies[qtyIndex]?.adults
-              ? [
-                  ...Array(room.occupancies[qtyIndex].adults).fill({
+            rateKey: occupancy.rateKey,
+            occupancyId: occupancy.id,
+            paxesName: [
+              ...Array(occupancy.adults).fill({
+                firstName: "",
+                lastName: "",
+                age: "",
+                type: "adult",
+              }),
+              ...(occupancy.childrenAges?.length
+                ? occupancy.childrenAges.map((age) => ({
                     firstName: "",
                     lastName: "",
-                    age: "",
-                    type: "adult",
-                  }),
-                  ...(room.occupancies[qtyIndex].childrenAges?.length
-                    ? room.occupancies[qtyIndex].childrenAges.map((age) => ({
-                        firstName: "",
-                        lastName: "",
-                        age,
-                        type: "child",
-                      }))
-                    : []),
-                ]
-              : [],
+                    age,
+                    type: "child",
+                  }))
+                : []),
+            ],
           }))
         );
         return acc;
       }, {});
 
+      console.log(initialRoomHolders);
+      
+  
       setRoomHolders(initialRoomHolders);
     }
   }, []);
+  
 
   const handleChange = (code, roomId, index, field, value) => {
     const updatedRoomHolders = {
@@ -210,7 +217,14 @@ export default function FormClientHB({ dataItinerary }) {
                             {generateAgeOptions(pax.type)} años
                           </select>
                           <span className="absolute top-[50%] right-4 transform -translate-y-[50%] pointer-events-none">
-                            ▼
+                          <Image
+                              width={14}
+                              height={14}
+                              alt="arrow-icons"
+                              src={`${
+                                process.env.NEXT_PUBLIC_URL
+                              }icons/arrows/down-100.svg`}
+                            />
                           </span>
                         </div>
                       </div>
