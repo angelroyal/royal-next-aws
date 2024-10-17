@@ -12,8 +12,12 @@ import RoomsHotelContext from "../../context/RoomsHotelContext";
 export function SearchModalHotel() {
   const router = useRouter();
   const { languageData } = useContext(LanguageContext);
-  const { requestBodyRooms, handleFetchPostRooms, setRequestBodyRooms } =
-    useContext(RoomsHotelContext);
+  const {
+    requestBodyRooms,
+    handleFetchPostRooms,
+    setRequestBodyRooms,
+    setSelectedRooms,
+  } = useContext(RoomsHotelContext);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -65,6 +69,8 @@ export function SearchModalHotel() {
         "check-out": checkOutDate,
         occupancies: roomData,
       };
+
+      setSelectedRooms([]);
 
       setRequestBodyRooms(queryParams);
       handleFetchPostRooms(queryParams);
