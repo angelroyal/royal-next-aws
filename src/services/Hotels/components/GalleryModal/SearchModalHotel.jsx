@@ -1,8 +1,7 @@
 "use client";
 
 import moment from "moment";
-import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import Calendar from "@/hooks/Calendar";
 import Room from "../../config/RoomBox";
@@ -14,20 +13,10 @@ export function SearchModalHotel() {
   const { requestBodyRooms, handleFetchPostRooms, setRequestBodyRooms } =
     useContext(RoomsHotelContext);
 
-  const [selectedDates, setSelectedDates] = useState({
-    formattedCheckIn: null,
-    formattedCheckOut: null,
-  });
-
   const handleDateChange = (dates) => {
     if (dates && dates.length >= 2) {
       const formattedCheckIn = moment(dates[0]).toISOString();
       const formattedCheckOut = moment(dates[1]).toISOString();
-
-      setSelectedDates({
-        formattedCheckIn,
-        formattedCheckOut,
-      });
 
       localStorage.setItem(
         "selectedDates",
@@ -40,19 +29,26 @@ export function SearchModalHotel() {
     const storedRoomData = localStorage.getItem("roomData");
     const roomData = storedRoomData ? JSON.parse(storedRoomData) : [];
 
-    const checkInDate = moment(selectedDates.formattedCheckIn).format("YYYY-MM-DD");
-    const checkOutDate = moment(selectedDates.formattedCheckOut).format("YYYY-MM-DD");
+    const storedDates = localStorage.getItem("selectedDates");
 
-    const queryParams = {
-      code: requestBodyRooms.code,
-      type: "hotel",
-      "check-in": checkInDate,
-      "check-out": checkOutDate,
-      occupancies: roomData,
-    };
+    if (storedDates) {
+      const [storedCheckIn, storedCheckOut] = JSON.parse(storedDates);
+      const checkInDate = moment(storedCheckIn).format("YYYY-MM-DD");
+      const checkOutDate = moment(storedCheckOut).format("YYYY-MM-DD");
 
-    setRequestBodyRooms(queryParams);
-    handleFetchPostRooms(queryParams);
+      const queryParams = {
+        code: requestBodyRooms.code,
+        type: "hotel",
+        "check-in": checkInDate,
+        "check-out": checkOutDate,
+        occupancies: roomData,
+      };
+
+      setRequestBodyRooms(queryParams);
+      handleFetchPostRooms(queryParams);
+    } else {
+      console.error("No hay fechas guardadas en el localStorage");
+    }
   };
 
   return (
@@ -81,5 +77,3 @@ export function SearchModalHotel() {
     </div>
   );
 }
-
-
