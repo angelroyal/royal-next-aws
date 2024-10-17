@@ -1,7 +1,8 @@
 "use client";
 
 import moment from "moment";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 import Calendar from "@/hooks/Calendar";
 import Room from "../../config/RoomBox";
@@ -9,9 +10,25 @@ import LanguageContext from "@/language/LanguageContext";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 
 export function SearchModalHotel() {
+  const router = useRouter();
   const { languageData } = useContext(LanguageContext);
   const { requestBodyRooms, handleFetchPostRooms, setRequestBodyRooms } =
     useContext(RoomsHotelContext);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const checkInDate = queryParams.get("check-in");
+    const checkOutDate = queryParams.get("check-out");
+
+    if (checkInDate && checkOutDate) {
+      const formattedCheckIn = moment(checkInDate).toISOString();
+      const formattedCheckOut = moment(checkOutDate).toISOString();
+      localStorage.setItem(
+        "selectedDates",
+        JSON.stringify([formattedCheckIn, formattedCheckOut])
+      );
+    }
+  }, []);
 
   const handleDateChange = (dates) => {
     if (dates && dates.length >= 2) {
@@ -22,6 +39,11 @@ export function SearchModalHotel() {
         "selectedDates",
         JSON.stringify([formattedCheckIn, formattedCheckOut])
       );
+
+      const queryParams = new URLSearchParams(window.location.search);
+      queryParams.set("check-in", moment(dates[0]).format("YYYY-MM-DD"));
+      queryParams.set("check-out", moment(dates[1]).format("YYYY-MM-DD"));
+      router.replace(`${window.location.pathname}?${queryParams.toString()}`);
     }
   };
 
