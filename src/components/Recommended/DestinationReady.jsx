@@ -55,7 +55,9 @@ export default function DestinationReady({ type, reservationDetails, dataImg }) 
             className="m-b text-fs-12 flex items-center w-fit px-[24px] py-[10px] bg-bl-100 rounded-full gap-[8px] text-white hover:!bg-bl-110"
             onClick={() => handleItinerary()}
           >
-            {languageData.cartTour.seeDetails}
+            
+            {languageData.recommendations.goPay}
+            {/* {languageData.cartTour.seeDetails} */}
             <Image
               src={`${process.env.NEXT_PUBLIC_URL}icons/arrows/arrow-right-w.svg`}
               width={20}
