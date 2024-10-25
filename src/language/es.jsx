@@ -1871,6 +1871,10 @@ export const es = {
     firstnamePlaceholder: "Ingrese el nombre",
     lastname: "Apellido",
     lastnamePlaceholder: "Ingrese el apellido",
+    age:"Edad",
+    adult: "Adulto",
+    child: "Niño",
+    formHb: "Seleccione la edad",
   },
 
 

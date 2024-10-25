@@ -58,7 +58,7 @@ export default function FormCentral(props) {
     cardNumber: numberCard.slice(-4),
     serviceType: paymentProvider.toLowerCase(),
     ...(hotelRH ? { guests: hotelRH } : {}),
-    ...(roomHolders ? { roomHolders: roomHolders } : {}),
+    ...(roomHolders ? { paxes: roomHolders } : {}),
     ...(formActivityItems ? { items: formActivityItems } : {}),
     ...(paymentProvider === "OPENPAY" &&
     window.OpenPay &&
