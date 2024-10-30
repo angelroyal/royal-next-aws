@@ -95,7 +95,7 @@ export default function FiltersHotels({ listing = false }) {
               ? filterItems.items.length
               : filterItems.length;
             return (
-              <div className="border-t border-[#ebebeb]">
+              <div className="border-t border-[#ebebeb]" key={index}>
                 <Disclosure defaultOpen={true}>
                   {({ open }) => (
                     <>

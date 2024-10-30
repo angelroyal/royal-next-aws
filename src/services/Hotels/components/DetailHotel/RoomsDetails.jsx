@@ -19,10 +19,9 @@ import {
   parseQueryParams,
   formatAdultsAndChildren,
 } from "../../utils/utilsDetailHotel";
-import ImageGet from "@/utils/others/ImageGet";
 
 export default function RoomsDetails(codeHotel) {
-  const { languageData, language } = useContext(LanguageContext);
+  const { languageData } = useContext(LanguageContext);
   const {
     roomsData,
     handleFetchPostRooms,
@@ -35,7 +34,7 @@ export default function RoomsDetails(codeHotel) {
     const queryParams = parseQueryParams(urlSearchParams, codeHotel);
     setRequestBodyRooms(queryParams);
     handleFetchPostRooms(queryParams);
-  }, []);  
+  }, []);
 
   // Filter rooms to avoid visual duplicates, except selected ones
   const filteredGroupedRooms = roomsData
@@ -66,6 +65,24 @@ export default function RoomsDetails(codeHotel) {
 
   if (!roomsData) {
     return <RoomsSelectedSkeleton />;
+  }
+
+  if (!roomsData || roomsData.rooms.length === 0) {
+    return (
+      <div className="py-[8rem] flex items-center flex-col md:flex-row justify-center">
+        <div className="pr-4">
+          <img
+            src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw.svg`}
+            alt="icon-logo"
+            width={80}
+            height={80}
+          />
+        </div>
+        <div className="w-[300px] m-s-b text-center text-[16px] md:w-[500px] text-or-100">
+          {languageData.modalHotel.noRoomsFound}
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -128,7 +145,13 @@ export default function RoomsDetails(codeHotel) {
                           <div className="flex flex-col gap-y-4 ">
                             {/* IMAGE ROOM */}
                             <div className="relative w-full h-[222px] overflow-hidden rounded-lg">
-                              <img src={room.image} width={40} height={40} alt="room" className="w-full h-full" />
+                              <img
+                                src={room.image}
+                                width={40}
+                                height={40}
+                                alt="room"
+                                className="w-full h-full"
+                              />
                               {/* <ImageGet
                                 imageUrl={room.image}
                                 type={"hotel"}
@@ -289,6 +312,7 @@ export default function RoomsDetails(codeHotel) {
             </div>
           );
         }
+
         return null;
       })}
     </>

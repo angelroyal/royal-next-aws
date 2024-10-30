@@ -14,8 +14,7 @@ export default function SearchHomeBlog() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
-    console.log("Formulario enviado:", text);
+    e.preventDefault();
   };
 
   return (

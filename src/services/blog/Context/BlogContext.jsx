@@ -25,7 +25,7 @@ const BlogProviderContext = ({ children }) => {
       setBlogData(response);
       // const response = await axiosWithInterceptor.get()
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setIsLoader(false);
       throw error;
     }

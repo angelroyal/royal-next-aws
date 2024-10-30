@@ -409,6 +409,7 @@ export const en = {
   },
 
   modalHotel: {
+    noRoomsFound:"Oops! No availability for your selected dates. Try other dates or contact us — we’ll help you find the best option!",
     titlePrincipal: "Hotel amenities:",
     textLearn: "What you need to know",
     textNeedKnow: "Don't forget these details:",
