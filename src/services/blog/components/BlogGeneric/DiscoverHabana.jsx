@@ -12,10 +12,6 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/discover-habana1.jpg";
-
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/discover-habana2.jpg";
-
 export default function DiscoverHabana() {
   // RICHI
   const { languageData } = useContext(LanguageContext);
@@ -25,9 +21,7 @@ export default function DiscoverHabana() {
       {/* START BLOG */}
 
       <div className="mb-6">
-        <TitleH1>
-          {languageData.DiscoverHabana.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.DiscoverHabana.mainTitle}</TitleH1>
       </div>
 
       <SubtitleP>
@@ -37,27 +31,19 @@ export default function DiscoverHabana() {
 
       {/* IMAGE 1 */}
       <img
-        src={imgBlogGeneric1.src}
-        // width={916}
-        // height={600}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-habana1.jpg`}
         alt="Imagen de estatua de bronce entre un grupo de personas a plena luz del día."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       {/* paragraphs1 */}
-      <SubtitleP>
-        {languageData.DiscoverHabana.paragraphs1.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.paragraphs1.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverHabana.paragraphs1.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.paragraphs1.Text2}</SubtitleP>
 
       {/* ASK */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.DiscoverHabana.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverHabana.section2Title}</TitleH2>
       </div>
 
       <SubtitleP>
@@ -69,43 +55,31 @@ export default function DiscoverHabana() {
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={923}
-        // height={547}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-habana2.jpg`}
         alt="find queretaro"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       {/* paragraphs2 */}
-      <SubtitleP>
-        {languageData.FindQueretaro.paragraphs2.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs2.Text1}</SubtitleP>
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.DiscoverHabana.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverHabana.section3Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.DiscoverHabana.subtitle3.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.subtitle3.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverHabana.subtitle3.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.subtitle3.Text2}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverHabana.subtitle3.Text3}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.subtitle3.Text3}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
-
         <li>
           <b className="text-black text-fs-16">
-            {languageData.DiscoverHabana.list1.textBold1}</b>
+            {languageData.DiscoverHabana.list1.textBold1}
+          </b>
           {languageData.DiscoverHabana.list1.textNormal1}
         </li>
 
@@ -150,24 +124,18 @@ export default function DiscoverHabana() {
           </b>
           {languageData.DiscoverHabana.list1.textNormal7}
         </li>
-
       </ul>
 
       {/* WHAT ARE THE FACILITIES */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.DiscoverHabana.section4Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverHabana.section4Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.DiscoverHabana.subtitle4}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.subtitle4}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
-
-      <li>
+        <li>
           <b className="text-black text-fs-16">
             {languageData.DiscoverHabana.list2.textBold1}
           </b>
@@ -201,7 +169,6 @@ export default function DiscoverHabana() {
           </b>
           {languageData.DiscoverHabana.list2.textNormal5}
         </li>
-    
       </ul>
 
       {/* REVIEWS */}
@@ -211,9 +178,7 @@ export default function DiscoverHabana() {
 
       {/* END BLOG */}
       <div className="my-2">
-        <TitleH2>
-          {languageData.DiscoverHabana.section5Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverHabana.section5Title}</TitleH2>
       </div>
 
       <SubtitleP>
@@ -222,15 +187,9 @@ export default function DiscoverHabana() {
         {languageData.DiscoverHabana.subtitle5.Text2}
       </SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverHabana.paragraphs5.Text1}
-      </SubtitleP>
-      <SubtitleP>
-      {languageData.DiscoverHabana.paragraphs5.Text2}
-      </SubtitleP>
-      <SubtitleP>
-      {languageData.DiscoverHabana.paragraphs5.Text3}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.paragraphs5.Text1}</SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.paragraphs5.Text2}</SubtitleP>
+      <SubtitleP>{languageData.DiscoverHabana.paragraphs5.Text3}</SubtitleP>
     </div>
   );
 }

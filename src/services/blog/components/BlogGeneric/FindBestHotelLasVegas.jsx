@@ -9,23 +9,17 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-best-hotel-las-vegas.jpg";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-best-hotel-las-vegas2.jpg";
-
 export default function FindBestHotelLasVegas() {
   // ARRAY TABLE BLOG
 
   const { languageData } = useContext(LanguageContext);
 
   return (
-
     <>
       <div className="flex flex-col gap-3">
         {/* START BLOG */}
         <div className="mb-6">
-          <TitleH1>
-            {languageData.FindBestHotelLasVegas.mainTitle}
-          </TitleH1>
+          <TitleH1>{languageData.FindBestHotelLasVegas.mainTitle}</TitleH1>
         </div>
         <SubtitleP>
           {languageData.FindBestHotelLasVegas.subtitle1.Text1}
@@ -35,9 +29,7 @@ export default function FindBestHotelLasVegas() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={588}
-          // height={372}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-best-hotel-las-vegas.jpg`}
           alt="Vista de cierre de espectáculo dados por artistas escénicos en un evento principal."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -60,9 +52,7 @@ export default function FindBestHotelLasVegas() {
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={588}
-          // height={360}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-best-hotel-las-vegas2.jpg`}
           alt="Vista de un hotel de Las Vegas que cuenta con un mini canal que imita a venecia dentro."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -78,9 +68,7 @@ export default function FindBestHotelLasVegas() {
 
         {/* ROOM TYPES */}
         <div className="mt-6">
-          <TitleH2>
-            {languageData.FindBestHotelLasVegas.section3Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindBestHotelLasVegas.section3Title}</TitleH2>
         </div>
 
         <SubtitleP>
@@ -89,13 +77,34 @@ export default function FindBestHotelLasVegas() {
 
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
-          <li><BT>{languageData.FindBestHotelLasVegas.list1.textBold1}</BT>{languageData.FindBestHotelLasVegas.list1.textNormal1}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list1.textBold2}</BT>{languageData.FindBestHotelLasVegas.list1.textNormal2}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list1.textBold3}</BT>{languageData.FindBestHotelLasVegas.list1.textNormal3}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list1.textBold4}</BT>{languageData.FindBestHotelLasVegas.list1.textNormal4}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list1.textBold5}</BT>{languageData.FindBestHotelLasVegas.list1.textNormal5}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list1.textBold6}</BT>{languageData.FindBestHotelLasVegas.list1.textNormal6}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list1.textBold7}</BT>{languageData.FindBestHotelLasVegas.list1.textNormal7}</li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list1.textBold1}</BT>
+            {languageData.FindBestHotelLasVegas.list1.textNormal1}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list1.textBold2}</BT>
+            {languageData.FindBestHotelLasVegas.list1.textNormal2}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list1.textBold3}</BT>
+            {languageData.FindBestHotelLasVegas.list1.textNormal3}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list1.textBold4}</BT>
+            {languageData.FindBestHotelLasVegas.list1.textNormal4}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list1.textBold5}</BT>
+            {languageData.FindBestHotelLasVegas.list1.textNormal5}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list1.textBold6}</BT>
+            {languageData.FindBestHotelLasVegas.list1.textNormal6}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list1.textBold7}</BT>
+            {languageData.FindBestHotelLasVegas.list1.textNormal7}
+          </li>
         </ul>
 
         {/* WHAT ARE THE FACILITIES */}
@@ -109,10 +118,22 @@ export default function FindBestHotelLasVegas() {
 
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
-          <li><BT>{languageData.FindBestHotelLasVegas.list2.textBold1}</BT>{languageData.FindBestHotelLasVegas.list2.textNormal1}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list2.textBold2}</BT>{languageData.FindBestHotelLasVegas.list2.textNormal2}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list2.textBold3}</BT>{languageData.FindBestHotelLasVegas.list2.textNormal3}</li>
-          <li><BT>{languageData.FindBestHotelLasVegas.list2.textBold4}</BT>{languageData.FindBestHotelLasVegas.list2.textNormal4}</li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list2.textBold1}</BT>
+            {languageData.FindBestHotelLasVegas.list2.textNormal1}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list2.textBold2}</BT>
+            {languageData.FindBestHotelLasVegas.list2.textNormal2}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list2.textBold3}</BT>
+            {languageData.FindBestHotelLasVegas.list2.textNormal3}
+          </li>
+          <li>
+            <BT>{languageData.FindBestHotelLasVegas.list2.textBold4}</BT>
+            {languageData.FindBestHotelLasVegas.list2.textNormal4}
+          </li>
         </ul>
 
         {/* REVIEWS */}
@@ -133,9 +154,9 @@ export default function FindBestHotelLasVegas() {
           {languageData.FindBestHotelLasVegas.paragraphs5.Text1}
         </SubtitleP>
         <SubtitleP>
-        {languageData.FindBestHotelLasVegas.paragraphs5.Text2}
+          {languageData.FindBestHotelLasVegas.paragraphs5.Text2}
         </SubtitleP>
       </div>
     </>
   );
-};
+}

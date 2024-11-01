@@ -9,11 +9,7 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-puerto-escondido1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-puerto-escondido2.png";
-
 export default function FindPuertoEscondido() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -21,23 +17,17 @@ export default function FindPuertoEscondido() {
       <div className="flex flex-col gap-3">
         {/* START BLOG */}
         <div className="mb-6">
-          <TitleH1>
-            {languageData.FindPuertoEscondido.mainTitle}
-          </TitleH1>
+          <TitleH1>{languageData.FindPuertoEscondido.mainTitle}</TitleH1>
         </div>
         <SubtitleP>
           {languageData.FindPuertoEscondido.subtitle1.Text1}
-          <BT>
-            {languageData.FindPuertoEscondido.subtitle1.BT}
-          </BT>,
+          <BT>{languageData.FindPuertoEscondido.subtitle1.BT}</BT>,
           {languageData.FindPuertoEscondido.subtitle1.Text2}
         </SubtitleP>
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={923}
-          // height={566}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-puerto-escondido1.png`}
           alt="Vista panorámica del lujoso hotel en Puerto Escondido"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -50,24 +40,18 @@ export default function FindPuertoEscondido() {
 
         {/* ASK */}
         <div className="mt-4">
-          <TitleH2>
-            {languageData.FindPuertoEscondido.section2Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindPuertoEscondido.section2Title}</TitleH2>
         </div>
         <SubtitleP>
           {languageData.FindPuertoEscondido.subtitle2.Text1}
-          <BT>
-            {languageData.FindPuertoEscondido.subtitle1.BT}
-          </BT>
+          <BT>{languageData.FindPuertoEscondido.subtitle1.BT}</BT>
           {languageData.FindPuertoEscondido.subtitle1.Text2}
         </SubtitleP>
 
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={926}
-          // height={574}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-puerto-escondido2.png`}
           alt="Vista de la entrada principal del hotel Vivo Resorts"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -78,9 +62,7 @@ export default function FindPuertoEscondido() {
 
         {/* ROOM TYPES */}
         <div className="mt-6">
-          <TitleH2>
-            {languageData.FindPuertoEscondido.section3Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindPuertoEscondido.section3Title}</TitleH2>
         </div>
 
         <SubtitleP>
@@ -111,39 +93,22 @@ export default function FindPuertoEscondido() {
             {languageData.FindPuertoEscondido.list1.textNormal3}
           </li>
           {languageData.FindPuertoEscondido.list1.Text1}
-          <li>
-            {languageData.FindPuertoEscondido.list1.textNormal4}
-          </li>
-          <li>
-            {languageData.FindPuertoEscondido.list1.textNormal5}
-          </li>
-          <li>
-            {languageData.FindPuertoEscondido.list1.textNormal6}
-          </li>
-          <li>
-            {languageData.FindPuertoEscondido.list1.textNormal7}
-          </li>
-          <li>
-            {languageData.FindPuertoEscondido.list1.textNormal8}
-          </li>
-          <li>
-            {languageData.FindPuertoEscondido.list1.textNormal9}
-          </li>
-          <li>
-            {languageData.FindPuertoEscondido.list1.textNormal10}
-          </li>
+          <li>{languageData.FindPuertoEscondido.list1.textNormal4}</li>
+          <li>{languageData.FindPuertoEscondido.list1.textNormal5}</li>
+          <li>{languageData.FindPuertoEscondido.list1.textNormal6}</li>
+          <li>{languageData.FindPuertoEscondido.list1.textNormal7}</li>
+          <li>{languageData.FindPuertoEscondido.list1.textNormal8}</li>
+          <li>{languageData.FindPuertoEscondido.list1.textNormal9}</li>
+          <li>{languageData.FindPuertoEscondido.list1.textNormal10}</li>
         </ul>
         <SubtitleP>
           {languageData.FindPuertoEscondido.paragraphBottom1}
         </SubtitleP>
 
-        
         {/* WHAT ARE THE FACILITIES */}
 
         <div className="mt-4">
-          <TitleH2>
-            {languageData.FindPuertoEscondido.section3Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindPuertoEscondido.section3Title}</TitleH2>
         </div>
         <SubtitleP>
           {languageData.FindPuertoEscondido.subtitle4.Text1}
@@ -195,7 +160,7 @@ export default function FindPuertoEscondido() {
           </li>
         </ul>
         <SubtitleP>
-        {languageData.FindPuertoEscondido.paragraphBottom2}
+          {languageData.FindPuertoEscondido.paragraphBottom2}
         </SubtitleP>
 
         {/* REVIEWS */}
@@ -209,16 +174,14 @@ export default function FindPuertoEscondido() {
         </div>
         <SubtitleP>
           {languageData.FindPuertoEscondido.subtitle5.Text1}
-          <BT>
-          {languageData.FindPuertoEscondido.subtitle5.BT}
-          </BT>
+          <BT>{languageData.FindPuertoEscondido.subtitle5.BT}</BT>
           {languageData.FindPuertoEscondido.subtitle5.Text2}
         </SubtitleP>
         <SubtitleP>
-        {languageData.FindPuertoEscondido.paragraphs5.Text1}
+          {languageData.FindPuertoEscondido.paragraphs5.Text1}
         </SubtitleP>
         <SubtitleP>
-        {languageData.FindPuertoEscondido.paragraphs5.Text2}
+          {languageData.FindPuertoEscondido.paragraphs5.Text2}
         </SubtitleP>
       </div>
     </>

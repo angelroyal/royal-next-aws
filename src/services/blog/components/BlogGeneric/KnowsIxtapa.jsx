@@ -9,9 +9,6 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/knows-Ixtapa1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/knows-Ixtapa2.png";
-
 export default function KnowsIxtapa() {
   const { languageData } = useContext(LanguageContext);
 
@@ -32,9 +29,9 @@ export default function KnowsIxtapa() {
       {/* IMAGE 1 */}
 
       <img
-        src={imgBlogGeneric1.src}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-Ixtapa1.jpg`}
         alt="Área de piscinas infantiles en el mejor hotel de Ixtapa, con instalaciones modernas y seguras para niños."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       <SubtitleP>{languageData.KnowsIxtapa.paragraphs1.Text2}</SubtitleP>
@@ -51,9 +48,7 @@ export default function KnowsIxtapa() {
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={942}
-        // height={530}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-Ixtapa2.jfif`}
         alt="Área de juegos infantiles del hotel Sunscape Dorado Pacífico Ixtapa "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

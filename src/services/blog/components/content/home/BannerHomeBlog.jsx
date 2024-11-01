@@ -1,20 +1,17 @@
-"use client"
+"use client";
 
 import { LanguageContext } from "@/services/blog/Context/LanguageContext";
 import { useContext } from "react";
-
 
 export default function BannerHomeBlog() {
   const { languageData } = useContext(LanguageContext);
   return (
     <>
       <div className="w-full h-[192px] bg-blue-800 relative flex items-center">
-
         <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog//banner-home-blog.jpg`}
-        
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/banner-home-blog.jpg`}
           alt="banner home blog"
-          className="w-full h-full max-lg:object-cover"
+          className="w-full h-full object-cover brightness-50"
         />
 
         <div className="absolute flex flex-col pl-[12rem]  max-2xl:pl-[11rem] max-lg:pl-[20px] max-md:pl-[15px] gap-4">

@@ -9,9 +9,6 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-holbox1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-holbox2.png";
-
 export default function FindHolbox() {
 
   const { languageData } = useContext(LanguageContext);
@@ -44,9 +41,7 @@ export default function FindHolbox() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={920}
-          // height={533}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-holbox1.png`}
           alt="Vista al mar desde la habitación del mejor hotel en Holbox"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -72,9 +67,7 @@ export default function FindHolbox() {
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={928}
-          // height={523}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-holbox2.png`}
           alt="Entrada principal del hotel Villas Flamingos Hotel"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

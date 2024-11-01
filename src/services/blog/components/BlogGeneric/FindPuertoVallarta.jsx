@@ -9,11 +9,7 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-puerto-vallarta1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-puerto-vallarta2.png";
-
 export default function FindPuertoVallarta() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -21,9 +17,7 @@ export default function FindPuertoVallarta() {
       <div className="flex flex-col gap-3">
         {/* START BLOG */}
         <div className="mb-6">
-          <TitleH1>
-            {languageData.FindPuertoVallarta.mainTitle}
-          </TitleH1>
+          <TitleH1>{languageData.FindPuertoVallarta.mainTitle}</TitleH1>
         </div>
         <SubtitleP>
           {languageData.FindPuertoVallarta.subtitle1.Text1}
@@ -33,9 +27,7 @@ export default function FindPuertoVallarta() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={913}
-          // height={559}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-puerto-vallarta1.png`}
           alt="Malecón de puerto vallarta, ubicado en las costas de méxico"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -45,20 +37,14 @@ export default function FindPuertoVallarta() {
 
         {/* ASK */}
         <div className="mt-4">
-          <TitleH2>
-            {languageData.FindPuertoVallarta.section2Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindPuertoVallarta.section2Title}</TitleH2>
         </div>
-        <SubtitleP>
-          {languageData.FindPuertoVallarta.subtitle2.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.FindPuertoVallarta.subtitle2.Text1}</SubtitleP>
 
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={926}
-          // height={526}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-puerto-vallarta2.png`}
           alt="Vista de la entrada principal del hotel Hilton Vallarta Riviera All-Inclusive Resort"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -70,20 +56,12 @@ export default function FindPuertoVallarta() {
 
         {/* ROOM TYPES */}
         <div className="mt-6">
-          <TitleH2>
-            {languageData.FindPuertoVallarta.sectio3Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindPuertoVallarta.sectio3Title}</TitleH2>
         </div>
 
-        <SubtitleP>
-          {languageData.FindPuertoVallarta.subtitle3.Text1}
-        </SubtitleP>
-        <SubtitleP>
-          {languageData.FindPuertoVallarta.subtitle3.Text2}
-        </SubtitleP>
-        <SubtitleP>
-          {languageData.FindPuertoVallarta.subtitle3.Text3}
-        </SubtitleP>
+        <SubtitleP>{languageData.FindPuertoVallarta.subtitle3.Text1}</SubtitleP>
+        <SubtitleP>{languageData.FindPuertoVallarta.subtitle3.Text2}</SubtitleP>
+        <SubtitleP>{languageData.FindPuertoVallarta.subtitle3.Text3}</SubtitleP>
 
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -121,9 +99,7 @@ export default function FindPuertoVallarta() {
 
         {/* WHAT ARE THE FACILITIES */}
         <div className="mt-4">
-          <TitleH2>
-            {languageData.FindPuertoVallarta.sectio4Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindPuertoVallarta.sectio4Title}</TitleH2>
         </div>
 
         <SubtitleP>
@@ -164,7 +140,6 @@ export default function FindPuertoVallarta() {
             </b>
             {languageData.FindPuertoVallarta.list2.textNormal5}
           </li>
-
         </ul>
 
         <SubtitleP>
@@ -178,19 +153,15 @@ export default function FindPuertoVallarta() {
 
         {/* END BLOG */}
         <div className="my-2">
-          <TitleH2>
-          {languageData.FindPuertoVallarta.sectio5Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindPuertoVallarta.sectio5Title}</TitleH2>
         </div>
         <SubtitleP>
-        {languageData.FindPuertoVallarta.subtitle5.Text1}
-        <BT>
-        {languageData.FindPuertoVallarta.subtitle5.BT}
-        </BT>
-        {languageData.FindPuertoVallarta.subtitle5.Text2}
+          {languageData.FindPuertoVallarta.subtitle5.Text1}
+          <BT>{languageData.FindPuertoVallarta.subtitle5.BT}</BT>
+          {languageData.FindPuertoVallarta.subtitle5.Text2}
         </SubtitleP>
         <SubtitleP>
-        {languageData.FindPuertoVallarta.paragraphs5.Text1}
+          {languageData.FindPuertoVallarta.paragraphs5.Text1}
         </SubtitleP>
       </div>
     </>

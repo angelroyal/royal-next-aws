@@ -9,11 +9,7 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/discover-mahahual.jpg";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/discover-mahahual-1.jpg";
-
 export default function DiscoverMahahual() {
-
   const { languageData } = useContext(LanguageContext);
 
   const TableBlog = {
@@ -35,9 +31,7 @@ export default function DiscoverMahahual() {
         <div className="mb-6">
           <TitleH1>{languageData.DiscoverMahahual.mainTitle}</TitleH1>
         </div>
-        <SubtitleP>
-          {languageData.DiscoverMahahual.subtitle1.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.subtitle1.Text1}</SubtitleP>
         <SubtitleP>
           {languageData.DiscoverMahahual.subtitle1.Text2}
           <BT>{languageData.DiscoverMahahual.subtitle1.BT}</BT>
@@ -46,21 +40,15 @@ export default function DiscoverMahahual() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={587}
-          // height={362}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-mahahual.jpg`}
           alt="Vista de un hotel frente al mar en el que se puede observar a numerosas personas disfrutando del día."
           className="rounded-lg h-[437px] object-cover w-full my-6"
-          priority={true} 
+          priority={true}
         />
 
-        <SubtitleP>
-          {languageData.DiscoverMahahual.paragraphs1.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.paragraphs1.Text1}</SubtitleP>
 
-        <SubtitleP>
-        {languageData.DiscoverMahahual.paragraphs1.Text2}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.paragraphs1.Text2}</SubtitleP>
         {/* ASK */}
         <div className="mt-4">
           <TitleH2>{languageData.DiscoverMahahual.section2Title}</TitleH2>
@@ -73,75 +61,60 @@ export default function DiscoverMahahual() {
 
         {/* IMAGE 2 */}
         <img
-          src={imgBlogGeneric2.src}
-          // width={589}
-          // height={337}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-mahahual-1.jpg`}
           alt="Vista de una decoración dorada del lobby de uno de los hoteles de Mahahual."
-          priority={true} 
+          priority={true}
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
 
-        <SubtitleP>
-          {languageData.DiscoverMahahual.paragraphs2.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.paragraphs2.Text1}</SubtitleP>
         {/* ROOM TYPES */}
         <div className="mt-6">
-          <TitleH2>
-            {languageData.DiscoverMahahual.section3Title}
-          </TitleH2>
+          <TitleH2>{languageData.DiscoverMahahual.section3Title}</TitleH2>
         </div>
 
-        <SubtitleP>
-          {languageData.DiscoverMahahual.subtitle3.Text1}
-        </SubtitleP>
-        <SubtitleP>
-          {languageData.DiscoverMahahual.subtitle3.Text2}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.subtitle3.Text1}</SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.subtitle3.Text2}</SubtitleP>
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
           <li>
-            <BT>{languageData.DiscoverMahahual.list1.textBold1}</BT> 
+            <BT>{languageData.DiscoverMahahual.list1.textBold1}</BT>
             {languageData.DiscoverMahahual.list1.textNormal1}
           </li>
-          
+
           <li>
-            <BT>{languageData.DiscoverMahahual.list1.textBold2}</BT> 
+            <BT>{languageData.DiscoverMahahual.list1.textBold2}</BT>
             {languageData.DiscoverMahahual.list1.textNormal2}
           </li>
 
           <li>
-            <BT>{languageData.DiscoverMahahual.list1.textBold3}</BT> 
+            <BT>{languageData.DiscoverMahahual.list1.textBold3}</BT>
             {languageData.DiscoverMahahual.list1.textNormal3}
           </li>
           <li>
-            <BT>{languageData.DiscoverMahahual.list1.textBold4}</BT> 
+            <BT>{languageData.DiscoverMahahual.list1.textBold4}</BT>
             {languageData.DiscoverMahahual.list1.textNormal4}
           </li>
           <li>
-            <BT>{languageData.DiscoverMahahual.list1.textBold5}</BT> 
+            <BT>{languageData.DiscoverMahahual.list1.textBold5}</BT>
             {languageData.DiscoverMahahual.list1.textNormal5}
           </li>
           <li>
-            <BT>{languageData.DiscoverMahahual.list1.textBold6}</BT> 
+            <BT>{languageData.DiscoverMahahual.list1.textBold6}</BT>
             {languageData.DiscoverMahahual.list1.textNormal6}
           </li>
           <li>
-            <BT>{languageData.DiscoverMahahual.list1.textBold7}</BT> 
+            <BT>{languageData.DiscoverMahahual.list1.textBold7}</BT>
             {languageData.DiscoverMahahual.list1.textNormal7}
           </li>
-
         </ul>
 
         {/* WHAT ARE THE FACILITIES */}
         <div className="mt-4">
-          <TitleH2>
-           {languageData.DiscoverMahahual.section4Title}
-          </TitleH2>
+          <TitleH2>{languageData.DiscoverMahahual.section4Title}</TitleH2>
         </div>
 
-        <SubtitleP>
-          {languageData.DiscoverMahahual.subtitle4.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.subtitle4.Text1}</SubtitleP>
 
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -163,9 +136,7 @@ export default function DiscoverMahahual() {
           </li>
         </ul>
 
-        <SubtitleP>
-          {languageData.DiscoverMahahual.paragraphBottom2}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.paragraphBottom2}</SubtitleP>
         {/* REVIEWS */}
         <div className="my-4">
           <TableReviews TableBlog={languageData.DiscoverMahahual.table} />
@@ -180,12 +151,8 @@ export default function DiscoverMahahual() {
           <BT>{languageData.DiscoverMahahual.subtitle5.BT}</BT>
           {languageData.DiscoverMahahual.subtitle5.Text2}
         </SubtitleP>
-        <SubtitleP>
-          {languageData.DiscoverMahahual.paragraphs5.Text1}
-        </SubtitleP>
-        <SubtitleP>
-          {languageData.DiscoverMahahual.paragraphs5.Text2}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.paragraphs5.Text1}</SubtitleP>
+        <SubtitleP>{languageData.DiscoverMahahual.paragraphs5.Text2}</SubtitleP>
       </div>
     </>
   );
