@@ -20,9 +20,9 @@ export default function ExtenBarraDeNavidad() {
 
       {/* IMAGE 1 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad1.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad1.jpg`}
         alt="Vista de letrero de Barra De Navida en el atardecer frente al denso mar."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       <SubtitleP>

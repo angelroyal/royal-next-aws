@@ -433,7 +433,7 @@ export const BlogJsonG = [
     descriptionEn:
       "Join me to discover why Barra de Navidad should be on your list of upcoming destinations to visit.",
     codeName: "barra-de-navidad",
-    image: `${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad1.png`,
+    image: `${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad1.jpg`,
     date: "06/05/2024",
     description: "description",
     type: ["beach"],
