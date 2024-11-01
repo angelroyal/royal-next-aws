@@ -23,7 +23,7 @@ export default function CardsHomeBlog({ blog }) {
             {/* IMG CARD */}
             <div className="h-[150px] overflow-hidden max-md:overflow-hidden rounded-lg">
               <img
-                src={BlogJG.image.src}
+                src={BlogJG.image}
                 alt="blog card"
                 className="rounded-lg w-full h-full object-cover group-hover:ease-in-out group-hover:scale-110 group-hover:transition-transform group-hover:duration-500 duration-500 ease-in-out select-none"
               />
