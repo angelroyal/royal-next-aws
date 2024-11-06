@@ -33,7 +33,7 @@ export default function DiscoverHabana() {
       <img
         src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-habana1.jpg`}
         alt="Imagen de estatua de bronce entre un grupo de personas a plena luz del día."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       {/* paragraphs1 */}

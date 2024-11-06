@@ -193,7 +193,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 8 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua8.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua8.jpg`}
         alt="Vista de letrero de Creel en un día completamente soleado y depejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -230,7 +230,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 10 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua10.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua10.webp`}
         alt="Vista de dos hombres de mediana edad sentados en sillones individuales de color azul en un hotel con aires rústicos en el predomina la madera y los tonos rojos y cafés"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -255,7 +255,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 11 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua11.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua11.jpg`}
         alt="Vista de restaurante con estética impactante ubicado frente a las barrancas de cobre. Se puede observar a unos cuántos comensales en sus mesas"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -294,7 +294,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 12 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua12.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua12.jpg`}
         alt='Vista de un hombre de la tercera edad llevando consigo sus maletas a punto de abordar el tren que yace detrás suyo. En el tren se puede leer "Chepe"'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -339,7 +339,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 13 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua13.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua13.jpg`}
         alt="Vista un tren dirigiéndose a su destino mientras pasa a un entre unas pequeñas montañas y un cuerpo de agua. La naturaleza predomina"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

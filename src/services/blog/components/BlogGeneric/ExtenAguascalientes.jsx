@@ -46,7 +46,7 @@ export default function ExtenAguascalientes() {
 
       {/* IMAGE 2 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-aguascalientes2.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-aguascalientes2.jpg`}
         alt="Vista de las icónicas letras gigantes que representan a la ciudad de Aguascalientes"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -203,7 +203,7 @@ export default function ExtenAguascalientes() {
       <img
         src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-aguascalientes5.png`}
         alt="Cristo Roto en Aguascalientes, monumento está ubicado en la presa de San José de Gracia."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-top"
       />
 
       <SubtitleP>
@@ -242,7 +242,7 @@ export default function ExtenAguascalientes() {
       <img
         src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-aguascalientes6.png`}
         alt="Viñedos de Aguascalientes"
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       <SubtitleP>

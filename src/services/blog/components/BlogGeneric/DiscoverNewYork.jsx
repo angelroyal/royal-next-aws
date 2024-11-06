@@ -29,7 +29,7 @@ export default function DiscoverNewYork() {
         {/* IMAGE 1 */}
 
         <img
-          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-new-york.jpg`}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-new-york.jfif`}
           alt="Área de piscinas y zona de descanso en el mejor hotel para hospedarse en Nueva York"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

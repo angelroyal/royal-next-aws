@@ -42,7 +42,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 2 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal2.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal2.jpg`}
         alt="Vista de letrero de de Chetumal. sus tonos son terrosos y una iguana esta posando sobre este letrero."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -199,7 +199,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 4 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal4.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal4.jpg`}
         alt="Vista de un vistoso letrero de Chetumal ocupando todo el ancho de la toma. Un cielo despejado se ve en lo alto."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -220,7 +220,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 5 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal5.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal5.jpg`}
         alt="Vista de la sobria y elegante entrada del muse de la cultura maya en Chetumal."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -262,7 +262,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 7 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal7.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal7.jpeg`}
         alt="Vista un muelle pequeño frente a la Laguna Milagros. El agua es azul turquesa y el cielo tiene agrupacines de nubes que decoran el cielo azul."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -331,7 +331,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 11 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal11.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal11.jpg`}
         alt="Vista a través de una ventana del aeropuerto por el cual se logra ver un avión estacionado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

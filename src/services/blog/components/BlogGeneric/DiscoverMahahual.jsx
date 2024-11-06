@@ -40,7 +40,7 @@ export default function DiscoverMahahual() {
         {/* IMAGE 1 */}
 
         <img
-          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-mahahual.jpg`}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-mahahual.jpeg`}
           alt="Vista de un hotel frente al mar en el que se puede observar a numerosas personas disfrutando del día."
           className="rounded-lg h-[437px] object-cover w-full my-6"
           priority={true}

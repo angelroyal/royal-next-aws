@@ -24,7 +24,7 @@ export default function ExtenBacalar() {
 
       {/* IMAGE 1 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-bacalar1.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-bacalar1.jpg`}
         alt="Vista de las letras gigantes de bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -425,7 +425,7 @@ export default function ExtenBacalar() {
 
       {/* IMAGE 10 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-bacalar10.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-bacalar10.jpg`}
         alt="Rápidos del rio de Bacalar"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

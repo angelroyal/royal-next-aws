@@ -56,7 +56,7 @@ export default function ExtenBarraDeNavidad() {
 
       {/* IMAGE 2 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad2.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad2.jfif`}
         alt="Vista de la orilla del mar al atardecer. Hay diversas enbarcaciones encallando y el agua está tranquila."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -82,9 +82,9 @@ export default function ExtenBarraDeNavidad() {
 
       {/* IMAGE 3 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad3.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad3.jpg`}
         alt="Vista de un atardecer en el mar. Hay algunas embarcaciones saliendo hacia el mar."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       <SubtitleP>
@@ -133,7 +133,7 @@ export default function ExtenBarraDeNavidad() {
 
       {/* IMAGE 5 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad5.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-barra-navidad5.jpg`}
         alt="Vista de 2 trajineras coloridad en llenas de personas. El día está soleado y despejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

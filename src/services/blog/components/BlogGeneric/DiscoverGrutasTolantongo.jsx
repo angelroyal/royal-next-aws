@@ -57,7 +57,7 @@ export default function DiscoverGrutasTolantongo() {
       <img
         src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-grutas-de-tolantongo.jpg`}
         alt="Vista de Grutas Tolantongo en el cual hay algunas personas dentro del agua pasando un momento agradable."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       <SubtitleP>

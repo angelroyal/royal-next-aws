@@ -311,7 +311,7 @@ export const BlogJsonG = [
     descriptionEn:
       "It's normal to wonder what the best hotel in Los Cabos San Lucas is if you're looking to combine luxury and exclusivity in a destination that also offers natural beauty in a sophisticated and relaxed setting.",
     codeName: "the-best-hotel-los-cabos-san-lucas",
-    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-los-cabos-san-lucas.jpg`,
+    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-los-cabos-san-lucas.webp`,
     date: "06/05/2024",
     description: "description",
     type: ["pool"],
@@ -326,7 +326,7 @@ export const BlogJsonG = [
     descriptionEn:
       "If you're looking to escape to the Mexican Caribbean, you could visit one of the many famous spots on the Yucatan Peninsula’s coast, such as Mahahual, Holbox, or Isla Mujeres.",
     codeName: "the-best-hotel-mahahual",
-    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-mahahual.jpg`,
+    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-mahahual.jpeg`,
     date: "06/05/2024",
     description: "description",
     type: ["other"],
@@ -341,7 +341,7 @@ export const BlogJsonG = [
     descriptionEn:
       "If you're already planning to visit the vibrant city that never sleeps, you might wonder: what is the best hotel to stay in New York? This is a question that has probably crossed your mind.",
     codeName: "the-best-hotel-new-york",
-    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-new-york.jpg`,
+    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-new-york.jfif`,
     date: "06/05/2024",
     description: "description",
     type: ["hotel"],
@@ -356,7 +356,7 @@ export const BlogJsonG = [
     descriptionEn:
       "When we ask ourselves how many Riu hotels there are in Cancun, we have to keep in mind that you’ll find more than one option for you, as there are 7 available Riu hotels in Cancun: Hotel Riu Caribe, Hotel Riu Dunamar, Hotel Riu Palace Las Americas, Hotel Riu Palace Peninsula, Hotel Riu Latino, Hotel Riu Palace Costa Mujeres, and Hotel Riu Cancun.",
     codeName: "the-best-hotel-riu-cancun",
-    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun.jpg`,
+    image: `${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun.jfif`,
     date: "06/05/2024",
     description: "description",
     type: ["hotel"],
@@ -403,7 +403,7 @@ export const BlogJsonG = [
     descriptionEn:
       "Do you want to embark on a magical experience? You can find it in Campeche, one of the most fascinating and colorful states in Mexico that is not yet very popular, so you can visit with the peace of mind that you won't face the typical crowds of famous locations.",
     codeName: "discovering-campeche",
-    image: `${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche1.png`,
+    image: `${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche1.jpg`,
     date: "06/05/2024",
     description: "description",
     type: ["other"],
@@ -628,7 +628,7 @@ export const BlogJsonG = [
     descriptionEn:
       "If you're seeking an escape from the daily hustle and a genuine connection with nature, Bacalar, Quintana Roo is your ideal destination. In this article, we invite you to dive into the charms of Bacalar and discover why you should add it to your travel list.",
     codeName: "bacalar-riviera-maya",
-    image: `${process.env.NEXT_PUBLIC_URL}img/blog/exten-bacalar1.png`,
+    image: `${process.env.NEXT_PUBLIC_URL}img/blog/exten-bacalar1.jpg`,
     date: "06/05/2024",
     description: "description",
     type: ["other"],

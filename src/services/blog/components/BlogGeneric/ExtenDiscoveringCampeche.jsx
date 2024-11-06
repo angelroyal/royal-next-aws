@@ -29,9 +29,9 @@ export default function ExtenDiscoveringCampeche() {
 
       {/* IMAGE 1 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche1.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche1.jpg`}
         alt="Vista del vistoso centro de Campeche en el que se puede observar una pequeña iglesia. Los árboles enmarcan el quiosco principal."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       <SubtitleP>
@@ -220,7 +220,7 @@ export default function ExtenDiscoveringCampeche() {
 
       {/* IMAGE 4 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche4.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche4.jpg`}
         alt="Vista del Fuerte de San Miguel bajo un cielo azul con nubes esparcidas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -414,7 +414,7 @@ export default function ExtenDiscoveringCampeche() {
 
       {/* IMAGE 11 */}
       <img
-        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche11.png`}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discovering-campeche11.jpg`}
         alt="Vista de restaurante en el que se observan las paredes cargadas de cuadros. Las paredes son rosas y hay diversos relojes antiguos sobre una de las paredes que yace a un costado de la puerta principal."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

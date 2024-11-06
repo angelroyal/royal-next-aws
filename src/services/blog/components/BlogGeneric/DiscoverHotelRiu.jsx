@@ -45,7 +45,7 @@ export default function DiscoverHotelRiu() {
         {/* IMAGE 1 */}
 
         <img
-          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun.jpg`}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun.jfif`}
           alt="Piscinas y zona de estar en el hotel Riu en Cancún"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -61,7 +61,7 @@ export default function DiscoverHotelRiu() {
         {/* IMAGE 2 */}
 
         <img
-          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun-1.jpg`}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun-1.jfif`}
           alt="Vista panorámica del Hotel Riu Palace Las Américas"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

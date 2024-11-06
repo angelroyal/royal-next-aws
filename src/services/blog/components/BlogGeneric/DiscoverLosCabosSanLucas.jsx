@@ -44,9 +44,9 @@ export default function DiscoverLosCabosSanLucas() {
         {/* IMAGE 1 */}
 
         <img
-          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-los-cabos-san-lucas.jpg`}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-los-cabos-san-lucas.webp`}
           alt="Vista del profundo mar azul de Los Cabos en el cual se puede ver la cola de una ballena saliendo a superficie."
-          className="rounded-lg h-[437px] object-cover w-full my-6"
+          className="rounded-lg h-[437px] object-cover w-full my-6 "
         />
 
         <SubtitleP>
@@ -70,7 +70,7 @@ export default function DiscoverLosCabosSanLucas() {
 
         {/* IMAGE 2 */}
         <img
-          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-los-cabos-san-lucas-1.jpg`}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-los-cabos-san-lucas-1.jpeg`}
           alt="Vista de una alberca en uno de los hoteles de Los Cabos San Lucas en el que hay camastros junto a sus cortinas. El día es soleado."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
