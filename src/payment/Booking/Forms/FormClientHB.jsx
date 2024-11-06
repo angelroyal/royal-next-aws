@@ -12,7 +12,7 @@ export default function FormClientHB({ dataItinerary }) {
 
   const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
-  const hbItineraries = dataItinerary;
+  const hbItineraries = dataItinerary.filter(itinerary => itinerary.type === "hotel");
 
   if (hbItineraries.length === 0) {
     return null;
