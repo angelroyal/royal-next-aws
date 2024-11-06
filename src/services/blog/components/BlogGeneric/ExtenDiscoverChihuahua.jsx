@@ -8,20 +8,6 @@ import TitleH1 from "./General/TitleH1";
 import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/exten-discover-chihuahua1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/exten-discover-chihuahua2.png";
-import imgBlogGeneric3 from "@/assets/img/BlogGeneric/exten-discover-chihuahua3.png";
-import imgBlogGeneric4 from "@/assets/img/BlogGeneric/exten-discover-chihuahua4.png";
-import imgBlogGeneric5 from "@/assets/img/BlogGeneric/exten-discover-chihuahua5.png";
-import imgBlogGeneric6 from "@/assets/img/BlogGeneric/exten-discover-chihuahua6.png";
-import imgBlogGeneric7 from "@/assets/img/BlogGeneric/exten-discover-chihuahua7.png";
-import imgBlogGeneric8 from "@/assets/img/BlogGeneric/exten-discover-chihuahua8.png";
-import imgBlogGeneric9 from "@/assets/img/BlogGeneric/exten-discover-chihuahua9.png";
-import imgBlogGeneric10 from "@/assets/img/BlogGeneric/exten-discover-chihuahua10.png";
-import imgBlogGeneric11 from "@/assets/img/BlogGeneric/exten-discover-chihuahua11.png";
-import imgBlogGeneric12 from "@/assets/img/BlogGeneric/exten-discover-chihuahua12.png";
-import imgBlogGeneric13 from "@/assets/img/BlogGeneric/exten-discover-chihuahua13.png";
-
 export default function ExtenDiscoverChihuahua() {
   const { languageData } = useContext(LanguageContext);
 
@@ -38,9 +24,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 1 */}
       <img
-        src={imgBlogGeneric1.src}
-        // width={921}
-        // height={583}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua1.png`}
         alt='Vista de las "Barrancas de Cobre" con un profundo azul cielo con unas cuantas nubes atiborradas en el horizonte. Se puede observar una persona haciendo tiroleza.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -83,9 +67,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 2 */}
       <img
-        src={imgBlogGeneric2.src}
-        // width={928}
-        // height={603}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua2.png`}
         alt='Vista de teleférico atravezando "Las Barrancas de Cobre" através de un cielo azul y lleno de nubes.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -117,9 +99,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 3 */}
       <img
-        src={imgBlogGeneric3.src}
-        // width={909}
-        // height={574}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua3.png`}
         alt='Vista de una mujer mirando "Las Barrancas de Cobre". El paisaje es verde y frondoso.'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -157,9 +137,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 4 */}
       <img
-        src={imgBlogGeneric4.src}
-        // width={928}
-        // height={389}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua4.png`}
         alt="Vista de un tren de gran tamaño de color negro en un día soleado y despejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -175,9 +153,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 5 */}
       <img
-        src={imgBlogGeneric5.src}
-        // width={906}
-        // height={575}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua5.png`}
         alt="Vista de dos personas tomándose una foto en el Mirado Cerro del Gallego, una persona sujeta la camara y la otra yace sentada sobre la malla de seguridad."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -190,9 +166,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 6 */}
       <img
-        src={imgBlogGeneric6.src}
-        // width={907}
-        // height={567}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua6.png`}
         alt="Vista de la imponente Cascada de Cusárare entre la naturaleza verde y copiosa."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -205,9 +179,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 7 */}
       <img
-        src={imgBlogGeneric7.src}
-        // width={919}
-        // height={517}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua7.png`}
         alt="Vista del cristalino y tranquilo Lago de Areco bajo un hermoso cielo azul con una cuantas nubes. La naturaleza enmarca el lago."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -221,9 +193,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 8 */}
       <img
-        src={imgBlogGeneric8.src}
-        // width={927}
-        // height={619}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua8.jpg`}
         alt="Vista de letrero de Creel en un día completamente soleado y depejado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -236,9 +206,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 9 */}
       <img
-        src={imgBlogGeneric9.src}
-        // width={927}
-        // height={546}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua9.png`}
         alt="Vista de una una construcción en el pueblo mágico de Botopilas. Se pueden oberservar unos cuantos árboles."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -262,9 +230,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 10 */}
       <img
-        src={imgBlogGeneric10.src}
-        // width={928}
-        // height={564}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua10.webp`}
         alt="Vista de dos hombres de mediana edad sentados en sillones individuales de color azul en un hotel con aires rústicos en el predomina la madera y los tonos rojos y cafés"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -289,9 +255,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 11 */}
       <img
-        src={imgBlogGeneric11.src}
-        // width={914}
-        // height={585}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua11.jpg`}
         alt="Vista de restaurante con estética impactante ubicado frente a las barrancas de cobre. Se puede observar a unos cuántos comensales en sus mesas"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -330,9 +294,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 12 */}
       <img
-        src={imgBlogGeneric12.src}
-        // width={913}
-        // height={609}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua12.jpg`}
         alt='Vista de un hombre de la tercera edad llevando consigo sus maletas a punto de abordar el tren que yace detrás suyo. En el tren se puede leer "Chepe"'
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -377,9 +339,7 @@ export default function ExtenDiscoverChihuahua() {
 
       {/* IMAGE 13 */}
       <img
-        src={imgBlogGeneric13.src}
-        // width={922}
-        // height={538}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-discover-chihuahua13.jpg`}
         alt="Vista un tren dirigiéndose a su destino mientras pasa a un entre unas pequeñas montañas y un cuerpo de agua. La naturaleza predomina"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

@@ -8,70 +8,41 @@ import TitleH1 from "./General/TitleH1";
 import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/exten-knows-chetumal1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/exten-knows-chetumal2.png";
-import imgBlogGeneric3 from "@/assets/img/BlogGeneric/exten-knows-chetumal3.png";
-import imgBlogGeneric4 from "@/assets/img/BlogGeneric/exten-knows-chetumal4.png";
-import imgBlogGeneric5 from "@/assets/img/BlogGeneric/exten-knows-chetumal5.png";
-import imgBlogGeneric6 from "@/assets/img/BlogGeneric/exten-knows-chetumal6.png";
-import imgBlogGeneric7 from "@/assets/img/BlogGeneric/exten-knows-chetumal7.png";
-import imgBlogGeneric8 from "@/assets/img/BlogGeneric/exten-knows-chetumal8.png";
-import imgBlogGeneric9 from "@/assets/img/BlogGeneric/exten-knows-chetumal9.png";
-import imgBlogGeneric10 from "@/assets/img/BlogGeneric/exten-knows-chetumal10.png";
-import imgBlogGeneric11 from "@/assets/img/BlogGeneric/exten-knows-chetumal11.png";
-import imgBlogGeneric12 from "@/assets/img/BlogGeneric/exten-knows-chetumal12.png";
-import imgBlogGeneric13 from "@/assets/img/BlogGeneric/exten-knows-chetumal13.png";
-
 export default function ExtenKnowsChetumal() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col gap-3">
-      <TitleH1>
-        {languageData.ExtenKnowsChetumal.mainTitle}
-      </TitleH1>
+      <TitleH1>{languageData.ExtenKnowsChetumal.mainTitle}</TitleH1>
 
-      <SubtitleP>
-        {languageData.ExtenKnowsChetumal.subtitle1}
-      </SubtitleP>
+      <SubtitleP>{languageData.ExtenKnowsChetumal.subtitle1}</SubtitleP>
 
       {/* IMAGE 1 */}
       <img
-        src={imgBlogGeneric1.src}
-        // width={931}
-        // height={382}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal1.png`}
         alt="Vista la costa. El mar se ve tranquilo y tiene tonos azulados y verdes. Las construcciones frente al mar son discretas y pequeñas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       <SubtitleP>
-        {languageData.ExtenKnowsChetumal.paragraphs1.Text1} {" "}
-        <BT>
-          {languageData.ExtenKnowsChetumal.paragraphs1.BT}
-        </BT>{" "}
+        {languageData.ExtenKnowsChetumal.paragraphs1.Text1}{" "}
+        <BT>{languageData.ExtenKnowsChetumal.paragraphs1.BT}</BT>{" "}
         {languageData.ExtenKnowsChetumal.paragraphs1.Text2}
       </SubtitleP>
 
       <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.ExtenKnowsChetumal.section2Title}</TitleH2>
       </div>
 
       <SubtitleP>
-        {languageData.ExtenKnowsChetumal.subtitle2.Text1} {" "}
-        <BT>
-          {languageData.ExtenKnowsChetumal.subtitle2.BT}
-        </BT>{" "}
+        {languageData.ExtenKnowsChetumal.subtitle2.Text1}{" "}
+        <BT>{languageData.ExtenKnowsChetumal.subtitle2.BT}</BT>{" "}
         {languageData.ExtenKnowsChetumal.subtitle2.Text2}
       </SubtitleP>
 
       {/* IMAGE 2 */}
       <img
-        src={imgBlogGeneric2.src}
-        // width={923}
-        // height={603}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal2.jpg`}
         alt="Vista de letrero de de Chetumal. sus tonos son terrosos y una iguana esta posando sobre este letrero."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -79,97 +50,145 @@ export default function ExtenKnowsChetumal() {
       <SubtitleP>{languageData.ExtenKnowsChetumal.paragraphs2.Text1}</SubtitleP>
 
       <SubtitleP>
-        <BT>{languageData.ExtenKnowsChetumal.paragraphs2.BT}</BT> {" "}
+        <BT>{languageData.ExtenKnowsChetumal.paragraphs2.BT}</BT>{" "}
         {languageData.ExtenKnowsChetumal.paragraphs2.Text2}
       </SubtitleP>
 
       <SubtitleP>{languageData.ExtenKnowsChetumal.paragraphs2.Text3}</SubtitleP>
 
       <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.ExtenKnowsChetumal.section3Title}</TitleH2>
       </div>
 
       <SubtitleP>
-        {languageData.ExtenKnowsChetumal.subtitle3.Text1}
-        {" "}
-        <BT>
-          {languageData.ExtenKnowsChetumal.subtitle3.BT}
-        </BT>
+        {languageData.ExtenKnowsChetumal.subtitle3.Text1}{" "}
+        <BT>{languageData.ExtenKnowsChetumal.subtitle3.BT}</BT>
       </SubtitleP>
 
       <div className="my-2">
         <TitleH2>
-          {languageData.ExtenKnowsChetumal.Characteristics.Characteristic1.Title}
+          {
+            languageData.ExtenKnowsChetumal.Characteristics.Characteristic1
+              .Title
+          }
         </TitleH2>
       </div>
       <SubtitleP>
-        <BT>{languageData.ExtenKnowsChetumal.Characteristics.Characteristic1.Subtitle.BT}</BT>
-        {languageData.ExtenKnowsChetumal.Characteristics.Characteristic1.Subtitle.Text1}
+        <BT>
+          {
+            languageData.ExtenKnowsChetumal.Characteristics.Characteristic1
+              .Subtitle.BT
+          }
+        </BT>
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic1
+            .Subtitle.Text1
+        }
       </SubtitleP>
 
       {/* IMAGE 3 */}
       <img
-        src={imgBlogGeneric3.src}
-        // width={927}
-        // height={364}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal3.png`}
         alt="Vista de un pequeñe muelle solitario bajo el atardecer de tonos naranjas. El agua yace calmada y los árboles se ven a la distancia."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic1.Text1} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic1.Text2} </SubtitleP>
-
-      <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.Characteristics.Characteristic2.Title}
-        </TitleH2>
-      </div>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic2.Subtitle}</SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic2.Text1}</SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic2.Text2}</SubtitleP>
-
-      <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Title}
-        </TitleH2>
-      </div>
-
       <SubtitleP>
-        {languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Subtitle}
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic1.Text1
+        }{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic1.Text2
+        }{" "}
       </SubtitleP>
 
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text1} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text2} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text3} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text4} </SubtitleP>
+      <div className="my-2">
+        <TitleH2>
+          {
+            languageData.ExtenKnowsChetumal.Characteristics.Characteristic2
+              .Title
+          }
+        </TitleH2>
+      </div>
+      <SubtitleP>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic2
+            .Subtitle
+        }
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.Characteristics.Characteristic2.Text1}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.Characteristics.Characteristic2.Text2}
+      </SubtitleP>
 
       <div className="my-2">
         <TitleH2>
-          {languageData.ExtenKnowsChetumal.section4Title}
+          {
+            languageData.ExtenKnowsChetumal.Characteristics.Characteristic3
+              .Title
+          }
         </TitleH2>
       </div>
 
       <SubtitleP>
-        {languageData.ExtenKnowsChetumal.subtitle4.Text1} {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic3
+            .Subtitle
+        }
+      </SubtitleP>
+
+      <SubtitleP>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text1
+        }{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text2
+        }{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text3
+        }{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.Characteristics.Characteristic3.Text4
+        }{" "}
+      </SubtitleP>
+
+      <div className="my-2">
+        <TitleH2>{languageData.ExtenKnowsChetumal.section4Title}</TitleH2>
+      </div>
+
+      <SubtitleP>
+        {languageData.ExtenKnowsChetumal.subtitle4.Text1}{" "}
         <BT>{languageData.ExtenKnowsChetumal.subtitle4.BT}</BT>{" "}
         {languageData.ExtenKnowsChetumal.subtitle4.Text2}
       </SubtitleP>
 
       <SubtitleP>
-        <BT>{languageData.ExtenKnowsChetumal.paragraphs4.BT1}</BT>
-        {" "}
-        {languageData.ExtenKnowsChetumal.paragraphs4.Text1}
-        {" "}
-        <BT>{languageData.ExtenKnowsChetumal.paragraphs4.BT2}</BT>
-        {" "}
+        <BT>{languageData.ExtenKnowsChetumal.paragraphs4.BT1}</BT>{" "}
+        {languageData.ExtenKnowsChetumal.paragraphs4.Text1}{" "}
+        <BT>{languageData.ExtenKnowsChetumal.paragraphs4.BT2}</BT>{" "}
         {languageData.ExtenKnowsChetumal.paragraphs4.Text2}
       </SubtitleP>
 
-      <SubtitleP>
-        {languageData.ExtenKnowsChetumal.paragraphs4.Text3}
-      </SubtitleP>
+      <SubtitleP>{languageData.ExtenKnowsChetumal.paragraphs4.Text3}</SubtitleP>
 
       <SubtitleP>
         <BT className="text-black text-fs-16">
@@ -180,9 +199,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 4 */}
       <img
-        src={imgBlogGeneric4.src}
-        // width={925}
-        // height={488}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal4.jpg`}
         alt="Vista de un vistoso letrero de Chetumal ocupando todo el ancho de la toma. Un cielo despejado se ve en lo alto."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -203,9 +220,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 5 */}
       <img
-        src={imgBlogGeneric5.src}
-        // width={917}
-        // height={509}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal5.jpg`}
         alt="Vista de la sobria y elegante entrada del muse de la cultura maya en Chetumal."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -226,9 +241,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 6 */}
       <img
-        src={imgBlogGeneric6.src}
-        // width={913}
-        // height={589}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal6.png`}
         alt="Vista a contra picada de una piramide maya en la zona arqueológica de Dzibanché"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -249,9 +262,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 7 */}
       <img
-        src={imgBlogGeneric7.src}
-        // width={916}
-        // height={520}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal7.jpeg`}
         alt="Vista un muelle pequeño frente a la Laguna Milagros. El agua es azul turquesa y el cielo tiene agrupacines de nubes que decoran el cielo azul."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -265,9 +276,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 8 */}
       <img
-        src={imgBlogGeneric8.src}
-        // width={925}
-        // height={520}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal8.png`}
         alt="Vista de un cielo imponente reflejado en el mar sobre el que yace un muelle que se extiende hacia dentro del agua."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -279,7 +288,6 @@ export default function ExtenKnowsChetumal() {
         {languageData.ExtenKnowsChetumal.places.place9.Text1}
       </SubtitleP>
 
-
       <SubtitleP>
         <BT className="text-black text-fs-16">
           {languageData.ExtenKnowsChetumal.places.place10.Title}{" "}
@@ -289,9 +297,7 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 9 */}
       <img
-        src={imgBlogGeneric9.src}
-        // width={913}
-        // height={606}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal9.png`}
         alt="Vista de una ruina maya rodeada por un bosque espeso en la zona arqueológica de Kohunlich"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -312,69 +318,81 @@ export default function ExtenKnowsChetumal() {
 
       {/* IMAGE 10 */}
       <img
-        src={imgBlogGeneric10.src}
-        // width={785}
-        // height={715}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal10.png`}
         alt="Vista desde dentro del cenote Taj Mahal. El Sol entra por una apertura del cenote y deja caer algunos rayos de luz entre el denso color turquesa del agua."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.section5Title}
-        </TitleH2>
+        <TitleH2>{languageData.ExtenKnowsChetumal.section5Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.ExtenKnowsChetumal.subtitle5}
-      </SubtitleP>
+      <SubtitleP>{languageData.ExtenKnowsChetumal.subtitle5}</SubtitleP>
 
       {/* IMAGE 11 */}
       <img
-        src={imgBlogGeneric11.src}
-        // width={912}
-        // height={585}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal11.jpg`}
         alt="Vista a través de una ventana del aeropuerto por el cual se logra ver un avión estacionado."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
-      <TitleH2> {languageData.ExtenKnowsChetumal.travelerQuestions.Question1.Question} </TitleH2>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.travelerQuestions.Question1.Text1}</SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.travelerQuestions.Question1.Text2}</SubtitleP>
+      <TitleH2>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.travelerQuestions.Question1.Question
+        }{" "}
+      </TitleH2>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.travelerQuestions.Question1.Text1}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.travelerQuestions.Question1.Text2}
+      </SubtitleP>
 
-      <TitleH2> {languageData.ExtenKnowsChetumal.travelerQuestions.Question2.Question} </TitleH2>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.travelerQuestions.Question2.Text1}</SubtitleP>
+      <TitleH2>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.travelerQuestions.Question2.Question
+        }{" "}
+      </TitleH2>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.travelerQuestions.Question2.Text1}
+      </SubtitleP>
 
-      <TitleH2> {languageData.ExtenKnowsChetumal.travelerQuestions.Question3.Question} </TitleH2>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.travelerQuestions.Question3.Text1}</SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.travelerQuestions.Question3.Text2}</SubtitleP>
+      <TitleH2>
+        {" "}
+        {
+          languageData.ExtenKnowsChetumal.travelerQuestions.Question3.Question
+        }{" "}
+      </TitleH2>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.travelerQuestions.Question3.Text1}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.travelerQuestions.Question3.Text2}
+      </SubtitleP>
 
       <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.section6Title}
-        </TitleH2>
+        <TitleH2>{languageData.ExtenKnowsChetumal.section6Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.ExtenKnowsChetumal.subtitle6}
-      </SubtitleP>
+      <SubtitleP>{languageData.ExtenKnowsChetumal.subtitle6}</SubtitleP>
 
       {/* IMAGE 12 */}
       <img
-        src={imgBlogGeneric12.src}
-        // width={920}
-        // height={583}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal12.png`}
         alt="Vista a contra picada de un hotel de color blanco yeso. Una pequeña alberca con el agua calmada yace en el centro de la toma."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       <SubtitleP>
-        {languageData.ExtenKnowsChetumal.paragraphs6.Text1}
-        {" "}
-        <BT>
-          {languageData.ExtenKnowsChetumal.paragraphs6.BT}
-        </BT>
-        {" "}
+        {languageData.ExtenKnowsChetumal.paragraphs6.Text1}{" "}
+        <BT>{languageData.ExtenKnowsChetumal.paragraphs6.BT}</BT>{" "}
         {languageData.ExtenKnowsChetumal.paragraphs6.Text2}
       </SubtitleP>
 
@@ -393,93 +411,115 @@ export default function ExtenKnowsChetumal() {
       </ul>
 
       <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.section7Title}
-        </TitleH2>
+        <TitleH2>{languageData.ExtenKnowsChetumal.section7Title}</TitleH2>
       </div>
 
       <SubtitleP>
-        <BT>
-          {languageData.ExtenKnowsChetumal.subtitle7.BT}
-        </BT>
-        {" "}
+        <BT>{languageData.ExtenKnowsChetumal.subtitle7.BT}</BT>{" "}
         {languageData.ExtenKnowsChetumal.subtitle7.Text1}
       </SubtitleP>
 
-      <SubtitleP>
-        {languageData.ExtenKnowsChetumal.paragraphs7}
-      </SubtitleP>
+      <SubtitleP>{languageData.ExtenKnowsChetumal.paragraphs7}</SubtitleP>
 
       {/* IMAGE 13 */}
       <img
-        src={imgBlogGeneric13.src}
-        // width={920}
-        // height={529}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-knows-chetumal13.png`}
         alt="Vista de un restaurante frente al mar. La luz es cálida y el atardecer cae, hay algunos comensales en sus mesas."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       <SubtitleP>
-        <BT className="text-black text-fs-16">{languageData.ExtenKnowsChetumal.gastronomy.restaurant1.Title}</BT>
-        {" "}{languageData.ExtenKnowsChetumal.gastronomy.restaurant1.description}
+        <BT className="text-black text-fs-16">
+          {languageData.ExtenKnowsChetumal.gastronomy.restaurant1.Title}
+        </BT>{" "}
+        {languageData.ExtenKnowsChetumal.gastronomy.restaurant1.description}
       </SubtitleP>
 
       <SubtitleP>
-        <BT className="text-black text-fs-16">{languageData.ExtenKnowsChetumal.gastronomy.restaurant2.Title}</BT>
-        {" "}{languageData.ExtenKnowsChetumal.gastronomy.restaurant2.description}
+        <BT className="text-black text-fs-16">
+          {languageData.ExtenKnowsChetumal.gastronomy.restaurant2.Title}
+        </BT>{" "}
+        {languageData.ExtenKnowsChetumal.gastronomy.restaurant2.description}
       </SubtitleP>
 
       <SubtitleP>
-        <BT className="text-black text-fs-16">{languageData.ExtenKnowsChetumal.gastronomy.restaurant3.Title}</BT>
-        {" "}{languageData.ExtenKnowsChetumal.gastronomy.restaurant3.description}
+        <BT className="text-black text-fs-16">
+          {languageData.ExtenKnowsChetumal.gastronomy.restaurant3.Title}
+        </BT>{" "}
+        {languageData.ExtenKnowsChetumal.gastronomy.restaurant3.description}
       </SubtitleP>
 
       <SubtitleP>
-        <BT className="text-black text-fs-16">{languageData.ExtenKnowsChetumal.gastronomy.restaurant4.Title}</BT>
-        {" "}{languageData.ExtenKnowsChetumal.gastronomy.restaurant4.description}
+        <BT className="text-black text-fs-16">
+          {languageData.ExtenKnowsChetumal.gastronomy.restaurant4.Title}
+        </BT>{" "}
+        {languageData.ExtenKnowsChetumal.gastronomy.restaurant4.description}
       </SubtitleP>
 
       <SubtitleP>
-        <BT className="text-black text-fs-16">{languageData.ExtenKnowsChetumal.gastronomy.restaurant5.Title}</BT>
-        {" "}{languageData.ExtenKnowsChetumal.gastronomy.restaurant5.description}
+        <BT className="text-black text-fs-16">
+          {languageData.ExtenKnowsChetumal.gastronomy.restaurant5.Title}
+        </BT>{" "}
+        {languageData.ExtenKnowsChetumal.gastronomy.restaurant5.description}
       </SubtitleP>
 
       <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.section8Title}
-        </TitleH2>
+        <TitleH2>{languageData.ExtenKnowsChetumal.section8Title}</TitleH2>
       </div>
 
       <h4 className="text-fs-16 text-black m-b">
         {languageData.ExtenKnowsChetumal.faqs.question1.Title}
       </h4>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.faqs.question1.answers.Text1}</SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.faqs.question1.answers.Text2}</SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.faqs.question1.answers.Text1}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.faqs.question1.answers.Text2}
+      </SubtitleP>
 
       <h4 className="text-fs-16 text-black m-b">
         {languageData.ExtenKnowsChetumal.faqs.question2.Title}
       </h4>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.faqs.question2.answers.Text1} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.faqs.question2.answers.Text2} </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.faqs.question2.answers.Text1}{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.faqs.question2.answers.Text2}{" "}
+      </SubtitleP>
 
       <h4 className="text-fs-16 text-black m-b">
         {languageData.ExtenKnowsChetumal.faqs.question3.Title}
       </h4>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.faqs.question3.answers.Text1} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.faqs.question3.answers.Text1} </SubtitleP>
-
-      <div className="my-2">
-        <TitleH2>
-          {languageData.ExtenKnowsChetumal.section9Title}
-        </TitleH2>
-      </div>
       <SubtitleP>
-        {languageData.ExtenKnowsChetumal.subtitle9}
+        {" "}
+        {languageData.ExtenKnowsChetumal.faqs.question3.answers.Text1}{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.faqs.question3.answers.Text1}{" "}
       </SubtitleP>
 
-      <SubtitleP> {languageData.ExtenKnowsChetumal.paragraphs9.Text1} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.paragraphs9.Text2} </SubtitleP>
-      <SubtitleP> {languageData.ExtenKnowsChetumal.paragraphs9.Text3} </SubtitleP>
+      <div className="my-2">
+        <TitleH2>{languageData.ExtenKnowsChetumal.section9Title}</TitleH2>
+      </div>
+      <SubtitleP>{languageData.ExtenKnowsChetumal.subtitle9}</SubtitleP>
+
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.paragraphs9.Text1}{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.paragraphs9.Text2}{" "}
+      </SubtitleP>
+      <SubtitleP>
+        {" "}
+        {languageData.ExtenKnowsChetumal.paragraphs9.Text3}{" "}
+      </SubtitleP>
     </div>
   );
-};
+}

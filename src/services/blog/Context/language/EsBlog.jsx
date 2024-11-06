@@ -1907,7 +1907,7 @@ export const EsBlog = {
   },
 
   DiscoverCuernavaca: {
-    mainTitle: "Descubre cuál es el mejor hotel dentro de Disney Orlando",
+    mainTitle: "Descubre cuál es el mejor hotel en Cuernavaca",
     description:
       "Si deseas encontrar el mejor hotel en Cuernavaca, puede que existan varias opciones que capten tu atención. Sin embargo, un establecimiento destaca por encima de los demás por su exquisita combinación de lujo, historia y servicio personalizado: el Anticavilla Restaurant, Hotel & Spa. ",
     //WHEN A BOLD IS NEEDED USE AN OBJECT.

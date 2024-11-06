@@ -9,9 +9,6 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-best-hotel-ixtapa.jpg";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-best-hotel-ixtapa2.jpg";
-
 export default function FindBestHotelIxtapa() {
   const { languageData } = useContext(LanguageContext);
 
@@ -30,9 +27,7 @@ export default function FindBestHotelIxtapa() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={584}
-          // height={389}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-best-hotel-ixtapa.jpg`}
           alt="Vista de hotel frente al mar turquesa durante un día despejado y soleado."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -55,9 +50,7 @@ export default function FindBestHotelIxtapa() {
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={581}
-          // height={363}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-best-hotel-ixtapa2.jpg`}
           alt="Vista del imponente hotel Barceló Ixtapa- All Inclusive."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />

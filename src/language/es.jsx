@@ -221,6 +221,7 @@ export const es = {
     subtitleKeep:
       "No te detengas aquí. Descubre más destinos emocionantes y planifica tu próxima aventura.",
     btnBack: "Volver al inicio",
+    goPay:"Ir a pagar",
 
     hotel: {
       titleRecommedation: "Alojamientos que pueden gustarte",

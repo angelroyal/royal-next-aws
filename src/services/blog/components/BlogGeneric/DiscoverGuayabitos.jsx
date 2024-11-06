@@ -9,85 +9,59 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/discover-guayabitos1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/discover-guayabitos2.png";
-
 export default function DiscoverGuayabitos() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col gap-3">
       {/* START BLOG */}
       <div className="mb-6">
-        <TitleH1>
-          {languageData.DiscoverGuayabitos.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.DiscoverGuayabitos.mainTitle}</TitleH1>
       </div>
 
       <SubtitleP>
-        <BT>
-          {languageData.DiscoverGuayabitos.subtitle1.BT}
-        </BT>{" "}
+        <BT>{languageData.DiscoverGuayabitos.subtitle1.BT}</BT>{" "}
         {languageData.DiscoverGuayabitos.subtitle1.Text1}
       </SubtitleP>
 
       {/* IMAGE 1 */}
 
       <img
-        src={imgBlogGeneric1.src}
-        // width={930}
-        // height={508}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-guayabitos1.png`}
         alt="Vista del mejor hotel todo incluido en Guayabitos, intoresco rincón del Pacífico mexicano."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.paragraphs1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.paragraphs1}</SubtitleP>
 
       {/* ASK */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.DiscoverGuayabitos.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverGuayabitos.section2Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.subtitle2}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.subtitle2}</SubtitleP>
 
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={924}
-        // height={484}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-guayabitos2.png`}
         alt="Vista de la entrada principal del hotel  Decameron Los Cocos"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       <SubtitleP>
-        {languageData.DiscoverGuayabitos.paragraphs2.Text1} {" "}
-        <BT>
-          {languageData.DiscoverGuayabitos.paragraphs2.BT}
-        </BT>.
+        {languageData.DiscoverGuayabitos.paragraphs2.Text1}{" "}
+        <BT>{languageData.DiscoverGuayabitos.paragraphs2.BT}</BT>.
       </SubtitleP>
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.DiscoverGuayabitos.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverGuayabitos.section3Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.subtitle3}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.subtitle3}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.paragraphs3}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.paragraphs3}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -127,20 +101,14 @@ export default function DiscoverGuayabitos() {
         </li>
       </ul>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.paragraphsbottom3}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.paragraphsbottom3}</SubtitleP>
 
       {/* WHAT ARE THE FACILITIES */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.DiscoverGuayabitos.section4Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverGuayabitos.section4Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.subtitle4}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.subtitle4}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -194,9 +162,7 @@ export default function DiscoverGuayabitos() {
         </li>
       </ul>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.paragraphsbottom4}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.paragraphsbottom4}</SubtitleP>
 
       {/* REVIEWS */}
       <div className="my-4">
@@ -205,26 +171,18 @@ export default function DiscoverGuayabitos() {
 
       {/* END BLOG */}
       <div className="my-2">
-        <TitleH2>
-          {languageData.DiscoverGuayabitos.section5Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverGuayabitos.section5Title}</TitleH2>
       </div>
 
       <SubtitleP>
         {languageData.DiscoverGuayabitos.subtitle5.Text1}{" "}
-        <BT>
-          {languageData.DiscoverGuayabitos.subtitle5.BT}
-        </BT>{" "}
+        <BT>{languageData.DiscoverGuayabitos.subtitle5.BT}</BT>{" "}
         {languageData.DiscoverGuayabitos.subtitle5.Text2}
       </SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.paragraphs5.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.paragraphs5.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverGuayabitos.paragraphs5.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverGuayabitos.paragraphs5.Text2}</SubtitleP>
     </div>
   );
-};
+}

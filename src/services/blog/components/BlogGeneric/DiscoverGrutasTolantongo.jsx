@@ -9,11 +9,7 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/discover-grutas-de-tolantongo.jpg";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/discover-grutas-de-tolantongo-2.jpg";
-
 export default function DiscoverGrutasTolantongo() {
-
   const { languageData } = useContext(LanguageContext);
 
   // ARRAY TABLE BLOG
@@ -49,25 +45,19 @@ export default function DiscoverGrutasTolantongo() {
     <div className="flex flex-col gap-3">
       {/* START BLOG */}
       <div className="mb-6">
-        <TitleH1>
-          {languageData.DiscoverGrutasTolantongo.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.DiscoverGrutasTolantongo.mainTitle}</TitleH1>
       </div>
       <SubtitleP>
         {languageData.DiscoverGrutasTolantongo.subtitle1.Text1}
-       <BT>
-        {languageData.DiscoverGrutasTolantongo.subtitle1.BT}
-       </BT>
-       {languageData.DiscoverGrutasTolantongo.subtitle1.Text2}
+        <BT>{languageData.DiscoverGrutasTolantongo.subtitle1.BT}</BT>
+        {languageData.DiscoverGrutasTolantongo.subtitle1.Text2}
       </SubtitleP>
       {/* IMAGE 1 */}
 
       <img
-        src={imgBlogGeneric1.src}
-        // width={587}
-        // height={391}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-grutas-de-tolantongo.jpg`}
         alt="Vista de Grutas Tolantongo en el cual hay algunas personas dentro del agua pasando un momento agradable."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
       <SubtitleP>
@@ -87,9 +77,7 @@ export default function DiscoverGrutasTolantongo() {
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={591}
-        // height={392}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-grutas-de-tolantongo-2.jpg`}
         alt="Vista de un cuarto de hotel acogedor en el cual se observan 2 camas y una miniatura de la vista del balcón."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -102,9 +90,7 @@ export default function DiscoverGrutasTolantongo() {
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.DiscoverGrutasTolantongo.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverGrutasTolantongo.section3Title}</TitleH2>
       </div>
 
       <SubtitleP>
@@ -113,18 +99,23 @@ export default function DiscoverGrutasTolantongo() {
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
         <li>
-          <b className="text-black text-fs-16">{languageData.DiscoverGrutasTolantongo.list1.textBold1}</b>
+          <b className="text-black text-fs-16">
+            {languageData.DiscoverGrutasTolantongo.list1.textBold1}
+          </b>
           {languageData.DiscoverGrutasTolantongo.list1.textNormal1}
         </li>
         <li>
-          <b className="text-black text-fs-16">{languageData.DiscoverGrutasTolantongo.list1.textBold2}</b>
+          <b className="text-black text-fs-16">
+            {languageData.DiscoverGrutasTolantongo.list1.textBold2}
+          </b>
           {languageData.DiscoverGrutasTolantongo.list1.textNormal2}
         </li>
         <li>
-          <b className="text-black text-fs-16">{languageData.DiscoverGrutasTolantongo.list1.textBold3}</b>
+          <b className="text-black text-fs-16">
+            {languageData.DiscoverGrutasTolantongo.list1.textBold3}
+          </b>
           {languageData.DiscoverGrutasTolantongo.list1.textNormal3}
         </li>
-        
       </ul>
 
       <SubtitleP>
@@ -145,19 +136,27 @@ export default function DiscoverGrutasTolantongo() {
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
         <li>
-          <b className="text-black text-fs-16">{languageData.DiscoverGrutasTolantongo.list2.textBold1}</b>
+          <b className="text-black text-fs-16">
+            {languageData.DiscoverGrutasTolantongo.list2.textBold1}
+          </b>
           {languageData.DiscoverGrutasTolantongo.list2.textNormal1}
         </li>
         <li>
-          <b className="text-black text-fs-16">{languageData.DiscoverGrutasTolantongo.list2.textBold2}</b>
+          <b className="text-black text-fs-16">
+            {languageData.DiscoverGrutasTolantongo.list2.textBold2}
+          </b>
           {languageData.DiscoverGrutasTolantongo.list2.textNormal3}
         </li>
         <li>
-          <b className="text-black text-fs-16">{languageData.DiscoverGrutasTolantongo.list2.textBold3}</b>
+          <b className="text-black text-fs-16">
+            {languageData.DiscoverGrutasTolantongo.list2.textBold3}
+          </b>
           {languageData.DiscoverGrutasTolantongo.list2.textNormal3}
         </li>
         <li>
-          <b className="text-black text-fs-16">{languageData.DiscoverGrutasTolantongo.list2.textBold4}</b>
+          <b className="text-black text-fs-16">
+            {languageData.DiscoverGrutasTolantongo.list2.textBold4}
+          </b>
           {languageData.DiscoverGrutasTolantongo.list2.textNormal4}
         </li>
       </ul>
@@ -180,7 +179,7 @@ export default function DiscoverGrutasTolantongo() {
         {languageData.DiscoverGrutasTolantongo.subtitle5.Text2}
       </SubtitleP>
       <SubtitleP>
-       {languageData.DiscoverGrutasTolantongo.paragraphs5.Text1}
+        {languageData.DiscoverGrutasTolantongo.paragraphs5.Text1}
       </SubtitleP>
       <SubtitleP>
         {languageData.DiscoverGrutasTolantongo.paragraphs5.Text2}

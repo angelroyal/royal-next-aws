@@ -9,95 +9,63 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/knows-cayo-cuba1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/knows-cayo-cuba2.png";
-
 export default function KnowsCayoCuba() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col gap-3">
       {/* START BLOG */}
       <div className="mb-6">
-        <TitleH1>
-          {languageData.KnowsCayoCuba.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.KnowsCayoCuba.mainTitle}</TitleH1>
       </div>
 
       <SubtitleP>
         {languageData.KnowsCayoCuba.subtitle1.Text1}
-        <BT>
-          {languageData.KnowsCayoCuba.subtitle1.BT}
-        </BT>{" "}
+        <BT>{languageData.KnowsCayoCuba.subtitle1.BT}</BT>{" "}
         {languageData.KnowsCayoCuba.subtitle1.Text2}
       </SubtitleP>
 
       {/* IMAGE 1 */}
 
       <img
-        src={imgBlogGeneric1.src}
-        // width={916}
-        // height={595}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-cayo-cuba1.png`}
         alt="Vista hacia el mar en el mejor hotel en Cayo Santa María "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs1.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs1.Text1}</SubtitleP>
 
       {/* ASK */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.KnowsCayoCuba.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsCayoCuba.section2Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.subtitle2}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.subtitle2}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs2.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs2.Text1}</SubtitleP>
 
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={918}
-        // height={601}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-cayo-cuba2.png`}
         alt="Entrada elegante del hotel Royalton Cayo Santa María, rodeada de vegetación tropical."
-        className="rounded-lg h-[437px] object-cover w-full my-6"
+        className="rounded-lg h-[437px] object-cover w-full my-6 object-bottom"
       />
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs2.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs2.Text2}</SubtitleP>
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.KnowsCayoCuba.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsCayoCuba.section3Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.subtitle3}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.subtitle3}</SubtitleP>
+
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs3.Text1}</SubtitleP>
 
       <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs3.Text1}
-      </SubtitleP>
-
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs3.Text2}
-        {" "}
-        <BT>
-          {languageData.KnowsCayoCuba.paragraphs3.BT}
-        </BT>
-        {" "}
+        {languageData.KnowsCayoCuba.paragraphs3.Text2}{" "}
+        <BT>{languageData.KnowsCayoCuba.paragraphs3.BT}</BT>{" "}
         {languageData.KnowsCayoCuba.paragraphs3.Text3}
       </SubtitleP>
 
@@ -146,24 +114,16 @@ export default function KnowsCayoCuba() {
         </li>
       </ul>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphsbottom3}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphsbottom3}</SubtitleP>
 
       {/* WHAT ARE THE FACILITIES */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.KnowsCayoCuba.section4Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsCayoCuba.section4Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.subtitle4}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.subtitle4}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs4.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs4.Text1}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -217,29 +177,19 @@ export default function KnowsCayoCuba() {
 
       {/* END BLOG */}
       <div className="my-2">
-        <TitleH2>
-          {languageData.KnowsCayoCuba.section5Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsCayoCuba.section5Title}</TitleH2>
       </div>
 
       <SubtitleP>
         {languageData.KnowsCayoCuba.subtitle5.Text1}
-        <BT>
-          {languageData.KnowsCayoCuba.subtitle5.BT}
-        </BT>
+        <BT>{languageData.KnowsCayoCuba.subtitle5.BT}</BT>
       </SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs5.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs5.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs5.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs5.Text2}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsCayoCuba.paragraphs5.Text3}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsCayoCuba.paragraphs5.Text3}</SubtitleP>
     </div>
   );
-};
+}

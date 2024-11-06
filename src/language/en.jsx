@@ -221,6 +221,7 @@ export const en = {
     subtitleKeep:
       "Don't stop here. Discover more exciting destinations and plan your next adventure.",
     btnBack: "Back to the beginning",
+    goPay:"Go pay",
 
     hotel: {
       titleRecommedation: "Accommodations you might like",

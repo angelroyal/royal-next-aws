@@ -8,18 +8,6 @@ import TitleH1 from "./General/TitleH1";
 import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/exten-guide-catemaco1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/exten-guide-catemaco2.png";
-import imgBlogGeneric3 from "@/assets/img/BlogGeneric/exten-guide-catemaco3.png";
-import imgBlogGeneric4 from "@/assets/img/BlogGeneric/exten-guide-catemaco4.png";
-import imgBlogGeneric5 from "@/assets/img/BlogGeneric/exten-guide-catemaco5.png";
-import imgBlogGeneric6 from "@/assets/img/BlogGeneric/exten-guide-catemaco6.png";
-import imgBlogGeneric7 from "@/assets/img/BlogGeneric/exten-guide-catemaco7.png";
-import imgBlogGeneric8 from "@/assets/img/BlogGeneric/exten-guide-catemaco8.png";
-import imgBlogGeneric9 from "@/assets/img/BlogGeneric/exten-guide-catemaco9.png";
-import imgBlogGeneric10 from "@/assets/img/BlogGeneric/exten-guide-catemaco10.png";
-import imgBlogGeneric11 from "@/assets/img/BlogGeneric/exten-guide-catemaco11.png";
-
 export default function ExtenGuideCatemaco() {
 
   const { languageData } = useContext(LanguageContext);
@@ -41,9 +29,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 1 */}
       <img
-        src={imgBlogGeneric1.src}
-        // width={917}
-        // height={568}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco1.png`}
         alt="Vista del atardecer de Catemaco, Veracruz, México"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -77,9 +63,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 2 */}
       <img
-        src={imgBlogGeneric2.src}
-        // width={923}
-        // height={484}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco2.png`}
         alt="Puerto del pueblo de catemaco, ubicado en veracruz"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -112,9 +96,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 3 */}
       <img
-        src={imgBlogGeneric3.src}
-        // width={917}
-        // height={569}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco3.png`}
         alt="Vista de la selva tropical y la cascada de Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -172,9 +154,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 4 */}
       <img
-        src={imgBlogGeneric4.src}
-        // width={919}
-        // height={553}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco4.png`}
         alt="Ritual en la calle de la ciudad de brujos en México"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -252,9 +232,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 5 */}
       <img
-        src={imgBlogGeneric5.src}
-        // width={918}
-        // height={593}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco5.png`}
         alt=" Lago de Catemaco, un cuerpo de agua dulce"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -285,9 +263,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 6 */}
       <img
-        src={imgBlogGeneric6.src}
-        // width={926}
-        // height={488}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco6.png`}
         alt="Nanciyaga, santuario ecológico de catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -326,9 +302,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 7 */}
       <img
-        src={imgBlogGeneric7.src}
-        // width={931}
-        // height={511}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco7.png`}
         alt="Playa Escondida con sus arenas blancas y aguas tranquilas de catemaco."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -351,9 +325,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 8 */}
       <img
-        src={imgBlogGeneric8.src}
-        // width={925}
-        // height={578}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco8.png`}
         alt="Reserva Ecológica La Otra Opción de catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -368,9 +340,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 9 */}
       <img
-        src={imgBlogGeneric9.src}
-        // width={921}
-        // height={480}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco9.png`}
         alt="Laguna Poza Reyn, lugar mágico en Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -405,9 +375,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 10 */}
       <img
-        src={imgBlogGeneric10.src}
-        // width={915}
-        // height={555}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco10.png`}
         alt="Hoteles acogedores donde puedes hospedarte en Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -464,9 +432,7 @@ export default function ExtenGuideCatemaco() {
 
       {/* IMAGE 11 */}
       <img
-        src={imgBlogGeneric11.src}
-        // width={914}
-        // height={573}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/exten-guide-catemaco11.png`}
         alt="Platillo de la gastronomía de Catemaco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />

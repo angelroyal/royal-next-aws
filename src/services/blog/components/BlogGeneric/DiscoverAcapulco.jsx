@@ -9,87 +9,59 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/discover-acapulco1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/discover-acapulco2.png";
-
 export default function DiscoverAcapulco() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col gap-3">
       {/* START BLOG */}
       <div className="mb-6">
-        <TitleH1>
-          {languageData.DiscoverAcapulco.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.DiscoverAcapulco.mainTitle}</TitleH1>
       </div>
 
       <SubtitleP>
-        {languageData.DiscoverAcapulco.subtitle1.Text1} {" "}
-        <BT>
-          {languageData.DiscoverAcapulco.subtitle1.BT} {" "}
-        </BT>
+        {languageData.DiscoverAcapulco.subtitle1.Text1}{" "}
+        <BT>{languageData.DiscoverAcapulco.subtitle1.BT} </BT>
         {languageData.DiscoverAcapulco.subtitle1.Text2}
       </SubtitleP>
 
       {/* IMAGE 1 */}
 
       <img
-        src={imgBlogGeneric1.src}
-        // width={917}
-        // height={556}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-acapulco1.jpg`}
         alt="Piscinas del mejor hotel de Acapulco con vistas panorámicas al mar, rodeadas de áreas de descanso."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
-      <SubtitleP>
-        {languageData.DiscoverAcapulco.paragraphs1.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.paragraphs1.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverAcapulco.paragraphs1.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.paragraphs1.Text1}</SubtitleP>
 
       {/* ASK */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.DiscoverAcapulco.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverAcapulco.section2Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.DiscoverAcapulco.subtitle2}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.subtitle2}</SubtitleP>
 
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={919}
-        // height={578}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-acapulco2.png`}
         alt="Entrada del hotel Encanto Acapulco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
-      <SubtitleP>
-        {languageData.DiscoverAcapulco.paragraphs2.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.paragraphs2.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.DiscoverAcapulco.paragraphs2.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.paragraphs2.Text2}</SubtitleP>
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.DiscoverAcapulco.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverAcapulco.section3Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.DiscoverAcapulco.subtitle3}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.subtitle3}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -131,18 +103,14 @@ export default function DiscoverAcapulco() {
 
       {/* WHAT ARE THE FACILITIES */}
       <div className="mt-4">
-        <TitleH2>
-        {languageData.DiscoverAcapulco.section4Title}
-        </TitleH2>
+        <TitleH2>{languageData.DiscoverAcapulco.section4Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-      {languageData.DiscoverAcapulco.subtitle4}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.subtitle4}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
-      <li>
+        <li>
           <BT className="text-black text-fs-16">
             {languageData.DiscoverAcapulco.list2.textBold1}{" "}
           </BT>
@@ -185,22 +153,14 @@ export default function DiscoverAcapulco() {
 
       {/* END BLOG */}
       <div className="my-2">
-        <TitleH2>
-        {languageData.DiscoverAcapulco.section5Title}
-          </TitleH2>
+        <TitleH2>{languageData.DiscoverAcapulco.section5Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-      {languageData.DiscoverAcapulco.subtitle5}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.subtitle5}</SubtitleP>
 
-      <SubtitleP>
-      {languageData.DiscoverAcapulco.paragraphs5.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.paragraphs5.Text1}</SubtitleP>
 
-      <SubtitleP>
-      {languageData.DiscoverAcapulco.paragraphs5.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.DiscoverAcapulco.paragraphs5.Text2}</SubtitleP>
     </div>
   );
-};
+}
