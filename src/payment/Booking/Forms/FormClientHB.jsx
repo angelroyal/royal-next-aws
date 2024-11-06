@@ -8,8 +8,6 @@ export default function FormClientHB({ dataItinerary }) {
   const { languageData } = useContext(LanguageContext);
   const { roomHolders, setRoomHolders } = useContext(PaymentContext);
 
-  // console.log(roomHolders);
-
   const HotelOrangeIcon = `${process.env.NEXT_PUBLIC_URL}icons/hotel/hotel-o.svg`;
 
   const hbItineraries = dataItinerary.filter(itinerary => itinerary.type === "hotel");
