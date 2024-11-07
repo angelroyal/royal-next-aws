@@ -1324,6 +1324,11 @@ export const es = {
     invalidEmail: "Correo electrónico no válido",
   },
 
+  pending:{
+    titlePending:"Estamos procesando tu pago",
+    subtitlePending:"Este proceso puede tardar algunas horas. Te notificaremos en cuanto tu reservación sea confirmada. Gracias por tu paciencia y comprensión.",
+  },
+
   confirmation: {
     titleConfirmation: "Reservación confirmada",
     subtitleConfirmation:
