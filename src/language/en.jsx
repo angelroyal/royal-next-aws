@@ -1262,7 +1262,7 @@ export const en = {
   },
 
   booking: {
-    titleVacations: "Your vacation is (almost) ready",
+    titleVacations: "You're one step away from completing your reservation",
     subtitleComplete: "Complete the data and finalize your purchase.",
     textBooking: "Summary of your booking",
     taxes: "Taxes",

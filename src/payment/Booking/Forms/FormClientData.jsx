@@ -70,9 +70,9 @@ export default function FormClientData() {
 
   return (
     <div className="w-full bg-white rounded-2xl pt-[2rem] pb-[3rem] px-[1.8rem]">
-      <div className="m-b text-fs-20 text-black">
+      {/* <div className="m-b text-fs-20 text-black">
         {languageData.booking.clientData.titleForm}
-      </div>
+      </div> */}
 
       <div className="flex justify-between gap-[1.5rem] items-end max-md:flex-col">
         <div className="flex flex-col w-full h-full">

@@ -1269,7 +1269,7 @@ export const es = {
   },
 
   booking: {
-    titleVacations: "Tus vacaciones están (casi) listas",
+    titleVacations: "Estás a un paso de completar tu reservación",
     subtitleComplete: "Completa los datos y finaliza tu compra.",
     textBooking: "Resumen de tu reservación",
     taxes: "Impuestos",
