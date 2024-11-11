@@ -13,7 +13,7 @@ import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 export function ItineraryCardTour({ tourInfo }) {
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
-  const { removeIsLoader, setRemoveIsLoader } = useContext(BookingContext);
+  const { setRemoveIsLoader } = useContext(BookingContext);
   const { setItinerary, fetchData } = useCartAxios();
 
   const cancelRemove = () => {
