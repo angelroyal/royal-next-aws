@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { useContext } from "react";
 
 import { BookingContext } from "@/payment/context/BookingContext";
-import Image from "next/image";
 
 export function RemoveTour({ setIsRemove }) {
   const { removeIsLoader } = useContext(BookingContext);

@@ -1,7 +1,7 @@
 import { Baggage } from "./Baggages";
+import { TripeType } from "./TripeType";
 import { PriceTransport } from "./PriceTransport";
 import { TitleTransport } from "./TitleTransport";
-import { TripeType } from "./TripeType";
 
 export function ContainerInformation({ transportInfo }) {
   return (

@@ -22,7 +22,7 @@ export function ListCardsItinerary({ dataItinerary }) {
               <ContainerCardPayment>
                 {/* HOTEL INFORMATION */}
                 {itinerary.type == "hotel" && (
-                    <ItineraryCardHotel hotelInfo={itinerary} />
+                  <ItineraryCardHotel hotelInfo={itinerary} />
                 )}
 
                 {/* TOUR INFORMATION */}
@@ -33,7 +33,7 @@ export function ListCardsItinerary({ dataItinerary }) {
                 {/* TRANSPORT INFORMATION */}
                 {(itinerary.type == "transport" ||
                   itinerary.type == "transportation") && (
-                    <ItineraryCardTransport transportInfo={itinerary} />
+                  <ItineraryCardTransport transportInfo={itinerary} />
                 )}
               </ContainerCardPayment>
             </div>

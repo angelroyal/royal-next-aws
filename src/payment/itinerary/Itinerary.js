@@ -53,7 +53,7 @@ export default function Itinerary(props) {
       <ListCardsItinerary dataItinerary={dataItinerary}/>
 
       {/* CARDS RETURN SHOW */}
-      <CardsItinerary dataItinerary={dataItinerary} />
+      {/* <CardsItinerary dataItinerary={dataItinerary} /> */}
 
       {/* ALERT UPDATE PRICES */}
       <AlertUpdate priceChanged={dataItinerary.priceChanged} />

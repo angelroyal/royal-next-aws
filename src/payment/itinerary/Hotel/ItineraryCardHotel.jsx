@@ -80,6 +80,7 @@ export function ItineraryCardHotel({ hotelInfo }) {
         )}
       </div>
 
+      {/* CARD REMOVE HOTEL */}
       <RemoveHotel
         hotelInfo={hotelInfo}
         isRemoveHotel={isRemoveHotel}
@@ -87,6 +88,7 @@ export function ItineraryCardHotel({ hotelInfo }) {
         removeReservation={removeReservation}
       />
 
+      {/* LOADER LINE */}
       {loader && <LinearProgress />}
     </>
   );

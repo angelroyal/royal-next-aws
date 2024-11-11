@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 
-import LanguageContext from "@/language/LanguageContext";
 import { Accordion } from "./Accordion";
+import LanguageContext from "@/language/LanguageContext";
 
 export function RoomsDetails({ hotelInfo }) {
   const { languageData } = useContext(LanguageContext);

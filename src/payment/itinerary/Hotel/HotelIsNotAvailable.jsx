@@ -1,9 +1,10 @@
+import { useContext } from "react";
+
+import { Occupancy } from "./Occupancy";
+import ImageGet from "@/utils/others/ImageGet";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
-import ImageGet from "@/utils/others/ImageGet";
-import { useContext } from "react";
 import { PrinceAndTaxesHotel } from "./PrinceAndTaxesHotel";
-import { Occupancy } from "./Occupancy";
 
 export function HotelIsNotAvailable({ hotelInfo }) {
   const { languageData, language } = useContext(LanguageContext);

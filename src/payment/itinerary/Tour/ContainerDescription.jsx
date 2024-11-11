@@ -1,7 +1,7 @@
-import { TitleTour } from "./TitleTour";
-import { Description } from "./Description";
 import { Duration } from "./Duration";
+import { TitleTour } from "./TitleTour";
 import { PriceTour } from "./PriceTour";
+import { Description } from "./Description";
 
 export function ContainerDescription({ tourInfo }) {
   return (

@@ -1,5 +1,5 @@
-import { CenterInformation } from "./CenterInformation";
 import { RightInformation } from "./RightInformation";
+import { CenterInformation } from "./CenterInformation";
 
 export function DescriptionTourDesktop({ tourInfo }) {
   return (

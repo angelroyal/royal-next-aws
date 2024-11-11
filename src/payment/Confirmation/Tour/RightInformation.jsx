@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import LanguageContext from "@/language/LanguageContext";
-import { AlertPyC } from "@/components/Alerts/LottiePay/AlertPyC";
+
 import { PyCTour } from "./PyCTour";
+import LanguageContext from "@/language/LanguageContext";
 
 export function RightInformation({ tourInfo }) {
   const { languageData } = useContext(LanguageContext);

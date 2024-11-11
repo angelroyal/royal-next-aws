@@ -1,5 +1,6 @@
-import LanguageContext from "@/language/LanguageContext";
 import { useContext } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
 
 export function PriceAndPyC({ transportInfo }) {
   const { languageData } = useContext(LanguageContext);

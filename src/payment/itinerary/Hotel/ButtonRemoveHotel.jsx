@@ -1,4 +1,5 @@
 import { useContext } from "react";
+
 import { BookingContext } from "@/payment/context/BookingContext";
 
 export function ButtonRemoveHotel({hotelInfo, setIsRemoveHotel}) {

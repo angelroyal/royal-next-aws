@@ -1,5 +1,6 @@
-import LanguageContext from "@/language/LanguageContext";
 import { useContext } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
 
 export function RoomsInformation({ hotelInfo }) {
   const { languageData } = useContext(LanguageContext);

@@ -1,6 +1,7 @@
-import LanguageContext from "@/language/LanguageContext";
 import Image from "next/image";
 import { useContext } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
 
 export function TripeType({ transportInfo }) {
   const { languageData } = useContext(LanguageContext);

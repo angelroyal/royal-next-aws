@@ -3,11 +3,11 @@ import { useContext, useState } from "react";
 import { RemoveTour } from "./RemoveTour";
 import { TourImages } from "./TourImages";
 import { MobileInfo } from "./MobileInfo";
-import { ContainerDescription } from "./ContainerDescription";
 import { ModalRemoveTour } from "./ModalRemoveTour";
+import { useCartAxios } from "@/components/Cart/CartAxios";
+import { ContainerDescription } from "./ContainerDescription";
 import { BookingContext } from "@/payment/context/BookingContext";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
-import { useCartAxios } from "@/components/Cart/CartAxios";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 
 export function ItineraryCardTour({ tourInfo }) {

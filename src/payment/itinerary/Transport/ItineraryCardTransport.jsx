@@ -7,8 +7,8 @@ import { useCartAxios } from "@/components/Cart/CartAxios";
 import { ContainerInformation } from "./ContainerInformation";
 import { BookingContext } from "@/payment/context/BookingContext";
 import { ContainerRemoveTransport } from "./ContainerRemoveTransport";
-import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
+import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
 
 export function ItineraryCardTransport({ transportInfo }) {
   const [loader, setLoader] = useState(false);

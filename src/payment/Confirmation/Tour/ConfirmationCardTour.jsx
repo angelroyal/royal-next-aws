@@ -1,5 +1,5 @@
-import { DescriptionTourDesktop } from "./DescriptionTourDesktop";
 import { DescriptionTourMobile } from "./DescriptionTourMobile";
+import { DescriptionTourDesktop } from "./DescriptionTourDesktop";
 
 export function ConfirmationCardTour({ tourInfo }) {
   return (
