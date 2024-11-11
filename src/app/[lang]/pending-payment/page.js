@@ -11,8 +11,6 @@ import BannerPaymentPending from "@/payment/Pending/bannerPaymentPending";
 import { Container } from "@/config/Others/Container";
 import BannerDiscoverPossibilities from "@/components/bannerJsx/bannerDiscoverPossibilities";
 import DetailReservationPending from "@/payment/Pending/DetailReservationPending";
-import FormPaymentSkeleton from "@/components/Skeleton/FormPaymentSkeleton";
-import PendingPaymentSkeleton from "@/components/Skeleton/PendingPaymentSkeleton";
 
 export default function page() {
   try {
@@ -29,7 +27,6 @@ export default function page() {
                   <DetailReservationPending />
                   <BannerDiscoverPossibilities />
                 </Container>
-
                 <FooterT />
               </CartAxiosProvider>
             </TokenProvider>
