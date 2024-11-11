@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FormPaymentSkeleton() {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-6 mt-10">
       <div className="flex flex-col gap-3  w-[70%] max-lg:w-full">
         {/* TITLE AND LOGO */}
         <div className="flex gap-4">

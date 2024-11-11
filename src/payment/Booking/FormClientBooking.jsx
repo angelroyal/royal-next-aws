@@ -2,16 +2,6 @@
 
 import React, { useState, useEffect, useContext } from "react";
 
-import Booking from "./Booking";
-import EmptyItinerary from "../itinerary/Alerts/EmptyItinerary";
-import DetailsPayment from "../itinerary/others/DetailsPayment";
-import { Container } from "@/config/Others/Container";
-import SkeletonPay from "@/utils/skeleton/SkeletonPay";
-import LanguageContext from "@/language/LanguageContext";
-import { useCartAxios } from "@/components/Cart/CartAxios";
-import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
-import { fetchDataItinerary } from "../Api/fetchDataItinerary";
-import { DialogPaymentItinerary } from "../Utils/DialogPaymentItinerary";
 import {
   loadOpenpayScripts,
   unloadOpenpayScripts,
@@ -20,6 +10,17 @@ import {
   loadConektaScripts,
   unloadConektaScripts,
 } from "../config/conektaScripts";
+
+import Booking from "./Booking";
+import { Container } from "@/config/Others/Container";
+import LanguageContext from "@/language/LanguageContext";
+import { useCartAxios } from "@/components/Cart/CartAxios";
+import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
+import { fetchDataItinerary } from "../Api/fetchDataItinerary";
+import DetailsPayment from "../itinerary/others/DetailsPayment";
+import EmptyItinerary from "../itinerary/Alerts/EmptyItinerary";
+import { DialogPaymentItinerary } from "../Utils/DialogPaymentItinerary";
+import FormPaymentSkeleton from "@/components/Skeleton/FormPaymentSkeleton";
 
 export default function FormClientBooking() {
   const [data, setData] = useState(null);
@@ -88,7 +89,7 @@ export default function FormClientBooking() {
           )}
         </div>
 
-        {data === null && skeletonShow && <SkeletonPay />}
+        {data === null && skeletonShow && <FormPaymentSkeleton />}
 
         {showClr &&
           (showClr.message === "CLR" || showClr.message === "CNF") && (
