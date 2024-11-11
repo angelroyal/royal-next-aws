@@ -3,7 +3,7 @@ import { useContext } from "react";
 import LanguageContext from "@/language/LanguageContext";
 import { BookingContext } from "@/payment/context/BookingContext";
 
-export function ContainerRemoveTransport({ isRemove, removeReservation, cancelRemove }) {
+export function ContainerRemoveTransport({ transportInfo, isRemove, removeReservation, cancelRemove }) {
   const { removeIsLoader } = useContext(BookingContext);
   const { languageData } = useContext(LanguageContext);
 
@@ -17,7 +17,7 @@ export function ContainerRemoveTransport({ isRemove, removeReservation, cancelRe
         />
         <div
           className="absolute right-0 top-0 h-full px-[22px] flex items-center justify-center cursor-pointer bg-red-100 rounded-r-lg text-fs-16 text-white m-s-b"
-          onClick={() => removeReservation(itemTransport)}
+          onClick={() => removeReservation(transportInfo)}
         >
           {languageData.cart.remove}
         </div>

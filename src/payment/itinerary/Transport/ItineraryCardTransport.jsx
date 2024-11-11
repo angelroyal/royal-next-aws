@@ -58,6 +58,7 @@ export function ItineraryCardTransport({ transportInfo }) {
       </div>
 
       <ContainerRemoveTransport
+        transportInfo={transportInfo}
         isRemove={isRemove}
         removeReservation={removeReservation}
         cancelRemove={cancelRemove}

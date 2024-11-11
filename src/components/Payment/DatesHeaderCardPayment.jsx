@@ -36,7 +36,7 @@ function DatesHotel({ languageData, dataCards }) {
 
       <ul className="tex-fs-16 m-b list-disc list-inside list-gry-70">
         <li>
-          <span className="text-black">Check out</span>{" "}
+          <span className="text-gry-100">Check out</span>{" "}
           <span className="text-gry-70 m-m">{dateFormatCheckOut} </span>
           <span className="text-gry-70 m-m">- </span>
           <span className="text-gry-70 m-m">02:00pm</span>
