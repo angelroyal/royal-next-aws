@@ -7,6 +7,7 @@ import LanguageContext from "../../language/LanguageContext";
 import { scrollToTop } from "../../utils/pageConfig/scrollToTop";
 import { isAnyHotelUnavailable } from "../config/itineraryHelpers";
 import { AlertNoAvailability, AlertUpdate } from "../Booking/AlertRate";
+import { ListCardsItinerary } from "./ListCardsItinerary";
 
 export default function Itinerary(props) {
   const { dataItinerary } = props;
@@ -46,6 +47,8 @@ export default function Itinerary(props) {
       <h2 className="text-fs-14 m-m text-black mb-[36px]">
         {languageData.itinerary.subtitleItinerary}
       </h2>
+
+      <ListCardsItinerary dataItinerary={dataItinerary}/>
 
       {/* CARDS RETURN SHOW */}
       <CardsItinerary dataItinerary={dataItinerary} />

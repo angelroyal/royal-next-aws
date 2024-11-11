@@ -107,7 +107,7 @@ export default function TourCardItinerary({ key, itemActivity }) {
                 />
               </div>
 
-              <div className={` flex lg:hidden ${isRemove && "opacity-50"}`}>
+              <div className={`flex lg:hidden ${isRemove && "opacity-50"}`}>
                 <div className="rounded-[8px] w-[133px] h-[117.7px] max-sm:h-[80px] max-sm:w-[90px]">
                   <img
                     className="w-full h-full rounded-[8px] object-cover"

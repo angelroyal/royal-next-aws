@@ -1,7 +1,24 @@
-import React from 'react'
+import React from "react";
 
 export default function page() {
   return (
-    <div>pantalla de pendiente de pago </div>
-  )
+    <LanguageProvider>
+      <TokenProvider>
+        <CartAxiosProvider>
+          <BookingProviderContext>
+            <Token />
+
+            <Navigation />
+
+            <PaymentProviderContext>
+              <></>
+            </PaymentProviderContext>
+            <ModalTaxesNotInclude />
+
+            <FooterT />
+          </BookingProviderContext>
+        </CartAxiosProvider>
+      </TokenProvider>
+    </LanguageProvider>
+  );
 }
