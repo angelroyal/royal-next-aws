@@ -25,6 +25,9 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
   const changeHome = () => {
     window.open(`/`, "_self");
   };
+  const changeBlog = () => {
+    window.open(`/blog`, "_self");
+  };
   const changeHotels = () => {
     window.open(`/${language}/hotels`, "_self");
   };
@@ -39,7 +42,7 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
   return (
     <Dialog
       as="div"
-      className="md:hidden"
+      className="lg:hidden"
       open={open}
       onClose={setMobileMenuOpen}
     >
@@ -58,6 +61,28 @@ export function HamburgerMenu({ open, setMobileMenuOpen }) {
         <div className="mt-6 flow-root">
           <div className="-my-6 divide-y divide-gray-500/10">
             <div className="flex gap-x-4 mt-4 py-6">
+              {/* BLOG LINK */}
+            <div
+              className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+              onClick={() => {
+                changeBlog();
+              }}
+            >
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}icons/general/globe-${
+                  currentActiveIcon === "blog" ? "o.svg" : "b.svg"
+                }`}
+                alt="icon blog"
+                className="pr-2 pb-1"
+              />
+              <span
+                className={`${
+                  currentActiveIcon === "blog" ? "text-or-100" : ""
+                }`}
+              >
+                Blog
+              </span>
+            </div>
               <SelectCurrency />
 
               <LanguageSelector />

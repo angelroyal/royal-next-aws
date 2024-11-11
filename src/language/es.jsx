@@ -1269,7 +1269,7 @@ export const es = {
   },
 
   booking: {
-    titleVacations: "Tus vacaciones están (casi) listas",
+    titleVacations: "Estás a un paso de completar tu reservación",
     subtitleComplete: "Completa los datos y finaliza tu compra.",
     textBooking: "Resumen de tu reservación",
     taxes: "Impuestos",
@@ -1322,6 +1322,11 @@ export const es = {
       },
     },
     invalidEmail: "Correo electrónico no válido",
+  },
+
+  pending:{
+    titlePending:"Estamos procesando tu pago",
+    subtitlePending:"Este proceso puede tardar algunas horas. Te notificaremos en cuanto tu reservación sea confirmada. Gracias por tu paciencia y comprensión.",
   },
 
   confirmation: {

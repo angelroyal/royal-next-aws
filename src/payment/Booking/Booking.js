@@ -5,11 +5,15 @@ import FormCentral from "./Forms/FormCentral";
 import LanguageContext from "../../language/LanguageContext";
 import { FormDataProvider } from "../context/FormDataContext";
 import axiosWithInterceptor from "../../config/Others/axiosWithInterceptor";
+import { isAnyHotelUnavailable } from "../config/itineraryHelpers";
+import { AlertNoAvailabilityClient } from "./AlertRate";
 
 export default function Booking(props) {
-  const { dataItinerary, hasActivities,hasTransport } = props;
+  const { dataItinerary, hasActivities, hasTransport } = props;
   const { languageData } = useContext(LanguageContext);
   const [activityPreBooking, setActivityPreBooking] = useState(null);
+  const isButtonDisabled = isAnyHotelUnavailable(dataItinerary);
+
   const fetchData = async () => {
     try {
       const url = "/v1/pre-booking/";
@@ -29,7 +33,7 @@ export default function Booking(props) {
   return (
     <FormDataProvider>
       <>
-        <div className="flex !gap-x-2 w-full items-start justify-start !mb-2">
+        <div className="flex !gap-x-2 w-full items-start justify-start !mb-2 pt-6 items-center">
           <Image
             className="w-[27px] h-[25px]"
             src={`${process.env.NEXT_PUBLIC_URL}icons/general/infotipo-staywuw.svg`}
@@ -52,6 +56,10 @@ export default function Booking(props) {
           activityTrue={hasActivities}
           transportTrue={hasTransport}
         />
+
+        {isButtonDisabled && (
+          <AlertNoAvailabilityClient isNoAvailability={isButtonDisabled} />
+        )}
       </>
     </FormDataProvider>
   );
