@@ -17,7 +17,6 @@ export default function NavigationDesktop() {
 
   // GET ACTIVITY SERVICE
   const routerActual = NavigationConfig();
-console.log(routerActual);
 
   useEffect(() => {
     setCurrentActiveIcon(routerActual);
@@ -40,39 +39,35 @@ console.log(routerActual);
   };
 
   return (
-    <div className="relative md:top-[-22px] mt-[38px] md:mt-0 max-sm:mt-[20px]">
+    <div className="relative max-lg:top-[-10px] md:top-[-22px] mt-[38px] lg:mt-0 max-sm:mt-[20px]">
       <Container>
         {/* fix tailwind */}
         <header className="relative pt-0 pb-[20px] flex flex-col gap-y-[1rem] max-sm:pb-0">
-          <div className="hidden md:flex justify-end items-center">
+          <div className="hidden lg:flex justify-end items-center">
             {/* BLOG LINK */}
             <div
-                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
-                  onClick={() => {
-                    changeBlog();
-                  }}
-                >
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_URL}icons/general/globe-${
-                      currentActiveIcon === "blog"
-                        ? "o.svg"
-                        : "b.svg"
-                    }`}
-                    alt="icon blog"
-                    className="pr-2 pb-1"
-                  />
-                  <span
-                    className={`${
-                      currentActiveIcon === "blog"
-                        ? "text-or-100"
-                        : ""
-                    }`}
-                  >
-                    {/* {languageData.SearchBox.tabHotel.hotel} */}
-                    Blog
-                  </span>
-                </div>
-          <span className="pl-[10px] pr-[10px]">|</span>
+              className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+              onClick={() => {
+                changeBlog();
+              }}
+            >
+              <img
+                src={`${process.env.NEXT_PUBLIC_URL}icons/general/globe-${
+                  currentActiveIcon === "blog" ? "o.svg" : "b.svg"
+                }`}
+                alt="icon blog"
+                className="pr-2 pb-1"
+              />
+              <span
+                className={`${
+                  currentActiveIcon === "blog" ? "text-or-100" : ""
+                }`}
+              >
+                {/* {languageData.SearchBox.tabHotel.hotel} */}
+                Blog
+              </span>
+            </div>
+            <span className="pl-[10px] pr-[10px]">|</span>
             <SelectCurrency />
             <span className="pl-[10px] pr-[10px]">|</span>
             <LanguageSelector />
@@ -85,7 +80,7 @@ console.log(routerActual);
             className="flex w-full items-center justify-between "
             aria-label="Global"
           >
-            <div className="flex md:flex-1 justify-between">
+            <div className="flex lg:flex-1 justify-between">
               {/* HOME HOTEL LINK */}
               <div
                 className="m-1.5 cursor-pointer"
@@ -109,7 +104,7 @@ console.log(routerActual);
                 {/* </Link> */}
               </div>
 
-              <div className="hidden md:items-center md:flex md:gap-x-7">
+              <div className="hidden lg:items-center lg:flex lg:gap-x-7">
                 {/* HOME LINK */}
                 <div
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
@@ -119,18 +114,14 @@ console.log(routerActual);
                 >
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}icons/general/home-${
-                      currentActiveIcon === "home"
-                        ? "o.svg"
-                        : "b.svg"
+                      currentActiveIcon === "home" ? "o.svg" : "b.svg"
                     }`}
                     alt="icon hotel"
                     className="pr-2 pb-1"
                   />
                   <span
                     className={`${
-                      currentActiveIcon === "home"
-                        ? "text-or-100"
-                        : ""
+                      currentActiveIcon === "home" ? "text-or-100" : ""
                     }`}
                   >
                     {/* {languageData.SearchBox.tabHotel.hotel} */}
@@ -250,7 +241,7 @@ console.log(routerActual);
               </div>
             </div>
 
-            <div className="flex gap-x-[18px] md:hidden">
+            <div className="flex gap-x-[18px] lg:hidden">
               <CartOpen />
 
               <button
