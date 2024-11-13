@@ -72,7 +72,7 @@ export default function CardMovingItinerary(props) {
           </span>
 
           {/* CARD TRANSPORT ITINERARY */}
-          <div className="bg-white pl-4 pr-[37px] xl:px-4 py-4  flex max-xl:flex-col rounded-lg relative w-[732px] max-xl:w-full shadow-3xl">
+          <div className="bg-white pl-4 pr-[37px] xl:px-4 py-4 flex max-xl:flex-col rounded-lg relative w-[732px] max-xl:w-full shadow-3xl">
             <div className="flex items-center gap-x-2 lg:gap-x-8 w-full">
               {/* REMOVE RESERVATION */}
               {!confirmation && !removeIsLoader ? (

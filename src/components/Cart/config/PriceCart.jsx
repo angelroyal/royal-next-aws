@@ -73,7 +73,7 @@ export default function PriceCart(props) {
             {languageData.cart.btnReset}
           </button> */}
           <Link
-            href={`/${language}/booking?uid=${cartId}`}
+            href={`/${language}/itinerary?uid=${cartId}`}
             passHref
             className="flex items-center text-fs-14 text-white m-s-b bg-bl-100 rounded-full py-[12px] px-[16px] hover:bg-[#1b317d] no-underline"
           >
