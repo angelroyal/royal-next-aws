@@ -1872,6 +1872,17 @@ export const en = {
     formHb: "Select the age",
   },
   
+  myReservation: {
+    checkReservation: "Check your Reservation",
+    enterCodeAndReservation:"Enter your reservation code and your last name(s)",
+    reservationCode:"Reservation code",
+    lastName:"Last name(s)",
+    findReservation:"Find your Reservation",
+    haveYouForgotten:"Have you forgotten your reservation code?",
+    doYouNeedHelp:"Do you need help?",
+    callUsAt:"Call us at",
+    followUsOn:"Follow us on",
+  },
 
   // region COUNTRIES
   countries: {

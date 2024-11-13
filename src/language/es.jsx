@@ -221,7 +221,7 @@ export const es = {
     subtitleKeep:
       "No te detengas aquí. Descubre más destinos emocionantes y planifica tu próxima aventura.",
     btnBack: "Volver al inicio",
-    goPay:"Ir a pagar",
+    goPay: "Ir a pagar",
 
     hotel: {
       titleRecommedation: "Alojamientos que pueden gustarte",
@@ -1324,9 +1324,10 @@ export const es = {
     invalidEmail: "Correo electrónico no válido",
   },
 
-  pending:{
-    titlePending:"Estamos procesando tu pago",
-    subtitlePending:"Este proceso puede tardar algunas horas. Te notificaremos en cuanto tu reservación sea confirmada. Gracias por tu paciencia y comprensión.",
+  pending: {
+    titlePending: "Estamos procesando tu pago",
+    subtitlePending:
+      "Este proceso puede tardar algunas horas. Te notificaremos en cuanto tu reservación sea confirmada. Gracias por tu paciencia y comprensión.",
   },
 
   confirmation: {
@@ -1877,13 +1878,23 @@ export const es = {
     firstnamePlaceholder: "Ingrese el nombre",
     lastname: "Apellido",
     lastnamePlaceholder: "Ingrese el apellido",
-    age:"Edad",
+    age: "Edad",
     adult: "Adulto",
     child: "Niño",
     formHb: "Seleccione la edad",
   },
 
-
+  myReservation: {
+    checkReservation: "Consulta tu Reservación",
+    enterCodeAndReservation:"Ingresa tu código de reserva y tus apellidos",
+    reservationCode:"Código de reservación",
+    lastName:"Apellidos",
+    findReservation:"Buscar tu Reserva",
+    haveYouForgotten:"¿Has olvidado tu código de reservación?",
+    doYouNeedHelp:"¿Necesitas ayuda?",
+    callUsAt:"Call us at",
+    followUsOn:"Síguenos en",
+  },
 
   // region COUNTRIES
   countries: {
