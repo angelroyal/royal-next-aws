@@ -94,7 +94,7 @@ export function BannerHomeTransportSwiper(props) {
               {languageData.bannerTransport.bookNowBtn}
             </bottom>
           </div>
-          <div className="w-[60%] !bg-white">
+          <div className="w-[60%] h-[19rem] !bg-white">
             {getImg?.transporte?.bannerCar?.[deviceType]?.length === 0 ? (
               <img
                 src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
@@ -106,7 +106,7 @@ export function BannerHomeTransportSwiper(props) {
                 src={getImg.transporte.bannerCar[deviceType]}
                 width={378}
                 height={235}
-                className="w-full h-[19rem] rounded-lg object-contain object-center select-none "
+                className="w-full h-full rounded-r-lg object-cover select-none "
                 alt="banner transport"
               />
             ) : (
@@ -131,7 +131,7 @@ export function BannerHomeTransportSwiper(props) {
               src={getImg.transporte.bannerBlue[deviceType]}
               width={266}
               height={235}
-              className="w-full rounded-lg select-none"
+              className="w-full rounded-lg select-none object-cover"
               alt="Banner Experimenta los mejores tours"
             />
           ) : (
@@ -190,18 +190,28 @@ export function BannerHomeTransportD(props) {
   const { getImg } = useContext(ImageContext);
   const { languageData } = useContext(LanguageContext);
 
+  const handleButtonClick = () => {
+    if (typeof window !== "undefined") {
+      const targetElement = document.getElementById("tab-search-home");
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
-    <div className="flex gap-[16px] min-h-[320px]">
+    <div className="flex gap-[16px] h-[318px]">
       <div className="flex bg-white justify-center items-center shadow-3xl w-1/2">
         <div className="w-[40%] flex flex-col pl-[25px] gap-3 max-sm:!w-[58%]">
           <span className="m-b text-fs-28">
             {languageData.bannerTransport.secureJourney}
           </span>
-          <div className="px-[24px] py-[16px] bg-yw-100 m-s-b text-fs-14 w-fit rounded-full">
+          <button onClick={handleButtonClick} className="px-[24px] py-[16px] bg-yw-100 m-s-b text-fs-14 w-fit rounded-full hover:bg-yw-110">
             {languageData.bannerTransport.bookNowBtn}
-          </div>
+          </button>
         </div>
-        <div className="w-[60%] !bg-white">
+        <div className="w-[60%] h-full !bg-white rounded-lg.
+        ">
           {getImg?.transporte?.bannerCar?.[deviceType]?.length === 0 ? (
             <SwiperSlide>
               <img
@@ -216,7 +226,7 @@ export function BannerHomeTransportD(props) {
               src={getImg.transporte.bannerCar[deviceType]}
               width={378}
               height={235}
-              className="w-full h-[19rem] rounded-lg object-contain object-center select-none "
+              className="w-full h-full rounded-r-lg object-cover object-center select-none "
               alt="Banner transport banner car"
             />
           ) : (
@@ -240,7 +250,7 @@ export function BannerHomeTransportD(props) {
             src={getImg.transporte.bannerBlue[deviceType]}
             width={266}
             height={235}
-            className="w-full rounded-lg select-none"
+            className="w-full rounded-lg select-none object-cover"
             alt="Banner Experimenta los mejores tours"
           />
         ) : (

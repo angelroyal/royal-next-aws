@@ -38,14 +38,12 @@ export default function BannerFooterTour() {
         />
       ) : getImg ? (
         <>
-          <Image
+          <img
             // src={`${process.env.NEXT_PUBLIC_URL}banners/tours/Feb2024/banner-tour.webp`}
             src={getImg.tour.bannerLocation[deviceType]}
-            width={1272}
-            height={469}
             alt="banner-footer-tour"
             // className="w-[99%] h-auto select-none max-md:hidden"
-            className="w-[99%] h-auto select-none rounded-lg"
+            className="w-full h-[535px] select-none rounded-lg object-cover max-2xl:h-[442px] max-xl:h-[349px] max-lg:h-[261px] max-sm:h-[588px]"
           />
 
           {/* <Image
