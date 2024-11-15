@@ -386,8 +386,8 @@ export function BannerHomeHotelSwiper(props) {
               src={getImg.hotel.bannerTour[deviceType]}
               width={266}
               height={235}
-              className="w-full rounded-lg select-none object-cover object-bottom"
-              alt="Banner tour mes de feb"
+              className="w-full rounded-lg select-none object-cover"
+              alt="Banner tour in hotels"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -477,7 +477,7 @@ export function BannerHomeHotelD(props) {
               src={getImg.hotel.bannerTour[deviceType]}
               width={266}
               height={235}
-              className="w-full rounded-lg select-none object-cover object-bottom transition-transform duration-500 transform scale-100 hover:scale-105"
+              className="w-full rounded-lg select-none object-cover transition-transform duration-500 transform scale-100 hover:scale-105"
               alt="Banner tour mes de feb"
             />
           ) : (

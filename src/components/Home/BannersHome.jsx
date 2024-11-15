@@ -203,8 +203,8 @@ export function BannersHomeOffers() {
         ) : getImg ? (
           <img
             src={getImg.home.offerBaggage[deviceType]}
-            className="h-full w-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
-            alt="Banner Experimenta los mejores tours"
+            className="h-full w-full rounded-lg select-none object-cover max-md:h-[300px]" // Cambiado de object-contain a object-cover
+            alt="Banner home"
           />
         ) : (
           <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -319,14 +319,14 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
 
         {/* SWIPER MOBILE */}
-        <div className="lg:hidden w-[35%] max-md:w-full max-md:hidden max-sm:block">
+        <div className="lg:hidden w-[35%] max-md:w-full max-md:hidden max-sm:block max-sm:h-[410px]">
           <Swiper
             slidesPerView={1}
-            className="h-full rounded-lg shadow-3xl"
+            className="!h-full rounded-lg shadow-3xl"
             initialSlide={0}
           >
             <SwiperSlide className="!rounded-lg">
-              <div className="rounded-lg">
+              <div className="rounded-lg h-full">
                 {getImg?.home?.offerHotel?.[deviceType]?.length === 0 ? (
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
@@ -336,7 +336,7 @@ export function BannersHomeExclusiveDiscounts() {
                 ) : getImg ? (
                   <img
                     src={getImg.home.offerHotel[deviceType]}
-                    className="w-full h-full rounded-lg select-none"
+                    className="w-full h-full rounded-lg select-none object-cover"
                   />
                 ) : (
                   <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -344,8 +344,8 @@ export function BannersHomeExclusiveDiscounts() {
               </div>
             </SwiperSlide>
 
-            <SwiperSlide className="!rounded-lg">
-              <div className="rounded-lg">
+            <SwiperSlide className="!rounded-lg !h-full">
+              <div className="rounded-lg !h-full">
                 {getImg?.home?.offerTour?.[deviceType]?.length === 0 ? (
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
@@ -355,7 +355,7 @@ export function BannersHomeExclusiveDiscounts() {
                 ) : getImg ? (
                   <img
                     src={getImg.home.offerTour[deviceType]}
-                    className="w-full h-full rounded-lg select-none"
+                    className="w-full h-full rounded-lg select-none object-cover"
                   />
                 ) : (
                   <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
