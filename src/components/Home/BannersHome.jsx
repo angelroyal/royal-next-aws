@@ -282,7 +282,7 @@ export function BannersHomeExclusiveDiscounts() {
             ) : getImg ? (
               <img
                 src={getImg.home.offerHotel[deviceType]}
-                className="w-full h-full rounded-lg select-none aspect-square object-contain"
+                className="w-full h-full rounded-lg select-none aspect-square object-cover"
                 alt="banner offers hotel"
               />
             ) : (
@@ -463,7 +463,7 @@ export function OffersNow() {
   return (
     <>
       <div className="w-full flex gap-[2vw] max-lg:hidden justify-between">
-        <div className="w-[50%]">
+        <div className="w-[50%] h-[350px]">
           {getImg?.home?.bannerBlue?.[deviceType]?.length === 0 ? (
             <img
               src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
@@ -473,15 +473,15 @@ export function OffersNow() {
           ) : getImg ? (
             <img
               src={getImg.home.bannerBlue[deviceType]}
-              alt="banner-offers"
-              className="w-full rounded-lg select-none "
+              alt="banner-offers-blue"
+              className="w-full h-full rounded-lg select-none object-cover"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
           )}
         </div>
 
-        <div className="w-[50%] ">
+        <div className="w-[50%] h-[350px]">
           {getImg?.home?.bannerYellow?.[deviceType]?.length === 0 ? (
             <img
               src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
@@ -491,8 +491,8 @@ export function OffersNow() {
           ) : getImg ? (
             <img
               src={getImg.home.bannerYellow[deviceType]}
-              alt="banner-offers"
-              className="w-full rounded-lg select-none object-cover"
+              alt="banner-offers-yw"
+              className="w-full h-full rounded-lg select-none object-cover"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -501,7 +501,7 @@ export function OffersNow() {
       </div>
 
       {/* SWIPER MOBILE BANNER OFFERS NOW */}
-      <div className="lg:hidden lg:h-[278px]">
+      <div className="lg:hidden lg:h-[278px] h-[768px] max-md:h-[412px]">
         <Swiper
           slidesPerView={1}
           className="h-full rounded-lg"
@@ -519,7 +519,7 @@ export function OffersNow() {
               ) : getImg ? (
                 <img
                   src={getImg.home.bannerBlue[deviceType]}
-                  alt="banner-offers"
+                  alt="banner blue tablet and mobile"
                   className="h-full w-full rounded-lg select-none object-cover"
                 />
               ) : (
