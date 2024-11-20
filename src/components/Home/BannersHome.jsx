@@ -95,7 +95,7 @@ export default function BannersHeaderHome(props) {
                 <SwiperSlide key={index}>
                   <img
                     src={imgCarrousel}
-                    className="w-full h-full object-center select-none"
+                    className="w-full h-full object-center object-cover select-none"
                     alt="banner-principal-home"
                     width="100%"
                     height="100%"
@@ -300,7 +300,7 @@ export function BannersHomeExclusiveDiscounts() {
             ) : getImg ? (
               <img
                 src={getImg.home.offerTour[deviceType]}
-                className="w-full h-full rounded-lg select-none aspect-square"
+                className="w-full h-full rounded-lg select-none aspect-square object-cover"
                 alt="banner discounts second"
               />
             ) : (
@@ -474,7 +474,7 @@ export function OffersNow() {
             <img
               src={getImg.home.bannerBlue[deviceType]}
               alt="banner-offers-blue"
-              className="w-full h-full rounded-lg select-none"
+              className="w-full h-full rounded-lg select-none object-cover"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -492,7 +492,7 @@ export function OffersNow() {
             <img
               src={getImg.home.bannerYellow[deviceType]}
               alt="banner-offers-yw"
-              className="w-full h-full rounded-lg select-none"
+              className="w-full h-full rounded-lg select-none object-cover"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />

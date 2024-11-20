@@ -132,7 +132,7 @@ export function BannerHomeTransportSwiper(props) {
               width={266}
               height={235}
               className="w-full rounded-lg select-none object-cover"
-              alt="Banner Experimenta los mejores tours"
+              alt="Banner blue transport"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -251,7 +251,7 @@ export function BannerHomeTransportD(props) {
             width={266}
             height={235}
             className="w-full rounded-lg select-none object-cover"
-            alt="Banner Experimenta los mejores tours"
+            alt="Banner blue transport"
           />
         ) : (
           <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
