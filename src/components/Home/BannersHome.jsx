@@ -139,7 +139,7 @@ export function BannersHomeOffers() {
 
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
-      <div className="w-[70%] max-md:w-full max-sm:h-[440px] z-0">
+      <div className="w-[70%] max-md:w-full max-md:h-1/2 z-0">
         {getImg ? (
           <Swiper
             slidesPerView={1}
@@ -191,7 +191,7 @@ export function BannersHomeOffers() {
         )}
       </div>
 
-      <div className="w-[30%] max-md:w-full">
+      <div className="w-[30%] max-md:w-full max-md:h-1/2">
         {getImg?.home?.offerBaggage?.[deviceType]?.length === 0 ? (
           <SwiperSlide>
             <img
@@ -203,7 +203,7 @@ export function BannersHomeOffers() {
         ) : getImg ? (
           <img
             src={getImg.home.offerBaggage[deviceType]}
-            className="h-full w-full rounded-lg select-none object-cover max-md:h-[300px]" // Cambiado de object-contain a object-cover
+            className="h-full w-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
             alt="Banner home"
           />
         ) : (
@@ -474,7 +474,7 @@ export function OffersNow() {
             <img
               src={getImg.home.bannerBlue[deviceType]}
               alt="banner-offers-blue"
-              className="w-full h-full rounded-lg select-none object-cover"
+              className="w-full h-full rounded-lg select-none"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -492,7 +492,7 @@ export function OffersNow() {
             <img
               src={getImg.home.bannerYellow[deviceType]}
               alt="banner-offers-yw"
-              className="w-full h-full rounded-lg select-none object-cover"
+              className="w-full h-full rounded-lg select-none"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
