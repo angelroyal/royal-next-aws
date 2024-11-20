@@ -95,7 +95,7 @@ export default function BannersHeaderHome(props) {
                 <SwiperSlide key={index}>
                   <img
                     src={imgCarrousel}
-                    className="object-cover w-full h-full object-center select-none"
+                    className="w-full h-full object-center select-none"
                     alt="banner-principal-home"
                     width="100%"
                     height="100%"

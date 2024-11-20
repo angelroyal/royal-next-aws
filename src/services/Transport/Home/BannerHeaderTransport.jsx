@@ -70,7 +70,7 @@ export function BannerHeaderTransport(props) {
                 >
                   <img
                     src={imgCarrousel}
-                    className="object-cover	w-full h-full object-center select-none"
+                    className="w-full h-full object-center select-none"
                     alt="banner-principal-home-transport"
                     width="100%"
                     height="100%"

@@ -64,7 +64,7 @@ export function BannerHomeHotelTop() {
                 (imgCarrousel, index) => (
                   <SwiperSlide key={index}>
                     <img
-                      className="object-cover	w-full h-full object-center select-none"
+                      className="w-full h-full object-center select-none"
                       src={imgCarrousel}
                       alt="banner-principal-hotel"
                       width="100%"
