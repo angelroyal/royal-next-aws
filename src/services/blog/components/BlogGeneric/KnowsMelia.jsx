@@ -9,92 +9,63 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/knows-melia1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/knows-melia2.png";
-
 export default function KnowsMelia() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
     <div className="flex flex-col gap-3">
       {/* START BLOG */}
       <div className="mb-6">
-        <TitleH1>
-          {languageData.KnowsMelia.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.KnowsMelia.mainTitle}</TitleH1>
       </div>
 
       <SubtitleP>
         {languageData.KnowsMelia.subtitle1.Text1}
-        <BT>
-          {languageData.KnowsMelia.subtitle1.BT}
-        </BT>
+        <BT>{languageData.KnowsMelia.subtitle1.BT}</BT>
         {languageData.KnowsMelia.subtitle1.Text2}
       </SubtitleP>
 
       {/* IMAGE 1 */}
 
       <img
-        src={imgBlogGeneric1.src}
-        // width={918}
-        // height={572}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-melia1.jpg`}
         alt="Vista del area de pscinas del mejor hotel Meliá en Punta Cana"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
-      <SubtitleP>
-        {languageData.KnowsMelia.paragraphs1.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.paragraphs1.Text1}</SubtitleP>
 
       {/* ASK */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.KnowsMelia.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsMelia.section2Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.subtitle2}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.subtitle2}</SubtitleP>
 
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={914}
-        // height={556}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-melia2.png`}
         alt="Vista de la habitación del hotel Meliá Caribe Beach Resort "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       <SubtitleP>
         {languageData.KnowsMelia.paragraphs2.Text1}
-        <BT>
-          {languageData.KnowsMelia.paragraphs2.BT}
-        </BT>
+        <BT>{languageData.KnowsMelia.paragraphs2.BT}</BT>
         {languageData.KnowsMelia.paragraphs2.Text1}
       </SubtitleP>
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.KnowsMelia.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsMelia.section3Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.subtitle3}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.subtitle3}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.paragraphs3.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.paragraphs3.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.paragraphs3.Text2}
-        {" "}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.paragraphs3.Text2} </SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -150,32 +121,17 @@ export default function KnowsMelia() {
 
       {/* WHAT ARE THE FACILITIES */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.KnowsMelia.section4Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsMelia.section4Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.subtitle4}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.subtitle4}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.paragraphs4}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.paragraphs4}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.list2.textNormal1}
-      </SubtitleP>
-      <SubtitleP>
-        {languageData.KnowsMelia.list2.textNormal2}
-        {" "}
-      </SubtitleP>
-      <SubtitleP>
-        {languageData.KnowsMelia.list2.textNormal3}
-      </SubtitleP>
-      <SubtitleP>
-        {languageData.KnowsMelia.list2.textNormal4}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.list2.textNormal1}</SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.list2.textNormal2} </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.list2.textNormal3}</SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.list2.textNormal4}</SubtitleP>
 
       {/* REVIEWS */}
       <div className="my-4">
@@ -184,25 +140,17 @@ export default function KnowsMelia() {
 
       {/* END BLOG */}
       <div className="my-2">
-        <TitleH2>
-          {languageData.KnowsMelia.section5Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsMelia.section5Title}</TitleH2>
       </div>
 
       <SubtitleP>
         {languageData.KnowsMelia.subtitle5.Text1}
-        <BT>
-          {languageData.KnowsMelia.subtitle5.BT}
-        </BT>
+        <BT>{languageData.KnowsMelia.subtitle5.BT}</BT>
         {languageData.KnowsMelia.subtitle5.Text2}
       </SubtitleP>
 
-      <SubtitleP>
-        {languageData.KnowsMelia.paragraphs5.Text1}
-      </SubtitleP>
-      <SubtitleP>
-        {languageData.KnowsMelia.paragraphs5.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.paragraphs5.Text1}</SubtitleP>
+      <SubtitleP>{languageData.KnowsMelia.paragraphs5.Text2}</SubtitleP>
     </div>
   );
-};
+}

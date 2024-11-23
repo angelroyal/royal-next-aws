@@ -95,7 +95,7 @@ export default function BannersHeaderHome(props) {
                 <SwiperSlide key={index}>
                   <img
                     src={imgCarrousel}
-                    className="object-cover w-full h-full object-center select-none"
+                    className="w-full h-full object-center object-cover select-none"
                     alt="banner-principal-home"
                     width="100%"
                     height="100%"
@@ -139,7 +139,7 @@ export function BannersHomeOffers() {
 
   return (
     <div className="w-full flex h-[434px] justify-between gap-[12px] max-xl:h-[347px] max-lg:h-[262px] max-md:flex-col max-md:h-auto">
-      <div className="w-[70%] max-md:w-full max-sm:h-[440px] z-0">
+      <div className="w-[70%] max-md:w-full max-md:h-1/2 z-0">
         {getImg ? (
           <Swiper
             slidesPerView={1}
@@ -191,7 +191,7 @@ export function BannersHomeOffers() {
         )}
       </div>
 
-      <div className="w-[30%] max-md:w-full">
+      <div className="w-[30%] max-md:w-full max-md:h-1/2">
         {getImg?.home?.offerBaggage?.[deviceType]?.length === 0 ? (
           <SwiperSlide>
             <img
@@ -204,7 +204,7 @@ export function BannersHomeOffers() {
           <img
             src={getImg.home.offerBaggage[deviceType]}
             className="h-full w-full rounded-lg select-none object-cover" // Cambiado de object-contain a object-cover
-            alt="Banner Experimenta los mejores tours"
+            alt="Banner home"
           />
         ) : (
           <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -282,7 +282,7 @@ export function BannersHomeExclusiveDiscounts() {
             ) : getImg ? (
               <img
                 src={getImg.home.offerHotel[deviceType]}
-                className="w-full h-full rounded-lg select-none aspect-square object-contain"
+                className="w-full h-full rounded-lg select-none aspect-square object-cover"
                 alt="banner offers hotel"
               />
             ) : (
@@ -300,7 +300,7 @@ export function BannersHomeExclusiveDiscounts() {
             ) : getImg ? (
               <img
                 src={getImg.home.offerTour[deviceType]}
-                className="w-full h-full rounded-lg select-none aspect-square"
+                className="w-full h-full rounded-lg select-none aspect-square object-cover"
                 alt="banner discounts second"
               />
             ) : (
@@ -319,14 +319,14 @@ export function BannersHomeExclusiveDiscounts() {
         </div>
 
         {/* SWIPER MOBILE */}
-        <div className="lg:hidden w-[35%] max-md:w-full max-md:hidden max-sm:block">
+        <div className="lg:hidden w-[35%] max-md:w-full max-md:hidden max-sm:block max-sm:h-[410px]">
           <Swiper
             slidesPerView={1}
-            className="h-full rounded-lg shadow-3xl"
+            className="!h-full rounded-lg shadow-3xl"
             initialSlide={0}
           >
             <SwiperSlide className="!rounded-lg">
-              <div className="rounded-lg">
+              <div className="rounded-lg h-full">
                 {getImg?.home?.offerHotel?.[deviceType]?.length === 0 ? (
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
@@ -336,7 +336,7 @@ export function BannersHomeExclusiveDiscounts() {
                 ) : getImg ? (
                   <img
                     src={getImg.home.offerHotel[deviceType]}
-                    className="w-full h-full rounded-lg select-none"
+                    className="w-full h-full rounded-lg select-none object-cover"
                   />
                 ) : (
                   <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -344,8 +344,8 @@ export function BannersHomeExclusiveDiscounts() {
               </div>
             </SwiperSlide>
 
-            <SwiperSlide className="!rounded-lg">
-              <div className="rounded-lg">
+            <SwiperSlide className="!rounded-lg !h-full">
+              <div className="rounded-lg !h-full">
                 {getImg?.home?.offerTour?.[deviceType]?.length === 0 ? (
                   <img
                     src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-t-new.jpg`}
@@ -355,7 +355,7 @@ export function BannersHomeExclusiveDiscounts() {
                 ) : getImg ? (
                   <img
                     src={getImg.home.offerTour[deviceType]}
-                    className="w-full h-full rounded-lg select-none"
+                    className="w-full h-full rounded-lg select-none object-cover"
                   />
                 ) : (
                   <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -463,7 +463,7 @@ export function OffersNow() {
   return (
     <>
       <div className="w-full flex gap-[2vw] max-lg:hidden justify-between">
-        <div className="w-[50%]">
+        <div className="w-[50%] h-[350px]">
           {getImg?.home?.bannerBlue?.[deviceType]?.length === 0 ? (
             <img
               src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
@@ -473,15 +473,15 @@ export function OffersNow() {
           ) : getImg ? (
             <img
               src={getImg.home.bannerBlue[deviceType]}
-              alt="banner-offers"
-              className="w-full rounded-lg select-none "
+              alt="banner-offers-blue"
+              className="w-full h-full rounded-lg select-none object-cover"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
           )}
         </div>
 
-        <div className="w-[50%] ">
+        <div className="w-[50%] h-[350px]">
           {getImg?.home?.bannerYellow?.[deviceType]?.length === 0 ? (
             <img
               src={`${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-h-new.jpg`}
@@ -491,8 +491,8 @@ export function OffersNow() {
           ) : getImg ? (
             <img
               src={getImg.home.bannerYellow[deviceType]}
-              alt="banner-offers"
-              className="w-full rounded-lg select-none object-cover"
+              alt="banner-offers-yw"
+              className="w-full h-full rounded-lg select-none object-cover"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -501,7 +501,7 @@ export function OffersNow() {
       </div>
 
       {/* SWIPER MOBILE BANNER OFFERS NOW */}
-      <div className="lg:hidden lg:h-[278px]">
+      <div className="lg:hidden lg:h-[278px] h-[768px] max-md:h-[412px]">
         <Swiper
           slidesPerView={1}
           className="h-full rounded-lg"
@@ -519,7 +519,7 @@ export function OffersNow() {
               ) : getImg ? (
                 <img
                   src={getImg.home.bannerBlue[deviceType]}
-                  alt="banner-offers"
+                  alt="banner blue tablet and mobile"
                   className="h-full w-full rounded-lg select-none object-cover"
                 />
               ) : (

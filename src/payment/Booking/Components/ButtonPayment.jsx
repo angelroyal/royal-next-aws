@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { PaymentContext } from "@/payment/context/PaymentContext";

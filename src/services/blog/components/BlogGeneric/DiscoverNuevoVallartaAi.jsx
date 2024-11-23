@@ -9,22 +9,15 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/discover-nuevo-vallarta-all-inclusive.jpg";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/discover-nuevo-vallarta-all-inclusive2.jpg";
-
 export default function DiscoverNuevoVallartaAi() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
-
     <>
       <div className="flex flex-col gap-3">
         {/* START BLOG */}
         <div className="mb-6">
-          <TitleH1>
-            {languageData.DiscoverNuevoVallartaAi.mainTitle}
-          </TitleH1>
+          <TitleH1>{languageData.DiscoverNuevoVallartaAi.mainTitle}</TitleH1>
         </div>
         <SubtitleP>
           {languageData.DiscoverNuevoVallartaAi.subtitle1.Text1}
@@ -34,9 +27,7 @@ export default function DiscoverNuevoVallartaAi() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={588}
-          // height={327}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-nuevo-vallarta-all-inclusive.jpg`}
           alt="Vista de la oriilla del mar en un día completamente soleado con un mar azul profundo."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -61,9 +52,7 @@ export default function DiscoverNuevoVallartaAi() {
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={585}
-          // height={389}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-nuevo-vallarta-all-inclusive2.jpg`}
           alt="Vista de alberca de un hotel con numerosos camastros. La alberca está iluminada internamente por luces con tonalidades verdes turquesas y moradas."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -87,24 +76,12 @@ export default function DiscoverNuevoVallartaAi() {
         </SubtitleP>
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
-          <li>
-            {languageData.DiscoverNuevoVallartaAi.list1.textNormal1}
-          </li>
-          <li>
-            {languageData.DiscoverNuevoVallartaAi.list1.textNormal2}
-          </li>
-          <li>
-            {languageData.DiscoverNuevoVallartaAi.list1.textNormal3}
-          </li>
-          <li>
-            {languageData.DiscoverNuevoVallartaAi.list1.textNormal4}
-          </li>
-          <li>
-            {languageData.DiscoverNuevoVallartaAi.list1.textNormal5}
-          </li>
-          <li>
-            {languageData.DiscoverNuevoVallartaAi.list1.textNormal6}
-          </li>
+          <li>{languageData.DiscoverNuevoVallartaAi.list1.textNormal1}</li>
+          <li>{languageData.DiscoverNuevoVallartaAi.list1.textNormal2}</li>
+          <li>{languageData.DiscoverNuevoVallartaAi.list1.textNormal3}</li>
+          <li>{languageData.DiscoverNuevoVallartaAi.list1.textNormal4}</li>
+          <li>{languageData.DiscoverNuevoVallartaAi.list1.textNormal5}</li>
+          <li>{languageData.DiscoverNuevoVallartaAi.list1.textNormal6}</li>
         </ul>
 
         <SubtitleP>
@@ -131,17 +108,21 @@ export default function DiscoverNuevoVallartaAi() {
           <li>{languageData.DiscoverNuevoVallartaAi.list2.textNormal5}</li>
         </ul>
         <SubtitleP>
-        {languageData.DiscoverNuevoVallartaAi.paragraphBottom2}
+          {languageData.DiscoverNuevoVallartaAi.paragraphBottom2}
         </SubtitleP>
 
         {/* REVIEWS */}
         <div className="my-4">
-          <TableReviews TableBlog={languageData.DiscoverNuevoVallartaAi.table} />
+          <TableReviews
+            TableBlog={languageData.DiscoverNuevoVallartaAi.table}
+          />
         </div>
 
         {/* END BLOG */}
         <div className="my-2">
-          <TitleH2>{languageData.DiscoverNuevoVallartaAi.section5Title}</TitleH2>
+          <TitleH2>
+            {languageData.DiscoverNuevoVallartaAi.section5Title}
+          </TitleH2>
         </div>
         <SubtitleP>
           {languageData.DiscoverNuevoVallartaAi.subtitle5.Text1}
@@ -157,4 +138,4 @@ export default function DiscoverNuevoVallartaAi() {
       </div>
     </>
   );
-};
+}

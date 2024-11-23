@@ -146,7 +146,7 @@ export default function ChainsHome({ typePage = null }) {
                     <img
                       src={hotel}
                       alt="Hotel Chains"
-                      className="select-none"
+                      className="select-none object-cover"
                       // width={hotel.width}
                       // height={hotel.height}
                     />

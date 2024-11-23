@@ -221,6 +221,7 @@ export const en = {
     subtitleKeep:
       "Don't stop here. Discover more exciting destinations and plan your next adventure.",
     btnBack: "Back to the beginning",
+    goPay:"Go pay",
 
     hotel: {
       titleRecommedation: "Accommodations you might like",
@@ -1262,7 +1263,7 @@ export const en = {
   },
 
   booking: {
-    titleVacations: "Your vacation is (almost) ready",
+    titleVacations: "You're one step away from completing your reservation",
     subtitleComplete: "Complete the data and finalize your purchase.",
     textBooking: "Summary of your booking",
     taxes: "Taxes",
@@ -1315,6 +1316,11 @@ export const en = {
       },
     },
     invalidEmail: "Invalid email",
+  },
+
+  pending:{
+    titlePending:"We are processing your payment",
+    subtitlePending:"This process may take a few hours. We will notify you as soon as your reservation is confirmed. Thank you for your patience and understanding.",
   },
 
   confirmation: {
@@ -1867,6 +1873,17 @@ export const en = {
     formHb: "Select the age",
   },
   
+  myReservation: {
+    checkReservation: "Check your Reservation",
+    enterCodeAndReservation:"Enter your reservation code and your last name(s)",
+    reservationCode:"Reservation code",
+    lastName:"Last name(s)",
+    findReservation:"Find your Reservation",
+    haveYouForgotten:"Have you forgotten your reservation code?",
+    doYouNeedHelp:"Do you need help?",
+    callUsAt:"Call us at",
+    followUsOn:"Follow us on",
+  },
 
   // region COUNTRIES
   countries: {

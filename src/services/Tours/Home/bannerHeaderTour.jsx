@@ -73,7 +73,7 @@ export default function BannerHeaderTour(props) {
               >
                 <img
                   src={imgCarrousel}
-                  className="object-cover	w-full h-full object-center select-none"
+                  className="w-full h-full object-center select-none object-cover"
                   alt="banner-principal-tour"
                   width="100%"
                   height="100%"

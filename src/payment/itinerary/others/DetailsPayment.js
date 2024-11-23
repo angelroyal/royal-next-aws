@@ -10,12 +10,13 @@ import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
+import { useRouter } from "next/navigation";
 
 export default function DetailsPayment(props) {
-  const { data, step } = props;
-
+  const router = useRouter();
+  const { data, step, page } = props;
   const isMobile = useIsMobileNew();
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   // NEW CONTEXT
   const {
@@ -26,12 +27,6 @@ export default function DetailsPayment(props) {
     setTotalTaxesNotIncluded,
   } = useContext(BookingContext);
 
-  const nextStep = () => {
-    if (isMobile) {
-      setOpenDialog(false);
-    }
-    handleStepChange(step + 1);
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,6 +57,13 @@ export default function DetailsPayment(props) {
       );
     }
   }, [data]);
+  
+  const searchParams = new URLSearchParams(window.location.search);
+  const uid = searchParams.get("uid");
+
+  const handleClientForm = () => {
+    router.push(`/${language}/form-client?uid=${uid}`);
+  };
 
   return (
     <>
@@ -188,9 +190,9 @@ export default function DetailsPayment(props) {
                 <div className="flex justify-center flex-nowrap gap-[51px] items-center">
                   <ModalShare itinerary={true} className="w-[30%]" />
 
-                  {step === 1 && (
+                  {page === "itinerary" && (
                     <button
-                      onClick={() => nextStep()}
+                      onClick={() => handleClientForm()}
                       className="rounded-full py-[10px] px-[27px] flex !gap-x-2 bg-yw-100 items-center border-0 focus:outline-none text-fs-10 text-black m-b text-nowrap"
                     >
                       {languageData.itinerary.detailsPayment.completePayment}

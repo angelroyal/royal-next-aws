@@ -10,12 +10,7 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-queretaro1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-queretaro2.png";
-
-
 export default function FindQueretaro() {
-
   // RICHI
   const { languageData } = useContext(LanguageContext);
 
@@ -37,9 +32,7 @@ export default function FindQueretaro() {
       {/* START BLOG */}
 
       <div className="mb-6">
-        <TitleH1>
-          {languageData.FindQueretaro.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.FindQueretaro.mainTitle}</TitleH1>
       </div>
 
       <SubtitleP>
@@ -49,27 +42,19 @@ export default function FindQueretaro() {
 
       {/* IMAGE 1 */}
       <img
-        src={imgBlogGeneric1.src}
-        // width={916}
-        // height={600}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-queretaro.jpg`}
         alt="Imagen de estatua de bronce entre un grupo de personas a plena luz del día."
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       {/* paragraphs1 */}
-      <SubtitleP>
-        {languageData.FindQueretaro.paragraphs1.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs1.Text1}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.FindQueretaro.paragraphs1.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs1.Text2}</SubtitleP>
 
       {/* ASK */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.FindQueretaro.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.FindQueretaro.section2Title}</TitleH2>
       </div>
 
       <SubtitleP>
@@ -81,39 +66,26 @@ export default function FindQueretaro() {
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={923}
-        // height={547}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-queretaro2.png`}
         alt="find queretaro"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
 
       {/* paragraphs2 */}
-      <SubtitleP>
-        {languageData.FindQueretaro.paragraphs2.Text1}
-      </SubtitleP>
-      <SubtitleP>
-        {languageData.FindQueretaro.paragraphs2.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs2.Text1}</SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs2.Text2}</SubtitleP>
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.FindQueretaro.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.FindQueretaro.section3Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.FindQueretaro.subtitle3}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.subtitle3}</SubtitleP>
 
-      <SubtitleP>
-        {languageData.FindQueretaro.paragraphs3}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs3}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
-
         <li>
           <b className="text-black text-fs-16">
             {languageData.FindQueretaro.list1.textBold1}{" "}
@@ -162,24 +134,18 @@ export default function FindQueretaro() {
           </b>
           {languageData.FindQueretaro.list1.textNormal7}
         </li>
-
       </ul>
 
       {/* WHAT ARE THE FACILITIES */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.FindQueretaro.section4Title}
-        </TitleH2>
+        <TitleH2>{languageData.FindQueretaro.section4Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.FindQueretaro.subtitle4}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.subtitle4}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
-
-      <li>
+        <li>
           <b className="text-black text-fs-16">
             {languageData.FindQueretaro.list2.textBold1}{" "}
           </b>
@@ -220,7 +186,6 @@ export default function FindQueretaro() {
           </b>
           {languageData.FindQueretaro.list2.textNormal6}
         </li>
-    
       </ul>
 
       {/* REVIEWS */}
@@ -230,9 +195,7 @@ export default function FindQueretaro() {
 
       {/* END BLOG */}
       <div className="my-2">
-        <TitleH2>
-          {languageData.FindQueretaro.section5Title}
-        </TitleH2>
+        <TitleH2>{languageData.FindQueretaro.section5Title}</TitleH2>
       </div>
 
       <SubtitleP>
@@ -241,12 +204,8 @@ export default function FindQueretaro() {
         {languageData.FindQueretaro.subtitle5.Text2}
       </SubtitleP>
 
-      <SubtitleP>
-        {languageData.FindQueretaro.paragraphs5.Text1}
-      </SubtitleP>
-      <SubtitleP>
-      {languageData.FindQueretaro.paragraphs5.Text2}
-      </SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs5.Text1}</SubtitleP>
+      <SubtitleP>{languageData.FindQueretaro.paragraphs5.Text2}</SubtitleP>
     </div>
   );
 }

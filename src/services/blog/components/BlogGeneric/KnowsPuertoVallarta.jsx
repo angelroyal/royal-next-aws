@@ -9,12 +9,7 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/knows-puerto-vallarta1.png";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/knows-puerto-vallarta2.png";
-
 export default function KnowsPuertoVallarta() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
@@ -22,26 +17,19 @@ export default function KnowsPuertoVallarta() {
       {/* START BLOG */}
 
       <div className="mb-6">
-        <TitleH1>
-          {languageData.KnowsPuertoVallarta.mainTitle}
-        </TitleH1>
+        <TitleH1>{languageData.KnowsPuertoVallarta.mainTitle}</TitleH1>
       </div>
 
       <SubtitleP>
-        {languageData.KnowsPuertoVallarta.subtitle1.Text1}
-        {" "}
-        <BT>
-          {languageData.KnowsPuertoVallarta.subtitle1.BT}
-        </BT>
+        {languageData.KnowsPuertoVallarta.subtitle1.Text1}{" "}
+        <BT>{languageData.KnowsPuertoVallarta.subtitle1.BT}</BT>
         {languageData.KnowsPuertoVallarta.subtitle1.Text2}
       </SubtitleP>
 
       {/* IMAGE 1 */}
 
       <img
-        src={imgBlogGeneric1.src}
-        // width={920}
-        // height={556}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-puerto-vallarta1.png`}
         alt="Mejor hotel de Puerto Vallarta, situado en la hermosa costa del Pacífico en el estado de Jalisco"
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -51,18 +39,14 @@ export default function KnowsPuertoVallarta() {
       </SubtitleP>
 
       <SubtitleP>
-        {languageData.KnowsPuertoVallarta.paragraphs1.Text2} {" "}
-        <BT>
-          {languageData.KnowsPuertoVallarta.paragraphs1.BT}
-        </BT>
+        {languageData.KnowsPuertoVallarta.paragraphs1.Text2}{" "}
+        <BT>{languageData.KnowsPuertoVallarta.paragraphs1.BT}</BT>
         {languageData.KnowsPuertoVallarta.paragraphs1.Text3}
       </SubtitleP>
 
       {/* ASK */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.KnowsPuertoVallarta.section2Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsPuertoVallarta.section2Title}</TitleH2>
       </div>
 
       <SubtitleP>
@@ -72,9 +56,7 @@ export default function KnowsPuertoVallarta() {
       {/* IMAGE 2 */}
 
       <img
-        src={imgBlogGeneric2.src}
-        // width={922}
-        // height={536}
+        src={`${process.env.NEXT_PUBLIC_URL}img/blog/knows-puerto-vallarta2.png`}
         alt="Entrada del hotel Villa Del Palmar Beach Resort & Spa "
         className="rounded-lg h-[437px] object-cover w-full my-6"
       />
@@ -84,24 +66,16 @@ export default function KnowsPuertoVallarta() {
       </SubtitleP>
       <SubtitleP>
         {languageData.KnowsPuertoVallarta.paragraphs2.Text2}{" "}
-        <BT>
-          {languageData.KnowsPuertoVallarta.paragraphs2.BT}
-        </BT>
+        <BT>{languageData.KnowsPuertoVallarta.paragraphs2.BT}</BT>
       </SubtitleP>
 
       {/* ROOM TYPES */}
       <div className="mt-6">
-        <TitleH2>
-          {languageData.KnowsPuertoVallarta.section3Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsPuertoVallarta.section3Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsPuertoVallarta.subtitle3}
-      </SubtitleP>
-      <SubtitleP>
-        {languageData.KnowsPuertoVallarta.paragraphs3}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsPuertoVallarta.subtitle3}</SubtitleP>
+      <SubtitleP>{languageData.KnowsPuertoVallarta.paragraphs3}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -133,24 +107,18 @@ export default function KnowsPuertoVallarta() {
 
       {/* WHAT ARE THE FACILITIES */}
       <div className="mt-4">
-        <TitleH2>
-          {languageData.KnowsPuertoVallarta.section4Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsPuertoVallarta.section4Title}</TitleH2>
       </div>
 
-      <SubtitleP>
-        {languageData.KnowsPuertoVallarta.subtitle4.Text1}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsPuertoVallarta.subtitle4.Text1}</SubtitleP>
 
       <SubtitleP>
-        {languageData.KnowsPuertoVallarta.subtitle4.Text2} {" "}
+        {languageData.KnowsPuertoVallarta.subtitle4.Text2}{" "}
         <b className="text-black">
           {languageData.KnowsPuertoVallarta.subtitle4.BT}
         </b>
       </SubtitleP>
-      <SubtitleP>
-        {languageData.KnowsPuertoVallarta.subtitle4.Text3}
-      </SubtitleP>
+      <SubtitleP>{languageData.KnowsPuertoVallarta.subtitle4.Text3}</SubtitleP>
 
       {/* LIST */}
       <ul className="gap-2 flex flex-col m-m text-fs-14">
@@ -205,26 +173,22 @@ export default function KnowsPuertoVallarta() {
 
       {/* END BLOG */}
       <div className="my-2">
-        <TitleH2>
-          {languageData.KnowsPuertoVallarta.section5Title}
-        </TitleH2>
+        <TitleH2>{languageData.KnowsPuertoVallarta.section5Title}</TitleH2>
       </div>
 
       <SubtitleP>
-        {languageData.KnowsPuertoVallarta.subtitle5.Text1} {" "}
-        <BT>
-          {languageData.KnowsPuertoVallarta.subtitle5.BT}
-        </BT>
+        {languageData.KnowsPuertoVallarta.subtitle5.Text1}{" "}
+        <BT>{languageData.KnowsPuertoVallarta.subtitle5.BT}</BT>
         {languageData.KnowsPuertoVallarta.subtitle5.Text2}
       </SubtitleP>
 
       <SubtitleP>
         {languageData.KnowsPuertoVallarta.paragraphs5.Text1}
       </SubtitleP>
-      
+
       <SubtitleP>
         {languageData.KnowsPuertoVallarta.paragraphs5.Text2}
       </SubtitleP>
     </div>
   );
-};
+}

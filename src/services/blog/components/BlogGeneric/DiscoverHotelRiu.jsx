@@ -9,11 +9,7 @@ import TitleH2 from "./General/TitleH2";
 import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/discover-riu-cancun.jpg";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/discover-riu-cancun-1.jpg";
-
 export default function DiscoverHotelRiu() {
-
   const { languageData } = useContext(LanguageContext);
 
   const TableBlog = {
@@ -49,109 +45,62 @@ export default function DiscoverHotelRiu() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={589}
-          // height={409}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun.jfif`}
           alt="Piscinas y zona de estar en el hotel Riu en Cancún"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
 
-        <SubtitleP>
-          {languageData.DiscoverHotelRiu.paragraphs1.Text1}
-        </SubtitleP>
-        <SubtitleP>
-        {languageData.DiscoverHotelRiu.paragraphs1.Text2}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.paragraphs1.Text1}</SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.paragraphs1.Text2}</SubtitleP>
         {/* ASK */}
         <div className="mt-4">
           <TitleH2>{languageData.DiscoverHotelRiu.section2Title}</TitleH2>
         </div>
-        <SubtitleP>
-          {languageData.DiscoverHotelRiu.subtitle2.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.subtitle2.Text1}</SubtitleP>
 
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={594}
-          // height={373}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/discover-riu-cancun-1.jfif`}
           alt="Vista panorámica del Hotel Riu Palace Las Américas"
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
 
-        <SubtitleP>
-         {languageData.DiscoverHotelRiu.paragraphs2.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.paragraphs2.Text1}</SubtitleP>
 
         {/* ROOM TYPES */}
         <div className="mt-6">
-          <TitleH2>
-            {languageData.DiscoverHotelRiu.section3Title}
-          </TitleH2>
+          <TitleH2>{languageData.DiscoverHotelRiu.section3Title}</TitleH2>
         </div>
 
-        <SubtitleP>
-          {languageData.DiscoverHotelRiu.subtitle3.Text1}
-        </SubtitleP>
-        <SubtitleP>
-          {languageData.DiscoverHotelRiu.subtitle3.Text2}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.subtitle3.Text1}</SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.subtitle3.Text2}</SubtitleP>
 
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
-          <li>
-            {languageData.DiscoverHotelRiu.list1.textNormal1}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list1.textNormal2}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list1.textNormal3}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list1.textNormal4}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list1.textNormal5}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list1.textNormal6}
-          </li>
+          <li>{languageData.DiscoverHotelRiu.list1.textNormal1}</li>
+          <li>{languageData.DiscoverHotelRiu.list1.textNormal2}</li>
+          <li>{languageData.DiscoverHotelRiu.list1.textNormal3}</li>
+          <li>{languageData.DiscoverHotelRiu.list1.textNormal4}</li>
+          <li>{languageData.DiscoverHotelRiu.list1.textNormal5}</li>
+          <li>{languageData.DiscoverHotelRiu.list1.textNormal6}</li>
         </ul>
 
         {/* WHAT ARE THE FACILITIES */}
         <div className="mt-4">
-          <TitleH2>
-            {languageData.DiscoverHotelRiu.section4Title}
-          </TitleH2>
+          <TitleH2>{languageData.DiscoverHotelRiu.section4Title}</TitleH2>
         </div>
 
-        <SubtitleP>
-          {languageData.DiscoverHotelRiu.subtitle4.Text1}
-        </SubtitleP>
-        <SubtitleP>
-        {languageData.DiscoverHotelRiu.subtitle4.Text2}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.subtitle4.Text1}</SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.subtitle4.Text2}</SubtitleP>
 
         {/* LIST */}
         <ul className="gap-2 flex flex-col m-m text-fs-14">
-          <li>
-            {languageData.DiscoverHotelRiu.list2.textNormal1}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list2.textNormal2}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list2.textNormal3}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list2.textNormal4}
-          </li>
-          <li>
-            {languageData.DiscoverHotelRiu.list2.textNormal5}
-          </li>
-          
+          <li>{languageData.DiscoverHotelRiu.list2.textNormal1}</li>
+          <li>{languageData.DiscoverHotelRiu.list2.textNormal2}</li>
+          <li>{languageData.DiscoverHotelRiu.list2.textNormal3}</li>
+          <li>{languageData.DiscoverHotelRiu.list2.textNormal4}</li>
+          <li>{languageData.DiscoverHotelRiu.list2.textNormal5}</li>
         </ul>
 
         {/* REVIEWS */}
@@ -168,9 +117,7 @@ export default function DiscoverHotelRiu() {
           {languageData.DiscoverHotelRiu.subtitle5.BT}
           {languageData.DiscoverHotelRiu.subtitle5.Text2}
         </SubtitleP>
-        <SubtitleP>
-          {languageData.DiscoverHotelRiu.paragraphs5.Text1}
-        </SubtitleP>
+        <SubtitleP>{languageData.DiscoverHotelRiu.paragraphs5.Text1}</SubtitleP>
       </div>
     </>
   );

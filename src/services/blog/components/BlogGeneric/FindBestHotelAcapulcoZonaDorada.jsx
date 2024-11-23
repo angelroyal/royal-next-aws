@@ -9,23 +9,15 @@ import SubtitleP from "./General/SubtitleP";
 import TableReviews from "./General/TableReviews";
 import { LanguageContext } from "../../Context/LanguageContext";
 
-import imgBlogGeneric1 from "@/assets/img/BlogGeneric/find-best-hotel-acapulco-zona-dorada.jpg";
-import imgBlogGeneric2 from "@/assets/img/BlogGeneric/find-best-hotel-acapulco-zona-dorada2.jpg";
-
-
 export default function FindAcapulcoZonaDorada() {
-
   const { languageData } = useContext(LanguageContext);
 
   return (
-
     <>
       <div className="flex flex-col gap-3">
         {/* START BLOG */}
         <div className="mb-6">
-          <TitleH1>
-            {languageData.FindAcapulcoZonaDorada.mainTitle}
-          </TitleH1>
+          <TitleH1>{languageData.FindAcapulcoZonaDorada.mainTitle}</TitleH1>
         </div>
         <SubtitleP>
           {languageData.FindAcapulcoZonaDorada.subtitle1.Text1}
@@ -33,9 +25,7 @@ export default function FindAcapulcoZonaDorada() {
         {/* IMAGE 1 */}
 
         <img
-          src={imgBlogGeneric1.src}
-          // width={590}
-          // height={371}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-best-hotel-acapulco-zona-dorada.jpg`}
           alt="Vista de letrero de Acapulco de espaldas al mar en un día plenamente soleado."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -45,9 +35,7 @@ export default function FindAcapulcoZonaDorada() {
         </SubtitleP>
         <SubtitleP>
           {languageData.FindAcapulcoZonaDorada.paragraphs1.Text2}
-          <BT>
-            {languageData.FindAcapulcoZonaDorada.paragraphs1.BT}
-          </BT>
+          <BT>{languageData.FindAcapulcoZonaDorada.paragraphs1.BT}</BT>
           {languageData.FindAcapulcoZonaDorada.paragraphs1.Text2}
         </SubtitleP>
 
@@ -62,9 +50,7 @@ export default function FindAcapulcoZonaDorada() {
         {/* IMAGE 2 */}
 
         <img
-          src={imgBlogGeneric2.src}
-          // width={586}
-          // height={371}
+          src={`${process.env.NEXT_PUBLIC_URL}img/blog/find-best-hotel-acapulco-zona-dorada2.jpg`}
           alt="Vista de alberca de hotel en un díá soleado. Se alcanza a ver un tobogan que da a la alberca."
           className="rounded-lg h-[437px] object-cover w-full my-6"
         />
@@ -78,9 +64,7 @@ export default function FindAcapulcoZonaDorada() {
 
         {/* ROOM TYPES */}
         <div className="mt-6">
-          <TitleH2>
-            {languageData.FindAcapulcoZonaDorada.section3Title}
-          </TitleH2>
+          <TitleH2>{languageData.FindAcapulcoZonaDorada.section3Title}</TitleH2>
         </div>
 
         <SubtitleP>
@@ -146,4 +130,4 @@ export default function FindAcapulcoZonaDorada() {
       </div>
     </>
   );
-};
+}

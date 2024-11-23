@@ -114,8 +114,8 @@ export function BannerHomeTourSwiper(props) {
               src={getImg.tour.bannerBlue[deviceType]}
               width={266}
               height={235}
-              className="w-full rounded-lg select-none"
-              alt="Banner Experimenta los mejores tours"
+              className="w-full rounded-lg select-none object-cover"
+              alt="Banner blue tour -m"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -206,8 +206,8 @@ export function BannerHomeTourD(props) {
               height={235}
               //   src={bannerTraveling}
               src={getImg.tour.bannerBlue[deviceType]}
-              className="w-full rounded-lg select-none"
-              alt="Banner Experimenta los mejores tours"
+              className="w-full rounded-lg select-none object-cover"
+              alt="Banner blue tour"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
@@ -233,13 +233,13 @@ export function BannerHomeTourD(props) {
               className="w-full h-full"
             />
           ) : getImg ? (
-            <Image
-              width={266}
-              height={235}
+            <img
+            //   width={266}
+            //   height={235}
               src={getImg.tour.bannerText[deviceType]}
               //   src={bannerTour}
-              alt="Banner tour mes de feb"
-              className="w-full rounded-lg select-none object-cover object-bottom transition-transform duration-500 transform scale-100 hover:scale-105"
+              alt="Banner tour desktop"
+              className="w-full rounded-lg select-none object-cover transition-transform duration-500 transform scale-100 hover:scale-105"
             />
           ) : (
             <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-full rounded-lg" />
