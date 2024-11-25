@@ -1,0 +1,566 @@
+[33mcommit e87f3fdebd840572bc16a6080f9597c333e6590f[m[33m ([m[1;36mHEAD -> [m[1;32mproduction[m[33m, [m[1;31morigin/production[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Dev[m[33m, [m[1;32mDev[m[33m)[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:58:56 2024 -0600
+
+    pod
+
+[33mcommit cd911195c18f3c17bf712f5ac49e7b8073a679bc[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:56:02 2024 -0600
+
+    SOLUTIONS ojala
+
+[33mcommit cf2e5c61583bc0334c674b19a105cce4a06c7f60[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:46:15 2024 -0600
+
+    SOLUTIONS sadsa
+
+[33mcommit b81613e59f787a9476cea6d3860d261fb7c82dcd[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:41:26 2024 -0600
+
+    SOLUTIONS
+
+[33mcommit cecdd17f658d1a5a6d997855d06b378bd5beb941[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:41:05 2024 -0600
+
+    fixed
+
+[33mcommit 4c6545673273225c830290a524f9944a9e93d76f[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:25:11 2024 -0600
+
+    ixed bueno
+
+[33mcommit 02c215c02d53077ba61df2262732837bd3306cc2[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:11:16 2024 -0600
+
+    source map active
+
+[33mcommit e0e669f603af870a6e5c33bb9e3a52a25f29e49e[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:07:27 2024 -0600
+
+    source map
+
+[33mcommit 287fce4811ac59d74fbd66b4e6338fd5cffcc7ea[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 09:00:42 2024 -0600
+
+    fixed payment
+
+[33mcommit c5c64beef2930c463697bfbe8b01d86232a582e4[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 08:53:36 2024 -0600
+
+    2 fixed
+
+[33mcommit c5027e952b04b61dc2cd877f5546b2bf3cc583f9[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 08:51:01 2024 -0600
+
+     fixed
+
+[33mcommit 1dc0c0f0411a121fbad33eba17537bc06a2cb5a0[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 08:45:30 2024 -0600
+
+     fixed
+
+[33mcommit a2cce4b120a36d83e425bb0583188585227722f1[m
+Merge: e59cd8d f6bc0e5
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Nov 25 09:39:12 2024 -0500
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit e59cd8d5ac84c754eee4fd3f702f8be3b3b75560[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Nov 25 09:39:03 2024 -0500
+
+    add status
+
+[33mcommit f6bc0e5525e05ce0dc4d54d77f341a8451ea8069[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 08:32:47 2024 -0600
+
+    fixed
+
+[33mcommit 323605cafaefff8cc9adeb7dba2860e6b6de5443[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 08:24:01 2024 -0600
+
+    fixed env
+
+[33mcommit 1e8261e84c19d0f71405b462860246b3f8fb80ce[m
+Merge: 9f67f2b a2eaf61
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 08:18:33 2024 -0600
+
+    Merge branch 'Dev' into production
+
+[33mcommit a2eaf616e6bfcb56c1df3c7ef09fc9618abeb0cf[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 25 08:15:16 2024 -0600
+
+    merge prod
+
+[33mcommit 9f67f2b18007f3be4c1e9624902ba454fdc46101[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Sat Nov 23 12:44:46 2024 -0500
+
+    commit trasnport
+
+[33mcommit c77bd0e1d0ed2b967bdf89a27f8d18ad8551ddf0[m
+Merge: 509435e 14a09e2
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Sat Nov 23 11:57:04 2024 -0500
+
+    Merge branch 'Dev' into production
+
+[33mcommit 14a09e2758c31566805e3b773317f36a4596563c[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Wed Nov 20 12:42:52 2024 -0500
+
+    object fit cover
+
+[33mcommit ede05be662f4930dafb03f1bd451d67db3a2b327[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Wed Nov 20 11:53:33 2024 -0500
+
+    mark details
+
+[33mcommit 8b586c9b34c466d7e9d8a23e270ef099856b0ef9[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Wed Nov 20 10:06:19 2024 -0500
+
+    banners home
+
+[33mcommit 5500de48b939b46a8cefa7073e72fff95ff71490[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Tue Nov 19 10:28:38 2024 -0500
+
+    banner offers
+
+[33mcommit 8c3d1e62e23f79e54bbde56001ad43a87aaf5f15[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Nov 15 17:22:31 2024 -0500
+
+    mrk edit
+
+[33mcommit becc8fe0335707dad80df223acf7ec9e3b8a3a17[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Nov 15 15:49:46 2024 -0500
+
+    transport banners
+
+[33mcommit 836c05ca32ef13574cacb3e4d8441ec2f88c676d[m
+Merge: 9550fa8 ca77974
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Wed Nov 13 10:49:42 2024 -0500
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit 9550fa8cd8639bb7d7cb4677c4cac0191f25c2fb[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Wed Nov 13 10:49:28 2024 -0500
+
+    my reservations
+
+[33mcommit ca779743071b6bbd72572200e8811ed9746f34a8[m
+Author: abastian <abastian@36t.mx>
+Date:   Wed Nov 13 09:27:49 2024 -0600
+
+    routes
+
+[33mcommit 95d7831ccf01c07377272f9e28bec37719d833da[m
+Author: abastian <abastian@36t.mx>
+Date:   Tue Nov 12 15:36:41 2024 -0600
+
+    fixed
+
+[33mcommit e0432f728b4960e91ac6c9105f37608e48b06766[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Nov 11 17:43:46 2024 -0500
+
+    remove tour
+
+[33mcommit 1584a413e61dba490a1a108d5bc05bb8d14c6bec[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Nov 11 17:16:37 2024 -0500
+
+    format code
+
+[33mcommit 4a58409ea22b616c6ff129512bbb679e8a4c9e33[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Nov 11 16:27:19 2024 -0500
+
+    transport
+
+[33mcommit 99d8ec99804f5e4143080c11833645b5286d9f6a[m
+Merge: 924dfe9 b6b4a50
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Nov 11 13:31:23 2024 -0500
+
+    resolve conflig
+
+[33mcommit 924dfe9e695089c3f9272b52ba31a6174e3fd131[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Nov 11 13:30:19 2024 -0500
+
+    cards itinerary
+
+[33mcommit b6b4a50f462c7c3299807e22bc07479893d27843[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Mon Nov 11 13:22:46 2024 -0500
+
+    nav blog
+
+[33mcommit 6704070a0acf62753fbb6d2bebca3ba527505fe7[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Mon Nov 11 12:28:34 2024 -0500
+
+    skeleton form
+
+[33mcommit 58cc1f0b095e3c5e9714585725541689308ba3eb[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 11 08:57:33 2024 -0600
+
+    fixed
+
+[33mcommit 87a561ca6897441aab73b45f2f6e4326529e8ca3[m
+Merge: b2685d8 e241991
+Author: abastian <abastian@36t.mx>
+Date:   Sat Nov 9 12:46:14 2024 -0600
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit b2685d8ed4767f5dbd6a2f73ebdf3839135c5420[m
+Author: abastian <abastian@36t.mx>
+Date:   Sat Nov 9 12:46:01 2024 -0600
+
+    fix
+
+[33mcommit e24199181971378c5cf2afe9ec7756df1b49482b[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Nov 8 16:33:16 2024 -0500
+
+    skeleton pending payment and form payment
+
+[33mcommit 2dfaab70aa83168fb44c781e4a3cbd3f831b0faa[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Thu Nov 7 17:38:45 2024 -0500
+
+    pending page
+
+[33mcommit 53570ee2d96a775de61c0cc34f8bc6e3f75d4302[m
+Author: abastian <abastian@36t.mx>
+Date:   Thu Nov 7 09:07:36 2024 -0600
+
+    ficed
+
+[33mcommit 594c5d4bd05bffcc9b102b040114ad5c38dbcf53[m
+Author: abastian <abastian@36t.mx>
+Date:   Wed Nov 6 15:56:39 2024 -0600
+
+    fixed
+
+[33mcommit f3a32625da12a961eae215cf92a42bdf33e65134[m
+Author: abastian <abastian@36t.mx>
+Date:   Wed Nov 6 15:47:41 2024 -0600
+
+    folder new directions
+
+[33mcommit 3112eb737b82f73a48140fa2e41ac8228a64ba7e[m
+Merge: 43c7e0b db00b5b
+Author: abastian <abastian@36t.mx>
+Date:   Wed Nov 6 12:28:48 2024 -0600
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit 43c7e0bf13b0fc378fcd5a226d85091a80e2dd4a[m
+Author: abastian <abastian@36t.mx>
+Date:   Wed Nov 6 12:28:31 2024 -0600
+
+    fixed
+
+[33mcommit db00b5bd634b75bf39d8f8c96de8854cf0f96cb2[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Wed Nov 6 11:24:47 2024 -0500
+
+    img blogs
+
+[33mcommit 509435e71539dd6f2dd0a2a064df75582462009b[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 4 08:42:48 2024 -0600
+
+    fixed form deviced
+
+[33mcommit 1317840da87a344a08fd56bbbb22a732e349c13a[m
+Author: abastian <abastian@36t.mx>
+Date:   Mon Nov 4 08:39:31 2024 -0600
+
+    fixed env
+
+[33mcommit d5b4345367c8ff26da43e4d75bbdad1fa7b6e7d7[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Nov 1 17:59:21 2024 -0500
+
+    update img
+
+[33mcommit 60a63632ad922c3cdc958d482717715bd702ea5a[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Fri Nov 1 17:57:14 2024 -0500
+
+    konecta
+
+[33mcommit 20b70e7406d0d1bdb4d97726048d83018d5f9f69[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Nov 1 17:39:44 2024 -0500
+
+    json blog imgs server
+
+[33mcommit 765d4fda7cf350427a599dbabd311bc3d812f952[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Nov 1 16:52:35 2024 -0500
+
+    img server
+
+[33mcommit 4a15cb3abbf1d9c5ccbca36fc3d638bf2277e784[m
+Merge: b36a97b eb6b61f
+Author: abastian <abastian@36t.mx>
+Date:   Wed Oct 30 11:16:07 2024 -0600
+
+    Merge branch 'production' of https://github.com/angelroyal/royal-next-aws into production
+
+[33mcommit b36a97b6c35a7415a89eacd6d63b7e5191afb373[m
+Author: abastian <abastian@36t.mx>
+Date:   Wed Oct 30 11:15:57 2024 -0600
+
+    fixed
+
+[33mcommit eb6b61f14958c705975b1d00485b5229a6c07a2e[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Tue Oct 29 10:45:20 2024 -0500
+
+    remove test
+
+[33mcommit 09172e5b53c1c60dda6d2bc8b505958a0a450c84[m
+Merge: c4161bd 85c4bbf
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Fri Oct 25 12:19:46 2024 -0500
+
+    Merge branch 'production' of https://github.com/angelroyal/royal-next-aws into production
+
+[33mcommit c4161bdf529a085f7eda1a933576481075988a9f[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Fri Oct 25 12:19:37 2024 -0500
+
+    pruebas
+
+[33mcommit 85c4bbf1cc5fc83a96d0b12e5cf182d3b42e6506[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Wed Oct 23 10:09:51 2024 -0600
+
+    env
+
+[33mcommit d229a8c5204da896a5dfd1b27984a47c7cdca825[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Tue Oct 22 15:40:29 2024 -0500
+
+    go pay
+
+[33mcommit 8d82f1087419c71e42733658227234de824a446f[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Thu Oct 17 15:03:46 2024 -0600
+
+    fix
+
+[33mcommit 8d27c2ea9e74f210d756fb50d7553d38d662eb17[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Thu Oct 17 10:58:06 2024 -0600
+
+    fixed
+
+[33mcommit 82b5b751059979e48317d85831c73d84867b8719[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Thu Oct 17 10:05:26 2024 -0600
+
+    fix
+
+[33mcommit b20fe269899579cfa5f12de17904964aceef79f8[m
+Merge: 9defeb4 2b8eef0
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Wed Oct 16 14:52:26 2024 -0600
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit 9defeb4c4b9262db41f83cbd3870ea4db78080b1[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Wed Oct 16 14:52:04 2024 -0600
+
+    fix
+
+[33mcommit 2b8eef01b612bb6b1731184e356ba78e54f0a190[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Wed Oct 16 13:55:34 2024 -0500
+
+    formClientHB icons and border
+
+[33mcommit c200ef45db1116d525b7df00fc3200f6949967c3[m
+Merge: 391d656 4be4f62
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Wed Oct 16 11:19:13 2024 -0600
+
+    Merge branch 'feature/AB/hb' into Dev
+
+[33mcommit 4be4f6211bc495a8a2bbdefa7ded9580377b1ec0[m[33m ([m[1;31morigin/feature/AB/hb[m[33m)[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Wed Oct 16 11:18:41 2024 -0600
+
+    add romid and occupancyid
+
+[33mcommit 391d656ecb32827f2d2ddfb11dad83db95b7cb38[m
+Merge: 8c02637 711d05e
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Tue Oct 15 15:32:58 2024 -0500
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit 8c02637a1e10323539de1cea47c04d38d904c244[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Tue Oct 15 15:32:44 2024 -0500
+
+    icons blog
+
+[33mcommit 711d05ef49b8e2ff682c8757b8c29f9485d01dd0[m
+Merge: 19bc87f 01b653f
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Tue Oct 15 12:19:37 2024 -0600
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit 19bc87fa49fed51721329c2946ae89f7d747b60a[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Tue Oct 15 12:19:14 2024 -0600
+
+    fix pedillos luis
+
+[33mcommit 01b653fc1707b05b880810e2339db9c7c22da62a[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Tue Oct 15 10:05:32 2024 -0500
+
+    language result not found
+
+[33mcommit 25a6a4452f107ea354dbc911d20aac4616b5034d[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Oct 14 17:17:59 2024 -0500
+
+    border b
+
+[33mcommit 65f62c84f52b741646e16ad2ebfffe380d674a6a[m
+Merge: f4812a6 0c76e0d
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Oct 14 17:16:21 2024 -0500
+
+    resolve conflig
+
+[33mcommit 0c76e0d315651f531d0d39ac51a3ad9d2bc817a3[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Oct 14 16:52:31 2024 -0500
+
+    blog
+
+[33mcommit f4812a6dc4d009cf6ff3bf9079e1d78dee8b5c2f[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Mon Oct 14 10:57:33 2024 -0500
+
+    language listing blog
+
+[33mcommit 247a3b43dc1532bed355c7f19c5f83ed530da336[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Mon Oct 14 09:06:08 2024 -0500
+
+    search
+
+[33mcommit 290a0f542dcbc78a2d3cb1ec991554cb3a23cfb5[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Fri Oct 11 17:37:22 2024 -0500
+
+    change env.prod
+
+[33mcommit 455da42f8bcaf6ae56443de48dad70e3445f8a79[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Fri Oct 11 17:35:06 2024 -0500
+
+    change
+
+[33mcommit da8002b385c9d0c9e52d03cca4f0d2e2aea4fea1[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Fri Oct 11 15:53:44 2024 -0600
+
+     env
+
+[33mcommit 8af19af36709c589aab366d863c718af2e3b700f[m
+Merge: 6a737af 6bed7d0
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Fri Oct 11 15:52:02 2024 -0600
+
+    Merge branch 'Dev' of https://github.com/angelroyal/royal-next-aws into Dev
+
+[33mcommit 6a737afd7b98758a96cd20014a1e23178ac12f05[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Fri Oct 11 15:51:27 2024 -0600
+
+     env
+
+[33mcommit 6bed7d04294cf0134e4101b15bdde285bfa4af15[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Oct 11 16:42:17 2024 -0500
+
+    skeleton
+
+[33mcommit 2c11b3402d076ec873b3b167293ed924a251fd14[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Fri Oct 11 16:31:47 2024 -0500
+
+    categories
+
+[33mcommit c6a866cfec5fafffa9fb29651a8368a2e7e800d7[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Fri Oct 11 15:16:41 2024 -0600
+
+    fix
+
+[33mcommit 4f2c4ec2469980f6a557c4e685eb687818532886[m
+Author: GuilleJRL <148250562+GuilleJRL@users.noreply.github.com>
+Date:   Fri Oct 11 13:52:54 2024 -0500
+
+    filters
+
+[33mcommit 69c1e5f06119e81b8f929c2872e42de0b2daa687[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Oct 11 13:41:18 2024 -0500
+
+    NEWS HIGHLIGHTS 3 json
+
+[33mcommit a23d456e5223157be3a35f80a6bc05f0f81008b7[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Oct 11 11:25:46 2024 -0500
+
+    skeleton blog
+
+[33mcommit 447242fa3fc6670ec2574bc03b849094053e52db[m
+Author: LuisPerazaV <160287372+LuisPerazaV@users.noreply.github.com>
+Date:   Fri Oct 11 10:27:43 2024 -0500
+
+    image change for img
+
+[33mcommit 047136f32aec736e576f20561642909282d5e136[m
+Author: Angel Bastian <abastian@36t.mx>
+Date:   Thu Oct 10 14:29:44 2024 -0600
+
+    fix
