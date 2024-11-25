@@ -1,10 +1,10 @@
-import { ContainerCardPayment } from "@/components/Payment/ContainerCardPayment";
-import { DatesHeaderCardPayment } from "@/components/Payment/DatesHeaderCardPayment";
-import { IconLocationFolder } from "@/components/Payment/IconLocationFolder";
-import { ListCardsPayment } from "@/components/Payment/ListCardsPayment";
-import { ConfirmationCardHotel } from "./Hotel/ConfirmationCardHotel";
 import { ConfirmationCardTour } from "./Tour/ConfirmationCardTour";
-// import { ConfirmationCardTransport } from "./Transport/ConfirmationCardTransport";
+import { ConfirmationCardHotel } from "./Hotel/ConfirmationCardHotel";
+import { ListCardsPayment } from "@/components/Payment/ListCardsPayment";
+import { IconLocationFolder } from "@/components/Payment/IconLocationFolder";
+import { ContainerCardPayment } from "@/components/Payment/ContainerCardPayment";
+import { ConfirmationCardTransport } from "./Transport/ConfirmationCardTransport";
+import { DatesHeaderCardPayment } from "@/components/Payment/DatesHeaderCardPayment";
 
 export function ListCardsConfirmations({ confirmations }) {
   // console.log(confirmations);
@@ -33,10 +33,10 @@ export function ListCardsConfirmations({ confirmations }) {
                 )}
 
                 {/* TRANSPORT INFORMATION */}
-                {/* {(confirmation.type == "transport" ||
+                {(confirmation.type == "transport" ||
                   confirmation.type == "transportation") && (
                   <ConfirmationCardTransport transportInfo={confirmation} />
-                )} */}
+                )}
               </ContainerCardPayment>
             </div>
           </div>

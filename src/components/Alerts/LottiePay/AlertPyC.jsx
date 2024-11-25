@@ -5,7 +5,7 @@ import LanguageContext from "@/language/LanguageContext";
 export function AlertPyC({
   openAlert,
   setOpenAlert,
-  title,
+  title = null,
   description = null,
   cancelPolicy,
   cardView,
