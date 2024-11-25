@@ -33,10 +33,10 @@ export function ListCardsConfirmations({ confirmations }) {
                 )}
 
                 {/* TRANSPORT INFORMATION */}
-                {(confirmation.type == "transport" ||
+                {/* {(confirmation.type == "transport" ||
                   confirmation.type == "transportation") && (
                   <ConfirmationCardTransport transportInfo={confirmation} />
-                )}
+                )} */}
               </ContainerCardPayment>
             </div>
           </div>
