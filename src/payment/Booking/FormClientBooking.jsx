@@ -21,12 +21,15 @@ import DetailsPayment from "../itinerary/others/DetailsPayment";
 import EmptyItinerary from "../itinerary/Alerts/EmptyItinerary";
 import { DialogPaymentItinerary } from "../Utils/DialogPaymentItinerary";
 import FormPaymentSkeleton from "@/components/Skeleton/FormPaymentSkeleton";
+import { useRouter } from "next/navigation";
+
 
 export default function FormClientBooking() {
+  const router = useRouter();
   const [data, setData] = useState(null);
   const { itineraryData } = useCartAxios();
   const [showClr, setShowClr] = useState(null);
-  const { languageData } = useContext(LanguageContext);
+  const { language,languageData } = useContext(LanguageContext);
   const [skeletonShow, setSkeletonShow] = useState(true);
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
   const [hasActivities, setHasActivities] = useState(false);
@@ -43,6 +46,19 @@ export default function FormClientBooking() {
       setHasTransport
     );
   }, [itineraryData]);
+
+  let uid = null;
+  if (typeof window !== "undefined") {
+    const searchParams = new URLSearchParams(window.location.search);
+    uid = searchParams.get("uid");
+  }
+
+  useEffect(() => {
+    
+    if (data?.status === 3) {
+      router.push(`/${language}/confirmation?uid=${uid}`);
+    }
+  }, [data]);
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
