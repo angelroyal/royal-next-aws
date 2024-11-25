@@ -130,7 +130,16 @@ export default function AlertPayment({ animationData, isOpen, closeModal }) {
   
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={closeModal}>
+      {/* Agrega 'static' aquí */}
+      <Dialog
+        as="div"
+        className="relative z-10"
+        static
+        onClose={() => {
+          // Evitar que se cierre al hacer clic fuera
+          console.log("Intento de cerrar el modal");
+        }}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -169,3 +178,4 @@ export default function AlertPayment({ animationData, isOpen, closeModal }) {
     </Transition>
   );
 }
+

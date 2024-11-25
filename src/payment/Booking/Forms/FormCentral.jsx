@@ -16,6 +16,7 @@ import { BookingContext } from "@/payment/context/BookingContext";
 import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT";
 import FormCreditCardClip from "./FormCreditCardClip";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export default function FormCentral(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,18 +47,12 @@ export default function FormCentral(props) {
 
   // PAYLOAD PAYMENT
   const paymentData = {
-    name: firstName,
-    lastname: lastName,
-    email: email,
-    phone: phoneNumber,
     currency: "MXN",
     cartId: uid,
-    cardTitular: nameCard,
-    cardNumber: numberCard.slice(-4),
     serviceType: paymentProvider.toLowerCase(),
-    ...(hotelRH ? { guests: hotelRH } : {}),
-    ...(roomHolders ? { paxes: roomHolders } : {}),
-    ...(formActivityItems ? { items: formActivityItems } : {}),
+    cardTitular: nameCard || "staywuw",
+    description: "solo si es para clip",
+    cardNumber: numberCard ? numberCard.slice(-4) : "4242",
     ...(paymentProvider === "OPENPAY" &&
     window.OpenPay &&
     window.OpenPay.deviceData
@@ -124,7 +119,6 @@ export default function FormCentral(props) {
         break;
 
       default:
-        console.error("Proveedor de pago no soportado");
         setAnimationData("Error");
         break;
     }
@@ -135,9 +129,43 @@ export default function FormCentral(props) {
     setCurrentStep(2);
   };
 
-  const handleContinueToStep3 = (event) => {
+  const handleSecondFormSubmit = async (event) => {
     event.preventDefault();
-    setCurrentStep(3);
+
+    const payload = {
+      name: firstName,
+      prefix: "+52",
+      lastname: lastName,
+      email: email,
+      phone: phoneNumber,
+      currency: "MXN",
+      cartId: uid,
+      serviceType: paymentProvider.toLowerCase(),
+      ...(hotelRH ? { guests: hotelRH } : {}),
+      ...(roomHolders ? { paxes: roomHolders } : {}),
+      ...(formActivityItems ? { items: formActivityItems } : {}),
+    };
+
+    try {
+      const response = await axiosWithInterceptor.post(
+        "v1/booking/form",
+        payload
+      );
+
+      if (response.status === 201) {
+        console.log("Datos enviados exitosamente:", response.data);
+        setCurrentStep(3);
+      } else {
+        console.error("Error al enviar los datos:", response.data.message);
+        setAnimationData("Error");
+      }
+    } catch (error) {
+      console.error(
+        "Error en la solicitud POST:",
+        error.response || error.message
+      );
+      setAnimationData("Error");
+    }
   };
 
   return (
@@ -158,7 +186,7 @@ export default function FormCentral(props) {
       )}
 
       {currentStep === 2 && (
-        <form onSubmit={handleContinueToStep3}>
+        <form onSubmit={handleSecondFormSubmit}>
           {dataItinerary && (
             <>
               {/* FORM PROVIDER HB */}
@@ -196,7 +224,7 @@ export default function FormCentral(props) {
               id="card-form"
               onSubmit={handleSubmitPayment}
             >
-              <FormCreditCard/>
+              <FormCreditCard />
             </form>
           )}
 

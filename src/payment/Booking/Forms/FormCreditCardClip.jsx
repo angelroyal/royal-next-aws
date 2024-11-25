@@ -1,9 +1,19 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
-import { SendPaymentRequest } from "@/payment/Api/fetchDataItinerary";
+import {
+  confirmBooking,
+  SendPaymentRequest,
+} from "@/payment/Api/fetchDataItinerary";
+import { useRouter } from "next/navigation";
 
 function FormCreditCardClip(props) {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const { language } = useContext(LanguageContext);
+  const API_KEY = process.env.NEXT_PUBLIC_CLIP_API_KEY;
+
+  // PROPS
   const {
     paymentData,
     setAnimationData,
@@ -12,13 +22,8 @@ function FormCreditCardClip(props) {
     setIsOpen,
   } = props;
 
-  const [loading, setLoading] = useState(false);
-  const [cardTokenID, setCardTokenID] = useState("");
-  const { language } = useContext(LanguageContext);
-  const [acceptTerms, setAcceptTerms] = useState(false);
-  const [acceptPrivacy, setAcceptPrivacy] = useState(false);
-
-  const API_KEY = process.env.NEXT_PUBLIC_CLIP_API_KEY;
+  const searchParams = new URLSearchParams(window.location.search);
+  const uid = searchParams.get("uid");
 
   // HANDLE TOKEN RECIVED AND POST API STAYWUW
   const handleTokenReceived = useCallback(
@@ -27,14 +32,32 @@ function FormCreditCardClip(props) {
 
       SendPaymentRequest(updatedPaymentData)
         .then((response) => {
+          if (response.paymentStatus === "PAID") {
+            confirmBooking(uid)
+              .then((confirmResponse) => {
+                router.push(`/${language}/confirmation?uid=${uid}`);
+              })
+              .catch((error) => {
+                console.error("Error al confirmar la reserva:", error);
+              });
+          } else if (response.paymentStatus === "PENDING") {
+            router.push(
+              `/${language}/pending-payment?reference=${response?.orderReference}`
+            );
+          } else {
+            setAnimationData("FailureData");
+          }
           setAnimationData("SuccessData");
-          setTimeout(() => {
-            handleStepChange(3);
-            closeModalAfterDelay();
-          }, 3000);
+          // setTimeout(() => {
+          //   closeModalAfterDelay();
+          // }, 3000);
         })
         .catch((error) => {
           setAnimationData("FailureData");
+        })
+        .finally(() => {
+          console.log("Finalizó el manejo del pago.");
+          // router.push(`/${language}/confirmation?uid=1ef9af6f-243e-6656-89e4-bf48e233bae1`);
         });
     },
     [paymentData, setAnimationData, handleStepChange, closeModalAfterDelay]
@@ -67,7 +90,6 @@ function FormCreditCardClip(props) {
         clearTimeout(timeoutId);
 
         const cardTokenID = cardToken.id;
-        setCardTokenID(cardTokenID);
         handleTokenReceived(cardTokenID);
       } catch (error) {
         handleErrors(error);
@@ -140,15 +162,14 @@ function FormCreditCardClip(props) {
     <form id="payment-form">
       <div id="checkout"></div>
       <div className="grid justify-end pt-8">
-      <button
-        className="border-transparent bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] px-[64px] py-[13px] hover:bg-yw-110"
-        type="submit"
-        disabled={loading}
-      >
-        {loading ? "Procesando..." : "Pagar"}
-      </button>
+        <button
+          className="border-transparent bg-yw-100 text-black text-fs-16 rounded-full m-b flex items-center gap-[5px] px-[64px] py-[13px] hover:bg-yw-110"
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? "Procesando..." : "Pagar"}
+        </button>
       </div>
-      {cardTokenID && <p>Card Token ID: {cardTokenID}</p>}
     </form>
   );
 }

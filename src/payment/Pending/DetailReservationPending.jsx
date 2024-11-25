@@ -1,11 +1,21 @@
 "use client";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 
 export default function DetailReservationPending() {
   const { languageData } = useContext(LanguageContext);
+  const [reference, setReference] = useState(null);
+
+  useEffect(() => {
+    // Ensure this runs only on the client side
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      setReference(searchParams.get("reference"));
+    }
+  }, []);
+
   return (
     <>
       <div className="flex py-[32px] px-[24px] items-start gap-x-[32px] rounded-[8px] w-full lg:shadow-[1px_0px_20px_1px_rgba(189,183,183,0.75)] lg:mb-[35px] h-max top-0 right-0 bg-white lg:mt-[3.2rem] max-lg:flex-col">
@@ -25,8 +35,7 @@ export default function DetailReservationPending() {
           </div>
 
           <div className="text-gry-100 text-fs-24 m-b">
-            #0000000001*
-            {/* {infoReservation.booking.reference} */}
+            #{reference ? reference : "Sin número de reserva"}
           </div>
 
           <div className="text-black text-fs-12 m-s-b">
@@ -48,7 +57,7 @@ export default function DetailReservationPending() {
 
               <span className="m-m text-fs-12 text-gry-100">
                 {/* {infoReservation.booking.name} */}
-                Katherine González Ramírez*
+                Angel Bastian Tinoco
               </span>
             </div>
 
@@ -69,7 +78,7 @@ export default function DetailReservationPending() {
             </span>
 
             <email className="m-m text-fs-12 text-gry-100">
-              katherine_dev@royalvacationsmexico.com*
+              arbt18@gmail.com*
               {/* {infoReservation.booking.email} */}
             </email>
           </div>
@@ -99,8 +108,7 @@ export default function DetailReservationPending() {
                 </span>
 
                 <span className="m-m text-fs-12 text-gry-100">
-                  Katherine González Ramírez*
-                  {/* {infoReservation.payment.titular} */}
+                  Angel Bastian Tinoco
                 </span>
               </div>
 
@@ -110,7 +118,7 @@ export default function DetailReservationPending() {
                 </span>
 
                 <span className="m-m text-fs-12 text-gry-100">
-                  29/01/2024 12:48pm*
+                  29/01/2024 12:48pm
                   {/* {infoReservation.booking.date} */}
                 </span>
               </div>
@@ -123,7 +131,7 @@ export default function DetailReservationPending() {
                   {languageData.confirmation.bookingData.titleBookingData}
                 </span>
                 <span className="m-m text-fs-12 text-gry-100">
-                  xxxx xxxx xxxx42*
+                  xxxx xxxx xxxx42
                 </span>
               </div>
               <div className="flex flex-col">
@@ -132,7 +140,7 @@ export default function DetailReservationPending() {
                 </span>
 
                 <span className="m-m text-fs-12 text-gry-100">
-                  0123456789*
+                  0123456789
                   {/* {infoReservation.payment.reference} */}
                 </span>
               </div>
