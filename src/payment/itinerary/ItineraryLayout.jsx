@@ -12,16 +12,18 @@ import { useCartAxios } from "@/components/Cart/CartAxios";
 import { scrollToTop } from "@/utils/pageConfig/scrollToTop";
 import { fetchDataItinerary } from "../Api/fetchDataItinerary";
 import { DialogPaymentItinerary } from "../Utils/DialogPaymentItinerary";
+import { useRouter } from "next/navigation";
 
 export default function ItineraryLayout() {
+  const router = useRouter();
   const [data, setData] = useState(null);
   const { itineraryData } = useCartAxios();
   const [showClr, setShowClr] = useState(null);
-  const { languageData } = useContext(LanguageContext);
+  const { language,languageData } = useContext(LanguageContext);
   const [skeletonShow, setSkeletonShow] = useState(true);
-  const [errorAlertBooking, setErrorAlertBooking] = useState(false);
-  const [hasActivities, setHasActivities] = useState(false);
   const [hasTransport, setHasTransport] = useState(false);
+  const [hasActivities, setHasActivities] = useState(false);
+  const [errorAlertBooking, setErrorAlertBooking] = useState(false);
 
   useEffect(() => {
     scrollToTop();
@@ -34,6 +36,19 @@ export default function ItineraryLayout() {
       setErrorAlertBooking
     );
   }, [itineraryData]);
+  
+  let uid = null;
+  if (typeof window !== "undefined") {
+    const searchParams = new URLSearchParams(window.location.search);
+    uid = searchParams.get("uid");
+  }
+
+  useEffect(() => {
+    
+    if (data?.status === 3) {
+      router.push(`/${language}/confirmation?uid=${uid}`);
+    }
+  }, [data]);
 
   return (
     <>

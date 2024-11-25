@@ -15,7 +15,6 @@ function FormCreditCardClip(props) {
   const { language } = useContext(LanguageContext);
   const API_KEY = process.env.NEXT_PUBLIC_CLIP_API_KEY;
   
-
   // PROPS
   const {
     paymentData,
@@ -39,7 +38,9 @@ function FormCreditCardClip(props) {
 
       SendPaymentRequest(updatedPaymentData)
         .then((response) => {
-          if (response.paymentStatus === "PAID") {
+          console.log(response);
+          
+          if (response.data.data.paymentStatus === "PAID") {
             confirmBooking(uid)
               .then((confirmResponse) => {
                 router.push(`/${language}/confirmation?uid=${uid}`);
@@ -47,7 +48,7 @@ function FormCreditCardClip(props) {
               .catch((error) => {
                 console.error("Error al confirmar la reserva:", error);
               });
-          } else if (response.paymentStatus === "PENDING") {
+          } else if (response.data.data.paymentStatus === "PENDING") {
             router.push(
               `/${language}/pending-payment?reference=${response?.orderReference}`
             );
@@ -157,7 +158,7 @@ function FormCreditCardClip(props) {
     }
   }, [initializeClipElements, setAnimationData]);
   
-  
+
 
   const handleErrors = (error) => {
     setAnimationData("FailureData");
