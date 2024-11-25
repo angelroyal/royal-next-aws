@@ -25,8 +25,12 @@ function FormCreditCardClip(props) {
     setIsOpen,
   } = props;
 
-  const searchParams = new URLSearchParams(window.location.search);
-  const uid = searchParams.get("uid");
+  let uid = null;
+  if (typeof window !== "undefined") {
+    const searchParams = new URLSearchParams(window.location.search);
+    uid = searchParams.get("uid");
+  }
+  
 
   // HANDLE TOKEN RECIVED AND POST API STAYWUW
   const handleTokenReceived = useCallback(
@@ -133,19 +137,26 @@ function FormCreditCardClip(props) {
   // LOAD CLIP SCRIPTS
 
   const loadClipSDK = useCallback(() => {
-    const script = document.createElement("script");
-    script.src = "https://sdk.clip.mx/js/clip-sdk.js";
-    script.async = true;
-    script.onload = initializeClipElements;
-    script.onerror = () => {
-      setAnimationData("FailureData");
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, [initializeClipElements]);
+    if (typeof document !== "undefined") {
+      const script = document.createElement("script");
+      script.src = "https://sdk.clip.mx/js/clip-sdk.js";
+      script.async = true;
+      script.onload = initializeClipElements;
+      script.onerror = () => {
+        setAnimationData("FailureData");
+      };
+      document.body.appendChild(script);
+  
+      return () => {
+        document.body.removeChild(script);
+      };
+    } else {
+      // Opcional: Maneja el caso en que la función se llama en un entorno sin `document`
+      console.error("Document is not available. loadClipSDK should run in the client.");
+      return () => {};
+    }
+  }, [initializeClipElements, setAnimationData]);
+  
 
   const handleErrors = (error) => {
     setAnimationData("FailureData");
