@@ -37,6 +37,7 @@ export function ListCardsConfirmations({ confirmations }) {
                   confirmation.type == "transportation") && (
                   <ConfirmationCardTransport transportInfo={confirmation} />
                 )} */}
+                
               </ContainerCardPayment>
             </div>
           </div>
