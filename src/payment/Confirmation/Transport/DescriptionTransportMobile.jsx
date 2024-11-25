@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { PriceAndPyC } from "./PriceAndPyc";
+// import { PriceAndPyC } from "./PriceAndPyc";
 import LanguageContext from "@/language/LanguageContext";
 
 export function DescriptionTransportMobile({ transportInfo }) {
@@ -33,7 +33,7 @@ export function DescriptionTransportMobile({ transportInfo }) {
         </span>
       </div>
 
-      <PriceAndPyC transportInfo={transportInfo}/>
+      {/* <PriceAndPyC transportInfo={transportInfo}/> */}
     </div>
   );
 }
