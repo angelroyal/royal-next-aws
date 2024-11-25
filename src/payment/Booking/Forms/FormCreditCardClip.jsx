@@ -14,6 +14,7 @@ function FormCreditCardClip(props) {
   const [loading, setLoading] = useState(false);
   const { language } = useContext(LanguageContext);
   const API_KEY = process.env.NEXT_PUBLIC_CLIP_API_KEY;
+  
 
   // PROPS
   const {
