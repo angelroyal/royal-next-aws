@@ -157,6 +157,7 @@ function FormCreditCardClip(props) {
     }
   }, [initializeClipElements, setAnimationData]);
   
+  
 
   const handleErrors = (error) => {
     setAnimationData("FailureData");
