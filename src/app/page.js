@@ -99,7 +99,7 @@ export default async function DetailPageHotel() {
     );
   } catch (error) {
     console.error(error);
-
+    
     return (
       <LanguageProvider>
         <TokenProvider>
@@ -114,3 +114,5 @@ export default async function DetailPageHotel() {
     );
   }
 }
+
+
