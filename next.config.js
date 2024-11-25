@@ -1,9 +1,4 @@
 module.exports = {
-  //   i18n: {
-  //     locales: ["en", "es"],
-  //     defaultLocale: "en",
-  //     localeDetection: false,
-  //   },
   images: {
     domains: [
       "apicrm.staywuw.com",
@@ -16,5 +11,11 @@ module.exports = {
       "f.civitatis.com",
       "cdn.worldota.net",
     ],
+  },
+  webpack: (config, { dev, isServer }) => {
+    if (!dev) {
+      config.devtool = 'source-map';
+    }
+    return config;
   },
 };
