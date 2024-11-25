@@ -1,23 +1,26 @@
-
 export default function SkeletonPay({ confirmation = false, step }) {
   return (
     <div className="mx-[70px] max-2xl:mx-0">
       <div className="flex ">
-        <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px]">
-          <StepsSkeleton />
-          <StepsSkeletonMobile />
+        <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px] pt-[1.8rem]">
+          {/* <StepsSkeleton /> */}
+          {/* <StepsSkeletonMobile /> */}
           {confirmation ? "" : <CartsReservationSkeleton />}
           <CartDetailsSkeleton />
         </div>
 
-        <div className={`hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] ${step !== 3 && 'bg-white'} z-[1]`}>
+        <div
+          className={`hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px] ${
+            step !== 3 && "bg-white"
+          } z-[1]`}
+        >
           <DetailsReservationSkeleton confirmation={confirmation} />
         </div>
-        <div
+        {/* <div
           className={`max-lg:hidden absolute right-0 z-0 lg:w-[25%] h-full ${step !== 3 && 'bg-white'} top-0 ${
             !confirmation && "bg-white"
           }`}
-        />
+        /> */}
       </div>
     </div>
   );
@@ -25,7 +28,7 @@ export default function SkeletonPay({ confirmation = false, step }) {
 
 function StepsSkeletonMobile() {
   return (
-    <div className="xl:hidden lg:flex md:hidden flex mt-[3.3rem] mb-[1.6rem] flex items-center justify-center">
+    <div className="xl:hidden lg:flex md:hidden mt-[3.3rem] mb-[1.6rem] flex items-center justify-center">
       {[...Array(3)].map((_, index) => (
         <div key={index} className="flex items-center">
           <div className="flex flex-col items-center">
@@ -93,7 +96,7 @@ function CartDetailsSkeleton() {
 function DetailsReservationSkeleton({ confirmation }) {
   return (
     <div
-      className={`w-full block sticky top-0 mt-[4rem] h-max ${
+      className={`w-full block sticky top-0 mt-[2rem] h-max bg-gry-70 shadow-3xl ${
         confirmation && "bg-white rounded-lg py-[32px] px-[24px]"
       }`}
     >
@@ -105,12 +108,30 @@ function DetailsReservationSkeleton({ confirmation }) {
 export function DetailsRightConfirmation() {
   return (
     <div className="flex flex-col  gap-y-[32px]">
-      <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-[240px] rounded-lg" />
+      <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-[193px] rounded-lg" />
       {[...Array(2)].map((_, index) => (
         <div key={index} className="flex flex-col items-start gap-y-4">
-          <div className="w-[80%] animate-[skeletonLoading_1s_linear_infinite_alternate] h-[30px]" />
+          <div className="w-[80%] animate-[skeletonLoading_1s_linear_infinite_alternate] h-[25px]" />
 
-          <div className="rounded-lg animate-[skeletonLoading_1s_linear_infinite_alternate] w-full h-[170px]" />
+          <div className="rounded-lg bg-gry-30 w-full h-[150px] grid grid-cols-2 gap-x-4 gap-y-4 justify-center items-center pl-2">
+            <div className="flex flex-col gap-2">
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-3 w-[100px]" />
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-2 w-[100px]" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-3 w-[100px]" />
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-2 w-[100px]" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-3 w-[100px]" />
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-2 w-[100px]" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-3 w-[100px]" />
+              <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-2 w-[100px]" />
+            </div>
+           
+          </div>
         </div>
       ))}
 
