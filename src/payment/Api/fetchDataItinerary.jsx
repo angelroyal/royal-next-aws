@@ -148,6 +148,11 @@ export const SendPaymentRequest = (paymentData) => {
     });
 };
 
+// CONFIRMATION RESERVATION
+export const confirmBooking = (cartId) => {
+  return axiosWithInterceptor.post('v1/booking/confirm', { cartId });
+};
+
 export async function GetConfirmationPDF(uid, language) {
   try {
     const url = `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${uid}?lang=${language}&available=true`;
