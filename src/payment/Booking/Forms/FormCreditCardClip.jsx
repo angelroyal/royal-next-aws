@@ -14,7 +14,7 @@ function FormCreditCardClip(props) {
   const [loading, setLoading] = useState(false);
   const { language } = useContext(LanguageContext);
   const API_KEY = process.env.NEXT_PUBLIC_CLIP_API_KEY;
-  
+
   // PROPS
   const {
     paymentData,
@@ -29,7 +29,6 @@ function FormCreditCardClip(props) {
     const searchParams = new URLSearchParams(window.location.search);
     uid = searchParams.get("uid");
   }
-  
 
   // HANDLE TOKEN RECIVED AND POST API STAYWUW
   const handleTokenReceived = useCallback(
@@ -39,7 +38,7 @@ function FormCreditCardClip(props) {
       SendPaymentRequest(updatedPaymentData)
         .then((response) => {
           console.log(response);
-          
+
           if (response.data.data.paymentStatus === "PAID") {
             confirmBooking(uid)
               .then((confirmResponse) => {
@@ -49,9 +48,7 @@ function FormCreditCardClip(props) {
                 console.error("Error al confirmar la reserva:", error);
               });
           } else if (response.data.data.paymentStatus === "PENDING") {
-            router.push(
-              `/${language}/pending-payment?reference=${response?.orderReference}`
-            );
+            router.push(`/${language}/pending-payment?uid=${uid}`);
           } else {
             setAnimationData("FailureData");
           }
@@ -65,7 +62,6 @@ function FormCreditCardClip(props) {
         })
         .finally(() => {
           console.log("Finalizó el manejo del pago.");
-          // router.push(`/${language}/confirmation?uid=1ef9af6f-243e-6656-89e4-bf48e233bae1`);
         });
     },
     [paymentData, setAnimationData, handleStepChange, closeModalAfterDelay]
@@ -147,18 +143,18 @@ function FormCreditCardClip(props) {
         setAnimationData("FailureData");
       };
       document.body.appendChild(script);
-  
+
       return () => {
         document.body.removeChild(script);
       };
     } else {
       // Opcional: Maneja el caso en que la función se llama en un entorno sin `document`
-      console.error("Document is not available. loadClipSDK should run in the client.");
+      console.error(
+        "Document is not available. loadClipSDK should run in the client."
+      );
       return () => {};
     }
   }, [initializeClipElements, setAnimationData]);
-  
-
 
   const handleErrors = (error) => {
     setAnimationData("FailureData");

@@ -25,7 +25,7 @@ function getLanguageFromPath(path) {
 
 export function LanguageSelector() {
   const { setLanguage } = useContext(LanguageContext);
-  const [selected, setSelected] = useState(country[0]);
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     const storedLanguage =
@@ -37,10 +37,12 @@ export function LanguageSelector() {
       (lang) => lang.value === storedLanguage.toLowerCase()
     );
 
-    setSelected(selectedLanguageObject);
-
-    setLanguage(storedLanguage);
-  }, [setLanguage]);
+    // Evitar actualizaciones innecesarias
+    if (selectedLanguageObject && selectedLanguageObject !== selected) {
+      setSelected(selectedLanguageObject);
+      setLanguage(storedLanguage);
+    }
+  }, [selected, setLanguage]);
 
   const handleChange = (newSelected) => {
     const newLanguage = newSelected.value;
@@ -52,6 +54,7 @@ export function LanguageSelector() {
 
     if (currentPath === "/") {
       setLanguage(newLanguage);
+      window.location.reload();
     } else if (currentPath.includes("/blog")) {
       const newPath = currentPath.replace(
         /\/blog\/[a-z]{2}(\/|$)/,
@@ -66,6 +69,11 @@ export function LanguageSelector() {
       window.location.href = newPath;
     }
   };
+
+  if (!selected) {
+    // Mostrar un valor predeterminado mientras se obtiene el idioma
+    return null;
+  }
 
   return (
     <div className="w-max block m-s-b text-gry-100">
