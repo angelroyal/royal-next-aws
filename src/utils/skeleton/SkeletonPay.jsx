@@ -97,7 +97,7 @@ function DetailsReservationSkeleton({ confirmation }) {
   return (
     <div
       className={`w-full block sticky top-0 mt-[2rem] h-max px-6 pb-[24px] pt-[48px] ${
-        confirmation && "bg-white rounded-lg py-[32px] px-[24px]"
+        confirmation && "bg-white rounded-lg py-[32px] px-[24px] shadow-3xl"
       }`}
     >
       {confirmation ? <DetailsRightConfirmation /> : <DetailsRightItinerary />}
@@ -113,7 +113,7 @@ export function DetailsRightConfirmation() {
         <div key={index} className="flex flex-col items-start gap-y-4">
           <div className="w-[80%] animate-[skeletonLoading_1s_linear_infinite_alternate] h-[25px]" />
 
-          <div className="rounded-lg bg-gry-30 w-full h-[150px] grid grid-cols-2 gap-x-4 gap-y-4 justify-center items-center pl-2">
+          <div className="rounded-lg w-full h-[150px] grid grid-cols-2 gap-x-4 gap-y-4 justify-center items-center pl-2">
             <div className="flex flex-col gap-2">
               <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-3 w-[100px]" />
               <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-2 w-[100px]" />
