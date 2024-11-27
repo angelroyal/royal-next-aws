@@ -59,12 +59,12 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
         <p className="text-fs-12 m-m text-gry-100 text-center mb-[24px]">
           {languageData.alertsPayment.textSuccess}
         </p>
-        <button
+        {/* <button
           className="text-white bg-grn-100 rounded-full px-[16px] py-[14px] text-fs-12 m-s-b hover:bg-grn-70 focus:outline-none"
           onClick={closeModal}
         >
           {languageData.alertsPayment.btnUnderstood}
-        </button>
+        </button> */}
       </div>
     );
   }
@@ -127,19 +127,11 @@ const AnimationContent = ({ animationData, languageData, closeModal }) => {
 
 export default function AlertPayment({ animationData, isOpen, closeModal }) {
   const { languageData } = useContext(LanguageContext);
-  
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       {/* Agrega 'static' aquí */}
-      <Dialog
-        as="div"
-        className="relative z-10"
-        static
-        onClose={() => {
-          // Evitar que se cierre al hacer clic fuera
-          console.log("Intento de cerrar el modal");
-        }}
-      >
+      <Dialog as="div" className="relative z-10" static onClose={() => {}}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -178,4 +170,3 @@ export default function AlertPayment({ animationData, isOpen, closeModal }) {
     </Transition>
   );
 }
-
