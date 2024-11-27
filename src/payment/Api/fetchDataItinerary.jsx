@@ -173,3 +173,13 @@ export async function SizePDF(pdfUrl) {
     console.error(error);
   }
 }
+
+export async function getBookingInfo(uid) {
+  try {
+    const response = await axiosWithInterceptor.get(`/v1/booking-info/${uid}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching booking information:", error);
+    throw error;
+  }
+}
