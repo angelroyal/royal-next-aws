@@ -1,8 +1,8 @@
 export default function SkeletonPay({ confirmation = false, step }) {
   return (
     <div className="mx-[70px] max-2xl:mx-0">
-      <div className="flex ">
-        <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px] pt-[1.8rem]">
+      <div className="flex pt-6">
+        <div className="w-full lg:w-[68%] xl:w-[77%] pt-[1.8rem]">
           {/* <StepsSkeleton /> */}
           {/* <StepsSkeletonMobile /> */}
           {confirmation ? "" : <CartsReservationSkeleton />}
@@ -96,8 +96,8 @@ function CartDetailsSkeleton() {
 function DetailsReservationSkeleton({ confirmation }) {
   return (
     <div
-      className={`w-full block sticky top-0 mt-[2rem] h-max bg-gry-70 shadow-3xl ${
-        confirmation && "bg-white rounded-lg py-[32px] px-[24px]"
+      className={`w-full block sticky top-0 mt-[2rem] h-max px-6 pb-[24px] pt-[48px] ${
+        confirmation && "bg-white rounded-lg py-[32px] px-[24px] shadow-3xl"
       }`}
     >
       {confirmation ? <DetailsRightConfirmation /> : <DetailsRightItinerary />}
@@ -113,7 +113,7 @@ export function DetailsRightConfirmation() {
         <div key={index} className="flex flex-col items-start gap-y-4">
           <div className="w-[80%] animate-[skeletonLoading_1s_linear_infinite_alternate] h-[25px]" />
 
-          <div className="rounded-lg bg-gry-30 w-full h-[150px] grid grid-cols-2 gap-x-4 gap-y-4 justify-center items-center pl-2">
+          <div className="rounded-lg w-full h-[150px] grid grid-cols-2 gap-x-4 gap-y-4 justify-center items-center pl-2">
             <div className="flex flex-col gap-2">
               <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-3 w-[100px]" />
               <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-2 w-[100px]" />
@@ -130,7 +130,6 @@ export function DetailsRightConfirmation() {
               <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-3 w-[100px]" />
               <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-2 w-[100px]" />
             </div>
-           
           </div>
         </div>
       ))}
@@ -149,14 +148,41 @@ export function DetailsRightConfirmation() {
 export function DetailsRightItinerary() {
   return (
     <>
-      <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-full mb-[40px]" />
+      <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-full mb-[45px]" />
 
-      <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[173px] w-full mb-[40px]" />
+      <div className="flex flex-col gap-4 mb-[70px]">
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[50px]" />
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[10px] w-[70%] " />
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[10px] w-[100px]" />
+        <div className="flex justify-between pl-3">
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[60%]" />
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[70px]" />
+        </div>
+        <hr />
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[120px]" />
+        <div className="flex justify-between pl-3 mb-[10px]">
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[50px]" />
+          <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[70px]" />
+        </div>
+        <hr />
+      </div>
 
-      <div className="flex flex-col items-center">
-        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-[80%] mb-[1rem]" />
-        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[24px] w-[60%] mb-[12px]" />
-        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[52px] w-[60%] rounded-full" />
+      <div className="flex justify-between pl-3 mb-[53px]">
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[50px]" />
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[20px] w-[70px]" />
+      </div>
+
+      <div className="flex gap-2 justify-end mb-[44px]">
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-[50px] rounded-lg" />
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-[50px] rounded-lg" />
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-[50px] rounded-lg" />
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[29px] w-[50px] rounded-lg" />
+      </div>
+
+      <div className="flex justify-between items-center">
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[15px] w-[80px]" />
+
+        <div className="animate-[skeletonLoading_1s_linear_infinite_alternate] h-[35px] w-[100px] rounded-full" />
       </div>
     </>
   );
