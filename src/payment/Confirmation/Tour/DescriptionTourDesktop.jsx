@@ -1,3 +1,4 @@
+import { ImageTour } from "./ImageTour";
 import { RightInformation } from "./RightInformation";
 import { CenterInformation } from "./CenterInformation";
 
