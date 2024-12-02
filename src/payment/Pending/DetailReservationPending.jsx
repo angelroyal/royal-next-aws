@@ -4,7 +4,8 @@ import React, { useEffect, useState, useContext } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
 import { getBookingInfo } from "../Api/fetchDataItinerary";
-import SkeletonConfirmPay from "@/utils/skeleton/SkeletonConfirmPay";
+// import SkeletonConfirmPay from "@/utils/skeleton/SkeletonConfirmPay";
+import PendingPaymentSkeleton from "@/components/Skeleton/PendingPaymentSkeleton";
 
 export default function DetailReservationPending() {
   const { languageData } = useContext(LanguageContext);
@@ -33,7 +34,8 @@ export default function DetailReservationPending() {
   if (!bookingInfo) {
     return (
       <>
-        <SkeletonConfirmPay />
+      <PendingPaymentSkeleton/>
+        {/* <SkeletonConfirmPay /> */}
       </>
     );
   }
