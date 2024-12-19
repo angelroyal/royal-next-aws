@@ -1,61 +1,106 @@
 {
-    "672": [
-        {
-            "roomId": "TWN.DX.0",
-            "paxesName": [
-                {
-                    "firstName": "",
-                    "lastName": "",
-                    "age": "",
-                    "type": "adult"
-                },
-                {
-                    "firstName": "",
-                    "lastName": "",
-                    "age": "",
-                    "type": "adult"
-                },
-                {
-                    "firstName": "",
-                    "lastName": "",
-                    "age": "1",
-                    "type": "child"
-                }
-            ]
+  "core": {
+    "name": "Core Module",
+    "description": "Centralized database for configurations, components, and features",
+    "database": {
+      "configurations": {
+        "theme": {
+          "light": {
+            "primaryColor": "#ffffff",
+            "secondaryColor": "#f0f0f0",
+            "accentColor": "#007bff",
+            "textColor": "#000000"
+          },
+          "dark": {
+            "primaryColor": "#121212",
+            "secondaryColor": "#1e1e1e",
+            "accentColor": "#007bff",
+            "textColor": "#ffffff"
+          }
         },
-        {
-            "roomId": "TWN.DX.1",
-            "paxesName": [
-                {
-                    "firstName": "",
-                    "lastName": "",
-                    "age": "",
-                    "type": "adult"
-                },
-                {
-                    "firstName": "",
-                    "lastName": "",
-                    "age": "1",
-                    "type": "child"
-                },
-                {
-                    "firstName": "",
-                    "lastName": "",
-                    "age": "1",
-                    "type": "child"
-                }
-            ]
+        "fonts": {
+          "defaultFont": "Roboto, sans-serif",
+          "headingFont": "Poppins, sans-serif",
+          "monospaceFont": "Courier New, monospace"
         },
-        {
-            "roomId": "JSU.ST-2.0",
-            "paxesName": [
-                {
-                    "firstName": "",
-                    "lastName": "",
-                    "age": "",
-                    "type": "adult"
-                }
-            ]
+        "logos": {
+          "lightLogo": "path/to/light-logo.png",
+          "darkLogo": "path/to/dark-logo.png",
+          "favicon": "path/to/favicon.ico"
+        },
+        "userPreferences": {
+          "defaultLanguage": "en",
+          "availableLanguages": ["en", "es", "fr", "de"],
+          "currency": "USD",
+          "dateFormat": "YYYY-MM-DD",
+          "timeZone": "America/Mexico_City"
         }
-    ]
+      },
+      "components": {
+        "Headers": [
+          { "id": 1, "name": "Header 1" },
+          { "id": 2, "name": "Header 2" },
+          { "id": 3, "name": "Header 3" },
+          { "id": 4, "name": "Header 4" },
+          { "id": 5, "name": "Header 5" }
+        ],
+        "Footers": [
+          { "id": 1, "name": "Footer 1" },
+          { "id": 2, "name": "Footer 2" },
+          { "id": 3, "name": "Footer 3" },
+          { "id": 4, "name": "Footer 4" },
+          { "id": 5, "name": "Footer 5" }
+        ],
+        "Sections": [
+          { "id": 1, "name": "Section 1" },
+          { "id": 2, "name": "Section 2" },
+          { "id": 3, "name": "Section 3" },
+          { "id": 4, "name": "Section 4" },
+          { "id": 5, "name": "Section 5" }
+        ],
+        "Features": [
+          {
+            "id": 1,
+            "name": "Payments",
+            "pages": [
+              { "type": "Landing Page", "name": "Payments Landing" },
+              { "type": "Listing Page", "name": "Payments Listing" }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Blog",
+            "pages": [
+              { "type": "Landing Page", "name": "Blog Landing" },
+              { "type": "Listing Page", "name": "Blog Listing" }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Hotel",
+            "pages": [
+              { "type": "Landing Page", "name": "Hotel Landing" },
+              { "type": "Listing Page", "name": "Hotel Listing" }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "Tours",
+            "pages": [
+              { "type": "Landing Page", "name": "Tours Landing" },
+              { "type": "Listing Page", "name": "Tours Listing" }
+            ]
+          },
+          {
+            "id": 5,
+            "name": "Transportation",
+            "pages": [
+              { "type": "Landing Page", "name": "Transportation Landing" },
+              { "type": "Listing Page", "name": "Transportation Listing" }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
