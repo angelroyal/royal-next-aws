@@ -1,6 +1,8 @@
 "use client";
 
 import { useContext, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 
 import {
   conektaErrorResponseHandler,
@@ -19,9 +21,12 @@ import AlertPayment from "@/components/Alerts/LottiePay/AlertPayment";
 import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT";
 import FormCreditCardClip from "./FormCreditCardClip";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
+import LanguageContext from "@/language/LanguageContext";
 
 export default function FormCentral(props) {
   const [isOpen, setIsOpen] = useState(false);
+  const { language } = useContext(LanguageContext);
+
   const [currentStep, setCurrentStep] = useState(1);
   const { handleStepChange } = useContext(BookingContext);
   const [animationData, setAnimationData] = useState("LoadingData");
@@ -76,6 +81,9 @@ export default function FormCentral(props) {
     }, 3000);
   };
 
+  const router = useRouter();
+
+
   const handleSubmitPayment = (event, clipToken = null) => {
     event.preventDefault();
     setIsOpen(true);
@@ -91,6 +99,9 @@ export default function FormCentral(props) {
           (token) =>
             conektaSuccessResponseHandler(
               token,
+              uid,
+              language,
+              router,
               paymentData,
               setAnimationData,
               handleStepChange,

@@ -175,7 +175,7 @@ export const reviewsDataInfo = [
         thumbnail:
           "https://media-cdn.tripadvisor.com/media/photo-t/1a/f6/f4/20/default-avatar-2020-31.jpg",
         small:
-          "https://media-cdn.tripadvisor.com/media/photo-l/1a/f6/f4/20/default-avatar-2020-31.jpg",
+          "https://media-cdn.tripadvisor.com/media/photo-l/1a/f6/f4/20/default-avatar-2020-31.",
         medium:
           "https://media-cdn.tripadvisor.com/media/photo-f/1a/f6/f4/20/default-avatar-2020-31.jpg",
         large:

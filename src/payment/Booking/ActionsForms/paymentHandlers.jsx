@@ -12,6 +12,9 @@ export const conektaErrorResponseHandler = (
 
 export const conektaSuccessResponseHandler = (
   token,
+  uid,
+  language,
+  router,
   paymentData,
   setAnimationData,
   handleStepChange,
@@ -19,11 +22,13 @@ export const conektaSuccessResponseHandler = (
 ) => {
   paymentData.token = token.id;
 
+  console.log(uid);
+
   SendPaymentRequest(paymentData)
     .then((response) => {
       setAnimationData("SuccessData");
       setTimeout(() => {
-        handleStepChange(3);
+        router.push(`/${language}/confirmation?uid=${uid}`);
         closeModalAfterDelay();
       }, 3000);
     })
