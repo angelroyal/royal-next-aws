@@ -1,6 +1,9 @@
 "use client";
 
-import { SendPaymentRequest } from "@/payment/Api/fetchDataItinerary";
+import {
+  confirmBooking,
+  SendPaymentRequest,
+} from "@/payment/Api/fetchDataItinerary";
 
 export const conektaErrorResponseHandler = (
   response,
@@ -22,15 +25,25 @@ export const conektaSuccessResponseHandler = (
 ) => {
   paymentData.token = token.id;
 
-  console.log(uid);
 
   SendPaymentRequest(paymentData)
     .then((response) => {
+
+      if (response.data.data.paymentStatus === "PAID") {
+        confirmBooking(uid)
+          .then((confirmResponse) => {
+            router.push(`/${language}/confirmation?uid=${uid}`);
+          })
+          .catch((error) => {
+            console.error("Error al confirmar la reserva:", error);
+          });
+      } else if (response.data.data.paymentStatus === "PENDING") {
+        router.push(`/${language}/pending-payment?uid=${uid}`);
+      } else {
+        setAnimationData("FailureData");
+      }
+
       setAnimationData("SuccessData");
-      setTimeout(() => {
-        router.push(`/${language}/confirmation?uid=${uid}`);
-        closeModalAfterDelay();
-      }, 3000);
     })
     .catch((error) => {
       setAnimationData("FailureData");
