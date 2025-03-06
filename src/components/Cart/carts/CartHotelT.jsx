@@ -16,24 +16,25 @@ export default function CartHotelT(props) {
   const [loadingHotels, setLoadingHotels] = useState({});
 
   const handleDeleteClick = (hotel) => {
-    setLoadingHotels((prevLoadingHotels) => ({ 
+    setLoadingHotels((prevLoadingHotels) => ({
       ...prevLoadingHotels,
       [hotel.id]: true,
     }));
 
     const hotelId = hotel.id;
     setIsLoader(true);
-    removeHotelItinerary(cartId, hotelId).then((response) => {
-      removeHotelById(hotelId);
-      setShowDelete({ ...showDelete });
-      setItinerary(Math.floor(Math.random() * 100) + 1);
-      setIsLoader(false);
-      setLoadingHotels({});
-    })
-    .catch((error) => {
-      setIsLoader(false);
-      alert("Ups ocurrio un error en eliminar el carro");
-    });
+    removeHotelItinerary(cartId, hotelId)
+      .then((response) => {
+        removeHotelById(hotelId);
+        setShowDelete({ ...showDelete });
+        setItinerary(Math.floor(Math.random() * 100) + 1);
+        setIsLoader(false);
+        setLoadingHotels({});
+      })
+      .catch((error) => {
+        setIsLoader(false);
+        alert("Ups ocurrio un error en eliminar el carro");
+      });
 
     // axiosWithInterceptor
     //   .delete(`v1/carts/${cartId}/hotel/${hotelId}`)
@@ -56,13 +57,10 @@ export default function CartHotelT(props) {
     setShowDelete(updatedShowDelete);
   };
 
-
   return (
     <div className="relative">
       {/* CARD CART HOTEL */}
-      <div
-        className="flex relative rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]"
-      >
+      <div className="flex relative rounded-lg hover:bg-[#efefef] mb-3 mr-[16px] max-sm:w-[98%]">
         {loadingHotels[hotel.id] && (
           <div className="absolute flex justify-center items-center w-full h-full backdrop-contrast-50">
             <div className="relative w-[8px] h-[8px] rounded-[5px] bg-bl-100 text-bl-100 animate-[dot-flashing_1s_infinite_linear_alternate] before:content-[' '] before:block before:absolute before:top-0 before:left-[15px] before:w-[8px] before:h-[8px] before:rounded-[5px] before:bg-bl-100 before:text-bl-100 before:animate-[dot-flashing_1s_infinite_alternate] before:delay-0 after:content-[' '] after:block after:absolute after:top-0 after:left-[30px] after:w-[8px] after:h-[8px] after:rounded-[5px] after:bg-bl-100 after:text-bl-100 after:animate-[dot-flashing_1s_infinite_alternate] after:delay-1000	dot-flashing" />
@@ -73,7 +71,11 @@ export default function CartHotelT(props) {
           {/* IMAGE CART */}
           <img
             // src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
-            src={hotel.image}
+            src={
+              hotel.image
+                ? hotel.image
+                : `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-h-es.webp`
+            }
             alt="img-cart-hotel"
             className="w-[100px] h-[100px] rounded-lg object-cover"
           />
@@ -81,7 +83,7 @@ export default function CartHotelT(props) {
           {/* INFO CART */}
           <div className="w-full leading-4 flex flex-col justify-center max-sm:w-[61%] gap-y-[5px]">
             <span className="m-m text-gry-100 text-fs-12 truncate w-[187px] ">
-              Cancun
+              {hotel.destination}
             </span>
 
             <span className="m-s-b text-fs-14 truncate w-[187px] max-sm:w-full">
