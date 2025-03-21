@@ -49,8 +49,8 @@ export function CardReview({ hotelReview, isModal = false }) {
         {/* USER IMAGE */}
         <img
           src={
-            hotelReview.user.avatar?.medium
-              ? hotelReview.user.avatar?.medium
+            hotelReview?.user?.avatar?.medium
+              ? hotelReview?.user?.avatar?.medium
               : "https://i.pinimg.com/736x/90/b8/fb/90b8fbf62acc355755149659743bb341.jpg"
           }
           alt="Profile Image"
@@ -61,27 +61,27 @@ export function CardReview({ hotelReview, isModal = false }) {
 
         {/* USER PERSONAL INFO */}
         <div className="flex flex-col gap-y-1 m-m">
-          {hotelReview.user.user_location &&
-            hotelReview.user.user_location.name && (
+          {hotelReview?.user?.user_location &&
+            hotelReview?.user?.user_location?.name && (
               <span className="text-gry-100 text-fs-10 w-full">
-                {hotelReview.user.user_location.name}
+                {hotelReview?.user?.user_location?.name}
               </span>
             )}
 
           <span className="text-black m-b text-fs-12 w-full">
-            {hotelReview.user.username}
+            {hotelReview?.user?.username}
           </span>
 
-          {hotelReview.published_date && (
+          {hotelReview?.published_date && (
             <span className="text-gry-70 text-xs w-full sm:text-left text-center ">
               {languageData.reviewsHotel.opinions} ({" "}
-              {moment(hotelReview.published_date).format("DD/MM/YYYY")} )
+              {moment(hotelReview?.published_date).format("DD/MM/YYYY")} )
             </span>
           )}
 
-          {hotelReview.trip_type !== "NONE" && (
+          {hotelReview?.trip_type !== "NONE" && (
             <div className="bg-gry-50 py-1 px-2 text-xs rounded-full text-black m-s-b text-fs-12 w-max">
-              {tripeType(hotelReview.trip_type)}
+              {tripeType(hotelReview?.trip_type)}
             </div>
           )}
         </div>
@@ -91,11 +91,11 @@ export function CardReview({ hotelReview, isModal = false }) {
       <div className="flex flex-col gap-y-2 w-full ">
         <div className="flex gap-x-2">
           <p className="pe-2 text-black m-0 text-fs-16 m-s-b">
-            {Math.round(hotelReview.rating)}/5
+            {Math.round(hotelReview?.rating)}/5
           </p>
 
           <TotalStars
-            stars={hotelReview.rating}
+            stars={hotelReview?.rating}
             width={"w-[16px]"}
             height={"w-[16px]"}
           />
@@ -103,7 +103,7 @@ export function CardReview({ hotelReview, isModal = false }) {
 
         {/* REVIEW TITLE */}
         <span className="m-s-b text-black text-fs-16">
-          <h2>{hotelReview.title}</h2>
+          <h2>{hotelReview?.title}</h2>
         </span>
 
         {/* REVIEW MESSAGE  */}
@@ -111,9 +111,9 @@ export function CardReview({ hotelReview, isModal = false }) {
           <p>
             {isModal
               ? showMore
-                ? `${TruncateLetters(hotelReview.text, 30)}...`
-                : hotelReview.text
-              : hotelReview.text}
+                ? `${TruncateLetters(hotelReview?.text, 30)}...`
+                : hotelReview?.text
+              : hotelReview?.text}
           </p>
 
           {isModal && (

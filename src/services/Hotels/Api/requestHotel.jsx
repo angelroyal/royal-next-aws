@@ -40,7 +40,7 @@ export async function GetReviewsTripe(locationId) {
 
   try {
     const response = await axios.get(
-      `https://staywuw.com/api2?locationId=${locationId}&endPoint=reviews`
+      `${process.env.NEXT_PUBLIC_ROYAL_URL_REVIEWS}?locationId=${locationId}&endPoint=reviews`
     );
     // const response = await axios.request(options);
     return response;
@@ -62,7 +62,7 @@ export async function GetLocationDetails(locationId) {
   //   headers: { accept: "application/json" },
   // };
   try {
-    const response = await axios.get(`https://staywuw.com/api2?locationId=${locationId}&endPoint=details`);
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_ROYAL_URL_REVIEWS}?locationId=${locationId}&endPoint=details`);
     // const response = await axios.request(options);
     return response;
   } catch (error) {
