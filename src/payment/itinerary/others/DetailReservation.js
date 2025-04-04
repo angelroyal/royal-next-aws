@@ -94,7 +94,7 @@ export default function ReservationShortInfo(props) {
             {languageData.confirmation.infoPayment}
           </div>
 
-          <div className="flex justify-between items-start">
+          {/* <div className="flex justify-between items-start">
             <div className="flex flex-col">
               <span className="m-s-b text-fs-12 text-gry-100">
                 {languageData.confirmation.titular}
@@ -114,7 +114,7 @@ export default function ReservationShortInfo(props) {
                 xxxx xxxx xxxx {infoReservation.payment.cardDigits}
               </span>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex justify-between items-start">
             <div className="flex flex-col">
