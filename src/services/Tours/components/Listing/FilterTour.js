@@ -141,10 +141,17 @@ export default function FilterTour(props) {
   const { languageData } = useContext(LanguageContext);
 
   const handleClickReset = () => {
+
     const newFilterStart = {
       ...filterStart,
-      stars: { items: [{ ...filterStart.stars.items[0], checked: true }] },
+      stars: {
+        ...filterStart.stars,
+        items: filterStart.stars.items.map((item, index) => 
+          index === 0 ? { ...item, checked: true } : item
+        ),
+      },
     };
+    
     setFilters(getFilters(tourData));
     setFiltersStars(newFilterStart);
     setRangeValue([3500, 10000]);
@@ -163,9 +170,9 @@ export default function FilterTour(props) {
     <>
       <div className="border border-[#ebebeb] rounded-lg shadow-3xl h-auto w-full mt-[25px] p-[24px] max-xl:!border-white max-xl:!shadow-none">
         <div className="flex justify-between mb-[10px]">
-          <h7 className="flex align-center m-b text-fs-16">
+          <h6 className="flex align-center m-b text-fs-16">
             {languageData.titlesFilterTour.filterResults}
-          </h7>
+          </h6>
           <button
             className="text-bl-100 m-b text-fs-12"
             onClick={handleClickReset}
