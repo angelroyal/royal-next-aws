@@ -25,7 +25,7 @@ export default function TabInfoHotel(props) {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [shortHotelDescription, setShortHotelDescription] = useState(null);
 
-  const { languageData } = useContext(LanguageContext);
+  const { languageData, language } = useContext(LanguageContext);
 
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
@@ -49,7 +49,58 @@ export default function TabInfoHotel(props) {
     };
     getDescriptionPreview();
   }, [hotel]);
-  
+
+  // GET DATE FROM LOCALSTORAGE
+  const [selectedDates, setSelectedDates] = useState(null);
+
+  useEffect(() => {
+    const storedDates = localStorage.getItem("selectedDates");
+    if (storedDates) {
+      try {
+        const parsedDates = JSON.parse(storedDates);
+        const formattedDates = parsedDates.map((dateStr) =>
+          new Intl.DateTimeFormat(language === "es" ? "es-ES" : "en-US", {
+            weekday: "short",
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          }).format(new Date(dateStr))
+        );
+        setSelectedDates(formattedDates);
+      } catch (error) {
+        console.error("Error al procesar selectedDates:", error);
+      }
+    }
+
+    const guests = localStorage.getItem("roomData");
+    if (guests) {
+      try {
+        setRoomData(JSON.parse(guests));
+      } catch (error) {
+        console.error("Error al parsear room:", error);
+      }
+    }
+  }, [language]);
+
+  const [roomData, setRoomData] = useState(null);
+
+  useEffect(() => {
+    const storedDates = localStorage.getItem("roomData");
+    if (storedDates) {
+      try {
+        setRoomData(JSON.parse(storedDates));
+      } catch (error) {
+        console.error("Error al parsear room:", error);
+      }
+    }
+  }, []);
+
+  const totalChildren = roomData?.reduce(
+    (sum, room) => sum + room.children.length,
+    0
+  );
+  const totalAdults = roomData?.reduce((sum, room) => sum + room.adults, 0);
+
   const getMessageForTab = (tabName) => {
     switch (tabName) {
       //   INFO HOTEL
@@ -116,7 +167,7 @@ export default function TabInfoHotel(props) {
         return (
           <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100 ">
             {/* {amenities.map((facility, index) => ( */}
-              {hotel.facilities.map((facility, index) => (
+            {hotel.facilities.map((facility, index) => (
               <Tooltip
                 key={index}
                 bgColor={facility?.extraCost && "bg-gry-50"}
@@ -147,10 +198,46 @@ export default function TabInfoHotel(props) {
             <div className="mb-2 m-b text-fs-20">
               {languageData.modalHotelOptions.findOutSchedules}
             </div>
-            <ul className="list-disc m-m text-fs-14 text-gry-100 ms-9">
-              <li>Check-in: 15:00 pm</li>
-              <li>Check-out: 15:00 pm</li>
-              {hotel.breakfast && <li> {languageData.modalHotel.breakfast}</li>}
+            <ul className="list-disc m-m text-fs-14 text-gry-100 ms-3">
+              {/* CHECK IN */}
+              <li className="flex gap-1 items-center">
+                <img
+                  className="h-[14px] w-4 invert"
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
+                  alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
+                />
+                <span className="m-b">
+                  {languageData.modalHotel.checkInText}
+                </span>{" "}
+                {selectedDates[0]} {languageData.modalHotel.checkIn}
+              </li>
+              {/* CHECK OUT */}
+              <li className="flex gap-1 items-center">
+                <img
+                  className="h-[14px] w-4 invert"
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
+                  alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon calendar`}
+                />
+                <span className="m-b">
+                  {languageData.modalHotel.checkOutText}
+                </span>{" "}
+                {selectedDates[1]} {languageData.modalHotel.checkOut}
+              </li>
+              {/* GUESTS */}
+              <li className="flex gap-1 items-center">
+                <img
+                  className="h-[14px] w-4 invert"
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                  alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon guests`}
+                />
+                <span className="m-b">{languageData.modalHotel.guests}</span>{" "}
+                {totalAdults} {languageData.modalHotel.people}
+                {roomData[0].children.length > 0 && (
+                  <div>
+                    {languageData.modalHotel.and} {totalChildren} {languageData.modalHotel.kid}
+                  </div>
+                )}
+              </li>
             </ul>
           </div>
         );
