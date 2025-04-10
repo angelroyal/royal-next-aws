@@ -114,7 +114,7 @@ export default function TabInfoHotel(props) {
 
       case "amenities":
         return (
-          <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100">
+          <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100 ">
             {/* {amenities.map((facility, index) => ( */}
               {hotel.facilities.map((facility, index) => (
               <Tooltip
