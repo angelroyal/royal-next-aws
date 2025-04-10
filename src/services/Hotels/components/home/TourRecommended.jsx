@@ -106,7 +106,7 @@ export default function CartTourOptions() {
                   <img
                     className="w-full h-full rounded-full object-cover select-none"
                     src={tour.image}
-                    alt="staywow card"
+                    alt="stayWuw card"
                   />
                 </div>
 
