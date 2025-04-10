@@ -40,7 +40,9 @@ export const es = {
     tour: "Tour",
     transportation: "Traslados",
     cart: "Carrito de compras",
-    number: "800 953 0342",
+    // number: "800 953 0342",
+    number: "800 000 0000",
+    hrefNumber: "8000000000",
     call: "¡Llámanos!",
     tabTitle: "¡Vuelve! Te echamos de menos",
     tabTitleRoyal: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
@@ -1058,7 +1060,6 @@ export const es = {
   footer: {
     contact: {
       titleContact: "Contacto",
-      phone: "800 953 0342",
       whatsApp: "998 134 2286",
       location:
         "Av. Tulum y Av Náder, Sm 2, Mza. 1, lte. 44, Andador VI, C.P. 77500 Cancún, Q.Roo.",
@@ -1627,7 +1628,6 @@ export const es = {
     titleConfirmedPayment: "¿Le falta algo a tu reservación?",
     subTitleConfirmedPayment: "Si tines alguna duda llámanos al ",
 
-    titleNumber: "800 953 0342",
     titleEmail: `info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
     principalBannerH: {
       title1: "Encuentra el descanso que buscas",

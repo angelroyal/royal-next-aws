@@ -127,10 +127,10 @@ export function FormContactClient() {
 
   // LP
   // const currentRoute = window.location.pathname;
-  const [currentRoute, setCurrentRoute] = useState('');
+  const [currentRoute, setCurrentRoute] = useState("");
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setCurrentRoute(window.location.pathname);
     }
   }, []);
@@ -288,12 +288,14 @@ export function FormContactClient() {
                           {/* PHONE NUMBER */}
                           <a
                             className="m-0 text-gry-70 text-fs-12 m-s-b cursor-pointer hover:text-or-100"
-                            href="tel:8009530342"
+                            href={`tel:${languageData.navigation.hrefNumber}`}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             {languageData.navBar.contact}
-                            <span className="m-b ml-1">800 953 0342</span>
+                            <span className="m-b ml-1">
+                              {languageData.navigation.number}
+                            </span>
                           </a>
                         </div>
                       </div>

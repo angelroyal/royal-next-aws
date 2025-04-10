@@ -12,7 +12,11 @@ export function BannerPaymentConfirmed() {
 
   return (
     <picture className="content-image-comunication">
-      <a href="tel:8009530342" target="_blank" rel="noopener noreferrer">
+      <a
+        href={`tel:${languageData.navigation.hrefNumber}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Image
           className={isMobile ? "image-confirmed-payment-b" : ""}
           src={Others.bannerConfirmPayment.image}
@@ -27,7 +31,7 @@ export function BannerPaymentConfirmed() {
           <h4 className="text-image-nex-h4-call">
             {languageData.titleBanners[Others.bannerConfirmPayment.paragraph]}{" "}
             <span className="span-new-text">
-              {languageData.titleBanners.titleNumber}
+              {languageData.navigation.number}
             </span>
           </h4>
         </div>

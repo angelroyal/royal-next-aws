@@ -65,12 +65,12 @@ export function BannerFaqsDown() {
           </a>{" "}
           {languageData.titleBanners[Others.bannerHelp.text]}{" "}
           <a
-            href="tel:8009530342"
+            href={`tel:${languageData.navigation.hrefNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer m-b hover:text-or-100 no-underline text-gry-100"
           >
-            {languageData.titleBanners.titleNumber}
+             {languageData.navigation.number}
           </a>
         </h4>
       </div>

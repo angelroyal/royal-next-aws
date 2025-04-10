@@ -1,4 +1,8 @@
+import LanguageContext from "@/language/LanguageContext";
+import { useContext } from "react";
+
 export function CancelPolicyEs() {
+  const { languageData } = useContext(LanguageContext);
   return (
     <>
       <h1 className="m-b text-[1.5rem] text-bl-100 pt-[4rem] pb-[2rem]">
@@ -12,7 +16,7 @@ export function CancelPolicyEs() {
         este apartado se mencionan aspectos generales, es importante mencionar
         que los porcentajes pueden o no coincidir debido a los aspectos arriba
         mencionados. Puedes revisar la política específica de cada servicio
-        directamente con un ejecutivo. ¡Llama al 800 953 0342!
+        directamente con un ejecutivo. ¡Llama al {languageData.navigation.number}!
       </div>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         En este apartado de cancelación, los días se entenderán como días
@@ -155,7 +159,7 @@ export function CancelPolicyEs() {
         </li>
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        Si tienes dudas comunícate al 800 953 0342 y un ejecutivo te ayudará.
+        Si tienes dudas comunícate al {languageData.navigation.number} y un ejecutivo te ayudará.
       </div>
       <h3 className="m-b text-[.938rem] text-black pt-[1.5rem] pb-[.3rem]">
         Cancelaciones en temporada alta y días festivos:
@@ -167,7 +171,7 @@ export function CancelPolicyEs() {
         validadas de manera individual.
       </div>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        Para cancelar llama al 800 953 0342 y proporciona los siguientes datos:
+        Para cancelar llama al {languageData.navigation.number} y proporciona los siguientes datos:
       </div>
       <ul className="list-none pl-[1rem] mb-[.5rem]">
         <li className="m-m text-[.875rem] text-black pb-[5px]">
@@ -181,8 +185,9 @@ export function CancelPolicyEs() {
         </li>
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        Si lo prefieres, manda tu solicitud de cancelación vía email a
-        info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com con los datos mencionados arriba.
+        Si lo prefieres, manda tu solicitud de cancelación vía email a info@
+        {process.env.NEXT_PUBLIC_NAME_COMPANY}.com con los datos mencionados
+        arriba.
       </div>
       <div className="m-b text-[.938rem] text-black pt-[1.5rem] pb-[.3rem] text-justify">
         NOTA: En cuanto a este apartado de cancelaciones, se aclara que los
@@ -199,13 +204,13 @@ export function CancelPolicyEs() {
         Política de Protección de Datos Personales:
       </h3>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        En {process.env.NEXT_PUBLIC_NAME_COMPANY}.Travel estamos comprometidos con tu seguridad. Por ello, te
-        informamos que de manera aleatoria nuestro departamento de Protección de
-        datos personales, realiza una validación adicional y podrá solicitar
-        documentos que comprueben que eres el titular de la reserva y/o la
-        compra es autorizada por el titular de la forma de pago que elegiste. En
-        caso de no proveerla, tu reserva puede estar sujeta a la cancelación del
-        servicio.
+        En {process.env.NEXT_PUBLIC_NAME_COMPANY}.Travel estamos comprometidos
+        con tu seguridad. Por ello, te informamos que de manera aleatoria
+        nuestro departamento de Protección de datos personales, realiza una
+        validación adicional y podrá solicitar documentos que comprueben que
+        eres el titular de la reserva y/o la compra es autorizada por el titular
+        de la forma de pago que elegiste. En caso de no proveerla, tu reserva
+        puede estar sujeta a la cancelación del servicio.
       </div>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         Si tu reserva resulta seleccionada para verificación de datos, un

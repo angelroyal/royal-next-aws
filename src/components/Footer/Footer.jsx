@@ -131,7 +131,7 @@ export default function Footer() {
               <div className="flex gap-x-6 w-max">
                 <a
                   className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5"
-                  href="tel:8009530342"
+                  href={`tel:${languageData.navigation.hrefNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -142,7 +142,7 @@ export default function Footer() {
                     height="14px"
                   />
                   <span className="hover:!text-or-100 no-underline text-white">
-                    {languageData.footer.contact.phone}
+                    {languageData.navigation.number}
                   </span>
                 </a>
                 <a
