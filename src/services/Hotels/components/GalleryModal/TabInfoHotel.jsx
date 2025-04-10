@@ -24,6 +24,20 @@ export default function TabInfoHotel(props) {
   const [hotelDescription, setHotelDescription] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [shortHotelDescription, setShortHotelDescription] = useState(null);
+  const [allAmenities, setAllAmenities] = useState([]);
+
+  useEffect(() => {
+    if (hotel && hotel.facilities) {
+      setAllAmenities(
+        Object.values(
+          hotel.facilities.reduce((acc, item) => {
+            acc[item.name] = item;
+            return acc;
+          }, {})
+        )
+      );
+    }
+  }, [hotel]);
 
   const { languageData } = useContext(LanguageContext);
 
@@ -49,7 +63,7 @@ export default function TabInfoHotel(props) {
     };
     getDescriptionPreview();
   }, [hotel]);
-  
+
   const getMessageForTab = (tabName) => {
     switch (tabName) {
       //   INFO HOTEL
@@ -116,27 +130,27 @@ export default function TabInfoHotel(props) {
         return (
           <div className="m-m gap-4 grid grid-cols-3 text-fs-14 text-gry-100 ">
             {/* {amenities.map((facility, index) => ( */}
-              {hotel.facilities.map((facility, index) => (
-              <Tooltip
-                key={index}
-                bgColor={facility?.extraCost && "bg-gry-50"}
-                text={
-                  facility?.extraCost && (
-                    <React.Fragment>
-                      <p className="text-grn-100 m-s-b text-fs-11 text-nowrap cursor-default">
-                        {languageData.detailHotel.extraCosts}
-                      </p>
-                      <></>
-                    </React.Fragment>
-                  )
-                }
-              >
-                <div className="flex items-center gap-x-2 mb-2">
-                  {facility.extraCost && "$"} {AmenitiesIcons(facility)}{" "}
-                  <p className="m-0 cursor-default">{facility.name}</p>
-                </div>
-              </Tooltip>
-            ))}
+            {allAmenities.length > 0 &&
+              allAmenities.map((facility, index) => (
+                <Tooltip
+                  key={index}
+                  bgColor={facility?.extraCost && "bg-gry-50"}
+                  text={
+                    facility?.extraCost && (
+                      <React.Fragment>
+                        <p className="text-grn-100 m-s-b text-fs-11 text-nowrap cursor-default">
+                          {languageData.detailHotel.extraCosts}
+                        </p>
+                      </React.Fragment>
+                    )
+                  }
+                >
+                  <div className="flex items-center gap-x-2 mb-2">
+                    {facility.extraCost && "$"} {AmenitiesIcons(facility)}{" "}
+                    <p className="m-0 cursor-default">{facility.name}</p>
+                  </div>
+                </Tooltip>
+              ))}
           </div>
         );
 

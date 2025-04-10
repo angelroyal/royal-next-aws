@@ -116,16 +116,16 @@ export default function DetailReservation() {
 
   function triggerAnimation() {
     setIsBouncing(true);
-    setTimeout(() => setIsBouncing(false), 3700); 
+    setTimeout(() => setIsBouncing(false), 3700);
   }
 
   return (
     <>
-      {isVisible && (
+      {isVisible && selectedRooms.length > 0 && (
         <div
           id="reservationDetails"
-          className={`sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-70 transition-all duration-500 ${
-            open === true ? "h-auto" : "h-[11.3rem] md:h-[127px]"
+          className={`sticky bottom-0 left-0 w-full bg-white py-[12px] z-[2] border-t border-gry-70 transition-all duration-500 ${
+            open === true ? "h-auto" : "h-[11rem] md:h-[110px]"
           }`}
         >
           <div
@@ -187,11 +187,16 @@ export default function DetailReservation() {
                           height={30}
                           alt={selectedRooms[0].name}
                         />
-                        
                       </div>
                       {selectedRooms.length > 0 && (
-                        <span className={`absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b ${isBouncing && "animate-bounce"}`}>
-                          {isBouncing && <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bl-100 opacity-75"/>}
+                        <span
+                          className={`absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b ${
+                            isBouncing && "animate-bounce"
+                          }`}
+                        >
+                          {isBouncing && (
+                            <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bl-100 opacity-75" />
+                          )}
                           {`+${selectedRooms.length}`}
                         </span>
                       )}{" "}
