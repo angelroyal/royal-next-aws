@@ -126,6 +126,7 @@ export default function TabInfoHotel(props) {
                       <p className="text-grn-100 m-s-b text-fs-11 text-nowrap cursor-default">
                         {languageData.detailHotel.extraCosts}
                       </p>
+                      <></>
                     </React.Fragment>
                   )
                 }
