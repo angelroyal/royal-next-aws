@@ -3,10 +3,9 @@ import HotelRecommendation from "@/components/Recommended/Hotel/HotelRecommendat
 import OffersNowRecommendation from "@/components/Recommended/OffersNowRecommendation";
 import TransportRecommendation from "@/components/Recommended/Transport/TransportRecommendation";
 
-export default function OrderRecommendation({ type, params, searchParams }) {
-  
+export default function OrderRecommendation({ params, searchParams }) {
   let order;
-  const service = type;
+  const service = params.type;
 
   // IS HOTEL
   switch (service) {
