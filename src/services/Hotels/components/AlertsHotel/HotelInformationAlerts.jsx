@@ -42,7 +42,7 @@ export function ReservationFailed() {
 
         <a
           className="sticky mx-auto bottom-2/4 w-max bg-white rounded-lg z-[4] p-6 flex flex-col justify-center items-center no-underline"
-          href="tel:8009530342"
+          href={`tel:${languageData.navigation.hrefNumber}`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -68,7 +68,7 @@ export function ReservationFailed() {
 
               <span className="hover:!text-or-100 no-underline text-black">
                 {languageData.navBar.contact}{" "}
-                <span className="m-b">{languageData.footer.contact.phone}</span>
+                <span className="m-b">{languageData.navigation.number}</span>
               </span>
             </div>
           </div>

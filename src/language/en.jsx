@@ -40,7 +40,8 @@ export const en = {
     tour: "Tour",
     transportation: "Transport",
     cart: "Shopping cart",
-    number: "800 953 0342",
+    number: "800 000 0000",
+    hrefNumber: "8000000000",
     call: "Call us!",
     tabTitle: "Come back! We miss you!",
     tabTitleRoyal: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
@@ -221,7 +222,7 @@ export const en = {
     subtitleKeep:
       "Don't stop here. Discover more exciting destinations and plan your next adventure.",
     btnBack: "Back to the beginning",
-    goPay:"Go pay",
+    goPay: "Go pay",
 
     hotel: {
       titleRecommedation: "Accommodations you might like",
@@ -410,15 +411,22 @@ export const en = {
   },
 
   modalHotel: {
-    noRoomsFound:"Oops! No availability for your selected dates. Try other dates or contact us — we’ll help you find the best option!",
+    noRoomsFound:
+      "Oops! No availability for your selected dates. Try other dates or contact us — we’ll help you find the best option!",
     titlePrincipal: "Hotel amenities:",
     textLearn: "What you need to know",
     textNeedKnow: "Don't forget these details:",
     amenities: "No amenities",
     showMore: "see more",
     showLess: "see less",
-    checkIn: "Check-in: 3:00 pm",
-    checkOut: "Check-out: 11:00 am",
+    checkIn: "15:00",
+    checkOut: "12:00 (noon)",
+    checkInText: "Check in:",
+    checkOutText: "Check out:",
+    guests: "Guests:",
+    people: "adult(s)",
+    kid: "child(ren)",
+    and: "and",
     breakfast: "Breakfast: 7:00 am to 11:00 am",
     buttonUpdate: "Update",
     showTooltip: "Choose your dates!",
@@ -1318,9 +1326,10 @@ export const en = {
     invalidEmail: "Invalid email",
   },
 
-  pending:{
-    titlePending:"We are processing your payment",
-    subtitlePending:"This process may take a few hours. We will notify you as soon as your reservation is confirmed. Thank you for your patience and understanding.",
+  pending: {
+    titlePending: "We are processing your payment",
+    subtitlePending:
+      "This process may take a few hours. We will notify you as soon as your reservation is confirmed. Thank you for your patience and understanding.",
   },
 
   confirmation: {
@@ -1612,7 +1621,6 @@ export const en = {
     titleConfirmedPayment: "Is something missing from your reservation?",
     subTitleConfirmedPayment: "If you have any questions, call us at ",
 
-    titleNumber: "800 953 0342",
     titleEmail: `info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
 
     principalBannerH: {
@@ -1872,17 +1880,18 @@ export const en = {
     child: "Child",
     formHb: "Select the age",
   },
-  
+
   myReservation: {
     checkReservation: "Check your Reservation",
-    enterCodeAndReservation:"Enter your reservation code and your last name(s)",
-    reservationCode:"Reservation code",
-    lastName:"Last name(s)",
-    findReservation:"Find your Reservation",
-    haveYouForgotten:"Have you forgotten your reservation code?",
-    doYouNeedHelp:"Do you need help?",
-    callUsAt:"Call us at",
-    followUsOn:"Follow us on",
+    enterCodeAndReservation:
+      "Enter your reservation code and your last name(s)",
+    reservationCode: "Reservation code",
+    lastName: "Last name(s)",
+    findReservation: "Find your Reservation",
+    haveYouForgotten: "Have you forgotten your reservation code?",
+    doYouNeedHelp: "Do you need help?",
+    callUsAt: "Call us at",
+    followUsOn: "Follow us on",
   },
 
   // region COUNTRIES

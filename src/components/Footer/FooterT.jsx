@@ -122,7 +122,7 @@ export default function FooterT() {
               <div className="flex gap-2">
                 <a
                   className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5"
-                  href="tel:8009530342"
+                  href={`tel:${languageData.navigation.hrefNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onMouseEnter={() => setIsHovered("CTN")}
@@ -148,7 +148,7 @@ export default function FooterT() {
                       isHovered === "CTN" && "!text-or-100"
                     } text-fs-12 m-s-b no-underline`}
                   >
-                    {languageData.footer.contact.phone}
+                    {languageData.navigation.number}
                   </span>
                 </a>
               </div>

@@ -93,10 +93,14 @@ export default function DestinationReady({ type, reservationDetails, dataImg }) 
             {service === "hotel" ? (
               <div className="flex items-start mr-[4px]">
                 <p className="m-0 !border-r pr-[4px] mr-[4px] !border-gry-100 ">
-                  {date.checkIn}
+                  {/* {date.checkIn} */}
+                  {languageData.modalHotel.checkIn}
                 </p>
 
-                <p className="m-0">{date.checkOut}</p>
+                <p className="m-0">
+                  {/* {date.checkOut} */}
+                  {languageData.modalHotel.checkOut}
+                  </p>
               </div>
             ) : (
               <p className="m-0 mr-[4px]">{date}</p>

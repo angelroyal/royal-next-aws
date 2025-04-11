@@ -1,4 +1,9 @@
+import { useContext } from "react";
+
+import LanguageContext from "@/language/LanguageContext";
+
 export function CancelPolicyEn() {
+  const { languageData } = useContext(LanguageContext);
   return (
     <>
       <h1 className="m-b text-[1.5rem] text-bl-100 pt-[4rem] pb-[2rem]">
@@ -13,8 +18,8 @@ export function CancelPolicyEn() {
         service acquired with our suppliers.In this section general aspects are
         mentioned, it is important to mention that the percentages may or may
         not coincide due to the aspects above mentioned. You can review the
-        specific policy of each service directly with an executive. Call 800 953
-        0342!
+        specific policy of each service directly with an executive. Call{" "}
+        {languageData.navigation.number}!
       </div>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         In this cancellation section, the days will be understood as days
@@ -153,7 +158,8 @@ export function CancelPolicyEn() {
         </li>
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        If you have doubts, contact 800 953 0342 and an executive will help you.
+        If you have doubts, contact {languageData.navigation.number} and an
+        executive will help you.
       </div>
       <h3 className="m-b text-[.938rem] text-black pt-[1.5rem] pb-[.3rem]">
         Cancellations in high season and holidays:
@@ -164,7 +170,8 @@ export function CancelPolicyEn() {
         special dates and cancellations will have to be Validated individually.
       </div>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        To cancel call 800 953 0342 and provide the following data:
+        To cancel call {languageData.navigation.number} and provide the
+        following data:
       </div>
       <ul className="list-none pl-[1rem] mb-[.5rem]">
         <li className="m-m text-[.875rem] text-black pb-[5px]">
@@ -178,8 +185,9 @@ export function CancelPolicyEn() {
         </li>
       </ul>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        If you prefer, send your cancellation application via email to
-        info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com with the data mentioned above.
+        If you prefer, send your cancellation application via email to info@
+        {process.env.NEXT_PUBLIC_NAME_COMPANY}.com with the data mentioned
+        above.
       </div>
       <div className="m-b text-[.938rem] text-black pt-[1.5rem] pb-[.3rem] text-justify">
         NOTE: As for this cancellation section, it is clarified that positions
@@ -195,12 +203,13 @@ export function CancelPolicyEn() {
         Personal data protection policy:
       </h3>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
-        In {process.env.NEXT_PUBLIC_NAME_COMPANY}. Travel we are committed to your safety. Therefore, you We
-        inform that our protection department randomly personal data, perform
-        additional validation and may Request documents that check that you are
-        the holder of the reserve and/or the purchase is authorized by the
-        holder of the payment method that You chose. In case of not providing
-        it, your reservation may be subject to the service cancellation.
+        In {process.env.NEXT_PUBLIC_NAME_COMPANY}. Travel we are committed to
+        your safety. Therefore, you We inform that our protection department
+        randomly personal data, perform additional validation and may Request
+        documents that check that you are the holder of the reserve and/or the
+        purchase is authorized by the holder of the payment method that You
+        chose. In case of not providing it, your reservation may be subject to
+        the service cancellation.
       </div>
       <div className="m-m text-[.875rem] text-black pb-[.5rem] text-justify">
         If your reservation is selected for data verification, a Executive will
