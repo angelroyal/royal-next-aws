@@ -30,6 +30,8 @@ export const ListingHotelProvider = ({ children }) => {
   useEffect(() => {
     const fetchAndLogHotelDetails = async () => {
       if (mapHotels && mapHotels.length > 0) {
+        console.log(mapHotels);
+        
         const filteredSortedHotels = sortAndFilterHotels(
           applyFilters(mapHotels, selectedFilters, pricing),
           orderHotel
@@ -48,6 +50,8 @@ export const ListingHotelProvider = ({ children }) => {
           endIndex
         );
         const keys = hotelsToFetchDetails.map((hotel) => hotel.key);
+        // console.log(keys);
+        
 
         try {
           const hotelDetails = await fetchHotelDetailsByKeys(keys);

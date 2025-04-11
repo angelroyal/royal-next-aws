@@ -22,6 +22,7 @@ import { useTourContext } from "../../context/ListingTourContext";
 import SearchBoxMobile from "@/components/searchMobil/SearchBoxMobile";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import { NotFoundDestination } from "@/components/General/NotFoundDestination";
+import { GetActivities } from "../../Api/requestTour";
 
 export default function ListingTour() {
   const {
@@ -52,8 +53,9 @@ export default function ListingTour() {
 
     const codeNameTour = searchParams.get("codeNameTour");
 
-    axiosWithInterceptor
-      .get(`v1/destinations/${codeNameTour}/activities`)
+    axiosWithInterceptor;
+    // .get(`v1/destinations/${codeNameTour}/activities`)
+    GetActivities(codeNameTour)
       .then((response) => {
         updateTourData(response.data);
         scrollToTop();
@@ -176,19 +178,17 @@ export default function ListingTour() {
 
             {currentTours && (
               <>
-                {currentTours
-                  .map((tour, index) => (
-                    <div key={index}>
-                      <TourCard
-                        tour={tour}
-                        destination={auxTourData.destination}
-                      />
-                      {getKeyImage(
-                        index + 1,
-                        auxTourData.activities.length
-                      ) && <ImageListingTour />}
-                    </div>
-                  ))}
+                {currentTours.map((tour, index) => (
+                  <div key={index}>
+                    <TourCard
+                      tour={tour}
+                      destination={auxTourData.destination}
+                    />
+                    {getKeyImage(index + 1, auxTourData.activities.length) && (
+                      <ImageListingTour />
+                    )}
+                  </div>
+                ))}
               </>
             )}
 

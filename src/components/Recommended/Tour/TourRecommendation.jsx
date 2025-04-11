@@ -12,15 +12,20 @@ import LanguageContext from "@/language/LanguageContext";
 import { fetchTopActivities } from "../Api/RequestRecommendation";
 import CardTopActivities from "@/services/Tours/Home/CardTopActivities";
 import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
+import { GetActivities } from "@/services/Tours/Api/requestTour";
 
-export default function TopActivities() {
+export default function TopActivities({ params, destination }) {
   const [tours, setTours] = useState([]);
   const { languageData } = useContext(LanguageContext);
 
   useEffect(() => {
     const loadTopActivities = async () => {
-      const data = await fetchTopActivities();
-      setTours(data);
+      const activities = await GetActivities(destination);
+      // const activities = await fetchTopActivities();
+
+      if (activities.data && activities.data.activities) {
+        setTours(activities.data.activities.slice(0, 20));
+      }
     };
     loadTopActivities();
   }, []);
@@ -66,7 +71,7 @@ export default function TopActivities() {
         {tours.length > 0
           ? tours.map((tour, index) => (
               <SwiperSlide key={index} className="!rounded-lg">
-                <CardTopActivities tour={tour} key={index} />
+                <CardTopActivities tour={tour} key={index} params={params}/>
               </SwiperSlide>
             ))
           : [...Array(5)].map((_, index) => (

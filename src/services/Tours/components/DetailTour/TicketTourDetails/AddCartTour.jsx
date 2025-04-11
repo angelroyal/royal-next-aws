@@ -29,6 +29,7 @@ export default function AddCartTour(props) {
     setIsLoader,
     isButtonDisabled,
     setIsButtonDisabled,
+    paramListing
   } = useContext(DetailTourContext);
 
   const handleAddCartTour = async () => {
@@ -87,7 +88,7 @@ export default function AddCartTour(props) {
 
       setTimeout(() => {
         router.push(
-          EntitiesRecommendations(language, "tour", InfoTour, cartUid)
+          EntitiesRecommendations(language, "tour", InfoTour, cartUid, paramListing)
         );
       }, 3000);
     } catch (error) {

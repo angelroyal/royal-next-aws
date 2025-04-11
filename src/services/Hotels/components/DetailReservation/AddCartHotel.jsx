@@ -17,7 +17,7 @@ export default function AddCartHotel() {
     useNotification();
   const { languageData, language } = useContext(LanguageContext);
 
-  const { selectedRooms, requestBodyRooms, keyHotel, hotelInfo } =
+  const { selectedRooms, requestBodyRooms, keyHotel, hotelInfo, paramListing } =
     useContext(RoomsHotelContext);
 
   // HANDLE ADD CART HOTEL
@@ -71,7 +71,7 @@ export default function AddCartHotel() {
       fetchData(cartUid);
       setTimeout(() => {
         router.push(
-          EntitiesRecommendations(language, "hotel", hotelInfo, cartUid)
+          EntitiesRecommendations(language, "hotel", hotelInfo, cartUid, paramListing)
         );
       }, 3000);
     } catch (error) {

@@ -3,7 +3,7 @@ import HotelRecommendation from "@/components/Recommended/Hotel/HotelRecommendat
 import OffersNowRecommendation from "@/components/Recommended/OffersNowRecommendation";
 import TransportRecommendation from "@/components/Recommended/Transport/TransportRecommendation";
 
-export default function OrderRecommendation({ type }) {
+export default function OrderRecommendation({ type, params, searchParams }) {
   let order;
   const service = type;
 
@@ -13,10 +13,10 @@ export default function OrderRecommendation({ type }) {
       {
         order = (
           <>
-            <TourRecommendation />
+            <TourRecommendation params={params} destination={searchParams.codeName} />
             <OffersNowRecommendation />
-            <TransportRecommendation />
-            <HotelRecommendation />
+            {/* <TransportRecommendation /> */}
+            <HotelRecommendation params={params} paramsHotel={searchParams} />
           </>
         );
       }
@@ -26,27 +26,27 @@ export default function OrderRecommendation({ type }) {
       {
         order = (
           <>
-            <HotelRecommendation />
+            <HotelRecommendation params={params} paramsHotel={searchParams} />
             <OffersNowRecommendation />
-            <TransportRecommendation />
-            <TourRecommendation />
+            {/* <TransportRecommendation /> */}
+            <TourRecommendation params={params} destination={searchParams.codeName} />
           </>
         );
       }
       break;
     // IS TRANSPORT
-    case "transport":
-      {
-        order = (
-          <>
-            <HotelRecommendation />
-            <OffersNowRecommendation />
-            <TourRecommendation />
-            <TransportRecommendation />
-          </>
-        );
-      }
-      break;
+    // case "transport":
+    //   {
+    //     order = (
+    //       <>
+    //         <HotelRecommendation />
+    //         <OffersNowRecommendation />
+    //         <TourRecommendation />
+    //         <TransportRecommendation />
+    //       </>
+    //     );
+    //   }
+    //   break;
   }
 
   return <div>{order}</div>;

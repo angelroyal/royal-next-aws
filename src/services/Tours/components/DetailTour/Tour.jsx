@@ -11,11 +11,17 @@ import LanguageContext from "@/language/LanguageContext";
 import { getAvailabilityTour } from "../../Api/requestTour";
 import SkeletonDetailTour from "../Skeleton/SkeletonDetailTour";
 import { ModalitiesTicket } from "./TicketTourDetails/ModalitiesTicket";
+import DetailTourContext from "../../context/DetailTourContext";
+import {
+  CalculateCheckInCheckOut,
+  CleanRoute,
+} from "@/config/Others/CleanRoute";
 
 export default function Tour(props) {
   const { params, tourMetaData, searchParams } = props;
   const [tourData, setTourData] = useState(null);
   const { languageData } = useContext(LanguageContext);
+  const { setParamListing } = useContext(DetailTourContext);
 
   useEffect(() => {
     const fetchTourData = async () => {
@@ -28,7 +34,23 @@ export default function Tour(props) {
     };
 
     fetchTourData();
+
+    const { checkIn, checkOut } = CalculateCheckInCheckOut(
+      searchParams.dateStart
+    );
+
+    setParamListing({
+      destination: CleanRoute(params.codeName),
+      occupancies: encodeURIComponent(JSON.stringify([{ adults: 2, children: [] }])),
+      code: searchParams.code,
+      "check-in": checkIn,
+      "check-out": checkOut,
+      type: "destination",
+      codeName: CleanRoute(params.codeName),
+    });
   }, []);
+
+  // console.log(paramHotelListing);
 
   return (
     <Container>

@@ -12,3 +12,16 @@ export async function getAvailabilityTour(id, searchParams) {
     console.error("Failed to fetch tour data:", error);
   }
 }
+
+export async function GetActivities(codeNameTour) {
+  try {
+    const response = await axiosWithInterceptor.get(
+      `v1/destinations/${codeNameTour}/activities`
+    );
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}

@@ -12,8 +12,9 @@ import { LimitPriceAlert } from "../AlertsHotel/HotelInformationAlerts";
 import { calculateNights } from "../../utils/calculateNights";
 import moment from "moment";
 import ImageGet from "@/utils/others/ImageGet";
+import { CleanRoute } from "@/config/Others/CleanRoute";
 
-export default function DetailReservation() {
+export default function DetailReservation({ searchParams }) {
   const limitPrice = 95000;
   const [open, setOpen] = useState(false);
   const [priceRooms, setTotalPrice] = useState(0);
@@ -23,8 +24,21 @@ export default function DetailReservation() {
   const [diffDate, setDiffDate] = useState(null);
   const [totalPerson, setTotalPerson] = useState(null);
 
-  const { selectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
+  const { selectedRooms, requestBodyRooms, setParamListing } =
+    useContext(RoomsHotelContext);
   const { totalPrice } = useCartAxios();
+
+  useEffect(() => {
+    if (searchParams) {
+      setParamListing({
+        codeName: searchParams.codeName,
+        code: searchParams.code,
+        "check-in": searchParams["check-in"],
+        "check-out": searchParams["check-out"],
+        occupancies: encodeURIComponent(JSON.stringify([{ adults: 2, children: [] }])),
+      });
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (requestBodyRooms && requestBodyRooms.occupancies) {

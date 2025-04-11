@@ -48,13 +48,18 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function DetailPageHotel({ params }) {
+export default async function DetailPageHotel({ params, searchParams}) {
   try {
+    console.log(searchParams);
+    
     const response = await axiosWithInterceptor.get(
       `v1/hotels/${params.id}/rooms`
     );
 
     const hotelData = response.data;
+
+    // console.log(hotelData);
+    
 
     const jsonLd = {
       "@context": "https://schema.org",
@@ -125,7 +130,7 @@ export default async function DetailPageHotel({ params }) {
 
                 <ReservationFailed />
 
-                <DetailReservation />
+                <DetailReservation searchParams={searchParams}/>
               </div>
               <FooterT />
             </RoomsHotelProvider>

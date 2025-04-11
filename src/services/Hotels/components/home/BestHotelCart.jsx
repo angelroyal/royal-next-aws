@@ -4,14 +4,17 @@ import Image from "next/image";
 import { useState, useContext } from "react";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
+import { CleanRoute } from "@/config/Others/CleanRoute";
 
-export function BestHotelCart({ hotel }) {
+export function BestHotelCart({ params, hotel }) {
   const [isHovered, setIsHovered] = useState(false);
   const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel) => {
     window.open(
-      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
+      `/${language}/mx/${params.codeName}/${CleanRoute(
+        params.codeName
+      )}-hotels/${hotel.codeName}`,
       "_blank"
     );
   };
@@ -28,7 +31,7 @@ export function BestHotelCart({ hotel }) {
           className={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform ${
             isHovered ? "scale-105" : "scale-100"
           }`}
-          src={hotel.image}
+          src={hotel.images[0]}
           alt="card"
         />
       </div>
@@ -71,10 +74,10 @@ export function BestHotelCart({ hotel }) {
               MXN{" "}
               <span className="m-b text-fs-16">
                 $
-                {Math.floor(hotel.price)
+                {Math.floor(hotel.minRate)
                   .toLocaleString("es-MX", { currency: "MXN" })
                   .replace(".00", "")}
-                .<sup>{(hotel.price % 1).toFixed(2).slice(2)}</sup>
+                .<sup>{(hotel.minRate % 1).toFixed(2).slice(2)}</sup>
               </span>
             </span>
           </div>
