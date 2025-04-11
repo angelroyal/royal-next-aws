@@ -52,7 +52,7 @@ export default async function Details({ params, searchParams }) {
                     />
                   )}
 
-                  <OrderRecommendation type={params.type} params={params} searchParams={searchParams} />
+                  <OrderRecommendation params={params} searchParams={searchParams} />
 
                   <KeepExploring />
                 </Container>
