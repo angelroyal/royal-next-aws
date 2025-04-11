@@ -1835,6 +1835,10 @@ export const es = {
         title: "Sin disponibilidad",
         message: "Por favor selecciona otras fechas",
       },
+      notAvailabilityPeople: {
+        title: "Reserva mínima: 3 personas",
+        message: "Necesitas agregar al menos 3 personas para continuar.",
+      },
     },
 
     itinerary: {

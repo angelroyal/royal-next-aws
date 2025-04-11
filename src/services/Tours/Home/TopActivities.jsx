@@ -8,8 +8,8 @@ import "@/assets/styles/general/Swiper.css";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 
-import CardTopActivities from "./CardTopActivities";
 import LanguageContext from "@/language/LanguageContext";
+import CardTopActivitiesHome from "./CardTopActivitiesHome";
 import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
 import { fetchTopActivities } from "@/components/Recommended/Api/RequestRecommendation";
 
@@ -49,7 +49,7 @@ export default function TopActivities() {
       >
         {tours.length > 0
           ? tours.map((tour, index) => (
-              <CardTopActivities tour={tour} key={index} />
+              <CardTopActivitiesHome tour={tour} key={index} />
             ))
           : [...Array(5)].map((_, index) => (
               <div key={index} className="min-w-[266px] h-full">

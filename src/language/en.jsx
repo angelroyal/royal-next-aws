@@ -1826,6 +1826,10 @@ export const en = {
         title: "No Availability",
         message: "Please select other dates",
       },
+      notAvailabilityPeople: {
+        title: "Minimum booking: 3 people",
+        message: "You need to add at least 3 people to continue.",
+      },
     },
 
     itinerary: {
