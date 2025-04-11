@@ -4,6 +4,7 @@ import OffersNowRecommendation from "@/components/Recommended/OffersNowRecommend
 import TransportRecommendation from "@/components/Recommended/Transport/TransportRecommendation";
 
 export default function OrderRecommendation({ type, params, searchParams }) {
+  
   let order;
   const service = type;
 

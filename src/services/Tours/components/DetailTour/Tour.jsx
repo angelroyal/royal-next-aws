@@ -50,8 +50,6 @@ export default function Tour(props) {
     });
   }, []);
 
-  // console.log(paramHotelListing);
-
   return (
     <Container>
       {/* <div className="p-9 mt-[25.8px]">  LP  TASK 20*/}
