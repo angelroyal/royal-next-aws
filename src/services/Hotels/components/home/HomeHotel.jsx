@@ -38,7 +38,7 @@ export const HomeHotel = (props) => {
         <BannerExcDiscounts/>
         <PopularState />
         <ShuffleHotel />
-        <TransportBanner />
+        {process.env.NEXT_PUBLIC_TRANSPORT === "true" && <TransportBanner />}
         <TourRecommended />
         <BannerHomeKnowMore />
         {/* <BtnShowNotification /> */}

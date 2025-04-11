@@ -56,85 +56,88 @@ export default function CartTransportT(props) {
             <div className="relative w-[8px] h-[8px] rounded-[5px] bg-bl-100 text-bl-100 animate-[dot-flashing_1s_infinite_linear_alternate] before:content-[' '] before:block before:absolute before:top-0 before:left-[15px] before:w-[8px] before:h-[8px] before:rounded-[5px] before:bg-bl-100 before:text-bl-100 before:animate-[dot-flashing_1s_infinite_alternate] before:delay-0 after:content-[' '] after:block after:absolute after:top-0 after:left-[30px] after:w-[8px] after:h-[8px] after:rounded-[5px] after:bg-bl-100 after:text-bl-100 after:animate-[dot-flashing_1s_infinite_alternate] after:delay-1000	dot-flashing" />
           </div>
         )}
+        {process.env.NEXT_PUBLIC_TRANSPORT === "true" ? (
+          <div className="p-2 gap-4 flex justify-between w-full max-sm:w-[86%]">
+            {/* IMAGE CART */}
+            <img
+              src={transport.image ? transport.image : ""}
+              // src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`}
+              alt="img-cart-tour"
+              className="w-[100px] h-[100px] rounded-lg object-cover object-right"
+            />
 
-        <div className="p-2 gap-4 flex justify-between w-full max-sm:w-[86%]">
-          {/* IMAGE CART */}
-          <img
-            src={transport.image ? transport.image : ""}
-            // src={`${process.env.NEXT_PUBLIC_URL}banners/transport/transport-card.jpg`}
-            alt="img-cart-tour"
-            className="w-[100px] h-[100px] rounded-lg object-cover object-right"
-          />
-
-          {/* INFO CART */}
-          <div className="w-full leading-4 flex flex-col justify-center max-sm:w-[61%]">
-            <span className="m-m text-gry-100 text-fs-12 truncate w-[187px] ">
-              {transport.destination}
-            </span>
-
-            <span className="m-s-b text-fs-14 truncate w-[187px] max-sm:w-full">
-              {transport.name}
-            </span>
-
-            {/* TIME TRANSPORT */}
-            <div className="flex gap-2 mb-[3px]">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
-                width={12}
-                height={12}
-                alt="icon-calendar"
-                className="w-[12px] h-[12px]"
-              />
-
-              <span className=" m-m text-gry-100 text-fs-12">
-                {moment(transport.date).format("MM/DD/YYYY")} |{" "}
-                {moment(`${transport.date}T${transport.time}`)
-                  .format("h:mma")
-                  .toLowerCase()}
+            {/* INFO CART */}
+            <div className="w-full leading-4 flex flex-col justify-center max-sm:w-[61%]">
+              <span className="m-m text-gry-100 text-fs-12 truncate w-[187px] ">
+                {transport.destination}
               </span>
-            </div>
 
-            {/* PRICE TRANSPORT */}
-            <span className="m-s-b text-fs-14 text-or-100 mb-[3px]">
-              MXN $
-              {Math.floor(transport.prices)
-                .toLocaleString("es-MX", { currency: "MXN" })
-                .replace(".00", "")}
-              .<sup>{(transport.prices % 1).toFixed(2).slice(2)}</sup>
-            </span>
+              <span className="m-s-b text-fs-14 truncate w-[187px] max-sm:w-full">
+                {transport.name}
+              </span>
 
-            {/* TYPE AND PEOPLE TOTAL  */}
-            <div className="flex gap-3">
-              <div className="flex gap-2">
+              {/* TIME TRANSPORT */}
+              <div className="flex gap-2 mb-[3px]">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+                  src={`${process.env.NEXT_PUBLIC_URL}icons/calendar/calendar-b.svg`}
                   width={12}
                   height={12}
-                  alt="icon-transport"
+                  alt="icon-calendar"
                   className="w-[12px] h-[12px]"
                 />
-                <span className=" m-m text-fs-12 text-gry-100">
-                  {transport.trip === "shared"
-                    ? languageData.CardHomeTransport.shared
-                    : languageData.CardHomeTransport.private}
+
+                <span className=" m-m text-gry-100 text-fs-12">
+                  {moment(transport.date).format("MM/DD/YYYY")} |{" "}
+                  {moment(`${transport.date}T${transport.time}`)
+                    .format("h:mma")
+                    .toLowerCase()}
                 </span>
               </div>
 
-              <div className="flex gap-2">
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
-                  width={12}
-                  height={12}
-                  alt="icon-adult"
-                  className="w-[12px] h-[12px]"
-                />
-                <span className=" m-m text-fs-12 text-gry-100">
-                  {transport.tourists}
-                </span>
+              {/* PRICE TRANSPORT */}
+              <span className="m-s-b text-fs-14 text-or-100 mb-[3px]">
+                MXN $
+                {Math.floor(transport.prices)
+                  .toLocaleString("es-MX", { currency: "MXN" })
+                  .replace(".00", "")}
+                .<sup>{(transport.prices % 1).toFixed(2).slice(2)}</sup>
+              </span>
+
+              {/* TYPE AND PEOPLE TOTAL  */}
+              <div className="flex gap-3">
+                <div className="flex gap-2">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/transport/transport-b.svg`}
+                    width={12}
+                    height={12}
+                    alt="icon-transport"
+                    className="w-[12px] h-[12px]"
+                  />
+                  <span className=" m-m text-fs-12 text-gry-100">
+                    {transport.trip === "shared"
+                      ? languageData.CardHomeTransport.shared
+                      : languageData.CardHomeTransport.private}
+                  </span>
+                </div>
+
+                <div className="flex gap-2">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_URL}icons/adult/adult-b.svg`}
+                    width={12}
+                    height={12}
+                    alt="icon-adult"
+                    className="w-[12px] h-[12px]"
+                  />
+                  <span className=" m-m text-fs-12 text-gry-100">
+                    {transport.tourists}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="w-full py-6 m-b pl-4">{languageData.CardHomeTransport.serviceNotAvailable}, {languageData.SearchBox.tabHotel.roomBox.buttonDelete}</div>
+        )}
 
         {/* ICON DELETE  CLICK*/}
         {showDelete[transport.id] ? (

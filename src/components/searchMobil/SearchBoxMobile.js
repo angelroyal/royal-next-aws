@@ -56,21 +56,23 @@ export default function SearchBoxMobile() {
           </span>
         </Tab>
 
-        <Tab
-          className="focus:outline-none focus:ring-transparent"
-          onClick={() => setActiveTab("transport")}
-          style={{ padding: "0" }}
-        >
-          <span
-            className={`${
-              activeTab === "transports" || activeTab === "transport"
-                ? "bg-bl-100 text-white"
-                : "bg-gry-50 text-gry-100"
-            } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
+        {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+          <Tab
+            className="focus:outline-none focus:ring-transparent"
+            onClick={() => setActiveTab("transport")}
+            style={{ padding: "0" }}
           >
-            {languageData.modalHotelOptions.titleTransfer}
-          </span>
-        </Tab>
+            <span
+              className={`${
+                activeTab === "transports" || activeTab === "transport"
+                  ? "bg-bl-100 text-white"
+                  : "bg-gry-50 text-gry-100"
+              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-3.5 px-4`}
+            >
+              {languageData.modalHotelOptions.titleTransfer}
+            </span>
+          </Tab>
+        )}
       </Tab.List>
 
       {activeTab === null ? (

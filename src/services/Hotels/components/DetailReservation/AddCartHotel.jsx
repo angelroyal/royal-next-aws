@@ -59,7 +59,7 @@ export default function AddCartHotel() {
         "success",
         languageData.Alerts.notification.hotel.successTitle,
         languageData.Alerts.notification.hotel.successSubtitle,
-        3000
+        3600
       );
 
       const cartUid = response.cart;

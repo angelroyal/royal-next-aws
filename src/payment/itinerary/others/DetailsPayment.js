@@ -17,6 +17,7 @@ export default function DetailsPayment(props) {
   const { data, step, page } = props;
   const isMobile = useIsMobileNew();
   const { languageData, language } = useContext(LanguageContext);
+  console.log(data);
 
   // NEW CONTEXT
   const {
@@ -26,7 +27,6 @@ export default function DetailsPayment(props) {
     setRoomsWithTaxesNotIncluded,
     setTotalTaxesNotIncluded,
   } = useContext(BookingContext);
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,13 +57,17 @@ export default function DetailsPayment(props) {
       );
     }
   }, [data]);
-  
+
   const searchParams = new URLSearchParams(window.location.search);
   const uid = searchParams.get("uid");
 
   const handleClientForm = () => {
     router.push(`/${language}/form-client?uid=${uid}`);
   };
+
+  const transportDisabled =
+    data.items.some((item) => item.type === "transportation") &&
+    process.env.NEXT_PUBLIC_TRANSPORT?.toLowerCase() !== "true";
 
   return (
     <>
@@ -193,7 +197,8 @@ export default function DetailsPayment(props) {
                   {page === "itinerary" && (
                     <button
                       onClick={() => handleClientForm()}
-                      className="rounded-full py-[10px] px-[27px] flex !gap-x-2 bg-yw-100 items-center border-0 focus:outline-none text-fs-10 text-black m-b text-nowrap"
+                      className={`rounded-full py-[10px] px-[27px] flex !gap-x-2  items-center border-0 focus:outline-none text-fs-10 text-black m-b text-nowrap ${transportDisabled ? "bg-yw-70" : "bg-yw-100 hover:bg-yw-110"}`}
+                      disabled={transportDisabled}
                     >
                       {languageData.itinerary.detailsPayment.completePayment}
                       <Image

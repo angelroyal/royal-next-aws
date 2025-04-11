@@ -13,9 +13,14 @@ export default function OrderRecommendation({ params, searchParams }) {
       {
         order = (
           <>
-            <TourRecommendation params={params} destination={searchParams.codeName} />
+            <TourRecommendation
+              params={params}
+              destination={searchParams.codeName}
+            />
             <OffersNowRecommendation />
-            {/* <TransportRecommendation /> */}
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
             <HotelRecommendation params={params} paramsHotel={searchParams} />
           </>
         );
@@ -28,25 +33,32 @@ export default function OrderRecommendation({ params, searchParams }) {
           <>
             <HotelRecommendation params={params} paramsHotel={searchParams} />
             <OffersNowRecommendation />
-            {/* <TransportRecommendation /> */}
-            <TourRecommendation params={params} destination={searchParams.codeName} />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
+            <TourRecommendation
+              params={params}
+              destination={searchParams.codeName}
+            />
           </>
         );
       }
       break;
     // IS TRANSPORT
-    // case "transport":
-    //   {
-    //     order = (
-    //       <>
-    //         <HotelRecommendation />
-    //         <OffersNowRecommendation />
-    //         <TourRecommendation />
-    //         <TransportRecommendation />
-    //       </>
-    //     );
-    //   }
-    //   break;
+    case "transport":
+      {
+        order = (
+          <>
+            <HotelRecommendation />
+            <OffersNowRecommendation />
+            <TourRecommendation />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
+          </>
+        );
+      }
+      break;
   }
 
   return <div>{order}</div>;

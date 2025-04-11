@@ -1,12 +1,12 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-
-import { BestHotelCart } from "./BestHotelCart";
-import { LodgingBestPrice } from "../Skeleton/HotelInformationSkeleton";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "../../../../assets/styles/general/Swiper.css";
+
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import BestHotelCartHome from "./BestHotelCartHome";
+import { LodgingBestPrice } from "../Skeleton/HotelInformationSkeleton";
 
 export function LodgingsView({ hotels }) {
   return hotels ? (
@@ -51,7 +51,7 @@ export function LodgingsView({ hotels }) {
             .map((hotel, index) => (
               <SwiperSlide key={index} className="!rounded-lg">
                 <div className="h-full cursor-pointer shadow-md shadow-gry-30 rounded-xl">
-                  <BestHotelCart
+                  <BestHotelCartHome
                     hotel={hotel}
 
                   />
@@ -73,7 +73,7 @@ export function LodgingsView({ hotels }) {
             <div key={index} className="!rounded-lg colum-two">
               {/*  */}
               <div className="h-full min-w-[266px] max-w-[280px] cursor-pointer shadow-md shadow-gry-30 rounded-xl">
-                <BestHotelCart
+                <BestHotelCartHome
                   hotel={hotel}
 
                 />
