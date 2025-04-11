@@ -11,7 +11,10 @@ export const DetailTourProvider = ({ children }) => {
   const [isLoader, setIsLoader] = useState(false);
   const [codeNameTour, setCodeNameTour] = useState(null);
   const [selectModality, setSelectModality] = useState(null);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true); 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  // PARAMS TO HOTEL LISTING
+  const [paramListing, setParamListing] = useState(null);
 
   return (
     <DetailTourContext.Provider
@@ -26,10 +29,12 @@ export const DetailTourProvider = ({ children }) => {
         setSelectModality,
         codeNameTour,
         setCodeNameTour,
-        isLoader, 
+        isLoader,
         setIsLoader,
-        isButtonDisabled, 
-        setIsButtonDisabled
+        isButtonDisabled,
+        setIsButtonDisabled,
+        paramListing,
+        setParamListing,
       }}
     >
       {children}

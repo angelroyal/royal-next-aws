@@ -3,7 +3,7 @@ import HotelRecommendation from "@/components/Recommended/Hotel/HotelRecommendat
 import OffersNowRecommendation from "@/components/Recommended/OffersNowRecommendation";
 import TransportRecommendation from "@/components/Recommended/Transport/TransportRecommendation";
 
-export default function OrderRecommendation({ type }) {
+export default function OrderRecommendation({ type, params, searchParams }) {
   let order;
   const service = type;
 
@@ -13,12 +13,15 @@ export default function OrderRecommendation({ type }) {
       {
         order = (
           <>
-            <TourRecommendation />
+            <TourRecommendation
+              params={params}
+              destination={searchParams.codeName}
+            />
             <OffersNowRecommendation />
             {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
               <TransportRecommendation />
             )}
-            <HotelRecommendation />
+            <HotelRecommendation params={params} paramsHotel={searchParams} />
           </>
         );
       }
@@ -28,12 +31,15 @@ export default function OrderRecommendation({ type }) {
       {
         order = (
           <>
-            <HotelRecommendation />
+            <HotelRecommendation params={params} paramsHotel={searchParams} />
             <OffersNowRecommendation />
             {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
               <TransportRecommendation />
             )}
-            <TourRecommendation />
+            <TourRecommendation
+              params={params}
+              destination={searchParams.codeName}
+            />
           </>
         );
       }

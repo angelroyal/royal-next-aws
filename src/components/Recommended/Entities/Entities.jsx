@@ -2,12 +2,13 @@ export function EntitiesRecommendations(
   language,
   type,
   infoReservation,
-  cartUid
+  cartUid,
+  paramListing
 ) {
-  
   let shortInfoReservation = {
     name: infoReservation.name,
     cartUid: cartUid,
+    ...paramListing,
   };
 
   if (type === "hotel") {

@@ -6,26 +6,24 @@ import LanguageContext from "@/language/LanguageContext";
 import React, { useContext, useState } from "react";
 import { getNextMonth } from "@/config/Others/getNextMonth";
 
-export default function CardTopActivities({ tour }) {
-    const [isHovered, setIsHovered] = useState(false);
-    const { languageData, language } = useContext(LanguageContext);
-  
-    const sentTour = (tourInfo) => {
-      const body = { dateStart: getNextMonth() };
-      const query = new URLSearchParams(body).toString();
-  
-      window.open(
-        `/${language}/mx/${tourInfo.destinationCodeName}-${
-          tourInfo[language || "es"].country
-        }/tours/${tourInfo.codeName}?${query}`,
-        "_blank"
-      );
-    };
+export default function CardTopActivities({ tour, params }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const { languageData, language } = useContext(LanguageContext);
+
+  const sentTour = (tourInfo) => {
+    const body = { dateStart: getNextMonth() };
+    const query = new URLSearchParams(body).toString();
+
+    window.open(
+      `/${language}/mx/${params.codeName}/tours/${tourInfo.codeName}?${query}`,
+      "_blank"
+    );
+  };
 
   return (
     // CARD TOP ACTIVITIES TOUR
     <div
-      className="!w-fit !rounded-lg shadow-3xl colum-two"
+      className="!w-fit !rounded-lg shadow-3xl colum-two h-[381px]"
       onClick={() => sentTour(tour)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -36,7 +34,7 @@ export default function CardTopActivities({ tour }) {
             className={`w-full h-full object-cover select-none transition-transform duration-500 transform ${
               isHovered ? "scale-105" : "scale-100"
             }`}
-            src={tour.image}
+            src={tour.images[0]}
             alt="card"
           />
 
@@ -46,32 +44,39 @@ export default function CardTopActivities({ tour }) {
           </p>
         </div>
 
-        <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col">
-          <div className="m-s-b pt-1 text-fs-14 text-start truncate max-sm:w-[250px] mb-[4px]">
-            {validateLanguageName(language, tour).name}{" "}
-          </div>
+        <div className="w-full rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col justify-between h-[164px]">
+          <div className="flex flex-col">
+            <div className="m-s-b pt-1 text-fs-14 text-start truncate max-sm:w-[250px] mb-[4px]">
+              {tour.name}{" "}
+              {/* {validateLanguageName(language, tour).name}{" "} */}
+            </div>
 
-          <TotalStars
-            className="my-1"
-            name="read-only"
-            stars={tour.category}
-            readOnly
-            width={"14px"}
-            height={"14px"}
-          />
-
-          <div className="flex gap-1 mb-[26px] mt-[6px]">
-            <Image
-              className="w-auto h-auto"
-              src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
-              alt="icon-location"
-              width={11}
-              height={14}
+            <TotalStars
+              className="my-1"
+              name="read-only"
+              stars={tour.starRating}
+              // stars={tour.category}
+              readOnly
+              width={"14px"}
+              height={"14px"}
             />
-            <span className="text-bl-100 m-s-b text-fs-12">
-              {validateLanguageName(language, tour).destination}
-            </span>
           </div>
+
+          {tour.address && (
+            <div className="flex gap-1 mb-[26px] mt-[6px]">
+              <Image
+                className="w-auto h-auto"
+                src={`${process.env.NEXT_PUBLIC_URL}icons/location/location-bl.svg`}
+                alt="icon-location"
+                width={11}
+                height={14}
+              />
+              <span className="text-bl-100 m-s-b text-fs-12 overflow-hidden text-nowrap text-ellipsis">
+                {tour.address}
+                {/* {validateLanguageName(language, tour).destination} */}
+              </span>
+            </div>
+          )}
 
           <div className="flex justify-between border-t border-[#ebebeb] pt-[11px] items-center">
             <div className="flex flex-col text-fs-12">
@@ -81,11 +86,13 @@ export default function CardTopActivities({ tour }) {
               <span className="m-s-b text-or-100">
                 MXN{" "}
                 <span className="m-b text-fs-16">
-                  ${Math.floor(validateLanguageName(language, tour).price)}
+                  ${Math.floor(tour.price)}
+                  {/* ${Math.floor(validateLanguageName(language, tour).price)} */}
                 </span>
                 .
                 <sup className="m-b">
-                  {(validateLanguageName(language, tour).price % 1)
+                  {(tour.price % 1)
+                    // {(validateLanguageName(language, tour).price % 1)
                     .toFixed(2)
                     .slice(2)}
                 </sup>

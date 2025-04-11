@@ -14,6 +14,7 @@ import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 import Page404 from "@/components/General/Page404";
 
 export default async function Details({ params, searchParams }) {
+  
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
@@ -51,7 +52,7 @@ export default async function Details({ params, searchParams }) {
                     />
                   )}
 
-                  <OrderRecommendation type={params.type} />
+                  <OrderRecommendation type={params.type} params={params} searchParams={searchParams} />
 
                   <KeepExploring />
                 </Container>

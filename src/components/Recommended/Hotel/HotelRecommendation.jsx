@@ -4,67 +4,105 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import LanguageContext from "@/language/LanguageContext";
-import { BestHotelCart } from '@/services/Hotels/components/home/BestHotelCart'
+import { BestHotelCart } from "@/services/Hotels/components/home/BestHotelCart";
 import { shuffleHotelTypes } from "@/services/Hotels/config/shuffleHotelTypes";
+import {
+  fetchHotelDetailsByKeys,
+  fetchPostHotels,
+} from "@/services/Hotels/config/axiosService";
+import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
+import { combineHotelData } from "@/services/Hotels/utils/hotelUtils";
 
-export default function HotelRecommendation() {
+export default function HotelRecommendation({ params, paramsHotel }) {
+  const { languageData } = useContext(LanguageContext);
+  const [hotelsMap, setHotelsMap] = useState([]);
+  const [hotelsInfo, setHotelsInfo] = useState([]);
 
-    const { languageData } = useContext(LanguageContext);
+  useEffect(() => {
+    const occupancies = JSON.parse(decodeURIComponent(paramsHotel.occupancies));
+    let params = {
+      "check-in": paramsHotel["check-in"],
+      "check-out": paramsHotel["check-out"],
+      code: paramsHotel.code,
+      occupancies,
+      type: "destination",
+      codeName: paramsHotel.codeName,
+    };
 
-    const hotels = shuffleHotelTypes;
+    fetchPostHotels(params).then((response) => {
+      setHotelsMap(response.mapHotels);
+    });
+  }, [paramsHotel]);
 
-    return (
-        <>
-            <div className="bg-white p-[36px] relative rounded-lg my-[28px]">
+  useEffect(() => {
+    if (hotelsMap.length > 0) {
+      let hotelsKeysReduce = hotelsMap.slice(0, 20);
+      const keysHotel = hotelsKeysReduce.map((hotel) => hotel.key);
 
-                {/* TITLE */}
-                <div className="mb-[36px]">
-                    <span className="m-b text-fs-20">{languageData.recommendations.hotel.titleRecommedation}</span>
-                </div>
+      fetchHotelDetailsByKeys(keysHotel).then((response) => {
+        let dataCombine = combineHotelData(hotelsKeysReduce, response);
+        setHotelsInfo(dataCombine);
+      });
+    }
+  }, [hotelsMap]);
 
-                <Swiper
-                    slidesPerView={4}
-                    spaceBetween={12}
-                    id="swiper-tour-recommendation"
-                    navigation
-                    modules={[Navigation]}
-                    className="mySwiper !static mb-0"
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1,
-                        },
-                        500: {
-                            slidesPerView: 1.2,
-                        },
-                        768: {
-                            slidesPerView: 2,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                        },
-                        1280: {
-                            slidesPerView: 4,
-                        },
-                        1536: {
-                            slidesPerView: 4.5,
-                        },
-                    }}
-                >
-                    {/* CARD HOTEL */}
-                    {hotels[0][1].slice(0, 10).map((hotelMap, index) => (
-                        <SwiperSlide key={index} className="!rounded-lg">
-                            <BestHotelCart hotel={hotelMap} />
-                        </SwiperSlide>
-                    ))}
+  return (
+    <>
+      <div className="bg-white p-[36px] relative rounded-lg my-[28px]">
+        {/* TITLE */}
+        <div className="mb-[36px]">
+          <span className="m-b text-fs-20">
+            {languageData.recommendations.hotel.titleRecommedation}
+          </span>
+        </div>
 
-                </Swiper>
-
-            </div>
-        </>
-    )
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={12}
+          id="swiper-tour-recommendation"
+          navigation
+          modules={[Navigation]}
+          className="mySwiper !static mb-0"
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            500: {
+              slidesPerView: 1.2,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+            1536: {
+              slidesPerView: 4.5,
+            },
+          }}
+        >
+          {/* CARD HOTEL */}
+          {hotelsInfo.length > 0
+            ? hotelsInfo.map((hotelMap, index) => (
+                <SwiperSlide key={index} className="!rounded-lg">
+                  <BestHotelCart params={params} hotel={hotelMap} />
+                </SwiperSlide>
+              ))
+            : [...Array(5)].map((_, index) => (
+                <SwiperSlide key={index} className="!rounded-lg">
+                  <CardTopActivitiesSkeleton />
+                </SwiperSlide>
+              ))}
+        </Swiper>
+      </div>
+    </>
+  );
 }
