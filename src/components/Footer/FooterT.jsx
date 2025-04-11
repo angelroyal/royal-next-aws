@@ -177,9 +177,9 @@ export default function FooterT() {
                   className="w-[20px] h-[20px]  select-none"
                 />
                 <span
-                  className={`${
-                    footerBlue ? "text-white" : "text-black"
-                  } ${isHovered === "EML" && "!text-or-100" } text-fs-12 m-s-b no-underline`}
+                  className={`${footerBlue ? "text-white" : "text-black"} ${
+                    isHovered === "EML" && "!text-or-100"
+                  } text-fs-12 m-s-b no-underline`}
                 >
                   info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com
                 </span>
@@ -246,16 +246,18 @@ export default function FooterT() {
               >
                 {languageData.itinerary.tourItinerary.titleTour}
               </Link>
-
+              
               {/* HOME TRANSPORT */}
-              <Link
-                href={`/${language}/transports`}
-                className={`${
-                  footerBlue ? "text-white" : "text-black"
-                } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
-              >
-                {languageData.modalMovingOptions.titleTransfer}
-              </Link>
+              {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+                <Link
+                  href={`/${language}/transports`}
+                  className={`${
+                    footerBlue ? "text-white" : "text-black"
+                  } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
+                >
+                  {languageData.modalMovingOptions.titleTransfer}
+                </Link>
+              )}
               {/* HOME BLOG */}
               <Link
                 href={`/blog`}

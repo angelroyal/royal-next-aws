@@ -15,7 +15,9 @@ export default function OrderRecommendation({ type }) {
           <>
             <TourRecommendation />
             <OffersNowRecommendation />
-            <TransportRecommendation />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
             <HotelRecommendation />
           </>
         );
@@ -28,7 +30,9 @@ export default function OrderRecommendation({ type }) {
           <>
             <HotelRecommendation />
             <OffersNowRecommendation />
-            <TransportRecommendation />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
             <TourRecommendation />
           </>
         );
@@ -42,7 +46,9 @@ export default function OrderRecommendation({ type }) {
             <HotelRecommendation />
             <OffersNowRecommendation />
             <TourRecommendation />
-            <TransportRecommendation />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
           </>
         );
       }

@@ -83,7 +83,7 @@ export default async function DetailPageHotel() {
                   <PopularDestinationsHome />
                   <ChainsHome />
                   <EnjoyStayHome />
-                  <TransportBanner />
+                  {process.env.NEXT_PUBLIC_TRANSPORT === "true" && <TransportBanner />}
 
                   <WaveLine />
                   <BannerDiscoverPossibilities />

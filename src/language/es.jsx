@@ -901,6 +901,7 @@ export const es = {
     privateService: "Servicio privado",
     sharedService: "Servicio compartido",
     vehicles: "vehículos",
+    serviceNotAvailable:"Servicio no disponible",
   },
 
   filterTransport: {

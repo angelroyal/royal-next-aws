@@ -35,15 +35,12 @@ export default async function DetailPageHotel({ searchParams }) {
         ? 0
         : "";
 
-    
-
     const response = await axiosWithInterceptor.get(
       `v1/transports/destinations/${searchParams.destinationId}/zones/${searchParams.zoneFromId}/${searchParams.zoneToId}/vehicles?round=${roundQueryParam}`
     );
 
     const transportData = response.data;
 
-    
     return (
       <LanguageProvider>
         <TokenProvider>
@@ -51,7 +48,11 @@ export default async function DetailPageHotel({ searchParams }) {
             <ListingTransportProvider>
               <Token />
               <Navigation />
-              <ListingTransport data={transportData.vehicles} />
+              {process.env.NEXT_PUBLIC_TRANSPORT === "true" ? (
+                <ListingTransport data={transportData.vehicles} />
+              ) : (
+                <Page404 />
+              )}
               <FooterT />
             </ListingTransportProvider>
           </CartAxiosProvider>

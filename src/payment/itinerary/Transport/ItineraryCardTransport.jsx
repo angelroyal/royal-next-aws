@@ -9,13 +9,14 @@ import { BookingContext } from "@/payment/context/BookingContext";
 import { ContainerRemoveTransport } from "./ContainerRemoveTransport";
 import LinearProgress from "@/components/Alerts/Progress/LinearProgress";
 import { removeTransportItinerary } from "@/payment/Api/fetchDataItinerary";
+import LanguageContext from "@/language/LanguageContext";
 
 export function ItineraryCardTransport({ transportInfo }) {
   const [loader, setLoader] = useState(false);
   const [isRemove, setIsRemove] = useState(false);
   const { setRemoveIsLoader } = useContext(BookingContext);
   const { setItinerary, removeTransportById } = useCartAxios();
-
+  const { languageData } = useContext(LanguageContext);
   const cancelRemove = () => {
     if (isRemove === true) setIsRemove(false);
   };
@@ -48,13 +49,19 @@ export function ItineraryCardTransport({ transportInfo }) {
         }`}
       >
         <RemoveTransport setIsRemove={setIsRemove} />
-        <div className="flex gap-x-[20px] w-full">
-          <TransportImage transportInfo={transportInfo} />
+        {process.env.NEXT_PUBLIC_TRANSPORT === "true" ? (
+          <>
+            <div className="flex gap-x-[20px] w-full">
+              <TransportImage transportInfo={transportInfo} />
 
-          <ContainerInformation transportInfo={transportInfo} />
-        </div>
+              <ContainerInformation transportInfo={transportInfo} />
+            </div>
 
-        <MobileInfo transportInfo={transportInfo} />
+            <MobileInfo transportInfo={transportInfo} />
+          </>
+        ) : (
+          <div className="py-4 m-b"> {languageData.CardHomeTransport.serviceNotAvailable} , {languageData.SearchBox.tabHotel.roomBox.buttonDelete}</div>
+        )}
       </div>
 
       <ContainerRemoveTransport

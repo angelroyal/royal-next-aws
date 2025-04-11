@@ -900,6 +900,7 @@ export const en = {
     privateService: "Private service",
     sharedService: "Shared service",
     vehicles: "vehicles",
+    serviceNotAvailable:"Service not available",
   },
 
   filterTransport: {
