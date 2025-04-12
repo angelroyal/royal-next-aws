@@ -8,15 +8,14 @@ import { useContext, useEffect, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import LanguageContext from "@/language/LanguageContext";
-import { BestHotelCart } from "@/services/Hotels/components/home/BestHotelCart";
-import { shuffleHotelTypes } from "@/services/Hotels/config/shuffleHotelTypes";
 import {
   fetchHotelDetailsByKeys,
   fetchPostHotels,
 } from "@/services/Hotels/config/axiosService";
-import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
+import LanguageContext from "@/language/LanguageContext";
 import { combineHotelData } from "@/services/Hotels/utils/hotelUtils";
+import { BestHotelCart } from "@/services/Hotels/components/home/BestHotelCart";
+import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
 
 export default function HotelRecommendation({ params, paramsHotel }) {
   const { languageData } = useContext(LanguageContext);
@@ -93,7 +92,11 @@ export default function HotelRecommendation({ params, paramsHotel }) {
           {hotelsInfo.length > 0
             ? hotelsInfo.map((hotelMap, index) => (
                 <SwiperSlide key={index} className="!rounded-lg">
-                  <BestHotelCart params={params} hotel={hotelMap} />
+                  <BestHotelCart
+                    params={params}
+                    hotel={hotelMap}
+                    paramsH={paramsHotel}
+                  />
                 </SwiperSlide>
               ))
             : [...Array(5)].map((_, index) => (

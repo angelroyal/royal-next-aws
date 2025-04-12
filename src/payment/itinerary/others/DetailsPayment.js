@@ -6,18 +6,17 @@ import {
   TourDescription,
   TransportDescription,
 } from "./TypeReservation";
+import { useRouter } from "next/navigation";
 import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
-import { useRouter } from "next/navigation";
 
 export default function DetailsPayment(props) {
   const router = useRouter();
   const { data, step, page } = props;
   const isMobile = useIsMobileNew();
   const { languageData, language } = useContext(LanguageContext);
-  console.log(data);
 
   // NEW CONTEXT
   const {

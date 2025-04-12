@@ -37,8 +37,6 @@ export async function generateMetadata({ params }) {
 
 export default async function DetailPageTour({ params, searchParams }) {
   try {
-    console.log(params, searchParams);
-
     const response = await axiosWithInterceptor.get(
       `v1/activities/${params.id}`
     );

@@ -6,22 +6,32 @@ import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 import { CleanRoute } from "@/config/Others/CleanRoute";
 
-export function BestHotelCart({ params, hotel }) {
+export function BestHotelCart({ params, hotel, paramsH }) {
   const [isHovered, setIsHovered] = useState(false);
   const { languageData, language } = useContext(LanguageContext);
 
-  const searchHotel = (hotel) => {
-    window.open(
-      `/${language}/mx/${params.codeName}/${CleanRoute(
-        params.codeName
-      )}-hotels/${hotel.codeName}`,
-      "_blank"
-    );
-  };
+const searchHotel = (hotel, query) => {
+  const cleanedQuery = { ...query };
+  delete cleanedQuery.checkIn;
+  delete cleanedQuery.checkOut;
+
+  const queryParamsString = [
+    `codeName=${cleanedQuery.codeName}`,
+    `check-in=${cleanedQuery['check-in']}`,
+    `check-out=${cleanedQuery['check-out']}`,
+    `occupancies=${cleanedQuery.occupancies}`,
+  ].join('&');
+
+  window.open(
+    `/${language}/mx/${params.codeName}/${paramsH.codeName}-hotels/${hotel.codeName}?${queryParamsString}`,
+    "_blank"
+  );
+};
+
 
   return (
     <div
-      onClick={() => searchHotel(hotel)}
+      onClick={() => searchHotel(hotel,paramsH)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="shadow-3xl !rounded-lg"
@@ -94,3 +104,8 @@ export function BestHotelCart({ params, hotel }) {
     </div>
   );
 }
+
+
+// http://localhost:3000/es/mx/cancun-mexico/cancun-hotels/park-royal-beach-cancun?codeNameHotel=park-royal-beach-cancun&code=18&type=destination&codeName=cancun&check-in=2025-04-17&check-out=2025-04-19&occupancies=%255B%257B%2522adults%2522%253A1%252C%2522children%2522%253A%255B%255D%257D%255D
+
+// http://localhost:3000/es/mx/cancun-mexico/cancun-hotels/park-royal-beach-cancun?codeNameHotel=park-royal-beach-cancun&name=Park+Royal+Beach+Cancun&cartUid=1f0165da-060f-6a26-b0a4-5b2b7ec6e75c&codeName=cancun&code=18&check-in=2025-04-17&check-out=2025-04-19&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D
