@@ -2,6 +2,7 @@ module.exports = {
   images: {
     domains: [
       "apicrm.staywuw.com",
+      "api-crm.bastiansoft.com",
       "sandboxmexico.com",
       "api.sandboxmexico.com",
       "staywuw.com",
