@@ -499,6 +499,7 @@ export const en = {
     alert: "Warning!! Rooms will be removed",
     addRoomMessage: "Add Room",
     extraCosts: "This amenity has an additional cost.",
+    STA: "Subject To Availability",
   },
 
   hotelTypes: {
@@ -900,7 +901,7 @@ export const en = {
     privateService: "Private service",
     sharedService: "Shared service",
     vehicles: "vehicles",
-    serviceNotAvailable:"Service not available",
+    serviceNotAvailable: "Service not available",
   },
 
   filterTransport: {

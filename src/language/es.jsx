@@ -499,6 +499,7 @@ export const es = {
     alert: "Advertencia!! Las habitaciones serán eliminadas",
     addRoomMessage: "Agrega tu habitación",
     extraCosts: "Esta amenidad cuenta con costo extra",
+    STA:"Sujeto A Disponibilidad"
   },
 
   hotelTypes: {

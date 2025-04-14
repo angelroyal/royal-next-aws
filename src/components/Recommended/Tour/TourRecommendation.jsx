@@ -17,6 +17,8 @@ import { GetActivities } from "@/services/Tours/Api/requestTour";
 export default function TopActivities({ params, destination }) {
   const [tours, setTours] = useState([]);
   const { languageData } = useContext(LanguageContext);
+  // console.log(destination);
+  
 
   useEffect(() => {
     const loadTopActivities = async () => {
