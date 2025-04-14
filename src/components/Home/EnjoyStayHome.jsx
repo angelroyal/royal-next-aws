@@ -160,7 +160,6 @@ export default function EnjoyStayHome() {
   };
 
   const dates = calculateFutureDates();
-  // LP
 
   // LP PERSON
   const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
@@ -231,7 +230,7 @@ export default function EnjoyStayHome() {
             {hotelsEnjoy.map((hotel, index) => (
               <SwiperSlide className="!rounded-lg shadow-3xl" key={index}>
                 {/* CARDS HOTEL */}
-                <CardHotelHome hotel={hotel} />
+                <CardHotelHome hotel={hotel} encodedRoom={encodedRoomData}/>
               </SwiperSlide>
             ))}
           </Swiper>
