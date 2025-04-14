@@ -100,7 +100,7 @@ export default function CartHotelT(props) {
               />
 
               <span className=" m-m text-gry-100 text-fs-12">
-                {hotel.checkIn} | 2:00pm
+                {hotel.checkIn} | 15:00
               </span>
             </div>
 
