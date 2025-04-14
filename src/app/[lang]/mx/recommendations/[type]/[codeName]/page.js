@@ -17,7 +17,8 @@ export default async function Details({ params, searchParams }) {
   
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
+      `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${params.lang}/all`,
+      // `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
       {
         headers: {
           "Cache-Control":
