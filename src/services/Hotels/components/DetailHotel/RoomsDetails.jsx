@@ -190,8 +190,8 @@ export default function RoomsDetails(codeHotel) {
                                 </div>
 
                                 {/* BEDS */}
-                                {room.beds &&
-                                  room.beds.map((bed, index) => (
+                                {room?.beds && typeof room.beds !== "string" ? (
+                                  room?.beds.map((bed, index) => (
                                     <div
                                       key={index}
                                       className="flex gap-x-[4px]"
@@ -205,7 +205,19 @@ export default function RoomsDetails(codeHotel) {
                                         {bed.number} {bed.type}
                                       </span>
                                     </div>
-                                  ))}
+                                  ))
+                                ) : (
+                                  <div className="flex items-center gap-x-1">
+                                    <img
+                                      src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                                      className="w-[14px] h-[14px]"
+                                      alt="room"
+                                    />
+                                    <span className="m-s-b text-fs-12 text-gry-100">
+                                      {languageData.detailHotel[room.beds]}
+                                    </span>
+                                  </div>
+                                )}
                               </div>
                             </div>
 
