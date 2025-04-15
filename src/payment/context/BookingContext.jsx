@@ -27,6 +27,7 @@ const BookingProviderContext = ({ children }) => {
     <BookingContext.Provider
       value={{
         step,
+        setStep,
         handleStepChange,
         termsAccept,
         setTermsAccept,

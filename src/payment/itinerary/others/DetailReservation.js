@@ -171,18 +171,18 @@ export default function ReservationShortInfo(props) {
 
               <div className="flex items-end gap-x-1 text-white m-b">
                 <p className="mb-[3px] text-fs-14">MXN</p>
-                <p className="text-fs-20 m-0">
-                  $
-                  {Math.floor(dataItinerary.summary.totalCurrentPrice)
-                    .toLocaleString("es-MX", { currency: "MXN" })
-                    .replace(".00", "")}
-                  .
-                  <sup>
-                    {(dataItinerary.summary.totalCurrentPrice % 1)
-                      .toFixed(2)
-                      .slice(2)}
-                  </sup>
-                </p>
+                <p className="m-0 text-fs-20">
+                $
+                {Math.floor(dataItinerary.totalPrice)
+                  .toLocaleString("es-MX", { currency: "MXN" })
+                  .replace(".00", "")}
+                .
+                <sup>
+                  {(dataItinerary.totalPrice % 1)
+                    .toFixed(2)
+                    .slice(2)}
+                </sup>{" "}
+              </p>
               </div>
             </div>
 

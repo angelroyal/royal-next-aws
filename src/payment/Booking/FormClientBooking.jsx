@@ -140,7 +140,7 @@ export default function FormClientBooking() {
         )}
       </Container>
 
-      {data && data.items && <DialogPaymentItinerary reservationData={data} />}
+      {data && data.items && <DialogPaymentItinerary reservationData={data} form={true}/>}
     </div>
   );
 }

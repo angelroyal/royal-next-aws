@@ -8,10 +8,15 @@ import { useIsMobileNew } from "../../config/Mobile/isMobile";
 import LoadingProgress from "@/components/General/LoadingProgress";
 import { ShareContainer } from "../../utils/booking/ShareContainer";
 import { DialogItineraryMobile } from "../itinerary/others/DialogItineraryMobile";
+import { useNotification } from "@/components/Alerts/Notifications/useNotification";
+import { GetConfirmationPDF, SizePDF } from "../Api/fetchDataItinerary";
+import NotificationType from "@/components/Alerts/Notifications/NotificationType";
+import { useRouter } from "next/navigation";
 
 export function DialogPaymentItinerary(props) {
-  const { handleStepChange, reservationData, step, setChangeButton } = props;
-  const { languageData } = useContext(LanguageContext);
+  const router = useRouter();
+  const { handleStepChange, reservationData, setChangeButton, form } = props;
+  const { languageData, language } = useContext(LanguageContext);
 
   const reservationType = (type) => {
     switch (type) {
@@ -24,6 +29,7 @@ export function DialogPaymentItinerary(props) {
 
   // NEW CONTEXT
   const {
+    step,
     termsAccept,
     policyAccept,
     buttonActive,
@@ -32,7 +38,6 @@ export function DialogPaymentItinerary(props) {
     openDialog,
     setOpenDialog,
   } = useContext(BookingContext);
-
   // OLD CONTEXT
   // const {
   //   termsAccept,
@@ -48,6 +53,77 @@ export function DialogPaymentItinerary(props) {
   const paymentReservation = () => {
     setChangeButton(Math.floor(Math.random() * 100) + 1);
   };
+
+  const [isDownloading, setIsDownloading] = useState(false);
+  const { notification, showNotification, hideNotification } =
+    useNotification();
+
+  const downloadPDF = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const cartId = searchParams.get("uid");
+    setIsDownloading(true);
+    // CHECK TO KNOW IF THE PDF EXISTS
+    GetConfirmationPDF(cartId, language)
+      .then((response) => {
+        if (response.status === 200) {
+          // CHECK IF THE PDF HAS CONTENT
+          SizePDF(
+            `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${cartId}?lang=${language}`
+          )
+            .then((response) => {
+              if (response > 0) {
+                // DOWNLOAD PDF
+                window.open(
+                  `${process.env.NEXT_PUBLIC_ROYAL_URL}dowloand-pdf/${cartId}?lang=${language}`
+                );
+                // DOWNLOAD PDF SUCCESSFUL ALERT
+                showNotification(
+                  "success",
+                  languageData.shareLink.downloadSuccess,
+                  "",
+                  5000
+                );
+              } else {
+                // ALERT EMPTY PDF
+                showNotification(
+                  "warning",
+                  languageData.shareLink.PDFNotFound,
+                  "",
+                  5000
+                );
+              }
+            })
+            .catch((error) => {
+              showNotification(
+                "error",
+                languageData.shareLink.downloadFiledTitle,
+                languageData.shareLink.downloadFiledMessage,
+                5000
+              );
+            });
+        }
+        setIsDownloading(false);
+      })
+      .catch((error) => {
+        setIsDownloading(false);
+        if (error.response.status >= 400) {
+          showNotification(
+            "error",
+            languageData.shareLink.downloadFiledTitle,
+            languageData.shareLink.downloadFiledMessage,
+            5000
+          );
+        }
+      });
+  };
+
+  const searchParams = new URLSearchParams(window.location.search);
+  const uid = searchParams.get("uid");
+
+  const handleClientForm = () => {
+    router.push(`/${language}/form-client?uid=${uid}`);
+  };
+
   return (
     <>
       {!openDialog && reservationData && (
@@ -113,8 +189,9 @@ export function DialogPaymentItinerary(props) {
 
                   {step === 1 && (
                     <button
-                      onClick={() => handleStepChange(step + 1)}
-                      className="py-[10px] px-[2.1rem] flex items-center justify-center bg-yw-100 border-0 rounded-full m-b text-nowrap gap-x-[0.3rem] text-fs-10"
+                      // onClick={() => handleStepChange(step + 1)}
+                      onClick={() => handleClientForm()}
+                      className={`py-[10px] px-[2.1rem] flex items-center justify-center bg-yw-100 border-0 rounded-full m-b text-nowrap gap-x-[0.3rem] text-fs-10 ${form && " hidden "}`}
                     >
                       {languageData.itinerary.detailsPayment.completePayment}
                       <Image
@@ -184,14 +261,12 @@ export function DialogPaymentItinerary(props) {
                   <p className="text-fs-14 mb-[3px]">MXN</p>
                   <p className="m-0 text-fs-20">
                     $
-                    {Math.floor(reservationData.summary.totalCurrentPrice)
+                    {Math.floor(reservationData.totalPrice)
                       .toLocaleString("es-MX", { currency: "MXN" })
                       .replace(".00", "")}
                     .
                     <sup>
-                      {(reservationData.summary.totalCurrentPrice % 1)
-                        .toFixed(2)
-                        .slice(2)}
+                      {(reservationData.totalPrice % 1).toFixed(2).slice(2)}
                     </sup>{" "}
                   </p>
                 </div>
@@ -213,7 +288,7 @@ export function DialogPaymentItinerary(props) {
                 </button>
                 {/* BTN DOWNLOAD */}
                 <button
-                  onClick={() => setSmShow(!smShow)}
+                  onClick={downloadPDF}
                   className="bg-or-100 rounded-full px-4 py-2 flex items-center gap-x-2 text-white text-fs-12 m-b"
                 >
                   <Image
@@ -239,8 +314,19 @@ export function DialogPaymentItinerary(props) {
       <DialogItineraryMobile
         setChangeButton={setChangeButton}
         dataItinerary={reservationData}
-        setSmShow={() => setSmShow(true)}
+        setSmShow={downloadPDF}
       />
+
+      {notification && notification.visible && (
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+          transport={true}
+        />
+      )}
     </>
   );
 }
