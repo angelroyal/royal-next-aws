@@ -77,75 +77,77 @@ export function TotalPriceBL({ smShow, handleCloseModal, handleIconClick }) {
   };
 
   return (
-    <div className="hidden lg:flex justify-between mt-[1.6rem] w-full py-[0.9rem] pl-[40px] bg-bl-100 rounded-bl-[2.4rem] !pr-4 !rounded-br-lg">
-      <span className="flex items-center gap-x-1 text-white m-b text-fs-14">
-        {languageData.confirmation.bookingData.numberConfirmation}:
-        <div className="h-[20px] !px-2 !py-1 bg-grn-10 rounded text-fs-10 m-b text-grn-100 text-center">
-          {infoReservation.booking.reference}
-        </div>
-      </span>
-
-      <div className="flex flex-row gap-4 items-center">
-        <span className="flex gap-x-2 text-white m-b text-fs-16 items-center">
-          {languageData.confirmation.total}
-
-          <p className="text-fs-20 m-0">
-            $
-            {Math.floor(infoReservation.totalPrice)
-              .toLocaleString("es-MX", { currency: "MXN" })
-              .replace(".00", "")}
-            .<sup>{(infoReservation.totalPrice % 1).toFixed(2).slice(2)}</sup>
-          </p>
+    <>
+      <div className="hidden lg:flex justify-between mt-[1.6rem] w-full py-[0.9rem] pl-[40px] bg-bl-100 rounded-bl-[2.4rem] !pr-4 !rounded-br-lg">
+        <span className="flex items-center gap-x-1 text-white m-b text-fs-14">
+          {languageData.confirmation.bookingData.numberConfirmation}:
+          <div className="h-[20px] !px-2 !py-1 bg-grn-10 rounded text-fs-10 m-b text-grn-100 text-center">
+            {infoReservation.booking.reference}
+          </div>
         </span>
-        {/* BTN SHARE */}
-        <button
-          className="border border-white rounded-full flex gap-2 py-[.4rem] px-4"
-          onClick={handleIconClick}
-        >
-          <Image
-            src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
-            alt="icon-share"
-            width={16}
-            height={18}
-          />
 
-          <span className="m-b text-white text-fs-12">
-            {languageData.shareLink.share}
+        <div className="flex flex-row gap-4 items-center">
+          <span className="flex gap-x-2 text-white m-b text-fs-16 items-center">
+            {languageData.confirmation.total}
+
+            <p className="text-fs-20 m-0">
+              $
+              {Math.floor(infoReservation.totalPrice)
+                .toLocaleString("es-MX", { currency: "MXN" })
+                .replace(".00", "")}
+              .<sup>{(infoReservation.totalPrice % 1).toFixed(2).slice(2)}</sup>
+            </p>
           </span>
-        </button>
+          {/* BTN SHARE */}
+          <button
+            className="border border-white rounded-full flex gap-2 py-[.4rem] px-4"
+            onClick={handleIconClick}
+          >
+            <Image
+              src={`${process.env.NEXT_PUBLIC_URL}icons/share/share-w.svg`}
+              alt="icon-share"
+              width={16}
+              height={18}
+            />
 
-        {/* BTN DOWNLOAD */}
-        <button
-          className="bg-or-100 rounded-full flex gap-2 py-2 px-4"
-          onClick={downloadPDF}
-        >
-          <Image
-            src={`${process.env.NEXT_PUBLIC_URL}icons/download-i/download-w.svg`}
-            alt="icon-download"
-            width={16}
-            height={18}
-          />
+            <span className="m-b text-white text-fs-12">
+              {languageData.shareLink.share}
+            </span>
+          </button>
 
-          <span className="m-b text-white text-fs-12">
-            {isDownloading
-              ? languageData.shareLink.downloadingItinerary
-              : languageData.shareLink.downloadItinerary}
-          </span>
-        </button>
+          {/* BTN DOWNLOAD */}
+          <button
+            className="bg-or-100 rounded-full flex gap-2 py-2 px-4"
+            onClick={downloadPDF}
+          >
+            <Image
+              src={`${process.env.NEXT_PUBLIC_URL}icons/download-i/download-w.svg`}
+              alt="icon-download"
+              width={16}
+              height={18}
+            />
 
-        <ShareContainer smShow={smShow} handleCloseModal={handleCloseModal} />
+            <span className="m-b text-white text-fs-12">
+              {isDownloading
+                ? languageData.shareLink.downloadingItinerary
+                : languageData.shareLink.downloadItinerary}
+            </span>
+          </button>
 
-        {notification && notification.visible && (
-          <NotificationType
-            type={notification.type}
-            title={notification.title}
-            message={notification.message}
-            duration={notification.duration}
-            onClose={hideNotification}
-            transport={true}
-          />
-        )}
+          <ShareContainer smShow={smShow} handleCloseModal={handleCloseModal} />
+        </div>
       </div>
-    </div>
+
+      {notification && notification.visible && (
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+          transport={false}
+        />
+      )}
+    </>
   );
 }

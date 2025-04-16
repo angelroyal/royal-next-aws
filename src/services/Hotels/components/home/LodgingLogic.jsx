@@ -6,6 +6,8 @@ import { useToken } from "@/config/context/AuthContext";
 import { shuffleHotelTypes } from "../../config/shuffleHotelTypes";
 
 export default function LodgingHotel({ selectionId }) {
+  // console.log(selectionId);
+  
   const token = useToken();
   const shuffleTypes = shuffleHotelTypes;
 

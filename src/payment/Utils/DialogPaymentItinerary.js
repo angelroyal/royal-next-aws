@@ -324,7 +324,7 @@ export function DialogPaymentItinerary(props) {
           message={notification.message}
           duration={notification.duration}
           onClose={hideNotification}
-          transport={true}
+          transport={false}
         />
       )}
     </>
