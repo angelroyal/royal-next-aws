@@ -17,28 +17,15 @@ import { combineHotelData } from "@/services/Hotels/utils/hotelUtils";
 import { BestHotelCart } from "@/services/Hotels/components/home/BestHotelCart";
 import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
 
-export default function HotelRecommendation({ params, paramsHotel }) {
+export default function HotelRecommendation({ params, paramsHotel, hotelsMap }) {
   const { languageData } = useContext(LanguageContext);
-  const [hotelsMap, setHotelsMap] = useState([]);
+  // const [hotelsMap, setHotelsMap] = useState([]);
   const [hotelsInfo, setHotelsInfo] = useState([]);
 
-  useEffect(() => {
-    const occupancies = JSON.parse(decodeURIComponent(paramsHotel.occupancies));
-    let params = {
-      "check-in": paramsHotel["check-in"],
-      "check-out": paramsHotel["check-out"],
-      code: paramsHotel.code,
-      occupancies,
-      type: "destination",
-      codeName: paramsHotel.codeName,
-    };
-
-    fetchPostHotels(params).then((response) => {
-      setHotelsMap(response.mapHotels);
-    });
-  }, [paramsHotel]);
 
   useEffect(() => {
+    console.log(hotelsMap);
+    
     if (hotelsMap.length > 0) {
       let hotelsKeysReduce = hotelsMap.slice(0, 20);
       const keysHotel = hotelsKeysReduce.map((hotel) => hotel.key);

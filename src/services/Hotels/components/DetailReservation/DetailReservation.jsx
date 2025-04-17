@@ -13,9 +13,15 @@ import { calculateNights } from "../../utils/calculateNights";
 import moment from "moment";
 import ImageGet from "@/utils/others/ImageGet";
 import { CleanRoute } from "@/config/Others/CleanRoute";
+import NotificationType from "@/components/Alerts/Notifications/NotificationType";
+import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 
 export default function DetailReservation({ searchParams }) {
   const limitPrice = 95000;
+  const { notification, showNotification, hideNotification } =
+    useNotification();
+
+  const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [priceRooms, setTotalPrice] = useState(0);
   const [isLimitPrice, setISLimitPrice] = useState(false);
@@ -35,7 +41,9 @@ export default function DetailReservation({ searchParams }) {
         code: searchParams.code,
         "check-in": searchParams["check-in"],
         "check-out": searchParams["check-out"],
-        occupancies: encodeURIComponent(JSON.stringify([{ adults: 2, children: [] }])),
+        occupancies: encodeURIComponent(
+          JSON.stringify([{ adults: 2, children: [] }])
+        ),
       });
     }
   }, [searchParams]);
@@ -133,6 +141,24 @@ export default function DetailReservation({ searchParams }) {
     setTimeout(() => setIsBouncing(false), 3700);
   }
 
+  const handleAlert = (typeAlert) => {
+    if (typeAlert == "success") {
+      showNotification(
+        "success",
+        languageData.Alerts.notification.hotel.successTitle,
+        languageData.Alerts.notification.hotel.successSubtitle,
+        3600
+      );
+    } else {
+      showNotification(
+        "error",
+        languageData.Alerts.notification.hotel.errorTitle,
+        languageData.Alerts.notification.hotel.errorSubtitle,
+        3000
+      );
+    }
+  };
+
   return (
     <>
       {isVisible && selectedRooms.length > 0 && (
@@ -218,7 +244,11 @@ export default function DetailReservation({ searchParams }) {
                   )}
 
                   {selectedRooms.length > 0 && !isLimitPrice ? (
-                    <AddCartHotel />
+                    <AddCartHotel
+                      isLoading={isLoading}
+                      setIsLoading={setIsLoading}
+                      handleAlert={handleAlert}
+                    />
                   ) : (
                     <div className="select-none	rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
                       {languageData.detailHotel.buttonPrincipal}
@@ -254,6 +284,16 @@ export default function DetailReservation({ searchParams }) {
             </button>
           </div>
         </div>
+      )}
+
+      {notification && notification.visible && (
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+        />
       )}
     </>
   );

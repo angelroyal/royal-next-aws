@@ -3,7 +3,7 @@ import HotelRecommendation from "@/components/Recommended/Hotel/HotelRecommendat
 import OffersNowRecommendation from "@/components/Recommended/OffersNowRecommendation";
 import TransportRecommendation from "@/components/Recommended/Transport/TransportRecommendation";
 
-export default function OrderRecommendation({ params, searchParams }) {
+export default function OrderRecommendation({ params, searchParams, hotelsMap }) {
   let order;
   const service = params.type;
 
@@ -21,7 +21,7 @@ export default function OrderRecommendation({ params, searchParams }) {
             {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
               <TransportRecommendation />
             )}
-            <HotelRecommendation params={params} paramsHotel={searchParams} />
+            <HotelRecommendation params={params} paramsHotel={searchParams} hotelsMap={hotelsMap}/>
           </>
         );
       }
@@ -31,7 +31,7 @@ export default function OrderRecommendation({ params, searchParams }) {
       {
         order = (
           <>
-            <HotelRecommendation params={params} paramsHotel={searchParams} />
+            <HotelRecommendation params={params} paramsHotel={searchParams} hotelsMap={hotelsMap}/>
             <OffersNowRecommendation />
             {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
               <TransportRecommendation />
