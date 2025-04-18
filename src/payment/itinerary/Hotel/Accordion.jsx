@@ -61,7 +61,7 @@ export function Accordion({ index, accordionOpen, roomInfo }) {
                   </div>
 
                   {/* MAP ROOM BEDS */}
-                  {roomBed.beds &&
+                  {roomBed?.beds && typeof roomBed.beds !== "string" ? (
                     roomBed.beds.map((bed, item) => (
                       <div key={item} className="flex gap-2 items-center">
                         <Image
@@ -75,8 +75,19 @@ export function Accordion({ index, accordionOpen, roomInfo }) {
                           {bed.number} {bed.type}
                         </span>
                       </div>
-                    ))}
-
+                    ))
+                  ) : (
+                    <div className="flex items-center gap-x-3">
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                        className="w-[14px] h-[14px]"
+                        alt="room"
+                      />
+                      <span className="m-s-b text-fs-12 text-gry-100">
+                        {languageData.detailHotel[roomBed.beds]}
+                      </span>
+                    </div>
+                  )}
                   {/* NON REFUNDABLE */}
 
                   <div className="flex items-center">
