@@ -9,10 +9,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useContext, useEffect, useState } from "react";
 
 import LanguageContext from "@/language/LanguageContext";
-import { fetchTopActivities } from "../Api/RequestRecommendation";
+import { GetActivities } from "@/services/Tours/Api/requestTour";
 import CardTopActivities from "@/services/Tours/Home/CardTopActivities";
 import { CardTopActivitiesSkeleton } from "@/components/Skeleton/CardTopActivitiesSkeleton";
-import { GetActivities } from "@/services/Tours/Api/requestTour";
 
 export default function TopActivities({ params, destination }) {
   const [tours, setTours] = useState([]);
@@ -20,17 +19,39 @@ export default function TopActivities({ params, destination }) {
   // console.log(destination);
   
 
+  // useEffect(() => {
+  //   const loadTopActivities = async () => {
+  //     const activities = await GetActivities(destination);
+  //     // const activities = await fetchTopActivities();
+
+  //     if (activities.data && activities.data.activities) {
+  //       setTours(activities.data.activities.slice(0, 20));
+  //     }
+  //   };
+  //   loadTopActivities();
+  // }, []);
+  const [showComponent, setShowComponent] = useState(true);
   useEffect(() => {
     const loadTopActivities = async () => {
-      const activities = await GetActivities(destination);
-      // const activities = await fetchTopActivities();
+      try {
+        const activities = await GetActivities(destination);
 
-      if (activities.data && activities.data.activities) {
-        setTours(activities.data.activities.slice(0, 20));
+        if (activities.data && activities.data.activities) {
+          setTours(activities.data.activities.slice(0, 20));
+        }
+      } catch (error) {
+        if (error.response?.status === 404) {
+          setShowComponent(false);
+        } else {
+          console.error("Error loading activities:", error);
+        }
       }
     };
+
     loadTopActivities();
-  }, []);
+  }, [destination]);
+
+  if (!showComponent) return null;
 
   return (
     <div className="bg-white p-[36px] relative rounded-lg my-[28px] max-md:p-[20px]">

@@ -22,10 +22,9 @@ export default function HotelRecommendation({ params, paramsHotel, hotelsMap }) 
   // const [hotelsMap, setHotelsMap] = useState([]);
   const [hotelsInfo, setHotelsInfo] = useState([]);
 
+console.log(hotelsInfo);
 
   useEffect(() => {
-    console.log(hotelsMap);
-    
     if (hotelsMap.length > 0) {
       let hotelsKeysReduce = hotelsMap.slice(0, 20);
       const keysHotel = hotelsKeysReduce.map((hotel) => hotel.key);

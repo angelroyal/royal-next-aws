@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { useCartAxios } from "../CartAxios";
 import { removeHotelItinerary } from "@/payment/Api/fetchDataItinerary";
 import { calculateNights } from "@/services/Hotels/utils/calculateNights";
+import ImageGet from "@/utils/others/ImageGet";
+import LanguageContext from "@/language/LanguageContext";
 // import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export default function CartHotelT(props) {
@@ -57,6 +59,7 @@ export default function CartHotelT(props) {
     setShowDelete(updatedShowDelete);
   };
 
+  const { language } = useContext(LanguageContext);
   return (
     <div className="relative">
       {/* CARD CART HOTEL */}
@@ -69,8 +72,20 @@ export default function CartHotelT(props) {
 
         <div className="p-2 gap-4 flex justify-between w-full max-sm:w-[86%]">
           {/* IMAGE CART */}
-          <img
-            // src="https://cdn.worldota.net/t/x500/content/53/d7/53d7b42e4a23bb1c3779fc15b5ae8b08fb17bfa1.jpeg"
+          <ImageGet
+            imageUrl={
+              hotel.image
+                ? hotel.image
+                : `${process.env.NEXT_PUBLIC_URL}banners/NoAvailability/no-availability-d-h-es.webp`
+            }
+            type={"hotel"}
+            language={language}
+            altDescription={"img-cart-hotel"}
+            classN="w-[100px] h-[100px] rounded-lg object-cover"
+            width={100}
+            height={100}
+          />
+          {/* <img
             src={
               hotel.image
                 ? hotel.image
@@ -78,7 +93,7 @@ export default function CartHotelT(props) {
             }
             alt="img-cart-hotel"
             className="w-[100px] h-[100px] rounded-lg object-cover"
-          />
+          /> */}
 
           {/* INFO CART */}
           <div className="w-full leading-4 flex flex-col justify-center max-sm:w-[61%] gap-y-[5px]">

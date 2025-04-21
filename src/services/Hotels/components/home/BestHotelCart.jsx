@@ -5,45 +5,54 @@ import { useState, useContext } from "react";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 import { CleanRoute } from "@/config/Others/CleanRoute";
+import ImageGet from "@/utils/others/ImageGet";
 
 export function BestHotelCart({ params, hotel, paramsH }) {
   const [isHovered, setIsHovered] = useState(false);
   const { languageData, language } = useContext(LanguageContext);
 
-const searchHotel = (hotel, query) => {
-  const cleanedQuery = { ...query };
-  delete cleanedQuery.checkIn;
-  delete cleanedQuery.checkOut;
+  const searchHotel = (hotel, query) => {
+    const cleanedQuery = { ...query };
+    delete cleanedQuery.checkIn;
+    delete cleanedQuery.checkOut;
 
-  const queryParamsString = [
-    `codeName=${cleanedQuery.codeName}`,
-    `check-in=${cleanedQuery['check-in']}`,
-    `check-out=${cleanedQuery['check-out']}`,
-    `occupancies=${cleanedQuery.occupancies}`,
-  ].join('&');
+    const queryParamsString = [
+      `codeName=${cleanedQuery.codeName}`,
+      `check-in=${cleanedQuery["check-in"]}`,
+      `check-out=${cleanedQuery["check-out"]}`,
+      `occupancies=${cleanedQuery.occupancies}`,
+    ].join("&");
 
-  window.open(
-    `/${language}/mx/${params.codeName}/${paramsH.codeName}-hotels/${hotel.codeName}?${queryParamsString}`,
-    "_blank"
-  );
-};
-
+    window.open(
+      `/${language}/mx/${params.codeName}/${paramsH.codeName}-hotels/${hotel.codeName}?${queryParamsString}`,
+      "_blank"
+    );
+  };
 
   return (
     <div
-      onClick={() => searchHotel(hotel,paramsH)}
+      onClick={() => searchHotel(hotel, paramsH)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="shadow-3xl !rounded-lg"
     >
       <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
-        <img
+        <ImageGet
+          imageUrl={hotel.images[0]}
+          type={"hotel"}
+          language={language}
+          altDescription={"card recommendations hotel"}
+          classN={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform ${
+            isHovered ? "scale-105" : "scale-100"
+          }`}
+        />
+        {/* <img
           className={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform ${
             isHovered ? "scale-105" : "scale-100"
           }`}
           src={hotel.images[0]}
           alt="card"
-        />
+        /> */}
       </div>
 
       {/* bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col */}
@@ -104,7 +113,6 @@ const searchHotel = (hotel, query) => {
     </div>
   );
 }
-
 
 // http://localhost:3000/es/mx/cancun-mexico/cancun-hotels/park-royal-beach-cancun?codeNameHotel=park-royal-beach-cancun&code=18&type=destination&codeName=cancun&check-in=2025-04-17&check-out=2025-04-19&occupancies=%255B%257B%2522adults%2522%253A1%252C%2522children%2522%253A%255B%255D%257D%255D
 

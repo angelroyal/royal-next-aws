@@ -12,7 +12,7 @@ export default function ImageGet({
   height,
   altDescription,
   isZoom= false,
-  classN= "",
+  classN= "w-full h-full",
 
 }) {
   const [imageSize, setImageSize] = useState({ width: 0, height: 0, url: "" });
@@ -60,7 +60,7 @@ export default function ImageGet({
       ) : (
         <img
           src={ImageNotFoundType(type, language)}
-          className={`w-full h-full object-cover ${isZoom && 'transition-transform duration-500 transform hover:scale-105'} ${classN}`}
+          className={` object-cover ${isZoom && 'transition-transform duration-500 transform hover:scale-105'} ${classN}`}
           width={width}
           height={height}
           alt={altDescription}
