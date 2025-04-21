@@ -1,5 +1,6 @@
 "use client";
 
+import Cookies from "js-cookie";
 import React, { useState, useEffect, useContext } from "react";
 
 import {
@@ -8,6 +9,7 @@ import {
 } from "./config/conektaScripts";
 import Booking from "./Booking/Booking";
 import Itinerary from "./itinerary/Itinerary";
+import { decrypt } from "@/config/Others/encrypt";
 import { Container } from "@/config/Others/Container";
 import SkeletonPay from "@/utils/skeleton/SkeletonPay";
 import LanguageContext from "../language/LanguageContext";
@@ -33,21 +35,47 @@ export default function Payment() {
   const [errorAlertBooking, setErrorAlertBooking] = useState(false);
   const { step, handleStepChange, openDialog } = useContext(BookingContext);
 
+  const [provider, setProvider] = useState(null);
+  
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+    const encrypted = Cookies.get("payment");
+    
+    if (encrypted) {
+      setProvider(decrypt(encrypted));
+    }
+  }, []); 
+
+  useEffect(() => {
+    if (provider === "CONEKTA") {
       loadConektaScripts();
-    } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+    } else if (provider === "OPENPAY") {
       loadOpenpayScripts();
     }
 
     return () => {
-      if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+      if (provider === "CONEKTA") {
         unloadConektaScripts();
-      } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+      } else if (provider === "OPENPAY") {
         unloadOpenpayScripts();
       }
     };
   }, []);
+
+  // useEffect(() => {
+  //   if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+  //     loadConektaScripts();
+  //   } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+  //     loadOpenpayScripts();
+  //   }
+
+  //   return () => {
+  //     if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+  //       unloadConektaScripts();
+  //     } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+  //       unloadOpenpayScripts();
+  //     }
+  //   };
+  // }, []);
 
   useEffect(() => {
     scrollToTop();

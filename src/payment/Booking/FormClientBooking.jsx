@@ -1,5 +1,7 @@
 "use client";
 
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect, useContext } from "react";
 
 import {
@@ -12,6 +14,7 @@ import {
 } from "../config/conektaScripts";
 
 import Booking from "./Booking";
+import { decrypt } from "@/config/Others/encrypt";
 import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
@@ -21,7 +24,6 @@ import DetailsPayment from "../itinerary/others/DetailsPayment";
 import EmptyItinerary from "../itinerary/Alerts/EmptyItinerary";
 import { DialogPaymentItinerary } from "../Utils/DialogPaymentItinerary";
 import FormPaymentSkeleton from "@/components/Skeleton/FormPaymentSkeleton";
-import { useRouter } from "next/navigation";
 
 
 export default function FormClientBooking() {
@@ -60,21 +62,47 @@ export default function FormClientBooking() {
     }
   }, [data]);
 
+  const [provider, setProvider] = useState(null);
+  
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+    const encrypted = Cookies.get("payment");
+    
+    if (encrypted) {
+      setProvider(decrypt(encrypted));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (provider === "CONEKTA") {
       loadConektaScripts();
-    } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+    } else if (provider === "OPENPAY") {
       loadOpenpayScripts();
     }
 
     return () => {
-      if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+      if (provider === "CONEKTA") {
         unloadConektaScripts();
-      } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+      } else if (provider === "OPENPAY") {
         unloadOpenpayScripts();
       }
     };
   }, []);
+
+  // useEffect(() => {
+  //   if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+  //     loadConektaScripts();
+  //   } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+  //     loadOpenpayScripts();
+  //   }
+
+  //   return () => {
+  //     if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+  //       unloadConektaScripts();
+  //     } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+  //       unloadOpenpayScripts();
+  //     }
+  //   };
+  // }, []);
 
   return (
     <div className="w-full h-full relative bg-[#f6f6f6]">

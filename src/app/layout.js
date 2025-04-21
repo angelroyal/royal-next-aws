@@ -5,6 +5,7 @@ import LanguageProvider from "@/language/LanguageProvider";
 import CookieBanner from "@/components/General/CookieBanner";
 import AosInitializer from "@/config/Animation/AosInitializer";
 import { FormContactClient } from "@/components/Alerts/FormContactClient";
+import { PaymentProvider } from "@/context/PaymentContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -71,6 +72,9 @@ export default function RootLayout({ children }) {
     },
   };
 
+  // TEST PROVIDER
+  const gatewayProvider = { name: "cp" };
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -88,10 +92,12 @@ export default function RootLayout({ children }) {
           />
         </section>
         <LanguageProvider>
-          {children}
-          <AosInitializer />
-          <CookieBanner />
-          <FormContactClient />
+          <PaymentProvider gatewayProvider={gatewayProvider}>
+            {children}
+            <AosInitializer />
+            <CookieBanner />
+            <FormContactClient />
+          </PaymentProvider>
         </LanguageProvider>
       </body>
     </html>
