@@ -11,7 +11,9 @@ export default function ImageGet({
   width,
   height,
   altDescription,
-  isZoom= false
+  isZoom= false,
+  classN= "w-full h-full",
+
 }) {
   const [imageSize, setImageSize] = useState({ width: 0, height: 0, url: "" });
   const [isLoader, setIsLoader] = useState(true);
@@ -46,11 +48,11 @@ export default function ImageGet({
   return (
     <>
       {isLoader ? (
-        <div className="w-full h-full rounded-lg animate-[skeletonLoading_1s_linear_infinite_alternate]" />
+        <div className={`w-full h-full rounded-lg animate-[skeletonLoading_1s_linear_infinite_alternate] ${classN}`} />
       ) : imageSize.url ? (
         <img
           src={imageSize.url}
-          className={`w-full h-full object-cover ${isZoom && 'transition-transform duration-500 transform hover:scale-105'} select-none`}
+          className={`w-full h-full object-cover ${isZoom && 'transition-transform duration-500 transform hover:scale-105'} ${classN} select-none`}
           width={width}
           height={height}
           alt={altDescription}
@@ -58,7 +60,7 @@ export default function ImageGet({
       ) : (
         <img
           src={ImageNotFoundType(type, language)}
-          className={`w-full h-full object-cover ${isZoom && 'transition-transform duration-500 transform hover:scale-105'} `}
+          className={` object-cover ${isZoom && 'transition-transform duration-500 transform hover:scale-105'} ${classN}`}
           width={width}
           height={height}
           alt={altDescription}

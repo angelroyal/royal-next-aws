@@ -12,9 +12,16 @@ import { LimitPriceAlert } from "../AlertsHotel/HotelInformationAlerts";
 import { calculateNights } from "../../utils/calculateNights";
 import moment from "moment";
 import ImageGet from "@/utils/others/ImageGet";
+import { CleanRoute } from "@/config/Others/CleanRoute";
+import NotificationType from "@/components/Alerts/Notifications/NotificationType";
+import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 
-export default function DetailReservation() {
+export default function DetailReservation({ searchParams }) {
   const limitPrice = 95000;
+  const { notification, showNotification, hideNotification } =
+    useNotification();
+
+  const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [priceRooms, setTotalPrice] = useState(0);
   const [isLimitPrice, setISLimitPrice] = useState(false);
@@ -23,8 +30,23 @@ export default function DetailReservation() {
   const [diffDate, setDiffDate] = useState(null);
   const [totalPerson, setTotalPerson] = useState(null);
 
-  const { selectedRooms, requestBodyRooms } = useContext(RoomsHotelContext);
+  const { selectedRooms, requestBodyRooms, setParamListing } =
+    useContext(RoomsHotelContext);
   const { totalPrice } = useCartAxios();
+
+  useEffect(() => {
+    if (searchParams) {
+      setParamListing({
+        codeName: searchParams.codeName,
+        code: searchParams.code,
+        "check-in": searchParams["check-in"],
+        "check-out": searchParams["check-out"],
+        occupancies: encodeURIComponent(
+          JSON.stringify([{ adults: 2, children: [] }])
+        ),
+      });
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (requestBodyRooms && requestBodyRooms.occupancies) {
@@ -116,16 +138,34 @@ export default function DetailReservation() {
 
   function triggerAnimation() {
     setIsBouncing(true);
-    setTimeout(() => setIsBouncing(false), 3700); 
+    setTimeout(() => setIsBouncing(false), 3700);
   }
+
+  const handleAlert = (typeAlert) => {
+    if (typeAlert == "success") {
+      showNotification(
+        "success",
+        languageData.Alerts.notification.hotel.successTitle,
+        languageData.Alerts.notification.hotel.successSubtitle,
+        3600
+      );
+    } else {
+      showNotification(
+        "error",
+        languageData.Alerts.notification.hotel.errorTitle,
+        languageData.Alerts.notification.hotel.errorSubtitle,
+        3000
+      );
+    }
+  };
 
   return (
     <>
-      {isVisible && (
+      {isVisible && selectedRooms.length > 0 && (
         <div
           id="reservationDetails"
-          className={`sticky bottom-0 left-0 w-full bg-white py-[17px] z-[2] border-t border-gry-70 transition-all duration-500 ${
-            open === true ? "h-auto" : "h-[11.3rem] md:h-[127px]"
+          className={`sticky bottom-0 left-0 w-full bg-white py-[12px] z-[2] border-t border-gry-70 transition-all duration-500 ${
+            open === true ? "h-auto" : "h-[11rem] md:h-[110px]"
           }`}
         >
           <div
@@ -187,11 +227,16 @@ export default function DetailReservation() {
                           height={30}
                           alt={selectedRooms[0].name}
                         />
-                        
                       </div>
                       {selectedRooms.length > 0 && (
-                        <span className={`absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b ${isBouncing && "animate-bounce"}`}>
-                          {isBouncing && <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bl-100 opacity-75"/>}
+                        <span
+                          className={`absolute top-0 bottom-0 my-auto right-[-15px] rounded-full w-[1.5rem] h-[1.5rem] bg-bl-100 flex justify-center items-center text-white text-fs-10 m-s-b ${
+                            isBouncing && "animate-bounce"
+                          }`}
+                        >
+                          {isBouncing && (
+                            <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bl-100 opacity-75" />
+                          )}
                           {`+${selectedRooms.length}`}
                         </span>
                       )}{" "}
@@ -199,7 +244,11 @@ export default function DetailReservation() {
                   )}
 
                   {selectedRooms.length > 0 && !isLimitPrice ? (
-                    <AddCartHotel />
+                    <AddCartHotel
+                      isLoading={isLoading}
+                      setIsLoading={setIsLoading}
+                      handleAlert={handleAlert}
+                    />
                   ) : (
                     <div className="select-none	rounded-full py-3.5 px-[105px] bg-gry-70 text-gry-100 text-fs-12 m-s-b text-center md:py-3.5 md:px-4 h-max">
                       {languageData.detailHotel.buttonPrincipal}
@@ -235,6 +284,16 @@ export default function DetailReservation() {
             </button>
           </div>
         </div>
+      )}
+
+      {notification && notification.visible && (
+        <NotificationType
+          type={notification.type}
+          title={notification.title}
+          message={notification.message}
+          duration={notification.duration}
+          onClose={hideNotification}
+        />
       )}
     </>
   );

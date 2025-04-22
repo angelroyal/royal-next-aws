@@ -13,9 +13,15 @@ import HomeHotel from "@/services/Hotels/components/home/HomeHotel";
 export default async function Home({ params }) {
   
   try {
+    console.log("inicia home");
+    
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
+      `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${params.lang}/all`,
+      // `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
     );
+
+    // console.log(response.data);
+    
 
     const dataImg = response.data;
 
@@ -37,6 +43,8 @@ export default async function Home({ params }) {
       </ImageProvider>
     );
   } catch (error) {
+    console.log("error");
+    
     return (
       <LanguageProvider>
         <TokenProvider>

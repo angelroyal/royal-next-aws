@@ -10,12 +10,13 @@ import { getNextMonth } from "@/config/Others/getNextMonth";
 export default function CardTourHome({ activity }) {
   const { languageData, language } = useContext(LanguageContext);
   const [isHovered, setIsHovered] = useState(false);
+  const destinationN = activity.destinationName.toLowerCase();
 
   const activityDetails = () => {
     const body = { dateStart: getNextMonth() };
     const query = new URLSearchParams(body).toString();
     window.open(
-      `${language}/mx/${activity.destinationName}-mexico/tours/${activity.codeName}?${query}`,
+      `${language}/mx/${destinationN}-mexico/tours/${activity.codeName}?${query}`,
       "_blank"
     );
   };

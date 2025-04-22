@@ -1,12 +1,11 @@
 "use client";
 
 import Cookies from "js-cookie";
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { es } from "./es";
 import { en } from "./en";
 import LanguageContext from "./LanguageContext";
-
 
 function LanguageProvider(props) {
   const [language, setLanguage] = useState("en");

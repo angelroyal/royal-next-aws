@@ -81,7 +81,8 @@ export default async function HomeTransport({ params }) {
 
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
+      `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${params.lang}/all`
+      // `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`
     );
 
     const dataImg = response.data;
@@ -94,34 +95,35 @@ export default async function HomeTransport({ params }) {
               <CartAxiosProvider>
                 <Token />
                 <Navigation />
-
-                {/* SearchTransport */}
-                <div className="relative flex justify-center align-center mb-[285px] lg:mb-[180px]">
-                  <BannerHeaderTransport dataImg={dataImg}/>
-                  <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
-                    <SearchBox />
-                  </div>
-                </div>
-
-                <Container>
-                  <div className="max-md:overflow-x-hidden">
-                    <BannerHomeTransport />
-                    <TipsBooking />
-
-                    {/* <PromotedRoutes /> */}
-
-                    <ChainsHome typePage={"transport"} />
-                    <EnjoyStayHome />
-
-                    <BannerSafelyTransport />
-                    <BannerDiscoverPossibilities />
-                    <RecommendedTransport />
-                    <div className="mb-16">
-                      <CartTourOptions />
+                {process.env.NEXT_PUBLIC_TRANSPORT === "true" ? (
+                  <>
+                    <div className="relative flex justify-center align-center mb-[285px] lg:mb-[180px]">
+                      <BannerHeaderTransport dataImg={dataImg} />
+                      <div className="absolute top-[67%] sm:top-[60%] md:top-[63%] lg:top-[73%] xl:top-[80%] 2xl:top-[81%] w-full flex flex-col items-center z-[1]">
+                        <SearchBox />
+                      </div>
                     </div>
-                  </div>
-                </Container>
-                {/* END LP */}
+
+                    <Container>
+                      <div className="max-md:overflow-x-hidden">
+                        <BannerHomeTransport />
+                        <TipsBooking />
+
+                        <ChainsHome typePage={"transport"} />
+                        <EnjoyStayHome />
+
+                        <BannerSafelyTransport />
+                        <BannerDiscoverPossibilities />
+                        <RecommendedTransport />
+                        <div className="mb-16">
+                          <CartTourOptions />
+                        </div>
+                      </div>
+                    </Container>
+                  </>
+                ) : (
+                  <Page404 />
+                )}
 
                 <FooterT />
               </CartAxiosProvider>

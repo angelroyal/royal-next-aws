@@ -12,11 +12,13 @@ import KeepExploring from "@/components/Recommended/KeepExploring";
 import DestinationReady from "@/components/Recommended/DestinationReady";
 import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 import Page404 from "@/components/General/Page404";
+import { fetchPostHotels } from "@/services/Hotels/config/axiosService";
 
 export default async function Details({ params, searchParams }) {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
+      `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${params.lang}/all`,
+      // `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
       {
         headers: {
           "Cache-Control":
@@ -32,6 +34,22 @@ export default async function Details({ params, searchParams }) {
     );
 
     const dataImg = response.data;
+
+    const occupancies = JSON.parse(
+      decodeURIComponent(searchParams.occupancies)
+    );
+    let paramsFindHotel = {
+      "check-in": searchParams["check-in"],
+      "check-out": searchParams["check-out"],
+      code: searchParams.code,
+      occupancies,
+      type: "destination",
+      codeName: searchParams.codeName,
+    };
+
+    let responseHotels = await fetchPostHotels(paramsFindHotel);
+
+    const hotelsMap = responseHotels.mapHotels;
 
     return (
       <ImageProvider>
@@ -51,7 +69,11 @@ export default async function Details({ params, searchParams }) {
                     />
                   )}
 
-                  <OrderRecommendation type={params.type} />
+                  <OrderRecommendation
+                    params={params}
+                    searchParams={searchParams}
+                    hotelsMap={hotelsMap}
+                  />
 
                   <KeepExploring />
                 </Container>

@@ -14,7 +14,7 @@ export default function FooterMyReservation() {
         </div>
         <a
           className="flex cursor-pointer no-underline"
-          href="tel:8009530342"
+          href={`tel:${languageData.navigation.hrefNumber}`}
           target="_blank"
           rel="noopener noreferrer"
         >

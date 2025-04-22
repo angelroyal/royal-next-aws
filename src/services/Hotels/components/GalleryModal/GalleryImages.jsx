@@ -9,6 +9,7 @@ import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "../../../../assets/css/Hotel/GalleryImage.css";
+import ImageGet from "@/utils/others/ImageGet";
 
 export function GalleryImages({ images }) {
   const carrouselRef = useRef(null);
@@ -36,10 +37,16 @@ export function GalleryImages({ images }) {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <img
+            {/* <img
               src={image}
-              className="h-full object-cover w-full rounded-lg"
+              className=""
               alt={`${index + 1}`}
+            /> */}
+            <ImageGet
+              imageUrl={image}
+              type={"hotel"}
+              altDescription={`${index + 1}`}
+              classN="h-full object-cover w-full rounded-lg"
             />
           </SwiperSlide>
         ))}
@@ -75,8 +82,8 @@ export function GalleryImages({ images }) {
         }}
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index} className="!h-[72px]">
-            <img
+          <SwiperSlide key={index} className="!h-[72px] rounded-lg">
+            {/* <img
               className={`object-cover w-full h-full rounded-lg cursor-pointer ${
                 index === currentSlideIndex
                   ? "opacity-100 border-2 border-or-100"
@@ -84,6 +91,16 @@ export function GalleryImages({ images }) {
               }`}
               src={image}
               alt={`${index + 1}`}
+            /> */}
+             <ImageGet
+              imageUrl={image}
+              type={"hotel"}
+              altDescription={`${index + 1}`}
+              classN={`object-cover w-full h-full rounded-lg cursor-pointer ${
+                index === currentSlideIndex
+                  ? "opacity-100 border-2 border-or-100"
+                  : "opacity-50"
+              }`}
             />
           </SwiperSlide>
         ))}

@@ -122,7 +122,7 @@ export default function FooterT() {
               <div className="flex gap-2">
                 <a
                   className="flex cursor-pointer no-underline text-fs-12 gap-x-2.5"
-                  href="tel:8009530342"
+                  href={`tel:${languageData.navigation.hrefNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onMouseEnter={() => setIsHovered("CTN")}
@@ -148,7 +148,7 @@ export default function FooterT() {
                       isHovered === "CTN" && "!text-or-100"
                     } text-fs-12 m-s-b no-underline`}
                   >
-                    {languageData.footer.contact.phone}
+                    {languageData.navigation.number}
                   </span>
                 </a>
               </div>
@@ -177,9 +177,9 @@ export default function FooterT() {
                   className="w-[20px] h-[20px]  select-none"
                 />
                 <span
-                  className={`${
-                    footerBlue ? "text-white" : "text-black"
-                  } ${isHovered === "EML" && "!text-or-100" } text-fs-12 m-s-b no-underline`}
+                  className={`${footerBlue ? "text-white" : "text-black"} ${
+                    isHovered === "EML" && "!text-or-100"
+                  } text-fs-12 m-s-b no-underline`}
                 >
                   info@{process.env.NEXT_PUBLIC_NAME_COMPANY}.com
                 </span>
@@ -246,16 +246,18 @@ export default function FooterT() {
               >
                 {languageData.itinerary.tourItinerary.titleTour}
               </Link>
-
+              
               {/* HOME TRANSPORT */}
-              <Link
-                href={`/${language}/transports`}
-                className={`${
-                  footerBlue ? "text-white" : "text-black"
-                } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
-              >
-                {languageData.modalMovingOptions.titleTransfer}
-              </Link>
+              {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+                <Link
+                  href={`/${language}/transports`}
+                  className={`${
+                    footerBlue ? "text-white" : "text-black"
+                  } text-fs-12 m-m hover:!text-or-100 no-underline w-fit`}
+                >
+                  {languageData.modalMovingOptions.titleTransfer}
+                </Link>
+              )}
               {/* HOME BLOG */}
               <Link
                 href={`/blog`}

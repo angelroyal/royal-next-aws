@@ -3,9 +3,9 @@ import HotelRecommendation from "@/components/Recommended/Hotel/HotelRecommendat
 import OffersNowRecommendation from "@/components/Recommended/OffersNowRecommendation";
 import TransportRecommendation from "@/components/Recommended/Transport/TransportRecommendation";
 
-export default function OrderRecommendation({ type }) {
+export default function OrderRecommendation({ params, searchParams, hotelsMap }) {
   let order;
-  const service = type;
+  const service = params.type;
 
   // IS HOTEL
   switch (service) {
@@ -13,10 +13,15 @@ export default function OrderRecommendation({ type }) {
       {
         order = (
           <>
-            <TourRecommendation />
+            <TourRecommendation
+              params={params}
+              destination={searchParams.codeName}
+            />
             <OffersNowRecommendation />
-            <TransportRecommendation />
-            <HotelRecommendation />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
+            <HotelRecommendation params={params} paramsHotel={searchParams} hotelsMap={hotelsMap}/>
           </>
         );
       }
@@ -26,10 +31,15 @@ export default function OrderRecommendation({ type }) {
       {
         order = (
           <>
-            <HotelRecommendation />
+            <HotelRecommendation params={params} paramsHotel={searchParams} hotelsMap={hotelsMap}/>
             <OffersNowRecommendation />
-            <TransportRecommendation />
-            <TourRecommendation />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
+            <TourRecommendation
+              params={params}
+              destination={searchParams.codeName}
+            />
           </>
         );
       }
@@ -42,7 +52,9 @@ export default function OrderRecommendation({ type }) {
             <HotelRecommendation />
             <OffersNowRecommendation />
             <TourRecommendation />
-            <TransportRecommendation />
+            {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+              <TransportRecommendation />
+            )}
           </>
         );
       }

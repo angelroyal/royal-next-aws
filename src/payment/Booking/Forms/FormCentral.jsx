@@ -1,8 +1,8 @@
 "use client";
 
-import { useContext, useState, useEffect } from "react";
+import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-
+import { useContext, useState, useEffect } from "react";
 
 import {
   conektaErrorResponseHandler,
@@ -22,6 +22,7 @@ import SkeletonActivitiesTourPT from "@/utils/skeleton/SkeletonActivitiesTourPT"
 import FormCreditCardClip from "./FormCreditCardClip";
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import LanguageContext from "@/language/LanguageContext";
+import { decrypt } from "@/config/Others/encrypt";
 
 export default function FormCentral(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function FormCentral(props) {
   const [currentStep, setCurrentStep] = useState(1);
   const { handleStepChange } = useContext(BookingContext);
   const [animationData, setAnimationData] = useState("LoadingData");
-  const paymentProvider = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER;
+  // const paymentProvider = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER;
   const { activityPreBooking, activityTrue, dataItinerary, transportTrue } =
     props;
 
@@ -53,23 +54,47 @@ export default function FormCentral(props) {
   const uid = searchParams.get("uid");
   // const dev = window.OpenPay?.deviceData.setup("card-form");
 
+  const [provider, setProvider] = useState(null);
+
+  useEffect(() => {
+    const encrypted = Cookies.get("payment");
+
+    if (encrypted) {
+      setProvider(decrypt(encrypted));
+    }
+  }, []);
+
   // PAYLOAD PAYMENT
   const paymentData = {
     currency: "MXN",
     cartId: uid,
-    serviceType: paymentProvider.toLowerCase(),
+    serviceType: provider?.toLowerCase(),
     cardTitular: nameCard || "staywuw",
     description: "solo si es para clip",
     cardNumber: numberCard ? numberCard.slice(-4) : "4242",
-    ...(paymentProvider === "OPENPAY" &&
-    window.OpenPay &&
-    window.OpenPay.deviceData
+    ...(provider === "OPENPAY" && window.OpenPay && window.OpenPay.deviceData
       ? {
           deviceId: window.OpenPay.deviceData.setup("card-form"),
           description: "solo si es para openpay",
         }
       : {}),
   };
+  // const paymentData = {
+  //   currency: "MXN",
+  //   cartId: uid,
+  //   serviceType: paymentProvider.toLowerCase(),
+  //   cardTitular: nameCard || "staywuw",
+  //   description: "solo si es para clip",
+  //   cardNumber: numberCard ? numberCard.slice(-4) : "4242",
+  //   ...(paymentProvider === "OPENPAY" &&
+  //   window.OpenPay &&
+  //   window.OpenPay.deviceData
+  //     ? {
+  //         deviceId: window.OpenPay.deviceData.setup("card-form"),
+  //         description: "solo si es para openpay",
+  //       }
+  //     : {}),
+  // };
 
   const closeModal = () => {
     setIsOpen(false);
@@ -83,13 +108,12 @@ export default function FormCentral(props) {
 
   const router = useRouter();
 
-
   const handleSubmitPayment = (event, clipToken = null) => {
     event.preventDefault();
     setIsOpen(true);
     setAnimationData("LoadingData");
 
-    switch (paymentProvider) {
+    switch (provider) {
       case "CONEKTA":
         const conektaPublicKey = process.env.NEXT_PUBLIC_CONEKTA_KEY;
         window.Conekta.setPublicKey(conektaPublicKey);
@@ -154,7 +178,7 @@ export default function FormCentral(props) {
       phone: phoneNumber,
       currency: "MXN",
       cartId: uid,
-      serviceType: paymentProvider.toLowerCase(),
+      serviceType: provider.toLowerCase(),
       ...(hotelRH ? { guests: hotelRH } : {}),
       ...(roomHolders ? { paxes: roomHolders } : {}),
       ...(formActivityItems ? { items: formActivityItems } : {}),
@@ -231,7 +255,7 @@ export default function FormCentral(props) {
 
       {currentStep === 3 && (
         <>
-          {(paymentProvider === "CONEKTA" || paymentProvider === "OPENPAY") && (
+          {(provider === "CONEKTA" || provider === "OPENPAY") && (
             <form
               method="POST"
               name="paymentForm"
@@ -242,7 +266,7 @@ export default function FormCentral(props) {
             </form>
           )}
 
-          {paymentProvider === "CLIP" && (
+          {provider === "CLIP" && (
             <FormCreditCardClip
               paymentData={paymentData}
               setAnimationData={setAnimationData}

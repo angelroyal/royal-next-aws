@@ -106,35 +106,36 @@ export default function SearchBox() {
               {languageData.modalHotelOptions.titleTour}
             </span>
           </Tab>
-
           {/* TAB TRANSPORT */}
-          <Tab
-            className="focus:outline-none focus:ring-transparent"
-            onClick={() => handleTabChange("transport")}
-            style={{ padding: "0" }}
-          >
-            <span
-              className={`${
-                currentActiveIcon === "transports"
-                  ? "bg-bl-100 text-white"
-                  : "bg-gry-50 text-gry-100"
-              } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
+          {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+            <Tab
+              className="focus:outline-none focus:ring-transparent"
+              onClick={() => handleTabChange("transport")}
+              style={{ padding: "0" }}
             >
-              <Image
-                className="w-[29px] h-[25px] max-lg:w-4 max-lg:h-4"
-                src={`${process.env.NEXT_PUBLIC_URL}${
-                  currentActiveIcon === "transport" ||
+              <span
+                className={`${
                   currentActiveIcon === "transports"
-                    ? "icons/transport/transport-w.svg"
-                    : "icons/transport/transport-b.svg"
-                }`}
-                alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon tour`}
-                width={29}
-                height={25}
-              />{" "}
-              {languageData.modalHotelOptions.titleTransfer}
-            </span>
-          </Tab>
+                    ? "bg-bl-100 text-white"
+                    : "bg-gry-50 text-gry-100"
+                } w-max flex border-0 gap-2 justify-center rounded-t-lg py-2 px-4 h-[43.79px] items-center`}
+              >
+                <Image
+                  className="w-[29px] h-[25px] max-lg:w-4 max-lg:h-4"
+                  src={`${process.env.NEXT_PUBLIC_URL}${
+                    currentActiveIcon === "transport" ||
+                    currentActiveIcon === "transports"
+                      ? "icons/transport/transport-w.svg"
+                      : "icons/transport/transport-b.svg"
+                  }`}
+                  alt={`${process.env.NEXT_PUBLIC_NAME_COMPANY} icon tour`}
+                  width={29}
+                  height={25}
+                />{" "}
+                {languageData.modalHotelOptions.titleTransfer}
+              </span>
+            </Tab>
+          )}
         </Tab.List>
 
         <div className="w-full flex justify-center">

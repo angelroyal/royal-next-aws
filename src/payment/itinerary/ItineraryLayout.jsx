@@ -82,14 +82,14 @@ export default function ItineraryLayout() {
               </h2>
               <a
                 className="text-nowrap m-m text-fs-14 text-gry-100 text-center flex cursor-pointer"
-                href="tel:8009530342"
+                href={`tel:${languageData.navigation.hrefNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {languageData.Alerts.itinerary.contact}{" "}
                 <p className="m-0 ml-[4px] m-s-b hover:text-or-100">
                   {" "}
-                  800 953 0342
+                  {languageData.navigation.number}
                 </p>
               </a>
             </div>

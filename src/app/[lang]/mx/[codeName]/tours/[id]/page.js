@@ -58,7 +58,7 @@ export default async function DetailPageTour({ params, searchParams }) {
         price: tourMetaData.activity.price,
         priceCurrency: "MXN",
         availability: "http://schema.org/InStock",
-        validFrom: "2024-01-01", 
+        validFrom: "2024-01-01",
       },
       itinerary: [
         {
@@ -102,7 +102,11 @@ export default async function DetailPageTour({ params, searchParams }) {
                 />
               </section>
               <Navigation hotelDetails={true} />
-              <Tour params={params} tourMetaData={tourMetaData} searchParams={searchParams}/>
+              <Tour
+                params={params}
+                tourMetaData={tourMetaData}
+                searchParams={searchParams}
+              />
               <FooterT />
             </DetailTourProvider>
           </CartAxiosProvider>

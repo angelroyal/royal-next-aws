@@ -29,6 +29,7 @@ export default function AddCartTour(props) {
     setIsLoader,
     isButtonDisabled,
     setIsButtonDisabled,
+    paramListing,
   } = useContext(DetailTourContext);
 
   const handleAddCartTour = async () => {
@@ -82,12 +83,18 @@ export default function AddCartTour(props) {
         "success",
         languageData.Alerts.notification.tour.successTitle,
         languageData.Alerts.notification.tour.successSubtitle,
-        3000
+        3600
       );
 
       setTimeout(() => {
         router.push(
-          EntitiesRecommendations(language, "tour", InfoTour, cartUid)
+          EntitiesRecommendations(
+            language,
+            "tour",
+            InfoTour,
+            cartUid,
+            paramListing
+          )
         );
       }, 3000);
     } catch (error) {
@@ -116,13 +123,23 @@ export default function AddCartTour(props) {
           );
           break;
 
-          // GENERAL ALERT AND NOT AVAILABILITY ACTIVITY
+        // GENERAL ALERT AND NOT AVAILABILITY ACTIVITY
         case "NAV":
         case "unexpected provider error occurred, description not added in database yet":
           showNotification(
             "warning",
             languageData.Alerts.tour.NotAvailability.title,
             languageData.Alerts.tour.NotAvailability.message,
+            5000
+          );
+          break;
+
+        case "WNP":
+        case "unexpected provider error occurred, description not added in database yet":
+          showNotification(
+            "warning",
+            languageData.Alerts.tour.notAvailabilityPeople.title,
+            languageData.Alerts.tour.notAvailabilityPeople.message,
             5000
           );
           break;

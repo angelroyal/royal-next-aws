@@ -18,6 +18,7 @@ export const fetchPostHotels = async (requestBody) => {
 
 export const fetchHotelDetailsByKeys = async (keys) => {
   const codes = keys.join(",");
+  
   if (codes) {
     try {
       const response = await axiosWithInterceptor.get(`v1/hotels/${codes}`);

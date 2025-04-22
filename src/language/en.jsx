@@ -40,7 +40,8 @@ export const en = {
     tour: "Tour",
     transportation: "Transport",
     cart: "Shopping cart",
-    number: "800 953 0342",
+    number: "800 000 0000",
+    hrefNumber: "8000000000",
     call: "Call us!",
     tabTitle: "Come back! We miss you!",
     tabTitleRoyal: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
@@ -418,8 +419,14 @@ export const en = {
     amenities: "No amenities",
     showMore: "see more",
     showLess: "see less",
-    checkIn: "Check-in: 3:00 pm",
-    checkOut: "Check-out: 11:00 am",
+    checkIn: "15:00",
+    checkOut: "12:00 (noon)",
+    checkInText: "Check in:",
+    checkOutText: "Check out:",
+    guests: "Guests:",
+    people: "adult(s)",
+    kid: "child(ren)",
+    and: "and",
     breakfast: "Breakfast: 7:00 am to 11:00 am",
     buttonUpdate: "Update",
     showTooltip: "Choose your dates!",
@@ -894,6 +901,7 @@ export const en = {
     privateService: "Private service",
     sharedService: "Shared service",
     vehicles: "vehicles",
+    serviceNotAvailable: "Service not available",
   },
 
   filterTransport: {
@@ -1615,7 +1623,6 @@ export const en = {
     titleConfirmedPayment: "Is something missing from your reservation?",
     subTitleConfirmedPayment: "If you have any questions, call us at ",
 
-    titleNumber: "800 953 0342",
     titleEmail: `info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
 
     principalBannerH: {
@@ -1819,6 +1826,10 @@ export const en = {
       NotAvailability: {
         title: "No Availability",
         message: "Please select other dates",
+      },
+      notAvailabilityPeople: {
+        title: "Minimum booking: 3 people",
+        message: "You need to add at least 3 people to continue.",
       },
     },
 

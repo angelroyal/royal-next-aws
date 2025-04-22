@@ -33,7 +33,8 @@ export default async function DetailPageHotel() {
     const language = cookiesStore.get("language")?.value || "en";
 
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_CRM}getImages/${language}/all`,
+      `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${language}/all`,
+      // `${process.env.NEXT_PUBLIC_API_CRM}getImages/${language}/all`,
       {
         headers: {
           "Cache-Control":
@@ -83,7 +84,7 @@ export default async function DetailPageHotel() {
                   <PopularDestinationsHome />
                   <ChainsHome />
                   <EnjoyStayHome />
-                  <TransportBanner />
+                  {process.env.NEXT_PUBLIC_TRANSPORT === "true" && <TransportBanner />}
 
                   <WaveLine />
                   <BannerDiscoverPossibilities />

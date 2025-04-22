@@ -40,7 +40,9 @@ export const es = {
     tour: "Tour",
     transportation: "Traslados",
     cart: "Carrito de compras",
-    number: "800 953 0342",
+    // number: "800 953 0342",
+    number: "800 000 0000",
+    hrefNumber: "8000000000",
     call: "¡Llámanos!",
     tabTitle: "¡Vuelve! Te echamos de menos",
     tabTitleRoyal: `${process.env.NEXT_PUBLIC_NAME_COMPANY}`,
@@ -417,8 +419,14 @@ export const es = {
     amenities: "Sin amenidades",
     showMore: "Ver más",
     showLess: "Ver menos",
-    checkIn: "Check-in: 15:00 pm",
-    checkOut: "Check-out: 11:00 pm",
+    checkIn: "15:00",
+    checkOut: "12:00 (medio día)",
+    checkInText: "Entrada:",
+    checkOutText: "Salida:",
+    guests:"Huéspedes:",
+    people:"adulto(s)",
+    kid:"niño(s)",
+    and:"y",
     breakfast: "Desayuno: 7:00 am a 11:00 am",
     buttonUpdate: "Actualizar",
     showTooltip: "¡Elige tus fechas!",
@@ -894,6 +902,7 @@ export const es = {
     privateService: "Servicio privado",
     sharedService: "Servicio compartido",
     vehicles: "vehículos",
+    serviceNotAvailable:"Servicio no disponible",
   },
 
   filterTransport: {
@@ -1053,7 +1062,6 @@ export const es = {
   footer: {
     contact: {
       titleContact: "Contacto",
-      phone: "800 953 0342",
       whatsApp: "998 134 2286",
       location:
         "Av. Tulum y Av Náder, Sm 2, Mza. 1, lte. 44, Andador VI, C.P. 77500 Cancún, Q.Roo.",
@@ -1622,7 +1630,6 @@ export const es = {
     titleConfirmedPayment: "¿Le falta algo a tu reservación?",
     subTitleConfirmedPayment: "Si tines alguna duda llámanos al ",
 
-    titleNumber: "800 953 0342",
     titleEmail: `info@${process.env.NEXT_PUBLIC_NAME_COMPANY}.com`,
     principalBannerH: {
       title1: "Encuentra el descanso que buscas",
@@ -1828,6 +1835,10 @@ export const es = {
       NotAvailability: {
         title: "Sin disponibilidad",
         message: "Por favor selecciona otras fechas",
+      },
+      notAvailabilityPeople: {
+        title: "Reserva mínima: 3 personas",
+        message: "Necesitas agregar al menos 3 personas para continuar.",
       },
     },
 

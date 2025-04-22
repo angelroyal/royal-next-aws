@@ -15,6 +15,7 @@ import { BannerState } from "@/components/bannerJsx/bannerPaymentConfirmed";
 import BannerConfirmationT from "@/components/bannerJsx/bannerConfirmationT";
 import { Container } from "@/config/Others/Container";
 import { ListCardsConfirmations } from "./ListCardsConfirmation";
+import { DialogPaymentItinerary } from "../Utils/DialogPaymentItinerary";
 
 export default function ConfirmReservation() {
   const { fetchData, setCartData, setItinerary, setTotalItemsInCart } =
@@ -23,7 +24,7 @@ export default function ConfirmReservation() {
   const [smShow, setSmShow] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [dataConfirmation, setDataConfirmation] = useState(null);
-  const { setInfoReservation, handleStepChange, step } =
+  const { setInfoReservation, handleStepChange, step, setStep } =
     useContext(BookingContext);
 
   const handleOpenModal = () => {
@@ -43,6 +44,8 @@ export default function ConfirmReservation() {
   };
 
   useEffect(() => {
+    setStep(3);
+    handleStepChange(3);
     scrollToTop();
     fetchDataConfirmation(
       setDataConfirmation,
@@ -63,43 +66,47 @@ export default function ConfirmReservation() {
     setTotalItemsInCart(null);
     setCartData(null);
   };
-
+  
   return (
-    <Container>
-      {isLoading && <SkeletonConfirmPay step={step} />}
+    <>
+      <Container>
+        {isLoading && <SkeletonConfirmPay step={step} />}
 
-      <>
-        {dataConfirmation && (
-          <>
-            {/* BANNER STATE CONFIRMATION */}
-            <BannerState />
+        <>
+          {dataConfirmation && (
+            <>
+              {/* BANNER STATE CONFIRMATION */}
+              <BannerState />
 
-            <div className="flex min-h-[42rem] ">
-              {/* LEFT INFORMATION */}
-              <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px] lg:mt-[3.2rem] mt-[1.8rem]">
+              <div className="flex min-h-[42rem] ">
+                {/* LEFT INFORMATION */}
+                <div className="w-full lg:w-[68%] xl:w-[90%] lg:pr-[20px] lg:mt-[3.2rem] mt-[1.8rem]">
+                  <ListCardsConfirmations confirmations={dataConfirmation} />
+                  {/* <CardsItinerary dataItinerary={dataConfirmation} /> */}
+                </div>
 
-                <ListCardsConfirmations confirmations={dataConfirmation}/>
-                {/* <CardsItinerary dataItinerary={dataConfirmation} /> */}
+                {/* RIGHT INFORMATION */}
+                <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px]">
+                  <ReservationShortInfo />
+                </div>
               </div>
 
-              {/* RIGHT INFORMATION */}
-              <div className="hidden lg:flex lg:w-[35%] xl:pl-[49px] pl-[9px]">
-                <ReservationShortInfo />
-              </div>
-            </div>
+              {/* TOTAL PRICE CONFIRMATION */}
+              <TotalPriceBL
+                smShow={smShow}
+                handleCloseModal={handleCloseModal}
+                handleIconClick={handleIconClick}
+              />
 
-            {/* TOTAL PRICE CONFIRMATION */}
-            <TotalPriceBL
-              smShow={smShow}
-              handleCloseModal={handleCloseModal}
-              handleIconClick={handleIconClick}
-            />
-
-            {/* BOTTOM BANNER CONFIRMATION */}
-            <BannerConfirmationT />
-          </>
-        )}
-      </>
-    </Container>
+              {/* BOTTOM BANNER CONFIRMATION */}
+              <BannerConfirmationT />
+            </>
+          )}
+        </>
+      </Container>
+      {dataConfirmation && dataConfirmation.items && (
+        <DialogPaymentItinerary reservationData={dataConfirmation} />
+      )}
+    </>
   );
 }

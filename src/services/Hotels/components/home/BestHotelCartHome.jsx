@@ -4,55 +4,64 @@ import Image from "next/image";
 import { useState, useContext } from "react";
 import { TotalStars } from "@/components/General/Stars";
 import LanguageContext from "@/language/LanguageContext";
-import { CleanRoute } from "@/config/Others/CleanRoute";
-import ImageGet from "@/utils/others/ImageGet";
 
-export function BestHotelCart({ params, hotel, paramsH }) {
+export default function BestHotelCartHome({ hotel }) {
   const [isHovered, setIsHovered] = useState(false);
   const { languageData, language } = useContext(LanguageContext);
+  
+  const roomData = [{ adults: 2, children: [] }];
+  const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
+  
 
-  const searchHotel = (hotel, query) => {
-    const cleanedQuery = { ...query };
-    delete cleanedQuery.checkIn;
-    delete cleanedQuery.checkOut;
-
-    const queryParamsString = [
-      `codeName=${cleanedQuery.codeName}`,
-      `check-in=${cleanedQuery["check-in"]}`,
-      `check-out=${cleanedQuery["check-out"]}`,
-      `occupancies=${cleanedQuery.occupancies}`,
-    ].join("&");
-
+  const getNextMonthDates = () => {
+    const today = new Date();
+    const checkIn = new Date(today);
+    checkIn.setMonth(checkIn.getMonth() + 1);
+  
+    const checkOut = new Date(checkIn);
+    checkOut.setDate(checkIn.getDate() + 2);
+  
+    const formatDate = (date) => date.toISOString().split("T")[0];
+  
+    return {
+      checkIn: formatDate(checkIn),
+      checkOut: formatDate(checkOut),
+    };
+  };
+  
+  const searchHotel = (hotel) => {
+    const { checkIn, checkOut } = getNextMonthDates();
+  
+    const queryParamsString = new URLSearchParams({
+      codeNameHotel: hotel.codeName,
+      codeName:hotel.destinationCodeName,
+      occupancies: encodedRoomData,
+      'check-in': checkIn,
+      'check-out': checkOut,
+    }).toString();
+  
     window.open(
-      `/${language}/mx/${params.codeName}/${paramsH.codeName}-hotels/${hotel.codeName}?${queryParamsString}`,
+      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}?${queryParamsString}`,
       "_blank"
     );
   };
+  
 
   return (
     <div
-      onClick={() => searchHotel(hotel, paramsH)}
+      onClick={() => searchHotel(hotel)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="shadow-3xl !rounded-lg"
     >
       <div className="w-full h-[216px] overflow-hidden rounded-t-lg">
-        <ImageGet
-          imageUrl={hotel.images[0]}
-          type={"hotel"}
-          language={language}
-          altDescription={"card recommendations hotel"}
-          classN={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform ${
-            isHovered ? "scale-105" : "scale-100"
-          }`}
-        />
-        {/* <img
+        <img
           className={`w-full h-full rounded-t-lg object-cover select-none transition-transform duration-500 transform ${
             isHovered ? "scale-105" : "scale-100"
           }`}
-          src={hotel.images[0]}
+          src={hotel.image}
           alt="card"
-        /> */}
+        />
       </div>
 
       {/* bottom-0 w-full h-1/4 rounded-b-lg pb-3 pt-2 px-4 bg-white flex flex-col */}
@@ -93,10 +102,10 @@ export function BestHotelCart({ params, hotel, paramsH }) {
               MXN{" "}
               <span className="m-b text-fs-16">
                 $
-                {Math.floor(hotel.minRate)
+                {Math.floor(hotel.price)
                   .toLocaleString("es-MX", { currency: "MXN" })
                   .replace(".00", "")}
-                .<sup>{(hotel.minRate % 1).toFixed(2).slice(2)}</sup>
+                .<sup>{(hotel.price % 1).toFixed(2).slice(2)}</sup>
               </span>
             </span>
           </div>
@@ -113,7 +122,3 @@ export function BestHotelCart({ params, hotel, paramsH }) {
     </div>
   );
 }
-
-// http://localhost:3000/es/mx/cancun-mexico/cancun-hotels/park-royal-beach-cancun?codeNameHotel=park-royal-beach-cancun&code=18&type=destination&codeName=cancun&check-in=2025-04-17&check-out=2025-04-19&occupancies=%255B%257B%2522adults%2522%253A1%252C%2522children%2522%253A%255B%255D%257D%255D
-
-// http://localhost:3000/es/mx/cancun-mexico/cancun-hotels/park-royal-beach-cancun?codeNameHotel=park-royal-beach-cancun&name=Park+Royal+Beach+Cancun&cartUid=1f0165da-060f-6a26-b0a4-5b2b7ec6e75c&codeName=cancun&code=18&check-in=2025-04-17&check-out=2025-04-19&occupancies=%255B%257B%2522adults%2522%253A2%252C%2522children%2522%253A%255B%255D%257D%255D

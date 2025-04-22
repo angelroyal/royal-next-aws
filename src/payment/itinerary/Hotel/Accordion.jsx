@@ -88,6 +88,23 @@ export function Accordion({ index, accordionOpen, roomInfo }) {
                       </span>
                     </div>
                   )}
+                  {/* BEDS */}
+                  {/* {roomBed?.beds &&
+                    roomBed.beds.map((bed, item) => (
+                      <div key={item} className="flex gap-2 items-center">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_URL}icons/room/room-b.svg`}
+                          alt="icon Room"
+                          className="w-[14px] h-[15px]"
+                          width={14}
+                          height={15}
+                        />{" "}
+                        <span className="text-fs-10 text-gry-100 m-s-b text-nowrap">
+                          {bed.number} {bed.type}
+                        </span>
+                      </div>
+                    ))} */}
+
                   {/* NON REFUNDABLE */}
 
                   <div className="flex items-center">

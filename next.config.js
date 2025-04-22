@@ -2,6 +2,7 @@ module.exports = {
   images: {
     domains: [
       "apicrm.staywuw.com",
+      "api-crm.bastiansoft.com",
       "sandboxmexico.com",
       "api.sandboxmexico.com",
       "staywuw.com",
@@ -10,6 +11,7 @@ module.exports = {
       "staywuw.com",
       "f.civitatis.com",
       "cdn.worldota.net",
+      "api-staywuw.bastiansoft.com"
     ],
   },
   webpack: (config, { dev, isServer }) => {

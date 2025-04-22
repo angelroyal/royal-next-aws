@@ -213,9 +213,9 @@ export default function RoomsDetails(codeHotel) {
                                       className="w-[14px] h-[14px]"
                                       alt="room"
                                     />
-                                    <span className="m-s-b text-fs-12 text-gry-100">
-                                      {languageData.detailHotel[room.beds]}
-                                    </span>
+                                     <span className="m-s-b text-fs-12 text-gry-100">
+                                        {languageData.detailHotel[room.beds]}
+                                      </span>
                                   </div>
                                 )}
                               </div>

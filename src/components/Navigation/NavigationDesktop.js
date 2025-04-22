@@ -200,44 +200,45 @@ export default function NavigationDesktop() {
                   </span>
                   {/* </Link> */}
                 </div>
-
                 {/* TRANSPORT LINK */}
-                <div
-                  className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
-                  onClick={() => {
-                    // setTypeHome("tours");
-                    changeTransport();
-                  }}
-                >
-                  {/* <Link
+                {process.env.NEXT_PUBLIC_TRANSPORT === "true" && (
+                  <div
+                    className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline cursor-pointer"
+                    onClick={() => {
+                      // setTypeHome("tours");
+                      changeTransport();
+                    }}
+                  >
+                    {/* <Link
                   href={`/${language}/transports`}
                   passHref
                   className="flex items-center text-gry-100 m-b hover:text-or-100 no-underline	"
                 > */}
-                  <img
-                    src={`${
-                      process.env.NEXT_PUBLIC_URL
-                    }icons/transport/transport-${
-                      currentActiveIcon === "transports" ||
-                      currentActiveIcon === "transport"
-                        ? "o.svg"
-                        : "b.svg"
-                    }`}
-                    alt="icon transport"
-                    className="pr-2"
-                  />
-                  <span
-                    className={`${
-                      currentActiveIcon === "transports" ||
-                      currentActiveIcon === "transport"
-                        ? "text-or-100"
-                        : ""
-                    }`}
-                  >
-                    {languageData.modalHotelOptions.titleTransfer}
-                  </span>
-                  {/* </Link> */}
-                </div>
+                    <img
+                      src={`${
+                        process.env.NEXT_PUBLIC_URL
+                      }icons/transport/transport-${
+                        currentActiveIcon === "transports" ||
+                        currentActiveIcon === "transport"
+                          ? "o.svg"
+                          : "b.svg"
+                      }`}
+                      alt="icon transport"
+                      className="pr-2"
+                    />
+                    <span
+                      className={`${
+                        currentActiveIcon === "transports" ||
+                        currentActiveIcon === "transport"
+                          ? "text-or-100"
+                          : ""
+                      }`}
+                    >
+                      {languageData.modalHotelOptions.titleTransfer}
+                    </span>
+                    {/* </Link> */}
+                  </div>
+                )}
               </div>
             </div>
 

@@ -65,7 +65,7 @@ export default function AlertProcessing() {
                     {languageData.alertsPayment.textErrorPersists}{" "}
                     <a
                       className="no-underline focus:outline-none"
-                      href="tel:8009530342"
+                      href={`tel:${languageData.navigation.hrefNumber}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -78,7 +78,7 @@ export default function AlertProcessing() {
                   <div className="flex gap-[24px]">
                     <a
                       className="flex gap-2 no-underline m-s-b items-center"
-                      href="tel:8009530342"
+                      href={`tel:${languageData.navigation.hrefNumber}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

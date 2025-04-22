@@ -6,11 +6,11 @@ import {
   TourDescription,
   TransportDescription,
 } from "./TypeReservation";
+import { useRouter } from "next/navigation";
 import ModalShare from "../../../utils/booking/ModalShare";
 import LanguageContext from "../../../language/LanguageContext";
 import { useIsMobileNew } from "../../../config/Mobile/isMobile";
 import { BookingContext } from "@/payment/context/BookingContext";
-import { useRouter } from "next/navigation";
 
 export default function DetailsPayment(props) {
   const router = useRouter();
@@ -26,7 +26,6 @@ export default function DetailsPayment(props) {
     setRoomsWithTaxesNotIncluded,
     setTotalTaxesNotIncluded,
   } = useContext(BookingContext);
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,13 +56,17 @@ export default function DetailsPayment(props) {
       );
     }
   }, [data]);
-  
+
   const searchParams = new URLSearchParams(window.location.search);
   const uid = searchParams.get("uid");
 
   const handleClientForm = () => {
     router.push(`/${language}/form-client?uid=${uid}`);
   };
+
+  const transportDisabled =
+    data.items.some((item) => item.type === "transportation") &&
+    process.env.NEXT_PUBLIC_TRANSPORT?.toLowerCase() !== "true";
 
   return (
     <>
@@ -193,7 +196,8 @@ export default function DetailsPayment(props) {
                   {page === "itinerary" && (
                     <button
                       onClick={() => handleClientForm()}
-                      className="rounded-full py-[10px] px-[27px] flex !gap-x-2 bg-yw-100 items-center border-0 focus:outline-none text-fs-10 text-black m-b text-nowrap"
+                      className={`rounded-full py-[10px] px-[27px] flex !gap-x-2  items-center border-0 focus:outline-none text-fs-10 text-black m-b text-nowrap ${transportDisabled ? "bg-yw-70" : "bg-yw-100 hover:bg-yw-110"}`}
+                      disabled={transportDisabled}
                     >
                       {languageData.itinerary.detailsPayment.completePayment}
                       <Image

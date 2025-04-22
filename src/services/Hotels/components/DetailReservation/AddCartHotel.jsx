@@ -5,19 +5,19 @@ import { saveToCart } from "../../Api/requestHotel";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
-import NotificationType from "@/components/Alerts/Notifications/NotificationType";
-import { useNotification } from "@/components/Alerts/Notifications/useNotification";
+// import NotificationType from "@/components/Alerts/Notifications/NotificationType";
+// import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 import { EntitiesRecommendations } from "@/components/Recommended/Entities/Entities";
 
-export default function AddCartHotel() {
+export default function AddCartHotel({ isLoading, setIsLoading, handleAlert }) {
   const router = useRouter();
   const { fetchData } = useCartAxios();
-  const [isLoading, setIsLoading] = useState(false);
-  const { notification, showNotification, hideNotification } =
-    useNotification();
+
+  // const { notification, showNotification, hideNotification } =
+  //   useNotification();
   const { languageData, language } = useContext(LanguageContext);
 
-  const { selectedRooms, requestBodyRooms, keyHotel, hotelInfo } =
+  const { selectedRooms, requestBodyRooms, keyHotel, hotelInfo, paramListing } =
     useContext(RoomsHotelContext);
 
   // HANDLE ADD CART HOTEL
@@ -55,12 +55,13 @@ export default function AddCartHotel() {
       }
 
       const response = await saveToCart(saveRequestCart);
-      showNotification(
-        "success",
-        languageData.Alerts.notification.hotel.successTitle,
-        languageData.Alerts.notification.hotel.successSubtitle,
-        3000
-      );
+      handleAlert("success");
+      // showNotification(
+      //   "success",
+      //   languageData.Alerts.notification.hotel.successTitle,
+      //   languageData.Alerts.notification.hotel.successSubtitle,
+      //   3600
+      // );
 
       const cartUid = response.cart;
       const expirationTime = new Date().getTime() + 2 * 60 * 60 * 1000;
@@ -71,25 +72,34 @@ export default function AddCartHotel() {
       fetchData(cartUid);
       setTimeout(() => {
         router.push(
-          EntitiesRecommendations(language, "hotel", hotelInfo, cartUid)
+          EntitiesRecommendations(
+            language,
+            "hotel",
+            hotelInfo,
+            cartUid,
+            paramListing
+          )
         );
       }, 3000);
     } catch (error) {
       setIsLoading(false);
+      handleAlert("error");
 
-      showNotification(
-        "error",
-        languageData.Alerts.notification.hotel.errorTitle,
-        languageData.Alerts.notification.hotel.errorSubtitle,
-        3000
-      );
+      // showNotification(
+      //   "error",
+      //   languageData.Alerts.notification.hotel.errorTitle,
+      //   languageData.Alerts.notification.hotel.errorSubtitle,
+      //   3000
+      // );
     }
   };
 
   return (
     <>
       <button
-        className={`rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max ${!isLoading &&'hover:bg-yw-110'}`}
+        className={`rounded-full bg-yw-100 text-black text-fs-12 m-s-b text-center py-3.5 px-[117px] md:py-3.5 md:px-4 md:h-max ${
+          !isLoading && "hover:bg-yw-110"
+        }`}
         onClick={handleReserveNow}
         disabled={isLoading}
       >
@@ -98,7 +108,7 @@ export default function AddCartHotel() {
           : languageData.detailHotel.buttonPrincipal}
       </button>
 
-      {notification && notification.visible && (
+      {/* {notification && notification.visible && (
         <NotificationType
           type={notification.type}
           title={notification.title}
@@ -106,7 +116,7 @@ export default function AddCartHotel() {
           duration={notification.duration}
           onClose={hideNotification}
         />
-      )}
+      )} */}
     </>
   );
 }

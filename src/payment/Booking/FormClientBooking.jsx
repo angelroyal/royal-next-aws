@@ -1,5 +1,7 @@
 "use client";
 
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect, useContext } from "react";
 
 import {
@@ -12,6 +14,7 @@ import {
 } from "../config/conektaScripts";
 
 import Booking from "./Booking";
+import { decrypt } from "@/config/Others/encrypt";
 import { Container } from "@/config/Others/Container";
 import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
@@ -21,7 +24,6 @@ import DetailsPayment from "../itinerary/others/DetailsPayment";
 import EmptyItinerary from "../itinerary/Alerts/EmptyItinerary";
 import { DialogPaymentItinerary } from "../Utils/DialogPaymentItinerary";
 import FormPaymentSkeleton from "@/components/Skeleton/FormPaymentSkeleton";
-import { useRouter } from "next/navigation";
 
 
 export default function FormClientBooking() {
@@ -60,21 +62,51 @@ export default function FormClientBooking() {
     }
   }, [data]);
 
+  const [provider, setProvider] = useState(null);
+  
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
-      loadConektaScripts();
-    } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
-      loadOpenpayScripts();
+    const encrypted = Cookies.get("payment");
+    
+    if (encrypted) {
+      setProvider(decrypt(encrypted));
     }
-
-    return () => {
-      if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
-        unloadConektaScripts();
-      } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
-        unloadOpenpayScripts();
-      }
-    };
   }, []);
+
+  useEffect(() => {
+    if(provider){
+      // console.log("entra konekta",provider );
+      
+      if (provider === "CONEKTA") {
+        loadConektaScripts();
+      } else if (provider === "OPENPAY") {
+        loadOpenpayScripts();
+      }
+  
+      return () => {
+        if (provider === "CONEKTA") {
+          unloadConektaScripts();
+        } else if (provider === "OPENPAY") {
+          unloadOpenpayScripts();
+        }
+      };
+    }
+  }, [provider]);
+
+  // useEffect(() => {
+  //   if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+  //     loadConektaScripts();
+  //   } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+  //     loadOpenpayScripts();
+  //   }
+
+  //   return () => {
+  //     if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {
+  //       unloadConektaScripts();
+  //     } else if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "OPENPAY") {
+  //       unloadOpenpayScripts();
+  //     }
+  //   };
+  // }, []);
 
   return (
     <div className="w-full h-full relative bg-[#f6f6f6]">
@@ -126,21 +158,21 @@ export default function FormClientBooking() {
             </h2>
             <a
               className="text-nowrap m-m text-fs-14 text-gry-100 text-center flex cursor-pointer"
-              href="tel:8009530342"
+              href={`tel:${languageData.navigation.hrefNumber}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               {languageData.Alerts.itinerary.contact}{" "}
               <p className="m-0 ml-[4px] m-s-b hover:text-or-100">
                 {" "}
-                800 953 0342
+                {languageData.navigation.number}
               </p>
             </a>
           </div>
         )}
       </Container>
 
-      {data && data.items && <DialogPaymentItinerary reservationData={data} />}
+      {data && data.items && <DialogPaymentItinerary reservationData={data} form={true}/>}
     </div>
   );
 }

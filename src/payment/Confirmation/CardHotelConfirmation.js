@@ -34,7 +34,7 @@ export default function CardHotelConfirmation(props) {
             </span>{" "}
             <span className="text-gry-70 m-m">{dateFormatCheckIn}</span>{" "}
             <span className="text-gry-70 m-m">|</span>{" "}
-            <span className="text-gry-70 m-m">14:00pm</span>
+            <span className="text-gry-70 m-m">{languageData.modalHotel.checkIn}</span>
           </div>
 
           <ul className="tex-fs-16 m-b list-disc list-inside list-gry-70">
@@ -42,7 +42,7 @@ export default function CardHotelConfirmation(props) {
               <span className="text-black">Check out</span>{" "}
               <span className="text-gry-70 m-m">{dateFormatCheckOut} </span>
               <span className="text-gry-70 m-m">- </span>
-              <span className="text-gry-70 m-m">02:00pm</span>
+              <span className="text-gry-70 m-m">{languageData.modalHotel.checkOut}</span>
             </li>
           </ul>
         </div>

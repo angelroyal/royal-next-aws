@@ -12,6 +12,9 @@ import { ImageModification } from "@/utils/others/ImageModification";
 const RoomsHotelContext = createContext();
 
 export const RoomsHotelProvider = ({ children }) => {
+  // PARAMS RECOMMENDATION
+  const [paramListing, setParamListing] = useState(null);
+  
   const [roomsData, setRoomsData] = useState(null);
   const [selectedRooms, setSelectedRooms] = useState([]);
   const [requestBodyRooms, setRequestBodyRooms] = useState(null);
@@ -152,6 +155,7 @@ export const RoomsHotelProvider = ({ children }) => {
         setLocationDetails,
         openAlert,
         setOpenAlert,
+        paramListing, setParamListing
       }}
     >
       {children}

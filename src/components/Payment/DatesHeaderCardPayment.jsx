@@ -29,17 +29,18 @@ function DatesHotel({ languageData, dataCards }) {
     <div className="max-md:flex-col flex gap-x-4">
       <div className="text-fs-16 m-b">
         <span className="text-or-100">{languageData.dayOfWeek[dateWeek]}</span>{" "}
+        <span className="text-gry-100">{languageData.modalHotel.checkInText}</span>{" "}
         <span className="text-gry-70 m-m">{dateFormatCheckIn}</span>{" "}
         <span className="text-gry-70 m-m">|</span>{" "}
-        <span className="text-gry-70 m-m">14:00pm</span>
+        <span className="text-gry-70 m-m">{languageData.modalHotel.checkIn}</span>
       </div>
 
       <ul className="tex-fs-16 m-b list-disc list-inside list-gry-70">
         <li>
-          <span className="text-gry-100">Check out</span>{" "}
+          <span className="text-gry-100">{languageData.modalHotel.checkOutText}</span>{" "}
           <span className="text-gry-70 m-m">{dateFormatCheckOut} </span>
           <span className="text-gry-70 m-m">- </span>
-          <span className="text-gry-70 m-m">02:00pm</span>
+          <span className="text-gry-70 m-m">{languageData.modalHotel.checkOut}</span>
         </li>
       </ul>
     </div>
