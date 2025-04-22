@@ -22,11 +22,12 @@ export default function TopActivities() {
       try {
         const data = await fetchTopActivities();
         setTours(data);
-      } catch (error) {
+        // let actualDate = data.filter(items=>items.es?.name && items.en?.name)
+        // setTours(actualDate);
+      } catch (actualDate) {
         console.error(error);
       }
     };
-
     getTopActivities();
   }, []);
 

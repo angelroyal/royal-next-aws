@@ -11,12 +11,16 @@ export default function CardTopActivitiesHome({ tour }) {
   const { languageData, language } = useContext(LanguageContext);
 
   const sentTour = (tourInfo) => {
+    // console.log(tourInfo);
+    
     const body = { dateStart: getNextMonth() };
     const query = new URLSearchParams(body).toString();
+    const languageData = tourInfo[language] ? language : "es";
 
+    
     window.open(
       `/${language}/mx/${tourInfo.destinationCodeName}-${
-        tourInfo[language || "es"].country
+        tourInfo[languageData].country
       }/tours/${tourInfo.codeName}?${query}`,
       "_blank"
     );

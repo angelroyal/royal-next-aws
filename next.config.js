@@ -11,6 +11,7 @@ module.exports = {
       "staywuw.com",
       "f.civitatis.com",
       "cdn.worldota.net",
+      "api-staywuw.bastiansoft.com"
     ],
   },
   webpack: (config, { dev, isServer }) => {

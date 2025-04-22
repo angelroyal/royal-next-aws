@@ -73,20 +73,24 @@ export default function FormClientBooking() {
   }, []);
 
   useEffect(() => {
-    if (provider === "CONEKTA") {
-      loadConektaScripts();
-    } else if (provider === "OPENPAY") {
-      loadOpenpayScripts();
-    }
-
-    return () => {
+    if(provider){
+      // console.log("entra konekta",provider );
+      
       if (provider === "CONEKTA") {
-        unloadConektaScripts();
+        loadConektaScripts();
       } else if (provider === "OPENPAY") {
-        unloadOpenpayScripts();
+        loadOpenpayScripts();
       }
-    };
-  }, []);
+  
+      return () => {
+        if (provider === "CONEKTA") {
+          unloadConektaScripts();
+        } else if (provider === "OPENPAY") {
+          unloadOpenpayScripts();
+        }
+      };
+    }
+  }, [provider]);
 
   // useEffect(() => {
   //   if (process.env.NEXT_PUBLIC_PAYMENT_PROVIDER === "CONEKTA") {

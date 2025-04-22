@@ -10,7 +10,7 @@ const PaymentContext = createContext();
 
 const PaymentProvider = ({ children, gatewayProvider }) => {
   //GATEWAY PAYMENT
-  const nameProvider = codePayProvider(gatewayProvider.name);
+  const nameProvider = codePayProvider(gatewayProvider);
   const encrypted = encrypt(nameProvider);
 
   useEffect(() => {

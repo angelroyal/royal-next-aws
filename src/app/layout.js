@@ -6,6 +6,7 @@ import CookieBanner from "@/components/General/CookieBanner";
 import AosInitializer from "@/config/Animation/AosInitializer";
 import { FormContactClient } from "@/components/Alerts/FormContactClient";
 import { PaymentProvider } from "@/context/PaymentContext";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export const metadata = {
   author: "StayWuw",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Corporation",
@@ -73,8 +74,15 @@ export default function RootLayout({ children }) {
   };
 
   // TEST PROVIDER
-  const gatewayProvider = { name: "cp" };
+  let gatewayProvider = process.env.NEXT_PuBLIC_PAYMENT_PROVIDER_CODE;
 
+  try {
+    let response = await axios.get(`${process.env.NEXT_PUBLIC_API_CRM}/providers/active-payment`);
+    gatewayProvider = response.data.providers;
+  } catch (error) {
+    console.log(error); 
+  }
+  
   return (
     <html lang="en">
       <body className={inter.className}>
