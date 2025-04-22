@@ -81,7 +81,7 @@ export default function SendHotel() {
 
   return (
     <div
-      className={`flex ${isHotelResults ? "flex-col" : "flex-col lg:flex-row"} shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6 max-lg:w-[391px]`}
+      className={`flex ${isHotelResults ? "flex-col" : "flex-col lg:flex-row"} shadow-3xl items-center bg-white gap-2.5 rounded-lg p-6 max-lg:w-[391px] max-md:w-[350px]`}
     >
       <AutocompleteHotel onSelectItem={handleSelectItem} />
       <Calendar onDateChange={handleDateChange} />

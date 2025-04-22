@@ -52,7 +52,7 @@ export default function SearchTransport({ isListing = false }) {
   return (
     <div
       className={`flex flex-col p-6 shadow-3xl bg-white gap-y-[12.5px] rounded-lg ${
-        isListing ? "w-full" : "max-lg:w-[391px]"
+        isListing ? "w-full" : "max-lg:w-[391px]  max-md:[350px]"
       }`}
     >
       {/* SELECT TRAVEL TYPE */}
