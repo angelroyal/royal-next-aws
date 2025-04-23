@@ -71,14 +71,13 @@ export function ItineraryCardHotel({ hotelInfo }) {
         </div>
 
         <RoomsDetails hotelInfo={hotelInfo} />
-
-        {hotelInfo.available === false && (
-          <>
-            <UnavailableCardHotel destination={hotelInfo} />
-            <div className="overlay" />
-          </>
-        )}
       </div>
+      {hotelInfo.available === false && (
+        <>
+          <UnavailableCardHotel destination={hotelInfo} />
+          <div className="overlay" />
+        </>
+      )}
 
       {/* CARD REMOVE HOTEL */}
       <RemoveHotel

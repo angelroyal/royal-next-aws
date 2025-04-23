@@ -13,12 +13,12 @@ import DestinationReady from "@/components/Recommended/DestinationReady";
 import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 import Page404 from "@/components/General/Page404";
 import { fetchPostHotels } from "@/services/Hotels/config/axiosService";
+import { GetActivities } from "@/services/Tours/Api/requestTour";
 
 export default async function Details({ params, searchParams }) {
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${params.lang}/all`,
-      // `${process.env.NEXT_PUBLIC_API_CRM}getImages/${params.lang}/all`,
       {
         headers: {
           "Cache-Control":
@@ -34,11 +34,11 @@ export default async function Details({ params, searchParams }) {
     );
 
     const dataImg = response.data;
-
     const occupancies = JSON.parse(
       decodeURIComponent(searchParams.occupancies)
     );
-    let paramsFindHotel = {
+
+    const paramsFindHotel = {
       "check-in": searchParams["check-in"],
       "check-out": searchParams["check-out"],
       code: searchParams.code,
@@ -47,9 +47,40 @@ export default async function Details({ params, searchParams }) {
       codeName: searchParams.codeName,
     };
 
-    let responseHotels = await fetchPostHotels(paramsFindHotel);
+    let hotelsMap = [];
+    try {
+      const responseHotels = await fetchPostHotels(paramsFindHotel);
+      hotelsMap = responseHotels?.mapHotels || [];
+    } catch (e) {
+      console.warn("Error al obtener hoteles:", e);
+    }
 
-    const hotelsMap = responseHotels.mapHotels;
+    let toursMap = [];
+    try {
+      const responseTour = await GetActivities(searchParams.codeName);
+      toursMap = responseTour?.data?.activities?.slice(0, 20) || [];
+    } catch (e) {
+      console.warn("Error al obtener tours:", e);
+    }
+
+    if (hotelsMap.length === 0 && toursMap.length === 0) {
+      return (
+        <LanguageProvider>
+          <TokenProvider>
+            <CartAxiosProvider>
+              <Token />
+              <Navigation hotelDetails={true} />
+              <Page404 />
+              <FooterT />
+            </CartAxiosProvider>
+          </TokenProvider>
+        </LanguageProvider>
+      );
+    }
+
+    const isOnlyHotels = hotelsMap.length > 0 && toursMap.length === 0;
+    const isOnlyTours = toursMap.length > 0 && hotelsMap.length === 0;
+    const hasBoth = hotelsMap.length > 0 && toursMap.length > 0;
 
     return (
       <ImageProvider>
@@ -59,7 +90,6 @@ export default async function Details({ params, searchParams }) {
               <Token />
               <div className="bg-[#f6f6f6]">
                 <Navigation />
-
                 <Container>
                   {searchParams.name && searchParams.cartUid && (
                     <DestinationReady
@@ -73,11 +103,14 @@ export default async function Details({ params, searchParams }) {
                     params={params}
                     searchParams={searchParams}
                     hotelsMap={hotelsMap}
+                    toursMap={toursMap}
+                    isOnlyHotels={isOnlyHotels}
+                    isOnlyTours={isOnlyTours}
+                    hasBoth={hasBoth}
                   />
 
                   <KeepExploring />
                 </Container>
-
                 <FooterT />
               </div>
             </CartAxiosProvider>
@@ -86,6 +119,7 @@ export default async function Details({ params, searchParams }) {
       </ImageProvider>
     );
   } catch (error) {
+    console.error("Error en Details:", error);
     return (
       <LanguageProvider>
         <TokenProvider>
