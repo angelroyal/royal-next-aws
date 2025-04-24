@@ -225,15 +225,15 @@ export const en = {
     goPay: "Go pay",
 
     hotel: {
-      titleRecommedation: "Accommodations you might like",
+      titleRecommendation: "Accommodations you might like",
     },
 
     tour: {
-      titleRecommedation: "Add more fun to your vacation",
+      titleRecommendation: "Add more fun to your vacation",
     },
 
     transport: {
-      titleRecommedation: "Do you already know how to get there?",
+      titleRecommendation: "Do you already know how to get there?",
       btnchoose: "Choose transportation",
     },
   },

@@ -22,7 +22,7 @@ export default function TourRecommendation({ params, toursMap }) {
           <div className="mb-[36px]">
             {/* TITLE */}
             <span className="m-b text-fs-20 max-md:text-fs-16">
-              {languageData.recommendations.tour.titleRecommedation}
+              {languageData.recommendations.tour.titleRecommendation}
             </span>
           </div>
 

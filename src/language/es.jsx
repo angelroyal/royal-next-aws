@@ -226,15 +226,15 @@ export const es = {
     goPay: "Ir a pagar",
 
     hotel: {
-      titleRecommedation: "Alojamientos que pueden gustarte",
+      titleRecommendation: "Alojamientos que pueden gustarte",
     },
 
     tour: {
-      titleRecommedation: "Añade más diversión a tus vacaciones",
+      titleRecommendation: "Añade más diversión a tus vacaciones",
     },
 
     transport: {
-      titleRecommedation: "¿Ya sabes cómo llegar?",
+      titleRecommendation: "¿Ya sabes cómo llegar?",
       btnchoose: "Elegir transporte",
     },
   },

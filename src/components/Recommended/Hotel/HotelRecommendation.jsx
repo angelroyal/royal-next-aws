@@ -41,7 +41,7 @@ export default function HotelRecommendation({
           {/* TITLE */}
           <div className="mb-[36px]">
             <span className="m-b text-fs-20">
-              {languageData.recommendations.hotel.titleRecommedation}
+              {languageData.recommendations.hotel.titleRecommendation}
             </span>
           </div>
 

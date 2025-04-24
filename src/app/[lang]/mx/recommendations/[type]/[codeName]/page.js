@@ -2,22 +2,21 @@ import axios from "axios";
 
 import Token from "@/components/General/Token";
 import FooterT from "@/components/Footer/FooterT";
+import Page404 from "@/components/General/Page404";
 import { Container } from "@/config/Others/Container";
 import { ImageProvider } from "@/context/ImageContext";
+import { CleanRoute } from "@/config/Others/CleanRoute";
 import LanguageProvider from "@/language/LanguageProvider";
 import Navigation from "@/components/Navigation/Navigation";
 import { TokenProvider } from "@/config/context/AuthContext";
 import { CartAxiosProvider } from "@/components/Cart/CartAxios";
+import { GetActivities } from "@/services/Tours/Api/requestTour";
 import KeepExploring from "@/components/Recommended/KeepExploring";
+import { fetchPostHotels } from "@/services/Hotels/config/axiosService";
 import DestinationReady from "@/components/Recommended/DestinationReady";
 import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
-import Page404 from "@/components/General/Page404";
-import { fetchPostHotels } from "@/services/Hotels/config/axiosService";
-import { GetActivities } from "@/services/Tours/Api/requestTour";
-import { CleanRoute } from "@/config/Others/CleanRoute";
 
 export default async function Details({ params, searchParams }) {
-
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${params.lang}/all`,
@@ -51,20 +50,22 @@ export default async function Details({ params, searchParams }) {
       codeName: nameClean,
     };
 
+    // HOTELS
     let hotelsMap = [];
     try {
       const responseHotels = await fetchPostHotels(paramsFindHotel);
       hotelsMap = responseHotels?.mapHotels || [];
     } catch (e) {
-      console.error("Error al obtener hoteles:", e);
+      console.error("Error getting hotels:", e);
     }
 
+    // TOURS
     let toursMap = [];
     try {
       const responseTour = await GetActivities(nameClean);
       toursMap = responseTour?.data?.activities?.slice(0, 20) || [];
     } catch (e) {
-      console.error("Error al obtener tours:", e);
+      console.error("Error getting tours:", e);
     }
 
     if (hotelsMap.length === 0 && toursMap.length === 0) {
@@ -81,10 +82,6 @@ export default async function Details({ params, searchParams }) {
         </LanguageProvider>
       );
     }
-
-    const isOnlyHotels = hotelsMap.length > 0 && toursMap.length === 0;
-    const isOnlyTours = toursMap.length > 0 && hotelsMap.length === 0;
-    const hasBoth = hotelsMap.length > 0 && toursMap.length > 0;
 
     return (
       <ImageProvider>
@@ -108,9 +105,6 @@ export default async function Details({ params, searchParams }) {
                     searchParams={searchParams}
                     hotelsMap={hotelsMap}
                     toursMap={toursMap}
-                    isOnlyHotels={isOnlyHotels}
-                    isOnlyTours={isOnlyTours}
-                    hasBoth={hasBoth}
                   />
 
                   <KeepExploring />
