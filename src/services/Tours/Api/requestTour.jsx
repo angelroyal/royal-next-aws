@@ -1,9 +1,9 @@
 import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
-export async function getAvailabilityTour(id, searchParams) {
+export async function getAvailabilityTour(id, dateStart) {
   try {
     const response = await axiosWithInterceptor.get(
-      `v1/activities/${id}/availability?dateFrom=${searchParams.dateStart}&days=5&provider=ct`
+      `v1/activities/${id}/availability?dateFrom=${dateStart}&days=5&provider=ct`
     );
     if (response.status === 200) {
       return response;
