@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 
 import { EnBlog } from "./language/EnBlog";
 import { EsBlog } from "./language/EsBlog";
+import Cookies from "js-cookie";
 
 const LanguageContext = createContext();
 
@@ -19,7 +20,7 @@ const LanguageProvideContext = ({ children }) => {
   //USEEFFECT TO SET LANGUAGE
 
   useEffect(() => {
-    const currentLanguageLs = localStorage.getItem("language");
+    const currentLanguageLs = Cookies.get("language") || "en";
     if (currentLanguageLs) {
       setLanguage(currentLanguageLs.toLowerCase());
     }
@@ -30,7 +31,9 @@ const LanguageProvideContext = ({ children }) => {
     language,
     languageData: languages[language],
     setLanguage: (newLanguage) => {
-      localStorage.setItem("language", newLanguage.toUpperCase());
+      Cookies.get("language") || "en"
+      Cookies.set("language", newLanguage.toUpperCase());
+      // localStorage.setItem("language", newLanguage.toUpperCase());
       setLanguage(newLanguage.toLowerCase());
     },
   };

@@ -1,5 +1,6 @@
-import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 import axios from "axios";
+import Cookies from "js-cookie";
+import axiosWithInterceptor from "@/config/Others/axiosWithInterceptor";
 
 export const fetchDataItinerary = async (
   setData,
@@ -71,7 +72,7 @@ export const fetchDataConfirmation = async (
 ) => {
   try {
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    const language = localStorage.getItem("language") || "es";
+    const language = Cookies.get("language") || "es";
     const url = "/v1/booking/";
     const searchParams = new URLSearchParams(window.location.search);
     const cartId = searchParams.get("uid");

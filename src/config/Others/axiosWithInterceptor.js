@@ -1,9 +1,13 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 // import sendToSlack from "@/utils/errorBoundary/slackNotifier";
+
+// http://localhost:3000/es/mx/tuxtla-gutierrez-mexico/tours/excursion-a-comitan-de-dominguez-y-la-cascada-las-nubes?dateStart=2025-05-24
 
 const getLanguage = () => {
   if (typeof window !== "undefined") {
-    return localStorage.getItem("language") || "en";
+    return Cookies.get("language") || "en";
+    // return localStorage.getItem("language") || "en";
   }
   return "en";
 };

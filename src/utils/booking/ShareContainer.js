@@ -3,6 +3,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import React, { Fragment, useContext, useState } from "react";
 
 import LanguageContext from "../../language/LanguageContext";
+import Cookies from "js-cookie";
 
 const typeShared = [
   {
@@ -29,7 +30,7 @@ export function ShareContainer({ smShow, handleCloseModal }) {
   const { languageData } = useContext(LanguageContext);
 
   const [activeIcon, setActiveIcon] = useState(null);
-  const storageLanguage = localStorage.getItem("language");
+  const storageLanguage = Cookies.get("language") || "en";
 
   const setMessage = () => {
     switch (storageLanguage) {

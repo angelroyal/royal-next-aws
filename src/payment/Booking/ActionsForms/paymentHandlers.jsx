@@ -25,9 +25,10 @@ export const conektaSuccessResponseHandler = (
 ) => {
   paymentData.token = token.id;
 
-
   SendPaymentRequest(paymentData)
     .then((response) => {
+      console.log("response", response);
+      console.log("response.data", response.data);
 
       if (response.data.data.paymentStatus === "PAID") {
         confirmBooking(uid)
@@ -39,7 +40,11 @@ export const conektaSuccessResponseHandler = (
           });
       } else if (response.data.data.paymentStatus === "PENDING") {
         router.push(`/${language}/pending-payment?uid=${uid}`);
-      } else {
+      }
+      // else if (response.data.data.paymentStatus === "PENDING") {
+      //   router.push(`/${language}/pending-payment?uid=${uid}`);
+      // }
+      else {
         setAnimationData("FailureData");
       }
 

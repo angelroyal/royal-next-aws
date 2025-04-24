@@ -1,10 +1,11 @@
+import Cookies from "js-cookie";
 import React, { useEffect, useRef, useState } from "react";
 import flatpickr from "flatpickr";
 
 function CalendarMobile({ onDateChange }) {
   const monthRefs = useRef([]);
   const [selectedDates, setSelectedDates] = useState([]);
-  const language = localStorage.getItem("language") || "es";
+  const language = Cookies.get("language") || "en";
 
   useEffect(() => {
     const today = new Date();

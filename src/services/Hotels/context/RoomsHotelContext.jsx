@@ -1,5 +1,6 @@
 "use client";
 
+import Cookies from "js-cookie";
 import React, { createContext, useEffect, useState } from "react";
 
 import { postRoomsToAPI } from "../Api/requestHotel";
@@ -8,7 +9,6 @@ import {
   filterBySelectedReviews,
 } from "../utils/FiltersReviews";
 import { ImageModification } from "@/utils/others/ImageModification";
-
 const RoomsHotelContext = createContext();
 
 export const RoomsHotelProvider = ({ children }) => {
@@ -47,7 +47,7 @@ export const RoomsHotelProvider = ({ children }) => {
 
   const handleFetchPostRooms = async (requestBody) => {
     setRoomsData(null);
-    const lang = localStorage.getItem("language") || "es";
+    const lang = Cookies.get("language") || "en";
     try {
       const responseData = await postRoomsToAPI(requestBody);
       const newResponse = await ImageModification(responseData, lang);

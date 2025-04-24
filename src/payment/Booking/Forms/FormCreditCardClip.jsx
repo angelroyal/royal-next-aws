@@ -46,6 +46,7 @@ function FormCreditCardClip(props) {
               })
               .catch((error) => {
                 console.error("Error al confirmar la reserva:", error);
+                router.push(`/${language}/pending-payment?uid=${uid}`);
               });
           } else if (response.data.data.paymentStatus === "PENDING") {
             router.push(`/${language}/pending-payment?uid=${uid}`);

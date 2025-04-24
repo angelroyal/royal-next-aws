@@ -1,4 +1,5 @@
 "use client";
+import Cookies from "js-cookie";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/l10n/es.js";
 import "flatpickr/dist/flatpickr.min.css";
@@ -7,10 +8,11 @@ import LanguageContext from "../language/LanguageContext";
 
 function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
   const calendarRef = useRef(null);
-  const language =
-    typeof localStorage !== "undefined"
-      ? localStorage.getItem("language") || "es"
-      : "es";
+  const language = Cookies.get("language") || "es";
+  // const language =
+  //   typeof localStorage !== "undefined"
+  //     ? localStorage.getItem("language") || "es"
+  //     : "es";
 
   useEffect(() => {
     let calendarInstance;
@@ -56,7 +58,10 @@ function Calendar({ onDateChange, listing = false, hotelDetails = false }) {
         onDateChange(selectedDates);
         localStorage.setItem("selectedDates", JSON.stringify(selectedDates));
 
-        calendarInstance.set("maxDate", new Date(new Date().getFullYear() + 1, 11, 31));
+        calendarInstance.set(
+          "maxDate",
+          new Date(new Date().getFullYear() + 1, 11, 31)
+        );
       }
     };
 

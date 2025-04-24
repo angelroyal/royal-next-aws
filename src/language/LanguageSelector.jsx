@@ -4,6 +4,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import { useState, useContext, useEffect, Fragment } from "react";
 
 import LanguageContext from "./LanguageContext";
+import Cookies from "js-cookie";
 
 const country = [
   {
@@ -29,7 +30,7 @@ export function LanguageSelector() {
 
   useEffect(() => {
     const storedLanguage =
-      localStorage.getItem("language") ||
+      Cookies.get("language") ||
       getLanguageFromPath(window.location.pathname) ||
       "en";
 
@@ -49,7 +50,8 @@ export function LanguageSelector() {
     const currentPath = window.location.pathname;
     const currentSearch = window.location.search;
 
-    localStorage.setItem("language", newLanguage);
+    Cookies.set("language", newLanguage);
+    // localStorage.setItem("language", newLanguage);
     setSelected(newSelected);
 
     if (currentPath === "/") {
