@@ -12,16 +12,13 @@ export default function CardTopActivitiesHome({ tour }) {
 
   const sentTour = (tourInfo) => {
     // console.log(tourInfo);
-    
+
     const body = { dateStart: getNextMonth() };
     const query = new URLSearchParams(body).toString();
     const languageData = tourInfo[language] ? language : "es";
 
-    
     window.open(
-      `/${language}/mx/${tourInfo.destinationCodeName}-${
-        tourInfo[languageData].country
-      }/tours/${tourInfo.codeName}?${query}`,
+      `/${language}/mx/${tourInfo.destinationCodeName}-${tourInfo[languageData].country}/tours/${tourInfo.codeName}?${query}`,
       "_blank"
     );
   };
@@ -85,7 +82,10 @@ export default function CardTopActivitiesHome({ tour }) {
               <span className="m-s-b text-or-100">
                 MXN{" "}
                 <span className="m-b text-fs-16">
-                  ${Math.floor(validateLanguageName(language, tour).price)}
+                  $
+                  {Math.floor(validateLanguageName(language, tour).price)
+                    .toLocaleString("es-MX", { currency: "MXN" })
+                    .replace(".00", "")}
                 </span>
                 .
                 <sup className="m-b">
