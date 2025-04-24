@@ -17,6 +17,8 @@ import {
   CleanRoute,
 } from "@/config/Others/CleanRoute";
 
+const formatDate = (date) => date.toISOString().split("T")[0];
+
 export default function Tour(props) {
   const { params, tourMetaData, searchParams } = props;
   const [tourData, setTourData] = useState(null);
@@ -24,9 +26,24 @@ export default function Tour(props) {
   const { setParamListing } = useContext(DetailTourContext);
 
   useEffect(() => {
+    const newDate = new Date();
+    const currentDay = newDate.getDate();
+    newDate.setDate(1);
+    newDate.setMonth(newDate.getMonth() + 1);
+    const lastDay = new Date(
+      newDate.getFullYear(),
+      newDate.getMonth() + 1,
+      0
+    ).getDate();
+    newDate.setDate(Math.min(currentDay, lastDay));
+
+    const dateStart = searchParams.dateStart
+      ? searchParams.dateStart
+      : formatDate(newDate);
+
     const fetchTourData = async () => {
       try {
-        const response = await getAvailabilityTour(params.id, searchParams);
+        const response = await getAvailabilityTour(params.id, dateStart);
         setTourData(response.data);
       } catch (error) {
         console.error("Failed to fetch tour data:", error);
@@ -35,14 +52,18 @@ export default function Tour(props) {
 
     fetchTourData();
 
-    const { checkIn, checkOut } = CalculateCheckInCheckOut(
-      searchParams.dateStart
-    );
+    const { checkIn, checkOut } = CalculateCheckInCheckOut(dateStart);
 
     setParamListing({
       destination: CleanRoute(params.codeName),
-      occupancies: encodeURIComponent(JSON.stringify([{ adults: 2, children: [] }])),
-      code: searchParams.code,
+      occupancies: encodeURIComponent(
+        JSON.stringify([{ adults: 2, children: [] }])
+      ),
+      code: searchParams.code
+        ? searchParams.code
+        : tourMetaData?.destination
+        ? tourMetaData?.destination?.code
+        : "",
       "check-in": checkIn,
       "check-out": checkOut,
       type: "destination",
