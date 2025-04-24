@@ -15,7 +15,6 @@ import NotificationType from "@/components/Alerts/Notifications/NotificationType
 import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 
 export default function DetailReservation({ searchParams, hotelData }) {
-  console.log(searchParams);
 
   const limitPrice = 95000;
   const { notification, showNotification, hideNotification } =
@@ -36,6 +35,7 @@ export default function DetailReservation({ searchParams, hotelData }) {
 
   // LP CHECK IN - OUT
   const today = new Date();
+  
   const defaultCheckIn = new Date(today);
   defaultCheckIn.setMonth(defaultCheckIn.getMonth() + 1);
 

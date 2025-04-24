@@ -12,6 +12,7 @@ export function BestHotelCart({ params, hotel, paramsH }) {
   const { languageData, language } = useContext(LanguageContext);
 
   const searchHotel = (hotel, query) => {
+
     const cleanedQuery = { ...query };
     delete cleanedQuery.checkIn;
     delete cleanedQuery.checkOut;
@@ -20,7 +21,7 @@ export function BestHotelCart({ params, hotel, paramsH }) {
       `codeName=${cleanedQuery.codeName}`,
       `check-in=${cleanedQuery["check-in"]}`,
       `check-out=${cleanedQuery["check-out"]}`,
-      `occupancies=${cleanedQuery.occupancies}`,
+      `occupancies=${encodeURIComponent(cleanedQuery.occupancies)}`,
     ].join("&");
 
     window.open(
