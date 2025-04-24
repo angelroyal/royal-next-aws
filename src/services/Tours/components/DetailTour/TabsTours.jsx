@@ -17,12 +17,15 @@ export default function TabsTours(props) {
   const { tourData } = props;
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const { languageData } = useContext(LanguageContext);
+  // LP 24-04-2025
+  const [tourDescription, setTourDescription] = useState(null);
 
   const handleTabClick = (tab) => {
     setSelectedTab(tab);
   };
 
   // VALIDATION FOR THE LIMIT OF LETTERS ALLOWED
+  console.log(tourData);
 
   const getMessageForTab = (tabName) => {
     switch (tabName) {
@@ -72,7 +75,7 @@ export default function TabsTours(props) {
                   selectedTab.name === tab.name
                     ? "border-or-70 text-or-100"
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline m-0 !ml-0 !mr-0 cursor-pointer`}
+                } m-0 group inline-flex items-center border-b-2 py-2 px-4 text-sm font-medium no-underline !ml-0 !mr-0 cursor-pointer`}
                 aria-current={
                   selectedTab.name === tab.name ? "page" : undefined
                 }

@@ -79,7 +79,7 @@ export default function Tour(props) {
       {!tourData && <SkeletonDetailTour />}
 
       {tourData && (
-        <div className="p-9 ">
+        <div className="p-9 max-md:p-4">
           <div className="flex flex-col lg:flex-row mt-9">
             <div className="w-full lg:w-6/12 shadow-3xl p-4">
               <TabsTours tourData={tourData.activity} />

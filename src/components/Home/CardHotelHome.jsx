@@ -13,6 +13,7 @@ export default function CardHotelHome(props) {
       "_blank"
     );
   };
+  console.log(hotel);
 
   const { languageData, language } = useContext(LanguageContext);
   const [isHovered, setIsHovered] = useState(false);
@@ -66,7 +67,14 @@ export default function CardHotelHome(props) {
               {languageData.cartTour.from}
             </span>
             <span className="m-b text-or-100 text-fs-12">
-              MXN <span className="m-b text-fs-16">$5,000</span>
+              MXN{" "}
+              <span className="m-b text-fs-16">
+                $
+                {Math.floor(hotel.price)
+                  .toLocaleString("es-MX", { currency: "MXN" })
+                  .replace(".00", "")}
+                .<sup>{(hotel.price % 1).toFixed(2).slice(2)}</sup>
+              </span>
             </span>
           </div>
 

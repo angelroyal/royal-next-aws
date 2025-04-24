@@ -68,7 +68,7 @@ export default function DestinationReady({ type, reservationDetails, dataImg }) 
           </button>
         </div>
 
-        <div className="min-w-[350px] max-lg:w-full bg-grn-30 flex flex-col p-[16px] gap-[8px] rounded-lg max-w-[500px]">
+        <div className="min-w-[250px] max-lg:w-full bg-grn-30 flex flex-col p-[16px] gap-[8px] rounded-lg max-w-[500px]">
           {/* NAME */}
           <div className="flex gap-2">
             <Image
