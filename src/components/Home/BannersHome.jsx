@@ -237,38 +237,10 @@ export function BannersHomeExclusiveDiscounts() {
     }
   }, [randomNumber]);
 
-  const getNextMonthDates = () => {
-    const today = new Date();
-    const checkIn = new Date(today);
-    checkIn.setMonth(checkIn.getMonth() + 1);
-  
-    const checkOut = new Date(checkIn);
-    checkOut.setDate(checkIn.getDate() + 2);
-  
-    const formatDate = (date) => date.toISOString().split("T")[0];
-  
-    return {
-      checkIn: formatDate(checkIn),
-      checkOut: formatDate(checkOut),
-    };
-  };
-  const roomData = [{ adults: 2, children: [] }];
-  const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
-
   const searchHotel = (hotel) => {
 
-    const { checkIn, checkOut } = getNextMonthDates();
-  
-    const queryParamsString = new URLSearchParams({
-      codeNameHotel: hotel.codeName,
-      codeName:hotel.destinationCodeName,
-      occupancies: encodedRoomData,
-      'check-in': checkIn,
-      'check-out': checkOut,
-    }).toString();
-
     window.open(
-      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}?${queryParamsString}`,
+      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
       "_blank"
     );
   };

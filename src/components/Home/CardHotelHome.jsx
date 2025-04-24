@@ -1,41 +1,15 @@
 import Image from "next/image";
 import { useContext, useState } from "react";
-import { TotalStars } from "../General/Stars";
 
+import { TotalStars } from "../General/Stars";
 import LanguageContext from "@/language/LanguageContext";
 
 export default function CardHotelHome(props) {
-  const { hotel,encodedRoom } = props;
-
-  const getNextMonthDates = () => {
-    const today = new Date();
-    const checkIn = new Date(today);
-    checkIn.setMonth(checkIn.getMonth() + 1);
-  
-    const checkOut = new Date(checkIn);
-    checkOut.setDate(checkIn.getDate() + 2);
-  
-    const formatDate = (date) => date.toISOString().split("T")[0];
-  
-    return {
-      checkIn: formatDate(checkIn),
-      checkOut: formatDate(checkOut),
-    };
-  };
+  const { hotel } = props;
 
   const searchHotel = (hotel) => {
-    const { checkIn, checkOut } = getNextMonthDates();
-  
-    const queryParamsString = new URLSearchParams({
-      codeNameHotel: hotel.codeName,
-      codeName:hotel.destinationCodeName,
-      occupancies: encodedRoom,
-      'check-in': checkIn,
-      'check-out': checkOut,
-    }).toString();
-
     window.open(
-      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}?${queryParamsString}`,
+      `/${language}/mx/${hotel.destinationCodeName}-mexico/${hotel.destinationCodeName}-hotels/${hotel.codeName}`,
       "_blank"
     );
   };

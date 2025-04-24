@@ -1,22 +1,22 @@
 "use client";
 
-import { Container } from "@/config/Others/Container";
-import LanguageContext from "@/language/LanguageContext";
+import moment from "moment";
 import { useContext, useEffect, useState } from "react";
 
 import SelectRooms from "./SelectRooms";
 import AddCartHotel from "./AddCartHotel";
+import { Container } from "@/config/Others/Container";
+import LanguageContext from "@/language/LanguageContext";
 import { useCartAxios } from "@/components/Cart/CartAxios";
+import { calculateNights } from "../../utils/calculateNights";
 import RoomsHotelContext from "../../context/RoomsHotelContext";
 import { LimitPriceAlert } from "../AlertsHotel/HotelInformationAlerts";
-import { calculateNights } from "../../utils/calculateNights";
-import moment from "moment";
-import ImageGet from "@/utils/others/ImageGet";
-import { CleanRoute } from "@/config/Others/CleanRoute";
 import NotificationType from "@/components/Alerts/Notifications/NotificationType";
 import { useNotification } from "@/components/Alerts/Notifications/useNotification";
 
-export default function DetailReservation({ searchParams }) {
+export default function DetailReservation({ searchParams, hotelData }) {
+  console.log(searchParams);
+
   const limitPrice = 95000;
   const { notification, showNotification, hideNotification } =
     useNotification();
@@ -25,7 +25,7 @@ export default function DetailReservation({ searchParams }) {
   const [open, setOpen] = useState(false);
   const [priceRooms, setTotalPrice] = useState(0);
   const [isLimitPrice, setISLimitPrice] = useState(false);
-  const { languageData, language } = useContext(LanguageContext);
+  const { languageData } = useContext(LanguageContext);
 
   const [diffDate, setDiffDate] = useState(null);
   const [totalPerson, setTotalPerson] = useState(null);
@@ -34,16 +34,26 @@ export default function DetailReservation({ searchParams }) {
     useContext(RoomsHotelContext);
   const { totalPrice } = useCartAxios();
 
+  // LP CHECK IN - OUT
+  const today = new Date();
+  const defaultCheckIn = new Date(today);
+  defaultCheckIn.setMonth(defaultCheckIn.getMonth() + 1);
+
+  const defaultCheckOut = new Date(defaultCheckIn);
+  defaultCheckOut.setDate(defaultCheckIn.getDate() + 2);
+
+  const formatDate = (date) => date.toISOString().split("T")[0];
+
   useEffect(() => {
     if (searchParams) {
       setParamListing({
-        codeName: searchParams.codeName,
-        code: searchParams.code,
-        "check-in": searchParams["check-in"],
-        "check-out": searchParams["check-out"],
-        occupancies: encodeURIComponent(
-          JSON.stringify([{ adults: 2, children: [] }])
-        ),
+        codeName: hotelData.destination.toLowerCase(),
+        code: hotelData.destinationCode,
+        "check-in": searchParams["check-in"] || formatDate(defaultCheckIn),
+        "check-out": searchParams["check-out"] || formatDate(defaultCheckOut),
+        occupancies:
+          searchParams.occupancies ||
+          encodeURIComponent(JSON.stringify([{ adults: 2, children: [] }])),
       });
     }
   }, [searchParams]);

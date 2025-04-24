@@ -4,9 +4,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/assets/styles/general/Swiper.css";
 
+import { useContext } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useContext, useState } from "react";
 
 import CardHotelHome from "./CardHotelHome";
 import LanguageContext from "@/language/LanguageContext";
@@ -139,20 +139,19 @@ export default function EnjoyStayHome() {
   const calculateFutureDates = () => {
     const formatDate = (date) => {
       const day = String(date.getDate()).padStart(2, "0");
-      const month = String(date.getMonth() + 1).padStart(2, "0"); 
-      const year = String(date.getFullYear()); 
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const year = String(date.getFullYear());
       return `${year}-${month}-${day}`;
       // return `${day}/${month}/${year}`;
-
     };
-  
+
     const today = new Date();
     const twoWeeksAhead = new Date(today);
     twoWeeksAhead.setDate(today.getDate() + 14);
-  
+
     const threeWeeksAhead = new Date(today);
     threeWeeksAhead.setDate(today.getDate() + 21);
-  
+
     return {
       twoWeeksAhead: formatDate(twoWeeksAhead),
       threeWeeksAhead: formatDate(threeWeeksAhead),
@@ -161,10 +160,7 @@ export default function EnjoyStayHome() {
 
   const dates = calculateFutureDates();
 
-  // LP PERSON
-  const [roomData, setRoomData] = useState([{ adults: 2, children: [] }]);
-  const encodedRoomData = encodeURIComponent(JSON.stringify(roomData));
-  // 
+  //
   const requestBody = {
     codeNameHotel: "cancun",
     destination: "Cancún",
@@ -173,7 +169,6 @@ export default function EnjoyStayHome() {
     type: "destination",
     "check-in": dates.twoWeeksAhead,
     "check-out": dates.threeWeeksAhead,
-    occupancies: encodedRoomData,
   };
 
   const query = new URLSearchParams(requestBody).toString();
@@ -230,7 +225,7 @@ export default function EnjoyStayHome() {
             {hotelsEnjoy.map((hotel, index) => (
               <SwiperSlide className="!rounded-lg shadow-3xl" key={index}>
                 {/* CARDS HOTEL */}
-                <CardHotelHome hotel={hotel} encodedRoom={encodedRoomData}/>
+                <CardHotelHome hotel={hotel} />
               </SwiperSlide>
             ))}
           </Swiper>

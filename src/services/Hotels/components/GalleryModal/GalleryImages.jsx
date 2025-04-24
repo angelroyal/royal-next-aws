@@ -1,14 +1,15 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "../../../../assets/css/Hotel/GalleryImage.css";
+
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+
 import ImageGet from "@/utils/others/ImageGet";
 
 export function GalleryImages({ images }) {
@@ -20,7 +21,7 @@ export function GalleryImages({ images }) {
     setCurrentSlideIndex(swiper.activeIndex);
   };
   return (
-    <div className=" w-full lg:w-[52%] select-none">
+    <div className="w-full lg:w-[52%] select-none">
       <Swiper
         navigation={true}
         // style={{

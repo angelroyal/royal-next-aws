@@ -14,8 +14,10 @@ import OrderRecommendation from "@/components/Recommended/OrderRecommendation";
 import Page404 from "@/components/General/Page404";
 import { fetchPostHotels } from "@/services/Hotels/config/axiosService";
 import { GetActivities } from "@/services/Tours/Api/requestTour";
+import { CleanRoute } from "@/config/Others/CleanRoute";
 
 export default async function Details({ params, searchParams }) {
+
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_API_CRM}/image/get-images/${params.lang}/all`,
@@ -38,13 +40,15 @@ export default async function Details({ params, searchParams }) {
       decodeURIComponent(searchParams.occupancies)
     );
 
+    const nameClean = CleanRoute(params.codeName);
+
     const paramsFindHotel = {
       "check-in": searchParams["check-in"],
       "check-out": searchParams["check-out"],
       code: searchParams.code,
       occupancies,
       type: "destination",
-      codeName: searchParams.codeName,
+      codeName: nameClean,
     };
 
     let hotelsMap = [];
@@ -52,15 +56,15 @@ export default async function Details({ params, searchParams }) {
       const responseHotels = await fetchPostHotels(paramsFindHotel);
       hotelsMap = responseHotels?.mapHotels || [];
     } catch (e) {
-      console.warn("Error al obtener hoteles:", e);
+      console.error("Error al obtener hoteles:", e);
     }
 
     let toursMap = [];
     try {
-      const responseTour = await GetActivities(searchParams.codeName);
+      const responseTour = await GetActivities(nameClean);
       toursMap = responseTour?.data?.activities?.slice(0, 20) || [];
     } catch (e) {
-      console.warn("Error al obtener tours:", e);
+      console.error("Error al obtener tours:", e);
     }
 
     if (hotelsMap.length === 0 && toursMap.length === 0) {
